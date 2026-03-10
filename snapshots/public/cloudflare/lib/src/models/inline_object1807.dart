@@ -32,7 +32,7 @@ factory InlineObject1807.fromJson(Map<String, dynamic> json) { return InlineObje
   config: InlineObject1807Config.fromJson(json['config'] as Map<String, dynamic>),
   end: DateTime.parse(json['end'] as String),
   name: json['name'] as String,
-  output: (json['output'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  output: (json['output'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   start: DateTime.parse(json['start'] as String),
   success: json['success'] as bool,
   type: InlineObject1807Type.fromJson(json['type'] as String),
@@ -46,7 +46,7 @@ final DateTime? end;
 
 final String name;
 
-final Map<String,String> output;
+final Map<String,Object?> output;
 
 final DateTime start;
 
@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('attem
       json.containsKey('start') && json['start'] is String &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('type'); } 
-InlineObject1807 copyWith({List<InlineObject1807Attempts>? attempts, InlineObject1807Config? config, DateTime? Function()? end, String? name, Map<String,String>? output, DateTime? start, bool? Function()? success, InlineObject1807Type? type, }) { return InlineObject1807(
+InlineObject1807 copyWith({List<InlineObject1807Attempts>? attempts, InlineObject1807Config? config, DateTime? Function()? end, String? name, Map<String,Object?>? output, DateTime? start, bool? Function()? success, InlineObject1807Type? type, }) { return InlineObject1807(
   attempts: attempts ?? this.attempts,
   config: config ?? this.config,
   end: end != null ? end() : this.end,

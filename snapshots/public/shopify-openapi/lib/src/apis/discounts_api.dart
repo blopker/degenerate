@@ -35,7 +35,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-01
 ///
 /// `POST /admin/api/2020-01/price_rules/{price_rule_id}/discount_codes.json`
-Future<ApiResult<void, Never>> deprecated202001CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,7 +73,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/price_rules/{price_rule_id}/discount_codes/{discount_code_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,7 +154,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_create-2020-01
 ///
 /// `POST /admin/api/2020-01/price_rules/{price_rule_id}/batch.json`
-Future<ApiResult<void, Never>> deprecated202001CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -230,7 +230,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-04
 ///
 /// `POST /admin/api/2020-04/price_rules/{price_rule_id}/discount_codes.json`
-Future<ApiResult<void, Never>> deprecated202004CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -268,7 +268,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/price_rules/{price_rule_id}/discount_codes/{discount_code_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -349,7 +349,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_create-2020-04
 ///
 /// `POST /admin/api/2020-04/price_rules/{price_rule_id}/batch.json`
-Future<ApiResult<void, Never>> deprecated202004CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -425,7 +425,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-07
 ///
 /// `POST /admin/api/2020-07/price_rules/{price_rule_id}/discount_codes.json`
-Future<ApiResult<void, Never>> deprecated202007CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -463,7 +463,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/price_rules/{price_rule_id}/discount_codes/{discount_code_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -544,7 +544,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_create-2020-07
 ///
 /// `POST /admin/api/2020-07/price_rules/{price_rule_id}/batch.json`
-Future<ApiResult<void, Never>> deprecated202007CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -620,7 +620,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-10
 ///
 /// `POST /admin/api/2020-10/price_rules/{price_rule_id}/discount_codes.json`
-Future<ApiResult<void, Never>> createPriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createPriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -658,7 +658,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/price_rules/{price_rule_id}/discount_codes/{discount_code_id}.json`
-Future<ApiResult<void, Never>> updatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -739,7 +739,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_create-2020-10
 ///
 /// `POST /admin/api/2020-10/price_rules/{price_rule_id}/batch.json`
-Future<ApiResult<void, Never>> createPriceRulesParamPriceRuleIdBatch({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createPriceRulesParamPriceRuleIdBatch({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -815,7 +815,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2021-01
 ///
 /// `POST /admin/api/2021-01/price_rules/{price_rule_id}/discount_codes.json`
-Future<ApiResult<void, Never>> deprecated202101CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -853,7 +853,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/price_rules/{price_rule_id}/discount_codes/{discount_code_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -934,7 +934,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_create-2021-01
 ///
 /// `POST /admin/api/2021-01/price_rules/{price_rule_id}/batch.json`
-Future<ApiResult<void, Never>> deprecated202101CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1010,7 +1010,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-unstable
 ///
 /// `POST /admin/api/unstable/price_rules/{price_rule_id}/discount_codes.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreatePriceRulesParamPriceRuleIdDiscountCodes({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1048,7 +1048,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-unstable
 ///
 /// `PUT /admin/api/unstable/price_rules/{price_rule_id}/discount_codes/{discount_code_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdatePriceRulesParamPriceRuleIdDiscountCodesParamDiscountCodeId({required String priceRuleId, required String discountCodeId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1129,7 +1129,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_create-unstable
 ///
 /// `POST /admin/api/unstable/price_rules/{price_rule_id}/batch.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreatePriceRulesParamPriceRuleIdBatch({required String priceRuleId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

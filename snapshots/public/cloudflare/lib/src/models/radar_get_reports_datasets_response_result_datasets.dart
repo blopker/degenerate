@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';final class RadarGetReportsDatasetsR
 factory RadarGetReportsDatasetsResponseResultDatasets.fromJson(Map<String, dynamic> json) { return RadarGetReportsDatasetsResponseResultDatasets(
   description: json['description'] as String,
   id: (json['id'] as num).toInt(),
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
   title: json['title'] as String,
   type: json['type'] as String,
@@ -19,7 +19,7 @@ final String description;
 
 final int id;
 
-final Map<String,String> meta;
+final Map<String,Object?> meta;
 
 final List<String> tags;
 
@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('tags') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-RadarGetReportsDatasetsResponseResultDatasets copyWith({String? description, int? id, Map<String,String>? meta, List<String>? tags, String? title, String? type, }) { return RadarGetReportsDatasetsResponseResultDatasets(
+RadarGetReportsDatasetsResponseResultDatasets copyWith({String? description, int? id, Map<String,Object?>? meta, List<String>? tags, String? title, String? type, }) { return RadarGetReportsDatasetsResponseResultDatasets(
   description: description ?? this.description,
   id: id ?? this.id,
   meta: meta ?? this.meta,

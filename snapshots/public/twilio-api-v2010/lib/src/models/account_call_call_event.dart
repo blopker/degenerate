@@ -7,22 +7,22 @@
 final class AccountCallCallEvent {const AccountCallCallEvent({this.request, this.response, });
 
 factory AccountCallCallEvent.fromJson(Map<String, dynamic> json) { return AccountCallCallEvent(
-  request: json['request'] as String?,
-  response: json['response'] as String?,
+  request: json['request'],
+  response: json['response'],
 ); }
 
 /// Contains a dictionary representing the request of the call.
-final String? request;
+final Object? request;
 
 /// Contains a dictionary representing the call response, including a list of the call events.
-final String? response;
+final Object? response;
 
 Map<String, dynamic> toJson() { return {
   'request': ?request,
   'response': ?response,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountCallCallEvent copyWith({String? Function()? request, String? Function()? response, }) { return AccountCallCallEvent(
+AccountCallCallEvent copyWith({Object? Function()? request, Object? Function()? response, }) { return AccountCallCallEvent(
   request: request != null ? request() : this.request,
   response: response != null ? response() : this.response,
 ); } 

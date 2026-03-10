@@ -7,11 +7,11 @@
 import 'package:collection/collection.dart';final class QueryMatch {const QueryMatch({this.matches, this.total, });
 
 factory QueryMatch.fromJson(Map<String, dynamic> json) { return QueryMatch(
-  matches: (json['matches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  matches: (json['matches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   total: json['total'] != null ? (json['total'] as num).toInt() : null,
 ); }
 
-final List<Map<String,String>>? matches;
+final List<Map<String,Object?>>? matches;
 
 final int? total;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'total': ?total,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-QueryMatch copyWith({List<Map<String, String>> Function()? matches, int Function()? total, }) { return QueryMatch(
+QueryMatch copyWith({List<Map<String, Object>> Function()? matches, int Function()? total, }) { return QueryMatch(
   matches: matches != null ? matches() : this.matches,
   total: total != null ? total() : this.total,
 ); } 

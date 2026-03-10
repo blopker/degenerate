@@ -37,11 +37,11 @@ final class WebhookCodeScanningAlertCreatedAlert {const WebhookCodeScanningAlert
 
 factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlert(
   createdAt: DateTime.parse(json['created_at'] as String),
-  dismissedAt: json['dismissed_at'] as String,
-  dismissedBy: json['dismissed_by'] as String,
+  dismissedAt: json['dismissed_at'],
+  dismissedBy: json['dismissed_by'],
   dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
-  dismissedReason: json['dismissed_reason'] as String,
-  fixedAt: json['fixed_at'] as String?,
+  dismissedReason: json['dismissed_reason'],
+  fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
   instancesUrl: json['instances_url'] as String?,
   mostRecentInstance: json['most_recent_instance'] != null
@@ -53,7 +53,7 @@ factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json)
   tool: WebhookCodeScanningAlertCreatedAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   updatedAt: json['updated_at'] as String?,
   url: Uri.parse(json['url'] as String),
-  dismissalApprovedBy: json['dismissal_approved_by'] as String?,
+  dismissalApprovedBy: json['dismissal_approved_by'],
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -61,17 +61,17 @@ factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json)
 final DateTime? createdAt;
 
 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final String? dismissedAt;
+final Object? dismissedAt;
 
-final String? dismissedBy;
+final Object? dismissedBy;
 
 final CodeScanningAlertDismissedComment? dismissedComment;
 
 /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
-final String? dismissedReason;
+final Object? dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final String? fixedAt;
+final Object? fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
@@ -94,7 +94,7 @@ final String? updatedAt;
 
 final Uri url;
 
-final String? dismissalApprovedBy;
+final Object? dismissalApprovedBy;
 
 final List<SimpleUser>? assignees;
 
@@ -118,16 +118,16 @@ Map<String, dynamic> toJson() { return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('dismissed_at') && json['dismissed_at'] is String &&
-      json.containsKey('dismissed_by') && json['dismissed_by'] is String &&
-      json.containsKey('dismissed_reason') && json['dismissed_reason'] is String &&
+      json.containsKey('dismissed_at') &&
+      json.containsKey('dismissed_by') &&
+      json.containsKey('dismissed_reason') &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('rule') &&
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertCreatedAlert copyWith({DateTime? Function()? createdAt, String? Function()? dismissedAt, String? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, String? Function()? dismissedReason, String? Function()? fixedAt, Uri? htmlUrl, String Function()? instancesUrl, WebhookCodeScanningAlertCreatedAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertCreatedAlertRule? rule, WebhookCodeScanningAlertCreatedAlertState? Function()? state, WebhookCodeScanningAlertCreatedAlertTool? Function()? tool, String? Function()? updatedAt, Uri? url, String? Function()? dismissalApprovedBy, List<SimpleUser> Function()? assignees, }) { return WebhookCodeScanningAlertCreatedAlert(
+WebhookCodeScanningAlertCreatedAlert copyWith({DateTime? Function()? createdAt, Object? Function()? dismissedAt, Object? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, Object? Function()? dismissedReason, Object? Function()? fixedAt, Uri? htmlUrl, String Function()? instancesUrl, WebhookCodeScanningAlertCreatedAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertCreatedAlertRule? rule, WebhookCodeScanningAlertCreatedAlertState? Function()? state, WebhookCodeScanningAlertCreatedAlertTool? Function()? tool, String? Function()? updatedAt, Uri? url, Object? Function()? dismissalApprovedBy, List<SimpleUser> Function()? assignees, }) { return WebhookCodeScanningAlertCreatedAlert(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
   dismissedBy: dismissedBy != null ? dismissedBy() : this.dismissedBy,

@@ -38,7 +38,7 @@ factory ToolSearchCall.fromJson(Map<String, dynamic> json) { return ToolSearchCa
   id: json['id'] as String,
   callId: json['call_id'] as String,
   execution: ToolSearchExecutionType.fromJson(json['execution'] as String),
-  arguments: json['arguments'] as String,
+  arguments: json['arguments'],
   status: FunctionCallStatus.fromJson(json['status'] as String),
   createdBy: json['created_by'] as String?,
 ); }
@@ -55,7 +55,7 @@ final String? callId;
 final ToolSearchExecutionType execution;
 
 /// Arguments used for the tool search call.
-final String arguments;
+final Object? arguments;
 
 /// The status of the tool search call item that was recorded.
 final FunctionCallStatus status;
@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'call_id': ?callId,
   'execution': execution.toJson(),
-  'arguments': arguments,
+  'arguments': ?arguments,
   'status': status.toJson(),
   'created_by': ?createdBy,
 }; } 
@@ -76,14 +76,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('execution') &&
-      json.containsKey('arguments') && json['arguments'] is String &&
+      json.containsKey('arguments') &&
       json.containsKey('status'); } 
-ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, String? arguments, FunctionCallStatus? status, String Function()? createdBy, }) { return ToolSearchCall(
+ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, Object? Function()? arguments, FunctionCallStatus? status, String Function()? createdBy, }) { return ToolSearchCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId != null ? callId() : this.callId,
   execution: execution ?? this.execution,
-  arguments: arguments ?? this.arguments,
+  arguments: arguments != null ? arguments() : this.arguments,
   status: status ?? this.status,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 

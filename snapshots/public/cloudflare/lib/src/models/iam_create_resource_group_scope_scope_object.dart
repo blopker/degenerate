@@ -5,27 +5,27 @@
 //  OpenAPI spec version: 3.0.3
 
 /// This is a combination of pre-defined resource name and identifier (like Zone ID etc.)
-extension type const IamCreateResourceGroupScopeScopeObjectKey(String value) {
-factory IamCreateResourceGroupScopeScopeObjectKey.fromJson(String json) => IamCreateResourceGroupScopeScopeObjectKey(json);
+extension type IamCreateResourceGroupScopeScopeObjectKey(Object? value) {
+factory IamCreateResourceGroupScopeScopeObjectKey.fromJson(Object? json) => IamCreateResourceGroupScopeScopeObjectKey(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 /// A scope object represents any resource that can have actions applied against invite.
 final class IamCreateResourceGroupScopeScopeObject {const IamCreateResourceGroupScopeScopeObject({required this.key});
 
 factory IamCreateResourceGroupScopeScopeObject.fromJson(Map<String, dynamic> json) { return IamCreateResourceGroupScopeScopeObject(
-  key: IamCreateResourceGroupScopeScopeObjectKey.fromJson(json['key'] as String),
+  key: IamCreateResourceGroupScopeScopeObjectKey.fromJson(json['key'] as Object?),
 ); }
 
-final IamCreateResourceGroupScopeScopeObjectKey key;
+final IamCreateResourceGroupScopeScopeObjectKey? key;
 
 Map<String, dynamic> toJson() { return {
-  'key': key.toJson(),
+  if (key != null) 'key': key?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key'); } 
-IamCreateResourceGroupScopeScopeObject copyWith({IamCreateResourceGroupScopeScopeObjectKey? key}) { return IamCreateResourceGroupScopeScopeObject(
-  key: key ?? this.key,
+IamCreateResourceGroupScopeScopeObject copyWith({IamCreateResourceGroupScopeScopeObjectKey? Function()? key}) { return IamCreateResourceGroupScopeScopeObject(
+  key: key != null ? key() : this.key,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IamCreateResourceGroupScopeScopeObject &&

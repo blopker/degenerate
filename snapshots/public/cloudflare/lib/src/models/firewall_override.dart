@@ -29,20 +29,20 @@ final class FirewallOverride {const FirewallOverride({this.description, this.gro
 
 factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOverride(
   description: json['description'] != null ? FirewallComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
   paused: json['paused'] != null ? FirewallPaused.fromJson(json['paused'] as bool) : null,
   priority: json['priority'] != null ? FirewallPriority.fromJson(json['priority'] as num) : null,
   rewriteAction: json['rewrite_action'] != null
         ? FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>)
         : null,
-  rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as String))),
+  rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as Object?))),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
 final FirewallComponentsSchemasDescription? description;
 
-final Map<String,String>? groups;
+final Map<String,Object?>? groups;
 
 final FirewallOverridesId? id;
 
@@ -52,7 +52,7 @@ final FirewallPriority? priority;
 
 final FirewallRewriteAction? rewriteAction;
 
-final Map<String,FirewallWafAction>? rules;
+final Map<String,FirewallWafAction?>? rules;
 
 final List<String>? urls;
 
@@ -63,11 +63,11 @@ Map<String, dynamic> toJson() { return {
   if (paused != null) 'paused': paused?.toJson(),
   if (priority != null) 'priority': priority?.toJson(),
   if (rewriteAction != null) 'rewrite_action': rewriteAction?.toJson(),
-  if (rules != null) 'rules': rules?.map((k, v) => MapEntry(k, v.toJson())),
+  if (rules != null) 'rules': rules?.map((k, v) => MapEntry(k, v?.toJson())),
   'urls': ?urls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, String> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
+FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, Object> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
   description: description != null ? description() : this.description,
   groups: groups != null ? groups() : this.groups,
   id: id != null ? id() : this.id,

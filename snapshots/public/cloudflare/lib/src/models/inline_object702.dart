@@ -102,11 +102,11 @@ factory InlineObject702.fromJson(Map<String, dynamic> json) { return InlineObjec
         ? InlineObject702FunctionCall.fromJson(json['function_call'] as Map<String, dynamic>)
         : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => InlineObject702Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   logprobs: json['logprobs'] as bool?,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => InlineObject702Modalities.fromJson(e as String)).toList(),
   model: json['model'] as String?,
   n: json['n'] != null ? (json['n'] as num).toInt() : null,
@@ -153,7 +153,7 @@ final InlineObject702FunctionCall? functionCall;
 
 final List<InlineObject702Functions>? functions;
 
-final Map<String,String>? logitBias;
+final Map<String,Object?>? logitBias;
 
 final bool? logprobs;
 
@@ -161,7 +161,7 @@ final int? maxCompletionTokens;
 
 final int? maxTokens;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 final List<InlineObject702Modalities>? modalities;
 
@@ -247,7 +247,7 @@ Map<String, dynamic> toJson() { return {
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-InlineObject702 copyWith({InlineObject702Audio Function()? audio, InlineObject702ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, InlineObject702FunctionCall Function()? functionCall, List<InlineObject702Functions> Function()? functions, Map<String, String>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, Map<String, String>? Function()? metadata, List<InlineObject702Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, InlineObject702Prediction Function()? prediction, double? Function()? presencePenalty, String? prompt, InlineObject702ReasoningEffort? Function()? reasoningEffort, InlineObject702ResponseFormat Function()? responseFormat, int? Function()? seed, InlineObject702ServiceTier? Function()? serviceTier, InlineObject702Stop Function()? stop, bool? Function()? store, bool? Function()? stream, InlineObject702StreamOptions Function()? streamOptions, double? Function()? temperature, InlineObject702ToolChoice Function()? toolChoice, List<InlineObject702Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, InlineObject702WebSearchOptions Function()? webSearchOptions, }) { return InlineObject702(
+InlineObject702 copyWith({InlineObject702Audio Function()? audio, InlineObject702ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, InlineObject702FunctionCall Function()? functionCall, List<InlineObject702Functions> Function()? functions, Map<String, Object>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, Map<String, Object>? Function()? metadata, List<InlineObject702Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, InlineObject702Prediction Function()? prediction, double? Function()? presencePenalty, String? prompt, InlineObject702ReasoningEffort? Function()? reasoningEffort, InlineObject702ResponseFormat Function()? responseFormat, int? Function()? seed, InlineObject702ServiceTier? Function()? serviceTier, InlineObject702Stop Function()? stop, bool? Function()? store, bool? Function()? stream, InlineObject702StreamOptions Function()? streamOptions, double? Function()? temperature, InlineObject702ToolChoice Function()? toolChoice, List<InlineObject702Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, InlineObject702WebSearchOptions Function()? webSearchOptions, }) { return InlineObject702(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,

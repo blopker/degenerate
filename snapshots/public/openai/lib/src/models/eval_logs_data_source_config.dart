@@ -36,7 +36,7 @@ final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({this.type 
 factory EvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalLogsDataSourceConfig(
   type: EvalLogsDataSourceConfigType.fromJson(json['type'] as String),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The type of data source. Always `logs`.
@@ -47,7 +47,7 @@ final Map<String,String>? metadata;
 /// The json schema for the run data source items.
 /// Learn how to build JSON schemas [here](https://json-schema.org/).
 /// 
-final Map<String,String> schema;
+final Map<String,Object?> schema;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('schema'); } 
-EvalLogsDataSourceConfig copyWith({EvalLogsDataSourceConfigType? type, Map<String, String>? Function()? metadata, Map<String,String>? schema, }) { return EvalLogsDataSourceConfig(
+EvalLogsDataSourceConfig copyWith({EvalLogsDataSourceConfigType? type, Map<String, String>? Function()? metadata, Map<String,Object?>? schema, }) { return EvalLogsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
   schema: schema ?? this.schema,

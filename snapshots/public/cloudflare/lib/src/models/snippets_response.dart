@@ -10,7 +10,7 @@ final class SnippetsResponse {const SnippetsResponse({required this.errors, requ
 factory SnippetsResponse.fromJson(Map<String, dynamic> json) { return SnippetsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SnippetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SnippetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -19,7 +19,7 @@ final List<SnippetsMessage> errors;
 final List<SnippetsMessage> messages;
 
 /// Contain the response result.
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 /// Indicate whether the API call was successful.
 final bool success;
@@ -34,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-SnippetsResponse copyWith({List<SnippetsMessage>? errors, List<SnippetsMessage>? messages, Map<String,String>? result, bool? success, }) { return SnippetsResponse(
+SnippetsResponse copyWith({List<SnippetsMessage>? errors, List<SnippetsMessage>? messages, Map<String,Object?>? result, bool? success, }) { return SnippetsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

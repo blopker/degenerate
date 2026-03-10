@@ -32,7 +32,7 @@ factory RealtimeSessionCreateRequestTools.fromJson(Map<String, dynamic> json) { 
   type: json['type'] != null ? RealtimeSessionCreateRequestToolsType.fromJson(json['type'] as String) : null,
   name: json['name'] as String?,
   description: json['description'] as String?,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The type of the tool, i.e. `function`.
@@ -48,7 +48,7 @@ final String? name;
 final String? description;
 
 /// Parameters of the function in JSON Schema.
-final Map<String,String>? parameters;
+final Map<String,Object?>? parameters;
 
 Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'parameters': ?parameters,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-RealtimeSessionCreateRequestTools copyWith({RealtimeSessionCreateRequestToolsType Function()? type, String Function()? name, String Function()? description, Map<String, String> Function()? parameters, }) { return RealtimeSessionCreateRequestTools(
+RealtimeSessionCreateRequestTools copyWith({RealtimeSessionCreateRequestToolsType Function()? type, String Function()? name, String Function()? description, Map<String, Object> Function()? parameters, }) { return RealtimeSessionCreateRequestTools(
   type: type != null ? type() : this.type,
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,

@@ -38,7 +38,7 @@ factory PagesDeploymentConfigValues.fromJson(Map<String, dynamic> json) { return
   aiBindings: (json['ai_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject94.fromJson(v as Map<String, dynamic>))),
   alwaysUseLatestCompatibilityDate: json['always_use_latest_compatibility_date'] as bool,
   analyticsEngineDatasets: (json['analytics_engine_datasets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject95.fromJson(v as Map<String, dynamic>))),
-  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)))),
+  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
   buildImageMajorVersion: (json['build_image_major_version'] as num).toInt(),
   compatibilityDate: json['compatibility_date'] as String,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>).map((e) => e as String).toList(),
@@ -73,7 +73,7 @@ final bool alwaysUseLatestCompatibilityDate;
 final Map<String,InlineObject95>? analyticsEngineDatasets;
 
 /// Browser bindings used for Pages Functions.
-final Map<String,Map<String,String>?>? browsers;
+final Map<String,Map<String,Object?>?>? browsers;
 
 /// The major version of the build image to use for Pages Functions.
 final int buildImageMajorVersion;
@@ -159,7 +159,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alway
       json.containsKey('env_vars') &&
       json.containsKey('fail_open') && json['fail_open'] is bool &&
       json.containsKey('usage_model'); } 
-PagesDeploymentConfigValues copyWith({Map<String, InlineObject94> Function()? aiBindings, bool? alwaysUseLatestCompatibilityDate, Map<String, InlineObject95> Function()? analyticsEngineDatasets, Map<String, Map<String, String>> Function()? browsers, int? buildImageMajorVersion, String? compatibilityDate, List<String>? compatibilityFlags, Map<String, InlineObject96> Function()? d1Databases, Map<String, InlineObject97> Function()? durableObjectNamespaces, Map<String, InlineObject117>? Function()? envVars, bool? failOpen, Map<String, InlineObject98> Function()? hyperdriveBindings, Map<String, InlineObject99> Function()? kvNamespaces, PagesDeploymentConfigValuesLimits Function()? limits, Map<String, InlineObject100> Function()? mtlsCertificates, PagesDeploymentConfigValuesPlacement Function()? placement, Map<String, InlineObject101> Function()? queueProducers, Map<String, InlineObject102> Function()? r2Buckets, Map<String, InlineObject103> Function()? services, PagesDeploymentConfigValuesUsageModel? usageModel, Map<String, InlineObject104> Function()? vectorizeBindings, String Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValues(
+PagesDeploymentConfigValues copyWith({Map<String, InlineObject94> Function()? aiBindings, bool? alwaysUseLatestCompatibilityDate, Map<String, InlineObject95> Function()? analyticsEngineDatasets, Map<String, Map<String, Object>> Function()? browsers, int? buildImageMajorVersion, String? compatibilityDate, List<String>? compatibilityFlags, Map<String, InlineObject96> Function()? d1Databases, Map<String, InlineObject97> Function()? durableObjectNamespaces, Map<String, InlineObject117>? Function()? envVars, bool? failOpen, Map<String, InlineObject98> Function()? hyperdriveBindings, Map<String, InlineObject99> Function()? kvNamespaces, PagesDeploymentConfigValuesLimits Function()? limits, Map<String, InlineObject100> Function()? mtlsCertificates, PagesDeploymentConfigValuesPlacement Function()? placement, Map<String, InlineObject101> Function()? queueProducers, Map<String, InlineObject102> Function()? r2Buckets, Map<String, InlineObject103> Function()? services, PagesDeploymentConfigValuesUsageModel? usageModel, Map<String, InlineObject104> Function()? vectorizeBindings, String Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValues(
   aiBindings: aiBindings != null ? aiBindings() : this.aiBindings,
   alwaysUseLatestCompatibilityDate: alwaysUseLatestCompatibilityDate ?? this.alwaysUseLatestCompatibilityDate,
   analyticsEngineDatasets: analyticsEngineDatasets != null ? analyticsEngineDatasets() : this.analyticsEngineDatasets,

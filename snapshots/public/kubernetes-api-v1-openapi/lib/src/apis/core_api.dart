@@ -490,7 +490,7 @@ return _execute(
 /// partially update the specified ConfigMap
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/configmaps/{name}`
-Future<ApiResult<ConfigMap, Never>> patchCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ConfigMap, Never>> patchCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -713,7 +713,7 @@ return _execute(
 /// partially update the specified Endpoints
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/endpoints/{name}`
-Future<ApiResult<Endpoints, Never>> patchCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Endpoints, Never>> patchCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -936,7 +936,7 @@ return _execute(
 /// partially update the specified Event
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/events/{name}`
-Future<ApiResult<Event, Never>> patchCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Event, Never>> patchCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -1159,7 +1159,7 @@ return _execute(
 /// partially update the specified LimitRange
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/limitranges/{name}`
-Future<ApiResult<LimitRange, Never>> patchCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<LimitRange, Never>> patchCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -1382,7 +1382,7 @@ return _execute(
 /// partially update the specified PersistentVolumeClaim
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
-Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -1500,7 +1500,7 @@ return _execute(
 /// partially update status of the specified PersistentVolumeClaim
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
-Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -1691,7 +1691,7 @@ return _execute(
 /// partially update the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPod({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPod({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -1897,7 +1897,7 @@ return _execute(
 /// partially update ephemeralcontainers of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -2507,7 +2507,7 @@ return _execute(
 /// partially update resize of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/resize`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodResize({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodResize({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -2593,7 +2593,7 @@ return _execute(
 /// partially update status of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/status`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -2784,7 +2784,7 @@ return _execute(
 /// partially update the specified PodTemplate
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/podtemplates/{name}`
-Future<ApiResult<PodTemplate, Never>> patchCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<PodTemplate, Never>> patchCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -3007,7 +3007,7 @@ return _execute(
 /// partially update the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
-Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -3125,7 +3125,7 @@ return _execute(
 /// partially update scale of the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
-Future<ApiResult<Scale, Never>> patchCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Scale, Never>> patchCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -3211,7 +3211,7 @@ return _execute(
 /// partially update status of the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
-Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -3402,7 +3402,7 @@ return _execute(
 /// partially update the specified ResourceQuota
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}`
-Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -3520,7 +3520,7 @@ return _execute(
 /// partially update status of the specified ResourceQuota
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
-Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -3711,7 +3711,7 @@ return _execute(
 /// partially update the specified Secret
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/secrets/{name}`
-Future<ApiResult<Secret, Never>> patchCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Secret, Never>> patchCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -3934,7 +3934,7 @@ return _execute(
 /// partially update the specified ServiceAccount
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
-Future<ApiResult<ServiceAccount, Never>> patchCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ServiceAccount, Never>> patchCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -4187,7 +4187,7 @@ return _execute(
 /// partially update the specified Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}`
-Future<ApiResult<Service, Never>> patchCoreV1NamespacedService({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Service, Never>> patchCoreV1NamespacedService({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -4655,7 +4655,7 @@ return _execute(
 /// partially update status of the specified Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/status`
-Future<ApiResult<Service, Never>> patchCoreV1NamespacedServiceStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Service, Never>> patchCoreV1NamespacedServiceStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -4741,7 +4741,7 @@ return _execute(
 /// partially update the specified Namespace
 ///
 /// `PATCH /api/v1/namespaces/{name}`
-Future<ApiResult<Namespace, Never>> patchCoreV1Namespace({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> patchCoreV1Namespace({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -4889,7 +4889,7 @@ return _execute(
 /// partially update status of the specified Namespace
 ///
 /// `PATCH /api/v1/namespaces/{name}/status`
-Future<ApiResult<Namespace, Never>> patchCoreV1NamespaceStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> patchCoreV1NamespaceStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -5080,7 +5080,7 @@ return _execute(
 /// partially update the specified Node
 ///
 /// `PATCH /api/v1/nodes/{name}`
-Future<ApiResult<Node, Never>> patchCoreV1Node({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Node, Never>> patchCoreV1Node({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -5548,7 +5548,7 @@ return _execute(
 /// partially update status of the specified Node
 ///
 /// `PATCH /api/v1/nodes/{name}/status`
-Future<ApiResult<Node, Never>> patchCoreV1NodeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Node, Never>> patchCoreV1NodeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -5774,7 +5774,7 @@ return _execute(
 /// partially update the specified PersistentVolume
 ///
 /// `PATCH /api/v1/persistentvolumes/{name}`
-Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolume({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolume({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;
@@ -5892,7 +5892,7 @@ return _execute(
 /// partially update status of the specified PersistentVolume
 ///
 /// `PATCH /api/v1/persistentvolumes/{name}/status`
-Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolumeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,String> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolumeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) queryParameters['pretty'] = pretty;
 if (dryRun != null) queryParameters['dryRun'] = dryRun;

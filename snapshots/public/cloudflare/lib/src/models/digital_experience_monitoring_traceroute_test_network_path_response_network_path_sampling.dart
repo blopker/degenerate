@@ -8,22 +8,22 @@
 final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling({required this.unit, required this.value, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
-  unit: json['unit'] as String,
+  unit: json['unit'],
   value: (json['value'] as num).toInt(),
 ); }
 
-final String unit;
+final Object? unit;
 
 final int value;
 
 Map<String, dynamic> toJson() { return {
-  'unit': unit,
+  'unit': ?unit,
   'value': value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') && json['unit'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
       json.containsKey('value') && json['value'] is num; } 
-DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling copyWith({String? unit, int? value, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
-  unit: unit ?? this.unit,
+DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling copyWith({Object? Function()? unit, int? value, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
+  unit: unit != null ? unit() : this.unit,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

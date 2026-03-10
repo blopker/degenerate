@@ -7,11 +7,11 @@
 import 'package:collection/collection.dart';final class WorkersAiSearchModelResponse404 {const WorkersAiSearchModelResponse404({required this.errors, required this.success, });
 
 factory WorkersAiSearchModelResponse404.fromJson(Map<String, dynamic> json) { return WorkersAiSearchModelResponse404(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,String>> errors;
+final List<Map<String,Object?>> errors;
 
 final bool success;
 
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorkersAiSearchModelResponse404 copyWith({List<Map<String,String>>? errors, bool? success, }) { return WorkersAiSearchModelResponse404(
+WorkersAiSearchModelResponse404 copyWith({List<Map<String,Object?>>? errors, bool? success, }) { return WorkersAiSearchModelResponse404(
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 

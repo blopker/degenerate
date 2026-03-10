@@ -35,7 +35,7 @@ factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { retur
   type: TextResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool?,
 ); }
 
@@ -52,7 +52,7 @@ final String? description;
 /// 
 final String name;
 
-final Map<String,String> schema;
+final Map<String,Object?> schema;
 
 final bool? strict;
 
@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema'); } 
-TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,String>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
+TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,Object?>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
   type: type ?? this.type,
   description: description != null ? description() : this.description,
   name: name ?? this.name,

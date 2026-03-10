@@ -57,7 +57,7 @@ factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveI
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   recording: json['recording'] != null
         ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>)
@@ -90,7 +90,7 @@ final StreamLiveInputRecordingDeletion? deleteRecordingAfterDays;
 
 final StreamLiveInputEnabled? enabled;
 
-final Map<String,String>? meta;
+final Map<String,Object?>? meta;
 
 final StreamLiveInputModified? modified;
 
@@ -129,7 +129,7 @@ Map<String, dynamic> toJson() { return {
   if (webRtcPlayback != null) 'webRTCPlayback': webRtcPlayback?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-StreamLiveInput copyWith({StreamLiveInputCreated Function()? created, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, String> Function()? meta, StreamLiveInputModified Function()? modified, StreamLiveInputRecordingSettings Function()? recording, StreamInputRtmps Function()? rtmps, StreamPlaybackRtmps Function()? rtmpsPlayback, StreamInputSrt Function()? srt, StreamPlaybackSrt Function()? srtPlayback, StreamLiveInputStatus? Function()? status, StreamLiveInputIdentifier Function()? uid, StreamInputWebrtc Function()? webRtc, StreamPlaybackWebrtc Function()? webRtcPlayback, }) { return StreamLiveInput(
+StreamLiveInput copyWith({StreamLiveInputCreated Function()? created, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, Object> Function()? meta, StreamLiveInputModified Function()? modified, StreamLiveInputRecordingSettings Function()? recording, StreamInputRtmps Function()? rtmps, StreamPlaybackRtmps Function()? rtmpsPlayback, StreamInputSrt Function()? srt, StreamPlaybackSrt Function()? srtPlayback, StreamLiveInputStatus? Function()? status, StreamLiveInputIdentifier Function()? uid, StreamInputWebrtc Function()? webRtc, StreamPlaybackWebrtc Function()? webRtcPlayback, }) { return StreamLiveInput(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,

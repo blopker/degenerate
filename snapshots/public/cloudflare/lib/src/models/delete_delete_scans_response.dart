@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';final class DeleteDeleteScansRespons
 factory DeleteDeleteScansResponse.fromJson(Map<String, dynamic> json) { return DeleteDeleteScansResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => e as String).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<String> errors;
 
 final List<String> messages;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-DeleteDeleteScansResponse copyWith({List<String>? errors, List<String>? messages, Map<String,String>? result, bool? success, }) { return DeleteDeleteScansResponse(
+DeleteDeleteScansResponse copyWith({List<String>? errors, List<String>? messages, Map<String,Object?>? result, bool? success, }) { return DeleteDeleteScansResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

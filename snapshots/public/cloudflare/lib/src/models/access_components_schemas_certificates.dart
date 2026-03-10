@@ -11,7 +11,7 @@ factory AccessComponentsSchemasCertificates.fromJson(Map<String, dynamic> json) 
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   expiresOn: json['expires_on'] != null ? AccessTimestamp.fromJson(json['expires_on'] as String) : null,
   fingerprint: json['fingerprint'] != null ? AccessFingerprint.fromJson(json['fingerprint'] as String) : null,
-  id: json['id'] as String?,
+  id: json['id'],
   name: json['name'] != null ? AccessCertificatesComponentsSchemasName2.fromJson(json['name'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
@@ -25,7 +25,7 @@ final AccessTimestamp? expiresOn;
 final AccessFingerprint? fingerprint;
 
 /// The ID of the application that will use this certificate.
-final String? id;
+final Object? id;
 
 final AccessCertificatesComponentsSchemasName2? name;
 
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccessComponentsSchemasCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, String Function()? id, AccessCertificatesComponentsSchemasName2 Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessComponentsSchemasCertificates(
+AccessComponentsSchemasCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, Object? Function()? id, AccessCertificatesComponentsSchemasName2 Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessComponentsSchemasCertificates(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

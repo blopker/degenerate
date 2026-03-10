@@ -5,21 +5,21 @@
 //  OpenAPI spec version: 3.0.3
 
 /// The WAF rule action to apply.
-extension type const FirewallWafRewriteAction(String value) {
-factory FirewallWafRewriteAction.fromJson(String json) => FirewallWafRewriteAction(json);
+extension type FirewallWafRewriteAction(Object? value) {
+factory FirewallWafRewriteAction.fromJson(Object? json) => FirewallWafRewriteAction(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 /// Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.
 final class FirewallRewriteAction {const FirewallRewriteAction({this.block, this.challenge, this.$default, this.disable, this.simulate, });
 
 factory FirewallRewriteAction.fromJson(Map<String, dynamic> json) { return FirewallRewriteAction(
-  block: json['block'] != null ? FirewallWafRewriteAction.fromJson(json['block'] as String) : null,
-  challenge: json['challenge'] != null ? FirewallWafRewriteAction.fromJson(json['challenge'] as String) : null,
-  $default: json['default'] != null ? FirewallWafRewriteAction.fromJson(json['default'] as String) : null,
-  disable: json['disable'] != null ? FirewallWafRewriteAction.fromJson(json['disable'] as String) : null,
-  simulate: json['simulate'] != null ? FirewallWafRewriteAction.fromJson(json['simulate'] as String) : null,
+  block: json['block'] != null ? FirewallWafRewriteAction.fromJson(json['block'] as Object?) : null,
+  challenge: json['challenge'] != null ? FirewallWafRewriteAction.fromJson(json['challenge'] as Object?) : null,
+  $default: json['default'] != null ? FirewallWafRewriteAction.fromJson(json['default'] as Object?) : null,
+  disable: json['disable'] != null ? FirewallWafRewriteAction.fromJson(json['disable'] as Object?) : null,
+  simulate: json['simulate'] != null ? FirewallWafRewriteAction.fromJson(json['simulate'] as Object?) : null,
 ); }
 
 final FirewallWafRewriteAction? block;
@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (simulate != null) 'simulate': simulate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-FirewallRewriteAction copyWith({FirewallWafRewriteAction Function()? block, FirewallWafRewriteAction Function()? challenge, FirewallWafRewriteAction Function()? $default, FirewallWafRewriteAction Function()? disable, FirewallWafRewriteAction Function()? simulate, }) { return FirewallRewriteAction(
+FirewallRewriteAction copyWith({FirewallWafRewriteAction? Function()? block, FirewallWafRewriteAction? Function()? challenge, FirewallWafRewriteAction? Function()? $default, FirewallWafRewriteAction? Function()? disable, FirewallWafRewriteAction? Function()? simulate, }) { return FirewallRewriteAction(
   block: block != null ? block() : this.block,
   challenge: challenge != null ? challenge() : this.challenge,
   $default: $default != null ? $default() : this.$default,

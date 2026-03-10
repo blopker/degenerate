@@ -48,7 +48,7 @@ factory PaymentIntentNextAction.fromJson(Map<String, dynamic> json) { return Pay
         ? PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode.fromJson(json['swish_handle_redirect_or_display_qr_code'] as Map<String, dynamic>)
         : null,
   type: json['type'] as String,
-  useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   verifyWithMicrodeposits: json['verify_with_microdeposits'] != null
         ? PaymentIntentNextActionVerifyWithMicrodeposits.fromJson(json['verify_with_microdeposits'] as Map<String, dynamic>)
         : null,
@@ -93,7 +93,7 @@ final PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode? swishHandleRedi
 final String type;
 
 /// When confirming a PaymentIntent with Stripe.js, Stripe.js depends on the contents of this dictionary to invoke authentication flows. The shape of the contents is subject to change and is only intended to be used by Stripe.js.
-final Map<String,String>? useStripeSdk;
+final Map<String,Object?>? useStripeSdk;
 
 final PaymentIntentNextActionVerifyWithMicrodeposits? verifyWithMicrodeposits;
 
@@ -125,7 +125,7 @@ Map<String, dynamic> toJson() { return {
   if (wechatPayRedirectToIosApp != null) 'wechat_pay_redirect_to_ios_app': wechatPayRedirectToIosApp?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-PaymentIntentNextAction copyWith({PaymentIntentNextActionAlipayHandleRedirect Function()? alipayHandleRedirect, PaymentIntentNextActionBoleto Function()? boletoDisplayDetails, PaymentIntentNextActionCardAwaitNotification Function()? cardAwaitNotification, PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode Function()? cashappHandleRedirectOrDisplayQrCode, PaymentIntentNextActionDisplayBankTransferInstructions Function()? displayBankTransferInstructions, PaymentIntentNextActionKonbini Function()? konbiniDisplayDetails, PaymentIntentNextActionDisplayMultibancoDetails Function()? multibancoDisplayDetails, PaymentIntentNextActionDisplayOxxoDetails Function()? oxxoDisplayDetails, PaymentIntentNextActionPaynowDisplayQrCode Function()? paynowDisplayQrCode, PaymentIntentNextActionPixDisplayQrCode Function()? pixDisplayQrCode, PaymentIntentNextActionPromptpayDisplayQrCode Function()? promptpayDisplayQrCode, PaymentIntentNextActionRedirectToUrl Function()? redirectToUrl, PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode Function()? swishHandleRedirectOrDisplayQrCode, String? type, Map<String, String> Function()? useStripeSdk, PaymentIntentNextActionVerifyWithMicrodeposits Function()? verifyWithMicrodeposits, PaymentIntentNextActionWechatPayDisplayQrCode Function()? wechatPayDisplayQrCode, PaymentIntentNextActionWechatPayRedirectToAndroidApp Function()? wechatPayRedirectToAndroidApp, PaymentIntentNextActionWechatPayRedirectToIosApp Function()? wechatPayRedirectToIosApp, }) { return PaymentIntentNextAction(
+PaymentIntentNextAction copyWith({PaymentIntentNextActionAlipayHandleRedirect Function()? alipayHandleRedirect, PaymentIntentNextActionBoleto Function()? boletoDisplayDetails, PaymentIntentNextActionCardAwaitNotification Function()? cardAwaitNotification, PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode Function()? cashappHandleRedirectOrDisplayQrCode, PaymentIntentNextActionDisplayBankTransferInstructions Function()? displayBankTransferInstructions, PaymentIntentNextActionKonbini Function()? konbiniDisplayDetails, PaymentIntentNextActionDisplayMultibancoDetails Function()? multibancoDisplayDetails, PaymentIntentNextActionDisplayOxxoDetails Function()? oxxoDisplayDetails, PaymentIntentNextActionPaynowDisplayQrCode Function()? paynowDisplayQrCode, PaymentIntentNextActionPixDisplayQrCode Function()? pixDisplayQrCode, PaymentIntentNextActionPromptpayDisplayQrCode Function()? promptpayDisplayQrCode, PaymentIntentNextActionRedirectToUrl Function()? redirectToUrl, PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode Function()? swishHandleRedirectOrDisplayQrCode, String? type, Map<String, Object> Function()? useStripeSdk, PaymentIntentNextActionVerifyWithMicrodeposits Function()? verifyWithMicrodeposits, PaymentIntentNextActionWechatPayDisplayQrCode Function()? wechatPayDisplayQrCode, PaymentIntentNextActionWechatPayRedirectToAndroidApp Function()? wechatPayRedirectToAndroidApp, PaymentIntentNextActionWechatPayRedirectToIosApp Function()? wechatPayRedirectToIosApp, }) { return PaymentIntentNextAction(
   alipayHandleRedirect: alipayHandleRedirect != null ? alipayHandleRedirect() : this.alipayHandleRedirect,
   boletoDisplayDetails: boletoDisplayDetails != null ? boletoDisplayDetails() : this.boletoDisplayDetails,
   cardAwaitNotification: cardAwaitNotification != null ? cardAwaitNotification() : this.cardAwaitNotification,

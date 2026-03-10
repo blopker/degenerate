@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// For a given zone, list all active certificate packs.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs`
-Future<ApiResult<ResponseCommon68, Never>> certificatePacksListCertificatePacks({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, String? status, String? deploy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon68, Never>> certificatePacksListCertificatePacks({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, Object? status, Object? deploy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();

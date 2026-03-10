@@ -40,7 +40,7 @@ factory WebhookInstallationUnsuspend.fromJson(Map<String, dynamic> json) { retur
   repository: json['repository'] != null
         ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>)
         : null,
-  requester: json['requester'] as String?,
+  requester: json['requester'],
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
@@ -56,7 +56,7 @@ final List<WebhooksRepositories2>? repositories;
 
 final RepositoryWebhooks? repository;
 
-final String? requester;
+final Object? requester;
 
 final SimpleUser sender;
 
@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('installation') &&
       json.containsKey('sender'); } 
-WebhookInstallationUnsuspend copyWith({WebhookInstallationUnsuspendAction? action, EnterpriseWebhooks Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks Function()? organization, List<WebhooksRepositories2> Function()? repositories, RepositoryWebhooks Function()? repository, String? Function()? requester, SimpleUser? sender, }) { return WebhookInstallationUnsuspend(
+WebhookInstallationUnsuspend copyWith({WebhookInstallationUnsuspendAction? action, EnterpriseWebhooks Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks Function()? organization, List<WebhooksRepositories2> Function()? repositories, RepositoryWebhooks Function()? repository, Object? Function()? requester, SimpleUser? sender, }) { return WebhookInstallationUnsuspend(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,

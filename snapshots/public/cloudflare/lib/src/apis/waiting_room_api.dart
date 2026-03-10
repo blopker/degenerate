@@ -71,7 +71,7 @@ return _execute(
 /// Creates a new waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,7 +84,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -93,7 +93,7 @@ return _execute(
 /// Fetches a single configured waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -104,7 +104,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -113,7 +113,7 @@ return _execute(
 /// Updates a configured waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -126,7 +126,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -135,7 +135,7 @@ return _execute(
 /// Patches a configured waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -148,7 +148,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -157,7 +157,7 @@ return _execute(
 /// Deletes a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -168,7 +168,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -204,7 +204,7 @@ return _execute(
 /// Only available for the Waiting Room Advanced subscription. Creates an event for a waiting room. An event takes place during a specified period of time, temporarily changing the behavior of a waiting room. While the event is active, some of the properties in the event's configuration may either override or inherit from the waiting room's configuration. Note that events cannot overlap with each other, so only one event can be active at a time.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -217,7 +217,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -226,7 +226,7 @@ return _execute(
 /// Fetches a single configured event for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -237,7 +237,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -246,7 +246,7 @@ return _execute(
 /// Updates a configured event for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -259,7 +259,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -268,7 +268,7 @@ return _execute(
 /// Patches a configured event for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -281,7 +281,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -290,7 +290,7 @@ return _execute(
 /// Deletes an event for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -301,7 +301,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -310,7 +310,7 @@ return _execute(
 /// Previews an event's configuration as if it was active. Inherited fields from the waiting room will be displayed with their current values.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}/details`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -321,7 +321,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -445,7 +445,7 @@ return _execute(
 /// 5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/status`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -456,7 +456,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -482,7 +482,7 @@ return _execute(
 /// For example, you can make a request to `http://waitingrooms.dev/preview/<uuid>?waitTime=50` to configure the estimated wait time as 50 minutes.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/preview`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -495,14 +495,14 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
 /// Get zone-level Waiting Room settings
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -513,14 +513,14 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
 /// Update zone-level Waiting Room settings
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -533,14 +533,14 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
 /// Patch zone-level Waiting Room settings
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<Map<String, String>, Never>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -553,7 +553,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 

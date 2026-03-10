@@ -45,7 +45,7 @@ factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite
   organizationIsEnforcingTwofactor: json['organization_is_enforcing_twofactor'] as bool?,
   organizationName: json['organization_name'] as String?,
   roles: (json['roles'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  status: json['status'] as String?,
+  status: json['status'],
 ); }
 
 final IamSchemasExpiresOn? expiresOn;
@@ -72,7 +72,7 @@ final String? organizationName;
 final List<String>? roles;
 
 /// Current status of the invitation.
-final String? status;
+final Object? status;
 
 Map<String, dynamic> toJson() { return {
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invited_member_id') && json['invited_member_id'] is String &&
       json.containsKey('organization_id') && json['organization_id'] is String; } 
-IamUserInvite copyWith({IamSchemasExpiresOn Function()? expiresOn, IamInviteComponentsSchemasIdentifier Function()? id, IamInvitedBy Function()? invitedBy, IamInvitedMemberEmail Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn Function()? invitedOn, String? organizationId, bool Function()? organizationIsEnforcingTwofactor, String Function()? organizationName, List<String> Function()? roles, String Function()? status, }) { return IamUserInvite(
+IamUserInvite copyWith({IamSchemasExpiresOn Function()? expiresOn, IamInviteComponentsSchemasIdentifier Function()? id, IamInvitedBy Function()? invitedBy, IamInvitedMemberEmail Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn Function()? invitedOn, String? organizationId, bool Function()? organizationIsEnforcingTwofactor, String Function()? organizationName, List<String> Function()? roles, Object? Function()? status, }) { return IamUserInvite(
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,
   invitedBy: invitedBy != null ? invitedBy() : this.invitedBy,

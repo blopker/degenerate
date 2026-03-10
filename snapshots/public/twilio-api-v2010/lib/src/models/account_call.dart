@@ -32,7 +32,7 @@ factory AccountCall.fromJson(Map<String, dynamic> json) { return AccountCall(
   queueTime: json['queue_time'] as String?,
   trunkSid: json['trunk_sid'] as String?,
   uri: json['uri'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The unique string that we created to identify this Call resource.
@@ -110,7 +110,7 @@ final String? trunkSid;
 final String? uri;
 
 /// A list of subresources available to this call, identified by their URIs relative to `https://api.twilio.com`.
-final Map<String,String>? subresourceUris;
+final Map<String,Object?>? subresourceUris;
 
 Map<String, dynamic> toJson() { return {
   'sid': ?sid,
@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountCall copyWith({String? Function()? sid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? parentCallSid, String? Function()? accountSid, String? Function()? to, String? Function()? toFormatted, String? Function()? from, String? Function()? fromFormatted, String? Function()? phoneNumberSid, CallEnumStatus Function()? status, String? Function()? startTime, String? Function()? endTime, String? Function()? duration, String? Function()? price, String? Function()? priceUnit, String? Function()? direction, String? Function()? answeredBy, String? Function()? apiVersion, String? Function()? forwardedFrom, String? Function()? groupSid, String? Function()? callerName, String? Function()? queueTime, String? Function()? trunkSid, String? Function()? uri, Map<String, String>? Function()? subresourceUris, }) { return AccountCall(
+AccountCall copyWith({String? Function()? sid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? parentCallSid, String? Function()? accountSid, String? Function()? to, String? Function()? toFormatted, String? Function()? from, String? Function()? fromFormatted, String? Function()? phoneNumberSid, CallEnumStatus Function()? status, String? Function()? startTime, String? Function()? endTime, String? Function()? duration, String? Function()? price, String? Function()? priceUnit, String? Function()? direction, String? Function()? answeredBy, String? Function()? apiVersion, String? Function()? forwardedFrom, String? Function()? groupSid, String? Function()? callerName, String? Function()? queueTime, String? Function()? trunkSid, String? Function()? uri, Map<String, Object>? Function()? subresourceUris, }) { return AccountCall(
   sid: sid != null ? sid() : this.sid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,

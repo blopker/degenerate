@@ -7,16 +7,16 @@
 final class InlineObject67 {const InlineObject67({this.result});
 
 factory InlineObject67.fromJson(Map<String, dynamic> json) { return InlineObject67(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-InlineObject67 copyWith({Map<String, String> Function()? result}) { return InlineObject67(
+InlineObject67 copyWith({Map<String, Object> Function()? result}) { return InlineObject67(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

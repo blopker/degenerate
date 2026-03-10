@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'iam_membership_components_sc
 factory IamUpdateMemberWithRoles.fromJson(Map<String, dynamic> json) { return IamUpdateMemberWithRoles(
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   roles: (json['roles'] as List<dynamic>?)?.map((e) => IamRole.fromJson(e as Map<String, dynamic>)).toList(),
-  status: json['status'] as String?,
+  status: json['status'],
   user: json['user'] != null
         ? IamUpdateMemberWithRolesUser.fromJson(json['user'] as Map<String, dynamic>)
         : null,
@@ -21,7 +21,7 @@ final IamMembershipComponentsSchemasIdentifier? id;
 final List<IamRole>? roles;
 
 /// A member's status in the account.
-final String? status;
+final Object? status;
 
 /// Details of the user associated to the membership.
 final IamUpdateMemberWithRolesUser? user;
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (user != null) 'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier Function()? id, List<IamRole> Function()? roles, String Function()? status, IamUpdateMemberWithRolesUser Function()? user, }) { return IamUpdateMemberWithRoles(
+IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier Function()? id, List<IamRole> Function()? roles, Object? Function()? status, IamUpdateMemberWithRolesUser Function()? user, }) { return IamUpdateMemberWithRoles(
   id: id != null ? id() : this.id,
   roles: roles != null ? roles() : this.roles,
   status: status != null ? status() : this.status,

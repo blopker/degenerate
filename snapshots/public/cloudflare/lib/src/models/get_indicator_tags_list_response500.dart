@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'get_indicator_tags_list_resp
 
 factory GetIndicatorTagsListResponse500.fromJson(Map<String, dynamic> json) { return GetIndicatorTagsListResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => GetIndicatorTagsListResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<GetIndicatorTagsListResponse500Errors> errors;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetIndicatorTagsListResponse500 copyWith({List<GetIndicatorTagsListResponse500Errors>? errors, Map<String,String>? result, bool? success, }) { return GetIndicatorTagsListResponse500(
+GetIndicatorTagsListResponse500 copyWith({List<GetIndicatorTagsListResponse500Errors>? errors, Map<String,Object?>? result, bool? success, }) { return GetIndicatorTagsListResponse500(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

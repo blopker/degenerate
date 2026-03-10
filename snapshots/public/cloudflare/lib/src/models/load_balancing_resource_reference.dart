@@ -62,7 +62,7 @@ final class LoadBalancingResourceReference {const LoadBalancingResourceReference
 
 factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) { return LoadBalancingResourceReference(
   referenceType: json['reference_type'] != null ? LoadBalancingResourceReferenceReferenceType.fromJson(json['reference_type'] as String) : null,
-  references: (json['references'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  references: (json['references'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   resourceId: json['resource_id'] as String?,
   resourceName: json['resource_name'] as String?,
   resourceType: json['resource_type'] != null ? LoadBalancingResourceReferenceResourceType.fromJson(json['resource_type'] as String) : null,
@@ -72,7 +72,7 @@ factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) { ret
 final LoadBalancingResourceReferenceReferenceType? referenceType;
 
 /// A list of references to (referrer) or from (referral) this resource.
-final List<Map<String,String>>? references;
+final List<Map<String,Object?>>? references;
 
 final String? resourceId;
 
@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   if (resourceType != null) 'resource_type': resourceType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReferenceType Function()? referenceType, List<Map<String, String>> Function()? references, String Function()? resourceId, String Function()? resourceName, LoadBalancingResourceReferenceResourceType Function()? resourceType, }) { return LoadBalancingResourceReference(
+LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReferenceType Function()? referenceType, List<Map<String, Object>> Function()? references, String Function()? resourceId, String Function()? resourceName, LoadBalancingResourceReferenceResourceType Function()? resourceType, }) { return LoadBalancingResourceReference(
   referenceType: referenceType != null ? referenceType() : this.referenceType,
   references: references != null ? references() : this.references,
   resourceId: resourceId != null ? resourceId() : this.resourceId,

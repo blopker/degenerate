@@ -18,7 +18,7 @@ factory WebhookDeploymentCreatedWorkflowRunRepository.fromJson(Map<String, dynam
   contentsUrl: json['contents_url'] as String?,
   contributorsUrl: json['contributors_url'] as String?,
   deploymentsUrl: json['deployments_url'] as String?,
-  description: json['description'] as String?,
+  description: json['description'],
   downloadsUrl: json['downloads_url'] as String?,
   eventsUrl: json['events_url'] as String?,
   fork: json['fork'] as bool?,
@@ -79,7 +79,7 @@ final String? contributorsUrl;
 
 final String? deploymentsUrl;
 
-final String? description;
+final Object? description;
 
 final String? downloadsUrl;
 
@@ -198,7 +198,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WebhookDeploymentCreatedWorkflowRunRepository copyWith({String Function()? archiveUrl, String Function()? assigneesUrl, String Function()? blobsUrl, String Function()? branchesUrl, String Function()? collaboratorsUrl, String Function()? commentsUrl, String Function()? commitsUrl, String Function()? compareUrl, String Function()? contentsUrl, String Function()? contributorsUrl, String Function()? deploymentsUrl, String? Function()? description, String Function()? downloadsUrl, String Function()? eventsUrl, bool Function()? fork, String Function()? forksUrl, String Function()? fullName, String Function()? gitCommitsUrl, String Function()? gitRefsUrl, String Function()? gitTagsUrl, String Function()? hooksUrl, String Function()? htmlUrl, int Function()? id, String Function()? issueCommentUrl, String Function()? issueEventsUrl, String Function()? issuesUrl, String Function()? keysUrl, String Function()? labelsUrl, String Function()? languagesUrl, String Function()? mergesUrl, String Function()? milestonesUrl, String Function()? name, String Function()? nodeId, String Function()? notificationsUrl, WebhookDeploymentCreatedWorkflowRunRepositoryOwner Function()? owner, bool Function()? private, String Function()? pullsUrl, String Function()? releasesUrl, String Function()? stargazersUrl, String Function()? statusesUrl, String Function()? subscribersUrl, String Function()? subscriptionUrl, String Function()? tagsUrl, String Function()? teamsUrl, String Function()? treesUrl, String Function()? url, }) { return WebhookDeploymentCreatedWorkflowRunRepository(
+WebhookDeploymentCreatedWorkflowRunRepository copyWith({String Function()? archiveUrl, String Function()? assigneesUrl, String Function()? blobsUrl, String Function()? branchesUrl, String Function()? collaboratorsUrl, String Function()? commentsUrl, String Function()? commitsUrl, String Function()? compareUrl, String Function()? contentsUrl, String Function()? contributorsUrl, String Function()? deploymentsUrl, Object? Function()? description, String Function()? downloadsUrl, String Function()? eventsUrl, bool Function()? fork, String Function()? forksUrl, String Function()? fullName, String Function()? gitCommitsUrl, String Function()? gitRefsUrl, String Function()? gitTagsUrl, String Function()? hooksUrl, String Function()? htmlUrl, int Function()? id, String Function()? issueCommentUrl, String Function()? issueEventsUrl, String Function()? issuesUrl, String Function()? keysUrl, String Function()? labelsUrl, String Function()? languagesUrl, String Function()? mergesUrl, String Function()? milestonesUrl, String Function()? name, String Function()? nodeId, String Function()? notificationsUrl, WebhookDeploymentCreatedWorkflowRunRepositoryOwner Function()? owner, bool Function()? private, String Function()? pullsUrl, String Function()? releasesUrl, String Function()? stargazersUrl, String Function()? statusesUrl, String Function()? subscribersUrl, String Function()? subscriptionUrl, String Function()? tagsUrl, String Function()? teamsUrl, String Function()? treesUrl, String Function()? url, }) { return WebhookDeploymentCreatedWorkflowRunRepository(
   archiveUrl: archiveUrl != null ? archiveUrl() : this.archiveUrl,
   assigneesUrl: assigneesUrl != null ? assigneesUrl() : this.assigneesUrl,
   blobsUrl: blobsUrl != null ? blobsUrl() : this.blobsUrl,

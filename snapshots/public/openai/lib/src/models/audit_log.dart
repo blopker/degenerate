@@ -75,11 +75,11 @@ factory AuditLog.fromJson(Map<String, dynamic> json) { return AuditLog(
   ipAllowlistConfigDeactivated: json['ip_allowlist.config.deactivated'] != null
         ? AuditLogIpAllowlistConfigDeactivated.fromJson(json['ip_allowlist.config.deactivated'] as Map<String, dynamic>)
         : null,
-  loginSucceeded: (json['login.succeeded'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  loginSucceeded: (json['login.succeeded'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   loginFailed: json['login.failed'] != null
         ? AuditLogLoginFailed.fromJson(json['login.failed'] as Map<String, dynamic>)
         : null,
-  logoutSucceeded: (json['logout.succeeded'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  logoutSucceeded: (json['logout.succeeded'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   logoutFailed: json['logout.failed'] != null
         ? AuditLogLogoutFailed.fromJson(json['logout.failed'] as Map<String, dynamic>)
         : null,
@@ -228,13 +228,13 @@ final AuditLogIpAllowlistConfigActivated? ipAllowlistConfigActivated;
 final AuditLogIpAllowlistConfigDeactivated? ipAllowlistConfigDeactivated;
 
 /// This event has no additional fields beyond the standard audit log attributes.
-final Map<String,String>? loginSucceeded;
+final Map<String,Object?>? loginSucceeded;
 
 /// The details for events with this `type`.
 final AuditLogLoginFailed? loginFailed;
 
 /// This event has no additional fields beyond the standard audit log attributes.
-final Map<String,String>? logoutSucceeded;
+final Map<String,Object?>? logoutSucceeded;
 
 /// The details for events with this `type`.
 final AuditLogLogoutFailed? logoutFailed;
@@ -366,7 +366,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('type') &&
       json.containsKey('effective_at') && json['effective_at'] is num &&
       json.containsKey('actor'); } 
-AuditLog copyWith({String? id, AuditLogEventType? type, int? effectiveAt, AuditLogProject Function()? project, AuditLogActor? actor, AuditLogKeyCreated Function()? apiKeyCreated, AuditLogKeyUpdated Function()? apiKeyUpdated, AuditLogKeyDeleted Function()? apiKeyDeleted, AuditLogCheckpointPermissionCreated Function()? checkpointPermissionCreated, AuditLogCheckpointPermissionDeleted Function()? checkpointPermissionDeleted, AuditLogExternalKeyRegistered Function()? externalKeyRegistered, AuditLogExternalKeyRemoved Function()? externalKeyRemoved, AuditLogGroupCreated Function()? groupCreated, AuditLogGroupUpdated Function()? groupUpdated, AuditLogGroupDeleted Function()? groupDeleted, AuditLogScimEnabled Function()? scimEnabled, AuditLogScimDisabled Function()? scimDisabled, AuditLogInviteSent Function()? inviteSent, AuditLogInviteAccepted Function()? inviteAccepted, AuditLogInviteDeleted Function()? inviteDeleted, AuditLogIpAllowlistCreated Function()? ipAllowlistCreated, AuditLogIpAllowlistUpdated Function()? ipAllowlistUpdated, AuditLogIpAllowlistDeleted Function()? ipAllowlistDeleted, AuditLogIpAllowlistConfigActivated Function()? ipAllowlistConfigActivated, AuditLogIpAllowlistConfigDeactivated Function()? ipAllowlistConfigDeactivated, Map<String, String> Function()? loginSucceeded, AuditLogLoginFailed Function()? loginFailed, Map<String, String> Function()? logoutSucceeded, AuditLogLogoutFailed Function()? logoutFailed, AuditLogOrganizationUpdated Function()? organizationUpdated, AuditLogProjectCreated Function()? projectCreated, AuditLogProjectUpdated Function()? projectUpdated, AuditLogProjectArchived Function()? projectArchived, AuditLogProjectDeleted Function()? projectDeleted, AuditLogRateLimitUpdated Function()? rateLimitUpdated, AuditLogRateLimitDeleted Function()? rateLimitDeleted, AuditLogRoleCreated Function()? roleCreated, AuditLogRoleUpdated Function()? roleUpdated, AuditLogRoleDeleted Function()? roleDeleted, AuditLogRoleAssignmentCreated Function()? roleAssignmentCreated, AuditLogRoleAssignmentDeleted Function()? roleAssignmentDeleted, AuditLogServiceAccountCreated Function()? serviceAccountCreated, AuditLogServiceAccountUpdated Function()? serviceAccountUpdated, AuditLogServiceAccountDeleted Function()? serviceAccountDeleted, AuditLogUserAdded Function()? userAdded, AuditLogUserUpdated Function()? userUpdated, AuditLogUserDeleted Function()? userDeleted, AuditLogCertificateCreated Function()? certificateCreated, AuditLogCertificateUpdated Function()? certificateUpdated, AuditLogCertificateDeleted Function()? certificateDeleted, AuditLogCertificatesActivated Function()? certificatesActivated, AuditLogCertificatesDeactivated Function()? certificatesDeactivated, }) { return AuditLog(
+AuditLog copyWith({String? id, AuditLogEventType? type, int? effectiveAt, AuditLogProject Function()? project, AuditLogActor? actor, AuditLogKeyCreated Function()? apiKeyCreated, AuditLogKeyUpdated Function()? apiKeyUpdated, AuditLogKeyDeleted Function()? apiKeyDeleted, AuditLogCheckpointPermissionCreated Function()? checkpointPermissionCreated, AuditLogCheckpointPermissionDeleted Function()? checkpointPermissionDeleted, AuditLogExternalKeyRegistered Function()? externalKeyRegistered, AuditLogExternalKeyRemoved Function()? externalKeyRemoved, AuditLogGroupCreated Function()? groupCreated, AuditLogGroupUpdated Function()? groupUpdated, AuditLogGroupDeleted Function()? groupDeleted, AuditLogScimEnabled Function()? scimEnabled, AuditLogScimDisabled Function()? scimDisabled, AuditLogInviteSent Function()? inviteSent, AuditLogInviteAccepted Function()? inviteAccepted, AuditLogInviteDeleted Function()? inviteDeleted, AuditLogIpAllowlistCreated Function()? ipAllowlistCreated, AuditLogIpAllowlistUpdated Function()? ipAllowlistUpdated, AuditLogIpAllowlistDeleted Function()? ipAllowlistDeleted, AuditLogIpAllowlistConfigActivated Function()? ipAllowlistConfigActivated, AuditLogIpAllowlistConfigDeactivated Function()? ipAllowlistConfigDeactivated, Map<String, Object> Function()? loginSucceeded, AuditLogLoginFailed Function()? loginFailed, Map<String, Object> Function()? logoutSucceeded, AuditLogLogoutFailed Function()? logoutFailed, AuditLogOrganizationUpdated Function()? organizationUpdated, AuditLogProjectCreated Function()? projectCreated, AuditLogProjectUpdated Function()? projectUpdated, AuditLogProjectArchived Function()? projectArchived, AuditLogProjectDeleted Function()? projectDeleted, AuditLogRateLimitUpdated Function()? rateLimitUpdated, AuditLogRateLimitDeleted Function()? rateLimitDeleted, AuditLogRoleCreated Function()? roleCreated, AuditLogRoleUpdated Function()? roleUpdated, AuditLogRoleDeleted Function()? roleDeleted, AuditLogRoleAssignmentCreated Function()? roleAssignmentCreated, AuditLogRoleAssignmentDeleted Function()? roleAssignmentDeleted, AuditLogServiceAccountCreated Function()? serviceAccountCreated, AuditLogServiceAccountUpdated Function()? serviceAccountUpdated, AuditLogServiceAccountDeleted Function()? serviceAccountDeleted, AuditLogUserAdded Function()? userAdded, AuditLogUserUpdated Function()? userUpdated, AuditLogUserDeleted Function()? userDeleted, AuditLogCertificateCreated Function()? certificateCreated, AuditLogCertificateUpdated Function()? certificateUpdated, AuditLogCertificateDeleted Function()? certificateDeleted, AuditLogCertificatesActivated Function()? certificatesActivated, AuditLogCertificatesDeactivated Function()? certificatesDeactivated, }) { return AuditLog(
   id: id ?? this.id,
   type: type ?? this.type,
   effectiveAt: effectiveAt ?? this.effectiveAt,

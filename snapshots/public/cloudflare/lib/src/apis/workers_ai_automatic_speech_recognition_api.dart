@@ -38,7 +38,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/flux model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/flux`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramFluxResponse400>> workersAiPostRunCfDeepgramFlux({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramFluxRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramFluxResponse400>> workersAiPostRunCfDeepgramFlux({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramFluxRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -58,7 +58,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDeepgramFluxResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -91,7 +91,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/nova-3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/nova-3`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramNova3Response400>> workersAiPostRunCfDeepgramNova3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramNova3Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramNova3Response400>> workersAiPostRunCfDeepgramNova3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramNova3Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -111,7 +111,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDeepgramNova3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -144,7 +144,7 @@ return _execute(
 /// Runs inference on the @cf/openai/whisper model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperResponse400>> workersAiPostRunCfOpenaiWhisper({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfOpenaiWhisperResponse400>> workersAiPostRunCfOpenaiWhisper({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -164,7 +164,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfOpenaiWhisperResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -176,7 +176,7 @@ return _execute(
 /// Runs inference on the @cf/openai/whisper-large-v3-turbo model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper-large-v3-turbo`
-Future<ApiResult<Map<String, String>, TurboResponse400>> workersAiPostRunCfOpenaiWhisperLargeV3Turbo({required String accountId, String? queueRequest, String? tags, TurboRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, TurboResponse400>> workersAiPostRunCfOpenaiWhisperLargeV3Turbo({required String accountId, String? queueRequest, String? tags, TurboRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -196,7 +196,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return TurboResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -208,7 +208,7 @@ return _execute(
 /// Runs inference on the @cf/openai/whisper-tiny-en model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper-tiny-en`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400>> workersAiPostRunCfOpenaiWhisperTinyEn({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400>> workersAiPostRunCfOpenaiWhisperTinyEn({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -228,7 +228,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

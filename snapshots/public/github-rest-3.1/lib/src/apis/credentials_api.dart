@@ -29,7 +29,7 @@ final ApiConfig _config;
 /// > Any authenticated requests will return a 403.
 ///
 /// `POST /credentials/revoke`
-Future<ApiResult<Map<String, String>, ValidationErrorSimple>> credentialsRevoke({required CredentialsRevokeRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, ValidationErrorSimple>> credentialsRevoke({required CredentialsRevokeRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -42,7 +42,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

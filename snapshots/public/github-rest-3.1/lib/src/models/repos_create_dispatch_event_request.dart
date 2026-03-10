@@ -8,21 +8,21 @@ final class ReposCreateDispatchEventRequest {const ReposCreateDispatchEventReque
 
 factory ReposCreateDispatchEventRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDispatchEventRequest(
   eventType: json['event_type'] as String,
-  clientPayload: (json['client_payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  clientPayload: (json['client_payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// A custom webhook event name. Must be 100 characters or fewer.
 final String eventType;
 
 /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
-final Map<String,String>? clientPayload;
+final Map<String,Object?>? clientPayload;
 
 Map<String, dynamic> toJson() { return {
   'event_type': eventType,
   'client_payload': ?clientPayload,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_type') && json['event_type'] is String; } 
-ReposCreateDispatchEventRequest copyWith({String? eventType, Map<String, String> Function()? clientPayload, }) { return ReposCreateDispatchEventRequest(
+ReposCreateDispatchEventRequest copyWith({String? eventType, Map<String, Object> Function()? clientPayload, }) { return ReposCreateDispatchEventRequest(
   eventType: eventType ?? this.eventType,
   clientPayload: clientPayload != null ? clientPayload() : this.clientPayload,
 ); } 

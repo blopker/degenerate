@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-01
 ///
 /// `GET /admin/api/2020-01/reports.json`
-Future<ApiResult<void, Never>> deprecated202001GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetReports({Object? ids, Object? limit, Object? sinceId, Object? updatedAtMin, Object? updatedAtMax, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (limit != null) queryParameters['limit'] = limit;
@@ -46,7 +46,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-01
 ///
 /// `POST /admin/api/2020-01/reports.json`
-Future<ApiResult<void, Never>> deprecated202001CreateReports({String? name, String? shopifyQl, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateReports({Object? name, Object? shopifyQl, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (shopifyQl != null) queryParameters['shopify_ql'] = shopifyQl;
@@ -73,7 +73,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-01
 ///
 /// `GET /admin/api/2020-01/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetReportsParamReportId({required String reportId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetReportsParamReportId({required String reportId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -97,7 +97,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateReportsParamReportId({required String reportId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateReportsParamReportId({required String reportId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -135,7 +135,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-04
 ///
 /// `GET /admin/api/2020-04/reports.json`
-Future<ApiResult<void, Never>> deprecated202004GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetReports({Object? ids, Object? limit, Object? sinceId, Object? updatedAtMin, Object? updatedAtMax, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (limit != null) queryParameters['limit'] = limit;
@@ -164,7 +164,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-04
 ///
 /// `POST /admin/api/2020-04/reports.json`
-Future<ApiResult<void, Never>> deprecated202004CreateReports({String? name, String? shopifyQl, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateReports({Object? name, Object? shopifyQl, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (shopifyQl != null) queryParameters['shopify_ql'] = shopifyQl;
@@ -191,7 +191,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-04
 ///
 /// `GET /admin/api/2020-04/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetReportsParamReportId({required String reportId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetReportsParamReportId({required String reportId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -215,7 +215,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateReportsParamReportId({required String reportId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateReportsParamReportId({required String reportId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -253,7 +253,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-07
 ///
 /// `GET /admin/api/2020-07/reports.json`
-Future<ApiResult<void, Never>> deprecated202007GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetReports({Object? ids, Object? limit, Object? sinceId, Object? updatedAtMin, Object? updatedAtMax, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (limit != null) queryParameters['limit'] = limit;
@@ -282,7 +282,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-07
 ///
 /// `POST /admin/api/2020-07/reports.json`
-Future<ApiResult<void, Never>> deprecated202007CreateReports({String? name, String? shopifyQl, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateReports({Object? name, Object? shopifyQl, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (shopifyQl != null) queryParameters['shopify_ql'] = shopifyQl;
@@ -309,7 +309,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-07
 ///
 /// `GET /admin/api/2020-07/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetReportsParamReportId({required String reportId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetReportsParamReportId({required String reportId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -333,7 +333,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateReportsParamReportId({required String reportId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateReportsParamReportId({required String reportId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -371,7 +371,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-10
 ///
 /// `GET /admin/api/2020-10/reports.json`
-Future<ApiResult<void, Never>> getReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getReports({Object? ids, Object? limit, Object? sinceId, Object? updatedAtMin, Object? updatedAtMax, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (limit != null) queryParameters['limit'] = limit;
@@ -400,7 +400,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-10
 ///
 /// `POST /admin/api/2020-10/reports.json`
-Future<ApiResult<void, Never>> createReports({String? name, String? shopifyQl, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createReports({Object? name, Object? shopifyQl, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (shopifyQl != null) queryParameters['shopify_ql'] = shopifyQl;
@@ -427,7 +427,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-10
 ///
 /// `GET /admin/api/2020-10/reports/{report_id}.json`
-Future<ApiResult<void, Never>> getReportsParamReportId({required String reportId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getReportsParamReportId({required String reportId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -451,7 +451,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/reports/{report_id}.json`
-Future<ApiResult<void, Never>> updateReportsParamReportId({required String reportId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateReportsParamReportId({required String reportId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -489,7 +489,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2021-01
 ///
 /// `GET /admin/api/2021-01/reports.json`
-Future<ApiResult<void, Never>> deprecated202101GetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetReports({Object? ids, Object? limit, Object? sinceId, Object? updatedAtMin, Object? updatedAtMax, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (limit != null) queryParameters['limit'] = limit;
@@ -518,7 +518,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2021-01
 ///
 /// `POST /admin/api/2021-01/reports.json`
-Future<ApiResult<void, Never>> deprecated202101CreateReports({String? name, String? shopifyQl, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateReports({Object? name, Object? shopifyQl, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (shopifyQl != null) queryParameters['shopify_ql'] = shopifyQl;
@@ -545,7 +545,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2021-01
 ///
 /// `GET /admin/api/2021-01/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetReportsParamReportId({required String reportId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetReportsParamReportId({required String reportId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -569,7 +569,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateReportsParamReportId({required String reportId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateReportsParamReportId({required String reportId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -607,7 +607,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-unstable
 ///
 /// `GET /admin/api/unstable/reports.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetReports({String? ids, String? limit, String? sinceId, String? updatedAtMin, String? updatedAtMax, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetReports({Object? ids, Object? limit, Object? sinceId, Object? updatedAtMin, Object? updatedAtMax, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (limit != null) queryParameters['limit'] = limit;
@@ -636,7 +636,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-unstable
 ///
 /// `POST /admin/api/unstable/reports.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateReports({String? name, String? shopifyQl, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateReports({Object? name, Object? shopifyQl, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (shopifyQl != null) queryParameters['shopify_ql'] = shopifyQl;
@@ -663,7 +663,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-unstable
 ///
 /// `GET /admin/api/unstable/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetReportsParamReportId({required String reportId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetReportsParamReportId({required String reportId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -687,7 +687,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-unstable
 ///
 /// `PUT /admin/api/unstable/reports/{report_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateReportsParamReportId({required String reportId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateReportsParamReportId({required String reportId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

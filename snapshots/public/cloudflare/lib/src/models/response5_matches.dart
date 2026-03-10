@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'vectorize_vector_identifier.
 
 factory Response5Matches.fromJson(Map<String, dynamic> json) { return Response5Matches(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   namespace: json['namespace'] as String?,
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
@@ -16,7 +16,7 @@ factory Response5Matches.fromJson(Map<String, dynamic> json) { return Response5M
 
 final VectorizeVectorIdentifier? id;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 final String? namespace;
 
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'values': ?values,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Response5Matches copyWith({VectorizeVectorIdentifier Function()? id, Map<String, String>? Function()? metadata, String? Function()? namespace, double Function()? score, List<double>? Function()? values, }) { return Response5Matches(
+Response5Matches copyWith({VectorizeVectorIdentifier Function()? id, Map<String, Object>? Function()? metadata, String? Function()? namespace, double Function()? score, List<double>? Function()? values, }) { return Response5Matches(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   namespace: namespace != null ? namespace() : this.namespace,

@@ -32,12 +32,12 @@ final class InlineObject755AllowedTools {const InlineObject755AllowedTools({requ
 
 factory InlineObject755AllowedTools.fromJson(Map<String, dynamic> json) { return InlineObject755AllowedTools(
   mode: InlineObject755AllowedToolsMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 final InlineObject755AllowedToolsMode mode;
 
-final List<Map<String,String>> tools;
+final List<Map<String,Object?>> tools;
 
 Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
       json.containsKey('tools'); } 
-InlineObject755AllowedTools copyWith({InlineObject755AllowedToolsMode? mode, List<Map<String,String>>? tools, }) { return InlineObject755AllowedTools(
+InlineObject755AllowedTools copyWith({InlineObject755AllowedToolsMode? mode, List<Map<String,Object?>>? tools, }) { return InlineObject755AllowedTools(
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,
 ); } 

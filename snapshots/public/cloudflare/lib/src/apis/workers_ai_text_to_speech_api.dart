@@ -59,7 +59,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/aura-1 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -79,7 +79,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDeepgramAura1Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -154,7 +154,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/aura-2-en model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -174,7 +174,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDeepgramAura2EnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -207,7 +207,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/aura-2-es model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -227,7 +227,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDeepgramAura2EsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -239,7 +239,7 @@ return _execute(
 /// Runs inference on the @cf/myshell-ai/melotts model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/myshell-ai/melotts`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMyshellAiMelottsResponse400>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMyshellAiMelottsResponse400>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -259,7 +259,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMyshellAiMelottsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

@@ -7,13 +7,13 @@
 import 'package:collection/collection.dart';import 'delete_organization_response.dart';import 'message3.dart';final class OrganizationsDeleteResponse {const OrganizationsDeleteResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory OrganizationsDeleteResponse.fromJson(Map<String, dynamic> json) { return OrganizationsDeleteResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: DeleteOrganizationResponse.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,String>> errors;
+final List<Map<String,Object?>> errors;
 
 final List<Message3> messages;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-OrganizationsDeleteResponse copyWith({List<Map<String,String>>? errors, List<Message3>? messages, DeleteOrganizationResponse? result, bool? success, }) { return OrganizationsDeleteResponse(
+OrganizationsDeleteResponse copyWith({List<Map<String,Object?>>? errors, List<Message3>? messages, DeleteOrganizationResponse? result, bool? success, }) { return OrganizationsDeleteResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

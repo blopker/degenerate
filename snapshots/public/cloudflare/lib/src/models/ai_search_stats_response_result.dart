@@ -9,8 +9,8 @@ final class AiSearchStatsResponseResult {const AiSearchStatsResponseResult({this
 factory AiSearchStatsResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchStatsResponseResult(
   completed: json['completed'] != null ? (json['completed'] as num).toInt() : null,
   error: json['error'] != null ? (json['error'] as num).toInt() : null,
-  fileEmbedErrors: (json['file_embed_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  indexSourceErrors: (json['index_source_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  fileEmbedErrors: (json['file_embed_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  indexSourceErrors: (json['index_source_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   lastActivity: json['last_activity'] != null ? DateTime.parse(json['last_activity'] as String) : null,
   queued: json['queued'] != null ? (json['queued'] as num).toInt() : null,
   running: json['running'] != null ? (json['running'] as num).toInt() : null,
@@ -21,9 +21,9 @@ final int? completed;
 
 final int? error;
 
-final Map<String,String>? fileEmbedErrors;
+final Map<String,Object?>? fileEmbedErrors;
 
-final Map<String,String>? indexSourceErrors;
+final Map<String,Object?>? indexSourceErrors;
 
 final DateTime? lastActivity;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'skipped': ?skipped,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AiSearchStatsResponseResult copyWith({int Function()? completed, int Function()? error, Map<String, String> Function()? fileEmbedErrors, Map<String, String> Function()? indexSourceErrors, DateTime Function()? lastActivity, int Function()? queued, int Function()? running, int Function()? skipped, }) { return AiSearchStatsResponseResult(
+AiSearchStatsResponseResult copyWith({int Function()? completed, int Function()? error, Map<String, Object> Function()? fileEmbedErrors, Map<String, Object> Function()? indexSourceErrors, DateTime Function()? lastActivity, int Function()? queued, int Function()? running, int Function()? skipped, }) { return AiSearchStatsResponseResult(
   completed: completed != null ? completed() : this.completed,
   error: error != null ? error() : this.error,
   fileEmbedErrors: fileEmbedErrors != null ? fileEmbedErrors() : this.fileEmbedErrors,

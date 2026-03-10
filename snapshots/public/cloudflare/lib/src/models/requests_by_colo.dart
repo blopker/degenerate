@@ -10,8 +10,8 @@ final class RequestsByColo {const RequestsByColo({this.all, this.cached, this.co
 factory RequestsByColo.fromJson(Map<String, dynamic> json) { return RequestsByColo(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
   cached: json['cached'] != null ? (json['cached'] as num).toInt() : null,
-  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  httpStatus: (json['http_status'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  httpStatus: (json['http_status'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,
 ); }
 
@@ -22,10 +22,10 @@ final int? all;
 final int? cached;
 
 /// Key/value pairs where the key is a two-digit country code and the value is the number of requests served to that country.
-final Map<String,String>? country;
+final Map<String,Object?>? country;
 
 /// A variable list of key/value pairs where the key is a HTTP status code and the value is the number of requests with that code served.
-final Map<String,String>? httpStatus;
+final Map<String,Object?>? httpStatus;
 
 /// Total number of requests served from the origin.
 final int? uncached;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'uncached': ?uncached,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-RequestsByColo copyWith({int Function()? all, int Function()? cached, Map<String, String> Function()? country, Map<String, String> Function()? httpStatus, int Function()? uncached, }) { return RequestsByColo(
+RequestsByColo copyWith({int Function()? all, int Function()? cached, Map<String, Object> Function()? country, Map<String, Object> Function()? httpStatus, int Function()? uncached, }) { return RequestsByColo(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,
   country: country != null ? country() : this.country,

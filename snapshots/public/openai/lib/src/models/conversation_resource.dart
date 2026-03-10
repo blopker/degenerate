@@ -31,7 +31,7 @@ final class ConversationResource {const ConversationResource({required this.id, 
 factory ConversationResource.fromJson(Map<String, dynamic> json) { return ConversationResource(
   id: json['id'] as String,
   object: ConversationResourceObject.fromJson(json['object'] as String),
-  metadata: json['metadata'] as String,
+  metadata: json['metadata'],
   createdAt: (json['created_at'] as num).toInt(),
 ); }
 
@@ -43,7 +43,7 @@ final ConversationResourceObject object;
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be         useful for storing additional information about the object in a structured         format, and querying for objects via API or the dashboard.
 ///         Keys are strings with a maximum length of 64 characters. Values are strings         with a maximum length of 512 characters.
-final String metadata;
+final Object? metadata;
 
 /// The time at which the conversation was created, measured in seconds since the Unix epoch.
 final int createdAt;
@@ -51,17 +51,17 @@ final int createdAt;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'object': object.toJson(),
-  'metadata': metadata,
+  'metadata': ?metadata,
   'created_at': createdAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('metadata') && json['metadata'] is String &&
+      json.containsKey('metadata') &&
       json.containsKey('created_at') && json['created_at'] is num; } 
-ConversationResource copyWith({String? id, ConversationResourceObject? object, String? metadata, int? createdAt, }) { return ConversationResource(
+ConversationResource copyWith({String? id, ConversationResourceObject? object, Object? Function()? metadata, int? createdAt, }) { return ConversationResource(
   id: id ?? this.id,
   object: object ?? this.object,
-  metadata: metadata ?? this.metadata,
+  metadata: metadata != null ? metadata() : this.metadata,
   createdAt: createdAt ?? this.createdAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

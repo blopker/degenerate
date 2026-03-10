@@ -11,7 +11,7 @@ factory FunctionTool.fromJson(Map<String, dynamic> json) { return FunctionTool(
   type: json['type'] as String,
   name: json['name'] as String,
   description: json['description'] as String?,
-  parameters: (json['parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  parameters: (json['parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool,
   deferLoading: json['defer_loading'] as bool?,
 ); }
@@ -24,7 +24,7 @@ final String name;
 
 final String? description;
 
-final Map<String,String>? parameters;
+final Map<String,Object?>? parameters;
 
 final bool? strict;
 
@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('parameters') &&
       json.containsKey('strict') && json['strict'] is bool; } 
-FunctionTool copyWith({String? type, String? name, String? Function()? description, Map<String, String>? Function()? parameters, bool? Function()? strict, bool Function()? deferLoading, }) { return FunctionTool(
+FunctionTool copyWith({String? type, String? name, String? Function()? description, Map<String, Object>? Function()? parameters, bool? Function()? strict, bool Function()? deferLoading, }) { return FunctionTool(
   type: type ?? this.type,
   name: name ?? this.name,
   description: description != null ? description() : this.description,

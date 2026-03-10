@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'get_event_list_get_response4
 
 factory GetEventListGetResponse400.fromJson(Map<String, dynamic> json) { return GetEventListGetResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetEventListGetResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<GetEventListGetResponse400Errors> errors;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetEventListGetResponse400 copyWith({List<GetEventListGetResponse400Errors>? errors, Map<String,String>? result, bool? success, }) { return GetEventListGetResponse400(
+GetEventListGetResponse400 copyWith({List<GetEventListGetResponse400Errors>? errors, Map<String,Object?>? result, bool? success, }) { return GetEventListGetResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

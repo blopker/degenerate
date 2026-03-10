@@ -7,19 +7,19 @@
 import 'package:collection/collection.dart';final class DnsRecordsDnsResponseBatchObject {const DnsRecordsDnsResponseBatchObject({this.deletes, this.patches, this.posts, this.puts, });
 
 factory DnsRecordsDnsResponseBatchObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseBatchObject(
-  deletes: (json['deletes'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  patches: (json['patches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  posts: (json['posts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  puts: (json['puts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  deletes: (json['deletes'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  patches: (json['patches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  posts: (json['posts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  puts: (json['puts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
-final List<Map<String,String>>? deletes;
+final List<Map<String,Object?>>? deletes;
 
-final List<Map<String,String>>? patches;
+final List<Map<String,Object?>>? patches;
 
-final List<Map<String,String>>? posts;
+final List<Map<String,Object?>>? posts;
 
-final List<Map<String,String>>? puts;
+final List<Map<String,Object?>>? puts;
 
 Map<String, dynamic> toJson() { return {
   if (deletes != null) 'deletes': deletes?.map((e) => e).toList(),
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (puts != null) 'puts': puts?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DnsRecordsDnsResponseBatchObject copyWith({List<Map<String, String>> Function()? deletes, List<Map<String, String>> Function()? patches, List<Map<String, String>> Function()? posts, List<Map<String, String>> Function()? puts, }) { return DnsRecordsDnsResponseBatchObject(
+DnsRecordsDnsResponseBatchObject copyWith({List<Map<String, Object>> Function()? deletes, List<Map<String, Object>> Function()? patches, List<Map<String, Object>> Function()? posts, List<Map<String, Object>> Function()? puts, }) { return DnsRecordsDnsResponseBatchObject(
   deletes: deletes != null ? deletes() : this.deletes,
   patches: patches != null ? patches() : this.patches,
   posts: posts != null ? posts() : this.posts,

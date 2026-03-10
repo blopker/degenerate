@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Runs inference on the @cf/microsoft/nonomni-resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/nonomni-resnet-50`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMicrosoftNonomniResnet50Response400>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMicrosoftNonomniResnet50Response400>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -37,7 +37,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMicrosoftNonomniResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -49,7 +49,7 @@ return _execute(
 /// Runs inference on the @cf/microsoft/resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/resnet-50`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMicrosoftResnet50Response400>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMicrosoftResnet50Response400>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMicrosoftResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

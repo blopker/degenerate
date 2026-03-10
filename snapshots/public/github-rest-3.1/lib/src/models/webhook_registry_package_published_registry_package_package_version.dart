@@ -25,7 +25,7 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Ma
   id: (json['id'] as num).toInt(),
   installationCommand: json['installation_command'] as String,
   manifest: json['manifest'] as String?,
-  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   name: json['name'] as String,
   npmMetadata: json['npm_metadata'] != null
         ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>)
@@ -70,7 +70,7 @@ final String installationCommand;
 
 final String? manifest;
 
-final List<Map<String,String>> metadata;
+final List<Map<String,Object?>> metadata;
 
 final String name;
 
@@ -139,7 +139,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('package_url') && json['package_url'] is String &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor Function()? author, WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody Function()? body, String Function()? bodyHtml, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata Function()? containerMetadata, String Function()? createdAt, String? description, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, String? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,String>>? metadata, String? name, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? Function()? npmMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>? Function()? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, String? summary, String Function()? tagName, String Function()? targetCommitish, String Function()? targetOid, String Function()? updatedAt, String? version, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor Function()? author, WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody Function()? body, String Function()? bodyHtml, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata Function()? containerMetadata, String Function()? createdAt, String? description, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, String? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,Object?>>? metadata, String? name, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? Function()? npmMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>? Function()? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, String? summary, String Function()? tagName, String Function()? targetCommitish, String Function()? targetOid, String Function()? updatedAt, String? version, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: author != null ? author() : this.author,
   body: body != null ? body() : this.body,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,

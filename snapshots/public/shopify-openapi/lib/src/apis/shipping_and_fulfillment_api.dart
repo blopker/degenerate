@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2020-01
 ///
 /// `GET /admin/api/2020-01/assigned_fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202001GetAssignedFulfillmentOrders({String? assignmentStatus, String? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -43,7 +43,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2020-04
 ///
 /// `GET /admin/api/2020-04/assigned_fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202004GetAssignedFulfillmentOrders({String? assignmentStatus, String? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -69,7 +69,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2020-07
 ///
 /// `GET /admin/api/2020-07/assigned_fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202007GetAssignedFulfillmentOrders({String? assignmentStatus, String? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -95,7 +95,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2020-10
 ///
 /// `GET /admin/api/2020-10/assigned_fulfillment_orders.json`
-Future<ApiResult<void, Never>> getAssignedFulfillmentOrders({String? assignmentStatus, String? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -121,7 +121,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2021-01
 ///
 /// `GET /admin/api/2021-01/assigned_fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202101GetAssignedFulfillmentOrders({String? assignmentStatus, String? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -147,7 +147,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-unstable
 ///
 /// `GET /admin/api/unstable/assigned_fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetAssignedFulfillmentOrders({String? assignmentStatus, String? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -173,7 +173,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -199,7 +199,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -225,7 +225,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -251,7 +251,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -277,7 +277,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -303,7 +303,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -329,7 +329,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -355,7 +355,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -381,7 +381,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -407,7 +407,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -433,7 +433,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -459,7 +459,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -485,7 +485,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -511,7 +511,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -537,7 +537,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -563,7 +563,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -589,7 +589,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -615,7 +615,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -659,7 +659,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-01
 ///
 /// `POST /admin/api/2020-01/carrier_services.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCarrierServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCarrierServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -697,7 +697,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/carrier_services/{carrier_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -753,7 +753,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-04
 ///
 /// `POST /admin/api/2020-04/carrier_services.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCarrierServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCarrierServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -791,7 +791,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/carrier_services/{carrier_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -847,7 +847,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-07
 ///
 /// `POST /admin/api/2020-07/carrier_services.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCarrierServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCarrierServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -885,7 +885,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/carrier_services/{carrier_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -941,7 +941,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-10
 ///
 /// `POST /admin/api/2020-10/carrier_services.json`
-Future<ApiResult<void, Never>> createCarrierServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCarrierServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -979,7 +979,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/carrier_services/{carrier_service_id}.json`
-Future<ApiResult<void, Never>> updateCarrierServicesParamCarrierServiceId({required String carrierServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateCarrierServicesParamCarrierServiceId({required String carrierServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1035,7 +1035,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2021-01
 ///
 /// `POST /admin/api/2021-01/carrier_services.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCarrierServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCarrierServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1073,7 +1073,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/carrier_services/{carrier_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1129,7 +1129,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-unstable
 ///
 /// `POST /admin/api/unstable/carrier_services.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCarrierServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCarrierServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1167,7 +1167,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-unstable
 ///
 /// `PUT /admin/api/unstable/carrier_services/{carrier_service_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCarrierServicesParamCarrierServiceId({required String carrierServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1205,7 +1205,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillments({required String orderId, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? updatedAtMax, String? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
@@ -1257,7 +1257,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillments({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillments({required String orderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1277,7 +1277,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-01
 ///
 /// `GET /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202001GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -1301,7 +1301,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsCount({required String orderId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
@@ -1328,7 +1328,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -1352,7 +1352,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1372,7 +1372,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillments({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillments({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1392,7 +1392,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillments/{fulfillment_id}/update_tracking.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1412,7 +1412,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/complete.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1432,7 +1432,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1452,7 +1452,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1472,7 +1472,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1492,7 +1492,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillments({required String orderId, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? updatedAtMax, String? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
@@ -1544,7 +1544,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillments({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillments({required String orderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1564,7 +1564,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-04
 ///
 /// `GET /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202004GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -1588,7 +1588,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsCount({required String orderId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
@@ -1615,7 +1615,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -1639,7 +1639,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1659,7 +1659,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillments({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillments({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1679,7 +1679,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillments/{fulfillment_id}/update_tracking.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1699,7 +1699,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/complete.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1719,7 +1719,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1739,7 +1739,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1759,7 +1759,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1779,7 +1779,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillments({required String orderId, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? updatedAtMax, String? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
@@ -1831,7 +1831,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillments({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillments({required String orderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1851,7 +1851,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-07
 ///
 /// `GET /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202007GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -1875,7 +1875,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsCount({required String orderId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
@@ -1902,7 +1902,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -1926,7 +1926,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1946,7 +1946,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillments({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillments({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1966,7 +1966,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillments/{fulfillment_id}/update_tracking.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1986,7 +1986,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/complete.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2006,7 +2006,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2026,7 +2026,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2046,7 +2046,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2066,7 +2066,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillments({required String orderId, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? updatedAtMax, String? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
@@ -2118,7 +2118,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillments({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillments({required String orderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2138,7 +2138,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-10
 ///
 /// `GET /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> getFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -2162,7 +2162,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/count.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsCount({required String orderId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
@@ -2189,7 +2189,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2213,7 +2213,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> updateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2233,7 +2233,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillments.json`
-Future<ApiResult<void, Never>> createFulfillments({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createFulfillments({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2253,7 +2253,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillments/{fulfillment_id}/update_tracking.json`
-Future<ApiResult<void, Never>> createFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2273,7 +2273,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/complete.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2293,7 +2293,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/open.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2313,7 +2313,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2333,7 +2333,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> createFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2353,7 +2353,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillments({required String orderId, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? updatedAtMax, String? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
@@ -2405,7 +2405,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillments({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillments({required String orderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2425,7 +2425,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2021-01
 ///
 /// `GET /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202101GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -2449,7 +2449,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsCount({required String orderId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
@@ -2476,7 +2476,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2500,7 +2500,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2520,7 +2520,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillments.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillments({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillments({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2540,7 +2540,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillments/{fulfillment_id}/update_tracking.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2560,7 +2560,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/complete.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2580,7 +2580,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2600,7 +2600,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2620,7 +2620,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2640,7 +2640,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillments({required String orderId, String? createdAtMax, String? createdAtMin, String? fields, String? limit, String? sinceId, String? updatedAtMax, String? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
@@ -2692,7 +2692,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillments({required String orderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillments({required String orderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2712,7 +2712,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-unstable
 ///
 /// `GET /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -2736,7 +2736,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsCount({required String orderId, String? createdAtMin, String? createdAtMax, String? updatedAtMin, String? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
@@ -2763,7 +2763,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2787,7 +2787,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-unstable
 ///
 /// `PUT /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2807,7 +2807,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-unstable
 ///
 /// `POST /admin/api/unstable/fulfillments.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillments({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillments({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2827,7 +2827,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-unstable
 ///
 /// `POST /admin/api/unstable/fulfillments/{fulfillment_id}/update_tracking.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentsParamFulfillmentIdUpdateTracking({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2847,7 +2847,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/complete.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdComplete({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2867,7 +2867,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/open.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdOpen({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2887,7 +2887,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdCancel({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2907,7 +2907,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-unstable
 ///
 /// `POST /admin/api/unstable/fulfillments/{fulfillment_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentsParamFulfillmentIdCancel({required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2927,7 +2927,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? fulfillmentId2, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
@@ -2952,7 +2952,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2972,7 +2972,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, String? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (eventId2 != null) queryParameters['event_id'] = eventId2;
 
@@ -3014,7 +3014,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? fulfillmentId2, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
@@ -3039,7 +3039,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3059,7 +3059,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, String? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (eventId2 != null) queryParameters['event_id'] = eventId2;
 
@@ -3101,7 +3101,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? fulfillmentId2, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
@@ -3126,7 +3126,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3146,7 +3146,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, String? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (eventId2 != null) queryParameters['event_id'] = eventId2;
 
@@ -3188,7 +3188,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? fulfillmentId2, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
@@ -3213,7 +3213,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3233,7 +3233,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, String? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (eventId2 != null) queryParameters['event_id'] = eventId2;
 
@@ -3275,7 +3275,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? fulfillmentId2, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
@@ -3300,7 +3300,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3320,7 +3320,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, String? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (eventId2 != null) queryParameters['event_id'] = eventId2;
 
@@ -3362,7 +3362,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? fulfillmentId2, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
@@ -3387,7 +3387,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3407,7 +3407,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, String? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (eventId2 != null) queryParameters['event_id'] = eventId2;
 
@@ -3449,7 +3449,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentOrders({required String orderId, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
 
@@ -3491,7 +3491,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3512,7 +3512,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#close-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -3538,7 +3538,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/move.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, String? newLocationId, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
 
@@ -3564,7 +3564,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentOrders({required String orderId, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
 
@@ -3606,7 +3606,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3627,7 +3627,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#close-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -3653,7 +3653,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/move.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, String? newLocationId, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
 
@@ -3679,7 +3679,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentOrders({required String orderId, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
 
@@ -3721,7 +3721,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3742,7 +3742,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#close-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -3768,7 +3768,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/move.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, String? newLocationId, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
 
@@ -3794,7 +3794,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillment_orders.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentOrders({required String orderId, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
 
@@ -3836,7 +3836,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/cancel.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3857,7 +3857,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#close-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/close.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -3883,7 +3883,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/move.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, String? newLocationId, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
 
@@ -3909,7 +3909,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentOrders({required String orderId, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
 
@@ -3951,7 +3951,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3972,7 +3972,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#close-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -3998,7 +3998,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/move.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, String? newLocationId, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
 
@@ -4025,7 +4025,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#open-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdOpen({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdOpen({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4046,7 +4046,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#reschedule-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/reschedule.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdReschedule({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdReschedule({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4066,7 +4066,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillment_orders.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentOrders({required String orderId, String? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderId2 != null) queryParameters['order_id'] = orderId2;
 
@@ -4108,7 +4108,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancel({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4129,7 +4129,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#release_hold-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/release_hold.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersReleaseHold({String? orderId, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersReleaseHold({Object? orderId, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderId != null) queryParameters['order_id'] = orderId;
 
@@ -4156,7 +4156,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#close-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/close.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4182,7 +4182,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/move.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, String? newLocationId, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
 
@@ -4209,7 +4209,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#open-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/open.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdOpen({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdOpen({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4230,7 +4230,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#reschedule-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/reschedule.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdReschedule({required String fulfillmentOrderId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdReschedule({required String fulfillmentOrderId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4250,7 +4250,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, String? message, String? fulfillmentOrderLineItems, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
@@ -4277,7 +4277,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4303,7 +4303,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4329,7 +4329,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, String? message, String? fulfillmentOrderLineItems, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
@@ -4356,7 +4356,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4382,7 +4382,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4408,7 +4408,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, String? message, String? fulfillmentOrderLineItems, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
@@ -4435,7 +4435,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4461,7 +4461,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4487,7 +4487,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, String? message, String? fulfillmentOrderLineItems, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
@@ -4514,7 +4514,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4540,7 +4540,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
-Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4566,7 +4566,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, String? message, String? fulfillmentOrderLineItems, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
@@ -4593,7 +4593,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4619,7 +4619,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4645,7 +4645,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, String? message, String? fulfillmentOrderLineItems, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
@@ -4672,7 +4672,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4698,7 +4698,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, String? message, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (message != null) queryParameters['message'] = message;
 
@@ -4724,7 +4724,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#fetch-tracking-numbers
 ///
 /// `GET /fetch_tracking_numbers`
-Future<ApiResult<void, Never>> deprecatedUnknownVersionGetFetchTrackingNumbers({String? orderNames, String? shop, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnknownVersionGetFetchTrackingNumbers({Object? orderNames, Object? shop, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderNames != null) queryParameters['order_names'] = orderNames;
 if (shop != null) queryParameters['shop'] = shop;
@@ -4749,7 +4749,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#fetch-stock
 ///
 /// `GET /fetch_stock`
-Future<ApiResult<void, Never>> deprecatedUnknownVersionGetFetchStock({String? maxRetries, String? shop, String? sku, String? timestamp, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnknownVersionGetFetchStock({Object? maxRetries, Object? shop, Object? sku, Object? timestamp, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (maxRetries != null) queryParameters['max_retries'] = maxRetries;
 if (shop != null) queryParameters['shop'] = shop;
@@ -4776,7 +4776,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-01
 ///
 /// `GET /admin/api/2020-01/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202001GetFulfillmentServices({String? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetFulfillmentServices({Object? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scope != null) queryParameters['scope'] = scope;
 
@@ -4803,7 +4803,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#create-2020-01
 ///
 /// `POST /admin/api/2020-01/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4841,7 +4841,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/fulfillment_services/{fulfillment_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4879,7 +4879,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-04
 ///
 /// `GET /admin/api/2020-04/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202004GetFulfillmentServices({String? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetFulfillmentServices({Object? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scope != null) queryParameters['scope'] = scope;
 
@@ -4906,7 +4906,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#create-2020-04
 ///
 /// `POST /admin/api/2020-04/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4944,7 +4944,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/fulfillment_services/{fulfillment_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4982,7 +4982,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-07
 ///
 /// `GET /admin/api/2020-07/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202007GetFulfillmentServices({String? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetFulfillmentServices({Object? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scope != null) queryParameters['scope'] = scope;
 
@@ -5009,7 +5009,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#create-2020-07
 ///
 /// `POST /admin/api/2020-07/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5047,7 +5047,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/fulfillment_services/{fulfillment_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5085,7 +5085,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-10
 ///
 /// `GET /admin/api/2020-10/fulfillment_services.json`
-Future<ApiResult<void, Never>> getFulfillmentServices({String? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getFulfillmentServices({Object? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scope != null) queryParameters['scope'] = scope;
 
@@ -5112,7 +5112,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#create-2020-10
 ///
 /// `POST /admin/api/2020-10/fulfillment_services.json`
-Future<ApiResult<void, Never>> createFulfillmentServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createFulfillmentServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5150,7 +5150,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/fulfillment_services/{fulfillment_service_id}.json`
-Future<ApiResult<void, Never>> updateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5188,7 +5188,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2021-01
 ///
 /// `GET /admin/api/2021-01/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202101GetFulfillmentServices({String? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetFulfillmentServices({Object? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scope != null) queryParameters['scope'] = scope;
 
@@ -5215,7 +5215,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#create-2021-01
 ///
 /// `POST /admin/api/2021-01/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5253,7 +5253,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/fulfillment_services/{fulfillment_service_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5291,7 +5291,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-unstable
 ///
 /// `GET /admin/api/unstable/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentServices({String? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentServices({Object? scope}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scope != null) queryParameters['scope'] = scope;
 
@@ -5318,7 +5318,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#create-unstable
 ///
 /// `POST /admin/api/unstable/fulfillment_services.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentServices({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentServices({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5356,7 +5356,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-unstable
 ///
 /// `PUT /admin/api/unstable/fulfillment_services/{fulfillment_service_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateFulfillmentServicesParamFulfillmentServiceId({required String fulfillmentServiceId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5395,7 +5395,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/locationsformove#index-2020-01
 ///
 /// `GET /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
-Future<ApiResult<void, Never>> deprecated202001GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -5420,7 +5420,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/locationsformove#index-2020-04
 ///
 /// `GET /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
-Future<ApiResult<void, Never>> deprecated202004GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -5445,7 +5445,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/locationsformove#index-2020-07
 ///
 /// `GET /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
-Future<ApiResult<void, Never>> deprecated202007GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -5470,7 +5470,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/locationsformove#index-2020-10
 ///
 /// `GET /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
-Future<ApiResult<void, Never>> getFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -5495,7 +5495,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/locationsformove#index-2021-01
 ///
 /// `GET /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
-Future<ApiResult<void, Never>> deprecated202101GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 
@@ -5520,7 +5520,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/locationsformove#index-unstable
 ///
 /// `GET /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, String? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
 

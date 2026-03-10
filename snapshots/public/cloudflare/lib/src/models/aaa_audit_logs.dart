@@ -15,7 +15,7 @@ factory AaaAuditLogs.fromJson(Map<String, dynamic> json) { return AaaAuditLogs(
         : null,
   id: json['id'] as String?,
   $interface: json['interface'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   newValue: json['newValue'] as String?,
   oldValue: json['oldValue'] as String?,
   owner: json['owner'] != null
@@ -38,7 +38,7 @@ final String? id;
 final String? $interface;
 
 /// An object which can lend more context to the action being logged. This is a flexible value and varies between different actions.
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 /// The new value of the resource that was modified.
 final String? newValue;
@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (when != null) 'when': when?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AaaAuditLogs copyWith({AaaAuditLogsAction Function()? action, AaaAuditLogsActor Function()? actor, String Function()? id, String Function()? $interface, Map<String, String> Function()? metadata, String Function()? newValue, String Function()? oldValue, AaaAuditLogsOwner Function()? owner, AaaAuditLogsResource Function()? resource, DateTime Function()? when, }) { return AaaAuditLogs(
+AaaAuditLogs copyWith({AaaAuditLogsAction Function()? action, AaaAuditLogsActor Function()? actor, String Function()? id, String Function()? $interface, Map<String, Object> Function()? metadata, String Function()? newValue, String Function()? oldValue, AaaAuditLogsOwner Function()? owner, AaaAuditLogsResource Function()? resource, DateTime Function()? when, }) { return AaaAuditLogs(
   action: action != null ? action() : this.action,
   actor: actor != null ? actor() : this.actor,
   id: id != null ? id() : this.id,

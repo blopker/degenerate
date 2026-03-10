@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'pay_per_crawl_rest_error.dar
 
 factory ErrorResponse2.fromJson(Map<String, dynamic> json) { return ErrorResponse2(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlRestError.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as String?,
+  result: json['result'],
   success: json['success'] as bool?,
 ); }
 
 final List<PayPerCrawlRestError>? errors;
 
-final String? result;
+final Object? result;
 
 final bool? success;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ErrorResponse2 copyWith({List<PayPerCrawlRestError> Function()? errors, String Function()? result, bool Function()? success, }) { return ErrorResponse2(
+ErrorResponse2 copyWith({List<PayPerCrawlRestError> Function()? errors, Object? Function()? result, bool Function()? success, }) { return ErrorResponse2(
   errors: errors != null ? errors() : this.errors,
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,

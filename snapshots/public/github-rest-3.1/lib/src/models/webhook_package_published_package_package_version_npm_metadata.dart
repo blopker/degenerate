@@ -10,32 +10,32 @@ factory WebhookPackagePublishedPackagePackageVersionNpmMetadata.fromJson(Map<Str
   name: json['name'] as String?,
   version: json['version'] as String?,
   npmUser: json['npm_user'] as String?,
-  author: (json['author'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  bugs: (json['bugs'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  dependencies: (json['dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  devDependencies: (json['dev_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  peerDependencies: (json['peer_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  optionalDependencies: (json['optional_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  author: (json['author'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  bugs: (json['bugs'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  dependencies: (json['dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  devDependencies: (json['dev_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  peerDependencies: (json['peer_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  optionalDependencies: (json['optional_dependencies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   description: json['description'] as String?,
-  dist: (json['dist'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  dist: (json['dist'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   gitHead: json['git_head'] as String?,
   homepage: json['homepage'] as String?,
   license: json['license'] as String?,
   main: json['main'] as String?,
-  repository: (json['repository'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  scripts: (json['scripts'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  repository: (json['repository'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  scripts: (json['scripts'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   id: json['id'] as String?,
   nodeVersion: json['node_version'] as String?,
   npmVersion: json['npm_version'] as String?,
   hasShrinkwrap: json['has_shrinkwrap'] as bool?,
-  maintainers: (json['maintainers'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  contributors: (json['contributors'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  engines: (json['engines'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  maintainers: (json['maintainers'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  contributors: (json['contributors'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  engines: (json['engines'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   keywords: (json['keywords'] as List<dynamic>?)?.map((e) => e as String).toList(),
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  man: (json['man'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  directories: (json['directories'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  man: (json['man'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  directories: (json['directories'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   os: (json['os'] as List<dynamic>?)?.map((e) => e as String).toList(),
   cpu: (json['cpu'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readme: json['readme'] as String?,
@@ -52,21 +52,21 @@ final String? version;
 
 final String? npmUser;
 
-final Map<String,String>? author;
+final Map<String,Object?>? author;
 
-final Map<String,String>? bugs;
+final Map<String,Object?>? bugs;
 
-final Map<String,String>? dependencies;
+final Map<String,Object?>? dependencies;
 
-final Map<String,String>? devDependencies;
+final Map<String,Object?>? devDependencies;
 
-final Map<String,String>? peerDependencies;
+final Map<String,Object?>? peerDependencies;
 
-final Map<String,String>? optionalDependencies;
+final Map<String,Object?>? optionalDependencies;
 
 final String? description;
 
-final Map<String,String>? dist;
+final Map<String,Object?>? dist;
 
 final String? gitHead;
 
@@ -76,9 +76,9 @@ final String? license;
 
 final String? main;
 
-final Map<String,String>? repository;
+final Map<String,Object?>? repository;
 
-final Map<String,String>? scripts;
+final Map<String,Object?>? scripts;
 
 final String? id;
 
@@ -88,21 +88,21 @@ final String? npmVersion;
 
 final bool? hasShrinkwrap;
 
-final List<Map<String,String>>? maintainers;
+final List<Map<String,Object?>>? maintainers;
 
-final List<Map<String,String>>? contributors;
+final List<Map<String,Object?>>? contributors;
 
-final Map<String,String>? engines;
+final Map<String,Object?>? engines;
 
 final List<String>? keywords;
 
 final List<String>? files;
 
-final Map<String,String>? bin;
+final Map<String,Object?>? bin;
 
-final Map<String,String>? man;
+final Map<String,Object?>? man;
 
-final Map<String,String>? directories;
+final Map<String,Object?>? directories;
 
 final List<String>? os;
 
@@ -160,7 +160,7 @@ Map<String, dynamic> toJson() { return {
   'deleted_by_id': ?deletedById,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WebhookPackagePublishedPackagePackageVersionNpmMetadata copyWith({String Function()? name, String Function()? version, String Function()? npmUser, Map<String, String>? Function()? author, Map<String, String>? Function()? bugs, Map<String, String> Function()? dependencies, Map<String, String> Function()? devDependencies, Map<String, String> Function()? peerDependencies, Map<String, String> Function()? optionalDependencies, String Function()? description, Map<String, String>? Function()? dist, String Function()? gitHead, String Function()? homepage, String Function()? license, String Function()? main, Map<String, String>? Function()? repository, Map<String, String> Function()? scripts, String Function()? id, String Function()? nodeVersion, String Function()? npmVersion, bool Function()? hasShrinkwrap, List<Map<String, String>> Function()? maintainers, List<Map<String, String>> Function()? contributors, Map<String, String> Function()? engines, List<String> Function()? keywords, List<String> Function()? files, Map<String, String> Function()? bin, Map<String, String> Function()? man, Map<String, String>? Function()? directories, List<String> Function()? os, List<String> Function()? cpu, String Function()? readme, String Function()? installationCommand, int Function()? releaseId, String Function()? commitOid, bool Function()? publishedViaActions, int Function()? deletedById, }) { return WebhookPackagePublishedPackagePackageVersionNpmMetadata(
+WebhookPackagePublishedPackagePackageVersionNpmMetadata copyWith({String Function()? name, String Function()? version, String Function()? npmUser, Map<String, Object>? Function()? author, Map<String, Object>? Function()? bugs, Map<String, Object> Function()? dependencies, Map<String, Object> Function()? devDependencies, Map<String, Object> Function()? peerDependencies, Map<String, Object> Function()? optionalDependencies, String Function()? description, Map<String, Object>? Function()? dist, String Function()? gitHead, String Function()? homepage, String Function()? license, String Function()? main, Map<String, Object>? Function()? repository, Map<String, Object> Function()? scripts, String Function()? id, String Function()? nodeVersion, String Function()? npmVersion, bool Function()? hasShrinkwrap, List<Map<String, Object>> Function()? maintainers, List<Map<String, Object>> Function()? contributors, Map<String, Object> Function()? engines, List<String> Function()? keywords, List<String> Function()? files, Map<String, Object> Function()? bin, Map<String, Object> Function()? man, Map<String, Object>? Function()? directories, List<String> Function()? os, List<String> Function()? cpu, String Function()? readme, String Function()? installationCommand, int Function()? releaseId, String Function()? commitOid, bool Function()? publishedViaActions, int Function()? deletedById, }) { return WebhookPackagePublishedPackagePackageVersionNpmMetadata(
   name: name != null ? name() : this.name,
   version: version != null ? version() : this.version,
   npmUser: npmUser != null ? npmUser() : this.npmUser,

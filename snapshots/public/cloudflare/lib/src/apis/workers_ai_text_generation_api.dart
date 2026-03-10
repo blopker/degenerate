@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Runs inference on the @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it`
-Future<ApiResult<Map<String, String>, $27bItResponse400>> workersAiPostRunCfAisingaporeGemmaSeaLionV427bIt({required String accountId, String? queueRequest, String? tags, $27bItRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $27bItResponse400>> workersAiPostRunCfAisingaporeGemmaSeaLionV427bIt({required String accountId, String? queueRequest, String? tags, $27bItRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -37,7 +37,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return $27bItResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -49,7 +49,7 @@ return _execute(
 /// Runs inference on the @cf/deepseek-ai/deepseek-math-7b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-math-7b-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400>> workersAiPostRunCfDeepseekAiDeepseekMath7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400>> workersAiPostRunCfDeepseekAiDeepseekMath7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -81,7 +81,7 @@ return _execute(
 /// Runs inference on the @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400>> workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400>> workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -101,7 +101,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -113,7 +113,7 @@ return _execute(
 /// Runs inference on the @cf/defog/sqlcoder-7b-2 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/defog/sqlcoder-7b-2`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfDefogSqlcoder7b2Response400>> workersAiPostRunCfDefogSqlcoder7b2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDefogSqlcoder7b2Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDefogSqlcoder7b2Response400>> workersAiPostRunCfDefogSqlcoder7b2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDefogSqlcoder7b2Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -133,7 +133,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfDefogSqlcoder7b2Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -145,7 +145,7 @@ return _execute(
 /// Runs inference on the @cf/fblgit/una-cybertron-7b-v2-bf16 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/fblgit/una-cybertron-7b-v2-bf16`
-Future<ApiResult<Map<String, String>, Bf16Response400>> workersAiPostRunCfFblgitUnaCybertron7bV2Bf16({required String accountId, String? queueRequest, String? tags, Bf16Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, Bf16Response400>> workersAiPostRunCfFblgitUnaCybertron7bV2Bf16({required String accountId, String? queueRequest, String? tags, Bf16Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -165,7 +165,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return Bf16Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -177,7 +177,7 @@ return _execute(
 /// Runs inference on the @cf/google/gemma-2b-it-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-2b-it-lora`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfGoogleGemma2bItLoraResponse400>> workersAiPostRunCfGoogleGemma2bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma2bItLoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfGoogleGemma2bItLoraResponse400>> workersAiPostRunCfGoogleGemma2bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma2bItLoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -197,7 +197,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfGoogleGemma2bItLoraResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -209,7 +209,7 @@ return _execute(
 /// Runs inference on the @cf/google/gemma-3-12b-it model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-3-12b-it`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfGoogleGemma312bItResponse400>> workersAiPostRunCfGoogleGemma312bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma312bItRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfGoogleGemma312bItResponse400>> workersAiPostRunCfGoogleGemma312bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma312bItRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -229,7 +229,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfGoogleGemma312bItResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -241,7 +241,7 @@ return _execute(
 /// Runs inference on the @cf/google/gemma-7b-it-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-7b-it-lora`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfGoogleGemma7bItLoraResponse400>> workersAiPostRunCfGoogleGemma7bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma7bItLoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfGoogleGemma7bItLoraResponse400>> workersAiPostRunCfGoogleGemma7bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma7bItLoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -261,7 +261,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfGoogleGemma7bItLoraResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -273,7 +273,7 @@ return _execute(
 /// Runs inference on the @cf/ibm-granite/granite-4.0-h-micro model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ibm-granite/granite-4.0-h-micro`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400>> workersAiPostRunCfIbmGranite40HMicro({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfIbmGraniteGranite40HMicroRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400>> workersAiPostRunCfIbmGranite40HMicro({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfIbmGraniteGranite40HMicroRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -293,7 +293,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -305,7 +305,7 @@ return _execute(
 /// Runs inference on the @cf/meta-llama/llama-2-7b-chat-hf-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta-llama/llama-2-7b-chat-hf-lora`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraResponse400>> workersAiPostRunCfMetaLlama27bChatHfLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraResponse400>> workersAiPostRunCfMetaLlama27bChatHfLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -325,7 +325,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -337,7 +337,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-2-7b-chat-fp16 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-fp16`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama27bChatFp16Response400>> workersAiPostRunCfMetaLlama27bChatFp16({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatFp16Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama27bChatFp16Response400>> workersAiPostRunCfMetaLlama27bChatFp16({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatFp16Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -357,7 +357,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama27bChatFp16Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -369,7 +369,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-2-7b-chat-int8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-int8`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama27bChatInt8Response400>> workersAiPostRunCfMetaLlama27bChatInt8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatInt8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama27bChatInt8Response400>> workersAiPostRunCfMetaLlama27bChatInt8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatInt8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -389,7 +389,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama27bChatInt8Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -401,7 +401,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3-8b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama38bInstructResponse400>> workersAiPostRunCfMetaLlama38bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama38bInstructResponse400>> workersAiPostRunCfMetaLlama38bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -421,7 +421,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama38bInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -433,7 +433,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3-8b-instruct-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama38bInstructAwqResponse400>> workersAiPostRunCfMetaLlama38bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama38bInstructAwqResponse400>> workersAiPostRunCfMetaLlama38bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -453,7 +453,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama38bInstructAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -465,7 +465,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama318bInstructAwqResponse400>> workersAiPostRunCfMetaLlama318bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama318bInstructAwqResponse400>> workersAiPostRunCfMetaLlama318bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -485,7 +485,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama318bInstructAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -497,7 +497,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama318bInstructFp8Response400>> workersAiPostRunCfMetaLlama318bInstructFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama318bInstructFp8Response400>> workersAiPostRunCfMetaLlama318bInstructFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -517,7 +517,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama318bInstructFp8Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -529,7 +529,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8-fast`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama318bInstructFp8FastResponse400>> workersAiPostRunCfMetaLlama318bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8FastRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama318bInstructFp8FastResponse400>> workersAiPostRunCfMetaLlama318bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8FastRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -549,7 +549,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama318bInstructFp8FastResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -561,7 +561,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.1-70b-instruct-fp8-fast model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastResponse400>> workersAiPostRunCfMetaLlama3170bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastResponse400>> workersAiPostRunCfMetaLlama3170bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -581,7 +581,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama3170bInstructFp8FastResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -593,7 +593,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.2-1b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-1b-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama321bInstructResponse400>> workersAiPostRunCfMetaLlama321bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama321bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama321bInstructResponse400>> workersAiPostRunCfMetaLlama321bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama321bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -613,7 +613,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama321bInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -625,7 +625,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.2-3b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-3b-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama323bInstructResponse400>> workersAiPostRunCfMetaLlama323bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama323bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama323bInstructResponse400>> workersAiPostRunCfMetaLlama323bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama323bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -645,7 +645,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama323bInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -657,7 +657,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.2-11b-vision-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-11b-vision-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama3211bVisionInstructResponse400>> workersAiPostRunCfMetaLlama3211bVisionInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama3211bVisionInstructResponse400>> workersAiPostRunCfMetaLlama3211bVisionInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -677,7 +677,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama3211bVisionInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -689,7 +689,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-3.3-70b-instruct-fp8-fast model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.3-70b-instruct-fp8-fast`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400>> workersAiPostRunCfMetaLlama370bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400>> workersAiPostRunCfMetaLlama370bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -709,7 +709,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -721,7 +721,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-4-scout-17b-16e-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-4-scout-17b-16e-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400>> workersAiPostRunCfMetaLlama4Scout17b16eInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400>> workersAiPostRunCfMetaLlama4Scout17b16eInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -741,7 +741,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -753,7 +753,7 @@ return _execute(
 /// Runs inference on the @cf/meta/llama-guard-3-8b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-guard-3-8b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMetaLlamaGuard38bResponse400>> workersAiPostRunCfMetaLlamaGuard38b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaGuard38bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaLlamaGuard38bResponse400>> workersAiPostRunCfMetaLlamaGuard38b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaGuard38bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -773,7 +773,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMetaLlamaGuard38bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -785,7 +785,7 @@ return _execute(
 /// Runs inference on the @cf/microsoft/phi-2 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/phi-2`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMicrosoftPhi2Response400>> workersAiPostRunCfMicrosoftPhi2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMicrosoftPhi2Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMicrosoftPhi2Response400>> workersAiPostRunCfMicrosoftPhi2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMicrosoftPhi2Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -805,7 +805,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMicrosoftPhi2Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -817,7 +817,7 @@ return _execute(
 /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.1 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.1`
-Future<ApiResult<Map<String, String>, $1Response400>> workersAiPostRunCfMistral7bInstructV01({required String accountId, String? queueRequest, String? tags, $1Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $1Response400>> workersAiPostRunCfMistral7bInstructV01({required String accountId, String? queueRequest, String? tags, $1Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -837,7 +837,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return $1Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -849,7 +849,7 @@ return _execute(
 /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.2-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.2-lora`
-Future<ApiResult<Map<String, String>, $2LoraResponse400>> workersAiPostRunCfMistral7bInstructV02Lora({required String accountId, String? queueRequest, String? tags, $2LoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $2LoraResponse400>> workersAiPostRunCfMistral7bInstructV02Lora({required String accountId, String? queueRequest, String? tags, $2LoraRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -869,7 +869,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return $2LoraResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -881,7 +881,7 @@ return _execute(
 /// Runs inference on the @cf/mistralai/mistral-small-3.1-24b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400>> workersAiPostRunCfMistralaiMistralSmall3124bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400>> workersAiPostRunCfMistralaiMistralSmall3124bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -901,7 +901,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -913,7 +913,7 @@ return _execute(
 /// Runs inference on the @cf/openai/gpt-oss-20b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/gpt-oss-20b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiGptOss20bResponse400>> workersAiPostRunCfOpenaiGptOss20b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss20bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfOpenaiGptOss20bResponse400>> workersAiPostRunCfOpenaiGptOss20b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss20bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -933,7 +933,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfOpenaiGptOss20bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -945,7 +945,7 @@ return _execute(
 /// Runs inference on the @cf/openai/gpt-oss-120b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/gpt-oss-120b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenaiGptOss120bResponse400>> workersAiPostRunCfOpenaiGptOss120b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss120bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfOpenaiGptOss120bResponse400>> workersAiPostRunCfOpenaiGptOss120b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss120bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -965,7 +965,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfOpenaiGptOss120bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -977,7 +977,7 @@ return _execute(
 /// Runs inference on the @cf/openchat/openchat-3.5-0106 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openchat/openchat-3.5-0106`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfOpenchatOpenchat350106Response400>> workersAiPostRunCfOpenchat350106({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenchatOpenchat350106Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfOpenchatOpenchat350106Response400>> workersAiPostRunCfOpenchat350106({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenchatOpenchat350106Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -997,7 +997,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfOpenchatOpenchat350106Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1009,7 +1009,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen1.5-0.5b-chat model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-0.5b-chat`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen1505bChatResponse400>> workersAiPostRunCfQwenQwen1505bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1505bChatRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen1505bChatResponse400>> workersAiPostRunCfQwenQwen1505bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1505bChatRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1029,7 +1029,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfQwenQwen1505bChatResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1041,7 +1041,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen1.5-1.8b-chat model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-1.8b-chat`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen1518bChatResponse400>> workersAiPostRunCfQwenQwen1518bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1518bChatRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen1518bChatResponse400>> workersAiPostRunCfQwenQwen1518bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1518bChatRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1061,7 +1061,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfQwenQwen1518bChatResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1073,7 +1073,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen1.5-7b-chat-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-7b-chat-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen157bChatAwqResponse400>> workersAiPostRunCfQwenQwen157bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen157bChatAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen157bChatAwqResponse400>> workersAiPostRunCfQwenQwen157bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen157bChatAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1093,7 +1093,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfQwenQwen157bChatAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1105,7 +1105,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen1.5-14b-chat-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-14b-chat-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen1514bChatAwqResponse400>> workersAiPostRunCfQwenQwen1514bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1514bChatAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen1514bChatAwqResponse400>> workersAiPostRunCfQwenQwen1514bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1514bChatAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1125,7 +1125,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfQwenQwen1514bChatAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1137,7 +1137,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen2.5-coder-32b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen2.5-coder-32b-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen25Coder32bInstructResponse400>> workersAiPostRunCfQwenQwen25Coder32bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen25Coder32bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen25Coder32bInstructResponse400>> workersAiPostRunCfQwenQwen25Coder32bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen25Coder32bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1157,7 +1157,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfQwenQwen25Coder32bInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1169,7 +1169,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen3-30b-a3b-fp8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-30b-a3b-fp8`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwen330bA3bFp8Response400>> workersAiPostRunCfQwenQwen330bA3bFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen330bA3bFp8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen330bA3bFp8Response400>> workersAiPostRunCfQwenQwen330bA3bFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen330bA3bFp8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1189,7 +1189,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfQwenQwen330bA3bFp8Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1201,7 +1201,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwq-32b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwq-32b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfQwenQwq32bResponse400>> workersAiPostRunCfQwenQwq32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwq32bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwq32bResponse400>> workersAiPostRunCfQwenQwq32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwq32bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1221,7 +1221,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfQwenQwq32bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1233,7 +1233,7 @@ return _execute(
 /// Runs inference on the @cf/thebloke/discolm-german-7b-v1-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq`
-Future<ApiResult<Map<String, String>, AwqResponse400>> workersAiPostRunCfTheblokeDiscolmGerman7bV1Awq({required String accountId, String? queueRequest, String? tags, AwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, AwqResponse400>> workersAiPostRunCfTheblokeDiscolmGerman7bV1Awq({required String accountId, String? queueRequest, String? tags, AwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1253,7 +1253,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return AwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1265,7 +1265,7 @@ return _execute(
 /// Runs inference on the @cf/tiiuae/falcon-7b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/tiiuae/falcon-7b-instruct`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400>> workersAiPostRunCfTiiuaeFalcon7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfTiiuaeFalcon7bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400>> workersAiPostRunCfTiiuaeFalcon7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfTiiuaeFalcon7bInstructRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1285,7 +1285,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1297,7 +1297,7 @@ return _execute(
 /// Runs inference on the @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/tinyllama/tinyllama-1.1b-chat-v1.0`
-Future<ApiResult<Map<String, String>, $0Response400>> workersAiPostRunCfTinyllama11bChatV10({required String accountId, String? queueRequest, String? tags, $0Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $0Response400>> workersAiPostRunCfTinyllama11bChatV10({required String accountId, String? queueRequest, String? tags, $0Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1317,7 +1317,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return $0Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1329,7 +1329,7 @@ return _execute(
 /// Runs inference on the @cf/zai-org/glm-4.7-flash model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/zai-org/glm-4.7-flash`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunCfZaiOrgGlm47FlashResponse400>> workersAiPostRunCfZaiOrgGlm47Flash({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfZaiOrgGlm47FlashRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfZaiOrgGlm47FlashResponse400>> workersAiPostRunCfZaiOrgGlm47Flash({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfZaiOrgGlm47FlashRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1349,7 +1349,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunCfZaiOrgGlm47FlashResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1361,7 +1361,7 @@ return _execute(
 /// Runs inference on the @hf/google/gemma-7b-it model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/google/gemma-7b-it`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfGoogleGemma7bItResponse400>> workersAiPostRunHfGoogleGemma7bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfGoogleGemma7bItRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfGoogleGemma7bItResponse400>> workersAiPostRunHfGoogleGemma7bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfGoogleGemma7bItRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1381,7 +1381,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfGoogleGemma7bItResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1393,7 +1393,7 @@ return _execute(
 /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/mistral/mistral-7b-instruct-v0.2`
-Future<ApiResult<Map<String, String>, $2Response400>> workersAiPostRunHfMistral7bInstructV02({required String accountId, String? queueRequest, String? tags, $2Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $2Response400>> workersAiPostRunHfMistral7bInstructV02({required String accountId, String? queueRequest, String? tags, $2Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1413,7 +1413,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return $2Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1425,7 +1425,7 @@ return _execute(
 /// Runs inference on the @hf/nexusflow/starling-lm-7b-beta model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/nexusflow/starling-lm-7b-beta`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400>> workersAiPostRunHfNexusflowStarlingLm7bBeta({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNexusflowStarlingLm7bBetaRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400>> workersAiPostRunHfNexusflowStarlingLm7bBeta({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNexusflowStarlingLm7bBetaRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1445,7 +1445,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1457,7 +1457,7 @@ return _execute(
 /// Runs inference on the @hf/nousresearch/hermes-2-pro-mistral-7b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400>> workersAiPostRunHfNousresearchHermes2ProMistral7b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400>> workersAiPostRunHfNousresearchHermes2ProMistral7b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1477,7 +1477,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1489,7 +1489,7 @@ return _execute(
 /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-base-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqResponse400>> workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqResponse400>> workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1509,7 +1509,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1521,7 +1521,7 @@ return _execute(
 /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-instruct-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqResponse400>> workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqResponse400>> workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1541,7 +1541,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1553,7 +1553,7 @@ return _execute(
 /// Runs inference on the @hf/thebloke/llama-2-13b-chat-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/llama-2-13b-chat-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfTheblokeLlama213bChatAwqResponse400>> workersAiPostRunHfTheblokeLlama213bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeLlama213bChatAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfTheblokeLlama213bChatAwqResponse400>> workersAiPostRunHfTheblokeLlama213bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeLlama213bChatAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1573,7 +1573,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfTheblokeLlama213bChatAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1585,7 +1585,7 @@ return _execute(
 /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/mistral-7b-instruct-v0.1-awq`
-Future<ApiResult<Map<String, String>, $1AwqResponse400>> workersAiPostRunHfTheblokeMistral7bInstructV01Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $1AwqResponse400>> workersAiPostRunHfTheblokeMistral7bInstructV01Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1605,7 +1605,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return $1AwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1617,7 +1617,7 @@ return _execute(
 /// Runs inference on the @hf/thebloke/neural-chat-7b-v3-1-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq`
-Future<ApiResult<Map<String, String>, $1AwqResponse4002>> workersAiPostRunHfTheblokeNeuralChat7bV31Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest2? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $1AwqResponse4002>> workersAiPostRunHfTheblokeNeuralChat7bV31Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest2? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1637,7 +1637,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return $1AwqResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1649,7 +1649,7 @@ return _execute(
 /// Runs inference on the @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqResponse400>> workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqResponse400>> workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1669,7 +1669,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1681,7 +1681,7 @@ return _execute(
 /// Runs inference on the @hf/thebloke/zephyr-7b-beta-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/zephyr-7b-beta-awq`
-Future<ApiResult<Map<String, String>, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqResponse400>> workersAiPostRunHfTheblokeZephyr7bBetaAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqResponse400>> workersAiPostRunHfTheblokeZephyr7bBetaAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -1701,7 +1701,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return WorkersAiPostRunHfTheblokeZephyr7bBetaAwqResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

@@ -7,11 +7,11 @@
 final class PostEventRawUpdateResponse {const PostEventRawUpdateResponse({required this.data, required this.id, });
 
 factory PostEventRawUpdateResponse.fromJson(Map<String, dynamic> json) { return PostEventRawUpdateResponse(
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   id: json['id'] as String,
 ); }
 
-final Map<String,String> data;
+final Map<String,Object?> data;
 
 final String id;
 
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('id') && json['id'] is String; } 
-PostEventRawUpdateResponse copyWith({Map<String,String>? data, String? id, }) { return PostEventRawUpdateResponse(
+PostEventRawUpdateResponse copyWith({Map<String,Object?>? data, String? id, }) { return PostEventRawUpdateResponse(
   data: data ?? this.data,
   id: id ?? this.id,
 ); } 

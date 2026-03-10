@@ -7,11 +7,11 @@
 import 'package:collection/collection.dart';final class WorkersAiCreateFinetuneResponse400 {const WorkersAiCreateFinetuneResponse400({required this.errors, required this.success, });
 
 factory WorkersAiCreateFinetuneResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiCreateFinetuneResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,String>> errors;
+final List<Map<String,Object?>> errors;
 
 final bool success;
 
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorkersAiCreateFinetuneResponse400 copyWith({List<Map<String,String>>? errors, bool? success, }) { return WorkersAiCreateFinetuneResponse400(
+WorkersAiCreateFinetuneResponse400 copyWith({List<Map<String,Object?>>? errors, bool? success, }) { return WorkersAiCreateFinetuneResponse400(
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 

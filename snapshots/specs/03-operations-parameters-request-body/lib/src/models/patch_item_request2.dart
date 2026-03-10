@@ -8,19 +8,19 @@ final class PatchItemRequest2 {const PatchItemRequest2({this.name, this.avatar, 
 
 factory PatchItemRequest2.fromJson(Map<String, dynamic> json) { return PatchItemRequest2(
   name: json['name'] as String?,
-  avatar: json['avatar'] as String?,
+  avatar: json['avatar'],
 ); }
 
 final String? name;
 
-final String? avatar;
+final Object? avatar;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   'avatar': ?avatar,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PatchItemRequest2 copyWith({String Function()? name, String Function()? avatar, }) { return PatchItemRequest2(
+PatchItemRequest2 copyWith({String Function()? name, Object? Function()? avatar, }) { return PatchItemRequest2(
   name: name != null ? name() : this.name,
   avatar: avatar != null ? avatar() : this.avatar,
 ); } 

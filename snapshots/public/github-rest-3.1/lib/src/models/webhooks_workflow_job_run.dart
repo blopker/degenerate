@@ -7,17 +7,17 @@
 final class WebhooksWorkflowJobRun {const WebhooksWorkflowJobRun({required this.conclusion, required this.createdAt, required this.environment, required this.htmlUrl, required this.id, required this.name, required this.status, required this.updatedAt, });
 
 factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) { return WebhooksWorkflowJobRun(
-  conclusion: json['conclusion'] as String,
+  conclusion: json['conclusion'],
   createdAt: json['created_at'] as String,
   environment: json['environment'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
-  name: json['name'] as String,
+  name: json['name'],
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
 ); }
 
-final String? conclusion;
+final Object? conclusion;
 
 final String createdAt;
 
@@ -27,7 +27,7 @@ final String htmlUrl;
 
 final int id;
 
-final String? name;
+final Object? name;
 
 final String status;
 
@@ -43,15 +43,15 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'updated_at': updatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('conclusion') && json['conclusion'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('conclusion') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhooksWorkflowJobRun copyWith({String? Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, String? Function()? name, String? status, String? updatedAt, }) { return WebhooksWorkflowJobRun(
+WebhooksWorkflowJobRun copyWith({Object? Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, Object? Function()? name, String? status, String? updatedAt, }) { return WebhooksWorkflowJobRun(
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   createdAt: createdAt ?? this.createdAt,
   environment: environment ?? this.environment,

@@ -7,16 +7,16 @@
 import 'package:collection/collection.dart';final class UrlInfo {const UrlInfo({this.result});
 
 factory UrlInfo.fromJson(Map<String, dynamic> json) { return UrlInfo(
-  result: (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
-final List<Map<String,String>>? result;
+final List<Map<String,Object?>>? result;
 
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-UrlInfo copyWith({List<Map<String, String>> Function()? result}) { return UrlInfo(
+UrlInfo copyWith({List<Map<String, Object>> Function()? result}) { return UrlInfo(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

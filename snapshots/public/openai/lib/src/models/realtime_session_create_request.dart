@@ -11,7 +11,7 @@ final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({re
 
 factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequest(
   clientSecret: RealtimeSessionCreateRequestClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
-  modalities: json['modalities'] as String?,
+  modalities: json['modalities'],
   instructions: json['instructions'] as String?,
   voice: json['voice'] != null
         ? VoiceIdsOrCustomVoice.fromJson(json['voice'] as Map<String, dynamic>)
@@ -48,7 +48,7 @@ final RealtimeSessionCreateRequestClientSecret clientSecret;
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to ["text"].
 /// 
-final String? modalities;
+final Object? modalities;
 
 /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.
 /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
   if (prompt != null) 'prompt': prompt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret'); } 
-RealtimeSessionCreateRequest copyWith({RealtimeSessionCreateRequestClientSecret? clientSecret, String Function()? modalities, String Function()? instructions, VoiceIdsOrCustomVoice Function()? voice, String Function()? inputAudioFormat, String Function()? outputAudioFormat, RealtimeSessionCreateRequestInputAudioTranscription Function()? inputAudioTranscription, double Function()? speed, RealtimeSessionCreateRequestTracing Function()? tracing, RealtimeSessionCreateRequestTurnDetection Function()? turnDetection, List<RealtimeSessionCreateRequestTools> Function()? tools, String Function()? toolChoice, double Function()? temperature, RealtimeSessionCreateRequestMaxResponseOutputTokens Function()? maxResponseOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeSessionCreateRequest(
+RealtimeSessionCreateRequest copyWith({RealtimeSessionCreateRequestClientSecret? clientSecret, Object? Function()? modalities, String Function()? instructions, VoiceIdsOrCustomVoice Function()? voice, String Function()? inputAudioFormat, String Function()? outputAudioFormat, RealtimeSessionCreateRequestInputAudioTranscription Function()? inputAudioTranscription, double Function()? speed, RealtimeSessionCreateRequestTracing Function()? tracing, RealtimeSessionCreateRequestTurnDetection Function()? turnDetection, List<RealtimeSessionCreateRequestTools> Function()? tools, String Function()? toolChoice, double Function()? temperature, RealtimeSessionCreateRequestMaxResponseOutputTokens Function()? maxResponseOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeSessionCreateRequest(
   clientSecret: clientSecret ?? this.clientSecret,
   modalities: modalities != null ? modalities() : this.modalities,
   instructions: instructions != null ? instructions() : this.instructions,

@@ -10,7 +10,7 @@ final class ManagedFieldsEntry {const ManagedFieldsEntry({this.apiVersion, this.
 factory ManagedFieldsEntry.fromJson(Map<String, dynamic> json) { return ManagedFieldsEntry(
   apiVersion: json['apiVersion'] as String?,
   fieldsType: json['fieldsType'] as String?,
-  fieldsV1: (json['fieldsV1'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  fieldsV1: (json['fieldsV1'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   manager: json['manager'] as String?,
   operation: json['operation'] as String?,
   subresource: json['subresource'] as String?,
@@ -24,7 +24,7 @@ final String? apiVersion;
 final String? fieldsType;
 
 /// FieldsV1 holds the first JSON version format as described in the "FieldsV1" type.
-final Map<String,String>? fieldsV1;
+final Map<String,Object?>? fieldsV1;
 
 /// Manager is an identifier of the workflow managing these fields.
 final String? manager;
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (time != null) 'time': time?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ManagedFieldsEntry copyWith({String Function()? apiVersion, String Function()? fieldsType, Map<String, String> Function()? fieldsV1, String Function()? manager, String Function()? operation, String Function()? subresource, Time Function()? time, }) { return ManagedFieldsEntry(
+ManagedFieldsEntry copyWith({String Function()? apiVersion, String Function()? fieldsType, Map<String, Object> Function()? fieldsV1, String Function()? manager, String Function()? operation, String Function()? subresource, Time Function()? time, }) { return ManagedFieldsEntry(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   fieldsType: fieldsType != null ? fieldsType() : this.fieldsType,
   fieldsV1: fieldsV1 != null ? fieldsV1() : this.fieldsV1,

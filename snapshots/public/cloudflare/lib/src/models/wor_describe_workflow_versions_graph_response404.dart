@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'wor_describe_workflow_versio
 factory WorDescribeWorkflowVersionsGraphResponse404.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowVersionsGraphResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsGraphResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<WorDescribeWorkflowVersionsGraphResponse404Errors> errors;
 
 final List<String> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorDescribeWorkflowVersionsGraphResponse404 copyWith({List<WorDescribeWorkflowVersionsGraphResponse404Errors>? errors, List<String>? messages, Map<String, String>? Function()? result, bool? success, }) { return WorDescribeWorkflowVersionsGraphResponse404(
+WorDescribeWorkflowVersionsGraphResponse404 copyWith({List<WorDescribeWorkflowVersionsGraphResponse404Errors>? errors, List<String>? messages, Map<String, Object>? Function()? result, bool? success, }) { return WorDescribeWorkflowVersionsGraphResponse404(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

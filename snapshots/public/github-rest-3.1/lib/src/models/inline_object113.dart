@@ -7,16 +7,16 @@
 final class InlineObject113 {const InlineObject113({this.status});
 
 factory InlineObject113.fromJson(Map<String, dynamic> json) { return InlineObject113(
-  status: json['status'] as String?,
+  status: json['status'],
 ); }
 
-final String? status;
+final Object? status;
 
 Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-InlineObject113 copyWith({String Function()? status}) { return InlineObject113(
+InlineObject113 copyWith({Object? Function()? status}) { return InlineObject113(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

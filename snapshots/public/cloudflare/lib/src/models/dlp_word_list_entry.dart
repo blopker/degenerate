@@ -13,7 +13,7 @@ factory DlpWordListEntry.fromJson(Map<String, dynamic> json) { return DlpWordLis
   name: json['name'] as String,
   profileId: json['profile_id'] as String?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  wordList: json['word_list'] as String,
+  wordList: json['word_list'],
 ); }
 
 final DateTime createdAt;
@@ -28,7 +28,7 @@ final String? profileId;
 
 final DateTime updatedAt;
 
-final String wordList;
+final Object? wordList;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
@@ -37,22 +37,22 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'profile_id': ?profileId,
   'updated_at': updatedAt.toIso8601String(),
-  'word_list': wordList,
+  'word_list': ?wordList,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('word_list') && json['word_list'] is String; } 
-DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, String? wordList, }) { return DlpWordListEntry(
+      json.containsKey('word_list'); } 
+DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, Object? Function()? wordList, }) { return DlpWordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   name: name ?? this.name,
   profileId: profileId != null ? profileId() : this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
-  wordList: wordList ?? this.wordList,
+  wordList: wordList != null ? wordList() : this.wordList,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DlpWordListEntry &&

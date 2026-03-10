@@ -5,10 +5,10 @@
 //  OpenAPI spec version: 3.0.3
 
 import 'firewall_components_ua_rule_id.dart';import 'firewall_schemas_configuration.dart';import 'firewall_schemas_paused.dart';/// The action to apply to a matched request.
-extension type const FirewallComponentsSchemasMode(String value) {
-factory FirewallComponentsSchemasMode.fromJson(String json) => FirewallComponentsSchemasMode(json);
+extension type FirewallComponentsSchemasMode(Object? value) {
+factory FirewallComponentsSchemasMode.fromJson(Object? json) => FirewallComponentsSchemasMode(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 /// An informative summary of the rule.
@@ -26,7 +26,7 @@ factory FirewallFirewalluablock.fromJson(Map<String, dynamic> json) { return Fir
         : null,
   description: json['description'] != null ? FirewallFirewalluablockComponentsSchemasDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? FirewallComponentsUaRuleId.fromJson(json['id'] as String) : null,
-  mode: json['mode'] != null ? FirewallComponentsSchemasMode.fromJson(json['mode'] as String) : null,
+  mode: json['mode'] != null ? FirewallComponentsSchemasMode.fromJson(json['mode'] as Object?) : null,
   paused: json['paused'] != null ? FirewallSchemasPaused.fromJson(json['paused'] as bool) : null,
 ); }
 
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (paused != null) 'paused': paused?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-FirewallFirewalluablock copyWith({FirewallSchemasConfiguration Function()? configuration, FirewallFirewalluablockComponentsSchemasDescription Function()? description, FirewallComponentsUaRuleId Function()? id, FirewallComponentsSchemasMode Function()? mode, FirewallSchemasPaused Function()? paused, }) { return FirewallFirewalluablock(
+FirewallFirewalluablock copyWith({FirewallSchemasConfiguration Function()? configuration, FirewallFirewalluablockComponentsSchemasDescription Function()? description, FirewallComponentsUaRuleId Function()? id, FirewallComponentsSchemasMode? Function()? mode, FirewallSchemasPaused Function()? paused, }) { return FirewallFirewalluablock(
   configuration: configuration != null ? configuration() : this.configuration,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

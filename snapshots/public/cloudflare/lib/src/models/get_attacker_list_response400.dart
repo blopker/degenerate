@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'get_attacker_list_response40
 
 factory GetAttackerListResponse400.fromJson(Map<String, dynamic> json) { return GetAttackerListResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetAttackerListResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<GetAttackerListResponse400Errors> errors;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetAttackerListResponse400 copyWith({List<GetAttackerListResponse400Errors>? errors, Map<String,String>? result, bool? success, }) { return GetAttackerListResponse400(
+GetAttackerListResponse400 copyWith({List<GetAttackerListResponse400Errors>? errors, Map<String,Object?>? result, bool? success, }) { return GetAttackerListResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

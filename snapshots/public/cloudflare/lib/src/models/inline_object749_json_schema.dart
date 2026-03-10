@@ -9,7 +9,7 @@ final class InlineObject749JsonSchema {const InlineObject749JsonSchema({this.des
 factory InlineObject749JsonSchema.fromJson(Map<String, dynamic> json) { return InlineObject749JsonSchema(
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool?,
 ); }
 
@@ -17,7 +17,7 @@ final String? description;
 
 final String name;
 
-final Map<String,String>? schema;
+final Map<String,Object?>? schema;
 
 final bool? strict;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'strict': ?strict,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-InlineObject749JsonSchema copyWith({String Function()? description, String? name, Map<String, String> Function()? schema, bool? Function()? strict, }) { return InlineObject749JsonSchema(
+InlineObject749JsonSchema copyWith({String Function()? description, String? name, Map<String, Object> Function()? schema, bool? Function()? strict, }) { return InlineObject749JsonSchema(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   schema: schema != null ? schema() : this.schema,

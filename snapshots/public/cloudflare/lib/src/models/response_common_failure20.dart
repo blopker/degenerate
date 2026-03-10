@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'cloudforce_one_whois_message
 factory ResponseCommonFailure20.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure20(
   errors: (json['errors'] as List<dynamic>).map((e) => CloudforceOneWhoisMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CloudforceOneWhoisMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<CloudforceOneWhoisMessages2> errors;
 
 final List<CloudforceOneWhoisMessages2> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Returns a boolean for the success/failure of the API call.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure20 copyWith({List<CloudforceOneWhoisMessages2>? errors, List<CloudforceOneWhoisMessages2>? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseCommonFailure20(
+ResponseCommonFailure20 copyWith({List<CloudforceOneWhoisMessages2>? errors, List<CloudforceOneWhoisMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure20(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

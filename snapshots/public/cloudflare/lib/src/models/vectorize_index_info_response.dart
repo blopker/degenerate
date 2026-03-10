@@ -9,7 +9,7 @@ import 'vectorize_index_dimensions.dart';import 'vectorize_mutation_uuid.dart';f
 factory VectorizeIndexInfoResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexInfoResponse(
   dimensions: json['dimensions'] != null ? VectorizeIndexDimensions.fromJson(json['dimensions'] as num) : null,
   processedUpToDatetime: json['processedUpToDatetime'] != null ? DateTime.parse(json['processedUpToDatetime'] as String) : null,
-  processedUpToMutation: json['processedUpToMutation'] != null ? VectorizeMutationUuid.fromJson(json['processedUpToMutation'] as String) : null,
+  processedUpToMutation: json['processedUpToMutation'] != null ? VectorizeMutationUuid.fromJson(json['processedUpToMutation'] as Object?) : null,
   vectorCount: json['vectorCount'] != null ? (json['vectorCount'] as num).toInt() : null,
 ); }
 
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'vectorCount': ?vectorCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions Function()? dimensions, DateTime? Function()? processedUpToDatetime, VectorizeMutationUuid Function()? processedUpToMutation, int Function()? vectorCount, }) { return VectorizeIndexInfoResponse(
+VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions Function()? dimensions, DateTime? Function()? processedUpToDatetime, VectorizeMutationUuid? Function()? processedUpToMutation, int Function()? vectorCount, }) { return VectorizeIndexInfoResponse(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   processedUpToDatetime: processedUpToDatetime != null ? processedUpToDatetime() : this.processedUpToDatetime,
   processedUpToMutation: processedUpToMutation != null ? processedUpToMutation() : this.processedUpToMutation,

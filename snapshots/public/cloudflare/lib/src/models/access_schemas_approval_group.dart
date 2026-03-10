@@ -9,7 +9,7 @@ final class AccessSchemasApprovalGroup {const AccessSchemasApprovalGroup({requir
 
 factory AccessSchemasApprovalGroup.fromJson(Map<String, dynamic> json) { return AccessSchemasApprovalGroup(
   approvalsNeeded: (json['approvals_needed'] as num).toDouble(),
-  emailAddresses: (json['email_addresses'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  emailAddresses: (json['email_addresses'] as List<dynamic>?)?.map((e) => e).toList(),
   emailListUuid: json['email_list_uuid'] as String?,
 ); }
 
@@ -17,7 +17,7 @@ factory AccessSchemasApprovalGroup.fromJson(Map<String, dynamic> json) { return 
 final double approvalsNeeded;
 
 /// A list of emails that can approve the access request.
-final List<String>? emailAddresses;
+final List<Object?>? emailAddresses;
 
 /// The UUID of an re-usable email list.
 final String? emailListUuid;
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'email_list_uuid': ?emailListUuid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('approvals_needed') && json['approvals_needed'] is num; } 
-AccessSchemasApprovalGroup copyWith({double? approvalsNeeded, List<String> Function()? emailAddresses, String Function()? emailListUuid, }) { return AccessSchemasApprovalGroup(
+AccessSchemasApprovalGroup copyWith({double? approvalsNeeded, List<Object> Function()? emailAddresses, String Function()? emailListUuid, }) { return AccessSchemasApprovalGroup(
   approvalsNeeded: approvalsNeeded ?? this.approvalsNeeded,
   emailAddresses: emailAddresses != null ? emailAddresses() : this.emailAddresses,
   emailListUuid: emailListUuid != null ? emailListUuid() : this.emailListUuid,

@@ -42,10 +42,10 @@ factory WebhookCodeScanningAlertReopenedAlert.fromJson(Map<String, dynamic> json
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: json['dismissed_at'] as String,
-  dismissedBy: (json['dismissed_by'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  dismissedBy: (json['dismissed_by'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
   dismissedReason: json['dismissed_reason'] as String,
-  fixedAt: json['fixed_at'] as String?,
+  fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
   instancesUrl: json['instances_url'] as String?,
   mostRecentInstance: json['most_recent_instance'] != null
@@ -57,7 +57,7 @@ factory WebhookCodeScanningAlertReopenedAlert.fromJson(Map<String, dynamic> json
   tool: WebhookCodeScanningAlertReopenedAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   updatedAt: json['updated_at'] as String?,
   url: Uri.parse(json['url'] as String),
-  dismissalApprovedBy: json['dismissal_approved_by'] as String?,
+  dismissalApprovedBy: json['dismissal_approved_by'],
 ); }
 
 final List<SimpleUser>? assignees;
@@ -68,7 +68,7 @@ final DateTime createdAt;
 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final String? dismissedAt;
 
-final Map<String,String>? dismissedBy;
+final Map<String,Object?>? dismissedBy;
 
 final CodeScanningAlertDismissedComment? dismissedComment;
 
@@ -76,7 +76,7 @@ final CodeScanningAlertDismissedComment? dismissedComment;
 final String? dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final String? fixedAt;
+final Object? fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
@@ -99,7 +99,7 @@ final String? updatedAt;
 
 final Uri url;
 
-final String? dismissalApprovedBy;
+final Object? dismissalApprovedBy;
 
 Map<String, dynamic> toJson() { return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
@@ -130,7 +130,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertReopenedAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, String? Function()? dismissedAt, Map<String, String>? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, String? Function()? dismissedReason, String? Function()? fixedAt, Uri? htmlUrl, String Function()? instancesUrl, WebhookCodeScanningAlertReopenedAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertReopenedAlertRule? rule, WebhookCodeScanningAlertReopenedAlertState? Function()? state, WebhookCodeScanningAlertReopenedAlertTool? tool, String? Function()? updatedAt, Uri? url, String? Function()? dismissalApprovedBy, }) { return WebhookCodeScanningAlertReopenedAlert(
+WebhookCodeScanningAlertReopenedAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, String? Function()? dismissedAt, Map<String, Object>? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, String? Function()? dismissedReason, Object? Function()? fixedAt, Uri? htmlUrl, String Function()? instancesUrl, WebhookCodeScanningAlertReopenedAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertReopenedAlertRule? rule, WebhookCodeScanningAlertReopenedAlertState? Function()? state, WebhookCodeScanningAlertReopenedAlertTool? tool, String? Function()? updatedAt, Uri? url, Object? Function()? dismissalApprovedBy, }) { return WebhookCodeScanningAlertReopenedAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,

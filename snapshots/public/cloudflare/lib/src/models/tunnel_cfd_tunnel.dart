@@ -23,7 +23,7 @@ factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) { return TunnelCfdTu
   createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,
   deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
   id: json['id'] != null ? TunnelTunnelId.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   name: json['name'] != null ? TunnelTunnelName.fromJson(json['name'] as String) : null,
   remoteConfig: json['remote_config'] != null ? TunnelRemoteConfig.fromJson(json['remote_config'] as bool) : null,
   status: json['status'] != null ? TunnelStatus.fromJson(json['status'] as String) : null,
@@ -46,7 +46,7 @@ final TunnelDeletedAt? deletedAt;
 
 final TunnelTunnelId? id;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 final TunnelTunnelName? name;
 
@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (tunType != null) 'tun_type': tunType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-TunnelCfdTunnel copyWith({TunnelAccountId Function()? accountTag, TunnelConfigSrc Function()? configSrc, List<TunnelSchemasConnection> Function()? connections, TunnelConnsActiveAt Function()? connsActiveAt, TunnelConnsInactiveAt Function()? connsInactiveAt, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId Function()? id, Map<String, String> Function()? metadata, TunnelTunnelName Function()? name, TunnelRemoteConfig Function()? remoteConfig, TunnelStatus Function()? status, TunnelTunnelType Function()? tunType, }) { return TunnelCfdTunnel(
+TunnelCfdTunnel copyWith({TunnelAccountId Function()? accountTag, TunnelConfigSrc Function()? configSrc, List<TunnelSchemasConnection> Function()? connections, TunnelConnsActiveAt Function()? connsActiveAt, TunnelConnsInactiveAt Function()? connsInactiveAt, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId Function()? id, Map<String, Object> Function()? metadata, TunnelTunnelName Function()? name, TunnelRemoteConfig Function()? remoteConfig, TunnelStatus Function()? status, TunnelTunnelType Function()? tunType, }) { return TunnelCfdTunnel(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   configSrc: configSrc != null ? configSrc() : this.configSrc,
   connections: connections != null ? connections() : this.connections,

@@ -8,17 +8,17 @@
 final class AccessEveryoneRule {const AccessEveryoneRule({required this.everyone});
 
 factory AccessEveryoneRule.fromJson(Map<String, dynamic> json) { return AccessEveryoneRule(
-  everyone: (json['everyone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  everyone: (json['everyone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// An empty object which matches on all users.
-final Map<String,String> everyone;
+final Map<String,Object?> everyone;
 
 Map<String, dynamic> toJson() { return {
   'everyone': everyone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('everyone'); } 
-AccessEveryoneRule copyWith({Map<String,String>? everyone}) { return AccessEveryoneRule(
+AccessEveryoneRule copyWith({Map<String,Object?>? everyone}) { return AccessEveryoneRule(
   everyone: everyone ?? this.everyone,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

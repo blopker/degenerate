@@ -7,11 +7,11 @@
 final class WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart {const WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart({this.body, this.contentType, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   contentType: json['contentType'] as String?,
 ); }
 
-final Map<String,String>? body;
+final Map<String,Object?>? body;
 
 final String? contentType;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'contentType': ?contentType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart copyWith({Map<String, String> Function()? body, String Function()? contentType, }) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart(
+WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart copyWith({Map<String, Object> Function()? body, String Function()? contentType, }) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

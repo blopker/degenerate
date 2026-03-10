@@ -9,7 +9,7 @@ final class GetEventRawReadResponse {const GetEventRawReadResponse({required thi
 factory GetEventRawReadResponse.fromJson(Map<String, dynamic> json) { return GetEventRawReadResponse(
   accountId: (json['accountId'] as num).toDouble(),
   created: json['created'] as String,
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   id: json['id'] as String,
   source: json['source'] as String,
   tlp: json['tlp'] as String,
@@ -19,7 +19,7 @@ final double accountId;
 
 final String created;
 
-final Map<String,String> data;
+final Map<String,Object?> data;
 
 final String id;
 
@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('tlp') && json['tlp'] is String; } 
-GetEventRawReadResponse copyWith({double? accountId, String? created, Map<String,String>? data, String? id, String? source, String? tlp, }) { return GetEventRawReadResponse(
+GetEventRawReadResponse copyWith({double? accountId, String? created, Map<String,Object?>? data, String? id, String? source, String? tlp, }) { return GetEventRawReadResponse(
   accountId: accountId ?? this.accountId,
   created: created ?? this.created,
   data: data ?? this.data,

@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'rulesets_rule_action.dart';i
 
 factory RulesetsRule.fromJson(Map<String, dynamic> json) { return RulesetsRule(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
-  actionParameters: json.containsKey('action_parameters') ? (json['action_parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)) : const {},
+  actionParameters: json.containsKey('action_parameters') ? (json['action_parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)) : const {},
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
   description: json.containsKey('description') ? json['description'] as String : '',
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
@@ -31,7 +31,7 @@ factory RulesetsRule.fromJson(Map<String, dynamic> json) { return RulesetsRule(
 final RulesetsRuleAction? action;
 
 /// The parameters configuring the rule's action.
-final Map<String,String> actionParameters;
+final Map<String,Object?> actionParameters;
 
 final List<RulesetsRuleCategory>? categories;
 
@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-RulesetsRule copyWith({RulesetsRuleAction Function()? action, Map<String, String> Function()? actionParameters, List<RulesetsRuleCategory> Function()? categories, String Function()? description, RulesetsRuleEnabled Function()? enabled, RulesetsRuleExposedCredentialCheck Function()? exposedCredentialCheck, String Function()? expression, RulesetsRuleId Function()? id, DateTime? lastUpdated, RulesetsRuleLogging Function()? logging, RulesetsRuleRatelimit Function()? ratelimit, String Function()? ref, String? version, }) { return RulesetsRule(
+RulesetsRule copyWith({RulesetsRuleAction Function()? action, Map<String, Object> Function()? actionParameters, List<RulesetsRuleCategory> Function()? categories, String Function()? description, RulesetsRuleEnabled Function()? enabled, RulesetsRuleExposedCredentialCheck Function()? exposedCredentialCheck, String Function()? expression, RulesetsRuleId Function()? id, DateTime? lastUpdated, RulesetsRuleLogging Function()? logging, RulesetsRuleRatelimit Function()? ratelimit, String Function()? ref, String? version, }) { return RulesetsRule(
   action: action != null ? action() : this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   categories: categories != null ? categories() : this.categories,

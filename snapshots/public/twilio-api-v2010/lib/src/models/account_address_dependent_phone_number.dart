@@ -204,7 +204,7 @@ factory AccountAddressDependentPhoneNumber.fromJson(Map<String, dynamic> json) {
   smsMethod: json['sms_method'] != null ? AccountAddressDependentPhoneNumberSmsMethod.fromJson(json['sms_method'] as String) : null,
   smsUrl: json['sms_url'] != null ? Uri.parse(json['sms_url'] as String) : null,
   addressRequirements: json['address_requirements'] != null ? DependentPhoneNumberEnumAddressRequirement.fromJson(json['address_requirements'] as String) : null,
-  capabilities: json['capabilities'] as String?,
+  capabilities: json['capabilities'],
   statusCallback: json['status_callback'] != null ? Uri.parse(json['status_callback'] as String) : null,
   statusCallbackMethod: json['status_callback_method'] != null ? AccountAddressDependentPhoneNumberStatusCallbackMethod.fromJson(json['status_callback_method'] as String) : null,
   apiVersion: json['api_version'] as String?,
@@ -264,7 +264,7 @@ final Uri? smsUrl;
 final DependentPhoneNumberEnumAddressRequirement? addressRequirements;
 
 /// The set of Boolean properties that indicates whether a phone number can receive calls or messages.  Capabilities are  `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
-final String? capabilities;
+final Object? capabilities;
 
 /// The URL we call using the `status_callback_method` to send status information to your application.
 final Uri? statusCallback;
@@ -321,7 +321,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountAddressDependentPhoneNumber copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? phoneNumber, Uri? Function()? voiceUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, bool? Function()? voiceCallerIdLookup, String? Function()? dateCreated, String? Function()? dateUpdated, AccountAddressDependentPhoneNumberSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountAddressDependentPhoneNumberSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, DependentPhoneNumberEnumAddressRequirement Function()? addressRequirements, String? Function()? capabilities, Uri? Function()? statusCallback, AccountAddressDependentPhoneNumberStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? apiVersion, String? Function()? smsApplicationSid, String? Function()? voiceApplicationSid, String? Function()? trunkSid, DependentPhoneNumberEnumEmergencyStatus Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? uri, }) { return AccountAddressDependentPhoneNumber(
+AccountAddressDependentPhoneNumber copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? phoneNumber, Uri? Function()? voiceUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, bool? Function()? voiceCallerIdLookup, String? Function()? dateCreated, String? Function()? dateUpdated, AccountAddressDependentPhoneNumberSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountAddressDependentPhoneNumberSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, DependentPhoneNumberEnumAddressRequirement Function()? addressRequirements, Object? Function()? capabilities, Uri? Function()? statusCallback, AccountAddressDependentPhoneNumberStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? apiVersion, String? Function()? smsApplicationSid, String? Function()? voiceApplicationSid, String? Function()? trunkSid, DependentPhoneNumberEnumEmergencyStatus Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? uri, }) { return AccountAddressDependentPhoneNumber(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

@@ -314,7 +314,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}`
-Future<ApiResult<Map<String, String>, BasicError>> codespacesDeleteFromOrganization({required String org, required String username, required String codespaceName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> codespacesDeleteFromOrganization({required String org, required String username, required String codespaceName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -325,7 +325,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -1052,7 +1052,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `DELETE /user/codespaces/{codespace_name}`
-Future<ApiResult<Map<String, String>, BasicError>> codespacesDeleteForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> codespacesDeleteForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1063,7 +1063,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

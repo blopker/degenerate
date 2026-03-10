@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'radar_get_email_security_sum
 
 factory RadarGetEmailSecuritySummaryBySpoofResponse400.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpoofResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetEmailSecuritySummaryBySpoofResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<RadarGetEmailSecuritySummaryBySpoofResponse400Errors> errors;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecuritySummaryBySpoofResponse400 copyWith({List<RadarGetEmailSecuritySummaryBySpoofResponse400Errors>? errors, Map<String,String>? result, bool? success, }) { return RadarGetEmailSecuritySummaryBySpoofResponse400(
+RadarGetEmailSecuritySummaryBySpoofResponse400 copyWith({List<RadarGetEmailSecuritySummaryBySpoofResponse400Errors>? errors, Map<String,Object?>? result, bool? success, }) { return RadarGetEmailSecuritySummaryBySpoofResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

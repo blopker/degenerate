@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'post_tag_category_create_res
 
 factory PostTagCategoryCreateResponse409.fromJson(Map<String, dynamic> json) { return PostTagCategoryCreateResponse409(
   errors: (json['errors'] as List<dynamic>).map((e) => PostTagCategoryCreateResponse409Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<PostTagCategoryCreateResponse409Errors> errors;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-PostTagCategoryCreateResponse409 copyWith({List<PostTagCategoryCreateResponse409Errors>? errors, Map<String,String>? result, bool? success, }) { return PostTagCategoryCreateResponse409(
+PostTagCategoryCreateResponse409 copyWith({List<PostTagCategoryCreateResponse409Errors>? errors, Map<String,Object?>? result, bool? success, }) { return PostTagCategoryCreateResponse409(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

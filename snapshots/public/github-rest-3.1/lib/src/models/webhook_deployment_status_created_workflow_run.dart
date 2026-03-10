@@ -99,7 +99,7 @@ factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> 
   displayTitle: json['display_title'] as String,
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
-  headCommit: json['head_commit'] as String?,
+  headCommit: json['head_commit'],
   headRepository: json['head_repository'] != null
         ? WebhookDeploymentStatusCreatedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>)
         : null,
@@ -111,7 +111,7 @@ factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> 
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   path: json['path'] as String,
-  previousAttemptUrl: json['previous_attempt_url'] as String?,
+  previousAttemptUrl: json['previous_attempt_url'],
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => WebhookDeploymentStatusCreatedWorkflowRunPullRequests.fromJson(e as Map<String, dynamic>)).toList(),
   referencedWorkflows: (json['referenced_workflows'] as List<dynamic>?)?.map((e) => WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflows.fromJson(e as Map<String, dynamic>)).toList(),
   repository: json['repository'] != null
@@ -151,7 +151,7 @@ final String event;
 
 final String headBranch;
 
-final String? headCommit;
+final Object? headCommit;
 
 final WebhookDeploymentStatusCreatedWorkflowRunHeadRepository? headRepository;
 
@@ -171,7 +171,7 @@ final String nodeId;
 
 final String path;
 
-final String? previousAttemptUrl;
+final Object? previousAttemptUrl;
 
 final List<WebhookDeploymentStatusCreatedWorkflowRunPullRequests> pullRequests;
 
@@ -259,7 +259,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num; } 
-WebhookDeploymentStatusCreatedWorkflowRun copyWith({WebhookDeploymentStatusCreatedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentStatusCreatedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, String? Function()? headCommit, WebhookDeploymentStatusCreatedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, String? Function()? previousAttemptUrl, List<WebhookDeploymentStatusCreatedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentStatusCreatedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentStatusCreatedWorkflowRunStatus? status, WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, }) { return WebhookDeploymentStatusCreatedWorkflowRun(
+WebhookDeploymentStatusCreatedWorkflowRun copyWith({WebhookDeploymentStatusCreatedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentStatusCreatedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, Object? Function()? headCommit, WebhookDeploymentStatusCreatedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, Object? Function()? previousAttemptUrl, List<WebhookDeploymentStatusCreatedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentStatusCreatedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentStatusCreatedWorkflowRunStatus? status, WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, }) { return WebhookDeploymentStatusCreatedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl != null ? artifactsUrl() : this.artifactsUrl,
   cancelUrl: cancelUrl != null ? cancelUrl() : this.cancelUrl,

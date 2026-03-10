@@ -20,7 +20,7 @@ factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClippi
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   endTimeSeconds: json['endTimeSeconds'] != null ? StreamEndTimeSeconds.fromJson(json['endTimeSeconds'] as num) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   playback: json['playback'] != null
         ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>)
@@ -47,7 +47,7 @@ final StreamEndTimeSeconds? endTimeSeconds;
 
 final StreamMaxDurationSeconds? maxDurationSeconds;
 
-final Map<String,String>? meta;
+final Map<String,Object?>? meta;
 
 final StreamLiveInputModified? modified;
 
@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-StreamClipping copyWith({List<String> Function()? allowedOrigins, StreamClippedFromVideoUid Function()? clippedFromVideoUid, StreamClippingCreated Function()? created, StreamCreator Function()? creator, StreamEndTimeSeconds Function()? endTimeSeconds, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, String> Function()? meta, StreamLiveInputModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamStartTimeSeconds Function()? startTimeSeconds, StreamMediaState Function()? status, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2 Function()? watermark, }) { return StreamClipping(
+StreamClipping copyWith({List<String> Function()? allowedOrigins, StreamClippedFromVideoUid Function()? clippedFromVideoUid, StreamClippingCreated Function()? created, StreamCreator Function()? creator, StreamEndTimeSeconds Function()? endTimeSeconds, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, Object> Function()? meta, StreamLiveInputModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamStartTimeSeconds Function()? startTimeSeconds, StreamMediaState Function()? status, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2 Function()? watermark, }) { return StreamClipping(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   clippedFromVideoUid: clippedFromVideoUid != null ? clippedFromVideoUid() : this.clippedFromVideoUid,
   created: created != null ? created() : this.created,

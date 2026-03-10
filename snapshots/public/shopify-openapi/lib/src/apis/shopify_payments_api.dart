@@ -126,7 +126,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/disputes.json`
-Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsDisputes({String? sinceId, String? lastId, String? status, String? initiatedAt, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsDisputes({Object? sinceId, Object? lastId, Object? status, Object? initiatedAt, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -172,7 +172,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#index-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/disputes.json`
-Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsDisputes({String? sinceId, String? lastId, String? status, String? initiatedAt, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsDisputes({Object? sinceId, Object? lastId, Object? status, Object? initiatedAt, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -200,7 +200,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -248,7 +248,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -296,7 +296,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-07
 ///
 /// `GET /admin/api/2020-07/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202007GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -344,7 +344,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-10
 ///
 /// `GET /admin/api/2020-10/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> getShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -392,7 +392,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2021-01
 ///
 /// `GET /admin/api/2021-01/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202101GetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -440,7 +440,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-unstable
 ///
 /// `GET /admin/api/unstable/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetShopifyPaymentsPayouts({String? sinceId, String? lastId, String? dateMin, String? dateMax, String? date, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;
@@ -489,7 +489,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/transaction#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/balance/transactions.json`
-Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsBalanceTransactions({String? sinceId, String? lastId, String? test, String? payoutId, String? payoutStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsBalanceTransactions({Object? sinceId, Object? lastId, Object? test, Object? payoutId, Object? payoutStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 if (lastId != null) queryParameters['last_id'] = lastId;

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List, search, sort, and filter all of your custom hostnames.
 ///
 /// `GET /zones/{zone_id}/custom_hostnames`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneListCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, String? hostname, String? id, double? page, double? perPage, String? order, String? direction, String? ssl, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneListCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, String? hostname, String? id, double? page, double? perPage, Object? order, Object? direction, Object? ssl, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hostname != null) queryParameters['hostname'] = hostname;
 if (id != null) queryParameters['id'] = id;

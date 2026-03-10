@@ -32,7 +32,7 @@ final class EvalResponsesSource {const EvalResponsesSource({required this.type, 
 
 factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
   type: EvalResponsesSourceType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   model: json['model'] as String?,
   instructionsSearch: json['instructions_search'] as String?,
   createdAfter: json['created_after'] != null ? (json['created_after'] as num).toInt() : null,
@@ -47,7 +47,7 @@ factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalRes
 /// The type of run data source. Always `responses`.
 final EvalResponsesSourceType type;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 final String? model;
 
@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'tools': ?tools,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EvalResponsesSource copyWith({EvalResponsesSourceType? type, Map<String, String>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
+EvalResponsesSource copyWith({EvalResponsesSourceType? type, Map<String, Object>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
   model: model != null ? model() : this.model,

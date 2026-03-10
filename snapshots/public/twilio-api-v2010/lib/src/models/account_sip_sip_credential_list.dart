@@ -12,7 +12,7 @@ factory AccountSipSipCredentialList.fromJson(Map<String, dynamic> json) { return
   dateUpdated: json['date_updated'] as String?,
   friendlyName: json['friendly_name'] as String?,
   sid: json['sid'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   uri: json['uri'] as String?,
 ); }
 
@@ -32,7 +32,7 @@ final String? friendlyName;
 final String? sid;
 
 /// A list of credentials associated with this credential list.
-final Map<String,String>? subresourceUris;
+final Map<String,Object?>? subresourceUris;
 
 /// The URI for this resource, relative to `https://api.twilio.com`.
 final String? uri;
@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountSipSipCredentialList copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? sid, Map<String, String>? Function()? subresourceUris, String? Function()? uri, }) { return AccountSipSipCredentialList(
+AccountSipSipCredentialList copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? sid, Map<String, Object>? Function()? subresourceUris, String? Function()? uri, }) { return AccountSipSipCredentialList(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,

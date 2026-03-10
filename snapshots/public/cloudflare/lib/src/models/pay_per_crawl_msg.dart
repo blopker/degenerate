@@ -11,7 +11,7 @@ factory PayPerCrawlMsg.fromJson(Map<String, dynamic> json) { return PayPerCrawlM
   documentationUrl: json['documentation_url'] as String?,
   errorChain: (json['error_chain'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String?,
-  meta: json['meta'] as String?,
+  meta: json['meta'],
   source: json['source'] != null
         ? PayPerCrawlSource.fromJson(json['source'] as Map<String, dynamic>)
         : null,
@@ -27,7 +27,7 @@ final String? message;
 
 /// Meta object containing non-standard meta-information about the error.
 /// This field must be an object or null!
-final String? meta;
+final Object? meta;
 
 final PayPerCrawlSource? source;
 
@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PayPerCrawlMsg copyWith({int Function()? code, String Function()? documentationUrl, List<PayPerCrawlMsg> Function()? errorChain, String Function()? message, String Function()? meta, PayPerCrawlSource Function()? source, }) { return PayPerCrawlMsg(
+PayPerCrawlMsg copyWith({int Function()? code, String Function()? documentationUrl, List<PayPerCrawlMsg> Function()? errorChain, String Function()? message, Object? Function()? meta, PayPerCrawlSource Function()? source, }) { return PayPerCrawlMsg(
   code: code != null ? code() : this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   errorChain: errorChain != null ? errorChain() : this.errorChain,

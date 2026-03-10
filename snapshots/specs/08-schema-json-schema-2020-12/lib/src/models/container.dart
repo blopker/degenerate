@@ -7,20 +7,20 @@
 import 'package:collection/collection.dart';final class Container {const Container({this.payload, this.tags, });
 
 factory Container.fromJson(Map<String, dynamic> json) { return Container(
-  payload: json['payload'] as String?,
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  payload: json['payload'],
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => e).toList(),
 ); }
 
-final String? payload;
+final Object? payload;
 
-final List<String>? tags;
+final List<Object?>? tags;
 
 Map<String, dynamic> toJson() { return {
   'payload': ?payload,
   'tags': ?tags,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Container copyWith({String Function()? payload, List<String> Function()? tags, }) { return Container(
+Container copyWith({Object? Function()? payload, List<Object> Function()? tags, }) { return Container(
   payload: payload != null ? payload() : this.payload,
   tags: tags != null ? tags() : this.tags,
 ); } 

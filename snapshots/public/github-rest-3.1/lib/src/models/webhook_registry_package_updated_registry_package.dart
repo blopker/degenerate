@@ -8,7 +8,7 @@ import 'webhook_registry_package_updated_registry_package_owner.dart';import 'we
 
 factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackage(
   createdAt: json['created_at'] as String,
-  description: json['description'] as String,
+  description: json['description'],
   ecosystem: json['ecosystem'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
@@ -17,13 +17,13 @@ factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynami
   owner: WebhookRegistryPackageUpdatedRegistryPackageOwner.fromJson(json['owner'] as Map<String, dynamic>),
   packageType: json['package_type'] as String,
   packageVersion: WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
-  registry: (json['registry'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  registry: (json['registry'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   updatedAt: json['updated_at'] as String,
 ); }
 
 final String createdAt;
 
-final String? description;
+final Object? description;
 
 final String ecosystem;
 
@@ -41,7 +41,7 @@ final String packageType;
 
 final WebhookRegistryPackageUpdatedRegistryPackagePackageVersion packageVersion;
 
-final Map<String,String>? registry;
+final Map<String,Object?>? registry;
 
 final String updatedAt;
 
@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') &&
       json.containsKey('ecosystem') && json['ecosystem'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('package_version') &&
       json.containsKey('registry') &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, String? Function()? description, String? ecosystem, String? htmlUrl, int? id, String? name, String? namespace, WebhookRegistryPackageUpdatedRegistryPackageOwner? owner, String? packageType, WebhookRegistryPackageUpdatedRegistryPackagePackageVersion? packageVersion, Map<String, String>? Function()? registry, String? updatedAt, }) { return WebhookRegistryPackageUpdatedRegistryPackage(
+WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, Object? Function()? description, String? ecosystem, String? htmlUrl, int? id, String? name, String? namespace, WebhookRegistryPackageUpdatedRegistryPackageOwner? owner, String? packageType, WebhookRegistryPackageUpdatedRegistryPackagePackageVersion? packageVersion, Map<String, Object>? Function()? registry, String? updatedAt, }) { return WebhookRegistryPackageUpdatedRegistryPackage(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   ecosystem: ecosystem ?? this.ecosystem,

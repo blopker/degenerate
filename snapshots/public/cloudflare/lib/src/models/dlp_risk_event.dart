@@ -7,14 +7,14 @@
 import 'dlp_risk_level.dart';final class DlpRiskEvent {const DlpRiskEvent({this.eventDetails, required this.id, required this.name, required this.riskLevel, required this.timestamp, });
 
 factory DlpRiskEvent.fromJson(Map<String, dynamic> json) { return DlpRiskEvent(
-  eventDetails: json['event_details'] as String?,
+  eventDetails: json['event_details'],
   id: json['id'] as String,
   name: json['name'] as String,
   riskLevel: DlpRiskLevel.fromJson(json['risk_level'] as String),
   timestamp: DateTime.parse(json['timestamp'] as String),
 ); }
 
-final String? eventDetails;
+final Object? eventDetails;
 
 final String id;
 
@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('risk_level') &&
       json.containsKey('timestamp') && json['timestamp'] is String; } 
-DlpRiskEvent copyWith({String Function()? eventDetails, String? id, String? name, DlpRiskLevel? riskLevel, DateTime? timestamp, }) { return DlpRiskEvent(
+DlpRiskEvent copyWith({Object? Function()? eventDetails, String? id, String? name, DlpRiskLevel? riskLevel, DateTime? timestamp, }) { return DlpRiskEvent(
   eventDetails: eventDetails != null ? eventDetails() : this.eventDetails,
   id: id ?? this.id,
   name: name ?? this.name,

@@ -7,7 +7,7 @@
 import 'vectorize_mutation_uuid.dart';final class VectorizeCreateMetadataIndexResponse {const VectorizeCreateMetadataIndexResponse({this.mutationId});
 
 factory VectorizeCreateMetadataIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeCreateMetadataIndexResponse(
-  mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as String) : null,
+  mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as Object?) : null,
 ); }
 
 final VectorizeMutationUuid? mutationId;
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (mutationId != null) 'mutationId': mutationId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-VectorizeCreateMetadataIndexResponse copyWith({VectorizeMutationUuid Function()? mutationId}) { return VectorizeCreateMetadataIndexResponse(
+VectorizeCreateMetadataIndexResponse copyWith({VectorizeMutationUuid? Function()? mutationId}) { return VectorizeCreateMetadataIndexResponse(
   mutationId: mutationId != null ? mutationId() : this.mutationId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

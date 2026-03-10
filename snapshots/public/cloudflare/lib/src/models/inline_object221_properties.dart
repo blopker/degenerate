@@ -7,16 +7,16 @@
 final class InlineObject221Properties {const InlineObject221Properties({this.conditions});
 
 factory InlineObject221Properties.fromJson(Map<String, dynamic> json) { return InlineObject221Properties(
-  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
-final Map<String,String>? conditions;
+final Map<String,Object?>? conditions;
 
 Map<String, dynamic> toJson() { return {
   'conditions': ?conditions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-InlineObject221Properties copyWith({Map<String, String> Function()? conditions}) { return InlineObject221Properties(
+InlineObject221Properties copyWith({Map<String, Object> Function()? conditions}) { return InlineObject221Properties(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

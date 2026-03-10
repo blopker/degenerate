@@ -8,7 +8,7 @@ final class AccountRequestTracerRequestTraceRequestBody {const AccountRequestTra
 
 factory AccountRequestTracerRequestTraceRequestBody.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequestBody(
   base64: json['base64'] as String?,
-  json: (json['json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  json: (json['json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   plainText: json['plain_text'] as String?,
 ); }
 
@@ -16,7 +16,7 @@ factory AccountRequestTracerRequestTraceRequestBody.fromJson(Map<String, dynamic
 final String? base64;
 
 /// Arbitrary json as request body
-final Map<String,String>? json;
+final Map<String,Object?>? json;
 
 /// Request body as plain text
 final String? plainText;
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'plain_text': ?plainText,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountRequestTracerRequestTraceRequestBody copyWith({String Function()? base64, Map<String, String> Function()? json, String Function()? plainText, }) { return AccountRequestTracerRequestTraceRequestBody(
+AccountRequestTracerRequestTraceRequestBody copyWith({String Function()? base64, Map<String, Object> Function()? json, String Function()? plainText, }) { return AccountRequestTracerRequestTraceRequestBody(
   base64: base64 != null ? base64() : this.base64,
   json: json != null ? json() : this.json,
   plainText: plainText != null ? plainText() : this.plainText,

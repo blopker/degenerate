@@ -7,15 +7,15 @@
 final class HookDeliveryRequest {const HookDeliveryRequest({required this.headers, required this.payload, });
 
 factory HookDeliveryRequest.fromJson(Map<String, dynamic> json) { return HookDeliveryRequest(
-  headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The request headers sent with the webhook delivery.
-final Map<String,String>? headers;
+final Map<String,Object?>? headers;
 
 /// The webhook payload.
-final Map<String,String>? payload;
+final Map<String,Object?>? payload;
 
 Map<String, dynamic> toJson() { return {
   'headers': ?headers,
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('headers') &&
       json.containsKey('payload'); } 
-HookDeliveryRequest copyWith({Map<String, String>? Function()? headers, Map<String, String>? Function()? payload, }) { return HookDeliveryRequest(
+HookDeliveryRequest copyWith({Map<String, Object>? Function()? headers, Map<String, Object>? Function()? payload, }) { return HookDeliveryRequest(
   headers: headers != null ? headers() : this.headers,
   payload: payload != null ? payload() : this.payload,
 ); } 

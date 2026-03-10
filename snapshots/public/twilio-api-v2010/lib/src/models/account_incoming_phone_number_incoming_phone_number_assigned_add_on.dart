@@ -12,12 +12,12 @@ factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<
   resourceSid: json['resource_sid'] as String?,
   friendlyName: json['friendly_name'] as String?,
   description: json['description'] as String?,
-  configuration: json['configuration'] as String?,
+  configuration: json['configuration'],
   uniqueName: json['unique_name'] as String?,
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
   uri: json['uri'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The unique string that that we created to identify the resource.
@@ -36,7 +36,7 @@ final String? friendlyName;
 final String? description;
 
 /// A JSON string that represents the current configuration of this Add-on installation.
-final String? configuration;
+final Object? configuration;
 
 /// An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource.
 final String? uniqueName;
@@ -51,7 +51,7 @@ final String? dateUpdated;
 final String? uri;
 
 /// A list of related resources identified by their relative URIs.
-final Map<String,String>? subresourceUris;
+final Map<String,Object?>? subresourceUris;
 
 Map<String, dynamic> toJson() { return {
   'sid': ?sid,
@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? resourceSid, String? Function()? friendlyName, String? Function()? description, String? Function()? configuration, String? Function()? uniqueName, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, Map<String, String>? Function()? subresourceUris, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
+AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? resourceSid, String? Function()? friendlyName, String? Function()? description, Object? Function()? configuration, String? Function()? uniqueName, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, Map<String, Object>? Function()? subresourceUris, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   resourceSid: resourceSid != null ? resourceSid() : this.resourceSid,

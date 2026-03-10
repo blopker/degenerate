@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'tls_certificates_and_hostnam
 factory ResponseCommonFailure71.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure71(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<TlsCertificatesAndHostnamesMessages2> errors;
 
 final List<TlsCertificatesAndHostnamesMessages2> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure71 copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseCommonFailure71(
+ResponseCommonFailure71 copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure71(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

@@ -7,16 +7,16 @@
 import 'package:collection/collection.dart';final class TenantUnit {const TenantUnit({required this.unitMemberships, required this.unitMetadata, required this.unitName, required this.unitStatus, required this.unitTag, });
 
 factory TenantUnit.fromJson(Map<String, dynamic> json) { return TenantUnit(
-  unitMemberships: (json['unit_memberships'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  unitMetadata: (json['unit_metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  unitMemberships: (json['unit_memberships'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  unitMetadata: (json['unit_metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   unitName: json['unit_name'] as String,
   unitStatus: json['unit_status'] as String,
   unitTag: json['unit_tag'] as String,
 ); }
 
-final List<Map<String,String>> unitMemberships;
+final List<Map<String,Object?>> unitMemberships;
 
-final Map<String,String> unitMetadata;
+final Map<String,Object?> unitMetadata;
 
 final String unitName;
 
@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit_
       json.containsKey('unit_name') && json['unit_name'] is String &&
       json.containsKey('unit_status') && json['unit_status'] is String &&
       json.containsKey('unit_tag') && json['unit_tag'] is String; } 
-TenantUnit copyWith({List<Map<String,String>>? unitMemberships, Map<String,String>? unitMetadata, String? unitName, String? unitStatus, String? unitTag, }) { return TenantUnit(
+TenantUnit copyWith({List<Map<String,Object?>>? unitMemberships, Map<String,Object?>? unitMetadata, String? unitName, String? unitStatus, String? unitTag, }) { return TenantUnit(
   unitMemberships: unitMemberships ?? this.unitMemberships,
   unitMetadata: unitMetadata ?? this.unitMetadata,
   unitName: unitName ?? this.unitName,

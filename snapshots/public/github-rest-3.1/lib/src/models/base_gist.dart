@@ -29,8 +29,8 @@ factory BaseGist.fromJson(Map<String, dynamic> json) { return BaseGist(
         ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
         : null,
   truncated: json['truncated'] as bool?,
-  forks: (json['forks'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  history: (json['history'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  forks: (json['forks'] as List<dynamic>?)?.map((e) => e).toList(),
+  history: (json['history'] as List<dynamic>?)?.map((e) => e).toList(),
 ); }
 
 final Uri url;
@@ -71,9 +71,9 @@ final SimpleUser? owner;
 
 final bool? truncated;
 
-final List<String>? forks;
+final List<Object?>? forks;
 
-final List<String>? history;
+final List<Object?>? history;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
@@ -114,7 +114,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('user') &&
       json.containsKey('comments_url') && json['comments_url'] is String; } 
-BaseGist copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,InlineObject2>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, List<String> Function()? forks, List<String> Function()? history, }) { return BaseGist(
+BaseGist copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,InlineObject2>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, List<Object> Function()? forks, List<Object> Function()? history, }) { return BaseGist(
   url: url ?? this.url,
   forksUrl: forksUrl ?? this.forksUrl,
   commitsUrl: commitsUrl ?? this.commitsUrl,

@@ -70,7 +70,7 @@ factory WebhookCodeScanningAlertFixedAlert.fromJson(Map<String, dynamic> json) {
   dismissedBy: WebhookCodeScanningAlertFixedAlertDismissedBy.fromJson(json['dismissed_by'] as Map<String, dynamic>),
   dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
   dismissedReason: WebhookCodeScanningAlertFixedAlertDismissedReason.fromJson(json['dismissed_reason'] as String),
-  fixedAt: json['fixed_at'] as String?,
+  fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
   instancesUrl: json['instances_url'] != null ? Uri.parse(json['instances_url'] as String) : null,
   mostRecentInstance: json['most_recent_instance'] != null
@@ -99,7 +99,7 @@ final CodeScanningAlertDismissedComment? dismissedComment;
 final WebhookCodeScanningAlertFixedAlertDismissedReason? dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final String? fixedAt;
+final Object? fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
@@ -147,7 +147,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertFixedAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertFixedAlertDismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, WebhookCodeScanningAlertFixedAlertDismissedReason? Function()? dismissedReason, String? Function()? fixedAt, Uri? htmlUrl, Uri Function()? instancesUrl, WebhookCodeScanningAlertFixedAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertFixedAlertRule? rule, WebhookCodeScanningAlertFixedAlertState? Function()? state, WebhookCodeScanningAlertFixedAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertFixedAlert(
+WebhookCodeScanningAlertFixedAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertFixedAlertDismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, WebhookCodeScanningAlertFixedAlertDismissedReason? Function()? dismissedReason, Object? Function()? fixedAt, Uri? htmlUrl, Uri Function()? instancesUrl, WebhookCodeScanningAlertFixedAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertFixedAlertRule? rule, WebhookCodeScanningAlertFixedAlertState? Function()? state, WebhookCodeScanningAlertFixedAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertFixedAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,

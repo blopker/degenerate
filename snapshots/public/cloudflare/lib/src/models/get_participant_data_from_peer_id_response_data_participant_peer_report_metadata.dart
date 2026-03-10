@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_browser_metadata.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_candidate_pairs.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_device_info.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_events.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_ip_information.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_pc_metadata.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata({this.audioDevicesUpdates, this.browserMetadata, this.candidatePairs, this.deviceInfo, this.events, this.ipInformation, this.pcMetadata, this.roomViewType, this.sdkName, this.sdkVersion, this.selectedDeviceUpdates, this.speakerDevicesUpdates, this.videoDevicesUpdates, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata(
-  audioDevicesUpdates: (json['audio_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  audioDevicesUpdates: (json['audio_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   browserMetadata: json['browser_metadata'] != null
         ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata.fromJson(json['browser_metadata'] as Map<String, dynamic>)
         : null,
@@ -25,12 +25,12 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata.fr
   roomViewType: json['room_view_type'] as String?,
   sdkName: json['sdk_name'] as String?,
   sdkVersion: json['sdk_version'] as String?,
-  selectedDeviceUpdates: (json['selected_device_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  speakerDevicesUpdates: (json['speaker_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  videoDevicesUpdates: (json['video_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  selectedDeviceUpdates: (json['selected_device_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  speakerDevicesUpdates: (json['speaker_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  videoDevicesUpdates: (json['video_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
-final List<Map<String,String>>? audioDevicesUpdates;
+final List<Map<String,Object?>>? audioDevicesUpdates;
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata? browserMetadata;
 
@@ -50,11 +50,11 @@ final String? sdkName;
 
 final String? sdkVersion;
 
-final List<Map<String,String>>? selectedDeviceUpdates;
+final List<Map<String,Object?>>? selectedDeviceUpdates;
 
-final List<Map<String,String>>? speakerDevicesUpdates;
+final List<Map<String,Object?>>? speakerDevicesUpdates;
 
-final List<Map<String,String>>? videoDevicesUpdates;
+final List<Map<String,Object?>>? videoDevicesUpdates;
 
 Map<String, dynamic> toJson() { return {
   if (audioDevicesUpdates != null) 'audio_devices_updates': audioDevicesUpdates?.map((e) => e).toList(),
@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (videoDevicesUpdates != null) 'video_devices_updates': videoDevicesUpdates?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata copyWith({List<Map<String, String>> Function()? audioDevicesUpdates, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata Function()? browserMetadata, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs Function()? candidatePairs, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo Function()? deviceInfo, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataEvents> Function()? events, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation Function()? ipInformation, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata> Function()? pcMetadata, String Function()? roomViewType, String Function()? sdkName, String Function()? sdkVersion, List<Map<String, String>> Function()? selectedDeviceUpdates, List<Map<String, String>> Function()? speakerDevicesUpdates, List<Map<String, String>> Function()? videoDevicesUpdates, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata copyWith({List<Map<String, Object>> Function()? audioDevicesUpdates, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata Function()? browserMetadata, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs Function()? candidatePairs, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo Function()? deviceInfo, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataEvents> Function()? events, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformation Function()? ipInformation, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata> Function()? pcMetadata, String Function()? roomViewType, String Function()? sdkName, String Function()? sdkVersion, List<Map<String, Object>> Function()? selectedDeviceUpdates, List<Map<String, Object>> Function()? speakerDevicesUpdates, List<Map<String, Object>> Function()? videoDevicesUpdates, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata(
   audioDevicesUpdates: audioDevicesUpdates != null ? audioDevicesUpdates() : this.audioDevicesUpdates,
   browserMetadata: browserMetadata != null ? browserMetadata() : this.browserMetadata,
   candidatePairs: candidatePairs != null ? candidatePairs() : this.candidatePairs,

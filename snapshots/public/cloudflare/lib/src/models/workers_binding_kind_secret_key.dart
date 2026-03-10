@@ -80,17 +80,17 @@ bool get isUnknown { return !values.contains(this); }
 final class WorkersBindingKindSecretKey {const WorkersBindingKindSecretKey({required this.algorithm, required this.format, this.keyBase64, this.keyJwk, required this.name, required this.type, required this.usages, });
 
 factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretKey(
-  algorithm: (json['algorithm'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  algorithm: (json['algorithm'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   format: WorkersBindingKindSecretKeyFormat.fromJson(json['format'] as String),
   keyBase64: json['key_base64'] as String?,
-  keyJwk: (json['key_jwk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  keyJwk: (json['key_jwk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
   usages: (json['usages'] as List<dynamic>).map((e) => WorkersBindingKindSecretKeyUsages.fromJson(e as String)).toList(),
 ); }
 
 /// Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).
-final Map<String,String> algorithm;
+final Map<String,Object?> algorithm;
 
 /// Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
 final WorkersBindingKindSecretKeyFormat format;
@@ -99,7 +99,7 @@ final WorkersBindingKindSecretKeyFormat format;
 final String? keyBase64;
 
 /// Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is "jwk".
-final Map<String,String>? keyJwk;
+final Map<String,Object?>? keyJwk;
 
 final WorkersBindingName name;
 
@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('algor
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('usages'); } 
-WorkersBindingKindSecretKey copyWith({Map<String,String>? algorithm, WorkersBindingKindSecretKeyFormat? format, String Function()? keyBase64, Map<String, String> Function()? keyJwk, WorkersBindingName? name, String? type, List<WorkersBindingKindSecretKeyUsages>? usages, }) { return WorkersBindingKindSecretKey(
+WorkersBindingKindSecretKey copyWith({Map<String,Object?>? algorithm, WorkersBindingKindSecretKeyFormat? format, String Function()? keyBase64, Map<String, Object> Function()? keyJwk, WorkersBindingName? name, String? type, List<WorkersBindingKindSecretKeyUsages>? usages, }) { return WorkersBindingKindSecretKey(
   algorithm: algorithm ?? this.algorithm,
   format: format ?? this.format,
   keyBase64: keyBase64 != null ? keyBase64() : this.keyBase64,

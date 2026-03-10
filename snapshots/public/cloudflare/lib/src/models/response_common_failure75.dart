@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'vectorize_messages2.dart';fi
 factory ResponseCommonFailure75.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure75(
   errors: (json['errors'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<VectorizeMessages2> errors;
 
 final List<VectorizeMessages2> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Whether the API call was successful
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure75 copyWith({List<VectorizeMessages2>? errors, List<VectorizeMessages2>? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseCommonFailure75(
+ResponseCommonFailure75 copyWith({List<VectorizeMessages2>? errors, List<VectorizeMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure75(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

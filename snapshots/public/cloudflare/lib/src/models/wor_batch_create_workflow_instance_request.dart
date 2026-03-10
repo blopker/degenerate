@@ -11,14 +11,14 @@ factory WorBatchCreateWorkflowInstanceRequest.fromJson(Map<String, dynamic> json
   instanceRetention: json['instance_retention'] != null
         ? WorBatchCreateWorkflowInstanceRequestInstanceRetention.fromJson(json['instance_retention'] as Map<String, dynamic>)
         : null,
-  params: (json['params'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  params: (json['params'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 final String? instanceId;
 
 final WorBatchCreateWorkflowInstanceRequestInstanceRetention? instanceRetention;
 
-final Map<String,String>? params;
+final Map<String,Object?>? params;
 
 Map<String, dynamic> toJson() { return {
   'instance_id': ?instanceId,
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'params': ?params,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WorBatchCreateWorkflowInstanceRequest copyWith({String Function()? instanceId, WorBatchCreateWorkflowInstanceRequestInstanceRetention Function()? instanceRetention, Map<String, String> Function()? params, }) { return WorBatchCreateWorkflowInstanceRequest(
+WorBatchCreateWorkflowInstanceRequest copyWith({String Function()? instanceId, WorBatchCreateWorkflowInstanceRequestInstanceRetention Function()? instanceRetention, Map<String, Object> Function()? params, }) { return WorBatchCreateWorkflowInstanceRequest(
   instanceId: instanceId != null ? instanceId() : this.instanceId,
   instanceRetention: instanceRetention != null ? instanceRetention() : this.instanceRetention,
   params: params != null ? params() : this.params,

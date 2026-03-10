@@ -10,7 +10,7 @@ final class IamUserGroupMember {const IamUserGroupMember({this.email, required t
 factory IamUserGroupMember.fromJson(Map<String, dynamic> json) { return IamUserGroupMember(
   email: json['email'] != null ? IamEmail.fromJson(json['email'] as String) : null,
   id: json['id'] as String,
-  status: json['status'] as String?,
+  status: json['status'],
 ); }
 
 final IamEmail? email;
@@ -19,7 +19,7 @@ final IamEmail? email;
 final String id;
 
 /// The member's status in the account.
-final String? status;
+final Object? status;
 
 Map<String, dynamic> toJson() { return {
   if (email != null) 'email': email?.toJson(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-IamUserGroupMember copyWith({IamEmail Function()? email, String? id, String Function()? status, }) { return IamUserGroupMember(
+IamUserGroupMember copyWith({IamEmail Function()? email, String? id, Object? Function()? status, }) { return IamUserGroupMember(
   email: email != null ? email() : this.email,
   id: id ?? this.id,
   status: status != null ? status() : this.status,

@@ -7,16 +7,16 @@
 import 'webhook_package_published_package_package_version_container_metadata_tag.dart';final class WebhookPackagePublishedPackagePackageVersionContainerMetadata {const WebhookPackagePublishedPackagePackageVersionContainerMetadata({this.labels, this.manifest, this.tag, });
 
 factory WebhookPackagePublishedPackagePackageVersionContainerMetadata.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionContainerMetadata(
-  labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   tag: json['tag'] != null
         ? WebhookPackagePublishedPackagePackageVersionContainerMetadataTag.fromJson(json['tag'] as Map<String, dynamic>)
         : null,
 ); }
 
-final Map<String,String>? labels;
+final Map<String,Object?>? labels;
 
-final Map<String,String>? manifest;
+final Map<String,Object?>? manifest;
 
 final WebhookPackagePublishedPackagePackageVersionContainerMetadataTag? tag;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (tag != null) 'tag': tag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WebhookPackagePublishedPackagePackageVersionContainerMetadata copyWith({Map<String, String>? Function()? labels, Map<String, String>? Function()? manifest, WebhookPackagePublishedPackagePackageVersionContainerMetadataTag Function()? tag, }) { return WebhookPackagePublishedPackagePackageVersionContainerMetadata(
+WebhookPackagePublishedPackagePackageVersionContainerMetadata copyWith({Map<String, Object>? Function()? labels, Map<String, Object>? Function()? manifest, WebhookPackagePublishedPackagePackageVersionContainerMetadataTag Function()? tag, }) { return WebhookPackagePublishedPackagePackageVersionContainerMetadata(
   labels: labels != null ? labels() : this.labels,
   manifest: manifest != null ? manifest() : this.manifest,
   tag: tag != null ? tag() : this.tag,

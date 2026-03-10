@@ -11,8 +11,8 @@ final class McpListToolsTool {const McpListToolsTool({required this.name, this.d
 factory McpListToolsTool.fromJson(Map<String, dynamic> json) { return McpListToolsTool(
   name: json['name'] as String,
   description: json['description'] as String?,
-  inputSchema: (json['input_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  inputSchema: (json['input_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The name of the tool.
@@ -23,9 +23,9 @@ final String? description;
 
 /// The JSON schema describing the tool's input.
 /// 
-final Map<String,String> inputSchema;
+final Map<String,Object?> inputSchema;
 
-final Map<String,String>? annotations;
+final Map<String,Object?>? annotations;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('input_schema'); } 
-McpListToolsTool copyWith({String? name, String? Function()? description, Map<String,String>? inputSchema, Map<String, String>? Function()? annotations, }) { return McpListToolsTool(
+McpListToolsTool copyWith({String? name, String? Function()? description, Map<String,Object?>? inputSchema, Map<String, Object>? Function()? annotations, }) { return McpListToolsTool(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   inputSchema: inputSchema ?? this.inputSchema,

@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'urlscanner_get_scan_response
 
 factory UrlscannerGetScanResponse2DataRequestsResponseResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsResponseResponse(
   charset: json['charset'] as String,
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   mimeType: json['mimeType'] as String,
   protocol: json['protocol'] as String,
   remoteIpAddress: json['remoteIPAddress'] as String,
@@ -23,7 +23,7 @@ factory UrlscannerGetScanResponse2DataRequestsResponseResponse.fromJson(Map<Stri
 
 final String charset;
 
-final Map<String,String>? headers;
+final Map<String,Object?>? headers;
 
 final String mimeType;
 
@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chars
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('statusText') && json['statusText'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2DataRequestsResponseResponse copyWith({String? charset, Map<String, String> Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails? securityDetails, List<UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return UrlscannerGetScanResponse2DataRequestsResponseResponse(
+UrlscannerGetScanResponse2DataRequestsResponseResponse copyWith({String? charset, Map<String, Object> Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails? securityDetails, List<UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return UrlscannerGetScanResponse2DataRequestsResponseResponse(
   charset: charset ?? this.charset,
   headers: headers != null ? headers() : this.headers,
   mimeType: mimeType ?? this.mimeType,

@@ -7,17 +7,17 @@
 import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';final class AccessSchemasBookmarkProps {const AccessSchemasBookmarkProps({this.appLauncherVisible, required this.domain, this.logoUrl, this.name, required this.type, });
 
 factory AccessSchemasBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessSchemasBookmarkProps(
-  appLauncherVisible: json['app_launcher_visible'] as String?,
-  domain: json['domain'] as String,
+  appLauncherVisible: json['app_launcher_visible'],
+  domain: json['domain'],
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] as String,
 ); }
 
-final String? appLauncherVisible;
+final Object? appLauncherVisible;
 
 /// The URL or domain of the bookmark.
-final String domain;
+final Object? domain;
 
 final AccessLogoUrl? logoUrl;
 
@@ -28,16 +28,16 @@ final String type;
 
 Map<String, dynamic> toJson() { return {
   'app_launcher_visible': ?appLauncherVisible,
-  'domain': domain,
+  'domain': ?domain,
   if (logoUrl != null) 'logo_url': logoUrl?.toJson(),
   if (name != null) 'name': name?.toJson(),
   'type': type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
       json.containsKey('type') && json['type'] is String; } 
-AccessSchemasBookmarkProps copyWith({String Function()? appLauncherVisible, String? domain, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
+AccessSchemasBookmarkProps copyWith({Object? Function()? appLauncherVisible, Object? Function()? domain, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
-  domain: domain ?? this.domain,
+  domain: domain != null ? domain() : this.domain,
   logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,
   name: name != null ? name() : this.name,
   type: type ?? this.type,

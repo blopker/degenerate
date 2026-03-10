@@ -8,14 +8,14 @@ import 'package:collection/collection.dart';import 'vectorize_vector_identifier.
 
 factory VectorizeIndexGetVectorsByIdResponse2.fromJson(Map<String, dynamic> json) { return VectorizeIndexGetVectorsByIdResponse2(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   namespace: json['namespace'] as String?,
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
 ); }
 
 final VectorizeVectorIdentifier? id;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 final String? namespace;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'values': ?values,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier Function()? id, Map<String, String> Function()? metadata, String? Function()? namespace, List<double> Function()? values, }) { return VectorizeIndexGetVectorsByIdResponse2(
+VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier Function()? id, Map<String, Object> Function()? metadata, String? Function()? namespace, List<double> Function()? values, }) { return VectorizeIndexGetVectorsByIdResponse2(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   namespace: namespace != null ? namespace() : this.namespace,

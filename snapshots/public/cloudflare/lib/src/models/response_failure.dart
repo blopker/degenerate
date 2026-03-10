@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'r2_errors2.dart';final class
 factory ResponseFailure.fromJson(Map<String, dynamic> json) { return ResponseFailure(
   errors: (json['errors'] as List<dynamic>).map((e) => R2Errors2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<R2Errors2> errors;
 
 final List<String> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseFailure copyWith({List<R2Errors2>? errors, List<String>? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseFailure(
+ResponseFailure copyWith({List<R2Errors2>? errors, List<String>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseFailure(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

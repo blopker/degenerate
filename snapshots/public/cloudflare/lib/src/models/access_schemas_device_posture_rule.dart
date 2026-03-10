@@ -10,7 +10,7 @@ factory AccessSchemasDevicePostureRule.fromJson(Map<String, dynamic> json) { ret
   check: json['check'] != null
         ? AccessDevicePostureCheck.fromJson(json['check'] as Map<String, dynamic>)
         : null,
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   description: json['description'] as String?,
   error: json['error'] as String?,
   id: json['id'] as String?,
@@ -22,7 +22,7 @@ factory AccessSchemasDevicePostureRule.fromJson(Map<String, dynamic> json) { ret
 
 final AccessDevicePostureCheck? check;
 
-final Map<String,String>? data;
+final Map<String,Object?>? data;
 
 final String? description;
 
@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccessSchemasDevicePostureRule copyWith({AccessDevicePostureCheck Function()? check, Map<String, String> Function()? data, String Function()? description, String Function()? error, String Function()? id, String Function()? ruleName, bool Function()? success, String Function()? timestamp, String Function()? type, }) { return AccessSchemasDevicePostureRule(
+AccessSchemasDevicePostureRule copyWith({AccessDevicePostureCheck Function()? check, Map<String, Object> Function()? data, String Function()? description, String Function()? error, String Function()? id, String Function()? ruleName, bool Function()? success, String Function()? timestamp, String Function()? type, }) { return AccessSchemasDevicePostureRule(
   check: check != null ? check() : this.check,
   data: data != null ? data() : this.data,
   description: description != null ? description() : this.description,

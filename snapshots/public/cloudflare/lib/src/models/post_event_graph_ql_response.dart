@@ -7,20 +7,20 @@
 import 'package:collection/collection.dart';final class PostEventGraphQlResponse {const PostEventGraphQlResponse({this.data, this.errors, });
 
 factory PostEventGraphQlResponse.fromJson(Map<String, dynamic> json) { return PostEventGraphQlResponse(
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
-final Map<String,String>? data;
+final Map<String,Object?>? data;
 
-final List<Map<String,String>>? errors;
+final List<Map<String,Object?>>? errors;
 
 Map<String, dynamic> toJson() { return {
   'data': ?data,
   if (errors != null) 'errors': errors?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostEventGraphQlResponse copyWith({Map<String, String>? Function()? data, List<Map<String, String>>? Function()? errors, }) { return PostEventGraphQlResponse(
+PostEventGraphQlResponse copyWith({Map<String, Object>? Function()? data, List<Map<String, Object>>? Function()? errors, }) { return PostEventGraphQlResponse(
   data: data != null ? data() : this.data,
   errors: errors != null ? errors() : this.errors,
 ); } 

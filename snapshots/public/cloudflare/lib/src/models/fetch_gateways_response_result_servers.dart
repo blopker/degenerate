@@ -48,9 +48,9 @@ factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) {
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
   onBehalf: json.containsKey('on_behalf') ? json['on_behalf'] as bool : true,
-  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   status: json.containsKey('status') ? json['status'] as String : 'waiting',
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   updatedPrompts: (json['updated_prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, InlineObject189.fromJson(v as Map<String, dynamic>)))).toList(),
   updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, InlineObject190.fromJson(v as Map<String, dynamic>)))).toList(),
 ); }
@@ -84,11 +84,11 @@ final String name;
 
 final bool onBehalf;
 
-final List<Map<String,String>> prompts;
+final List<Map<String,Object?>> prompts;
 
 final String status;
 
-final List<Map<String,String>> tools;
+final List<Map<String,Object?>> tools;
 
 final List<Map<String,InlineObject189>> updatedPrompts;
 
@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('tools') &&
       json.containsKey('updated_prompts') &&
       json.containsKey('updated_tools'); } 
-FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, bool Function()? defaultDisabled, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,String>>? prompts, String Function()? status, List<Map<String,String>>? tools, List<Map<String,InlineObject189>>? updatedPrompts, List<Map<String,InlineObject190>>? updatedTools, }) { return FetchGatewaysResponseResultServers(
+FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, bool Function()? defaultDisabled, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,Object?>>? prompts, String Function()? status, List<Map<String,Object?>>? tools, List<Map<String,InlineObject189>>? updatedPrompts, List<Map<String,InlineObject190>>? updatedTools, }) { return FetchGatewaysResponseResultServers(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,

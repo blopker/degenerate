@@ -114,7 +114,7 @@ final class RealtimeSession {const RealtimeSession({this.id, this.object, this.m
 factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSession(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeSessionObject.fromJson(json['object'] as String) : null,
-  modalities: json['modalities'] as String?,
+  modalities: json['modalities'],
   model: json['model'] != null
         ? RealtimeSessionModel.fromJson(json['model'] as Map<String, dynamic>)
         : null,
@@ -160,7 +160,7 @@ final RealtimeSessionObject? object;
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to ["text"].
 /// 
-final String? modalities;
+final Object? modalities;
 
 /// The Realtime model used for this session.
 /// 
@@ -267,7 +267,7 @@ Map<String, dynamic> toJson() { return {
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-RealtimeSession copyWith({String Function()? id, RealtimeSessionObject Function()? object, String Function()? modalities, RealtimeSessionModel Function()? model, String Function()? instructions, VoiceIdsShared Function()? voice, RealtimeSessionInputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection Function()? turnDetection, RealtimeSessionInputAudioNoiseReduction Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionTracing? Function()? tracing, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, double Function()? temperature, RealtimeSessionMaxResponseOutputTokens Function()? maxResponseOutputTokens, int Function()? expiresAt, Prompt? Function()? prompt, List<RealtimeSessionInclude2>? Function()? include, }) { return RealtimeSession(
+RealtimeSession copyWith({String Function()? id, RealtimeSessionObject Function()? object, Object? Function()? modalities, RealtimeSessionModel Function()? model, String Function()? instructions, VoiceIdsShared Function()? voice, RealtimeSessionInputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection Function()? turnDetection, RealtimeSessionInputAudioNoiseReduction Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionTracing? Function()? tracing, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, double Function()? temperature, RealtimeSessionMaxResponseOutputTokens Function()? maxResponseOutputTokens, int Function()? expiresAt, Prompt? Function()? prompt, List<RealtimeSessionInclude2>? Function()? include, }) { return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   modalities: modalities != null ? modalities() : this.modalities,

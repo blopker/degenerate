@@ -5,10 +5,10 @@
 //  OpenAPI spec version: 3.0.3
 
 /// The unique component.
-extension type const ComponentsSchemasName(String value) {
-factory ComponentsSchemasName.fromJson(String json) => ComponentsSchemasName(json);
+extension type ComponentsSchemasName(Object? value) {
+factory ComponentsSchemasName.fromJson(Object? json) => ComponentsSchemasName(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 /// The default amount allocated.
@@ -29,7 +29,7 @@ final class ComponentValue {const ComponentValue({this.$default, this.name, this
 
 factory ComponentValue.fromJson(Map<String, dynamic> json) { return ComponentValue(
   $default: json['default'] != null ? Default.fromJson(json['default'] as num) : null,
-  name: json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as String) : null,
+  name: json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as Object?) : null,
   unitPrice: json['unit_price'] != null ? UnitPrice.fromJson(json['unit_price'] as num) : null,
 ); }
 
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (unitPrice != null) 'unit_price': unitPrice?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ComponentValue copyWith({Default Function()? $default, ComponentsSchemasName Function()? name, UnitPrice Function()? unitPrice, }) { return ComponentValue(
+ComponentValue copyWith({Default Function()? $default, ComponentsSchemasName? Function()? name, UnitPrice Function()? unitPrice, }) { return ComponentValue(
   $default: $default != null ? $default() : this.$default,
   name: name != null ? name() : this.name,
   unitPrice: unitPrice != null ? unitPrice() : this.unitPrice,

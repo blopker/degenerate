@@ -33,7 +33,7 @@ final class Member {const Member({required this.createTime, required this.id, re
 factory Member.fromJson(Map<String, dynamic> json) { return Member(
   createTime: DateTime.parse(json['create_time'] as String),
   id: MemberId.fromJson(json['id'] as String),
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)))),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
   status: MemberStatus.fromJson(json['status'] as String),
   updateTime: DateTime.parse(json['update_time'] as String),
   user: MemberSubjectUser.fromJson(json['user'] as Map<String, dynamic>),
@@ -43,7 +43,7 @@ final DateTime createTime;
 
 final MemberId id;
 
-final Map<String,Map<String,String>> meta;
+final Map<String,Map<String,Object?>> meta;
 
 final MemberStatus status;
 
@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('status') &&
       json.containsKey('update_time') && json['update_time'] is String &&
       json.containsKey('user'); } 
-Member copyWith({DateTime? createTime, MemberId? id, Map<String,Map<String,String>>? meta, MemberStatus? status, DateTime? updateTime, MemberSubjectUser? user, }) { return Member(
+Member copyWith({DateTime? createTime, MemberId? id, Map<String,Map<String,Object?>>? meta, MemberStatus? status, DateTime? updateTime, MemberSubjectUser? user, }) { return Member(
   createTime: createTime ?? this.createTime,
   id: id ?? this.id,
   meta: meta ?? this.meta,

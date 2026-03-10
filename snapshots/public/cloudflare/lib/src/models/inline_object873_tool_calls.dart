@@ -7,12 +7,12 @@
 final class InlineObject873ToolCalls {const InlineObject873ToolCalls({this.arguments, this.name, });
 
 factory InlineObject873ToolCalls.fromJson(Map<String, dynamic> json) { return InlineObject873ToolCalls(
-  arguments: (json['arguments'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  arguments: (json['arguments'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   name: json['name'] as String?,
 ); }
 
 /// The arguments passed to be passed to the tool call request
-final Map<String,String>? arguments;
+final Map<String,Object?>? arguments;
 
 /// The name of the tool to be called
 final String? name;
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-InlineObject873ToolCalls copyWith({Map<String, String> Function()? arguments, String Function()? name, }) { return InlineObject873ToolCalls(
+InlineObject873ToolCalls copyWith({Map<String, Object> Function()? arguments, String Function()? name, }) { return InlineObject873ToolCalls(
   arguments: arguments != null ? arguments() : this.arguments,
   name: name != null ? name() : this.name,
 ); } 

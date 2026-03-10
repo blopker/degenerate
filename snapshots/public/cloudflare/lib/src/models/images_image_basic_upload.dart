@@ -10,7 +10,7 @@ factory ImagesImageBasicUpload.fromJson(Map<String, dynamic> json) { return Imag
   creator: json['creator'] as String?,
   file: json['file'] != null ? base64Decode(json['file'] as String) : null,
   id: json['id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json.containsKey('requireSignedURLs') ? json['requireSignedURLs'] as bool : false,
   url: json['url'] as String?,
 ); }
@@ -25,7 +25,7 @@ final Uint8List? file;
 final String? id;
 
 /// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 /// Indicates whether the image requires a signature token for the access.
 final bool requireSignedUrLs;
@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ImagesImageBasicUpload copyWith({String Function()? creator, Uint8List Function()? file, String Function()? id, Map<String, String> Function()? metadata, bool Function()? requireSignedUrLs, String Function()? url, }) { return ImagesImageBasicUpload(
+ImagesImageBasicUpload copyWith({String Function()? creator, Uint8List Function()? file, String Function()? id, Map<String, Object> Function()? metadata, bool Function()? requireSignedUrLs, String Function()? url, }) { return ImagesImageBasicUpload(
   creator: creator != null ? creator() : this.creator,
   file: file != null ? file() : this.file,
   id: id != null ? id() : this.id,

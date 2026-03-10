@@ -292,7 +292,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve`
-Future<ApiResult<Map<String, String>, BasicError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -303,7 +303,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

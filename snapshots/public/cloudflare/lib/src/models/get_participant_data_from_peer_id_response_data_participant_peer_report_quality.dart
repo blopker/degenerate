@@ -7,57 +7,57 @@
 import 'package:collection/collection.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality({this.audioConsumer, this.audioConsumerCumulative, this.audioProducer, this.audioProducerCumulative, this.screenshareAudioConsumer, this.screenshareAudioConsumerCumulative, this.screenshareAudioProducer, this.screenshareAudioProducerCumulative, this.screenshareVideoConsumer, this.screenshareVideoConsumerCumulative, this.screenshareVideoProducer, this.screenshareVideoProducerCumulative, this.videoConsumer, this.videoConsumerCumulative, this.videoProducer, this.videoProducerCumulative, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality(
-  audioConsumer: (json['audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  audioConsumerCumulative: (json['audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  audioConsumer: (json['audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  audioConsumerCumulative: (json['audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   audioProducer: (json['audio_producer'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer.fromJson(e as Map<String, dynamic>)).toList(),
   audioProducerCumulative: json['audio_producer_cumulative'] != null
         ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative.fromJson(json['audio_producer_cumulative'] as Map<String, dynamic>)
         : null,
-  screenshareAudioConsumer: (json['screenshare_audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  screenshareAudioConsumerCumulative: (json['screenshare_audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  screenshareAudioProducer: (json['screenshare_audio_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  screenshareAudioProducerCumulative: (json['screenshare_audio_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  screenshareVideoConsumer: (json['screenshare_video_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  screenshareVideoConsumerCumulative: (json['screenshare_video_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  screenshareVideoProducer: (json['screenshare_video_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  screenshareVideoProducerCumulative: (json['screenshare_video_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  videoConsumer: (json['video_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  videoConsumerCumulative: (json['video_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  videoProducer: (json['video_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  videoProducerCumulative: (json['video_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  screenshareAudioConsumer: (json['screenshare_audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareAudioConsumerCumulative: (json['screenshare_audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  screenshareAudioProducer: (json['screenshare_audio_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareAudioProducerCumulative: (json['screenshare_audio_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  screenshareVideoConsumer: (json['screenshare_video_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareVideoConsumerCumulative: (json['screenshare_video_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  screenshareVideoProducer: (json['screenshare_video_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareVideoProducerCumulative: (json['screenshare_video_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  videoConsumer: (json['video_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  videoConsumerCumulative: (json['video_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  videoProducer: (json['video_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  videoProducerCumulative: (json['video_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
-final List<Map<String,String>>? audioConsumer;
+final List<Map<String,Object?>>? audioConsumer;
 
-final Map<String,String>? audioConsumerCumulative;
+final Map<String,Object?>? audioConsumerCumulative;
 
 final List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer>? audioProducer;
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative? audioProducerCumulative;
 
-final List<Map<String,String>>? screenshareAudioConsumer;
+final List<Map<String,Object?>>? screenshareAudioConsumer;
 
-final Map<String,String>? screenshareAudioConsumerCumulative;
+final Map<String,Object?>? screenshareAudioConsumerCumulative;
 
-final List<Map<String,String>>? screenshareAudioProducer;
+final List<Map<String,Object?>>? screenshareAudioProducer;
 
-final Map<String,String>? screenshareAudioProducerCumulative;
+final Map<String,Object?>? screenshareAudioProducerCumulative;
 
-final List<Map<String,String>>? screenshareVideoConsumer;
+final List<Map<String,Object?>>? screenshareVideoConsumer;
 
-final Map<String,String>? screenshareVideoConsumerCumulative;
+final Map<String,Object?>? screenshareVideoConsumerCumulative;
 
-final List<Map<String,String>>? screenshareVideoProducer;
+final List<Map<String,Object?>>? screenshareVideoProducer;
 
-final Map<String,String>? screenshareVideoProducerCumulative;
+final Map<String,Object?>? screenshareVideoProducerCumulative;
 
-final List<Map<String,String>>? videoConsumer;
+final List<Map<String,Object?>>? videoConsumer;
 
-final Map<String,String>? videoConsumerCumulative;
+final Map<String,Object?>? videoConsumerCumulative;
 
-final List<Map<String,String>>? videoProducer;
+final List<Map<String,Object?>>? videoProducer;
 
-final Map<String,String>? videoProducerCumulative;
+final Map<String,Object?>? videoProducerCumulative;
 
 Map<String, dynamic> toJson() { return {
   if (audioConsumer != null) 'audio_consumer': audioConsumer?.map((e) => e).toList(),
@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'video_producer_cumulative': ?videoProducerCumulative,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality copyWith({List<Map<String, String>> Function()? audioConsumer, Map<String, String> Function()? audioConsumerCumulative, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer> Function()? audioProducer, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative Function()? audioProducerCumulative, List<Map<String, String>> Function()? screenshareAudioConsumer, Map<String, String> Function()? screenshareAudioConsumerCumulative, List<Map<String, String>> Function()? screenshareAudioProducer, Map<String, String> Function()? screenshareAudioProducerCumulative, List<Map<String, String>> Function()? screenshareVideoConsumer, Map<String, String> Function()? screenshareVideoConsumerCumulative, List<Map<String, String>> Function()? screenshareVideoProducer, Map<String, String> Function()? screenshareVideoProducerCumulative, List<Map<String, String>> Function()? videoConsumer, Map<String, String> Function()? videoConsumerCumulative, List<Map<String, String>> Function()? videoProducer, Map<String, String> Function()? videoProducerCumulative, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality copyWith({List<Map<String, Object>> Function()? audioConsumer, Map<String, Object> Function()? audioConsumerCumulative, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer> Function()? audioProducer, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative Function()? audioProducerCumulative, List<Map<String, Object>> Function()? screenshareAudioConsumer, Map<String, Object> Function()? screenshareAudioConsumerCumulative, List<Map<String, Object>> Function()? screenshareAudioProducer, Map<String, Object> Function()? screenshareAudioProducerCumulative, List<Map<String, Object>> Function()? screenshareVideoConsumer, Map<String, Object> Function()? screenshareVideoConsumerCumulative, List<Map<String, Object>> Function()? screenshareVideoProducer, Map<String, Object> Function()? screenshareVideoProducerCumulative, List<Map<String, Object>> Function()? videoConsumer, Map<String, Object> Function()? videoConsumerCumulative, List<Map<String, Object>> Function()? videoProducer, Map<String, Object> Function()? videoProducerCumulative, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality(
   audioConsumer: audioConsumer != null ? audioConsumer() : this.audioConsumer,
   audioConsumerCumulative: audioConsumerCumulative != null ? audioConsumerCumulative() : this.audioConsumerCumulative,
   audioProducer: audioProducer != null ? audioProducer() : this.audioProducer,

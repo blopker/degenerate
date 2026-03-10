@@ -10,7 +10,7 @@ final class ResponseCommonFailure11 {const ResponseCommonFailure11({required thi
 factory ResponseCommonFailure11.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure11(
   errors: (json['errors'] as List<dynamic>).map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -21,7 +21,7 @@ final List<Message> errors;
 final List<Message>? messages;
 
 /// Contains the response payload (always null on failure).
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Indicates whether the API call was successful.
 final bool success;
@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure11 copyWith({List<Message>? errors, List<Message>? Function()? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseCommonFailure11(
+ResponseCommonFailure11 copyWith({List<Message>? errors, List<Message>? Function()? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure11(
   errors: errors ?? this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,

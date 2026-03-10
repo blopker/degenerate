@@ -64,7 +64,7 @@ final class ToolChoiceAllowed {const ToolChoiceAllowed({required this.type, requ
 factory ToolChoiceAllowed.fromJson(Map<String, dynamic> json) { return ToolChoiceAllowed(
   type: ToolChoiceAllowedType.fromJson(json['type'] as String),
   mode: ToolChoiceAllowedMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 /// Allowed tool configuration type. Always `allowed_tools`.
@@ -90,7 +90,7 @@ final ToolChoiceAllowedMode mode;
 /// ]
 /// ````
 /// 
-final List<Map<String,String>> tools;
+final List<Map<String,Object?>> tools;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -100,7 +100,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('mode') &&
       json.containsKey('tools'); } 
-ToolChoiceAllowed copyWith({ToolChoiceAllowedType? type, ToolChoiceAllowedMode? mode, List<Map<String,String>>? tools, }) { return ToolChoiceAllowed(
+ToolChoiceAllowed copyWith({ToolChoiceAllowedType? type, ToolChoiceAllowedMode? mode, List<Map<String,Object?>>? tools, }) { return ToolChoiceAllowed(
   type: type ?? this.type,
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,

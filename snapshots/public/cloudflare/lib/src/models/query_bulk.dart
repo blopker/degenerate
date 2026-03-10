@@ -7,16 +7,16 @@
 import 'package:collection/collection.dart';final class QueryBulk {const QueryBulk({this.queries});
 
 factory QueryBulk.fromJson(Map<String, dynamic> json) { return QueryBulk(
-  queries: (json['queries'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  queries: (json['queries'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
-final List<Map<String,String>>? queries;
+final List<Map<String,Object?>>? queries;
 
 Map<String, dynamic> toJson() { return {
   if (queries != null) 'queries': queries?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-QueryBulk copyWith({List<Map<String, String>> Function()? queries}) { return QueryBulk(
+QueryBulk copyWith({List<Map<String, Object>> Function()? queries}) { return QueryBulk(
   queries: queries != null ? queries() : this.queries,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -11,7 +11,7 @@ factory MqQueuePullBatch2.fromJson(Map<String, dynamic> json) { return MqQueuePu
   body: json['body'] as String?,
   id: json['id'] as String?,
   leaseId: json['lease_id'] != null ? MqLeaseId.fromJson(json['lease_id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   timestampMs: json['timestamp_ms'] != null ? (json['timestamp_ms'] as num).toDouble() : null,
 ); }
 
@@ -23,7 +23,7 @@ final String? id;
 
 final MqLeaseId? leaseId;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 final double? timestampMs;
 
@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'timestamp_ms': ?timestampMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-MqQueuePullBatch2 copyWith({double Function()? attempts, String Function()? body, String Function()? id, MqLeaseId Function()? leaseId, Map<String, String> Function()? metadata, double Function()? timestampMs, }) { return MqQueuePullBatch2(
+MqQueuePullBatch2 copyWith({double Function()? attempts, String Function()? body, String Function()? id, MqLeaseId Function()? leaseId, Map<String, Object> Function()? metadata, double Function()? timestampMs, }) { return MqQueuePullBatch2(
   attempts: attempts != null ? attempts() : this.attempts,
   body: body != null ? body() : this.body,
   id: id != null ? id() : this.id,

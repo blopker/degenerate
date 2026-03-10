@@ -96,7 +96,7 @@ factory WebhookDeploymentReviewApprovedWorkflowRun.fromJson(Map<String, dynamic>
   displayTitle: json['display_title'] as String,
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
-  headCommit: (json['head_commit'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  headCommit: (json['head_commit'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   headRepository: json['head_repository'] != null
         ? WebhookDeploymentReviewApprovedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>)
         : null,
@@ -148,7 +148,7 @@ final String event;
 
 final String headBranch;
 
-final Map<String,String>? headCommit;
+final Map<String,Object?>? headCommit;
 
 final WebhookDeploymentReviewApprovedWorkflowRunHeadRepository? headRepository;
 
@@ -256,7 +256,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num; } 
-WebhookDeploymentReviewApprovedWorkflowRun copyWith({WebhookDeploymentReviewApprovedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentReviewApprovedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, Map<String, String>? Function()? headCommit, WebhookDeploymentReviewApprovedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, String? Function()? previousAttemptUrl, List<WebhookDeploymentReviewApprovedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentReviewApprovedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentReviewApprovedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewApprovedWorkflowRunStatus? status, WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, }) { return WebhookDeploymentReviewApprovedWorkflowRun(
+WebhookDeploymentReviewApprovedWorkflowRun copyWith({WebhookDeploymentReviewApprovedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentReviewApprovedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, Map<String, Object>? Function()? headCommit, WebhookDeploymentReviewApprovedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, String? Function()? previousAttemptUrl, List<WebhookDeploymentReviewApprovedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentReviewApprovedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentReviewApprovedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewApprovedWorkflowRunStatus? status, WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, }) { return WebhookDeploymentReviewApprovedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl != null ? artifactsUrl() : this.artifactsUrl,
   cancelUrl: cancelUrl != null ? cancelUrl() : this.cancelUrl,

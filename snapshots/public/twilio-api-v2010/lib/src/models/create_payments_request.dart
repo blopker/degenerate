@@ -96,7 +96,7 @@ factory CreatePaymentsRequest.fromJson(Map<String, dynamic> json) { return Creat
   description: json['Description'] as String?,
   input: json['Input'] as String?,
   minPostalCodeLength: json['MinPostalCodeLength'] != null ? (json['MinPostalCodeLength'] as num).toInt() : null,
-  parameter: json['Parameter'] as String?,
+  parameter: json['Parameter'],
   paymentConnector: json['PaymentConnector'] as String?,
   paymentMethod: json['PaymentMethod'] != null ? PaymentsEnumPaymentMethod.fromJson(json['PaymentMethod'] as String) : null,
   postalCode: json['PostalCode'] as bool?,
@@ -130,7 +130,7 @@ final String? input;
 final int? minPostalCodeLength;
 
 /// A single-level JSON object used to pass custom parameters to payment processors. (Required for ACH payments). The information that has to be included here depends on the `<Pay>` Connector. [Read more](https://www.twilio.com/console/voice/pay-connectors).
-final String? parameter;
+final Object? parameter;
 
 /// This is the unique name corresponding to the Pay Connector installed in the Twilio Add-ons. Learn more about [`<Pay>` Connectors](https://www.twilio.com/console/voice/pay-connectors). The default value is `Default`.
 final String? paymentConnector;
@@ -171,7 +171,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
       json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType Function()? bankAccountType, double Function()? chargeAmount, String Function()? currency, String Function()? description, String Function()? input, int Function()? minPostalCodeLength, String Function()? parameter, String Function()? paymentConnector, PaymentsEnumPaymentMethod Function()? paymentMethod, bool Function()? postalCode, bool Function()? securityCode, int Function()? timeout, PaymentsEnumTokenType Function()? tokenType, String Function()? validCardTypes, }) { return CreatePaymentsRequest(
+CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType Function()? bankAccountType, double Function()? chargeAmount, String Function()? currency, String Function()? description, String Function()? input, int Function()? minPostalCodeLength, Object? Function()? parameter, String Function()? paymentConnector, PaymentsEnumPaymentMethod Function()? paymentMethod, bool Function()? postalCode, bool Function()? securityCode, int Function()? timeout, PaymentsEnumTokenType Function()? tokenType, String Function()? validCardTypes, }) { return CreatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   bankAccountType: bankAccountType != null ? bankAccountType() : this.bankAccountType,

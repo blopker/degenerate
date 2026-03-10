@@ -7,13 +7,13 @@
 import 'package:collection/collection.dart';import 'innate_entitlements.dart';import 'message3.dart';final class TenantsListEntitlementsResponse {const TenantsListEntitlementsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory TenantsListEntitlementsResponse.fromJson(Map<String, dynamic> json) { return TenantsListEntitlementsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: InnateEntitlements.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,String>> errors;
+final List<Map<String,Object?>> errors;
 
 final List<Message3> messages;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-TenantsListEntitlementsResponse copyWith({List<Map<String,String>>? errors, List<Message3>? messages, InnateEntitlements? result, bool? success, }) { return TenantsListEntitlementsResponse(
+TenantsListEntitlementsResponse copyWith({List<Map<String,Object?>>? errors, List<Message3>? messages, InnateEntitlements? result, bool? success, }) { return TenantsListEntitlementsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

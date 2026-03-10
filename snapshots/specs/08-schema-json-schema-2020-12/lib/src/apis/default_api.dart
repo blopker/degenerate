@@ -14,7 +14,7 @@ final ApiConfig _config;
 
 ///
 /// `POST /shapes`
-Future<ApiResult<Shape, Never>> createShape({required Shape body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Shape, Never>> createShape({required Shape? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,7 +27,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return Shape.fromJson(jsonDecode(response.body) as String);
+    return Shape.fromJson(jsonDecode(response.body) as Object?);
   },
 );
  } 

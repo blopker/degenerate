@@ -102,12 +102,12 @@ factory InlineObject724.fromJson(Map<String, dynamic> json) { return InlineObjec
         ? InlineObject724FunctionCall.fromJson(json['function_call'] as Map<String, dynamic>)
         : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => InlineObject724Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   logprobs: json['logprobs'] as bool?,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => InlineObject724Messages.fromJson(e)).toList(),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => InlineObject724Modalities.fromJson(e as String)).toList(),
   model: json['model'] as String?,
   n: json['n'] != null ? (json['n'] as num).toInt() : null,
@@ -153,7 +153,7 @@ final InlineObject724FunctionCall? functionCall;
 
 final List<InlineObject724Functions>? functions;
 
-final Map<String,String>? logitBias;
+final Map<String,Object?>? logitBias;
 
 final bool? logprobs;
 
@@ -164,7 +164,7 @@ final int? maxTokens;
 /// A list of messages comprising the conversation so far.
 final List<InlineObject724Messages> messages;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 final List<InlineObject724Modalities>? modalities;
 
@@ -247,7 +247,7 @@ Map<String, dynamic> toJson() { return {
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-InlineObject724 copyWith({InlineObject724Audio Function()? audio, InlineObject724ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, InlineObject724FunctionCall Function()? functionCall, List<InlineObject724Functions> Function()? functions, Map<String, String>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, List<InlineObject724Messages>? messages, Map<String, String>? Function()? metadata, List<InlineObject724Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, InlineObject724Prediction Function()? prediction, double? Function()? presencePenalty, InlineObject724ReasoningEffort? Function()? reasoningEffort, InlineObject724ResponseFormat Function()? responseFormat, int? Function()? seed, InlineObject724ServiceTier? Function()? serviceTier, InlineObject724Stop Function()? stop, bool? Function()? store, bool? Function()? stream, InlineObject724StreamOptions Function()? streamOptions, double? Function()? temperature, InlineObject724ToolChoice Function()? toolChoice, List<InlineObject724Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, InlineObject724WebSearchOptions Function()? webSearchOptions, }) { return InlineObject724(
+InlineObject724 copyWith({InlineObject724Audio Function()? audio, InlineObject724ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, InlineObject724FunctionCall Function()? functionCall, List<InlineObject724Functions> Function()? functions, Map<String, Object>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, List<InlineObject724Messages>? messages, Map<String, Object>? Function()? metadata, List<InlineObject724Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, InlineObject724Prediction Function()? prediction, double? Function()? presencePenalty, InlineObject724ReasoningEffort? Function()? reasoningEffort, InlineObject724ResponseFormat Function()? responseFormat, int? Function()? seed, InlineObject724ServiceTier? Function()? serviceTier, InlineObject724Stop Function()? stop, bool? Function()? store, bool? Function()? stream, InlineObject724StreamOptions Function()? streamOptions, double? Function()? temperature, InlineObject724ToolChoice Function()? toolChoice, List<InlineObject724Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, InlineObject724WebSearchOptions Function()? webSearchOptions, }) { return InlineObject724(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,

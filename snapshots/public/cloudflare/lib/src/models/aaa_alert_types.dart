@@ -30,7 +30,7 @@ final class AaaAlertTypes {const AaaAlertTypes({this.description, this.displayNa
 factory AaaAlertTypes.fromJson(Map<String, dynamic> json) { return AaaAlertTypes(
   description: json['description'] != null ? AaaDescription.fromJson(json['description'] as String) : null,
   displayName: json['display_name'] != null ? AaaDisplayName.fromJson(json['display_name'] as String) : null,
-  filterOptions: (json['filter_options'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  filterOptions: (json['filter_options'] as List<dynamic>?)?.map((e) => e).toList(),
   type: json['type'] != null ? AaaType.fromJson(json['type'] as String) : null,
 ); }
 
@@ -38,7 +38,7 @@ final AaaDescription? description;
 
 final AaaDisplayName? displayName;
 
-final List<String>? filterOptions;
+final List<Object?>? filterOptions;
 
 final AaaType? type;
 
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AaaAlertTypes copyWith({AaaDescription Function()? description, AaaDisplayName Function()? displayName, List<String> Function()? filterOptions, AaaType Function()? type, }) { return AaaAlertTypes(
+AaaAlertTypes copyWith({AaaDescription Function()? description, AaaDisplayName Function()? displayName, List<Object> Function()? filterOptions, AaaType Function()? type, }) { return AaaAlertTypes(
   description: description != null ? description() : this.description,
   displayName: displayName != null ? displayName() : this.displayName,
   filterOptions: filterOptions != null ? filterOptions() : this.filterOptions,

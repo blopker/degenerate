@@ -28,11 +28,11 @@ bool get isUnknown { return !values.contains(this); }
 final class MqQueueMessageJson {const MqQueueMessageJson({this.body, this.contentType, });
 
 factory MqQueueMessageJson.fromJson(Map<String, dynamic> json) { return MqQueueMessageJson(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   contentType: json['content_type'] != null ? MqQueueMessageJsonContentType.fromJson(json['content_type'] as String) : null,
 ); }
 
-final Map<String,String>? body;
+final Map<String,Object?>? body;
 
 final MqQueueMessageJsonContentType? contentType;
 
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (contentType != null) 'content_type': contentType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-MqQueueMessageJson copyWith({Map<String, String> Function()? body, MqQueueMessageJsonContentType Function()? contentType, }) { return MqQueueMessageJson(
+MqQueueMessageJson copyWith({Map<String, Object> Function()? body, MqQueueMessageJsonContentType Function()? contentType, }) { return MqQueueMessageJson(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

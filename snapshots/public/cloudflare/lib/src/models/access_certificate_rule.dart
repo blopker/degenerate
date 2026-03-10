@@ -8,16 +8,16 @@
 final class AccessCertificateRule {const AccessCertificateRule({required this.certificate});
 
 factory AccessCertificateRule.fromJson(Map<String, dynamic> json) { return AccessCertificateRule(
-  certificate: (json['certificate'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  certificate: (json['certificate'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
-final Map<String,String> certificate;
+final Map<String,Object?> certificate;
 
 Map<String, dynamic> toJson() { return {
   'certificate': certificate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate'); } 
-AccessCertificateRule copyWith({Map<String,String>? certificate}) { return AccessCertificateRule(
+AccessCertificateRule copyWith({Map<String,Object?>? certificate}) { return AccessCertificateRule(
   certificate: certificate ?? this.certificate,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

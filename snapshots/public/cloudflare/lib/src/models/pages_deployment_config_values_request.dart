@@ -38,7 +38,7 @@ factory PagesDeploymentConfigValuesRequest.fromJson(Map<String, dynamic> json) {
   aiBindings: (json['ai_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject105.fromJson(v as Map<String, dynamic>))),
   alwaysUseLatestCompatibilityDate: json.containsKey('always_use_latest_compatibility_date') ? json['always_use_latest_compatibility_date'] as bool : false,
   analyticsEngineDatasets: (json['analytics_engine_datasets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, InlineObject106.fromJson(v as Map<String, dynamic>))),
-  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)))),
+  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
   buildImageMajorVersion: json.containsKey('build_image_major_version') ? (json['build_image_major_version'] as num).toInt() : 3,
   compatibilityDate: json['compatibility_date'] as String?,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -73,7 +73,7 @@ final bool alwaysUseLatestCompatibilityDate;
 final Map<String,InlineObject106?>? analyticsEngineDatasets;
 
 /// Browser bindings used for Pages Functions.
-final Map<String,Map<String,String>?>? browsers;
+final Map<String,Map<String,Object?>?>? browsers;
 
 /// The major version of the build image to use for Pages Functions.
 final int buildImageMajorVersion;
@@ -154,7 +154,7 @@ Map<String, dynamic> toJson() { return {
   'wrangler_config_hash': ?wranglerConfigHash,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PagesDeploymentConfigValuesRequest copyWith({Map<String, InlineObject105> Function()? aiBindings, bool Function()? alwaysUseLatestCompatibilityDate, Map<String, InlineObject106> Function()? analyticsEngineDatasets, Map<String, Map<String, String>> Function()? browsers, int Function()? buildImageMajorVersion, String Function()? compatibilityDate, List<String> Function()? compatibilityFlags, Map<String, InlineObject107> Function()? d1Databases, Map<String, InlineObject108> Function()? durableObjectNamespaces, Map<String, InlineObject109> Function()? envVars, bool Function()? failOpen, Map<String, InlineObject110> Function()? hyperdriveBindings, Map<String, InlineObject111> Function()? kvNamespaces, PagesDeploymentConfigValuesRequestLimits Function()? limits, Map<String, InlineObject112> Function()? mtlsCertificates, PagesDeploymentConfigValuesRequestPlacement Function()? placement, Map<String, InlineObject113> Function()? queueProducers, Map<String, InlineObject114> Function()? r2Buckets, Map<String, InlineObject115> Function()? services, PagesDeploymentConfigValuesRequestUsageModel Function()? usageModel, Map<String, InlineObject116> Function()? vectorizeBindings, String Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValuesRequest(
+PagesDeploymentConfigValuesRequest copyWith({Map<String, InlineObject105> Function()? aiBindings, bool Function()? alwaysUseLatestCompatibilityDate, Map<String, InlineObject106> Function()? analyticsEngineDatasets, Map<String, Map<String, Object>> Function()? browsers, int Function()? buildImageMajorVersion, String Function()? compatibilityDate, List<String> Function()? compatibilityFlags, Map<String, InlineObject107> Function()? d1Databases, Map<String, InlineObject108> Function()? durableObjectNamespaces, Map<String, InlineObject109> Function()? envVars, bool Function()? failOpen, Map<String, InlineObject110> Function()? hyperdriveBindings, Map<String, InlineObject111> Function()? kvNamespaces, PagesDeploymentConfigValuesRequestLimits Function()? limits, Map<String, InlineObject112> Function()? mtlsCertificates, PagesDeploymentConfigValuesRequestPlacement Function()? placement, Map<String, InlineObject113> Function()? queueProducers, Map<String, InlineObject114> Function()? r2Buckets, Map<String, InlineObject115> Function()? services, PagesDeploymentConfigValuesRequestUsageModel Function()? usageModel, Map<String, InlineObject116> Function()? vectorizeBindings, String Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValuesRequest(
   aiBindings: aiBindings != null ? aiBindings() : this.aiBindings,
   alwaysUseLatestCompatibilityDate: alwaysUseLatestCompatibilityDate != null ? alwaysUseLatestCompatibilityDate() : this.alwaysUseLatestCompatibilityDate,
   analyticsEngineDatasets: analyticsEngineDatasets != null ? analyticsEngineDatasets() : this.analyticsEngineDatasets,

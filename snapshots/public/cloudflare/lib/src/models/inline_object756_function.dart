@@ -9,7 +9,7 @@ final class InlineObject756Function {const InlineObject756Function({this.descrip
 factory InlineObject756Function.fromJson(Map<String, dynamic> json) { return InlineObject756Function(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool?,
 ); }
 
@@ -20,7 +20,7 @@ final String? description;
 final String name;
 
 /// The parameters the function accepts, described as a JSON Schema object.
-final Map<String,String>? parameters;
+final Map<String,Object?>? parameters;
 
 final bool? strict;
 
@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'strict': ?strict,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-InlineObject756Function copyWith({String Function()? description, String? name, Map<String, String> Function()? parameters, bool? Function()? strict, }) { return InlineObject756Function(
+InlineObject756Function copyWith({String Function()? description, String? name, Map<String, Object> Function()? parameters, bool? Function()? strict, }) { return InlineObject756Function(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,

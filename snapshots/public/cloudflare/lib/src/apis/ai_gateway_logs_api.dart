@@ -159,7 +159,7 @@ return _execute(
 /// Retrieves the original request payload for an AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/request`
-Future<ApiResult<Map<String, String>, AigConfigGetGatewayLogRequestResponse404>> aigConfigGetGatewayLogRequest({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, AigConfigGetGatewayLogRequestResponse404>> aigConfigGetGatewayLogRequest({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -170,7 +170,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return AigConfigGetGatewayLogRequestResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -182,7 +182,7 @@ return _execute(
 /// Retrieves the response payload for an AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/response`
-Future<ApiResult<Map<String, String>, AigConfigGetGatewayLogResponseResponse404>> aigConfigGetGatewayLogResponse({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, AigConfigGetGatewayLogResponseResponse404>> aigConfigGetGatewayLogResponse({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -193,7 +193,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return AigConfigGetGatewayLogResponseResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

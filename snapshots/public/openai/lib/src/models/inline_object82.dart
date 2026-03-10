@@ -11,7 +11,7 @@ final class InlineObject82 {const InlineObject82({this.workflowName, this.groupI
 factory InlineObject82.fromJson(Map<String, dynamic> json) { return InlineObject82(
   workflowName: json['workflow_name'] as String?,
   groupId: json['group_id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The name of the workflow to attach to this trace. This is used to
@@ -27,7 +27,7 @@ final String? groupId;
 /// The arbitrary metadata to attach to this trace to enable
 /// filtering in the traces dashboard.
 /// 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 Map<String, dynamic> toJson() { return {
   'workflow_name': ?workflowName,
@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-InlineObject82 copyWith({String Function()? workflowName, String Function()? groupId, Map<String, String> Function()? metadata, }) { return InlineObject82(
+InlineObject82 copyWith({String Function()? workflowName, String Function()? groupId, Map<String, Object> Function()? metadata, }) { return InlineObject82(
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   groupId: groupId != null ? groupId() : this.groupId,
   metadata: metadata != null ? metadata() : this.metadata,

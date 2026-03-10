@@ -11,7 +11,7 @@ factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) { return S
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
   maxDurationSeconds: StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num),
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
@@ -29,7 +29,7 @@ final DateTime? expiry;
 
 final StreamMaxDurationSeconds maxDurationSeconds;
 
-final Map<String,String>? meta;
+final Map<String,Object?>? meta;
 
 final StreamRequireSignedUrLs? requireSignedUrLs;
 
@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxDurationSeconds'); } 
-StreamDirectUploadRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, DateTime Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, String> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload Function()? watermark, }) { return StreamDirectUploadRequest(
+StreamDirectUploadRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, DateTime Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, Object> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload Function()? watermark, }) { return StreamDirectUploadRequest(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,

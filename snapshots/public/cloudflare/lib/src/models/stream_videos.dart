@@ -79,7 +79,7 @@ factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
         : null,
   liveInput: json['liveInput'] != null ? StreamLiveInput2.fromJson(json['liveInput'] as String) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamModified.fromJson(json['modified'] as String) : null,
   playback: json['playback'] != null
         ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>)
@@ -117,7 +117,7 @@ final StreamLiveInput2? liveInput;
 
 final StreamMaxDurationSeconds? maxDurationSeconds;
 
-final Map<String,String>? meta;
+final Map<String,Object?>? meta;
 
 final StreamModified? modified;
 
@@ -175,7 +175,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-StreamVideos copyWith({List<String> Function()? allowedOrigins, StreamCreated Function()? created, StreamCreator Function()? creator, StreamDuration Function()? duration, StreamInput Function()? input, StreamLiveInput2 Function()? liveInput, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, String> Function()? meta, StreamModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamReadyToStream Function()? readyToStream, StreamReadyToStreamAt Function()? readyToStreamAt, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamSize Function()? size, StreamMediaStatus Function()? status, StreamThumbnailUrl Function()? thumbnail, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamIdentifier Function()? uid, StreamOneTimeUploadExpiry Function()? uploadExpiry, StreamUploaded Function()? uploaded, StreamWatermarks Function()? watermark, }) { return StreamVideos(
+StreamVideos copyWith({List<String> Function()? allowedOrigins, StreamCreated Function()? created, StreamCreator Function()? creator, StreamDuration Function()? duration, StreamInput Function()? input, StreamLiveInput2 Function()? liveInput, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, Object> Function()? meta, StreamModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamReadyToStream Function()? readyToStream, StreamReadyToStreamAt Function()? readyToStreamAt, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamSize Function()? size, StreamMediaStatus Function()? status, StreamThumbnailUrl Function()? thumbnail, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamIdentifier Function()? uid, StreamOneTimeUploadExpiry Function()? uploadExpiry, StreamUploaded Function()? uploaded, StreamWatermarks Function()? watermark, }) { return StreamVideos(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   created: created != null ? created() : this.created,
   creator: creator != null ? creator() : this.creator,

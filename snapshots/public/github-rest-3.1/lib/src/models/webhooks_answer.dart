@@ -58,7 +58,7 @@ factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnsw
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
-  parentId: json['parent_id'] as String,
+  parentId: json['parent_id'],
   reactions: json['reactions'] != null
         ? WebhooksAnswerReactions.fromJson(json['reactions'] as Map<String, dynamic>)
         : null,
@@ -84,7 +84,7 @@ final int id;
 
 final String nodeId;
 
-final String? parentId;
+final Object? parentId;
 
 final WebhooksAnswerReactions? reactions;
 
@@ -117,11 +117,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('parent_id') && json['parent_id'] is String &&
+      json.containsKey('parent_id') &&
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user'); } 
-WebhooksAnswer copyWith({WebhooksAnswerAuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, String? Function()? parentId, WebhooksAnswerReactions Function()? reactions, String? repositoryUrl, DateTime? updatedAt, WebhooksAnswerUser? Function()? user, }) { return WebhooksAnswer(
+WebhooksAnswer copyWith({WebhooksAnswerAuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, Object? Function()? parentId, WebhooksAnswerReactions Function()? reactions, String? repositoryUrl, DateTime? updatedAt, WebhooksAnswerUser? Function()? user, }) { return WebhooksAnswer(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   childCommentCount: childCommentCount ?? this.childCommentCount,

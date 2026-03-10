@@ -8,14 +8,14 @@ import 'package:collection/collection.dart';import 'vectorize_vector_identifier.
 
 factory VectorizeIndexQueryResponseMatches.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryResponseMatches(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
 ); }
 
 final VectorizeVectorIdentifier? id;
 
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 /// The score of the vector according to the index's distance metric
 final double? score;
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'values': ?values,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-VectorizeIndexQueryResponseMatches copyWith({VectorizeVectorIdentifier Function()? id, Map<String, String>? Function()? metadata, double Function()? score, List<double>? Function()? values, }) { return VectorizeIndexQueryResponseMatches(
+VectorizeIndexQueryResponseMatches copyWith({VectorizeVectorIdentifier Function()? id, Map<String, Object>? Function()? metadata, double Function()? score, List<double>? Function()? values, }) { return VectorizeIndexQueryResponseMatches(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   score: score != null ? score() : this.score,

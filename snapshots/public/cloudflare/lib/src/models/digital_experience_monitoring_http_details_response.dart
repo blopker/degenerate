@@ -13,7 +13,7 @@ factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dyna
         : null,
   httpStatsByColo: (json['httpStatsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   interval: json['interval'] as String?,
-  kind: json['kind'] as String?,
+  kind: json['kind'],
   method: json['method'] as String?,
   name: json['name'] as String?,
   targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
@@ -30,7 +30,7 @@ final List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo>? httpS
 /// The interval at which the HTTP synthetic application test is set to run.
 final String? interval;
 
-final String? kind;
+final Object? kind;
 
 /// The HTTP method to use when running the test
 final String? method;
@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'targeted': ?targeted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DigitalExperienceMonitoringHttpDetailsResponse copyWith({String Function()? host, DigitalExperienceMonitoringHttpDetailsResponseHttpStats? Function()? httpStats, List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo> Function()? httpStatsByColo, String Function()? interval, String Function()? kind, String Function()? method, String Function()? name, List<DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
+DigitalExperienceMonitoringHttpDetailsResponse copyWith({String Function()? host, DigitalExperienceMonitoringHttpDetailsResponseHttpStats? Function()? httpStats, List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo> Function()? httpStatsByColo, String Function()? interval, Object? Function()? kind, String Function()? method, String Function()? name, List<DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: host != null ? host() : this.host,
   httpStats: httpStats != null ? httpStats() : this.httpStats,
   httpStatsByColo: httpStatsByColo != null ? httpStatsByColo() : this.httpStatsByColo,

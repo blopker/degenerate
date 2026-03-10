@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'stream_creator.dart';import 
 factory StreamVideoCopyRequest.fromJson(Map<String, dynamic> json) { return StreamVideoCopyRequest(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
@@ -23,7 +23,7 @@ final List<String>? allowedOrigins;
 
 final StreamCreator? creator;
 
-final Map<String,String>? meta;
+final Map<String,Object?>? meta;
 
 final StreamRequireSignedUrLs? requireSignedUrLs;
 
@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-StreamVideoCopyRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, Map<String, String> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, Uri? url, StreamWatermarkAtUpload Function()? watermark, }) { return StreamVideoCopyRequest(
+StreamVideoCopyRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, Map<String, Object> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, Uri? url, StreamWatermarkAtUpload Function()? watermark, }) { return StreamVideoCopyRequest(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   meta: meta != null ? meta() : this.meta,

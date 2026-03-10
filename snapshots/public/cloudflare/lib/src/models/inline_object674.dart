@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'inline_object674_functions.d
 factory InlineObject674.fromJson(Map<String, dynamic> json) { return InlineObject674(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => InlineObject674Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   messages: (json['messages'] as List<dynamic>).map((e) => InlineObject674Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
@@ -29,7 +29,7 @@ final double? frequencyPenalty;
 final List<InlineObject674Functions>? functions;
 
 /// JSON schema that should be fufilled for the response.
-final Map<String,String>? guidedJson;
+final Map<String,Object?>? guidedJson;
 
 /// The maximum number of tokens to generate in the response.
 final int maxTokens;
@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-InlineObject674 copyWith({double Function()? frequencyPenalty, List<InlineObject674Functions> Function()? functions, Map<String, String> Function()? guidedJson, int Function()? maxTokens, List<InlineObject674Messages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, List<InlineObject674Tools> Function()? tools, int Function()? topK, double Function()? topP, }) { return InlineObject674(
+InlineObject674 copyWith({double Function()? frequencyPenalty, List<InlineObject674Functions> Function()? functions, Map<String, Object> Function()? guidedJson, int Function()? maxTokens, List<InlineObject674Messages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, List<InlineObject674Tools> Function()? tools, int Function()? topK, double Function()? topP, }) { return InlineObject674(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,

@@ -75,10 +75,10 @@ String toJson() => value;
 
 }
 /// Status of DNSSEC, based on user-desired state and presence of necessary records.
-extension type const DnssecStatus(String value) {
-factory DnssecStatus.fromJson(String json) => DnssecStatus(json);
+extension type DnssecStatus(Object? value) {
+factory DnssecStatus.fromJson(Object? json) => DnssecStatus(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 final class DnssecDnssec {const DnssecDnssec({this.algorithm, this.digest, this.digestAlgorithm, this.digestType, this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.ds, this.flags, this.keyTag, this.keyType, this.modifiedOn, this.publicKey, this.status, });
@@ -97,7 +97,7 @@ factory DnssecDnssec.fromJson(Map<String, dynamic> json) { return DnssecDnssec(
   keyType: json['key_type'] != null ? DnssecKeyType.fromJson(json['key_type'] as String) : null,
   modifiedOn: json['modified_on'] != null ? DnssecModifiedOn.fromJson(json['modified_on'] as String) : null,
   publicKey: json['public_key'] != null ? DnssecPublicKey.fromJson(json['public_key'] as String) : null,
-  status: json['status'] != null ? DnssecStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? DnssecStatus.fromJson(json['status'] as Object?) : null,
 ); }
 
 final DnssecAlgorithm? algorithm;
@@ -145,7 +145,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DnssecDnssec copyWith({DnssecAlgorithm? Function()? algorithm, DnssecDigest? Function()? digest, DnssecDigestAlgorithm? Function()? digestAlgorithm, DnssecDigestType? Function()? digestType, DnssecDnssecMultiSigner Function()? dnssecMultiSigner, DnssecDnssecPresigned Function()? dnssecPresigned, DnssecDnssecUseNsec3 Function()? dnssecUseNsec3, DnssecDs? Function()? ds, DnssecFlags? Function()? flags, DnssecKeyTag? Function()? keyTag, DnssecKeyType? Function()? keyType, DnssecModifiedOn? Function()? modifiedOn, DnssecPublicKey? Function()? publicKey, DnssecStatus Function()? status, }) { return DnssecDnssec(
+DnssecDnssec copyWith({DnssecAlgorithm? Function()? algorithm, DnssecDigest? Function()? digest, DnssecDigestAlgorithm? Function()? digestAlgorithm, DnssecDigestType? Function()? digestType, DnssecDnssecMultiSigner Function()? dnssecMultiSigner, DnssecDnssecPresigned Function()? dnssecPresigned, DnssecDnssecUseNsec3 Function()? dnssecUseNsec3, DnssecDs? Function()? ds, DnssecFlags? Function()? flags, DnssecKeyTag? Function()? keyTag, DnssecKeyType? Function()? keyType, DnssecModifiedOn? Function()? modifiedOn, DnssecPublicKey? Function()? publicKey, DnssecStatus? Function()? status, }) { return DnssecDnssec(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   digest: digest != null ? digest() : this.digest,
   digestAlgorithm: digestAlgorithm != null ? digestAlgorithm() : this.digestAlgorithm,

@@ -5,33 +5,33 @@
 //  OpenAPI spec version: 3.0.3
 
 import 'package:collection/collection.dart';import 'iam_create_resource_group_scope_scope_object.dart';/// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
-extension type const IamCreateResourceGroupScopeScopeKey(String value) {
-factory IamCreateResourceGroupScopeScopeKey.fromJson(String json) => IamCreateResourceGroupScopeScopeKey(json);
+extension type IamCreateResourceGroupScopeScopeKey(Object? value) {
+factory IamCreateResourceGroupScopeScopeKey.fromJson(Object? json) => IamCreateResourceGroupScopeScopeKey(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 /// A scope is a combination of scope objects which provides additional context.
 final class IamCreateScope {const IamCreateScope({required this.key, required this.objects, });
 
 factory IamCreateScope.fromJson(Map<String, dynamic> json) { return IamCreateScope(
-  key: IamCreateResourceGroupScopeScopeKey.fromJson(json['key'] as String),
+  key: IamCreateResourceGroupScopeScopeKey.fromJson(json['key'] as Object?),
   objects: (json['objects'] as List<dynamic>).map((e) => IamCreateResourceGroupScopeScopeObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final IamCreateResourceGroupScopeScopeKey key;
+final IamCreateResourceGroupScopeScopeKey? key;
 
 /// A list of scope objects for additional context. The number of Scope objects should not be zero.
 final List<IamCreateResourceGroupScopeScopeObject> objects;
 
 Map<String, dynamic> toJson() { return {
-  'key': key.toJson(),
+  if (key != null) 'key': key?.toJson(),
   'objects': objects.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
       json.containsKey('objects'); } 
-IamCreateScope copyWith({IamCreateResourceGroupScopeScopeKey? key, List<IamCreateResourceGroupScopeScopeObject>? objects, }) { return IamCreateScope(
-  key: key ?? this.key,
+IamCreateScope copyWith({IamCreateResourceGroupScopeScopeKey? Function()? key, List<IamCreateResourceGroupScopeScopeObject>? objects, }) { return IamCreateScope(
+  key: key != null ? key() : this.key,
   objects: objects ?? this.objects,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

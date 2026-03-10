@@ -7,17 +7,17 @@
 /// Reference an input image by either URL or uploaded file ID.
 /// Provide exactly one of `image_url` or `file_id`.
 /// 
-final class ImageRefParam {const ImageRefParam({this.string});
+final class ImageRefParam {const ImageRefParam({this.object});
 
 factory ImageRefParam.fromJson(Object? json) { return ImageRefParam(
-  string: json is String ? json : null,
+  object: json,
 ); }
 
-final String? string;
+final Object? object;
 
 /// At least one variant must be present.
-bool get isValid { return string != null; } 
+bool get isValid { return object != null; } 
 Map<String, dynamic> toJson() { return {
-  'string': ?string,
+  'object': ?object,
 }; } 
  }

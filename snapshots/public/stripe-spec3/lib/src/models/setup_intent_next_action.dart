@@ -15,7 +15,7 @@ factory SetupIntentNextAction.fromJson(Map<String, dynamic> json) { return Setup
         ? SetupIntentNextActionRedirectToUrl.fromJson(json['redirect_to_url'] as Map<String, dynamic>)
         : null,
   type: json['type'] as String,
-  useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   verifyWithMicrodeposits: json['verify_with_microdeposits'] != null
         ? SetupIntentNextActionVerifyWithMicrodeposits.fromJson(json['verify_with_microdeposits'] as Map<String, dynamic>)
         : null,
@@ -29,7 +29,7 @@ final SetupIntentNextActionRedirectToUrl? redirectToUrl;
 final String type;
 
 /// When confirming a SetupIntent with Stripe.js, Stripe.js depends on the contents of this dictionary to invoke authentication flows. The shape of the contents is subject to change and is only intended to be used by Stripe.js.
-final Map<String,String>? useStripeSdk;
+final Map<String,Object?>? useStripeSdk;
 
 final SetupIntentNextActionVerifyWithMicrodeposits? verifyWithMicrodeposits;
 
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (verifyWithMicrodeposits != null) 'verify_with_microdeposits': verifyWithMicrodeposits?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SetupIntentNextAction copyWith({PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode Function()? cashappHandleRedirectOrDisplayQrCode, SetupIntentNextActionRedirectToUrl Function()? redirectToUrl, String? type, Map<String, String> Function()? useStripeSdk, SetupIntentNextActionVerifyWithMicrodeposits Function()? verifyWithMicrodeposits, }) { return SetupIntentNextAction(
+SetupIntentNextAction copyWith({PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode Function()? cashappHandleRedirectOrDisplayQrCode, SetupIntentNextActionRedirectToUrl Function()? redirectToUrl, String? type, Map<String, Object> Function()? useStripeSdk, SetupIntentNextActionVerifyWithMicrodeposits Function()? verifyWithMicrodeposits, }) { return SetupIntentNextAction(
   cashappHandleRedirectOrDisplayQrCode: cashappHandleRedirectOrDisplayQrCode != null ? cashappHandleRedirectOrDisplayQrCode() : this.cashappHandleRedirectOrDisplayQrCode,
   redirectToUrl: redirectToUrl != null ? redirectToUrl() : this.redirectToUrl,
   type: type ?? this.type,

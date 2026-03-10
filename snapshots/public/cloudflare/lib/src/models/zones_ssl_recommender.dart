@@ -9,20 +9,20 @@ final class ZonesSslRecommender {const ZonesSslRecommender({this.enabled, this.i
 
 factory ZonesSslRecommender.fromJson(Map<String, dynamic> json) { return ZonesSslRecommender(
   enabled: json['enabled'] != null ? ZonesSslRecommenderEnabled.fromJson(json['enabled'] as bool) : null,
-  id: json['id'] as String?,
+  id: json['id'],
 ); }
 
 final ZonesSslRecommenderEnabled? enabled;
 
 /// Enrollment value for SSL/TLS Recommender.
-final String? id;
+final Object? id;
 
 Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   'id': ?id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled Function()? enabled, String Function()? id, }) { return ZonesSslRecommender(
+ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled Function()? enabled, Object? Function()? id, }) { return ZonesSslRecommender(
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,
 ); } 

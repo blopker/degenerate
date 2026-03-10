@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-01
 ///
 /// `GET /admin/api/2020-01/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({Object? limit, Object? sinceId, Object? processedAtMin, Object? processedAtMax, Object? processedAt, Object? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -46,7 +46,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-04
 ///
 /// `GET /admin/api/2020-04/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({Object? limit, Object? sinceId, Object? processedAtMin, Object? processedAtMax, Object? processedAt, Object? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -75,7 +75,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-07
 ///
 /// `GET /admin/api/2020-07/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({Object? limit, Object? sinceId, Object? processedAtMin, Object? processedAtMax, Object? processedAt, Object? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -104,7 +104,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-10
 ///
 /// `GET /admin/api/2020-10/tender_transactions.json`
-Future<ApiResult<void, Never>> getTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getTenderTransactions({Object? limit, Object? sinceId, Object? processedAtMin, Object? processedAtMax, Object? processedAt, Object? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -133,7 +133,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2021-01
 ///
 /// `GET /admin/api/2021-01/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({Object? limit, Object? sinceId, Object? processedAtMin, Object? processedAtMax, Object? processedAt, Object? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -162,7 +162,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-unstable
 ///
 /// `GET /admin/api/unstable/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({String? limit, String? sinceId, String? processedAtMin, String? processedAtMax, String? processedAt, String? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({Object? limit, Object? sinceId, Object? processedAtMin, Object? processedAtMax, Object? processedAt, Object? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;

@@ -68,7 +68,7 @@ factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return Re
   liveParticipants: (json['live_participants'] as num).toDouble(),
   maxConcurrentParticipants: (json['max_concurrent_participants'] as num).toDouble(),
   meetingDisplayName: json['meeting_display_name'] as String,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   minutesConsumed: (json['minutes_consumed'] as num).toDouble(),
   organizationId: json['organization_id'] as String,
   startedAt: json['started_at'] as String,
@@ -101,7 +101,7 @@ final double maxConcurrentParticipants;
 final String meetingDisplayName;
 
 /// Any meta data about session.
-final Map<String,String>? meta;
+final Map<String,Object?>? meta;
 
 /// number of minutes consumed since the session started
 final double minutesConsumed;
@@ -150,7 +150,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('assoc
       json.containsKey('status') &&
       json.containsKey('type') &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession> Function()? breakoutRooms, String? createdAt, String Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, String> Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) { return RealtimekitActiveSession(
+RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession> Function()? breakoutRooms, String? createdAt, String Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, Object> Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) { return RealtimekitActiveSession(
   associatedId: associatedId ?? this.associatedId,
   breakoutRooms: breakoutRooms != null ? breakoutRooms() : this.breakoutRooms,
   createdAt: createdAt ?? this.createdAt,

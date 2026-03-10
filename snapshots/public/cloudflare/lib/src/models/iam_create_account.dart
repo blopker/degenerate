@@ -8,7 +8,7 @@ import 'iam_account_type.dart';import 'iam_create_account_unit.dart';final class
 
 factory IamCreateAccount.fromJson(Map<String, dynamic> json) { return IamCreateAccount(
   name: json['name'] as String,
-  type: json['type'] != null ? IamAccountType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? IamAccountType.fromJson(json['type'] as Object?) : null,
   unit: json['unit'] != null
         ? IamCreateAccountUnit.fromJson(json['unit'] as Map<String, dynamic>)
         : null,
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (unit != null) 'unit': unit?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-IamCreateAccount copyWith({String? name, IamAccountType Function()? type, IamCreateAccountUnit Function()? unit, }) { return IamCreateAccount(
+IamCreateAccount copyWith({String? name, IamAccountType? Function()? type, IamCreateAccountUnit Function()? unit, }) { return IamCreateAccount(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
   unit: unit != null ? unit() : this.unit,

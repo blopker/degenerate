@@ -180,7 +180,7 @@ factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) { return Rep
   squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? ReposCreateInOrgRequestSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
   mergeCommitTitle: json['merge_commit_title'] != null ? ReposCreateInOrgRequestMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
   mergeCommitMessage: json['merge_commit_message'] != null ? ReposCreateInOrgRequestMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
-  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The name of the repository.
@@ -274,7 +274,7 @@ final ReposCreateInOrgRequestMergeCommitTitle? mergeCommitTitle;
 final ReposCreateInOrgRequestMergeCommitMessage? mergeCommitMessage;
 
 /// The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
-final Map<String,String>? customProperties;
+final Map<String,Object?>? customProperties;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -304,7 +304,7 @@ Map<String, dynamic> toJson() { return {
   'custom_properties': ?customProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateInOrgRequest copyWith({String? name, String Function()? description, String Function()? homepage, bool Function()? private, ReposCreateInOrgRequestVisibility Function()? visibility, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasDownloads, bool Function()? isTemplate, int Function()? teamId, bool Function()? autoInit, String Function()? gitignoreTemplate, String Function()? licenseTemplate, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? useSquashPrTitleAsDefault, ReposCreateInOrgRequestSquashMergeCommitTitle Function()? squashMergeCommitTitle, ReposCreateInOrgRequestSquashMergeCommitMessage Function()? squashMergeCommitMessage, ReposCreateInOrgRequestMergeCommitTitle Function()? mergeCommitTitle, ReposCreateInOrgRequestMergeCommitMessage Function()? mergeCommitMessage, Map<String, String> Function()? customProperties, }) { return ReposCreateInOrgRequest(
+ReposCreateInOrgRequest copyWith({String? name, String Function()? description, String Function()? homepage, bool Function()? private, ReposCreateInOrgRequestVisibility Function()? visibility, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasDownloads, bool Function()? isTemplate, int Function()? teamId, bool Function()? autoInit, String Function()? gitignoreTemplate, String Function()? licenseTemplate, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? useSquashPrTitleAsDefault, ReposCreateInOrgRequestSquashMergeCommitTitle Function()? squashMergeCommitTitle, ReposCreateInOrgRequestSquashMergeCommitMessage Function()? squashMergeCommitMessage, ReposCreateInOrgRequestMergeCommitTitle Function()? mergeCommitTitle, ReposCreateInOrgRequestMergeCommitMessage Function()? mergeCommitMessage, Map<String, Object> Function()? customProperties, }) { return ReposCreateInOrgRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,

@@ -11,7 +11,7 @@ factory WorkersObservabilityQueryResultsEventsSeriesDataAggregates.fromJson(Map<
   firstSeen: json['_firstSeen'] as String,
   interval: (json['_interval'] as num).toInt(),
   lastSeen: json['_lastSeen'] as String,
-  bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 final int count;
@@ -22,7 +22,7 @@ final int interval;
 
 final String lastSeen;
 
-final Map<String,String>? bin;
+final Map<String,Object?>? bin;
 
 Map<String, dynamic> toJson() { return {
   '_count': count,
@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_coun
       json.containsKey('_firstSeen') && json['_firstSeen'] is String &&
       json.containsKey('_interval') && json['_interval'] is num &&
       json.containsKey('_lastSeen') && json['_lastSeen'] is String; } 
-WorkersObservabilityQueryResultsEventsSeriesDataAggregates copyWith({int? count, String? firstSeen, int? interval, String? lastSeen, Map<String, String> Function()? bin, }) { return WorkersObservabilityQueryResultsEventsSeriesDataAggregates(
+WorkersObservabilityQueryResultsEventsSeriesDataAggregates copyWith({int? count, String? firstSeen, int? interval, String? lastSeen, Map<String, Object> Function()? bin, }) { return WorkersObservabilityQueryResultsEventsSeriesDataAggregates(
   count: count ?? this.count,
   firstSeen: firstSeen ?? this.firstSeen,
   interval: interval ?? this.interval,

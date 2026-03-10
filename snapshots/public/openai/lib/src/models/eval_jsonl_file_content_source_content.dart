@@ -7,20 +7,20 @@
 final class EvalJsonlFileContentSourceContent {const EvalJsonlFileContentSourceContent({required this.item, this.sample, });
 
 factory EvalJsonlFileContentSourceContent.fromJson(Map<String, dynamic> json) { return EvalJsonlFileContentSourceContent(
-  item: (json['item'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  sample: (json['sample'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  item: (json['item'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  sample: (json['sample'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
-final Map<String,String> item;
+final Map<String,Object?> item;
 
-final Map<String,String>? sample;
+final Map<String,Object?>? sample;
 
 Map<String, dynamic> toJson() { return {
   'item': item,
   'sample': ?sample,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('item'); } 
-EvalJsonlFileContentSourceContent copyWith({Map<String,String>? item, Map<String, String> Function()? sample, }) { return EvalJsonlFileContentSourceContent(
+EvalJsonlFileContentSourceContent copyWith({Map<String,Object?>? item, Map<String, Object> Function()? sample, }) { return EvalJsonlFileContentSourceContent(
   item: item ?? this.item,
   sample: sample != null ? sample() : this.sample,
 ); } 

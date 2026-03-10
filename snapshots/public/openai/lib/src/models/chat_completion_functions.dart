@@ -9,7 +9,7 @@ final class ChatCompletionFunctions {const ChatCompletionFunctions({this.descrip
 factory ChatCompletionFunctions.fromJson(Map<String, dynamic> json) { return ChatCompletionFunctions(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// A description of what the function does, used by the model to choose when and how to call the function.
@@ -18,7 +18,7 @@ final String? description;
 /// The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
 final String name;
 
-final Map<String,String>? parameters;
+final Map<String,Object?>? parameters;
 
 Map<String, dynamic> toJson() { return {
   'description': ?description,
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'parameters': ?parameters,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ChatCompletionFunctions copyWith({String Function()? description, String? name, Map<String, String> Function()? parameters, }) { return ChatCompletionFunctions(
+ChatCompletionFunctions copyWith({String Function()? description, String? name, Map<String, Object> Function()? parameters, }) { return ChatCompletionFunctions(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,

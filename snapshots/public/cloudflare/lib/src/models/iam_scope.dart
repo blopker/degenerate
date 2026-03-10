@@ -5,33 +5,33 @@
 //  OpenAPI spec version: 3.0.3
 
 import 'package:collection/collection.dart';import 'iam_scope_object.dart';/// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
-extension type const IamScopeKey(String value) {
-factory IamScopeKey.fromJson(String json) => IamScopeKey(json);
+extension type IamScopeKey(Object? value) {
+factory IamScopeKey.fromJson(Object? json) => IamScopeKey(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 /// A scope is a combination of scope objects which provides additional context.
 final class IamScope {const IamScope({required this.key, required this.objects, });
 
 factory IamScope.fromJson(Map<String, dynamic> json) { return IamScope(
-  key: IamScopeKey.fromJson(json['key'] as String),
+  key: IamScopeKey.fromJson(json['key'] as Object?),
   objects: (json['objects'] as List<dynamic>).map((e) => IamScopeObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final IamScopeKey key;
+final IamScopeKey? key;
 
 /// A list of scope objects for additional context.
 final List<IamScopeObject> objects;
 
 Map<String, dynamic> toJson() { return {
-  'key': key.toJson(),
+  if (key != null) 'key': key?.toJson(),
   'objects': objects.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
       json.containsKey('objects'); } 
-IamScope copyWith({IamScopeKey? key, List<IamScopeObject>? objects, }) { return IamScope(
-  key: key ?? this.key,
+IamScope copyWith({IamScopeKey? Function()? key, List<IamScopeObject>? objects, }) { return IamScope(
+  key: key != null ? key() : this.key,
   objects: objects ?? this.objects,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

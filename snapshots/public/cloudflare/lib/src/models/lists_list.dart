@@ -24,7 +24,7 @@ factory ListsList.fromJson(Map<String, dynamic> json) { return ListsList(
   createdOn: ListsCreatedOn.fromJson(json['created_on'] as String),
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
   id: ListsListId.fromJson(json['id'] as String),
-  kind: ListsKind.fromJson(json['kind'] as String),
+  kind: ListsKind.fromJson(json['kind'] as Object?),
   modifiedOn: ListsModifiedOn.fromJson(json['modified_on'] as String),
   name: ListsName.fromJson(json['name'] as String),
   numItems: ListsNumItems.fromJson(json['num_items'] as num),
@@ -37,7 +37,7 @@ final ListsDescription? description;
 
 final ListsListId id;
 
-final ListsKind kind;
+final ListsKind? kind;
 
 final ListsModifiedOn modifiedOn;
 
@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toJson(),
   if (description != null) 'description': description?.toJson(),
   'id': id.toJson(),
-  'kind': kind.toJson(),
+  if (kind != null) 'kind': kind?.toJson(),
   'modified_on': modifiedOn.toJson(),
   'name': name.toJson(),
   'num_items': numItems.toJson(),
@@ -64,11 +64,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') &&
       json.containsKey('num_items') &&
       json.containsKey('num_referencing_filters'); } 
-ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription Function()? description, ListsListId? id, ListsKind? kind, ListsModifiedOn? modifiedOn, ListsName? name, ListsNumItems? numItems, ListsNumReferencingFilters? numReferencingFilters, }) { return ListsList(
+ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription Function()? description, ListsListId? id, ListsKind? Function()? kind, ListsModifiedOn? modifiedOn, ListsName? name, ListsNumItems? numItems, ListsNumReferencingFilters? numReferencingFilters, }) { return ListsList(
   createdOn: createdOn ?? this.createdOn,
   description: description != null ? description() : this.description,
   id: id ?? this.id,
-  kind: kind ?? this.kind,
+  kind: kind != null ? kind() : this.kind,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   name: name ?? this.name,
   numItems: numItems ?? this.numItems,

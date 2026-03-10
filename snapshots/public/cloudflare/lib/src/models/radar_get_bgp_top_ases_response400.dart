@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'radar_get_bgp_top_ases_respo
 
 factory RadarGetBgpTopAsesResponse400.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetBgpTopAsesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<RadarGetBgpTopAsesResponse400Errors> errors;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetBgpTopAsesResponse400 copyWith({List<RadarGetBgpTopAsesResponse400Errors>? errors, Map<String,String>? result, bool? success, }) { return RadarGetBgpTopAsesResponse400(
+RadarGetBgpTopAsesResponse400 copyWith({List<RadarGetBgpTopAsesResponse400Errors>? errors, Map<String,Object?>? result, bool? success, }) { return RadarGetBgpTopAsesResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

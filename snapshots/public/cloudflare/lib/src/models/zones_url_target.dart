@@ -11,21 +11,21 @@ factory ZonesUrlTarget.fromJson(Map<String, dynamic> json) { return ZonesUrlTarg
   constraint: json['constraint'] != null
         ? ZonesStringConstraint.fromJson(json['constraint'] as Map<String, dynamic>)
         : null,
-  target: json['target'] as String?,
+  target: json['target'],
 ); }
 
 /// The constraint of a target.
 final ZonesStringConstraint? constraint;
 
 /// A target based on the URL of the request.
-final String? target;
+final Object? target;
 
 Map<String, dynamic> toJson() { return {
   if (constraint != null) 'constraint': constraint?.toJson(),
   'target': ?target,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ZonesUrlTarget copyWith({ZonesStringConstraint Function()? constraint, String Function()? target, }) { return ZonesUrlTarget(
+ZonesUrlTarget copyWith({ZonesStringConstraint Function()? constraint, Object? Function()? target, }) { return ZonesUrlTarget(
   constraint: constraint != null ? constraint() : this.constraint,
   target: target != null ? target() : this.target,
 ); } 

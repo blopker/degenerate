@@ -35,7 +35,7 @@ factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) { retu
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseInclude.fromJson(e as String)).toList(),
   model: json['model'] as String?,
-  outputModalities: json['output_modalities'] as String?,
+  outputModalities: json['output_modalities'],
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null
         ? RealtimeSessionCreateResponseAudio.fromJson(json['audio'] as Map<String, dynamic>)
@@ -74,7 +74,7 @@ final String? model;
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to ["text"].
 /// 
-final String? outputModalities;
+final Object? outputModalities;
 
 /// The default system instructions (i.e. system message) prepended to model
 /// calls. This field allows the client to guide the model on desired
@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-RealtimeSessionCreateResponse copyWith({String Function()? id, String Function()? object, int Function()? expiresAt, List<RealtimeSessionCreateResponseInclude> Function()? include, String Function()? model, String Function()? outputModalities, String Function()? instructions, RealtimeSessionCreateResponseAudio Function()? audio, RealtimeSessionCreateResponseTracing Function()? tracing, RealtimeSessionCreateResponseTurnDetection Function()? turnDetection, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, RealtimeSessionCreateResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeSessionCreateResponse(
+RealtimeSessionCreateResponse copyWith({String Function()? id, String Function()? object, int Function()? expiresAt, List<RealtimeSessionCreateResponseInclude> Function()? include, String Function()? model, Object? Function()? outputModalities, String Function()? instructions, RealtimeSessionCreateResponseAudio Function()? audio, RealtimeSessionCreateResponseTracing Function()? tracing, RealtimeSessionCreateResponseTurnDetection Function()? turnDetection, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, RealtimeSessionCreateResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeSessionCreateResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

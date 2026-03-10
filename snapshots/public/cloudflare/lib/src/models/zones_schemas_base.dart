@@ -10,7 +10,7 @@ factory ZonesSchemasBase.fromJson(Map<String, dynamic> json) { return ZonesSchem
   editable: json['editable'] as bool?,
   id: json['id'] as String,
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
-  value: json['value'] as String,
+  value: json['value'],
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
@@ -23,21 +23,21 @@ final String id;
 final DateTime? modifiedOn;
 
 /// Current value of the zone setting.
-final String value;
+final Object? value;
 
 Map<String, dynamic> toJson() { return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
-  'value': value,
+  'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-ZonesSchemasBase copyWith({bool Function()? editable, String? id, DateTime? Function()? modifiedOn, String? value, }) { return ZonesSchemasBase(
+      json.containsKey('value'); } 
+ZonesSchemasBase copyWith({bool Function()? editable, String? id, DateTime? Function()? modifiedOn, Object? Function()? value, }) { return ZonesSchemasBase(
   editable: editable != null ? editable() : this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
-  value: value ?? this.value,
+  value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ZonesSchemasBase &&

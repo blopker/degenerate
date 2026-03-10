@@ -3381,7 +3381,7 @@ return _execute(
 /// Redeliver a webhook delivery for a webhook configured in a repository.
 ///
 /// `POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts`
-Future<ApiResult<Map<String, String>, BasicError>> reposRedeliverWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> reposRedeliverWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3392,7 +3392,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }

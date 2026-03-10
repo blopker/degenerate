@@ -85,7 +85,7 @@ final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval {const
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
   contextExpansion: json.containsKey('context_expansion') ? (json['context_expansion'] as num).toInt() : 0,
-  filters: (json['filters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  filters: (json['filters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   fusionMethod: json['fusion_method'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod.fromJson(json['fusion_method'] as String) : null,
   keywordMatchMode: json.containsKey('keyword_match_mode') ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch,
   matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
@@ -99,7 +99,7 @@ final List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy>
 
 final int contextExpansion;
 
-final Map<String,String>? filters;
+final Map<String,Object?>? filters;
 
 final AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod? fusionMethod;
 
@@ -126,7 +126,7 @@ Map<String, dynamic> toJson() { return {
   'return_on_failure': returnOnFailure,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy> Function()? boostBy, int Function()? contextExpansion, Map<String, String> Function()? filters, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod Function()? fusionMethod, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType Function()? retrievalType, bool Function()? returnOnFailure, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
+AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy> Function()? boostBy, int Function()? contextExpansion, Map<String, Object> Function()? filters, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod Function()? fusionMethod, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType Function()? retrievalType, bool Function()? returnOnFailure, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,
   filters: filters != null ? filters() : this.filters,

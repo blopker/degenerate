@@ -9,7 +9,7 @@ final class FunctionObject {const FunctionObject({this.description, required thi
 factory FunctionObject.fromJson(Map<String, dynamic> json) { return FunctionObject(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool?,
 ); }
 
@@ -19,7 +19,7 @@ final String? description;
 /// The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
 final String name;
 
-final Map<String,String>? parameters;
+final Map<String,Object?>? parameters;
 
 final bool? strict;
 
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'strict': ?strict,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-FunctionObject copyWith({String Function()? description, String? name, Map<String, String> Function()? parameters, bool? Function()? strict, }) { return FunctionObject(
+FunctionObject copyWith({String Function()? description, String? name, Map<String, Object> Function()? parameters, bool? Function()? strict, }) { return FunctionObject(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,

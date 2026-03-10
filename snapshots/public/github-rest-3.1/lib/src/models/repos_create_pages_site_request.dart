@@ -5,17 +5,17 @@
 //  OpenAPI spec version: 3.1.0
 
 /// The source branch and directory used to publish your Pages site.
-final class ReposCreatePagesSiteRequest {const ReposCreatePagesSiteRequest({this.string});
+final class ReposCreatePagesSiteRequest {const ReposCreatePagesSiteRequest({this.object});
 
 factory ReposCreatePagesSiteRequest.fromJson(Object? json) { return ReposCreatePagesSiteRequest(
-  string: json is String ? json : null,
+  object: json,
 ); }
 
-final String? string;
+final Object? object;
 
 /// At least one variant must be present.
-bool get isValid { return string != null; } 
+bool get isValid { return object != null; } 
 Map<String, dynamic> toJson() { return {
-  'string': ?string,
+  'object': ?object,
 }; } 
  }

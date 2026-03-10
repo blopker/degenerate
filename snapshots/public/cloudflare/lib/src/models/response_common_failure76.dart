@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'waf_managed_rules_messages2.
 factory ResponseCommonFailure76.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure76(
   errors: (json['errors'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<WafManagedRulesMessages2> errors;
 
 final List<WafManagedRulesMessages2> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Defines whether the API call was successful.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure76 copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseCommonFailure76(
+ResponseCommonFailure76 copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure76(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

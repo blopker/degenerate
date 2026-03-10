@@ -5,21 +5,21 @@
 //  OpenAPI spec version: 3.0.3
 
 /// Responses API Input messages. Refer to OpenAI Responses API docs to learn more about supported content types
-final class InlineObject605RequestsInput {const InlineObject605RequestsInput({this.string, this.listString, });
+final class InlineObject605RequestsInput {const InlineObject605RequestsInput({this.string, this.listObject, });
 
 factory InlineObject605RequestsInput.fromJson(Object? json) { return InlineObject605RequestsInput(
   string: json is String ? json : null,
-  // listString: skipped (collection type in anyOf not supported)
+  // listObject: skipped (collection type in anyOf not supported)
 ); }
 
 final String? string;
 
-final List<String>? listString;
+final List<Object?>? listObject;
 
 /// At least one variant must be present.
-bool get isValid { return string != null || listString != null; } 
+bool get isValid { return string != null || listObject != null; } 
 Map<String, dynamic> toJson() { return {
   'string': ?string,
-  'listString': ?listString,
+  'listObject': ?listObject,
 }; } 
  }

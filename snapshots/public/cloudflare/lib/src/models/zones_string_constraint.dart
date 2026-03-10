@@ -5,27 +5,27 @@
 //  OpenAPI spec version: 3.0.3
 
 /// String constraint.
-final class ZonesStringConstraint {const ZonesStringConstraint({this.$operator = 'contains', required this.value, });
+final class ZonesStringConstraint {const ZonesStringConstraint({required this.$operator, required this.value, });
 
 factory ZonesStringConstraint.fromJson(Map<String, dynamic> json) { return ZonesStringConstraint(
-  $operator: json['operator'] as String,
+  $operator: json['operator'],
   value: json['value'] as String,
 ); }
 
 /// The matches operator can use asterisks and pipes as wildcard and 'or' operators.
-final String $operator;
+final Object? $operator;
 
 /// The value to apply the operator to.
 final String value;
 
 Map<String, dynamic> toJson() { return {
-  'operator': $operator,
+  'operator': ?$operator,
   'value': value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') && json['operator'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') &&
       json.containsKey('value') && json['value'] is String; } 
-ZonesStringConstraint copyWith({String? $operator, String? value, }) { return ZonesStringConstraint(
-  $operator: $operator ?? this.$operator,
+ZonesStringConstraint copyWith({Object? Function()? $operator, String? value, }) { return ZonesStringConstraint(
+  $operator: $operator != null ? $operator() : this.$operator,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

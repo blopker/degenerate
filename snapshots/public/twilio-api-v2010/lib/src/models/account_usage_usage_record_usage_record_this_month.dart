@@ -18,7 +18,7 @@ factory AccountUsageUsageRecordUsageRecordThisMonth.fromJson(Map<String, dynamic
   price: json['price'] != null ? (json['price'] as num).toDouble() : null,
   priceUnit: json['price_unit'] as String?,
   startDate: json['start_date'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   uri: json['uri'] as String?,
   usage: json['usage'] as String?,
   usageUnit: json['usage_unit'] as String?,
@@ -58,7 +58,7 @@ final String? priceUnit;
 final String? startDate;
 
 /// A list of related resources identified by their URIs. For more information, see [List Subresources](https://www.twilio.com/docs/usage/api/usage-record#list-subresources).
-final Map<String,String>? subresourceUris;
+final Map<String,Object?>? subresourceUris;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final String? uri;
@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'usage_unit': ?usageUnit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountUsageUsageRecordUsageRecordThisMonth copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? asOf, String? Function()? category, String? Function()? count, String? Function()? countUnit, String? Function()? description, String? Function()? endDate, double? Function()? price, String? Function()? priceUnit, String? Function()? startDate, Map<String, String>? Function()? subresourceUris, String? Function()? uri, String? Function()? usage, String? Function()? usageUnit, }) { return AccountUsageUsageRecordUsageRecordThisMonth(
+AccountUsageUsageRecordUsageRecordThisMonth copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? asOf, String? Function()? category, String? Function()? count, String? Function()? countUnit, String? Function()? description, String? Function()? endDate, double? Function()? price, String? Function()? priceUnit, String? Function()? startDate, Map<String, Object>? Function()? subresourceUris, String? Function()? uri, String? Function()? usage, String? Function()? usageUnit, }) { return AccountUsageUsageRecordUsageRecordThisMonth(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   asOf: asOf != null ? asOf() : this.asOf,

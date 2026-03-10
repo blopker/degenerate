@@ -89,7 +89,7 @@ factory FineTuningJobEvent.fromJson(Map<String, dynamic> json) { return FineTuni
   level: FineTuningJobEventLevel.fromJson(json['level'] as String),
   message: json['message'] as String,
   type: json['type'] != null ? FineTuningJobEventType.fromJson(json['type'] as String) : null,
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The object type, which is always "fine_tuning.job.event".
@@ -111,7 +111,7 @@ final String message;
 final FineTuningJobEventType? type;
 
 /// The data associated with the event.
-final Map<String,String>? data;
+final Map<String,Object?>? data;
 
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
@@ -127,7 +127,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('level') &&
       json.containsKey('message') && json['message'] is String; } 
-FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? createdAt, FineTuningJobEventLevel? level, String? message, FineTuningJobEventType Function()? type, Map<String, String> Function()? data, }) { return FineTuningJobEvent(
+FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? createdAt, FineTuningJobEventLevel? level, String? message, FineTuningJobEventType Function()? type, Map<String, Object> Function()? data, }) { return FineTuningJobEvent(
   object: object ?? this.object,
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,

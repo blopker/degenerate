@@ -17,8 +17,8 @@ factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return Assigne
   createdAt: (json['created_at'] as num).toInt(),
   updatedAt: (json['updated_at'] as num).toInt(),
   createdBy: json['created_by'] as String,
-  createdByUserObj: (json['created_by_user_obj'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  createdByUserObj: (json['created_by_user_obj'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// Identifier for the role.
@@ -49,10 +49,10 @@ final int? updatedAt;
 final String? createdBy;
 
 /// User details for the actor that created the role, when available.
-final Map<String,String>? createdByUserObj;
+final Map<String,Object?>? createdByUserObj;
 
 /// Arbitrary metadata stored on the role.
-final Map<String,String>? metadata;
+final Map<String,Object?>? metadata;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_by') && json['created_by'] is String &&
       json.containsKey('created_by_user_obj') &&
       json.containsKey('metadata'); } 
-AssignedRoleDetails copyWith({String? id, String? name, List<String>? permissions, String? resourceType, bool? predefinedRole, String? Function()? description, int? Function()? createdAt, int? Function()? updatedAt, String? Function()? createdBy, Map<String, String>? Function()? createdByUserObj, Map<String, String>? Function()? metadata, }) { return AssignedRoleDetails(
+AssignedRoleDetails copyWith({String? id, String? name, List<String>? permissions, String? resourceType, bool? predefinedRole, String? Function()? description, int? Function()? createdAt, int? Function()? updatedAt, String? Function()? createdBy, Map<String, Object>? Function()? createdByUserObj, Map<String, Object>? Function()? metadata, }) { return AssignedRoleDetails(
   id: id ?? this.id,
   name: name ?? this.name,
   permissions: permissions ?? this.permissions,

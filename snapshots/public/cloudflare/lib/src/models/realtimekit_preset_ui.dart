@@ -7,11 +7,11 @@
 import 'realtimekit_preset_ui_design_tokens.dart';final class RealtimekitPresetUi {const RealtimekitPresetUi({this.configDiff, required this.designTokens, });
 
 factory RealtimekitPresetUi.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUi(
-  configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   designTokens: RealtimekitPresetUiDesignTokens.fromJson(json['design_tokens'] as Map<String, dynamic>),
 ); }
 
-final Map<String,String>? configDiff;
+final Map<String,Object?>? configDiff;
 
 final RealtimekitPresetUiDesignTokens designTokens;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'design_tokens': designTokens.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('design_tokens'); } 
-RealtimekitPresetUi copyWith({Map<String, String> Function()? configDiff, RealtimekitPresetUiDesignTokens? designTokens, }) { return RealtimekitPresetUi(
+RealtimekitPresetUi copyWith({Map<String, Object> Function()? configDiff, RealtimekitPresetUiDesignTokens? designTokens, }) { return RealtimekitPresetUi(
   configDiff: configDiff != null ? configDiff() : this.configDiff,
   designTokens: designTokens ?? this.designTokens,
 ); } 

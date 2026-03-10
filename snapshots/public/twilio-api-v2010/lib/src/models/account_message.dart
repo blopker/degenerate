@@ -115,7 +115,7 @@ factory AccountMessage.fromJson(Map<String, dynamic> json) { return AccountMessa
   errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
   priceUnit: json['price_unit'] as String?,
   apiVersion: json['api_version'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The text content of the message
@@ -174,7 +174,7 @@ final String? priceUnit;
 final String? apiVersion;
 
 /// A list of related resources identified by their URIs relative to `https://api.twilio.com`
-final Map<String,String>? subresourceUris;
+final Map<String,Object?>? subresourceUris;
 
 Map<String, dynamic> toJson() { return {
   'body': ?body,
@@ -199,7 +199,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountMessage copyWith({String? Function()? body, String? Function()? numSegments, MessageEnumDirection Function()? direction, String? Function()? from, String? Function()? to, String? Function()? dateUpdated, String? Function()? price, String? Function()? errorMessage, String? Function()? uri, String? Function()? accountSid, String? Function()? numMedia, MessageEnumStatus Function()? status, String? Function()? messagingServiceSid, String? Function()? sid, String? Function()? dateSent, String? Function()? dateCreated, int? Function()? errorCode, String? Function()? priceUnit, String? Function()? apiVersion, Map<String, String>? Function()? subresourceUris, }) { return AccountMessage(
+AccountMessage copyWith({String? Function()? body, String? Function()? numSegments, MessageEnumDirection Function()? direction, String? Function()? from, String? Function()? to, String? Function()? dateUpdated, String? Function()? price, String? Function()? errorMessage, String? Function()? uri, String? Function()? accountSid, String? Function()? numMedia, MessageEnumStatus Function()? status, String? Function()? messagingServiceSid, String? Function()? sid, String? Function()? dateSent, String? Function()? dateCreated, int? Function()? errorCode, String? Function()? priceUnit, String? Function()? apiVersion, Map<String, Object>? Function()? subresourceUris, }) { return AccountMessage(
   body: body != null ? body() : this.body,
   numSegments: numSegments != null ? numSegments() : this.numSegments,
   direction: direction != null ? direction() : this.direction,

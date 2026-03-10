@@ -196,7 +196,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach`
-Future<ApiResult<Map<String, String>, BasicError>> codeSecurityAttachEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityAttachEnterpriseConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> codeSecurityAttachEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityAttachEnterpriseConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -209,7 +209,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
@@ -494,7 +494,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/code-security/configurations/{configuration_id}/attach`
-Future<ApiResult<Map<String, String>, Never>> codeSecurityAttachConfiguration({required String org, required int configurationId, required CodeSecurityAttachConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, Never>> codeSecurityAttachConfiguration({required String org, required int configurationId, required CodeSecurityAttachConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -507,7 +507,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 

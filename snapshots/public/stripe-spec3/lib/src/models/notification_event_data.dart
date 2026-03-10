@@ -8,22 +8,22 @@
 final class NotificationEventData {const NotificationEventData({required this.object, this.previousAttributes, });
 
 factory NotificationEventData.fromJson(Map<String, dynamic> json) { return NotificationEventData(
-  object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  previousAttributes: (json['previous_attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  previousAttributes: (json['previous_attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// Object containing the API resource relevant to the event. For example, an `invoice.created` event will have a full [invoice object](https://api.stripe.com#invoice_object) as the value of the object key.
-final Map<String,String> object;
+final Map<String,Object?> object;
 
 /// Object containing the names of the updated attributes and their values prior to the event (only included in events of type `*.updated`). If an array attribute has any updated elements, this object contains the entire array. In Stripe API versions 2017-04-06 or earlier, an updated array attribute in this object includes only the updated array elements.
-final Map<String,String>? previousAttributes;
+final Map<String,Object?>? previousAttributes;
 
 Map<String, dynamic> toJson() { return {
   'object': object,
   'previous_attributes': ?previousAttributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object'); } 
-NotificationEventData copyWith({Map<String,String>? object, Map<String, String> Function()? previousAttributes, }) { return NotificationEventData(
+NotificationEventData copyWith({Map<String,Object?>? object, Map<String, Object> Function()? previousAttributes, }) { return NotificationEventData(
   object: object ?? this.object,
   previousAttributes: previousAttributes != null ? previousAttributes() : this.previousAttributes,
 ); } 

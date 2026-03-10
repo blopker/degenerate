@@ -31,11 +31,11 @@ bool get isUnknown { return !values.contains(this); }
 final class InlineObject477ResponseFormat {const InlineObject477ResponseFormat({this.jsonSchema, this.type, });
 
 factory InlineObject477ResponseFormat.fromJson(Map<String, dynamic> json) { return InlineObject477ResponseFormat(
-  jsonSchema: json['json_schema'] as String?,
+  jsonSchema: json['json_schema'],
   type: json['type'] != null ? InlineObject477ResponseFormatType.fromJson(json['type'] as String) : null,
 ); }
 
-final String? jsonSchema;
+final Object? jsonSchema;
 
 final InlineObject477ResponseFormatType? type;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-InlineObject477ResponseFormat copyWith({String Function()? jsonSchema, InlineObject477ResponseFormatType Function()? type, }) { return InlineObject477ResponseFormat(
+InlineObject477ResponseFormat copyWith({Object? Function()? jsonSchema, InlineObject477ResponseFormatType Function()? type, }) { return InlineObject477ResponseFormat(
   jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
   type: type != null ? type() : this.type,
 ); } 

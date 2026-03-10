@@ -5,25 +5,25 @@
 //  OpenAPI spec version: 3.0.3
 
 /// Provides the API response.
-final class ResponseCommon78Result {const ResponseCommon78Result({this.mapStringString, this.listString, this.string, });
+final class ResponseCommon78Result {const ResponseCommon78Result({this.mapStringObject, this.listObject, this.string, });
 
 factory ResponseCommon78Result.fromJson(Object? json) { return ResponseCommon78Result(
-  // mapStringString: skipped (collection type in anyOf not supported)
-  // listString: skipped (collection type in anyOf not supported)
+  // mapStringObject: skipped (collection type in anyOf not supported)
+  // listObject: skipped (collection type in anyOf not supported)
   string: json is String ? json : null,
 ); }
 
-final Map<String,String>? mapStringString;
+final Map<String,Object?>? mapStringObject;
 
-final List<String>? listString;
+final List<Object?>? listObject;
 
 final String? string;
 
 /// At least one variant must be present.
-bool get isValid { return mapStringString != null || listString != null || string != null; } 
+bool get isValid { return mapStringObject != null || listObject != null || string != null; } 
 Map<String, dynamic> toJson() { return {
-  'mapStringString': ?mapStringString,
-  'listString': ?listString,
+  'mapStringObject': ?mapStringObject,
+  'listObject': ?listObject,
   'string': ?string,
 }; } 
  }

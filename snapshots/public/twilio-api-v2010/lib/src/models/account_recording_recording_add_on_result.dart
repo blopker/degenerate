@@ -59,7 +59,7 @@ factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json)
   dateUpdated: json['date_updated'] as String?,
   dateCompleted: json['date_completed'] as String?,
   referenceSid: json['reference_sid'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The unique string that that we created to identify the Recording AddOnResult resource.
@@ -89,7 +89,7 @@ final String? dateCompleted;
 final String? referenceSid;
 
 /// A list of related resources identified by their relative URIs.
-final Map<String,String>? subresourceUris;
+final Map<String,Object?>? subresourceUris;
 
 Map<String, dynamic> toJson() { return {
   'sid': ?sid,
@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? Function()? accountSid, RecordingAddOnResultEnumStatus Function()? status, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? dateCompleted, String? Function()? referenceSid, Map<String, String>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResult(
+AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? Function()? accountSid, RecordingAddOnResultEnumStatus Function()? status, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? dateCompleted, String? Function()? referenceSid, Map<String, Object>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResult(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   status: status != null ? status() : this.status,

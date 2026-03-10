@@ -5,27 +5,27 @@
 //  OpenAPI spec version: 3.0.3
 
 /// This is a combination of pre-defined resource name and identifier (like Zone ID etc.)
-extension type const IamScopeObjectKey(String value) {
-factory IamScopeObjectKey.fromJson(String json) => IamScopeObjectKey(json);
+extension type IamScopeObjectKey(Object? value) {
+factory IamScopeObjectKey.fromJson(Object? json) => IamScopeObjectKey(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }
 /// A scope object represents any resource that can have actions applied against invite.
 final class IamScopeObject {const IamScopeObject({required this.key});
 
 factory IamScopeObject.fromJson(Map<String, dynamic> json) { return IamScopeObject(
-  key: IamScopeObjectKey.fromJson(json['key'] as String),
+  key: IamScopeObjectKey.fromJson(json['key'] as Object?),
 ); }
 
-final IamScopeObjectKey key;
+final IamScopeObjectKey? key;
 
 Map<String, dynamic> toJson() { return {
-  'key': key.toJson(),
+  if (key != null) 'key': key?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key'); } 
-IamScopeObject copyWith({IamScopeObjectKey? key}) { return IamScopeObject(
-  key: key ?? this.key,
+IamScopeObject copyWith({IamScopeObjectKey? Function()? key}) { return IamScopeObject(
+  key: key != null ? key() : this.key,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IamScopeObject &&

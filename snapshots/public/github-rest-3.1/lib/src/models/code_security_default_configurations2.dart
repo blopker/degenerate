@@ -7,14 +7,14 @@
 import 'code_security_configuration.dart';final class CodeSecurityDefaultConfigurations2 {const CodeSecurityDefaultConfigurations2({this.defaultForNewRepos, this.configuration, });
 
 factory CodeSecurityDefaultConfigurations2.fromJson(Map<String, dynamic> json) { return CodeSecurityDefaultConfigurations2(
-  defaultForNewRepos: json['default_for_new_repos'] as String?,
+  defaultForNewRepos: json['default_for_new_repos'],
   configuration: json['configuration'] != null
         ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>)
         : null,
 ); }
 
 /// The visibility of newly created repositories for which the code security configuration will be applied to by default
-final String? defaultForNewRepos;
+final Object? defaultForNewRepos;
 
 final CodeSecurityConfiguration? configuration;
 
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (configuration != null) 'configuration': configuration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-CodeSecurityDefaultConfigurations2 copyWith({String Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecurityDefaultConfigurations2(
+CodeSecurityDefaultConfigurations2 copyWith({Object? Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecurityDefaultConfigurations2(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
   configuration: configuration != null ? configuration() : this.configuration,
 ); } 

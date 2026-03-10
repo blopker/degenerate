@@ -40,7 +40,7 @@ factory WebhookStarDeleted.fromJson(Map<String, dynamic> json) { return WebhookS
         : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  starredAt: json['starred_at'] as String,
+  starredAt: json['starred_at'],
 ); }
 
 final WebhookStarDeletedAction action;
@@ -56,7 +56,7 @@ final RepositoryWebhooks repository;
 final SimpleUser sender;
 
 /// The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
-final String? starredAt;
+final Object? starredAt;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
@@ -70,8 +70,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('starred_at') && json['starred_at'] is String; } 
-WebhookStarDeleted copyWith({WebhookStarDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? Function()? starredAt, }) { return WebhookStarDeleted(
+      json.containsKey('starred_at'); } 
+WebhookStarDeleted copyWith({WebhookStarDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, Object? Function()? starredAt, }) { return WebhookStarDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

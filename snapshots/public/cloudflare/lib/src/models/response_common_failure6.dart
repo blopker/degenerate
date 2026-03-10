@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'alexandria_messages2.dart';f
 factory ResponseCommonFailure6.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure6(
   errors: (json['errors'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<AlexandriaMessages2> errors;
 
 final List<AlexandriaMessages2> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Indicates whether the API call was successful.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure6 copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseCommonFailure6(
+ResponseCommonFailure6 copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure6(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

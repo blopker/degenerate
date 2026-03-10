@@ -5,9 +5,9 @@
 //  OpenAPI spec version: 3.0.3
 
 /// The WAF rule action to apply.
-extension type const FirewallWafAction(String value) {
-factory FirewallWafAction.fromJson(String json) => FirewallWafAction(json);
+extension type FirewallWafAction(Object? value) {
+factory FirewallWafAction.fromJson(Object? json) => FirewallWafAction(json);
 
-String toJson() => value;
+Object? toJson() => value;
 
 }

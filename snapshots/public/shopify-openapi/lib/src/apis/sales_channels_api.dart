@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCheckouts({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCheckouts({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -37,7 +37,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCheckouts({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCheckouts({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,7 +57,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCheckouts({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCheckouts({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,7 +77,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts.json`
-Future<ApiResult<void, Never>> createCheckouts({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCheckouts({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,7 +97,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCheckouts({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCheckouts({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -117,7 +117,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-unstable
 ///
 /// `POST /admin/api/unstable/checkouts.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckouts({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckouts({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,7 +137,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenComplete({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,7 +175,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCheckoutsParamToken({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCheckoutsParamToken({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -215,7 +215,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenComplete({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -253,7 +253,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCheckoutsParamToken({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCheckoutsParamToken({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -293,7 +293,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenComplete({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -331,7 +331,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCheckoutsParamToken({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCheckoutsParamToken({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -371,7 +371,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> createCheckoutsParamTokenComplete({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCheckoutsParamTokenComplete({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -409,7 +409,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/checkouts/{token}.json`
-Future<ApiResult<void, Never>> updateCheckoutsParamToken({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateCheckoutsParamToken({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -449,7 +449,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenComplete({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -487,7 +487,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCheckoutsParamToken({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCheckoutsParamToken({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -527,7 +527,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-unstable
 ///
 /// `POST /admin/api/unstable/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenComplete({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenComplete({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -565,7 +565,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-unstable
 ///
 /// `PUT /admin/api/unstable/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCheckoutsParamToken({required String token, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCheckoutsParamToken({required String token, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -605,7 +605,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectionListings({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListings({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -629,7 +629,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, Object? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -671,7 +671,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-01
 ///
 /// `PUT /admin/api/2020-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -709,7 +709,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectionListings({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListings({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -733,7 +733,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, Object? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -775,7 +775,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-04
 ///
 /// `PUT /admin/api/2020-04/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -813,7 +813,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectionListings({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListings({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -837,7 +837,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, Object? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -879,7 +879,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-07
 ///
 /// `PUT /admin/api/2020-07/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -917,7 +917,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings.json`
-Future<ApiResult<void, Never>> getCollectionListings({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectionListings({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -941,7 +941,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, Object? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -983,7 +983,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-10
 ///
 /// `PUT /admin/api/2020-10/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> updateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateCollectionListingsParamCollectionListingId({required String collectionListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1021,7 +1021,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectionListings({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListings({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -1045,7 +1045,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, Object? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -1087,7 +1087,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2021-01
 ///
 /// `PUT /admin/api/2021-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1125,7 +1125,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListings({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListings({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -1149,7 +1149,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, String? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, Object? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -1191,7 +1191,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-unstable
 ///
 /// `PUT /admin/api/unstable/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCollectionListingsParamCollectionListingId({required String collectionListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCollectionListingsParamCollectionListingId({required String collectionListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1247,7 +1247,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenPayments({required String token, Object? amountRequired, Object? requestDetailsRequired, Object? sessionIdRequired, Object? uniqueTokenRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) queryParameters['amount required'] = amountRequired;
 if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired;
@@ -1330,7 +1330,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenPayments({required String token, Object? amountRequired, Object? requestDetailsRequired, Object? sessionIdRequired, Object? uniqueTokenRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) queryParameters['amount required'] = amountRequired;
 if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired;
@@ -1413,7 +1413,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenPayments({required String token, Object? amountRequired, Object? requestDetailsRequired, Object? sessionIdRequired, Object? uniqueTokenRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) queryParameters['amount required'] = amountRequired;
 if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired;
@@ -1496,7 +1496,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> createCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createCheckoutsParamTokenPayments({required String token, Object? amountRequired, Object? requestDetailsRequired, Object? sessionIdRequired, Object? uniqueTokenRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) queryParameters['amount required'] = amountRequired;
 if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired;
@@ -1579,7 +1579,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenPayments({required String token, Object? amountRequired, Object? requestDetailsRequired, Object? sessionIdRequired, Object? uniqueTokenRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) queryParameters['amount required'] = amountRequired;
 if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired;
@@ -1662,7 +1662,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-unstable
 ///
 /// `POST /admin/api/unstable/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenPayments({required String token, String? amountRequired, String? requestDetailsRequired, String? sessionIdRequired, String? uniqueTokenRequired, String? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenPayments({required String token, Object? amountRequired, Object? requestDetailsRequired, Object? sessionIdRequired, Object? uniqueTokenRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) queryParameters['amount required'] = amountRequired;
 if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired;
@@ -1727,7 +1727,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductListings({Object? productIds, Object? limit, Object? collectionId, Object? updatedAtMin, Object? handle, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (productIds != null) queryParameters['product_ids'] = productIds;
 if (limit != null) queryParameters['limit'] = limit;
@@ -1755,7 +1755,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductListingsProductIds({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductListingsProductIds({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -1815,7 +1815,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-01
 ///
 /// `PUT /admin/api/2020-01/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateProductListingsParamProductListingId({required String productListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1853,7 +1853,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductListings({Object? productIds, Object? limit, Object? collectionId, Object? updatedAtMin, Object? handle, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (productIds != null) queryParameters['product_ids'] = productIds;
 if (limit != null) queryParameters['limit'] = limit;
@@ -1881,7 +1881,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductListingsProductIds({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductListingsProductIds({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -1941,7 +1941,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-04
 ///
 /// `PUT /admin/api/2020-04/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateProductListingsParamProductListingId({required String productListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1979,7 +1979,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductListings({String? productIds, String? limit, String? collectionId, String? updatedAtMin, String? handle, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductListings({Object? productIds, Object? limit, Object? collectionId, Object? updatedAtMin, Object? handle, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (productIds != null) queryParameters['product_ids'] = productIds;
 if (limit != null) queryParameters['limit'] = limit;
@@ -2007,7 +2007,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductListingsProductIds({String? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductListingsProductIds({Object? limit}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 
@@ -2067,7 +2067,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-07
 ///
 /// `PUT /admin/api/2020-07/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateProductListingsParamProductListingId({required String productListingId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateProductListingsParamProductListingId({required String productListingId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

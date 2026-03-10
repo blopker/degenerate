@@ -7,11 +7,11 @@
 final class AccessSchemasEmptyResponse {const AccessSchemasEmptyResponse({this.result, this.success, });
 
 factory AccessSchemasEmptyResponse.fromJson(Map<String, dynamic> json) { return AccessSchemasEmptyResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool?,
 ); }
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 final bool? success;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccessSchemasEmptyResponse copyWith({Map<String, String>? Function()? result, bool Function()? success, }) { return AccessSchemasEmptyResponse(
+AccessSchemasEmptyResponse copyWith({Map<String, Object>? Function()? result, bool Function()? success, }) { return AccessSchemasEmptyResponse(
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,
 ); } 

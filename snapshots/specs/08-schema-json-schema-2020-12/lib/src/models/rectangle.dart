@@ -7,31 +7,31 @@
 final class Rectangle {const Rectangle({required this.kind, required this.width, required this.height, this.meta, });
 
 factory Rectangle.fromJson(Map<String, dynamic> json) { return Rectangle(
-  kind: json['kind'] as String,
+  kind: json['kind'],
   width: (json['width'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
-  meta: json['meta'] as String?,
+  meta: json['meta'],
 ); }
 
-final String kind;
+final Object? kind;
 
 final double width;
 
 final double height;
 
-final String? meta;
+final Object? meta;
 
 Map<String, dynamic> toJson() { return {
-  'kind': kind,
+  'kind': ?kind,
   'width': width,
   'height': height,
   'meta': ?meta,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
       json.containsKey('width') && json['width'] is num &&
       json.containsKey('height') && json['height'] is num; } 
-Rectangle copyWith({String? kind, double? width, double? height, String Function()? meta, }) { return Rectangle(
-  kind: kind ?? this.kind,
+Rectangle copyWith({Object? Function()? kind, double? width, double? height, Object? Function()? meta, }) { return Rectangle(
+  kind: kind != null ? kind() : this.kind,
   width: width ?? this.width,
   height: height ?? this.height,
   meta: meta != null ? meta() : this.meta,

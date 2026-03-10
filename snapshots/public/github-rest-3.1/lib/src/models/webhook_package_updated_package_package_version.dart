@@ -18,7 +18,7 @@ factory WebhookPackageUpdatedPackagePackageVersion.fromJson(Map<String, dynamic>
   id: (json['id'] as num).toInt(),
   installationCommand: json['installation_command'] as String,
   manifest: json['manifest'] as String?,
-  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   name: json['name'] as String,
   packageFiles: (json['package_files'] as List<dynamic>).map((e) => WebhookPackageUpdatedPackagePackageVersionPackageFiles.fromJson(e as Map<String, dynamic>)).toList(),
   packageUrl: json['package_url'] as String?,
@@ -58,7 +58,7 @@ final String installationCommand;
 
 final String? manifest;
 
-final List<Map<String,String>> metadata;
+final List<Map<String,Object?>> metadata;
 
 final String name;
 
@@ -129,7 +129,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('target_oid') && json['target_oid'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-WebhookPackageUpdatedPackagePackageVersion copyWith({WebhookPackageUpdatedPackagePackageVersionAuthor? Function()? author, String? body, String? bodyHtml, String? createdAt, String? description, List<WebhookPackageUpdatedPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, Uri? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,String>>? metadata, String? name, List<WebhookPackageUpdatedPackagePackageVersionPackageFiles>? packageFiles, String Function()? packageUrl, bool Function()? prerelease, WebhookPackageUpdatedPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, Uri Function()? sourceUrl, String? summary, String Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) { return WebhookPackageUpdatedPackagePackageVersion(
+WebhookPackageUpdatedPackagePackageVersion copyWith({WebhookPackageUpdatedPackagePackageVersionAuthor? Function()? author, String? body, String? bodyHtml, String? createdAt, String? description, List<WebhookPackageUpdatedPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, Uri? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,Object?>>? metadata, String? name, List<WebhookPackageUpdatedPackagePackageVersionPackageFiles>? packageFiles, String Function()? packageUrl, bool Function()? prerelease, WebhookPackageUpdatedPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, Uri Function()? sourceUrl, String? summary, String Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) { return WebhookPackageUpdatedPackagePackageVersion(
   author: author != null ? author() : this.author,
   body: body ?? this.body,
   bodyHtml: bodyHtml ?? this.bodyHtml,

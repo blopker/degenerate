@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-01
 ///
 /// `GET /admin/api/2020-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202001GetGiftCards({String? status, String? limit, String? sinceId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetGiftCards({Object? status, Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 if (limit != null) queryParameters['limit'] = limit;
@@ -44,7 +44,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-01
 ///
 /// `POST /admin/api/2020-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202001CreateGiftCards({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateGiftCards({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,7 +83,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateGiftCardsParamGiftCardId({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateGiftCardsParamGiftCardId({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,7 +103,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-01
 ///
 /// `GET /admin/api/2020-01/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetGiftCardsCount({String? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetGiftCardsCount({Object? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 
@@ -127,7 +127,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-01
 ///
 /// `POST /admin/api/2020-01/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202001CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -158,7 +158,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-01
 ///
 /// `GET /admin/api/2020-01/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202001GetGiftCardsSearch({String? order, String? query, String? limit, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetGiftCardsSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -185,7 +185,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-04
 ///
 /// `GET /admin/api/2020-04/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202004GetGiftCards({String? status, String? limit, String? sinceId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetGiftCards({Object? status, Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 if (limit != null) queryParameters['limit'] = limit;
@@ -212,7 +212,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-04
 ///
 /// `POST /admin/api/2020-04/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202004CreateGiftCards({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateGiftCards({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -251,7 +251,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateGiftCardsParamGiftCardId({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateGiftCardsParamGiftCardId({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -271,7 +271,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-04
 ///
 /// `GET /admin/api/2020-04/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetGiftCardsCount({String? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetGiftCardsCount({Object? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 
@@ -295,7 +295,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-04
 ///
 /// `POST /admin/api/2020-04/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202004CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -326,7 +326,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-04
 ///
 /// `GET /admin/api/2020-04/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202004GetGiftCardsSearch({String? order, String? query, String? limit, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetGiftCardsSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -353,7 +353,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-07
 ///
 /// `GET /admin/api/2020-07/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202007GetGiftCards({String? status, String? limit, String? sinceId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetGiftCards({Object? status, Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 if (limit != null) queryParameters['limit'] = limit;
@@ -380,7 +380,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-07
 ///
 /// `POST /admin/api/2020-07/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202007CreateGiftCards({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateGiftCards({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -419,7 +419,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateGiftCardsParamGiftCardId({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateGiftCardsParamGiftCardId({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -439,7 +439,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-07
 ///
 /// `GET /admin/api/2020-07/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetGiftCardsCount({String? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetGiftCardsCount({Object? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 
@@ -463,7 +463,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-07
 ///
 /// `POST /admin/api/2020-07/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202007CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -494,7 +494,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-07
 ///
 /// `GET /admin/api/2020-07/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202007GetGiftCardsSearch({String? order, String? query, String? limit, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetGiftCardsSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -521,7 +521,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-10
 ///
 /// `GET /admin/api/2020-10/gift_cards.json`
-Future<ApiResult<void, Never>> getGiftCards({String? status, String? limit, String? sinceId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getGiftCards({Object? status, Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 if (limit != null) queryParameters['limit'] = limit;
@@ -548,7 +548,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-10
 ///
 /// `POST /admin/api/2020-10/gift_cards.json`
-Future<ApiResult<void, Never>> createGiftCards({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createGiftCards({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -587,7 +587,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> updateGiftCardsParamGiftCardId({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateGiftCardsParamGiftCardId({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -607,7 +607,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-10
 ///
 /// `GET /admin/api/2020-10/gift_cards/count.json`
-Future<ApiResult<void, Never>> getGiftCardsCount({String? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getGiftCardsCount({Object? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 
@@ -631,7 +631,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-10
 ///
 /// `POST /admin/api/2020-10/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> createGiftCardsParamGiftCardIdDisable({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createGiftCardsParamGiftCardIdDisable({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -662,7 +662,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-10
 ///
 /// `GET /admin/api/2020-10/gift_cards/search.json`
-Future<ApiResult<void, Never>> getGiftCardsSearch({String? order, String? query, String? limit, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getGiftCardsSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -689,7 +689,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2021-01
 ///
 /// `GET /admin/api/2021-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202101GetGiftCards({String? status, String? limit, String? sinceId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetGiftCards({Object? status, Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 if (limit != null) queryParameters['limit'] = limit;
@@ -716,7 +716,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2021-01
 ///
 /// `POST /admin/api/2021-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202101CreateGiftCards({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateGiftCards({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -755,7 +755,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateGiftCardsParamGiftCardId({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateGiftCardsParamGiftCardId({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -775,7 +775,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2021-01
 ///
 /// `GET /admin/api/2021-01/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetGiftCardsCount({String? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetGiftCardsCount({Object? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 
@@ -799,7 +799,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2021-01
 ///
 /// `POST /admin/api/2021-01/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202101CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -830,7 +830,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2021-01
 ///
 /// `GET /admin/api/2021-01/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202101GetGiftCardsSearch({String? order, String? query, String? limit, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetGiftCardsSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -857,7 +857,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-unstable
 ///
 /// `GET /admin/api/unstable/gift_cards.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCards({String? status, String? limit, String? sinceId, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCards({Object? status, Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 if (limit != null) queryParameters['limit'] = limit;
@@ -884,7 +884,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-unstable
 ///
 /// `POST /admin/api/unstable/gift_cards.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCards({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCards({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -923,7 +923,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-unstable
 ///
 /// `PUT /admin/api/unstable/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateGiftCardsParamGiftCardId({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateGiftCardsParamGiftCardId({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -943,7 +943,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-unstable
 ///
 /// `GET /admin/api/unstable/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsCount({String? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsCount({Object? status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status;
 
@@ -967,7 +967,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-unstable
 ///
 /// `POST /admin/api/unstable/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCardsParamGiftCardIdDisable({required String giftCardId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCardsParamGiftCardIdDisable({required String giftCardId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -998,7 +998,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-unstable
 ///
 /// `GET /admin/api/unstable/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsSearch({String? order, String? query, String? limit, String? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -1025,7 +1025,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-01
 ///
 /// `GET /admin/api/2020-01/users.json`
-Future<ApiResult<void, Never>> deprecated202001GetUsers({String? limit, String? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetUsers({Object? limit, Object? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (pageInfo != null) queryParameters['page_info'] = pageInfo;
@@ -1086,7 +1086,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-04
 ///
 /// `GET /admin/api/2020-04/users.json`
-Future<ApiResult<void, Never>> deprecated202004GetUsers({String? limit, String? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetUsers({Object? limit, Object? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (pageInfo != null) queryParameters['page_info'] = pageInfo;
@@ -1147,7 +1147,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-07
 ///
 /// `GET /admin/api/2020-07/users.json`
-Future<ApiResult<void, Never>> deprecated202007GetUsers({String? limit, String? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetUsers({Object? limit, Object? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (pageInfo != null) queryParameters['page_info'] = pageInfo;
@@ -1208,7 +1208,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-10
 ///
 /// `GET /admin/api/2020-10/users.json`
-Future<ApiResult<void, Never>> getUsers({String? limit, String? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getUsers({Object? limit, Object? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (pageInfo != null) queryParameters['page_info'] = pageInfo;
@@ -1269,7 +1269,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2021-01
 ///
 /// `GET /admin/api/2021-01/users.json`
-Future<ApiResult<void, Never>> deprecated202101GetUsers({String? limit, String? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetUsers({Object? limit, Object? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (pageInfo != null) queryParameters['page_info'] = pageInfo;
@@ -1330,7 +1330,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-unstable
 ///
 /// `GET /admin/api/unstable/users.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetUsers({String? limit, String? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetUsers({Object? limit, Object? pageInfo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (pageInfo != null) queryParameters['page_info'] = pageInfo;

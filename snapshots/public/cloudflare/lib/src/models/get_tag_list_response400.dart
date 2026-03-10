@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'get_tag_list_response400_err
 
 factory GetTagListResponse400.fromJson(Map<String, dynamic> json) { return GetTagListResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetTagListResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<GetTagListResponse400Errors> errors;
 
-final Map<String,String> result;
+final Map<String,Object?> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetTagListResponse400 copyWith({List<GetTagListResponse400Errors>? errors, Map<String,String>? result, bool? success, }) { return GetTagListResponse400(
+GetTagListResponse400 copyWith({List<GetTagListResponse400Errors>? errors, Map<String,Object?>? result, bool? success, }) { return GetTagListResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

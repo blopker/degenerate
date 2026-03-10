@@ -8,7 +8,7 @@ final class ErrorModel {const ErrorModel({this.code, this.errors, this.message, 
 
 factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
-  errors: (json['errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  errors: (json['errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   message: json['message'] as String?,
   status: json['status'] as String?,
 ); }
@@ -17,7 +17,7 @@ factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
 final int? code;
 
 /// Errors
-final Map<String,String>? errors;
+final Map<String,Object?>? errors;
 
 /// Error message
 final String? message;
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ErrorModel copyWith({int Function()? code, Map<String, String> Function()? errors, String Function()? message, String Function()? status, }) { return ErrorModel(
+ErrorModel copyWith({int Function()? code, Map<String, Object> Function()? errors, String Function()? message, String Function()? status, }) { return ErrorModel(
   code: code != null ? code() : this.code,
   errors: errors != null ? errors() : this.errors,
   message: message != null ? message() : this.message,

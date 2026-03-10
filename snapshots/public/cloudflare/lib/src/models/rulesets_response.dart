@@ -10,7 +10,7 @@ final class RulesetsResponse {const RulesetsResponse({required this.errors, requ
 factory RulesetsResponse.fromJson(Map<String, dynamic> json) { return RulesetsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as String,
+  result: json['result'],
   success: json['success'] as bool,
 ); }
 
@@ -19,7 +19,7 @@ final List<RulesetsMessage> errors;
 final List<RulesetsMessage> messages;
 
 /// A result.
-final String result;
+final Object? result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -27,17 +27,17 @@ final bool success;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result,
+  'result': ?result,
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('result') && json['result'] is String &&
+      json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RulesetsResponse copyWith({List<RulesetsMessage>? errors, List<RulesetsMessage>? messages, String? result, bool? success, }) { return RulesetsResponse(
+RulesetsResponse copyWith({List<RulesetsMessage>? errors, List<RulesetsMessage>? messages, Object? Function()? result, bool? success, }) { return RulesetsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result ?? this.result,
+  result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

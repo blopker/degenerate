@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'response_message.dart';impor
 factory UnrevokeRegistrationsResponse.fromJson(Map<String, dynamic> json) { return UnrevokeRegistrationsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   resultInfo: json['result_info'] != null
         ? TeamsDevicesCursorResultInfo.fromJson(json['result_info'] as Map<String, dynamic>)
         : null,
@@ -20,7 +20,7 @@ final List<ResponseMessage> errors;
 
 final List<ResponseMessage> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 final TeamsDevicesCursorResultInfo? resultInfo;
 
@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-UnrevokeRegistrationsResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Map<String, String>? Function()? result, TeamsDevicesCursorResultInfo Function()? resultInfo, bool? success, }) { return UnrevokeRegistrationsResponse(
+UnrevokeRegistrationsResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Map<String, Object>? Function()? result, TeamsDevicesCursorResultInfo Function()? resultInfo, bool? success, }) { return UnrevokeRegistrationsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

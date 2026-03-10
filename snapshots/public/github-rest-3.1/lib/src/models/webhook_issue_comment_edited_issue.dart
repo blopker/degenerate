@@ -35,7 +35,7 @@ final class WebhookIssueCommentEditedIssue {const WebhookIssueCommentEditedIssue
 factory WebhookIssueCommentEditedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentEditedIssue(
   activeLockReason: json['active_lock_reason'] as String,
   assignee: WebhookIssueCommentEditedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>),
-  assignees: (json['assignees'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   authorAssociation: json['author_association'] as String,
   body: json['body'] as String,
   closedAt: json['closed_at'] as String,
@@ -49,10 +49,10 @@ factory WebhookIssueCommentEditedIssue.fromJson(Map<String, dynamic> json) { ret
   labels: (json['labels'] as List<dynamic>).map((e) => WebhookIssueCommentEditedIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
   labelsUrl: json['labels_url'] as String,
   locked: json['locked'] as bool,
-  milestone: (json['milestone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  milestone: (json['milestone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
-  performedViaGithubApp: (json['performed_via_github_app'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  performedViaGithubApp: (json['performed_via_github_app'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   pullRequest: json['pull_request'] != null
         ? WebhookIssueCommentEditedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>)
         : null,
@@ -80,7 +80,7 @@ final String? activeLockReason;
 
 final WebhookIssueCommentEditedIssueAssignee? assignee;
 
-final List<Map<String,String>?> assignees;
+final List<Map<String,Object?>?> assignees;
 
 final String authorAssociation;
 
@@ -108,13 +108,13 @@ final String labelsUrl;
 
 final bool locked;
 
-final Map<String,String>? milestone;
+final Map<String,Object?>? milestone;
 
 final String nodeId;
 
 final int number;
 
-final Map<String,String>? performedViaGithubApp;
+final Map<String,Object?>? performedViaGithubApp;
 
 final WebhookIssueCommentEditedIssuePullRequest? pullRequest;
 
@@ -203,7 +203,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssueCommentEditedIssue copyWith({String? Function()? activeLockReason, WebhookIssueCommentEditedIssueAssignee? Function()? assignee, List<Map<String,String>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<WebhookIssueCommentEditedIssueLabels>? labels, String? labelsUrl, bool? locked, Map<String, String>? Function()? milestone, String? nodeId, int? number, Map<String, String>? Function()? performedViaGithubApp, WebhookIssueCommentEditedIssuePullRequest Function()? pullRequest, WebhookIssueCommentEditedIssueReactions? reactions, String? repositoryUrl, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, WebhookIssueCommentEditedIssueState? state, String? Function()? stateReason, String Function()? timelineUrl, String? title, IssueType Function()? type, String? updatedAt, String? url, WebhookIssueCommentEditedIssueUser? user, }) { return WebhookIssueCommentEditedIssue(
+WebhookIssueCommentEditedIssue copyWith({String? Function()? activeLockReason, WebhookIssueCommentEditedIssueAssignee? Function()? assignee, List<Map<String,Object?>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<WebhookIssueCommentEditedIssueLabels>? labels, String? labelsUrl, bool? locked, Map<String, Object>? Function()? milestone, String? nodeId, int? number, Map<String, Object>? Function()? performedViaGithubApp, WebhookIssueCommentEditedIssuePullRequest Function()? pullRequest, WebhookIssueCommentEditedIssueReactions? reactions, String? repositoryUrl, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, WebhookIssueCommentEditedIssueState? state, String? Function()? stateReason, String Function()? timelineUrl, String? title, IssueType Function()? type, String? updatedAt, String? url, WebhookIssueCommentEditedIssueUser? user, }) { return WebhookIssueCommentEditedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,
   assignees: assignees ?? this.assignees,

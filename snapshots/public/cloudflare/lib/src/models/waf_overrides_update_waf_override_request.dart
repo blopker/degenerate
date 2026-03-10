@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'firewall_identifier.dart';im
 factory WafOverridesUpdateWafOverrideRequest.fromJson(Map<String, dynamic> json) { return WafOverridesUpdateWafOverrideRequest(
   id: FirewallIdentifier.fromJson(json['id'] as String),
   rewriteAction: FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>),
-  rules: (json['rules'] as Map<String, dynamic>).map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as String))),
+  rules: (json['rules'] as Map<String, dynamic>).map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as Object?))),
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
@@ -17,21 +17,21 @@ final FirewallIdentifier id;
 
 final FirewallRewriteAction rewriteAction;
 
-final Map<String,FirewallWafAction> rules;
+final Map<String,FirewallWafAction?> rules;
 
 final List<String> urls;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
   'rewrite_action': rewriteAction.toJson(),
-  'rules': rules.map((k, v) => MapEntry(k, v.toJson())),
+  'rules': rules.map((k, v) => MapEntry(k, v?.toJson())),
   'urls': urls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('rewrite_action') &&
       json.containsKey('rules') &&
       json.containsKey('urls'); } 
-WafOverridesUpdateWafOverrideRequest copyWith({FirewallIdentifier? id, FirewallRewriteAction? rewriteAction, Map<String,FirewallWafAction>? rules, List<String>? urls, }) { return WafOverridesUpdateWafOverrideRequest(
+WafOverridesUpdateWafOverrideRequest copyWith({FirewallIdentifier? id, FirewallRewriteAction? rewriteAction, Map<String,FirewallWafAction?>? rules, List<String>? urls, }) { return WafOverridesUpdateWafOverrideRequest(
   id: id ?? this.id,
   rewriteAction: rewriteAction ?? this.rewriteAction,
   rules: rules ?? this.rules,

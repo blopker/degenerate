@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'lists_messages2.dart';final 
 factory ResponseCommonFailure42.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure42(
   errors: (json['errors'] as List<dynamic>).map((e) => ListsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ListsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<ListsMessages2> errors;
 
 final List<ListsMessages2> messages;
 
-final Map<String,String>? result;
+final Map<String,Object?>? result;
 
 /// Defines whether the API call was successful.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure42 copyWith({List<ListsMessages2>? errors, List<ListsMessages2>? messages, Map<String, String>? Function()? result, bool? success, }) { return ResponseCommonFailure42(
+ResponseCommonFailure42 copyWith({List<ListsMessages2>? errors, List<ListsMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure42(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

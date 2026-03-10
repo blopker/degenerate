@@ -38,11 +38,11 @@ final class WebhookCodeScanningAlertReopenedByUserAlert {const WebhookCodeScanni
 factory WebhookCodeScanningAlertReopenedByUserAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedByUserAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
-  dismissedAt: json['dismissed_at'] as String,
-  dismissedBy: json['dismissed_by'] as String,
+  dismissedAt: json['dismissed_at'],
+  dismissedBy: json['dismissed_by'],
   dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
-  dismissedReason: json['dismissed_reason'] as String,
-  fixedAt: json['fixed_at'] as String?,
+  dismissedReason: json['dismissed_reason'],
+  fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
   mostRecentInstance: json['most_recent_instance'] != null
         ? WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>)
@@ -60,17 +60,17 @@ final List<SimpleUser>? assignees;
 final DateTime createdAt;
 
 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final String? dismissedAt;
+final Object? dismissedAt;
 
-final String? dismissedBy;
+final Object? dismissedBy;
 
 final CodeScanningAlertDismissedComment? dismissedComment;
 
 /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
-final String? dismissedReason;
+final Object? dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final String? fixedAt;
+final Object? fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
@@ -106,16 +106,16 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('dismissed_at') && json['dismissed_at'] is String &&
-      json.containsKey('dismissed_by') && json['dismissed_by'] is String &&
-      json.containsKey('dismissed_reason') && json['dismissed_reason'] is String &&
+      json.containsKey('dismissed_at') &&
+      json.containsKey('dismissed_by') &&
+      json.containsKey('dismissed_reason') &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('rule') &&
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertReopenedByUserAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, String? Function()? dismissedAt, String? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, String? Function()? dismissedReason, String? Function()? fixedAt, Uri? htmlUrl, WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertReopenedByUserAlertRule? rule, WebhookCodeScanningAlertReopenedByUserAlertState? Function()? state, WebhookCodeScanningAlertReopenedByUserAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertReopenedByUserAlert(
+WebhookCodeScanningAlertReopenedByUserAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, Object? Function()? dismissedAt, Object? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, Object? Function()? dismissedReason, Object? Function()? fixedAt, Uri? htmlUrl, WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertReopenedByUserAlertRule? rule, WebhookCodeScanningAlertReopenedByUserAlertState? Function()? state, WebhookCodeScanningAlertReopenedByUserAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertReopenedByUserAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,

@@ -7,12 +7,12 @@
 final class RealtimekitGenericSuccessResponse {const RealtimekitGenericSuccessResponse({this.data, this.success = true, });
 
 factory RealtimekitGenericSuccessResponse.fromJson(Map<String, dynamic> json) { return RealtimekitGenericSuccessResponse(
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 /// Data returned by the operation
-final Map<String,String>? data;
+final Map<String,Object?>? data;
 
 /// Success status of the operation
 final bool success;
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-RealtimekitGenericSuccessResponse copyWith({Map<String, String> Function()? data, bool? success, }) { return RealtimekitGenericSuccessResponse(
+RealtimekitGenericSuccessResponse copyWith({Map<String, Object> Function()? data, bool? success, }) { return RealtimekitGenericSuccessResponse(
   data: data != null ? data() : this.data,
   success: success ?? this.success,
 ); } 

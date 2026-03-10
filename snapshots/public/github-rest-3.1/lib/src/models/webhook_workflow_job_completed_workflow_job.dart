@@ -68,7 +68,7 @@ factory WebhookWorkflowJobCompletedWorkflowJob.fromJson(Map<String, dynamic> jso
   status: json['status'] as String,
   headBranch: json['head_branch'] as String,
   workflowName: json['workflow_name'] as String,
-  steps: (json['steps'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  steps: (json['steps'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   url: json['url'] as String,
 ); }
 
@@ -117,7 +117,7 @@ final String? headBranch;
 /// The name of the workflow.
 final String? workflowName;
 
-final List<Map<String,String>?> steps;
+final List<Map<String,Object?>?> steps;
 
 final String url;
 
@@ -169,7 +169,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('check
       json.containsKey('workflow_name') && json['workflow_name'] is String &&
       json.containsKey('steps') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? completedAt, WebhookWorkflowJobCompletedWorkflowJobConclusion? conclusion, String? createdAt, String? headSha, String? htmlUrl, int? id, List<String?>? labels, String? name, String? nodeId, int? runAttempt, int? runId, String? runUrl, double? Function()? runnerGroupId, String? Function()? runnerGroupName, double? Function()? runnerId, String? Function()? runnerName, String? startedAt, String? status, String? Function()? headBranch, String? Function()? workflowName, List<Map<String,String>?>? steps, String? url, }) { return WebhookWorkflowJobCompletedWorkflowJob(
+WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? completedAt, WebhookWorkflowJobCompletedWorkflowJobConclusion? conclusion, String? createdAt, String? headSha, String? htmlUrl, int? id, List<String?>? labels, String? name, String? nodeId, int? runAttempt, int? runId, String? runUrl, double? Function()? runnerGroupId, String? Function()? runnerGroupName, double? Function()? runnerId, String? Function()? runnerName, String? startedAt, String? status, String? Function()? headBranch, String? Function()? workflowName, List<Map<String,Object?>?>? steps, String? url, }) { return WebhookWorkflowJobCompletedWorkflowJob(
   checkRunUrl: checkRunUrl ?? this.checkRunUrl,
   completedAt: completedAt ?? this.completedAt,
   conclusion: conclusion ?? this.conclusion,

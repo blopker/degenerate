@@ -10,7 +10,7 @@ factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) { return Web
   enterprise: json['enterprise'] != null
         ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>)
         : null,
-  inputs: (json['inputs'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  inputs: (json['inputs'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   installation: json['installation'] != null
         ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>)
         : null,
@@ -25,7 +25,7 @@ factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) { return Web
 
 final EnterpriseWebhooks? enterprise;
 
-final Map<String,String>? inputs;
+final Map<String,Object?>? inputs;
 
 final SimpleInstallation? installation;
 
@@ -54,7 +54,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('input
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('workflow') && json['workflow'] is String; } 
-WebhookWorkflowDispatch copyWith({EnterpriseWebhooks Function()? enterprise, Map<String, String>? Function()? inputs, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, String? ref, RepositoryWebhooks? repository, SimpleUser? sender, String? workflow, }) { return WebhookWorkflowDispatch(
+WebhookWorkflowDispatch copyWith({EnterpriseWebhooks Function()? enterprise, Map<String, Object>? Function()? inputs, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, String? ref, RepositoryWebhooks? repository, SimpleUser? sender, String? workflow, }) { return WebhookWorkflowDispatch(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   inputs: inputs != null ? inputs() : this.inputs,
   installation: installation != null ? installation() : this.installation,

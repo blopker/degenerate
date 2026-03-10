@@ -209,7 +209,7 @@ return _execute(
 /// Sends an event to a running workflow instance to trigger state transitions.
 ///
 /// `POST /accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/events/{event_type}`
-Future<ApiResult<WorSendEventWorkflowInstanceResponse, WorSendEventWorkflowInstanceResponse400>> worSendEventWorkflowInstance({required String workflowName, required String instanceId, required String eventType, required String accountId, Map<String,String>? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorSendEventWorkflowInstanceResponse, WorSendEventWorkflowInstanceResponse400>> worSendEventWorkflowInstance({required String workflowName, required String instanceId, required String eventType, required String accountId, Map<String,Object?>? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

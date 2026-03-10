@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List, search, and filter all of your custom SSL certificates. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
 ///
 /// `GET /zones/{zone_id}/custom_certificates`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneListSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneListSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, Object? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();

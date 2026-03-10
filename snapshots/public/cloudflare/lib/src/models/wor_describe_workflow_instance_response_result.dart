@@ -52,7 +52,7 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   end: DateTime.parse(json['end'] as String),
   error: WorDescribeWorkflowInstanceResponseResultError.fromJson(json['error'] as Map<String, dynamic>),
   output: WorDescribeWorkflowInstanceResponseResultOutput.fromJson(json['output'] as Map<String, dynamic>),
-  params: (json['params'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  params: (json['params'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   queued: DateTime.parse(json['queued'] as String),
   start: DateTime.parse(json['start'] as String),
   status: WorDescribeWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),
@@ -69,7 +69,7 @@ final WorDescribeWorkflowInstanceResponseResultError? error;
 
 final WorDescribeWorkflowInstanceResponseResultOutput output;
 
-final Map<String,String> params;
+final Map<String,Object?> params;
 
 final DateTime queued;
 
@@ -113,7 +113,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('end')
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('trigger') &&
       json.containsKey('versionId') && json['versionId'] is String; } 
-WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, WorDescribeWorkflowInstanceResponseResultError? Function()? error, WorDescribeWorkflowInstanceResponseResultOutput? output, Map<String,String>? params, DateTime? queued, DateTime? Function()? start, WorDescribeWorkflowInstanceResponseResultStatus? status, int? stepCount, List<WorDescribeWorkflowInstanceResponseResultSteps>? steps, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultTrigger? trigger, String? versionId, }) { return WorDescribeWorkflowInstanceResponseResult(
+WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, WorDescribeWorkflowInstanceResponseResultError? Function()? error, WorDescribeWorkflowInstanceResponseResultOutput? output, Map<String,Object?>? params, DateTime? queued, DateTime? Function()? start, WorDescribeWorkflowInstanceResponseResultStatus? status, int? stepCount, List<WorDescribeWorkflowInstanceResponseResultSteps>? steps, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultTrigger? trigger, String? versionId, }) { return WorDescribeWorkflowInstanceResponseResult(
   end: end != null ? end() : this.end,
   error: error != null ? error() : this.error,
   output: output ?? this.output,

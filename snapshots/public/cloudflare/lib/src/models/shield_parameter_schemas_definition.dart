@@ -8,22 +8,22 @@ import 'package:collection/collection.dart';/// An operation schema object conta
 final class ShieldParameterSchemasDefinition {const ShieldParameterSchemasDefinition({this.parameters, this.responses, });
 
 factory ShieldParameterSchemasDefinition.fromJson(Map<String, dynamic> json) { return ShieldParameterSchemasDefinition(
-  parameters: (json['parameters'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
-  responses: (json['responses'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  parameters: (json['parameters'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  responses: (json['responses'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// An array containing the learned parameter schemas.
-final List<Map<String,String>>? parameters;
+final List<Map<String,Object?>>? parameters;
 
 /// An empty response object. This field is required to yield a valid operation schema.
-final Map<String,String>? responses;
+final Map<String,Object?>? responses;
 
 Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.map((e) => e).toList(),
   'responses': ?responses,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ShieldParameterSchemasDefinition copyWith({List<Map<String, String>> Function()? parameters, Map<String, String>? Function()? responses, }) { return ShieldParameterSchemasDefinition(
+ShieldParameterSchemasDefinition copyWith({List<Map<String, Object>> Function()? parameters, Map<String, Object>? Function()? responses, }) { return ShieldParameterSchemasDefinition(
   parameters: parameters != null ? parameters() : this.parameters,
   responses: responses != null ? responses() : this.responses,
 ); } 

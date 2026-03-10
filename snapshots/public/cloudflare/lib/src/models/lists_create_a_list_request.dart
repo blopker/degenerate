@@ -8,26 +8,26 @@ import 'lists_description.dart';import 'lists_kind.dart';import 'lists_name.dart
 
 factory ListsCreateAListRequest.fromJson(Map<String, dynamic> json) { return ListsCreateAListRequest(
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
-  kind: ListsKind.fromJson(json['kind'] as String),
+  kind: ListsKind.fromJson(json['kind'] as Object?),
   name: ListsName.fromJson(json['name'] as String),
 ); }
 
 final ListsDescription? description;
 
-final ListsKind kind;
+final ListsKind? kind;
 
 final ListsName name;
 
 Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
-  'kind': kind.toJson(),
+  if (kind != null) 'kind': kind?.toJson(),
   'name': name.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
       json.containsKey('name'); } 
-ListsCreateAListRequest copyWith({ListsDescription Function()? description, ListsKind? kind, ListsName? name, }) { return ListsCreateAListRequest(
+ListsCreateAListRequest copyWith({ListsDescription Function()? description, ListsKind? Function()? kind, ListsName? name, }) { return ListsCreateAListRequest(
   description: description != null ? description() : this.description,
-  kind: kind ?? this.kind,
+  kind: kind != null ? kind() : this.kind,
   name: name ?? this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
