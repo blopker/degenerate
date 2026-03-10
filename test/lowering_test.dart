@@ -523,4 +523,128 @@ void main() {
       );
     });
   });
+
+  group('Vendor extensions (x- fields)', () {
+    test('x- fields at schema level are ignored', () {
+      final tl = TypeLowerer();
+      final types = tl.lowerSchemas({
+        'Pet': {
+          'type': 'object',
+          'x-custom-annotation': 'internal-only',
+          'x-deprecated-since': '2024-01-01',
+          'properties': {
+            'name': {'type': 'string'},
+            'status': {
+              'type': 'string',
+              'x-enum-descriptions': ['Available', 'Pending', 'Sold'],
+              'enum': ['available', 'pending', 'sold'],
+            },
+          },
+          'required': ['name'],
+        },
+      });
+
+      expect(types, hasLength(2)); // Pet + PetStatus enum
+      final pet = types.whereType<IrObject>().first;
+      expect(pet.name, equals('Pet'));
+      expect(pet.fields, hasLength(2)); // name, status — no x- fields
+      expect(pet.fields.map((f) => f.name), containsAll(['name', 'status']));
+    });
+
+    test('x- fields at path and operation level are ignored', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.1.0',
+        'info': {'title': 'Test', 'version': '1.0.0'},
+        'paths': {
+          '/pets': {
+            'x-rate-limit': 100,
+            'x-internal': true,
+            'get': {
+              'operationId': 'listPets',
+              'x-codegen-request-body-name': 'body',
+              'x-throttling-tier': 'free',
+              'tags': ['pets'],
+              'parameters': [
+                {
+                  'name': 'limit',
+                  'in': 'query',
+                  'x-example': 10,
+                  'schema': {'type': 'integer'},
+                },
+              ],
+              'responses': {
+                '200': {
+                  'description': 'OK',
+                  'x-response-name': 'PetList',
+                },
+              },
+            },
+          },
+        },
+        'components': {
+          'schemas': {
+            'Pet': {
+              'type': 'object',
+              'x-expandable': true,
+              'properties': {
+                'id': {'type': 'integer'},
+              },
+            },
+          },
+        },
+      });
+
+      final tl = TypeLowerer();
+      final types = tl.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(tl, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+
+      // Schema lowered correctly despite x- fields
+      expect(types, hasLength(1));
+      final pet = types.first as IrObject;
+      expect(pet.fields, hasLength(1));
+      expect(pet.fields.first.name, equals('id'));
+
+      // Operation lowered correctly despite x- fields
+      expect(apis, hasLength(1));
+      final api = apis.first;
+      expect(api.operations, hasLength(1));
+      final op = api.operations.first;
+      expect(op.operationId, equals('listPets'));
+      expect(op.parameters, hasLength(1));
+      expect(op.parameters.first.name, equals('limit'));
+    });
+
+    test('x- fields at top level and info are ignored', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.1.0',
+        'info': {
+          'title': 'Test',
+          'version': '1.0.0',
+          'x-logo': {'url': 'https://example.com/logo.png'},
+        },
+        'x-tagGroups': [
+          {'name': 'General', 'tags': ['pets']},
+        ],
+        'paths': {
+          '/pets': {
+            'get': {
+              'operationId': 'listPets',
+              'tags': ['pets'],
+              'responses': {
+                '200': {'description': 'OK'},
+              },
+            },
+          },
+        },
+      });
+
+      final tl = TypeLowerer();
+      final opLowerer = OperationLowerer(tl, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+
+      expect(apis, hasLength(1));
+      expect(apis.first.operations.first.operationId, equals('listPets'));
+    });
+  });
 }

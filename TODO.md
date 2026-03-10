@@ -72,7 +72,7 @@
 - [ ] **CI workflow** — add GitHub Actions for tests, analyze, and snapshot validation. *(review2.md 7d)*
 - [x] **Spec-derived base URL helper** — SDK facade emits `static const defaultBaseUrl` from `servers[0].url` when present. *(review2.md #13)*
 - [x] **Retry interceptor improvements** — runtime retry middleware now supports jittered exponential backoff, `Retry-After` handling (seconds + HTTP-date), deterministic test hooks, and idempotency-based method gating with override hooks for unsafe methods when explicitly desired. *(review2.md #6)*
-- [ ] **Vendor extension pass-through** — skip `x-` fields gracefully (already mostly works, not tested).
+- [x] **Vendor extension pass-through** — `x-` fields are naturally ignored at all levels (schema, operation, path, parameter, response, top-level) since the parser only reads known keys. Verified with tests covering Stripe (3,500+ `x-` fields) and dedicated unit tests.
 - [ ] **Lazy top-down tree-shaking** — current pipeline lowers all schemas then BFS-prunes unreachable types. For large specs with `--tag`/`--path` filters, lowering operations first and only lowering referenced schemas would reduce memory and time. *(review3.md #2)*
 
 ### Architectural Suggestions (from review2.md)
