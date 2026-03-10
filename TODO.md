@@ -64,7 +64,7 @@
 - [ ] **Cookie parameters dropped** — recognized during partitioning but explicitly ignored (`break`). Need to either synthesize a `Cookie` header or add first-class cookie support in `ApiRequest`. *(review.md #3, review2.md 1b)*
 - [ ] **Security schemes don't drive codegen** — runtime has `AuthInterceptor`, but generator doesn't emit typed auth surfaces from `securitySchemes`. Should support API key (header/query/cookie), bearer/basic, and per-operation security requirements. Fixture 06 exists but isn't wired up. *(review2.md #3, #6)*
 - [ ] **External `$ref` file resolution** — currently throws `UnsupportedError`. Need multi-document loading and a document graph for split-file specs. Common enterprise requirement. *(review.md #1, review2.md #4)*
-- [ ] **Lossy schema fallbacks** — untyped schemas → `String` (should be `Object?` or `JsonValue`); free-form objects → `Map<String, String>` (should be `Map<String, Object?>`); boolean schemas → `String`. *(review2.md 5a/5b/5c)*
+- [ ] **Lossy schema fallbacks** — untyped schemas → `String` (should be `Object?` or `JsonValue`); free-form objects → `Map<String, String>` (should be `Map<String, Object?>`); boolean schemas → `String`. Consider adding a pre-validation phase that checks the spec against the OpenAPI 3.0/3.1 JSON meta-schema and fails fast with JSON Pointer locations. *(review2.md 5a/5b/5c, review3.md #5)*
 - [ ] **`--client` flag is a no-op** — CLI exposes `--client http|none` but nothing changes in generated output. Either wire it up or remove it. *(review.md #7, review2.md 7c)*
 
 ### P2: Polish and Trust
@@ -76,14 +76,18 @@
 - [ ] **Spec-derived base URL helper** — parser reads `servers` but generator doesn't use them. Emit a generated constant for the first server URL. *(review2.md #13)*
 - [ ] **Retry interceptor improvements** — add jitter, idempotency gating, `Retry-After` header handling. Current implementation is useful but operationally naive. *(review2.md #6)*
 - [ ] **Vendor extension pass-through** — skip `x-` fields gracefully (already mostly works, not tested).
+- [ ] **Lazy top-down tree-shaking** — current pipeline lowers all schemas then BFS-prunes unreachable types. For large specs with `--tag`/`--path` filters, lowering operations first and only lowering referenced schemas would reduce memory and time. *(review3.md #2)*
 
 ### Architectural Suggestions (from review2.md)
 
-These are cross-cutting improvements that would make multiple P0/P1 items easier to implement:
+These are cross-cutting improvements that would make multiple P0/P1 items easier to implement.
+Items from review3.md added where they don't duplicate existing entries:
 
 - [x] **Parameter serialization layer** — IR preserves `style`, `explode`, `allowReserved` on `IrParameter`. Emitter generates style-aware query serialization. Runtime `ApiQueryParameter` supports repeated keys and reserved-char passthrough. Remaining style matrix coverage is incremental.
 - [x] **Request-body preparation layer** — media-type-aware serialization: JSON (`jsonEncode`), text (raw), bytes (raw). Shared `media_type_utils.dart` handles media-type normalization and preference selection. Multipart/form not yet supported.
 - [x] **Response decoding layer** — media-type-aware deserialization: JSON (all types), text (primitives/enums), bytes (`Uint8List` from `bodyBytes`). Shared logic in `media_type_utils.dart`.
+- [ ] **Migrate serialization helpers to `code_builder` Expressions** — `buildFromJsonCode`/`buildToJsonCode` return raw strings mixed with AST construction. Refactoring to return `code_builder` `Expression` objects would enable automatic import tracking and eliminate string-templating edge cases. High effort, low urgency. *(review3.md #3)*
+- [ ] **Split `TypeLowerer` into normalizer + mapper** — `TypeLowerer` handles ref resolution, allOf flattening, name canonicalization, *and* IR mapping in one class with multipass resolution. Separating into `SchemaNormalizer` (produces a fully resolved graph) and `IrMapper` (purely translates to `IrType`) would simplify cycle handling and make the pipeline more testable. *(review3.md #4)*
 
 ---
 
