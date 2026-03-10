@@ -381,6 +381,7 @@ class ApiEmitter {
         IrMap(:final values) =>
           'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
         IrPrimitive(:final kind) => switch (kind) {
+          PrimitiveKind.object => 'return jsonDecode(response.body);',
           PrimitiveKind.string => 'return response.body;',
           PrimitiveKind.int => 'return int.parse(response.body);',
           PrimitiveKind.double => 'return double.parse(response.body);',
@@ -404,6 +405,7 @@ class ApiEmitter {
         'Cannot decode $mediaType response into ${irTypeName(returnType)}';
     return switch (returnType) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => 'return response.body;',
         PrimitiveKind.string => 'return response.body;',
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
@@ -423,6 +425,7 @@ class ApiEmitter {
     final type = p.type;
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => p.dartName,
         PrimitiveKind.string => p.dartName,
         _ => '${p.dartName}.toString()',
       },
@@ -435,6 +438,7 @@ class ApiEmitter {
     final type = p.type;
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => p.dartName,
         PrimitiveKind.string => p.dartName,
         _ => '${p.dartName}.toString()',
       },
@@ -636,6 +640,7 @@ class ApiEmitter {
   String _queryScalarExpr(IrType type, String accessor) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => '$accessor.toString()',
         PrimitiveKind.string => accessor,
         PrimitiveKind.bool => '$accessor.toString()',
         PrimitiveKind.dateTime ||
@@ -769,6 +774,8 @@ try {
     if (isJsonLikeMediaType(mediaType)) {
       return switch (errorType) {
         IrPrimitive(:final kind) => switch (kind) {
+          PrimitiveKind.object =>
+            'try { return jsonDecode(response.body); } catch (_) { return null; }',
           PrimitiveKind.string =>
             'try { return response.body; } catch (_) { return null; }',
           PrimitiveKind.int =>
@@ -802,6 +809,8 @@ try {
         'Cannot decode $mediaType error into ${irTypeName(errorType)}';
     return switch (errorType) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object =>
+          'try { return response.body; } catch (_) { return null; }',
         PrimitiveKind.string =>
           'try { return response.body; } catch (_) { return null; }',
         PrimitiveKind.int =>
@@ -864,6 +873,7 @@ try {
         'Cannot encode non-JSON $mediaType request body from ${irTypeName(bodyType)}';
     return switch (bodyType) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => 'body',
         PrimitiveKind.string => 'body',
         PrimitiveKind.bytes => 'body',
         _ => buildToJsonCode(bodyType, 'body'),
@@ -877,6 +887,7 @@ try {
   bool _supportsNonJsonDecode(IrType type) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => true,
         PrimitiveKind.string ||
         PrimitiveKind.int ||
         PrimitiveKind.double ||
@@ -892,6 +903,7 @@ try {
   bool _supportsNonJsonEncode(IrType type) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => true,
         PrimitiveKind.string ||
         PrimitiveKind.int ||
         PrimitiveKind.double ||

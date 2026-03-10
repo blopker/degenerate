@@ -8,13 +8,11 @@ import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 
 /// Full pipeline helper: parse YAML → lower types → lower operations.
-({
-  List<IrType> types,
-  List<IrApi> apis,
-  TypeLowerer typeLowerer,
-}) _lowerPetstore() {
-  final yamlContent =
-      File('test/fixtures/public/petstore-v3.0-oai.yaml').readAsStringSync();
+({List<IrType> types, List<IrApi> apis, TypeLowerer typeLowerer})
+_lowerPetstore() {
+  final yamlContent = File(
+    'test/fixtures/public/petstore-v3.0-oai.yaml',
+  ).readAsStringSync();
   final doc = OpenApiDocument.parseYaml(yamlContent);
 
   final typeLowerer = TypeLowerer();
@@ -72,23 +70,19 @@ void main() {
       });
 
       test('name field is String and required', () {
-        final name =
-            pet.fields.firstWhere((f) => f.originalName == 'name');
+        final name = pet.fields.firstWhere((f) => f.originalName == 'name');
         expect(name.name, equals('name'));
         expect(name.isRequired, isTrue);
         expect(name.type, isA<IrPrimitive>());
-        expect(
-            (name.type as IrPrimitive).kind, equals(PrimitiveKind.string));
+        expect((name.type as IrPrimitive).kind, equals(PrimitiveKind.string));
       });
 
       test('tag field is String and optional', () {
-        final tag =
-            pet.fields.firstWhere((f) => f.originalName == 'tag');
+        final tag = pet.fields.firstWhere((f) => f.originalName == 'tag');
         expect(tag.name, equals('tag'));
         expect(tag.isRequired, isFalse);
         expect(tag.type, isA<IrPrimitive>());
-        expect(
-            (tag.type as IrPrimitive).kind, equals(PrimitiveKind.string));
+        expect((tag.type as IrPrimitive).kind, equals(PrimitiveKind.string));
       });
 
       test('requiredFields lists id and name', () {
@@ -109,21 +103,22 @@ void main() {
       });
 
       test('code field is int and required', () {
-        final code =
-            error.fields.firstWhere((f) => f.originalName == 'code');
+        final code = error.fields.firstWhere((f) => f.originalName == 'code');
         expect(code.isRequired, isTrue);
         expect(code.type, isA<IrPrimitive>());
-        expect(
-            (code.type as IrPrimitive).kind, equals(PrimitiveKind.int));
+        expect((code.type as IrPrimitive).kind, equals(PrimitiveKind.int));
       });
 
       test('message field is String and required', () {
-        final message =
-            error.fields.firstWhere((f) => f.originalName == 'message');
+        final message = error.fields.firstWhere(
+          (f) => f.originalName == 'message',
+        );
         expect(message.isRequired, isTrue);
         expect(message.type, isA<IrPrimitive>());
-        expect((message.type as IrPrimitive).kind,
-            equals(PrimitiveKind.string));
+        expect(
+          (message.type as IrPrimitive).kind,
+          equals(PrimitiveKind.string),
+        );
       });
     });
 
@@ -150,20 +145,26 @@ void main() {
       });
 
       test('string+date-time → PrimitiveKind.dateTime', () {
-        final t = lowerer.lowerInlineSchema(
-            {'type': 'string', 'format': 'date-time'});
+        final t = lowerer.lowerInlineSchema({
+          'type': 'string',
+          'format': 'date-time',
+        });
         expect((t as IrPrimitive).kind, equals(PrimitiveKind.dateTime));
       });
 
       test('string+uri → PrimitiveKind.uri', () {
-        final t = lowerer
-            .lowerInlineSchema({'type': 'string', 'format': 'uri'});
+        final t = lowerer.lowerInlineSchema({
+          'type': 'string',
+          'format': 'uri',
+        });
         expect((t as IrPrimitive).kind, equals(PrimitiveKind.uri));
       });
 
       test('string+binary → PrimitiveKind.bytes', () {
-        final t = lowerer
-            .lowerInlineSchema({'type': 'string', 'format': 'binary'});
+        final t = lowerer.lowerInlineSchema({
+          'type': 'string',
+          'format': 'binary',
+        });
         expect((t as IrPrimitive).kind, equals(PrimitiveKind.bytes));
       });
 
@@ -187,25 +188,29 @@ void main() {
       final lowerer = TypeLowerer();
 
       test('nullable: true sets isNullable on field type', () {
-        final obj = lowerer.lowerSchema('Test', {
-          'type': 'object',
-          'required': ['name'],
-          'properties': {
-            'name': {'type': 'string', 'nullable': true},
-          },
-        }) as IrObject;
+        final obj =
+            lowerer.lowerSchema('Test', {
+                  'type': 'object',
+                  'required': ['name'],
+                  'properties': {
+                    'name': {'type': 'string', 'nullable': true},
+                  },
+                })
+                as IrObject;
         final field = obj.fields.first;
         expect(field.isRequired, isTrue);
         expect(field.type.isNullable, isTrue);
       });
 
       test('optional non-nullable field', () {
-        final obj = lowerer.lowerSchema('Test2', {
-          'type': 'object',
-          'properties': {
-            'value': {'type': 'integer'},
-          },
-        }) as IrObject;
+        final obj =
+            lowerer.lowerSchema('Test2', {
+                  'type': 'object',
+                  'properties': {
+                    'value': {'type': 'integer'},
+                  },
+                })
+                as IrObject;
         final field = obj.fields.first;
         expect(field.isRequired, isFalse);
         expect(field.type.isNullable, isFalse);
@@ -237,6 +242,48 @@ void main() {
         expect((m.values as IrPrimitive).kind, equals(PrimitiveKind.int));
       });
 
+      test('free-form object falls back to Map<String, Object?>', () {
+        final t = lowerer.lowerInlineSchema({'type': 'object'});
+
+        expect(t, isA<IrMap>());
+        final m = t as IrMap;
+        expect(m.values, isA<IrPrimitive>());
+        expect((m.values as IrPrimitive).kind, equals(PrimitiveKind.object));
+      });
+
+      test('untyped schema falls back to Object?', () {
+        final t = lowerer.lowerInlineSchema({});
+
+        expect(t, isA<IrPrimitive>());
+        expect((t as IrPrimitive).kind, equals(PrimitiveKind.object));
+      });
+
+      test('additionalProperties true falls back to Map<String, Object?>', () {
+        final t = lowerer.lowerInlineSchema({
+          'type': 'object',
+          'additionalProperties': true,
+        });
+
+        expect(t, isA<IrMap>());
+        final m = t as IrMap;
+        expect((m.values as IrPrimitive).kind, equals(PrimitiveKind.object));
+      });
+
+      test('boolean schema property falls back to Object?', () {
+        final t =
+            lowerer.lowerSchema('BoolContainer', {
+                  'type': 'object',
+                  'properties': {'anything': true},
+                })
+                as IrObject;
+
+        expect(t.fields.single.type, isA<IrPrimitive>());
+        expect(
+          (t.fields.single.type as IrPrimitive).kind,
+          equals(PrimitiveKind.object),
+        );
+      });
+
       test('\$ref → IrTypeRef', () {
         final t = lowerer.lowerInlineSchema({
           r'$ref': '#/components/schemas/Pet',
@@ -246,9 +293,7 @@ void main() {
       });
 
       test('_cycleRef → IrTypeRef', () {
-        final t = lowerer.lowerInlineSchema({
-          '_cycleRef': 'Node',
-        });
+        final t = lowerer.lowerInlineSchema({'_cycleRef': 'Node'});
         expect(t, isA<IrTypeRef>());
         expect((t as IrTypeRef).name, equals('Node'));
       });
@@ -271,8 +316,9 @@ void main() {
       late IrOperation op;
 
       setUp(() {
-        op = apis.first.operations
-            .firstWhere((o) => o.operationId == 'listPets');
+        op = apis.first.operations.firstWhere(
+          (o) => o.operationId == 'listPets',
+        );
       });
 
       test('method and path', () {
@@ -291,8 +337,7 @@ void main() {
         expect(limit.location, equals(ParameterLocation.query));
         expect(limit.isRequired, isFalse);
         expect(limit.type, isA<IrPrimitive>());
-        expect(
-            (limit.type as IrPrimitive).kind, equals(PrimitiveKind.int));
+        expect((limit.type as IrPrimitive).kind, equals(PrimitiveKind.int));
       });
 
       test('200 response has Pets schema resolved to IrList', () {
@@ -309,11 +354,9 @@ void main() {
 
       test('default response has Error schema', () {
         expect(op.defaultResponse, isNotNull);
-        final jsonContent =
-            op.defaultResponse!.content['application/json']!;
+        final jsonContent = op.defaultResponse!.content['application/json']!;
         expect(jsonContent.schema, isA<IrTypeRef>());
-        expect(
-            (jsonContent.schema as IrTypeRef).name, equals('ErrorModel'));
+        expect((jsonContent.schema as IrTypeRef).name, equals('ErrorModel'));
       });
 
       test('200 response has x-next header', () {
@@ -322,14 +365,43 @@ void main() {
         expect(resp200.headers.first.originalName, equals('x-next'));
         expect(resp200.headers.first.type, isA<IrPrimitive>());
       });
+
+      test('boolean parameter schemas fall back to Object?', () {
+        final doc = OpenApiDocument({
+          'openapi': '3.1.1',
+          'info': {'title': 'x', 'version': '1'},
+          'paths': {
+            '/pets': {
+              'get': {
+                'operationId': 'listPets',
+                'parameters': [
+                  {'name': 'filter', 'in': 'query', 'schema': true},
+                ],
+                'responses': {
+                  '200': {'description': 'ok'},
+                },
+              },
+            },
+          },
+        });
+        final apis = OperationLowerer(
+          TypeLowerer(),
+          doc: doc,
+        ).lowerPaths(doc.paths);
+
+        final param = apis.single.operations.single.parameters.single;
+        expect(param.type, isA<IrPrimitive>());
+        expect((param.type as IrPrimitive).kind, equals(PrimitiveKind.object));
+      });
     });
 
     group('createPets', () {
       late IrOperation op;
 
       setUp(() {
-        op = apis.first.operations
-            .firstWhere((o) => o.operationId == 'createPets');
+        op = apis.first.operations.firstWhere(
+          (o) => o.operationId == 'createPets',
+        );
       });
 
       test('method is POST', () {
@@ -339,8 +411,7 @@ void main() {
       test('has required request body with Pet schema', () {
         expect(op.requestBody, isNotNull);
         expect(op.requestBody!.isRequired, isTrue);
-        final jsonContent =
-            op.requestBody!.content['application/json']!;
+        final jsonContent = op.requestBody!.content['application/json']!;
         expect(jsonContent.schema, isA<IrTypeRef>());
         expect((jsonContent.schema as IrTypeRef).name, equals('Pet'));
       });
@@ -354,8 +425,9 @@ void main() {
       late IrOperation op;
 
       setUp(() {
-        op = apis.first.operations
-            .firstWhere((o) => o.operationId == 'showPetById');
+        op = apis.first.operations.firstWhere(
+          (o) => o.operationId == 'showPetById',
+        );
       });
 
       test('method and path', () {
@@ -370,8 +442,7 @@ void main() {
         expect(petId.location, equals(ParameterLocation.path));
         expect(petId.isRequired, isTrue);
         expect(petId.type, isA<IrPrimitive>());
-        expect((petId.type as IrPrimitive).kind,
-            equals(PrimitiveKind.string));
+        expect((petId.type as IrPrimitive).kind, equals(PrimitiveKind.string));
       });
 
       test('200 response has Pet schema', () {
@@ -391,9 +462,7 @@ void main() {
         'openapi': '3.1.0',
         'info': {'title': 'Test'},
         'paths': {
-          '/pets': {
-            r'$ref': 'resources/pets.yml',
-          },
+          '/pets': {r'$ref': 'resources/pets.yml'},
         },
       });
 
@@ -412,9 +481,7 @@ void main() {
         'info': {'title': 'Test'},
         'paths': {
           '/pets': {
-            'get': {
-              r'$ref': 'resources/pets_list.yml',
-            },
+            'get': {r'$ref': 'resources/pets_list.yml'},
           },
         },
       });

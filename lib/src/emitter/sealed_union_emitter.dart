@@ -995,6 +995,7 @@ class AnyOfEmitter {
   /// prevent breaking type promotion across named arguments in constructor calls.
   static String _primitiveAnyOfExpr(IrPrimitive p, String accessor) {
     return switch (p.kind) {
+      PrimitiveKind.object => accessor,
       PrimitiveKind.string => '$accessor is String ? $accessor : null',
       PrimitiveKind.int => '$accessor is num ? $accessor.toInt() : null',
       PrimitiveKind.double => '$accessor is num ? $accessor.toDouble() : null',
@@ -1055,6 +1056,7 @@ class AnyOfEmitter {
       PrimitiveKind.bigInt ||
       PrimitiveKind.bytes ||
       PrimitiveKind.string => 'String',
+      PrimitiveKind.object => 'Object?',
       PrimitiveKind.int ||
       PrimitiveKind.double ||
       PrimitiveKind.duration ||

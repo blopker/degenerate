@@ -51,6 +51,7 @@ Reference irTypeToReference(
 
 Reference _primitiveRef(PrimitiveKind kind, bool nullable) {
   final symbol = switch (kind) {
+    PrimitiveKind.object => 'Object',
     PrimitiveKind.string => 'String',
     PrimitiveKind.int => 'int',
     PrimitiveKind.double => 'double',
@@ -84,6 +85,7 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 String irTypeName(IrType type) {
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
+      PrimitiveKind.object => 'Object',
       PrimitiveKind.string => 'String',
       PrimitiveKind.int => 'int',
       PrimitiveKind.double => 'double',
@@ -121,6 +123,7 @@ String buildFromJsonCode(
 
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
+      PrimitiveKind.object => accessor,
       PrimitiveKind.string => '$accessor as String$nullSuffix',
       PrimitiveKind.int when isOptional =>
         '$accessor != null ? ($accessor as num).toInt() : null',
@@ -191,6 +194,7 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
   final q = nullable ? '?' : '';
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
+      PrimitiveKind.object => accessor,
       PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
       PrimitiveKind.uri => '$accessor$q.toString()',
       PrimitiveKind.bigInt => '$accessor$q.toString()',
@@ -250,6 +254,7 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
     PrimitiveKind.bigInt => 'String',
     PrimitiveKind.duration => 'num',
     PrimitiveKind.bytes => 'String',
+    PrimitiveKind.object => 'Object?',
     PrimitiveKind.int => 'num',
     PrimitiveKind.double => 'num',
     _ => irTypeName(inner),

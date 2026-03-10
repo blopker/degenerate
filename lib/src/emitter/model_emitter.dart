@@ -214,6 +214,7 @@ class ModelEmitter {
   String? _canParseTypeCheck(IrType type, String accessor) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.object => null,
         PrimitiveKind.string => '$accessor is String',
         PrimitiveKind.int => '$accessor is num',
         PrimitiveKind.double => '$accessor is num',
@@ -389,6 +390,9 @@ class ModelEmitter {
         final kind = (f.type as IrPrimitive).kind;
         if (kind == PrimitiveKind.string) {
           return Code("'${escapeDartString(v)}'");
+        }
+        if (kind == PrimitiveKind.object) {
+          return null;
         }
         // Non-string primitive with string default → skip
         return null;

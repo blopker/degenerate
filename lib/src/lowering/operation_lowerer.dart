@@ -234,16 +234,21 @@ class OperationLowerer {
     final explode = param['explode'] as bool?;
     final allowReserved = param['allowReserved'] == true;
 
-    final schemaMap = param['schema'] as Map<String, dynamic>?;
+    final rawSchema = param['schema'];
     // Generate a name hint for inline parameter schemas.
     String? paramNameHint;
     if (_currentOperationId != null) {
       paramNameHint = '${_currentOpPascal!}${toPascalCase(name)}';
     }
-    final type = schemaMap != null
-        ? typeLowerer.lowerInlineSchema(schemaMap, nameHint: paramNameHint)
-        : IrPrimitive(PrimitiveKind.string);
-    final defaultValue = param['default'] ?? schemaMap?['default'];
+    final type = rawSchema != null
+        ? typeLowerer.lowerUntypedInlineSchema(
+            rawSchema,
+            nameHint: paramNameHint,
+          )
+        : const IrPrimitive(PrimitiveKind.object, isNullable: true);
+    final defaultValue =
+        param['default'] ??
+        (rawSchema is Map<String, dynamic> ? rawSchema['default'] : null);
 
     return IrParameter(
       name,
@@ -334,16 +339,16 @@ class OperationLowerer {
       final mediaMap = entry.value;
       if (mediaMap is! Map<String, dynamic>) continue;
 
-      final schemaMap = mediaMap['schema'] as Map<String, dynamic>?;
-      if (schemaMap == null) continue;
+      final rawSchema = mediaMap['schema'];
+      if (rawSchema == null) continue;
 
       // Generate a name hint for inline request body schemas.
       String? bodyNameHint;
       if (_currentOperationId != null) {
         bodyNameHint = '${_currentOpPascal!}Request';
       }
-      final irSchema = typeLowerer.lowerInlineSchema(
-        schemaMap,
+      final irSchema = typeLowerer.lowerUntypedInlineSchema(
+        rawSchema,
         nameHint: bodyNameHint,
       );
       // encoding is a map of property names to encoding objects, not a string.
@@ -372,8 +377,8 @@ class OperationLowerer {
         final mediaMap = entry.value;
         if (mediaMap is! Map<String, dynamic>) continue;
 
-        final schemaMap = mediaMap['schema'] as Map<String, dynamic>?;
-        if (schemaMap == null) continue;
+        final rawSchema = mediaMap['schema'];
+        if (rawSchema == null) continue;
 
         // Generate a name hint for inline schemas based on the operation
         String? nameHint;
@@ -386,8 +391,8 @@ class OperationLowerer {
           }
         }
 
-        final irSchema = typeLowerer.lowerInlineSchema(
-          schemaMap,
+        final irSchema = typeLowerer.lowerUntypedInlineSchema(
+          rawSchema,
           nameHint: nameHint,
         );
         irContent[mediaType] = IrMediaType(irSchema);
@@ -403,10 +408,10 @@ class OperationLowerer {
         final headerMap = entry.value;
         if (headerMap is! Map<String, dynamic>) continue;
 
-        final schemaMap = headerMap['schema'] as Map<String, dynamic>?;
-        final headerType = schemaMap != null
-            ? typeLowerer.lowerInlineSchema(schemaMap)
-            : IrPrimitive(PrimitiveKind.string);
+        final rawSchema = headerMap['schema'];
+        final headerType = rawSchema != null
+            ? typeLowerer.lowerUntypedInlineSchema(rawSchema)
+            : const IrPrimitive(PrimitiveKind.object, isNullable: true);
         final headerDescription = headerMap['description'] as String?;
 
         headers.add(

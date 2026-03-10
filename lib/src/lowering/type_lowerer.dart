@@ -71,8 +71,8 @@ class TypeLowerer {
     for (final entry in schemas.entries) {
       final name = entry.key;
       final schema = entry.value;
-      if (schema is! Map<String, dynamic>) continue;
-      final irType = lowerSchema(name, schema);
+      final irType = _lowerNamedSchema(name, schema);
+      if (irType == null) continue;
       results.add(irType);
     }
 
@@ -226,21 +226,17 @@ class TypeLowerer {
   }
 
   /// Lower a single named schema to an IR type and register it.
-  IrType lowerSchema(String name, Map<String, dynamic> schema) {
-    // Use pre-computed name mapping if available, otherwise compute it
+  IrType? _lowerNamedSchema(String name, dynamic schema) {
+    if (schema is! Map<String, dynamic> && schema is! bool) return null;
     final dartName = _nameMapping[name] ?? _uniqueTypeName(name);
     _nameMapping[name] = dartName;
     final discProp = _discriminatorProperties[name];
-    var irType = _lowerSchemaImpl(
-      dartName,
-      schema,
-      discriminatorProperty: discProp,
-    );
-    // Wrap named primitives as extension types so they get their own emitted file.
-    // Strip nullability from the inner primitive — nullability is handled at the
-    // field/parameter level (PartialImages? rather than PartialImages(int?)).
+    var irType = schema is Map<String, dynamic>
+        ? _lowerSchemaImpl(dartName, schema, discriminatorProperty: discProp)
+        : _lowerBooleanSchema(schema, nameHint: dartName);
     if (irType is IrPrimitive) {
-      final inner = irType.isNullable
+      final preserveNullableInner = irType.kind == PrimitiveKind.object;
+      final inner = irType.isNullable && !preserveNullableInner
           ? IrPrimitive(irType.kind, format: irType.format)
           : irType;
       irType = IrExtensionType(
@@ -252,6 +248,10 @@ class TypeLowerer {
     }
     typeRegistry[dartName] = irType;
     return irType;
+  }
+
+  IrType lowerSchema(String name, Map<String, dynamic> schema) {
+    return _lowerNamedSchema(name, schema)!;
   }
 
   /// Lower an anonymous/inline schema (e.g. in a response body or parameter).
@@ -303,6 +303,19 @@ class TypeLowerer {
       }
     }
     return resolved;
+  }
+
+  IrType lowerUntypedInlineSchema(dynamic schema, {String? nameHint}) {
+    if (schema is Map<String, dynamic>) {
+      return lowerInlineSchema(schema, nameHint: nameHint);
+    }
+    if (schema is bool) {
+      return _lowerBooleanSchema(schema, nameHint: nameHint);
+    }
+    warnings.add(
+      'Encountered invalid non-object schema; defaulting to Object?.',
+    );
+    return const IrPrimitive(PrimitiveKind.object);
   }
 
   /// Check if a schema will produce a named type that needs registration
@@ -588,12 +601,11 @@ class TypeLowerer {
       return _lowerPrimitive(type, flattened);
     }
 
-    // Fallback: no explicit type — treat as String.
-    // Named schemas become extension types (e.g. `extension type IamUserInviteStatus(String value)`).
+    // Fallback: no explicit type — treat as Object?.
     return IrPrimitive(
-      PrimitiveKind.string,
+      PrimitiveKind.object,
       description: description,
-      isNullable: nullable,
+      isNullable: true,
     );
   }
 
@@ -638,6 +650,13 @@ class TypeLowerer {
     }
   }
 
+  IrType _lowerBooleanSchema(bool schema, {String? nameHint}) {
+    warnings.add(
+      'Boolean schema${nameHint != null ? ' for $nameHint' : ''} lowered as Object? fallback.',
+    );
+    return const IrPrimitive(PrimitiveKind.object, isNullable: true);
+  }
+
   // ─── Enum ─────────────────────────────────────────────────────
 
   IrType _lowerEnum(String? name, Map<String, dynamic> schema) {
@@ -673,7 +692,7 @@ class TypeLowerer {
         itemsType = _lowerSchemaImpl(itemNameHint, itemsSchema);
       }
     } else {
-      itemsType = IrPrimitive(PrimitiveKind.string);
+      itemsType = const IrPrimitive(PrimitiveKind.object, isNullable: true);
     }
     return IrList(itemsType, description: description, isNullable: nullable);
   }
@@ -694,7 +713,7 @@ class TypeLowerer {
       }
     } else {
       // additionalProperties: true or absent → Map<String, dynamic>
-      valueType = IrPrimitive(PrimitiveKind.string);
+      valueType = const IrPrimitive(PrimitiveKind.object, isNullable: true);
     }
     return IrMap(valueType, description: description, isNullable: nullable);
   }
@@ -727,9 +746,12 @@ class TypeLowerer {
       // Property values can be boolean schemas (true/false) in JSON Schema.
       // Treat boolean schemas as unconstrained (true) or impossible (false).
       if (entry.value is! Map<String, dynamic>) {
-        // true → accept anything (dynamic/String fallback)
+        // true/false boolean schema → accept anything via Object? fallback.
         // false → nothing valid, but we still emit the field
-        final fieldType = IrPrimitive(PrimitiveKind.string);
+        final fieldType = const IrPrimitive(
+          PrimitiveKind.object,
+          isNullable: true,
+        );
         fields.add(
           IrField(
             fieldDartName,

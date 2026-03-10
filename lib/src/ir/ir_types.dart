@@ -276,6 +276,7 @@ enum HttpMethod { get, post, put, patch, delete, head, options, trace }
 enum ParameterLocation { path, query, header, cookie }
 
 enum PrimitiveKind {
+  object,
   string,
   int,
   double,

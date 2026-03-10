@@ -64,7 +64,7 @@
 - [x] **Cookie parameters emitted** — cookie params now appear in method signatures, flow through `ApiRequest.cookies`, and adapters synthesize the `Cookie` header. `ApiConfig` supports `defaultCookies`. *(review.md #3, review2.md 1b)*
 - [x] **Security schemes drive codegen** — generator now emits typed auth helpers for API key (header/query/cookie), bearer, and basic auth plus generated security metadata for schemes and per-operation/global requirements. Fixture 06 snapshot exercises the output. *(review2.md #3, #6)*
 - [ ] **External `$ref` file resolution** — currently throws `UnsupportedError`. Need multi-document loading and a document graph for split-file specs. Common enterprise requirement. *(review.md #1, review2.md #4)*
-- [ ] **Lossy schema fallbacks** — untyped schemas → `String` (should be `Object?` or `JsonValue`); free-form objects → `Map<String, String>` (should be `Map<String, Object?>`); boolean schemas → `String`. Consider adding a pre-validation phase that checks the spec against the OpenAPI 3.0/3.1 JSON meta-schema and fails fast with JSON Pointer locations. *(review2.md 5a/5b/5c, review3.md #5)*
+- [x] **Lossy schema fallbacks fixed** — untyped schemas now lower to `Object?`, free-form objects to `Map<String, Object?>`, and boolean schemas to `Object?` instead of silent `String` fallbacks. A future pre-validation phase could still improve diagnostics with JSON Pointer locations. *(review2.md 5a/5b/5c, review3.md #5)*
 - [x] **`--client` flag removed** — was a no-op; runtime is now handled by separate adapter packages (`degenerate_http`, `degenerate_dio`). *(review.md #7, review2.md 7c)*
 
 ### P2: Polish and Trust
