@@ -1,0 +1,70 @@
+paths:
+  /pets:
+    get:
+      operationId: listPets
+      tags:
+        - pets
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: 'models.yaml#/components/schemas/Pet'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: 'models.yaml#/components/schemas/Error'
+    post:
+      operationId: createPet
+      tags:
+        - pets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'models.yaml#/components/schemas/Pet'
+      responses:
+        '201':
+          description: Pet created
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: 'models.yaml#/components/schemas/Error'
+
+  /pets/{petId}:
+    get:
+      operationId: getPet
+      tags:
+        - pets
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A pet
+          content:
+            application/json:
+              schema:
+                $ref: 'models.yaml#/components/schemas/Pet'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: 'models.yaml#/components/schemas/Error'

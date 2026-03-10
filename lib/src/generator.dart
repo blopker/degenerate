@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import 'parser/openapi_document.dart';
+import 'parser/ref_inliner.dart';
 
 import 'lowering/type_lowerer.dart';
 import 'lowering/operation_lowerer.dart';
@@ -87,14 +88,19 @@ class Generator {
 
     _log('Spec: ${doc.title} (OpenAPI ${doc.version})');
 
-    // 2. Note: $ref resolution and allOf flattening are handled inline
+    // 2. Inline external $ref values by loading referenced files.
+    final inliner = RefInliner(p.dirname(p.absolute(config.inputPath)));
+    final inlinedRoot = inliner.inline(doc.root);
+    final inlinedDoc = OpenApiDocument(inlinedRoot);
+
+    // Note: local $ref resolution and allOf flattening are handled inline
     // during type lowering (TypeLowerer handles $ref directly, and uses
     // AllOfFlattener for allOf compositions).
 
     // 4. Lower schemas to IR types
     _log('Lowering schemas to IR...');
     final typeLowerer = TypeLowerer();
-    final irTypes = typeLowerer.lowerSchemas(doc.schemas);
+    final irTypes = typeLowerer.lowerSchemas(inlinedDoc.schemas);
 
     if (config.verbose) {
       _log('  ${irTypes.length} types lowered');
@@ -111,8 +117,8 @@ class Generator {
 
     // 5. Lower operations to IR operations
     _log('Lowering operations to IR...');
-    final opLowerer = OperationLowerer(typeLowerer, doc: doc);
-    var irApis = opLowerer.lowerPaths(doc.paths);
+    final opLowerer = OperationLowerer(typeLowerer, doc: inlinedDoc);
+    var irApis = opLowerer.lowerPaths(inlinedDoc.paths);
 
     // Build a set of names already in irTypes for deduplication.
     final existingNames = irTypes
@@ -218,16 +224,16 @@ class Generator {
     final packageName =
         config.packageName ??
         _existingPackageName(config.outputDir) ??
-        _inferPackageName(doc.title);
+        _inferPackageName(inlinedDoc.title);
     final specFileName = p.basename(config.inputPath);
-    final specVersion = doc.version;
+    final specVersion = inlinedDoc.version;
 
     final fileEmitter = FileEmitter();
     final emitterWarnings = <String>[];
-    final securitySchemes = _lowerSecuritySchemes(doc.securitySchemes);
-    final globalSecurity = _lowerSecurityRequirements(doc.security);
-    final defaultServerUrl = doc.servers.isNotEmpty
-        ? doc.servers.first['url'] as String?
+    final securitySchemes = _lowerSecuritySchemes(inlinedDoc.securitySchemes);
+    final globalSecurity = _lowerSecurityRequirements(inlinedDoc.security);
+    final defaultServerUrl = inlinedDoc.servers.isNotEmpty
+        ? inlinedDoc.servers.first['url'] as String?
         : null;
     final files = fileEmitter.emitAll(
       types: irTypes,

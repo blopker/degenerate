@@ -166,7 +166,7 @@ void main() {
 
   group('public - external refs', () {
     for (final specName in _externalRefSpecs) {
-      test('$specName fails with UnsupportedError', () async {
+      test('$specName fails with FileSystemException for missing refs', () async {
         final specFile = _specFiles(p.join(_fixturesDir, 'public'))
             .firstWhere((f) => p.basenameWithoutExtension(f.path) == specName);
         final tempDir =
@@ -180,7 +180,7 @@ void main() {
           );
           await expectLater(
             Generator(config).generate(),
-            throwsA(isA<UnsupportedError>()),
+            throwsA(isA<FileSystemException>()),
           );
         } finally {
           tempDir.deleteSync(recursive: true);

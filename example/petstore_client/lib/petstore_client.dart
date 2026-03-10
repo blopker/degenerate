@@ -6,6 +6,7 @@
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
 export 'src/client/petstore_client_api.dart';
+export 'src/client/petstore_client_security.dart';
 
 export 'src/models/category.dart';
 export 'src/models/find_pets_by_status_status.dart';

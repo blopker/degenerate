@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:degenerate_http/degenerate_http.dart';
 import 'package:petstore_client/petstore_client.dart';
 
@@ -19,6 +21,9 @@ void main() async {
 
   try {
     // ── Find available pets ──────────────────────────────────────
+    // The live petstore server sometimes returns pets that violate the
+    // spec (e.g. missing required 'name' field). ApiParseException
+    // gives you access to the raw response so you can handle it.
     print('=== Finding available pets ===');
     final findResult = await sdk.pet.findPetsByStatus(
       status: FindPetsByStatusStatus.available,
@@ -34,6 +39,12 @@ void main() async {
         if (data.length > 5) print('  ... and ${data.length - 5} more');
       case ApiError(:final statusCode, :final rawBody):
         print('Error $statusCode: $rawBody');
+      // Escape hatch: the server returned a 2xx but the body didn't match
+      // the spec. You can fall back to manual parsing with the raw response.
+      case ApiParseException(:final response, :final exception):
+        print('Server returned invalid data: $exception');
+        final raw = jsonDecode(response.body) as List;
+        print('  Got ${raw.length} items as raw JSON (first: ${raw.first})');
       case ApiException(:final exception):
         print('Network error: $exception');
     }

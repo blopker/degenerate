@@ -19,7 +19,7 @@
 
 ## Features
 
-- **Full OpenAPI 3.0 and 3.1 support** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, and circular references
+- **Full OpenAPI 3.0 and 3.1 support** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution
 - **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
 - **Fast** — generates 12,700 files from the Cloudflare spec in ~6 seconds (AOT compiled)
@@ -73,6 +73,10 @@ void main() async {
       print('Found ${data.length} pets');
     case ApiError(:final statusCode, :final rawBody):
       print('Error $statusCode: $rawBody');
+    case ApiParseException(:final response):
+      // Server returned 2xx but body didn't match the spec.
+      // Fall back to raw response for manual parsing.
+      print('Bad response body: ${response.body}');
     case ApiException(:final exception):
       print('Network error: $exception');
   }
@@ -337,6 +341,7 @@ lib/src/
   naming.dart                PascalCase/camelCase/sanitize/deduplicate
   ir/ir_types.dart           All IR types (sealed classes, enums)
   parser/openapi_document.dart   YAML/JSON parsing
+  parser/ref_inliner.dart      Resolve external $ref files to local refs
   normalizer/
     allof_flattener.dart     Merge allOf compositions
   lowering/
@@ -357,7 +362,7 @@ packages/
   degenerate_dio/            package:dio adapter
 ```
 
-The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline allOf flattening and $ref resolution) -> **Emit** (IR to Dart via code_builder) -> **Write**. Generated files include `// dart format off` to prevent reformatting.
+The pipeline is: **Parse** (YAML/JSON) -> **Inline** (resolve external `$ref` files to local refs) -> **Lower** (schemas to IR, with inline allOf flattening and $ref resolution) -> **Emit** (IR to Dart via code_builder) -> **Write**. Generated files include `// dart format off` to prevent reformatting.
 
 ## Tested Specs
 
@@ -376,7 +381,7 @@ The pipeline is: **Parse** (YAML/JSON) -> **Lower** (schemas to IR, with inline 
 ## Limitations
 
 - **Swagger 2.0** is not supported; only OpenAPI 3.0 and 3.1
-- **External `$ref` files** (e.g., `$ref: './other.yaml'`) are not resolved
+- **Remote `$ref` URLs** (e.g., `$ref: 'https://...'`) are not resolved; only local filesystem refs are supported
 
 ## License
 

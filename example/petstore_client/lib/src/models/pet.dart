@@ -37,9 +37,7 @@ final class Pet {const Pet({this.id, required this.name, this.category, required
 factory Pet.fromJson(Map<String, dynamic> json) { return Pet(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   name: json['name'] as String,
-  category: json['category'] != null
-        ? Category.fromJson(json['category'] as Map<String, dynamic>)
-        : null,
+  category: json['category'] != null ? Category.fromJson(json['category'] as Map<String, dynamic>) : null,
   photoUrls: (json['photoUrls'] as List<dynamic>).map((e) => e as String).toList(),
   tags: (json['tags'] as List<dynamic>?)?.map((e) => Tag.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'] != null ? PetStatus.fromJson(json['status'] as String) : null,

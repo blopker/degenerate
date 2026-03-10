@@ -5,6 +5,7 @@
 // OpenAPI spec version: 3.0.4
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'petstore_client_security.dart';
 import '../apis/pet_api.dart';
 import '../apis/store_api.dart';
 import '../apis/user_api.dart';
@@ -16,6 +17,8 @@ import '../apis/user_api.dart';
 /// sdk.pet.addPet();
 /// ```
 final class PetstoreClientApi {
+  static const defaultBaseUrl = '/api/v3';
+
   final ApiConfig _config;
 
   PetstoreClientApi(this._config);
@@ -23,4 +26,6 @@ final class PetstoreClientApi {
   late final PetApi pet = PetApi(_config);
   late final StoreApi store = StoreApi(_config);
   late final UserApi user = UserApi(_config);
+
+  PetstoreClientApi withApiKey(String value) => PetstoreClientApi(PetstoreClientSecurity.applyApiKey(_config, value));
 }

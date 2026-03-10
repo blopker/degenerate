@@ -17,11 +17,12 @@ final ApiConfig _config;
 /// Returns a map of status codes to quantities.
 ///
 /// `GET /store/inventory`
-Future<ApiResult<Map<String, int>, Never>> getInventory() async  { final request = ApiRequest(
+Future<ApiResult<Map<String, int>, Never>> getInventory() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/store/inventory',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Place a new order in the store.
 ///
 /// `POST /store/order`
-Future<ApiResult<Order, Never>> placeOrder({Order? body}) async  { final request = ApiRequest(
+Future<ApiResult<Order, Never>> placeOrder({Order? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/store/order',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -57,11 +59,12 @@ return _execute(
 /// For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
 ///
 /// `GET /store/order/{orderId}`
-Future<ApiResult<Order, Never>> getOrderById({required int orderId}) async  { final request = ApiRequest(
+Future<ApiResult<Order, Never>> getOrderById({required int orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/store/order/${Uri.encodeComponent(orderId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -76,11 +79,12 @@ return _execute(
 /// For valid response try integer IDs with value < 1000. Anything above 1000 or non-integers will generate API errors.
 ///
 /// `DELETE /store/order/{orderId}`
-Future<ApiResult<void, Never>> deleteOrder({required int orderId}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteOrder({required int orderId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/store/order/${Uri.encodeComponent(orderId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -101,19 +105,23 @@ Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(A
 
   final response = await chain(request);
 
-  if (response.isSuccessful) {
-    return ApiSuccess(
-      onSuccess(response),
+  try {
+    if (response.isSuccessful) {
+      return ApiSuccess(
+        onSuccess(response),
+        statusCode: response.statusCode,
+        headers: response.headers,
+      );
+    }
+    return ApiError(
       statusCode: response.statusCode,
+      error: onError != null ? onError(response) : null,
+      rawBody: response.body,
       headers: response.headers,
     );
+  } catch (e, st) {
+    return ApiParseException(e, st, response: response);
   }
-  return ApiError(
-    statusCode: response.statusCode,
-    error: onError != null ? onError(response) : null,
-    rawBody: response.body,
-    headers: response.headers,
-  );
 } catch (e, st) {
   return ApiException(e, st);
 }

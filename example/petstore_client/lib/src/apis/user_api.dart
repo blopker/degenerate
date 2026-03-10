@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// This can only be done by the logged in user.
 ///
 /// `POST /user`
-Future<ApiResult<User, Never>> createUser({User? body}) async  { final request = ApiRequest(
+Future<ApiResult<User, Never>> createUser({User? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/user',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -36,12 +37,13 @@ return _execute(
 /// Creates list of users with given input array.
 ///
 /// `POST /user/createWithList`
-Future<ApiResult<User, Never>> createUsersWithListInput({List<User>? body}) async  { final request = ApiRequest(
+Future<ApiResult<User, Never>> createUsersWithListInput({List<User>? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/user/createWithList',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body),
 );
 
@@ -57,15 +59,19 @@ return _execute(
 /// Log into the system.
 ///
 /// `GET /user/login`
-Future<ApiResult<String, Never>> loginUser({String? username, String? password, }) async  { final request = ApiRequest(
+Future<ApiResult<String, Never>> loginUser({String? username, String? password, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (username != null) queryParameters['username'] = username;
+if (password != null) queryParameters['password'] = password;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/login',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'username': ?username,
-    'password': ?password,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -80,11 +86,12 @@ return _execute(
 /// Log user out of the system.
 ///
 /// `GET /user/logout`
-Future<ApiResult<void, Never>> logoutUser() async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> logoutUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/logout',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -97,11 +104,12 @@ return _execute(
 /// Get user detail based on username.
 ///
 /// `GET /user/{username}`
-Future<ApiResult<User, Never>> getUserByName({required String username}) async  { final request = ApiRequest(
+Future<ApiResult<User, Never>> getUserByName({required String username}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/user/${Uri.encodeComponent(username)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -116,12 +124,13 @@ return _execute(
 /// This can only be done by the logged in user.
 ///
 /// `PUT /user/{username}`
-Future<ApiResult<void, Never>> updateUser({required String username, User? body, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> updateUser({required String username, User? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/user/${Uri.encodeComponent(username)}',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body?.toJson()),
 );
 
@@ -135,11 +144,12 @@ return _execute(
 /// This can only be done by the logged in user.
 ///
 /// `DELETE /user/{username}`
-Future<ApiResult<void, Never>> deleteUser({required String username}) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deleteUser({required String username}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/user/${Uri.encodeComponent(username)}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -160,19 +170,23 @@ Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(A
 
   final response = await chain(request);
 
-  if (response.isSuccessful) {
-    return ApiSuccess(
-      onSuccess(response),
+  try {
+    if (response.isSuccessful) {
+      return ApiSuccess(
+        onSuccess(response),
+        statusCode: response.statusCode,
+        headers: response.headers,
+      );
+    }
+    return ApiError(
       statusCode: response.statusCode,
+      error: onError != null ? onError(response) : null,
+      rawBody: response.body,
       headers: response.headers,
     );
+  } catch (e, st) {
+    return ApiParseException(e, st, response: response);
   }
-  return ApiError(
-    statusCode: response.statusCode,
-    error: onError != null ? onError(response) : null,
-    rawBody: response.body,
-    headers: response.headers,
-  );
 } catch (e, st) {
   return ApiException(e, st);
 }

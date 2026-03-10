@@ -1,0 +1,15 @@
+name: wire_13_external_refs
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  spec_13_external_refs:
+    path: ../../../snapshots/specs/13-external-refs
+  degenerate_runtime:
+    path: ../../../packages/degenerate_runtime
+
+dev_dependencies:
+  test: ^1.25.6

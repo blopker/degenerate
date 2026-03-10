@@ -1,0 +1,13 @@
+Owner:
+  type: object
+  required:
+    - name
+  properties:
+    name:
+      type: string
+    email:
+      type: string
+    pets:
+      type: array
+      items:
+        $ref: 'models.yaml#/components/schemas/Pet'

@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Add a new pet to the store.
 ///
 /// `POST /pet`
-Future<ApiResult<Pet, Never>> addPet({required Pet body}) async  { final request = ApiRequest(
+Future<ApiResult<Pet, Never>> addPet({required Pet body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/pet',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -36,12 +37,13 @@ return _execute(
 /// Update an existing pet by Id.
 ///
 /// `PUT /pet`
-Future<ApiResult<Pet, Never>> updatePet({required Pet body}) async  { final request = ApiRequest(
+Future<ApiResult<Pet, Never>> updatePet({required Pet body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
   method: 'PUT',
   path: '/pet',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
+  headers: headers,
   body: jsonEncode(body.toJson()),
 );
 
@@ -57,14 +59,18 @@ return _execute(
 /// Multiple status values can be provided with comma separated strings.
 ///
 /// `GET /pet/findByStatus`
-Future<ApiResult<List<Pet>, Never>> findPetsByStatus({required FindPetsByStatusStatus status}) async  { final request = ApiRequest(
+Future<ApiResult<List<Pet>, Never>> findPetsByStatus({required FindPetsByStatusStatus status}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/pet/findByStatus',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'status': status.toJson(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -80,14 +86,20 @@ return _execute(
 /// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
 ///
 /// `GET /pet/findByTags`
-Future<ApiResult<List<Pet>, Never>> findPetsByTags({required List<String> tags}) async  { final request = ApiRequest(
+Future<ApiResult<List<Pet>, Never>> findPetsByTags({required List<String> tags}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+for (final item in tags) {
+  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item, allowReserved: false));
+}
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/pet/findByTags',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'tags': tags.toString(),
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -103,11 +115,12 @@ return _execute(
 /// Returns a single pet.
 ///
 /// `GET /pet/{petId}`
-Future<ApiResult<Pet, Never>> getPetById({required int petId}) async  { final request = ApiRequest(
+Future<ApiResult<Pet, Never>> getPetById({required int petId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'GET',
   path: '/pet/${Uri.encodeComponent(petId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -122,15 +135,19 @@ return _execute(
 /// Updates a pet resource based on the form data.
 ///
 /// `POST /pet/{petId}`
-Future<ApiResult<Pet, Never>> updatePetWithForm({required int petId, String? name, String? status, }) async  { final request = ApiRequest(
+Future<ApiResult<Pet, Never>> updatePetWithForm({required int petId, String? name, String? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (status != null) queryParameters['status'] = status;
+
+final headers = <String, String>{..._config.defaultHeaders};
+
+final request = ApiRequest(
   method: 'POST',
   path: '/pet/${Uri.encodeComponent(petId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
-  queryParameters: {
-    'name': ?name,
-    'status': ?status,
-  },
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
 );
 
 return _execute(
@@ -145,11 +162,13 @@ return _execute(
 /// Delete a pet.
 ///
 /// `DELETE /pet/{petId}`
-Future<ApiResult<void, Never>> deletePet({required int petId, String? apiKey, }) async  { final request = ApiRequest(
+Future<ApiResult<void, Never>> deletePet({required int petId, String? apiKey, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+if (apiKey != null) headers['api_key'] = apiKey;
+
+final request = ApiRequest(
   method: 'DELETE',
   path: '/pet/${Uri.encodeComponent(petId.toString())}',
-  headers: {..._config.defaultHeaders
-  },
+  headers: headers,
 );
 
 return _execute(
@@ -162,16 +181,20 @@ return _execute(
 /// Upload image of the pet.
 ///
 /// `POST /pet/{petId}/uploadImage`
-Future<ApiResult<Response, Never>> uploadFile({required int petId, String? additionalMetadata, Uint8List? body, }) async  { final request = ApiRequest(
+Future<ApiResult<Response, Never>> uploadFile({required int petId, String? additionalMetadata, Uint8List? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (additionalMetadata != null) queryParameters['additionalMetadata'] = additionalMetadata;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/octet-stream';
+
+final request = ApiRequest(
   method: 'POST',
   path: '/pet/${Uri.encodeComponent(petId.toString())}/uploadImage',
-  headers: {..._config.defaultHeaders
-    , 'Content-Type': 'application/json'
-  },
-  queryParameters: {
-    'additionalMetadata': ?additionalMetadata,
-  },
-  body: jsonEncode(body),
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: body,
 );
 
 return _execute(
@@ -194,19 +217,23 @@ Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(A
 
   final response = await chain(request);
 
-  if (response.isSuccessful) {
-    return ApiSuccess(
-      onSuccess(response),
+  try {
+    if (response.isSuccessful) {
+      return ApiSuccess(
+        onSuccess(response),
+        statusCode: response.statusCode,
+        headers: response.headers,
+      );
+    }
+    return ApiError(
       statusCode: response.statusCode,
+      error: onError != null ? onError(response) : null,
+      rawBody: response.body,
       headers: response.headers,
     );
+  } catch (e, st) {
+    return ApiParseException(e, st, response: response);
   }
-  return ApiError(
-    statusCode: response.statusCode,
-    error: onError != null ? onError(response) : null,
-    rawBody: response.body,
-    headers: response.headers,
-  );
 } catch (e, st) {
   return ApiException(e, st);
 }

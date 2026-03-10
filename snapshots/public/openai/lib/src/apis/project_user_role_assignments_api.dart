@@ -89,19 +89,23 @@ Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(A
 
   final response = await chain(request);
 
-  if (response.isSuccessful) {
-    return ApiSuccess(
-      onSuccess(response),
+  try {
+    if (response.isSuccessful) {
+      return ApiSuccess(
+        onSuccess(response),
+        statusCode: response.statusCode,
+        headers: response.headers,
+      );
+    }
+    return ApiError(
       statusCode: response.statusCode,
+      error: onError != null ? onError(response) : null,
+      rawBody: response.body,
       headers: response.headers,
     );
+  } catch (e, st) {
+    return ApiParseException(e, st, response: response);
   }
-  return ApiError(
-    statusCode: response.statusCode,
-    error: onError != null ? onError(response) : null,
-    rawBody: response.body,
-    headers: response.headers,
-  );
 } catch (e, st) {
   return ApiException(e, st);
 }

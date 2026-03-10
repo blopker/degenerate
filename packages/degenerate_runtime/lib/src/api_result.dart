@@ -1,3 +1,5 @@
+import 'api_client.dart';
+
 /// The result of an API operation.
 ///
 /// [T] is the success data type, [E] is the typed error schema (if any).
@@ -32,9 +34,24 @@ final class ApiError<T, E> extends ApiResult<T, E> {
 }
 
 /// Network-level failure (DNS, timeout, connection refused).
-final class ApiException<T, E> extends ApiResult<T, E> {
+class ApiException<T, E> extends ApiResult<T, E> {
   final Object exception;
   final StackTrace stackTrace;
 
   const ApiException(this.exception, this.stackTrace);
+}
+
+/// The server returned a response but it could not be deserialized.
+///
+/// This typically means the server violated its own OpenAPI spec
+/// (e.g. returning null for a required field). The original [response]
+/// is preserved so callers can fall back to manual parsing.
+final class ApiParseException<T, E> extends ApiException<T, E> {
+  final ApiResponse response;
+
+  const ApiParseException(
+    super.exception,
+    super.stackTrace, {
+    required this.response,
+  });
 }

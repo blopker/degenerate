@@ -4,7 +4,7 @@
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
-- **260+ unit tests** all passing, **19 wire tests** passing, `dart analyze` clean on all source directories
+- **292+ unit tests** all passing, **29 wire tests** passing, `dart analyze` clean on all source directories
 - **CLI**: `--input`, `--output`, `--name`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
 - **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
@@ -29,12 +29,17 @@
 | GitHub REST 3.1 | 6,401 | 0 issues |
 | Cloudflare | 14,580 | 0 issues |
 | Stripe (162k lines) | 10,768 | 0 issues |
-| DigitalOcean | — | Fails (external `$ref` — tested) |
+| External refs (custom fixture) | 7 | 0 issues |
+| DigitalOcean | — | Fails (missing external ref files) |
 
 ---
 
+## Completed (Session 9)
+- [x] **External `$ref` file resolution** — `RefInliner` pre-processing pass loads referenced YAML/JSON files, registers external schemas as local `#/components/schemas/Name` refs, resolves chained refs across files, detects circular refs, and handles JSON pointers (RFC 6901). Fixture 13 exercises multi-file specs with path-level and schema-level external refs including circular cross-file refs. DigitalOcean test verifies `FileSystemException` for missing ref files.
+- [x] **`ApiParseException`** — new `ApiResult` subtype for deserialization failures. Carries the raw `ApiResponse` so callers can fall back to manual parsing when the server violates its own spec. Generated `_execute` distinguishes parse errors from network errors. Example app demonstrates the escape hatch pattern.
+
 ## Completed (Session 8)
-- [x] **External `$ref` handling** — now throws `UnsupportedError` for all non-local refs (any ref not starting with `#/`). DigitalOcean snapshot deleted; explicit failure test added.
+- [x] **External `$ref` error handling** — now throws `FileSystemException` for missing external ref files. DigitalOcean snapshot deleted; explicit failure test added.
 - [x] **Header parameters emitted** — header params now written into `ApiRequest.headers` with required/optional handling.
 - [x] **2xx success detection expanded** — checks all 2xx status codes, not just 200-204.
 - [x] **Primitive/enum/collection error deserialization** — type-aware deserialization for string, int, double, bool, enum, list, map error schemas.
@@ -63,7 +68,7 @@
 
 - [x] **Cookie parameters emitted** — cookie params now appear in method signatures, flow through `ApiRequest.cookies`, and adapters synthesize the `Cookie` header. `ApiConfig` supports `defaultCookies`. *(review.md #3, review2.md 1b)*
 - [x] **Security schemes drive codegen** — generator now emits typed auth helpers for API key (header/query/cookie), bearer, and basic auth plus generated security metadata for schemes and per-operation/global requirements. Fixture 06 snapshot exercises the output. *(review2.md #3, #6)*
-- [ ] **External `$ref` file resolution** — currently throws `UnsupportedError`. Need multi-document loading and a document graph for split-file specs. Common enterprise requirement. *(review.md #1, review2.md #4)*
+- [x] **External `$ref` file resolution** — `RefInliner` resolves external refs by inlining schemas as local refs. Handles chained refs, JSON pointers, circular detection. *(review.md #1, review2.md #4)*
 - [x] **Lossy schema fallbacks fixed** — untyped schemas now lower to `Object?`, free-form objects to `Map<String, Object?>`, and boolean schemas to `Object?` instead of silent `String` fallbacks. A future pre-validation phase could still improve diagnostics with JSON Pointer locations. *(review2.md 5a/5b/5c, review3.md #5)*
 - [x] **`--client` flag removed** — was a no-op; runtime is now handled by separate adapter packages (`degenerate_http`, `degenerate_dio`). *(review.md #7, review2.md 7c)*
 
@@ -242,6 +247,7 @@ lib/src/
   naming.dart                PascalCase/camelCase/sanitize/deduplicate
   ir/ir_types.dart           All IR types (sealed classes, enums)
   parser/openapi_document.dart   YAML/JSON parsing
+  parser/ref_inliner.dart      Resolve external $ref files to local refs
   normalizer/
     allof_flattener.dart     Merge allOf compositions (used inline during lowering)
   lowering/
@@ -282,3 +288,4 @@ outputs/                     Experimenting/investigation (.gitignored)
 - `github-rest-3.1.yaml` — 244k lines, OpenAPI 3.1
 - `cloudflare.yaml` — 360k lines
 - `stripe-spec3.yaml` — 162k lines, heavy anyOf, vendor extensions
+- `13-external-refs.yaml` — multi-file spec with external `$ref` (paths, schemas, chained refs, circular refs)
