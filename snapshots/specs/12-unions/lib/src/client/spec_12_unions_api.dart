@@ -14,6 +14,8 @@ import '../apis/default_api.dart';
 /// sdk.$default.listShapes();
 /// ```
 final class Spec12UnionsApi {
+  static const defaultBaseUrl = 'https://api.example.com/v1';
+
   final ApiConfig _config;
 
   Spec12UnionsApi(this._config);

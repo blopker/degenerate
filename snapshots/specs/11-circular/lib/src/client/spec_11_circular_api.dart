@@ -14,6 +14,8 @@ import '../apis/default_api.dart';
 /// sdk.$default.listEmployees();
 /// ```
 final class Spec11CircularApi {
+  static const defaultBaseUrl = 'https://api.example.com/v1';
+
   final ApiConfig _config;
 
   Spec11CircularApi(this._config);

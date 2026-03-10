@@ -491,6 +491,30 @@ void main() {
         contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"),
       );
     });
+
+    test('SDK facade emits defaultBaseUrl from servers', () {
+      final filesWithServer = FileEmitter().emitAll(
+        types: types,
+        apis: apis,
+        packageName: 'petstore_client',
+        specFileName: 'petstore.yaml',
+        specVersion: '1.0.0',
+        defaultServerUrl: 'https://petstore.swagger.io/v1',
+      );
+      final sdkFile =
+          filesWithServer['lib/src/client/petstore_client_api.dart']!;
+      expect(
+        sdkFile,
+        contains(
+          "static const defaultBaseUrl = 'https://petstore.swagger.io/v1'",
+        ),
+      );
+    });
+
+    test('SDK facade omits defaultBaseUrl when no servers', () {
+      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      expect(sdkFile, isNot(contains('defaultBaseUrl')));
+    });
   });
 
   // ─── Header parameter emission ─────────────────────────────────

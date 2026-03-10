@@ -70,11 +70,8 @@
 ### P2: Polish and Trust
 
 - [ ] **CI workflow** — add GitHub Actions for tests, analyze, and snapshot validation. *(review2.md 7d)*
-- [ ] **Determinism test** — run generator twice on same input, assert byte-identical output. *(review2.md #10)*
-- [ ] **README claims too broad** — "full OpenAPI 3.x support" is premature. Better: "strong support for JSON-oriented OpenAPI 3.x specs." *(review2.md 7a)*
-- [ ] **Formatting story inconsistent** — emitted files use `// dart format off` markers, but pipeline docs describe dart_style parallel formatting. Reconcile. *(review2.md 7b)*
-- [ ] **Spec-derived base URL helper** — parser reads `servers` but generator doesn't use them. Emit a generated constant for the first server URL. *(review2.md #13)*
-- [ ] **Retry interceptor improvements** — add jitter, idempotency gating, `Retry-After` header handling. Current implementation is useful but operationally naive. *(review2.md #6)*
+- [x] **Spec-derived base URL helper** — SDK facade emits `static const defaultBaseUrl` from `servers[0].url` when present. *(review2.md #13)*
+- [x] **Retry interceptor improvements** — runtime retry middleware now supports jittered exponential backoff, `Retry-After` handling (seconds + HTTP-date), deterministic test hooks, and idempotency-based method gating with override hooks for unsafe methods when explicitly desired. *(review2.md #6)*
 - [ ] **Vendor extension pass-through** — skip `x-` fields gracefully (already mostly works, not tested).
 - [ ] **Lazy top-down tree-shaking** — current pipeline lowers all schemas then BFS-prunes unreachable types. For large specs with `--tag`/`--path` filters, lowering operations first and only lowering referenced schemas would reduce memory and time. *(review3.md #2)*
 

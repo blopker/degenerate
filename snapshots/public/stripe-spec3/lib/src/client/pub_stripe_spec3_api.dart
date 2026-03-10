@@ -15,6 +15,8 @@ import '../apis/default_api.dart';
 /// sdk.$default.getAccount();
 /// ```
 final class PubStripeSpec3Api {
+  static const defaultBaseUrl = 'https://api.stripe.com/';
+
   final ApiConfig _config;
 
   PubStripeSpec3Api(this._config);

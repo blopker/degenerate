@@ -56,6 +56,8 @@ import '../apis/users_api.dart';
 /// sdk.meta.metaRoot();
 /// ```
 final class PubGithubRest31Api {
+  static const defaultBaseUrl = 'https://api.github.com';
+
   final ApiConfig _config;
 
   PubGithubRest31Api(this._config);

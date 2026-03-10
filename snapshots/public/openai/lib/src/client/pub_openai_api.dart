@@ -48,6 +48,8 @@ import '../apis/skills_api.dart';
 /// sdk.assistants.createThread();
 /// ```
 final class PubOpenaiApi {
+  static const defaultBaseUrl = 'https://api.openai.com/v1';
+
   final ApiConfig _config;
 
   PubOpenaiApi(this._config);

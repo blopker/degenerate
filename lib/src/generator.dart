@@ -226,6 +226,9 @@ class Generator {
     final emitterWarnings = <String>[];
     final securitySchemes = _lowerSecuritySchemes(doc.securitySchemes);
     final globalSecurity = _lowerSecurityRequirements(doc.security);
+    final defaultServerUrl = doc.servers.isNotEmpty
+        ? doc.servers.first['url'] as String?
+        : null;
     final files = fileEmitter.emitAll(
       types: irTypes,
       apis: irApis,
@@ -236,6 +239,7 @@ class Generator {
       specVersion: specVersion,
       runtimePath: config.runtimePath,
       workspace: config.workspace,
+      defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,
     );
 

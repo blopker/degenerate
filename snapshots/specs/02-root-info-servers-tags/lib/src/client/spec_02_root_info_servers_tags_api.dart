@@ -15,6 +15,8 @@ import '../apis/status_api.dart';
 /// sdk.status.getStatus();
 /// ```
 final class Spec02RootInfoServersTagsApi {
+  static const defaultBaseUrl = 'https://{env}.example.com:{port}/{basePath}';
+
   final ApiConfig _config;
 
   Spec02RootInfoServersTagsApi(this._config);

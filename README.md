@@ -49,7 +49,7 @@ import 'package:petstore/petstore.dart';
 
 void main() async {
   final client = HttpApiClient(
-    baseUrl: Uri.parse('https://petstore3.swagger.io/api/v3'),
+    baseUrl: Uri.parse(PetstoreApi.defaultBaseUrl),
   );
 
   final sdk = PetstoreApi(

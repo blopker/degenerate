@@ -422,6 +422,8 @@ import '../apis/custom_pages_for_a_zone_api.dart';
 /// sdk.accounts.accountsListAccounts();
 /// ```
 final class PubCloudflareApi {
+  static const defaultBaseUrl = 'https://api.cloudflare.com/client/v4';
+
   final ApiConfig _config;
 
   PubCloudflareApi(this._config);

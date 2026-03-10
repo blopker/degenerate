@@ -89,6 +89,8 @@ import '../apis/api20100401_user_defined_message_subscription_api.dart';
 /// sdk.api20100401Account.listAccount();
 /// ```
 final class PubTwilioApi {
+  static const defaultBaseUrl = 'https://api.twilio.com';
+
   final ApiConfig _config;
 
   PubTwilioApi(this._config);

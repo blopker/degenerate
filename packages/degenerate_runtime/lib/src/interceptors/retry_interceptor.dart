@@ -1,5 +1,12 @@
+import 'dart:io';
+import 'dart:math';
+
 import '../api_client.dart';
 import '../interceptor.dart';
+
+typedef RetrySleep = Future<void> Function(Duration delay);
+typedef RetryRandom = double Function();
+typedef RetryClock = DateTime Function();
 
 /// Middleware that retries failed requests with exponential backoff.
 ///
@@ -25,10 +32,30 @@ class RetryInterceptor implements Interceptor {
   /// If null, retries on 429 and 5xx.
   final bool Function(ApiResponse response)? retryWhen;
 
+  /// Custom predicate to decide whether a request is safe to retry.
+  /// If null, retries only idempotent methods by default.
+  final bool Function(ApiRequest request)? shouldRetryRequest;
+
+  /// Random jitter ratio applied to exponential backoff.
+  ///
+  /// `0.25` means the computed delay is randomized within +/-25%.
+  final double jitterRatio;
+
+  final RetrySleep? sleep;
+  final RetryRandom? random;
+  final RetryClock? clock;
+  final Duration? maxDelay;
+
   const RetryInterceptor({
     this.maxRetries = 3,
     this.initialDelay = const Duration(milliseconds: 500),
     this.retryWhen,
+    this.shouldRetryRequest,
+    this.jitterRatio = 0.25,
+    this.sleep,
+    this.random,
+    this.clock,
+    this.maxDelay,
   });
 
   bool _shouldRetry(ApiResponse response) {
@@ -36,29 +63,108 @@ class RetryInterceptor implements Interceptor {
     return response.statusCode == 429 || response.statusCode >= 500;
   }
 
+  bool _shouldRetryRequest(ApiRequest request) {
+    if (shouldRetryRequest != null) return shouldRetryRequest!(request);
+    switch (request.method.toUpperCase()) {
+      case 'GET':
+      case 'HEAD':
+      case 'OPTIONS':
+      case 'TRACE':
+      case 'PUT':
+      case 'DELETE':
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  RetrySleep get _sleep => sleep ?? Future<void>.delayed;
+  RetryRandom get _random => random ?? _defaultRandom;
+  RetryClock get _clock => clock ?? _defaultClock;
+
   @override
   Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
     Object? lastError;
     StackTrace? lastStack;
+    ApiResponse? previousResponse;
 
     for (var attempt = 0; attempt <= maxRetries; attempt++) {
       if (attempt > 0) {
-        final delay = initialDelay * (1 << (attempt - 1));
-        await Future<void>.delayed(delay);
+        final delay = _computeDelay(
+          attempt,
+          previousResponse: previousResponse,
+        );
+        await _sleep(delay);
       }
       try {
         final response = await next(request);
-        if (!_shouldRetry(response) || attempt == maxRetries) {
+        previousResponse = response;
+        if (!_shouldRetry(response) ||
+            !_shouldRetryRequest(request) ||
+            attempt == maxRetries) {
           return response;
         }
       } catch (e, st) {
         lastError = e;
         lastStack = st;
-        if (attempt == maxRetries) break;
+        if (attempt == maxRetries || !_shouldRetryRequest(request)) break;
       }
     }
 
     // All retries exhausted with exceptions.
     Error.throwWithStackTrace(lastError!, lastStack!);
   }
+
+  Duration _computeDelay(int attempt, {ApiResponse? previousResponse}) {
+    final retryAfter = previousResponse == null
+        ? null
+        : _parseRetryAfter(previousResponse.headers);
+    if (retryAfter != null) return _capDelay(retryAfter);
+
+    final baseDelay = initialDelay * (1 << (attempt - 1));
+    final clampedBase = _capDelay(baseDelay);
+    if (jitterRatio <= 0) return clampedBase;
+
+    final jitterMultiplier = 1 + ((_random() * 2) - 1) * jitterRatio;
+    final jittered = Duration(
+      microseconds: (clampedBase.inMicroseconds * jitterMultiplier).round(),
+    );
+    return _capDelay(jittered);
+  }
+
+  Duration _capDelay(Duration delay) {
+    if (maxDelay == null || delay <= maxDelay!) return delay;
+    return maxDelay!;
+  }
+
+  Duration? _parseRetryAfter(Map<String, String> headers) {
+    String? value;
+    for (final entry in headers.entries) {
+      if (entry.key.toLowerCase() == 'retry-after') {
+        value = entry.value;
+        break;
+      }
+    }
+    if (value == null || value.trim().isEmpty) return null;
+
+    final seconds = int.tryParse(value.trim());
+    if (seconds != null) {
+      return seconds <= 0 ? Duration.zero : Duration(seconds: seconds);
+    }
+
+    DateTime? retryAt;
+    try {
+      retryAt = HttpDate.parse(value);
+    } catch (_) {
+      retryAt = DateTime.tryParse(value);
+    }
+    if (retryAt == null) return null;
+    final delay = retryAt.toUtc().difference(_clock().toUtc());
+    return delay.isNegative ? Duration.zero : delay;
+  }
 }
+
+final _rng = Random();
+double _defaultRandom() => _rng.nextDouble();
+
+DateTime _defaultClock() => DateTime.now();

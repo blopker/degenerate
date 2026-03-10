@@ -27,6 +27,7 @@ class FileEmitter {
     required String specVersion,
     String runtimePath = 'degenerate_runtime',
     bool workspace = false,
+    String? defaultServerUrl,
     List<String>? warnings,
   }) {
     final files = <String, String>{};
@@ -194,6 +195,7 @@ class FileEmitter {
         packageName: packageName,
         specFileName: specFileName,
         specVersion: specVersion,
+        defaultServerUrl: defaultServerUrl,
       );
     }
 
@@ -504,6 +506,7 @@ class FileEmitter {
     required String packageName,
     required String specFileName,
     required String specVersion,
+    String? defaultServerUrl,
   }) {
     final className = '${toPascalCase(packageName)}Api';
     final buf = StringBuffer();
@@ -541,6 +544,11 @@ class FileEmitter {
     }
     buf.writeln('/// ```');
     buf.writeln('final class $className {');
+    if (defaultServerUrl != null) {
+      final escaped = escapeDartString(defaultServerUrl);
+      buf.writeln("  static const defaultBaseUrl = '$escaped';");
+      buf.writeln();
+    }
     buf.writeln('  final ApiConfig _config;');
     buf.writeln();
     buf.writeln('  $className(this._config);');

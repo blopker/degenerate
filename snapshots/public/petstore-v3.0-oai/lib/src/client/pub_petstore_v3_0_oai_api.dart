@@ -14,6 +14,8 @@ import '../apis/pets_api.dart';
 /// sdk.pets.listPets();
 /// ```
 final class 0OaiApi {
+  static const defaultBaseUrl = 'http://petstore.swagger.io/v1';
+
   final ApiConfig _config;
 
   0OaiApi(this._config);
