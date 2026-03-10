@@ -11,6 +11,7 @@ String normalizeMediaType(String mediaType) {
 bool isJsonLikeMediaType(String mediaType) {
   final normalized = normalizeMediaType(mediaType);
   return normalized == 'application/json' ||
+      normalized == '*/*' ||
       (normalized.startsWith('application/') && normalized.endsWith('+json'));
 }
 

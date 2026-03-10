@@ -307,7 +307,10 @@ class ApiEmitter {
     buf.writeln('final headers = <String, String>{..._config.defaultHeaders};');
     if (requestBodyContent case (final mediaType, _)
         when !isMultipartMediaType(mediaType)) {
-      buf.writeln("headers['Content-Type'] = '$mediaType';");
+      // Use application/json for wildcard content types since we serialize as JSON.
+      final contentType =
+          normalizeMediaType(mediaType) == '*/*' ? 'application/json' : mediaType;
+      buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
       final sanitizedName = p.name

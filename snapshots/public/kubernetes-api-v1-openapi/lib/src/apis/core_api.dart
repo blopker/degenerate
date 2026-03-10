@@ -278,7 +278,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -286,7 +286,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -308,7 +308,7 @@ if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidatio
 if (pretty != null) queryParameters['pretty'] = pretty;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -316,7 +316,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Binding');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -373,7 +373,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -381,7 +381,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ConfigMap');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -413,7 +413,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -421,7 +421,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -468,7 +468,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -476,7 +476,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ConfigMap');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -531,7 +531,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -539,7 +539,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -596,7 +596,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -604,7 +604,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Endpoints');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -636,7 +636,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -644,7 +644,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -691,7 +691,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -699,7 +699,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Endpoints');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -754,7 +754,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -762,7 +762,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -819,7 +819,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -827,7 +827,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Event');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -859,7 +859,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -867,7 +867,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -914,7 +914,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -922,7 +922,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Event');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -977,7 +977,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -985,7 +985,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -1042,7 +1042,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -1050,7 +1050,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from LimitRange');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1082,7 +1082,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1090,7 +1090,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -1137,7 +1137,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1145,7 +1145,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from LimitRange');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1200,7 +1200,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1208,7 +1208,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -1265,7 +1265,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -1273,7 +1273,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolumeClaim');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1305,7 +1305,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1313,7 +1313,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -1360,7 +1360,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1368,7 +1368,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolumeClaim');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1423,7 +1423,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1431,7 +1431,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -1478,7 +1478,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1486,7 +1486,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolumeClaim');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1574,7 +1574,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -1582,7 +1582,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1614,7 +1614,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1622,7 +1622,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -1669,7 +1669,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1677,7 +1677,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1732,7 +1732,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1740,7 +1740,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -1820,7 +1820,7 @@ if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidatio
 if (pretty != null) queryParameters['pretty'] = pretty;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -1828,7 +1828,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Binding');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1875,7 +1875,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1883,7 +1883,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -1936,7 +1936,7 @@ if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidatio
 if (pretty != null) queryParameters['pretty'] = pretty;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -1944,7 +1944,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Eviction');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -2485,7 +2485,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -2493,7 +2493,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -2571,7 +2571,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -2579,7 +2579,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Pod');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -2667,7 +2667,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -2675,7 +2675,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PodTemplate');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -2707,7 +2707,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2715,7 +2715,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -2762,7 +2762,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -2770,7 +2770,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PodTemplate');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -2825,7 +2825,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2833,7 +2833,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -2890,7 +2890,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -2898,7 +2898,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ReplicationController');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -2930,7 +2930,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2938,7 +2938,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -2985,7 +2985,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -2993,7 +2993,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ReplicationController');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3048,7 +3048,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3056,7 +3056,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -3103,7 +3103,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -3111,7 +3111,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Scale');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3189,7 +3189,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -3197,7 +3197,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ReplicationController');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3285,7 +3285,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -3293,7 +3293,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ResourceQuota');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3325,7 +3325,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3333,7 +3333,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -3380,7 +3380,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -3388,7 +3388,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ResourceQuota');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3443,7 +3443,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3451,7 +3451,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -3498,7 +3498,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -3506,7 +3506,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ResourceQuota');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3594,7 +3594,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -3602,7 +3602,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Secret');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3634,7 +3634,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3642,7 +3642,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -3689,7 +3689,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -3697,7 +3697,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Secret');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3752,7 +3752,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3760,7 +3760,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -3817,7 +3817,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -3825,7 +3825,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ServiceAccount');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3857,7 +3857,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3865,7 +3865,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -3912,7 +3912,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -3920,7 +3920,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from ServiceAccount');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -3975,7 +3975,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3983,7 +3983,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -4005,7 +4005,7 @@ if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidatio
 if (pretty != null) queryParameters['pretty'] = pretty;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -4013,7 +4013,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from TokenRequest');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -4070,7 +4070,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -4078,7 +4078,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Service');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -4110,7 +4110,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4118,7 +4118,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -4165,7 +4165,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4173,7 +4173,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Service');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -4228,7 +4228,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4236,7 +4236,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -4633,7 +4633,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4641,7 +4641,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Service');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -4719,7 +4719,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4727,7 +4727,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -4782,7 +4782,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4790,7 +4790,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -4812,7 +4812,7 @@ if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidatio
 if (pretty != null) queryParameters['pretty'] = pretty;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4820,7 +4820,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -4867,7 +4867,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4875,7 +4875,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Namespace');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -4963,7 +4963,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -4971,7 +4971,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Node');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -5003,7 +5003,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5011,7 +5011,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -5058,7 +5058,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -5066,7 +5066,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Node');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -5121,7 +5121,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5129,7 +5129,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -5526,7 +5526,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -5534,7 +5534,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from Node');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -5657,7 +5657,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
@@ -5665,7 +5665,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolume');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -5697,7 +5697,7 @@ if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitia
 if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5705,7 +5705,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -5752,7 +5752,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -5760,7 +5760,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolume');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(
@@ -5815,7 +5815,7 @@ if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDepend
 if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5823,7 +5823,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from DeleteOptions');,
+  body: jsonEncode(body?.toJson()),
 );
 
 return _execute(
@@ -5870,7 +5870,7 @@ if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
 if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
 
 final headers = <String, String>{..._config.defaultHeaders};
-headers['Content-Type'] = '*/*';
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
@@ -5878,7 +5878,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: throw UnsupportedError('Cannot encode non-JSON */* request body from PersistentVolume');,
+  body: jsonEncode(body.toJson()),
 );
 
 return _execute(

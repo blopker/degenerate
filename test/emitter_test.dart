@@ -1421,6 +1421,66 @@ void main() {
       expect(source, contains(r'if (body.scope case final scope$?)'));
     });
 
+    test('treats */* wildcard as JSON for object request bodies', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'createItem',
+          'createItem',
+          HttpMethod.post,
+          '/items',
+          requestBody: IrRequestBody({
+            '*/*': IrMediaType(
+              IrTypeRef('Item'),
+            ),
+          }, isRequired: true),
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      // Should serialize as JSON, not throw UnsupportedError
+      expect(source, isNot(contains('UnsupportedError')));
+      expect(source, contains('jsonEncode(body.toJson())'));
+      // Content-Type should be application/json, not */*
+      expect(source, contains("'Content-Type'] = 'application/json'"));
+      expect(source, isNot(contains("'Content-Type'] = '*/*'")));
+    });
+
+    test('treats */* wildcard as JSON for object success responses', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items/1',
+          responses: {
+            200: IrResponse(
+              content: {
+                '*/*': IrMediaType(IrTypeRef('Item')),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      // Should deserialize as JSON
+      expect(source, isNot(contains('UnsupportedError')));
+      expect(source, contains('Item.fromJson'));
+    });
+
     test('throws for unsupported text request object bodies', () {
       final api = IrApi('TestApi', [
         IrOperation(
