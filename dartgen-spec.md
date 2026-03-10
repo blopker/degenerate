@@ -1,3 +1,5 @@
+# WARNING: OUTDATED
+
 # Dartgen: OpenAPI → Dart Client Generator
 
 ## Design Specification v0.1
