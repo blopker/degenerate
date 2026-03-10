@@ -6,7 +6,7 @@
   "lsp": {
     "dart": {
       "settings": {
-        "analysisExcludedFolders": ["snapshots/**"],
+        "analysisExcludedFolders": ["snapshots/**", "outputs/**"],
       },
     },
   },
