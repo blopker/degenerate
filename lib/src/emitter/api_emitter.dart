@@ -736,7 +736,7 @@ try {
     return ApiError(
       statusCode: response.statusCode,
       error: onError != null ? onError(response) : null,
-      rawBody: response.body,
+      rawError: response.body,
       headers: response.headers,
     );
   } catch (e, st) {

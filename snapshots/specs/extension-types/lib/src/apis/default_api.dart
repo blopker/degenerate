@@ -53,7 +53,7 @@ Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(A
     return ApiError(
       statusCode: response.statusCode,
       error: onError != null ? onError(response) : null,
-      rawBody: response.body,
+      rawError: response.body,
       headers: response.headers,
     );
   } catch (e, st) {

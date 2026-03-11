@@ -71,8 +71,8 @@ void main() async {
   switch (result) {
     case ApiSuccess(:final data):
       print('Found ${data.length} pets');
-    case ApiError(:final statusCode, :final rawBody):
-      print('Error $statusCode: $rawBody');
+    case ApiError(:final statusCode, :final rawError):
+      print('Error $statusCode: $rawError');
     case ApiParseException(:final response):
       // Server returned 2xx but body didn't match the spec.
       // Fall back to raw response for manual parsing.

@@ -16,3 +16,6 @@ test:
 
 update_snapshots:
 	UPDATE_SNAPSHOTS=1 dart test test/snapshot_test.dart
+
+update_example:
+	dart run bin/degenerate.dart -i example/petstore3.json -o example/petstore_client --clean -n petstore_client

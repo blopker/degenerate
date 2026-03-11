@@ -154,7 +154,7 @@ void main() {
       expect(result, isA<ApiError>());
       final error = result as ApiError;
       expect(error.statusCode, equals(404));
-      expect(error.rawBody, equals('not found'));
+      expect(error.rawError, equals('not found'));
     });
   });
 

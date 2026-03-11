@@ -37,8 +37,8 @@ void main() async {
           );
         }
         if (data.length > 5) print('  ... and ${data.length - 5} more');
-      case ApiError(:final statusCode, :final rawBody):
-        print('Error $statusCode: $rawBody');
+      case ApiError(:final statusCode, :final rawError):
+        print('Error $statusCode: $rawError');
       // Escape hatch: the server returned a 2xx but the body didn't match
       // the spec. You can fall back to manual parsing with the raw response.
       case ApiParseException(:final response, :final exception):
@@ -59,8 +59,8 @@ void main() async {
         print('  Status: ${data.status}');
         print('  Photos: ${data.photoUrls}');
         print('  toJson: ${data.toJson()}');
-      case ApiError(:final statusCode, :final rawBody):
-        print('Not found ($statusCode): $rawBody');
+      case ApiError(:final statusCode, :final rawError):
+        print('Not found ($statusCode): $rawError');
       case ApiException(:final exception):
         print('Network error: $exception');
     }
@@ -82,8 +82,8 @@ void main() async {
         print('  Pet ID: ${data.petId}');
         print('  Status: ${data.status}');
         print('  Ship date: ${data.shipDate}');
-      case ApiError(:final statusCode, :final rawBody):
-        print('Failed ($statusCode): $rawBody');
+      case ApiError(:final statusCode, :final rawError):
+        print('Failed ($statusCode): $rawError');
       case ApiException(:final exception):
         print('Network error: $exception');
     }
@@ -98,8 +98,8 @@ void main() async {
           print('  ${entry.key}: ${entry.value}');
         }
         if (data.length > 10) print('  ... and ${data.length - 10} more');
-      case ApiError(:final statusCode, :final rawBody):
-        print('Error ($statusCode): $rawBody');
+      case ApiError(:final statusCode, :final rawError):
+        print('Error ($statusCode): $rawError');
       case ApiException(:final exception):
         print('Network error: $exception');
     }
@@ -110,8 +110,8 @@ void main() async {
     switch (missingResult) {
       case ApiSuccess(:final data):
         print('Unexpectedly found: ${data.name}');
-      case ApiError(:final statusCode, :final rawBody):
-        print('[$statusCode] $rawBody');
+      case ApiError(:final statusCode, :final rawError):
+        print('[$statusCode] $rawError');
       case ApiException(:final exception):
         print('Network error: $exception');
     }

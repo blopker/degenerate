@@ -25,19 +25,19 @@ final class ApiSuccess<T, E> extends ApiResult<T, E> {
 final class ApiError<T, E> extends ApiResult<T, E> {
   final int statusCode;
   final E? error;
-  final String? rawBody;
+  final String? rawError;
   final Map<String, String> headers;
 
   const ApiError({
     required this.statusCode,
     this.error,
-    this.rawBody,
+    this.rawError,
     this.headers = const {},
   });
 
   @override
   String toString() =>
-      error != null ? 'ApiError($statusCode, $error)' : 'ApiError($statusCode, $rawBody)';
+      error != null ? 'ApiError($statusCode, $error)' : 'ApiError($statusCode, $rawError)';
 }
 
 /// Network-level failure (DNS, timeout, connection refused).
