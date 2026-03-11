@@ -219,7 +219,7 @@ return _execute(
     return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

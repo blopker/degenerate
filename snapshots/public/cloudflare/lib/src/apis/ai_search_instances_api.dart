@@ -39,7 +39,7 @@ return _execute(
     return AiSearchListInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchListInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchListInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -64,7 +64,7 @@ return _execute(
     return AiSearchCreateInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchCreateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchCreateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -85,7 +85,7 @@ return _execute(
     return AiSearchFetchInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchFetchInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchFetchInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -108,7 +108,7 @@ return _execute(
     return AiSearchUpdateInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchUpdateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchUpdateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -129,7 +129,7 @@ return _execute(
     return AiSearchDeleteInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchDeleteInstancesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchDeleteInstancesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -154,7 +154,7 @@ return _execute(
     return AiSearchInstanceChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchInstanceChatCompletionResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchInstanceChatCompletionResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -179,7 +179,7 @@ return _execute(
     return AiSearchInstanceSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchInstanceSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchInstanceSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -202,7 +202,7 @@ return _execute(
     return AiSearchStatsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchStatsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchStatsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

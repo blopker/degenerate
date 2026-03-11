@@ -73,7 +73,7 @@ return _execute(
     return RadarGetQualityIndexSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetQualityIndexSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetQualityIndexSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -140,7 +140,7 @@ return _execute(
     return RadarGetQualityIndexTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetQualityIndexTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetQualityIndexTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -196,7 +196,7 @@ return _execute(
     return RadarGetQualitySpeedHistogramResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetQualitySpeedHistogramResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetQualitySpeedHistogramResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -250,7 +250,7 @@ return _execute(
     return RadarGetQualitySpeedSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetQualitySpeedSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetQualitySpeedSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -307,7 +307,7 @@ return _execute(
     return RadarGetQualitySpeedTopAsesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetQualitySpeedTopAsesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetQualitySpeedTopAsesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -364,7 +364,7 @@ return _execute(
     return RadarGetQualitySpeedTopLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetQualitySpeedTopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetQualitySpeedTopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -43,7 +43,7 @@ return _execute(
     return GetAllBudgets.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -69,7 +69,7 @@ return _execute(
     return GetBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -97,7 +97,7 @@ return _execute(
     return BillingUpdateBudgetOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -123,7 +123,7 @@ return _execute(
     return DeleteBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -159,7 +159,7 @@ return _execute(
     return BillingPremiumRequestUsageReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -192,7 +192,7 @@ return _execute(
     return BillingUsageReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -231,7 +231,7 @@ return _execute(
     return BillingUsageSummaryReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -266,7 +266,7 @@ return _execute(
     return BillingPremiumRequestUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -299,7 +299,7 @@ return _execute(
     return BillingUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -338,7 +338,7 @@ return _execute(
     return BillingUsageSummaryReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -29,7 +29,7 @@ return _execute(
     return GetTargetIndustryListByDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetTargetIndustryListByDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetTargetIndustryListByDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -60,7 +60,7 @@ return _execute(
     return GetTargetIndustryListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetTargetIndustryListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetTargetIndustryListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -81,7 +81,7 @@ return _execute(
     return GetTargetIndustryListCompleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetTargetIndustryListCompleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetTargetIndustryListCompleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

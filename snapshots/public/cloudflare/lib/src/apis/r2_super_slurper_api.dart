@@ -56,7 +56,7 @@ return _execute(
     return Success2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -138,7 +138,7 @@ return _execute(
     return Success2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

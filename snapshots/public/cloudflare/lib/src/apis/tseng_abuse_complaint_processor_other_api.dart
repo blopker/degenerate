@@ -45,7 +45,7 @@ return _execute(
     return ListAbuseReportsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ListAbuseReportsResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ListAbuseReportsResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -75,7 +75,7 @@ return _execute(
     return ListEmailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ListEmailsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ListEmailsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -111,7 +111,7 @@ return _execute(
     return ListMitigationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ListMitigationsResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ListMitigationsResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -136,7 +136,7 @@ return _execute(
     return AbuseReportsMitigationAppealResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RequestReviewResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RequestReviewResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -159,7 +159,7 @@ return _execute(
     return GetAbuseReportResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetAbuseReportResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetAbuseReportResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -184,7 +184,7 @@ return _execute(
     return AbuseReportsSubmitReportResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AbuseReportsSubmitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AbuseReportsSubmitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

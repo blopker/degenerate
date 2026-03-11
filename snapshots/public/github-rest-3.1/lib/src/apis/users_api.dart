@@ -31,7 +31,7 @@ return _execute(
     return UsersGetAuthenticatedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -56,7 +56,7 @@ return _execute(
     return PrivateUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -87,7 +87,7 @@ return _execute(
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -108,7 +108,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -129,7 +129,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -150,7 +150,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -176,7 +176,7 @@ return _execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -210,7 +210,7 @@ return _execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -236,7 +236,7 @@ return _execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -259,7 +259,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -290,7 +290,7 @@ return _execute(
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -321,7 +321,7 @@ return _execute(
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -342,7 +342,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -365,7 +365,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -386,7 +386,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -419,7 +419,7 @@ return _execute(
     return json.map((e) => GpgKey.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -446,7 +446,7 @@ return _execute(
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -471,7 +471,7 @@ return _execute(
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -494,7 +494,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -527,7 +527,7 @@ return _execute(
     return json.map((e) => Key.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -554,7 +554,7 @@ return _execute(
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -579,7 +579,7 @@ return _execute(
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -602,7 +602,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -637,7 +637,7 @@ return _execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -668,7 +668,7 @@ return _execute(
     return json.map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -696,7 +696,7 @@ return _execute(
     return json.map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -721,7 +721,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -754,7 +754,7 @@ return _execute(
     return json.map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -781,7 +781,7 @@ return _execute(
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -806,7 +806,7 @@ return _execute(
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -829,7 +829,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -858,7 +858,7 @@ return _execute(
     return UsersGetByIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -917,7 +917,7 @@ return _execute(
     return UsersGetByUsernameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -974,7 +974,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -995,7 +995,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1016,7 +1016,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1052,7 +1052,7 @@ return _execute(
     return UsersListAttestationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1188,7 +1188,7 @@ return _execute(
     return Hovercard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

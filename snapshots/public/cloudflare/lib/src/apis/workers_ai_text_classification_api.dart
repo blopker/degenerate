@@ -40,7 +40,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -72,7 +72,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

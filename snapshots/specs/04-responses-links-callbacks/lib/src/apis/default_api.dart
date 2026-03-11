@@ -30,7 +30,7 @@ return _execute(
     return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

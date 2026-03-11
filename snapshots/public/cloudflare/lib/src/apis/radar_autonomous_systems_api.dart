@@ -42,7 +42,7 @@ return _execute(
     return RadarGetEntitiesAsnListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEntitiesAsnListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEntitiesAsnListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -71,7 +71,7 @@ return _execute(
     return RadarGetEntitiesAsnByIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEntitiesAsnByIdResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEntitiesAsnByIdResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -100,7 +100,7 @@ return _execute(
     return RadarGetAsnsAsSetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAsnsAsSetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAsnsAsSetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -130,7 +130,7 @@ return _execute(
     return RadarGetAsnsRelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAsnsRelResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAsnsRelResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -171,7 +171,7 @@ return _execute(
     return RadarGetAsBotnetThreatFeedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAsBotnetThreatFeedResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAsBotnetThreatFeedResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -201,7 +201,7 @@ return _execute(
     return RadarGetEntitiesAsnByIpResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEntitiesAsnByIpResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEntitiesAsnByIpResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

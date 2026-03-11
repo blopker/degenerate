@@ -39,7 +39,7 @@ return _execute(
     return RadarGetCertificateAuthoritiesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetCertificateAuthoritiesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetCertificateAuthoritiesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -68,7 +68,7 @@ return _execute(
     return RadarGetCertificateAuthorityDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetCertificateAuthorityDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetCertificateAuthorityDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -99,7 +99,7 @@ return _execute(
     return RadarGetCertificateLogsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetCertificateLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetCertificateLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -128,7 +128,7 @@ return _execute(
     return RadarGetCertificateLogDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetCertificateLogDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetCertificateLogDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -254,7 +254,7 @@ return _execute(
     return RadarGetCtSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetCtSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetCtSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -379,7 +379,7 @@ return _execute(
     return RadarGetCtTimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetCtTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetCtTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -506,7 +506,7 @@ return _execute(
     return RadarGetCtTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetCtTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetCtTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

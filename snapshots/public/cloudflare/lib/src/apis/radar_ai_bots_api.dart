@@ -98,7 +98,7 @@ return _execute(
     return RadarGetAiBotsSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAiBotsSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAiBotsSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -189,7 +189,7 @@ return _execute(
     return RadarGetAiBotsTimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAiBotsTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAiBotsTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -281,7 +281,7 @@ return _execute(
     return RadarGetAiBotsTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAiBotsTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAiBotsTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

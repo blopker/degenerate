@@ -62,7 +62,7 @@ return _execute(
     return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -85,7 +85,7 @@ return _execute(
     return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -110,7 +110,7 @@ return _execute(
     return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

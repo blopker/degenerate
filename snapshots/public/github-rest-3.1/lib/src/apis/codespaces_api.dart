@@ -40,7 +40,7 @@ return _execute(
     return CodespacesListInOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -141,7 +141,7 @@ return _execute(
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -164,7 +164,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -197,7 +197,7 @@ return _execute(
     return CodespacesListSelectedReposForOrgSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -224,7 +224,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -246,7 +246,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -271,7 +271,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -303,7 +303,7 @@ return _execute(
     return CodespacesGetCodespacesForUserInOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -328,7 +328,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -353,7 +353,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -385,7 +385,7 @@ return _execute(
     return CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -412,7 +412,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -445,7 +445,7 @@ return _execute(
     return CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -478,7 +478,7 @@ return _execute(
     return CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -510,7 +510,7 @@ return _execute(
     return CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -542,7 +542,7 @@ return _execute(
     return CodespacesPermissionsCheckForDevcontainer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -689,7 +689,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -722,7 +722,7 @@ return _execute(
     return CodespacesListForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -751,7 +751,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -861,7 +861,7 @@ return _execute(
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -910,7 +910,7 @@ return _execute(
     return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -937,7 +937,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -962,7 +962,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -987,7 +987,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1012,7 +1012,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1041,7 +1041,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1066,7 +1066,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1093,7 +1093,7 @@ return _execute(
     return CodespaceExportDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1118,7 +1118,7 @@ return _execute(
     return CodespaceExportDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1143,7 +1143,7 @@ return _execute(
     return CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1174,7 +1174,7 @@ return _execute(
     return CodespaceWithFullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1199,7 +1199,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -1224,7 +1224,7 @@ return _execute(
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

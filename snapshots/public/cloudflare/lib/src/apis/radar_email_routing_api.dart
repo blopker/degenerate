@@ -88,7 +88,7 @@ return _execute(
     return RadarGetEmailRoutingSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailRoutingSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailRoutingSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -169,7 +169,7 @@ return _execute(
     return RadarGetEmailRoutingTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailRoutingTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailRoutingTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

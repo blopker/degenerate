@@ -60,7 +60,7 @@ return _execute(
     return SearchCodeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SearchCodeResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SearchCodeResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -143,7 +143,7 @@ return _execute(
     return SearchIssuesAndPullRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SearchIssuesAndPullRequestsResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SearchIssuesAndPullRequestsResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -185,7 +185,7 @@ return _execute(
     return SearchLabelsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -226,7 +226,7 @@ return _execute(
     return SearchReposResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SearchReposResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SearchReposResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -305,7 +305,7 @@ return _execute(
     return SearchUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SearchUsersResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SearchUsersResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

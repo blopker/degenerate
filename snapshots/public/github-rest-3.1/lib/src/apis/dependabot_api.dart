@@ -58,7 +58,7 @@ return _execute(
     return json.map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -91,7 +91,7 @@ return _execute(
     return DependabotRepositoryAccessDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -126,7 +126,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -155,7 +155,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -206,7 +206,7 @@ return _execute(
     return json.map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -469,7 +469,7 @@ return _execute(
     return json.map((e) => DependabotAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -492,7 +492,7 @@ return _execute(
     return DependabotAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -519,7 +519,7 @@ return _execute(
     return DependabotAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

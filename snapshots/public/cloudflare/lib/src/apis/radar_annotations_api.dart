@@ -47,7 +47,7 @@ return _execute(
     return RadarGetAnnotationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAnnotationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAnnotationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -84,7 +84,7 @@ return _execute(
     return RadarGetAnnotationsOutagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAnnotationsOutagesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAnnotationsOutagesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -117,7 +117,7 @@ return _execute(
     return RadarGetAnnotationsOutagesTopResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAnnotationsOutagesTopResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAnnotationsOutagesTopResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -40,7 +40,7 @@ return _execute(
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -68,7 +68,7 @@ return _execute(
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -102,7 +102,7 @@ return _execute(
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -134,7 +134,7 @@ return _execute(
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -162,7 +162,7 @@ return _execute(
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GistsGetResponse403.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GistsGetResponse403.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -196,7 +196,7 @@ return _execute(
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -217,7 +217,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -253,7 +253,7 @@ return _execute(
     return json.map((e) => GistComment.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -283,7 +283,7 @@ return _execute(
     return GistComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -311,7 +311,7 @@ return _execute(
     return GistComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -341,7 +341,7 @@ return _execute(
     return GistComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -362,7 +362,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -393,7 +393,7 @@ return _execute(
     return json.map((e) => GistCommit.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -424,7 +424,7 @@ return _execute(
     return json.map((e) => GistSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -447,7 +447,7 @@ return _execute(
     return BaseGist.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -468,7 +468,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return GistsCheckIsStarredResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GistsCheckIsStarredResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -489,7 +489,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -510,7 +510,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -538,7 +538,7 @@ return _execute(
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -570,7 +570,7 @@ return _execute(
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -57,7 +57,7 @@ return _execute(
     return json.map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -93,7 +93,7 @@ return _execute(
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -162,7 +162,7 @@ return _execute(
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -212,7 +212,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -257,7 +257,7 @@ return _execute(
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -291,7 +291,7 @@ return _execute(
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -369,7 +369,7 @@ return _execute(
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -404,7 +404,7 @@ return _execute(
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -482,7 +482,7 @@ return _execute(
     return json.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -526,7 +526,7 @@ return _execute(
     return PullRequestMergeResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PullsMergeResponse405.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PullsMergeResponse405.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -572,7 +572,7 @@ return _execute(
     return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -597,7 +597,7 @@ return _execute(
     return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -673,7 +673,7 @@ return _execute(
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -703,7 +703,7 @@ return _execute(
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -735,7 +735,7 @@ return _execute(
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -765,7 +765,7 @@ return _execute(
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -803,7 +803,7 @@ return _execute(
     return json.map((e) => ReviewComment.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -838,7 +838,7 @@ return _execute(
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -870,7 +870,7 @@ return _execute(
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -896,7 +896,7 @@ return _execute(
     return PullsUpdateBranchResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

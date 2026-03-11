@@ -38,7 +38,7 @@ return _execute(
     return AiSearchListTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchListTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchListTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -63,7 +63,7 @@ return _execute(
     return AiSearchCreateTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchCreateTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchCreateTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -84,7 +84,7 @@ return _execute(
     return AiSearchFetchTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchFetchTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchFetchTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -107,7 +107,7 @@ return _execute(
     return AiSearchUpdateTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchUpdateTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchUpdateTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -128,7 +128,7 @@ return _execute(
     return AiSearchDeleteTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchDeleteTokensResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchDeleteTokensResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

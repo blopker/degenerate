@@ -73,7 +73,7 @@ return _execute(
     return RadarGetAiInferenceSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAiInferenceSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAiInferenceSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -140,7 +140,7 @@ return _execute(
     return RadarGetAiInferenceTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetAiInferenceTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetAiInferenceTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -53,7 +53,7 @@ return _execute(
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -98,7 +98,7 @@ return _execute(
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -123,7 +123,7 @@ return _execute(
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -146,7 +146,7 @@ return _execute(
     return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

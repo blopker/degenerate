@@ -39,7 +39,7 @@ return _execute(
     return GetAttackerListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetAttackerListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetAttackerListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

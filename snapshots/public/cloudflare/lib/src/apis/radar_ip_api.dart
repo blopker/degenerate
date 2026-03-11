@@ -38,7 +38,7 @@ return _execute(
     return RadarGetEntitiesIpResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEntitiesIpResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEntitiesIpResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

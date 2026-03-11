@@ -55,7 +55,7 @@ return _execute(
     return json.map((e) => OrganizationSecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +80,7 @@ return _execute(
     return SecretScanningPatternConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -107,7 +107,7 @@ return _execute(
     return SecretScanningUpdateOrgPatternConfigsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -154,7 +154,7 @@ return _execute(
     return json.map((e) => SecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return SecretScanningListAlertsForRepoResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SecretScanningListAlertsForRepoResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -187,7 +187,7 @@ return _execute(
     return SecretScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SecretScanningGetAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SecretScanningGetAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -218,7 +218,7 @@ return _execute(
     return SecretScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SecretScanningUpdateAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SecretScanningUpdateAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -253,7 +253,7 @@ return _execute(
     return json.map((e) => SecretScanningLocation.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return SecretScanningListLocationsForAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SecretScanningListLocationsForAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -282,7 +282,7 @@ return _execute(
     return SecretScanningPushProtectionBypass.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SecretScanningCreatePushProtectionBypassResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SecretScanningCreatePushProtectionBypassResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -310,7 +310,7 @@ return _execute(
     return SecretScanningScanHistory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return SecretScanningGetScanHistoryResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return SecretScanningGetScanHistoryResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

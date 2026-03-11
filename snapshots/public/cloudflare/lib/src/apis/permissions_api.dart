@@ -32,7 +32,7 @@ return _execute(
     return json.map((e) => GetPermissionListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return GetPermissionListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetPermissionListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return _execute(
     return PostPermissionCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PostPermissionCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PostPermissionCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -82,7 +82,7 @@ return _execute(
     return PutPermissionUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PutPermissionUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PutPermissionUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -105,7 +105,7 @@ return _execute(
     return DeletePermissionDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return DeletePermissionDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return DeletePermissionDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

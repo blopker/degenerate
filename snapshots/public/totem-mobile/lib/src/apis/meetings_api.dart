@@ -29,7 +29,7 @@ return _execute(
     return LivekitTokenResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -48,7 +48,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -67,7 +67,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -86,7 +86,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -105,7 +105,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -124,7 +124,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -143,7 +143,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -162,7 +162,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -185,7 +185,7 @@ return _execute(
     return LivekitOrderSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -211,7 +211,7 @@ return _execute(
     return SessionState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

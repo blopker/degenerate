@@ -40,7 +40,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return $5Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return $5Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -72,7 +72,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return $5Response4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return $5Response4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -104,7 +104,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfBaaiBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfBaaiBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -136,7 +136,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return $5Response4003.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return $5Response4003.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -168,7 +168,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return $5Response4004.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return $5Response4004.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -200,7 +200,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return $5Response4005.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return $5Response4005.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -232,7 +232,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfBaaiOmniBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfBaaiOmniBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -264,7 +264,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return $5Response4006.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return $5Response4006.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -296,7 +296,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return $5Response4007.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return $5Response4007.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -328,7 +328,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -360,7 +360,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -392,7 +392,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -424,7 +424,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfQwenQwen3Embedding06bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfQwenQwen3Embedding06bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

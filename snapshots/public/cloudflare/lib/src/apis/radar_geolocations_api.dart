@@ -41,7 +41,7 @@ return _execute(
     return RadarGetGeolocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetGeolocationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetGeolocationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -70,7 +70,7 @@ return _execute(
     return RadarGetGeolocationDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetGeolocationDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetGeolocationDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

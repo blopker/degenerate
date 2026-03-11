@@ -83,7 +83,7 @@ return _execute(
     return RadarGetDnsAs112SummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetDnsAs112SummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetDnsAs112SummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -158,7 +158,7 @@ return _execute(
     return RadarGetDnsAs112TimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetDnsAs112TimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetDnsAs112TimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -234,7 +234,7 @@ return _execute(
     return RadarGetDnsAs112TimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetDnsAs112TimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetDnsAs112TimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -294,7 +294,7 @@ return _execute(
     return RadarGetDnsAs112TopLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetDnsAs112TopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetDnsAs112TopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -354,7 +354,7 @@ return _execute(
     return RadarGetDnsAs112TopLocationsByDnssecResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetDnsAs112TopLocationsByDnssecResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetDnsAs112TopLocationsByDnssecResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -414,7 +414,7 @@ return _execute(
     return RadarGetDnsAs112TopLocationsByEdnsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetDnsAs112TopLocationsByEdnsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetDnsAs112TopLocationsByEdnsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -474,7 +474,7 @@ return _execute(
     return RadarGetDnsAs112TopLocationsByIpVersionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetDnsAs112TopLocationsByIpVersionResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetDnsAs112TopLocationsByIpVersionResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

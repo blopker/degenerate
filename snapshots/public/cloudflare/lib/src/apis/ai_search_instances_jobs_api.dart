@@ -38,7 +38,7 @@ return _execute(
     return AiSearchInstanceListJobsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchInstanceListJobsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchInstanceListJobsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -63,7 +63,7 @@ return _execute(
     return AiSearchInstanceCreateJobResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchInstanceCreateJobResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchInstanceCreateJobResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -86,7 +86,7 @@ return _execute(
     return AiSearchInstanceGetJobResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchInstanceGetJobResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchInstanceGetJobResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -111,7 +111,7 @@ return _execute(
     return AiSearchInstanceChangeJobStatusResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchInstanceChangeJobStatusResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchInstanceChangeJobStatusResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -141,7 +141,7 @@ return _execute(
     return AiSearchInstanceListJobLogsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AiSearchInstanceListJobLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AiSearchInstanceListJobLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

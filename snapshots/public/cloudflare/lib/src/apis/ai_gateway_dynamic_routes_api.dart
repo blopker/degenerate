@@ -29,7 +29,7 @@ return _execute(
     return AigConfigListGatewayDynamicRoutesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigListGatewayDynamicRoutesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigListGatewayDynamicRoutesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -52,7 +52,7 @@ return _execute(
     return AigConfigPostGatewayDynamicRouteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigPostGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigPostGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -73,7 +73,7 @@ return _execute(
     return AigConfigGetGatewayDynamicRouteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigGetGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigGetGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -96,7 +96,7 @@ return _execute(
     return AigConfigUpdateGatewayDynamicRouteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigUpdateGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigUpdateGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -117,7 +117,7 @@ return _execute(
     return AigConfigDeleteGatewayDynamicRouteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigDeleteGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigDeleteGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -138,7 +138,7 @@ return _execute(
     return AigConfigListGatewayDynamicRouteDeploymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigListGatewayDynamicRouteDeploymentsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigListGatewayDynamicRouteDeploymentsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -161,7 +161,7 @@ return _execute(
     return AigConfigPostGatewayDynamicRouteDeploymentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigPostGatewayDynamicRouteDeploymentResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigPostGatewayDynamicRouteDeploymentResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -182,7 +182,7 @@ return _execute(
     return AigConfigListGatewayDynamicRouteVersionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigListGatewayDynamicRouteVersionsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigListGatewayDynamicRouteVersionsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -205,7 +205,7 @@ return _execute(
     return AigConfigPostGatewayDynamicRouteVersionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigPostGatewayDynamicRouteVersionResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigPostGatewayDynamicRouteVersionResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -226,7 +226,7 @@ return _execute(
     return AigConfigGetGatewayDynamicRouteVersionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigGetGatewayDynamicRouteVersionResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigGetGatewayDynamicRouteVersionResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

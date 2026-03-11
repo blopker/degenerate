@@ -30,7 +30,7 @@ return _execute(
     return json.map((e) => GetDatasetListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return GetDatasetListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetDatasetListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -51,7 +51,7 @@ return _execute(
     return GetDatasetReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetDatasetReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetDatasetReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +74,7 @@ return _execute(
     return PostDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PostDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PostDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -97,7 +97,7 @@ return _execute(
     return PatchDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PatchDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PatchDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -120,7 +120,7 @@ return _execute(
     return DeleteDatasetDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return DeleteDatasetDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return DeleteDatasetDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -143,7 +143,7 @@ return _execute(
     return PostDatasetCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PostDatasetCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PostDatasetCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

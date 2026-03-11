@@ -83,7 +83,7 @@ return _execute(
     return RadarGetEmailSecuritySummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailSecuritySummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailSecuritySummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -159,7 +159,7 @@ return _execute(
     return RadarGetEmailSecurityTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailSecurityTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailSecurityTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -235,7 +235,7 @@ return _execute(
     return RadarGetEmailSecurityTopTldsByMessagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailSecurityTopTldsByMessagesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailSecurityTopTldsByMessagesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -311,7 +311,7 @@ return _execute(
     return RadarGetEmailSecurityTopTldsByMaliciousResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailSecurityTopTldsByMaliciousResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailSecurityTopTldsByMaliciousResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -387,7 +387,7 @@ return _execute(
     return RadarGetEmailSecurityTopTldsBySpamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailSecurityTopTldsBySpamResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailSecurityTopTldsBySpamResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -463,7 +463,7 @@ return _execute(
     return RadarGetEmailSecurityTopTldsBySpoofResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEmailSecurityTopTldsBySpoofResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEmailSecurityTopTldsBySpoofResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

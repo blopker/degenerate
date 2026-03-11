@@ -40,7 +40,7 @@ return _execute(
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
-    try { return WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

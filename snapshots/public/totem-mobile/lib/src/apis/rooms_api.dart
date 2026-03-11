@@ -33,7 +33,7 @@ return _execute(
     return RoomState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -56,7 +56,7 @@ return _execute(
     return RoomState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -79,7 +79,7 @@ return _execute(
     return JoinResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -100,7 +100,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -121,7 +121,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -150,7 +150,7 @@ return _execute(
     return RemoveParticipantPayload.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

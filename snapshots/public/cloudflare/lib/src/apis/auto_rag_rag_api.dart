@@ -38,7 +38,7 @@ return _execute(
     return AutoragConfigFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AutoragConfigFilesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AutoragConfigFilesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -59,7 +59,7 @@ return _execute(
     return AutoragConfigSyncResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AutoragConfigSyncResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AutoragConfigSyncResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

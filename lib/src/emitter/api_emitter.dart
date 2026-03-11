@@ -784,29 +784,24 @@ try {
     if (isJsonLikeMediaType(mediaType)) {
       return switch (errorType) {
         IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.string =>
-            'try { return response.body; } catch (_) { return null; }',
-          PrimitiveKind.int =>
-            'try { return int.parse(response.body); } catch (_) { return null; }',
-          PrimitiveKind.double =>
-            'try { return double.parse(response.body); } catch (_) { return null; }',
-          PrimitiveKind.bool =>
-            'try { return jsonDecode(response.body) as bool; } catch (_) { return null; }',
+          PrimitiveKind.string => 'return response.body;',
+          PrimitiveKind.int => 'return int.parse(response.body);',
+          PrimitiveKind.double => 'return double.parse(response.body);',
+          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
           PrimitiveKind.bytes =>
-            'try { return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')}; } catch (_) { return null; }',
-          _ =>
-            'try { return jsonDecode(response.body); } catch (_) { return null; }',
+            'return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')};',
+          _ => 'return jsonDecode(response.body);',
         },
         IrEnum(:final name) =>
-          'try { return $name.fromJson(jsonDecode(response.body) as String); } catch (_) { return null; }',
+          'return $name.fromJson(jsonDecode(response.body) as String);',
         IrList(:final items) =>
-          'try { final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList(); } catch (_) { return null; }',
+          'final json = jsonDecode(response.body) as List<dynamic>;\n'
+              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList();',
         IrMap(:final values) =>
-          'try { return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')})); } catch (_) { return null; }',
+          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
         // All named types with .fromJson(Map)
         _ =>
-          'try { return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')}; } catch (_) { return null; }',
+          'return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')};',
       };
     }
 
@@ -815,19 +810,16 @@ try {
     return switch (errorType) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.object || PrimitiveKind.string =>
-          'try { return response.body; } catch (_) { return null; }',
-        PrimitiveKind.int =>
-          'try { return int.parse(response.body); } catch (_) { return null; }',
-        PrimitiveKind.double =>
-          'try { return double.parse(response.body); } catch (_) { return null; }',
+          'return response.body;',
+        PrimitiveKind.int => 'return int.parse(response.body);',
+        PrimitiveKind.double => 'return double.parse(response.body);',
         PrimitiveKind.bool =>
-          "try { return response.body.toLowerCase() == 'true'; } catch (_) { return null; }",
+          "return response.body.toLowerCase() == 'true';",
         PrimitiveKind.bytes =>
-          'try { return Uint8List.fromList(response.bodyBytes); } catch (_) { return null; }',
+          'return Uint8List.fromList(response.bodyBytes);',
         _ => 'return null;',
       },
-      IrEnum(:final name) =>
-        'try { return $name.fromJson(response.body); } catch (_) { return null; }',
+      IrEnum(:final name) => 'return $name.fromJson(response.body);',
       _ =>
         '// TODO: Unsupported non-JSON error schema $unsupportedMessage\nreturn null;',
     };

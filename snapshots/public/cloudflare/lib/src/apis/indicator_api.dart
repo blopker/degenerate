@@ -65,7 +65,7 @@ return _execute(
     return GetIndicatorReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetIndicatorReadResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetIndicatorReadResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -90,7 +90,7 @@ return _execute(
     return PatchIndicatorUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PatchIndicatorUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PatchIndicatorUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -113,7 +113,7 @@ return _execute(
     return DeleteIndicatorDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return DeleteIndicatorDeleteResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return DeleteIndicatorDeleteResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -138,7 +138,7 @@ return _execute(
     return double.parse(response.body);
   },
   onError: (response) {
-    try { return PostIndicatorCreateBulkResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PostIndicatorCreateBulkResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -163,7 +163,7 @@ return _execute(
     return PostIndicatorCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PostIndicatorCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PostIndicatorCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -187,7 +187,7 @@ return _execute(
     return json.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
   },
   onError: (response) {
-    try { return GetIndicatorTagsListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetIndicatorTagsListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -240,7 +240,7 @@ return _execute(
     return GetIndicatorListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return GetIndicatorListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetIndicatorListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

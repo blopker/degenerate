@@ -34,7 +34,7 @@ return _execute(
     return json.map((e) => UrlscannerCreateScanBulkResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return UrlscannerCreateScanBulkResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerCreateScanBulkResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return _execute(
     return response.body;
   },
   onError: (response) {
-    try { return UrlscannerGetScanDomResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerGetScanDomResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +80,7 @@ return _execute(
     return UrlscannerGetScanHarResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return UrlscannerGetScanHarResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerGetScanHarResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -103,7 +103,7 @@ return _execute(
     return response.body;
   },
   onError: (response) {
-    try { return UrlscannerGetResponseResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerGetResponseResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -126,7 +126,7 @@ return _execute(
     return UrlscannerGetScanResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return UrlscannerGetScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerGetScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -151,7 +151,7 @@ return _execute(
     return UrlscannerCreateScanResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return UrlscannerCreateScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerCreateScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -180,7 +180,7 @@ return _execute(
     return response.body;
   },
   onError: (response) {
-    try { return UrlscannerGetScanScreenshotResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerGetScanScreenshotResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -210,7 +210,7 @@ return _execute(
     return UrlscannerSearchScansResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return UrlscannerSearchScansResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UrlscannerSearchScansResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

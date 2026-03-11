@@ -29,7 +29,7 @@ return _execute(
     return PostDatasetPopulateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PostDatasetPopulateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PostDatasetPopulateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

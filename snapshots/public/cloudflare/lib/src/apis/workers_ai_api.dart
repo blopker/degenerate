@@ -29,7 +29,7 @@ return _execute(
     return WorkersAiSearchAuthorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return WorkersAiSearchAuthorResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiSearchAuthorResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -58,7 +58,7 @@ return _execute(
     return WorkersAiGetModelSchemaResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return WorkersAiGetModelSchemaResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiGetModelSchemaResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -91,7 +91,7 @@ return _execute(
     return WorkersAiSearchModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return WorkersAiSearchModelResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiSearchModelResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -121,7 +121,7 @@ return _execute(
     return WorkersAiPostRunModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return WorkersAiPostRunModelResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostRunModelResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -142,7 +142,7 @@ return _execute(
     return WorkersAiSearchTaskResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return WorkersAiSearchTaskResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiSearchTaskResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -169,7 +169,7 @@ return _execute(
     return WorkersAiPostToMarkdownResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return WorkersAiPostToMarkdownResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostToMarkdownResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -192,7 +192,7 @@ return _execute(
     return WorkersAiGetToMarkdownSupportedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return WorkersAiGetToMarkdownSupportedResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiGetToMarkdownSupportedResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

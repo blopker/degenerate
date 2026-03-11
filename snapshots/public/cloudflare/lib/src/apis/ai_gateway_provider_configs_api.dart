@@ -38,7 +38,7 @@ return _execute(
     return AigConfigListProvidersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigListProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigListProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -63,7 +63,7 @@ return _execute(
     return AigConfigCreateProvidersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigCreateProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigCreateProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -88,7 +88,7 @@ return _execute(
     return AigConfigUpdateProvidersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigUpdateProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigUpdateProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -111,7 +111,7 @@ return _execute(
     return AigConfigDeleteProvidersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigDeleteProvidersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigDeleteProvidersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

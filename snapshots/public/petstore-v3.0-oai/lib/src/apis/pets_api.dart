@@ -36,7 +36,7 @@ return _execute(
     return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +78,7 @@ return _execute(
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

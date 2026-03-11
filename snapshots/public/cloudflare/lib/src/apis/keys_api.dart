@@ -33,7 +33,7 @@ return _execute(
     return TelemetryKeysListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return TelemetryKeysListResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return TelemetryKeysListResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

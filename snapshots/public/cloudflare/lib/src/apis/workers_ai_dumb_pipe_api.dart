@@ -29,7 +29,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -50,7 +50,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -71,7 +71,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

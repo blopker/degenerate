@@ -33,7 +33,7 @@ return _execute(
     return PostBinDbPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PostBinDbPostResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PostBinDbPostResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -52,7 +52,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return GetBinDbGetBinaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetBinDbGetBinaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

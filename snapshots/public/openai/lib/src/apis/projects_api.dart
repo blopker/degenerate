@@ -95,7 +95,7 @@ return _execute(
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -163,7 +163,7 @@ return _execute(
     return KeyDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -230,7 +230,7 @@ return _execute(
     return ProjectRateLimit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -258,7 +258,7 @@ return _execute(
     return ProjectServiceAccountListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -281,7 +281,7 @@ return _execute(
     return ProjectServiceAccountCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -349,7 +349,7 @@ return _execute(
     return ProjectUserListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -372,7 +372,7 @@ return _execute(
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -413,7 +413,7 @@ return _execute(
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -438,7 +438,7 @@ return _execute(
     return ProjectUserDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

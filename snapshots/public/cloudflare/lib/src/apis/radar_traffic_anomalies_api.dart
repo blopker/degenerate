@@ -51,7 +51,7 @@ return _execute(
     return RadarGetTrafficAnomaliesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetTrafficAnomaliesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetTrafficAnomaliesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -85,7 +85,7 @@ return _execute(
     return RadarGetTrafficAnomaliesTopResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetTrafficAnomaliesTopResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetTrafficAnomaliesTopResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

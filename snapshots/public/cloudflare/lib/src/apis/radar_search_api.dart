@@ -50,7 +50,7 @@ return _execute(
     return RadarGetSearchGlobalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetSearchGlobalResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetSearchGlobalResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

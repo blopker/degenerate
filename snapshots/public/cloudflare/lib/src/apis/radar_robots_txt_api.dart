@@ -49,7 +49,7 @@ return _execute(
     return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -96,7 +96,7 @@ return _execute(
     return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

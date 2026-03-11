@@ -41,7 +41,7 @@ return _execute(
     return AigConfigListDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigListDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigListDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -66,7 +66,7 @@ return _execute(
     return AigConfigCreateDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigCreateDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigCreateDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -89,7 +89,7 @@ return _execute(
     return AigConfigFetchDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigFetchDatasetResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigFetchDatasetResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -114,7 +114,7 @@ return _execute(
     return AigConfigUpdateDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigUpdateDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigUpdateDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -137,7 +137,7 @@ return _execute(
     return AigConfigDeleteDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AigConfigDeleteDatasetResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AigConfigDeleteDatasetResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

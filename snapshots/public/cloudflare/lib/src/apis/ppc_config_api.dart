@@ -33,7 +33,7 @@ return _execute(
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -58,7 +58,7 @@ return _execute(
     return PayPerCrawlQueryZonesCanBeEnabledResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -81,7 +81,7 @@ return _execute(
     return PayPerCrawlGetConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -106,7 +106,7 @@ return _execute(
     return PayPerCrawlGetConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -131,7 +131,7 @@ return _execute(
     return PayPerCrawlGetConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -137,6 +137,19 @@ void main() {
       expect(parseError.response.body, contains('"id":1'));
     });
 
+    test('returns ApiParseException when error body is malformed', () async {
+      client.nextResponse = ApiResponse(
+        statusCode: 500,
+        body: 'internal server error', // not valid JSON
+      );
+
+      final result = await api.getPet(petId: '1');
+      expect(result, isA<ApiParseException>());
+      final parseError = result as ApiParseException;
+      expect(parseError.response.statusCode, equals(500));
+      expect(parseError.response.body, equals('internal server error'));
+    });
+
     test('deserializes error response', () async {
       client.nextResponse = ApiResponse(
         statusCode: 404,

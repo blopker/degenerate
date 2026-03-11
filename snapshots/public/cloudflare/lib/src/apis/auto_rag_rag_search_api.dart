@@ -31,7 +31,7 @@ return _execute(
     return AutoragConfigAiSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AutoragConfigAiSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AutoragConfigAiSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -54,7 +54,7 @@ return _execute(
     return AutoragConfigSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return AutoragConfigSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return AutoragConfigSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

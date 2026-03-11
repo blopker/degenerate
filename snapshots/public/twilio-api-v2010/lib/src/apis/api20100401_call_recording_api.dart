@@ -115,7 +115,7 @@ return _execute(
     return AccountCallCallRecording.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return UpdateCallRecordingResponse408.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return UpdateCallRecordingResponse408.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

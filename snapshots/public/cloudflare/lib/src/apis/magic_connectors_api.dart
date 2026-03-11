@@ -29,7 +29,7 @@ return _execute(
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -52,7 +52,7 @@ return _execute(
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -73,7 +73,7 @@ return _execute(
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -96,7 +96,7 @@ return _execute(
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -119,7 +119,7 @@ return _execute(
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -140,7 +140,7 @@ return _execute(
     return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -171,7 +171,7 @@ return _execute(
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -192,7 +192,7 @@ return _execute(
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -213,7 +213,7 @@ return _execute(
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -243,7 +243,7 @@ return _execute(
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -264,7 +264,7 @@ return _execute(
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -285,7 +285,7 @@ return _execute(
     return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

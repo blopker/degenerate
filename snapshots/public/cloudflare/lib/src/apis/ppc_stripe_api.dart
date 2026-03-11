@@ -31,7 +31,7 @@ return _execute(
     return PayPerCrawlGetStripeConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -54,7 +54,7 @@ return _execute(
     return PayPerCrawlCreateStripeConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -77,7 +77,7 @@ return _execute(
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -100,7 +100,7 @@ return _execute(
     return PayPerCrawlGetStripeConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -123,7 +123,7 @@ return _execute(
     return PayPerCrawlCreateStripeConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -146,7 +146,7 @@ return _execute(
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -43,7 +43,7 @@ return _execute(
     return RadarGetEntitiesLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEntitiesLocationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEntitiesLocationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -72,7 +72,7 @@ return _execute(
     return RadarGetEntitiesLocationByAlpha2Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetEntitiesLocationByAlpha2Response404.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetEntitiesLocationByAlpha2Response404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

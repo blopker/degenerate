@@ -87,7 +87,7 @@ return _execute(
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -112,7 +112,7 @@ return _execute(
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -135,7 +135,7 @@ return _execute(
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -160,7 +160,7 @@ return _execute(
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -185,7 +185,7 @@ return _execute(
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -208,7 +208,7 @@ return _execute(
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

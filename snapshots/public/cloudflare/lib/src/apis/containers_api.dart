@@ -38,7 +38,7 @@ return _execute(
     return BaseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return BaseErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return BaseErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

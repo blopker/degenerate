@@ -31,7 +31,7 @@ return _execute(
     return ResponseCommon62.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -56,7 +56,7 @@ return _execute(
     return ResponseCommon62.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

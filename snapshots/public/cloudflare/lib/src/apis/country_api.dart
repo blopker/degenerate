@@ -30,7 +30,7 @@ return _execute(
     return json.map((e) => GetCountryReadResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    try { return GetCountryReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return GetCountryReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

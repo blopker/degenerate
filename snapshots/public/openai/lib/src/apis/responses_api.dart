@@ -87,7 +87,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -111,7 +111,7 @@ return _execute(
     return ModelResponseProperties.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

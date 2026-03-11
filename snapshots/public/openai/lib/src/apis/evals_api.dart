@@ -121,7 +121,7 @@ return _execute(
     return DeleteEvalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -173,7 +173,7 @@ return _execute(
     return EvalRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -233,7 +233,7 @@ return _execute(
     return DeleteEvalRunResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

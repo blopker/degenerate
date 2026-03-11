@@ -50,7 +50,7 @@ return _execute(
     return Shape.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -73,7 +73,7 @@ return _execute(
     return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return PetOrError.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return PetOrError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

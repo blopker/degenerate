@@ -41,7 +41,7 @@ return _execute(
     return RadarGetReportsDatasetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetReportsDatasetsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetReportsDatasetsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -64,7 +64,7 @@ return _execute(
     return response.body;
   },
   onError: (response) {
-    try { return RadarGetReportsDatasetDownloadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetReportsDatasetDownloadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -95,7 +95,7 @@ return _execute(
     return RadarPostReportsDatasetDownloadUrlResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarPostReportsDatasetDownloadUrlResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarPostReportsDatasetDownloadUrlResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

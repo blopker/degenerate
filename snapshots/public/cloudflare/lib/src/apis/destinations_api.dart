@@ -40,7 +40,7 @@ return _execute(
     return DestinationListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return DestinationListResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return DestinationListResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -65,7 +65,7 @@ return _execute(
     return DestinationCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return DestinationCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return DestinationCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -90,7 +90,7 @@ return _execute(
     return DestinationUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return DestinationUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return DestinationUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -113,7 +113,7 @@ return _execute(
     return DestinationsDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return DestinationsDeleteResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return DestinationsDeleteResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

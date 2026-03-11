@@ -57,7 +57,7 @@ return _execute(
     return RadarGetOriginPostQuantumSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetOriginPostQuantumSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetOriginPostQuantumSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -106,7 +106,7 @@ return _execute(
     return RadarGetOriginPostQuantumTimeseriesGroupsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetOriginPostQuantumTimeseriesGroupsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetOriginPostQuantumTimeseriesGroupsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -135,7 +135,7 @@ return _execute(
     return RadarGetPostQuantumTlsSupportResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RadarGetPostQuantumTlsSupportResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RadarGetPostQuantumTlsSupportResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

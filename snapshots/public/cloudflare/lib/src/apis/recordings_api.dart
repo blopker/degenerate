@@ -132,7 +132,7 @@ return _execute(
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -31,7 +31,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MagicPcapCollectionListPacketCaptureRequestsResponsedefault.fromJson(jsonDecode(response.body)); } catch (_) { return null; }
+    return MagicPcapCollectionListPacketCaptureRequestsResponsedefault.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -56,7 +56,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MagicPcapCollectionCreatePcapRequestResponsedefault.fromJson(jsonDecode(response.body)); } catch (_) { return null; }
+    return MagicPcapCollectionCreatePcapRequestResponsedefault.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -79,7 +79,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MagicPcapCollectionGetPcapRequestResponsedefault.fromJson(jsonDecode(response.body)); } catch (_) { return null; }
+    return MagicPcapCollectionGetPcapRequestResponsedefault.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -118,7 +118,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ResponseCommonFailure49.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure49.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -141,7 +141,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault.fromJson(jsonDecode(response.body)); } catch (_) { return null; }
+    return MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -166,7 +166,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault.fromJson(jsonDecode(response.body)); } catch (_) { return null; }
+    return MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault.fromJson(jsonDecode(response.body));
   },
 );
  } 
@@ -209,7 +209,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault.fromJson(jsonDecode(response.body)); } catch (_) { return null; }
+    return MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault.fromJson(jsonDecode(response.body));
   },
 );
  } 

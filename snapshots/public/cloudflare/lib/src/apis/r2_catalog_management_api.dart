@@ -34,7 +34,7 @@ return _execute(
     return ResponseSingle39.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -59,7 +59,7 @@ return _execute(
     return ResponseSingle39.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -83,7 +83,7 @@ return _execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    try { return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -109,7 +109,7 @@ return _execute(
     return ResponseSingle39.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    try { return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>); } catch (_) { return null; }
+    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
