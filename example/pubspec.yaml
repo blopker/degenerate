@@ -3,7 +3,7 @@ description: Example CLI app using generated petstore client.
 publish_to: none
 
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.11.0
 
 dependencies:
   petstore_client:

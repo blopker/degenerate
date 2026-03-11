@@ -25,16 +25,16 @@ void main() async {
     // spec (e.g. missing required 'name' field). ApiParseException
     // gives you access to the raw response so you can handle it.
     print('=== Finding available pets ===');
-    final findResult = await sdk.pet.findPetsByStatus(
-      status: FindPetsByStatusStatus.available,
-    );
+    final findResult = await sdk.pet.findPetsByStatus(status: .available);
     switch (findResult) {
       case ApiSuccess(:final data, :final statusCode):
         print('[$statusCode] Found ${data.length} available pets');
         for (final pet in data.take(5)) {
           final tags = pet.tags?.map((t) => t.name).join(', ') ?? 'none';
-          print('  #${pet.id} ${pet.name} '
-              '(status: ${pet.status}, tags: [$tags])');
+          print(
+            '  #${pet.id} ${pet.name} '
+            '(status: ${pet.status}, tags: [$tags])',
+          );
         }
         if (data.length > 5) print('  ... and ${data.length - 5} more');
       case ApiError(:final statusCode, :final rawBody):
