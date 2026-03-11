@@ -14,12 +14,13 @@ final ApiConfig _config;
 
 ///
 /// `GET /verbs`
-Future<ApiResult<void, Never>> verbsGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsGet({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -29,12 +30,13 @@ return _execute(
  } 
 ///
 /// `POST /verbs`
-Future<ApiResult<void, Never>> verbsPost() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsPost({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -44,12 +46,13 @@ return _execute(
  } 
 ///
 /// `PUT /verbs`
-Future<ApiResult<void, Never>> verbsPut() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsPut({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -59,12 +62,13 @@ return _execute(
  } 
 ///
 /// `PATCH /verbs`
-Future<ApiResult<void, Never>> verbsPatch() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsPatch({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,12 +78,13 @@ return _execute(
  } 
 ///
 /// `DELETE /verbs`
-Future<ApiResult<void, Never>> verbsDelete() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsDelete({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -89,12 +94,13 @@ return _execute(
  } 
 ///
 /// `HEAD /verbs`
-Future<ApiResult<void, Never>> verbsHead() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsHead({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'HEAD',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -104,12 +110,13 @@ return _execute(
  } 
 ///
 /// `OPTIONS /verbs`
-Future<ApiResult<void, Never>> verbsOptions() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsOptions({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'OPTIONS',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -119,12 +126,13 @@ return _execute(
  } 
 ///
 /// `TRACE /verbs`
-Future<ApiResult<void, Never>> verbsTrace() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> verbsTrace({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'TRACE',
   path: '/verbs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -134,16 +142,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

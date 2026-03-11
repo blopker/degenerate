@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Create a new User Defined Message for the given Call SID.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessages.json`
-Future<ApiResult<AccountCallUserDefinedMessage, Never>> createUserDefinedMessage({required String accountSid, required String callSid, CreateUserDefinedMessageRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallUserDefinedMessage, Never>> createUserDefinedMessage({required String accountSid, required String callSid, CreateUserDefinedMessageRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -27,6 +27,7 @@ final request = ApiRequest(
     if (body.idempotencyKey case final idempotencyKey$?)
       'IdempotencyKey=${Uri.encodeQueryComponent(idempotencyKey$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -38,16 +39,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

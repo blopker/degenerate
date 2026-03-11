@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists all mTLS certificates uploaded to your account, such as Bring Your Own CA (BYO-CA) for mTLS. To list certificates issued by the Cloudflare managed CA, use the [List Client Certificates endpoint](/api/resources/client_certificates/methods/list/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementListMTlsCertificates({required TlsCertificatesAndHostnamesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementListMTlsCertificates({required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Upload a certificate that you want to use with mTLS-enabled Cloudflare services, such as Bring Your Own CA (BYO-CA) for mTLS. To create certificates issued by the Cloudflare managed CA, use the [Create Client Certificate endpoint](/api/resources/client_certificates/methods/create/).
 ///
 /// `POST /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementUploadMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementUploadMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetches a single mTLS certificate uploaded to your account. To get a certificate issued by the Cloudflare managed CA, use the [Client Certificate Details endpoint](/api/resources/client_certificates/methods/get/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementGetMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementGetMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,12 +82,13 @@ return _execute(
 /// Deletes the mTLS certificate unless the certificate is in use by one or more Cloudflare services.
 ///
 /// `DELETE /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementDeleteMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementDeleteMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -99,12 +103,13 @@ return _execute(
 /// Lists all active associations between the certificate and Cloudflare services.
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}/associations`
-Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementListMTlsCertificateAssociations({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> mTlsCertificateManagementListMTlsCertificateAssociations({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toString())}/associations',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -116,16 +121,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Fetches the current URL Normalization settings.
 ///
 /// `GET /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsResponse, Never>> getUrlNormalization({required RulesetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RulesetsResponse, Never>> getUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Updates the URL Normalization settings.
 ///
 /// `PUT /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsResponse, Never>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RulesetsResponse, Never>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Deletes the URL Normalization settings.
 ///
 /// `DELETE /zones/{zone_id}/url_normalization`
-Future<ApiResult<void, Never>> deleteUrlNormalization({required RulesetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,16 +77,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

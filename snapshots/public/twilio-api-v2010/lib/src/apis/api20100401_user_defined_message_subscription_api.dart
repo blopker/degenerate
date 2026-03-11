@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Subscribe to User Defined Messages for a given Call SID.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions.json`
-Future<ApiResult<AccountCallUserDefinedMessageSubscription, Never>> createUserDefinedMessageSubscription({required String accountSid, required String callSid, CreateUserDefinedMessageSubscriptionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallUserDefinedMessageSubscription, Never>> createUserDefinedMessageSubscription({required String accountSid, required String callSid, CreateUserDefinedMessageSubscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -29,6 +29,7 @@ final request = ApiRequest(
     if (body.method case final method$?)
       'Method=${Uri.encodeQueryComponent(method$.toJson())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -41,12 +42,13 @@ return _execute(
 /// Delete a specific User Defined Message Subscription.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions/{Sid}.json`
-Future<ApiResult<void, Never>> deleteUserDefinedMessageSubscription({required String accountSid, required String callSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteUserDefinedMessageSubscription({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessageSubscriptions/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -56,16 +58,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

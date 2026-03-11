@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Returns details of all webhooks for an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/webhooks`
-Future<ApiResult<RealtimekitWebhooksListSuccessResponse, Never>> getAllWebhooks({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitWebhooksListSuccessResponse, Never>> getAllWebhooks({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Adds a new webhook to an App.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/webhooks`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> addWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitWebhookRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> addWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -62,12 +64,13 @@ return _execute(
 /// Returns webhook details for the given webhook ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> getWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> getWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -85,7 +88,7 @@ return _execute(
 /// Replace all details for the given webhook ID.
 ///
 /// `PUT /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> replaceWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitWebhookRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> replaceWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,6 +96,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -110,7 +114,7 @@ return _execute(
 /// Edits the webhook details for the given webhook ID.
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> editWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitPatchWebhookRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> editWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitPatchWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -118,6 +122,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -135,12 +140,13 @@ return _execute(
 /// Removes a webhook for the given webhook ID.
 ///
 /// `DELETE /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> deleteWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, RealtimekitErrorResponse>> deleteWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -155,16 +161,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

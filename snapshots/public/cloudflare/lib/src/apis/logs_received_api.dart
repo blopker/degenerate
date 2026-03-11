@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Gets log retention flag for Logpull API.
 ///
 /// `GET /zones/{zone_id}/logs/control/retention/flag`
-Future<ApiResult<ResponseCommon43, Never>> getZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon43, Never>> getZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/control/retention/flag',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Updates log retention flag for Logpull API.
 ///
 /// `POST /zones/{zone_id}/logs/control/retention/flag`
-Future<ApiResult<ResponseCommon43, Never>> postZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, required LogcontrolRetentionFlag body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon43, Never>> postZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, required LogcontrolRetentionFlag body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/control/retention/flag',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// The `/rayids` api route allows lookups by specific rayid. The rayids route will return zero, one, or more records (ray ids are not unique).
 ///
 /// `GET /zones/{zone_id}/logs/rayids/{ray_id}`
-Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsRayidsRayId({required LogshareIdentifier zoneId, required LogshareRayIdentifier rayId, LogshareFields? fields, LogshareTimestamps? timestamps, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsRayidsRayId({required LogshareIdentifier zoneId, required LogshareRayIdentifier rayId, LogshareFields? fields, LogshareTimestamps? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 if (timestamps != null) queryParameters['timestamps'] = timestamps.toJson();
@@ -72,6 +74,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -86,7 +89,7 @@ return _execute(
 /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is "give me all the logs for zone Z for minute M", where the minute M refers to the time records were received at Cloudflare's central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
 ///
 /// `GET /zones/{zone_id}/logs/received`
-Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsReceived({required LogshareIdentifier zoneId, LogshareStart? start, required LogshareEnd end, LogshareFields? fields, LogshareSample? sample, LogshareCount? count, LogshareTimestamps? timestamps, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsReceived({required LogshareIdentifier zoneId, LogshareStart? start, required LogshareEnd end, LogshareFields? fields, LogshareSample? sample, LogshareCount? count, LogshareTimestamps? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (start != null) {
 queryParametersList.add(ApiQueryParameter(name: 'start', value: start.toString(), allowReserved: false));
@@ -105,6 +108,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -119,12 +123,13 @@ return _execute(
 /// Lists all fields available. The response is json object with key-value pairs, where keys are field names, and values are descriptions.
 ///
 /// `GET /zones/{zone_id}/logs/received/fields`
-Future<ApiResult<LogshareFieldsResponse, Never>> getZonesZoneIdLogsReceivedFields({required LogshareIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<LogshareFieldsResponse, Never>> getZonesZoneIdLogsReceivedFields({required LogshareIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/received/fields',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -136,16 +141,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

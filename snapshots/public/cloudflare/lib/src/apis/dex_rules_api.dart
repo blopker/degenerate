@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List DEX Rules
 ///
 /// `GET /accounts/{account_id}/dex/rules`
-Future<ApiResult<ResponseCommon19, Never>> listDexRules({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon19, Never>> listDexRules({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -43,7 +44,7 @@ return _execute(
 /// Create a DEX Rule
 ///
 /// `POST /accounts/{account_id}/dex/rules`
-Future<ApiResult<ResponseCommon19, Never>> createDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCreateRuleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon19, Never>> createDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCreateRuleBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,6 +52,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -65,12 +67,13 @@ return _execute(
 /// Get details for a DEX Rule
 ///
 /// `GET /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19, Never>> getDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon19, Never>> getDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -83,7 +86,7 @@ return _execute(
 /// Update a DEX Rule
 ///
 /// `PATCH /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19, Never>> updateDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, required DigitalExperienceMonitoringPatchRuleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon19, Never>> updateDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, required DigitalExperienceMonitoringPatchRuleBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -91,6 +94,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -103,12 +107,13 @@ return _execute(
 /// Delete a DEX Rule
 ///
 /// `DELETE /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<ResponseCommon19, Never>> deleteDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon19, Never>> deleteDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -120,16 +125,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns all Source-of-Truth tag categories for an account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/tags/categories`
-Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListResponse400>> getTagCategoryList({required String accountId, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListResponse400>> getTagCategoryList({required String accountId, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (search != null) queryParameters['search'] = search;
 
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// Updates a Source-of-Truth tag category by UUID.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
-Future<ApiResult<PatchTagCategoryUpdateResponse, PatchTagCategoryUpdateResponse400>> patchTagCategoryUpdate({required String accountId, required String categoryUuid, PatchTagCategoryUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchTagCategoryUpdateResponse, PatchTagCategoryUpdateResponse400>> patchTagCategoryUpdate({required String accountId, required String categoryUuid, PatchTagCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/${Uri.encodeComponent(categoryUuid)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -71,12 +73,13 @@ return _execute(
 /// Deletes a Source-of-Truth tag category by UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
-Future<ApiResult<DeleteTagCategoryDeleteResponse, DeleteTagCategoryDeleteResponse400>> deleteTagCategoryDelete({required String accountId, required String categoryUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteTagCategoryDeleteResponse, DeleteTagCategoryDeleteResponse400>> deleteTagCategoryDelete({required String accountId, required String categoryUuid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/${Uri.encodeComponent(categoryUuid)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -94,7 +97,7 @@ return _execute(
 /// Creates a new Source-of-Truth tag category for an account.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/tags/categories/create`
-Future<ApiResult<PostTagCategoryCreateResponse, PostTagCategoryCreateResponse400>> postTagCategoryCreate({required String accountId, PostTagCategoryCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostTagCategoryCreateResponse, PostTagCategoryCreateResponse400>> postTagCategoryCreate({required String accountId, PostTagCategoryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,6 +105,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/create',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -116,16 +120,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

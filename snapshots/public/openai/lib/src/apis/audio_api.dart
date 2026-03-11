@@ -18,7 +18,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /audio/speech`
-Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -26,6 +26,7 @@ final request = ApiRequest(
   path: '/audio/speech',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -42,7 +43,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/transcriptions`
-Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -71,6 +72,7 @@ final request = ApiRequest(
       ApiMultipartField.text('known_speaker_references', knownSpeakerReferences$.toString()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -83,7 +85,7 @@ return _execute(
 /// Translates audio into English.
 ///
 /// `POST /audio/translations`
-Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -98,6 +100,7 @@ final request = ApiRequest(
     ApiMultipartField.text('temperature', body.temperature.toString()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -115,7 +118,7 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents`
-Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -128,6 +131,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -145,7 +149,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents`
-Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -157,6 +161,7 @@ final request = ApiRequest(
     ApiMultipartField.text('language', body.language),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -174,12 +179,13 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -197,7 +203,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -205,6 +211,7 @@ final request = ApiRequest(
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -222,12 +229,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -245,7 +253,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voices`
-Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -257,6 +265,7 @@ final request = ApiRequest(
     ApiMultipartField.text('consent', body.consent),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -268,16 +277,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

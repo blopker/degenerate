@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists the most commonly used licenses on GitHub. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses`
-Future<ApiResult<List<LicenseSimple>, Never>> licensesGetAllCommonlyUsed({bool? featured, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<LicenseSimple>, Never>> licensesGetAllCommonlyUsed({bool? featured, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (featured != null) queryParameters['featured'] = featured.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,12 +47,13 @@ return _execute(
 /// Gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses/{license}`
-Future<ApiResult<License, BasicError>> licensesGet({required String license}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<License, BasicError>> licensesGet({required String license, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/licenses/${Uri.encodeComponent(license)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,7 +76,7 @@ return _execute(
 /// - **`application/vnd.github.html+json`**: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/license`
-Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref.toString();
 
@@ -86,6 +88,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -100,16 +103,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

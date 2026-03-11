@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists WARP registrations.
 ///
 /// `GET /accounts/{account_id}/devices/registrations`
-Future<ApiResult<ListRegistrationsResponse, Never>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListRegistrationsResponse, Never>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (userId != null) {
 for (final item in userId) {
@@ -48,6 +48,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -62,7 +63,7 @@ return _execute(
 /// Fetches a single WARP registration.
 ///
 /// `GET /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<GetRegistrationResponse, Never>> getRegistration({required String registrationId, required String accountId, String? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetRegistrationResponse, Never>> getRegistration({required String registrationId, required String accountId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) queryParameters['include'] = include;
 
@@ -74,6 +75,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -88,12 +90,13 @@ return _execute(
 /// Deletes a WARP registration.
 ///
 /// `DELETE /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<DeleteRegistrationResponse, Never>> deleteRegistration({required String registrationId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteRegistrationResponse, Never>> deleteRegistration({required String registrationId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/registrations/${Uri.encodeComponent(registrationId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,7 +111,7 @@ return _execute(
 /// Revokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/revoke`
-Future<ApiResult<RevokeRegistrationsResponse, Never>> revokeRegistrations({required String accountId, required List<String> id, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RevokeRegistrationsResponse, Never>> revokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
   queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
@@ -122,6 +125,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -136,7 +140,7 @@ return _execute(
 /// Unrevokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/unrevoke`
-Future<ApiResult<UnrevokeRegistrationsResponse, Never>> unrevokeRegistrations({required String accountId, required List<String> id, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UnrevokeRegistrationsResponse, Never>> unrevokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
   queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
@@ -150,6 +154,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -161,16 +166,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

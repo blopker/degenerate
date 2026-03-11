@@ -1,8 +1,10 @@
 export 'src/api_client.dart';
 export 'src/api_config.dart';
 export 'src/api_result.dart';
+export 'src/cancel_token.dart';
 export 'src/interceptor.dart';
 export 'src/multipart.dart';
+export 'src/request_options.dart';
 export 'src/security.dart';
 export 'src/interceptors/auth_interceptor.dart';
 export 'src/interceptors/logging_interceptor.dart';

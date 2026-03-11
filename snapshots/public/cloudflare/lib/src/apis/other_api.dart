@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all DNS Protection rules for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> listDnsProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon28, Never>> listDnsProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// Create a DNS Protection rule for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> createDnsProtectionRule({required DosIdentifier accountId, required DosNewDnsProtectionRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> createDnsProtectionRule({required DosIdentifier accountId, required DosNewDnsProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -68,12 +70,13 @@ return _execute(
 /// Delete all DNS Protection rules for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> deleteDnsProtectionRulesForAccount({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteDnsProtectionRulesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -88,12 +91,13 @@ return _execute(
 /// Get a DNS Protection rule specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> getDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,7 +112,7 @@ return _execute(
 /// Update a DNS Protection rule specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> updateDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosDnsProtectionRuleUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updateDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosDnsProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,6 +120,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -130,12 +135,13 @@ return _execute(
 /// Delete a DNS Protection rule specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -150,7 +156,7 @@ return _execute(
 /// List all allowlist prefixes for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist`
-Future<ApiResult<ResponseCommon28, Never>> listAllowlistPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon28, Never>> listAllowlistPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -165,6 +171,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -179,7 +186,7 @@ return _execute(
 /// Create an allowlist prefix for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist`
-Future<ApiResult<ResponseCommon28, Never>> createAllowlistedPrefix({required DosIdentifier accountId, required DosNewInfraPrefix body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> createAllowlistedPrefix({required DosIdentifier accountId, required DosNewInfraPrefix body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -187,6 +194,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -201,12 +209,13 @@ return _execute(
 /// Delete all allowlist prefixes for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist`
-Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefixesForAccount({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefixesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -221,12 +230,13 @@ return _execute(
 /// Get an allowlist prefix specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> getAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -241,7 +251,7 @@ return _execute(
 /// Update an allowlist prefix specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> updateAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosInfraPrefixUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updateAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosInfraPrefixUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -249,6 +259,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -263,12 +274,13 @@ return _execute(
 /// Delete the allowlist prefix for an account given a UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -283,7 +295,7 @@ return _execute(
 /// List all prefixes for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes`
-Future<ApiResult<ResponseCommon28, Never>> listPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon28, Never>> listPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -298,6 +310,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -312,7 +325,7 @@ return _execute(
 /// Create a prefix for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes`
-Future<ApiResult<ResponseCommon28, Never>> createPrefix({required DosIdentifier accountId, required DosNewPrefix body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> createPrefix({required DosIdentifier accountId, required DosNewPrefix body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -320,6 +333,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -334,12 +348,13 @@ return _execute(
 /// Delete all prefixes for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes`
-Future<ApiResult<ResponseCommon28, Never>> deletePrefixesForAccount({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deletePrefixesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -354,12 +369,13 @@ return _execute(
 /// Get a prefix specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> getPrefix({required DosIdentifier accountId, required DosUuid prefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -374,7 +390,7 @@ return _execute(
 /// Update a prefix specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> updatePrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosPrefixUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updatePrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosPrefixUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -382,6 +398,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -396,12 +413,13 @@ return _execute(
 /// Delete the prefix for an account given a UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> deletePrefix({required DosIdentifier accountId, required DosUuid prefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deletePrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -416,7 +434,7 @@ return _execute(
 /// Create multiple prefixes for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/bulk`
-Future<ApiResult<ResponseCommon28, Never>> bulkCreatePrefixes({required DosIdentifier accountId, required List<DosNewPrefix> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> bulkCreatePrefixes({required DosIdentifier accountId, required List<DosNewPrefix> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -424,6 +442,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/bulk',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -438,7 +457,7 @@ return _execute(
 /// List all SYN Protection filters for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> listSynProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon28, Never>> listSynProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) queryParameters['mode'] = mode;
 if (page != null) queryParameters['page'] = page.toString();
@@ -454,6 +473,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -468,7 +488,7 @@ return _execute(
 /// Create a SYN Protection filter for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> createSynProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> createSynProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -476,6 +496,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -490,12 +511,13 @@ return _execute(
 /// Delete all SYN Protection filters for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFiltersForAccount({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFiltersForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -510,12 +532,13 @@ return _execute(
 /// Get a SYN Protection filter specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> getSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -530,7 +553,7 @@ return _execute(
 /// Update a SYN Protection filter specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> updateSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updateSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -538,6 +561,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -552,12 +576,13 @@ return _execute(
 /// Delete a SYN Protection filter specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -572,7 +597,7 @@ return _execute(
 /// List all SYN Protection rules for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> listSynProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon28, Never>> listSynProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -587,6 +612,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -601,7 +627,7 @@ return _execute(
 /// Create a SYN Protection rule for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> createSynProtectionRule({required DosIdentifier accountId, required DosNewSynProtectionRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> createSynProtectionRule({required DosIdentifier accountId, required DosNewSynProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -609,6 +635,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -623,12 +650,13 @@ return _execute(
 /// Delete all SYN Protection rules for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRulesForAccount({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRulesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -643,12 +671,13 @@ return _execute(
 /// Get a SYN Protection rule specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> getSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -663,7 +692,7 @@ return _execute(
 /// Update a SYN Protection rule specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> updateSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosSynProtectionRuleUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updateSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosSynProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -671,6 +700,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -685,12 +715,13 @@ return _execute(
 /// Delete a SYN Protection rule specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -705,7 +736,7 @@ return _execute(
 /// List all TCP Flow Protection filters for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> listTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon28, Never>> listTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) queryParameters['mode'] = mode;
 if (page != null) queryParameters['page'] = page.toString();
@@ -721,6 +752,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -735,7 +767,7 @@ return _execute(
 /// Create a TCP Flow Protection filter for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> createTcpFlowProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> createTcpFlowProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -743,6 +775,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -757,12 +790,13 @@ return _execute(
 /// Delete all TCP Flow Protection filters for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -777,12 +811,13 @@ return _execute(
 /// Get a TCP Flow Protection filter specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> getTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -797,7 +832,7 @@ return _execute(
 /// Update a TCP Flow Protection filter specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> updateTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updateTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -805,6 +840,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -819,12 +855,13 @@ return _execute(
 /// Delete a TCP Flow Protection filter specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -839,7 +876,7 @@ return _execute(
 /// List all TCP Flow Protection rules for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> listTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon28, Never>> listTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -854,6 +891,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -868,7 +906,7 @@ return _execute(
 /// Create a TCP Flow Protection rule for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> createTcpFlowProtectionRule({required DosIdentifier accountId, required DosNewTcpFlowProtectionRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> createTcpFlowProtectionRule({required DosIdentifier accountId, required DosNewTcpFlowProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -876,6 +914,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -890,12 +929,13 @@ return _execute(
 /// Delete all TCP Flow Protection rules for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRulesForAccount({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -910,12 +950,13 @@ return _execute(
 /// Get a TCP Flow Protection rule specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> getTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -930,7 +971,7 @@ return _execute(
 /// Update a TCP Flow Protection rule specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> updateTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosTcpFlowProtectionRuleUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updateTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosTcpFlowProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -938,6 +979,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -952,12 +994,13 @@ return _execute(
 /// Delete a TCP Flow Protection rule specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -972,12 +1015,13 @@ return _execute(
 /// Get the protection status of the account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status`
-Future<ApiResult<ResponseCommon28, Never>> getProtectionStatus({required DosIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> getProtectionStatus({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_protection_status',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -992,7 +1036,7 @@ return _execute(
 /// Update the protection status of the account.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status`
-Future<ApiResult<ResponseCommon28, Never>> updateProtectionStatus({required DosIdentifier accountId, required DosUpdateProtectionStatus body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon28, Never>> updateProtectionStatus({required DosIdentifier accountId, required DosUpdateProtectionStatus body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1000,6 +1044,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_protection_status',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1011,16 +1056,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

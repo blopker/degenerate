@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists and filters Cloudflare Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name.toString();
 if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
@@ -39,6 +39,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -53,7 +54,7 @@ return _execute(
 /// Creates a new Cloudflare Tunnel in an account.
 ///
 /// `POST /accounts/{account_id}/cfd_tunnel`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelCreateACloudflareTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateACloudflareTunnelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelCreateACloudflareTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateACloudflareTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +62,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,12 +77,13 @@ return _execute(
 /// Fetches a single Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// Updates an existing Cloudflare Tunnel.
 ///
 /// `PATCH /accounts/{account_id}/cfd_tunnel/{tunnel_id}`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelUpdateACloudflareTunnel({required TunnelTunnelId tunnelId, required TunnelAccountId accountId, required CloudflareTunnelUpdateACloudflareTunnelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelUpdateACloudflareTunnel({required TunnelTunnelId tunnelId, required TunnelAccountId accountId, required CloudflareTunnelUpdateACloudflareTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,6 +106,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -117,7 +121,7 @@ return _execute(
 /// Deletes a Cloudflare Tunnel from an account.
 ///
 /// `DELETE /accounts/{account_id}/cfd_tunnel/{tunnel_id}`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelDeleteACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,Object?> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelDeleteACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,Object?> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -125,6 +129,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -139,12 +144,13 @@ return _execute(
 /// Fetches connection details for a Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/connections',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -159,7 +165,7 @@ return _execute(
 /// Removes a connection (aka Cloudflare Tunnel Connector) from a Cloudflare Tunnel independently of its current state. If no connector id (client_id) is provided all connectors will be removed. We recommend running this command after rotating tokens.
 ///
 /// `DELETE /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelCleanUpCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, TunnelClientId? clientId, required Map<String,Object?> body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelCleanUpCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, TunnelClientId? clientId, required Map<String,Object?> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientId != null) queryParameters['client_id'] = clientId.toString();
 
@@ -173,6 +179,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -187,12 +194,13 @@ return _execute(
 /// Fetches connector and connection details for a Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetCloudflareTunnelConnector({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required TunnelClientId connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetCloudflareTunnelConnector({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required TunnelClientId connectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/connectors/${Uri.encodeComponent(connectorId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -207,7 +215,7 @@ return _execute(
 /// Gets a management token used to access the management resources (i.e. Streaming Logs) of a tunnel.
 ///
 /// `POST /accounts/{account_id}/cfd_tunnel/{tunnel_id}/management`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetACloudflareTunnelManagementToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelGetACloudflareTunnelManagementTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetACloudflareTunnelManagementToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelGetACloudflareTunnelManagementTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -215,6 +223,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/management',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -229,12 +238,13 @@ return _execute(
 /// Gets the token used to associate cloudflared with a specific tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/token`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetACloudflareTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetACloudflareTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/token',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -249,7 +259,7 @@ return _execute(
 /// Lists and filters all types of Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/tunnels`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
@@ -276,6 +286,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -290,7 +301,7 @@ return _execute(
 /// Lists and filters Warp Connector Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/warp_connector`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
@@ -312,6 +323,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -326,7 +338,7 @@ return _execute(
 /// Creates a new Warp Connector Tunnel in an account.
 ///
 /// `POST /accounts/{account_id}/warp_connector`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelCreateAWarpConnectorTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateAWarpConnectorTunnelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelCreateAWarpConnectorTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateAWarpConnectorTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -334,6 +346,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -348,12 +361,13 @@ return _execute(
 /// Fetches a single Warp Connector Tunnel.
 ///
 /// `GET /accounts/{account_id}/warp_connector/{tunnel_id}`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -368,7 +382,7 @@ return _execute(
 /// Updates an existing Warp Connector Tunnel.
 ///
 /// `PATCH /accounts/{account_id}/warp_connector/{tunnel_id}`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelUpdateAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelUpdateAWarpConnectorTunnelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelUpdateAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelUpdateAWarpConnectorTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -376,6 +390,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -390,7 +405,7 @@ return _execute(
 /// Deletes a Warp Connector Tunnel from an account.
 ///
 /// `DELETE /accounts/{account_id}/warp_connector/{tunnel_id}`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelDeleteAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,Object?> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelDeleteAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,Object?> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -398,6 +413,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -412,12 +428,13 @@ return _execute(
 /// Gets the token used to associate warp device with a specific Warp Connector tunnel.
 ///
 /// `GET /accounts/{account_id}/warp_connector/{tunnel_id}/token`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetAWarpConnectorTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelGetAWarpConnectorTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}/token',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -429,16 +446,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

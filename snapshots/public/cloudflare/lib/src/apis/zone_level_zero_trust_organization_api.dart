@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Returns the configuration for your Zero Trust organization.
 ///
 /// `GET /zones/{zone_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/organizations',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Sets up a Zero Trust organization for your account.
 ///
 /// `POST /zones/{zone_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/organizations',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Updates the configuration for your Zero Trust organization.
 ///
 /// `PUT /zones/{zone_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,6 +69,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/organizations',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Revokes a user's access across all applications.
 ///
 /// `POST /zones/{zone_id}/access/organizations/revoke_user`
-Future<ApiResult<AccessEmptyResponse, Never>> zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccessEmptyResponse, Never>> zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +92,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/organizations/revoke_user',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -100,16 +104,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

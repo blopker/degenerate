@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieves the value of Argo Smart Routing enablement setting.
 ///
 /// `GET /zones/{zone_id}/argo/smart_routing`
-Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingGetArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingGetArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Configures the value of the Argo Smart Routing enablement setting.
 ///
 /// `PATCH /zones/{zone_id}/argo/smart_routing`
-Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingPatchArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, required ArgoConfigPatch body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingPatchArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, required ArgoConfigPatch body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -56,16 +58,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets`
-Future<ApiResult<AigConfigListDatasetResponse, AigConfigListDatasetResponse400>> aigConfigListDataset({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? enable, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AigConfigListDatasetResponse, AigConfigListDatasetResponse400>> aigConfigListDataset({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? enable, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -50,7 +51,7 @@ return _execute(
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets`
-Future<ApiResult<AigConfigCreateDatasetResponse, AigConfigCreateDatasetResponse400>> aigConfigCreateDataset({required String gatewayId, required String accountId, AigConfigCreateDatasetRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigCreateDatasetResponse, AigConfigCreateDatasetResponse400>> aigConfigCreateDataset({required String gatewayId, required String accountId, AigConfigCreateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,6 +59,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/datasets',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,12 +77,13 @@ return _execute(
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigFetchDatasetResponse, AigConfigFetchDatasetResponse404>> aigConfigFetchDataset({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigFetchDatasetResponse, AigConfigFetchDatasetResponse404>> aigConfigFetchDataset({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/datasets/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -98,7 +101,7 @@ return _execute(
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigUpdateDatasetResponse, AigConfigUpdateDatasetResponse400>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigUpdateDatasetResponse, AigConfigUpdateDatasetResponse400>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,6 +109,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/datasets/${Uri.encodeComponent(id)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -123,12 +127,13 @@ return _execute(
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigDeleteDatasetResponse, AigConfigDeleteDatasetResponse404>> aigConfigDeleteDataset({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigDeleteDatasetResponse, AigConfigDeleteDatasetResponse404>> aigConfigDeleteDataset({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/datasets/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -143,16 +148,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

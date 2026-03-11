@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists App Configs associated with a site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/app_configs`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsListAppConfigs({required MagicIdentifier accountId, required MagicIdentifier siteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsListAppConfigs({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new App Config for a site
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/app_configs`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsAddAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAppConfigAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsAddAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAppConfigAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Updates an App Config for a site
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsUpdateAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsUpdateAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,6 +69,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs/${Uri.encodeComponent(appConfigId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Updates an App Config for a site
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsPatchAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsPatchAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, required MagicAppConfigUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +92,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs/${Uri.encodeComponent(appConfigId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -103,12 +107,13 @@ return _execute(
 /// Deletes specific App Config associated with a site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsDeleteAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicSiteAppConfigsDeleteAppConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicIdentifier appConfigId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/sites/${Uri.encodeComponent(siteId.toString())}/app_configs/${Uri.encodeComponent(appConfigId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -120,16 +125,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

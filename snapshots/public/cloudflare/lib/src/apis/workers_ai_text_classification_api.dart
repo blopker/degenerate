@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Runs inference on the @cf/baai/bge-reranker-base model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-reranker-base`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -32,6 +32,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Runs inference on the @cf/huggingface/distilbert-sst-2-int8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/huggingface/distilbert-sst-2-int8`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -64,6 +65,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -78,16 +80,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

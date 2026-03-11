@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List the abuse reports for a given account
 ///
 /// `GET /accounts/{account_id}/abuse-reports`
-Future<ApiResult<ListAbuseReportsResponse, ListAbuseReportsResponse500>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListAbuseReportsResponse, ListAbuseReportsResponse500>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -37,6 +37,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -54,7 +55,7 @@ return _execute(
 /// List emails sent to the customer for an abuse report. Returns all successful customer emails sent for the specified abuse report. Does not include emails sent to hosts or submitters.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/emails`
-Future<ApiResult<ListEmailsResponse, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListEmailsResponse, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -67,6 +68,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -84,7 +86,7 @@ return _execute(
 /// List mitigations done to remediate the abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/mitigations`
-Future<ApiResult<ListMitigationsResponse, ListMitigationsResponse500>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListMitigationsResponse, ListMitigationsResponse500>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -103,6 +105,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -120,7 +123,7 @@ return _execute(
 /// Request a review for mitigations on an account.
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_id}/mitigations/appeal`
-Future<ApiResult<AbuseReportsMitigationAppealResult, RequestReviewResponse500>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AbuseReportsMitigationAppealResult, RequestReviewResponse500>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -128,6 +131,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportId)}/mitigations/appeal',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -145,12 +149,13 @@ return _execute(
 /// Retrieve the details of an abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<GetAbuseReportResponse, GetAbuseReportResponse400>> getAbuseReport({required String accountId, required String reportParam, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetAbuseReportResponse, GetAbuseReportResponse400>> getAbuseReport({required String accountId, required String reportParam, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportParam)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -168,7 +173,7 @@ return _execute(
 /// Submit the Abuse Report of a particular type
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<AbuseReportsSubmitReportResponse, AbuseReportsSubmitErrorResponse>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AbuseReportsSubmitReportResponse, AbuseReportsSubmitErrorResponse>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -176,6 +181,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportParam.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -190,16 +196,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

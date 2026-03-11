@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Disable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/disable`
-Future<ApiResult<ResponseCommon75, Never>> wafContentScanningDisable({required BundleIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningDisable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/disable',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Enable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/enable`
-Future<ApiResult<ResponseCommon75, Never>> wafContentScanningEnable({required BundleIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningEnable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/enable',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,12 +59,13 @@ return _execute(
 /// Get a list of existing custom scan expressions for Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<ResponseCommon75, Never>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/payloads',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -77,7 +80,7 @@ return _execute(
 /// Add custom scan expressions for Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<ResponseCommon75, Never>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -85,6 +88,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/payloads',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -99,12 +103,13 @@ return _execute(
 /// Delete a Content Scan Custom Expression.
 ///
 /// `DELETE /zones/{zone_id}/content-upload-scan/payloads/{expression_id}`
-Future<ApiResult<ResponseCommon75, Never>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/payloads/${Uri.encodeComponent(expressionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -119,12 +124,13 @@ return _execute(
 /// Retrieve the current status of Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<ResponseCommon75, Never>> wafContentScanningGetStatus({required BundleIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/settings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -139,7 +145,7 @@ return _execute(
 /// Update the Content Scanning status.
 ///
 /// `PUT /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<ResponseCommon75, Never>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon75, Never>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -147,6 +153,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -158,16 +165,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Return matches for string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/matches`
-Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatches({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatches({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) queryParameters['id'] = id;
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Return matches as CSV for string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/matches/download`
-Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatchesDownload({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatchesDownload({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) queryParameters['id'] = id;
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -64,6 +65,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -81,12 +83,13 @@ return _execute(
 /// Return string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionQueries({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/queries',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -102,7 +105,7 @@ return _execute(
 /// Return a success message after creating new saved string queries
 ///
 /// `POST /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, required Query body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, required Query body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) queryParameters['id'] = id;
 if (tag != null) queryParameters['tag'] = tag;
@@ -118,6 +121,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -133,12 +137,13 @@ return _execute(
 /// Return a success message after updating saved string queries by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionQueries({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/queries',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -154,7 +159,7 @@ return _execute(
 /// Return a success message after deleting saved string queries by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) queryParameters['id'] = id;
 if (tag != null) queryParameters['tag'] = tag;
@@ -168,6 +173,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -183,7 +189,7 @@ return _execute(
 /// Return a success message after creating new saved string queries in bulk
 ///
 /// `POST /accounts/{account_id}/brand-protection/queries/bulk`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueriesBulk({required String accountId, required QueryBulk body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueriesBulk({required String accountId, required QueryBulk body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -191,6 +197,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/queries/bulk',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -206,12 +213,13 @@ return _execute(
 /// Return new string queries
 ///
 /// `POST /accounts/{account_id}/brand-protection/search`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionSearch({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionSearch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/search',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -227,12 +235,13 @@ return _execute(
 /// Return the total number of saved string queries
 ///
 /// `GET /accounts/{account_id}/brand-protection/total-queries`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTotalQueries({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTotalQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/brand-protection/total-queries',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -245,16 +254,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

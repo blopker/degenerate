@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Files
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/files`
-Future<ApiResult<AutoragConfigFilesResponse, AutoragConfigFilesResponse404>> autoragConfigFiles({required String id, required String accountId, int? page, int? perPage, String? search, AutoragConfigFilesStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AutoragConfigFilesResponse, AutoragConfigFilesResponse404>> autoragConfigFiles({required String id, required String accountId, int? page, int? perPage, String? search, AutoragConfigFilesStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -45,12 +46,13 @@ return _execute(
 /// Sync
 ///
 /// `PATCH /accounts/{account_id}/autorag/rags/{id}/sync`
-Future<ApiResult<AutoragConfigSyncResponse, AutoragConfigSyncResponse400>> autoragConfigSync({required String id, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AutoragConfigSyncResponse, AutoragConfigSyncResponse400>> autoragConfigSync({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId)}/autorag/rags/${Uri.encodeComponent(id)}/sync',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -65,16 +67,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

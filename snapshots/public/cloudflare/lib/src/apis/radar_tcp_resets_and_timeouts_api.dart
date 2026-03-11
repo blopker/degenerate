@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves the distribution of connection stage by TCP connections terminated within the first 10 packets by a reset or timeout.
 ///
 /// `GET /radar/tcp_resets_timeouts/summary`
-Future<ApiResult<RadarGetTcpResetsTimeoutsSummaryResponse, RadarGetTcpResetsTimeoutsSummaryResponse400>> radarGetTcpResetsTimeoutsSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetTcpResetsTimeoutsSummaryResponse, RadarGetTcpResetsTimeoutsSummaryResponse400>> radarGetTcpResetsTimeoutsSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -64,6 +64,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -81,7 +82,7 @@ return _execute(
 /// Retrieves the distribution of connection stage by TCP connections terminated within the first 10 packets by a reset or timeout over time.
 ///
 /// `GET /radar/tcp_resets_timeouts/timeseries_groups`
-Future<ApiResult<RadarGetTcpResetsTimeoutsTimeseriesGroupResponse, RadarGetTcpResetsTimeoutsTimeseriesGroupResponse400>> radarGetTcpResetsTimeoutsTimeseriesGroup({RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetTcpResetsTimeoutsTimeseriesGroupResponse, RadarGetTcpResetsTimeoutsTimeseriesGroupResponse400>> radarGetTcpResetsTimeoutsTimeseriesGroup({RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -129,6 +130,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -143,16 +145,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

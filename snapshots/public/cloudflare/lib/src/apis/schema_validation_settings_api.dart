@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieves the current global schema validation settings for a zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSettings({required ShieldIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSettings({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Fully updates global schema validation settings for a zone, replacing existing configuration.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Partially updates global schema validation settings for a zone using PATCH semantics.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,6 +69,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Lists all per-operation schema validation settings configured for the zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -94,6 +97,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -108,7 +112,7 @@ return _execute(
 /// Updates schema validation settings for multiple API operations in a single request. Efficient for applying consistent validation rules across endpoints.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,InlineObject1827> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,InlineObject1827> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,6 +120,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -130,12 +135,13 @@ return _execute(
 /// Retrieves the schema validation settings configured for a specific API operation.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -150,7 +156,7 @@ return _execute(
 /// Fully updates schema validation settings for a specific API operation.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -158,6 +164,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -172,12 +179,13 @@ return _execute(
 /// Removes custom schema validation settings for a specific API operation, reverting to zone-level defaults.
 ///
 /// `DELETE /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -189,16 +197,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

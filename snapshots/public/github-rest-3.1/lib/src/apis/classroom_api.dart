@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}`
-Future<ApiResult<ClassroomAssignment, BasicError>> classroomGetAnAssignment({required int assignmentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ClassroomAssignment, BasicError>> classroomGetAnAssignment({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/assignments/${Uri.encodeComponent(assignmentId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -40,7 +41,7 @@ return _execute(
 /// Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}/accepted_assignments`
-Future<ApiResult<List<ClassroomAcceptedAssignment>, Never>> classroomListAcceptedAssignmentsForAnAssignment({required int assignmentId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<ClassroomAcceptedAssignment>, Never>> classroomListAcceptedAssignmentsForAnAssignment({required int assignmentId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -53,6 +54,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -68,12 +70,13 @@ return _execute(
 /// Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}/grades`
-Future<ApiResult<List<ClassroomAssignmentGrade>, BasicError>> classroomGetAssignmentGrades({required int assignmentId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<ClassroomAssignmentGrade>, BasicError>> classroomGetAssignmentGrades({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/assignments/${Uri.encodeComponent(assignmentId.toString())}/grades',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -92,7 +95,7 @@ return _execute(
 /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
 ///
 /// `GET /classrooms`
-Future<ApiResult<List<SimpleClassroom>, Never>> classroomListClassrooms({int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleClassroom>, Never>> classroomListClassrooms({int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -105,6 +108,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -120,12 +124,13 @@ return _execute(
 /// Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.
 ///
 /// `GET /classrooms/{classroom_id}`
-Future<ApiResult<Classroom, BasicError>> classroomGetAClassroom({required int classroomId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Classroom, BasicError>> classroomGetAClassroom({required int classroomId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/classrooms/${Uri.encodeComponent(classroomId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -143,7 +148,7 @@ return _execute(
 /// Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
 ///
 /// `GET /classrooms/{classroom_id}/assignments`
-Future<ApiResult<List<SimpleClassroomAssignment>, Never>> classroomListAssignmentsForAClassroom({required int classroomId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleClassroomAssignment>, Never>> classroomListAssignmentsForAClassroom({required int classroomId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -156,6 +161,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -168,16 +174,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

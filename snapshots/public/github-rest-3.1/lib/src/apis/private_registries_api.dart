@@ -21,7 +21,7 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries`
-Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, BasicError>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, BasicError>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -34,6 +34,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -54,7 +55,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/private-registries`
-Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, BasicError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, BasicError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,6 +63,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -82,12 +84,13 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries/public-key`
-Future<ApiResult<PrivateRegistriesGetOrgPublicKeyResponse, BasicError>> privateRegistriesGetOrgPublicKey({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PrivateRegistriesGetOrgPublicKeyResponse, BasicError>> privateRegistriesGetOrgPublicKey({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/public-key',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,12 +111,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<OrgPrivateRegistryConfiguration, BasicError>> privateRegistriesGetOrgPrivateRegistry({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgPrivateRegistryConfiguration, BasicError>> privateRegistriesGetOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -134,7 +138,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, BasicError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,6 +146,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/${Uri.encodeComponent(secretName)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -160,12 +165,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, BasicError>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/private-registries/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -178,16 +184,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

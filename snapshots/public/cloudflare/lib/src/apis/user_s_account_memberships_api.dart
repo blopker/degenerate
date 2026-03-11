@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List memberships of accounts the user can access.
 ///
 /// `GET /memberships`
-Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, Never>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, Never>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountName != null) queryParameters['account.name'] = accountName.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -35,6 +35,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -49,12 +50,13 @@ return _execute(
 /// Get a specific membership.
 ///
 /// `GET /memberships/{membership_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -69,7 +71,7 @@ return _execute(
 /// Accept or reject this account invitation.
 ///
 /// `PUT /memberships/{membership_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,6 +79,7 @@ final request = ApiRequest(
   path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -91,12 +94,13 @@ return _execute(
 /// Remove the associated member from an account.
 ///
 /// `DELETE /memberships/{membership_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,16 +112,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

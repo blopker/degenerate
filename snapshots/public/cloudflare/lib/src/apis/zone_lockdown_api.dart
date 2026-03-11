@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches Zone Lockdown rules. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/lockdowns`
-Future<ApiResult<ResponseCommon31, Never>> zoneLockdownListZoneLockdownRules({required FirewallIdentifier zoneId, double? page, FirewallSchemasDescriptionSearch? description, FirewallModifiedOn? modifiedOn, FirewallIpSearch? ip, FirewallSchemasPriority? priority, FirewallUriSearch? uriSearch, FirewallIpRangeSearch? ipRangeSearch, double? perPage, DateTime? createdOn, String? descriptionSearch, String? ipSearch, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownListZoneLockdownRules({required FirewallIdentifier zoneId, double? page, FirewallSchemasDescriptionSearch? description, FirewallModifiedOn? modifiedOn, FirewallIpSearch? ip, FirewallSchemasPriority? priority, FirewallUriSearch? uriSearch, FirewallIpRangeSearch? ipRangeSearch, double? perPage, DateTime? createdOn, String? descriptionSearch, String? ipSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (description != null) queryParameters['description'] = description.toString();
@@ -39,6 +39,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -53,7 +54,7 @@ return _execute(
 /// Creates a new Zone Lockdown rule.
 ///
 /// `POST /zones/{zone_id}/firewall/lockdowns`
-Future<ApiResult<ResponseCommon31, Never>> zoneLockdownCreateAZoneLockdownRule({required FirewallIdentifier zoneId, required ZoneLockdownCreateAZoneLockdownRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownCreateAZoneLockdownRule({required FirewallIdentifier zoneId, required ZoneLockdownCreateAZoneLockdownRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +62,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/lockdowns',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,12 +77,13 @@ return _execute(
 /// Fetches the details of a Zone Lockdown rule.
 ///
 /// `GET /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ResponseCommon31, Never>> zoneLockdownGetAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownGetAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/lockdowns/${Uri.encodeComponent(lockDownsId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// Updates an existing Zone Lockdown rule.
 ///
 /// `PUT /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ResponseCommon31, Never>> zoneLockdownUpdateAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, required ZoneLockdownUpdateAZoneLockdownRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> zoneLockdownUpdateAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, required ZoneLockdownUpdateAZoneLockdownRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,6 +106,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/lockdowns/${Uri.encodeComponent(lockDownsId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -117,12 +121,13 @@ return _execute(
 /// Deletes an existing Zone Lockdown rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ZoneLockdownDeleteAZoneLockdownRuleResponse, Never>> zoneLockdownDeleteAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ZoneLockdownDeleteAZoneLockdownRuleResponse, Never>> zoneLockdownDeleteAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/lockdowns/${Uri.encodeComponent(lockDownsId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -134,16 +139,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

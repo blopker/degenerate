@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieve all Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/audit_ssh_settings`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGetAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGetAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/audit_ssh_settings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Update Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
 ///
 /// `PUT /accounts/{account_id}/gateway/audit_ssh_settings`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustUpdateAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustUpdateAuditSshSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustUpdateAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustUpdateAuditSshSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/audit_ssh_settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Rotate the SSH account seed that generates the host key identity when connecting through the Cloudflare SSH Proxy.
 ///
 /// `POST /accounts/{account_id}/gateway/audit_ssh_settings/rotate_seed`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustRotateSshAccountSeed({required ZeroTrustGatewaySchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustRotateSshAccountSeed({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/audit_ssh_settings/rotate_seed',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -76,16 +79,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

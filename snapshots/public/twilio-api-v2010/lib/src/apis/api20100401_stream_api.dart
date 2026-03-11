@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Create a Stream
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams.json`
-Future<ApiResult<AccountCallStream, Never>> createStream({required String accountSid, required String callSid, CreateStreamRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallStream, Never>> createStream({required String accountSid, required String callSid, CreateStreamRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -429,6 +429,7 @@ final request = ApiRequest(
     if (body.parameter99Value case final parameter99Value$?)
       'Parameter99.Value=${Uri.encodeQueryComponent(parameter99Value$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -441,7 +442,7 @@ return _execute(
 /// Stop a Stream using either the SID of the Stream resource or the `name` used when creating the resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams/{Sid}.json`
-Future<ApiResult<AccountCallStream, Never>> updateStream({required String accountSid, required String callSid, required String sid, UpdateStreamRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallStream, Never>> updateStream({required String accountSid, required String callSid, required String sid, UpdateStreamRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -451,6 +452,7 @@ final request = ApiRequest(
   body: [
     'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -462,16 +464,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.
 ///
 /// `GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}`
-Future<ApiResult<List<DependencyGraphDiff2>, BasicError>> dependencyGraphDiffRange({required String owner, required String repo, required String basehead, String? name, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<DependencyGraphDiff2>, BasicError>> dependencyGraphDiffRange({required String owner, required String repo, required String basehead, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,12 +48,13 @@ return _execute(
 /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
 ///
 /// `GET /repos/{owner}/{repo}/dependency-graph/sbom`
-Future<ApiResult<DependencyGraphSpdxSbom, BasicError>> dependencyGraphExportSbom({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DependencyGraphSpdxSbom, BasicError>> dependencyGraphExportSbom({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependency-graph/sbom',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,7 +76,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/dependency-graph/snapshots`
-Future<ApiResult<DependencyGraphCreateRepositorySnapshotResponse, Never>> dependencyGraphCreateRepositorySnapshot({required String owner, required String repo, required Snapshot body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DependencyGraphCreateRepositorySnapshotResponse, Never>> dependencyGraphCreateRepositorySnapshot({required String owner, required String repo, required Snapshot body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -82,6 +84,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependency-graph/snapshots',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -93,16 +96,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

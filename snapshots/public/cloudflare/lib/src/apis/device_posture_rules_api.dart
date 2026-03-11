@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Fetches device posture rules for a Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/devices/posture`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesListDevicePostureRules({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesListDevicePostureRules({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new device posture rule.
 ///
 /// `POST /accounts/{account_id}/devices/posture`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesCreateDevicePostureRule({required TeamsDevicesIdentifier accountId, required DevicePostureRulesCreateDevicePostureRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesCreateDevicePostureRule({required TeamsDevicesIdentifier accountId, required DevicePostureRulesCreateDevicePostureRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetches a single device posture rule.
 ///
 /// `GET /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDetails({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDetails({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Updates a device posture rule.
 ///
 /// `PUT /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesUpdateDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, required DevicePostureRulesUpdateDevicePostureRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesUpdateDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, required DevicePostureRulesUpdateDevicePostureRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Deletes a device posture rule.
 ///
 /// `DELETE /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

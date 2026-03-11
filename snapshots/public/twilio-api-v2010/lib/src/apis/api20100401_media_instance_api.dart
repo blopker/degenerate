@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Fetch a single Media resource associated with a specific Message resource
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json`
-Future<ApiResult<AccountMessageMedia, Never>> fetchMedia({required String accountSid, required String messageSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountMessageMedia, Never>> fetchMedia({required String accountSid, required String messageSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Media/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,12 +34,13 @@ return _execute(
 /// Delete the Media resource.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json`
-Future<ApiResult<void, Never>> deleteMedia({required String accountSid, required String messageSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteMedia({required String accountSid, required String messageSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Media/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -48,16 +50,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

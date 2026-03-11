@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists all Access groups.
 ///
 /// `GET /zones/{zone_id}/access/groups`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new Access group.
 ///
 /// `POST /zones/{zone_id}/access/groups`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetches a single Access group.
 ///
 /// `GET /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Updates a configured Access group.
 ///
 /// `PUT /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Deletes an Access group.
 ///
 /// `DELETE /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

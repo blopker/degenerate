@@ -19,12 +19,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -63,12 +65,13 @@ return _execute(
 /// Fetch a single Service Binding
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings/${Uri.encodeComponent(bindingId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -83,12 +86,13 @@ return _execute(
 /// Delete a Service Binding
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings/${Uri.encodeComponent(bindingId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -104,12 +108,13 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/services`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/services',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -121,16 +126,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

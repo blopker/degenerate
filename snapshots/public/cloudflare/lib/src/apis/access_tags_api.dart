@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List tags
 ///
 /// `GET /accounts/{account_id}/access/tags`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon3, Never>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -28,6 +28,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -40,7 +41,7 @@ return _execute(
 /// Create a tag
 ///
 /// `POST /accounts/{account_id}/access/tags`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,6 +49,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -60,12 +62,13 @@ return _execute(
 /// Get a tag
 ///
 /// `GET /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags/${Uri.encodeComponent(tagName.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -78,7 +81,7 @@ return _execute(
 /// Update a tag
 ///
 /// `PUT /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -86,6 +89,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags/${Uri.encodeComponent(tagName.toString())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -98,12 +102,13 @@ return _execute(
 /// Delete a tag
 ///
 /// `DELETE /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<ResponseCommon3, Never>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/tags/${Uri.encodeComponent(tagName.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -115,16 +120,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

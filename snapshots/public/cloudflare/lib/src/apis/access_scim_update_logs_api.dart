@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/logs/scim/updates`
-Future<ApiResult<ResponseCommon3, Never>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, required List<String> idpId, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon3, Never>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, required List<String> idpId, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (direction != null) queryParameters['direction'] = direction.toJson();
@@ -56,6 +56,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -67,16 +68,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

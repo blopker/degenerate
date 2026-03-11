@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a list of datasets.
 ///
 /// `GET /radar/datasets`
-Future<ApiResult<RadarGetReportsDatasetsResponse, RadarGetReportsDatasetsResponse400>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetReportsDatasetsResponse, RadarGetReportsDatasetsResponse400>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -50,12 +51,13 @@ return _execute(
 /// Retrieves the CSV content of a given dataset by alias or ID. When getting the content by alias the latest dataset is returned, optionally filtered by the latest available at a given date.
 ///
 /// `GET /radar/datasets/{alias}`
-Future<ApiResult<String, RadarGetReportsDatasetDownloadResponse400>> radarGetReportsDatasetDownload({required String alias}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, RadarGetReportsDatasetDownloadResponse400>> radarGetReportsDatasetDownload({required String alias, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/radar/datasets/${Uri.encodeComponent(alias)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -73,7 +75,7 @@ return _execute(
 /// Retrieves an URL to download a single dataset.
 ///
 /// `POST /radar/datasets/download`
-Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponse, RadarPostReportsDatasetDownloadUrlResponse400>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponse, RadarPostReportsDatasetDownloadUrlResponse400>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
@@ -87,6 +89,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,16 +104,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

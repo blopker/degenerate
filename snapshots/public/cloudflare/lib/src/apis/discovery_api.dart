@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/discovery',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Retrieve the most up to date view of discovered operations
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -66,6 +67,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -80,7 +82,7 @@ return _execute(
 /// Update the `state` on one or more discovered operations
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,6 +90,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/discovery/operations',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -102,7 +105,7 @@ return _execute(
 /// Update the `state` on a discovered operation
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -110,6 +113,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/discovery/operations/${Uri.encodeComponent(operationId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -121,16 +125,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

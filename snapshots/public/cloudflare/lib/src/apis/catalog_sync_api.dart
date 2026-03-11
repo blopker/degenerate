@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List Catalog Syncs (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsList({required McnAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsList({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -40,7 +41,7 @@ return _execute(
 /// Create a new Catalog Sync (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsCreate({required McnAccountId accountId, String? forwarded, required McnCreateCatalogSyncRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsCreate({required McnAccountId accountId, String? forwarded, required McnCreateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) headers['forwarded'] = forwarded;
 
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -66,12 +68,13 @@ return _execute(
 /// Read a Catalog Sync (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsRead({required McnAccountId accountId, required McnCatalogSyncId syncId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsRead({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -89,7 +92,7 @@ return _execute(
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsUpdate({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsUpdate({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,6 +100,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -114,7 +118,7 @@ return _execute(
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsPatch({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsPatch({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,6 +126,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -139,7 +144,7 @@ return _execute(
 /// Delete a Catalog Sync (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsDelete({required McnAccountId accountId, required McnCatalogSyncId syncId, bool? deleteDestination, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsDelete({required McnAccountId accountId, required McnCatalogSyncId syncId, bool? deleteDestination, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deleteDestination != null) queryParameters['delete_destination'] = deleteDestination.toString();
 
@@ -151,6 +156,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -168,12 +174,13 @@ return _execute(
 /// Refresh a Catalog Sync's destination by running the sync policy against latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}/refresh`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsRefresh({required McnAccountId accountId, required McnCatalogSyncId syncId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsRefresh({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}/refresh',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -191,7 +198,7 @@ return _execute(
 /// List prebuilt catalog sync policies (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/prebuilt-policies`
-Future<ApiResult<McnResponse, McnResponse>> catalogSyncsPrebuiltPoliciesList({required McnAccountId accountId, McnCatalogSyncDestinationType? destinationType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> catalogSyncsPrebuiltPoliciesList({required McnAccountId accountId, McnCatalogSyncDestinationType? destinationType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (destinationType != null) queryParameters['destination_type'] = destinationType.toJson();
 
@@ -203,6 +210,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -217,16 +225,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

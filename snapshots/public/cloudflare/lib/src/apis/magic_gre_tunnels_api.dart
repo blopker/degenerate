@@ -17,13 +17,14 @@ final ApiConfig _config;
 /// Lists GRE tunnels associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -38,7 +39,7 @@ return _execute(
 /// Creates a new GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicCreateGreTunnelRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicCreateGreTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
@@ -47,6 +48,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -61,7 +63,7 @@ return _execute(
 /// Updates multiple GRE tunnels. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
@@ -70,6 +72,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -84,13 +87,14 @@ return _execute(
 /// Lists informtion for a specific GRE tunnel.
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnelDetails({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnelDetails({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -105,7 +109,7 @@ return _execute(
 /// Updates a specific GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicGreTunnelAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicGreTunnelAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
@@ -114,6 +118,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -128,13 +133,14 @@ return _execute(
 /// Disables and removes a specific static GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `DELETE /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsDeleteGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsDeleteGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -146,16 +152,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

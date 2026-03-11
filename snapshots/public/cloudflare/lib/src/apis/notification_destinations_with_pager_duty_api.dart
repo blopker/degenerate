@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Get a list of all configured PagerDuty services.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/pagerduty`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyListPagerDutyServices({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyListPagerDutyServices({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Deletes all the PagerDuty Services connected to the account.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/destinations/pagerduty`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyDeletePagerDutyServices({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyDeletePagerDutyServices({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,12 +59,13 @@ return _execute(
 /// Creates a new token for integrating with PagerDuty.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/pagerduty/connect`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty/connect',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -77,12 +80,13 @@ return _execute(
 /// Links PagerDuty with the account using the integration token.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/pagerduty/connect/{token_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDutyToken({required AaaAccountId accountId, required AaaIntegrationToken tokenId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyConnectPagerDutyToken({required AaaAccountId accountId, required AaaIntegrationToken tokenId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty/connect/${Uri.encodeComponent(tokenId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -94,16 +98,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

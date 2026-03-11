@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of applications representing an application within the requesting account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Applications.json`
-Future<ApiResult<ListApplicationResponse, Never>> listApplication({required String accountSid, String? friendlyName, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListApplicationResponse, Never>> listApplication({required String accountSid, String? friendlyName, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
 if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -42,7 +43,7 @@ return _execute(
 /// Create a new application within your account
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Applications.json`
-Future<ApiResult<AccountApplication, Never>> createApplication({required String accountSid, CreateApplicationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountApplication, Never>> createApplication({required String accountSid, CreateApplicationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -83,6 +84,7 @@ final request = ApiRequest(
     if (body.publicApplicationConnectEnabled case final publicApplicationConnectEnabled$?)
       'PublicApplicationConnectEnabled=${Uri.encodeQueryComponent(publicApplicationConnectEnabled$.toString())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -95,12 +97,13 @@ return _execute(
 /// Fetch the application specified by the provided sid
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
-Future<ApiResult<AccountApplication, Never>> fetchApplication({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountApplication, Never>> fetchApplication({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -113,7 +116,7 @@ return _execute(
 /// Updates the application's properties
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
-Future<ApiResult<AccountApplication, Never>> updateApplication({required String accountSid, required String sid, UpdateApplicationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountApplication, Never>> updateApplication({required String accountSid, required String sid, UpdateApplicationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -154,6 +157,7 @@ final request = ApiRequest(
     if (body.publicApplicationConnectEnabled case final publicApplicationConnectEnabled$?)
       'PublicApplicationConnectEnabled=${Uri.encodeQueryComponent(publicApplicationConnectEnabled$.toString())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -166,12 +170,13 @@ return _execute(
 /// Delete the application by the specified application sid
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
-Future<ApiResult<void, Never>> deleteApplication({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteApplication({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -181,16 +186,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

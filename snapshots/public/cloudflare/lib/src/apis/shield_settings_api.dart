@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
 ///
 /// `GET /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (normalize != null) queryParameters['normalize'] = normalize.toString();
 
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -43,7 +44,7 @@ return _execute(
 /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
 ///
 /// `PUT /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, required ShieldConfiguration body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, required ShieldConfiguration body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (normalize != null) queryParameters['normalize'] = normalize.toString();
 
@@ -57,6 +58,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -68,16 +70,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

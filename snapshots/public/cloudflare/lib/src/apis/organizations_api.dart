@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations`
-Future<ApiResult<OrganizationListOrganizationsResponse, Never>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<OrganizationListOrganizationsResponse, Never>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
 queryParameters['id'] = id.map((item) => item.toJson()).join(',');
@@ -43,6 +43,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +58,7 @@ return _execute(
 /// Create a new organization for a user. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations`
-Future<ApiResult<OrganizationsCreateUserOrganizationResponse, Never>> organizationsCreateUserOrganization({required Organization body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationsCreateUserOrganizationResponse, Never>> organizationsCreateUserOrganization({required Organization body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,6 +66,7 @@ final request = ApiRequest(
   path: '/organizations',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -79,12 +81,13 @@ return _execute(
 /// Retrieve the details of a certain organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}`
-Future<ApiResult<OrganizationsRetrieveResponse, Never>> organizationsRetrieve({required OrganizationId organizationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationsRetrieveResponse, Never>> organizationsRetrieve({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -99,7 +102,7 @@ return _execute(
 /// Modify organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}`
-Future<ApiResult<OrganizationsModifyResponse, Never>> organizationsModify({required OrganizationId organizationId, required Organization body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationsModifyResponse, Never>> organizationsModify({required OrganizationId organizationId, required Organization body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,6 +110,7 @@ final request = ApiRequest(
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -122,12 +126,13 @@ return _execute(
 /// It must not contain any sub-organizations, accounts, members or users. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}`
-Future<ApiResult<OrganizationsDeleteResponse, Never>> organizationsDelete({required OrganizationId organizationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationsDeleteResponse, Never>> organizationsDelete({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -142,7 +147,7 @@ return _execute(
 /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/accounts`
-Future<ApiResult<OrganizationsGetAccountsResponse, Never>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<OrganizationsGetAccountsResponse, Never>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountPubname != null) queryParameters['account_pubname'] = accountPubname;
 if (accountPubnameStartsWith != null) queryParameters['account_pubname.startsWith'] = accountPubnameStartsWith;
@@ -163,6 +168,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -177,12 +183,13 @@ return _execute(
 /// Get an organizations profile if it exists. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/profile`
-Future<ApiResult<ProfileResponse, Never>> organizationsGetProfile({required OrganizationId organizationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProfileResponse, Never>> organizationsGetProfile({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/profile',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -197,7 +204,7 @@ return _execute(
 /// Modify organization profile. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}/profile`
-Future<ApiResult<void, Never>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -205,6 +212,7 @@ final request = ApiRequest(
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/profile',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -214,16 +222,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

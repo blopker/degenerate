@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all teams in the enterprise for the authenticated user
 ///
 /// `GET /enterprises/{enterprise}/teams`
-Future<ApiResult<List<EnterpriseTeam>, BasicError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<EnterpriseTeam>, BasicError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -48,7 +49,7 @@ return _execute(
 /// To create an enterprise team, the authenticated user must be an owner of the enterprise.
 ///
 /// `POST /enterprises/{enterprise}/teams`
-Future<ApiResult<EnterpriseTeam, Never>> enterpriseTeamsCreate({required String enterprise, required EnterpriseTeamsCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, Never>> enterpriseTeamsCreate({required String enterprise, required EnterpriseTeamsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,6 +57,7 @@ final request = ApiRequest(
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -70,12 +72,13 @@ return _execute(
 /// Gets a team using the team's slug. To create the slug, GitHub replaces special characters in the name string, changes all words to lowercase, and replaces spaces with a `-` separator and adds the "ent:" prefix. For example, "My TEam Näme" would become `ent:my-team-name`.
 ///
 /// `GET /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(teamSlug)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -93,7 +96,7 @@ return _execute(
 /// To edit a team, the authenticated user must be an enterprise owner.
 ///
 /// `PATCH /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,6 +104,7 @@ final request = ApiRequest(
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(teamSlug)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -120,12 +124,13 @@ return _execute(
 /// If you are an enterprise owner, deleting an enterprise team will delete all of its IdP mappings as well.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<void, BasicError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(teamSlug)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -138,16 +143,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all service tokens.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensListServiceTokens({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensListServiceTokens({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (search != null) queryParameters['search'] = search;
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to rotate the Client Secret or create a new service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensCreateAServiceToken({required AccessIdentifier accountId, required AccessServiceTokensCreateAServiceTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensCreateAServiceToken({required AccessIdentifier accountId, required AccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -68,12 +70,13 @@ return _execute(
 /// Fetches a single service token.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -88,7 +91,7 @@ return _execute(
 /// Updates a configured service token.
 ///
 /// `PUT /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,6 +99,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -110,12 +114,13 @@ return _execute(
 /// Deletes a service token.
 ///
 /// `DELETE /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -130,12 +135,13 @@ return _execute(
 /// Refreshes the expiration of a service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/refresh`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRefreshAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRefreshAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}/refresh',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -150,7 +156,7 @@ return _execute(
 /// Generates a new Client Secret for a service token and revokes the old one.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/rotate`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRotateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, AccessServiceTokensRotateAServiceTokenRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRotateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, AccessServiceTokensRotateAServiceTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -158,6 +164,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}/rotate',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -169,16 +176,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

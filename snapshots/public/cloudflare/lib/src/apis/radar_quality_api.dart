@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a summary (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/summary`
-Future<ApiResult<RadarGetQualityIndexSummaryResponse, RadarGetQualityIndexSummaryResponse400>> radarGetQualityIndexSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, required RadarGetQualityIndexSummaryMetric metric, RadarGetQualityIndexSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetQualityIndexSummaryResponse, RadarGetQualityIndexSummaryResponse400>> radarGetQualityIndexSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, required RadarGetQualityIndexSummaryMetric metric, RadarGetQualityIndexSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -65,6 +65,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -82,7 +83,7 @@ return _execute(
 /// Retrieves a time series (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/timeseries_groups`
-Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponse, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponse, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -132,6 +133,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -149,7 +151,7 @@ return _execute(
 /// Retrieves a histogram from the previous 90 days of Cloudflare Speed Test data, split into fixed bandwidth (Mbps), latency (ms), or jitter (ms) buckets.
 ///
 /// `GET /radar/quality/speed/histogram`
-Future<ApiResult<RadarGetQualitySpeedHistogramResponse, RadarGetQualitySpeedHistogramResponse400>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedHistogramResponse, RadarGetQualitySpeedHistogramResponse400>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -188,6 +190,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -205,7 +208,7 @@ return _execute(
 /// Retrieves a summary of bandwidth, latency, jitter, and packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/summary`
-Future<ApiResult<RadarGetQualitySpeedSummaryResponse, RadarGetQualitySpeedSummaryResponse400>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedSummaryResponse, RadarGetQualitySpeedSummaryResponse400>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -242,6 +245,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -259,7 +263,7 @@ return _execute(
 /// Retrieves the top autonomous systems by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/ases`
-Future<ApiResult<RadarGetQualitySpeedTopAsesResponse, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedTopAsesResponse, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -299,6 +303,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -316,7 +321,7 @@ return _execute(
 /// Retrieves the top locations by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/locations`
-Future<ApiResult<RadarGetQualitySpeedTopLocationsResponse, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedTopLocationsResponse, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -356,6 +361,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -370,16 +376,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

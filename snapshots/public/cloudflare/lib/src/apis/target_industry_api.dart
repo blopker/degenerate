@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Lists all target industries for a specific dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries`
-Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetResponse400>> getTargetIndustryListByDataset({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetResponse400>> getTargetIndustryListByDataset({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/targetIndustries',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -36,7 +37,7 @@ return _execute(
 /// Lists target industries across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries`
-Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListResponse400>> getTargetIndustryList({required String accountId, List<String>? datasetIds, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListResponse400>> getTargetIndustryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -52,6 +53,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -67,12 +69,13 @@ return _execute(
 /// Lists all target industries from industry map catalog
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog`
-Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteResponse400>> getTargetIndustryListComplete({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteResponse400>> getTargetIndustryListComplete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/targetIndustries/catalog',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -87,16 +90,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Gateway Logs
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs`
-Future<ApiResult<AigConfigListGatewayLogsResponse, AigConfigListGatewayLogsResponse400>> aigConfigListGatewayLogs({required String accountId, required String gatewayId, String? search, int? page, int? perPage, AigConfigListGatewayLogsOrderBy? orderBy, AigConfigListGatewayLogsOrderByDirection? orderByDirection, List<AigConfigListGatewayLogsFilters>? filters, bool? metaInfo, AigConfigListGatewayLogsDirection? direction, DateTime? startDate, DateTime? endDate, double? minCost, double? maxCost, double? minTokensIn, double? maxTokensIn, double? minTokensOut, double? maxTokensOut, double? minTotalTokens, double? maxTotalTokens, double? minDuration, double? maxDuration, AigConfigListGatewayLogsFeedback? feedback, bool? success, bool? cached, String? model, String? modelType, String? provider, String? requestContentType, String? responseContentType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AigConfigListGatewayLogsResponse, AigConfigListGatewayLogsResponse400>> aigConfigListGatewayLogs({required String accountId, required String gatewayId, String? search, int? page, int? perPage, AigConfigListGatewayLogsOrderBy? orderBy, AigConfigListGatewayLogsOrderByDirection? orderByDirection, List<AigConfigListGatewayLogsFilters>? filters, bool? metaInfo, AigConfigListGatewayLogsDirection? direction, DateTime? startDate, DateTime? endDate, double? minCost, double? maxCost, double? minTokensIn, double? maxTokensIn, double? minTokensOut, double? maxTokensOut, double? minTotalTokens, double? maxTotalTokens, double? minDuration, double? maxDuration, AigConfigListGatewayLogsFeedback? feedback, bool? success, bool? cached, String? model, String? modelType, String? provider, String? requestContentType, String? responseContentType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (search != null) queryParameters['search'] = search;
 if (page != null) queryParameters['page'] = page.toString();
@@ -60,6 +60,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -75,7 +76,7 @@ return _execute(
 /// Delete Gateway Logs
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs`
-Future<ApiResult<AigConfigDeleteGatewayLogsResponse, AigConfigDeleteGatewayLogsResponse400>> aigConfigDeleteGatewayLogs({required String accountId, required String gatewayId, AigConfigDeleteGatewayLogsOrderBy? orderBy, AigConfigDeleteGatewayLogsOrderByDirection? orderByDirection, List<AigConfigDeleteGatewayLogsFilters>? filters, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AigConfigDeleteGatewayLogsResponse, AigConfigDeleteGatewayLogsResponse400>> aigConfigDeleteGatewayLogs({required String accountId, required String gatewayId, AigConfigDeleteGatewayLogsOrderBy? orderBy, AigConfigDeleteGatewayLogsOrderByDirection? orderByDirection, List<AigConfigDeleteGatewayLogsFilters>? filters, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
 if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
@@ -94,6 +95,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -111,12 +113,13 @@ return _execute(
 /// Retrieves detailed information for a specific AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}`
-Future<ApiResult<AigConfigGetGatewayLogDetailResponse, AigConfigGetGatewayLogDetailResponse404>> aigConfigGetGatewayLogDetail({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigGetGatewayLogDetailResponse, AigConfigGetGatewayLogDetailResponse404>> aigConfigGetGatewayLogDetail({required String id, required String gatewayId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -134,7 +137,7 @@ return _execute(
 /// Updates metadata for an AI Gateway log entry.
 ///
 /// `PATCH /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}`
-Future<ApiResult<AigConfigPatchGatewayLogResponse, AigConfigPatchGatewayLogResponse404>> aigConfigPatchGatewayLog({required String id, required String gatewayId, required String accountId, AigConfigPatchGatewayLogRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigPatchGatewayLogResponse, AigConfigPatchGatewayLogResponse404>> aigConfigPatchGatewayLog({required String id, required String gatewayId, required String accountId, AigConfigPatchGatewayLogRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,6 +145,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -159,12 +163,13 @@ return _execute(
 /// Retrieves the original request payload for an AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/request`
-Future<ApiResult<Map<String, Object>, AigConfigGetGatewayLogRequestResponse404>> aigConfigGetGatewayLogRequest({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, AigConfigGetGatewayLogRequestResponse404>> aigConfigGetGatewayLogRequest({required String id, required String gatewayId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}/request',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -182,12 +187,13 @@ return _execute(
 /// Retrieves the response payload for an AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/response`
-Future<ApiResult<Map<String, Object>, AigConfigGetGatewayLogResponseResponse404>> aigConfigGetGatewayLogResponse({required String id, required String gatewayId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, AigConfigGetGatewayLogResponseResponse404>> aigConfigGetGatewayLogResponse({required String id, required String gatewayId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/logs/${Uri.encodeComponent(id)}/response',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -202,16 +208,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

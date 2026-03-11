@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Gets latest Zaraz configuration for a zone. It can be preview or published configuration, whichever was the last updated. Secret variables values will not be included.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/config`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/config',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Updates Zaraz configuration for a zone.
 ///
 /// `PUT /zones/{zone_id}/settings/zaraz/config`
-Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId, required ZarazZarazConfigBase body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazConfig({required ZarazIdentifier zoneId, required ZarazZarazConfigBase body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/config',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Gets default Zaraz configuration for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/default`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazDefault({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazDefault({required ZarazIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/default',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,12 +82,13 @@ return _execute(
 /// Exports full current published Zaraz configuration for a zone, secret variables included.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/export`
-Future<ApiResult<ZarazZarazConfigBase, Never>> getZonesZoneIdentifierZarazExport({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ZarazZarazConfigBase, Never>> getZonesZoneIdentifierZarazExport({required ZarazIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/export',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -99,7 +103,7 @@ return _execute(
 /// Lists a history of published Zaraz configuration records for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/history`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, int? offset, int? limit, GetZonesZoneIdentifierZarazHistorySortField? sortField, GetZonesZoneIdentifierZarazHistorySortOrder? sortOrder, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, int? offset, int? limit, GetZonesZoneIdentifierZarazHistorySortField? sortField, GetZonesZoneIdentifierZarazHistorySortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (offset != null) queryParameters['offset'] = offset.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -114,6 +118,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -128,7 +133,7 @@ return _execute(
 /// Restores a historical published Zaraz configuration by ID for a zone.
 ///
 /// `PUT /zones/{zone_id}/settings/zaraz/history`
-Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, required int body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, required int body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,6 +141,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/history',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -150,7 +156,7 @@ return _execute(
 /// Gets a history of published Zaraz configurations by ID(s) for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/history/configs`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfigHistory({required ZarazIdentifier zoneId, required List<int> ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazConfigHistory({required ZarazIdentifier zoneId, required List<int> ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ids'] = ids.map((item) => item.toString()).join(',');
 
@@ -162,6 +168,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -176,7 +183,7 @@ return _execute(
 /// Publish current Zaraz preview configuration for a zone.
 ///
 /// `POST /zones/{zone_id}/settings/zaraz/publish`
-Future<ApiResult<ResponseCommon81, Never>> postZonesZoneIdentifierZarazPublish({required ZarazIdentifier zoneId, String? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon81, Never>> postZonesZoneIdentifierZarazPublish({required ZarazIdentifier zoneId, String? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -184,6 +191,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/publish',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -198,12 +206,13 @@ return _execute(
 /// Gets Zaraz workflow for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/workflow`
-Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/workflow',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -218,7 +227,7 @@ return _execute(
 /// Updates Zaraz workflow for a zone.
 ///
 /// `PUT /zones/{zone_id}/settings/zaraz/workflow`
-Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId, required ZarazZarazWorkflow body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon81, Never>> putZonesZoneIdentifierZarazWorkflow({required ZarazIdentifier zoneId, required ZarazZarazWorkflow body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -226,6 +235,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/workflow',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -237,16 +247,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

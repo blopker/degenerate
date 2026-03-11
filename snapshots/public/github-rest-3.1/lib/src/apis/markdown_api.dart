@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Depending on what is rendered in the Markdown, you may need to provide additional token scopes for labels, such as `issues:read` or `pull_requests:read`.
 ///
 /// `POST /markdown`
-Future<ApiResult<String, Never>> markdownRender({required MarkdownRenderRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> markdownRender({required MarkdownRenderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,6 +25,7 @@ final request = ApiRequest(
   path: '/markdown',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -39,7 +40,7 @@ return _execute(
 /// You must send Markdown as plain text (using a `Content-Type` header of `text/plain` or `text/x-markdown`) to this endpoint, rather than using JSON format. In raw mode, [GitHub Flavored Markdown](https://github.github.com/gfm/) is not supported and Markdown will be rendered in plain format like a README.md file. Markdown content must be 400 KB or less.
 ///
 /// `POST /markdown/raw`
-Future<ApiResult<String, Never>> markdownRenderRaw({String? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> markdownRenderRaw({String? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'text/plain';
 
 final request = ApiRequest(
@@ -47,6 +48,7 @@ final request = ApiRequest(
   path: '/markdown/raw',
   headers: headers,
   body: body,
+  options: options,
 );
 
 return _execute(
@@ -58,16 +60,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

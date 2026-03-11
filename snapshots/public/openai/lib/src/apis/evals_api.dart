@@ -16,7 +16,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /evals`
-Future<ApiResult<EvalList, Never>> listEvals({String? after, int? limit, ListEvalsOrder? order, ListEvalsOrderBy? orderBy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<EvalList, Never>> listEvals({String? after, int? limit, ListEvalsOrder? order, ListEvalsOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// 
 ///
 /// `POST /evals`
-Future<ApiResult<Eval, Never>> createEval({required CreateEvalRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Eval, Never>> createEval({required CreateEvalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/evals',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -67,12 +69,13 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}`
-Future<ApiResult<Eval, Never>> getEval({required String evalId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Eval, Never>> getEval({required String evalId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -86,7 +89,7 @@ return _execute(
 /// 
 ///
 /// `POST /evals/{eval_id}`
-Future<ApiResult<Eval, Never>> updateEval({required String evalId, required UpdateEvalRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Eval, Never>> updateEval({required String evalId, required UpdateEvalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,6 +97,7 @@ final request = ApiRequest(
   path: '/evals/${Uri.encodeComponent(evalId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -107,12 +111,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /evals/{eval_id}`
-Future<ApiResult<DeleteEvalResponse, ErrorModel>> deleteEval({required String evalId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteEvalResponse, ErrorModel>> deleteEval({required String evalId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/evals/${Uri.encodeComponent(evalId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -129,7 +134,7 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs`
-Future<ApiResult<EvalRunList, Never>> getEvalRuns({required String evalId, String? after, int? limit, GetEvalRunsOrder? order, GetEvalRunsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<EvalRunList, Never>> getEvalRuns({required String evalId, String? after, int? limit, GetEvalRunsOrder? order, GetEvalRunsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -144,6 +149,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -157,7 +163,7 @@ return _execute(
 /// 
 ///
 /// `POST /evals/{eval_id}/runs`
-Future<ApiResult<EvalRun, ErrorModel>> createEvalRun({required String evalId, required CreateEvalRunRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EvalRun, ErrorModel>> createEvalRun({required String evalId, required CreateEvalRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,6 +171,7 @@ final request = ApiRequest(
   path: '/evals/${Uri.encodeComponent(evalId)}/runs',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -181,12 +188,13 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<EvalRun, Never>> getEvalRun({required String evalId, required String runId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EvalRun, Never>> getEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -200,12 +208,13 @@ return _execute(
 /// 
 ///
 /// `POST /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<EvalRun, Never>> cancelEvalRun({required String evalId, required String runId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EvalRun, Never>> cancelEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -219,12 +228,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<DeleteEvalRunResponse, ErrorModel>> deleteEvalRun({required String evalId, required String runId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteEvalRunResponse, ErrorModel>> deleteEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -241,7 +251,7 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}/output_items`
-Future<ApiResult<EvalRunOutputItemList, Never>> getEvalRunOutputItems({required String evalId, required String runId, String? after, int? limit, GetEvalRunOutputItemsStatus? status, GetEvalRunOutputItemsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<EvalRunOutputItemList, Never>> getEvalRunOutputItems({required String evalId, required String runId, String? after, int? limit, GetEvalRunOutputItemsStatus? status, GetEvalRunOutputItemsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -256,6 +266,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -269,12 +280,13 @@ return _execute(
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}/output_items/{output_item_id}`
-Future<ApiResult<EvalRunOutputItem, Never>> getEvalRunOutputItem({required String evalId, required String runId, required String outputItemId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EvalRunOutputItem, Never>> getEvalRunOutputItem({required String evalId, required String runId, required String outputItemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/evals/${Uri.encodeComponent(evalId)}/runs/${Uri.encodeComponent(runId)}/output_items/${Uri.encodeComponent(outputItemId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -286,16 +298,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

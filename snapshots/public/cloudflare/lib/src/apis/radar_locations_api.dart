@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a list of locations.
 ///
 /// `GET /radar/entities/locations`
-Future<ApiResult<RadarGetEntitiesLocationsResponse, RadarGetEntitiesLocationsResponse400>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesLocationsResponse, RadarGetEntitiesLocationsResponse400>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -35,6 +35,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -52,7 +53,7 @@ return _execute(
 /// Retrieves the requested location information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this location).
 ///
 /// `GET /radar/entities/locations/{location}`
-Future<ApiResult<RadarGetEntitiesLocationByAlpha2Response, RadarGetEntitiesLocationByAlpha2Response404>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesLocationByAlpha2Response, RadarGetEntitiesLocationByAlpha2Response404>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
@@ -64,6 +65,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -78,16 +80,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

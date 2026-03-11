@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a list of origins with their regions.
 ///
 /// `GET /radar/origins`
-Future<ApiResult<RadarGetOriginsResponse, RadarGetOriginsResponse400>> radarGetOrigins({int? limit, int? offset, RadarGetOriginsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsResponse, RadarGetOriginsResponse400>> radarGetOrigins({int? limit, int? offset, RadarGetOriginsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -48,7 +49,7 @@ return _execute(
 /// Retrieves the requested origin information with its regions.
 ///
 /// `GET /radar/origins/{slug}`
-Future<ApiResult<RadarGetOriginDetailsResponse, RadarGetOriginDetailsResponse404>> radarGetOriginDetails({required RadarGetOriginDetailsSlug slug, RadarGetOriginDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginDetailsResponse, RadarGetOriginDetailsResponse404>> radarGetOriginDetails({required RadarGetOriginDetailsSlug slug, RadarGetOriginDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
@@ -60,6 +61,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -77,7 +79,7 @@ return _execute(
 /// Retrieves an aggregated summary of origin metrics grouped by the specified dimension.
 ///
 /// `GET /radar/origins/summary/{dimension}`
-Future<ApiResult<RadarGetOriginsSummaryResponse, RadarGetOriginsSummaryResponse400>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? region, RadarGetOriginsSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsSummaryResponse, RadarGetOriginsSummaryResponse400>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? region, RadarGetOriginsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -119,6 +121,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -136,7 +139,7 @@ return _execute(
 /// Retrieves the time series of origin metrics for the specified origin.
 ///
 /// `GET /radar/origins/timeseries`
-Future<ApiResult<RadarGetOriginsTimeseriesResponse, RadarGetOriginsTimeseriesResponse400>> radarGetOriginsTimeseries({RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, List<String>? region, RadarGetOriginsTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsTimeseriesResponse, RadarGetOriginsTimeseriesResponse400>> radarGetOriginsTimeseries({RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -178,6 +181,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -195,7 +199,7 @@ return _execute(
 /// Retrieves the distribution of origin metrics grouped by the specified dimension over time.
 ///
 /// `GET /radar/origins/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetOriginsTimeseriesGroupResponse, RadarGetOriginsTimeseriesGroupResponse400>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsTimeseriesGroupResponse, RadarGetOriginsTimeseriesGroupResponse400>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -239,6 +243,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -253,16 +258,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

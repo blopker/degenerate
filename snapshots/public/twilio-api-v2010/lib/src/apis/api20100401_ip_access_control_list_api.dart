@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of IpAccessControlLists that belong to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json`
-Future<ApiResult<ListSipIpAccessControlListResponse, Never>> listSipIpAccessControlList({required String accountSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListSipIpAccessControlListResponse, Never>> listSipIpAccessControlList({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
 if (page != null) queryParameters['Page'] = page.toString();
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Create a new IpAccessControlList resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json`
-Future<ApiResult<AccountSipSipIpAccessControlList, Never>> createSipIpAccessControlList({required String accountSid, CreateSipIpAccessControlListRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountSipSipIpAccessControlList, Never>> createSipIpAccessControlList({required String accountSid, CreateSipIpAccessControlListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -51,6 +52,7 @@ final request = ApiRequest(
   body: [
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -63,12 +65,13 @@ return _execute(
 /// Fetch a specific instance of an IpAccessControlList
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
-Future<ApiResult<AccountSipSipIpAccessControlList, Never>> fetchSipIpAccessControlList({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountSipSipIpAccessControlList, Never>> fetchSipIpAccessControlList({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Rename an IpAccessControlList
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
-Future<ApiResult<AccountSipSipIpAccessControlList, Never>> updateSipIpAccessControlList({required String accountSid, required String sid, UpdateSipIpAccessControlListRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountSipSipIpAccessControlList, Never>> updateSipIpAccessControlList({required String accountSid, required String sid, UpdateSipIpAccessControlListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -91,6 +94,7 @@ final request = ApiRequest(
   body: [
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -103,12 +107,13 @@ return _execute(
 /// Delete an IpAccessControlList from the requested account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipIpAccessControlList({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSipIpAccessControlList({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

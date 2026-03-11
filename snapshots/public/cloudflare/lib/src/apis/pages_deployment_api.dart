@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch a list of project deployments.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/deployments`
-Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentGetDeployments({required PagesProjectName projectName, required PagesIdentifier accountId, PagesDeploymentGetDeploymentsEnv? env, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentGetDeployments({required PagesProjectName projectName, required PagesIdentifier accountId, PagesDeploymentGetDeploymentsEnv? env, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (env != null) queryParameters['env'] = env.toJson();
 if (page != null) queryParameters['page'] = page.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -45,7 +46,7 @@ return _execute(
 /// Start a new deployment from production. The repository and account must have already been authorized on the Cloudflare Pages dashboard.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/deployments`
-Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentCreateDeployment({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDeploymentCreateDeploymentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentCreateDeployment({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDeploymentCreateDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -80,6 +81,7 @@ final request = ApiRequest(
       ApiMultipartField.text('wrangler_config_hash', wranglerConfigHash$),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -94,12 +96,13 @@ return _execute(
 /// Fetch information about a deployment.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentGetDeploymentInfo({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentGetDeploymentInfo({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -114,12 +117,13 @@ return _execute(
 /// Delete a deployment.
 ///
 /// `DELETE /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentDeleteDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentDeleteDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -134,12 +138,13 @@ return _execute(
 /// Fetch deployment logs for a project.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/history/logs`
-Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentGetDeploymentLogs({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentGetDeploymentLogs({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}/history/logs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -154,12 +159,13 @@ return _execute(
 /// Retry a previous deployment.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/retry`
-Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentRetryDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentRetryDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}/retry',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -174,12 +180,13 @@ return _execute(
 /// Rollback the production deployment to a previous deployment. You can only rollback to succesful builds on production.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/rollback`
-Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentRollbackDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentRollbackDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}/rollback',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -191,16 +198,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

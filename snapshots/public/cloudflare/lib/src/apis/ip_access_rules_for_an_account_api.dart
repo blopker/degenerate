@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches IP Access rules of an account. These rules apply to all the zones in the account. You can filter the results using several optional parameters.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) queryParameters['mode'] = mode.toJson();
 if (configurationTarget != null) queryParameters['configuration.target'] = configurationTarget.toJson();
@@ -37,6 +37,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -53,7 +54,7 @@ return _execute(
 /// Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +62,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/firewall/access_rules/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,12 +77,13 @@ return _execute(
 /// Fetches the details of an IP Access rule defined at the account level.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -97,7 +100,7 @@ return _execute(
 /// Note: This operation will affect all zones in the account.
 ///
 /// `PATCH /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallRule body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallRule body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,6 +108,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -121,12 +125,13 @@ return _execute(
 /// Note: This operation will affect all zones in the account.
 ///
 /// `DELETE /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -138,16 +143,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

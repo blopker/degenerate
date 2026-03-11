@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Fetch an instance of a result payload
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json`
-Future<ApiResult<AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload, Never>> fetchRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload, Never>> fetchRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(referenceSid)}/AddOnResults/${Uri.encodeComponent(addOnResultSid)}/Payloads/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,12 +34,13 @@ return _execute(
 /// Delete a payload from the result along with all associated Data
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json`
-Future<ApiResult<void, Never>> deleteRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Recordings/${Uri.encodeComponent(referenceSid)}/AddOnResults/${Uri.encodeComponent(addOnResultSid)}/Payloads/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -49,7 +51,7 @@ return _execute(
 /// Retrieve a list of payloads belonging to the AddOnResult
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads.json`
-Future<ApiResult<ListRecordingAddOnResultPayloadResponse, Never>> listRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListRecordingAddOnResultPayloadResponse, Never>> listRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
 if (page != null) queryParameters['Page'] = page.toString();
@@ -63,6 +65,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -74,16 +77,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Get Current User
 ///
 /// `GET /api/mobile/protected/users/current`
-Future<ApiResult<UserSchema, Never>> totemUsersMobileApiGetCurrentUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UserSchema, Never>> totemUsersMobileApiGetCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/users/current',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,12 +34,13 @@ return _execute(
 /// Get User Profile
 ///
 /// `GET /api/mobile/protected/users/profile/{user_slug}`
-Future<ApiResult<PublicUserSchema, Never>> totemUsersMobileApiGetUserProfile({required String userSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PublicUserSchema, Never>> totemUsersMobileApiGetUserProfile({required String userSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/users/profile/${Uri.encodeComponent(userSlug)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -51,7 +53,7 @@ return _execute(
 /// Update Current User
 ///
 /// `POST /api/mobile/protected/users/update`
-Future<ApiResult<UserSchema, Never>> totemUsersMobileApiUpdateCurrentUser({required UserUpdateSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UserSchema, Never>> totemUsersMobileApiUpdateCurrentUser({required UserUpdateSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,6 +61,7 @@ final request = ApiRequest(
   path: '/api/mobile/protected/users/update',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -71,7 +74,7 @@ return _execute(
 /// Update Current User Image
 ///
 /// `POST /api/mobile/protected/users/update_image`
-Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({required UpdateCurrentUserImageRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({required UpdateCurrentUserImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -81,6 +84,7 @@ final request = ApiRequest(
     ApiMultipartField.file('profile_image', body.profileImage),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -93,12 +97,13 @@ return _execute(
 /// Delete Current User
 ///
 /// `DELETE /api/mobile/protected/users/delete`
-Future<ApiResult<bool, Never>> totemUsersMobileApiDeleteCurrentUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<bool, Never>> totemUsersMobileApiDeleteCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/api/mobile/protected/users/delete',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -111,12 +116,13 @@ return _execute(
 /// Keeper
 ///
 /// `GET /api/mobile/protected/users/keeper/{slug}`
-Future<ApiResult<KeeperProfileSchema, Never>> totemUsersMobileApiKeeper({required String slug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<KeeperProfileSchema, Never>> totemUsersMobileApiKeeper({required String slug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/users/keeper/${Uri.encodeComponent(slug)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -129,7 +135,7 @@ return _execute(
 /// Submit Feedback
 ///
 /// `POST /api/mobile/protected/users/feedback`
-Future<ApiResult<bool, Never>> totemUsersMobileApiSubmitFeedback({required FeedbackSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<bool, Never>> totemUsersMobileApiSubmitFeedback({required FeedbackSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,6 +143,7 @@ final request = ApiRequest(
   path: '/api/mobile/protected/users/feedback',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -148,16 +155,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

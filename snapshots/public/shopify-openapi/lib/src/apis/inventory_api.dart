@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-01
 ///
 /// `GET /admin/api/2020-01/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202001GetInventoryItems({Object? idsRequired, Object? limit, int? ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired;
 if (limit != null) queryParameters['limit'] = limit;
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -43,12 +44,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-01
 ///
 /// `GET /admin/api/2020-01/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetInventoryItemsParamInventoryItemId({required String inventoryItemId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetInventoryItemsParamInventoryItemId({required String inventoryItemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -61,7 +63,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,6 +71,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-04
 ///
 /// `GET /admin/api/2020-04/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202004GetInventoryItems({Object? idsRequired, Object? limit, int? ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired;
 if (limit != null) queryParameters['limit'] = limit;
@@ -95,6 +98,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -107,12 +111,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-04
 ///
 /// `GET /admin/api/2020-04/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetInventoryItemsParamInventoryItemId({required String inventoryItemId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetInventoryItemsParamInventoryItemId({required String inventoryItemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -125,7 +130,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,6 +138,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -145,7 +151,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-07
 ///
 /// `GET /admin/api/2020-07/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202007GetInventoryItems({Object? idsRequired, Object? limit, int? ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired;
 if (limit != null) queryParameters['limit'] = limit;
@@ -159,6 +165,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -171,12 +178,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-07
 ///
 /// `GET /admin/api/2020-07/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetInventoryItemsParamInventoryItemId({required String inventoryItemId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetInventoryItemsParamInventoryItemId({required String inventoryItemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -189,7 +197,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -197,6 +205,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -209,7 +218,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-10
 ///
 /// `GET /admin/api/2020-10/inventory_items.json`
-Future<ApiResult<void, Never>> getInventoryItems({Object? idsRequired, Object? limit, int? ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired;
 if (limit != null) queryParameters['limit'] = limit;
@@ -223,6 +232,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -235,12 +245,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-10
 ///
 /// `GET /admin/api/2020-10/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> getInventoryItemsParamInventoryItemId({required String inventoryItemId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getInventoryItemsParamInventoryItemId({required String inventoryItemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -253,7 +264,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> updateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -261,6 +272,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -273,7 +285,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2021-01
 ///
 /// `GET /admin/api/2021-01/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202101GetInventoryItems({Object? idsRequired, Object? limit, int? ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired;
 if (limit != null) queryParameters['limit'] = limit;
@@ -287,6 +299,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -299,12 +312,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2021-01
 ///
 /// `GET /admin/api/2021-01/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetInventoryItemsParamInventoryItemId({required String inventoryItemId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetInventoryItemsParamInventoryItemId({required String inventoryItemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -317,7 +331,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -325,6 +339,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -337,7 +352,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-unstable
 ///
 /// `GET /admin/api/unstable/inventory_items.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryItems({Object? idsRequired, Object? limit, int? ids, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired;
 if (limit != null) queryParameters['limit'] = limit;
@@ -351,6 +366,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -363,12 +379,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-unstable
 ///
 /// `GET /admin/api/unstable/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryItemsParamInventoryItemId({required String inventoryItemId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryItemsParamInventoryItemId({required String inventoryItemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -381,7 +398,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-unstable
 ///
 /// `PUT /admin/api/unstable/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -389,6 +406,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/inventory_items/${Uri.encodeComponent(inventoryItemId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -403,7 +421,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-01
 ///
 /// `GET /admin/api/2020-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202001GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -418,6 +436,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -433,7 +452,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -448,6 +467,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -460,7 +480,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-01
 ///
 /// `POST /admin/api/2020-01/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -476,6 +496,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -490,7 +511,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-01
 ///
 /// `POST /admin/api/2020-01/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -506,6 +527,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -521,7 +543,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-01
 ///
 /// `POST /admin/api/2020-01/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -538,6 +560,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -552,7 +575,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-04
 ///
 /// `GET /admin/api/2020-04/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202004GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -567,6 +590,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -582,7 +606,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -597,6 +621,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -609,7 +634,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-04
 ///
 /// `POST /admin/api/2020-04/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -625,6 +650,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -639,7 +665,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-04
 ///
 /// `POST /admin/api/2020-04/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -655,6 +681,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -670,7 +697,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-04
 ///
 /// `POST /admin/api/2020-04/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -687,6 +714,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -701,7 +729,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-07
 ///
 /// `GET /admin/api/2020-07/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202007GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -716,6 +744,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -731,7 +760,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -746,6 +775,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -758,7 +788,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-07
 ///
 /// `POST /admin/api/2020-07/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -774,6 +804,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -788,7 +819,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-07
 ///
 /// `POST /admin/api/2020-07/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -804,6 +835,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -819,7 +851,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-07
 ///
 /// `POST /admin/api/2020-07/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -836,6 +868,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -850,7 +883,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-10
 ///
 /// `GET /admin/api/2020-10/inventory_levels.json`
-Future<ApiResult<void, Never>> getInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -865,6 +898,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -880,7 +914,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/inventory_levels.json`
-Future<ApiResult<void, Never>> deleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -895,6 +929,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -907,7 +942,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-10
 ///
 /// `POST /admin/api/2020-10/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> createInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -923,6 +958,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -937,7 +973,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-10
 ///
 /// `POST /admin/api/2020-10/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> createInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -953,6 +989,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -968,7 +1005,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-10
 ///
 /// `POST /admin/api/2020-10/inventory_levels/set.json`
-Future<ApiResult<void, Never>> createInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -985,6 +1022,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -999,7 +1037,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2021-01
 ///
 /// `GET /admin/api/2021-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202101GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -1014,6 +1052,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1029,7 +1068,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1044,6 +1083,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1056,7 +1096,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2021-01
 ///
 /// `POST /admin/api/2021-01/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1072,6 +1112,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1086,7 +1127,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2021-01
 ///
 /// `POST /admin/api/2021-01/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1102,6 +1143,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1117,7 +1159,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2021-01
 ///
 /// `POST /admin/api/2021-01/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1134,6 +1176,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1148,7 +1191,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-unstable
 ///
 /// `GET /admin/api/unstable/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds;
 if (locationIds != null) queryParameters['location_ids'] = locationIds;
@@ -1163,6 +1206,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1178,7 +1222,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1193,6 +1237,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1205,7 +1250,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-unstable
 ///
 /// `POST /admin/api/unstable/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1221,6 +1266,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1235,7 +1281,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-unstable
 ///
 /// `POST /admin/api/unstable/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1251,6 +1297,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1266,7 +1313,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-unstable
 ///
 /// `POST /admin/api/unstable/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired;
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired;
@@ -1283,6 +1330,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1295,12 +1343,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-01
 ///
 /// `GET /admin/api/2020-01/locations.json`
-Future<ApiResult<void, Never>> deprecated202001GetLocations() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetLocations({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/locations.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1313,12 +1362,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-01
 ///
 /// `GET /admin/api/2020-01/locations/{location_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetLocationsParamLocationId({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetLocationsParamLocationId({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/locations/${Uri.encodeComponent(locationId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1331,12 +1381,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-01
 ///
 /// `GET /admin/api/2020-01/locations/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetLocationsCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetLocationsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/locations/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1349,12 +1400,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-01
 ///
 /// `GET /admin/api/2020-01/locations/{location_id}/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202001GetLocationsParamLocationIdInventoryLevels({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetLocationsParamLocationIdInventoryLevels({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/locations/${Uri.encodeComponent(locationId)}/inventory_levels.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1367,12 +1419,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-04
 ///
 /// `GET /admin/api/2020-04/locations.json`
-Future<ApiResult<void, Never>> deprecated202004GetLocations() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetLocations({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/locations.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1385,12 +1438,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-04
 ///
 /// `GET /admin/api/2020-04/locations/{location_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetLocationsParamLocationId({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetLocationsParamLocationId({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/locations/${Uri.encodeComponent(locationId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1403,12 +1457,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-04
 ///
 /// `GET /admin/api/2020-04/locations/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetLocationsCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetLocationsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/locations/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1421,12 +1476,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-04
 ///
 /// `GET /admin/api/2020-04/locations/{location_id}/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202004GetLocationsParamLocationIdInventoryLevels({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetLocationsParamLocationIdInventoryLevels({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/locations/${Uri.encodeComponent(locationId)}/inventory_levels.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1439,12 +1495,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-07
 ///
 /// `GET /admin/api/2020-07/locations.json`
-Future<ApiResult<void, Never>> deprecated202007GetLocations() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetLocations({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/locations.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1457,12 +1514,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-07
 ///
 /// `GET /admin/api/2020-07/locations/{location_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetLocationsParamLocationId({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetLocationsParamLocationId({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/locations/${Uri.encodeComponent(locationId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1475,12 +1533,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-07
 ///
 /// `GET /admin/api/2020-07/locations/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetLocationsCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetLocationsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/locations/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1493,12 +1552,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-07
 ///
 /// `GET /admin/api/2020-07/locations/{location_id}/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202007GetLocationsParamLocationIdInventoryLevels({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetLocationsParamLocationIdInventoryLevels({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/locations/${Uri.encodeComponent(locationId)}/inventory_levels.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1511,12 +1571,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-10
 ///
 /// `GET /admin/api/2020-10/locations.json`
-Future<ApiResult<void, Never>> getLocations() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getLocations({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/locations.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1529,12 +1590,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-10
 ///
 /// `GET /admin/api/2020-10/locations/{location_id}.json`
-Future<ApiResult<void, Never>> getLocationsParamLocationId({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getLocationsParamLocationId({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/locations/${Uri.encodeComponent(locationId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1547,12 +1609,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-10
 ///
 /// `GET /admin/api/2020-10/locations/count.json`
-Future<ApiResult<void, Never>> getLocationsCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getLocationsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/locations/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1565,12 +1628,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-10
 ///
 /// `GET /admin/api/2020-10/locations/{location_id}/inventory_levels.json`
-Future<ApiResult<void, Never>> getLocationsParamLocationIdInventoryLevels({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getLocationsParamLocationIdInventoryLevels({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/locations/${Uri.encodeComponent(locationId)}/inventory_levels.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1583,12 +1647,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2021-01
 ///
 /// `GET /admin/api/2021-01/locations.json`
-Future<ApiResult<void, Never>> deprecated202101GetLocations() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetLocations({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/locations.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1601,12 +1666,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2021-01
 ///
 /// `GET /admin/api/2021-01/locations/{location_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetLocationsParamLocationId({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetLocationsParamLocationId({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/locations/${Uri.encodeComponent(locationId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1619,12 +1685,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2021-01
 ///
 /// `GET /admin/api/2021-01/locations/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetLocationsCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetLocationsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/locations/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1637,12 +1704,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2021-01
 ///
 /// `GET /admin/api/2021-01/locations/{location_id}/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202101GetLocationsParamLocationIdInventoryLevels({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetLocationsParamLocationIdInventoryLevels({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/locations/${Uri.encodeComponent(locationId)}/inventory_levels.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1655,12 +1723,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-unstable
 ///
 /// `GET /admin/api/unstable/locations.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetLocations() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetLocations({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/locations.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1673,12 +1742,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-unstable
 ///
 /// `GET /admin/api/unstable/locations/{location_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetLocationsParamLocationId({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetLocationsParamLocationId({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/locations/${Uri.encodeComponent(locationId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1691,12 +1761,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-unstable
 ///
 /// `GET /admin/api/unstable/locations/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetLocationsCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetLocationsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/locations/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1709,12 +1780,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-unstable
 ///
 /// `GET /admin/api/unstable/locations/{location_id}/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetLocationsParamLocationIdInventoryLevels({required String locationId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetLocationsParamLocationIdInventoryLevels({required String locationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/locations/${Uri.encodeComponent(locationId)}/inventory_levels.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1724,16 +1796,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

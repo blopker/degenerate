@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List resources in the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources`
-Future<ApiResult<McnResponseCollection, McnResponse>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponseCollection, McnResponse>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (providerId != null) queryParameters['provider_id'] = providerId;
 if (resourceType != null) {
@@ -53,6 +53,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -70,7 +71,7 @@ return _execute(
 /// Read an resource from the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/{resource_id}`
-Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (v2 != null) queryParameters['v2'] = v2.toString();
 
@@ -82,6 +83,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -99,7 +101,7 @@ return _execute(
 /// Export resources in the Resource Catalog as a JSON file (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/export`
-Future<ApiResult<Uint8List, McnResponse>> resourcesCatalogExport({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Uint8List, McnResponse>> resourcesCatalogExport({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (providerId != null) queryParameters['provider_id'] = providerId;
 if (resourceType != null) {
@@ -131,6 +133,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -148,7 +151,7 @@ return _execute(
 /// Preview Rego query result against the latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/resources/policy-preview`
-Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,6 +159,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources/policy-preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -170,16 +174,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

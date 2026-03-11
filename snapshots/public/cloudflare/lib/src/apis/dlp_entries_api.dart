@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists all DLP entries in an account.
 ///
 /// `GET /accounts/{account_id}/dlp/entries`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesListAllEntries({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesListAllEntries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a DLP custom entry.
 ///
 /// `POST /accounts/{account_id}/dlp/entries`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreateEntry({required String accountId, required DlpNewEntry body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreateEntry({required String accountId, required DlpNewEntry body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetches a DLP entry by ID.
 ///
 /// `GET /accounts/{account_id}/dlp/entries/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesGetDlpEntry({required String accountId, required String entryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesGetDlpEntry({required String accountId, required String entryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/${Uri.encodeComponent(entryId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Updates a DLP entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateEntry({required String accountId, required String entryId, required DlpEntryUpdateType body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateEntry({required String accountId, required String entryId, required DlpEntryUpdateType body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/${Uri.encodeComponent(entryId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Deletes a DLP custom entry.
 ///
 /// `DELETE /accounts/{account_id}/dlp/entries/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeleteEntry({required String accountId, required String entryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeleteEntry({required String accountId, required String entryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/${Uri.encodeComponent(entryId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -121,7 +126,7 @@ return _execute(
 /// Updates a DLP custom entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/custom/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateCustomEntry({required String accountId, required String entryId, required DlpCustomEntryUpdateType body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateCustomEntry({required String accountId, required String entryId, required DlpCustomEntryUpdateType body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -129,6 +134,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/custom/${Uri.encodeComponent(entryId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -143,7 +149,7 @@ return _execute(
 /// Updates a DLP entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/predefined/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdatePredefinedEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdatePredefinedEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -151,6 +157,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/predefined/${Uri.encodeComponent(entryId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -162,16 +169,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

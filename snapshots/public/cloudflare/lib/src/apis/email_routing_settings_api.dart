@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Get information about the settings for your Email Routing zone.
 ///
 /// `GET /zones/{zone_id}/email/routing`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsGetEmailRoutingSettings({required EmailIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsGetEmailRoutingSettings({required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Show the DNS records needed to configure your Email Routing zone.
 ///
 /// `GET /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailRoutingSettingsEmailRoutingDnsSettingsResponse, Never>> emailRoutingSettingsEmailRoutingDnsSettings({required EmailIdentifier zoneId, EmailEmailSettingName? subdomain, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<EmailRoutingSettingsEmailRoutingDnsSettingsResponse, Never>> emailRoutingSettingsEmailRoutingDnsSettings({required EmailIdentifier zoneId, EmailEmailSettingName? subdomain, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subdomain != null) queryParameters['subdomain'] = subdomain.toString();
 
@@ -49,6 +50,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -63,7 +65,7 @@ return _execute(
 /// Enable you Email Routing zone. Add and lock the necessary MX and SPF records.
 ///
 /// `POST /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsEnableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsEnableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,6 +73,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/dns',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -85,7 +88,7 @@ return _execute(
 /// Unlock MX Records previously locked by Email Routing.
 ///
 /// `PATCH /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsUnlockEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingSettingsUnlockEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,6 +96,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/dns',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -107,7 +111,7 @@ return _execute(
 /// Disable your Email Routing zone. Also removes additional MX records previously required for Email Routing to work.
 ///
 /// `DELETE /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailRoutingSettingsDisableEmailRoutingDnsResponse, Never>> emailRoutingSettingsDisableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmailRoutingSettingsDisableEmailRoutingDnsResponse, Never>> emailRoutingSettingsDisableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,6 +119,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/dns',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -126,16 +131,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

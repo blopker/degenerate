@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves domain rank details. Cloudflare provides an ordered rank for the top 100 domains, but for the remainder it only provides ranking buckets like top 200 thousand, top one million, etc.. These are available through Radar datasets endpoints.
 ///
 /// `GET /radar/ranking/domain/{domain}`
-Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
@@ -42,6 +42,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -59,7 +60,7 @@ return _execute(
 /// Retrieves domains rank over time.
 ///
 /// `GET /radar/ranking/timeseries_groups`
-Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
@@ -108,6 +109,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -125,7 +127,7 @@ return _execute(
 /// Retrieves the top or trending domains based on their rank. Popular domains are domains of broad appeal based on how people use the Internet. Trending domains are domains that are generating a surge in interest. For more information on top domains, see https://blog.cloudflare.com/radar-domain-rankings/.
 ///
 /// `GET /radar/ranking/top`
-Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -159,6 +161,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -173,16 +176,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

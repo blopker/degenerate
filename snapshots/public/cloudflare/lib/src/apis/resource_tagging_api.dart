@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves tags for a specific account-level resource.
 ///
 /// `GET /accounts/{account_id}/tags`
-Future<ApiResult<ResponseCommon56, Never>> tagsGet({required ResourceTaggingIdentifier accountId, required ResourceTaggingResourceId resourceId, required ResourceTaggingAccountResourceType resourceType, ResourceTaggingWorkerId? workerId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon56, Never>> tagsGet({required ResourceTaggingIdentifier accountId, required ResourceTaggingResourceId resourceId, required ResourceTaggingAccountResourceType resourceType, ResourceTaggingWorkerId? workerId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['resource_id'] = resourceId.toString();
 queryParameters['resource_type'] = resourceType.toJson();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -45,7 +46,7 @@ return _execute(
 /// Creates or updates tags for a specific account-level resource.
 ///
 /// `PUT /accounts/{account_id}/tags`
-Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingSetTagsRequestAccountLevel body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingSetTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) headers['If-Match'] = ifMatch;
 
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -71,7 +73,7 @@ return _execute(
 /// Removes all tags from a specific account-level resource.
 ///
 /// `DELETE /accounts/{account_id}/tags`
-Future<ApiResult<void, ResponseCommonFailure59>> tagsDelete({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingDeleteTagsRequestAccountLevel body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure59>> tagsDelete({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingDeleteTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) headers['If-Match'] = ifMatch;
 
@@ -80,6 +82,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// Lists all distinct tag keys used across resources in an account.
 ///
 /// `GET /accounts/{account_id}/tags/keys`
-Future<ApiResult<ResponseCommon56, Never>> tagsListKeys({required ResourceTaggingIdentifier accountId, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon56, Never>> tagsListKeys({required ResourceTaggingIdentifier accountId, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) queryParameters['cursor'] = cursor;
 
@@ -107,6 +110,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -121,7 +125,7 @@ return _execute(
 /// Lists all tagged resources for an account.
 ///
 /// `GET /accounts/{account_id}/tags/resources`
-Future<ApiResult<ResponseCommon56, Never>> tagsList({required ResourceTaggingIdentifier accountId, List<ResourceTaggingResourceType>? type, List<String>? tag, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon56, Never>> tagsList({required ResourceTaggingIdentifier accountId, List<ResourceTaggingResourceType>? type, List<String>? tag, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
 for (final item in type) {
@@ -143,6 +147,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -157,7 +162,7 @@ return _execute(
 /// Lists all distinct values for a given tag key, optionally filtered by resource type.
 ///
 /// `GET /accounts/{account_id}/tags/values/{tag_key}`
-Future<ApiResult<ResponseCommon56, Never>> tagsListValues({required ResourceTaggingIdentifier accountId, required String tagKey, ResourceTaggingResourceType? type, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon56, Never>> tagsListValues({required ResourceTaggingIdentifier accountId, required String tagKey, ResourceTaggingResourceType? type, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) queryParameters['type'] = type.toJson();
 if (cursor != null) queryParameters['cursor'] = cursor;
@@ -170,6 +175,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -184,7 +190,7 @@ return _execute(
 /// Retrieves tags for a specific zone-level resource.
 ///
 /// `GET /zones/{zone_id}/tags`
-Future<ApiResult<ResponseCommon56, Never>> tagsZoneGet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingResourceId resourceId, required ResourceTaggingZoneResourceType resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon56, Never>> tagsZoneGet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingResourceId resourceId, required ResourceTaggingZoneResourceType resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['resource_id'] = resourceId.toString();
 queryParameters['resource_type'] = resourceType.toJson();
@@ -198,6 +204,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -212,7 +219,7 @@ return _execute(
 /// Creates or updates tags for a specific zone-level resource. Replaces all existing tags for the resource.
 ///
 /// `PUT /zones/{zone_id}/tags`
-Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingSetTagsRequestZoneLevel body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingSetTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) headers['If-Match'] = ifMatch;
 
@@ -221,6 +228,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -238,7 +246,7 @@ return _execute(
 /// Removes all tags from a specific zone-level resource.
 ///
 /// `DELETE /zones/{zone_id}/tags`
-Future<ApiResult<void, ResponseCommonFailure59>> tagsZoneDelete({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingDeleteTagsRequestZoneLevel body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure59>> tagsZoneDelete({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingDeleteTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) headers['If-Match'] = ifMatch;
 
@@ -247,6 +255,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -259,16 +268,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

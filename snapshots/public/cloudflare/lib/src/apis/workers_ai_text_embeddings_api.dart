@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Runs inference on the @cf/baai/bge-base-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-base-en-v1.5`
-Future<ApiResult<Map<String, Object>, $5Response400>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $5Response400>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -32,6 +32,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Runs inference on the @cf/baai/bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-large-en-v1.5`
-Future<ApiResult<Map<String, Object>, $5Response4002>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $5Response4002>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -64,6 +65,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +83,7 @@ return _execute(
 /// Runs inference on the @cf/baai/bge-m3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-m3`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfBaaiBgeM3Response400>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfBaaiBgeM3Response400>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -96,6 +98,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -113,7 +116,7 @@ return _execute(
 /// Runs inference on the @cf/baai/bge-small-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-small-en-v1.5`
-Future<ApiResult<Map<String, Object>, $5Response4003>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $5Response4003>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -128,6 +131,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -145,7 +149,7 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-base-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-base-en-v1.5`
-Future<ApiResult<Map<String, Object>, $5Response4004>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $5Response4004>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -160,6 +164,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -177,7 +182,7 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-large-en-v1.5`
-Future<ApiResult<Map<String, Object>, $5Response4005>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $5Response4005>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -192,6 +197,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -209,7 +215,7 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-m3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-m3`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfBaaiOmniBgeM3Response400>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfBaaiOmniBgeM3Response400>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -224,6 +230,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -241,7 +248,7 @@ return _execute(
 /// Runs inference on the @cf/baai/omni-bge-small-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-small-en-v1.5`
-Future<ApiResult<Map<String, Object>, $5Response4006>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $5Response4006>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -256,6 +263,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -273,7 +281,7 @@ return _execute(
 /// Runs inference on the @cf/baai/ray-bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/ray-bge-large-en-v1.5`
-Future<ApiResult<Map<String, Object>, $5Response4007>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, $5Response4007>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -288,6 +296,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -305,7 +314,7 @@ return _execute(
 /// Runs inference on the @cf/google/embeddinggemma-300m model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/embeddinggemma-300m`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -320,6 +329,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -337,7 +347,7 @@ return _execute(
 /// Runs inference on the @cf/google/omni-embeddinggemma-300m model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/omni-embeddinggemma-300m`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -352,6 +362,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -369,7 +380,7 @@ return _execute(
 /// Runs inference on the @cf/pfnet/plamo-embedding-1b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/pfnet/plamo-embedding-1b`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -384,6 +395,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -401,7 +413,7 @@ return _execute(
 /// Runs inference on the @cf/qwen/qwen3-embedding-0.6b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-embedding-0.6b`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen3Embedding06bResponse400>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfQwenQwen3Embedding06bResponse400>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -416,6 +428,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -430,16 +443,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

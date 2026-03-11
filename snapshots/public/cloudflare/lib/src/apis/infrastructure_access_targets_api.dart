@@ -18,7 +18,7 @@ final ApiConfig _config;
 /// together.
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hostname != null) queryParameters['hostname'] = hostname;
 if (hostnameContains != null) queryParameters['hostname_contains'] = hostnameContains;
@@ -57,6 +57,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -69,7 +70,7 @@ return _execute(
 /// Create new target
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,6 +78,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -89,12 +91,13 @@ return _execute(
 /// Get target
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/${Uri.encodeComponent(targetId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -107,7 +110,7 @@ return _execute(
 /// Update target
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,6 +118,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/${Uri.encodeComponent(targetId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -127,12 +131,13 @@ return _execute(
 /// Delete target
 ///
 /// `DELETE /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<void, Never>> infraTargetsDelete({required InfraAccountTag accountId, required InfraTargetId targetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> infraTargetsDelete({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/${Uri.encodeComponent(targetId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -145,7 +150,7 @@ return _execute(
 /// Adds one or more targets.
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/batch`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,6 +158,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/batch',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -167,7 +173,7 @@ return _execute(
 /// Removes one or more targets.
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets/batch_delete`
-Future<ApiResult<void, Never>> infraTargetsDeleteBatchPost({required InfraAccountTag accountId, required InfraTargetsDeleteBatchPostRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> infraTargetsDeleteBatchPost({required InfraAccountTag accountId, required InfraTargetsDeleteBatchPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,6 +181,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/batch_delete',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -184,16 +191,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists Access policies configured for an application. Returns both exclusively scoped and reusable policies used by the application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3, Never>> accessPoliciesListAccessAppPolicies({required AccessUuid appId, required AccessIdentifier accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesListAccessAppPolicies({required AccessUuid appId, required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -44,7 +45,7 @@ return _execute(
 /// Creates a policy applying exclusive to a single application that defines the users or groups who can reach it. We recommend creating a reusable policy instead and subsequently referencing its ID in the application's 'policies' array.
 ///
 /// `POST /accounts/{account_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3, Never>> accessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier accountId, required AccessBasePolicyReq body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier accountId, required AccessBasePolicyReq body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +53,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -66,12 +68,13 @@ return _execute(
 /// Fetches a single Access policy configured for an application. Returns both exclusively owned and reusable policies used by the application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessPoliciesGetAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesGetAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -86,7 +89,7 @@ return _execute(
 /// Updates an Access policy specific to an application. To update a reusable policy, use the /accounts/{account_id}/policies/{uid} endpoint.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessPoliciesUpdateAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, required AccessBasePolicyReq body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesUpdateAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, required AccessBasePolicyReq body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,6 +97,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -108,12 +112,13 @@ return _execute(
 /// Deletes an Access policy specific to an application. To delete a reusable policy, use the /accounts/{account_id}/policies/{uid} endpoint.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessPoliciesDeleteAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesDeleteAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -128,12 +133,13 @@ return _execute(
 /// Converts an application-scoped policy to a reusable policy. The policy will no longer be exclusively scoped to the application. Further updates to the policy should go through the /accounts/{account_id}/policies/{uid} endpoint.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}/make_reusable`
-Future<ApiResult<ResponseCommon3, Never>> accessPoliciesConvertReusable({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessPoliciesConvertReusable({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}/make_reusable',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -145,16 +151,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

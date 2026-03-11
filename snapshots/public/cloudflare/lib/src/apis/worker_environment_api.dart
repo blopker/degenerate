@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Get script content from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<String, Never>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Put script content from a worker with an environment.
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
 
@@ -51,6 +52,7 @@ final request = ApiRequest(
     ApiMultipartField.text('metadata', body.metadata.toString()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -65,12 +67,13 @@ return _execute(
 /// Get script settings from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -85,7 +88,7 @@ return _execute(
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required ResponseCommon80 body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required ResponseCommon80 body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,6 +96,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -104,16 +108,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

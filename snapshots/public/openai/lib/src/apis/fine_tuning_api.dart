@@ -16,7 +16,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /fine_tuning/alpha/graders/run`
-Future<ApiResult<RunGraderResponse, Never>> runGrader({required RunGraderRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunGraderResponse, Never>> runGrader({required RunGraderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -24,6 +24,7 @@ final request = ApiRequest(
   path: '/fine_tuning/alpha/graders/run',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/alpha/graders/validate`
-Future<ApiResult<ValidateGraderResponse, Never>> validateGrader({required ValidateGraderRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ValidateGraderResponse, Never>> validateGrader({required ValidateGraderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/fine_tuning/alpha/graders/validate',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -60,7 +62,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions`
-Future<ApiResult<ListFineTuningCheckpointPermissionResponse, Never>> listFineTuningCheckpointPermissions({required String fineTunedModelCheckpoint, String? projectId, String? after, int? limit, ListFineTuningCheckpointPermissionsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListFineTuningCheckpointPermissionResponse, Never>> listFineTuningCheckpointPermissions({required String fineTunedModelCheckpoint, String? projectId, String? after, int? limit, ListFineTuningCheckpointPermissionsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (projectId != null) queryParameters['project_id'] = projectId;
 if (after != null) queryParameters['after'] = after;
@@ -75,6 +77,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -90,7 +93,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions`
-Future<ApiResult<ListFineTuningCheckpointPermissionResponse, Never>> createFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required CreateFineTuningCheckpointPermissionRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ListFineTuningCheckpointPermissionResponse, Never>> createFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required CreateFineTuningCheckpointPermissionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,6 +101,7 @@ final request = ApiRequest(
   path: '/fine_tuning/checkpoints/${Uri.encodeComponent(fineTunedModelCheckpoint)}/permissions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -113,12 +117,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions/{permission_id}`
-Future<ApiResult<DeleteFineTuningCheckpointPermissionResponse, Never>> deleteFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required String permissionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteFineTuningCheckpointPermissionResponse, Never>> deleteFineTuningCheckpointPermission({required String fineTunedModelCheckpoint, required String permissionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/fine_tuning/checkpoints/${Uri.encodeComponent(fineTunedModelCheckpoint)}/permissions/${Uri.encodeComponent(permissionId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -132,7 +137,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs`
-Future<ApiResult<ListPaginatedFineTuningJobsResponse, Never>> listPaginatedFineTuningJobs({String? after, int? limit, Map<String,String>? metadata, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListPaginatedFineTuningJobsResponse, Never>> listPaginatedFineTuningJobs({String? after, int? limit, Map<String,String>? metadata, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -150,6 +155,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -167,7 +173,7 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs`
-Future<ApiResult<FineTuningJob, Never>> createFineTuningJob({required CreateFineTuningJobRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FineTuningJob, Never>> createFineTuningJob({required CreateFineTuningJobRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,6 +181,7 @@ final request = ApiRequest(
   path: '/fine_tuning/jobs',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -190,12 +197,13 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}`
-Future<ApiResult<FineTuningJob, Never>> retrieveFineTuningJob({required String fineTuningJobId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FineTuningJob, Never>> retrieveFineTuningJob({required String fineTuningJobId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -209,12 +217,13 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs/{fine_tuning_job_id}/cancel`
-Future<ApiResult<FineTuningJob, Never>> cancelFineTuningJob({required String fineTuningJobId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FineTuningJob, Never>> cancelFineTuningJob({required String fineTuningJobId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/cancel',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -228,7 +237,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints`
-Future<ApiResult<ListFineTuningJobCheckpointsResponse, Never>> listFineTuningJobCheckpoints({required String fineTuningJobId, String? after, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListFineTuningJobCheckpointsResponse, Never>> listFineTuningJobCheckpoints({required String fineTuningJobId, String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -241,6 +250,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -254,7 +264,7 @@ return _execute(
 /// 
 ///
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}/events`
-Future<ApiResult<ListFineTuningJobEventsResponse, Never>> listFineTuningEvents({required String fineTuningJobId, String? after, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListFineTuningJobEventsResponse, Never>> listFineTuningEvents({required String fineTuningJobId, String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -267,6 +277,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -280,12 +291,13 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs/{fine_tuning_job_id}/pause`
-Future<ApiResult<FineTuningJob, Never>> pauseFineTuningJob({required String fineTuningJobId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FineTuningJob, Never>> pauseFineTuningJob({required String fineTuningJobId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/pause',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -299,12 +311,13 @@ return _execute(
 /// 
 ///
 /// `POST /fine_tuning/jobs/{fine_tuning_job_id}/resume`
-Future<ApiResult<FineTuningJob, Never>> resumeFineTuningJob({required String fineTuningJobId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FineTuningJob, Never>> resumeFineTuningJob({required String fineTuningJobId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/fine_tuning/jobs/${Uri.encodeComponent(fineTuningJobId)}/resume',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -316,16 +329,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List Scan Configs
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<ResponseCommon13, Never>> getConfigFetch({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon13, Never>> getConfigFetch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,7 +34,7 @@ return _execute(
 /// Create a new Scan Config
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<ResponseCommon13, Never>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon13, Never>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,6 +42,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -53,7 +55,7 @@ return _execute(
 /// Update an existing Scan Config
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<ResponseCommon13, Never>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon13, Never>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +63,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config/${Uri.encodeComponent(configId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -73,12 +76,13 @@ return _execute(
 /// Delete a Scan Config
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<DeleteDeleteScansResponse, Never>> deleteDeleteScans({required String accountId, required String configId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteDeleteScansResponse, Never>> deleteDeleteScans({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/config/${Uri.encodeComponent(configId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -91,12 +95,13 @@ return _execute(
 /// Get the Latest Scan Result
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}`
-Future<ApiResult<GetGetOpenPortsResponse, Never>> getGetOpenPorts({required String accountId, required String configId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetGetOpenPortsResponse, Never>> getGetOpenPorts({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/scans/results/${Uri.encodeComponent(configId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,16 +113,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

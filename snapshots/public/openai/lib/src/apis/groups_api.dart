@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Lists all groups in the organization.
 ///
 /// `GET /organization/groups`
-Future<ApiResult<GroupListResource, Never>> listGroups({int? limit, String? after, ListGroupsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GroupListResource, Never>> listGroups({int? limit, String? after, ListGroupsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Creates a new group in the organization.
 ///
 /// `POST /organization/groups`
-Future<ApiResult<GroupResponse, Never>> createGroup({required CreateGroupBody body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GroupResponse, Never>> createGroup({required CreateGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/organization/groups',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -61,7 +63,7 @@ return _execute(
 /// Updates a group's information.
 ///
 /// `POST /organization/groups/{group_id}`
-Future<ApiResult<GroupResourceWithSuccess, Never>> updateGroup({required String groupId, required UpdateGroupBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GroupResourceWithSuccess, Never>> updateGroup({required String groupId, required UpdateGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,6 +71,7 @@ final request = ApiRequest(
   path: '/organization/groups/${Uri.encodeComponent(groupId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,12 +84,13 @@ return _execute(
 /// Deletes a group from the organization.
 ///
 /// `DELETE /organization/groups/{group_id}`
-Future<ApiResult<GroupDeletedResource, Never>> deleteGroup({required String groupId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GroupDeletedResource, Never>> deleteGroup({required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -98,16 +102,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile.json`
-Future<ApiResult<ListIncomingPhoneNumberMobileResponse, Never>> listIncomingPhoneNumberMobile({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListIncomingPhoneNumberMobileResponse, Never>> listIncomingPhoneNumberMobile({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (beta != null) queryParameters['Beta'] = beta.toString();
 if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -45,7 +46,7 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberMobile, Never>> createIncomingPhoneNumberMobile({required String accountSid, CreateIncomingPhoneNumberMobileRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberMobile, Never>> createIncomingPhoneNumberMobile({required String accountSid, CreateIncomingPhoneNumberMobileRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -99,6 +100,7 @@ final request = ApiRequest(
     if (body.bundleSid case final bundleSid$?)
       'BundleSid=${Uri.encodeQueryComponent(bundleSid$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -110,16 +112,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

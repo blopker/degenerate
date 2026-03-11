@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves the list of Internet services categories.
 ///
 /// `GET /radar/ranking/internet_services/categories`
-Future<ApiResult<RadarGetRankingInternetServicesCategoriesResponse, RadarGetRankingInternetServicesCategoriesResponse400>> radarGetRankingInternetServicesCategories({int? limit, List<String>? name, List<String>? date, RadarGetRankingInternetServicesCategoriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingInternetServicesCategoriesResponse, RadarGetRankingInternetServicesCategoriesResponse400>> radarGetRankingInternetServicesCategories({int? limit, List<String>? name, List<String>? date, RadarGetRankingInternetServicesCategoriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -40,6 +40,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +58,7 @@ return _execute(
 /// Retrieves Internet Services rank update changes over time.
 ///
 /// `GET /radar/ranking/internet_services/timeseries_groups`
-Future<ApiResult<RadarGetRankingInternetServicesTimeseriesResponse, RadarGetRankingInternetServicesTimeseriesResponse400>> radarGetRankingInternetServicesTimeseries({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingInternetServicesTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingInternetServicesTimeseriesResponse, RadarGetRankingInternetServicesTimeseriesResponse400>> radarGetRankingInternetServicesTimeseries({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingInternetServicesTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (serviceCategory != null) {
 for (final item in serviceCategory) {
@@ -95,6 +96,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -112,7 +114,7 @@ return _execute(
 /// Retrieves top Internet services based on their rank.
 ///
 /// `GET /radar/ranking/internet_services/top`
-Future<ApiResult<RadarGetRankingTopInternetServicesResponse, RadarGetRankingTopInternetServicesResponse400>> radarGetRankingTopInternetServices({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? date, RadarGetRankingTopInternetServicesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingTopInternetServicesResponse, RadarGetRankingTopInternetServicesResponse400>> radarGetRankingTopInternetServices({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? date, RadarGetRankingTopInternetServicesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (serviceCategory != null) {
 for (final item in serviceCategory) {
@@ -140,6 +142,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -154,16 +157,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

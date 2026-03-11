@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List Connectors
 ///
 /// `GET /accounts/{account_id}/magic/connectors`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorList({required MconnAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorList({required MconnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -36,7 +37,7 @@ return _execute(
 /// Add a connector to your account
 ///
 /// `POST /accounts/{account_id}/magic/connectors`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorCreate({required MconnAccountId accountId, required MconnCustomerConnectorFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorCreate({required MconnAccountId accountId, required MconnCustomerConnectorFields body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,6 +45,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetch Connector
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorFetch({required MconnAccountId accountId, required MconnUuid connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorFetch({required MconnAccountId accountId, required MconnUuid connectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -80,7 +83,7 @@ return _execute(
 /// Replace Connector or Re-provision License Key
 ///
 /// `PUT /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorReplace({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorReplace({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,6 +91,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -103,7 +107,7 @@ return _execute(
 /// Edit Connector to update specific properties or Re-provision License Key
 ///
 /// `PATCH /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorUpdate({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorUpdate({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorFields body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -111,6 +115,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -126,12 +131,13 @@ return _execute(
 /// Remove a connector from your account
 ///
 /// `DELETE /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorDelete({required MconnAccountId accountId, required MconnUuid connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnResponse, MconnResponse>> mconnConnectorDelete({required MconnAccountId accountId, required MconnUuid connectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -147,7 +153,7 @@ return _execute(
 /// List Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from.toString();
 queryParameters['to'] = to.toString();
@@ -163,6 +169,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -178,12 +185,13 @@ return _execute(
 /// Get Event
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsGet({required MconnAccountId accountId, required String connectorId, required double eventT, required double eventN, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsGet({required MconnAccountId accountId, required String connectorId, required double eventT, required double eventN, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/${Uri.encodeComponent(eventT.toString())}.${Uri.encodeComponent(eventN.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -199,12 +207,13 @@ return _execute(
 /// Get latest Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/latest`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsListLatest({required MconnAccountId accountId, required String connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsListLatest({required MconnAccountId accountId, required String connectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/latest',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -220,7 +229,7 @@ return _execute(
 /// List Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from.toString();
 queryParameters['to'] = to.toString();
@@ -235,6 +244,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -250,12 +260,13 @@ return _execute(
 /// Get Snapshot
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/{snapshot_t}`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsGet({required MconnAccountId accountId, required String connectorId, required double snapshotT, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsGet({required MconnAccountId accountId, required String connectorId, required double snapshotT, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/${Uri.encodeComponent(snapshotT.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -271,12 +282,13 @@ return _execute(
 /// Get latest Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/latest`
-Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsListLatest({required MconnAccountId accountId, required String connectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshotsListLatest({required MconnAccountId accountId, required String connectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/latest',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -291,16 +303,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listTables({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, String? pageToken, int? pageSize, bool? returnUuids, bool? returnDetails, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listTables({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, String? pageToken, int? pageSize, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageToken != null) queryParameters['page_token'] = pageToken;
 if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
@@ -34,6 +34,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -48,16 +49,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

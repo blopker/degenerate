@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List all Regional Services regions available for use by this account.
 ///
 /// `GET /accounts/{account_id}/addressing/regional_hostnames/regions`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListRegions({required DlsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListRegions({required DlsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/regional_hostnames/regions',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// List all Regional Hostnames within a zone.
 ///
 /// `GET /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListHostnames({required DlsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListHostnames({required DlsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +59,7 @@ return _execute(
 /// Create a new Regional Hostname entry. Cloudflare will only use data centers that are physically located within the chosen region to decrypt and service HTTPS traffic. Learn more about [Regional Services](https://developers.cloudflare.com/data-localization/regional-services/get-started/).
 ///
 /// `POST /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountCreateHostname({required DlsIdentifier zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountCreateHostname({required DlsIdentifier zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,6 +67,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -79,12 +82,13 @@ return _execute(
 /// Fetch the configuration for a specific Regional Hostname, within a zone.
 ///
 /// `GET /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<DlsAccountRegionalHostnamesAccountFetchHostnameResponse, Never>> dlsAccountRegionalHostnamesAccountFetchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DlsAccountRegionalHostnamesAccountFetchHostnameResponse, Never>> dlsAccountRegionalHostnamesAccountFetchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -99,7 +103,7 @@ return _execute(
 /// Update the configuration for a specific Regional Hostname. Only the region_key of a hostname is mutable.
 ///
 /// `PATCH /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountPatchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountPatchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,6 +111,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toString())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -121,12 +126,13 @@ return _execute(
 /// Delete the region configuration for a specific Regional Hostname.
 ///
 /// `DELETE /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountDeleteHostname({required DlsIdentifier zoneId, required DlsHostname hostname, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountDeleteHostname({required DlsIdentifier zoneId, required DlsHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -138,16 +144,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a list of bots.
 ///
 /// `GET /radar/bots`
-Future<ApiResult<RadarGetBotsResponse, RadarGetBotsResponse400>> radarGetBots({int? limit, int? offset, RadarGetBotsBotCategory? botCategory, String? botOperator, RadarGetBotsKind? kind, RadarGetBotsBotVerificationStatus? botVerificationStatus, RadarGetBotsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsResponse, RadarGetBotsResponse400>> radarGetBots({int? limit, int? offset, RadarGetBotsBotCategory? botCategory, String? botOperator, RadarGetBotsKind? kind, RadarGetBotsBotVerificationStatus? botVerificationStatus, RadarGetBotsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -35,6 +35,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -52,7 +53,7 @@ return _execute(
 /// Retrieves the requested bot information.
 ///
 /// `GET /radar/bots/{bot_slug}`
-Future<ApiResult<RadarGetBotDetailsResponse, RadarGetBotDetailsResponse404>> radarGetBotDetails({required String botSlug, RadarGetBotDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetBotDetailsResponse, RadarGetBotDetailsResponse404>> radarGetBotDetails({required String botSlug, RadarGetBotDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
@@ -64,6 +65,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -81,7 +83,7 @@ return _execute(
 /// Retrieves an aggregated summary of bots HTTP requests grouped by the specified dimension.
 ///
 /// `GET /radar/bots/summary/{dimension}`
-Future<ApiResult<RadarGetBotsSummaryResponse, RadarGetBotsSummaryResponse400>> radarGetBotsSummary({required RadarGetBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsSummaryBotCategory>? botCategory, List<RadarGetBotsSummaryBotKind>? botKind, List<RadarGetBotsSummaryBotVerificationStatus>? botVerificationStatus, RadarGetBotsSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsSummaryResponse, RadarGetBotsSummaryResponse400>> radarGetBotsSummary({required RadarGetBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsSummaryBotCategory>? botCategory, List<RadarGetBotsSummaryBotKind>? botKind, List<RadarGetBotsSummaryBotVerificationStatus>? botVerificationStatus, RadarGetBotsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -154,6 +156,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -171,7 +174,7 @@ return _execute(
 /// Retrieves bots HTTP request volume over time.
 ///
 /// `GET /radar/bots/timeseries`
-Future<ApiResult<RadarGetBotsTimeseriesResponse, RadarGetBotsTimeseriesResponse400>> radarGetBotsTimeseries({RadarGetBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesBotCategory>? botCategory, List<RadarGetBotsTimeseriesBotKind>? botKind, List<RadarGetBotsTimeseriesBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsTimeseriesResponse, RadarGetBotsTimeseriesResponse400>> radarGetBotsTimeseries({RadarGetBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesBotCategory>? botCategory, List<RadarGetBotsTimeseriesBotKind>? botKind, List<RadarGetBotsTimeseriesBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -244,6 +247,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -261,7 +265,7 @@ return _execute(
 /// Retrieves the distribution of HTTP requests from bots, grouped by the specified dimension over time.
 ///
 /// `GET /radar/bots/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetBotsTimeseriesGroupResponse, RadarGetBotsTimeseriesGroupResponse400>> radarGetBotsTimeseriesGroup({required RadarGetBotsTimeseriesGroupDimension dimension, RadarGetBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesGroupBotCategory>? botCategory, List<RadarGetBotsTimeseriesGroupBotKind>? botKind, List<RadarGetBotsTimeseriesGroupBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsTimeseriesGroupResponse, RadarGetBotsTimeseriesGroupResponse400>> radarGetBotsTimeseriesGroup({required RadarGetBotsTimeseriesGroupDimension dimension, RadarGetBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesGroupBotCategory>? botCategory, List<RadarGetBotsTimeseriesGroupBotKind>? botKind, List<RadarGetBotsTimeseriesGroupBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -335,6 +339,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -349,16 +354,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

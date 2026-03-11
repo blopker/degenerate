@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#index-2020-01
 ///
 /// `GET /admin/api/2020-01/customers.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -36,6 +36,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -48,7 +49,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#create-2020-01
 ///
 /// `POST /admin/api/2020-01/customers.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCustomers({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCustomers({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,6 +57,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customers.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -68,7 +70,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#search-2020-01
 ///
 /// `GET /admin/api/2020-01/customers/search.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -83,6 +85,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#show-2020-01
 ///
 /// `GET /admin/api/2020-01/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerId({required String customerId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerId({required String customerId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -107,6 +110,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -119,7 +123,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerId({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerId({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,6 +131,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -139,12 +144,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteCustomersParamCustomerId({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteCustomersParamCustomerId({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -158,7 +164,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#account_activation_url-2020-01
 ///
 /// `POST /admin/api/2020-01/customers/{customer_id}/account_activation_url.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,6 +172,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/account_activation_url.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -178,7 +185,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#send_invite-2020-01
 ///
 /// `POST /admin/api/2020-01/customers/{customer_id}/send_invite.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,6 +193,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/send_invite.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -198,12 +206,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#count-2020-01
 ///
 /// `GET /admin/api/2020-01/customers/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomersCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCustomersCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/customers/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -216,12 +225,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#orders-2020-01
 ///
 /// `GET /admin/api/2020-01/customers/{customer_id}/orders.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerIdOrders({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerIdOrders({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/orders.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -234,7 +244,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#index-2020-04
 ///
 /// `GET /admin/api/2020-04/customers.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -253,6 +263,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -265,7 +276,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#create-2020-04
 ///
 /// `POST /admin/api/2020-04/customers.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCustomers({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCustomers({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -273,6 +284,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customers.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -285,7 +297,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#search-2020-04
 ///
 /// `GET /admin/api/2020-04/customers/search.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -300,6 +312,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -312,7 +325,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#show-2020-04
 ///
 /// `GET /admin/api/2020-04/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerId({required String customerId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerId({required String customerId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -324,6 +337,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -336,7 +350,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerId({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerId({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -344,6 +358,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -356,12 +371,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteCustomersParamCustomerId({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteCustomersParamCustomerId({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -375,7 +391,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#account_activation_url-2020-04
 ///
 /// `POST /admin/api/2020-04/customers/{customer_id}/account_activation_url.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -383,6 +399,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/account_activation_url.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -395,7 +412,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#send_invite-2020-04
 ///
 /// `POST /admin/api/2020-04/customers/{customer_id}/send_invite.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -403,6 +420,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/send_invite.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -415,12 +433,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#count-2020-04
 ///
 /// `GET /admin/api/2020-04/customers/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomersCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCustomersCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/customers/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -433,12 +452,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#orders-2020-04
 ///
 /// `GET /admin/api/2020-04/customers/{customer_id}/orders.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerIdOrders({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerIdOrders({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/orders.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -451,7 +471,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#index-2020-07
 ///
 /// `GET /admin/api/2020-07/customers.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -470,6 +490,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -482,7 +503,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#create-2020-07
 ///
 /// `POST /admin/api/2020-07/customers.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCustomers({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCustomers({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -490,6 +511,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customers.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -502,7 +524,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#search-2020-07
 ///
 /// `GET /admin/api/2020-07/customers/search.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -517,6 +539,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -529,7 +552,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#show-2020-07
 ///
 /// `GET /admin/api/2020-07/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerId({required String customerId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerId({required String customerId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -541,6 +564,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -553,7 +577,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerId({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerId({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -561,6 +585,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -573,12 +598,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteCustomersParamCustomerId({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteCustomersParamCustomerId({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -592,7 +618,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#account_activation_url-2020-07
 ///
 /// `POST /admin/api/2020-07/customers/{customer_id}/account_activation_url.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -600,6 +626,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/account_activation_url.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -612,7 +639,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#send_invite-2020-07
 ///
 /// `POST /admin/api/2020-07/customers/{customer_id}/send_invite.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -620,6 +647,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/send_invite.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -632,12 +660,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#count-2020-07
 ///
 /// `GET /admin/api/2020-07/customers/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomersCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCustomersCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/customers/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -650,12 +679,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#orders-2020-07
 ///
 /// `GET /admin/api/2020-07/customers/{customer_id}/orders.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerIdOrders({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerIdOrders({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/orders.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -668,7 +698,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#index-2020-10
 ///
 /// `GET /admin/api/2020-10/customers.json`
-Future<ApiResult<void, Never>> getCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -687,6 +717,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -699,7 +730,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#create-2020-10
 ///
 /// `POST /admin/api/2020-10/customers.json`
-Future<ApiResult<void, Never>> createCustomers({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCustomers({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -707,6 +738,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customers.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -719,7 +751,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#search-2020-10
 ///
 /// `GET /admin/api/2020-10/customers/search.json`
-Future<ApiResult<void, Never>> getCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -734,6 +766,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -746,7 +779,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#show-2020-10
 ///
 /// `GET /admin/api/2020-10/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> getCustomersParamCustomerId({required String customerId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomersParamCustomerId({required String customerId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -758,6 +791,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -770,7 +804,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> updateCustomersParamCustomerId({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateCustomersParamCustomerId({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -778,6 +812,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -790,12 +825,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deleteCustomersParamCustomerId({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCustomersParamCustomerId({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -809,7 +845,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#account_activation_url-2020-10
 ///
 /// `POST /admin/api/2020-10/customers/{customer_id}/account_activation_url.json`
-Future<ApiResult<void, Never>> createCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -817,6 +853,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/account_activation_url.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -829,7 +866,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#send_invite-2020-10
 ///
 /// `POST /admin/api/2020-10/customers/{customer_id}/send_invite.json`
-Future<ApiResult<void, Never>> createCustomersParamCustomerIdSendInvite({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCustomersParamCustomerIdSendInvite({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -837,6 +874,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/send_invite.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -849,12 +887,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#count-2020-10
 ///
 /// `GET /admin/api/2020-10/customers/count.json`
-Future<ApiResult<void, Never>> getCustomersCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getCustomersCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/customers/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -867,12 +906,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#orders-2020-10
 ///
 /// `GET /admin/api/2020-10/customers/{customer_id}/orders.json`
-Future<ApiResult<void, Never>> getCustomersParamCustomerIdOrders({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getCustomersParamCustomerIdOrders({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/orders.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -885,7 +925,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#index-2021-01
 ///
 /// `GET /admin/api/2021-01/customers.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -904,6 +944,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -916,7 +957,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#create-2021-01
 ///
 /// `POST /admin/api/2021-01/customers.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCustomers({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCustomers({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -924,6 +965,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customers.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -936,7 +978,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#search-2021-01
 ///
 /// `GET /admin/api/2021-01/customers/search.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -951,6 +993,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -963,7 +1006,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#show-2021-01
 ///
 /// `GET /admin/api/2021-01/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerId({required String customerId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerId({required String customerId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -975,6 +1018,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -987,7 +1031,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerId({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerId({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -995,6 +1039,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1007,12 +1052,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteCustomersParamCustomerId({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteCustomersParamCustomerId({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1026,7 +1072,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#account_activation_url-2021-01
 ///
 /// `POST /admin/api/2021-01/customers/{customer_id}/account_activation_url.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1034,6 +1080,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/account_activation_url.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1046,7 +1093,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#send_invite-2021-01
 ///
 /// `POST /admin/api/2021-01/customers/{customer_id}/send_invite.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1054,6 +1101,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/send_invite.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1066,12 +1114,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#count-2021-01
 ///
 /// `GET /admin/api/2021-01/customers/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomersCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCustomersCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/customers/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1084,12 +1133,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#orders-2021-01
 ///
 /// `GET /admin/api/2021-01/customers/{customer_id}/orders.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerIdOrders({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerIdOrders({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/orders.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1102,7 +1152,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#index-unstable
 ///
 /// `GET /admin/api/unstable/customers.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomers({Object? ids, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) queryParameters['ids'] = ids;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -1121,6 +1171,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1133,7 +1184,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#create-unstable
 ///
 /// `POST /admin/api/unstable/customers.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomers({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomers({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1141,6 +1192,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customers.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1153,7 +1205,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#search-unstable
 ///
 /// `GET /admin/api/unstable/customers/search.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersSearch({Object? order, Object? query, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (query != null) queryParameters['query'] = query;
@@ -1168,6 +1220,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1180,7 +1233,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#show-unstable
 ///
 /// `GET /admin/api/unstable/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerId({required String customerId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerId({required String customerId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -1192,6 +1245,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1204,7 +1258,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#update-unstable
 ///
 /// `PUT /admin/api/unstable/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerId({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerId({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1212,6 +1266,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1224,12 +1279,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/customers/{customer_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomersParamCustomerId({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomersParamCustomerId({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1243,7 +1299,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#account_activation_url-unstable
 ///
 /// `POST /admin/api/unstable/customers/{customer_id}/account_activation_url.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomersParamCustomerIdAccountActivationUrl({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1251,6 +1307,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/account_activation_url.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1263,7 +1320,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#send_invite-unstable
 ///
 /// `POST /admin/api/unstable/customers/{customer_id}/send_invite.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomersParamCustomerIdSendInvite({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1271,6 +1328,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/send_invite.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1283,12 +1341,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#count-unstable
 ///
 /// `GET /admin/api/unstable/customers/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersCount() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/customers/count.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1301,12 +1360,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer#orders-unstable
 ///
 /// `GET /admin/api/unstable/customers/{customer_id}/orders.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerIdOrders({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerIdOrders({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/orders.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1319,12 +1379,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#index-2020-01
 ///
 /// `GET /admin/api/2020-01/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerIdAddresses({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerIdAddresses({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1337,7 +1398,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#create-2020-01
 ///
 /// `POST /admin/api/2020-01/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1345,6 +1406,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1357,12 +1419,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#show-2020-01
 ///
 /// `GET /admin/api/2020-01/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1375,7 +1438,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1383,6 +1446,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1395,12 +1459,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1413,7 +1478,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#set-2020-01
 ///
 /// `PUT /admin/api/2020-01/customers/{customer_id}/addresses/set.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
 if (operation != null) queryParameters['operation'] = operation;
@@ -1426,6 +1491,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1438,12 +1504,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#default-2020-01
 ///
 /// `PUT /admin/api/2020-01/customers/{customer_id}/addresses/{address_id}/default.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}/default.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1456,12 +1523,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#index-2020-04
 ///
 /// `GET /admin/api/2020-04/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerIdAddresses({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerIdAddresses({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1474,7 +1542,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#create-2020-04
 ///
 /// `POST /admin/api/2020-04/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1482,6 +1550,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1494,12 +1563,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#show-2020-04
 ///
 /// `GET /admin/api/2020-04/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1512,7 +1582,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1520,6 +1590,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1532,12 +1603,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1550,7 +1622,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#set-2020-04
 ///
 /// `PUT /admin/api/2020-04/customers/{customer_id}/addresses/set.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
 if (operation != null) queryParameters['operation'] = operation;
@@ -1563,6 +1635,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1575,12 +1648,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#default-2020-04
 ///
 /// `PUT /admin/api/2020-04/customers/{customer_id}/addresses/{address_id}/default.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-04/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}/default.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1593,12 +1667,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#index-2020-07
 ///
 /// `GET /admin/api/2020-07/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerIdAddresses({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerIdAddresses({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1611,7 +1686,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#create-2020-07
 ///
 /// `POST /admin/api/2020-07/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1619,6 +1694,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1631,12 +1707,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#show-2020-07
 ///
 /// `GET /admin/api/2020-07/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1649,7 +1726,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1657,6 +1734,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1669,12 +1747,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1687,7 +1766,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#set-2020-07
 ///
 /// `PUT /admin/api/2020-07/customers/{customer_id}/addresses/set.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
 if (operation != null) queryParameters['operation'] = operation;
@@ -1700,6 +1779,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1712,12 +1792,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#default-2020-07
 ///
 /// `PUT /admin/api/2020-07/customers/{customer_id}/addresses/{address_id}/default.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-07/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}/default.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1730,12 +1811,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#index-2020-10
 ///
 /// `GET /admin/api/2020-10/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> getCustomersParamCustomerIdAddresses({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getCustomersParamCustomerIdAddresses({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1748,7 +1830,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#create-2020-10
 ///
 /// `POST /admin/api/2020-10/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> createCustomersParamCustomerIdAddresses({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCustomersParamCustomerIdAddresses({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1756,6 +1838,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1768,12 +1851,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#show-2020-10
 ///
 /// `GET /admin/api/2020-10/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> getCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1786,7 +1870,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> updateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1794,6 +1878,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1806,12 +1891,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1824,7 +1910,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#set-2020-10
 ///
 /// `PUT /admin/api/2020-10/customers/{customer_id}/addresses/set.json`
-Future<ApiResult<void, Never>> updateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> updateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
 if (operation != null) queryParameters['operation'] = operation;
@@ -1837,6 +1923,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1849,12 +1936,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#default-2020-10
 ///
 /// `PUT /admin/api/2020-10/customers/{customer_id}/addresses/{address_id}/default.json`
-Future<ApiResult<void, Never>> updateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2020-10/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}/default.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1867,12 +1955,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#index-2021-01
 ///
 /// `GET /admin/api/2021-01/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerIdAddresses({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerIdAddresses({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1885,7 +1974,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#create-2021-01
 ///
 /// `POST /admin/api/2021-01/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1893,6 +1982,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1905,12 +1995,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#show-2021-01
 ///
 /// `GET /admin/api/2021-01/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1923,7 +2014,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1931,6 +2022,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -1943,12 +2035,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1961,7 +2054,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#set-2021-01
 ///
 /// `PUT /admin/api/2021-01/customers/{customer_id}/addresses/set.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
 if (operation != null) queryParameters['operation'] = operation;
@@ -1974,6 +2067,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1986,12 +2080,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#default-2021-01
 ///
 /// `PUT /admin/api/2021-01/customers/{customer_id}/addresses/{address_id}/default.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/2021-01/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}/default.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2004,12 +2099,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#index-unstable
 ///
 /// `GET /admin/api/unstable/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerIdAddresses({required String customerId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerIdAddresses({required String customerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2022,7 +2118,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#create-unstable
 ///
 /// `POST /admin/api/unstable/customers/{customer_id}/addresses.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomersParamCustomerIdAddresses({required String customerId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2030,6 +2126,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/addresses.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2042,12 +2139,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#show-unstable
 ///
 /// `GET /admin/api/unstable/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2060,7 +2158,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#update-unstable
 ///
 /// `PUT /admin/api/unstable/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2068,6 +2166,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2080,12 +2179,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/customers/{customer_id}/addresses/{address_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomersParamCustomerIdAddressesParamAddressId({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2098,7 +2198,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#set-unstable
 ///
 /// `PUT /admin/api/unstable/customers/{customer_id}/addresses/set.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
 if (operation != null) queryParameters['operation'] = operation;
@@ -2111,6 +2211,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2123,12 +2224,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customer-address#default-unstable
 ///
 /// `PUT /admin/api/unstable/customers/{customer_id}/addresses/{address_id}/default.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerIdAddressesParamAddressIdDefault({required String customerId, required String addressId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/admin/api/unstable/customers/${Uri.encodeComponent(customerId)}/addresses/${Uri.encodeComponent(addressId)}/default.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2141,7 +2243,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#index-2020-01
 ///
 /// `GET /admin/api/2020-01/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -2155,6 +2257,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2167,7 +2270,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#create-2020-01
 ///
 /// `POST /admin/api/2020-01/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCustomerSavedSearches({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCustomerSavedSearches({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2175,6 +2278,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customer_saved_searches.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2187,7 +2291,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#count-2020-01
 ///
 /// `GET /admin/api/2020-01/customer_saved_searches/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesCount({Object? sinceId}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesCount({Object? sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 
@@ -2199,6 +2303,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2211,7 +2316,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#show-2020-01
 ///
 /// `GET /admin/api/2020-01/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2223,6 +2328,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2235,7 +2341,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2243,6 +2349,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-01/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2255,12 +2362,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-01/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2273,7 +2381,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#other-2020-01
 ///
 /// `GET /admin/api/2020-01/customer_saved_searches/{customer_saved_search_id}/customers.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (limit != null) queryParameters['limit'] = limit;
@@ -2287,6 +2395,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2299,7 +2408,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#index-2020-04
 ///
 /// `GET /admin/api/2020-04/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -2313,6 +2422,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2325,7 +2435,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#create-2020-04
 ///
 /// `POST /admin/api/2020-04/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCustomerSavedSearches({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCustomerSavedSearches({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2333,6 +2443,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customer_saved_searches.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2345,7 +2456,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#count-2020-04
 ///
 /// `GET /admin/api/2020-04/customer_saved_searches/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesCount({Object? sinceId}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesCount({Object? sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 
@@ -2357,6 +2468,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2369,7 +2481,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#show-2020-04
 ///
 /// `GET /admin/api/2020-04/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2381,6 +2493,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2393,7 +2506,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2401,6 +2514,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-04/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2413,12 +2527,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-04/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2431,7 +2546,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#other-2020-04
 ///
 /// `GET /admin/api/2020-04/customer_saved_searches/{customer_saved_search_id}/customers.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (limit != null) queryParameters['limit'] = limit;
@@ -2445,6 +2560,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2457,7 +2573,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#index-2020-07
 ///
 /// `GET /admin/api/2020-07/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -2471,6 +2587,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2483,7 +2600,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#create-2020-07
 ///
 /// `POST /admin/api/2020-07/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCustomerSavedSearches({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCustomerSavedSearches({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2491,6 +2608,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customer_saved_searches.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2503,7 +2621,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#count-2020-07
 ///
 /// `GET /admin/api/2020-07/customer_saved_searches/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesCount({Object? sinceId}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesCount({Object? sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 
@@ -2515,6 +2633,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2527,7 +2646,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#show-2020-07
 ///
 /// `GET /admin/api/2020-07/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2539,6 +2658,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2551,7 +2671,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2559,6 +2679,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-07/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2571,12 +2692,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-07/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2589,7 +2711,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#other-2020-07
 ///
 /// `GET /admin/api/2020-07/customer_saved_searches/{customer_saved_search_id}/customers.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (limit != null) queryParameters['limit'] = limit;
@@ -2603,6 +2725,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2615,7 +2738,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#index-2020-10
 ///
 /// `GET /admin/api/2020-10/customer_saved_searches.json`
-Future<ApiResult<void, Never>> getCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -2629,6 +2752,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2641,7 +2765,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#create-2020-10
 ///
 /// `POST /admin/api/2020-10/customer_saved_searches.json`
-Future<ApiResult<void, Never>> createCustomerSavedSearches({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createCustomerSavedSearches({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2649,6 +2773,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customer_saved_searches.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2661,7 +2786,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#count-2020-10
 ///
 /// `GET /admin/api/2020-10/customer_saved_searches/count.json`
-Future<ApiResult<void, Never>> getCustomerSavedSearchesCount({Object? sinceId}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomerSavedSearchesCount({Object? sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 
@@ -2673,6 +2798,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2685,7 +2811,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#show-2020-10
 ///
 /// `GET /admin/api/2020-10/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> getCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2697,6 +2823,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2709,7 +2836,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> updateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2717,6 +2844,7 @@ final request = ApiRequest(
   path: '/admin/api/2020-10/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2729,12 +2857,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2020-10/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2747,7 +2876,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#other-2020-10
 ///
 /// `GET /admin/api/2020-10/customer_saved_searches/{customer_saved_search_id}/customers.json`
-Future<ApiResult<void, Never>> getCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (limit != null) queryParameters['limit'] = limit;
@@ -2761,6 +2890,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2773,7 +2903,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#index-2021-01
 ///
 /// `GET /admin/api/2021-01/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -2787,6 +2917,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2799,7 +2930,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#create-2021-01
 ///
 /// `POST /admin/api/2021-01/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCustomerSavedSearches({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCustomerSavedSearches({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2807,6 +2938,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customer_saved_searches.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2819,7 +2951,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#count-2021-01
 ///
 /// `GET /admin/api/2021-01/customer_saved_searches/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesCount({Object? sinceId}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesCount({Object? sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 
@@ -2831,6 +2963,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2843,7 +2976,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#show-2021-01
 ///
 /// `GET /admin/api/2021-01/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -2855,6 +2988,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2867,7 +3001,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2875,6 +3009,7 @@ final request = ApiRequest(
   path: '/admin/api/2021-01/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2887,12 +3022,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/2021-01/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2905,7 +3041,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#other-2021-01
 ///
 /// `GET /admin/api/2021-01/customer_saved_searches/{customer_saved_search_id}/customers.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (limit != null) queryParameters['limit'] = limit;
@@ -2919,6 +3055,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2931,7 +3068,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#index-unstable
 ///
 /// `GET /admin/api/unstable/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearches({Object? limit, Object? sinceId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit;
 if (sinceId != null) queryParameters['since_id'] = sinceId;
@@ -2945,6 +3082,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2957,7 +3095,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#create-unstable
 ///
 /// `POST /admin/api/unstable/customer_saved_searches.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomerSavedSearches({Object? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomerSavedSearches({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2965,6 +3103,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customer_saved_searches.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -2977,7 +3116,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#count-unstable
 ///
 /// `GET /admin/api/unstable/customer_saved_searches/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesCount({Object? sinceId}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesCount({Object? sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId;
 
@@ -2989,6 +3128,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -3001,7 +3141,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#show-unstable
 ///
 /// `GET /admin/api/unstable/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields;
 
@@ -3013,6 +3153,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -3025,7 +3166,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#update-unstable
 ///
 /// `PUT /admin/api/unstable/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3033,6 +3174,7 @@ final request = ApiRequest(
   path: '/admin/api/unstable/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -3045,12 +3187,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/customer_saved_searches/{customer_saved_search_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/admin/api/unstable/customer_saved_searches/${Uri.encodeComponent(customerSavedSearchId)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -3063,7 +3206,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/customers/customersavedsearch#other-unstable
 ///
 /// `GET /admin/api/unstable/customer_saved_searches/{customer_saved_search_id}/customers.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, Object? order, Object? limit, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order;
 if (limit != null) queryParameters['limit'] = limit;
@@ -3077,6 +3220,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -3086,16 +3230,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

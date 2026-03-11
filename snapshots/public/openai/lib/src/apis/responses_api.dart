@@ -22,7 +22,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<ModelResponseProperties, Never>> createResponse({required ModelResponseProperties body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ModelResponseProperties, Never>> createResponse({required ModelResponseProperties body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -30,6 +30,7 @@ final request = ApiRequest(
   path: '/responses',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -43,7 +44,7 @@ return _execute(
 /// 
 ///
 /// `GET /responses/{response_id}`
-Future<ApiResult<ModelResponseProperties, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ModelResponseProperties, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -62,6 +63,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -75,12 +77,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /responses/{response_id}`
-Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/responses/${Uri.encodeComponent(responseId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -97,12 +100,13 @@ return _execute(
 /// 
 ///
 /// `POST /responses/{response_id}/cancel`
-Future<ApiResult<ModelResponseProperties, ErrorModel>> cancelResponse({required String responseId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ModelResponseProperties, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/responses/${Uri.encodeComponent(responseId)}/cancel',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,7 +122,7 @@ return _execute(
 /// Returns a list of input items for a given response.
 ///
 /// `GET /responses/{response_id}/input_items`
-Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -137,6 +141,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -148,16 +153,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

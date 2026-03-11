@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Priority Intelligence Requirements
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/priority`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityList body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityList body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -23,6 +23,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -35,12 +36,13 @@ return _execute(
 /// Get a Priority Intelligence Requirement
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -53,7 +55,7 @@ return _execute(
 /// Update a Priority Intelligence Requirement
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, required CloudforceOneRequestsPriorityEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, required CloudforceOneRequestsPriorityEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +63,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -73,12 +76,13 @@ return _execute(
 /// Delete a Priority Intelligence Requirement
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -91,7 +95,7 @@ return _execute(
 /// Create a New Priority Intelligence Requirement
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/priority/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +103,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/new',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -111,12 +116,13 @@ return _execute(
 /// Get Priority Intelligence Requirement Quota
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/priority/quota`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityQuota({required CloudforceOneRequestsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/quota',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -128,16 +134,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

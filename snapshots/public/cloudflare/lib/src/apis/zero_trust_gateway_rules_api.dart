@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List Zero Trust Gateway rules for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/rules`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesListZeroTrustGatewayRules({required ZeroTrustGatewaySchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesListZeroTrustGatewayRules({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Create a new Zero Trust Gateway rule.
 ///
 /// `POST /accounts/{account_id}/gateway/rules`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesCreateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesCreateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Get a single Zero Trust Gateway rule.
 ///
 /// `GET /accounts/{account_id}/gateway/rules/{rule_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesZeroTrustGatewayRuleDetails({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesZeroTrustGatewayRuleDetails({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Update a configured Zero Trust Gateway rule.
 ///
 /// `PUT /accounts/{account_id}/gateway/rules/{rule_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesUpdateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesUpdateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Delete a Zero Trust Gateway rule.
 ///
 /// `DELETE /accounts/{account_id}/gateway/rules/{rule_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesDeleteZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesDeleteZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -121,12 +126,13 @@ return _execute(
 /// Resets the expiration of a Zero Trust Gateway Rule if its duration elapsed and it has a default duration. The Zero Trust Gateway Rule must have values  for both `expiration.expires_at` and `expiration.duration`.
 ///
 /// `POST /accounts/{account_id}/gateway/rules/{rule_id}/reset_expiration`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesResetExpirationZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesResetExpirationZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}/reset_expiration',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -141,12 +147,13 @@ return _execute(
 /// List Zero Trust Gateway rules for the parent account of an account in the MSP configuration.
 ///
 /// `GET /accounts/{account_id}/gateway/rules/tenant`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesListZeroTrustGatewayRulesTenant({required ZeroTrustGatewaySchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayRulesListZeroTrustGatewayRulesTenant({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/tenant',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -158,16 +165,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

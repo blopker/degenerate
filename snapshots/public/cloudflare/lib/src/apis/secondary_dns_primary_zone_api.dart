@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Get primary zone configuration for outgoing zone transfers.
 ///
 /// `GET /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZonePrimaryZoneConfigurationDetails({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZonePrimaryZoneConfigurationDetails({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Create primary zone configuration for outgoing zone transfers.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneCreatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoing body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneCreatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoing body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Update primary zone configuration for outgoing zone transfers.
 ///
 /// `PUT /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneUpdatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoing body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneUpdatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoing body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,6 +69,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,12 +84,13 @@ return _execute(
 /// Delete primary zone configuration for outgoing zone transfers.
 ///
 /// `DELETE /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Disable outgoing zone transfers for primary zone and clears IXFR backlog of primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/disable`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneDisableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneDisableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/disable',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -121,12 +126,13 @@ return _execute(
 /// Enable outgoing zone transfers for primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/enable`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneEnableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneEnableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/enable',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -141,12 +147,13 @@ return _execute(
 /// Notifies the secondary nameserver(s) and clears IXFR backlog of primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/force_notify`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneForceDnsNotify({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneForceDnsNotify({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/force_notify',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -161,12 +168,13 @@ return _execute(
 /// Get primary zone transfer status.
 ///
 /// `GET /zones/{zone_id}/secondary_dns/outgoing/status`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatus({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatus({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/status',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -178,16 +186,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

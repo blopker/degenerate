@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List all shapes
 ///
 /// `GET /shapes`
-Future<ApiResult<List<Shape>, Never>> listShapes() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Shape>, Never>> listShapes({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/shapes',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -34,7 +35,7 @@ return _execute(
 /// Create a shape
 ///
 /// `POST /shapes`
-Future<ApiResult<Shape, ErrorModel>> createShape({required Shape body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Shape, ErrorModel>> createShape({required Shape body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -42,6 +43,7 @@ final request = ApiRequest(
   path: '/shapes',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -57,7 +59,7 @@ return _execute(
 /// Create an order with nested items
 ///
 /// `POST /orders`
-Future<ApiResult<Order, PetOrError>> createOrder({required Order body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Order, PetOrError>> createOrder({required Order body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,6 +67,7 @@ final request = ApiRequest(
   path: '/orders',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -80,7 +83,7 @@ return _execute(
 /// Send a notification via email and/or SMS (anyOf)
 ///
 /// `POST /notifications`
-Future<ApiResult<SendNotificationResponse, Never>> sendNotification({required Notification body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SendNotificationResponse, Never>> sendNotification({required Notification body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,6 +91,7 @@ final request = ApiRequest(
   path: '/notifications',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -100,7 +104,7 @@ return _execute(
 /// List pets with extended info
 ///
 /// `GET /pets`
-Future<ApiResult<List<Pet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Pet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toJson();
 if (identifier != null) {
@@ -115,6 +119,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -128,12 +133,13 @@ return _execute(
 /// Get key-value metadata for a pet
 ///
 /// `GET /pets/{petId}/metadata`
-Future<ApiResult<Map<String, String>, Never>> getPetMetadata({required String petId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, String>, Never>> getPetMetadata({required String petId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/pets/${Uri.encodeComponent(petId)}/metadata',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -145,16 +151,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

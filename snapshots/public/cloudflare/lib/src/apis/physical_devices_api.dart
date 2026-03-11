@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists WARP devices.
 ///
 /// `GET /accounts/{account_id}/devices/physical-devices`
-Future<ApiResult<ListDevicesResponse, Never>> listDevices({required String accountId, String? cursor, ListDevicesSortBy? sortBy, ListDevicesSortOrder? sortOrder, String? lastSeenUserEmail, String? seenAfter, String? seenBefore, int? perPage, String? search, ListDevicesActiveRegistrations? activeRegistrations, List<String>? id, String? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListDevicesResponse, Never>> listDevices({required String accountId, String? cursor, ListDevicesSortBy? sortBy, ListDevicesSortOrder? sortOrder, String? lastSeenUserEmail, String? seenAfter, String? seenBefore, int? perPage, String? search, ListDevicesActiveRegistrations? activeRegistrations, List<String>? id, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) queryParameters['cursor'] = cursor;
 if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
@@ -43,6 +43,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +58,7 @@ return _execute(
 /// Fetches a single WARP device.
 ///
 /// `GET /accounts/{account_id}/devices/physical-devices/{device_id}`
-Future<ApiResult<GetDeviceResponse, Never>> getDevice({required String deviceId, required String accountId, String? include, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetDeviceResponse, Never>> getDevice({required String deviceId, required String accountId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) queryParameters['include'] = include;
 
@@ -69,6 +70,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -83,12 +85,13 @@ return _execute(
 /// Deletes a WARP device.
 ///
 /// `DELETE /accounts/{account_id}/devices/physical-devices/{device_id}`
-Future<ApiResult<DeleteDeviceResponse, Never>> deleteDevice({required String deviceId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteDeviceResponse, Never>> deleteDevice({required String deviceId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/physical-devices/${Uri.encodeComponent(deviceId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -103,12 +106,13 @@ return _execute(
 /// Revokes all WARP registrations associated with the specified device.
 ///
 /// `POST /accounts/{account_id}/devices/physical-devices/{device_id}/revoke`
-Future<ApiResult<RevokeDeviceResponse, Never>> revokeDevice({required String accountId, required String deviceId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RevokeDeviceResponse, Never>> revokeDevice({required String accountId, required String deviceId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/devices/physical-devices/${Uri.encodeComponent(deviceId)}/revoke',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -123,7 +127,7 @@ return _execute(
 /// Deletes a list of WARP registrations.
 ///
 /// `DELETE /accounts/{account_id}/devices/registrations`
-Future<ApiResult<DeleteRegistrationsResponse, Never>> deleteRegistrations({required String accountId, required List<String> id, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<DeleteRegistrationsResponse, Never>> deleteRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
   queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
@@ -137,6 +141,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -148,16 +153,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists all invitations associated with my user.
 ///
 /// `GET /user/invites`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesListInvitations() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userSInvitesListInvitations({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/invites',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Gets the details of an invitation.
 ///
 /// `GET /user/invites/{invite_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/invites/${Uri.encodeComponent(inviteId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +59,7 @@ return _execute(
 /// Responds to an invitation.
 ///
 /// `PATCH /user/invites/{invite_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,6 +67,7 @@ final request = ApiRequest(
   path: '/user/invites/${Uri.encodeComponent(inviteId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -76,16 +79,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

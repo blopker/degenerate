@@ -21,7 +21,7 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /orgs/{org}/secret-scanning/alerts`
-Future<ApiResult<List<OrganizationSecretScanningAlert>, BasicError>> secretScanningListAlertsForOrg({required String org, SecretScanningListAlertsForOrgState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForOrgSort? sort, SecretScanningListAlertsForOrgDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSecretScanningAlert>, BasicError>> secretScanningListAlertsForOrg({required String org, SecretScanningListAlertsForOrgState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForOrgSort? sort, SecretScanningListAlertsForOrgDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) queryParameters['state'] = state.toJson();
 if (secretType != null) queryParameters['secret_type'] = secretType;
@@ -46,6 +46,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -66,12 +67,13 @@ return _execute(
 /// Personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/secret-scanning/pattern-configurations`
-Future<ApiResult<SecretScanningPatternConfiguration, BasicError>> secretScanningListOrgPatternConfigs({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SecretScanningPatternConfiguration, BasicError>> secretScanningListOrgPatternConfigs({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/secret-scanning/pattern-configurations',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -91,7 +93,7 @@ return _execute(
 /// Personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/secret-scanning/pattern-configurations`
-Future<ApiResult<SecretScanningUpdateOrgPatternConfigsResponse, BasicError>> secretScanningUpdateOrgPatternConfigs({required String org, required SecretScanningUpdateOrgPatternConfigsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SecretScanningUpdateOrgPatternConfigsResponse, BasicError>> secretScanningUpdateOrgPatternConfigs({required String org, required SecretScanningUpdateOrgPatternConfigsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +101,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/secret-scanning/pattern-configurations',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -120,7 +123,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/secret-scanning/alerts`
-Future<ApiResult<List<SecretScanningAlert>, SecretScanningListAlertsForRepoResponse503>> secretScanningListAlertsForRepo({required String owner, required String repo, SecretScanningListAlertsForRepoState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForRepoSort? sort, SecretScanningListAlertsForRepoDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SecretScanningAlert>, SecretScanningListAlertsForRepoResponse503>> secretScanningListAlertsForRepo({required String owner, required String repo, SecretScanningListAlertsForRepoState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForRepoSort? sort, SecretScanningListAlertsForRepoDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) queryParameters['state'] = state.toJson();
 if (secretType != null) queryParameters['secret_type'] = secretType;
@@ -145,6 +148,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -167,7 +171,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}`
-Future<ApiResult<SecretScanningAlert, SecretScanningGetAlertResponse503>> secretScanningGetAlert({required String owner, required String repo, required AlertNumber alertNumber, bool? hideSecret, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SecretScanningAlert, SecretScanningGetAlertResponse503>> secretScanningGetAlert({required String owner, required String repo, required AlertNumber alertNumber, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hideSecret != null) queryParameters['hide_secret'] = hideSecret.toString();
 
@@ -179,6 +183,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -202,7 +207,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}`
-Future<ApiResult<SecretScanningAlert, SecretScanningUpdateAlertResponse503>> secretScanningUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required SecretScanningUpdateAlertRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SecretScanningAlert, SecretScanningUpdateAlertResponse503>> secretScanningUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required SecretScanningUpdateAlertRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -210,6 +215,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -231,7 +237,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations`
-Future<ApiResult<List<SecretScanningLocation>, SecretScanningListLocationsForAlertResponse503>> secretScanningListLocationsForAlert({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SecretScanningLocation>, SecretScanningListLocationsForAlertResponse503>> secretScanningListLocationsForAlert({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -244,6 +250,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -266,7 +273,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses`
-Future<ApiResult<SecretScanningPushProtectionBypass, SecretScanningCreatePushProtectionBypassResponse503>> secretScanningCreatePushProtectionBypass({required String owner, required String repo, required SecretScanningCreatePushProtectionBypassRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SecretScanningPushProtectionBypass, SecretScanningCreatePushProtectionBypassResponse503>> secretScanningCreatePushProtectionBypass({required String owner, required String repo, required SecretScanningCreatePushProtectionBypassRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -274,6 +281,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/push-protection-bypasses',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -296,12 +304,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/secret-scanning/scan-history`
-Future<ApiResult<SecretScanningScanHistory, SecretScanningGetScanHistoryResponse503>> secretScanningGetScanHistory({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SecretScanningScanHistory, SecretScanningGetScanHistoryResponse503>> secretScanningGetScanHistory({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/scan-history',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -316,16 +325,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

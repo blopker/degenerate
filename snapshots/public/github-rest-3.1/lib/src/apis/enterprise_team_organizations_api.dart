@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get all organizations assigned to an enterprise team
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations`
-Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -45,7 +46,7 @@ return _execute(
 /// Assign an enterprise team to multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add`
-Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ final request = ApiRequest(
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/add',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -68,7 +70,7 @@ return _execute(
 /// Unassign an enterprise team from multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove`
-Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,6 +78,7 @@ final request = ApiRequest(
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/remove',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -88,12 +91,13 @@ return _execute(
 /// Check if an enterprise team is assigned to an organization
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,12 +112,13 @@ return _execute(
 /// Assign an enterprise team to an organization.
 ///
 /// `PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -128,12 +133,13 @@ return _execute(
 /// Unassign an enterprise team from an organization.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -143,16 +149,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

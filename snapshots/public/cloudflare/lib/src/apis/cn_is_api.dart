@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List existing CNI objects
 ///
 /// `GET /accounts/{account_id}/cni/cnis`
-Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (slot != null) queryParameters['slot'] = slot;
 if (tunnelId != null) queryParameters['tunnel_id'] = tunnelId;
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -42,7 +43,7 @@ return _execute(
 /// Create a new CNI object
 ///
 /// `POST /accounts/{account_id}/cni/cnis`
-Future<ApiResult<NscCni, Never>> createCni({required NscAccountTag accountId, required NscCniCreate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<NscCni, Never>> createCni({required NscAccountTag accountId, required NscCniCreate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,6 +51,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -62,12 +64,13 @@ return _execute(
 /// Get information about a CNI object
 ///
 /// `GET /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<NscCni, Never>> getCni({required String cni, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<NscCni, Never>> getCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -80,7 +83,7 @@ return _execute(
 /// Modify stored information about a CNI object
 ///
 /// `PUT /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<NscCni, Never>> updateCni({required String cni, required NscAccountTag accountId, required NscCni body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<NscCni, Never>> updateCni({required String cni, required NscAccountTag accountId, required NscCni body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,6 +91,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -100,12 +104,13 @@ return _execute(
 /// Delete a specified CNI object
 ///
 /// `DELETE /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<void, Never>> deleteCni({required String cni, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -115,16 +120,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

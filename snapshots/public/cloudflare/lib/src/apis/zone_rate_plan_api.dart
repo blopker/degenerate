@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists available plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans`
-Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailablePlans({required Identifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_plans',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Details of the available plan that the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans/{plan_identifier}`
-Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_plans/${Uri.encodeComponent(planIdentifier.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,12 +59,13 @@ return _execute(
 /// Lists all rate plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_rate_plans`
-Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon8, Never>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_rate_plans',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,16 +77,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all the resource groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) queryParameters['id'] = id.toString();
 if (name != null) queryParameters['name'] = name;
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -44,7 +45,7 @@ return _execute(
 /// Create a new Resource Group under the specified account.
 ///
 /// `POST /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +53,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -66,12 +68,13 @@ return _execute(
 /// Get information about a specific resource group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -86,7 +89,7 @@ return _execute(
 /// Modify an existing resource group.
 ///
 /// `PUT /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,6 +97,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -108,12 +112,13 @@ return _execute(
 /// Remove a resource group from an account.
 ///
 /// `DELETE /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -125,16 +130,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

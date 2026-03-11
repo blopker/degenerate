@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists Access policies configured for an application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesListAccessPolicies({required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesListAccessPolicies({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Create a new Access policy for an application.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetches a single Access policy.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesGetAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesGetAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Update a configured Access policy.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Delete an Access policy.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

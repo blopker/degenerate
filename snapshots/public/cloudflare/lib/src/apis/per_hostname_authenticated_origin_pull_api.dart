@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Associate a hostname to a certificate and enable, disable or invalidate the association. If disabled, client certificate will not be sent to the hostname even if activated at the zone level. 100 maximum associations on a single certificate are allowed. Note: Use a null value for parameter *enabled* to invalidate the association.
 ///
 /// `PUT /zones/{zone_id}/origin_tls_client_auth/hostnames`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,6 +25,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -39,12 +40,13 @@ return _execute(
 /// Retrieves the client certificate authentication status for a specific hostname, showing whether authenticated origin pulls are enabled.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/{hostname}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required TlsCertificatesAndHostnamesSchemasHostname hostname, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required TlsCertificatesAndHostnamesSchemasHostname hostname, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/${Uri.encodeComponent(hostname.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Lists all client certificates configured for per-hostname authenticated origin pulls on the zone.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Upload a certificate to be used for client authentication on a hostname. 10 hostname certificates per zone are allowed.
 ///
 /// `POST /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Get the certificate by ID to be used for client authentication on a hostname.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -123,12 +128,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -140,16 +146,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

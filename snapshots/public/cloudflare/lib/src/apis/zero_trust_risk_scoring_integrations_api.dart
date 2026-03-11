@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List all risk score integrations for the account.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations`
-Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationList({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,7 +34,7 @@ return _execute(
 /// Create new risk score integration.
 ///
 /// `POST /accounts/{account_id}/zt_risk_scoring/integrations`
-Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationCreate({required String accountId, required DlpCreateIntegrationBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationCreate({required String accountId, required DlpCreateIntegrationBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,6 +42,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -53,12 +55,13 @@ return _execute(
 /// Get risk score integration by id.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationGet({required String accountId, required String integrationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationGet({required String accountId, required String integrationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/${Uri.encodeComponent(integrationId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -73,7 +76,7 @@ return _execute(
 /// Overwrite the reference_id, tenant_url, and active values with the ones provided.
 ///
 /// `PUT /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationUpdate({required String accountId, required String integrationId, required DlpUpdateIntegrationBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationUpdate({required String accountId, required String integrationId, required DlpUpdateIntegrationBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,6 +84,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/${Uri.encodeComponent(integrationId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -93,12 +97,13 @@ return _execute(
 /// Delete a risk score integration.
 ///
 /// `DELETE /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationDelete({required String accountId, required String integrationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationDelete({required String accountId, required String integrationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/${Uri.encodeComponent(integrationId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -111,12 +116,13 @@ return _execute(
 /// Get risk score integration by reference id.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationGetByReferenceId({required String accountId, required String referenceId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpZtRiskScoreIntegrationGetByReferenceId({required String accountId, required String referenceId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/integrations/reference_id/${Uri.encodeComponent(referenceId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -128,16 +134,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

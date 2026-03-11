@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a list of certificate authorities.
 ///
 /// `GET /radar/ct/authorities`
-Future<ApiResult<RadarGetCertificateAuthoritiesResponse, RadarGetCertificateAuthoritiesResponse400>> radarGetCertificateAuthorities({int? limit, int? offset, RadarGetCertificateAuthoritiesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateAuthoritiesResponse, RadarGetCertificateAuthoritiesResponse400>> radarGetCertificateAuthorities({int? limit, int? offset, RadarGetCertificateAuthoritiesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -48,7 +49,7 @@ return _execute(
 /// Retrieves the requested CA information.
 ///
 /// `GET /radar/ct/authorities/{ca_slug}`
-Future<ApiResult<RadarGetCertificateAuthorityDetailsResponse, RadarGetCertificateAuthorityDetailsResponse404>> radarGetCertificateAuthorityDetails({required String caSlug, RadarGetCertificateAuthorityDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateAuthorityDetailsResponse, RadarGetCertificateAuthorityDetailsResponse404>> radarGetCertificateAuthorityDetails({required String caSlug, RadarGetCertificateAuthorityDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
@@ -60,6 +61,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -77,7 +79,7 @@ return _execute(
 /// Retrieves a list of certificate logs.
 ///
 /// `GET /radar/ct/logs`
-Future<ApiResult<RadarGetCertificateLogsResponse, RadarGetCertificateLogsResponse400>> radarGetCertificateLogs({int? limit, int? offset, RadarGetCertificateLogsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateLogsResponse, RadarGetCertificateLogsResponse400>> radarGetCertificateLogs({int? limit, int? offset, RadarGetCertificateLogsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -91,6 +93,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -108,7 +111,7 @@ return _execute(
 /// Retrieves the requested certificate log information.
 ///
 /// `GET /radar/ct/logs/{log_slug}`
-Future<ApiResult<RadarGetCertificateLogDetailsResponse, RadarGetCertificateLogDetailsResponse404>> radarGetCertificateLogDetails({required String logSlug, RadarGetCertificateLogDetailsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateLogDetailsResponse, RadarGetCertificateLogDetailsResponse404>> radarGetCertificateLogDetails({required String logSlug, RadarGetCertificateLogDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
@@ -120,6 +123,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -137,7 +141,7 @@ return _execute(
 /// Retrieves an aggregated summary of certificates grouped by the specified dimension.
 ///
 /// `GET /radar/ct/summary/{dimension}`
-Future<ApiResult<RadarGetCtSummaryResponse, RadarGetCtSummaryResponse400>> radarGetCtSummary({required RadarGetCtSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtSummaryDuration>? duration, List<RadarGetCtSummaryEntryType>? entryType, List<RadarGetCtSummaryExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtSummaryLog>? logApi, List<String>? logOperator, List<RadarGetCtSummaryPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtSummarySignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtSummaryValidationLevel>? validationLevel, List<RadarGetCtSummaryUniqueEntries>? uniqueEntries, RadarGetCtSummaryNormalization? normalization, RadarGetCtSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetCtSummaryResponse, RadarGetCtSummaryResponse400>> radarGetCtSummary({required RadarGetCtSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtSummaryDuration>? duration, List<RadarGetCtSummaryEntryType>? entryType, List<RadarGetCtSummaryExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtSummaryLog>? logApi, List<String>? logOperator, List<RadarGetCtSummaryPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtSummarySignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtSummaryValidationLevel>? validationLevel, List<RadarGetCtSummaryUniqueEntries>? uniqueEntries, RadarGetCtSummaryNormalization? normalization, RadarGetCtSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -246,6 +250,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -263,7 +268,7 @@ return _execute(
 /// Retrieves certificate volume over time.
 ///
 /// `GET /radar/ct/timeseries`
-Future<ApiResult<RadarGetCtTimeseriesResponse, RadarGetCtTimeseriesResponse400>> radarGetCtTimeseries({RadarGetCtTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesDuration>? duration, List<RadarGetCtTimeseriesEntryType>? entryType, List<RadarGetCtTimeseriesExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesSignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtTimeseriesValidationLevel>? validationLevel, List<RadarGetCtTimeseriesUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetCtTimeseriesResponse, RadarGetCtTimeseriesResponse400>> radarGetCtTimeseries({RadarGetCtTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesDuration>? duration, List<RadarGetCtTimeseriesEntryType>? entryType, List<RadarGetCtTimeseriesExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesSignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtTimeseriesValidationLevel>? validationLevel, List<RadarGetCtTimeseriesUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -371,6 +376,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -388,7 +394,7 @@ return _execute(
 /// Retrieves the distribution of certificates grouped by the specified dimension over time.
 ///
 /// `GET /radar/ct/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetCtTimeseriesGroupResponse, RadarGetCtTimeseriesGroupResponse400>> radarGetCtTimeseriesGroup({required RadarGetCtTimeseriesGroupDimension dimension, RadarGetCtTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesGroupDuration>? duration, List<RadarGetCtTimeseriesGroupEntryType>? entryType, List<RadarGetCtTimeseriesGroupExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesGroupLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesGroupPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesGroupSignatureAlgorithm>? signatureAlgorithm, List<RadarGetCtTimeseriesGroupValidationLevel>? validationLevel, List<String>? tld, RadarGetCtTimeseriesGroupNormalization? normalization, List<RadarGetCtTimeseriesGroupUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetCtTimeseriesGroupResponse, RadarGetCtTimeseriesGroupResponse400>> radarGetCtTimeseriesGroup({required RadarGetCtTimeseriesGroupDimension dimension, RadarGetCtTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesGroupDuration>? duration, List<RadarGetCtTimeseriesGroupEntryType>? entryType, List<RadarGetCtTimeseriesGroupExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesGroupLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesGroupPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesGroupSignatureAlgorithm>? signatureAlgorithm, List<RadarGetCtTimeseriesGroupValidationLevel>? validationLevel, List<String>? tld, RadarGetCtTimeseriesGroupNormalization? normalization, List<RadarGetCtTimeseriesGroupUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -498,6 +504,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -512,16 +519,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

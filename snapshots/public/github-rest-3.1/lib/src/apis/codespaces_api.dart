@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/codespaces`
-Future<ApiResult<CodespacesListInOrganizationResponse, BasicError>> codespacesListInOrganization({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListInOrganizationResponse, BasicError>> codespacesListInOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -52,7 +53,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/codespaces/secrets`
-Future<ApiResult<CodespacesListOrgSecretsResponse, Never>> codespacesListOrgSecrets({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListOrgSecretsResponse, Never>> codespacesListOrgSecrets({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -65,6 +66,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -80,12 +82,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/codespaces/secrets/public-key`
-Future<ApiResult<CodespacesPublicKey, Never>> codespacesGetOrgPublicKey({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespacesPublicKey, Never>> codespacesGetOrgPublicKey({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/codespaces/secrets/public-key',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -102,12 +105,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/codespaces/secrets/{secret_name}`
-Future<ApiResult<CodespacesOrgSecret, Never>> codespacesGetOrgSecret({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespacesOrgSecret, Never>> codespacesGetOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -125,7 +129,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/codespaces/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, BasicError>> codespacesCreateOrUpdateOrgSecret({required String org, required String secretName, required CodespacesCreateOrUpdateOrgSecretRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, BasicError>> codespacesCreateOrUpdateOrgSecret({required String org, required String secretName, required CodespacesCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,6 +137,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -152,12 +157,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/codespaces/secrets/{secret_name}`
-Future<ApiResult<void, BasicError>> codespacesDeleteOrgSecret({required String org, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> codespacesDeleteOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -176,7 +182,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories`
-Future<ApiResult<CodespacesListSelectedReposForOrgSecretResponse, BasicError>> codespacesListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListSelectedReposForOrgSecretResponse, BasicError>> codespacesListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -189,6 +195,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -210,7 +217,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories`
-Future<ApiResult<void, BasicError>> codespacesSetSelectedReposForOrgSecret({required String org, required String secretName, required CodespacesSetSelectedReposForOrgSecretRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> codespacesSetSelectedReposForOrgSecret({required String org, required String secretName, required CodespacesSetSelectedReposForOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -218,6 +225,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/codespaces/secrets/${Uri.encodeComponent(secretName)}/repositories',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -234,12 +242,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> codespacesAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> codespacesAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/codespaces/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -259,12 +268,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> codespacesRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> codespacesRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/codespaces/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -282,7 +292,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/members/{username}/codespaces`
-Future<ApiResult<CodespacesGetCodespacesForUserInOrgResponse, BasicError>> codespacesGetCodespacesForUserInOrg({required String org, required String username, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesGetCodespacesForUserInOrgResponse, BasicError>> codespacesGetCodespacesForUserInOrg({required String org, required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -295,6 +305,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -314,12 +325,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}`
-Future<ApiResult<Map<String, Object>, BasicError>> codespacesDeleteFromOrganization({required String org, required String username, required String codespaceName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> codespacesDeleteFromOrganization({required String org, required String username, required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/members/${Uri.encodeComponent(username)}/codespaces/${Uri.encodeComponent(codespaceName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -339,12 +351,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop`
-Future<ApiResult<Codespace, BasicError>> codespacesStopInOrganization({required String org, required String username, required String codespaceName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesStopInOrganization({required String org, required String username, required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/members/${Uri.encodeComponent(username)}/codespaces/${Uri.encodeComponent(codespaceName)}/stop',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -364,7 +377,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces`
-Future<ApiResult<CodespacesListInRepositoryForAuthenticatedUserResponse, BasicError>> codespacesListInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListInRepositoryForAuthenticatedUserResponse, BasicError>> codespacesListInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -377,6 +390,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -396,7 +410,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/codespaces`
-Future<ApiResult<Codespace, BasicError>> codespacesCreateWithRepoForAuthenticatedUser({required String owner, required String repo, required CodespacesCreateWithRepoForAuthenticatedUserRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesCreateWithRepoForAuthenticatedUser({required String owner, required String repo, required CodespacesCreateWithRepoForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -404,6 +418,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/codespaces',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -424,7 +439,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/devcontainers`
-Future<ApiResult<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse, BasicError>> codespacesListDevcontainersInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse, BasicError>> codespacesListDevcontainersInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -437,6 +452,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -456,7 +472,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/machines`
-Future<ApiResult<CodespacesRepoMachinesForAuthenticatedUserResponse, BasicError>> codespacesRepoMachinesForAuthenticatedUser({required String owner, required String repo, String? location, String? clientIp, String? ref, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesRepoMachinesForAuthenticatedUserResponse, BasicError>> codespacesRepoMachinesForAuthenticatedUser({required String owner, required String repo, String? location, String? clientIp, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (location != null) queryParameters['location'] = location;
 if (clientIp != null) queryParameters['client_ip'] = clientIp;
@@ -470,6 +486,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -489,7 +506,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/new`
-Future<ApiResult<CodespacesPreFlightWithRepoForAuthenticatedUserResponse, BasicError>> codespacesPreFlightWithRepoForAuthenticatedUser({required String owner, required String repo, String? ref, String? clientIp, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesPreFlightWithRepoForAuthenticatedUserResponse, BasicError>> codespacesPreFlightWithRepoForAuthenticatedUser({required String owner, required String repo, String? ref, String? clientIp, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref;
 if (clientIp != null) queryParameters['client_ip'] = clientIp;
@@ -502,6 +519,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -521,7 +539,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/permissions_check`
-Future<ApiResult<CodespacesPermissionsCheckForDevcontainer, BasicError>> codespacesCheckPermissionsForDevcontainer({required String owner, required String repo, required String ref, required String devcontainerPath, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesPermissionsCheckForDevcontainer, BasicError>> codespacesCheckPermissionsForDevcontainer({required String owner, required String repo, required String ref, required String devcontainerPath, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ref'] = ref;
 queryParameters['devcontainer_path'] = devcontainerPath;
@@ -534,6 +552,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -554,7 +573,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/secrets`
-Future<ApiResult<CodespacesListRepoSecretsResponse, Never>> codespacesListRepoSecrets({required String owner, required String repo, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListRepoSecretsResponse, Never>> codespacesListRepoSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -567,6 +586,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -584,12 +604,13 @@ return _execute(
 /// If the repository is private, OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/secrets/public-key`
-Future<ApiResult<CodespacesPublicKey, Never>> codespacesGetRepoPublicKey({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespacesPublicKey, Never>> codespacesGetRepoPublicKey({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/codespaces/secrets/public-key',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -606,12 +627,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}`
-Future<ApiResult<RepoCodespacesSecret, Never>> codespacesGetRepoSecret({required String owner, required String repo, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepoCodespacesSecret, Never>> codespacesGetRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -629,7 +651,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
 ///
 /// `PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> codespacesCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required CodespacesCreateOrUpdateRepoSecretRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> codespacesCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required CodespacesCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -637,6 +659,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -653,12 +676,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
 ///
 /// `DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}`
-Future<ApiResult<void, Never>> codespacesDeleteRepoSecret({required String owner, required String repo, required String secretName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> codespacesDeleteRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -673,7 +697,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces`
-Future<ApiResult<Codespace, BasicError>> codespacesCreateWithPrForAuthenticatedUser({required String owner, required String repo, required int pullNumber, required CodespacesCreateWithPrForAuthenticatedUserRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesCreateWithPrForAuthenticatedUser({required String owner, required String repo, required int pullNumber, required CodespacesCreateWithPrForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -681,6 +705,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/codespaces',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -700,7 +725,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /user/codespaces`
-Future<ApiResult<CodespacesListForAuthenticatedUserResponse, BasicError>> codespacesListForAuthenticatedUser({int? perPage, int? page, int? repositoryId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListForAuthenticatedUserResponse, BasicError>> codespacesListForAuthenticatedUser({int? perPage, int? page, int? repositoryId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -714,6 +739,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -735,7 +761,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces`
-Future<ApiResult<Codespace, BasicError>> codespacesCreateForAuthenticatedUser({required CodespacesCreateForAuthenticatedUserRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesCreateForAuthenticatedUser({required CodespacesCreateForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -743,6 +769,7 @@ final request = ApiRequest(
   path: '/user/codespaces',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -765,7 +792,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/secrets`
-Future<ApiResult<CodespacesListSecretsForAuthenticatedUserResponse, Never>> codespacesListSecretsForAuthenticatedUser({int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodespacesListSecretsForAuthenticatedUserResponse, Never>> codespacesListSecretsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -778,6 +805,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -796,12 +824,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/secrets/public-key`
-Future<ApiResult<CodespacesUserPublicKey, Never>> codespacesGetPublicKeyForAuthenticatedUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespacesUserPublicKey, Never>> codespacesGetPublicKeyForAuthenticatedUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/codespaces/secrets/public-key',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -820,12 +849,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/secrets/{secret_name}`
-Future<ApiResult<CodespacesSecret, Never>> codespacesGetSecretForAuthenticatedUser({required String secretName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespacesSecret, Never>> codespacesGetSecretForAuthenticatedUser({required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -845,7 +875,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `PUT /user/codespaces/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, ValidationError>> codespacesCreateOrUpdateSecretForAuthenticatedUser({required String secretName, required CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, ValidationError>> codespacesCreateOrUpdateSecretForAuthenticatedUser({required String secretName, required CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -853,6 +883,7 @@ final request = ApiRequest(
   path: '/user/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -874,12 +905,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `DELETE /user/codespaces/secrets/{secret_name}`
-Future<ApiResult<void, Never>> codespacesDeleteSecretForAuthenticatedUser({required String secretName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> codespacesDeleteSecretForAuthenticatedUser({required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/user/codespaces/secrets/${Uri.encodeComponent(secretName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -896,12 +928,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/secrets/{secret_name}/repositories`
-Future<ApiResult<CodespacesListRepositoriesForSecretForAuthenticatedUserResponse, BasicError>> codespacesListRepositoriesForSecretForAuthenticatedUser({required String secretName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespacesListRepositoriesForSecretForAuthenticatedUserResponse, BasicError>> codespacesListRepositoriesForSecretForAuthenticatedUser({required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/codespaces/secrets/${Uri.encodeComponent(secretName)}/repositories',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -923,7 +956,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `PUT /user/codespaces/secrets/{secret_name}/repositories`
-Future<ApiResult<void, BasicError>> codespacesSetRepositoriesForSecretForAuthenticatedUser({required String secretName, required CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> codespacesSetRepositoriesForSecretForAuthenticatedUser({required String secretName, required CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -931,6 +964,7 @@ final request = ApiRequest(
   path: '/user/codespaces/secrets/${Uri.encodeComponent(secretName)}/repositories',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -950,12 +984,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> codespacesAddRepositoryForSecretForAuthenticatedUser({required String secretName, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> codespacesAddRepositoryForSecretForAuthenticatedUser({required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/user/codespaces/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -975,12 +1010,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> codespacesRemoveRepositoryForSecretForAuthenticatedUser({required String secretName, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> codespacesRemoveRepositoryForSecretForAuthenticatedUser({required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/user/codespaces/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -998,12 +1034,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/{codespace_name}`
-Future<ApiResult<Codespace, BasicError>> codespacesGetForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesGetForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1025,7 +1062,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `PATCH /user/codespaces/{codespace_name}`
-Future<ApiResult<Codespace, BasicError>> codespacesUpdateForAuthenticatedUser({required String codespaceName, CodespacesUpdateForAuthenticatedUserRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesUpdateForAuthenticatedUser({required String codespaceName, CodespacesUpdateForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1033,6 +1070,7 @@ final request = ApiRequest(
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1052,12 +1090,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `DELETE /user/codespaces/{codespace_name}`
-Future<ApiResult<Map<String, Object>, BasicError>> codespacesDeleteForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> codespacesDeleteForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1079,12 +1118,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces/{codespace_name}/exports`
-Future<ApiResult<CodespaceExportDetails, BasicError>> codespacesExportForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespaceExportDetails, BasicError>> codespacesExportForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}/exports',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1104,12 +1144,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/{codespace_name}/exports/{export_id}`
-Future<ApiResult<CodespaceExportDetails, BasicError>> codespacesGetExportDetailsForAuthenticatedUser({required String codespaceName, required String exportId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespaceExportDetails, BasicError>> codespacesGetExportDetailsForAuthenticatedUser({required String codespaceName, required String exportId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}/exports/${Uri.encodeComponent(exportId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1129,12 +1170,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/{codespace_name}/machines`
-Future<ApiResult<CodespacesCodespaceMachinesForAuthenticatedUserResponse, BasicError>> codespacesCodespaceMachinesForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespacesCodespaceMachinesForAuthenticatedUserResponse, BasicError>> codespacesCodespaceMachinesForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}/machines',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1158,7 +1200,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces/{codespace_name}/publish`
-Future<ApiResult<CodespaceWithFullRepository, BasicError>> codespacesPublishForAuthenticatedUser({required String codespaceName, required CodespacesPublishForAuthenticatedUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CodespaceWithFullRepository, BasicError>> codespacesPublishForAuthenticatedUser({required String codespaceName, required CodespacesPublishForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1166,6 +1208,7 @@ final request = ApiRequest(
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}/publish',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1185,12 +1228,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces/{codespace_name}/start`
-Future<ApiResult<Codespace, BasicError>> codespacesStartForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesStartForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}/start',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1210,12 +1254,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces/{codespace_name}/stop`
-Future<ApiResult<Codespace, BasicError>> codespacesStopForAuthenticatedUser({required String codespaceName}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Codespace, BasicError>> codespacesStopForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/user/codespaces/${Uri.encodeComponent(codespaceName)}/stop',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1230,16 +1275,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

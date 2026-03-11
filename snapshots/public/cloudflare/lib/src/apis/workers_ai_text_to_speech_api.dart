@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAuraResponse400>> workersAiPostWebsocketRunCfDeepgramAura({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAuraResponse400>> workersAiPostWebsocketRunCfDeepgramAura({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -38,12 +39,13 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1Response400>> workersAiPostWebsocketRunCfDeepgramAura1({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1Response400>> workersAiPostWebsocketRunCfDeepgramAura1({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-1',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/aura-1 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -74,6 +76,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -91,12 +94,13 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1-internal model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-1-internal`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400>> workersAiPostWebsocketRunCfDeepgramAura1Internal({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400>> workersAiPostWebsocketRunCfDeepgramAura1Internal({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-1-internal',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -112,12 +116,13 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2Response400>> workersAiPostWebsocketRunCfDeepgramAura2({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2Response400>> workersAiPostWebsocketRunCfDeepgramAura2({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -133,12 +138,13 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-en model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400>> workersAiPostWebsocketRunCfDeepgramAura2En({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400>> workersAiPostWebsocketRunCfDeepgramAura2En({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2-en',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -154,7 +160,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/aura-2-en model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -169,6 +175,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -186,12 +193,13 @@ return _execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-es model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400>> workersAiPostWebsocketRunCfDeepgramAura2Es({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400>> workersAiPostWebsocketRunCfDeepgramAura2Es({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2-es',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -207,7 +215,7 @@ return _execute(
 /// Runs inference on the @cf/deepgram/aura-2-es model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -222,6 +230,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -239,7 +248,7 @@ return _execute(
 /// Runs inference on the @cf/myshell-ai/melotts model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/myshell-ai/melotts`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMyshellAiMelottsResponse400>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMyshellAiMelottsResponse400>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -254,6 +263,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -268,16 +278,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

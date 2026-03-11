@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches rendered HTML content from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/content`
-Future<ApiResult<BrapiPostContentResponse, BrapiPostContentResponse400>> brapiPostContent({required String accountId, double? cacheTtl, required BrapiPostContentRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BrapiPostContentResponse, BrapiPostContentResponse400>> brapiPostContent({required String accountId, double? cacheTtl, required BrapiPostContentRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -31,6 +31,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -48,7 +49,7 @@ return _execute(
 /// Gets json from a webpage from a provided URL or HTML. Pass `prompt` or `schema` in the body. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/json`
-Future<ApiResult<BrapiPostJsonResponse, BrapiPostJsonResponse400>> brapiPostJson({required String accountId, double? cacheTtl, required BrapiPostJsonRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BrapiPostJsonResponse, BrapiPostJsonResponse400>> brapiPostJson({required String accountId, double? cacheTtl, required BrapiPostJsonRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -62,6 +63,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -79,7 +81,7 @@ return _execute(
 /// Get links from a web page.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/links`
-Future<ApiResult<BrapiPostLinksResponse, BrapiPostLinksResponse400>> brapiPostLinks({required String accountId, double? cacheTtl, required BrapiPostLinksRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BrapiPostLinksResponse, BrapiPostLinksResponse400>> brapiPostLinks({required String accountId, double? cacheTtl, required BrapiPostLinksRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -93,6 +95,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -110,7 +113,7 @@ return _execute(
 /// Gets markdown of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/markdown`
-Future<ApiResult<BrapiPostMarkdownResponse, BrapiPostMarkdownResponse400>> brapiPostMarkdown({required String accountId, double? cacheTtl, required BrapiPostMarkdownRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BrapiPostMarkdownResponse, BrapiPostMarkdownResponse400>> brapiPostMarkdown({required String accountId, double? cacheTtl, required BrapiPostMarkdownRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -124,6 +127,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -141,7 +145,7 @@ return _execute(
 /// Fetches rendered PDF from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/pdf`
-Future<ApiResult<String, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, double? cacheTtl, required BrapiPostPdfRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<String, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, double? cacheTtl, required BrapiPostPdfRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -155,6 +159,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -172,7 +177,7 @@ return _execute(
 /// Get meta attributes like height, width, text and others of selected elements.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/scrape`
-Future<ApiResult<BrapiPostScrapeResponse, BrapiPostScrapeResponse400>> brapiPostScrape({required String accountId, double? cacheTtl, required BrapiPostScrapeRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BrapiPostScrapeResponse, BrapiPostScrapeResponse400>> brapiPostScrape({required String accountId, double? cacheTtl, required BrapiPostScrapeRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -186,6 +191,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -203,7 +209,7 @@ return _execute(
 /// Takes a screenshot of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/screenshot`
-Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotResponse400>> brapiPostScreenshot({required String accountId, double? cacheTtl, required BrapiPostScreenshotRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotResponse400>> brapiPostScreenshot({required String accountId, double? cacheTtl, required BrapiPostScreenshotRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -217,6 +223,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -234,7 +241,7 @@ return _execute(
 /// Returns the page's HTML content and screenshot. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/snapshot`
-Future<ApiResult<BrapiPostSnapshotResponse, BrapiPostSnapshotResponse400>> brapiPostSnapshot({required String accountId, double? cacheTtl, required BrapiPostSnapshotRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BrapiPostSnapshotResponse, BrapiPostSnapshotResponse400>> brapiPostSnapshot({required String accountId, double? cacheTtl, required BrapiPostSnapshotRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
 
@@ -248,6 +255,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -262,16 +270,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

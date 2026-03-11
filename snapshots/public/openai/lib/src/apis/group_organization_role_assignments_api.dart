@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Lists the organization roles assigned to a group within the organization.
 ///
 /// `GET /organization/groups/{group_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listGroupRoleAssignments({required String groupId, int? limit, String? after, ListGroupRoleAssignmentsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RoleListResource, Never>> listGroupRoleAssignments({required String groupId, int? limit, String? after, ListGroupRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Assigns an organization role to a group within the organization.
 ///
 /// `POST /organization/groups/{group_id}/roles`
-Future<ApiResult<GroupRoleAssignment, Never>> assignGroupRole({required String groupId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GroupRoleAssignment, Never>> assignGroupRole({required String groupId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/roles',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -61,12 +63,13 @@ return _execute(
 /// Unassigns an organization role from a group within the organization.
 ///
 /// `DELETE /organization/groups/{group_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignGroupRole({required String groupId, required String roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignGroupRole({required String groupId, required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/groups/${Uri.encodeComponent(groupId)}/roles/${Uri.encodeComponent(roleId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -78,16 +81,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

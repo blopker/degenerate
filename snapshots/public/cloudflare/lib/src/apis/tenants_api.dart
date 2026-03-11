@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieves a Tenant by Tenant ID.
 ///
 /// `GET /tenants/{tenant_id}`
-Future<ApiResult<TenantsRetrieveTenantResponse, Never>> tenantsRetrieveTenant({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TenantsRetrieveTenantResponse, Never>> tenantsRetrieveTenant({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// List of account types available for the Tenant to provision accounts.
 ///
 /// `GET /tenants/{tenant_id}/account_types`
-Future<ApiResult<TenantsValidAccountTypesResponse, Never>> tenantsValidAccountTypes({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TenantsValidAccountTypesResponse, Never>> tenantsValidAccountTypes({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/account_types',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,12 +59,13 @@ return _execute(
 /// List of accounts for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/accounts`
-Future<ApiResult<TenantsListAccountsResponse, Never>> tenantsListAccounts({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TenantsListAccountsResponse, Never>> tenantsListAccounts({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/accounts',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -77,12 +80,13 @@ return _execute(
 /// List of innate entitlements available for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/entitlements`
-Future<ApiResult<TenantsListEntitlementsResponse, Never>> tenantsListEntitlements({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TenantsListEntitlementsResponse, Never>> tenantsListEntitlements({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/entitlements',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -97,12 +101,13 @@ return _execute(
 /// List of active members (Cloudflare users) for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/memberships`
-Future<ApiResult<TenantsListMembershipsResponse, Never>> tenantsListMemberships({required String tenantId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TenantsListMembershipsResponse, Never>> tenantsListMemberships({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/tenants/${Uri.encodeComponent(tenantId)}/memberships',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -114,16 +119,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

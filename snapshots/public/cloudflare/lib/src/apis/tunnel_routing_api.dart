@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists and filters private network routes in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes`
-Future<ApiResult<ResponseCommon69, Never>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (comment != null) queryParameters['comment'] = comment.toString();
 if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
@@ -43,6 +43,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +58,7 @@ return _execute(
 /// Routes a private network through a Cloudflare Tunnel.
 ///
 /// `POST /accounts/{account_id}/teamnet/routes`
-Future<ApiResult<ResponseCommon69, Never>> tunnelRouteCreateATunnelRoute({required TunnelAccountId accountId, required TunnelRouteCreateATunnelRouteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> tunnelRouteCreateATunnelRoute({required TunnelAccountId accountId, required TunnelRouteCreateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,6 +66,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -79,12 +81,13 @@ return _execute(
 /// Get a private network route in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<ResponseCommon69, Never>> tunnelRouteGetTunnelRoute({required TunnelAccountId accountId, required TunnelRouteId routeId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> tunnelRouteGetTunnelRoute({required TunnelAccountId accountId, required TunnelRouteId routeId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes/${Uri.encodeComponent(routeId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -99,7 +102,7 @@ return _execute(
 /// Updates an existing private network route in an account. The fields that are meant to be updated should be provided in the body of the request.
 ///
 /// `PATCH /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<ResponseCommon69, Never>> tunnelRouteUpdateATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, required TunnelRouteUpdateATunnelRouteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> tunnelRouteUpdateATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, required TunnelRouteUpdateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,6 +110,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes/${Uri.encodeComponent(routeId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -122,12 +126,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<ResponseCommon69, Never>> tunnelRouteDeleteATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> tunnelRouteDeleteATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes/${Uri.encodeComponent(routeId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -142,7 +147,7 @@ return _execute(
 /// Fetches routes that contain the given IP address.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes/ip/{ip}`
-Future<ApiResult<ResponseCommon69, Never>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (virtualNetworkId != null) queryParameters['virtual_network_id'] = virtualNetworkId.toString();
 if (defaultVirtualNetworkFallback != null) queryParameters['default_virtual_network_fallback'] = defaultVirtualNetworkFallback.toString();
@@ -155,6 +160,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -166,16 +172,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

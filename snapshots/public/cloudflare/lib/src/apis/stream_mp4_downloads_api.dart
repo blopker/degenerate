@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists the downloads created for a video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsListDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsListDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Creates a download for a video when a video is ready to view. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsCreateDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsCreateDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,12 +59,13 @@ return _execute(
 /// Delete the downloads for a video. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsDeleteDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamMP4DownloadsDeleteDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -77,12 +80,13 @@ return _execute(
 /// Creates a download for a video of specified type. For backwards-compatibility, POST requests to /downloads will enable the default download.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/downloads/{download_type}`
-Future<ApiResult<ResponseCommon66, Never>> streamDownloadsCreateTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamDownloadsCreateTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent(downloadType.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -97,12 +101,13 @@ return _execute(
 /// Delete specific type of download. For backwards-compatibility, DELETE requests to /downloads will delete the default download.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/downloads/{download_type}`
-Future<ApiResult<ResponseCommon66, Never>> streamDownloadsDeleteTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamDownloadsDeleteTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent(downloadType.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -114,16 +119,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

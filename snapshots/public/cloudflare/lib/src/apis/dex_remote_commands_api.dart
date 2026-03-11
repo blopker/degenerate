@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a paginated list of commands issued to devices under the specified account, optionally filtered by time range, device, or other parameters
 ///
 /// `GET /accounts/{account_id}/dex/commands`
-Future<ApiResult<ResponseCommon19, Never>> getCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, DateTime? from, DateTime? to, String? deviceId, String? userEmail, String? commandType, GetCommandsStatus? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon19, Never>> getCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, DateTime? from, DateTime? to, String? deviceId, String? userEmail, String? commandType, GetCommandsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -36,6 +36,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -50,7 +51,7 @@ return _execute(
 /// Initiate commands for up to 10 devices per account
 ///
 /// `POST /accounts/{account_id}/dex/commands`
-Future<ApiResult<ResponseCommon19, Never>> postCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required PostCommandsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon19, Never>> postCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required PostCommandsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,6 +59,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -72,12 +74,13 @@ return _execute(
 /// Downloads artifacts for an executed command. Bulk downloads are not supported
 ///
 /// `GET /accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}`
-Future<ApiResult<Uint8List, Never>> getCommandsCommandIdDownloadsFilename({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCommandId commandId, required String filename, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Uint8List, Never>> getCommandsCommandIdDownloadsFilename({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCommandId commandId, required String filename, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands/${Uri.encodeComponent(commandId.toString())}/downloads/${Uri.encodeComponent(filename)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -92,7 +95,7 @@ return _execute(
 /// List devices with WARP client support for remote captures which have been connected in the last 1 hour.
 ///
 /// `GET /accounts/{account_id}/dex/commands/devices`
-Future<ApiResult<ResponseCommon19, Never>> getCommandsEligibleDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon19, Never>> getCommandsEligibleDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -106,6 +109,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -120,12 +124,13 @@ return _execute(
 /// Retrieves the current quota usage and limits for device commands within a specific account, including the time when the quota will reset
 ///
 /// `GET /accounts/{account_id}/dex/commands/quota`
-Future<ApiResult<ResponseCommon19, Never>> getCommandsQuota({required DigitalExperienceMonitoringAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon19, Never>> getCommandsQuota({required DigitalExperienceMonitoringAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands/quota',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -137,16 +142,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

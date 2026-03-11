@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieves quota for all plans, as well as the current zone quota.
 ///
 /// `GET /zones/{zone_id}/speed_api/availabilities`
-Future<ApiResult<ResponseCommon49, Never>> speedGetAvailabilities({required ObservatoryIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon49, Never>> speedGetAvailabilities({required ObservatoryIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/availabilities',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Lists all webpages which have been tested.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages`
-Future<ApiResult<ResponseCommon49, Never>> speedListPages({required ObservatoryIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon49, Never>> speedListPages({required ObservatoryIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +59,7 @@ return _execute(
 /// Test history (list of tests) for a specific webpage.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ResponseCommon49, Never>> speedListTestHistory({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, int? page, int? perPage, ObservatoryRegion? region, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon49, Never>> speedListTestHistory({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, int? page, int? perPage, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -71,6 +73,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -85,7 +88,7 @@ return _execute(
 /// Starts a test for a specific webpage, in a specific region.
 ///
 /// `POST /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ResponseCommon49, Never>> speedCreateTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, SpeedCreateTestRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon49, Never>> speedCreateTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, SpeedCreateTestRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,6 +96,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages/${Uri.encodeComponent(url.toString())}/tests',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -107,7 +111,7 @@ return _execute(
 /// Deletes all tests for a specific webpage from a specific region. Deleted tests are still counted as part of the quota.
 ///
 /// `DELETE /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ResponseCommon49, Never>> speedDeleteTests({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon49, Never>> speedDeleteTests({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) queryParameters['region'] = region.toJson();
 
@@ -119,6 +123,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -133,12 +138,13 @@ return _execute(
 /// Retrieves the result of a specific test.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/tests/{test_id}`
-Future<ApiResult<ResponseCommon49, Never>> speedGetTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required String testId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon49, Never>> speedGetTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required String testId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages/${Uri.encodeComponent(url.toString())}/tests/${Uri.encodeComponent(testId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -153,7 +159,7 @@ return _execute(
 /// Lists the core web vital metrics trend over time for a specific page.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/trend`
-Future<ApiResult<ResponseCommon49, Never>> speedListPageTrend({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required ObservatoryTimestamp start, ObservatoryTimestamp? end, required String tz, required String metrics, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon49, Never>> speedListPageTrend({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required ObservatoryTimestamp start, ObservatoryTimestamp? end, required String tz, required String metrics, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['region'] = region.toJson();
 queryParameters['deviceType'] = deviceType.toJson();
@@ -170,6 +176,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -184,7 +191,7 @@ return _execute(
 /// Retrieves the test schedule for a page in a specific region.
 ///
 /// `GET /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ResponseCommon49, Never>> speedGetScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon49, Never>> speedGetScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) queryParameters['region'] = region.toJson();
 
@@ -196,6 +203,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -210,7 +218,7 @@ return _execute(
 /// Creates a scheduled test for a page.
 ///
 /// `POST /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ResponseCommon49, Never>> speedCreateScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, ObservatoryScheduleFrequency? frequency, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon49, Never>> speedCreateScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, ObservatoryScheduleFrequency? frequency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) queryParameters['region'] = region.toJson();
 if (frequency != null) queryParameters['frequency'] = frequency.toJson();
@@ -223,6 +231,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -237,7 +246,7 @@ return _execute(
 /// Deletes a scheduled test for a page.
 ///
 /// `DELETE /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ResponseCommon49, Never>> speedDeleteTestSchedule({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon49, Never>> speedDeleteTestSchedule({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) queryParameters['region'] = region.toJson();
 
@@ -249,6 +258,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -260,16 +270,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Lists the organization roles assigned to a user within the organization.
 ///
 /// `GET /organization/users/{user_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listUserRoleAssignments({required String userId, int? limit, String? after, ListUserRoleAssignmentsOrder? order, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RoleListResource, Never>> listUserRoleAssignments({required String userId, int? limit, String? after, ListUserRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Assigns an organization role to a user within the organization.
 ///
 /// `POST /organization/users/{user_id}/roles`
-Future<ApiResult<UserRoleAssignment, Never>> assignUserRole({required String userId, required PublicAssignOrganizationGroupRoleBody body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UserRoleAssignment, Never>> assignUserRole({required String userId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/organization/users/${Uri.encodeComponent(userId)}/roles',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -61,12 +63,13 @@ return _execute(
 /// Unassigns an organization role from a user within the organization.
 ///
 /// `DELETE /organization/users/{user_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignUserRole({required String userId, required String roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignUserRole({required String userId, required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/users/${Uri.encodeComponent(userId)}/roles/${Uri.encodeComponent(roleId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -78,16 +81,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

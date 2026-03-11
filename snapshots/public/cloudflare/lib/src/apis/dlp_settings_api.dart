@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Fetch limits associated with DLP for account
 ///
 /// `GET /accounts/{account_id}/dlp/limits`
-Future<ApiResult<ResponseCommon20, Never>> dlpLimitsGet({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpLimitsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/limits',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -38,7 +39,7 @@ return _execute(
 /// number of characters that can be matched using a range, e.g. `{1,100}`.
 ///
 /// `POST /accounts/{account_id}/dlp/patterns/validate`
-Future<ApiResult<ResponseCommon20, Never>> dlpPatternValidate({required String accountId, required DlpRegexValidationQuery body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpPatternValidate({required String accountId, required DlpRegexValidationQuery body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,6 +47,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/patterns/validate',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -58,12 +60,13 @@ return _execute(
 /// Get payload log settings
 ///
 /// `GET /accounts/{account_id}/dlp/payload_log`
-Future<ApiResult<ResponseCommon20, Never>> dlpPayloadLogGet({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpPayloadLogGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/payload_log',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -76,7 +79,7 @@ return _execute(
 /// Set payload log settings
 ///
 /// `PUT /accounts/{account_id}/dlp/payload_log`
-Future<ApiResult<ResponseCommon20, Never>> dlpPayloadLogPut({required String accountId, required DlpPayloadLogSettingUpdateLegacy body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpPayloadLogPut({required String accountId, required DlpPayloadLogSettingUpdateLegacy body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,6 +87,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/payload_log',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -96,12 +100,13 @@ return _execute(
 /// Get DLP account-level settings.
 ///
 /// `GET /accounts/{account_id}/dlp/settings`
-Future<ApiResult<ResponseCommon20, Never>> dlpSettingsGet({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpSettingsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/settings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -116,7 +121,7 @@ return _execute(
 /// Missing fields are reset to initial (unconfigured) values.
 ///
 /// `PUT /accounts/{account_id}/dlp/settings`
-Future<ApiResult<ResponseCommon20, Never>> dlpSettingsUpdate({required String accountId, required DlpDlpSettingsUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpSettingsUpdate({required String accountId, required DlpDlpSettingsUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,6 +129,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -138,7 +144,7 @@ return _execute(
 /// Missing fields keep their existing values.
 ///
 /// `PATCH /accounts/{account_id}/dlp/settings`
-Future<ApiResult<ResponseCommon20, Never>> dlpSettingsEdit({required String accountId, required DlpDlpSettingsUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpSettingsEdit({required String accountId, required DlpDlpSettingsUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,6 +152,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -158,12 +165,13 @@ return _execute(
 /// Delete (reset) DLP account-level settings to initial values.
 ///
 /// `DELETE /accounts/{account_id}/dlp/settings`
-Future<ApiResult<ResponseCommon20, Never>> dlpSettingsDelete({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpSettingsDelete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/settings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -175,16 +183,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

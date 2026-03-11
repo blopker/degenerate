@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves a paginated list of indicators for the account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators`
-Future<ApiResult<GetIndicatorListLegacyResponse, Never>> getIndicatorListLegacy({required String accountId, required String datasetId, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvent, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetIndicatorListLegacyResponse, Never>> getIndicatorListLegacy({required String accountId, required String datasetId, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
@@ -37,6 +37,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -51,12 +52,13 @@ return _execute(
 /// Retrieves a specific indicator by its UUID.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadResponse404>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadResponse404>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/${Uri.encodeComponent(indicatorId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,7 +76,7 @@ return _execute(
 /// Updates an existing indicator's properties.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateResponse400>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateResponse400>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -82,6 +84,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/${Uri.encodeComponent(indicatorId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -99,12 +102,13 @@ return _execute(
 /// Deletes a specific indicator by its UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteResponse404>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteResponse404>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/${Uri.encodeComponent(indicatorId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -122,7 +126,7 @@ return _execute(
 /// Creates multiple indicators at once with their respective types and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk`
-Future<ApiResult<double, PostIndicatorCreateBulkResponse400>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<double, PostIndicatorCreateBulkResponse400>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -130,6 +134,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/bulk',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -147,7 +152,7 @@ return _execute(
 /// Creates a new indicator with the specified type and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create`
-Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateResponse400>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateResponse400>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -155,6 +160,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/create',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -172,12 +178,13 @@ return _execute(
 /// Returns all mirrored tags from the indicator dataset (DO mirror table). No pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags`
-Future<ApiResult<List<Map<String, Object>>, GetIndicatorTagsListResponse400>> getIndicatorTagsList({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Map<String, Object>>, GetIndicatorTagsListResponse400>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/indicators/tags',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -196,7 +203,7 @@ return _execute(
 /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/indicators`
-Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -232,6 +239,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -246,16 +254,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

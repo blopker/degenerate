@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches User Agent Blocking rules in a zone. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesListUserAgentBlockingRules({required FirewallIdentifier zoneId, double? page, FirewallDescriptionSearch? description, double? perPage, String? userAgent, bool? paused, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesListUserAgentBlockingRules({required FirewallIdentifier zoneId, double? page, FirewallDescriptionSearch? description, double? perPage, String? userAgent, bool? paused, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (description != null) queryParameters['description'] = description.toString();
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,7 +48,7 @@ return _execute(
 /// Creates a new User Agent Blocking rule in a zone.
 ///
 /// `POST /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required FirewallIdentifier zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required FirewallIdentifier zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,6 +56,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -69,12 +71,13 @@ return _execute(
 /// Fetches the details of a User Agent Blocking rule.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesGetAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesGetAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -89,7 +92,7 @@ return _execute(
 /// Updates an existing User Agent Blocking rule.
 ///
 /// `PUT /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,6 +100,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -111,12 +115,13 @@ return _execute(
 /// Deletes an existing User Agent Blocking rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -128,16 +133,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

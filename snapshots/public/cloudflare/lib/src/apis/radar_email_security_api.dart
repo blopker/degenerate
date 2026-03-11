@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves the distribution of email security metrics by the specified dimension.
 ///
 /// `GET /radar/email/security/summary/{dimension}`
-Future<ApiResult<RadarGetEmailSecuritySummaryResponse, RadarGetEmailSecuritySummaryResponse400>> radarGetEmailSecuritySummary({required RadarGetEmailSecuritySummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecuritySummaryArc>? arc, List<RadarGetEmailSecuritySummaryDkim>? dkim, List<RadarGetEmailSecuritySummaryDmarc>? dmarc, List<RadarGetEmailSecuritySummarySpf>? spf, List<RadarGetEmailSecuritySummaryTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecuritySummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecuritySummaryResponse, RadarGetEmailSecuritySummaryResponse400>> radarGetEmailSecuritySummary({required RadarGetEmailSecuritySummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecuritySummaryArc>? arc, List<RadarGetEmailSecuritySummaryDkim>? dkim, List<RadarGetEmailSecuritySummaryDmarc>? dmarc, List<RadarGetEmailSecuritySummarySpf>? spf, List<RadarGetEmailSecuritySummaryTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecuritySummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -75,6 +75,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -92,7 +93,7 @@ return _execute(
 /// Retrieves the distribution of email security metrics grouped by dimension over time.
 ///
 /// `GET /radar/email/security/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetEmailSecurityTimeseriesGroupResponse, RadarGetEmailSecurityTimeseriesGroupResponse400>> radarGetEmailSecurityTimeseriesGroup({required RadarGetEmailSecurityTimeseriesGroupDimension dimension, RadarGetEmailSecurityTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTimeseriesGroupArc>? arc, List<RadarGetEmailSecurityTimeseriesGroupDkim>? dkim, List<RadarGetEmailSecurityTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailSecurityTimeseriesGroupSpf>? spf, List<RadarGetEmailSecurityTimeseriesGroupTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecurityTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTimeseriesGroupResponse, RadarGetEmailSecurityTimeseriesGroupResponse400>> radarGetEmailSecurityTimeseriesGroup({required RadarGetEmailSecurityTimeseriesGroupDimension dimension, RadarGetEmailSecurityTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTimeseriesGroupArc>? arc, List<RadarGetEmailSecurityTimeseriesGroupDkim>? dkim, List<RadarGetEmailSecurityTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailSecurityTimeseriesGroupSpf>? spf, List<RadarGetEmailSecurityTimeseriesGroupTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecurityTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -151,6 +152,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -168,7 +170,7 @@ return _execute(
 /// Retrieves the top TLDs by number of email messages.
 ///
 /// `GET /radar/email/security/top/tlds`
-Future<ApiResult<RadarGetEmailSecurityTopTldsByMessagesResponse, RadarGetEmailSecurityTopTldsByMessagesResponse404>> radarGetEmailSecurityTopTldsByMessages({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMessagesArc>? arc, List<RadarGetEmailSecurityTopTldsByMessagesDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMessagesDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMessagesSpf>? spf, List<RadarGetEmailSecurityTopTldsByMessagesTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMessagesTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMessagesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsByMessagesResponse, RadarGetEmailSecurityTopTldsByMessagesResponse404>> radarGetEmailSecurityTopTldsByMessages({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMessagesArc>? arc, List<RadarGetEmailSecurityTopTldsByMessagesDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMessagesDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMessagesSpf>? spf, List<RadarGetEmailSecurityTopTldsByMessagesTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMessagesTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMessagesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -227,6 +229,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -244,7 +247,7 @@ return _execute(
 /// Retrieves the top TLDs by emails classified as malicious or not.
 ///
 /// `GET /radar/email/security/top/tlds/malicious/{malicious}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsByMaliciousResponse, RadarGetEmailSecurityTopTldsByMaliciousResponse404>> radarGetEmailSecurityTopTldsByMalicious({required RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMaliciousArc>? arc, List<RadarGetEmailSecurityTopTldsByMaliciousDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMaliciousDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMaliciousSpf>? spf, List<RadarGetEmailSecurityTopTldsByMaliciousTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMaliciousTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMaliciousFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsByMaliciousResponse, RadarGetEmailSecurityTopTldsByMaliciousResponse404>> radarGetEmailSecurityTopTldsByMalicious({required RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMaliciousArc>? arc, List<RadarGetEmailSecurityTopTldsByMaliciousDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMaliciousDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMaliciousSpf>? spf, List<RadarGetEmailSecurityTopTldsByMaliciousTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMaliciousTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMaliciousFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -303,6 +306,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -320,7 +324,7 @@ return _execute(
 /// Retrieves the top TLDs by emails classified as spam or not.
 ///
 /// `GET /radar/email/security/top/tlds/spam/{spam}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsBySpamResponse, RadarGetEmailSecurityTopTldsBySpamResponse404>> radarGetEmailSecurityTopTldsBySpam({required RadarGetEmailSecurityTopTldsBySpamSpam spam, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpamArc>? arc, List<RadarGetEmailSecurityTopTldsBySpamDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpamDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpamSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpamTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpamTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpamFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsBySpamResponse, RadarGetEmailSecurityTopTldsBySpamResponse404>> radarGetEmailSecurityTopTldsBySpam({required RadarGetEmailSecurityTopTldsBySpamSpam spam, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpamArc>? arc, List<RadarGetEmailSecurityTopTldsBySpamDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpamDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpamSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpamTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpamTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpamFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -379,6 +383,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -396,7 +401,7 @@ return _execute(
 /// Retrieves the top TLDs by emails classified as spoof or not.
 ///
 /// `GET /radar/email/security/top/tlds/spoof/{spoof}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsBySpoofResponse, RadarGetEmailSecurityTopTldsBySpoofResponse404>> radarGetEmailSecurityTopTldsBySpoof({required RadarGetEmailSecurityTopTldsBySpoofSpoof spoof, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpoofArc>? arc, List<RadarGetEmailSecurityTopTldsBySpoofDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpoofDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpoofSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpoofTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpoofTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpoofFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsBySpoofResponse, RadarGetEmailSecurityTopTldsBySpoofResponse404>> radarGetEmailSecurityTopTldsBySpoof({required RadarGetEmailSecurityTopTldsBySpoofSpoof spoof, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpoofArc>? arc, List<RadarGetEmailSecurityTopTldsBySpoofDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpoofDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpoofSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpoofTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpoofTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpoofFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -455,6 +460,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -469,16 +475,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

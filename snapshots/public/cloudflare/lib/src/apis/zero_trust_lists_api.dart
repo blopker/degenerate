@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetch all Zero Trust lists for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/lists`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsListZeroTrustLists({required ZeroTrustGatewaySchemasIdentifier accountId, ZeroTrustGatewaySchemasType? type, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsListZeroTrustLists({required ZeroTrustGatewaySchemasIdentifier accountId, ZeroTrustGatewaySchemasType? type, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) queryParameters['type'] = type.toJson();
 
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -43,7 +44,7 @@ return _execute(
 /// Creates a new Zero Trust list.
 ///
 /// `POST /accounts/{account_id}/gateway/lists`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsCreateZeroTrustList({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsCreateZeroTrustListRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsCreateZeroTrustList({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsCreateZeroTrustListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,6 +52,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/lists',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -65,12 +67,13 @@ return _execute(
 /// Fetch a single Zero Trust list.
 ///
 /// `GET /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsZeroTrustListDetails({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsZeroTrustListDetails({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/lists/${Uri.encodeComponent(listId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -85,7 +88,7 @@ return _execute(
 /// Updates a configured Zero Trust list. Skips updating list items if not included in the payload. A non empty list items will overwrite the existing list.
 ///
 /// `PUT /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsUpdateZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsUpdateZeroTrustListRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsUpdateZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsUpdateZeroTrustListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,6 +96,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/lists/${Uri.encodeComponent(listId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -107,7 +111,7 @@ return _execute(
 /// Appends or removes an item from a configured Zero Trust list.
 ///
 /// `PATCH /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsPatchZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsPatchZeroTrustListRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsPatchZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsPatchZeroTrustListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,6 +119,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/lists/${Uri.encodeComponent(listId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -129,12 +134,13 @@ return _execute(
 /// Deletes a Zero Trust list.
 ///
 /// `DELETE /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsDeleteZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsDeleteZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/lists/${Uri.encodeComponent(listId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -149,12 +155,13 @@ return _execute(
 /// Fetch all items in a single Zero Trust list.
 ///
 /// `GET /accounts/{account_id}/gateway/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsZeroTrustListItems({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsZeroTrustListItems({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/lists/${Uri.encodeComponent(listId.toString())}/items',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -166,16 +173,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

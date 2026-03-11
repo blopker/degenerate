@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Returns the configuration for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganization({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganization({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Sets up a Zero Trust organization for your account.
 ///
 /// `POST /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Updates the configuration for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,6 +69,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,12 +84,13 @@ return _execute(
 /// Returns the DoH settings for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/doh',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -101,7 +105,7 @@ return _execute(
 /// Updates the DoH settings for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,6 +113,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/doh',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -123,7 +128,7 @@ return _execute(
 /// Revokes a user's access across all applications.
 ///
 /// `POST /accounts/{account_id}/access/organizations/revoke_user`
-Future<ApiResult<AccessEmptyResponse, Never>> zeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessIdentifier accountId, bool? devices, required ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AccessEmptyResponse, Never>> zeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessIdentifier accountId, bool? devices, required ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (devices != null) queryParameters['devices'] = devices.toString();
 
@@ -137,6 +142,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -148,16 +154,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

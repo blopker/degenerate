@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List configured pools.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsListPools({required LoadBalancingComponentsSchemasIdentifier accountId, String? monitor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsListPools({required LoadBalancingComponentsSchemasIdentifier accountId, String? monitor, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (monitor != null) queryParameters['monitor'] = monitor;
 
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -43,7 +44,7 @@ return _execute(
 /// Create a new pool.
 ///
 /// `POST /accounts/{account_id}/load_balancers/pools`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsCreatePool({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsCreatePoolRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsCreatePool({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsCreatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,6 +52,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -65,7 +67,7 @@ return _execute(
 /// Apply changes to a number of existing pools, overwriting the supplied properties. Pools are ordered by ascending `name`. Returns the list of affected pools. Supports the standard pagination query parameters, either `limit`/`offset` or `per_page`/`page`.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/pools`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPatchPools({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPatchPools({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,6 +75,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -87,12 +90,13 @@ return _execute(
 /// Fetch a single configured pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -107,7 +111,7 @@ return _execute(
 /// Modify a configured pool.
 ///
 /// `PUT /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsUpdatePoolRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsUpdatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,6 +119,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -129,7 +134,7 @@ return _execute(
 /// Apply changes to an existing pool, overwriting the supplied properties.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,6 +142,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -151,12 +157,13 @@ return _execute(
 /// Delete a configured pool.
 ///
 /// `DELETE /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -171,12 +178,13 @@ return _execute(
 /// Fetch the latest pool health status for a single pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}/health`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/health',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -191,7 +199,7 @@ return _execute(
 /// Preview pool health using provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /accounts/{account_id}/load_balancers/pools/{pool_id}/preview`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -199,6 +207,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -213,12 +222,13 @@ return _execute(
 /// Get the list of resources that reference the provided pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}/references`
-Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsListPoolReferences({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerPoolsListPoolReferences({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/references',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -230,16 +240,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

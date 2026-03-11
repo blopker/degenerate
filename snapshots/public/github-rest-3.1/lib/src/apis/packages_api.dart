@@ -19,12 +19,13 @@ final ApiConfig _config;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/docker/conflicts`
-Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForOrganization({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/docker/conflicts',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -45,7 +46,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages`
-Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForOrganization({required String org, required PackagesListPackagesForOrganizationPackageType packageType, PackagesListPackagesForOrganizationVisibility? visibility, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForOrganization({required String org, required PackagesListPackagesForOrganizationPackageType packageType, PackagesListPackagesForOrganizationVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) queryParameters['visibility'] = visibility.toJson();
@@ -60,6 +61,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -80,12 +82,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages/{package_type}/{package_name}`
-Future<ApiResult<Package, Never>> packagesGetPackageForOrganization({required PackagesGetPackageForOrganizationPackageType packageType, required String packageName, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Package, Never>> packagesGetPackageForOrganization({required PackagesGetPackageForOrganizationPackageType packageType, required String packageName, required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -104,12 +107,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /orgs/{org}/packages/{package_type}/{package_name}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageForOrg({required PackagesDeletePackageForOrgPackageType packageType, required String packageName, required String org, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageForOrg({required PackagesDeletePackageForOrgPackageType packageType, required String packageName, required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -133,7 +137,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /orgs/{org}/packages/{package_type}/{package_name}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageForOrg({required PackagesRestorePackageForOrgPackageType packageType, required String packageName, required String org, String? token, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, BasicError>> packagesRestorePackageForOrg({required PackagesRestorePackageForOrgPackageType packageType, required String packageName, required String org, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (token != null) queryParameters['token'] = token;
 
@@ -145,6 +149,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -162,7 +167,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages/{package_type}/{package_name}/versions`
-Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByOrg({required PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType, required String packageName, required String org, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByOrg({required PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType, required String packageName, required String org, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -176,6 +181,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -196,12 +202,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForOrganization({required PackagesGetPackageVersionForOrganizationPackageType packageType, required String packageName, required String org, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForOrganization({required PackagesGetPackageVersionForOrganizationPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -220,12 +227,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForOrg({required PackagesDeletePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForOrg({required PackagesDeletePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -249,12 +257,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForOrg({required PackagesRestorePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForOrg({required PackagesRestorePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -272,12 +281,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// `GET /user/docker/conflicts`
-Future<ApiResult<List<Package>, Never>> packagesListDockerMigrationConflictingPackagesForAuthenticatedUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Package>, Never>> packagesListDockerMigrationConflictingPackagesForAuthenticatedUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/docker/conflicts',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -295,7 +305,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages`
-Future<ApiResult<List<Package>, Never>> packagesListPackagesForAuthenticatedUser({required PackagesListPackagesForAuthenticatedUserPackageType packageType, PackagesListPackagesForAuthenticatedUserVisibility? visibility, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Package>, Never>> packagesListPackagesForAuthenticatedUser({required PackagesListPackagesForAuthenticatedUserPackageType packageType, PackagesListPackagesForAuthenticatedUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) queryParameters['visibility'] = visibility.toJson();
@@ -310,6 +320,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -327,12 +338,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages/{package_type}/{package_name}`
-Future<ApiResult<Package, Never>> packagesGetPackageForAuthenticatedUser({required PackagesGetPackageForAuthenticatedUserPackageType packageType, required String packageName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Package, Never>> packagesGetPackageForAuthenticatedUser({required PackagesGetPackageForAuthenticatedUserPackageType packageType, required String packageName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -349,12 +361,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /user/packages/{package_type}/{package_name}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageForAuthenticatedUser({required PackagesDeletePackageForAuthenticatedUserPackageType packageType, required String packageName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageForAuthenticatedUser({required PackagesDeletePackageForAuthenticatedUserPackageType packageType, required String packageName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -376,7 +389,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /user/packages/{package_type}/{package_name}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageForAuthenticatedUser({required PackagesRestorePackageForAuthenticatedUserPackageType packageType, required String packageName, String? token, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, BasicError>> packagesRestorePackageForAuthenticatedUser({required PackagesRestorePackageForAuthenticatedUserPackageType packageType, required String packageName, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (token != null) queryParameters['token'] = token;
 
@@ -388,6 +401,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -405,7 +419,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages/{package_type}/{package_name}/versions`
-Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser({required PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType, required String packageName, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser({required PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType, required String packageName, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -419,6 +433,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -439,12 +454,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForAuthenticatedUser({required PackagesGetPackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForAuthenticatedUser({required PackagesGetPackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -463,12 +479,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForAuthenticatedUser({required PackagesDeletePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForAuthenticatedUser({required PackagesDeletePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -490,12 +507,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForAuthenticatedUser({required PackagesRestorePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForAuthenticatedUser({required PackagesRestorePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -513,12 +531,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// `GET /users/{username}/docker/conflicts`
-Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForUser({required String username}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForUser({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/docker/conflicts',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -539,7 +558,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages`
-Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForUser({required String username, required PackagesListPackagesForUserPackageType packageType, PackagesListPackagesForUserVisibility? visibility, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForUser({required String username, required PackagesListPackagesForUserPackageType packageType, PackagesListPackagesForUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) queryParameters['visibility'] = visibility.toJson();
@@ -554,6 +573,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -574,12 +594,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages/{package_type}/{package_name}`
-Future<ApiResult<Package, Never>> packagesGetPackageForUser({required PackagesGetPackageForUserPackageType packageType, required String packageName, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Package, Never>> packagesGetPackageForUser({required PackagesGetPackageForUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -598,12 +619,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /users/{username}/packages/{package_type}/{package_name}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageForUser({required PackagesDeletePackageForUserPackageType packageType, required String packageName, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageForUser({required PackagesDeletePackageForUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -627,7 +649,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /users/{username}/packages/{package_type}/{package_name}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageForUser({required PackagesRestorePackageForUserPackageType packageType, required String packageName, required String username, String? token, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, BasicError>> packagesRestorePackageForUser({required PackagesRestorePackageForUserPackageType packageType, required String packageName, required String username, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (token != null) queryParameters['token'] = token;
 
@@ -639,6 +661,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -656,12 +679,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages/{package_type}/{package_name}/versions`
-Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByUser({required PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType packageType, required String packageName, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByUser({required PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -682,12 +706,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForUser({required PackagesGetPackageVersionForUserPackageType packageType, required String packageName, required int packageVersionId, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForUser({required PackagesGetPackageVersionForUserPackageType packageType, required String packageName, required int packageVersionId, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -706,12 +731,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForUser({required PackagesDeletePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForUser({required PackagesDeletePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -735,12 +761,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForUser({required PackagesRestorePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForUser({required PackagesRestorePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -753,16 +780,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

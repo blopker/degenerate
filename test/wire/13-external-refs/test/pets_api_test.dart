@@ -163,4 +163,29 @@ void main() {
       expect(error.error?.message, equals('Not found'));
     });
   });
+
+  group('RequestOptions', () {
+    test('extra headers are merged into request', () async {
+      await api.listPets(
+        options: RequestOptions(
+          extraHeaders: {'X-Request-Id': 'abc-123'},
+        ),
+      );
+
+      expect(client.lastRequest!.headers['X-Request-Id'], equals('abc-123'));
+    });
+
+    test('cancel token throws CancelledException', () async {
+      final token = CancelToken();
+      token.cancel();
+
+      final result = await api.listPets(
+        options: RequestOptions(cancelToken: token),
+      );
+
+      expect(result, isA<ApiException>());
+      final exception = result as ApiException;
+      expect(exception.exception, isA<CancelledException>());
+    });
+  });
 }

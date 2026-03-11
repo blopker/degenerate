@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists indexing jobs for an AI Search instance.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<AiSearchInstanceListJobsResponse, AiSearchInstanceListJobsResponse400>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AiSearchInstanceListJobsResponse, AiSearchInstanceListJobsResponse400>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,7 +48,7 @@ return _execute(
 /// Creates a new indexing job for an AI Search instance.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<AiSearchInstanceCreateJobResponse, AiSearchInstanceCreateJobResponse400>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AiSearchInstanceCreateJobResponse, AiSearchInstanceCreateJobResponse400>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,6 +56,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -72,12 +74,13 @@ return _execute(
 /// Retrieves details for a specific AI Search indexing job.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}`
-Future<ApiResult<AiSearchInstanceGetJobResponse, AiSearchInstanceGetJobResponse400>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AiSearchInstanceGetJobResponse, AiSearchInstanceGetJobResponse400>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs/${Uri.encodeComponent(jobId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// Updates the status of an AI Search indexing job.
 ///
 /// `PATCH /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}`
-Future<ApiResult<AiSearchInstanceChangeJobStatusResponse, AiSearchInstanceChangeJobStatusResponse400>> aiSearchInstanceChangeJobStatus({required String id, required String jobId, required String accountId, AiSearchInstanceChangeJobStatusRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AiSearchInstanceChangeJobStatusResponse, AiSearchInstanceChangeJobStatusResponse400>> aiSearchInstanceChangeJobStatus({required String id, required String jobId, required String accountId, AiSearchInstanceChangeJobStatusRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,6 +106,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-search/instances/${Uri.encodeComponent(id)}/jobs/${Uri.encodeComponent(jobId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -120,7 +124,7 @@ return _execute(
 /// Lists log entries for an AI Search indexing job.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}/logs`
-Future<ApiResult<AiSearchInstanceListJobLogsResponse, AiSearchInstanceListJobLogsResponse400>> aiSearchInstanceListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AiSearchInstanceListJobLogsResponse, AiSearchInstanceListJobLogsResponse400>> aiSearchInstanceListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -133,6 +137,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -147,16 +152,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all accounts you have ownership or verified access to.
 ///
 /// `GET /accounts`
-Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (page != null) queryParameters['page'] = page.toString();
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// Create an account (only available for tenant admins at this time)
 ///
 /// `POST /accounts`
-Future<ApiResult<ResponseCommon35, Never>> accountCreation({required IamCreateAccount body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountCreation({required IamCreateAccount body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/accounts',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -68,12 +70,13 @@ return _execute(
 /// Get information about a specific account that you are a member of.
 ///
 /// `GET /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -88,7 +91,7 @@ return _execute(
 /// Update an existing account.
 ///
 /// `PUT /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,6 +99,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -110,12 +114,13 @@ return _execute(
 /// Delete a specific account (only available for tenant admins at this time). This is a permanent operation that will delete any zones or other resources under the account
 ///
 /// `DELETE /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountDeletion({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountDeletion({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -130,7 +135,7 @@ return _execute(
 /// Move an account within an organization hierarchy or an account outside an organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /accounts/{account_id}/move`
-Future<ApiResult<AccountsMoveAccountsResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountsMoveAccountsResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -138,6 +143,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/move',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -157,12 +163,13 @@ return _execute(
 /// account.
 ///
 /// `GET /accounts/{account_id}/organizations`
-Future<ApiResult<AccountsListAccountOrganizationsResponse, Never>> accountsListAccountOrganizations({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountsListAccountOrganizationsResponse, Never>> accountsListAccountOrganizations({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/organizations',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -175,12 +182,13 @@ return _execute(
 /// Get account profile
 ///
 /// `GET /accounts/{account_id}/profile`
-Future<ApiResult<AccountsGetAccountProfileResponse, Never>> accountsGetAccountProfile({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountsGetAccountProfileResponse, Never>> accountsGetAccountProfile({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -193,7 +201,7 @@ return _execute(
 /// Modify account profile
 ///
 /// `PUT /accounts/{account_id}/profile`
-Future<ApiResult<void, Never>> accountsModifyAccountProfile({required String accountId, required Profile body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> accountsModifyAccountProfile({required String accountId, required Profile body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -201,6 +209,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -213,7 +222,7 @@ return _execute(
 /// Batch move a collection of accounts to a specific organization. ⚠️ Not implemented.
 ///
 /// `POST /accounts/move`
-Future<ApiResult<AccountsBatchMoveAccountsResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountsBatchMoveAccountsResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -221,6 +230,7 @@ final request = ApiRequest(
   path: '/accounts/move',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -232,16 +242,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Returns a list of Hyperdrives.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<ResponseCommon34, Never>> listHyperdrive({required HyperdriveIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon34, Never>> listHyperdrive({required HyperdriveIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates and returns a new Hyperdrive configuration.
 ///
 /// `POST /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<ResponseCommon34, Never>> createHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveHyperdriveConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon34, Never>> createHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveHyperdriveConfig body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Returns the specified Hyperdrive configuration.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> getHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon34, Never>> getHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Updates and returns the specified Hyperdrive configuration.
 ///
 /// `PUT /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> updateHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfig body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon34, Never>> updateHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfig body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,7 +105,7 @@ return _execute(
 /// Patches and returns the specified Hyperdrive configuration. Custom caching settings are not kept if caching is disabled.
 ///
 /// `PATCH /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> patchHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfigPatch body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon34, Never>> patchHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfigPatch body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,6 +113,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -123,12 +128,13 @@ return _execute(
 /// Deletes the specified Hyperdrive.
 ///
 /// `DELETE /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> deleteHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon34, Never>> deleteHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -140,16 +146,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

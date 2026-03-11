@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// User Details
 ///
 /// `GET /user`
-Future<ApiResult<ResponseCommon35, Never>> userDetails() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userDetails({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -35,7 +36,7 @@ return _execute(
 /// Edit part of your user details.
 ///
 /// `PATCH /user`
-Future<ApiResult<ResponseCommon35, Never>> userEditUser({required UserEditUserRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> userEditUser({required UserEditUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -43,6 +44,7 @@ final request = ApiRequest(
   path: '/user',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -57,12 +59,13 @@ return _execute(
 /// Retrieves list of tenants the authenticated user / method has access to.
 ///
 /// `GET /users/tenants`
-Future<ApiResult<UserListUserTenantsResponse, Never>> userListUserTenants() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UserListUserTenantsResponse, Never>> userListUserTenants({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/users/tenants',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,16 +77,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

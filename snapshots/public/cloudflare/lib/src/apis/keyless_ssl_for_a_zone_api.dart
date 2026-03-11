@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List all Keyless SSL configurations for a given zone.
 ///
 /// `GET /zones/{zone_id}/keyless_certificates`
-Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneListKeylessSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneListKeylessSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a Keyless SSL configuration that allows SSL/TLS termination without exposing private keys to Cloudflare. Keys remain on your infrastructure.
 ///
 /// `POST /zones/{zone_id}/keyless_certificates`
-Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneCreateKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneCreateKeylessSslConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneCreateKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneCreateKeylessSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Get details for one Keyless SSL configuration.
 ///
 /// `GET /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneGetKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneGetKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// This will update attributes of a Keyless SSL. Consists of one or more of the following:  host,name,port.
 ///
 /// `PATCH /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneEditKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneEditKeylessSslConfigurationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneEditKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneEditKeylessSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Removes a Keyless SSL configuration. SSL connections will no longer use the keyless server for cryptographic operations.
 ///
 /// `DELETE /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneDeleteKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> keylessSslForAZoneDeleteKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

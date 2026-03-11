@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves the distribution of AS112 queries by the specified dimension.
 ///
 /// `GET /radar/as112/summary/{dimension}`
-Future<ApiResult<RadarGetDnsAs112SummaryResponse, RadarGetDnsAs112SummaryResponse400>> radarGetDnsAs112Summary({required RadarGetDnsAs112SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112SummaryQueryType?>? queryType, List<RadarGetDnsAs112SummaryProtocol>? protocol, List<RadarGetDnsAs112SummaryResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112SummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112SummaryResponse, RadarGetDnsAs112SummaryResponse400>> radarGetDnsAs112Summary({required RadarGetDnsAs112SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112SummaryQueryType?>? queryType, List<RadarGetDnsAs112SummaryProtocol>? protocol, List<RadarGetDnsAs112SummaryResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112SummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -75,6 +75,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -92,7 +93,7 @@ return _execute(
 /// Retrieves the AS112 DNS queries over time.
 ///
 /// `GET /radar/as112/timeseries`
-Future<ApiResult<RadarGetDnsAs112TimeseriesResponse, RadarGetDnsAs112TimeseriesResponse400>> radarGetDnsAs112Timeseries({RadarGetDnsAs112TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesProtocol>? protocol, List<RadarGetDnsAs112TimeseriesResponseCode>? responseCode, RadarGetDnsAs112TimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TimeseriesResponse, RadarGetDnsAs112TimeseriesResponse400>> radarGetDnsAs112Timeseries({RadarGetDnsAs112TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesProtocol>? protocol, List<RadarGetDnsAs112TimeseriesResponseCode>? responseCode, RadarGetDnsAs112TimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -150,6 +151,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -167,7 +169,7 @@ return _execute(
 /// Retrieves the distribution of AS112 queries grouped by dimension over time.
 ///
 /// `GET /radar/as112/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetDnsAs112TimeseriesGroupResponse, RadarGetDnsAs112TimeseriesGroupResponse400>> radarGetDnsAs112TimeseriesGroup({required RadarGetDnsAs112TimeseriesGroupDimension dimension, RadarGetDnsAs112TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesGroupQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesGroupProtocol>? protocol, List<RadarGetDnsAs112TimeseriesGroupResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112TimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TimeseriesGroupResponse, RadarGetDnsAs112TimeseriesGroupResponse400>> radarGetDnsAs112TimeseriesGroup({required RadarGetDnsAs112TimeseriesGroupDimension dimension, RadarGetDnsAs112TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesGroupQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesGroupProtocol>? protocol, List<RadarGetDnsAs112TimeseriesGroupResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -226,6 +228,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -243,7 +246,7 @@ return _execute(
 /// Retrieves the top locations by AS112 DNS queries.
 ///
 /// `GET /radar/as112/top/locations`
-Future<ApiResult<RadarGetDnsAs112TopLocationsResponse, RadarGetDnsAs112TopLocationsResponse404>> radarGetDnsAs112TopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsResponse, RadarGetDnsAs112TopLocationsResponse404>> radarGetDnsAs112TopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -286,6 +289,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -303,7 +307,7 @@ return _execute(
 /// Retrieves the top locations of DNS queries to AS112 with DNSSEC (DNS Security Extensions) support.
 ///
 /// `GET /radar/as112/top/locations/dnssec/{dnssec}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponse, RadarGetDnsAs112TopLocationsByDnssecResponse404>> radarGetDnsAs112TopLocationsByDnssec({required RadarGetDnsAs112TopLocationsByDnssecDnssec dnssec, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByDnssecFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponse, RadarGetDnsAs112TopLocationsByDnssecResponse404>> radarGetDnsAs112TopLocationsByDnssec({required RadarGetDnsAs112TopLocationsByDnssecDnssec dnssec, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByDnssecFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -346,6 +350,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -363,7 +368,7 @@ return _execute(
 /// Retrieves the top locations of DNS queries to AS112 with EDNS (Extension Mechanisms for DNS) support.
 ///
 /// `GET /radar/as112/top/locations/edns/{edns}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByEdnsResponse, RadarGetDnsAs112TopLocationsByEdnsResponse404>> radarGetDnsAs112TopLocationsByEdns({required RadarGetDnsAs112TopLocationsByEdnsEdns edns, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByEdnsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsByEdnsResponse, RadarGetDnsAs112TopLocationsByEdnsResponse404>> radarGetDnsAs112TopLocationsByEdns({required RadarGetDnsAs112TopLocationsByEdnsEdns edns, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByEdnsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -406,6 +411,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -423,7 +429,7 @@ return _execute(
 /// Retrieves the top locations of DNS queries to AS112 for an IP version.
 ///
 /// `GET /radar/as112/top/locations/ip_version/{ip_version}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByIpVersionResponse, RadarGetDnsAs112TopLocationsByIpVersionResponse404>> radarGetDnsAs112TopLocationsByIpVersion({required RadarGetDnsAs112TopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByIpVersionFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsByIpVersionResponse, RadarGetDnsAs112TopLocationsByIpVersionResponse404>> radarGetDnsAs112TopLocationsByIpVersion({required RadarGetDnsAs112TopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByIpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -466,6 +472,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -480,16 +487,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

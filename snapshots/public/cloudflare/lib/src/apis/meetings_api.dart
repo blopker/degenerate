@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns all meetings for the given App ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings`
-Future<ApiResult<RealtimekitPagingResponse, Never>> getAllMeetings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? pageNo, double? perPage, DateTime? startTime, DateTime? endTime, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RealtimekitPagingResponse, Never>> getAllMeetings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? pageNo, double? perPage, DateTime? startTime, DateTime? endTime, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,7 +48,7 @@ return _execute(
 /// Create a meeting for the given App ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> createMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required CreateMeetingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> createMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required CreateMeetingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,6 +56,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -69,7 +71,7 @@ return _execute(
 /// Returns a meeting details in an App for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, String? name, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 
@@ -81,6 +83,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -98,7 +101,7 @@ return _execute(
 /// Replaces all the details for the given meeting ID.
 ///
 /// `PUT /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> replaceMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required ReplaceMeetingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> replaceMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required ReplaceMeetingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,6 +109,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -120,7 +124,7 @@ return _execute(
 /// Updates a meeting in an App for the given meeting ID.
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> updateMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required UpdateMeetingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> updateMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required UpdateMeetingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -128,6 +132,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -145,7 +150,7 @@ return _execute(
 /// Returns all participants detail for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants`
-Future<ApiResult<RealtimekitPagingResponse, RealtimekitGenericErrorResponse>> getMeetingParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, double? pageNo, double? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RealtimekitPagingResponse, RealtimekitGenericErrorResponse>> getMeetingParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, double? pageNo, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -158,6 +163,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -175,7 +181,7 @@ return _execute(
 /// Adds a participant to the given meeting ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> addParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required AddParticipantRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> addParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required AddParticipantRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,6 +189,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -200,12 +207,13 @@ return _execute(
 /// Returns a participant details for the given meeting and participant ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getMeetingParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getMeetingParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -223,7 +231,7 @@ return _execute(
 /// Updates a participant's details for the given meeting and participant ID.
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> editParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, required EditParticipantRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> editParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, required EditParticipantRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -231,6 +239,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -248,12 +257,13 @@ return _execute(
 /// Deletes a participant for the given meeting and participant ID.
 ///
 /// `DELETE /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> deleteMeetingParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> deleteMeetingParticipant({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -271,12 +281,13 @@ return _execute(
 /// Regenerates participant's authentication token for the given meeting and participant ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}/token`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> regenerateToken({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> regenerateToken({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required String participantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}/token',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -291,16 +302,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

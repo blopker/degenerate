@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Returns a list of projects.
 ///
 /// `GET /organization/projects`
-Future<ApiResult<ProjectListResponse, Never>> listProjects({int? limit, String? after, bool? includeArchived, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectListResponse, Never>> listProjects({int? limit, String? after, bool? includeArchived, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
 ///
 /// `POST /organization/projects`
-Future<ApiResult<Project, Never>> createProject({required ProjectCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, Never>> createProject({required ProjectCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/organization/projects',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -61,12 +63,13 @@ return _execute(
 /// Retrieves a project.
 ///
 /// `GET /organization/projects/{project_id}`
-Future<ApiResult<Project, Never>> retrieveProject({required String projectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, Never>> retrieveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Modifies a project in the organization.
 ///
 /// `POST /organization/projects/{project_id}`
-Future<ApiResult<Project, ErrorResponse>> modifyProject({required String projectId, required ProjectUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, ErrorResponse>> modifyProject({required String projectId, required ProjectUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/organization/projects/${Uri.encodeComponent(projectId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -102,7 +106,7 @@ return _execute(
 /// Returns a list of API keys in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys`
-Future<ApiResult<KeyListResponse, Never>> listProjectApiKeys({required String projectId, int? limit, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<KeyListResponse, Never>> listProjectApiKeys({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -115,6 +119,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -127,12 +132,13 @@ return _execute(
 /// Retrieves an API key in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys/{key_id}`
-Future<ApiResult<Key3, Never>> retrieveProjectApiKey({required String projectId, required String keyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Key3, Never>> retrieveProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/api_keys/${Uri.encodeComponent(keyId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -149,12 +155,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/api_keys/{key_id}`
-Future<ApiResult<KeyDeleteResponse, ErrorResponse>> deleteProjectApiKey({required String projectId, required String keyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<KeyDeleteResponse, ErrorResponse>> deleteProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/api_keys/${Uri.encodeComponent(keyId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -170,12 +177,13 @@ return _execute(
 /// Archives a project in the organization. Archived projects cannot be used or updated.
 ///
 /// `POST /organization/projects/{project_id}/archive`
-Future<ApiResult<Project, Never>> archiveProject({required String projectId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, Never>> archiveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/archive',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -188,7 +196,7 @@ return _execute(
 /// Returns the rate limits per model for a project.
 ///
 /// `GET /organization/projects/{project_id}/rate_limits`
-Future<ApiResult<ProjectRateLimitListResponse, Never>> listProjectRateLimits({required String projectId, int? limit, String? after, String? before, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectRateLimitListResponse, Never>> listProjectRateLimits({required String projectId, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -202,6 +210,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -214,7 +223,7 @@ return _execute(
 /// Updates a project rate limit.
 ///
 /// `POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}`
-Future<ApiResult<ProjectRateLimit, ErrorResponse>> updateProjectRateLimits({required String projectId, required String rateLimitId, required ProjectRateLimitUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectRateLimit, ErrorResponse>> updateProjectRateLimits({required String projectId, required String rateLimitId, required ProjectRateLimitUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -222,6 +231,7 @@ final request = ApiRequest(
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/rate_limits/${Uri.encodeComponent(rateLimitId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -237,7 +247,7 @@ return _execute(
 /// Returns a list of service accounts in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts`
-Future<ApiResult<ProjectServiceAccountListResponse, ErrorResponse>> listProjectServiceAccounts({required String projectId, int? limit, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectServiceAccountListResponse, ErrorResponse>> listProjectServiceAccounts({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -250,6 +260,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -265,7 +276,7 @@ return _execute(
 /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
 ///
 /// `POST /organization/projects/{project_id}/service_accounts`
-Future<ApiResult<ProjectServiceAccountCreateResponse, ErrorResponse>> createProjectServiceAccount({required String projectId, required ProjectServiceAccountCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectServiceAccountCreateResponse, ErrorResponse>> createProjectServiceAccount({required String projectId, required ProjectServiceAccountCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -273,6 +284,7 @@ final request = ApiRequest(
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/service_accounts',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -288,12 +300,13 @@ return _execute(
 /// Retrieves a service account in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts/{service_account_id}`
-Future<ApiResult<ProjectServiceAccount, Never>> retrieveProjectServiceAccount({required String projectId, required String serviceAccountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectServiceAccount, Never>> retrieveProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/service_accounts/${Uri.encodeComponent(serviceAccountId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -310,12 +323,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/service_accounts/{service_account_id}`
-Future<ApiResult<ProjectServiceAccountDeleteResponse, Never>> deleteProjectServiceAccount({required String projectId, required String serviceAccountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectServiceAccountDeleteResponse, Never>> deleteProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/service_accounts/${Uri.encodeComponent(serviceAccountId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -328,7 +342,7 @@ return _execute(
 /// Returns a list of users in the project.
 ///
 /// `GET /organization/projects/{project_id}/users`
-Future<ApiResult<ProjectUserListResponse, ErrorResponse>> listProjectUsers({required String projectId, int? limit, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectUserListResponse, ErrorResponse>> listProjectUsers({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -341,6 +355,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -356,7 +371,7 @@ return _execute(
 /// Adds a user to the project. Users must already be members of the organization to be added to a project.
 ///
 /// `POST /organization/projects/{project_id}/users`
-Future<ApiResult<ProjectUser, ErrorResponse>> createProjectUser({required String projectId, required ProjectUserCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUser, ErrorResponse>> createProjectUser({required String projectId, required ProjectUserCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -364,6 +379,7 @@ final request = ApiRequest(
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/users',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -379,12 +395,13 @@ return _execute(
 /// Retrieves a user in the project.
 ///
 /// `GET /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUser, Never>> retrieveProjectUser({required String projectId, required String userId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUser, Never>> retrieveProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/users/${Uri.encodeComponent(userId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -397,7 +414,7 @@ return _execute(
 /// Modifies a user's role in the project.
 ///
 /// `POST /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUser, ErrorResponse>> modifyProjectUser({required String projectId, required String userId, required ProjectUserUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUser, ErrorResponse>> modifyProjectUser({required String projectId, required String userId, required ProjectUserUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -405,6 +422,7 @@ final request = ApiRequest(
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/users/${Uri.encodeComponent(userId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -424,12 +442,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUserDeleteResponse, ErrorResponse>> deleteProjectUser({required String projectId, required String userId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUserDeleteResponse, ErrorResponse>> deleteProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/projects/${Uri.encodeComponent(projectId)}/users/${Uri.encodeComponent(userId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -444,16 +463,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists Apps associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAppsResponseArray, Never>> magicAccountAppsListApps({required MagicIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseArray, Never>> magicAccountAppsListApps({required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new App for an account
 ///
 /// `POST /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Updates an Account App
 ///
 /// `PUT /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,6 +69,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Updates an Account App
 ///
 /// `PATCH /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +92,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -103,12 +107,13 @@ return _execute(
 /// Deletes specific Account App.
 ///
 /// `DELETE /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MagicAppsResponseObject, Never>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -120,16 +125,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves the latest annotations.
 ///
 /// `GET /radar/annotations`
-Future<ApiResult<RadarGetAnnotationsResponse, RadarGetAnnotationsResponse400>> radarGetAnnotations({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsDataSource? dataSource, RadarGetAnnotationsEventType? eventType, int? asn, String? location, String? origin, RadarGetAnnotationsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAnnotationsResponse, RadarGetAnnotationsResponse400>> radarGetAnnotations({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsDataSource? dataSource, RadarGetAnnotationsEventType? eventType, int? asn, String? location, String? origin, RadarGetAnnotationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -39,6 +39,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -56,7 +57,7 @@ return _execute(
 /// Retrieves the latest Internet outages and anomalies.
 ///
 /// `GET /radar/annotations/outages`
-Future<ApiResult<RadarGetAnnotationsOutagesResponse, RadarGetAnnotationsOutagesResponse400>> radarGetAnnotationsOutages({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, int? asn, String? location, String? origin, RadarGetAnnotationsOutagesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAnnotationsOutagesResponse, RadarGetAnnotationsOutagesResponse400>> radarGetAnnotationsOutages({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, int? asn, String? location, String? origin, RadarGetAnnotationsOutagesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -76,6 +77,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -93,7 +95,7 @@ return _execute(
 /// Retrieves the number of outages by location.
 ///
 /// `GET /radar/annotations/outages/locations`
-Future<ApiResult<RadarGetAnnotationsOutagesTopResponse, RadarGetAnnotationsOutagesTopResponse400>> radarGetAnnotationsOutagesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsOutagesTopFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAnnotationsOutagesTopResponse, RadarGetAnnotationsOutagesTopResponse400>> radarGetAnnotationsOutagesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsOutagesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (dateRange != null) queryParameters['dateRange'] = dateRange;
@@ -109,6 +111,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -123,16 +126,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

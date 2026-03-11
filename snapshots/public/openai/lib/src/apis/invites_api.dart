@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Returns a list of invites in the organization.
 ///
 /// `GET /organization/invites`
-Future<ApiResult<InviteListResponse, Never>> listInvites({int? limit, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<InviteListResponse, Never>> listInvites({int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
@@ -28,6 +28,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -40,7 +41,7 @@ return _execute(
 /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
 ///
 /// `POST /organization/invites`
-Future<ApiResult<Invite, Never>> inviteUser({required InviteRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Invite, Never>> inviteUser({required InviteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,6 +49,7 @@ final request = ApiRequest(
   path: '/organization/invites',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -60,12 +62,13 @@ return _execute(
 /// Retrieves an invite.
 ///
 /// `GET /organization/invites/{invite_id}`
-Future<ApiResult<Invite, Never>> retrieveInvite({required String inviteId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Invite, Never>> retrieveInvite({required String inviteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organization/invites/${Uri.encodeComponent(inviteId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -78,12 +81,13 @@ return _execute(
 /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
 ///
 /// `DELETE /organization/invites/{invite_id}`
-Future<ApiResult<InviteDeleteResponse, Never>> deleteInvite({required String inviteId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<InviteDeleteResponse, Never>> deleteInvite({required String inviteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organization/invites/${Uri.encodeComponent(inviteId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,16 +99,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns one item
 ///
 /// `GET /items/{itemId}`
-Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, List<String>? tagsPipe, List<String>? tagsSpace, GetItemFilter? filter, String? xTraceId, String? session, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, List<String>? tagsPipe, List<String>? tagsSpace, GetItemFilter? filter, String? xTraceId, String? session, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.join(','), allowReserved: true));
@@ -46,6 +46,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   cookies: cookies,
+  options: options,
 );
 
 return _execute(
@@ -56,7 +57,7 @@ return _execute(
 /// Upload a file with metadata
 ///
 /// `POST /upload`
-Future<ApiResult<void, Never>> uploadFile({required UploadFileRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> uploadFile({required UploadFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -69,6 +70,7 @@ final request = ApiRequest(
       ApiMultipartField.text('tags', tags$),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -79,7 +81,7 @@ return _execute(
 /// Create an auth token
 ///
 /// `POST /token`
-Future<ApiResult<void, Never>> createToken({required CreateTokenRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createToken({required CreateTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -93,6 +95,7 @@ final request = ApiRequest(
     if (body.timeout case final timeout$?)
       'timeout=${Uri.encodeQueryComponent(timeout$.toString())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -102,16 +105,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

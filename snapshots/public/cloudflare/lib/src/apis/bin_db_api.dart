@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Posts a file to Binary Storage
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/binary`
-Future<ApiResult<PostBinDbPostResponse, PostBinDbPostResponse400>> postBinDbPost({required double accountId, required PostBinDbPostRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostBinDbPostResponse, PostBinDbPostResponse400>> postBinDbPost({required double accountId, required PostBinDbPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -25,6 +25,7 @@ final request = ApiRequest(
     ApiMultipartField.file('file', body.file),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -40,12 +41,13 @@ return _execute(
 /// Retrieves a file from Binary Storage
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/binary/{hash}`
-Future<ApiResult<void, GetBinDbGetBinaryResponse400>> getBinDbGetBinary({required double accountId, required String hash, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, GetBinDbGetBinaryResponse400>> getBinDbGetBinary({required double accountId, required String hash, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/binary/${Uri.encodeComponent(hash)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -58,16 +60,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

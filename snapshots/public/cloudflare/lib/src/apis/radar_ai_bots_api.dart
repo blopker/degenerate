@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves an aggregated summary of AI bots HTTP requests grouped by the specified dimension.
 ///
 /// `GET /radar/ai/bots/summary/{dimension}`
-Future<ApiResult<RadarGetAiBotsSummaryResponse, RadarGetAiBotsSummaryResponse400>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsSummaryResponse, RadarGetAiBotsSummaryResponse400>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -90,6 +90,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -107,7 +108,7 @@ return _execute(
 /// Retrieves AI bots HTTP request volume over time.
 ///
 /// `GET /radar/ai/bots/timeseries`
-Future<ApiResult<RadarGetAiBotsTimeseriesResponse, RadarGetAiBotsTimeseriesResponse400>> radarGetAiBotsTimeseries({RadarGetAiBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesResponse, RadarGetAiBotsTimeseriesResponse400>> radarGetAiBotsTimeseries({RadarGetAiBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -181,6 +182,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -198,7 +200,7 @@ return _execute(
 /// Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
 ///
 /// `GET /radar/ai/bots/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupResponse, RadarGetAiBotsTimeseriesGroupResponse400>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupResponse, RadarGetAiBotsTimeseriesGroupResponse400>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -273,6 +275,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -287,16 +290,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all teams in an organization that are visible to the authenticated user.
 ///
 /// `GET /orgs/{org}/teams`
-Future<ApiResult<List<Team>, BasicError>> teamsList({required String org, int? perPage, int? page, TeamsListTeamType? teamType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Team>, BasicError>> teamsList({required String org, int? perPage, int? page, TeamsListTeamType? teamType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -51,7 +52,7 @@ return _execute(
 /// When you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see "[About teams](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/about-teams)".
 ///
 /// `POST /orgs/{org}/teams`
-Future<ApiResult<TeamFull, ValidationError>> teamsCreate({required String org, required TeamsCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TeamFull, ValidationError>> teamsCreate({required String org, required TeamsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,6 +60,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/teams',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -79,12 +81,13 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<TeamFull, BasicError>> teamsGetByName({required String org, required String teamSlug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TeamFull, BasicError>> teamsGetByName({required String org, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -105,7 +108,7 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
 ///
 /// `PATCH /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<TeamFull, BasicError>> teamsUpdateInOrg({required String org, required String teamSlug, TeamsUpdateInOrgRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TeamFull, BasicError>> teamsUpdateInOrg({required String org, required String teamSlug, TeamsUpdateInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,6 +116,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -135,12 +139,13 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<void, Never>> teamsDeleteInOrg({required String org, required String teamSlug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> teamsDeleteInOrg({required String org, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -156,7 +161,7 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/invitations`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/invitations`
-Future<ApiResult<List<OrganizationInvitation>, Never>> teamsListPendingInvitationsInOrg({required String org, required String teamSlug, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationInvitation>, Never>> teamsListPendingInvitationsInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -169,6 +174,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -186,7 +192,7 @@ return _execute(
 /// To list members in a team, the team must be visible to the authenticated user.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/members`
-Future<ApiResult<List<SimpleUser>, Never>> teamsListMembersInOrg({required String org, required String teamSlug, TeamsListMembersInOrgRole? role, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> teamsListMembersInOrg({required String org, required String teamSlug, TeamsListMembersInOrgRole? role, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (role != null) queryParameters['role'] = role.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -200,6 +206,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -225,12 +232,13 @@ return _execute(
 /// The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/teams/teams#create-a-team).
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/memberships/{username}`
-Future<ApiResult<TeamMembership, Never>> teamsGetMembershipForUserInOrg({required String org, required String teamSlug, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TeamMembership, Never>> teamsGetMembershipForUserInOrg({required String org, required String teamSlug, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}/memberships/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -257,7 +265,7 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
 /// `PUT /orgs/{org}/teams/{team_slug}/memberships/{username}`
-Future<ApiResult<TeamMembership, Never>> teamsAddOrUpdateMembershipForUserInOrg({required String org, required String teamSlug, required String username, TeamsAddOrUpdateMembershipForUserInOrgRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TeamMembership, Never>> teamsAddOrUpdateMembershipForUserInOrg({required String org, required String teamSlug, required String username, TeamsAddOrUpdateMembershipForUserInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -265,6 +273,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}/memberships/${Uri.encodeComponent(username)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -287,12 +296,13 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}`
-Future<ApiResult<void, Never>> teamsRemoveMembershipForUserInOrg({required String org, required String teamSlug, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> teamsRemoveMembershipForUserInOrg({required String org, required String teamSlug, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}/memberships/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -308,7 +318,7 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/repos`
-Future<ApiResult<List<MinimalRepository>, Never>> teamsListReposInOrg({required String org, required String teamSlug, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, Never>> teamsListReposInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -321,6 +331,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -345,12 +356,13 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
-Future<ApiResult<TeamRepository, Never>> teamsCheckPermissionsForRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TeamRepository, Never>> teamsCheckPermissionsForRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -370,7 +382,7 @@ return _execute(
 /// For more information about the permission levels, see "[Repository permission levels for an organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)".
 ///
 /// `PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
-Future<ApiResult<void, Never>> teamsAddOrUpdateRepoPermissionsInOrg({required String org, required String teamSlug, required String owner, required String repo, TeamsAddOrUpdateRepoPermissionsInOrgRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> teamsAddOrUpdateRepoPermissionsInOrg({required String org, required String teamSlug, required String owner, required String repo, TeamsAddOrUpdateRepoPermissionsInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -378,6 +390,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -393,12 +406,13 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
-Future<ApiResult<void, Never>> teamsRemoveRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> teamsRemoveRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/teams/${Uri.encodeComponent(teamSlug)}/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -414,7 +428,7 @@ return _execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/teams`
-Future<ApiResult<List<Team>, Never>> teamsListChildInOrg({required String org, required String teamSlug, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Team>, Never>> teamsListChildInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -427,6 +441,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -447,7 +462,7 @@ return _execute(
 /// When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
 ///
 /// `GET /user/teams`
-Future<ApiResult<List<TeamFull>, BasicError>> teamsListForAuthenticatedUser({int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<TeamFull>, BasicError>> teamsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -460,6 +475,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -475,16 +491,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

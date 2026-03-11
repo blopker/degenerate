@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Get Hypermedia links to resources accessible in GitHub's REST API
 ///
 /// `GET /`
-Future<ApiResult<Root, Never>> metaRoot() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Root, Never>> metaRoot({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -44,12 +45,13 @@ return _execute(
 /// > This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
 ///
 /// `GET /meta`
-Future<ApiResult<Overview, Never>> metaGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Overview, Never>> metaGet({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/meta',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -64,7 +66,7 @@ return _execute(
 /// Get the octocat as ASCII art
 ///
 /// `GET /octocat`
-Future<ApiResult<String, Never>> metaGetOctocat({String? s}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<String, Never>> metaGetOctocat({String? s, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (s != null) queryParameters['s'] = s;
 
@@ -76,6 +78,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -90,12 +93,13 @@ return _execute(
 /// Get all supported GitHub API versions.
 ///
 /// `GET /versions`
-Future<ApiResult<List<String>, BasicError>> metaGetAllVersions() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<String>, BasicError>> metaGetAllVersions({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/versions',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -114,12 +118,13 @@ return _execute(
 /// Get a random sentence from the Zen of GitHub
 ///
 /// `GET /zen`
-Future<ApiResult<String, Never>> metaGetZen() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> metaGetZen({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zen',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -131,16 +136,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

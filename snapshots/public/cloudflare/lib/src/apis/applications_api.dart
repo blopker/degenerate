@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get applications with different filters.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<ResponseCommon5, Never>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon5, Never>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) queryParameters['filter'] = filter;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// Create application.
 ///
 /// `POST /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<ResponseCommon5, Never>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon5, Never>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/applications',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -68,12 +70,13 @@ return _execute(
 /// Get application by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<ResponseCommon5, Never>> getApplicationById({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon5, Never>> getApplicationById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/applications/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -88,7 +91,7 @@ return _execute(
 /// Update application version.
 ///
 /// `PATCH /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<ResponseCommon5, Never>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon5, Never>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,6 +99,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/resource-library/applications/${Uri.encodeComponent(id)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -107,16 +111,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List Endpoint Health Checks.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckList({required MagicTransitIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckList({required MagicTransitIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Create Endpoint Health Check.
 ///
 /// `POST /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckCreate({required MagicTransitIdentifier accountId, required MagicTransitEndpointHealthCheck body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckCreate({required MagicTransitIdentifier accountId, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Get a single Endpoint Health Check.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Update a Endpoint Health Check.
 ///
 /// `PUT /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckUpdate({required MagicTransitIdentifier accountId, required MagicTransitUuid id, required MagicTransitEndpointHealthCheck body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckUpdate({required MagicTransitIdentifier accountId, required MagicTransitUuid id, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Delete Endpoint Health Check.
 ///
 /// `DELETE /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckDelete({required MagicTransitIdentifier accountId, required MagicTransitUuid id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckDelete({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

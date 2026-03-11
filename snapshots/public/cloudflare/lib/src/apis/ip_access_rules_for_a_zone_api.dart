@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches IP Access rules of a zone. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneListIpAccessRules({required FirewallIdentifier zoneId, FirewallSchemasMode? mode, IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAZoneListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAZoneListIpAccessRulesOrder? order, IpAccessRulesForAZoneListIpAccessRulesDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneListIpAccessRules({required FirewallIdentifier zoneId, FirewallSchemasMode? mode, IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAZoneListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAZoneListIpAccessRulesOrder? order, IpAccessRulesForAZoneListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) queryParameters['mode'] = mode.toJson();
 if (configurationTarget != null) queryParameters['configuration.target'] = configurationTarget.toJson();
@@ -37,6 +37,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -53,7 +54,7 @@ return _execute(
 /// Note: To create an IP Access rule that applies to multiple zones, refer to [IP Access rules for a user](#ip-access-rules-for-a-user) or [IP Access rules for an account](#ip-access-rules-for-an-account) as appropriate.
 ///
 /// `POST /zones/{zone_id}/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneCreateAnIpAccessRule({required FirewallIdentifier zoneId, required IpAccessRulesForAZoneCreateAnIpAccessRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneCreateAnIpAccessRule({required FirewallIdentifier zoneId, required IpAccessRulesForAZoneCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +62,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/access_rules/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,7 +77,7 @@ return _execute(
 /// Updates an IP Access rule defined at the zone level. You can only update the rule action (`mode` parameter) and notes.
 ///
 /// `PATCH /zones/{zone_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneUpdateAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneUpdateAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,6 +85,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -99,7 +102,7 @@ return _execute(
 /// Optionally, you can use the `cascade` property to specify that you wish to delete similar rules in other zones managed by the same zone owner.
 ///
 /// `DELETE /zones/{zone_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneDeleteAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneDeleteAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,6 +110,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -118,16 +122,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Get all SSO connectors
 ///
 /// `GET /accounts/{account_id}/sso_connectors`
-Future<ApiResult<ResponseCommon35, Never>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,7 +34,7 @@ return _execute(
 /// Initialize new SSO connector
 ///
 /// `POST /accounts/{account_id}/sso_connectors`
-Future<ApiResult<ResponseCommon35, Never>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,6 +42,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -53,12 +55,13 @@ return _execute(
 /// Get single SSO connector
 ///
 /// `GET /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseCommon35, Never>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -71,7 +74,7 @@ return _execute(
 /// Update SSO connector state
 ///
 /// `PATCH /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseCommon35, Never>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,6 +82,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -91,12 +95,13 @@ return _execute(
 /// Delete SSO connector
 ///
 /// `DELETE /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseCommon35, Never>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -109,12 +114,13 @@ return _execute(
 /// Begin SSO connector verification
 ///
 /// `POST /accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification`
-Future<ApiResult<ResponseCommon35, Never>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}/begin_verification',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -126,16 +132,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

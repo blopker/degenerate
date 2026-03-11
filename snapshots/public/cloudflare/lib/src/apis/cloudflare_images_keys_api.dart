@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists your signing keys. These can be found on your Cloudflare Images dashboard.
 ///
 /// `GET /accounts/{account_id}/images/v1/keys`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Create a new signing key with specified name. Returns all keys available.
 ///
 /// `PUT /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// 
 ///
 /// `DELETE /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -76,16 +79,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

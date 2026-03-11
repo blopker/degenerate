@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of recordings belonging to the call used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json`
-Future<ApiResult<ListCallRecordingResponse, Never>> listCallRecording({required String accountSid, required String callSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListCallRecordingResponse, Never>> listCallRecording({required String accountSid, required String callSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateCreated != null) queryParameters['DateCreated'] = dateCreated;
 if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore;
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -44,7 +45,7 @@ return _execute(
 /// Create a recording for the call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json`
-Future<ApiResult<AccountCallCallRecording, Never>> createCallRecording({required String accountSid, required String callSid, CreateCallRecordingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallCallRecording, Never>> createCallRecording({required String accountSid, required String callSid, CreateCallRecordingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -65,6 +66,7 @@ final request = ApiRequest(
     if (body.recordingTrack case final recordingTrack$?)
       'RecordingTrack=${Uri.encodeQueryComponent(recordingTrack$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -77,12 +79,13 @@ return _execute(
 /// Fetch an instance of a recording for a call
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountCallCallRecording, Never>> fetchCallRecording({required String accountSid, required String callSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallCallRecording, Never>> fetchCallRecording({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// Changes the status of the recording to paused, stopped, or in-progress. Note: Pass `Twilio.CURRENT` instead of recording sid to reference current active recording.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountCallCallRecording, UpdateCallRecordingResponse408>> updateCallRecording({required String accountSid, required String callSid, required String sid, UpdateCallRecordingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallCallRecording, UpdateCallRecordingResponse408>> updateCallRecording({required String accountSid, required String callSid, required String sid, UpdateCallRecordingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -107,6 +110,7 @@ final request = ApiRequest(
     if (body.pauseBehavior case final pauseBehavior$?)
       'PauseBehavior=${Uri.encodeQueryComponent(pauseBehavior$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -122,12 +126,13 @@ return _execute(
 /// Delete a recording from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteCallRecording({required String accountSid, required String callSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCallRecording({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -137,16 +142,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

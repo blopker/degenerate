@@ -21,7 +21,7 @@ final ApiConfig _config;
 /// Each page returns up to 10 budgets.
 ///
 /// `GET /organizations/{org}/settings/billing/budgets`
-Future<ApiResult<GetAllBudgets, BasicError>> billingGetAllBudgetsOrg({required String org, int? page, int? perPage, BillingGetAllBudgetsOrgScope? scope, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetAllBudgets, BasicError>> billingGetAllBudgetsOrg({required String org, int? page, int? perPage, BillingGetAllBudgetsOrgScope? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -35,6 +35,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -55,12 +56,13 @@ return _execute(
 /// Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
 ///
 /// `GET /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<GetBudget, BasicError>> billingGetBudgetOrg({required String org, required String budgetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetBudget, BasicError>> billingGetBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(org)}/settings/billing/budgets/${Uri.encodeComponent(budgetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -81,7 +83,7 @@ return _execute(
 /// Updates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `PATCH /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<BillingUpdateBudgetOrgResponse, BasicError>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<BillingUpdateBudgetOrgResponse, BasicError>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +91,7 @@ final request = ApiRequest(
   path: '/organizations/${Uri.encodeComponent(org)}/settings/billing/budgets/${Uri.encodeComponent(budgetId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -109,12 +112,13 @@ return _execute(
 /// Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `DELETE /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<DeleteBudget, BasicError>> billingDeleteBudgetOrg({required String org, required String budgetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteBudget, BasicError>> billingDeleteBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/organizations/${Uri.encodeComponent(org)}/settings/billing/budgets/${Uri.encodeComponent(budgetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -134,7 +138,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportOrg, BasicError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportOrg, BasicError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -151,6 +155,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -170,7 +175,7 @@ return _execute(
 /// **Note:** This endpoint is only available to organizations with access to the enhanced billing platform. For more information, see "[About the enhanced billing platform](https://docs.github.com/billing/using-the-new-billing-platform)."
 ///
 /// `GET /organizations/{org}/settings/billing/usage`
-Future<ApiResult<BillingUsageReport, BasicError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageReport, BasicError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -184,6 +189,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -206,7 +212,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportOrg, BasicError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportOrg, BasicError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -223,6 +229,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -242,7 +249,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportUser, BasicError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportUser, BasicError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -258,6 +265,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -277,7 +285,7 @@ return _execute(
 /// **Note:** This endpoint is only available to users with access to the enhanced billing platform.
 ///
 /// `GET /users/{username}/settings/billing/usage`
-Future<ApiResult<BillingUsageReportUser, BasicError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageReportUser, BasicError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -291,6 +299,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -313,7 +322,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportUser, BasicError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportUser, BasicError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -330,6 +339,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -344,16 +354,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

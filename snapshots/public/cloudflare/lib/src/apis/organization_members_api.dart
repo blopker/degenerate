@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members`
-Future<ApiResult<MembersListResponse, Never>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<MembersListResponse, Never>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
 for (final item in status) {
@@ -39,6 +39,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -53,7 +54,7 @@ return _execute(
 /// Create a membership that grants access to a specific Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations/{organization_id}/members`
-Future<ApiResult<MembersCreateResponse, Never>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MembersCreateResponse, Never>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +62,7 @@ final request = ApiRequest(
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,12 +77,13 @@ return _execute(
 /// Retrieve a single membership from an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<MembersRetrieveResponse, Never>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MembersRetrieveResponse, Never>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// Delete a membership to a particular Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<void, Never>> membersDelete({required OrganizationId organizationId, required MemberId memberId, required MembersDeleteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> membersDelete({required OrganizationId organizationId, required MemberId memberId, required MembersDeleteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,6 +106,7 @@ final request = ApiRequest(
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -115,7 +119,7 @@ return _execute(
 /// Batch create multiple memberships that grant access to a specific Organization.
 ///
 /// `POST /organizations/{organization_id}/members:batchCreate`
-Future<ApiResult<MembersBatchCreateResponse, Never>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MembersBatchCreateResponse, Never>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -123,6 +127,7 @@ final request = ApiRequest(
   path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members:batchCreate',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -134,16 +139,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

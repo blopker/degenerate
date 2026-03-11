@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists and filters subnets in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/subnets`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name.toString();
 if (comment != null) queryParameters['comment'] = comment.toString();
@@ -39,6 +39,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -53,7 +54,7 @@ return _execute(
 /// Updates the Cloudflare Source subnet of the given address family
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetUpdateCloudflareSource({required TunnelAccountId accountId, required TunnelAddressFamily addressFamily, required ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetUpdateCloudflareSource({required TunnelAccountId accountId, required TunnelAddressFamily addressFamily, required ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,6 +62,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/cloudflare_source/${Uri.encodeComponent(addressFamily.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -84,7 +86,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/zerotrust/subnets/warp`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetCreateWarp({required TunnelAccountId accountId, required ZeroTrustNetworksSubnetCreateWarpRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetCreateWarp({required TunnelAccountId accountId, required ZeroTrustNetworksSubnetCreateWarpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,6 +94,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -106,12 +109,13 @@ return _execute(
 /// Get a WARP IP assignment subnet.
 ///
 /// `GET /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetGetWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetGetWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -131,7 +135,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetUpdateWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, required ZeroTrustNetworksSubnetUpdateWarpRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetUpdateWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, required ZeroTrustNetworksSubnetUpdateWarpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,6 +143,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -153,12 +158,13 @@ return _execute(
 /// Delete a WARP IP assignment subnet. This operation is idempotent - deleting an already-deleted or non-existent subnet will return success with a null result.
 ///
 /// `DELETE /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetDeleteWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetDeleteWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -170,16 +176,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

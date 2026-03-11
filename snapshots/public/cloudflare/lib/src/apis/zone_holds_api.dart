@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieve whether the zone is subject to a zone hold, and metadata about the hold.
 ///
 /// `GET /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldGet({required ZonesSchemasIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldGet({required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hold',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone's hostname.
 ///
 /// `POST /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeSubdomains != null) queryParameters['include_subdomains'] = includeSubdomains.toString();
 
@@ -49,6 +50,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -64,7 +66,7 @@ return _execute(
 /// The hold is enabled if the `hold_after` date-time value is in the past.
 ///
 /// `PATCH /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -72,6 +74,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hold',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -87,7 +90,7 @@ return _execute(
 /// creation and activation of zones with this zone's hostname.
 ///
 /// `DELETE /zones/{zone_id}/hold`
-Future<ApiResult<ResponseCommon86, Never>> zones0HoldDelete({required ZonesSchemasIdentifier zoneId, String? holdAfter, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon86, Never>> zones0HoldDelete({required ZonesSchemasIdentifier zoneId, String? holdAfter, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (holdAfter != null) queryParameters['hold_after'] = holdAfter;
 
@@ -99,6 +102,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -110,16 +114,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

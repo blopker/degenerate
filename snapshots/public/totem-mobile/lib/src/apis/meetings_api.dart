@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Get Livekit Token
 ///
 /// `GET /api/mobile/protected/meetings/event/{event_slug}/token`
-Future<ApiResult<LivekitTokenResponseSchema, ErrorResponseSchema>> totemMeetingsMobileApiGetLivekitToken({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<LivekitTokenResponseSchema, ErrorResponseSchema>> totemMeetingsMobileApiGetLivekitToken({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/token',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -36,12 +37,13 @@ return _execute(
 /// Pass Totem Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/pass-totem`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiPassTotemEndpoint({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiPassTotemEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/pass-totem',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Accept Totem Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/accept-totem`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiAcceptTotemEndpoint({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiAcceptTotemEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/accept-totem',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -74,12 +77,13 @@ return _execute(
 /// Start Room Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/start`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiStartRoomEndpoint({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiStartRoomEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/start',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -93,12 +97,13 @@ return _execute(
 /// End Room Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/end`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiEndRoomEndpoint({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiEndRoomEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/end',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -112,12 +117,13 @@ return _execute(
 /// Mute Participant Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/mute/{participant_identity}`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiMuteParticipantEndpoint({required String eventSlug, required String participantIdentity, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiMuteParticipantEndpoint({required String eventSlug, required String participantIdentity, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/mute/${Uri.encodeComponent(participantIdentity)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -131,12 +137,13 @@ return _execute(
 /// Mute All Participants Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/mute-all`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiMuteAllParticipantsEndpoint({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiMuteAllParticipantsEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/mute-all',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -150,12 +157,13 @@ return _execute(
 /// Remove Participant Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/remove/{participant_identity}`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiRemoveParticipantEndpoint({required String eventSlug, required String participantIdentity, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiRemoveParticipantEndpoint({required String eventSlug, required String participantIdentity, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/remove/${Uri.encodeComponent(participantIdentity)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -169,7 +177,7 @@ return _execute(
 /// Reorder Participants Endpoint
 ///
 /// `POST /api/mobile/protected/meetings/event/{event_slug}/reorder`
-Future<ApiResult<LivekitOrderSchema, ErrorResponseSchema>> totemMeetingsMobileApiReorderParticipantsEndpoint({required String eventSlug, required LivekitOrderSchema body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<LivekitOrderSchema, ErrorResponseSchema>> totemMeetingsMobileApiReorderParticipantsEndpoint({required String eventSlug, required LivekitOrderSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -177,6 +185,7 @@ final request = ApiRequest(
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/reorder',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -197,12 +206,13 @@ return _execute(
 /// in the OpenAPI documentation for client-side usage.
 ///
 /// `GET /api/mobile/protected/meetings/event/{event_slug}/room-state`
-Future<ApiResult<SessionState, ErrorResponseSchema>> totemMeetingsMobileApiGetRoomStateEndpoint({required String eventSlug}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SessionState, ErrorResponseSchema>> totemMeetingsMobileApiGetRoomStateEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/room-state',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -217,16 +227,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

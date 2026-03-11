@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'request_options.dart';
+
 /// The contract any HTTP client must satisfy.
 abstract interface class ApiClient {
   /// Send a request and return a response.
@@ -35,6 +37,7 @@ final class ApiRequest {
   final Map<String, String> cookies;
   final Object? body;
   final String? contentType;
+  final RequestOptions? options;
 
   const ApiRequest({
     required this.method,
@@ -45,6 +48,7 @@ final class ApiRequest {
     this.cookies = const {},
     this.body,
     this.contentType,
+    this.options,
   });
 
   /// Create a copy with selected fields replaced.
@@ -57,6 +61,7 @@ final class ApiRequest {
     Map<String, String>? cookies,
     Object? Function()? body,
     String? Function()? contentType,
+    RequestOptions? options,
   }) {
     return ApiRequest(
       method: method ?? this.method,
@@ -67,6 +72,7 @@ final class ApiRequest {
       cookies: cookies ?? this.cookies,
       body: body != null ? body() : this.body,
       contentType: contentType != null ? contentType() : this.contentType,
+      options: options ?? this.options,
     );
   }
 

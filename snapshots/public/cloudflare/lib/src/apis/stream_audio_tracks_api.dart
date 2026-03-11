@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists additional audio tracks on a video. Note this API will not return information for audio attached to the video upload.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/audio`
-Future<ApiResult<ResponseCommon66, Never>> listAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> listAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Edits additional audio tracks on a video. Editing the default status of an audio track to `true` will mark all other audio tracks on the video default status to `false`.
 ///
 /// `PATCH /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> editAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, required StreamEditAudioTrack body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> editAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, required StreamEditAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio/${Uri.encodeComponent(audioIdentifier.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Deletes additional audio tracks on a video. Deleting a default audio track is not allowed. You must assign another audio track as default prior to deletion.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> deleteAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> deleteAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio/${Uri.encodeComponent(audioIdentifier.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Adds an additional audio track to a video using the provided audio track URL.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/audio/copy`
-Future<ApiResult<ResponseCommon66, Never>> addAudioTrack({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamCopyAudioTrack body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> addAudioTrack({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamCopyAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio/copy',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -98,16 +102,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

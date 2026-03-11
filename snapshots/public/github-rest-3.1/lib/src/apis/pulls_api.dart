@@ -30,7 +30,7 @@ final ApiConfig _config;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls`
-Future<ApiResult<List<PullRequestSimple>, ValidationError>> pullsList({required String owner, required String repo, PullsListState? state, String? head, String? base, PullsListSort? sort, PullsListDirection? direction, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PullRequestSimple>, ValidationError>> pullsList({required String owner, required String repo, PullsListState? state, String? head, String? base, PullsListSort? sort, PullsListDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) queryParameters['state'] = state.toJson();
 if (head != null) queryParameters['head'] = head;
@@ -48,6 +48,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -77,7 +78,7 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls`
-Future<ApiResult<PullRequest, BasicError>> pullsCreate({required String owner, required String repo, required PullsCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequest, BasicError>> pullsCreate({required String owner, required String repo, required PullsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -85,6 +86,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -110,7 +112,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/comments`
-Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewCommentsForRepo({required String owner, required String repo, PullsListReviewCommentsForRepoSort? sort, PullsListReviewCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewCommentsForRepo({required String owner, required String repo, PullsListReviewCommentsForRepoSort? sort, PullsListReviewCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) queryParameters['sort'] = sort.toJson();
 if (direction != null) queryParameters['direction'] = direction.toJson();
@@ -126,6 +128,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -148,12 +151,13 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/comments/{comment_id}`
-Future<ApiResult<PullRequestReviewComment, BasicError>> pullsGetReviewComment({required String owner, required String repo, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, BasicError>> pullsGetReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -178,7 +182,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}`
-Future<ApiResult<PullRequestReviewComment, Never>> pullsUpdateReviewComment({required String owner, required String repo, required int commentId, required PullsUpdateReviewCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, Never>> pullsUpdateReviewComment({required String owner, required String repo, required int commentId, required PullsUpdateReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,6 +190,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -200,12 +205,13 @@ return _execute(
 /// Deletes a review comment.
 ///
 /// `DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}`
-Future<ApiResult<void, BasicError>> pullsDeleteReviewComment({required String owner, required String repo, required int commentId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> pullsDeleteReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -243,12 +249,13 @@ return _execute(
 /// - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}`
-Future<ApiResult<PullRequest, BasicError>> pullsGet({required String owner, required String repo, required int pullNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequest, BasicError>> pullsGet({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -275,7 +282,7 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/pulls/{pull_number}`
-Future<ApiResult<PullRequest, ValidationError>> pullsUpdate({required String owner, required String repo, required int pullNumber, PullsUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequest, ValidationError>> pullsUpdate({required String owner, required String repo, required int pullNumber, PullsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -283,6 +290,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -308,7 +316,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/comments`
-Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewComments({required String owner, required String repo, required int pullNumber, PullsListReviewCommentsSort? sort, PullsListReviewCommentsDirection? direction, DateTime? since, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewComments({required String owner, required String repo, required int pullNumber, PullsListReviewCommentsSort? sort, PullsListReviewCommentsDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) queryParameters['sort'] = sort.toJson();
 if (direction != null) queryParameters['direction'] = direction.toJson();
@@ -324,6 +332,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -353,7 +362,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/comments`
-Future<ApiResult<PullRequestReviewComment, ValidationError>> pullsCreateReviewComment({required String owner, required String repo, required int pullNumber, required PullsCreateReviewCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, ValidationError>> pullsCreateReviewComment({required String owner, required String repo, required int pullNumber, required PullsCreateReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -361,6 +370,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -388,7 +398,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies`
-Future<ApiResult<PullRequestReviewComment, BasicError>> pullsCreateReplyForReviewComment({required String owner, required String repo, required int pullNumber, required int commentId, required PullsCreateReplyForReviewCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, BasicError>> pullsCreateReplyForReviewComment({required String owner, required String repo, required int pullNumber, required int commentId, required PullsCreateReplyForReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -396,6 +406,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments/${Uri.encodeComponent(commentId.toString())}/replies',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -422,7 +433,7 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/commits`
-Future<ApiResult<List<Commit>, Never>> pullsListCommits({required String owner, required String repo, required int pullNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Commit>, Never>> pullsListCommits({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -435,6 +446,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -460,7 +472,7 @@ return _execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/files`
-Future<ApiResult<List<DiffEntry>, ValidationError>> pullsListFiles({required String owner, required String repo, required int pullNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<DiffEntry>, ValidationError>> pullsListFiles({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -473,6 +485,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -491,12 +504,13 @@ return _execute(
 /// Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/merge`
-Future<ApiResult<void, Never>> pullsCheckIfMerged({required String owner, required String repo, required int pullNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> pullsCheckIfMerged({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/merge',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -510,7 +524,7 @@ return _execute(
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge`
-Future<ApiResult<PullRequestMergeResult, PullsMergeResponse405>> pullsMerge({required String owner, required String repo, required int pullNumber, PullsMergeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestMergeResult, PullsMergeResponse405>> pullsMerge({required String owner, required String repo, required int pullNumber, PullsMergeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -518,6 +532,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/merge',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -535,12 +550,13 @@ return _execute(
 /// Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
-Future<ApiResult<PullRequestReviewRequest, Never>> pullsListRequestedReviewers({required String owner, required String repo, required int pullNumber, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReviewRequest, Never>> pullsListRequestedReviewers({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/requested_reviewers',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -556,7 +572,7 @@ return _execute(
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
-Future<ApiResult<PullRequestSimple, BasicError>> pullsRequestReviewers({required String owner, required String repo, required int pullNumber, PullsRequestReviewersRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestSimple, BasicError>> pullsRequestReviewers({required String owner, required String repo, required int pullNumber, PullsRequestReviewersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -564,6 +580,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/requested_reviewers',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -581,7 +598,7 @@ return _execute(
 /// Removes review requests from a pull request for a given set of users and/or teams.
 ///
 /// `DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
-Future<ApiResult<PullRequestSimple, ValidationError>> pullsRemoveRequestedReviewers({required String owner, required String repo, required int pullNumber, required PullsRemoveRequestedReviewersRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestSimple, ValidationError>> pullsRemoveRequestedReviewers({required String owner, required String repo, required int pullNumber, required PullsRemoveRequestedReviewersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -589,6 +606,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/requested_reviewers',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -613,7 +631,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews`
-Future<ApiResult<List<PullRequestReview>, Never>> pullsListReviews({required String owner, required String repo, required int pullNumber, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PullRequestReview>, Never>> pullsListReviews({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -626,6 +644,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -657,7 +676,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews`
-Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsCreateReview({required String owner, required String repo, required int pullNumber, PullsCreateReviewRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsCreateReview({required String owner, required String repo, required int pullNumber, PullsCreateReviewRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -665,6 +684,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -689,12 +709,13 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
-Future<ApiResult<PullRequestReview, BasicError>> pullsGetReview({required String owner, required String repo, required int pullNumber, required int reviewId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReview, BasicError>> pullsGetReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -719,7 +740,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
-Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsUpdateReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsUpdateReviewRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsUpdateReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsUpdateReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -727,6 +748,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -751,12 +773,13 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
-Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsDeletePendingReview({required String owner, required String repo, required int pullNumber, required int reviewId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsDeletePendingReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -781,7 +804,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments`
-Future<ApiResult<List<ReviewComment>, BasicError>> pullsListCommentsForReview({required String owner, required String repo, required int pullNumber, required int reviewId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<ReviewComment>, BasicError>> pullsListCommentsForReview({required String owner, required String repo, required int pullNumber, required int reviewId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -794,6 +817,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -822,7 +846,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals`
-Future<ApiResult<PullRequestReview, BasicError>> pullsDismissReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsDismissReviewRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReview, BasicError>> pullsDismissReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsDismissReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -830,6 +854,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}/dismissals',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -854,7 +879,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events`
-Future<ApiResult<PullRequestReview, BasicError>> pullsSubmitReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsSubmitReviewRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullRequestReview, BasicError>> pullsSubmitReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsSubmitReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -862,6 +887,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}/events',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -880,7 +906,7 @@ return _execute(
 /// Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch`
-Future<ApiResult<PullsUpdateBranchResponse202, ValidationError>> pullsUpdateBranch({required String owner, required String repo, required int pullNumber, PullsUpdateBranchRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PullsUpdateBranchResponse202, ValidationError>> pullsUpdateBranch({required String owner, required String repo, required int pullNumber, PullsUpdateBranchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -888,6 +914,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/update-branch',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -902,16 +929,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieves a collection of calls made to and from your account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (to != null) queryParameters['To'] = to;
 if (from != null) queryParameters['From'] = from;
@@ -39,6 +39,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -51,7 +52,7 @@ return _execute(
 /// Create a new outgoing call to phones, SIP-enabled endpoints or Twilio Client connections
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<AccountCall, Never>> createCall({required String accountSid, CreateCallRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCall, Never>> createCall({required String accountSid, CreateCallRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -130,6 +131,7 @@ final request = ApiRequest(
     if (body.applicationSid case final applicationSid$?)
       'ApplicationSid=${Uri.encodeQueryComponent(applicationSid$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -142,12 +144,13 @@ return _execute(
 /// Fetch the call specified by the provided Call SID
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall, Never>> fetchCall({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCall, Never>> fetchCall({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -160,7 +163,7 @@ return _execute(
 /// Initiates a call redirect or terminates a call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall, Never>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCall, Never>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -187,6 +190,7 @@ final request = ApiRequest(
     if (body.timeLimit case final timeLimit$?)
       'TimeLimit=${Uri.encodeQueryComponent(timeLimit$.toString())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -199,12 +203,13 @@ return _execute(
 /// Delete a Call record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<void, Never>> deleteCall({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCall({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -214,16 +219,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

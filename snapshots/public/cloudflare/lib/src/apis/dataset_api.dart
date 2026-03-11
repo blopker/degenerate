@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Lists all datasets in an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset`
-Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListResponse400>> getDatasetList({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListResponse400>> getDatasetList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Reads a dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<GetDatasetReadResponse, GetDatasetReadResponse400>> getDatasetRead({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetDatasetReadResponse, GetDatasetReadResponse400>> getDatasetRead({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -58,7 +60,7 @@ return _execute(
 /// Updates an existing dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateResponse400>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateResponse400>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,6 +68,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Updates an existing dataset
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateResponse400>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateResponse400>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +92,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -106,12 +110,13 @@ return _execute(
 /// Deletes a dataset given a datasetId.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteResponse400>> deleteDatasetDelete({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteResponse400>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -127,7 +132,7 @@ return _execute(
 /// Creates a dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/create`
-Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateResponse400>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateResponse400>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -135,6 +140,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/create',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -149,16 +155,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

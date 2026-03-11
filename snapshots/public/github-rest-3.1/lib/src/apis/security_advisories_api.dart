@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see "[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories)."
 ///
 /// `GET /advisories`
-Future<ApiResult<List<GlobalAdvisory>, BasicError>> securityAdvisoriesListGlobalAdvisories({String? ghsaId, SecurityAdvisoriesListGlobalAdvisoriesType? type, String? cveId, SecurityAdvisoryEcosystems? ecosystem, SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity, SecurityAdvisoriesListGlobalAdvisoriesCwes? cwes, bool? isWithdrawn, SecurityAdvisoriesListGlobalAdvisoriesAffects? affects, String? published, String? updated, String? modified, String? epssPercentage, String? epssPercentile, String? before, String? after, SecurityAdvisoriesListGlobalAdvisoriesDirection? direction, int? perPage, SecurityAdvisoriesListGlobalAdvisoriesSort? sort, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<GlobalAdvisory>, BasicError>> securityAdvisoriesListGlobalAdvisories({String? ghsaId, SecurityAdvisoriesListGlobalAdvisoriesType? type, String? cveId, SecurityAdvisoryEcosystems? ecosystem, SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity, SecurityAdvisoriesListGlobalAdvisoriesCwes? cwes, bool? isWithdrawn, SecurityAdvisoriesListGlobalAdvisoriesAffects? affects, String? published, String? updated, String? modified, String? epssPercentage, String? epssPercentile, String? before, String? after, SecurityAdvisoriesListGlobalAdvisoriesDirection? direction, int? perPage, SecurityAdvisoriesListGlobalAdvisoriesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ghsaId != null) queryParameters['ghsa_id'] = ghsaId;
 if (type != null) queryParameters['type'] = type.toJson();
@@ -52,6 +52,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -70,12 +71,13 @@ return _execute(
 /// Gets a global security advisory using its GitHub Security Advisory (GHSA) identifier.
 ///
 /// `GET /advisories/{ghsa_id}`
-Future<ApiResult<GlobalAdvisory, BasicError>> securityAdvisoriesGetGlobalAdvisory({required String ghsaId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GlobalAdvisory, BasicError>> securityAdvisoriesGetGlobalAdvisory({required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/advisories/${Uri.encodeComponent(ghsaId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -97,7 +99,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/security-advisories`
-Future<ApiResult<List<RepositoryAdvisory>, BasicError>> securityAdvisoriesListOrgRepositoryAdvisories({required String org, SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RepositoryAdvisory>, BasicError>> securityAdvisoriesListOrgRepositoryAdvisories({required String org, SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) queryParameters['direction'] = direction.toJson();
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -114,6 +116,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -136,7 +139,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
 ///
 /// `GET /repos/{owner}/{repo}/security-advisories`
-Future<ApiResult<List<RepositoryAdvisory>, BasicError>> securityAdvisoriesListRepositoryAdvisories({required String owner, required String repo, SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListRepositoryAdvisoriesState? state, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RepositoryAdvisory>, BasicError>> securityAdvisoriesListRepositoryAdvisories({required String owner, required String repo, SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListRepositoryAdvisoriesState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) queryParameters['direction'] = direction.toJson();
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -153,6 +156,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -175,7 +179,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesCreateRepositoryAdvisory({required String owner, required String repo, required RepositoryAdvisoryCreate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesCreateRepositoryAdvisory({required String owner, required String repo, required RepositoryAdvisoryCreate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,6 +187,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/security-advisories',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -201,7 +206,7 @@ return _execute(
 /// See "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)" for more information about private vulnerability reporting.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/reports`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesCreatePrivateVulnerabilityReport({required String owner, required String repo, required PrivateVulnerabilityReportCreate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesCreatePrivateVulnerabilityReport({required String owner, required String repo, required PrivateVulnerabilityReportCreate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -209,6 +214,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/security-advisories/reports',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -233,12 +239,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
 ///
 /// `GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesGetRepositoryAdvisory({required String owner, required String repo, required String ghsaId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesGetRepositoryAdvisory({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/security-advisories/${Uri.encodeComponent(ghsaId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -261,7 +268,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesUpdateRepositoryAdvisory({required String owner, required String repo, required String ghsaId, required RepositoryAdvisoryUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesUpdateRepositoryAdvisory({required String owner, required String repo, required String ghsaId, required RepositoryAdvisoryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -269,6 +276,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/security-advisories/${Uri.encodeComponent(ghsaId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -292,12 +300,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve`
-Future<ApiResult<Map<String, Object>, BasicError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/security-advisories/${Uri.encodeComponent(ghsaId)}/cve',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -318,12 +327,13 @@ return _execute(
 /// > Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks`
-Future<ApiResult<FullRepository, BasicError>> securityAdvisoriesCreateFork({required String owner, required String repo, required String ghsaId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FullRepository, BasicError>> securityAdvisoriesCreateFork({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/security-advisories/${Uri.encodeComponent(ghsaId)}/forks',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -338,16 +348,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

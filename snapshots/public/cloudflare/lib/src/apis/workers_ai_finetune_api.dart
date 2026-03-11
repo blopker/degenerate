@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiListFinetunesResponse, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiListFinetunesResponse, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -36,7 +37,7 @@ return _execute(
 /// Create a new Finetune
 ///
 /// `POST /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiCreateFinetuneResponse, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiCreateFinetuneResponse, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,6 +45,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,7 +61,7 @@ return _execute(
 /// Upload a Finetune Asset
 ///
 /// `POST /accounts/{account_id}/ai/finetunes/{finetune_id}/finetune-assets`
-Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -72,6 +74,7 @@ final request = ApiRequest(
       ApiMultipartField.text('file_name', fileName$),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -87,7 +90,7 @@ return _execute(
 /// List Public Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes/public`
-Future<ApiResult<WorkersAiListPublicFinetunesResponse, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<WorkersAiListPublicFinetunesResponse, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -101,6 +104,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -115,16 +119,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

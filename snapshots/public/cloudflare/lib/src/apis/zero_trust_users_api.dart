@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Gets a list of users for an account.
 ///
 /// `GET /accounts/{account_id}/access/users`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUsers({required AccessIdentifier accountId, String? name, String? email, String? search, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUsers({required AccessIdentifier accountId, String? name, String? email, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (email != null) queryParameters['email'] = email;
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,7 +48,7 @@ return _execute(
 /// Creates a new user.
 ///
 /// `POST /accounts/{account_id}/access/users`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersCreateUser({required AccessIdentifier accountId, required ZeroTrustUsersCreateUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersCreateUser({required AccessIdentifier accountId, required ZeroTrustUsersCreateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,6 +56,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -69,12 +71,13 @@ return _execute(
 /// Gets a specific user for an account.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUser({required AccessUuid userId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -89,7 +92,7 @@ return _execute(
 /// Updates a specific user's name for an account. Requires the user's current email as confirmation (email cannot be changed).
 ///
 /// `PUT /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersUpdateUser({required AccessUuid userId, required AccessIdentifier accountId, required ZeroTrustUsersUpdateUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersUpdateUser({required AccessUuid userId, required AccessIdentifier accountId, required ZeroTrustUsersUpdateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,6 +100,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -111,12 +115,13 @@ return _execute(
 /// Deletes a specific user for an account. This will also revoke any active seats and tokens for the user.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteUser({required AccessUuid userId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -131,12 +136,13 @@ return _execute(
 /// Get active sessions for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSessions({required AccessUuid userId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSessions({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/active_sessions',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -151,12 +157,13 @@ return _execute(
 /// Get an active session for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions/{nonce}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSession({required AccessUuid userId, required AccessIdentifier accountId, required AccessNonce nonce, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSession({required AccessUuid userId, required AccessIdentifier accountId, required AccessNonce nonce, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/active_sessions/${Uri.encodeComponent(nonce.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -171,12 +178,13 @@ return _execute(
 /// Get all failed login attempts for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/failed_logins`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetFailedLogins({required AccessUuid userId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetFailedLogins({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/failed_logins',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -191,12 +199,13 @@ return _execute(
 /// Get last seen identity for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/last_seen_identity`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetLastSeenIdentity({required AccessUuid userId, required AccessIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetLastSeenIdentity({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/last_seen_identity',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -211,12 +220,13 @@ return _execute(
 /// Deletes a specific MFA device for a user. This action is only available if MFA is turned on for the organization.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}/mfa_authenticators/{authenticator_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteMfaAuthenticator({required AccessUuid userId, required AccessIdentifier accountId, required AccessAuthenticatorId authenticatorId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteMfaAuthenticator({required AccessUuid userId, required AccessIdentifier accountId, required AccessAuthenticatorId authenticatorId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/mfa_authenticators/${Uri.encodeComponent(authenticatorId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -228,16 +238,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

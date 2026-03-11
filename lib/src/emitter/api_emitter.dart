@@ -192,6 +192,16 @@ class ApiEmitter {
       );
     }
 
+    // Per-request options
+    params.add(
+      Parameter(
+        (pb) => pb
+          ..name = 'options'
+          ..named = true
+          ..type = refer('RequestOptions?'),
+      ),
+    );
+
     // Determine return type from success response
     final successResponseContent = _successResponseContent(op);
     final returnType = successResponseContent?.$2.schema;
@@ -363,6 +373,7 @@ class ApiEmitter {
       );
     }
 
+    buf.writeln('  options: options,');
     buf.writeln(');');
     buf.writeln();
 
@@ -714,16 +725,27 @@ class ApiEmitter {
         )
         ..body = const Code('''
 try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

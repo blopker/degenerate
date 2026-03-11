@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<RealtimekitPagingResponse, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RealtimekitPagingResponse, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (meetingId != null) queryParameters['meeting_id'] = meetingId;
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
@@ -40,6 +40,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -54,7 +55,7 @@ return _execute(
 /// Starts recording a meeting. The meeting can be started by an App admin directly, or a participant with permissions to start a recording, based on the type of authorization used.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> startRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartRecordingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> startRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartRecordingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,6 +63,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -76,12 +78,13 @@ return _execute(
 /// Returns details of a recording for the given recording ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getOneRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String recordingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getOneRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String recordingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/${Uri.encodeComponent(recordingId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -96,7 +99,7 @@ return _execute(
 /// Pause/Resume/Stop a given recording ID.
 ///
 /// `PUT /accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> pauseResumeStopRecording({required RealtimekitAccountIdentifier accountId, required String appId, required String recordingId, required PauseResumeStopRecordingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> pauseResumeStopRecording({required RealtimekitAccountIdentifier accountId, required String appId, required String recordingId, required PauseResumeStopRecordingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,6 +107,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId)}/recordings/${Uri.encodeComponent(recordingId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -118,12 +122,13 @@ return _execute(
 /// Returns the active recording details for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings/active-recording/{meeting_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/active-recording/${Uri.encodeComponent(meetingId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -141,7 +146,7 @@ return _execute(
 /// Starts a track recording in a meeting. Track recordings consist of "layers". Layers are used to map audio/video tracks in a meeting to output destinations. More information about track recordings is available in the [Track Recordings Guide Page](https://docs.realtime.cloudflare.com/guides/capabilities/recording/recording-overview).
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/recordings/track`
-Future<ApiResult<void, Never>> startTrackRecordingForAMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartTrackRecordingForAMeetingRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> startTrackRecordingForAMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartTrackRecordingForAMeetingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -149,6 +154,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/track',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -158,16 +164,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

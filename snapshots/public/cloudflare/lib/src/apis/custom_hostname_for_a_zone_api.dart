@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List, search, sort, and filter all of your custom hostnames.
 ///
 /// `GET /zones/{zone_id}/custom_hostnames`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneListCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, String? hostname, String? id, double? page, double? perPage, Object? order, Object? direction, Object? ssl, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneListCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, String? hostname, String? id, double? page, double? perPage, Object? order, Object? direction, Object? ssl, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hostname != null) queryParameters['hostname'] = hostname;
 if (id != null) queryParameters['id'] = id;
@@ -35,6 +35,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Add a new custom hostname and request that an SSL certificate be issued for it. One of three validation methods—http, txt, email—should be used, with 'http' recommended if the CNAME is already in place (or will be soon). Specifying 'email' will send an email to the WHOIS contacts on file for the base domain plus hostmaster, postmaster, webmaster, admin, administrator. If http is used and the domain is not already pointing to the Managed CNAME host, the PATCH method must be used once it is (to complete validation).  Enable bundling of certificates using the custom_cert_bundle field. The bundling process requires the following condition One certificate in the bundle must use an RSA, and the other must use an ECDSA.
 ///
 /// `POST /zones/{zone_id}/custom_hostnames`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneCreateCustomHostname({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameForAZoneCreateCustomHostnameRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneCreateCustomHostname({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameForAZoneCreateCustomHostnameRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,6 +58,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -71,12 +73,13 @@ return _execute(
 /// Retrieves detailed information about a specific custom hostname, including SSL certificate status, ownership verification, and origin configuration.
 ///
 /// `GET /zones/{zone_id}/custom_hostnames/{custom_hostname_id}`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneCustomHostnameDetails({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneCustomHostnameDetails({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -91,7 +94,7 @@ return _execute(
 /// Modify SSL configuration for a custom hostname. When sent with SSL config that matches existing config, used to indicate that hostname should pass domain control validation (DCV). Can also be used to change validation type, e.g., from 'http' to 'email'. Bundle an existing certificate with another certificate by using the "custom_cert_bundle" field. The bundling process supports combining certificates as long as the following condition is met. One certificate must use the RSA algorithm, and the other must use the ECDSA algorithm.
 ///
 /// `PATCH /zones/{zone_id}/custom_hostnames/{custom_hostname_id}`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneEditCustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameForAZoneEditCustomHostnameRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneEditCustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameForAZoneEditCustomHostnameRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +102,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -113,12 +117,13 @@ return _execute(
 /// Permanently deletes a custom hostname and revokes any SSL certificates that were issued for it. This action cannot be undone.
 ///
 /// `DELETE /zones/{zone_id}/custom_hostnames/{custom_hostname_id}`
-Future<ApiResult<CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse, Never>> customHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificates({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse, Never>> customHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificates({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -133,7 +138,7 @@ return _execute(
 /// Replace a single custom certificate within a certificate pack that contains two bundled certificates. The replacement must adhere to the following constraints. You can only replace an RSA certificate with another RSA certificate or an ECDSA certificate with another ECDSA certificate.
 ///
 /// `PUT /zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneEditCustomCertificateCustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesCustomCertAndKey body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneEditCustomCertificateCustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesCustomCertAndKey body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -141,6 +146,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}/certificate_pack/${Uri.encodeComponent(certificatePackId.toString())}/certificates/${Uri.encodeComponent(certificateId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -155,12 +161,13 @@ return _execute(
 /// Delete a single custom certificate from a certificate pack that contains two bundled certificates. Deletion is subject to the following constraints. You cannot delete a certificate if it is the only remaining certificate in the pack. At least one certificate must remain in the pack.
 ///
 /// `DELETE /zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}`
-Future<ApiResult<CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202, Never>> customHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202, Never>> customHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}/certificate_pack/${Uri.encodeComponent(certificatePackId.toString())}/certificates/${Uri.encodeComponent(certificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -172,16 +179,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

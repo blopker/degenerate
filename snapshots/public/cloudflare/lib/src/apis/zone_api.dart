@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /zones`
-Future<ApiResult<ResponseCommon85, Never>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon85, Never>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (status != null) queryParameters['status'] = status.toJson();
@@ -39,6 +39,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -51,7 +52,7 @@ return _execute(
 /// Create Zone
 ///
 /// `POST /zones`
-Future<ApiResult<ResponseCommon85, Never>> zonesPost({required ZonesPostRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon85, Never>> zonesPost({required ZonesPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,6 +60,7 @@ final request = ApiRequest(
   path: '/zones',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -71,12 +73,13 @@ return _execute(
 /// Zone Details
 ///
 /// `GET /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85, Never>> zones0Get({required ZonesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon85, Never>> zones0Get({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -91,7 +94,7 @@ return _execute(
 /// Edits a zone. Only one zone property can be changed at a time.
 ///
 /// `PATCH /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85, Never>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon85, Never>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +102,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -113,12 +117,13 @@ return _execute(
 /// Deletes an existing zone.
 ///
 /// `DELETE /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85, Never>> zones0Delete({required ZonesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon85, Never>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -135,12 +140,13 @@ return _execute(
 /// Zones.
 ///
 /// `PUT /zones/{zone_id}/activation_check`
-Future<ApiResult<ResponseCommon83, Never>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon83, Never>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/activation_check',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -195,7 +201,7 @@ return _execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/purge_cache`
-Future<ApiResult<ResponseSingleId, Never>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingleId, Never>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -203,6 +209,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/purge_cache',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -214,16 +221,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

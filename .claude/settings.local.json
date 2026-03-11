@@ -13,7 +13,8 @@
       "mcp__kagi__kagi_summarizer",
       "WebFetch(domain:dart.dev)",
       "Bash(command make:*)",
-      "Bash(git status:*)"
+      "Bash(git status:*)",
+      "WebFetch(domain:pub.dev)"
     ]
   }
 }

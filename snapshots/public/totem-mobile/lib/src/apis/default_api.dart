@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Register or update an FCM token for the current user
 ///
 /// `POST /api/mobile/protected/fcm/register`
-Future<ApiResult<FcmTokenResponseSchema, Never>> totemApiMobileApiRegisterFcmToken({required FcmTokenRegisterSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FcmTokenResponseSchema, Never>> totemApiMobileApiRegisterFcmToken({required FcmTokenRegisterSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,6 +25,7 @@ final request = ApiRequest(
   path: '/api/mobile/protected/fcm/register',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -39,12 +40,13 @@ return _execute(
 /// Delete an FCM token for the current user
 ///
 /// `DELETE /api/mobile/protected/fcm/unregister/{token}`
-Future<ApiResult<void, Never>> totemApiMobileApiUnregisterFcmToken({required String token}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> totemApiMobileApiUnregisterFcmToken({required String token, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/api/mobile/protected/fcm/unregister/${Uri.encodeComponent(token)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -55,12 +57,13 @@ return _execute(
 /// Onboard Get
 ///
 /// `GET /api/mobile/protected/onboard/`
-Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardGet() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardGet({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/api/mobile/protected/onboard/',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -73,7 +76,7 @@ return _execute(
 /// Onboard Post
 ///
 /// `POST /api/mobile/protected/onboard/`
-Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardPost({required OnboardSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OnboardSchema, Never>> totemOnboardMobileApiOnboardPost({required OnboardSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,6 +84,7 @@ final request = ApiRequest(
   path: '/api/mobile/protected/onboard/',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -96,7 +100,7 @@ return _execute(
 /// This endpoint handles both new and existing users.
 ///
 /// `POST /api/mobile/auth/request-pin`
-Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthRequestPin({required PinRequestSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthRequestPin({required PinRequestSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,6 +108,7 @@ final request = ApiRequest(
   path: '/api/mobile/auth/request-pin',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -121,7 +126,7 @@ return _execute(
 /// Validate PIN and issue token pair.
 ///
 /// `POST /api/mobile/auth/validate-pin`
-Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthValidatePin({required ValidatePinSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthValidatePin({required ValidatePinSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -129,6 +134,7 @@ final request = ApiRequest(
   path: '/api/mobile/auth/validate-pin',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -146,7 +152,7 @@ return _execute(
 /// Refresh access token using a valid refresh token.
 ///
 /// `POST /api/mobile/auth/refresh`
-Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthRefreshToken({required RefreshTokenSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthRefreshToken({required RefreshTokenSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,6 +160,7 @@ final request = ApiRequest(
   path: '/api/mobile/auth/refresh',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -171,7 +178,7 @@ return _execute(
 /// Logout by invalidating a refresh token.
 ///
 /// `POST /api/mobile/auth/logout`
-Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthLogout({required RefreshTokenSchema body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthLogout({required RefreshTokenSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -179,6 +186,7 @@ final request = ApiRequest(
   path: '/api/mobile/auth/logout',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -193,16 +201,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

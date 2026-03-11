@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Get all environment variables for a trigger
 ///
 /// `GET /accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables`
-Future<ApiResult<Response, Never>> listEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Response, Never>> listEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/environment_variables',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Create or update environment variables for a trigger
 ///
 /// `PATCH /accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables`
-Future<ApiResult<Response, BuildsErrorResponse>> upsertEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required Map<String,InlineObject41> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Response, BuildsErrorResponse>> upsertEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required Map<String,InlineObject41> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/environment_variables',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -62,12 +64,13 @@ return _execute(
 /// Remove a specific environment variable from a trigger
 ///
 /// `DELETE /accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables/{environment_variable_key}`
-Future<ApiResult<Response, BuildsErrorResponse>> deleteEnvironmentVariable({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsEnvironmentVariableKey environmentVariableKey, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Response, BuildsErrorResponse>> deleteEnvironmentVariable({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsEnvironmentVariableKey environmentVariableKey, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/environment_variables/${Uri.encodeComponent(environmentVariableKey.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -82,16 +85,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

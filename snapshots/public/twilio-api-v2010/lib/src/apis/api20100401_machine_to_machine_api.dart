@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/MachineToMachine.json`
-Future<ApiResult<ListAvailablePhoneNumberMachineToMachineResponse, Never>> listAvailablePhoneNumberMachineToMachine({required String accountSid, required String countryCode, int? areaCode, String? contains, bool? smsEnabled, bool? mmsEnabled, bool? voiceEnabled, bool? excludeAllAddressRequired, bool? excludeLocalAddressRequired, bool? excludeForeignAddressRequired, bool? beta, String? nearNumber, String? nearLatLong, int? distance, String? inPostalCode, String? inRegion, String? inRateCenter, String? inLata, String? inLocality, bool? faxEnabled, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListAvailablePhoneNumberMachineToMachineResponse, Never>> listAvailablePhoneNumberMachineToMachine({required String accountSid, required String countryCode, int? areaCode, String? contains, bool? smsEnabled, bool? mmsEnabled, bool? voiceEnabled, bool? excludeAllAddressRequired, bool? excludeLocalAddressRequired, bool? excludeForeignAddressRequired, bool? beta, String? nearNumber, String? nearLatLong, int? distance, String? inPostalCode, String? inRegion, String? inRateCenter, String? inLata, String? inLocality, bool? faxEnabled, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (areaCode != null) queryParameters['AreaCode'] = areaCode.toString();
 if (contains != null) queryParameters['Contains'] = contains;
@@ -47,6 +47,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -58,16 +59,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

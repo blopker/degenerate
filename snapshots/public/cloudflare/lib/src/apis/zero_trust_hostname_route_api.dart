@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists and filters hostname routes in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) queryParameters['id'] = id.toString();
 if (hostname != null) queryParameters['hostname'] = hostname.toString();
@@ -36,6 +36,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -50,7 +51,7 @@ return _execute(
 /// Create a hostname route.
 ///
 /// `POST /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,6 +59,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -72,12 +74,13 @@ return _execute(
 /// Get a hostname route.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -92,7 +95,7 @@ return _execute(
 /// Updates a hostname route.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,6 +103,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -114,12 +118,13 @@ return _execute(
 /// Delete a hostname route.
 ///
 /// `DELETE /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -131,16 +136,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

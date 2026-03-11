@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List all Zero Trust Gateway proxy endpoints for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/proxy_endpoints`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsListProxyEndpoints({required ZeroTrustGatewaySchemasIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsListProxyEndpoints({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Create a new Zero Trust Gateway proxy endpoint.
 ///
 /// `POST /accounts/{account_id}/gateway/proxy_endpoints`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsCreateProxyEndpoint({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsCreateProxyEndpoint({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Get a single Zero Trust Gateway proxy endpoint.
 ///
 /// `GET /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsProxyEndpointDetails({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsProxyEndpointDetails({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Update a configured Zero Trust Gateway proxy endpoint.
 ///
 /// `PATCH /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsUpdateProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsUpdateProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Delete a configured Zero Trust Gateway proxy endpoint.
 ///
 /// `DELETE /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsDeleteProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon82, Never>> zeroTrustGatewayProxyEndpointsDeleteProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

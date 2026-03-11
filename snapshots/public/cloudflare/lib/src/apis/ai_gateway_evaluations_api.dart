@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Evaluators
 ///
 /// `GET /accounts/{account_id}/ai-gateway/evaluation-types`
-Future<ApiResult<AigConfigListEvaluatorsResponse, AigConfigListEvaluatorsResponse400>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AigConfigListEvaluatorsResponse, AigConfigListEvaluatorsResponse400>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,7 +48,7 @@ return _execute(
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<AigConfigListEvaluationsResponse, AigConfigListEvaluationsResponse400>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AigConfigListEvaluationsResponse, AigConfigListEvaluationsResponse400>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -63,6 +64,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -80,7 +82,7 @@ return _execute(
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<AigConfigCreateEvaluationsResponse, AigConfigCreateEvaluationsResponse400>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigCreateEvaluationsResponse, AigConfigCreateEvaluationsResponse400>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/evaluations',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -105,12 +108,13 @@ return _execute(
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigFetchEvaluationsResponse, AigConfigFetchEvaluationsResponse404>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigFetchEvaluationsResponse, AigConfigFetchEvaluationsResponse404>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/evaluations/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -128,12 +132,13 @@ return _execute(
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigDeleteEvaluationsResponse, AigConfigDeleteEvaluationsResponse404>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigDeleteEvaluationsResponse, AigConfigDeleteEvaluationsResponse404>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/evaluations/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -148,16 +153,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

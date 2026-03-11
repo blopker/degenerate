@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// create an instance of payments. This will start a new payments session
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments.json`
-Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -54,6 +54,7 @@ final request = ApiRequest(
     if (body.validCardTypes case final validCardTypes$?)
       'ValidCardTypes=${Uri.encodeQueryComponent(validCardTypes$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -66,7 +67,7 @@ return _execute(
 /// update an instance of payments with different phases of payment flows.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments/{Sid}.json`
-Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -81,6 +82,7 @@ final request = ApiRequest(
     if (body.status case final status$?)
       'Status=${Uri.encodeQueryComponent(status$.toJson())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -92,16 +94,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List Cloud Integrations (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers`
-Future<ApiResult<McnResponse, McnResponse>> providersList({required McnAccountId accountId, bool? status, String? orderBy, bool? desc, bool? cloudflare, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> providersList({required McnAccountId accountId, bool? status, String? orderBy, bool? desc, bool? cloudflare, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (orderBy != null) queryParameters['order_by'] = orderBy;
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Create a new Cloud Integration (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers`
-Future<ApiResult<McnResponse, McnResponse>> providersCreate({required McnAccountId accountId, String? forwarded, required McnCreateProviderRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> providersCreate({required McnAccountId accountId, String? forwarded, required McnCreateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) headers['forwarded'] = forwarded;
 
@@ -58,6 +59,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,7 +77,7 @@ return _execute(
 /// Read a Cloud Integration (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersRead({required McnAccountId accountId, required McnProviderId providerId, bool? status, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> providersRead({required McnAccountId accountId, required McnProviderId providerId, bool? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 
@@ -87,6 +89,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -104,7 +107,7 @@ return _execute(
 /// Update a Cloud Integration (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersUpdate({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> providersUpdate({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -112,6 +115,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -129,7 +133,7 @@ return _execute(
 /// Update a Cloud Integration (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersPatch({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> providersPatch({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,6 +141,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -154,12 +159,13 @@ return _execute(
 /// Delete a Cloud Integration (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersDelete({required McnAccountId accountId, required McnProviderId providerId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> providersDelete({required McnAccountId accountId, required McnProviderId providerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -177,7 +183,7 @@ return _execute(
 /// Run discovery for a Cloud Integration (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers/{provider_id}/discover`
-Future<ApiResult<McnResponse, McnResponse>> providersDiscover({required McnAccountId accountId, required McnProviderId providerId, bool? v2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> providersDiscover({required McnAccountId accountId, required McnProviderId providerId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (v2 != null) queryParameters['v2'] = v2.toString();
 
@@ -189,6 +195,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -206,12 +213,13 @@ return _execute(
 /// Get initial configuration to complete Cloud Integration setup (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers/{provider_id}/initial_setup`
-Future<ApiResult<McnResponse, McnResponse>> providersInitialSetup({required McnAccountId accountId, required McnProviderId providerId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> providersInitialSetup({required McnAccountId accountId, required McnProviderId providerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}/initial_setup',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -229,12 +237,13 @@ return _execute(
 /// Run discovery for all Cloud Integrations in an account (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers/discover`
-Future<ApiResult<McnResponse, McnResponse>> providersDiscoverAll({required McnAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> providersDiscoverAll({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/discover',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -249,16 +258,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

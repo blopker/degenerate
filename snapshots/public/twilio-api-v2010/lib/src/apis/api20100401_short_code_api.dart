@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Fetch an instance of a short code
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
-Future<ApiResult<AccountShortCode, Never>> fetchShortCode({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountShortCode, Never>> fetchShortCode({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,7 +34,7 @@ return _execute(
 /// Update a short code with the following parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
-Future<ApiResult<AccountShortCode, Never>> updateShortCode({required String accountSid, required String sid, UpdateShortCodeRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountShortCode, Never>> updateShortCode({required String accountSid, required String sid, UpdateShortCodeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
     if (body.smsFallbackMethod case final smsFallbackMethod$?)
       'SmsFallbackMethod=${Uri.encodeQueryComponent(smsFallbackMethod$.toJson())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -66,7 +68,7 @@ return _execute(
 /// Retrieve a list of short-codes belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json`
-Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
 if (shortCode != null) queryParameters['ShortCode'] = shortCode;
@@ -82,6 +84,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -93,16 +96,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

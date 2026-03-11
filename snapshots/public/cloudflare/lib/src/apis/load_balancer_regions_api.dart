@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all region mappings.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subdivisionCode != null) queryParameters['subdivision_code'] = subdivisionCode.toString();
 if (subdivisionCodeA2 != null) queryParameters['subdivision_code_a2'] = subdivisionCodeA2.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -45,12 +46,13 @@ return _execute(
 /// Get a single region mapping.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions/{region_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/regions/${Uri.encodeComponent(regionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -62,16 +64,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

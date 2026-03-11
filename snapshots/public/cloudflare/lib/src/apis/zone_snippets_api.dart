@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches all snippets belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets`
-Future<ApiResult<SnippetsResponse, Never>> listZoneSnippets({required SnippetsZoneId zoneId, SnippetsPage? page, SnippetsPerPage? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SnippetsResponse, Never>> listZoneSnippets({required SnippetsZoneId zoneId, SnippetsPage? page, SnippetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -44,12 +45,13 @@ return _execute(
 /// Fetches a snippet belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsResponse, Never>> getZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SnippetsResponse, Never>> getZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -64,7 +66,7 @@ return _execute(
 /// Creates or updates a snippet belonging to the zone.
 ///
 /// `PUT /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsResponse, Never>> updateZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, required UpdateZoneSnippetRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SnippetsResponse, Never>> updateZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, required UpdateZoneSnippetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -74,6 +76,7 @@ final request = ApiRequest(
     ApiMultipartField.text('metadata', body.metadata.toString()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -88,12 +91,13 @@ return _execute(
 /// Deletes a snippet belonging to the zone.
 ///
 /// `DELETE /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsResponse, Never>> deleteZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SnippetsResponse, Never>> deleteZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,12 +112,13 @@ return _execute(
 /// Fetches the content of a snippet belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/{snippet_name}/content`
-Future<ApiResult<Map<String, List<Uint8List>>, Never>> getZoneSnippetContent({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, List<Uint8List>>, Never>> getZoneSnippetContent({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}/content',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -129,12 +134,13 @@ throw UnsupportedError('Cannot decode multipart/form-data response into Map<Stri
 /// Fetches all snippet rules belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<SnippetsResponse, Never>> listZoneSnippetRules({required SnippetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SnippetsResponse, Never>> listZoneSnippetRules({required SnippetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/snippet_rules',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -149,7 +155,7 @@ return _execute(
 /// Updates all snippet rules belonging to the zone.
 ///
 /// `PUT /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<SnippetsResponse, Never>> updateZoneSnippetRules({required SnippetsZoneId zoneId, required UpdateZoneSnippetRulesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SnippetsResponse, Never>> updateZoneSnippetRules({required SnippetsZoneId zoneId, required UpdateZoneSnippetRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -157,6 +163,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/snippet_rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -171,12 +178,13 @@ return _execute(
 /// Deletes all snippet rules belonging to the zone.
 ///
 /// `DELETE /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<SnippetsResponse, Never>> deleteZoneSnippetRules({required SnippetsZoneId zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SnippetsResponse, Never>> deleteZoneSnippetRules({required SnippetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/snippet_rules',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -188,16 +196,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

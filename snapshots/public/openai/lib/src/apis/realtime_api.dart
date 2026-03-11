@@ -16,7 +16,7 @@ final ApiConfig _config;
 /// to complete the peer connection.
 ///
 /// `POST /realtime/calls`
-Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -28,6 +28,7 @@ final request = ApiRequest(
       ApiMultipartField.text('session', session$.toString()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// handle it.
 ///
 /// `POST /realtime/calls/{call_id}/accept`
-Future<ApiResult<void, Never>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/accept',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -60,12 +62,13 @@ return _execute(
 /// WebRTC.
 ///
 /// `POST /realtime/calls/{call_id}/hangup`
-Future<ApiResult<void, Never>> hangupRealtimeCall({required String callId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> hangupRealtimeCall({required String callId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/hangup',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -76,7 +79,7 @@ return _execute(
 /// Transfer an active SIP call to a new destination using the SIP REFER verb.
 ///
 /// `POST /realtime/calls/{call_id}/refer`
-Future<ApiResult<void, Never>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,6 +87,7 @@ final request = ApiRequest(
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/refer',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -94,7 +98,7 @@ return _execute(
 /// Decline an incoming SIP call by returning a SIP status code to the caller.
 ///
 /// `POST /realtime/calls/{call_id}/reject`
-Future<ApiResult<void, Never>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,6 +106,7 @@ final request = ApiRequest(
   path: '/realtime/calls/${Uri.encodeComponent(callId)}/reject',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -125,7 +130,7 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/client_secrets`
-Future<ApiResult<RealtimeCreateClientSecretResponse, Never>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimeCreateClientSecretResponse, Never>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,6 +138,7 @@ final request = ApiRequest(
   path: '/realtime/client_secrets',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -154,7 +160,7 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/sessions`
-Future<ApiResult<RealtimeSessionCreateResponse, Never>> createRealtimeSession({required RealtimeSessionCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimeSessionCreateResponse, Never>> createRealtimeSession({required RealtimeSessionCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -162,6 +168,7 @@ final request = ApiRequest(
   path: '/realtime/sessions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -183,7 +190,7 @@ return _execute(
 /// 
 ///
 /// `POST /realtime/transcription_sessions`
-Future<ApiResult<RealtimeTranscriptionSessionCreateResponse, Never>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimeTranscriptionSessionCreateResponse, Never>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -191,6 +198,7 @@ final request = ApiRequest(
   path: '/realtime/transcription_sessions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -202,16 +210,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

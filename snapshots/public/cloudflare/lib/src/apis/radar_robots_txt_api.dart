@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves the top domain categories by the number of robots.txt files parsed.
 ///
 /// `GET /radar/robots_txt/top/domain_categories`
-Future<ApiResult<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404>> radarGetRobotsTxtTopDomainCategoriesByFilesParsed({int? limit, List<String>? name, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory? userAgentCategory, List<String>? date, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404>> radarGetRobotsTxtTopDomainCategoriesByFilesParsed({int? limit, List<String>? name, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory? userAgentCategory, List<String>? date, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -41,6 +41,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -58,7 +59,7 @@ return _execute(
 /// Retrieves the top user agents on robots.txt files.
 ///
 /// `GET /radar/robots_txt/top/user_agents/directive`
-Future<ApiResult<RadarGetRobotsTxtTopUserAgentsByDirectiveResponse, RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404>> radarGetRobotsTxtTopUserAgentsByDirective({int? limit, List<String>? name, RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory? userAgentCategory, List<String>? date, List<String>? domainCategory, RadarGetRobotsTxtTopUserAgentsByDirectiveDirective? directive, RadarGetRobotsTxtTopUserAgentsByDirectiveFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRobotsTxtTopUserAgentsByDirectiveResponse, RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404>> radarGetRobotsTxtTopUserAgentsByDirective({int? limit, List<String>? name, RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory? userAgentCategory, List<String>? date, List<String>? domainCategory, RadarGetRobotsTxtTopUserAgentsByDirectiveDirective? directive, RadarGetRobotsTxtTopUserAgentsByDirectiveFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -88,6 +89,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -102,16 +104,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

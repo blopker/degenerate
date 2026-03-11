@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieves the current fallback origin configuration for custom hostnames on a zone. The fallback origin handles traffic when specific custom hostname origins are unavailable.
 ///
 /// `GET /zones/{zone_id}/custom_hostnames/fallback_origin`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/fallback_origin',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Updates the fallback origin configuration for custom hostnames on a zone. Sets the default origin server for custom hostname traffic.
 ///
 /// `PUT /zones/{zone_id}/custom_hostnames/fallback_origin`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/fallback_origin',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Removes the fallback origin configuration for custom hostnames on a zone. Custom hostnames without specific origins will no longer have a fallback.
 ///
 /// `DELETE /zones/{zone_id}/custom_hostnames/fallback_origin`
-Future<ApiResult<ResponseCommon68, Never>> customHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> customHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/fallback_origin',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -76,16 +79,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

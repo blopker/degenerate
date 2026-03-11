@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/deprecated_api_calls#index-2021-01
 ///
 /// `GET /admin/api/2021-01/deprecated_api_calls.json`
-Future<ApiResult<void, Never>> deprecated202101GetDeprecatedApiCalls() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetDeprecatedApiCalls({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/2021-01/deprecated_api_calls.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -35,12 +36,13 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/deprecated_api_calls#index-unstable
 ///
 /// `GET /admin/api/unstable/deprecated_api_calls.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetDeprecatedApiCalls() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetDeprecatedApiCalls({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/admin/api/unstable/deprecated_api_calls.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -50,16 +52,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

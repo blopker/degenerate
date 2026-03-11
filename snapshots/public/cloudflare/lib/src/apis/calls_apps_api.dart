@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists all apps in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsList({required CallsAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon11, Never>> callsAppsList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new Cloudflare calls app. An app is an unique enviroment where each Session can access all Tracks within the app.
 ///
 /// `POST /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon11, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetches details for a single Calls app.
 ///
 /// `GET /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon11, Never>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Edit details for a single app.
 ///
 /// `PUT /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon11, Never>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Deletes an app from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon11, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

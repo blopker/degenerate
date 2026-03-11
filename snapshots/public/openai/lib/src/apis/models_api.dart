@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
 ///
 /// `GET /models`
-Future<ApiResult<ListModelsResponse, Never>> listModels() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ListModelsResponse, Never>> listModels({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/models',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,12 +34,13 @@ return _execute(
 /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
 ///
 /// `GET /models/{model}`
-Future<ApiResult<Model, Never>> retrieveModel({required String model}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Model, Never>> retrieveModel({required String model, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/models/${Uri.encodeComponent(model)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -51,12 +53,13 @@ return _execute(
 /// Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
 ///
 /// `DELETE /models/{model}`
-Future<ApiResult<DeleteModelResponse, Never>> deleteModel({required String model}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteModelResponse, Never>> deleteModel({required String model, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/models/${Uri.encodeComponent(model)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -68,16 +71,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

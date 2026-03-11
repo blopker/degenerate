@@ -20,12 +20,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listCatalogs({required R2DataCatalogAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listCatalogs({required R2DataCatalogAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -45,12 +46,13 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -71,12 +73,13 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/disable`
-Future<ApiResult<void, ResponseCommonFailure55>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure55>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/disable',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,12 +98,13 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/enable`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/enable',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -115,16 +119,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

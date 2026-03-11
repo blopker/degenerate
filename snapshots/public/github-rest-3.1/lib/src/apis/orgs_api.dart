@@ -20,7 +20,7 @@ final ApiConfig _config;
 /// > Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
 ///
 /// `GET /organizations`
-Future<ApiResult<List<OrganizationSimple>, Never>> orgsList({int? since, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSimple>, Never>> orgsList({int? since, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) queryParameters['since'] = since.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -56,12 +57,13 @@ return _execute(
 /// To see information about an organization's GitHub plan, GitHub Apps need the `Organization plan` permission.
 ///
 /// `GET /orgs/{org}`
-Future<ApiResult<OrganizationFull, BasicError>> orgsGet({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationFull, BasicError>> orgsGet({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -89,7 +91,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}`
-Future<ApiResult<OrganizationFull, OrgsUpdateResponse422>> orgsUpdate({required String org, OrgsUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationFull, OrgsUpdateResponse422>> orgsUpdate({required String org, OrgsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,6 +99,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -120,12 +123,13 @@ return _execute(
 /// https://docs.github.com/site-policy/github-terms/github-terms-of-service
 ///
 /// `DELETE /orgs/{org}`
-Future<ApiResult<Map<String, Object>, BasicError>> orgsDelete({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> orgsDelete({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -155,7 +159,7 @@ return _execute(
 /// deployed artifact can change over time.
 ///
 /// `POST /orgs/{org}/artifacts/metadata/deployment-record`
-Future<ApiResult<OrgsCreateArtifactDeploymentRecordResponse, Never>> orgsCreateArtifactDeploymentRecord({required String org, required OrgsCreateArtifactDeploymentRecordRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgsCreateArtifactDeploymentRecordResponse, Never>> orgsCreateArtifactDeploymentRecord({required String org, required OrgsCreateArtifactDeploymentRecordRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -163,6 +167,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/artifacts/metadata/deployment-record',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -180,7 +185,7 @@ return _execute(
 /// If no existing records match, new records will be created.
 ///
 /// `POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}`
-Future<ApiResult<OrgsSetClusterDeploymentRecordsResponse, Never>> orgsSetClusterDeploymentRecords({required String org, required String cluster, required OrgsSetClusterDeploymentRecordsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgsSetClusterDeploymentRecordsResponse, Never>> orgsSetClusterDeploymentRecords({required String org, required String cluster, required OrgsSetClusterDeploymentRecordsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -188,6 +193,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/artifacts/metadata/deployment-record/cluster/${Uri.encodeComponent(cluster)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -204,7 +210,7 @@ return _execute(
 /// associated with a repository owned by the organization.
 ///
 /// `POST /orgs/{org}/artifacts/metadata/storage-record`
-Future<ApiResult<OrgsCreateArtifactStorageRecordResponse, Never>> orgsCreateArtifactStorageRecord({required String org, required OrgsCreateArtifactStorageRecordRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgsCreateArtifactStorageRecordResponse, Never>> orgsCreateArtifactStorageRecord({required String org, required OrgsCreateArtifactStorageRecordRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -212,6 +218,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/artifacts/metadata/storage-record',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -226,12 +233,13 @@ return _execute(
 /// List deployment records for an artifact metadata associated with an organization.
 ///
 /// `GET /orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records`
-Future<ApiResult<OrgsListArtifactDeploymentRecordsResponse, Never>> orgsListArtifactDeploymentRecords({required String org, required String subjectDigest, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgsListArtifactDeploymentRecordsResponse, Never>> orgsListArtifactDeploymentRecords({required String org, required String subjectDigest, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/artifacts/${Uri.encodeComponent(subjectDigest)}/metadata/deployment-records',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -248,12 +256,13 @@ return _execute(
 /// The collection of storage records returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `content:read` permission is required.
 ///
 /// `GET /orgs/{org}/artifacts/{subject_digest}/metadata/storage-records`
-Future<ApiResult<OrgsListArtifactStorageRecordsResponse, Never>> orgsListArtifactStorageRecords({required String org, required String subjectDigest, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgsListArtifactStorageRecordsResponse, Never>> orgsListArtifactStorageRecords({required String org, required String subjectDigest, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/artifacts/${Uri.encodeComponent(subjectDigest)}/metadata/storage-records',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -272,7 +281,7 @@ return _execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `POST /orgs/{org}/attestations/bulk-list`
-Future<ApiResult<OrgsListAttestationsBulkResponse, Never>> orgsListAttestationsBulk({required String org, int? perPage, String? before, String? after, required OrgsListAttestationsBulkRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<OrgsListAttestationsBulkResponse, Never>> orgsListAttestationsBulk({required String org, int? perPage, String? before, String? after, required OrgsListAttestationsBulkRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (before != null) queryParameters['before'] = before;
@@ -288,6 +297,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -302,7 +312,7 @@ return _execute(
 /// Delete artifact attestations in bulk by either subject digests or unique ID.
 ///
 /// `POST /orgs/{org}/attestations/delete-request`
-Future<ApiResult<void, BasicError>> orgsDeleteAttestationsBulk({required String org, required OrgsDeleteAttestationsBulkRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsDeleteAttestationsBulk({required String org, required OrgsDeleteAttestationsBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -310,6 +320,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/attestations/delete-request',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -325,12 +336,13 @@ return _execute(
 /// Delete an artifact attestation by subject digest.
 ///
 /// `DELETE /orgs/{org}/attestations/digest/{subject_digest}`
-Future<ApiResult<void, BasicError>> orgsDeleteAttestationsBySubjectDigest({required String org, required String subjectDigest, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsDeleteAttestationsBySubjectDigest({required String org, required String subjectDigest, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/attestations/digest/${Uri.encodeComponent(subjectDigest)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -347,7 +359,7 @@ return _execute(
 /// Results will be sorted in ascending order by repository ID
 ///
 /// `GET /orgs/{org}/attestations/repositories`
-Future<ApiResult<List<OrgsListAttestationRepositoriesResponse>, Never>> orgsListAttestationRepositories({required String org, int? perPage, String? before, String? after, String? predicateType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrgsListAttestationRepositoriesResponse>, Never>> orgsListAttestationRepositories({required String org, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (before != null) queryParameters['before'] = before;
@@ -362,6 +374,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -377,12 +390,13 @@ return _execute(
 /// Delete an artifact attestation by unique ID that is associated with a repository owned by an org.
 ///
 /// `DELETE /orgs/{org}/attestations/{attestation_id}`
-Future<ApiResult<void, BasicError>> orgsDeleteAttestationsById({required String org, required int attestationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsDeleteAttestationsById({required String org, required int attestationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/attestations/${Uri.encodeComponent(attestationId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -402,7 +416,7 @@ return _execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `GET /orgs/{org}/attestations/{subject_digest}`
-Future<ApiResult<OrgsListAttestationsResponse, Never>> orgsListAttestations({required String org, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<OrgsListAttestationsResponse, Never>> orgsListAttestations({required String org, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (before != null) queryParameters['before'] = before;
@@ -417,6 +431,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -431,7 +446,7 @@ return _execute(
 /// List the users blocked by an organization.
 ///
 /// `GET /orgs/{org}/blocks`
-Future<ApiResult<List<SimpleUser>, Never>> orgsListBlockedUsers({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> orgsListBlockedUsers({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -444,6 +459,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -459,12 +475,13 @@ return _execute(
 /// Returns a 204 if the given user is blocked by the given organization. Returns a 404 if the organization is not blocking the user, or if the user account has been identified as spam by GitHub.
 ///
 /// `GET /orgs/{org}/blocks/{username}`
-Future<ApiResult<void, BasicError>> orgsCheckBlockedUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsCheckBlockedUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/blocks/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -480,12 +497,13 @@ return _execute(
 /// Blocks the given user on behalf of the specified organization and returns a 204. If the organization cannot block the given user a 422 is returned.
 ///
 /// `PUT /orgs/{org}/blocks/{username}`
-Future<ApiResult<void, ValidationError>> orgsBlockUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationError>> orgsBlockUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/blocks/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -501,12 +519,13 @@ return _execute(
 /// Unblocks the given user on behalf of the specified organization.
 ///
 /// `DELETE /orgs/{org}/blocks/{username}`
-Future<ApiResult<void, Never>> orgsUnblockUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsUnblockUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/blocks/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -519,7 +538,7 @@ return _execute(
 /// The return hash contains `failed_at` and `failed_reason` fields which represent the time at which the invitation failed and the reason for the failure.
 ///
 /// `GET /orgs/{org}/failed_invitations`
-Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListFailedInvitations({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListFailedInvitations({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -532,6 +551,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -555,7 +575,7 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks`
-Future<ApiResult<List<OrgHook>, BasicError>> orgsListWebhooks({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrgHook>, BasicError>> orgsListWebhooks({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -568,6 +588,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -591,7 +612,7 @@ return _execute(
 /// edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks`
-Future<ApiResult<OrgHook, ValidationError>> orgsCreateWebhook({required String org, required OrgsCreateWebhookRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgHook, ValidationError>> orgsCreateWebhook({required String org, required OrgsCreateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -599,6 +620,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/hooks',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -622,12 +644,13 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}`
-Future<ApiResult<OrgHook, BasicError>> orgsGetWebhook({required String org, required int hookId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgHook, BasicError>> orgsGetWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -654,7 +677,7 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `PATCH /orgs/{org}/hooks/{hook_id}`
-Future<ApiResult<OrgHook, ValidationError>> orgsUpdateWebhook({required String org, required int hookId, OrgsUpdateWebhookRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgHook, ValidationError>> orgsUpdateWebhook({required String org, required int hookId, OrgsUpdateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -662,6 +685,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -684,12 +708,13 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `DELETE /orgs/{org}/hooks/{hook_id}`
-Future<ApiResult<void, BasicError>> orgsDeleteWebhook({required String org, required int hookId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsDeleteWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -710,12 +735,13 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}/config`
-Future<ApiResult<WebhookConfig, Never>> orgsGetWebhookConfigForOrg({required String org, required int hookId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WebhookConfig, Never>> orgsGetWebhookConfigForOrg({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}/config',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -735,7 +761,7 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `PATCH /orgs/{org}/hooks/{hook_id}/config`
-Future<ApiResult<WebhookConfig, Never>> orgsUpdateWebhookConfigForOrg({required String org, required int hookId, OrgsUpdateWebhookConfigForOrgRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WebhookConfig, Never>> orgsUpdateWebhookConfigForOrg({required String org, required int hookId, OrgsUpdateWebhookConfigForOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -743,6 +769,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}/config',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -762,7 +789,7 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}/deliveries`
-Future<ApiResult<List<HookDeliveryItem>, BasicError>> orgsListWebhookDeliveries({required String org, required int hookId, int? perPage, String? cursor, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<HookDeliveryItem>, BasicError>> orgsListWebhookDeliveries({required String org, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (cursor != null) queryParameters['cursor'] = cursor;
@@ -775,6 +802,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -798,12 +826,13 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}`
-Future<ApiResult<HookDelivery, BasicError>> orgsGetWebhookDelivery({required String org, required int hookId, required int deliveryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<HookDelivery, BasicError>> orgsGetWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}/deliveries/${Uri.encodeComponent(deliveryId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -826,12 +855,13 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts`
-Future<ApiResult<Map<String, Object>, BasicError>> orgsRedeliverWebhookDelivery({required String org, required int hookId, required int deliveryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> orgsRedeliverWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}/deliveries/${Uri.encodeComponent(deliveryId.toString())}/attempts',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -855,12 +885,13 @@ return _execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks/{hook_id}/pings`
-Future<ApiResult<void, BasicError>> orgsPingWebhook({required String org, required int hookId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsPingWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/orgs/${Uri.encodeComponent(org)}/hooks/${Uri.encodeComponent(hookId.toString())}/pings',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -876,7 +907,7 @@ return _execute(
 /// Get API request count statistics for an actor broken down by route within a specified time frame.
 ///
 /// `GET /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}`
-Future<ApiResult<List<InsightsRouteStats2>, Never>> apiInsightsGetRouteStatsByActor({required String org, required InsightsGetRouteStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetRouteStatsByActorDirection? direction, List<InsightsGetRouteStatsByActorSort>? sort, String? apiRouteSubstring, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<InsightsRouteStats2>, Never>> apiInsightsGetRouteStatsByActor({required String org, required InsightsGetRouteStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetRouteStatsByActorDirection? direction, List<InsightsGetRouteStatsByActorSort>? sort, String? apiRouteSubstring, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -898,6 +929,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -913,7 +945,7 @@ return _execute(
 /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.
 ///
 /// `GET /orgs/{org}/insights/api/subject-stats`
-Future<ApiResult<List<InsightsSubjectStats2>, Never>> apiInsightsGetSubjectStats({required String org, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetSubjectStatsDirection? direction, List<InsightsGetSubjectStatsSort>? sort, String? subjectNameSubstring, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<InsightsSubjectStats2>, Never>> apiInsightsGetSubjectStats({required String org, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetSubjectStatsDirection? direction, List<InsightsGetSubjectStatsSort>? sort, String? subjectNameSubstring, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -935,6 +967,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -950,7 +983,7 @@ return _execute(
 /// Get overall statistics of API requests made within an organization by all users and apps within a specified time frame.
 ///
 /// `GET /orgs/{org}/insights/api/summary-stats`
-Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStats({required String org, required String minTimestamp, String? maxTimestamp, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStats({required String org, required String minTimestamp, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -963,6 +996,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -977,7 +1011,7 @@ return _execute(
 /// Get overall statistics of API requests within the organization for a user.
 ///
 /// `GET /orgs/{org}/insights/api/summary-stats/users/{user_id}`
-Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -990,6 +1024,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1004,7 +1039,7 @@ return _execute(
 /// Get overall statistics of API requests within the organization made by a specific actor. Actors can be GitHub App installations, OAuth apps or other tokens on behalf of a user.
 ///
 /// `GET /orgs/{org}/insights/api/summary-stats/{actor_type}/{actor_id}`
-Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStatsByActor({required String org, required InsightsGetSummaryStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStatsByActor({required String org, required InsightsGetSummaryStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -1017,6 +1052,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1031,7 +1067,7 @@ return _execute(
 /// Get the number of API requests and rate-limited requests made within an organization over a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStats({required String org, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStats({required String org, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -1045,6 +1081,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1060,7 +1097,7 @@ return _execute(
 /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats/users/{user_id}`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -1074,6 +1111,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1089,7 +1127,7 @@ return _execute(
 /// Get the number of API requests and rate-limited requests made within an organization by a specific actor within a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByActor({required String org, required InsightsGetTimeStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByActor({required String org, required InsightsGetTimeStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -1103,6 +1141,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1118,7 +1157,7 @@ return _execute(
 /// Get API usage statistics within an organization for a user broken down by the type of access.
 ///
 /// `GET /orgs/{org}/insights/api/user-stats/{user_id}`
-Future<ApiResult<List<InsightsUserStats2>, Never>> apiInsightsGetUserStats({required String org, required String userId, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetUserStatsDirection? direction, List<InsightsGetUserStatsSort>? sort, String? actorNameSubstring, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<InsightsUserStats2>, Never>> apiInsightsGetUserStats({required String org, required String userId, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetUserStatsDirection? direction, List<InsightsGetUserStatsSort>? sort, String? actorNameSubstring, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
@@ -1140,6 +1179,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1160,7 +1200,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:read` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/installations`
-Future<ApiResult<OrgsListAppInstallationsResponse, Never>> orgsListAppInstallations({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<OrgsListAppInstallationsResponse, Never>> orgsListAppInstallations({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -1173,6 +1213,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1190,7 +1231,7 @@ return _execute(
 /// member, the `login` field in the return hash will be `null`.
 ///
 /// `GET /orgs/{org}/invitations`
-Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListPendingInvitations({required String org, int? perPage, int? page, OrgsListPendingInvitationsRole? role, OrgsListPendingInvitationsInvitationSource? invitationSource, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListPendingInvitations({required String org, int? perPage, int? page, OrgsListPendingInvitationsRole? role, OrgsListPendingInvitationsInvitationSource? invitationSource, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -1205,6 +1246,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1226,7 +1268,7 @@ return _execute(
 /// and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `POST /orgs/{org}/invitations`
-Future<ApiResult<OrganizationInvitation, ValidationError>> orgsCreateInvitation({required String org, OrgsCreateInvitationRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationInvitation, ValidationError>> orgsCreateInvitation({required String org, OrgsCreateInvitationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1234,6 +1276,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/invitations',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1253,12 +1296,13 @@ return _execute(
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).
 ///
 /// `DELETE /orgs/{org}/invitations/{invitation_id}`
-Future<ApiResult<void, ValidationError>> orgsCancelInvitation({required String org, required int invitationId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationError>> orgsCancelInvitation({required String org, required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/invitations/${Uri.encodeComponent(invitationId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1274,7 +1318,7 @@ return _execute(
 /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
 ///
 /// `GET /orgs/{org}/invitations/{invitation_id}/teams`
-Future<ApiResult<List<Team>, BasicError>> orgsListInvitationTeams({required String org, required int invitationId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Team>, BasicError>> orgsListInvitationTeams({required String org, required int invitationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -1287,6 +1331,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1305,12 +1350,13 @@ return _execute(
 /// Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/issue-types`
-Future<ApiResult<List<IssueType>, BasicError>> orgsListIssueTypes({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<IssueType>, BasicError>> orgsListIssueTypes({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/issue-types',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1334,7 +1380,7 @@ return _execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/issue-types`
-Future<ApiResult<IssueType, BasicError>> orgsCreateIssueType({required String org, required OrganizationCreateIssueType body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<IssueType, BasicError>> orgsCreateIssueType({required String org, required OrganizationCreateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1342,6 +1388,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/issue-types',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1364,7 +1411,7 @@ return _execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/issue-types/{issue_type_id}`
-Future<ApiResult<IssueType, BasicError>> orgsUpdateIssueType({required String org, required int issueTypeId, required OrganizationUpdateIssueType body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<IssueType, BasicError>> orgsUpdateIssueType({required String org, required int issueTypeId, required OrganizationUpdateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1372,6 +1419,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/issue-types/${Uri.encodeComponent(issueTypeId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1394,12 +1442,13 @@ return _execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/issue-types/{issue_type_id}`
-Future<ApiResult<void, ValidationErrorSimple>> orgsDeleteIssueType({required String org, required int issueTypeId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationErrorSimple>> orgsDeleteIssueType({required String org, required int issueTypeId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/issue-types/${Uri.encodeComponent(issueTypeId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1415,7 +1464,7 @@ return _execute(
 /// List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
 ///
 /// `GET /orgs/{org}/members`
-Future<ApiResult<List<SimpleUser>, ValidationError>> orgsListMembers({required String org, OrgsListMembersFilter? filter, OrgsListMembersRole? role, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, ValidationError>> orgsListMembers({required String org, OrgsListMembersFilter? filter, OrgsListMembersRole? role, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) queryParameters['filter'] = filter.toJson();
 if (role != null) queryParameters['role'] = role.toJson();
@@ -1430,6 +1479,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1448,12 +1498,13 @@ return _execute(
 /// Check if a user is, publicly or privately, a member of the organization.
 ///
 /// `GET /orgs/{org}/members/{username}`
-Future<ApiResult<void, Never>> orgsCheckMembershipForUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsCheckMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/members/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1469,12 +1520,13 @@ return _execute(
 /// > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
 /// `DELETE /orgs/{org}/members/{username}`
-Future<ApiResult<void, BasicError>> orgsRemoveMember({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsRemoveMember({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/members/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1490,12 +1542,13 @@ return _execute(
 /// In order to get a user's membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user's membership status.
 ///
 /// `GET /orgs/{org}/memberships/{username}`
-Future<ApiResult<OrgMembership, BasicError>> orgsGetMembershipForUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgMembership, BasicError>> orgsGetMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/memberships/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1521,7 +1574,7 @@ return _execute(
 /// To prevent abuse, organization owners are limited to creating 50 organization invitations for an organization within a 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
 ///
 /// `PUT /orgs/{org}/memberships/{username}`
-Future<ApiResult<OrgMembership, ValidationError>> orgsSetMembershipForUser({required String org, required String username, OrgsSetMembershipForUserRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgMembership, ValidationError>> orgsSetMembershipForUser({required String org, required String username, OrgsSetMembershipForUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1529,6 +1582,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/memberships/${Uri.encodeComponent(username)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1551,12 +1605,13 @@ return _execute(
 /// > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
 /// `DELETE /orgs/{org}/memberships/{username}`
-Future<ApiResult<void, BasicError>> orgsRemoveMembershipForUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsRemoveMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/memberships/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1579,12 +1634,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles`
-Future<ApiResult<OrgsListOrgRolesResponse, BasicError>> orgsListOrgRoles({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgsListOrgRolesResponse, BasicError>> orgsListOrgRoles({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1606,12 +1662,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/organization-roles/teams/{team_slug}`
-Future<ApiResult<void, Never>> orgsRevokeAllOrgRolesTeam({required String org, required String teamSlug, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsRevokeAllOrgRolesTeam({required String org, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles/teams/${Uri.encodeComponent(teamSlug)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1628,12 +1685,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}`
-Future<ApiResult<void, Never>> orgsAssignTeamToOrgRole({required String org, required String teamSlug, required int roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsAssignTeamToOrgRole({required String org, required String teamSlug, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles/teams/${Uri.encodeComponent(teamSlug)}/${Uri.encodeComponent(roleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1650,12 +1708,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}`
-Future<ApiResult<void, Never>> orgsRevokeOrgRoleTeam({required String org, required String teamSlug, required int roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsRevokeOrgRoleTeam({required String org, required String teamSlug, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles/teams/${Uri.encodeComponent(teamSlug)}/${Uri.encodeComponent(roleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1672,12 +1731,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/organization-roles/users/{username}`
-Future<ApiResult<void, Never>> orgsRevokeAllOrgRolesUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsRevokeAllOrgRolesUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles/users/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1694,12 +1754,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/organization-roles/users/{username}/{role_id}`
-Future<ApiResult<void, Never>> orgsAssignUserToOrgRole({required String org, required String username, required int roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsAssignUserToOrgRole({required String org, required String username, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles/users/${Uri.encodeComponent(username)}/${Uri.encodeComponent(roleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1716,12 +1777,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}`
-Future<ApiResult<void, Never>> orgsRevokeOrgRoleUser({required String org, required String username, required int roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsRevokeOrgRoleUser({required String org, required String username, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles/users/${Uri.encodeComponent(username)}/${Uri.encodeComponent(roleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1741,12 +1803,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles/{role_id}`
-Future<ApiResult<OrganizationRole, BasicError>> orgsGetOrgRole({required String org, required int roleId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationRole, BasicError>> orgsGetOrgRole({required String org, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/organization-roles/${Uri.encodeComponent(roleId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1768,7 +1831,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles/{role_id}/teams`
-Future<ApiResult<List<TeamRoleAssignment>, Never>> orgsListOrgRoleTeams({required String org, required int roleId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<TeamRoleAssignment>, Never>> orgsListOrgRoleTeams({required String org, required int roleId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -1781,6 +1844,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1800,7 +1864,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles/{role_id}/users`
-Future<ApiResult<List<UserRoleAssignment>, Never>> orgsListOrgRoleUsers({required String org, required int roleId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<UserRoleAssignment>, Never>> orgsListOrgRoleUsers({required String org, required int roleId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -1813,6 +1877,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1828,7 +1893,7 @@ return _execute(
 /// List all users who are outside collaborators of an organization.
 ///
 /// `GET /orgs/{org}/outside_collaborators`
-Future<ApiResult<List<SimpleUser>, Never>> orgsListOutsideCollaborators({required String org, OrgsListOutsideCollaboratorsFilter? filter, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> orgsListOutsideCollaborators({required String org, OrgsListOutsideCollaboratorsFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) queryParameters['filter'] = filter.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -1842,6 +1907,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1857,7 +1923,7 @@ return _execute(
 /// When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)". Converting an organization member to an outside collaborator may be restricted by enterprise administrators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."
 ///
 /// `PUT /orgs/{org}/outside_collaborators/{username}`
-Future<ApiResult<OrgsConvertMemberToOutsideCollaboratorResponse202, BasicError>> orgsConvertMemberToOutsideCollaborator({required String org, required String username, OrgsConvertMemberToOutsideCollaboratorRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgsConvertMemberToOutsideCollaboratorResponse202, BasicError>> orgsConvertMemberToOutsideCollaborator({required String org, required String username, OrgsConvertMemberToOutsideCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1865,6 +1931,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/outside_collaborators/${Uri.encodeComponent(username)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1882,12 +1949,13 @@ return _execute(
 /// Removing a user from this list will remove them from all the organization's repositories.
 ///
 /// `DELETE /orgs/{org}/outside_collaborators/{username}`
-Future<ApiResult<void, OrgsRemoveOutsideCollaboratorResponse422>> orgsRemoveOutsideCollaborator({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, OrgsRemoveOutsideCollaboratorResponse422>> orgsRemoveOutsideCollaborator({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/outside_collaborators/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -1905,7 +1973,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-token-requests`
-Future<ApiResult<List<OrganizationProgrammaticAccessGrantRequest>, BasicError>> orgsListPatGrantRequests({required String org, int? perPage, int? page, OrgsListPatGrantRequestsSort? sort, OrgsListPatGrantRequestsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationProgrammaticAccessGrantRequest>, BasicError>> orgsListPatGrantRequests({required String org, int? perPage, int? page, OrgsListPatGrantRequestsSort? sort, OrgsListPatGrantRequestsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -1934,6 +2002,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -1954,7 +2023,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-token-requests`
-Future<ApiResult<Map<String, Object>, BasicError>> orgsReviewPatGrantRequestsInBulk({required String org, required OrgsReviewPatGrantRequestsInBulkRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> orgsReviewPatGrantRequestsInBulk({required String org, required OrgsReviewPatGrantRequestsInBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1962,6 +2031,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/personal-access-token-requests',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -1981,7 +2051,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-token-requests/{pat_request_id}`
-Future<ApiResult<void, BasicError>> orgsReviewPatGrantRequest({required String org, required int patRequestId, required OrgsReviewPatGrantRequestRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsReviewPatGrantRequest({required String org, required int patRequestId, required OrgsReviewPatGrantRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1989,6 +2059,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/personal-access-token-requests/${Uri.encodeComponent(patRequestId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2006,7 +2077,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRequestRepositories({required String org, required int patRequestId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRequestRepositories({required String org, required int patRequestId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2019,6 +2090,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2039,7 +2111,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-tokens`
-Future<ApiResult<List<OrganizationProgrammaticAccessGrant>, BasicError>> orgsListPatGrants({required String org, int? perPage, int? page, OrgsListPatGrantsSort? sort, OrgsListPatGrantsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationProgrammaticAccessGrant>, BasicError>> orgsListPatGrants({required String org, int? perPage, int? page, OrgsListPatGrantsSort? sort, OrgsListPatGrantsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2068,6 +2140,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2088,7 +2161,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-tokens`
-Future<ApiResult<Map<String, Object>, BasicError>> orgsUpdatePatAccesses({required String org, required OrgsUpdatePatAccessesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, Object>, BasicError>> orgsUpdatePatAccesses({required String org, required OrgsUpdatePatAccessesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2096,6 +2169,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/personal-access-tokens',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2115,7 +2189,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-tokens/{pat_id}`
-Future<ApiResult<void, BasicError>> orgsUpdatePatAccess({required String org, required int patId, required OrgsUpdatePatAccessRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsUpdatePatAccess({required String org, required int patId, required OrgsUpdatePatAccessRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2123,6 +2197,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/personal-access-tokens/${Uri.encodeComponent(patId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2140,7 +2215,7 @@ return _execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRepositories({required String org, required int patId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRepositories({required String org, required int patId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2153,6 +2228,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2172,12 +2248,13 @@ return _execute(
 /// Organization members can read these properties.
 ///
 /// `GET /orgs/{org}/properties/schema`
-Future<ApiResult<List<CustomProperty>, BasicError>> orgsCustomPropertiesForReposGetOrganizationDefinitions({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<CustomProperty>, BasicError>> orgsCustomPropertiesForReposGetOrganizationDefinitions({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/properties/schema',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2204,7 +2281,7 @@ return _execute(
 ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// `PATCH /orgs/{org}/properties/schema`
-Future<ApiResult<List<CustomProperty>, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<CustomProperty>, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2212,6 +2289,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/properties/schema',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2231,12 +2309,13 @@ return _execute(
 /// Organization members can read these properties.
 ///
 /// `GET /orgs/{org}/properties/schema/{custom_property_name}`
-Future<ApiResult<CustomProperty, BasicError>> orgsCustomPropertiesForReposGetOrganizationDefinition({required String org, required String customPropertyName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CustomProperty, BasicError>> orgsCustomPropertiesForReposGetOrganizationDefinition({required String org, required String customPropertyName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/properties/schema/${Uri.encodeComponent(customPropertyName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2258,7 +2337,7 @@ return _execute(
 /// - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// `PUT /orgs/{org}/properties/schema/{custom_property_name}`
-Future<ApiResult<CustomProperty, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition({required String org, required String customPropertyName, required CustomPropertySetPayload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CustomProperty, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition({required String org, required String customPropertyName, required CustomPropertySetPayload body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2266,6 +2345,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/properties/schema/${Uri.encodeComponent(customPropertyName)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2287,12 +2367,13 @@ return _execute(
 ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// `DELETE /orgs/{org}/properties/schema/{custom_property_name}`
-Future<ApiResult<void, BasicError>> orgsCustomPropertiesForReposDeleteOrganizationDefinition({required String org, required String customPropertyName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsCustomPropertiesForReposDeleteOrganizationDefinition({required String org, required String customPropertyName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/properties/schema/${Uri.encodeComponent(customPropertyName)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2309,7 +2390,7 @@ return _execute(
 /// Organization members can read these properties.
 ///
 /// `GET /orgs/{org}/properties/values`
-Future<ApiResult<List<OrgRepoCustomPropertyValues>, BasicError>> orgsCustomPropertiesForReposGetOrganizationValues({required String org, int? perPage, int? page, String? repositoryQuery, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrgRepoCustomPropertyValues>, BasicError>> orgsCustomPropertiesForReposGetOrganizationValues({required String org, int? perPage, int? page, String? repositoryQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2323,6 +2404,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2350,7 +2432,7 @@ return _execute(
 ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 ///
 /// `PATCH /orgs/{org}/properties/values`
-Future<ApiResult<void, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2358,6 +2440,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/properties/values',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2373,7 +2456,7 @@ return _execute(
 /// Members of an organization can choose to have their membership publicized or not.
 ///
 /// `GET /orgs/{org}/public_members`
-Future<ApiResult<List<SimpleUser>, Never>> orgsListPublicMembers({required String org, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> orgsListPublicMembers({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2386,6 +2469,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2401,12 +2485,13 @@ return _execute(
 /// Check if the provided user is a public member of the organization.
 ///
 /// `GET /orgs/{org}/public_members/{username}`
-Future<ApiResult<void, Never>> orgsCheckPublicMembershipForUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsCheckPublicMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/public_members/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2421,12 +2506,13 @@ return _execute(
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /orgs/{org}/public_members/{username}`
-Future<ApiResult<void, BasicError>> orgsSetPublicMembershipForAuthenticatedUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> orgsSetPublicMembershipForAuthenticatedUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/public_members/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2442,12 +2528,13 @@ return _execute(
 /// Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.
 ///
 /// `DELETE /orgs/{org}/public_members/{username}`
-Future<ApiResult<void, Never>> orgsRemovePublicMembershipForAuthenticatedUser({required String org, required String username, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsRemovePublicMembershipForAuthenticatedUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/public_members/${Uri.encodeComponent(username)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2460,7 +2547,7 @@ return _execute(
 /// Get the history of an organization ruleset.
 ///
 /// `GET /orgs/{org}/rulesets/{ruleset_id}/history`
-Future<ApiResult<List<RulesetVersion>, BasicError>> orgsGetOrgRulesetHistory({required String org, required int rulesetId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RulesetVersion>, BasicError>> orgsGetOrgRulesetHistory({required String org, required int rulesetId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2473,6 +2560,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2491,12 +2579,13 @@ return _execute(
 /// Get a version of an organization ruleset.
 ///
 /// `GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}`
-Future<ApiResult<RulesetVersion, BasicError>> orgsGetOrgRulesetVersion({required String org, required int rulesetId, required int versionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RulesetVersion, BasicError>> orgsGetOrgRulesetVersion({required String org, required int rulesetId, required int versionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/history/${Uri.encodeComponent(versionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2516,12 +2605,13 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/immutable-releases`
-Future<ApiResult<ImmutableReleasesOrganizationSettings, Never>> orgsGetImmutableReleasesSettings({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ImmutableReleasesOrganizationSettings, Never>> orgsGetImmutableReleasesSettings({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/immutable-releases',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2538,7 +2628,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/settings/immutable-releases`
-Future<ApiResult<void, Never>> orgsSetImmutableReleasesSettings({required String org, required OrgsSetImmutableReleasesSettingsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsSetImmutableReleasesSettings({required String org, required OrgsSetImmutableReleasesSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2546,6 +2636,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/settings/immutable-releases',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2560,7 +2651,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/immutable-releases/repositories`
-Future<ApiResult<OrgsGetImmutableReleasesSettingsRepositoriesResponse, Never>> orgsGetImmutableReleasesSettingsRepositories({required String org, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<OrgsGetImmutableReleasesSettingsRepositoriesResponse, Never>> orgsGetImmutableReleasesSettingsRepositories({required String org, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -2573,6 +2664,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2589,7 +2681,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/settings/immutable-releases/repositories`
-Future<ApiResult<void, Never>> orgsSetImmutableReleasesSettingsRepositories({required String org, required OrgsSetImmutableReleasesSettingsRepositoriesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsSetImmutableReleasesSettingsRepositories({required String org, required OrgsSetImmutableReleasesSettingsRepositoriesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2597,6 +2689,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/settings/immutable-releases/repositories',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2611,12 +2704,13 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/settings/immutable-releases/repositories/{repository_id}`
-Future<ApiResult<void, Never>> orgsEnableSelectedRepositoryImmutableReleasesOrganization({required String org, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsEnableSelectedRepositoryImmutableReleasesOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/immutable-releases/repositories/${Uri.encodeComponent(repositoryId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2631,12 +2725,13 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/settings/immutable-releases/repositories/{repository_id}`
-Future<ApiResult<void, Never>> orgsDisableSelectedRepositoryImmutableReleasesOrganization({required String org, required int repositoryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> orgsDisableSelectedRepositoryImmutableReleasesOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/settings/immutable-releases/repositories/${Uri.encodeComponent(repositoryId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2649,7 +2744,7 @@ return _execute(
 /// Lists all of the authenticated user's organization memberships.
 ///
 /// `GET /user/memberships/orgs`
-Future<ApiResult<List<OrgMembership>, BasicError>> orgsListMembershipsForAuthenticatedUser({OrgsListMembershipsForAuthenticatedUserState? state, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrgMembership>, BasicError>> orgsListMembershipsForAuthenticatedUser({OrgsListMembershipsForAuthenticatedUserState? state, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) queryParameters['state'] = state.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -2663,6 +2758,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2681,12 +2777,13 @@ return _execute(
 /// If the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. If the authenticated user is not affiliated with the organization, a `404` is returned. This endpoint will return a `403` if the request is made by a GitHub App that is blocked by the organization.
 ///
 /// `GET /user/memberships/orgs/{org}`
-Future<ApiResult<OrgMembership, BasicError>> orgsGetMembershipForAuthenticatedUser({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgMembership, BasicError>> orgsGetMembershipForAuthenticatedUser({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/memberships/orgs/${Uri.encodeComponent(org)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -2704,7 +2801,7 @@ return _execute(
 /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
 ///
 /// `PATCH /user/memberships/orgs/{org}`
-Future<ApiResult<OrgMembership, BasicError>> orgsUpdateMembershipForAuthenticatedUser({required String org, required OrgsUpdateMembershipForAuthenticatedUserRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrgMembership, BasicError>> orgsUpdateMembershipForAuthenticatedUser({required String org, required OrgsUpdateMembershipForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2712,6 +2809,7 @@ final request = ApiRequest(
   path: '/user/memberships/orgs/${Uri.encodeComponent(org)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -2734,7 +2832,7 @@ return _execute(
 /// > Requests using a fine-grained access token will receive a `200 Success` response with an empty list.
 ///
 /// `GET /user/orgs`
-Future<ApiResult<List<OrganizationSimple>, BasicError>> orgsListForAuthenticatedUser({int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSimple>, BasicError>> orgsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2747,6 +2845,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2767,7 +2866,7 @@ return _execute(
 /// This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://docs.github.com/rest/orgs/orgs#list-organizations-for-the-authenticated-user) API instead.
 ///
 /// `GET /users/{username}/orgs`
-Future<ApiResult<List<OrganizationSimple>, Never>> orgsListForUser({required String username, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSimple>, Never>> orgsListForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2780,6 +2879,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -2792,16 +2892,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

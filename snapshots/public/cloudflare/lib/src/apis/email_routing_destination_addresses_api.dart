@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists existing destination addresses.
 ///
 /// `GET /accounts/{account_id}/email/routing/addresses`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesListDestinationAddresses({required EmailIdentifier accountId, double? page, double? perPage, EmailRoutingDestinationAddressesListDestinationAddressesDirection? direction, bool? verified, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesListDestinationAddresses({required EmailIdentifier accountId, double? page, double? perPage, EmailRoutingDestinationAddressesListDestinationAddressesDirection? direction, bool? verified, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// Create a destination address to forward your emails to. Destination addresses need to be verified before they can be used.
 ///
 /// `POST /accounts/{account_id}/email/routing/addresses`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesCreateADestinationAddress({required EmailIdentifier accountId, required EmailCreateDestinationAddressProperties body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesCreateADestinationAddress({required EmailIdentifier accountId, required EmailCreateDestinationAddressProperties body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,6 +55,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email/routing/addresses',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -68,12 +70,13 @@ return _execute(
 /// Gets information for a specific destination email already created.
 ///
 /// `GET /accounts/{account_id}/email/routing/addresses/{destination_address_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesGetADestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesGetADestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -88,12 +91,13 @@ return _execute(
 /// Deletes a specific destination address.
 ///
 /// `DELETE /accounts/{account_id}/email/routing/addresses/{destination_address_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesDeleteDestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesDeleteDestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -105,16 +109,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

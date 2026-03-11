@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Fetch an instance of a participant
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> fetchParticipant({required String accountSid, required String conferenceSid, required String callSid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountConferenceParticipant, Never>> fetchParticipant({required String accountSid, required String conferenceSid, required String callSid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants/${Uri.encodeComponent(callSid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,7 +34,7 @@ return _execute(
 /// Update the properties of the participant
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> updateParticipant({required String accountSid, required String conferenceSid, required String callSid, UpdateParticipantRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountConferenceParticipant, Never>> updateParticipant({required String accountSid, required String conferenceSid, required String callSid, UpdateParticipantRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -66,6 +67,7 @@ final request = ApiRequest(
     if (body.callSidToCoach case final callSidToCoach$?)
       'CallSidToCoach=${Uri.encodeQueryComponent(callSidToCoach$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -78,12 +80,13 @@ return _execute(
 /// Kick a participant from a given conference
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<void, Never>> deleteParticipant({required String accountSid, required String conferenceSid, required String callSid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteParticipant({required String accountSid, required String conferenceSid, required String callSid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants/${Uri.encodeComponent(callSid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -94,7 +97,7 @@ return _execute(
 /// Retrieve a list of participants belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json`
-Future<ApiResult<ListParticipantResponse, Never>> listParticipant({required String accountSid, required String conferenceSid, bool? muted, bool? hold, bool? coaching, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListParticipantResponse, Never>> listParticipant({required String accountSid, required String conferenceSid, bool? muted, bool? hold, bool? coaching, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (muted != null) queryParameters['Muted'] = muted.toString();
 if (hold != null) queryParameters['Hold'] = hold.toString();
@@ -111,6 +114,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -123,7 +127,7 @@ return _execute(
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> createParticipant({required String accountSid, required String conferenceSid, CreateParticipantRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountConferenceParticipant, Never>> createParticipant({required String accountSid, required String conferenceSid, CreateParticipantRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -230,6 +234,7 @@ final request = ApiRequest(
     if (body.callerDisplayName case final callerDisplayName$?)
       'CallerDisplayName=${Uri.encodeQueryComponent(callerDisplayName$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -241,16 +246,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves the distribution of email routing metrics by the specified dimension.
 ///
 /// `GET /radar/email/routing/summary/{dimension}`
-Future<ApiResult<RadarGetEmailRoutingSummaryResponse, RadarGetEmailRoutingSummaryResponse400>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailRoutingSummaryResponse, RadarGetEmailRoutingSummaryResponse400>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -80,6 +80,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -97,7 +98,7 @@ return _execute(
 /// Retrieves the distribution of email routing metrics grouped by dimension over time.
 ///
 /// `GET /radar/email/routing/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetEmailRoutingTimeseriesGroupResponse, RadarGetEmailRoutingTimeseriesGroupResponse400>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailRoutingTimeseriesGroupResponse, RadarGetEmailRoutingTimeseriesGroupResponse400>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -161,6 +162,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -175,16 +177,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

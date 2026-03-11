@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List DNS Internal Views for an Account
 ///
 /// `GET /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (nameExact != null) queryParameters['name.exact'] = nameExact;
@@ -40,6 +40,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -54,7 +55,7 @@ return _execute(
 /// Create Internal DNS View for an account
 ///
 /// `POST /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsView body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,6 +63,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -76,12 +78,13 @@ return _execute(
 /// Get DNS Internal View
 ///
 /// `GET /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -96,7 +99,7 @@ return _execute(
 /// Update an existing Internal DNS View
 ///
 /// `PATCH /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsView body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,6 +107,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -118,12 +122,13 @@ return _execute(
 /// Delete an existing Internal DNS View
 ///
 /// `DELETE /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponse, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponse, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -135,16 +140,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

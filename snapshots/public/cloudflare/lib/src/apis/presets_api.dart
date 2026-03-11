@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Fetches all the presets belonging to an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<RealtimekitPagingResponse, Never>> getPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? perPage, double? pageNo, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RealtimekitPagingResponse, Never>> getPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? perPage, double? pageNo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -44,7 +45,7 @@ return _execute(
 /// Creates a preset belonging to the current App
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> postPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitPreset body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> postPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitPreset body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +53,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -66,12 +68,13 @@ return _execute(
 /// Fetches details of a preset using the provided preset ID
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets/${Uri.encodeComponent(presetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -86,7 +89,7 @@ return _execute(
 /// Update a preset by the provided preset ID
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> patchPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, required RealtimekitUpdatePreset body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> patchPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, required RealtimekitUpdatePreset body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,6 +97,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets/${Uri.encodeComponent(presetId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -108,12 +112,13 @@ return _execute(
 /// Deletes a preset using the provided preset ID
 ///
 /// `DELETE /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> deletePresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> deletePresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/presets/${Uri.encodeComponent(presetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -125,16 +130,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

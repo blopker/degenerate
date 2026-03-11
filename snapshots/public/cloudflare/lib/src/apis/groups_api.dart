@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List groups for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<List<GetGroupListResponse>, GetGroupListResponse400>> getGroupList({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<GetGroupListResponse>, GetGroupListResponse400>> getGroupList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Create a group
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<PostGroupCreateResponse, PostGroupCreateResponse400>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostGroupCreateResponse, PostGroupCreateResponse400>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -60,12 +62,13 @@ return _execute(
 /// Read a group for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<GetGroupReadResponse, GetGroupReadResponse400>> getGroupRead({required String accountId, required String groupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetGroupReadResponse, GetGroupReadResponse400>> getGroupRead({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups/${Uri.encodeComponent(groupId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Update a group
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateResponse400>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateResponse400>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +92,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups/${Uri.encodeComponent(groupId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -104,12 +108,13 @@ return _execute(
 /// Delete a group for an account
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteResponse400>> deleteGroupDelete({required String accountId, required String groupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteResponse400>> deleteGroupDelete({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups/${Uri.encodeComponent(groupId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -125,12 +130,13 @@ return _execute(
 /// List group members
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListResponse400>> getGroupMemberList({required String accountId, required String groupId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListResponse400>> getGroupMemberList({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups/${Uri.encodeComponent(groupId)}/members',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -147,7 +153,7 @@ return _execute(
 /// Create a group member
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateResponse400>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateResponse400>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -155,6 +161,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups/${Uri.encodeComponent(groupId)}/members',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -170,12 +177,13 @@ return _execute(
 /// Delete a group member
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}`
-Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteResponse400>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteResponse400>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/-/groups/${Uri.encodeComponent(groupId)}/members/${Uri.encodeComponent(memberId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -190,16 +198,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

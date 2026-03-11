@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Fetches a list of managed networks for an account.
 ///
 /// `GET /accounts/{account_id}/devices/networks`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksListDeviceManagedNetworks({required TeamsDevicesIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksListDeviceManagedNetworks({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new device managed network.
 ///
 /// `POST /accounts/{account_id}/devices/networks`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksCreateDeviceManagedNetwork({required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksCreateDeviceManagedNetwork({required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Fetches details for a single managed network.
 ///
 /// `GET /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeviceManagedNetworkDetails({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeviceManagedNetworkDetails({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Updates a configured device managed network.
 ///
 /// `PUT /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksUpdateDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksUpdateDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Deletes a device managed network and fetches a list of the remaining device managed networks for an account.
 ///
 /// `DELETE /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeleteDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon67, Never>> deviceManagedNetworksDeleteDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

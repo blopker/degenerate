@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List Requests
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestList body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestList body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -23,6 +23,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -35,12 +36,13 @@ return _execute(
 /// Get a Request
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -55,7 +57,7 @@ return _execute(
 /// Updating a request alters the request in the Cloudforce One queue. This API may be used to update any attributes of the request after the initial submission. Only fields that you choose to update need to be add to the request body.
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,6 +65,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,12 +78,13 @@ return _execute(
 /// Delete a Request
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -93,7 +97,7 @@ return _execute(
 /// List Request Assets
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetList body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetList body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,6 +105,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -113,12 +118,13 @@ return _execute(
 /// Get a Request Asset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/${Uri.encodeComponent(assetId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -131,7 +137,7 @@ return _execute(
 /// Update a Request Asset
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, required CloudforceOneRequestsRequestAssetEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,6 +145,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/${Uri.encodeComponent(assetId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -151,12 +158,13 @@ return _execute(
 /// Delete a Request Asset
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/${Uri.encodeComponent(assetId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -169,7 +177,7 @@ return _execute(
 /// Create a New Request Asset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -180,6 +188,7 @@ final request = ApiRequest(
       ApiMultipartField.text('source', source$.toJson()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -192,7 +201,7 @@ return _execute(
 /// List Request Messages
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageList body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageList body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -200,6 +209,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -212,7 +222,7 @@ return _execute(
 /// Update a Request Message
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, required CloudforceOneRequestsRequestMessageEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -220,6 +230,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message/${Uri.encodeComponent(messageId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -232,12 +243,13 @@ return _execute(
 /// Delete a Request Message
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message/${Uri.encodeComponent(messageId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -250,7 +262,7 @@ return _execute(
 /// Create a New Request Message
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -258,6 +270,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message/new',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -270,12 +283,13 @@ return _execute(
 /// Get Request Priority, Status, and TLP constants
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/constants`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestConstants({required CloudforceOneRequestsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestConstants({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/constants',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -290,7 +304,7 @@ return _execute(
 /// Creating a request adds the request into the Cloudforce One queue for analysis. In addition to the content, a short title, type, priority, and releasability should be provided. If one is not provided, a default will be assigned.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestEdit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -298,6 +312,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/new',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -310,12 +325,13 @@ return _execute(
 /// Get Request Quota
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/quota`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestQuota({required CloudforceOneRequestsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/quota',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -328,12 +344,13 @@ return _execute(
 /// Get Request Types
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/types`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestTypes({required CloudforceOneRequestsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestTypes({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/types',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -345,16 +362,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

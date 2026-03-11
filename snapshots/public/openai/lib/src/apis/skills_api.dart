@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List all skills for the current project.
 ///
 /// `GET /skills`
-Future<ApiResult<SkillListResource, Never>> listSkills({int? limit, OrderEnum? order, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SkillListResource, Never>> listSkills({int? limit, OrderEnum? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Create a new skill.
 ///
 /// `POST /skills`
-Future<ApiResult<SkillResource, Never>> createSkill({CreateSkillBody? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SkillResource, Never>> createSkill({CreateSkillBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/skills',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -61,12 +63,13 @@ return _execute(
 /// Get a skill by its ID.
 ///
 /// `GET /skills/{skill_id}`
-Future<ApiResult<SkillResource, Never>> getSkill({required String skillId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SkillResource, Never>> getSkill({required String skillId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/skills/${Uri.encodeComponent(skillId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Update the default version pointer for a skill.
 ///
 /// `POST /skills/{skill_id}`
-Future<ApiResult<SkillResource, Never>> updateSkillDefaultVersion({required String skillId, SetDefaultSkillVersionBody? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SkillResource, Never>> updateSkillDefaultVersion({required String skillId, SetDefaultSkillVersionBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/skills/${Uri.encodeComponent(skillId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -99,12 +103,13 @@ return _execute(
 /// Delete a skill by its ID.
 ///
 /// `DELETE /skills/{skill_id}`
-Future<ApiResult<DeletedSkillResource, Never>> deleteSkill({required String skillId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletedSkillResource, Never>> deleteSkill({required String skillId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/skills/${Uri.encodeComponent(skillId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -117,12 +122,13 @@ return _execute(
 /// Download a skill zip bundle by its ID.
 ///
 /// `GET /skills/{skill_id}/content`
-Future<ApiResult<String, Never>> getSkillContent({required String skillId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> getSkillContent({required String skillId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/skills/${Uri.encodeComponent(skillId)}/content',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -135,7 +141,7 @@ return _execute(
 /// List skill versions for a skill.
 ///
 /// `GET /skills/{skill_id}/versions`
-Future<ApiResult<SkillVersionListResource, Never>> listSkillVersions({required String skillId, int? limit, OrderEnum? order, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SkillVersionListResource, Never>> listSkillVersions({required String skillId, int? limit, OrderEnum? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -149,6 +155,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -161,7 +168,7 @@ return _execute(
 /// Create a new immutable skill version.
 ///
 /// `POST /skills/{skill_id}/versions`
-Future<ApiResult<SkillVersionResource, Never>> createSkillVersion({required String skillId, CreateSkillVersionBody? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SkillVersionResource, Never>> createSkillVersion({required String skillId, CreateSkillVersionBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -169,6 +176,7 @@ final request = ApiRequest(
   path: '/skills/${Uri.encodeComponent(skillId)}/versions',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -181,12 +189,13 @@ return _execute(
 /// Get a specific skill version.
 ///
 /// `GET /skills/{skill_id}/versions/{version}`
-Future<ApiResult<SkillVersionResource, Never>> getSkillVersion({required String skillId, required String version, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SkillVersionResource, Never>> getSkillVersion({required String skillId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/skills/${Uri.encodeComponent(skillId)}/versions/${Uri.encodeComponent(version)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -199,12 +208,13 @@ return _execute(
 /// Delete a skill version.
 ///
 /// `DELETE /skills/{skill_id}/versions/{version}`
-Future<ApiResult<DeletedSkillVersionResource, Never>> deleteSkillVersion({required String skillId, required String version, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletedSkillVersionResource, Never>> deleteSkillVersion({required String skillId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/skills/${Uri.encodeComponent(skillId)}/versions/${Uri.encodeComponent(version)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -217,12 +227,13 @@ return _execute(
 /// Download a skill version zip bundle.
 ///
 /// `GET /skills/{skill_id}/versions/{version}/content`
-Future<ApiResult<String, Never>> getSkillVersionContent({required String skillId, required String version, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> getSkillVersionContent({required String skillId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/skills/${Uri.encodeComponent(skillId)}/versions/${Uri.encodeComponent(version)}/content',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -234,16 +245,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

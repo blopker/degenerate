@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Retrieves details for all accessible custom threat indicator feeds.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsGetIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsGetIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new custom threat indicator feed for sharing threat intelligence data.
 ///
 /// `POST /accounts/{account_id}/intel/indicator-feeds`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsCreateIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsCreateFeed body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsCreateIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsCreateFeed body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Retrieves details for a specific custom threat indicator feed.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds/{feed_id}`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsGetIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsGetIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Revises details for a specific custom threat indicator feed.
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/{feed_id}`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsUpdateIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, required CustomIndicatorFeedsUpdatePublicFieldRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsUpdateIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, required CustomIndicatorFeedsUpdatePublicFieldRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Retrieves the raw data entries in a custom threat indicator feed.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds/{feed_id}/data`
-Future<ApiResult<String, Never>> customIndicatorFeedsGetIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> customIndicatorFeedsGetIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/data',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -121,12 +126,13 @@ return _execute(
 /// Downloads the content of a custom threat indicator feed.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds/{feed_id}/download`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsDownloadIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsDownloadIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/download',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -141,7 +147,7 @@ return _execute(
 /// Revises the raw data entries in a custom threat indicator feed.
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/{feed_id}/snapshot`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsUpdateIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, required CustomIndicatorFeedsUpdateIndicatorFeedDataRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsUpdateIndicatorFeedData({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, required CustomIndicatorFeedsUpdateIndicatorFeedDataRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -152,6 +158,7 @@ final request = ApiRequest(
       ApiMultipartField.text('source', source$),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -166,7 +173,7 @@ return _execute(
 /// Grants access permissions for a custom threat indicator feed to other accounts.
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/permissions/add`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsAddPermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsAddPermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -174,6 +181,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/permissions/add',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -188,7 +196,7 @@ return _execute(
 /// Revokes access permissions for a custom threat indicator feed.
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/permissions/remove`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsRemovePermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsRemovePermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -196,6 +204,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/permissions/remove',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -210,12 +219,13 @@ return _execute(
 /// Lists current access permissions for custom threat indicator feeds.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds/permissions/view`
-Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsViewPermissions({required CustomIndicatorFeedsIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon16, Never>> customIndicatorFeedsViewPermissions({required CustomIndicatorFeedsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/permissions/view',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -227,16 +237,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

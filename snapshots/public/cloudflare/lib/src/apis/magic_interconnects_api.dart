@@ -17,13 +17,14 @@ final ApiConfig _config;
 /// Lists interconnects associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects`
-Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -38,7 +39,7 @@ return _execute(
 /// Updates multiple interconnects associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects`
-Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required Object? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
@@ -47,6 +48,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -61,13 +63,14 @@ return _execute(
 /// Lists details for a specific interconnect.
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnectDetails({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnectDetails({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -82,7 +85,7 @@ return _execute(
 /// Updates a specific interconnect associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicInterconnectTunnelUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicInterconnectTunnelUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 
@@ -91,6 +94,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -102,16 +106,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

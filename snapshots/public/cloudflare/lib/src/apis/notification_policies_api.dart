@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Get a list of all Notification policies.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/policies`
-Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesListNotificationPolicies({required AaaAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesListNotificationPolicies({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates a new Notification policy.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/policies`
-Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Get details for a single policy.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Update a Notification policy.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Delete a Notification policy.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon2, Never>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

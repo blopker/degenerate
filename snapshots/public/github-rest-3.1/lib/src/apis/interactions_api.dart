@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Shows which type of GitHub user can interact with this organization and when the restriction expires. If there is no restrictions, you will see an empty response.
 ///
 /// `GET /orgs/{org}/interaction-limits`
-Future<ApiResult<InteractionsGetRestrictionsForOrgResponse, Never>> interactionsGetRestrictionsForOrg({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<InteractionsGetRestrictionsForOrgResponse, Never>> interactionsGetRestrictionsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/orgs/${Uri.encodeComponent(org)}/interaction-limits',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.
 ///
 /// `PUT /orgs/{org}/interaction-limits`
-Future<ApiResult<InteractionLimitResponse, ValidationError>> interactionsSetRestrictionsForOrg({required String org, required InteractionLimit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<InteractionLimitResponse, ValidationError>> interactionsSetRestrictionsForOrg({required String org, required InteractionLimit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -45,6 +46,7 @@ final request = ApiRequest(
   path: '/orgs/${Uri.encodeComponent(org)}/interaction-limits',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -62,12 +64,13 @@ return _execute(
 /// Removes all interaction restrictions from public repositories in the given organization. You must be an organization owner to remove restrictions.
 ///
 /// `DELETE /orgs/{org}/interaction-limits`
-Future<ApiResult<void, Never>> interactionsRemoveRestrictionsForOrg({required String org}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> interactionsRemoveRestrictionsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/orgs/${Uri.encodeComponent(org)}/interaction-limits',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -80,12 +83,13 @@ return _execute(
 /// Shows which type of GitHub user can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.
 ///
 /// `GET /repos/{owner}/{repo}/interaction-limits`
-Future<ApiResult<InteractionsGetRestrictionsForRepoResponse, Never>> interactionsGetRestrictionsForRepo({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<InteractionsGetRestrictionsForRepoResponse, Never>> interactionsGetRestrictionsForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/interaction-limits',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -100,7 +104,7 @@ return _execute(
 /// Temporarily restricts interactions to a certain type of GitHub user within the given repository. You must have owner or admin access to set these restrictions. If an interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.
 ///
 /// `PUT /repos/{owner}/{repo}/interaction-limits`
-Future<ApiResult<InteractionLimitResponse, Never>> interactionsSetRestrictionsForRepo({required String owner, required String repo, required InteractionLimit body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<InteractionLimitResponse, Never>> interactionsSetRestrictionsForRepo({required String owner, required String repo, required InteractionLimit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -108,6 +112,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/interaction-limits',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -122,12 +127,13 @@ return _execute(
 /// Removes all interaction restrictions from the given repository. You must have owner or admin access to remove restrictions. If the interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.
 ///
 /// `DELETE /repos/{owner}/{repo}/interaction-limits`
-Future<ApiResult<void, Never>> interactionsRemoveRestrictionsForRepo({required String owner, required String repo, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> interactionsRemoveRestrictionsForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/interaction-limits',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -140,12 +146,13 @@ return _execute(
 /// Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
 ///
 /// `GET /user/interaction-limits`
-Future<ApiResult<InteractionsGetRestrictionsForAuthenticatedUserResponse, Never>> interactionsGetRestrictionsForAuthenticatedUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<InteractionsGetRestrictionsForAuthenticatedUserResponse, Never>> interactionsGetRestrictionsForAuthenticatedUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/user/interaction-limits',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -160,7 +167,7 @@ return _execute(
 /// Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
 ///
 /// `PUT /user/interaction-limits`
-Future<ApiResult<InteractionLimitResponse, ValidationError>> interactionsSetRestrictionsForAuthenticatedUser({required InteractionLimit body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<InteractionLimitResponse, ValidationError>> interactionsSetRestrictionsForAuthenticatedUser({required InteractionLimit body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -168,6 +175,7 @@ final request = ApiRequest(
   path: '/user/interaction-limits',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -185,12 +193,13 @@ return _execute(
 /// Removes any interaction restrictions from your public repositories.
 ///
 /// `DELETE /user/interaction-limits`
-Future<ApiResult<void, Never>> interactionsRemoveRestrictionsForAuthenticatedUser() async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> interactionsRemoveRestrictionsForAuthenticatedUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/user/interaction-limits',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -200,16 +209,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

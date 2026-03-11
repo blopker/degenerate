@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways`
-Future<ApiResult<AigConfigListGatewayResponse, AigConfigListGatewayResponse400>> aigConfigListGateway({required String accountId, int? page, int? perPage, String? search, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<AigConfigListGatewayResponse, AigConfigListGatewayResponse400>> aigConfigListGateway({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -48,7 +49,7 @@ return _execute(
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways`
-Future<ApiResult<AigConfigCreateGatewayResponse, AigConfigCreateGatewayResponse400>> aigConfigCreateGateway({required String accountId, AigConfigCreateGatewayRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigCreateGatewayResponse, AigConfigCreateGatewayResponse400>> aigConfigCreateGateway({required String accountId, AigConfigCreateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,6 +57,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -73,12 +75,13 @@ return _execute(
 /// Retrieves the endpoint URL for an AI Gateway.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/url/{provider}`
-Future<ApiResult<AigConfigGetGatewayUrlResponse, AigConfigGetGatewayUrlResponse400>> aigConfigGetGatewayUrl({required String gatewayId, required String accountId, required String provider, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigGetGatewayUrlResponse, AigConfigGetGatewayUrlResponse400>> aigConfigGetGatewayUrl({required String gatewayId, required String accountId, required String provider, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/url/${Uri.encodeComponent(provider)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -96,12 +99,13 @@ return _execute(
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigFetchGatewayResponse, AigConfigFetchGatewayResponse404>> aigConfigFetchGateway({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigFetchGatewayResponse, AigConfigFetchGatewayResponse404>> aigConfigFetchGateway({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -119,7 +123,7 @@ return _execute(
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigUpdateGatewayResponse, AigConfigUpdateGatewayResponse400>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigUpdateGatewayResponse, AigConfigUpdateGatewayResponse400>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,6 +131,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(id)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -144,12 +149,13 @@ return _execute(
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigDeleteGatewayResponse, AigConfigDeleteGatewayResponse404>> aigConfigDeleteGateway({required String accountId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigDeleteGatewayResponse, AigConfigDeleteGatewayResponse404>> aigConfigDeleteGateway({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -164,16 +170,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

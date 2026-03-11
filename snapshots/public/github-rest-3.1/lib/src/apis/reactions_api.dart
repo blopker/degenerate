@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List the reactions to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
 ///
 /// `GET /repos/{owner}/{repo}/comments/{comment_id}/reactions`
-Future<ApiResult<List<Reaction>, BasicError>> reactionsListForCommitComment({required String owner, required String repo, required int commentId, ReactionsListForCommitCommentContent? content, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Reaction>, BasicError>> reactionsListForCommitComment({required String owner, required String repo, required int commentId, ReactionsListForCommitCommentContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (content != null) queryParameters['content'] = content.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Create a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment). A response with an HTTP `200` status means that you already added the reaction type to this commit comment.
 ///
 /// `POST /repos/{owner}/{repo}/comments/{comment_id}/reactions`
-Future<ApiResult<Reaction, ValidationError>> reactionsCreateForCommitComment({required String owner, required String repo, required int commentId, required ReactionsCreateForCommitCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Reaction, ValidationError>> reactionsCreateForCommitComment({required String owner, required String repo, required int commentId, required ReactionsCreateForCommitCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,6 +58,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/comments/${Uri.encodeComponent(commentId.toString())}/reactions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -77,12 +79,13 @@ return _execute(
 /// Delete a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
 ///
 /// `DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}`
-Future<ApiResult<void, Never>> reactionsDeleteForCommitComment({required String owner, required String repo, required int commentId, required int reactionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reactionsDeleteForCommitComment({required String owner, required String repo, required int commentId, required int reactionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/comments/${Uri.encodeComponent(commentId.toString())}/reactions/${Uri.encodeComponent(reactionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -95,7 +98,7 @@ return _execute(
 /// List the reactions to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
 ///
 /// `GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions`
-Future<ApiResult<List<Reaction>, BasicError>> reactionsListForIssueComment({required String owner, required String repo, required int commentId, ReactionsListForIssueCommentContent? content, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Reaction>, BasicError>> reactionsListForIssueComment({required String owner, required String repo, required int commentId, ReactionsListForIssueCommentContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (content != null) queryParameters['content'] = content.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -109,6 +112,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -127,7 +131,7 @@ return _execute(
 /// Create a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment). A response with an HTTP `200` status means that you already added the reaction type to this issue comment.
 ///
 /// `POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions`
-Future<ApiResult<Reaction, ValidationError>> reactionsCreateForIssueComment({required String owner, required String repo, required int commentId, required ReactionsCreateForIssueCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Reaction, ValidationError>> reactionsCreateForIssueComment({required String owner, required String repo, required int commentId, required ReactionsCreateForIssueCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -135,6 +139,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments/${Uri.encodeComponent(commentId.toString())}/reactions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -155,12 +160,13 @@ return _execute(
 /// Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}`
-Future<ApiResult<void, Never>> reactionsDeleteForIssueComment({required String owner, required String repo, required int commentId, required int reactionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reactionsDeleteForIssueComment({required String owner, required String repo, required int commentId, required int reactionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/comments/${Uri.encodeComponent(commentId.toString())}/reactions/${Uri.encodeComponent(reactionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -173,7 +179,7 @@ return _execute(
 /// List the reactions to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/reactions`
-Future<ApiResult<List<Reaction>, BasicError>> reactionsListForIssue({required String owner, required String repo, required int issueNumber, ReactionsListForIssueContent? content, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Reaction>, BasicError>> reactionsListForIssue({required String owner, required String repo, required int issueNumber, ReactionsListForIssueContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (content != null) queryParameters['content'] = content.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -187,6 +193,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -205,7 +212,7 @@ return _execute(
 /// Create a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue). A response with an HTTP `200` status means that you already added the reaction type to this issue.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/reactions`
-Future<ApiResult<Reaction, ValidationError>> reactionsCreateForIssue({required String owner, required String repo, required int issueNumber, required ReactionsCreateForIssueRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Reaction, ValidationError>> reactionsCreateForIssue({required String owner, required String repo, required int issueNumber, required ReactionsCreateForIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -213,6 +220,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/reactions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -233,12 +241,13 @@ return _execute(
 /// Delete a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}`
-Future<ApiResult<void, Never>> reactionsDeleteForIssue({required String owner, required String repo, required int issueNumber, required int reactionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reactionsDeleteForIssue({required String owner, required String repo, required int issueNumber, required int reactionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/issues/${Uri.encodeComponent(issueNumber.toString())}/reactions/${Uri.encodeComponent(reactionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -251,7 +260,7 @@ return _execute(
 /// List the reactions to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
 ///
 /// `GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions`
-Future<ApiResult<List<Reaction>, BasicError>> reactionsListForPullRequestReviewComment({required String owner, required String repo, required int commentId, ReactionsListForPullRequestReviewCommentContent? content, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Reaction>, BasicError>> reactionsListForPullRequestReviewComment({required String owner, required String repo, required int commentId, ReactionsListForPullRequestReviewCommentContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (content != null) queryParameters['content'] = content.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -265,6 +274,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -283,7 +293,7 @@ return _execute(
 /// Create a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request). A response with an HTTP `200` status means that you already added the reaction type to this pull request review comment.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions`
-Future<ApiResult<Reaction, ValidationError>> reactionsCreateForPullRequestReviewComment({required String owner, required String repo, required int commentId, required ReactionsCreateForPullRequestReviewCommentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Reaction, ValidationError>> reactionsCreateForPullRequestReviewComment({required String owner, required String repo, required int commentId, required ReactionsCreateForPullRequestReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -291,6 +301,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}/reactions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -311,12 +322,13 @@ return _execute(
 /// Delete a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
 ///
 /// `DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}`
-Future<ApiResult<void, Never>> reactionsDeleteForPullRequestComment({required String owner, required String repo, required int commentId, required int reactionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reactionsDeleteForPullRequestComment({required String owner, required String repo, required int commentId, required int reactionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}/reactions/${Uri.encodeComponent(reactionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -329,7 +341,7 @@ return _execute(
 /// List the reactions to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
 ///
 /// `GET /repos/{owner}/{repo}/releases/{release_id}/reactions`
-Future<ApiResult<List<Reaction>, BasicError>> reactionsListForRelease({required String owner, required String repo, required int releaseId, ReactionsListForReleaseContent? content, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Reaction>, BasicError>> reactionsListForRelease({required String owner, required String repo, required int releaseId, ReactionsListForReleaseContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (content != null) queryParameters['content'] = content.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -343,6 +355,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -361,7 +374,7 @@ return _execute(
 /// Create a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release). A response with a `Status: 200 OK` means that you already added the reaction type to this release.
 ///
 /// `POST /repos/{owner}/{repo}/releases/{release_id}/reactions`
-Future<ApiResult<Reaction, ValidationError>> reactionsCreateForRelease({required String owner, required String repo, required int releaseId, required ReactionsCreateForReleaseRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Reaction, ValidationError>> reactionsCreateForRelease({required String owner, required String repo, required int releaseId, required ReactionsCreateForReleaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -369,6 +382,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/releases/${Uri.encodeComponent(releaseId.toString())}/reactions',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -389,12 +403,13 @@ return _execute(
 /// Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
 ///
 /// `DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}`
-Future<ApiResult<void, Never>> reactionsDeleteForRelease({required String owner, required String repo, required int releaseId, required int reactionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reactionsDeleteForRelease({required String owner, required String repo, required int releaseId, required int reactionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/releases/${Uri.encodeComponent(releaseId.toString())}/reactions/${Uri.encodeComponent(reactionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -404,16 +419,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

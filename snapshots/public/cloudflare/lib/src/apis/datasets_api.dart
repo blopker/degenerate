@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Populate dataset-specific lookup tables from existing Events data with batch processing
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/datasets/populate`
-Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateResponse400>> postDatasetPopulate({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateResponse400>> postDatasetPopulate({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/datasets/populate',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -35,16 +36,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

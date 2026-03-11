@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Runs inference on the @cf/ai4bharat/indictrans2-en-indic-1B model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/indictrans2-en-indic-1B`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -32,6 +32,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Runs inference on the @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/omni-indictrans2-en-indic-1b`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -64,6 +65,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -81,7 +83,7 @@ return _execute(
 /// Runs inference on the @cf/meta/m2m100-1.2b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/m2m100-1.2b`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -96,6 +98,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -110,16 +113,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

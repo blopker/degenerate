@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Get risk event/score information for a specific user
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/{user_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/${Uri.encodeComponent(userId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,12 +34,13 @@ return _execute(
 /// Clear the risk score for a particular user
 ///
 /// `POST /accounts/{account_id}/zt_risk_scoring/{user_id}/reset`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreResetPost({required String accountId, required String userId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreResetPost({required String accountId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/${Uri.encodeComponent(userId)}/reset',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -51,12 +53,13 @@ return _execute(
 /// Get all behaviors and associated configuration
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsGet({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/behaviors',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -69,7 +72,7 @@ return _execute(
 /// Update configuration for risk behaviors
 ///
 /// `PUT /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,6 +80,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/behaviors',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -89,12 +93,13 @@ return _execute(
 /// Get risk score info for all users in the account
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/summary`
-Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGet({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpRiskScoreSummaryGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/zt_risk_scoring/summary',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -106,16 +111,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List On-ramps (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps`
-Future<ApiResult<McnResponse, McnResponse>> onrampsList({required McnAccountId accountId, String? orderBy, bool? desc, bool? status, bool? vpcs, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> onrampsList({required McnAccountId accountId, String? orderBy, bool? desc, bool? status, bool? vpcs, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (orderBy != null) queryParameters['order_by'] = orderBy;
 if (desc != null) queryParameters['desc'] = desc.toString();
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -49,7 +50,7 @@ return _execute(
 /// Create a new On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps`
-Future<ApiResult<McnResponse, McnResponse>> onrampsCreate({required McnAccountId accountId, String? forwarded, required McnCreateOnrampRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsCreate({required McnAccountId accountId, String? forwarded, required McnCreateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) headers['forwarded'] = forwarded;
 
@@ -58,6 +59,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -75,7 +77,7 @@ return _execute(
 /// Read an On-ramp (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsRead({required McnAccountId accountId, required McnOnrampId onrampId, bool? status, bool? vpcs, bool? postApplyResources, bool? plannedResources, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> onrampsRead({required McnAccountId accountId, required McnOnrampId onrampId, bool? status, bool? vpcs, bool? postApplyResources, bool? plannedResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (vpcs != null) queryParameters['vpcs'] = vpcs.toString();
@@ -90,6 +92,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -107,7 +110,7 @@ return _execute(
 /// Update an On-ramp (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsUpdate({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsUpdate({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,6 +118,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -132,7 +136,7 @@ return _execute(
 /// Update an On-ramp (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsPatch({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsPatch({required McnAccountId accountId, required McnOnrampId onrampId, required McnUpdateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,6 +144,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -157,7 +162,7 @@ return _execute(
 /// Delete an On-ramp (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
-Future<ApiResult<McnResponse, McnResponse>> onrampsDelete({required McnAccountId accountId, required McnOnrampId onrampId, bool? destroy, bool? force, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<McnResponse, McnResponse>> onrampsDelete({required McnAccountId accountId, required McnOnrampId onrampId, bool? destroy, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (destroy != null) queryParameters['destroy'] = destroy.toString();
 if (force != null) queryParameters['force'] = force.toString();
@@ -170,6 +175,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -187,12 +193,13 @@ return _execute(
 /// Apply an On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps/{onramp_id}/apply`
-Future<ApiResult<McnResponse, McnResponse>> onrampsApply({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsApply({required McnAccountId accountId, required McnOnrampId onrampId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/apply',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -210,12 +217,13 @@ return _execute(
 /// Export an On-ramp to terraform ready file(s) (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps/{onramp_id}/export`
-Future<ApiResult<Uint8List, McnResponse>> onrampsExport({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Uint8List, McnResponse>> onrampsExport({required McnAccountId accountId, required McnOnrampId onrampId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/export',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -233,12 +241,13 @@ return _execute(
 /// Plan an On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps/{onramp_id}/plan`
-Future<ApiResult<McnResponse, McnResponse>> onrampsPlan({required McnAccountId accountId, required McnOnrampId onrampId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsPlan({required McnAccountId accountId, required McnOnrampId onrampId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/plan',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -256,12 +265,13 @@ return _execute(
 /// Read the Magic WAN Address Space (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceRead({required McnAccountId accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceRead({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -279,7 +289,7 @@ return _execute(
 /// Update the Magic WAN Address Space (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceUpdate({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpaceUpdate({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -287,6 +297,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -304,7 +315,7 @@ return _execute(
 /// Update the Magic WAN Address Space (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space`
-Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpacePatch({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<McnResponse, McnResponse>> onrampsMwanAddrSpacePatch({required McnAccountId accountId, required McnUpdateMagicWanAddressSpaceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -312,6 +323,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -326,16 +338,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Lists all watermark profiles for an account.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,7 +38,7 @@ return _execute(
 /// Creates watermark profiles using a single `HTTP POST multipart/form-data` request.
 ///
 /// `POST /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -57,6 +58,7 @@ final request = ApiRequest(
       ApiMultipartField.text('scale', scale$.toJson()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -71,12 +73,13 @@ return _execute(
 /// Retrieves details for a single watermark profile.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks/${Uri.encodeComponent(identifier.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -91,12 +94,13 @@ return _execute(
 /// Deletes a watermark profile.
 ///
 /// `DELETE /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks/${Uri.encodeComponent(identifier.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -108,16 +112,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

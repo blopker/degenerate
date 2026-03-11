@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Returns a list of files.
 ///
 /// `GET /files`
-Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (purpose != null) queryParameters['purpose'] = purpose;
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -59,7 +60,7 @@ return _execute(
 /// 
 ///
 /// `POST /files`
-Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -72,6 +73,7 @@ final request = ApiRequest(
       ApiMultipartField.text('expires_after', expiresAfter$.toString()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -84,12 +86,13 @@ return _execute(
 /// Returns information about a specific file.
 ///
 /// `GET /files/{file_id}`
-Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/files/${Uri.encodeComponent(fileId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -102,12 +105,13 @@ return _execute(
 /// Delete a file and remove it from all vector stores.
 ///
 /// `DELETE /files/{file_id}`
-Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/files/${Uri.encodeComponent(fileId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -120,12 +124,13 @@ return _execute(
 /// Returns the contents of the specified file.
 ///
 /// `GET /files/{file_id}/content`
-Future<ApiResult<String, Never>> downloadFile({required String fileId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, Never>> downloadFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/files/${Uri.encodeComponent(fileId)}/content',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -137,16 +142,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

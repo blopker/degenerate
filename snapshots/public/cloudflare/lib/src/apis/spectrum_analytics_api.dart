@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Retrieves analytics aggregated from the last minute of usage on Spectrum applications underneath a given zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/aggregate/current`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon63, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (appId != null) queryParameters['appID'] = appId.toString();
 if (coloName != null) queryParameters['colo_name'] = coloName;
@@ -30,6 +30,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -44,7 +45,7 @@ return _execute(
 /// Retrieves a list of aggregate metrics grouped by time interval.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/bytime`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
@@ -74,6 +75,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -88,7 +90,7 @@ return _execute(
 /// Retrieves a list of summarised aggregate metrics over a given time period.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/summary`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
@@ -117,6 +119,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -128,16 +131,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

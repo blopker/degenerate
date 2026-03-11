@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of all slots matching the specified parameters
 ///
 /// `GET /accounts/{account_id}/cni/slots`
-Future<ApiResult<NscSlotList, Never>> listSlots({required NscAccountTag accountId, String? addressContains, String? site, String? speed, bool? occupied, int? cursor, int? limit, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<NscSlotList, Never>> listSlots({required NscAccountTag accountId, String? addressContains, String? site, String? speed, bool? occupied, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressContains != null) queryParameters['address_contains'] = addressContains;
 if (site != null) queryParameters['site'] = site;
@@ -32,6 +32,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -44,12 +45,13 @@ return _execute(
 /// Get information about the specified slot
 ///
 /// `GET /accounts/{account_id}/cni/slots/{slot}`
-Future<ApiResult<NscSlotInfo, Never>> getSlot({required String slot, required NscAccountTag accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<NscSlotInfo, Never>> getSlot({required String slot, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/slots/${Uri.encodeComponent(slot)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -61,16 +63,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

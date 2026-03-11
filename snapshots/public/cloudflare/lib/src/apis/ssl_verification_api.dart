@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Get SSL Verification Info for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/verification`
-Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection, Never>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, Object? retry, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection, Never>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, Object? retry, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (retry != null) queryParameters['retry'] = retry;
 
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -43,7 +44,7 @@ return _execute(
 /// Edit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.
 ///
 /// `PATCH /zones/{zone_id}/ssl/verification/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68, Never>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,6 +52,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/verification/${Uri.encodeComponent(certificatePackId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -62,16 +64,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

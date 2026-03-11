@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// List permissions
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions`
-Future<ApiResult<List<GetPermissionListResponse>, GetPermissionListResponse400>> getPermissionList({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<GetPermissionListResponse>, GetPermissionListResponse400>> getPermissionList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/permissions',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Create a permission
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions`
-Future<ApiResult<PostPermissionCreateResponse, PostPermissionCreateResponse400>> postPermissionCreate({required String accountId, required String datasetId, PostPermissionCreateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostPermissionCreateResponse, PostPermissionCreateResponse400>> postPermissionCreate({required String accountId, required String datasetId, PostPermissionCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/permissions',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -66,7 +68,7 @@ return _execute(
 /// Update a permission
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}`
-Future<ApiResult<PutPermissionUpdateResponse, PutPermissionUpdateResponse400>> putPermissionUpdate({required String accountId, required String datasetId, required String grantId, PutPermissionUpdateRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PutPermissionUpdateResponse, PutPermissionUpdateResponse400>> putPermissionUpdate({required String accountId, required String datasetId, required String grantId, PutPermissionUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -74,6 +76,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/permissions/${Uri.encodeComponent(grantId)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -91,12 +94,13 @@ return _execute(
 /// Delete a permission
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}`
-Future<ApiResult<DeletePermissionDeleteResponse, DeletePermissionDeleteResponse400>> deletePermissionDelete({required String accountId, required String datasetId, required String grantId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletePermissionDeleteResponse, DeletePermissionDeleteResponse400>> deletePermissionDelete({required String accountId, required String datasetId, required String grantId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/dataset/${Uri.encodeComponent(datasetId)}/permissions/${Uri.encodeComponent(grantId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -111,16 +115,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

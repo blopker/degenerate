@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Fetch all datasets
 ///
 /// `GET /accounts/{account_id}/dlp/datasets`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsReadAll({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsReadAll({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,7 +34,7 @@ return _execute(
 /// Create a new dataset
 ///
 /// `POST /accounts/{account_id}/dlp/datasets`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsCreate({required String accountId, required DlpDatasetsCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsCreate({required String accountId, required DlpDatasetsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,6 +42,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -53,12 +55,13 @@ return _execute(
 /// Fetch a specific dataset
 ///
 /// `GET /accounts/{account_id}/dlp/datasets/{dataset_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsRead({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsRead({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -71,7 +74,7 @@ return _execute(
 /// Update details about a dataset
 ///
 /// `PUT /accounts/{account_id}/dlp/datasets/{dataset_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUpdate({required String accountId, required String datasetId, required DlpDatasetsUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUpdate({required String accountId, required String datasetId, required DlpDatasetsUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,6 +82,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -93,12 +97,13 @@ return _execute(
 /// This deletes all versions of the dataset.
 ///
 /// `DELETE /accounts/{account_id}/dlp/datasets/{dataset_id}`
-Future<ApiResult<void, Never>> dlpDatasetsDelete({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> dlpDatasetsDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -109,12 +114,13 @@ return _execute(
 /// Prepare to upload a new version of a dataset
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/upload`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsCreateVersion({required String accountId, required String datasetId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsCreateVersion({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}/upload',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -132,7 +138,7 @@ return _execute(
 /// be a UTF-8 encoded, newline (NL or CRNL) separated list of words to be matched.
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/upload/{version}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUploadVersion({required String accountId, required String datasetId, required int version, required Uint8List body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUploadVersion({required String accountId, required String datasetId, required int version, required Uint8List body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
 
 final request = ApiRequest(
@@ -140,6 +146,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}/upload/${Uri.encodeComponent(version.toString())}',
   headers: headers,
   body: body,
+  options: options,
 );
 
 return _execute(
@@ -156,7 +163,7 @@ return _execute(
 /// the same order as in the request.
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsDefineColumns({required String accountId, required String datasetId, required int version, required List<DlpDatasetsDefineColumnsRequest> body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsDefineColumns({required String accountId, required String datasetId, required int version, required List<DlpDatasetsDefineColumnsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -164,6 +171,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}/versions/${Uri.encodeComponent(version.toString())}',
   headers: headers,
   body: jsonEncode(body),
+  options: options,
 );
 
 return _execute(
@@ -179,7 +187,7 @@ return _execute(
 /// created in the Cloudflare dashboard.
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}/entries/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUploadDatasetColumn({required String accountId, required String datasetId, required int version, required String entryId, required Uint8List body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpDatasetsUploadDatasetColumn({required String accountId, required String datasetId, required int version, required String entryId, required Uint8List body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
 
 final request = ApiRequest(
@@ -187,6 +195,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/datasets/${Uri.encodeComponent(datasetId)}/versions/${Uri.encodeComponent(version.toString())}/entries/${Uri.encodeComponent(entryId)}',
   headers: headers,
   body: body,
+  options: options,
 );
 
 return _execute(
@@ -198,16 +207,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

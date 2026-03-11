@@ -18,7 +18,7 @@ final ApiConfig _config;
 /// This is needed for our generated terraform API.
 ///
 /// `POST /accounts/{account_id}/dlp/entries/integration`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreateIntegrationEntry({required String accountId, required DlpNewPredefinedEntry body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesCreateIntegrationEntry({required String accountId, required DlpNewPredefinedEntry body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -26,6 +26,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/integration',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -40,7 +41,7 @@ return _execute(
 /// Updates a DLP entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/integration/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateIntegrationEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesUpdateIntegrationEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,6 +49,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/integration/${Uri.encodeComponent(entryId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -62,12 +64,13 @@ return _execute(
 /// This is a no-op as integration entires can't be deleted but is needed for our generated terraform API.
 ///
 /// `DELETE /accounts/{account_id}/dlp/entries/integration/{entry_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeleteIntegrationEntry({required String accountId, required String entryId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon20, Never>> dlpEntriesDeleteIntegrationEntry({required String accountId, required String entryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/dlp/entries/integration/${Uri.encodeComponent(entryId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,16 +82,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

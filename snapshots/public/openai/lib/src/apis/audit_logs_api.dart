@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List user actions and configuration changes within this organization.
 ///
 /// `GET /organization/audit_logs`
-Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (effectiveAt != null) {
 if (effectiveAt.gt != null) queryParametersList.add(ApiQueryParameter(name: 'gt', value: effectiveAt.gt.toString(), allowReserved: false));
@@ -60,6 +60,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -71,16 +72,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

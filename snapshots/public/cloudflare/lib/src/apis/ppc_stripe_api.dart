@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Gets the stripe config for a crawler.
 ///
 /// `GET /accounts/{account_id}/pay-per-crawl/crawler/stripe`
-Future<ApiResult<PayPerCrawlGetStripeConfigResponse, ErrorResponse2>> payPerCrawlCrawlerGetStripeConfig({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PayPerCrawlGetStripeConfigResponse, ErrorResponse2>> payPerCrawlCrawlerGetStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/crawler/stripe',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -40,12 +41,13 @@ return _execute(
 /// Creates the stripe config for a crawler.
 ///
 /// `POST /accounts/{account_id}/pay-per-crawl/crawler/stripe`
-Future<ApiResult<PayPerCrawlCreateStripeConfigResponse, ErrorResponse2>> payPerCrawlCrawlerCreateStripeConfig({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PayPerCrawlCreateStripeConfigResponse, ErrorResponse2>> payPerCrawlCrawlerCreateStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/crawler/stripe',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -63,12 +65,13 @@ return _execute(
 /// Deletes the stripe config for a crawler.
 ///
 /// `DELETE /accounts/{account_id}/pay-per-crawl/crawler/stripe`
-Future<ApiResult<NoResultResponse, ErrorResponse2>> payPerCrawlCrawlerDeleteStripeConfig({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<NoResultResponse, ErrorResponse2>> payPerCrawlCrawlerDeleteStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/crawler/stripe',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -86,12 +89,13 @@ return _execute(
 /// Gets the stripe config for a publisher.
 ///
 /// `GET /accounts/{account_id}/pay-per-crawl/publisher/stripe`
-Future<ApiResult<PayPerCrawlGetStripeConfigResponse, ErrorResponse2>> payPerCrawlPublisherGetStripeConfig({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PayPerCrawlGetStripeConfigResponse, ErrorResponse2>> payPerCrawlPublisherGetStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/publisher/stripe',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -109,12 +113,13 @@ return _execute(
 /// Creates the stripe config for a publisher.
 ///
 /// `POST /accounts/{account_id}/pay-per-crawl/publisher/stripe`
-Future<ApiResult<PayPerCrawlCreateStripeConfigResponse, ErrorResponse2>> payPerCrawlPublisherCreateStripeConfig({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PayPerCrawlCreateStripeConfigResponse, ErrorResponse2>> payPerCrawlPublisherCreateStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/publisher/stripe',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -132,12 +137,13 @@ return _execute(
 /// Deletes the stripe config for a publisher.
 ///
 /// `DELETE /accounts/{account_id}/pay-per-crawl/publisher/stripe`
-Future<ApiResult<NoResultResponse, ErrorResponse2>> payPerCrawlPublisherDeleteStripeConfig({required String accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<NoResultResponse, ErrorResponse2>> payPerCrawlPublisherDeleteStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/pay-per-crawl/publisher/stripe',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -152,16 +158,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

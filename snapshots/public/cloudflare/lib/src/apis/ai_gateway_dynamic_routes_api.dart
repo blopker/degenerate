@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// List all AI Gateway Dynamic Routes.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes`
-Future<ApiResult<AigConfigListGatewayDynamicRoutesResponse, AigConfigListGatewayDynamicRoutesResponse400>> aigConfigListGatewayDynamicRoutes({required String accountId, required String gatewayId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigListGatewayDynamicRoutesResponse, AigConfigListGatewayDynamicRoutesResponse400>> aigConfigListGatewayDynamicRoutes({required String accountId, required String gatewayId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -36,7 +37,7 @@ return _execute(
 /// Create a new AI Gateway Dynamic Route.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes`
-Future<ApiResult<AigConfigPostGatewayDynamicRouteResponse, AigConfigPostGatewayDynamicRouteResponse400>> aigConfigPostGatewayDynamicRoute({required String accountId, required String gatewayId, AigConfigPostGatewayDynamicRouteRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigPostGatewayDynamicRouteResponse, AigConfigPostGatewayDynamicRouteResponse400>> aigConfigPostGatewayDynamicRoute({required String accountId, required String gatewayId, AigConfigPostGatewayDynamicRouteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,6 +45,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -59,12 +61,13 @@ return _execute(
 /// Get an AI Gateway Dynamic Route.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}`
-Future<ApiResult<AigConfigGetGatewayDynamicRouteResponse, AigConfigGetGatewayDynamicRouteResponse400>> aigConfigGetGatewayDynamicRoute({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigGetGatewayDynamicRouteResponse, AigConfigGetGatewayDynamicRouteResponse400>> aigConfigGetGatewayDynamicRoute({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -80,7 +83,7 @@ return _execute(
 /// Update an AI Gateway Dynamic Route.
 ///
 /// `PATCH /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}`
-Future<ApiResult<AigConfigUpdateGatewayDynamicRouteResponse, AigConfigUpdateGatewayDynamicRouteResponse400>> aigConfigUpdateGatewayDynamicRoute({required String accountId, required String gatewayId, required String id, AigConfigUpdateGatewayDynamicRouteRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigUpdateGatewayDynamicRouteResponse, AigConfigUpdateGatewayDynamicRouteResponse400>> aigConfigUpdateGatewayDynamicRoute({required String accountId, required String gatewayId, required String id, AigConfigUpdateGatewayDynamicRouteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,6 +91,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -103,12 +107,13 @@ return _execute(
 /// Delete an AI Gateway Dynamic Route.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}`
-Future<ApiResult<AigConfigDeleteGatewayDynamicRouteResponse, AigConfigDeleteGatewayDynamicRouteResponse400>> aigConfigDeleteGatewayDynamicRoute({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigDeleteGatewayDynamicRouteResponse, AigConfigDeleteGatewayDynamicRouteResponse400>> aigConfigDeleteGatewayDynamicRoute({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -124,12 +129,13 @@ return _execute(
 /// List all AI Gateway Dynamic Route Deployments.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/deployments`
-Future<ApiResult<AigConfigListGatewayDynamicRouteDeploymentsResponse, AigConfigListGatewayDynamicRouteDeploymentsResponse400>> aigConfigListGatewayDynamicRouteDeployments({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigListGatewayDynamicRouteDeploymentsResponse, AigConfigListGatewayDynamicRouteDeploymentsResponse400>> aigConfigListGatewayDynamicRouteDeployments({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}/deployments',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -145,7 +151,7 @@ return _execute(
 /// Create a new AI Gateway Dynamic Route Deployment.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/deployments`
-Future<ApiResult<AigConfigPostGatewayDynamicRouteDeploymentResponse, AigConfigPostGatewayDynamicRouteDeploymentResponse400>> aigConfigPostGatewayDynamicRouteDeployment({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteDeploymentRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigPostGatewayDynamicRouteDeploymentResponse, AigConfigPostGatewayDynamicRouteDeploymentResponse400>> aigConfigPostGatewayDynamicRouteDeployment({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteDeploymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,6 +159,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}/deployments',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -168,12 +175,13 @@ return _execute(
 /// List all AI Gateway Dynamic Route Versions.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions`
-Future<ApiResult<AigConfigListGatewayDynamicRouteVersionsResponse, AigConfigListGatewayDynamicRouteVersionsResponse400>> aigConfigListGatewayDynamicRouteVersions({required String accountId, required String gatewayId, required String id, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigListGatewayDynamicRouteVersionsResponse, AigConfigListGatewayDynamicRouteVersionsResponse400>> aigConfigListGatewayDynamicRouteVersions({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}/versions',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -189,7 +197,7 @@ return _execute(
 /// Create a new AI Gateway Dynamic Route Version.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions`
-Future<ApiResult<AigConfigPostGatewayDynamicRouteVersionResponse, AigConfigPostGatewayDynamicRouteVersionResponse400>> aigConfigPostGatewayDynamicRouteVersion({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteVersionRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigPostGatewayDynamicRouteVersionResponse, AigConfigPostGatewayDynamicRouteVersionResponse400>> aigConfigPostGatewayDynamicRouteVersion({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteVersionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -197,6 +205,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}/versions',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -212,12 +221,13 @@ return _execute(
 /// Get an AI Gateway Dynamic Route Version.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions/{version_id}`
-Future<ApiResult<AigConfigGetGatewayDynamicRouteVersionResponse, AigConfigGetGatewayDynamicRouteVersionResponse400>> aigConfigGetGatewayDynamicRouteVersion({required String accountId, required String gatewayId, required String id, required String versionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AigConfigGetGatewayDynamicRouteVersionResponse, AigConfigGetGatewayDynamicRouteVersionResponse400>> aigConfigGetGatewayDynamicRouteVersion({required String accountId, required String gatewayId, required String id, required String versionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai-gateway/gateways/${Uri.encodeComponent(gatewayId)}/routes/${Uri.encodeComponent(id)}/versions/${Uri.encodeComponent(versionId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -232,16 +242,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

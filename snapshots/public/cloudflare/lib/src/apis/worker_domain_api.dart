@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Lists all Worker Domains for an account.
 ///
 /// `GET /accounts/{account_id}/workers/domains`
-Future<ApiResult<ResponseCommon80, Never>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon80, Never>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (zoneName != null) queryParameters['zone_name'] = zoneName.toString();
 if (service != null) queryParameters['service'] = service.toString();
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,7 +48,7 @@ return _execute(
 /// Attaches a Worker to a zone and hostname.
 ///
 /// `PUT /accounts/{account_id}/workers/domains`
-Future<ApiResult<ResponseCommon80, Never>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon80, Never>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,6 +56,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/domains',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -69,12 +71,13 @@ return _execute(
 /// Gets a Worker domain.
 ///
 /// `GET /accounts/{account_id}/workers/domains/{domain_id}`
-Future<ApiResult<ResponseCommon80, Never>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon80, Never>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/domains/${Uri.encodeComponent(domainId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -89,12 +92,13 @@ return _execute(
 /// Detaches a Worker from a zone and hostname.
 ///
 /// `DELETE /accounts/{account_id}/workers/domains/{domain_id}`
-Future<ApiResult<void, Never>> workerDomainDetachFromDomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> workerDomainDetachFromDomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/domains/${Uri.encodeComponent(domainId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -104,16 +108,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

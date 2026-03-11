@@ -850,7 +850,7 @@ void main() {
         );
         final source = emitRaw(library);
 
-        expect(source, contains('{required String sessionId}'));
+        expect(source, contains('required String sessionId'));
         expect(
           source,
           contains(

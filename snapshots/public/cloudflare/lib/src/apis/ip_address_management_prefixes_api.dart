@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Submit LOA document (pdf format) under the account.
 ///
 /// `POST /accounts/{account_id}/addressing/loa_documents`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesUploadLoaDocument({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUploadLoaDocumentRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesUploadLoaDocument({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUploadLoaDocumentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -27,6 +27,7 @@ final request = ApiRequest(
     ApiMultipartField.text('loa_document', body.loaDocument),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -41,12 +42,13 @@ return _execute(
 /// Download specified LOA document under the account.
 ///
 /// `GET /accounts/{account_id}/addressing/loa_documents/{loa_document_id}/download`
-Future<ApiResult<Uint8List, Never>> ipAddressManagementPrefixesDownloadLoaDocument({required AddressingLoaDocumentIdentifier loaDocumentId, required AddressingAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Uint8List, Never>> ipAddressManagementPrefixesDownloadLoaDocument({required AddressingLoaDocumentIdentifier loaDocumentId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/loa_documents/${Uri.encodeComponent(loaDocumentId.toString())}/download',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -61,12 +63,13 @@ return _execute(
 /// List all prefixes owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesListPrefixes({required AddressingAccountIdentifier accountId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesListPrefixes({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -81,7 +84,7 @@ return _execute(
 /// Add a new prefix under the account.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesAddPrefix({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesAddPrefixRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesAddPrefix({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesAddPrefixRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +92,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -103,12 +107,13 @@ return _execute(
 /// List a particular prefix owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesPrefixDetails({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesPrefixDetails({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -123,7 +128,7 @@ return _execute(
 /// Modify the description for a prefix owned by the account.
 ///
 /// `PATCH /accounts/{account_id}/addressing/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesUpdatePrefixDescription({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUpdatePrefixDescriptionRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesUpdatePrefixDescription({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUpdatePrefixDescriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,6 +136,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -145,12 +151,13 @@ return _execute(
 /// Delete an unapproved prefix owned by the account.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesDeletePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesDeletePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -165,12 +172,13 @@ return _execute(
 /// Triggers a new prefix validation. The checks are run asynchronously and include IRR, RPKI, and prefix ownership.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/validate`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesValidatePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesValidatePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/validate',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -182,16 +190,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -17,12 +17,13 @@ final ApiConfig _config;
 /// Sends AXFR zone transfer request to primary nameserver(s).
 ///
 /// `POST /zones/{zone_id}/secondary_dns/force_axfr`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneForceAxfr({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneForceAxfr({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/force_axfr',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -37,12 +38,13 @@ return _execute(
 /// Get secondary zone configuration for incoming zone transfers.
 ///
 /// `GET /zones/{zone_id}/secondary_dns/incoming`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneSecondaryZoneConfigurationDetails({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneSecondaryZoneConfigurationDetails({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -57,7 +59,7 @@ return _execute(
 /// Create secondary zone configuration for incoming zone transfers.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/incoming`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneCreateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZone body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneCreateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZone body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,6 +67,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -79,7 +82,7 @@ return _execute(
 /// Update secondary zone configuration for incoming zone transfers.
 ///
 /// `PUT /zones/{zone_id}/secondary_dns/incoming`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneUpdateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZone body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneUpdateSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsDnsSecondarySecondaryZone body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,6 +90,7 @@ final request = ApiRequest(
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -101,12 +105,13 @@ return _execute(
 /// Delete secondary zone configuration for incoming zone transfers.
 ///
 /// `DELETE /zones/{zone_id}/secondary_dns/incoming`
-Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneDeleteSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon58, Never>> secondaryDnsSecondaryZoneDeleteSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -118,16 +123,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

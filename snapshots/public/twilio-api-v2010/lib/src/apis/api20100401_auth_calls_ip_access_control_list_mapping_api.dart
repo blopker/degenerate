@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of IP Access Control List mappings belonging to the domain used in the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json`
-Future<ApiResult<ListSipAuthCallsIpAccessControlListMappingResponse, Never>> listSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListSipAuthCallsIpAccessControlListMappingResponse, Never>> listSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
 if (page != null) queryParameters['Page'] = page.toString();
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Create a new IP Access Control List mapping
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json`
-Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> createSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, CreateSipAuthCallsIpAccessControlListMappingRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> createSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, CreateSipAuthCallsIpAccessControlListMappingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -51,6 +52,7 @@ final request = ApiRequest(
   body: [
     'IpAccessControlListSid=${Uri.encodeQueryComponent(body.ipAccessControlListSid)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -63,12 +65,13 @@ return _execute(
 /// Fetch a specific instance of an IP Access Control List mapping
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json`
-Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> fetchSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> fetchSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Calls/IpAccessControlListMappings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -81,12 +84,13 @@ return _execute(
 /// Delete an IP Access Control List mapping from the requested domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Calls/IpAccessControlListMappings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -96,16 +100,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

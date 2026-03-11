@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// Retrieve a list of Message resources associated with a Twilio Account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages.json`
-Future<ApiResult<ListMessageResponse, Never>> listMessage({required String accountSid, String? to, String? from, DateTime? dateSent, DateTime? dateSentBefore, DateTime? dateSentAfter, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListMessageResponse, Never>> listMessage({required String accountSid, String? to, String? from, DateTime? dateSent, DateTime? dateSentBefore, DateTime? dateSentAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (to != null) queryParameters['To'] = to;
 if (from != null) queryParameters['From'] = from;
@@ -34,6 +34,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -46,7 +47,7 @@ return _execute(
 /// Send a message
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages.json`
-Future<ApiResult<AccountMessage, Never>> createMessage({required String accountSid, CreateMessageRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountMessage, Never>> createMessage({required String accountSid, CreateMessageRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -102,6 +103,7 @@ final request = ApiRequest(
     if (body.contentSid case final contentSid$?)
       'ContentSid=${Uri.encodeQueryComponent(contentSid$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -114,12 +116,13 @@ return _execute(
 /// Fetch a specific Message
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<AccountMessage, Never>> fetchMessage({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountMessage, Never>> fetchMessage({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -132,7 +135,7 @@ return _execute(
 /// Update a Message resource (used to redact Message `body` text and to cancel not-yet-sent messages)
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<AccountMessage, Never>> updateMessage({required String accountSid, required String sid, UpdateMessageRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountMessage, Never>> updateMessage({required String accountSid, required String sid, UpdateMessageRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -145,6 +148,7 @@ final request = ApiRequest(
     if (body.status case final status$?)
       'Status=${Uri.encodeQueryComponent(status$.toJson())}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -157,12 +161,13 @@ return _execute(
 /// Deletes a Message resource from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<void, Never>> deleteMessage({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteMessage({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -172,16 +177,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

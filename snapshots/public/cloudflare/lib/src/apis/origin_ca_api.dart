@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List all existing Origin CA certificates for a given zone. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates`
-Future<ApiResult<ResponseCommon68, Never>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon68, Never>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['zone_id'] = zoneId.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -33,6 +33,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -47,7 +48,7 @@ return _execute(
 /// Create an Origin CA certificate. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `POST /certificates`
-Future<ApiResult<ResponseCommon68, Never>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,6 +56,7 @@ final request = ApiRequest(
   path: '/certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -69,12 +71,13 @@ return _execute(
 /// Get an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> originCaGetCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> originCaGetCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/certificates/${Uri.encodeComponent(certificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -89,12 +92,13 @@ return _execute(
 /// Revoke an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `DELETE /certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponse, Never>> originCaRevokeCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponse, Never>> originCaRevokeCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/certificates/${Uri.encodeComponent(certificateId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -106,16 +110,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -24,7 +24,7 @@ final ApiConfig _config;
 /// > The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 ///
 /// `POST /repos/{owner}/{repo}/check-runs`
-Future<ApiResult<CheckRun, Never>> checksCreate({required String owner, required String repo, required ChecksCreateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckRun, Never>> checksCreate({required String owner, required String repo, required ChecksCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -32,6 +32,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-runs',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -51,12 +52,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-runs/{check_run_id}`
-Future<ApiResult<CheckRun, Never>> checksGet({required String owner, required String repo, required int checkRunId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckRun, Never>> checksGet({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-runs/${Uri.encodeComponent(checkRunId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -76,7 +78,7 @@ return _execute(
 /// OAuth apps and personal access tokens (classic) cannot use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}`
-Future<ApiResult<CheckRun, Never>> checksUpdate({required String owner, required String repo, required int checkRunId, required ChecksUpdateRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckRun, Never>> checksUpdate({required String owner, required String repo, required int checkRunId, required ChecksUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,6 +86,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-runs/${Uri.encodeComponent(checkRunId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -100,7 +103,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations`
-Future<ApiResult<List<CheckAnnotation>, Never>> checksListAnnotations({required String owner, required String repo, required int checkRunId, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<CheckAnnotation>, Never>> checksListAnnotations({required String owner, required String repo, required int checkRunId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -113,6 +116,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -130,12 +134,13 @@ return _execute(
 /// For more information about how to re-run GitHub Actions jobs, see "[Re-run a job from a workflow run](https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run)".
 ///
 /// `POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest`
-Future<ApiResult<EmptyObject, BasicError>> checksRerequestRun({required String owner, required String repo, required int checkRunId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, BasicError>> checksRerequestRun({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-runs/${Uri.encodeComponent(checkRunId.toString())}/rerequest',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -158,7 +163,7 @@ return _execute(
 /// OAuth apps and personal access tokens (classic) cannot use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/check-suites`
-Future<ApiResult<CheckSuite, Never>> checksCreateSuite({required String owner, required String repo, required ChecksCreateSuiteRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckSuite, Never>> checksCreateSuite({required String owner, required String repo, required ChecksCreateSuiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,6 +171,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-suites',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -181,7 +187,7 @@ return _execute(
 /// You must have admin permissions in the repository to set preferences for check suites.
 ///
 /// `PATCH /repos/{owner}/{repo}/check-suites/preferences`
-Future<ApiResult<CheckSuitePreference, Never>> checksSetSuitesPreferences({required String owner, required String repo, required ChecksSetSuitesPreferencesRequest body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckSuitePreference, Never>> checksSetSuitesPreferences({required String owner, required String repo, required ChecksSetSuitesPreferencesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -189,6 +195,7 @@ final request = ApiRequest(
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-suites/preferences',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -208,12 +215,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-suites/{check_suite_id}`
-Future<ApiResult<CheckSuite, Never>> checksGetSuite({required String owner, required String repo, required int checkSuiteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckSuite, Never>> checksGetSuite({required String owner, required String repo, required int checkSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-suites/${Uri.encodeComponent(checkSuiteId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -233,7 +241,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs`
-Future<ApiResult<ChecksListForSuiteResponse, Never>> checksListForSuite({required String owner, required String repo, required int checkSuiteId, String? checkName, ChecksListForSuiteStatus? status, ChecksListForSuiteFilter? filter, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ChecksListForSuiteResponse, Never>> checksListForSuite({required String owner, required String repo, required int checkSuiteId, String? checkName, ChecksListForSuiteStatus? status, ChecksListForSuiteFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (checkName != null) queryParameters['check_name'] = checkName;
 if (status != null) queryParameters['status'] = status.toJson();
@@ -249,6 +257,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -263,12 +272,13 @@ return _execute(
 /// Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://docs.github.com/webhooks/event-payloads/#check_suite) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.
 ///
 /// `POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest`
-Future<ApiResult<EmptyObject, Never>> checksRerequestSuite({required String owner, required String repo, required int checkSuiteId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> checksRerequestSuite({required String owner, required String repo, required int checkSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
   path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/check-suites/${Uri.encodeComponent(checkSuiteId.toString())}/rerequest',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -290,7 +300,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}/check-runs`
-Future<ApiResult<ChecksListForRefResponse, Never>> checksListForRef({required String owner, required String repo, required String ref, String? checkName, ChecksListForRefStatus? status, ChecksListForRefFilter? filter, int? perPage, int? page, int? appId, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ChecksListForRefResponse, Never>> checksListForRef({required String owner, required String repo, required String ref, String? checkName, ChecksListForRefStatus? status, ChecksListForRefFilter? filter, int? perPage, int? page, int? appId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (checkName != null) queryParameters['check_name'] = checkName;
 if (status != null) queryParameters['status'] = status.toJson();
@@ -307,6 +317,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -326,7 +337,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}/check-suites`
-Future<ApiResult<ChecksListSuitesForRefResponse, Never>> checksListSuitesForRef({required String owner, required String repo, required String ref, int? appId, String? checkName, int? perPage, int? page, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ChecksListSuitesForRefResponse, Never>> checksListSuitesForRef({required String owner, required String repo, required String ref, int? appId, String? checkName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (appId != null) queryParameters['app_id'] = appId.toString();
 if (checkName != null) queryParameters['check_name'] = checkName;
@@ -341,6 +352,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -352,16 +364,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

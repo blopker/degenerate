@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Returns a summary of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/summary/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumSummaryResponse, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginPostQuantumSummaryResponse, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -49,6 +49,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -66,7 +67,7 @@ return _execute(
 /// Returns a timeseries of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumTimeseriesGroupsResponse, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginPostQuantumTimeseriesGroupsResponse, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -98,6 +99,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -115,7 +117,7 @@ return _execute(
 /// Tests whether a hostname or IP address supports Post-Quantum (PQ) TLS key exchange. Returns information about the negotiated key exchange algorithm and whether it uses PQ cryptography.
 ///
 /// `GET /radar/post_quantum/tls/support`
-Future<ApiResult<RadarGetPostQuantumTlsSupportResponse, RadarGetPostQuantumTlsSupportResponse400>> radarGetPostQuantumTlsSupport({required String host}) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetPostQuantumTlsSupportResponse, RadarGetPostQuantumTlsSupportResponse400>> radarGetPostQuantumTlsSupport({required String host, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['host'] = host;
 
@@ -127,6 +129,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -141,16 +144,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

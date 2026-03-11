@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// List of Worker Versions. The first version in the list is the latest version.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<ResponseCommon80, Never>> workerVersionsListVersions({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, bool? deployable, int? page, int? perPage, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon80, Never>> workerVersionsListVersions({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, bool? deployable, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deployable != null) queryParameters['deployable'] = deployable.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -31,6 +31,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -45,7 +46,7 @@ return _execute(
 /// Upload a Worker Version without deploying to Cloudflare's network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<ResponseCommon80, Never>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon80, Never>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) queryParameters['bindings_inherit'] = bindingsInherit.toJson();
 
@@ -63,6 +64,7 @@ final request = ApiRequest(
     ApiMultipartField.text('metadata', body.metadata.toString()),
   ],
   contentType: 'multipart/form-data',
+  options: options,
 );
 
 return _execute(
@@ -77,12 +79,13 @@ return _execute(
 /// Retrieves detailed information about a specific version of a Workers script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80, Never>> workerVersionsGetVersionDetail({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkersVersionIdentifier versionId, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon80, Never>> workerVersionsGetVersionDetail({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkersVersionIdentifier versionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/versions/${Uri.encodeComponent(versionId.toString())}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -94,16 +97,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

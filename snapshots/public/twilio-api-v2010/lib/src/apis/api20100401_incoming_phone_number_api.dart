@@ -15,12 +15,13 @@ final ApiConfig _config;
 /// Fetch an incoming-phone-number belonging to the account used to make the request.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> fetchIncomingPhoneNumber({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> fetchIncomingPhoneNumber({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -33,7 +34,7 @@ return _execute(
 /// Update an incoming-phone-number instance.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> updateIncomingPhoneNumber({required String accountSid, required String sid, UpdateIncomingPhoneNumberRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> updateIncomingPhoneNumber({required String accountSid, required String sid, UpdateIncomingPhoneNumberRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -88,6 +89,7 @@ final request = ApiRequest(
     if (body.bundleSid case final bundleSid$?)
       'BundleSid=${Uri.encodeQueryComponent(bundleSid$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -100,12 +102,13 @@ return _execute(
 /// Delete a phone-numbers belonging to the account used to make the request.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<void, Never>> deleteIncomingPhoneNumber({required String accountSid, required String sid, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteIncomingPhoneNumber({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(sid)}.json',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -116,7 +119,7 @@ return _execute(
 /// Retrieve a list of incoming-phone-numbers belonging to the account used to make the request.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
-Future<ApiResult<ListIncomingPhoneNumberResponse, Never>> listIncomingPhoneNumber({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListIncomingPhoneNumberResponse, Never>> listIncomingPhoneNumber({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (beta != null) queryParameters['Beta'] = beta.toString();
 if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
@@ -134,6 +137,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -146,7 +150,7 @@ return _execute(
 /// Purchase a phone-number for the account.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> createIncomingPhoneNumber({required String accountSid, CreateIncomingPhoneNumberRequest? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> createIncomingPhoneNumber({required String accountSid, CreateIncomingPhoneNumberRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -203,6 +207,7 @@ final request = ApiRequest(
     if (body.areaCode case final areaCode$?)
       'AreaCode=${Uri.encodeQueryComponent(areaCode$)}',
   ].join('&'),
+  options: options,
 );
 
 return _execute(
@@ -214,16 +219,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

@@ -19,12 +19,13 @@ final ApiConfig _config;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/namespaces/${Uri.encodeComponent(namespace)}/tables/${Uri.encodeComponent(tableName)}/maintenance-configs',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -44,7 +45,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> updateTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, required R2DataCatalogMaintenanceUpdateParams body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> updateTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, required R2DataCatalogMaintenanceUpdateParams body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +53,7 @@ final request = ApiRequest(
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/namespaces/${Uri.encodeComponent(namespace)}/tables/${Uri.encodeComponent(tableName)}/maintenance-configs',
   headers: headers,
   body: jsonEncode(body.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -66,16 +68,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {

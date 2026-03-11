@@ -15,7 +15,7 @@ final ApiConfig _config;
 /// List recently generated videos for the current project.
 ///
 /// `GET /videos`
-Future<ApiResult<VideoListResource, Never>> listVideos({int? limit, OrderEnum? order, String? after, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<VideoListResource, Never>> listVideos({int? limit, OrderEnum? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -29,6 +29,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -41,7 +42,7 @@ return _execute(
 /// Create a new video generation job from a prompt and optional reference assets.
 ///
 /// `POST /videos`
-Future<ApiResult<VideoResource, Never>> createVideo({CreateVideoBody? body}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VideoResource, Never>> createVideo({CreateVideoBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,6 +50,7 @@ final request = ApiRequest(
   path: '/videos',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -61,12 +63,13 @@ return _execute(
 /// Fetch the latest metadata for a generated video.
 ///
 /// `GET /videos/{video_id}`
-Future<ApiResult<VideoResource, Never>> getVideo({required String videoId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VideoResource, Never>> getVideo({required String videoId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
   path: '/videos/${Uri.encodeComponent(videoId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -79,12 +82,13 @@ return _execute(
 /// Permanently delete a completed or failed video and its stored assets.
 ///
 /// `DELETE /videos/{video_id}`
-Future<ApiResult<DeletedVideoResource, Never>> deleteVideo({required String videoId}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletedVideoResource, Never>> deleteVideo({required String videoId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
   path: '/videos/${Uri.encodeComponent(videoId)}',
   headers: headers,
+  options: options,
 );
 
 return _execute(
@@ -99,7 +103,7 @@ return _execute(
 /// Streams the rendered video content for the specified video job.
 ///
 /// `GET /videos/{video_id}/content`
-Future<ApiResult<String, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<String, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (variant != null) queryParameters['variant'] = variant.toJson();
 
@@ -111,6 +115,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  options: options,
 );
 
 return _execute(
@@ -123,7 +128,7 @@ return _execute(
 /// Create a remix of a completed video using a refreshed prompt.
 ///
 /// `POST /videos/{video_id}/remix`
-Future<ApiResult<VideoResource, Never>> createVideoRemix({required String videoId, CreateVideoRemixBody? body, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VideoResource, Never>> createVideoRemix({required String videoId, CreateVideoRemixBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,6 +136,7 @@ final request = ApiRequest(
   path: '/videos/${Uri.encodeComponent(videoId)}/remix',
   headers: headers,
   body: jsonEncode(body?.toJson()),
+  options: options,
 );
 
 return _execute(
@@ -142,16 +148,27 @@ return _execute(
  } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
+  final cancelToken = request.options?.cancelToken;
+  if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+  final extraHeaders = request.options?.extraHeaders;
+  final effectiveRequest = extraHeaders != null
+      ? request.copyWith(headers: {...request.headers, ...extraHeaders})
+      : request;
+
   final chain = buildInterceptorChain(
     interceptors: _config.interceptors,
     terminal: (req) async {
-      return _config.timeout != null
-          ? await _config.client.send(req).timeout(_config.timeout!)
-          : await _config.client.send(req);
+      if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+      final future = _config.client.send(req);
+      return effectiveTimeout != null
+          ? await future.timeout(effectiveTimeout)
+          : await future;
     },
   );
 
-  final response = await chain(request);
+  final response = await chain(effectiveRequest);
 
   try {
     if (response.isSuccessful) {
