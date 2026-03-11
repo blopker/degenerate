@@ -4,7 +4,7 @@
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
-- **292+ unit tests** all passing, **29 wire tests** passing, `dart analyze` clean on all source directories
+- **295+ unit tests** all passing, **29 wire tests** passing, `dart analyze` clean on all source directories
 - **CLI**: `--input`, `--output`, `--name`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
 - **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
@@ -33,6 +33,15 @@
 | DigitalOcean | — | Fails (missing external ref files) |
 
 ---
+
+## Completed (Session 11)
+- [x] **Cancel tokens** — `CancelToken` and `CancelledException` in runtime. Every generated method accepts `RequestOptions(cancelToken: token)`. Cancellation is socket-level in both adapters: Dio bridges to `dio.CancelToken`; HTTP uses `AbortableRequest`/`AbortableMultipartRequest`.
+- [x] **Per-request options** — `RequestOptions` with `timeout`, `extraHeaders`, and `cancelToken`. Generated `_execute` merges extra headers and applies per-request timeout.
+- [x] **Socket-level timeout** — timeout uses `Timer` + `CancelToken` instead of `Future.timeout()`, so timed-out requests actually close the socket. Dio native timeout exceptions (`connectTimeout`/`sendTimeout`/`receiveTimeout`) are converted to `TimeoutException` for consistency.
+- [x] **`ApiParseException` for error deserialization** — error deserialization failures now produce `ApiParseException` instead of silently returning `ApiError` with null error.
+- [x] **`toString()` on all `ApiResult` types** — readable output when printed.
+- [x] **`rawBody` renamed to `rawError`** on `ApiError` for clarity.
+- [x] **Multipart `contentType` passthrough** — both HTTP and Dio adapters now pass through `contentType` on file parts.
 
 ## Completed (Session 9)
 - [x] **External `$ref` file resolution** — `RefInliner` pre-processing pass loads referenced YAML/JSON files, registers external schemas as local `#/components/schemas/Name` refs, resolves chained refs across files, detects circular refs, and handles JSON pointers (RFC 6901). Fixture 13 exercises multi-file specs with path-level and schema-level external refs including circular cross-file refs. DigitalOcean test verifies `FileSystemException` for missing ref files.
@@ -114,6 +123,22 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 11 (2026-03-10) — Cancel tokens, per-request options, socket-level cancellation
+
+- `CancelToken` and `CancelledException` in `degenerate_runtime`
+- `RequestOptions` with `timeout`, `extraHeaders`, `cancelToken` — threaded through generated methods and `ApiRequest`
+- Generated `_execute` merges extra headers, creates adapter-level cancel token combining user cancel + timeout timer
+- Socket-level cancellation in both adapters: Dio bridges to `dio.CancelToken`; HTTP uses `AbortableRequest`/`AbortableMultipartRequest` with `abortTrigger`
+- Timeout via `Timer` + cancel token instead of `Future.timeout()` — actually closes the socket
+- Dio adapter converts native timeout exceptions to `TimeoutException` for consistency
+- `ApiParseException` for error deserialization failures (was silently nulling out `ApiError.error`)
+- `toString()` on all `ApiResult` types
+- `rawBody` → `rawError` rename on `ApiError`
+- Multipart `contentType` passthrough in both adapters
+- 8 cancel token tests, 4 ApiResult tests, adapter cancel/timeout tests
+- README: added cancel tokens section, Dio example with granular timeouts, per-request options
+- All tests passing, analyzer clean
 
 ### Session 10 (2026-03-10) — Multipart/form-data, base URL, retry improvements, serialization cleanup
 

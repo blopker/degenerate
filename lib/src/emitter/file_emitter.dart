@@ -168,6 +168,7 @@ class FileEmitter {
       final library = Library(
         (b) => b
           ..comments.addAll(header)
+          ..directives.add(Directive.import('dart:async'))
           ..directives.addAll(
             needsConvert ? [Directive.import('dart:convert')] : [],
           )

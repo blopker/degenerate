@@ -26,6 +26,7 @@
 - **Tag & path filtering** — generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
 - **Multi-format request/response** — JSON, text, binary, multipart/form-data, and form-urlencoded bodies with media-type-aware serialization
 - **Pluggable HTTP** — bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
+- **Cancel tokens & per-request options** — cancel in-flight requests at the socket level, override timeout/headers per call
 - **OkHttp-style middleware** — single `intercept(request, next)` pattern with built-in retry, auth, and logging interceptors
 - **Modular output** — one file per model, small types inlined into their parent, barrel file for convenient imports
 
@@ -151,6 +152,27 @@ The adapter packages re-export `degenerate_runtime`, so you only need a single i
 // This gives you HttpApiClient + all runtime types (ApiConfig, ApiResult, interceptors, etc.)
 import 'package:degenerate_http/degenerate_http.dart';
 ```
+
+### Using Dio
+
+```dart
+import 'package:degenerate_dio/degenerate_dio.dart';
+import 'package:dio/dio.dart';
+import 'package:petstore/petstore.dart';
+
+final dio = Dio()
+  // For granular timeout control, configure Dio directly
+  // and leave ApiConfig.timeout null:
+  ..options.connectTimeout = Duration(seconds: 5)
+  ..options.receiveTimeout = Duration(seconds: 30);
+
+final sdk = PetstoreApi(ApiConfig(
+  client: DioApiClient(baseUrl: Uri.parse(PetstoreApi.defaultBaseUrl), inner: dio),
+  // timeout: Duration(seconds: 10), // or use a single overall deadline here
+));
+```
+
+Use the `Dio` instance for low-level settings like proxy configuration, custom adapters, and granular timeouts. Configure default headers, interceptors, and cancellation through `ApiConfig`.
 
 ## Generated Output
 
@@ -332,6 +354,33 @@ ApiConfig(
   ],
 )
 ```
+
+## Cancel Tokens & Per-Request Options
+
+Every generated method accepts an optional `RequestOptions` for per-request overrides:
+
+```dart
+// Cancel a request (closes the socket immediately in both http and dio adapters)
+final token = CancelToken();
+final result = await sdk.pet.listPets(
+  options: RequestOptions(cancelToken: token),
+);
+// From another isolate, timer, or UI callback:
+token.cancel();
+
+// Per-request timeout (overrides ApiConfig.timeout)
+final result = await sdk.pet.getPetById(
+  petId: 1,
+  options: RequestOptions(timeout: Duration(seconds: 5)),
+);
+
+// Extra headers for a single request
+final result = await sdk.pet.listPets(
+  options: RequestOptions(extraHeaders: {'X-Request-Id': 'abc-123'}),
+);
+```
+
+Cancel tokens work at the socket level — both adapters abort the underlying connection rather than just abandoning the future. A cancelled request surfaces as `ApiException(CancelledException())`. A timed-out request surfaces as `ApiException(TimeoutException(...))`.
 
 ## Architecture
 

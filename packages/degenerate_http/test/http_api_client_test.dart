@@ -111,6 +111,31 @@ void main() {
       );
     });
 
+    test('cancel token races against in-flight request', () async {
+      final token = CancelToken();
+      token.cancel();
+
+      final inner = MockClient((request) async {
+        return http.Response('', 200);
+      });
+
+      final client = HttpApiClient(
+        baseUrl: Uri.parse('https://api.example.com'),
+        inner: inner,
+      );
+
+      expect(
+        () => client.send(
+          ApiRequest(
+            method: 'GET',
+            path: '/hello',
+            options: RequestOptions(cancelToken: token),
+          ),
+        ),
+        throwsA(isA<CancelledException>()),
+      );
+    });
+
     test('sends cookies as Cookie header', () async {
       http.BaseRequest? capturedRequest;
       final inner = MockClient((request) async {

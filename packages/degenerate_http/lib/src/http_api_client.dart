@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
@@ -15,15 +16,19 @@ final class HttpApiClient implements ApiClient {
   @override
   Future<ApiResponse> send(ApiRequest request) async {
     final uri = request.resolveUri(baseUrl);
-    final httpRequest = http.Request(request.method, uri)
-      ..headers.addAll(request.resolvedHeaders());
-    if (request.contentType != null) {
-      httpRequest.headers['content-type'] = request.contentType!;
-    }
+    final cancelToken = request.options?.cancelToken;
+    if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+    // Build the abort trigger from our cancel token.
+    final Future<void>? abortTrigger = cancelToken?.whenCancelled;
+
     if (request.body is List<ApiMultipartField>) {
       final fields = request.body as List<ApiMultipartField>;
-      final multipart = http.MultipartRequest(request.method, uri)
-        ..headers.addAll(request.resolvedHeaders());
+      final multipart = http.AbortableMultipartRequest(
+        request.method,
+        uri,
+        abortTrigger: abortTrigger,
+      )..headers.addAll(request.resolvedHeaders());
       for (final field in fields) {
         switch (field) {
           case ApiMultipartTextField():
@@ -39,14 +44,27 @@ final class HttpApiClient implements ApiClient {
             ));
         }
       }
-      final streamed = await _inner.send(multipart);
-      final bytes = await streamed.stream.toBytes();
-      return ApiResponse(
-        statusCode: streamed.statusCode,
-        headers: streamed.headers,
-        body: utf8.decode(bytes, allowMalformed: true),
-        bodyBytes: bytes,
-      );
+      try {
+        final streamed = await _inner.send(multipart);
+        final bytes = await streamed.stream.toBytes();
+        return ApiResponse(
+          statusCode: streamed.statusCode,
+          headers: streamed.headers,
+          body: utf8.decode(bytes, allowMalformed: true),
+          bodyBytes: bytes,
+        );
+      } on http.RequestAbortedException {
+        throw const CancelledException();
+      }
+    }
+
+    final httpRequest = http.AbortableRequest(
+      request.method,
+      uri,
+      abortTrigger: abortTrigger,
+    )..headers.addAll(request.resolvedHeaders());
+    if (request.contentType != null) {
+      httpRequest.headers['content-type'] = request.contentType!;
     }
     if (request.body != null) {
       final body = request.body;
@@ -60,14 +78,18 @@ final class HttpApiClient implements ApiClient {
         );
       }
     }
-    final streamed = await _inner.send(httpRequest);
-    final bytes = await streamed.stream.toBytes();
-    return ApiResponse(
-      statusCode: streamed.statusCode,
-      headers: streamed.headers,
-      body: utf8.decode(bytes, allowMalformed: true),
-      bodyBytes: bytes,
-    );
+    try {
+      final streamed = await _inner.send(httpRequest);
+      final bytes = await streamed.stream.toBytes();
+      return ApiResponse(
+        statusCode: streamed.statusCode,
+        headers: streamed.headers,
+        body: utf8.decode(bytes, allowMalformed: true),
+        bodyBytes: bytes,
+      );
+    } on http.RequestAbortedException {
+      throw const CancelledException();
+    }
   }
 
   @override

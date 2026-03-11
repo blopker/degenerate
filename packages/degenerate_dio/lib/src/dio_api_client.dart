@@ -1,9 +1,22 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:dio/dio.dart' as dio;
 
 /// [ApiClient] implementation backed by `package:dio`.
+///
+/// Configure default headers, interceptors, and cancellation through
+/// [ApiConfig] rather than on the [Dio] instance — the generated client
+/// manages these concerns. Use the [Dio] instance for low-level settings
+/// like proxy configuration or custom [HttpClientAdapter]s.
+///
+/// **Timeouts:** [ApiConfig.timeout] applies a single overall deadline to the
+/// entire request. For more granular control (separate connect, send, and
+/// receive timeouts), leave [ApiConfig.timeout] null and configure
+/// [Dio.options.connectTimeout], [Dio.options.sendTimeout], and
+/// [Dio.options.receiveTimeout] directly — they will surface as
+/// [TimeoutException] in [ApiException].
 final class DioApiClient implements ApiClient {
   final dio.Dio _inner;
   @override
@@ -16,6 +29,20 @@ final class DioApiClient implements ApiClient {
   Future<ApiResponse> send(ApiRequest request) async {
     final uri = request.resolveUri(baseUrl);
     final headers = request.resolvedHeaders();
+
+    // Bridge our CancelToken to Dio's native CancelToken for socket-level cancellation.
+    final cancelToken = request.options?.cancelToken;
+    dio.CancelToken? dioCancelToken;
+    if (cancelToken != null) {
+      if (cancelToken.isCancelled) throw const CancelledException();
+      dioCancelToken = dio.CancelToken();
+      cancelToken.whenCancelled.then((_) {
+        if (!dioCancelToken!.isCancelled) {
+          dioCancelToken!.cancel();
+        }
+      });
+    }
+
     try {
       final Object? data;
       if (request.body is List<ApiMultipartField>) {
@@ -55,6 +82,7 @@ final class DioApiClient implements ApiClient {
           validateStatus: (_) => true,
         ),
         data: data,
+        cancelToken: dioCancelToken,
       );
       final bytes = response.data ?? const <int>[];
       return ApiResponse(
@@ -64,6 +92,15 @@ final class DioApiClient implements ApiClient {
         bodyBytes: bytes,
       );
     } on dio.DioException catch (e) {
+      if (e.type == dio.DioExceptionType.cancel) {
+        throw const CancelledException();
+      }
+      // Convert Dio's native timeout exceptions to TimeoutException.
+      if (e.type == dio.DioExceptionType.connectionTimeout ||
+          e.type == dio.DioExceptionType.sendTimeout ||
+          e.type == dio.DioExceptionType.receiveTimeout) {
+        throw TimeoutException(e.message ?? 'Request timed out');
+      }
       if (e.response != null) {
         final r = e.response!;
         final bytes = switch (r.data) {
