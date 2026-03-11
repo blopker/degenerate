@@ -17,6 +17,9 @@ final class ApiSuccess<T, E> extends ApiResult<T, E> {
     required this.statusCode,
     this.headers = const {},
   });
+
+  @override
+  String toString() => 'ApiSuccess($statusCode, $data)';
 }
 
 final class ApiError<T, E> extends ApiResult<T, E> {
@@ -31,6 +34,10 @@ final class ApiError<T, E> extends ApiResult<T, E> {
     this.rawBody,
     this.headers = const {},
   });
+
+  @override
+  String toString() =>
+      error != null ? 'ApiError($statusCode, $error)' : 'ApiError($statusCode, $rawBody)';
 }
 
 /// Network-level failure (DNS, timeout, connection refused).
@@ -39,6 +46,9 @@ class ApiException<T, E> extends ApiResult<T, E> {
   final StackTrace stackTrace;
 
   const ApiException(this.exception, this.stackTrace);
+
+  @override
+  String toString() => 'ApiException($exception)';
 }
 
 /// The server returned a response but it could not be deserialized.
@@ -54,4 +64,7 @@ final class ApiParseException<T, E> extends ApiException<T, E> {
     super.stackTrace, {
     required this.response,
   });
+
+  @override
+  String toString() => 'ApiParseException(${response.statusCode}, $exception)';
 }
