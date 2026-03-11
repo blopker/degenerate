@@ -524,6 +524,197 @@ void main() {
     });
   });
 
+  group('inline schema naming', () {
+    test('inline object with title uses title as name', () {
+      final lowerer = TypeLowerer();
+      final t = lowerer.lowerInlineSchema({
+        'type': 'object',
+        'title': 'MyCustomWidget',
+        'properties': {
+          'color': {'type': 'string'},
+        },
+      });
+      expect(t, isA<IrObject>());
+      expect((t as IrObject).name, equals('MyCustomWidget'));
+    });
+
+    test('oneOf inline variants use title when available', () {
+      final lowerer = TypeLowerer();
+      lowerer.lowerSchema('EventUnion', {
+        'oneOf': [
+          {
+            'type': 'object',
+            'title': 'CreatedEvent',
+            'properties': {
+              'event': {
+                'type': 'string',
+                'enum': ['created'],
+              },
+              'data': {'type': 'string'},
+            },
+            'required': ['event', 'data'],
+          },
+          {
+            'type': 'object',
+            'title': 'DeletedEvent',
+            'properties': {
+              'event': {
+                'type': 'string',
+                'enum': ['deleted'],
+              },
+              'id': {'type': 'integer'},
+            },
+            'required': ['event', 'id'],
+          },
+        ],
+      });
+      // Variants should use their title, not InlineObject
+      expect(lowerer.typeRegistry, contains('CreatedEvent'));
+      expect(lowerer.typeRegistry, contains('DeletedEvent'));
+      expect(
+        lowerer.typeRegistry.keys.where((k) => k.startsWith('InlineObject')),
+        isEmpty,
+      );
+    });
+
+    test('oneOf inline variants use parent name as fallback', () {
+      final lowerer = TypeLowerer();
+      lowerer.lowerSchema('StreamEvent', {
+        'oneOf': [
+          {
+            'type': 'object',
+            'properties': {
+              'event': {
+                'type': 'string',
+                'enum': ['started'],
+              },
+            },
+            'required': ['event'],
+          },
+          {
+            'type': 'object',
+            'properties': {
+              'event': {
+                'type': 'string',
+                'enum': ['stopped'],
+              },
+            },
+            'required': ['event'],
+          },
+        ],
+      });
+      // Should use parent-derived names, not InlineObject
+      expect(
+        lowerer.typeRegistry.keys.where((k) => k.startsWith('InlineObject')),
+        isEmpty,
+      );
+      // Should contain names derived from parent
+      expect(
+        lowerer.typeRegistry.keys.where(
+          (k) => k.startsWith('StreamEvent'),
+        ),
+        hasLength(greaterThanOrEqualTo(3)), // StreamEvent + 2 variants
+      );
+    });
+
+    test('anyOf inline variants use title when available', () {
+      final lowerer = TypeLowerer();
+      lowerer.lowerSchema('Shape', {
+        'anyOf': [
+          {
+            'type': 'object',
+            'title': 'Circle',
+            'properties': {
+              'radius': {'type': 'number'},
+            },
+          },
+          {
+            'type': 'object',
+            'title': 'Square',
+            'properties': {
+              'side': {'type': 'number'},
+            },
+          },
+        ],
+      });
+      expect(lowerer.typeRegistry, contains('Circle'));
+      expect(lowerer.typeRegistry, contains('Square'));
+      expect(
+        lowerer.typeRegistry.keys.where((k) => k.startsWith('InlineObject')),
+        isEmpty,
+      );
+    });
+
+    test('anyOf inline variants use parent name as fallback', () {
+      final lowerer = TypeLowerer();
+      lowerer.lowerSchema('InputData', {
+        'anyOf': [
+          {
+            'type': 'object',
+            'properties': {
+              'text': {'type': 'string'},
+            },
+          },
+          {
+            'type': 'object',
+            'properties': {
+              'url': {'type': 'string', 'format': 'uri'},
+            },
+          },
+        ],
+      });
+      expect(
+        lowerer.typeRegistry.keys.where((k) => k.startsWith('InlineObject')),
+        isEmpty,
+      );
+      expect(
+        lowerer.typeRegistry.keys.where((k) => k.startsWith('InputData')),
+        hasLength(greaterThanOrEqualTo(3)), // InputData + 2 variants
+      );
+    });
+
+    test('discriminated union inline variants use title', () {
+      final lowerer = TypeLowerer();
+      lowerer.lowerSchema('Animal', {
+        'oneOf': [
+          {
+            'type': 'object',
+            'title': 'DogAnimal',
+            'properties': {
+              'type': {
+                'type': 'string',
+                'enum': ['dog'],
+              },
+              'bark': {'type': 'boolean'},
+            },
+            'required': ['type'],
+          },
+          {
+            'type': 'object',
+            'title': 'CatAnimal',
+            'properties': {
+              'type': {
+                'type': 'string',
+                'enum': ['cat'],
+              },
+              'purr': {'type': 'boolean'},
+            },
+            'required': ['type'],
+          },
+        ],
+        'discriminator': {
+          'propertyName': 'type',
+        },
+      });
+      expect(lowerer.typeRegistry, contains('DogAnimal'));
+      expect(lowerer.typeRegistry, contains('CatAnimal'));
+      expect(
+        lowerer.typeRegistry.keys.where((k) => k.startsWith('InlineObject')),
+        isEmpty,
+      );
+    });
+  });
+
   group('Vendor extensions (x- fields)', () {
     test('x- fields at schema level are ignored', () {
       final tl = TypeLowerer();

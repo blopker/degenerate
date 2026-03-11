@@ -6,16 +6,16 @@
 
 /// Ignore all query string parameters.
 /// 
-final class InlineObject183 {const InlineObject183._(this.value);
+final class ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 {const ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._(this.value);
 
-factory InlineObject183.fromJson(String json) { return switch (json) {
+factory ZonesCacheKeyFieldsValueQueryStringExcludeVariant1.fromJson(String json) { return switch (json) {
   '*' => $empty,
-  _ => InlineObject183._(json),
+  _ => ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._(json),
 }; }
 
-static const InlineObject183 $empty = InlineObject183._('*');
+static const ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 $empty = ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._('*');
 
-static const List<InlineObject183> values = [$empty];
+static const List<ZonesCacheKeyFieldsValueQueryStringExcludeVariant1> values = [$empty];
 
 final String value;
 
@@ -23,11 +23,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineObject183 && other.value == value; } 
+    other is ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineObject183($value)'; } 
+@override String toString() { return 'ZonesCacheKeyFieldsValueQueryStringExcludeVariant1($value)'; } 
  }
-/// A value that is one of: `InlineObject183`, `List<String>`.
+/// A value that is one of: `ZonesCacheKeyFieldsValueQueryStringExcludeVariant1`, `List<String>`.
 sealed class ZonesCacheKeyFieldsValueQueryStringExclude {const ZonesCacheKeyFieldsValueQueryStringExclude();
 
 factory ZonesCacheKeyFieldsValueQueryStringExclude.fromJson(Map<String, dynamic> json) {   return ZonesCacheKeyFieldsValueQueryStringExclude$Unknown(json); }
@@ -36,15 +36,15 @@ factory ZonesCacheKeyFieldsValueQueryStringExclude.fromJson(Map<String, dynamic>
 Object? get value;
 Object? toJson() { return value; } 
  }
-final class ZonesCacheKeyFieldsValueQueryStringExcludeInlineObject183 extends ZonesCacheKeyFieldsValueQueryStringExclude {const ZonesCacheKeyFieldsValueQueryStringExcludeInlineObject183(this._value);
+final class ZonesCacheKeyFieldsValueQueryStringExcludeZonesCacheKeyFieldsValueQueryStringExcludeVariant1 extends ZonesCacheKeyFieldsValueQueryStringExclude {const ZonesCacheKeyFieldsValueQueryStringExcludeZonesCacheKeyFieldsValueQueryStringExcludeVariant1(this._value);
 
-final InlineObject183 _value;
+final ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 _value;
 
-@override InlineObject183 get value { return _value; } 
+@override ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheKeyFieldsValueQueryStringExcludeInlineObject183 && _value == other._value; } 
+    other is ZonesCacheKeyFieldsValueQueryStringExcludeZonesCacheKeyFieldsValueQueryStringExcludeVariant1 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesCacheKeyFieldsValueQueryStringExclude.inlineObject183($_value)'; } 
+@override String toString() { return 'ZonesCacheKeyFieldsValueQueryStringExclude.zonesCacheKeyFieldsValueQueryStringExcludeVariant1($_value)'; } 
  }
 final class ZonesCacheKeyFieldsValueQueryStringExcludeListString extends ZonesCacheKeyFieldsValueQueryStringExclude {const ZonesCacheKeyFieldsValueQueryStringExcludeListString(this._value);
 

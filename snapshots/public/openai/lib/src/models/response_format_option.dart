@@ -6,16 +6,16 @@
 
 import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_text.dart';/// `auto` is the default value
 /// 
-final class InlineObject {const InlineObject._(this.value);
+final class ResponseFormatOptionVariant1 {const ResponseFormatOptionVariant1._(this.value);
 
-factory InlineObject.fromJson(String json) { return switch (json) {
+factory ResponseFormatOptionVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,
-  _ => InlineObject._(json),
+  _ => ResponseFormatOptionVariant1._(json),
 }; }
 
-static const InlineObject auto = InlineObject._('auto');
+static const ResponseFormatOptionVariant1 auto = ResponseFormatOptionVariant1._('auto');
 
-static const List<InlineObject> values = [auto];
+static const List<ResponseFormatOptionVariant1> values = [auto];
 
 final String value;
 
@@ -23,11 +23,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineObject && other.value == value; } 
+    other is ResponseFormatOptionVariant1 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineObject($value)'; } 
+@override String toString() { return 'ResponseFormatOptionVariant1($value)'; } 
  }
-/// A value that is one of: `InlineObject`, `ResponseFormatText`, `ResponseFormatJsonObject`, `ResponseFormatJsonSchema`.
+/// A value that is one of: `ResponseFormatOptionVariant1`, `ResponseFormatText`, `ResponseFormatJsonObject`, `ResponseFormatJsonSchema`.
 sealed class ResponseFormatOption {const ResponseFormatOption();
 
 factory ResponseFormatOption.fromJson(Map<String, dynamic> json) {   if (ResponseFormatText.canParse(json)) {
@@ -45,15 +45,15 @@ factory ResponseFormatOption.fromJson(Map<String, dynamic> json) {   if (Respons
 Object? get value;
 Object? toJson() { return value; } 
  }
-final class ResponseFormatOptionInlineObject extends ResponseFormatOption {const ResponseFormatOptionInlineObject(this._value);
+final class ResponseFormatOptionResponseFormatOptionVariant1 extends ResponseFormatOption {const ResponseFormatOptionResponseFormatOptionVariant1(this._value);
 
-final InlineObject _value;
+final ResponseFormatOptionVariant1 _value;
 
-@override InlineObject get value { return _value; } 
+@override ResponseFormatOptionVariant1 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseFormatOptionInlineObject && _value == other._value; } 
+    other is ResponseFormatOptionResponseFormatOptionVariant1 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ResponseFormatOption.inlineObject($_value)'; } 
+@override String toString() { return 'ResponseFormatOption.responseFormatOptionVariant1($_value)'; } 
  }
 final class ResponseFormatOptionResponseFormatText extends ResponseFormatOption {const ResponseFormatOptionResponseFormatText(this._value);
 

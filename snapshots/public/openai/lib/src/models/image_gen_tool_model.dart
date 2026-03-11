@@ -6,22 +6,22 @@
 
 /// The image generation model to use. Default: `gpt-image-1`.
 /// 
-final class InlineObject51 {const InlineObject51._(this.value);
+final class ImageGenToolModelVariant2 {const ImageGenToolModelVariant2._(this.value);
 
-factory InlineObject51.fromJson(String json) { return switch (json) {
+factory ImageGenToolModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-image-1' => gptImage1,
   'gpt-image-1-mini' => gptImage1Mini,
   'gpt-image-1.5' => gptImage15,
-  _ => InlineObject51._(json),
+  _ => ImageGenToolModelVariant2._(json),
 }; }
 
-static const InlineObject51 gptImage1 = InlineObject51._('gpt-image-1');
+static const ImageGenToolModelVariant2 gptImage1 = ImageGenToolModelVariant2._('gpt-image-1');
 
-static const InlineObject51 gptImage1Mini = InlineObject51._('gpt-image-1-mini');
+static const ImageGenToolModelVariant2 gptImage1Mini = ImageGenToolModelVariant2._('gpt-image-1-mini');
 
-static const InlineObject51 gptImage15 = InlineObject51._('gpt-image-1.5');
+static const ImageGenToolModelVariant2 gptImage15 = ImageGenToolModelVariant2._('gpt-image-1.5');
 
-static const List<InlineObject51> values = [gptImage1, gptImage1Mini, gptImage15];
+static const List<ImageGenToolModelVariant2> values = [gptImage1, gptImage1Mini, gptImage15];
 
 final String value;
 
@@ -29,25 +29,25 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineObject51 && other.value == value; } 
+    other is ImageGenToolModelVariant2 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineObject51($value)'; } 
+@override String toString() { return 'ImageGenToolModelVariant2($value)'; } 
  }
-final class ImageGenToolModel {const ImageGenToolModel({this.string, this.inlineObject51, });
+final class ImageGenToolModel {const ImageGenToolModel({this.string, this.imageGenToolModelVariant2, });
 
 factory ImageGenToolModel.fromJson(Object? json) { return ImageGenToolModel(
   string: json is String ? json : null,
-  inlineObject51: json is String ? InlineObject51.fromJson(json) : null,
+  imageGenToolModelVariant2: json is String ? ImageGenToolModelVariant2.fromJson(json) : null,
 ); }
 
 final String? string;
 
-final InlineObject51? inlineObject51;
+final ImageGenToolModelVariant2? imageGenToolModelVariant2;
 
 /// At least one variant must be present.
-bool get isValid { return string != null || inlineObject51 != null; } 
+bool get isValid { return string != null || imageGenToolModelVariant2 != null; } 
 Map<String, dynamic> toJson() { return {
   'string': ?string,
-  if (inlineObject51 != null) 'inlineObject51': inlineObject51!.toJson(),
+  if (imageGenToolModelVariant2 != null) 'imageGenToolModelVariant2': imageGenToolModelVariant2!.toJson(),
 }; } 
  }

@@ -6,22 +6,22 @@
 
 import 'assistants_named_tool_choice.dart';/// `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
 /// 
-final class InlineObject2 {const InlineObject2._(this.value);
+final class ToolChoiceOptionVariant1 {const ToolChoiceOptionVariant1._(this.value);
 
-factory InlineObject2.fromJson(String json) { return switch (json) {
+factory ToolChoiceOptionVariant1.fromJson(String json) { return switch (json) {
   'none' => none,
   'auto' => auto,
   'required' => $required,
-  _ => InlineObject2._(json),
+  _ => ToolChoiceOptionVariant1._(json),
 }; }
 
-static const InlineObject2 none = InlineObject2._('none');
+static const ToolChoiceOptionVariant1 none = ToolChoiceOptionVariant1._('none');
 
-static const InlineObject2 auto = InlineObject2._('auto');
+static const ToolChoiceOptionVariant1 auto = ToolChoiceOptionVariant1._('auto');
 
-static const InlineObject2 $required = InlineObject2._('required');
+static const ToolChoiceOptionVariant1 $required = ToolChoiceOptionVariant1._('required');
 
-static const List<InlineObject2> values = [none, auto, $required];
+static const List<ToolChoiceOptionVariant1> values = [none, auto, $required];
 
 final String value;
 
@@ -29,11 +29,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineObject2 && other.value == value; } 
+    other is ToolChoiceOptionVariant1 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineObject2($value)'; } 
+@override String toString() { return 'ToolChoiceOptionVariant1($value)'; } 
  }
-/// A value that is one of: `InlineObject2`, `AssistantsNamedToolChoice`.
+/// A value that is one of: `ToolChoiceOptionVariant1`, `AssistantsNamedToolChoice`.
 sealed class ToolChoiceOption {const ToolChoiceOption();
 
 factory ToolChoiceOption.fromJson(Map<String, dynamic> json) {   if (AssistantsNamedToolChoice.canParse(json)) {
@@ -45,15 +45,15 @@ factory ToolChoiceOption.fromJson(Map<String, dynamic> json) {   if (AssistantsN
 Object? get value;
 Object? toJson() { return value; } 
  }
-final class ToolChoiceOptionInlineObject2 extends ToolChoiceOption {const ToolChoiceOptionInlineObject2(this._value);
+final class ToolChoiceOptionToolChoiceOptionVariant1 extends ToolChoiceOption {const ToolChoiceOptionToolChoiceOptionVariant1(this._value);
 
-final InlineObject2 _value;
+final ToolChoiceOptionVariant1 _value;
 
-@override InlineObject2 get value { return _value; } 
+@override ToolChoiceOptionVariant1 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolChoiceOptionInlineObject2 && _value == other._value; } 
+    other is ToolChoiceOptionToolChoiceOptionVariant1 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ToolChoiceOption.inlineObject2($_value)'; } 
+@override String toString() { return 'ToolChoiceOption.toolChoiceOptionVariant1($_value)'; } 
  }
 final class ToolChoiceOptionAssistantsNamedToolChoice extends ToolChoiceOption {const ToolChoiceOptionAssistantsNamedToolChoice(this._value);
 

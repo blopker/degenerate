@@ -6,16 +6,16 @@
 
 import 'vad_config.dart';/// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.
 /// 
-final class InlineObject109 {const InlineObject109._(this.value);
+final class TranscriptionChunkingStrategyVariant1 {const TranscriptionChunkingStrategyVariant1._(this.value);
 
-factory InlineObject109.fromJson(String json) { return switch (json) {
+factory TranscriptionChunkingStrategyVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,
-  _ => InlineObject109._(json),
+  _ => TranscriptionChunkingStrategyVariant1._(json),
 }; }
 
-static const InlineObject109 auto = InlineObject109._('auto');
+static const TranscriptionChunkingStrategyVariant1 auto = TranscriptionChunkingStrategyVariant1._('auto');
 
-static const List<InlineObject109> values = [auto];
+static const List<TranscriptionChunkingStrategyVariant1> values = [auto];
 
 final String value;
 
@@ -23,11 +23,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineObject109 && other.value == value; } 
+    other is TranscriptionChunkingStrategyVariant1 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineObject109($value)'; } 
+@override String toString() { return 'TranscriptionChunkingStrategyVariant1($value)'; } 
  }
-/// A value that is one of: `InlineObject109`, `VadConfig`.
+/// A value that is one of: `TranscriptionChunkingStrategyVariant1`, `VadConfig`.
 sealed class TranscriptionChunkingStrategy {const TranscriptionChunkingStrategy();
 
 factory TranscriptionChunkingStrategy.fromJson(Map<String, dynamic> json) {   if (VadConfig.canParse(json)) {
@@ -39,15 +39,15 @@ factory TranscriptionChunkingStrategy.fromJson(Map<String, dynamic> json) {   if
 Object? get value;
 Object? toJson() { return value; } 
  }
-final class TranscriptionChunkingStrategyInlineObject109 extends TranscriptionChunkingStrategy {const TranscriptionChunkingStrategyInlineObject109(this._value);
+final class TranscriptionChunkingStrategyTranscriptionChunkingStrategyVariant1 extends TranscriptionChunkingStrategy {const TranscriptionChunkingStrategyTranscriptionChunkingStrategyVariant1(this._value);
 
-final InlineObject109 _value;
+final TranscriptionChunkingStrategyVariant1 _value;
 
-@override InlineObject109 get value { return _value; } 
+@override TranscriptionChunkingStrategyVariant1 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptionChunkingStrategyInlineObject109 && _value == other._value; } 
+    other is TranscriptionChunkingStrategyTranscriptionChunkingStrategyVariant1 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'TranscriptionChunkingStrategy.inlineObject109($_value)'; } 
+@override String toString() { return 'TranscriptionChunkingStrategy.transcriptionChunkingStrategyVariant1($_value)'; } 
  }
 final class TranscriptionChunkingStrategyVadConfig extends TranscriptionChunkingStrategy {const TranscriptionChunkingStrategyVadConfig(this._value);
 
