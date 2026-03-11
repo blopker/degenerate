@@ -36,19 +36,17 @@ final class DioApiClient implements ApiClient {
     if (cancelToken != null) {
       if (cancelToken.isCancelled) throw const CancelledException();
       dioCancelToken = dio.CancelToken();
+      final token = dioCancelToken;
       cancelToken.whenCancelled.then((_) {
-        if (!dioCancelToken!.isCancelled) {
-          dioCancelToken!.cancel();
-        }
+        if (!token.isCancelled) token.cancel();
       });
     }
 
     try {
       final Object? data;
       if (request.body is List<ApiMultipartField>) {
-        final fields = request.body as List<ApiMultipartField>;
         final formData = dio.FormData();
-        for (final field in fields) {
+        for (final field in request.body as List<ApiMultipartField>) {
           switch (field) {
             case ApiMultipartTextField():
               formData.fields.add(MapEntry(field.name, field.value));
@@ -78,24 +76,16 @@ final class DioApiClient implements ApiClient {
               ? null
               : request.contentType,
           responseType: dio.ResponseType.bytes,
-          // Let us handle status codes ourselves.
           validateStatus: (_) => true,
         ),
         data: data,
         cancelToken: dioCancelToken,
       );
-      final bytes = response.data ?? const <int>[];
-      return ApiResponse(
-        statusCode: response.statusCode ?? 0,
-        headers: response.headers.map.map((k, v) => MapEntry(k, v.join(', '))),
-        body: utf8.decode(bytes, allowMalformed: true),
-        bodyBytes: bytes,
-      );
+      return _toApiResponse(response.statusCode, response.headers, response.data);
     } on dio.DioException catch (e) {
       if (e.type == dio.DioExceptionType.cancel) {
         throw const CancelledException();
       }
-      // Convert Dio's native timeout exceptions to TimeoutException.
       if (e.type == dio.DioExceptionType.connectionTimeout ||
           e.type == dio.DioExceptionType.sendTimeout ||
           e.type == dio.DioExceptionType.receiveTimeout) {
@@ -103,21 +93,30 @@ final class DioApiClient implements ApiClient {
       }
       if (e.response != null) {
         final r = e.response!;
-        final bytes = switch (r.data) {
-          List<int>() => r.data as List<int>,
-          String() => utf8.encode(r.data as String),
-          null => const <int>[],
-          _ => utf8.encode(r.data.toString()),
-        };
-        return ApiResponse(
-          statusCode: r.statusCode ?? 0,
-          headers: r.headers.map.map((k, v) => MapEntry(k, v.join(', '))),
-          body: utf8.decode(bytes, allowMalformed: true),
-          bodyBytes: bytes,
-        );
+        return _toApiResponse(r.statusCode, r.headers, r.data);
       }
       rethrow;
     }
+  }
+
+  /// Convert Dio response parts to [ApiResponse].
+  ApiResponse _toApiResponse(
+    int? statusCode,
+    dio.Headers headers,
+    Object? data,
+  ) {
+    final bytes = switch (data) {
+      List<int>() => data,
+      String() => utf8.encode(data),
+      null => const <int>[],
+      _ => utf8.encode(data.toString()),
+    };
+    return ApiResponse(
+      statusCode: statusCode ?? 0,
+      headers: headers.map.map((k, v) => MapEntry(k, v.join(', '))),
+      body: utf8.decode(bytes, allowMalformed: true),
+      bodyBytes: bytes,
+    );
   }
 
   @override

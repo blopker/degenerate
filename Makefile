@@ -10,6 +10,7 @@ test:
 	dart analyze snapshots/specs
 	dart analyze example
 	dart analyze test
+	dart analyze packages
 
 # test_unit:
 	# todo

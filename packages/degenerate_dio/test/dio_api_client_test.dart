@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:degenerate_dio/degenerate_dio.dart';
-import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:dio/dio.dart' as dio;
 import 'package:test/test.dart';
 

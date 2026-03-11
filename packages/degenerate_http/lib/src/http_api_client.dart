@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
@@ -19,17 +18,15 @@ final class HttpApiClient implements ApiClient {
     final cancelToken = request.options?.cancelToken;
     if (cancelToken?.isCancelled ?? false) throw const CancelledException();
 
-    // Build the abort trigger from our cancel token.
-    final Future<void>? abortTrigger = cancelToken?.whenCancelled;
+    final abortTrigger = cancelToken?.whenCancelled;
 
     if (request.body is List<ApiMultipartField>) {
-      final fields = request.body as List<ApiMultipartField>;
       final multipart = http.AbortableMultipartRequest(
         request.method,
         uri,
         abortTrigger: abortTrigger,
       )..headers.addAll(request.resolvedHeaders());
-      for (final field in fields) {
+      for (final field in request.body as List<ApiMultipartField>) {
         switch (field) {
           case ApiMultipartTextField():
             multipart.fields[field.name] = field.value;
@@ -44,18 +41,7 @@ final class HttpApiClient implements ApiClient {
             ));
         }
       }
-      try {
-        final streamed = await _inner.send(multipart);
-        final bytes = await streamed.stream.toBytes();
-        return ApiResponse(
-          statusCode: streamed.statusCode,
-          headers: streamed.headers,
-          body: utf8.decode(bytes, allowMalformed: true),
-          bodyBytes: bytes,
-        );
-      } on http.RequestAbortedException {
-        throw const CancelledException();
-      }
+      return _send(multipart);
     }
 
     final httpRequest = http.AbortableRequest(
@@ -74,12 +60,18 @@ final class HttpApiClient implements ApiClient {
         httpRequest.bodyBytes = body;
       } else {
         throw UnsupportedError(
-          'HttpApiClient only supports String, List<int>, and List<ApiMultipartField> request bodies.',
+          'HttpApiClient only supports String, List<int>, and '
+          'List<ApiMultipartField> request bodies.',
         );
       }
     }
+    return _send(httpRequest);
+  }
+
+  /// Send a request and convert the streamed response to [ApiResponse].
+  Future<ApiResponse> _send(http.BaseRequest request) async {
     try {
-      final streamed = await _inner.send(httpRequest);
+      final streamed = await _inner.send(request);
       final bytes = await streamed.stream.toBytes();
       return ApiResponse(
         statusCode: streamed.statusCode,
