@@ -6,6 +6,8 @@ export 'src/interceptor.dart';
 export 'src/multipart.dart';
 export 'src/request_options.dart';
 export 'src/security.dart';
+export 'src/sse.dart';
+export 'src/streamed_api_response.dart';
 export 'src/interceptors/auth_interceptor.dart';
 export 'src/interceptors/logging_interceptor.dart';
 export 'src/interceptors/retry_interceptor.dart';

@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import '../api_client.dart';
+import '../streamed_api_response.dart';
 
 /// A test [ApiClient] that records requests and returns canned responses.
 ///
@@ -38,6 +41,9 @@ final class RecordingClient implements ApiClient {
   /// Resets the recorded requests.
   void reset() => requests.clear();
 
+  /// The streaming response to return for the next [sendStreaming] call.
+  StreamedApiResponse? nextStreamedResponse;
+
   @override
   Future<ApiResponse> send(ApiRequest request) async {
     requests.add(request);
@@ -45,8 +51,42 @@ final class RecordingClient implements ApiClient {
   }
 
   @override
+  Future<StreamedApiResponse> sendStreaming(ApiRequest request) async {
+    requests.add(request);
+    return nextStreamedResponse ?? StreamedApiResponse(
+      statusCode: 200,
+      byteStream: const Stream.empty(),
+    );
+  }
+
+  @override
   Uri get baseUrl => Uri.parse('http://localhost');
 
   @override
   Future<void> close() async {}
+
+  /// Create a [StreamedApiResponse] that emits SSE events from JSON strings.
+  ///
+  /// ```dart
+  /// client.nextStreamedResponse = RecordingClient.sseResponse([
+  ///   '{"id":"1","content":"Hello"}',
+  ///   '{"id":"2","content":" world"}',
+  /// ]);
+  /// ```
+  static StreamedApiResponse sseResponse(
+    List<String> jsonEvents, {
+    int statusCode = 200,
+    String doneSignal = '[DONE]',
+  }) {
+    final chunks = <List<int>>[];
+    for (final event in jsonEvents) {
+      chunks.add(utf8.encode('data: $event\n\n'));
+    }
+    chunks.add(utf8.encode('data: $doneSignal\n\n'));
+    return StreamedApiResponse(
+      statusCode: statusCode,
+      headers: const {'content-type': 'text/event-stream'},
+      byteStream: Stream.fromIterable(chunks),
+    );
+  }
 }

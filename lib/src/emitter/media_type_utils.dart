@@ -53,3 +53,22 @@ bool isFormUrlencodedMediaType(String mediaType) {
 bool isOctetStreamMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == 'application/octet-stream';
 }
+
+bool isEventStreamMediaType(String mediaType) {
+  return normalizeMediaType(mediaType) == 'text/event-stream';
+}
+
+/// Find the `text/event-stream` response content for an operation, if any.
+(String, IrMediaType)? eventStreamContent(IrOperation op) {
+  // Check 2xx responses for text/event-stream content type.
+  for (final entry in op.responses.entries) {
+    if (entry.key >= 200 && entry.key < 300) {
+      for (final content in entry.value.content.entries) {
+        if (isEventStreamMediaType(content.key)) {
+          return (content.key, content.value);
+        }
+      }
+    }
+  }
+  return null;
+}

@@ -85,5 +85,39 @@ final class HttpApiClient implements ApiClient {
   }
 
   @override
+  Future<StreamedApiResponse> sendStreaming(ApiRequest request) async {
+    final uri = request.resolveUri(baseUrl);
+    final cancelToken = request.options?.cancelToken;
+    if (cancelToken?.isCancelled ?? false) throw const CancelledException();
+
+    final httpRequest = http.AbortableRequest(
+      request.method,
+      uri,
+      abortTrigger: cancelToken?.whenCancelled,
+    )..headers.addAll(request.resolvedHeaders());
+    if (request.contentType != null) {
+      httpRequest.headers['content-type'] = request.contentType!;
+    }
+    if (request.body != null) {
+      final body = request.body;
+      if (body is String) {
+        httpRequest.body = body;
+      } else if (body is List<int>) {
+        httpRequest.bodyBytes = body;
+      }
+    }
+    try {
+      final streamed = await _inner.send(httpRequest);
+      return StreamedApiResponse(
+        statusCode: streamed.statusCode,
+        headers: streamed.headers,
+        byteStream: streamed.stream,
+      );
+    } on http.RequestAbortedException {
+      throw const CancelledException();
+    }
+  }
+
+  @override
   Future<void> close() async => _inner.close();
 }

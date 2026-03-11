@@ -1761,6 +1761,1406 @@ return _execute(
   },
 );
  } 
+/// Execute @cf/aisingapore/gemma-sea-lion-v4-27b-it model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it`
+Stream<Map<String, Object>> workersAiPostRunCfAisingaporeGemmaSeaLionV427bItStream({required String accountId, String? queueRequest, String? tags, $27bItRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/deepseek-ai/deepseek-math-7b-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-math-7b-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfDeepseekAiDeepseekMath7bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepseek-ai/deepseek-math-7b-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b`
+Stream<Map<String, Object>> workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/defog/sqlcoder-7b-2 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/defog/sqlcoder-7b-2`
+Stream<Map<String, Object>> workersAiPostRunCfDefogSqlcoder7b2Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDefogSqlcoder7b2Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/defog/sqlcoder-7b-2',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/fblgit/una-cybertron-7b-v2-bf16`
+Stream<Map<String, Object>> workersAiPostRunCfFblgitUnaCybertron7bV2Bf16Stream({required String accountId, String? queueRequest, String? tags, Bf16Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/fblgit/una-cybertron-7b-v2-bf16',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/google/gemma-2b-it-lora model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-2b-it-lora`
+Stream<Map<String, Object>> workersAiPostRunCfGoogleGemma2bItLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma2bItLoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/google/gemma-2b-it-lora',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/google/gemma-3-12b-it model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-3-12b-it`
+Stream<Map<String, Object>> workersAiPostRunCfGoogleGemma312bItStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma312bItRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/google/gemma-3-12b-it',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/google/gemma-7b-it-lora model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-7b-it-lora`
+Stream<Map<String, Object>> workersAiPostRunCfGoogleGemma7bItLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma7bItLoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/google/gemma-7b-it-lora',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/ibm-granite/granite-4.0-h-micro model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/ibm-granite/granite-4.0-h-micro`
+Stream<Map<String, Object>> workersAiPostRunCfIbmGranite40HMicroStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfIbmGraniteGranite40HMicroRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/ibm-granite/granite-4.0-h-micro',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta-llama/llama-2-7b-chat-hf-lora`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama27bChatHfLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta-llama/llama-2-7b-chat-hf-lora',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-2-7b-chat-fp16 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-fp16`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama27bChatFp16Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatFp16Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-2-7b-chat-fp16',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-2-7b-chat-int8 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-int8`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama27bChatInt8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatInt8Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-2-7b-chat-int8',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3-8b-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama38bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3-8b-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3-8b-instruct-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct-awq`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama38bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3-8b-instruct-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.1-8b-instruct-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-awq`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama318bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.1-8b-instruct-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.1-8b-instruct-fp8 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama318bInstructFp8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8-fast`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama318bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8FastRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8-fast',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.1-70b-instruct-fp8-fast model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama3170bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.2-1b-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-1b-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama321bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama321bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.2-1b-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.2-3b-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-3b-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama323bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama323bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.2-3b-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.2-11b-vision-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-11b-vision-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama3211bVisionInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.2-11b-vision-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-3.3-70b-instruct-fp8-fast model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.3-70b-instruct-fp8-fast`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama370bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-3.3-70b-instruct-fp8-fast',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/meta/llama-4-scout-17b-16e-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-4-scout-17b-16e-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfMetaLlama4Scout17b16eInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/meta/llama-4-scout-17b-16e-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/microsoft/phi-2 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/microsoft/phi-2`
+Stream<Map<String, Object>> workersAiPostRunCfMicrosoftPhi2Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMicrosoftPhi2Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/microsoft/phi-2',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/mistral/mistral-7b-instruct-v0.1 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.1`
+Stream<Map<String, Object>> workersAiPostRunCfMistral7bInstructV01Stream({required String accountId, String? queueRequest, String? tags, $1Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/mistral/mistral-7b-instruct-v0.1',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.2-lora`
+Stream<Map<String, Object>> workersAiPostRunCfMistral7bInstructV02LoraStream({required String accountId, String? queueRequest, String? tags, $2LoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/mistral/mistral-7b-instruct-v0.2-lora',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfMistralaiMistralSmall3124bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/openchat/openchat-3.5-0106 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/openchat/openchat-3.5-0106`
+Stream<Map<String, Object>> workersAiPostRunCfOpenchat350106Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenchatOpenchat350106Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/openchat/openchat-3.5-0106',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/qwen/qwen1.5-0.5b-chat model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-0.5b-chat`
+Stream<Map<String, Object>> workersAiPostRunCfQwenQwen1505bChatStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1505bChatRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen1.5-0.5b-chat',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/qwen/qwen1.5-1.8b-chat model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-1.8b-chat`
+Stream<Map<String, Object>> workersAiPostRunCfQwenQwen1518bChatStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1518bChatRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen1.5-1.8b-chat',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/qwen/qwen1.5-7b-chat-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-7b-chat-awq`
+Stream<Map<String, Object>> workersAiPostRunCfQwenQwen157bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen157bChatAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen1.5-7b-chat-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/qwen/qwen1.5-14b-chat-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-14b-chat-awq`
+Stream<Map<String, Object>> workersAiPostRunCfQwenQwen1514bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1514bChatAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen1.5-14b-chat-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/qwen/qwen2.5-coder-32b-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen2.5-coder-32b-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfQwenQwen25Coder32bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen25Coder32bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen2.5-coder-32b-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/qwen/qwen3-30b-a3b-fp8 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-30b-a3b-fp8`
+Stream<Map<String, Object>> workersAiPostRunCfQwenQwen330bA3bFp8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen330bA3bFp8Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen3-30b-a3b-fp8',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/qwen/qwq-32b model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwq-32b`
+Stream<Map<String, Object>> workersAiPostRunCfQwenQwq32bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwq32bRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwq-32b',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/thebloke/discolm-german-7b-v1-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq`
+Stream<Map<String, Object>> workersAiPostRunCfTheblokeDiscolmGerman7bV1AwqStream({required String accountId, String? queueRequest, String? tags, AwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/tiiuae/falcon-7b-instruct model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/tiiuae/falcon-7b-instruct`
+Stream<Map<String, Object>> workersAiPostRunCfTiiuaeFalcon7bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfTiiuaeFalcon7bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/tiiuae/falcon-7b-instruct',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/tinyllama/tinyllama-1.1b-chat-v1.0`
+Stream<Map<String, Object>> workersAiPostRunCfTinyllama11bChatV10Stream({required String accountId, String? queueRequest, String? tags, $0Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/tinyllama/tinyllama-1.1b-chat-v1.0',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @cf/zai-org/glm-4.7-flash model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/zai-org/glm-4.7-flash`
+Stream<Map<String, Object>> workersAiPostRunCfZaiOrgGlm47FlashStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfZaiOrgGlm47FlashRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/zai-org/glm-4.7-flash',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/google/gemma-7b-it model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/google/gemma-7b-it`
+Stream<Map<String, Object>> workersAiPostRunHfGoogleGemma7bItStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfGoogleGemma7bItRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/google/gemma-7b-it',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/mistral/mistral-7b-instruct-v0.2 model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/mistral/mistral-7b-instruct-v0.2`
+Stream<Map<String, Object>> workersAiPostRunHfMistral7bInstructV02Stream({required String accountId, String? queueRequest, String? tags, $2Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/mistral/mistral-7b-instruct-v0.2',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/nexusflow/starling-lm-7b-beta model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/nexusflow/starling-lm-7b-beta`
+Stream<Map<String, Object>> workersAiPostRunHfNexusflowStarlingLm7bBetaStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNexusflowStarlingLm7bBetaRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/nexusflow/starling-lm-7b-beta',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b`
+Stream<Map<String, Object>> workersAiPostRunHfNousresearchHermes2ProMistral7bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/thebloke/deepseek-coder-6.7b-base-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq`
+Stream<Map<String, Object>> workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-instruct-awq`
+Stream<Map<String, Object>> workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/thebloke/deepseek-coder-6.7b-instruct-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/thebloke/llama-2-13b-chat-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/thebloke/llama-2-13b-chat-awq`
+Stream<Map<String, Object>> workersAiPostRunHfTheblokeLlama213bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeLlama213bChatAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/thebloke/llama-2-13b-chat-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/thebloke/mistral-7b-instruct-v0.1-awq`
+Stream<Map<String, Object>> workersAiPostRunHfTheblokeMistral7bInstructV01AwqStream({required String accountId, String? queueRequest, String? tags, $1AwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/thebloke/mistral-7b-instruct-v0.1-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq`
+Stream<Map<String, Object>> workersAiPostRunHfTheblokeNeuralChat7bV31AwqStream({required String accountId, String? queueRequest, String? tags, $1AwqRequest2? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq`
+Stream<Map<String, Object>> workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
+/// Execute @hf/thebloke/zephyr-7b-beta-awq model. (streaming)
+///
+/// `POST /accounts/{account_id}/ai/run/@hf/thebloke/zephyr-7b-beta-awq`
+Stream<Map<String, Object>> workersAiPostRunHfTheblokeZephyr7bBetaAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{..._config.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@hf/thebloke/zephyr-7b-beta-awq',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return _executeStreaming(
+  request,
+  onEvent: (data) {
+    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+);
+ } 
 /// Shared execution pipeline: interceptors -> send -> deserialize.
 Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
   final userCancelToken = request.options?.cancelToken;
@@ -1834,6 +3234,65 @@ Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(A
   }
 } catch (e, st) {
   return ApiException(e, st);
+}
+ } 
+/// Streaming execution pipeline: send -> SSE parse -> deserialize.
+Stream<T> _executeStreaming<T>(ApiRequest request, {required T Function(String data) onEvent, }) async*  { final userCancelToken = request.options?.cancelToken;
+if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
+
+final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+final extraHeaders = request.options?.extraHeaders;
+
+final adapterToken = (effectiveTimeout != null || userCancelToken != null)
+    ? CancelToken()
+    : null;
+Timer? timeoutTimer;
+bool timedOut = false;
+
+if (adapterToken != null) {
+  if (userCancelToken != null) {
+    final token = adapterToken;
+    userCancelToken.whenCancelled.then((_) {
+      if (!token.isCancelled) token.cancel();
+    });
+  }
+  if (effectiveTimeout != null) {
+    final token = adapterToken;
+    timeoutTimer = Timer(effectiveTimeout, () {
+      timedOut = true;
+      if (!token.isCancelled) token.cancel();
+    });
+  }
+}
+
+final effectiveRequest = request.copyWith(
+  headers: extraHeaders != null
+      ? {...request.headers, ...extraHeaders}
+      : null,
+  options: RequestOptions(cancelToken: adapterToken),
+);
+
+try {
+  final streamedResponse = await _config.client.sendStreaming(effectiveRequest);
+  timeoutTimer?.cancel();
+
+  if (!streamedResponse.isSuccessful) {
+    final buffered = await streamedResponse.toApiResponse();
+    throw ApiStreamError(
+      statusCode: buffered.statusCode,
+      rawError: buffered.body,
+      headers: buffered.headers,
+    );
+  }
+
+  yield* parseSseStream(streamedResponse.byteStream)
+      .map((event) => onEvent(event.data));
+} on CancelledException {
+  timeoutTimer?.cancel();
+  if (timedOut) {
+    throw TimeoutException('Request timed out', effectiveTimeout);
+  }
+  rethrow;
 }
  } 
  }

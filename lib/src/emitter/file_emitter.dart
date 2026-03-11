@@ -299,6 +299,12 @@ class FileEmitter {
           }
         }
       }
+      // Collect types from SSE (text/event-stream) responses
+      final sseContent = eventStreamContent(op);
+      if (sseContent != null) {
+        needsConvert = true;
+        _collectTopLevelTypeName(sseContent.$2.schema, names);
+      }
       // Collect types from error responses (default and 4xx/5xx)
       if (op.defaultResponse != null) {
         final content = preferredContent(op.defaultResponse!.content);

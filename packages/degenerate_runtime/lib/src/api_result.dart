@@ -68,3 +68,22 @@ final class ApiParseException<T, E> extends ApiException<T, E> {
   @override
   String toString() => 'ApiParseException(${response.statusCode}, $exception)';
 }
+
+/// Thrown when a streaming request receives a non-2xx response.
+///
+/// Streaming methods return `Stream<T>` instead of `ApiResult`, so
+/// errors are surfaced as exceptions rather than result variants.
+final class ApiStreamError implements Exception {
+  final int statusCode;
+  final String? rawError;
+  final Map<String, String> headers;
+
+  const ApiStreamError({
+    required this.statusCode,
+    this.rawError,
+    this.headers = const {},
+  });
+
+  @override
+  String toString() => 'ApiStreamError($statusCode, $rawError)';
+}
