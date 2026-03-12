@@ -22,7 +22,7 @@
 - **Strives for full OpenAPI 3.0 and 3.1 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution — [file a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
 - **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Lightweight unions** — `oneOf`/`anyOf` schemas emit `typedef` aliases over generic `OneOf` containers with pattern matching support, avoiding heavy sealed class hierarchies
-- **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
+- **Zero analysis issues** — generated code passes default `dart analyze` with no errors, warnings, or hints
 - **Fast** — generates ~12,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
 - **Tag & path filtering** — generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
 - **Multi-format request/response** — JSON, text, binary, multipart/form-data, and form-urlencoded bodies with media-type-aware serialization
@@ -407,39 +407,6 @@ final result = await sdk.pet.listPets(
 ```
 
 Cancel tokens work at the socket level — both adapters abort the underlying connection rather than just abandoning the future. A cancelled request surfaces as `ApiException(CancelledException())`. A timed-out request surfaces as `ApiException(TimeoutException(...))`.
-
-## Architecture
-
-```
-bin/degenerate.dart          CLI entry point
-lib/src/
-  generator.dart             Pipeline orchestrator
-  naming.dart                PascalCase/camelCase/sanitize/deduplicate
-  ir/ir_types.dart           All IR types (sealed classes, enums)
-  parser/openapi_document.dart   YAML/JSON parsing
-  parser/ref_inliner.dart      Resolve external $ref files to local refs
-  normalizer/
-    allof_flattener.dart     Merge allOf compositions
-  lowering/
-    type_lowerer.dart        OpenAPI schemas -> IR types
-    operation_lowerer.dart   OpenAPI paths/ops -> IR operations
-  emitter/
-    emit_utils.dart          Shared code gen utilities
-    media_type_utils.dart    Media type detection and preference logic
-    model_emitter.dart       IrObject -> final class
-    enum_emitter.dart        IrEnum -> final class with static const instances
-    extension_type_emitter.dart  IrExtensionType -> extension type
-    sealed_union_emitter.dart  Unions -> sealed class hierarchies
-    api_emitter.dart         IrApi -> API client class
-    file_emitter.dart        Orchestrates all emitters
-
-packages/
-  degenerate_runtime/        Core interfaces, middleware chain, interceptors
-  degenerate_http/           package:http adapter
-  degenerate_dio/            package:dio adapter
-```
-
-The pipeline is: **Parse** (YAML/JSON) -> **Inline** (resolve external `$ref` files to local refs) -> **Lower** (schemas to IR, with inline allOf flattening and $ref resolution) -> **Emit** (IR to Dart via code_builder) -> **Write**. Generated files include `// dart format off` to prevent reformatting.
 
 ## Tested Specs
 

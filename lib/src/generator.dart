@@ -1,3 +1,9 @@
+/// Pipeline: Parse (YAML/JSON) -> Inline (resolve external $ref files) ->
+/// Normalize (name canonicalization, discriminator detection) ->
+/// Lower (schemas to IR, with inline allOf flattening and $ref resolution) ->
+/// Emit (IR to Dart via code_builder) -> Write.
+library;
+
 import 'dart:io';
 
 import 'package:path/path.dart' as p;

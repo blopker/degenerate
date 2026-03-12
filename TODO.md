@@ -5,7 +5,7 @@
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
 - **CLI**: `--input`, `--output`, `--name`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
-- **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
+- **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors — web-compatible, no `dart:io`), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
 - **Forward-compatible**: enums use `final class` pattern preserving unknown raw values; discriminated unions and untagged unions have `$Unknown` fallback variants
 - **Union types**: `oneOf`/`anyOf` with 2-9 variants emit lightweight `typedef X = OneOfN<A, B, ...>` using runtime generic containers instead of sealed classes; inline primitive-only unions collapse to `Object`
@@ -92,7 +92,7 @@
 
 - [ ] **CI workflow** — add GitHub Actions for tests, analyze, and snapshot validation. *(review2.md 7d)*
 - [x] **Spec-derived base URL helper** — SDK facade emits `static const defaultBaseUrl` from `servers[0].url` when present. *(review2.md #13)*
-- [x] **Retry interceptor improvements** — runtime retry middleware now supports jittered exponential backoff, `Retry-After` handling (seconds + HTTP-date), deterministic test hooks, and idempotency-based method gating with override hooks for unsafe methods when explicitly desired. *(review2.md #6)*
+- [x] **Retry interceptor improvements** — runtime retry middleware now supports jittered exponential backoff, `Retry-After` handling (integer seconds only, for web compatibility), deterministic test hooks, and idempotency-based method gating with override hooks for unsafe methods when explicitly desired. *(review2.md #6)*
 - [x] **Vendor extension pass-through** — `x-` fields are naturally ignored at all levels (schema, operation, path, parameter, response, top-level) since the parser only reads known keys. Verified with tests covering Stripe (3,500+ `x-` fields) and dedicated unit tests.
 - [ ] **Lazy top-down tree-shaking** — current pipeline lowers all schemas then BFS-prunes unreachable types. For large specs with `--tag`/`--path` filters, lowering operations first and only lowering referenced schemas would reduce memory and time. *(review3.md #2)*
 
@@ -167,7 +167,7 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 - Null-guard correctness: uses `case final x?` pattern for nullable public field promotion; skips guard for non-nullable fields with defaults
 - Content-Type header skipped for multipart requests (adapters set it automatically with boundary)
 - Spec-derived base URL: SDK facade emits `static const defaultBaseUrl` from `servers[0].url`
-- Retry interceptor improvements: jittered exponential backoff, `Retry-After` header parsing (seconds + HTTP-date), idempotency-based method gating, deterministic test hooks
+- Retry interceptor improvements: jittered exponential backoff, `Retry-After` header parsing (integer seconds only, for web compatibility), idempotency-based method gating, deterministic test hooks
 - Reduced string duplication in `buildFromJsonCode` (extracted `_buildFromJsonNonNull` + `_simpleCastFromJson`) and `buildToJsonCode` (consolidated identical arms)
 - Consolidated duplicated `_toHeaderString`/`_toQueryString` into `_toStringExpr` in api_emitter
 - `application/x-www-form-urlencoded` support: emitter generates `Uri.encodeQueryComponent` key=value pairs joined by `&` as string body from object schema fields; Twilio snapshot now fully generates with zero `UnsupportedError`
@@ -264,11 +264,11 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 - Added `$unknown` fallback to enums (no more `FormatException` on unknown values)
 - Added `$Unknown` variant to discriminated unions and untagged unions
 - Added `isUnknown` getter on enums and discriminated unions
-- Added schema fallback warnings in `TypeLowerer` (printed by generator)
+- Added schema fallback warnings in type lowerer (printed by generator)
 - Wrote full README with CLI docs, architecture, examples, tested specs
 
 ### Session 2 (2026-03-08) — Kubernetes + Totem Mobile fixes
-- Fixed Kubernetes allOf-with-$ref bug (152 → 0 errors): `AllOfFlattener` short-circuits single-entry allOf with `$ref`; `TypeLowerer` checks for `$ref` after flattening
+- Fixed Kubernetes allOf-with-$ref bug (152 → 0 errors): `AllOfFlattener` short-circuits single-entry allOf with `$ref`; type lowerer checks for `$ref` after flattening
 - Fixed `format: byte` map values to use `base64Decode`/`base64Encode`
 - Fixed OpenAPI 3.1 nullable `anyOf: [Type, {type: null}]` pattern
 - Fixed inline discriminated/untagged unions getting `UnnamedUnion` names
@@ -295,8 +295,10 @@ lib/src/
   parser/ref_inliner.dart      Resolve external $ref files to local refs
   normalizer/
     allof_flattener.dart     Merge allOf compositions (used inline during lowering)
+    schema_normalizer.dart   Pre-scan: name canonicalization, discriminator detection
   lowering/
-    type_lowerer.dart        OpenAPI schemas → IR types (handles $ref and allOf inline)
+    ir_mapper.dart           OpenAPI schemas → IR types (handles $ref and allOf inline)
+    type_ref_resolver.dart   Resolve IrTypeRef nodes to concrete types
     operation_lowerer.dart   OpenAPI paths/ops → IR operations
   emitter/
     emit_utils.dart          Shared: formatting, type refs, fromJson/toJson code gen, parallel formatting
