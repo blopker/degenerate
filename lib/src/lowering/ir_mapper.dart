@@ -2,6 +2,7 @@ import '../ir/ir_types.dart';
 import '../naming.dart';
 import '../normalizer/allof_flattener.dart';
 import '../normalizer/schema_normalizer.dart';
+import 'type_ref_resolver.dart';
 
 /// Maps normalized OpenAPI schemas to IR types.
 ///
@@ -25,6 +26,9 @@ class IrMapper {
 
   /// Warnings collected during lowering (e.g., unknown schema fallbacks).
   final List<String> warnings;
+
+  /// Resolver for IrTypeRef nodes, created lazily over typeRegistry.
+  late final TypeRefResolver _resolver = TypeRefResolver(typeRegistry);
 
   /// Create an IrMapper from a [NormalizationContext].
   IrMapper(NormalizationContext context)
@@ -51,7 +55,7 @@ class IrMapper {
     // (IrMap, IrList, IrPrimitive). This must happen after all schemas are
     // lowered so the registry is fully populated.
     for (var i = 0; i < results.length; i++) {
-      results[i] = _resolveTypeRefsInType(results[i]);
+      results[i] = _resolver.resolve(results[i]);
     }
 
     // Add any inline-generated types (e.g., named enums from inline enum fields)
@@ -74,127 +78,7 @@ class IrMapper {
 
   /// Public entry point for resolving type refs in a type tree.
   /// Used by the generator for a final resolution pass.
-  IrType resolveTypeRefs(IrType type) => _resolveTypeRefsInType(type);
-
-  /// Recursively resolve IrTypeRef nodes within a type tree.
-  /// Replaces refs to non-emittable types (IrMap, IrList, IrPrimitive)
-  /// with the actual underlying type.
-  /// Track types currently being resolved to prevent infinite recursion
-  /// from circular references.
-  final Set<String> _resolving = {};
-
-  IrType _resolveTypeRefsInType(IrType type) {
-    // Get a key for cycle detection
-    final key = switch (type) {
-      IrObject(:final name) => name,
-      IrDiscriminatedUnion(:final name) => name,
-      IrUntaggedUnion(:final name) => name,
-      IrAnyOf(:final name) => name,
-      _ => null,
-    };
-    if (key != null && !_resolving.add(key)) return type; // cycle detected
-    try {
-      return _resolveTypeRefsInTypeImpl(type);
-    } finally {
-      if (key != null) _resolving.remove(key);
-    }
-  }
-
-  IrType _resolveTypeRefsInTypeImpl(IrType type) {
-    switch (type) {
-      case IrObject():
-        var changed = false;
-        final newFields = type.fields.map((f) {
-          var resolved = _resolveTypeRef(f.type);
-          resolved = _resolveTypeRefsInType(resolved);
-          if (identical(resolved, f.type)) return f;
-          changed = true;
-          return IrField(
-            f.name,
-            f.originalName,
-            resolved,
-            isRequired: f.isRequired,
-            defaultValue: f.defaultValue,
-            description: f.description,
-          );
-        }).toList();
-        if (!changed) return type;
-        return IrObject(
-          type.name,
-          newFields,
-          requiredFields: type.requiredFields,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      case IrList():
-        final resolved = _resolveTypeRef(type.items);
-        final resolvedDeep = _resolveTypeRefsInType(resolved);
-        if (identical(resolvedDeep, type.items)) return type;
-        return IrList(
-          resolvedDeep,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      case IrMap():
-        final resolved = _resolveTypeRef(type.values);
-        final resolvedDeep = _resolveTypeRefsInType(resolved);
-        if (identical(resolvedDeep, type.values)) return type;
-        return IrMap(
-          resolvedDeep,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      case IrDiscriminatedUnion():
-        var changed = false;
-        final newMapping = <String, IrType>{};
-        for (final entry in type.mapping.entries) {
-          var resolved = _resolveTypeRef(entry.value);
-          resolved = _resolveTypeRefsInType(resolved);
-          if (!identical(resolved, entry.value)) changed = true;
-          newMapping[entry.key] = resolved;
-        }
-        if (!changed) return type;
-        return IrDiscriminatedUnion(
-          type.name,
-          type.discriminatorProperty,
-          newMapping,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      case IrUntaggedUnion():
-        var changed = false;
-        final newVariants = type.variants.map((v) {
-          var resolved = _resolveTypeRef(v);
-          resolved = _resolveTypeRefsInType(resolved);
-          if (!identical(resolved, v)) changed = true;
-          return resolved;
-        }).toList();
-        if (!changed) return type;
-        return IrUntaggedUnion(
-          type.name,
-          newVariants,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      case IrAnyOf():
-        var changed = false;
-        final newVariants = type.variants.map((v) {
-          var resolved = _resolveTypeRef(v);
-          resolved = _resolveTypeRefsInType(resolved);
-          if (!identical(resolved, v)) changed = true;
-          return resolved;
-        }).toList();
-        if (!changed) return type;
-        return IrAnyOf(
-          type.name,
-          newVariants,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      default:
-        return type;
-    }
-  }
+  IrType resolveTypeRefs(IrType type) => _resolver.resolve(type);
 
   /// Lower a single named schema to an IR type and register it.
   IrType? _lowerNamedSchema(String name, dynamic schema) {
@@ -245,13 +129,13 @@ class IrMapper {
     final effectiveName = needsName ? _uniqueTypeName(hint) : nameHint;
 
     final result = _lowerSchemaImpl(effectiveName, schema, isInline: true);
-    var resolved = _resolveTypeRef(result);
+    var resolved = _resolver.resolveRef(result);
     // Recursively resolve type refs within nested types (e.g. list items, map values).
-    resolved = _resolveTypeRefsDeep(resolved);
+    resolved = _resolver.resolveDeep(resolved);
     // Register inline named types so they get emitted as separate files.
     if (resolved is IrObject) {
       final objName = resolved.name;
-      resolved = _resolveTypeRefsInType(resolved);
+      resolved = _resolver.resolve(resolved);
       typeRegistry[objName] = resolved;
       _inlineTypes.add(resolved);
     } else if (resolved is IrEnum) {
@@ -337,83 +221,6 @@ class IrMapper {
   /// Returns inline types that were created during lowering and need to be
   /// added to the types list for emission.
   List<IrType> get inlineTypes => List.unmodifiable(_inlineTypes);
-
-  /// Recursively resolve IrTypeRef nodes within list items, map values, etc.
-  /// Unlike [_resolveTypeRef] which only handles the top-level ref, this
-  /// walks into `IrList`/`IrMap` to resolve nested refs (e.g. `List<EnumRef>` → `List<IrEnum>`).
-  IrType _resolveTypeRefsDeep(IrType type) {
-    switch (type) {
-      case IrList():
-        final resolvedItems = _resolveTypeRef(type.items);
-        final deepItems = _resolveTypeRefsDeep(resolvedItems);
-        if (identical(deepItems, type.items)) return type;
-        return IrList(
-          deepItems,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      case IrMap():
-        final resolvedValues = _resolveTypeRef(type.values);
-        final deepValues = _resolveTypeRefsDeep(resolvedValues);
-        if (identical(deepValues, type.values)) return type;
-        return IrMap(
-          deepValues,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      default:
-        return type;
-    }
-  }
-
-  /// If [type] is an [IrTypeRef] whose target in the registry is not an
-  /// emittable named type (object, enum, union), replace it with the actual
-  /// resolved type so generated code uses `List<Pet>` instead of `Pets`.
-  ///
-  /// Follows chains of refs (e.g., TypeA → TypeB → IrPrimitive) until
-  /// reaching a concrete type or a ref to an emittable type.
-  IrType _resolveTypeRef(IrType type) {
-    if (type is! IrTypeRef) return type;
-    final nullable = type.isNullable;
-    var current = type as IrType;
-    // Follow ref chains up to a reasonable depth to avoid infinite loops.
-    for (var depth = 0; depth < 20; depth++) {
-      if (current is! IrTypeRef) break;
-      final resolved = typeRegistry[current.name];
-      if (resolved == null) return current; // unknown ref — keep as-is
-      // Emittable named types (object, unions) get their own class, so
-      // IrTypeRef is correct for them.
-      if (resolved is IrObject ||
-          resolved is IrDiscriminatedUnion ||
-          resolved is IrUntaggedUnion ||
-          resolved is IrAnyOf) {
-        return current; // keep the ref — these get their own emitted files
-      }
-      // Extension types are emittable but resolve like enums — the
-      // IrExtensionType node itself carries the fromJson/toJson semantics
-      // that buildFromJsonCode needs (unlike objects/unions which all use
-      // the same Map<String, dynamic> fromJson pattern).
-      if (resolved is IrExtensionType) {
-        if (nullable && !resolved.isNullable) {
-          return IrExtensionType(
-            resolved.name,
-            resolved.inner,
-            description: resolved.description,
-            isNullable: true,
-          );
-        }
-        return resolved;
-      }
-      // For non-emittable types (IrEnum, IrList, IrMap, IrPrimitive, IrTypeRef),
-      // resolve to the actual type.
-      current = resolved;
-    }
-    // Apply nullability from the original ref if needed.
-    if (nullable && !current.isNullable) {
-      return _withNullable(current);
-    }
-    return current;
-  }
 
   // ──────────────────────────────────────────────────────────────
   // Internal helpers
@@ -511,7 +318,7 @@ class IrMapper {
         // This is just a nullable wrapper — lower the single real type.
         final inner = nonNullVariants[0] as Map<String, dynamic>;
         final result = _lowerSchemaImpl(name, inner, isInline: isInline);
-        return result.isNullable ? result : _withNullable(result);
+        return result.copyAsNullable();
       }
       return _lowerAnyOf(name, flattened, isInline: isInline);
     }
@@ -654,13 +461,7 @@ class IrMapper {
     final itemsSchema = rawItems is Map<String, dynamic> ? rawItems : null;
     IrType itemsType;
     if (itemsSchema != null) {
-      // Use lowerInlineSchema for items that need registration (objects,
-      // enums, unions) so they get emitted as separate files.
-      if (_looksLikeObject(itemsSchema) || _looksLikeNamedType(itemsSchema)) {
-        itemsType = lowerInlineSchema(itemsSchema, nameHint: itemNameHint);
-      } else {
-        itemsType = _lowerSchemaImpl(itemNameHint, itemsSchema, isInline: true);
-      }
+      itemsType = lowerInlineSchema(itemsSchema, nameHint: itemNameHint);
     } else {
       itemsType = const IrPrimitive(PrimitiveKind.object, isNullable: true);
     }
@@ -677,12 +478,7 @@ class IrMapper {
     if (addProps is Map<String, dynamic>) {
       // Derive a value name hint from the parent context.
       final valueHint = nameHint != null ? '${nameHint}Value' : null;
-      // Use lowerInlineSchema so inline value types get registered.
-      if (_looksLikeObject(addProps) || _looksLikeNamedType(addProps)) {
-        valueType = lowerInlineSchema(addProps, nameHint: valueHint);
-      } else {
-        valueType = _lowerSchemaImpl(valueHint, addProps, isInline: true);
-      }
+      valueType = lowerInlineSchema(addProps, nameHint: valueHint);
     } else {
       // additionalProperties: true or absent → Map<String, dynamic>
       valueType = const IrPrimitive(PrimitiveKind.object, isNullable: true);
@@ -781,7 +577,7 @@ class IrMapper {
       // and the lowered type doesn't already reflect it, wrap appropriately.
       // For IrTypeRef we need to re-create with the nullable flag.
       if (fieldNullable && !fieldType.isNullable) {
-        fieldType = _withNullable(fieldType);
+        fieldType = fieldType.copyAsNullable();
       }
 
       fields.add(
@@ -852,11 +648,7 @@ class IrMapper {
           // Use title if available, otherwise derive from parent + value.
           final hint = (refOrSchema['title'] as String?) ??
               '$unionName${toPascalCase(value)}';
-          mapping[value] =
-              (_looksLikeObject(refOrSchema) ||
-                  _looksLikeNamedType(refOrSchema))
-              ? lowerInlineSchema(refOrSchema, nameHint: hint)
-              : _lowerSchemaImpl(null, refOrSchema);
+          mapping[value] = lowerInlineSchema(refOrSchema, nameHint: hint);
         }
       }
     } else {
@@ -928,11 +720,7 @@ class IrMapper {
         final hint = (variant['title'] as String?) ??
             _singleEnumHint(unionName, variant) ??
             '${unionName}Variant${i + 1}';
-        if (_looksLikeObject(variant) || _looksLikeNamedType(variant)) {
-          variants.add(lowerInlineSchema(variant, nameHint: hint));
-        } else {
-          variants.add(_lowerSchemaImpl(hint, variant, isInline: true));
-        }
+        variants.add(lowerInlineSchema(variant, nameHint: hint));
       }
     }
 
@@ -982,11 +770,7 @@ class IrMapper {
         final hint = (variant['title'] as String?) ??
             _singleEnumHint(anyOfName, variant) ??
             '${anyOfName}Variant${i + 1}';
-        if (_looksLikeObject(variant) || _looksLikeNamedType(variant)) {
-          variants.add(lowerInlineSchema(variant, nameHint: hint));
-        } else {
-          variants.add(_lowerSchemaImpl(hint, variant, isInline: true));
-        }
+        variants.add(lowerInlineSchema(variant, nameHint: hint));
       }
     }
 
@@ -1088,64 +872,6 @@ class IrMapper {
   static String _extractRefName(String ref) {
     final segments = ref.split('/');
     return segments.last;
-  }
-
-  /// Return a copy of [type] with isNullable set to true.
-  IrType _withNullable(IrType type) {
-    return switch (type) {
-      IrPrimitive t => IrPrimitive(
-        t.kind,
-        format: t.format,
-        description: t.description,
-        isNullable: true,
-      ),
-      IrEnum t => IrEnum(
-        t.name,
-        t.values,
-        defaultValue: t.defaultValue,
-        description: t.description,
-        isNullable: true,
-      ),
-      IrList t => IrList(t.items, description: t.description, isNullable: true),
-      IrMap t => IrMap(t.values, description: t.description, isNullable: true),
-      IrObject t => IrObject(
-        t.name,
-        t.fields,
-        requiredFields: t.requiredFields,
-        description: t.description,
-        isNullable: true,
-      ),
-      IrTypeRef t => IrTypeRef(
-        t.name,
-        description: t.description,
-        isNullable: true,
-      ),
-      IrDiscriminatedUnion t => IrDiscriminatedUnion(
-        t.name,
-        t.discriminatorProperty,
-        t.mapping,
-        description: t.description,
-        isNullable: true,
-      ),
-      IrUntaggedUnion t => IrUntaggedUnion(
-        t.name,
-        t.variants,
-        description: t.description,
-        isNullable: true,
-      ),
-      IrAnyOf t => IrAnyOf(
-        t.name,
-        t.variants,
-        description: t.description,
-        isNullable: true,
-      ),
-      IrExtensionType t => IrExtensionType(
-        t.name,
-        t.inner,
-        description: t.description,
-        isNullable: true,
-      ),
-    };
   }
 
   static bool _listEquals<T>(List<T> a, List<T> b) {

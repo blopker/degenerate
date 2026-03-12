@@ -22,6 +22,10 @@ sealed class IrType {
     IrExtensionType(:final name) => name,
     _ => null,
   };
+
+  /// Returns a copy of this type with [isNullable] set to true.
+  /// If already nullable, returns `this`.
+  IrType copyAsNullable();
 }
 
 final class IrPrimitive extends IrType {
@@ -33,6 +37,11 @@ final class IrPrimitive extends IrType {
     super.description,
     super.isNullable,
   });
+
+  @override
+  IrPrimitive copyAsNullable() => isNullable
+      ? this
+      : IrPrimitive(kind, format: format, description: description, isNullable: true);
 }
 
 final class IrEnum extends IrType {
@@ -46,16 +55,31 @@ final class IrEnum extends IrType {
     super.description,
     super.isNullable,
   });
+
+  @override
+  IrEnum copyAsNullable() => isNullable
+      ? this
+      : IrEnum(name, values, defaultValue: defaultValue, description: description, isNullable: true);
 }
 
 final class IrList extends IrType {
   final IrType items;
   const IrList(this.items, {super.description, super.isNullable});
+
+  @override
+  IrList copyAsNullable() => isNullable
+      ? this
+      : IrList(items, description: description, isNullable: true);
 }
 
 final class IrMap extends IrType {
   final IrType values; // keys are always String in OpenAPI
   const IrMap(this.values, {super.description, super.isNullable});
+
+  @override
+  IrMap copyAsNullable() => isNullable
+      ? this
+      : IrMap(values, description: description, isNullable: true);
 }
 
 final class IrObject extends IrType {
@@ -69,6 +93,11 @@ final class IrObject extends IrType {
     super.description,
     super.isNullable,
   });
+
+  @override
+  IrObject copyAsNullable() => isNullable
+      ? this
+      : IrObject(name, fields, requiredFields: requiredFields, description: description, isNullable: true);
 }
 
 final class IrField {
@@ -100,6 +129,11 @@ final class IrDiscriminatedUnion extends IrType {
     super.description,
     super.isNullable,
   });
+
+  @override
+  IrDiscriminatedUnion copyAsNullable() => isNullable
+      ? this
+      : IrDiscriminatedUnion(name, discriminatorProperty, mapping, description: description, isNullable: true);
 }
 
 /// oneOf without discriminator — generates sealed class with runtime matching.
@@ -112,6 +146,11 @@ final class IrUntaggedUnion extends IrType {
     super.description,
     super.isNullable,
   });
+
+  @override
+  IrUntaggedUnion copyAsNullable() => isNullable
+      ? this
+      : IrUntaggedUnion(name, variants, description: description, isNullable: true);
 }
 
 /// anyOf — generates a composite that can be multiple types simultaneously.
@@ -124,6 +163,11 @@ final class IrAnyOf extends IrType {
     super.description,
     super.isNullable,
   });
+
+  @override
+  IrAnyOf copyAsNullable() => isNullable
+      ? this
+      : IrAnyOf(name, variants, description: description, isNullable: true);
 }
 
 /// A named wrapper around a primitive type, emitted as a Dart extension type.
@@ -139,12 +183,22 @@ final class IrExtensionType extends IrType {
     super.description,
     super.isNullable,
   });
+
+  @override
+  IrExtensionType copyAsNullable() => isNullable
+      ? this
+      : IrExtensionType(name, inner, description: description, isNullable: true);
 }
 
 /// A reference to a named type (resolved during IR construction).
 final class IrTypeRef extends IrType {
   final String name;
   const IrTypeRef(this.name, {super.description, super.isNullable});
+
+  @override
+  IrTypeRef copyAsNullable() => isNullable
+      ? this
+      : IrTypeRef(name, description: description, isNullable: true);
 }
 
 // ─── Operation IR ──────────────────────────────────────────

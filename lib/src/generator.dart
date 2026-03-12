@@ -7,6 +7,7 @@ import 'parser/ref_inliner.dart';
 
 import 'lowering/ir_mapper.dart';
 import 'lowering/operation_lowerer.dart';
+import 'lowering/type_ref_resolver.dart';
 import 'normalizer/schema_normalizer.dart';
 import 'emitter/file_emitter.dart';
 import 'ir/ir_types.dart';
@@ -151,14 +152,15 @@ class Generator {
 
     // Final pass: resolve all type refs across all types (including inline
     // and registry types that may not have been resolved by lowerSchemas).
+    final refResolver = TypeRefResolver(irMapper.typeRegistry);
     for (var i = 0; i < irTypes.length; i++) {
-      irTypes[i] = irMapper.resolveTypeRefs(irTypes[i]);
+      irTypes[i] = refResolver.resolve(irTypes[i]);
     }
 
     // Also resolve type refs in API operations (parameters, request bodies,
     // responses) so that refs to non-emittable types (e.g., IrList aliases)
     // are replaced with the actual types.
-    irApis = _resolveApiTypeRefs(irMapper, irApis);
+    irApis = _resolveApiTypeRefs(refResolver, irApis);
 
     // Filter deprecated operations if not included
     if (!config.includeDeprecated) {
@@ -379,7 +381,7 @@ class Generator {
   ///
   /// Uses `identical` checks to avoid rebuilding objects when nothing changed.
   static List<IrApi> _resolveApiTypeRefs(
-    IrMapper irMapper,
+    TypeRefResolver resolver,
     List<IrApi> apis,
   ) {
     return apis.map((api) {
@@ -388,7 +390,7 @@ class Generator {
         var opChanged = false;
 
         final params = op.parameters.map((p) {
-          final resolved = irMapper.resolveTypeRefs(p.type);
+          final resolved = resolver.resolve(p.type);
           if (identical(resolved, p.type)) return p;
           opChanged = true;
           return IrParameter(
@@ -407,7 +409,7 @@ class Generator {
           var rbChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final entry in rb.content.entries) {
-            final resolved = irMapper.resolveTypeRefs(entry.value.schema);
+            final resolved = resolver.resolve(entry.value.schema);
             if (!identical(resolved, entry.value.schema)) rbChanged = true;
             newContent[entry.key] = IrMediaType(resolved);
           }
@@ -424,7 +426,7 @@ class Generator {
           var entryChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final ce in resp.content.entries) {
-            final resolved = irMapper.resolveTypeRefs(ce.value.schema);
+            final resolved = resolver.resolve(ce.value.schema);
             if (!identical(resolved, ce.value.schema)) entryChanged = true;
             newContent[ce.key] = IrMediaType(resolved);
           }
@@ -447,7 +449,7 @@ class Generator {
           var drChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final ce in resp.content.entries) {
-            final resolved = irMapper.resolveTypeRefs(ce.value.schema);
+            final resolved = resolver.resolve(ce.value.schema);
             if (!identical(resolved, ce.value.schema)) drChanged = true;
             newContent[ce.key] = IrMediaType(resolved);
           }
