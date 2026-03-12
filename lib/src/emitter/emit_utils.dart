@@ -116,16 +116,33 @@ String buildFromJsonCode(
   String accessor, {
   bool isOptional = false,
   bool paramIsMap = false,
+  Map<String, IrType> typeRegistry = const {},
 }) {
+  // Resolve IrTypeRef to its target if it's a OneOf-eligible union (typedef).
+  final resolved = _resolveOneOfRef(type, typeRegistry);
+
   // For simple cast types (String, num, bool), nullable cast syntax works directly.
   if (isOptional) {
-    final simpleCast = _simpleCastFromJson(type, accessor);
+    final simpleCast = _simpleCastFromJson(resolved, accessor);
     if (simpleCast != null) return simpleCast;
   }
 
-  final expr = _buildFromJsonNonNull(type, accessor, paramIsMap: paramIsMap);
+  final expr = _buildFromJsonNonNull(resolved, accessor, paramIsMap: paramIsMap);
   if (!isOptional) return expr;
   return '$accessor != null ? $expr : null';
+}
+
+/// If [type] is an [IrTypeRef] whose target in [registry] is a OneOf-eligible
+/// union, return the target type so we emit parse code instead of `.fromJson()`.
+IrType _resolveOneOfRef(IrType type, Map<String, IrType> registry) {
+  if (type is! IrTypeRef) return type;
+  final target = registry[type.name];
+  if (target == null) return type;
+  return switch (target) {
+    IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => target,
+    IrAnyOf(:final variants) when isOneOfEligible(variants) => target,
+    _ => type,
+  };
 }
 
 /// Nullable-cast shorthand for types where `as Type?` is sufficient.
@@ -172,9 +189,14 @@ String _buildFromJsonNonNull(
       '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e')}).toList()',
     IrMap(:final values) =>
       '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v')}))',
+    IrUntaggedUnion(:final variants)
+        when isOneOfEligible(variants) =>
+      buildOneOfParseCode(variants, accessor),
     IrUntaggedUnion(:final name) => '$name.fromJson($accessor)',
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
+    IrAnyOf(:final variants) when isOneOfEligible(variants) =>
+      buildOneOfParseCode(variants, accessor),
     // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
     IrObject(:final name) ||
     IrTypeRef(:final name) ||
@@ -261,6 +283,77 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
 
 /// Check whether an [IrType] represents a list (used for equality checks).
 bool isListType(IrType type) => type is IrList;
+
+// ─── OneOf helpers ───────────────────────────────────────────────
+
+const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+
+/// Whether a union type should be emitted as a `typedef X = OneOfN<...>`
+/// instead of a sealed class hierarchy.
+bool isOneOfEligible(List<IrType> variants) =>
+    variants.length >= 2 && variants.length <= 9;
+
+/// Build the `OneOfN<A, B, ...>` type reference for a union's variants.
+Reference oneOfTypeReference(List<IrType> variants, {bool nullable = false}) {
+  final n = variants.length;
+  return _maybeNullable(
+    TypeReference(
+      (b) => b
+        ..symbol = 'OneOf$n'
+        ..types.addAll(variants.map((v) => irTypeToReference(v))),
+    ),
+    nullable,
+  );
+}
+
+/// Build the `OneOfN.parse(json, fromA: ..., fromB: ..., ...)` expression
+/// for deserializing a union value.
+String buildOneOfParseCode(
+  List<IrType> variants,
+  String accessor, {
+  bool isOptional = false,
+}) {
+  final n = variants.length;
+  final args = <String>[];
+
+  for (var i = 0; i < variants.length; i++) {
+    final variant = variants[i];
+    args.add('from${_oneOfLetters[i]}: (v) => ${_buildFromJsonNonNull(variant, 'v')}');
+
+    // Add canParse for objects/refs that have canParse
+    final canParseExpr = _buildCanParseExpr(variant);
+    if (canParseExpr != null) {
+      args.add(
+        'canParse${_oneOfLetters[i]}: (v) => $canParseExpr',
+      );
+    }
+  }
+
+  final call = 'OneOf$n.parse($accessor, ${args.join(', ')},)';
+  if (!isOptional) return call;
+  return '$accessor != null ? $call : null';
+}
+
+/// Build a canParse expression for a variant type, if applicable.
+String? _buildCanParseExpr(IrType type) {
+  return switch (type) {
+    IrObject(:final name) =>
+      'v is Map<String, dynamic> && $name.canParse(v)',
+    IrTypeRef(:final name) =>
+      'v is Map<String, dynamic> && $name.canParse(v)',
+    IrPrimitive(:final kind) => switch (kind) {
+      PrimitiveKind.string => 'v is String',
+      PrimitiveKind.int || PrimitiveKind.double || PrimitiveKind.num =>
+        'v is num',
+      PrimitiveKind.bool => 'v is bool',
+      _ => null,
+    },
+    IrEnum() => 'v is String',
+    IrList() => 'v is List',
+    IrMap() => 'v is Map',
+    _ => null,
+  };
+}
 
 /// Get the variant class name for a discriminated union variant.
 String variantClassName(String baseName, String variantKey) {

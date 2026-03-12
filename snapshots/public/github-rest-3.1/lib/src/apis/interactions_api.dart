@@ -29,7 +29,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return InteractionsGetRestrictionsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => InteractionLimitResponse.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && InteractionLimitResponse.canParse(v), fromB: (v) => InteractionsGetRestrictionsForOrgResponseVariant2.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && InteractionsGetRestrictionsForOrgResponseVariant2.canParse(v),);
   },
 );
  } 
@@ -95,7 +95,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return InteractionsGetRestrictionsForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => InteractionLimitResponse.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && InteractionLimitResponse.canParse(v), fromB: (v) => InteractionsGetRestrictionsForRepoResponseVariant2.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && InteractionsGetRestrictionsForRepoResponseVariant2.canParse(v),);
   },
 );
  } 
@@ -158,7 +158,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => InteractionLimitResponse.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && InteractionLimitResponse.canParse(v), fromB: (v) => InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2.canParse(v),);
   },
 );
  } 

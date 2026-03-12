@@ -76,7 +76,7 @@ return _execute(
     return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return PetOrError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Pet.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && Pet.canParse(v), fromB: (v) => ErrorModel.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ErrorModel.canParse(v),);
   },
 );
  } 

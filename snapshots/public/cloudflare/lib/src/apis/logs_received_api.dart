@@ -80,7 +80,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return LogshareLogsResponseJsonLines.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseB: (v) => v is Map,);
   },
 );
  } 
@@ -114,7 +114,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return LogshareLogsResponseJsonLines.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseB: (v) => v is Map,);
   },
 );
  } 

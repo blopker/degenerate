@@ -13,7 +13,14 @@ class ApiEmitter {
   final Map<String, IrType> typeRegistry;
   const ApiEmitter(this.api, {this.typeRegistry = const {}});
 
+  /// Wrapper around [buildFromJsonCode] that passes the type registry.
+  String _fromJson(IrType type, String accessor, {bool isOptional = false, bool paramIsMap = false}) =>
+      buildFromJsonCode(type, accessor, isOptional: isOptional, paramIsMap: paramIsMap, typeRegistry: typeRegistry);
+
   List<Spec> emit() {
+    final hasStreaming = api.operations.any(
+      (op) => eventStreamContent(op) != null,
+    );
     return [
       Class(
         (b) => b
@@ -42,7 +49,11 @@ class ApiEmitter {
             ),
           )
           ..methods.addAll(api.operations.map(_buildOperation))
-          ..methods.add(_buildExecute()),
+          ..methods.addAll(api.operations
+              .where((op) => eventStreamContent(op) != null)
+              .map(_buildStreamingOperation))
+          ..methods.add(_buildExecute())
+          ..methods.addAll(hasStreaming ? [_buildExecuteStreaming()] : []),
       ),
     ];
   }
@@ -412,23 +423,23 @@ class ApiEmitter {
       return switch (returnType) {
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList();',
+              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
         IrMap(:final values) =>
-          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
+          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_fromJson(values, 'v')}));',
         IrPrimitive(:final kind) => switch (kind) {
           PrimitiveKind.string => 'return response.body;',
           PrimitiveKind.int => 'return int.parse(response.body);',
           PrimitiveKind.double => 'return double.parse(response.body);',
           PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
           PrimitiveKind.bytes =>
-            'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
+            'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
           _ => 'return jsonDecode(response.body);',
         },
         IrExtensionType() =>
-          'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
+          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
         // All named types with .fromJson(Map)
         _ =>
-          'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
+          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
       };
     }
 
@@ -445,7 +456,7 @@ class ApiEmitter {
       },
       IrEnum(:final name) => 'return $name.fromJson(response.body);',
       IrExtensionType() =>
-        'return ${buildFromJsonCode(returnType, 'response.body')};',
+        'return ${_fromJson(returnType, 'response.body')};',
       _ =>
         "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
     };
@@ -801,6 +812,325 @@ try {
     );
   }
 
+  Method _buildStreamingOperation(IrOperation op) {
+    final params = <Parameter>[];
+
+    // Reuse the same parameter logic as _buildOperation
+    final pathParams = <IrParameter>[];
+    final queryParams = <IrParameter>[];
+    final headerParams = <IrParameter>[];
+    final cookieParams = <IrParameter>[];
+    for (final p in op.parameters) {
+      switch (p.location) {
+        case ParameterLocation.path:
+          pathParams.add(p);
+        case ParameterLocation.query:
+          queryParams.add(p);
+        case ParameterLocation.header:
+          headerParams.add(p);
+        case ParameterLocation.cookie:
+          cookieParams.add(p);
+      }
+    }
+
+    for (final p in pathParams) {
+      params.add(Parameter((pb) => pb
+        ..name = p.dartName
+        ..named = true
+        ..required = true
+        ..type = irTypeToReference(p.type, forceNonNullable: true)));
+    }
+    for (final p in queryParams) {
+      params.add(Parameter((pb) => pb
+        ..name = p.dartName
+        ..named = true
+        ..required = p.isRequired
+        ..type = irTypeToReference(p.type, forceNullable: !p.isRequired)));
+    }
+    for (final p in headerParams) {
+      params.add(Parameter((pb) => pb
+        ..name = p.dartName
+        ..named = true
+        ..required = p.isRequired
+        ..type = irTypeToReference(p.type, forceNullable: !p.isRequired)));
+    }
+    for (final p in cookieParams) {
+      params.add(Parameter((pb) => pb
+        ..name = p.dartName
+        ..named = true
+        ..required = p.isRequired
+        ..type = irTypeToReference(p.type, forceNullable: !p.isRequired)));
+    }
+
+    final isBodyAllowed =
+        op.method != HttpMethod.get && op.method != HttpMethod.head;
+    final requestBodyContent = op.requestBody != null && isBodyAllowed
+        ? _preferredRequestBodyContent(op.requestBody!)
+        : null;
+    final bodyType = requestBodyContent?.$2.schema;
+    if (bodyType != null) {
+      params.add(Parameter((pb) => pb
+        ..name = 'body'
+        ..named = true
+        ..required = op.requestBody!.isRequired
+        ..type = irTypeToReference(bodyType,
+            forceNullable: !op.requestBody!.isRequired)));
+    }
+
+    params.add(Parameter((pb) => pb
+      ..name = 'options'
+      ..named = true
+      ..type = refer('RequestOptions?')));
+
+    final sseContent = eventStreamContent(op)!;
+    final eventType = sseContent.$2.schema;
+    final eventTypeName = irTypeName(eventType);
+
+    final bodyCode = _buildStreamingOperationBody(
+      op,
+      eventType,
+      requestBodyContent: requestBodyContent,
+      bodyType: bodyType,
+      pathParams: pathParams,
+      queryParams: queryParams,
+      headerParams: headerParams,
+      cookieParams: cookieParams,
+    );
+
+    final docs = <String>[];
+    if (op.summary != null) {
+      docs.addAll(formatDocComment('${op.summary!} (streaming)'));
+    } else {
+      docs.add('/// Stream response.');
+    }
+    final httpMethod = op.method.name.toUpperCase();
+    docs.add('///');
+    docs.add('/// `$httpMethod ${op.path}`');
+
+    return Method(
+      (m) => m
+        ..name = '${op.dartMethodName}Stream'
+        ..returns = refer('Stream<$eventTypeName>')
+        ..optionalParameters.addAll(params)
+        ..docs.addAll(docs)
+        ..body = Code(bodyCode),
+    );
+  }
+
+  String _buildStreamingOperationBody(
+    IrOperation op,
+    IrType eventType, {
+    (String, IrMediaType)? requestBodyContent,
+    IrType? bodyType,
+    required List<IrParameter> pathParams,
+    required List<IrParameter> queryParams,
+    required List<IrParameter> headerParams,
+    required List<IrParameter> cookieParams,
+  }) {
+    final buf = StringBuffer();
+    final httpMethod = op.method.name.toUpperCase();
+
+    // Reuse path interpolation logic
+    final pathParamsByName = {for (final p in pathParams) p.name: p};
+    final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
+      final p = pathParamsByName[m[1]];
+      if (p == null) return m[0]!;
+      final type = p.type;
+      final isString = type is IrPrimitive && type.kind == PrimitiveKind.string;
+      final encodeExpr = isString
+          ? 'Uri.encodeComponent(${p.dartName})'
+          : 'Uri.encodeComponent(${p.dartName}.toString())';
+      return '\${$encodeExpr}';
+    });
+
+    if (queryParams.isNotEmpty) {
+      buf.writeln(
+        'final queryParameters = <String, String>{..._config.defaultQueryParameters};',
+      );
+      buf.writeln('final queryParametersList = <ApiQueryParameter>[];');
+      for (final p in queryParams) {
+        _writeQueryParameterSerialization(buf, p);
+      }
+      buf.writeln();
+    }
+
+    if (cookieParams.isNotEmpty) {
+      buf.writeln(
+        'final cookies = <String, String>{..._config.defaultCookies};',
+      );
+      for (final p in cookieParams) {
+        final sanitizedName = _sanitizeParameterName(p.name);
+        final cookieValue = _toStringExpr(p);
+        if (p.isRequired) {
+          buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
+        } else {
+          buf.writeln(
+            "if (${p.dartName} != null) cookies['$sanitizedName'] = $cookieValue;",
+          );
+        }
+      }
+      buf.writeln();
+    }
+
+    buf.writeln('final headers = <String, String>{..._config.defaultHeaders};');
+    if (requestBodyContent case (final mediaType, _)
+        when !isMultipartMediaType(mediaType)) {
+      final contentType =
+          normalizeMediaType(mediaType) == '*/*' ? 'application/json' : mediaType;
+      buf.writeln("headers['Content-Type'] = '$contentType';");
+    }
+    for (final p in headerParams) {
+      final sanitizedName = p.name.replaceAll('\n', '').replaceAll('\r', '').trim();
+      final headerValue = _toStringExpr(p);
+      if (p.isRequired) {
+        buf.writeln("headers['$sanitizedName'] = $headerValue;");
+      } else {
+        buf.writeln(
+          "if (${p.dartName} != null) headers['$sanitizedName'] = $headerValue;",
+        );
+      }
+    }
+    buf.writeln();
+
+    buf.writeln('final request = ApiRequest(');
+    buf.writeln("  method: '$httpMethod',");
+    buf.writeln("  path: '$path',");
+    buf.writeln('  headers: headers,');
+    if (queryParams.isNotEmpty) {
+      buf.writeln('  queryParameters: queryParameters,');
+      buf.writeln('  queryParametersList: queryParametersList,');
+    }
+    if (cookieParams.isNotEmpty) {
+      buf.writeln('  cookies: cookies,');
+    }
+    final multipartFields = bodyType != null &&
+            isMultipartMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+    final formUrlencodedFields = bodyType != null &&
+            isFormUrlencodedMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+
+    if (multipartFields != null) {
+      _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
+      buf.writeln("  contentType: 'multipart/form-data',");
+    } else if (formUrlencodedFields != null) {
+      _writeFormUrlencodedBody(buf, formUrlencodedFields);
+    } else if (bodyType != null) {
+      final requestBody = requestBodyContent!;
+      buf.writeln(
+        '  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},',
+      );
+    }
+    buf.writeln('  options: options,');
+    buf.writeln(');');
+    buf.writeln();
+
+    // Build the deserialize expression for each SSE event
+    final deserializeExpr = _buildSseDeserializeExpr(eventType);
+    buf.writeln('return _executeStreaming(');
+    buf.writeln('  request,');
+    buf.writeln('  onEvent: (data) {');
+    buf.writeln('    $deserializeExpr');
+    buf.writeln('  },');
+    buf.writeln(');');
+
+    return buf.toString();
+  }
+
+  String _buildSseDeserializeExpr(IrType eventType) {
+    return 'return ${_fromJson(eventType, 'jsonDecode(data)')};';
+  }
+
+  Method _buildExecuteStreaming() {
+    return Method(
+      (m) => m
+        ..name = '_executeStreaming'
+        ..types.add(refer('T'))
+        ..modifier = MethodModifier.asyncStar
+        ..returns = refer('Stream<T>')
+        ..requiredParameters.add(
+          Parameter(
+            (p) => p
+              ..name = 'request'
+              ..type = refer('ApiRequest'),
+          ),
+        )
+        ..optionalParameters.add(
+          Parameter(
+            (p) => p
+              ..name = 'onEvent'
+              ..named = true
+              ..required = true
+              ..type = refer('T Function(String data)'),
+          ),
+        )
+        ..docs.add(
+          '/// Streaming execution pipeline: send -> SSE parse -> deserialize.',
+        )
+        ..body = const Code('''
+final userCancelToken = request.options?.cancelToken;
+if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
+
+final effectiveTimeout = request.options?.timeout ?? _config.timeout;
+final extraHeaders = request.options?.extraHeaders;
+
+final adapterToken = (effectiveTimeout != null || userCancelToken != null)
+    ? CancelToken()
+    : null;
+Timer? timeoutTimer;
+bool timedOut = false;
+
+if (adapterToken != null) {
+  if (userCancelToken != null) {
+    final token = adapterToken;
+    userCancelToken.whenCancelled.then((_) {
+      if (!token.isCancelled) token.cancel();
+    });
+  }
+  if (effectiveTimeout != null) {
+    final token = adapterToken;
+    timeoutTimer = Timer(effectiveTimeout, () {
+      timedOut = true;
+      if (!token.isCancelled) token.cancel();
+    });
+  }
+}
+
+final effectiveRequest = request.copyWith(
+  headers: extraHeaders != null
+      ? {...request.headers, ...extraHeaders}
+      : null,
+  options: RequestOptions(cancelToken: adapterToken),
+);
+
+try {
+  final streamedResponse = await _config.client.sendStreaming(effectiveRequest);
+  timeoutTimer?.cancel();
+
+  if (!streamedResponse.isSuccessful) {
+    final buffered = await streamedResponse.toApiResponse();
+    throw ApiStreamError(
+      statusCode: buffered.statusCode,
+      rawError: buffered.body,
+      headers: buffered.headers,
+    );
+  }
+
+  yield* parseSseStream(streamedResponse.byteStream)
+      .map((event) => onEvent(event.data));
+} on CancelledException {
+  timeoutTimer?.cancel();
+  if (timedOut) {
+    throw TimeoutException('Request timed out', effectiveTimeout);
+  }
+  rethrow;
+}
+'''),
+    );
+  }
+
   (String, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
       preferredContent(body.content);
 
@@ -841,19 +1171,19 @@ try {
           PrimitiveKind.double => 'return double.parse(response.body);',
           PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
           PrimitiveKind.bytes =>
-            'return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')};',
+            'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
           _ => 'return jsonDecode(response.body);',
         },
         IrEnum(:final name) =>
           'return $name.fromJson(jsonDecode(response.body) as String);',
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList();',
+              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
         IrMap(:final values) =>
-          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
+          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_fromJson(values, 'v')}));',
         // All named types with .fromJson(Map)
         _ =>
-          'return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')};',
+          'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
       };
     }
 

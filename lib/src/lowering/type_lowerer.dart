@@ -265,17 +265,15 @@ class TypeLowerer {
   IrType lowerInlineSchema(Map<String, dynamic> schema, {String? nameHint}) {
     // Check if the schema will produce a named type (needs a unique name).
     final needsName = _looksLikeObject(schema) || _looksLikeNamedType(schema);
+    // Prefer: explicit nameHint > schema title > 'InlineObject' fallback.
+    final hint = (nameHint != null && nameHint.isNotEmpty)
+        ? nameHint
+        : (schema['title'] as String?) ?? 'InlineObject';
     // Pre-compute a unique name so that _lowerObject (and its inline enums)
     // use the correct final name from the start.
-    final effectiveName = needsName
-        ? _uniqueTypeName(
-            (nameHint != null && nameHint.isNotEmpty)
-                ? nameHint
-                : 'InlineObject',
-          )
-        : nameHint;
+    final effectiveName = needsName ? _uniqueTypeName(hint) : nameHint;
 
-    final result = _lowerSchemaImpl(effectiveName, schema);
+    final result = _lowerSchemaImpl(effectiveName, schema, isInline: true);
     var resolved = _resolveTypeRef(result);
     // Recursively resolve type refs within nested types (e.g. list items, map values).
     resolved = _resolveTypeRefsDeep(resolved);
@@ -454,6 +452,7 @@ class TypeLowerer {
     String? name,
     Map<String, dynamic> schema, {
     String? discriminatorProperty,
+    bool isInline = false,
   }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
@@ -524,7 +523,7 @@ class TypeLowerer {
 
     // oneOf without discriminator → IrUntaggedUnion.
     if (flattened.containsKey('oneOf')) {
-      return _lowerUntaggedUnion(name, flattened);
+      return _lowerUntaggedUnion(name, flattened, isInline: isInline);
     }
 
     // anyOf → check for OpenAPI 3.1 nullable pattern first.
@@ -540,10 +539,10 @@ class TypeLowerer {
       if (hasNullVariant && nonNullVariants.length == 1) {
         // This is just a nullable wrapper — lower the single real type.
         final inner = nonNullVariants[0] as Map<String, dynamic>;
-        final result = _lowerSchemaImpl(name, inner);
+        final result = _lowerSchemaImpl(name, inner, isInline: isInline);
         return result.isNullable ? result : _withNullable(result);
       }
-      return _lowerAnyOf(name, flattened);
+      return _lowerAnyOf(name, flattened, isInline: isInline);
     }
 
     final type = _extractType(flattened);
@@ -576,13 +575,13 @@ class TypeLowerer {
       // Object with only additionalProperties → IrMap.
       if (!flattened.containsKey('properties') &&
           flattened.containsKey('additionalProperties')) {
-        return _lowerMap(flattened);
+        return _lowerMap(flattened, nameHint: name);
       }
       // Object with no properties and no additionalProperties → Map<String, dynamic>.
       // This handles free-form objects like `type: object` with no further schema.
       if (!flattened.containsKey('properties') &&
           !flattened.containsKey('additionalProperties')) {
-        return _lowerMap(flattened);
+        return _lowerMap(flattened, nameHint: name);
       }
       return _lowerObject(
         name,
@@ -593,7 +592,7 @@ class TypeLowerer {
 
     // Object-like map (additionalProperties only, no explicit type).
     if (flattened.containsKey('additionalProperties')) {
-      return _lowerMap(flattened);
+      return _lowerMap(flattened, nameHint: name);
     }
 
     // Primitives.
@@ -689,7 +688,7 @@ class TypeLowerer {
       if (_looksLikeObject(itemsSchema) || _looksLikeNamedType(itemsSchema)) {
         itemsType = lowerInlineSchema(itemsSchema, nameHint: itemNameHint);
       } else {
-        itemsType = _lowerSchemaImpl(itemNameHint, itemsSchema);
+        itemsType = _lowerSchemaImpl(itemNameHint, itemsSchema, isInline: true);
       }
     } else {
       itemsType = const IrPrimitive(PrimitiveKind.object, isNullable: true);
@@ -699,17 +698,19 @@ class TypeLowerer {
 
   // ─── Map ──────────────────────────────────────────────────────
 
-  IrType _lowerMap(Map<String, dynamic> schema) {
+  IrType _lowerMap(Map<String, dynamic> schema, {String? nameHint}) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final addProps = schema['additionalProperties'];
     IrType valueType;
     if (addProps is Map<String, dynamic>) {
+      // Derive a value name hint from the parent context.
+      final valueHint = nameHint != null ? '${nameHint}Value' : null;
       // Use lowerInlineSchema so inline value types get registered.
       if (_looksLikeObject(addProps) || _looksLikeNamedType(addProps)) {
-        valueType = lowerInlineSchema(addProps);
+        valueType = lowerInlineSchema(addProps, nameHint: valueHint);
       } else {
-        valueType = _lowerSchemaImpl(null, addProps);
+        valueType = _lowerSchemaImpl(valueHint, addProps, isInline: true);
       }
     } else {
       // additionalProperties: true or absent → Map<String, dynamic>
@@ -877,22 +878,42 @@ class TypeLowerer {
           }
           mapping[value] = IrTypeRef(dartRefName);
         } else if (refOrSchema is Map<String, dynamic>) {
+          // Use title if available, otherwise derive from parent + value.
+          final hint = (refOrSchema['title'] as String?) ??
+              '$unionName${toPascalCase(value)}';
           mapping[value] =
               (_looksLikeObject(refOrSchema) ||
                   _looksLikeNamedType(refOrSchema))
-              ? lowerInlineSchema(refOrSchema)
+              ? lowerInlineSchema(refOrSchema, nameHint: hint)
               : _lowerSchemaImpl(null, refOrSchema);
         }
       }
     } else {
       // Infer mapping from oneOf entries.
-      for (final variant in oneOf) {
+      for (var i = 0; i < oneOf.length; i++) {
+        final variant = oneOf[i];
         if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
           final rawRefName = _extractRefName(variant[r'$ref'] as String);
           final dartRefName =
               _nameMapping[rawRefName] ??
               sanitizeDartName(toPascalCase(rawRefName));
           mapping[dartRefName] = IrTypeRef(dartRefName);
+        } else if (variant is Map<String, dynamic> &&
+            (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
+          final hint = (variant['title'] as String?) ??
+              '${unionName}Variant${i + 1}';
+          final lowered = lowerInlineSchema(variant, nameHint: hint);
+          // Derive the mapping key from the discriminator enum value if
+          // available, otherwise use the type name.
+          final props = variant['properties'] as Map<String, dynamic>?;
+          final discProp = props?[propertyName] as Map<String, dynamic>?;
+          final enumVals = discProp?['enum'] as List?;
+          final key = (enumVals != null && enumVals.isNotEmpty)
+              ? enumVals.first.toString()
+              : (lowered is IrObject ? lowered.name : hint);
+          mapping[key] = lowered is IrObject
+              ? IrTypeRef(lowered.name)
+              : lowered;
         }
       }
     }
@@ -908,23 +929,43 @@ class TypeLowerer {
 
   // ─── Untagged Union ───────────────────────────────────────────
 
-  IrType _lowerUntaggedUnion(String? name, Map<String, dynamic> schema) {
+  IrType _lowerUntaggedUnion(
+    String? name,
+    Map<String, dynamic> schema, {
+    bool isInline = false,
+  }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final unionName = name ?? _uniqueTypeName('InlineUnion');
 
     final oneOf = schema['oneOf'] as List;
     final variants = <IrType>[];
-    for (final variant in oneOf) {
+    for (var i = 0; i < oneOf.length; i++) {
+      final variant = oneOf[i];
       if (variant is Map<String, dynamic>) {
         // Use lowerInlineSchema for inline variants so they get registered
         // in the type registry and emitted as separate files.
+        final hint = (variant['title'] as String?) ??
+            _singleEnumHint(unionName, variant) ??
+            '${unionName}Variant${i + 1}';
         if (_looksLikeObject(variant) || _looksLikeNamedType(variant)) {
-          variants.add(lowerInlineSchema(variant));
+          variants.add(lowerInlineSchema(variant, nameHint: hint));
         } else {
-          variants.add(_lowerSchemaImpl(null, variant));
+          variants.add(_lowerSchemaImpl(hint, variant, isInline: true));
         }
       }
+    }
+
+    // Collapse inline primitive-only unions to Object — generating sealed
+    // wrapper types for oneOf: [string, number, bool] adds ceremony without
+    // value. Named schemas (name was passed in) are kept as unions since the
+    // spec author intentionally defined them.
+    if (isInline && _allPrimitives(variants)) {
+      return IrPrimitive(
+        PrimitiveKind.object,
+        description: description,
+        isNullable: nullable,
+      );
     }
 
     return IrUntaggedUnion(
@@ -937,23 +978,37 @@ class TypeLowerer {
 
   // ─── AnyOf ────────────────────────────────────────────────────
 
-  IrType _lowerAnyOf(String? name, Map<String, dynamic> schema) {
+  IrType _lowerAnyOf(String? name, Map<String, dynamic> schema,
+      {bool isInline = false}) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final anyOfName = name ?? _uniqueTypeName('InlineAnyOf');
 
     final anyOf = schema['anyOf'] as List;
     final variants = <IrType>[];
-    for (final variant in anyOf) {
+    for (var i = 0; i < anyOf.length; i++) {
+      final variant = anyOf[i];
       if (variant is Map<String, dynamic>) {
         // Use lowerInlineSchema for inline variants so they get registered
         // in the type registry and emitted as separate files.
+        final hint = (variant['title'] as String?) ??
+            _singleEnumHint(anyOfName, variant) ??
+            '${anyOfName}Variant${i + 1}';
         if (_looksLikeObject(variant) || _looksLikeNamedType(variant)) {
-          variants.add(lowerInlineSchema(variant));
+          variants.add(lowerInlineSchema(variant, nameHint: hint));
         } else {
-          variants.add(_lowerSchemaImpl(null, variant));
+          variants.add(_lowerSchemaImpl(hint, variant, isInline: true));
         }
       }
+    }
+
+    // Collapse inline primitive-only unions to Object.
+    if (isInline && _allPrimitives(variants)) {
+      return IrPrimitive(
+        PrimitiveKind.object,
+        description: description,
+        isNullable: nullable,
+      );
     }
 
     return IrAnyOf(
@@ -965,6 +1020,31 @@ class TypeLowerer {
   }
 
   // ─── Utilities ────────────────────────────────────────────────
+
+  /// Returns true if all variants are primitives (no objects, enums, refs, or
+  /// unions), meaning a sealed wrapper type adds no value over plain Object.
+  bool _allPrimitives(List<IrType> variants) {
+    return variants.isNotEmpty && variants.every((v) => v is IrPrimitive);
+  }
+
+  /// Derives a name hint from an inline object's single-value enum property.
+  ///
+  /// For schemas like `{event: {enum: [thread.run.created]}, data: ...}`,
+  /// returns `ParentNameThreadRunCreated`.
+  String? _singleEnumHint(String parentName, Map<String, dynamic> schema) {
+    final props = schema['properties'] as Map<String, dynamic>?;
+    if (props == null) return null;
+    for (final entry in props.entries) {
+      final prop = entry.value;
+      if (prop is Map<String, dynamic>) {
+        final enumValues = prop['enum'] as List?;
+        if (enumValues != null && enumValues.length == 1) {
+          return '$parentName${toPascalCase(enumValues.first.toString())}';
+        }
+      }
+    }
+    return null;
+  }
 
   String _uniqueTypeName(String rawName) {
     final pascal = toPascalCase(rawName);

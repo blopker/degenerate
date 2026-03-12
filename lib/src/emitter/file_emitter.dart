@@ -121,6 +121,7 @@ class FileEmitter {
       final needsCollection = modelAnalysis.needsCollection;
       final needsTypedData = modelAnalysis.needsTypedData;
       final needsConvert = modelAnalysis.needsConvert;
+      final needsOneOf = modelAnalysis.needsOneOf;
 
       final library = Library((b) {
         b.comments.addAll(header);
@@ -133,6 +134,11 @@ class FileEmitter {
         if (needsCollection) {
           b.directives.add(
             Directive.import('package:collection/collection.dart'),
+          );
+        }
+        if (needsOneOf) {
+          b.directives.add(
+            Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
           );
         }
         b.directives.addAll(modelImports);
@@ -239,15 +245,32 @@ class FileEmitter {
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
       IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type).emit(),
+      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+        _emitOneOfTypedef(type.name, variants, type.description),
       IrUntaggedUnion() => UntaggedUnionEmitter(
         type,
         typeRegistry: typeRegistry,
       ).emit(),
+      IrAnyOf(:final variants) when isOneOfEligible(variants) =>
+        _emitOneOfTypedef(type.name, variants, type.description),
       IrAnyOf() => AnyOfEmitter(type, typeRegistry: typeRegistry).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
       _ => [],
     };
   }
+
+  /// Emit a `typedef X = OneOfN<A, B, ...>;` for a union type.
+  List<Spec> _emitOneOfTypedef(
+    String name,
+    List<IrType> variants,
+    String? description,
+  ) {
+    final oneOfRef = oneOfTypeReference(variants);
+    final code = Code('typedef $name = ${oneOfRef.accept(_dartEmitter)};');
+    return [code];
+  }
+
+  static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
 
   String? _typeName(IrType type) => type.emittableName;
 
@@ -298,6 +321,12 @@ class FileEmitter {
             break;
           }
         }
+      }
+      // Collect types from SSE (text/event-stream) responses
+      final sseContent = eventStreamContent(op);
+      if (sseContent != null) {
+        needsConvert = true;
+        _collectTopLevelTypeName(sseContent.$2.schema, names);
       }
       // Collect types from error responses (default and 4xx/5xx)
       if (op.defaultResponse != null) {
@@ -352,18 +381,20 @@ class FileEmitter {
   }
 
   /// Single-pass model analysis: collects referenced type names and detects
-  /// whether dart:collection, dart:typed_data, and dart:convert are needed.
+  /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are needed.
   ({
     Set<String> referencedNames,
     bool needsCollection,
     bool needsTypedData,
     bool needsConvert,
+    bool needsOneOf,
   })
   _analyzeModel(IrType type) {
     final names = <String>{};
     var needsCollection = false;
     var needsTypedData = false;
     var needsConvert = false;
+    var needsOneOf = false;
 
     bool isBytesType(IrType t) => switch (t) {
       IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
@@ -372,10 +403,19 @@ class FileEmitter {
       _ => false,
     };
 
+    bool isOneOfType(IrType t) => switch (t) {
+      IrUntaggedUnion(:final variants) => isOneOfEligible(variants),
+      IrAnyOf(:final variants) => isOneOfEligible(variants),
+      IrList(:final items) => isOneOfType(items),
+      IrMap(:final values) => isOneOfType(values),
+      _ => false,
+    };
+
     void checkField(IrType fieldType) {
       _collectTopLevelTypeName(fieldType, names);
       if (isListType(fieldType)) needsCollection = true;
       if (isBytesType(fieldType)) needsTypedData = true;
+      if (isOneOfType(fieldType)) needsOneOf = true;
     }
 
     switch (type) {
@@ -402,12 +442,14 @@ class FileEmitter {
         }
       case IrUntaggedUnion(:final name, :final variants):
         names.add(name);
+        if (isOneOfEligible(variants)) needsOneOf = true;
         for (final variant in variants) {
           _collectTopLevelTypeName(variant, names);
           if (isBytesType(variant)) needsTypedData = true;
         }
       case IrAnyOf(:final name, :final variants):
         names.add(name);
+        if (isOneOfEligible(variants)) needsOneOf = true;
         for (final variant in variants) {
           _collectTopLevelTypeName(variant, names);
           if (isBytesType(variant)) {
@@ -434,6 +476,7 @@ class FileEmitter {
       needsCollection: needsCollection,
       needsTypedData: needsTypedData,
       needsConvert: needsConvert,
+      needsOneOf: needsOneOf,
     );
   }
 

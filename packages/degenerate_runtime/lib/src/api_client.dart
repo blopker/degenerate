@@ -2,11 +2,18 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'request_options.dart';
+import 'streamed_api_response.dart';
 
 /// The contract any HTTP client must satisfy.
 abstract interface class ApiClient {
-  /// Send a request and return a response.
+  /// Send a request and return a buffered response.
   Future<ApiResponse> send(ApiRequest request);
+
+  /// Send a request and return a streaming response.
+  ///
+  /// Used for Server-Sent Events and other streaming formats where
+  /// the response body should not be fully buffered.
+  Future<StreamedApiResponse> sendStreaming(ApiRequest request);
 
   /// Base URL for all requests. Must not have a trailing slash.
   Uri get baseUrl;

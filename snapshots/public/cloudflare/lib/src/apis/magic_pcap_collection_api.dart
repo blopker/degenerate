@@ -32,7 +32,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return MagicPcapCollectionListPacketCaptureRequestsResponsedefault.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon47.canParse(v), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommonFailure49.canParse(v),);
   },
 );
  } 
@@ -58,7 +58,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return MagicPcapCollectionCreatePcapRequestResponsedefault.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon47.canParse(v), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommonFailure49.canParse(v),);
   },
 );
  } 
@@ -82,7 +82,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return MagicPcapCollectionGetPcapRequestResponsedefault.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon47.canParse(v), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommonFailure49.canParse(v),);
   },
 );
  } 
@@ -147,7 +147,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon47.canParse(v), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommonFailure49.canParse(v),);
   },
 );
  } 
@@ -173,7 +173,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon47.canParse(v), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommonFailure49.canParse(v),);
   },
 );
  } 
@@ -218,7 +218,7 @@ return _execute(
     return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon47.canParse(v), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommonFailure49.canParse(v),);
   },
 );
  } 

@@ -30,17 +30,7 @@ final class DioApiClient implements ApiClient {
     final uri = request.resolveUri(baseUrl);
     final headers = request.resolvedHeaders();
 
-    // Bridge our CancelToken to Dio's native CancelToken for socket-level cancellation.
-    final cancelToken = request.options?.cancelToken;
-    dio.CancelToken? dioCancelToken;
-    if (cancelToken != null) {
-      if (cancelToken.isCancelled) throw const CancelledException();
-      dioCancelToken = dio.CancelToken();
-      final token = dioCancelToken;
-      cancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
+    final dioCancelToken = _bridgeCancelToken(request.options?.cancelToken);
 
     try {
       final Object? data;
@@ -117,6 +107,54 @@ final class DioApiClient implements ApiClient {
       body: utf8.decode(bytes, allowMalformed: true),
       bodyBytes: bytes,
     );
+  }
+
+  @override
+  Future<StreamedApiResponse> sendStreaming(ApiRequest request) async {
+    final uri = request.resolveUri(baseUrl);
+    final headers = request.resolvedHeaders();
+    final dioCancelToken = _bridgeCancelToken(request.options?.cancelToken);
+
+    try {
+      final response = await _inner.requestUri<dio.ResponseBody>(
+        uri,
+        options: dio.Options(
+          method: request.method,
+          headers: headers.isNotEmpty ? headers : null,
+          contentType: request.contentType,
+          responseType: dio.ResponseType.stream,
+          validateStatus: (_) => true,
+        ),
+        data: request.body,
+        cancelToken: dioCancelToken,
+      );
+      return StreamedApiResponse(
+        statusCode: response.statusCode ?? 0,
+        headers: response.headers.map.map((k, v) => MapEntry(k, v.join(', '))),
+        byteStream: response.data?.stream ?? const Stream.empty(),
+      );
+    } on dio.DioException catch (e) {
+      if (e.type == dio.DioExceptionType.cancel) {
+        throw const CancelledException();
+      }
+      if (e.type == dio.DioExceptionType.connectionTimeout ||
+          e.type == dio.DioExceptionType.sendTimeout ||
+          e.type == dio.DioExceptionType.receiveTimeout) {
+        throw TimeoutException(e.message ?? 'Request timed out');
+      }
+      rethrow;
+    }
+  }
+
+  /// Bridge our [CancelToken] to Dio's native cancel token.
+  dio.CancelToken? _bridgeCancelToken(CancelToken? cancelToken) {
+    if (cancelToken == null) return null;
+    if (cancelToken.isCancelled) throw const CancelledException();
+    final dioCancelToken = dio.CancelToken();
+    cancelToken.whenCancelled.then((_) {
+      if (!dioCancelToken.isCancelled) dioCancelToken.cancel();
+    });
+    return dioCancelToken;
   }
 
   @override
