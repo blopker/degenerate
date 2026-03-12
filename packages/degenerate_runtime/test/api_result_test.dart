@@ -68,4 +68,60 @@ void main() {
       expect(matched, equals('exception'));
     });
   });
+
+  group('dataOrThrow', () {
+    test('returns data on success', () {
+      final ApiResult<String, String> result = ApiSuccess(
+        'hello',
+        statusCode: 200,
+      );
+      expect(result.dataOrThrow, 'hello');
+    });
+
+    test('throws on ApiError', () {
+      final ApiResult<String, String> result = ApiError(
+        statusCode: 404,
+        rawError: 'not found',
+      );
+      expect(() => result.dataOrThrow, throwsA(isA<ApiError>()));
+    });
+
+    test('throws on ApiError with typed error', () {
+      final ApiResult<String, String> result = ApiError(
+        statusCode: 422,
+        error: 'validation failed',
+      );
+      final thrown = _catchError(() => result.dataOrThrow);
+      expect(thrown, isA<ApiError<String, String>>());
+      expect((thrown as ApiError).error, 'validation failed');
+    });
+
+    test('rethrows on ApiException', () {
+      final original = Exception('network down');
+      final ApiResult<String, String> result = ApiException(
+        original,
+        StackTrace.current,
+      );
+      expect(() => result.dataOrThrow, throwsA(same(original)));
+    });
+
+    test('rethrows on ApiParseException', () {
+      final original = FormatException('bad json');
+      final ApiResult<String, String> result = ApiParseException(
+        original,
+        StackTrace.current,
+        response: ApiResponse(statusCode: 200, body: 'bad'),
+      );
+      expect(() => result.dataOrThrow, throwsA(same(original)));
+    });
+  });
+}
+
+Object? _catchError(void Function() fn) {
+  try {
+    fn();
+    return null;
+  } catch (e) {
+    return e;
+  }
 }

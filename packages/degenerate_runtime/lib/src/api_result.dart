@@ -5,6 +5,12 @@ import 'api_client.dart';
 /// [T] is the success data type, [E] is the typed error schema (if any).
 sealed class ApiResult<T, E> {
   const ApiResult();
+
+  /// Returns the success data, or throws if the result is an error/exception.
+  ///
+  /// On [ApiError], throws the error result itself.
+  /// On [ApiException], rethrows the original exception.
+  T get dataOrThrow;
 }
 
 final class ApiSuccess<T, E> extends ApiResult<T, E> {
@@ -19,10 +25,13 @@ final class ApiSuccess<T, E> extends ApiResult<T, E> {
   });
 
   @override
+  T get dataOrThrow => data;
+
+  @override
   String toString() => 'ApiSuccess($statusCode, $data)';
 }
 
-final class ApiError<T, E> extends ApiResult<T, E> {
+final class ApiError<T, E> extends ApiResult<T, E> implements Exception {
   final int statusCode;
   final E? error;
   final String? rawError;
@@ -36,6 +45,9 @@ final class ApiError<T, E> extends ApiResult<T, E> {
   });
 
   @override
+  T get dataOrThrow => throw this;
+
+  @override
   String toString() =>
       error != null ? 'ApiError($statusCode, $error)' : 'ApiError($statusCode, $rawError)';
 }
@@ -46,6 +58,9 @@ class ApiException<T, E> extends ApiResult<T, E> {
   final StackTrace stackTrace;
 
   const ApiException(this.exception, this.stackTrace);
+
+  @override
+  T get dataOrThrow => Error.throwWithStackTrace(exception, stackTrace);
 
   @override
   String toString() => 'ApiException($exception)';
