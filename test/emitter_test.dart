@@ -1981,4 +1981,92 @@ void main() {
       expect(result!.$1, equals('image/png'));
     });
   });
+
+  group('OneOf variant inlining', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      // Schema: Parent object with a field whose type is an anyOf typedef.
+      // The anyOf has an int + a single-value enum variant.
+      // The enum variant should be inlined into the typedef file,
+      // not emitted as a separate file.
+      final doc = OpenApiDocument({
+        'openapi': '3.0.3',
+        'info': {'title': 'Inline Test', 'version': '1.0.0'},
+        'paths': <String, dynamic>{},
+        'components': {
+          'schemas': {
+            'Container': {
+              'type': 'object',
+              'properties': {
+                'value': {
+                  'anyOf': [
+                    {'type': 'integer'},
+                    {'type': 'string', 'enum': ['']},
+                  ],
+                },
+              },
+            },
+          },
+        },
+      });
+      final tl = TypeLowerer();
+      final types = tl.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(tl, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+      final allTypes = [...types, ...tl.inlineTypes];
+      for (final entry in tl.typeRegistry.entries) {
+        final name = switch (entry.value) {
+          IrObject(:final name) => name,
+          IrEnum(:final name) => name,
+          IrUntaggedUnion(:final name) => name,
+          IrAnyOf(:final name) => name,
+          IrExtensionType(:final name) => name,
+          _ => null,
+        };
+        if (name != null && !allTypes.any((t) => switch (t) {
+          IrObject(:final name) => name == entry.key,
+          IrEnum(:final name) => name == entry.key,
+          IrUntaggedUnion(:final name) => name == entry.key,
+          IrAnyOf(:final name) => name == entry.key,
+          IrExtensionType(:final name) => name == entry.key,
+          _ => false,
+        })) {
+          allTypes.add(entry.value);
+        }
+      }
+
+      files = FileEmitter().emitAll(
+        types: allTypes,
+        apis: apis,
+        packageName: 'inline_test',
+        specFileName: 'inline-test.yaml',
+        specVersion: '1.0.0',
+      );
+    });
+
+    test('enum variant is inlined into typedef file, not separate', () {
+      // The enum variant should NOT have its own file
+      final variantFiles = files.keys.where(
+        (k) => k.contains('variant') && k.endsWith('.dart'),
+      ).toList();
+      expect(variantFiles, isEmpty,
+          reason: 'Enum variant should be inlined, not a separate file');
+
+      // The typedef file should contain both the enum class and the typedef
+      final typedefFile = files['lib/src/models/container_value.dart'];
+      expect(typedefFile, isNotNull);
+      expect(typedefFile, contains('typedef ContainerValue'));
+      expect(typedefFile, contains('OneOf2'));
+      expect(typedefFile, contains('final class ContainerValueVariant2'));
+    });
+
+    test('parent model imports typedef file, not variant file', () {
+      final containerFile = files['lib/src/models/container.dart']!;
+      // Should import the typedef file (which contains the inlined variant)
+      expect(containerFile, contains("'container_value.dart'"));
+      // Should NOT import a separate variant file
+      expect(containerFile, isNot(contains("'container_value_variant2.dart'")));
+    });
+  });
 }

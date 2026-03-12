@@ -324,7 +324,6 @@ export 'src/models/create_fine_tuning_job_request_hyperparameters_batch_size.dar
 export 'src/models/create_fine_tuning_job_request_hyperparameters_learning_rate_multiplier.dart';
 export 'src/models/create_fine_tuning_job_request_hyperparameters_n_epochs.dart';
 export 'src/models/create_fine_tuning_job_request_integrations.dart';
-export 'src/models/create_fine_tuning_job_request_integrations_type.dart';
 export 'src/models/create_fine_tuning_job_request_integrations_wandb.dart';
 export 'src/models/create_fine_tuning_job_request_model.dart';
 export 'src/models/create_group_body.dart';

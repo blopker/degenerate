@@ -939,6 +939,15 @@ class TypeLowerer {
     final unionName = name ?? _uniqueTypeName('InlineUnion');
 
     final oneOf = schema['oneOf'] as List;
+
+    // Collapse anyOf/oneOf of single-value string enums into one enum.
+    // e.g. oneOf: [{enum: [High]}, {enum: [Medium]}, {enum: [Low]}]
+    final collapsed = _trySingleValueEnumCollapse(oneOf);
+    if (collapsed != null) {
+      return IrEnum(unionName, collapsed,
+          description: description, isNullable: nullable);
+    }
+
     final variants = <IrType>[];
     for (var i = 0; i < oneOf.length; i++) {
       final variant = oneOf[i];
@@ -985,6 +994,14 @@ class TypeLowerer {
     final anyOfName = name ?? _uniqueTypeName('InlineAnyOf');
 
     final anyOf = schema['anyOf'] as List;
+
+    // Collapse anyOf of single-value string enums into one enum.
+    final collapsed = _trySingleValueEnumCollapse(anyOf);
+    if (collapsed != null) {
+      return IrEnum(anyOfName, collapsed,
+          description: description, isNullable: nullable);
+    }
+
     final variants = <IrType>[];
     for (var i = 0; i < anyOf.length; i++) {
       final variant = anyOf[i];
@@ -1020,6 +1037,23 @@ class TypeLowerer {
   }
 
   // ─── Utilities ────────────────────────────────────────────────
+
+  /// Detects anyOf/oneOf where every variant is a single-value string enum,
+  /// e.g. `anyOf: [{enum: [Strict]}, {enum: [Lax]}, {enum: [None]}]`.
+  /// Returns the merged enum values if the pattern matches, null otherwise.
+  List<String>? _trySingleValueEnumCollapse(List variants) {
+    if (variants.isEmpty) return null;
+    final values = <String>[];
+    for (final variant in variants) {
+      if (variant is! Map<String, dynamic>) return null;
+      final enumValues = variant['enum'] as List?;
+      if (enumValues == null || enumValues.length != 1) return null;
+      final type = variant['type'] as String?;
+      if (type != null && type != 'string') return null;
+      values.add(enumValues.first.toString());
+    }
+    return values;
+  }
 
   /// Returns true if all variants are primitives (no objects, enums, refs, or
   /// unions), meaning a sealed wrapper type adds no value over plain Object.

@@ -64,11 +64,35 @@ paths:
               schema:
                 $ref: "#/components/schemas/Order"
         "400":
-          description: Bad request returns PetOrError
+          description: Validation error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PetOrError"
+                $ref: "#/components/schemas/Error"
+
+  /orders/{orderId}/payment:
+    put:
+      operationId: setPaymentMethod
+      summary: Set payment method for an order (untagged oneOf)
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaymentMethod"
+      responses:
+        "200":
+          description: Payment method set
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaymentMethod"
 
   /notifications:
     post:
@@ -223,10 +247,39 @@ components:
     # ---------------------------------------------------------------
     # 3. Untagged union with objects (oneOf, no discriminator)
     # ---------------------------------------------------------------
-    PetOrError:
+    PaymentMethod:
       oneOf:
-        - $ref: "#/components/schemas/Pet"
-        - $ref: "#/components/schemas/Error"
+        - $ref: "#/components/schemas/CreditCard"
+        - $ref: "#/components/schemas/BankAccount"
+
+    CreditCard:
+      type: object
+      required:
+        - cardNumber
+        - expiryMonth
+        - expiryYear
+      properties:
+        cardNumber:
+          type: string
+        expiryMonth:
+          type: integer
+        expiryYear:
+          type: integer
+        cardholderName:
+          type: string
+
+    BankAccount:
+      type: object
+      required:
+        - routingNumber
+        - accountNumber
+      properties:
+        routingNumber:
+          type: string
+        accountNumber:
+          type: string
+        accountHolderName:
+          type: string
 
     Pet:
       type: object

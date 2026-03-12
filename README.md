@@ -21,6 +21,7 @@
 
 - **Strives for full OpenAPI 3.0 and 3.1 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution — [file a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
 - **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
+- **Lightweight unions** — `oneOf`/`anyOf` schemas emit `typedef` aliases over generic `OneOf` containers with pattern matching support, avoiding heavy sealed class hierarchies
 - **Zero analysis issues** — generated code passes `dart analyze` with no errors, warnings, or hints
 - **Fast** — generates ~12,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
 - **Tag & path filtering** — generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
@@ -184,6 +185,7 @@ lib/
       pet.dart                 Data classes with fromJson/toJson/copyWith/==/hashCode
       pet_status.dart          Enum-like class with unknown value preservation
       user_id.dart             Extension type for branded primitives
+      pet_or_error.dart        OneOf typedef for untagged unions
       shape.dart               Sealed class for discriminated unions
     apis/
       pets_api.dart            API client class with typed methods
@@ -250,6 +252,30 @@ extension type Timestamp(DateTime value) {
   String toJson() => value.toIso8601String();
 }
 ```
+
+### Untagged Unions (oneOf / anyOf)
+
+`oneOf` and `anyOf` schemas with 2-9 variants generate lightweight type aliases using generic `OneOf` containers from `degenerate_runtime`:
+
+```dart
+// Generated: typedef Notification = OneOf2<EmailDetails, SmsDetails>;
+
+// Pattern match on the union value
+void handleNotification(Notification notification) {
+  switch (notification.value) {
+    case EmailDetails email => print('Email to ${email.to}'),
+    case SmsDetails sms => print('SMS to ${sms.phone}'),
+  }
+}
+
+// Create a union value to pass to an API call
+final notification = Notification.from(
+  EmailDetails(to: 'user@example.com', subject: 'Hello'),
+);
+await sdk.notifications.send(body: notification);
+```
+
+Since `Notification` is a type alias, `.from()` validates at runtime that the value matches one of the expected types. Pattern matching on `.value` gives you exhaustive type checking.
 
 ### Discriminated Unions
 

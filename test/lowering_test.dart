@@ -954,4 +954,83 @@ void main() {
       expect(apis.first.operations.first.operationId, equals('listPets'));
     });
   });
+
+  group('single-value enum anyOf collapse', () {
+    test('anyOf of single-value string enums collapses to one enum', () {
+      final lowerer = TypeLowerer();
+      final types = lowerer.lowerSchemas({
+        'SameSite': {
+          'anyOf': [
+            {'type': 'string', 'enum': ['Strict']},
+            {'type': 'string', 'enum': ['Lax']},
+            {'type': 'string', 'enum': ['None']},
+          ],
+        },
+      });
+
+      expect(types, hasLength(1));
+      final t = types.first;
+      expect(t, isA<IrEnum>());
+      final e = t as IrEnum;
+      expect(e.name, equals('SameSite'));
+      expect(e.values, equals(['Strict', 'Lax', 'None']));
+    });
+
+    test('oneOf of single-value string enums collapses to one enum', () {
+      final lowerer = TypeLowerer();
+      final types = lowerer.lowerSchemas({
+        'Priority': {
+          'oneOf': [
+            {'type': 'string', 'enum': ['High']},
+            {'type': 'string', 'enum': ['Medium']},
+            {'type': 'string', 'enum': ['Low']},
+          ],
+        },
+      });
+
+      expect(types, hasLength(1));
+      final t = types.first;
+      expect(t, isA<IrEnum>());
+      final e = t as IrEnum;
+      expect(e.name, equals('Priority'));
+      expect(e.values, equals(['High', 'Medium', 'Low']));
+    });
+
+    test('inline anyOf of single-value enums collapses to enum', () {
+      final lowerer = TypeLowerer();
+      final types = lowerer.lowerSchemas({
+        'Cookie': {
+          'type': 'object',
+          'properties': {
+            'sameSite': {
+              'anyOf': [
+                {'type': 'string', 'enum': ['Strict']},
+                {'type': 'string', 'enum': ['Lax']},
+                {'type': 'string', 'enum': ['None']},
+              ],
+            },
+          },
+        },
+      });
+
+      final cookie = types.whereType<IrObject>().first;
+      final field = cookie.fields.firstWhere((f) => f.name == 'sameSite');
+      expect(field.type, isA<IrEnum>());
+      expect((field.type as IrEnum).values, equals(['Strict', 'Lax', 'None']));
+    });
+
+    test('mixed single-value enums and other types does NOT collapse', () {
+      final lowerer = TypeLowerer();
+      final types = lowerer.lowerSchemas({
+        'Mixed': {
+          'anyOf': [
+            {'type': 'string', 'enum': ['Strict']},
+            {'type': 'integer'},
+          ],
+        },
+      });
+
+      expect(types.first, isNot(isA<IrEnum>()));
+    });
+  });
 }

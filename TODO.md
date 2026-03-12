@@ -1,6 +1,6 @@
 # Degenerate — OpenAPI → Dart Code Generator TODO
 
-## Current State (2026-03-10)
+## Current State (2026-03-12)
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
@@ -8,6 +8,7 @@
 - **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
 - **Forward-compatible**: enums use `final class` pattern preserving unknown raw values; discriminated unions and untagged unions have `$Unknown` fallback variants
+- **Union types**: `oneOf`/`anyOf` with 2-9 variants emit lightweight `typedef X = OneOfN<A, B, ...>` using runtime generic containers instead of sealed classes; inline primitive-only unions collapse to `Object`
 - **OpenAPI 3.1 support**: nullable `anyOf: [Type, {type: null}]` pattern handled correctly
 - **Parallel formatting**: dart_style formatting runs across all CPU cores via isolates (~2.4x speedup on large specs)
 - **Example app**: working Petstore CLI example hitting the live petstore3 server
@@ -32,6 +33,13 @@
 | DigitalOcean | — | Fails (missing external ref files) |
 
 ---
+
+## Completed (Session 12)
+- [x] **Inline schema naming improvements** — inline schemas use `title` field, parent context, and single-value enum values for naming instead of `InlineObjectN` fallback. Reduced OpenAI `InlineObject` files from 57 to 0.
+- [x] **Primitive-only union collapse** — inline `oneOf`/`anyOf` composed entirely of primitives (string, int, bool, etc.) collapse to `Object` instead of generating unnecessary sealed classes.
+- [x] **`OneOf` runtime generic containers** — 8 sealed classes (`OneOf2`-`OneOf9`) in `degenerate_runtime` with `.from()` construction (runtime type matching), `.parse()` deserialization (typed parsers with `canParse` discriminators), `.toJson()`, `.value` getter, equality, and pattern matching support.
+- [x] **OneOf typedefs in generated code** — eligible `oneOf`/`anyOf` unions (2-9 variants) now emit `typedef X = OneOfN<A, B, ...>` instead of full sealed class hierarchies, significantly reducing generated code volume while preserving type safety.
+- [x] **API deserialization for OneOf types** — `IrTypeRef` references to OneOf-eligible unions are resolved through the type registry, generating `OneOfN.parse(...)` with `canParse` discriminators instead of broken `.fromJson()` calls on typedefs.
 
 ## Completed (Session 11)
 - [x] **Cancel tokens** — `CancelToken` and `CancelledException` in runtime. Every generated method accepts `RequestOptions(cancelToken: token)`. Cancellation is socket-level in both adapters: Dio bridges to `dio.CancelToken`; HTTP uses `AbortableRequest`/`AbortableMultipartRequest`.
@@ -122,6 +130,19 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 12 (2026-03-12) — Inline naming, OneOf generics, union code reduction
+
+- Inline schema naming: priority chain of `title` → single-value enum → parent context + `VariantN` → `InlineObject` fallback
+- `_singleEnumHint()` extracts discriminator-like enum values (e.g., `enum: [thread.run.created]`) for naming
+- Primitive-only inline unions collapse to `Object` (guarded by `isInline` flag to preserve named top-level unions)
+- Created `packages/degenerate_runtime/lib/src/one_of.dart` with `OneOf2`-`OneOf9` sealed generic containers
+- Each OneOf class: `.from()` factory, static `.parse()` with typed `fromA`/`fromB`/`canParseA`/`canParseB`, `.toJson()`, `.value`, equality
+- `emit_utils.dart`: `isOneOfEligible()`, `oneOfTypeReference()`, `buildOneOfParseCode()`, `_buildCanParseExpr()`
+- `file_emitter.dart`: `_emitOneOfTypedef()` emits `typedef X = OneOfN<A, B, ...>` for eligible unions; `_analyzeModel()` tracks `needsOneOf`
+- `api_emitter.dart`: `_resolveOneOfRef()` resolves `IrTypeRef` to OneOf-eligible target via type registry for correct deserialization
+- 11 OneOf runtime tests, 12 inline naming/collapse lowering tests
+- All tests passing, analyzer clean on all directories
 
 ### Session 11 (2026-03-10) — Cancel tokens, per-request options, socket-level cancellation
 

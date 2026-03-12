@@ -48,6 +48,8 @@ class FileEmitter {
     for (final type in types) {
       final parentName = _typeName(type);
       if (parentName == null) continue;
+      // Don't resolve OneOf refs here — indirect references through typedefs
+      // shouldn't prevent inlining. Resolution is done later for imports.
       final analysis = _analyzeModel(type);
       analysis.referencedNames.remove(parentName); // exclude self
       for (final refName in analysis.referencedNames) {
@@ -55,9 +57,11 @@ class FileEmitter {
       }
     }
     // Also count API references — if an API directly uses a type, it stays separate.
+    // Don't resolve OneOf variant types here — variants can still be inlined
+    // into their parent typedef file (the parent file provides the import).
     final apiReferencedTypes = <String>{};
     for (final api in apis) {
-      final analysis = _analyzeApi(api);
+      final analysis = _analyzeApi(api);  // no typeRegistry
       apiReferencedTypes.addAll(analysis.referencedTypes);
     }
 
@@ -100,7 +104,7 @@ class FileEmitter {
       if (specs.isEmpty) continue;
 
       // Single-pass analysis: collect imports and detect special types
-      final modelAnalysis = _analyzeModel(type);
+      final modelAnalysis = _analyzeModel(type, typeRegistry);
       modelAnalysis.referencedNames.remove(name); // Don't import self
       // Remove inlined children from imports (they're in the same file)
       if (children != null) {
@@ -156,7 +160,7 @@ class FileEmitter {
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
-      final analysis = _analyzeApi(api);
+      final analysis = _analyzeApi(api, typeRegistry);
 
       // Derive imports directly from referenced types using pre-built lookup
       final sortedApiRefs =
@@ -283,7 +287,7 @@ class FileEmitter {
   /// Single-pass analysis of an API: collects referenced types, and determines
   /// whether dart:convert and dart:typed_data imports are needed.
   ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})
-  _analyzeApi(IrApi api) {
+  _analyzeApi(IrApi api, [Map<String, IrType>? typeRegistry]) {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
@@ -306,17 +310,20 @@ class FileEmitter {
         final bodyContent = preferredContent(op.requestBody!.content)!;
         if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
         final schema = bodyContent.$2.schema;
+        // Request bodies use .toJson() only — don't resolve OneOf variants.
         _collectTopLevelTypeName(schema, names);
         if (isBytesType(schema)) needsTypedData = true;
       }
       // Collect types from success responses (2xx)
+      // Response deserialization generates parse code that references variant
+      // types directly, so resolve OneOf refs via typeRegistry.
       for (final code in [200, 201, 202, 203, 204]) {
         final resp = op.responses[code];
         if (resp != null) {
           final content = preferredContent(resp.content);
           if (content != null) {
             if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-            _collectTopLevelTypeName(content.$2.schema, names);
+            _collectTopLevelTypeName(content.$2.schema, names, typeRegistry);
             if (isBytesType(content.$2.schema)) needsTypedData = true;
             break;
           }
@@ -326,14 +333,14 @@ class FileEmitter {
       final sseContent = eventStreamContent(op);
       if (sseContent != null) {
         needsConvert = true;
-        _collectTopLevelTypeName(sseContent.$2.schema, names);
+        _collectTopLevelTypeName(sseContent.$2.schema, names, typeRegistry);
       }
       // Collect types from error responses (default and 4xx/5xx)
       if (op.defaultResponse != null) {
         final content = preferredContent(op.defaultResponse!.content);
         if (content != null) {
           if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-          _collectTopLevelTypeName(content.$2.schema, names);
+          _collectTopLevelTypeName(content.$2.schema, names, typeRegistry);
         }
       }
       for (final entry in op.responses.entries) {
@@ -341,7 +348,7 @@ class FileEmitter {
           final content = preferredContent(entry.value.content);
           if (content != null) {
             if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-            _collectTopLevelTypeName(content.$2.schema, names);
+            _collectTopLevelTypeName(content.$2.schema, names, typeRegistry);
           }
         }
       }
@@ -355,7 +362,9 @@ class FileEmitter {
 
   /// Collect only the top-level type name from a type, without recursing
   /// into fields. For lists/maps, collect the item/value types.
-  void _collectTopLevelTypeName(IrType type, Set<String> names) {
+  /// When [typeRegistry] is provided, resolves IrTypeRef to OneOf-eligible
+  /// unions and collects their variant type names (needed for parse code imports).
+  void _collectTopLevelTypeName(IrType type, Set<String> names, [Map<String, IrType>? typeRegistry, Set<String>? resolving]) {
     switch (type) {
       case IrObject(:final name):
         names.add(name);
@@ -363,6 +372,25 @@ class FileEmitter {
         names.add(name);
       case IrTypeRef(:final name):
         names.add(name);
+        // If the ref points to a OneOf-eligible union (typedef), the generated
+        // parse code references the variant types directly — collect them too.
+        // Use resolving set to avoid infinite recursion on circular refs.
+        resolving ??= {};
+        if (typeRegistry != null && resolving.add(name)) {
+          final target = typeRegistry[name];
+          if (target != null) {
+            final variants = switch (target) {
+              IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants,
+              IrAnyOf(:final variants) when isOneOfEligible(variants) => variants,
+              _ => null,
+            };
+            if (variants != null) {
+              for (final v in variants) {
+                _collectTopLevelTypeName(v, names, typeRegistry, resolving);
+              }
+            }
+          }
+        }
       case IrDiscriminatedUnion(:final name):
         names.add(name);
       case IrUntaggedUnion(:final name):
@@ -372,9 +400,9 @@ class FileEmitter {
       case IrExtensionType(:final name):
         names.add(name);
       case IrList(:final items):
-        _collectTopLevelTypeName(items, names);
+        _collectTopLevelTypeName(items, names, typeRegistry, resolving);
       case IrMap(:final values):
-        _collectTopLevelTypeName(values, names);
+        _collectTopLevelTypeName(values, names, typeRegistry, resolving);
       case IrPrimitive():
         break;
     }
@@ -389,7 +417,7 @@ class FileEmitter {
     bool needsConvert,
     bool needsOneOf,
   })
-  _analyzeModel(IrType type) {
+  _analyzeModel(IrType type, [Map<String, IrType>? typeRegistry]) {
     final names = <String>{};
     var needsCollection = false;
     var needsTypedData = false;
@@ -412,7 +440,7 @@ class FileEmitter {
     };
 
     void checkField(IrType fieldType) {
-      _collectTopLevelTypeName(fieldType, names);
+      _collectTopLevelTypeName(fieldType, names, typeRegistry);
       if (isListType(fieldType)) needsCollection = true;
       if (isBytesType(fieldType)) needsTypedData = true;
       if (isOneOfType(fieldType)) needsOneOf = true;
