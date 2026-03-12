@@ -23,11 +23,11 @@
 
 ### Pipeline Stages
 
-1. **Parse** — Read OpenAPI 3.0/3.1 JSON or YAML into an in-memory document model.
-2. **Normalize** — Resolve all `$ref` pointers, flatten `allOf` compositions, detect circular references, canonicalize schema names.
-3. **Lower to IR** — Transform normalized schemas and operations into a typed, Dart-unaware intermediate representation.
-4. **Emit Dart AST** — Walk the IR and construct Dart source via `package:code_builder` specs.
-5. **Format & Write** — Pipe all specs through `package:dart_style` and write to disk.
+1. **Parse**: Read OpenAPI 3.0/3.1 JSON or YAML into an in-memory document model.
+2. **Normalize**: Resolve all `$ref` pointers, flatten `allOf` compositions, detect circular references, canonicalize schema names.
+3. **Lower to IR**: Transform normalized schemas and operations into a typed, Dart-unaware intermediate representation.
+4. **Emit Dart AST**: Walk the IR and construct Dart source via `package:code_builder` specs.
+5. **Format & Write**: Pipe all specs through `package:dart_style` and write to disk.
 
 ### Key Dependencies
 
@@ -45,7 +45,7 @@
 
 ## 2. Intermediate Representation (IR)
 
-The IR is the heart of the system. Every OpenAPI construct maps to exactly one IR node. The IR is fully resolved — no `$ref` strings, no ambiguity.
+The IR is the heart of the system. Every OpenAPI construct maps to exactly one IR node. The IR is fully resolved. No `$ref` strings, no ambiguity.
 
 ```dart
 // ─── Type IR ───────────────────────────────────────────────
@@ -97,7 +97,7 @@ final class IrField {
   const IrField(this.name, this.originalName, this.type, {this.isRequired = false, this.defaultValue, this.description});
 }
 
-/// oneOf with discriminator — generates sealed class hierarchy.
+/// oneOf with discriminator - generates sealed class hierarchy.
 final class IrDiscriminatedUnion extends IrType {
   final String name;
   final String discriminatorProperty;
@@ -105,14 +105,14 @@ final class IrDiscriminatedUnion extends IrType {
   const IrDiscriminatedUnion(this.name, this.discriminatorProperty, this.mapping, {super.description, super.isNullable});
 }
 
-/// oneOf without discriminator — generates sealed class with runtime matching.
+/// oneOf without discriminator - generates sealed class with runtime matching.
 final class IrUntaggedUnion extends IrType {
   final String name;
   final List<IrType> variants;
   const IrUntaggedUnion(this.name, this.variants, {super.description, super.isNullable});
 }
 
-/// anyOf — generates a composite that can be multiple types simultaneously.
+/// anyOf - generates a composite that can be multiple types simultaneously.
 final class IrAnyOf extends IrType {
   final String name;
   final List<IrType> variants;
@@ -213,7 +213,7 @@ allOf:
       extra: { type: string }
 ```
 
-**Strategy:** Merge all schemas into a single `IrObject`. Fields from later schemas override earlier ones. Required lists are unioned. This is pure composition — Dart doesn't need inheritance here.
+**Strategy:** Merge all schemas into a single `IrObject`. Fields from later schemas override earlier ones. Required lists are unioned. This is pure composition. Dart doesn't need inheritance here.
 
 If `allOf` contains a `discriminator`, promote to `IrDiscriminatedUnion` instead.
 
@@ -245,7 +245,7 @@ Rules:
 
 ---
 
-## 4. Union Type Strategies — The Hard Part
+## 4. Union Type Strategies: The Hard Part
 
 This is where existing Dart generators fall apart. We use Dart 3's sealed classes, exhaustive pattern matching, and extension types to produce genuinely idiomatic output.
 
@@ -411,7 +411,7 @@ final class ShapeTriangle extends Shape {
 }
 ```
 
-**Consumer usage — exhaustive switch:**
+**Consumer usage: exhaustive switch:**
 ```dart
 double area(Shape shape) => switch (shape) {
   ShapeCircle(:final radius)          => 3.14159 * radius * radius,
@@ -541,7 +541,7 @@ void handle(PetOrError result) => switch (result) {
 };
 ```
 
-### 4.3 `anyOf` — Composite Types
+### 4.3 `anyOf`: Composite Types
 
 Unlike `oneOf` (exactly one), `anyOf` means "could match one or more simultaneously."
 
@@ -804,7 +804,7 @@ switch (result) {
 
 ---
 
-## 6. Result Types — No Raw Exceptions
+## 6. Result Types: No Raw Exceptions
 
 Every operation returns a typed result. No `try/catch` required at call sites:
 
@@ -866,7 +866,7 @@ Each OpenAPI tag becomes an API class. Each operation becomes a method.
 ```dart
 /// Pets API operations.
 ///
-/// All operations return [ApiResult] — use pattern matching to handle
+/// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
 final class PetsApi {
   final ApiConfig _config;
@@ -1005,7 +1005,7 @@ final class PetsApi {
 Required + not-nullable  →  T       (no default, must be provided)
 Required + nullable      →  T?      (must be in JSON, but value can be null)
 Optional + not-nullable  →  T?      (may be absent from JSON)
-Optional + nullable      →  T?      (absent or null — same semantics)
+Optional + nullable      →  T?      (absent or null, same semantics)
 ```
 
 For serialization, optional fields that are `null` are **omitted** from JSON by default. A config flag `includeNullFields` can include them explicitly.
@@ -1034,7 +1034,7 @@ final class Pet {
     this.category,
   });
 
-  /// Structural parsing with exact types — no dynamic casts leaking out.
+  /// Structural parsing with exact types - no dynamic casts leaking out.
   factory Pet.fromJson(Map<String, dynamic> json) => Pet(
     id: (json['id'] as num).toInt(),
     name: json['name'] as String,
@@ -1100,11 +1100,11 @@ final class Pet {
 
 ### Key design decisions:
 
-- **`final class`**: Cannot be extended or implemented — prevents accidental misuse.
+- **`final class`**: Cannot be extended or implemented. Prevents accidental misuse.
 - **`const` constructor**: Enables compile-time constant creation where possible.
 - **`copyWith` with thunk for nullable fields**: `tag: () => null` sets to null; `tag: null` (default) means "keep current value." This is the cleanest Dart pattern for distinguishing "set null" from "unset."
 - **`canParse` static method**: Used by untagged unions to probe whether a JSON object matches this type structurally (checks for required fields unique to the type).
-- **Null-aware map elements (`?if`)**: Dart 3.8 feature — optional fields are cleanly omitted from serialized JSON without `if` statement blocks.
+- **Null-aware map elements (`?if`)**: Dart 3.8 feature. Optional fields are cleanly omitted from serialized JSON without `if` statement blocks.
 - **`ListEquality` for deep equality on collections**: From `package:collection`, used only where needed.
 - **No runtime reflection**: Zero use of `dart:mirrors`. Everything is statically known.
 
@@ -1150,11 +1150,11 @@ extension type const Port(int value) {
 }
 ```
 
-These compile to the underlying primitive at runtime (zero overhead), but provide compile-time type safety — you can't accidentally pass a `UserId` where a `Currency` is expected.
+These compile to the underlying primitive at runtime (zero overhead), but provide compile-time type safety. You can't accidentally pass a `UserId` where a `Currency` is expected.
 
 ---
 
-## 11. Code Emitter — `code_builder` Patterns
+## 11. Code Emitter: `code_builder` Patterns
 
 The emitter translates IR nodes into `code_builder` `Spec` objects. This is where AST construction replaces string templating.
 
@@ -1329,7 +1329,7 @@ dependencies:
 ## 13. CLI Interface
 
 ```
-dartgen — Generate a Dart client from an OpenAPI specification.
+dartgen: Generate a Dart client from an OpenAPI specification.
 
 Usage:
   dartgen generate [options]
@@ -1359,7 +1359,7 @@ The emitter produces **deterministic, diff-friendly output**:
 3. **No timestamps or random IDs** in generated code.
 4. **Header comment:**
    ```dart
-   // GENERATED CODE — DO NOT MODIFY BY HAND
+   // GENERATED CODE - DO NOT MODIFY BY HAND
    //
    // Generated by dartgen from petstore.yaml
    // OpenAPI spec version: 3.0.3
@@ -1373,7 +1373,7 @@ This ensures that re-running the generator on the same spec produces byte-identi
 
 The generator follows a **parse, don't validate** approach:
 
-- **At generation time:** Invalid specs produce clear error messages with JSON Pointer paths to the problematic node. The generator fails fast — no partial output.
+- **At generation time:** Invalid specs produce clear error messages with JSON Pointer paths to the problematic node. The generator fails fast. No partial output.
 - **At runtime (generated code):** Deserialization uses exact casts (`as String`, `as num`), never `dynamic`. Malformed JSON throws `FormatException` with the offending value. Union types throw `FormatException` listing which variants were attempted and why each failed.
 - **No silent coercion:** `"123"` does not become `int 123`. `null` does not become `""`. Types mean what they say.
 
@@ -1391,33 +1391,33 @@ The generator follows a **parse, don't validate** approach:
 
 ---
 
-## 17. Test Suite — Real-World OpenAPI Specs
+## 17. Test Suite: Real-World OpenAPI Specs
 
 The following 10 public OpenAPI specs serve as the conformance test suite for dartgen. They are chosen to cover a wide range of complexity: from tiny specs to massive enterprise APIs, from clean designs to specs full of `oneOf`/`anyOf` abuse, vendor extensions, and circular references. A spec that can't survive Stripe's `anyOf` nesting or GitHub's webhook payloads isn't production-ready.
 
 | # | Service | OAS Version | Why It's a Good Test | Spec Link |
 |---|---------|-------------|---------------------|-----------|
-| 1 | **Stripe** | 3.0 | The ultimate stress test. ~800 schemas, heavy use of `anyOf` for polymorphic "expandable" fields, vendor extensions (`x-expandableFields`, `x-resourceId`, `x-polymorphicResources`), deeply nested objects. If your generator handles Stripe, it handles anything. | [github.com/stripe/openapi](https://github.com/stripe/openapi) — `openapi/spec3.yaml` |
-| 2 | **GitHub REST API** | 3.0 + 3.1 | Massive API surface (~900 operations), heavy use of `oneOf` in webhook payloads, multi-segment path params, `nullable` fields everywhere, multiple response content types. Ships both 3.0 and 3.1 versions. | [github.com/github/rest-api-description](https://github.com/github/rest-api-description) — `descriptions-next/` (3.1) |
-| 3 | **OpenAI** | 3.0 | Complex `oneOf` discriminated unions for chat completion message roles, streaming vs. non-streaming responses, function calling schemas-within-schemas. Actively maintained by Stainless. | [github.com/openai/openai-openapi](https://github.com/openai/openai-openapi) — `openapi.yaml` |
+| 1 | **Stripe** | 3.0 | The ultimate stress test. ~800 schemas, heavy use of `anyOf` for polymorphic "expandable" fields, vendor extensions (`x-expandableFields`, `x-resourceId`, `x-polymorphicResources`), deeply nested objects. If your generator handles Stripe, it handles anything. | [github.com/stripe/openapi](https://github.com/stripe/openapi), `openapi/spec3.yaml` |
+| 2 | **GitHub REST API** | 3.0 + 3.1 | Massive API surface (~900 operations), heavy use of `oneOf` in webhook payloads, multi-segment path params, `nullable` fields everywhere, multiple response content types. Ships both 3.0 and 3.1 versions. | [github.com/github/rest-api-description](https://github.com/github/rest-api-description), `descriptions-next/` (3.1) |
+| 3 | **OpenAI** | 3.0 | Complex `oneOf` discriminated unions for chat completion message roles, streaming vs. non-streaming responses, function calling schemas-within-schemas. Actively maintained by Stainless. | [github.com/openai/openai-openapi](https://github.com/openai/openai-openapi), `openapi.yaml` |
 | 4 | **Cloudflare** | 3.0 | Huge API surface (~600 endpoints across dozens of products), inconsistent patterns across teams, some OAS compliance issues worth testing error tolerance against. | [github.com/cloudflare/api-schemas](https://github.com/cloudflare/api-schemas) |
-| 5 | **Twilio** | 3.0 | Split across many per-product spec files (Messaging, Voice, Video, etc.), good test for multi-file spec merging. Mature and well-structured. | [github.com/twilio/twilio-oai](https://github.com/twilio/twilio-oai) — `spec/json/` and `spec/yaml/` |
-| 6 | **DigitalOcean** | 3.0 | Clean, well-organized spec with good use of `$ref` components. Good mid-complexity benchmark — large enough to be real (~300 endpoints) but not pathological. | [github.com/digitalocean/openapi](https://github.com/digitalocean/openapi) — `specification/DigitalOcean-public.v2.yaml` |
-| 7 | **Shopify Admin API** | 3.0 | E-commerce domain with deeply nested product/variant/inventory models, pagination via Link headers, heavy use of enums and optional fields. | [shopify.dev/docs/api/admin-rest](https://shopify.dev/docs/api/admin-rest) — spec available via Shopify's API docs |
-| 8 | **Petstore (Official OAI Example)** | 3.0 + 3.1 | The canonical "hello world" of OpenAPI. Tiny (~3 endpoints), but useful as a smoke test and baseline. Both 3.0 and 3.1 versions are maintained by the OpenAPI Initiative. | [github.com/OAI/OpenAPI-Specification](https://github.com/OAI/OpenAPI-Specification/tree/main/examples) — `examples/v3.0/petstore.yaml` and `examples/v3.1/` |
-| 9 | **Supabase** | 3.0 | Auto-generated from PostgREST, produces specs with `additionalProperties`, deeply nested filter query params, and dynamic table-based paths. Good test for `Map<String, dynamic>` handling. | Generated per-project at `https://<project-ref>.supabase.co/rest/v1/?apikey=<key>` — or see the [PostgREST OpenAPI output](https://postgrest.org/en/stable/references/api/openapi.html) |
-| 10 | **Kubernetes** | 3.0 | One of the largest public OpenAPI specs in existence (~800+ schemas, ~1400 operations). Circular `$ref` chains, `intOrString` custom types, deeply nested status/spec/metadata patterns. The ultimate scale and circularity test. | [github.com/kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/tree/master/api/openapi-spec) — `api/openapi-spec/v3/` |
+| 5 | **Twilio** | 3.0 | Split across many per-product spec files (Messaging, Voice, Video, etc.), good test for multi-file spec merging. Mature and well-structured. | [github.com/twilio/twilio-oai](https://github.com/twilio/twilio-oai), `spec/json/` and `spec/yaml/` |
+| 6 | **DigitalOcean** | 3.0 | Clean, well-organized spec with good use of `$ref` components. Good mid-complexity benchmark, large enough to be real (~300 endpoints) but not pathological. | [github.com/digitalocean/openapi](https://github.com/digitalocean/openapi), `specification/DigitalOcean-public.v2.yaml` |
+| 7 | **Shopify Admin API** | 3.0 | E-commerce domain with deeply nested product/variant/inventory models, pagination via Link headers, heavy use of enums and optional fields. | [shopify.dev/docs/api/admin-rest](https://shopify.dev/docs/api/admin-rest), spec available via Shopify's API docs |
+| 8 | **Petstore (Official OAI Example)** | 3.0 + 3.1 | The canonical "hello world" of OpenAPI. Tiny (~3 endpoints), but useful as a smoke test and baseline. Both 3.0 and 3.1 versions are maintained by the OpenAPI Initiative. | [github.com/OAI/OpenAPI-Specification](https://github.com/OAI/OpenAPI-Specification/tree/main/examples), `examples/v3.0/petstore.yaml` and `examples/v3.1/` |
+| 9 | **Supabase** | 3.0 | Auto-generated from PostgREST, produces specs with `additionalProperties`, deeply nested filter query params, and dynamic table-based paths. Good test for `Map<String, dynamic>` handling. | Generated per-project at `https://<project-ref>.supabase.co/rest/v1/?apikey=<key>`, or see the [PostgREST OpenAPI output](https://postgrest.org/en/stable/references/api/openapi.html) |
+| 10 | **Kubernetes** | 3.0 | One of the largest public OpenAPI specs in existence (~800+ schemas, ~1400 operations). Circular `$ref` chains, `intOrString` custom types, deeply nested status/spec/metadata patterns. The ultimate scale and circularity test. | [github.com/kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/tree/master/api/openapi-spec), `api/openapi-spec/v3/` |
 
 ### Recommended Test Progression
 
 ```
-Level 0 — Smoke test:        Petstore (3 endpoints, trivial types)
-Level 1 — Basic models:      DigitalOcean (clean refs, enums, pagination)
-Level 2 — Union types:       OpenAI (discriminated oneOf, nested schemas)
-Level 3 — Multi-file:        Twilio (per-product spec splitting)
-Level 4 — Vendor extensions: Stripe (anyOf abuse, x-expandableFields)
-Level 5 — Scale:             GitHub (900 ops, webhook oneOf unions)
-Level 6 — Pathological:      Kubernetes (circular refs, intOrString, 800+ schemas)
+Level 0 - Smoke test:        Petstore (3 endpoints, trivial types)
+Level 1 - Basic models:      DigitalOcean (clean refs, enums, pagination)
+Level 2 - Union types:       OpenAI (discriminated oneOf, nested schemas)
+Level 3 - Multi-file:        Twilio (per-product spec splitting)
+Level 4 - Vendor extensions: Stripe (anyOf abuse, x-expandableFields)
+Level 5 - Scale:             GitHub (900 ops, webhook oneOf unions)
+Level 6 - Pathological:      Kubernetes (circular refs, intOrString, 800+ schemas)
 ```
 
 Run all 10 on every CI build. The test is simple: **does the generated code compile with zero analyzer errors?** If `dart analyze` passes on the generated output for all 10 specs, the generator is production-grade.

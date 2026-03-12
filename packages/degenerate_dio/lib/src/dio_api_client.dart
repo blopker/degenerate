@@ -7,7 +7,7 @@ import 'package:dio/dio.dart' as dio;
 /// [ApiClient] implementation backed by `package:dio`.
 ///
 /// Configure default headers, interceptors, and cancellation through
-/// [ApiConfig] rather than on the [Dio] instance — the generated client
+/// [ApiConfig] rather than on the [Dio] instance - the generated client
 /// manages these concerns. Use the [Dio] instance for low-level settings
 /// like proxy configuration or custom [HttpClientAdapter]s.
 ///
@@ -15,7 +15,7 @@ import 'package:dio/dio.dart' as dio;
 /// entire request. For more granular control (separate connect, send, and
 /// receive timeouts), leave [ApiConfig.timeout] null and configure
 /// [Dio.options.connectTimeout], [Dio.options.sendTimeout], and
-/// [Dio.options.receiveTimeout] directly — they will surface as
+/// [Dio.options.receiveTimeout] directly - they will surface as
 /// [TimeoutException] in [ApiException].
 final class DioApiClient implements ApiClient {
   final dio.Dio _inner;

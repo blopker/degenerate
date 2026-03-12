@@ -393,10 +393,10 @@ String escapeDocComment(String line) {
   final buf = StringBuffer();
   for (var i = 0; i < parts.length; i++) {
     if (i.isOdd) {
-      // Inside backticks — pass through unchanged.
+      // Inside backticks - pass through unchanged.
       buf.write('`${parts[i]}`');
     } else {
-      // Outside backticks — escape bare <word> tags.
+      // Outside backticks - escape bare <word> tags.
       buf.write(
         parts[i].replaceAllMapped(RegExp(r'<(\w+)>'), (m) => '`<${m[1]}>`'),
       );
@@ -436,7 +436,7 @@ String toSnakeCase(String input) {
   if (RegExp(r'^[0-9]').hasMatch(result)) {
     result = 'n$result';
   }
-  // Avoid _test suffix — dart test would pick up these files as test files.
+  // Avoid _test suffix - dart test would pick up these files as test files.
   if (result.endsWith('_test')) {
     result = '${result}_';
   }

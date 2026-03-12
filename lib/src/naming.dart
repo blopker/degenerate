@@ -219,7 +219,7 @@ List<String> _stripPrefixes(List<String> words) {
   if (words.isEmpty) return words;
 
   // Find the last meaningful segment(s) by removing leading version/api words
-  // Also check from the end — for patterns like PetStore_api_v2_Pet,
+  // Also check from the end - for patterns like PetStore_api_v2_Pet,
   // we want to find the last contiguous non-prefix segment(s)
   // Strategy: walk from end, skip version/api segments in the middle
   final meaningful = <String>[];

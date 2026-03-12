@@ -278,7 +278,7 @@ class Generator {
 
     // 8. Write to disk (unless dry run)
     if (config.dryRun) {
-      _log('Dry run — skipping file writes.');
+      _log('Dry run - skipping file writes.');
       for (final filePath in files.keys.toList()..sort()) {
         _log('  Would write: ${p.join(config.outputDir, filePath)}');
       }

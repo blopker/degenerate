@@ -6,7 +6,7 @@ import 'api_client.dart';
 /// A streaming API response where the body is delivered as a byte stream.
 ///
 /// Used for Server-Sent Events (SSE) and other streaming response formats.
-/// The [byteStream] is single-subscription — consuming it drains the
+/// The [byteStream] is single-subscription - consuming it drains the
 /// underlying HTTP connection.
 final class StreamedApiResponse {
   final int statusCode;

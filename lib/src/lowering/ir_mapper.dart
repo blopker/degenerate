@@ -315,7 +315,7 @@ class IrMapper {
         (v) => v is Map<String, dynamic> && v['type'] == 'null',
       );
       if (hasNullVariant && nonNullVariants.length == 1) {
-        // This is just a nullable wrapper — lower the single real type.
+        // This is just a nullable wrapper - lower the single real type.
         final inner = nonNullVariants[0] as Map<String, dynamic>;
         final result = _lowerSchemaImpl(name, inner, isInline: isInline);
         return result.copyAsNullable();
@@ -378,7 +378,7 @@ class IrMapper {
       return _lowerPrimitive(type, flattened);
     }
 
-    // Fallback: no explicit type — treat as Object?.
+    // Fallback: no explicit type - treat as Object?.
     return IrPrimitive(
       PrimitiveKind.object,
       description: description,
@@ -543,10 +543,10 @@ class IrMapper {
       if (fieldSchemaType == 'string' && fieldSchema.containsKey('enum')) {
         if (discriminatorProperty != null &&
             fieldOriginalName == discriminatorProperty) {
-          // This is a discriminator field — emit as plain String.
+          // This is a discriminator field - emit as plain String.
           // Override the schema to remove the enum so it lowers as a primitive.
         } else {
-          // Non-discriminator inline enum — generate a named enum.
+          // Non-discriminator inline enum - generate a named enum.
           inlineEnumName = '$objectName${toPascalCase(fieldOriginalName)}';
         }
       }
@@ -724,7 +724,7 @@ class IrMapper {
       }
     }
 
-    // Collapse inline primitive-only unions to Object — generating sealed
+    // Collapse inline primitive-only unions to Object - generating sealed
     // wrapper types for oneOf: [string, number, bool] adds ceremony without
     // value. Named schemas (name was passed in) are kept as unions since the
     // spec author intentionally defined them.

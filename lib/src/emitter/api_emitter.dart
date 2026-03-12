@@ -104,7 +104,7 @@ class ApiEmitter {
     return [
       '/// ${api.name} operations.',
       '///',
-      '/// All operations return [ApiResult] — use pattern matching to handle',
+      '/// All operations return [ApiResult] - use pattern matching to handle',
       '/// success, error, and exception cases.',
     ];
   }
@@ -130,7 +130,7 @@ class ApiEmitter {
       }
     }
 
-    // Path parameters (always required, never nullable — they're part of the URL)
+    // Path parameters (always required, never nullable - they're part of the URL)
     for (final p in pathParams) {
       params.add(
         Parameter(
@@ -181,7 +181,7 @@ class ApiEmitter {
       );
     }
 
-    // Request body (skip for GET/HEAD — bodies are not standard for these methods)
+    // Request body (skip for GET/HEAD - bodies are not standard for these methods)
     final isBodyAllowed =
         op.method != HttpMethod.get && op.method != HttpMethod.head;
     final requestBodyContent = op.requestBody != null && isBodyAllowed

@@ -89,7 +89,7 @@ ArgParser buildParser() {
 
 void printUsage(ArgParser argParser) {
   stderr.writeln(
-      'degenerate — Generate a Dart client from an OpenAPI specification.');
+      'degenerate -Generate a Dart client from an OpenAPI specification.');
   stderr.writeln();
   stderr.writeln('Usage:');
   stderr.writeln('  degenerate [options]');

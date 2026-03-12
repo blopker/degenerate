@@ -471,7 +471,7 @@ void main() {
 
     test('root SDK facade field names drop redundant Api suffix', () {
       final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
-      // "petsApi" is redundant — should just be "pets"
+      // "petsApi" is redundant - should just be "pets"
       expect(sdkFile, contains('late final PetsApi pets = '));
     });
 
@@ -1890,9 +1890,9 @@ void main() {
     });
 
     test('emits extension type files', () {
-      // UserId is referenced by both API and User — stays separate
+      // UserId is referenced by both API and User - stays separate
       expect(files.keys, contains('lib/src/models/user_id.dart'));
-      // Timestamp, Score are only referenced by User — inlined into user.dart
+      // Timestamp, Score are only referenced by User - inlined into user.dart
       expect(files.keys, isNot(contains('lib/src/models/timestamp.dart')));
       expect(files.keys, isNot(contains('lib/src/models/score.dart')));
       // They should appear inside user.dart instead

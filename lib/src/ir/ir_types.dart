@@ -1,7 +1,7 @@
 // Intermediate Representation types for the dartgen pipeline.
 //
 // Every OpenAPI construct maps to exactly one IR node. The IR is fully
-// resolved — no $ref strings, no ambiguity.
+// resolved - no $ref strings, no ambiguity.
 
 // ─── Type IR ───────────────────────────────────────────────
 
@@ -117,7 +117,7 @@ final class IrField {
   });
 }
 
-/// oneOf with discriminator — generates sealed class hierarchy.
+/// oneOf with discriminator - generates sealed class hierarchy.
 final class IrDiscriminatedUnion extends IrType {
   final String name;
   final String discriminatorProperty;
@@ -136,7 +136,7 @@ final class IrDiscriminatedUnion extends IrType {
       : IrDiscriminatedUnion(name, discriminatorProperty, mapping, description: description, isNullable: true);
 }
 
-/// oneOf without discriminator — generates sealed class with runtime matching.
+/// oneOf without discriminator - generates sealed class with runtime matching.
 final class IrUntaggedUnion extends IrType {
   final String name;
   final List<IrType> variants;
@@ -153,7 +153,7 @@ final class IrUntaggedUnion extends IrType {
       : IrUntaggedUnion(name, variants, description: description, isNullable: true);
 }
 
-/// anyOf — generates a composite that can be multiple types simultaneously.
+/// anyOf - generates a composite that can be multiple types simultaneously.
 final class IrAnyOf extends IrType {
   final String name;
   final List<IrType> variants;

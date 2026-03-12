@@ -150,16 +150,16 @@ class TypeRefResolver {
     for (var depth = 0; depth < 20; depth++) {
       if (current is! IrTypeRef) break;
       final resolved = _typeRegistry[current.name];
-      if (resolved == null) return current; // unknown ref — keep as-is
+      if (resolved == null) return current; // unknown ref - keep as-is
       // Emittable named types (object, unions) get their own class, so
       // IrTypeRef is correct for them.
       if (resolved is IrObject ||
           resolved is IrDiscriminatedUnion ||
           resolved is IrUntaggedUnion ||
           resolved is IrAnyOf) {
-        return current; // keep the ref — these get their own emitted files
+        return current; // keep the ref - these get their own emitted files
       }
-      // Extension types are emittable but resolve like enums — the
+      // Extension types are emittable but resolve like enums - the
       // IrExtensionType node itself carries the fromJson/toJson semantics.
       if (resolved is IrExtensionType) {
         if (nullable && !resolved.isNullable) {

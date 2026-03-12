@@ -352,7 +352,7 @@ class OperationLowerer {
         nameHint: bodyNameHint,
       );
       // encoding is a map of property names to encoding objects, not a string.
-      // Ignore it for now — it's only relevant for multipart form serialization.
+      // Ignore it for now - it's only relevant for multipart form serialization.
       irContent[mediaType] = IrMediaType(irSchema);
     }
 

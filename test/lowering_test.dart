@@ -937,7 +937,7 @@ void main() {
       expect(types, hasLength(2)); // Pet + PetStatus enum
       final pet = types.whereType<IrObject>().first;
       expect(pet.name, equals('Pet'));
-      expect(pet.fields, hasLength(2)); // name, status — no x- fields
+      expect(pet.fields, hasLength(2)); // name, status - no x- fields
       expect(pet.fields.map((f) => f.name), containsAll(['name', 'status']));
     });
 

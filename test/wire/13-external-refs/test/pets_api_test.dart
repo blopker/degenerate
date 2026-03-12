@@ -125,7 +125,7 @@ void main() {
         statusCode: 200,
         body: jsonEncode({
           'id': 1,
-          // name is required but missing — server spec violation
+          // name is required but missing - server spec violation
           'photoUrls': [],
         }),
       );

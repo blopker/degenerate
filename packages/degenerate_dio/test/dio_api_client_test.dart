@@ -40,7 +40,7 @@ void main() {
       inner.interceptors.add(
         dio.InterceptorsWrapper(
           onRequest: (options, handler) {
-            // Simulate a slow request — cancel fires before response
+            // Simulate a slow request - cancel fires before response
             token.cancel();
             handler.resolve(
               dio.Response<List<int>>(

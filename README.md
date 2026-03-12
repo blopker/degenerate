@@ -10,8 +10,8 @@
     <a href="#tested-specs">Tested Specs</a>
   </p>
   <p>
-    Generates type-safe Dart clients from OpenAPI specs with full <code>dart analyze</code> compliance,<br>
-    forward-compatible enums and unions, and an OkHttp-style middleware chain.
+    A Dart OpenAPI client generator that actually works on real-world specs. Zero analysis issues<br>
+    on Stripe, GitHub, Kubernetes, and 9 others, with no manual fixups. Production-ready batteries included.
   </p>
 </div>
 
@@ -19,17 +19,17 @@
 
 ## Features
 
-- **Strives for full OpenAPI 3.0 and 3.1 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution — [file a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
-- **Forward-compatible** — unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
-- **Lightweight unions** — `oneOf`/`anyOf` schemas emit `typedef` aliases over generic `OneOf` containers with pattern matching support, avoiding heavy sealed class hierarchies
-- **Zero analysis issues** — generated code passes default `dart analyze` with no errors, warnings, or hints
-- **Fast** — generates ~12,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
-- **Tag & path filtering** — generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
-- **Multi-format request/response** — JSON, text, binary, multipart/form-data, and form-urlencoded bodies with media-type-aware serialization
-- **Pluggable HTTP** — bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
-- **Cancel tokens & per-request options** — cancel in-flight requests at the socket level, override timeout/headers per call
-- **OkHttp-style middleware** — single `intercept(request, next)` pattern with built-in retry, auth, and logging interceptors
-- **Modular output** — one file per model, small types inlined into their parent, barrel file for convenient imports
+- **Strives for full OpenAPI 3.0 and 3.1 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution. [File a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
+- **Forward-compatible**: unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
+- **Lightweight unions**: `oneOf`/`anyOf` schemas emit `typedef` aliases over generic `OneOf` containers with pattern matching support, avoiding heavy sealed class hierarchies
+- **Zero analysis issues**: generated code passes default `dart analyze` with no errors, warnings, or hints
+- **Fast**: generates ~12,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
+- **Tag & path filtering**: generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
+- **Multi-format request/response**: JSON, text, binary, multipart/form-data, and form-urlencoded bodies with media-type-aware serialization
+- **Pluggable HTTP**: bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
+- **Cancel tokens & per-request options**: cancel in-flight requests at the socket level, override timeout/headers per call
+- **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in retry, auth, and logging interceptors
+- **Modular output**: one file per model, small types inlined into their parent, barrel file for convenient imports
 
 ## Quick Start
 
@@ -244,7 +244,7 @@ extension type const UserId(String value) {
 }
 ```
 
-This provides compile-time type safety without runtime overhead — you can't accidentally pass a `String` where a `UserId` is expected. Types with formats like `date-time`, `uri`, and `int32` automatically parse/serialize:
+This provides compile-time type safety without runtime overhead. You can't accidentally pass a `String` where a `UserId` is expected. Types with formats like `date-time`, `uri`, and `int32` automatically parse/serialize:
 
 ```dart
 extension type Timestamp(DateTime value) {
@@ -324,7 +324,7 @@ abstract interface class Interceptor {
 
 ### Built-in Interceptors
 
-**RetryInterceptor** — exponential backoff on 429 and 5xx:
+**RetryInterceptor**: exponential backoff on 429 and 5xx:
 
 ```dart
 RetryInterceptor(
@@ -334,7 +334,7 @@ RetryInterceptor(
 )
 ```
 
-**AuthInterceptor** — adds auth headers with optional token refresh on 401:
+**AuthInterceptor**: adds auth headers with optional token refresh on 401:
 
 ```dart
 AuthInterceptor(
@@ -347,7 +347,7 @@ AuthInterceptor(
 )
 ```
 
-**LoggingInterceptor** — logs requests and responses:
+**LoggingInterceptor**: logs requests and responses:
 
 ```dart
 LoggingInterceptor()  // prints to stdout by default
@@ -368,7 +368,7 @@ class TimingInterceptor implements Interceptor {
 }
 ```
 
-Interceptors execute in order — the first interceptor in the list is the outermost wrapper:
+Interceptors execute in order. The first interceptor in the list is the outermost wrapper:
 
 ```dart
 ApiConfig(
@@ -406,7 +406,7 @@ final result = await sdk.pet.listPets(
 );
 ```
 
-Cancel tokens work at the socket level — both adapters abort the underlying connection rather than just abandoning the future. A cancelled request surfaces as `ApiException(CancelledException())`. A timed-out request surfaces as `ApiException(TimeoutException(...))`.
+Cancel tokens work at the socket level. Both adapters abort the underlying connection rather than just abandoning the future. A cancelled request surfaces as `ApiException(CancelledException())`. A timed-out request surfaces as `ApiException(TimeoutException(...))`.
 
 ## Tested Specs
 

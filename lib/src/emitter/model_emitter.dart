@@ -374,7 +374,7 @@ class ModelEmitter {
   Code? _defaultCode(IrField f) {
     if (f.defaultValue == null) return null;
     final v = f.defaultValue;
-    // Don't use empty map/object defaults for object-typed fields —
+    // Don't use empty map/object defaults for object-typed fields -
     // they don't make sense as Dart defaults (const {} is Map, not the object).
     if (v is Map && v.isEmpty && _isObjectLikeType(f.type)) return null;
     // For enum-typed fields, emit the enum constant instead of a raw string.

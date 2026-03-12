@@ -625,7 +625,7 @@ class UntaggedUnionEmitter {
       if (variant is IrObject || variant is IrTypeRef) {
         final refName = typeName;
         if (_isUnionType(variant)) {
-          // Union types don't have canParse — just try fromJson.
+          // Union types don't have canParse - just try fromJson.
           // Their own fromJson handles unknown values, so this is unconditional.
           checks.add('  return $className($refName.fromJson(json));');
           hasUnconditionalReturn = true;
@@ -841,7 +841,7 @@ class AnyOfEmitter {
   }
 
   List<Spec> emit() {
-    // Deduplicate variants by type name — anyOf specs can list the same type
+    // Deduplicate variants by type name - anyOf specs can list the same type
     // multiple times (e.g., 29 String variants). Only keep the first of each.
     final seenTypeNames = <String>{};
     final seenFieldNames = <String>{};
@@ -940,15 +940,15 @@ class AnyOfEmitter {
 
     final args = fields
         .map((f) {
-          // Primitive types don't have canParse/fromJson — handle them inline.
+          // Primitive types don't have canParse/fromJson - handle them inline.
           if (f.type is IrPrimitive) {
             return '  ${f.name}: ${_primitiveAnyOfExpr(f.type as IrPrimitive, 'json')},';
           }
-          // Enums don't have canParse — they deserialize from a string value.
+          // Enums don't have canParse - they deserialize from a string value.
           if (f.type is IrEnum) {
             return '  ${f.name}: json is String ? ${f.typeName}.fromJson(json) : null,';
           }
-          // Extension types wrap a primitive — deserialize like primitives.
+          // Extension types wrap a primitive - deserialize like primitives.
           if (f.type is IrExtensionType) {
             final ext = f.type as IrExtensionType;
             final jsonType = _extensionTypeJsonType(ext.inner);
@@ -958,7 +958,7 @@ class AnyOfEmitter {
           if (f.type is IrList || f.type is IrMap) {
             return '  // ${f.name}: skipped (collection type in anyOf not supported)';
           }
-          // Union/AnyOf types don't have canParse — just try fromJson.
+          // Union/AnyOf types don't have canParse - just try fromJson.
           // If the data doesn't match, it'll parse as the $Unknown variant.
           if (_isUnionType(f.type)) {
             if (allObjectLike) {
@@ -1018,14 +1018,14 @@ class AnyOfEmitter {
   ) {
     final spreads = fields
         .map((f) {
-          // Primitives and enums can't be spread into a Map — include as named entries.
+          // Primitives and enums can't be spread into a Map - include as named entries.
           if (f.type is IrPrimitive) {
             return "  '${f.name}': ?${f.name},";
           }
           if (f.type is IrEnum) {
             return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
           }
-          // Extension types wrap a primitive — toJson returns a primitive, not a Map.
+          // Extension types wrap a primitive - toJson returns a primitive, not a Map.
           if (f.type is IrExtensionType) {
             return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
           }

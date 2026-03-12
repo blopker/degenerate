@@ -53,7 +53,7 @@ Stream<SseEvent> parseSseStream(
       continue;
     }
 
-    // Lines starting with ':' are comments — ignore.
+    // Lines starting with ':' are comments - ignore.
     if (line.startsWith(':')) continue;
 
     final colonIndex = line.indexOf(':');
