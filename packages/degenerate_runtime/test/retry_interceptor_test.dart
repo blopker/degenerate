@@ -202,13 +202,14 @@ void main() {
       expect(delays, [const Duration(milliseconds: 150)]);
     });
 
-    test('parses date Retry-After header', () async {
+    test('ignores non-integer Retry-After header and falls back to backoff',
+        () async {
       final delays = <Duration>[];
       var attempts = 0;
       final interceptor = RetryInterceptor(
         maxRetries: 1,
         initialDelay: const Duration(milliseconds: 100),
-        clock: () => DateTime.utc(2026, 3, 10, 12, 0, 0),
+        jitterRatio: 0,
         sleep: (delay) async => delays.add(delay),
       );
 
@@ -230,7 +231,8 @@ void main() {
 
       final response = await chain(ApiRequest(method: 'GET', path: '/test'));
       expect(response.statusCode, 200);
-      expect(delays, [const Duration(seconds: 3)]);
+      // Falls back to exponential backoff (100ms for first retry)
+      expect(delays, [const Duration(milliseconds: 100)]);
     });
 
     test('does not retry non-idempotent POST by default', () async {

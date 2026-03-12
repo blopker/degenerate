@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:math';
 
 import '../api_client.dart';
@@ -6,7 +5,6 @@ import '../interceptor.dart';
 
 typedef RetrySleep = Future<void> Function(Duration delay);
 typedef RetryRandom = double Function();
-typedef RetryClock = DateTime Function();
 
 /// Middleware that retries failed requests with exponential backoff.
 ///
@@ -43,7 +41,6 @@ class RetryInterceptor implements Interceptor {
 
   final RetrySleep? sleep;
   final RetryRandom? random;
-  final RetryClock? clock;
   final Duration? maxDelay;
 
   const RetryInterceptor({
@@ -54,7 +51,6 @@ class RetryInterceptor implements Interceptor {
     this.jitterRatio = 0.25,
     this.sleep,
     this.random,
-    this.clock,
     this.maxDelay,
   });
 
@@ -80,8 +76,6 @@ class RetryInterceptor implements Interceptor {
 
   RetrySleep get _sleep => sleep ?? Future<void>.delayed;
   RetryRandom get _random => random ?? _defaultRandom;
-  RetryClock get _clock => clock ?? _defaultClock;
-
   @override
   Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
     Object? lastError;
@@ -147,24 +141,14 @@ class RetryInterceptor implements Interceptor {
     }
     if (value == null || value.trim().isEmpty) return null;
 
+    // Only honor integer seconds values (e.g. "120").
+    // HTTP date formats are intentionally not supported to avoid
+    // depending on dart:io, keeping the runtime web-compatible.
     final seconds = int.tryParse(value.trim());
-    if (seconds != null) {
-      return seconds <= 0 ? Duration.zero : Duration(seconds: seconds);
-    }
-
-    DateTime? retryAt;
-    try {
-      retryAt = HttpDate.parse(value);
-    } catch (_) {
-      retryAt = DateTime.tryParse(value);
-    }
-    if (retryAt == null) return null;
-    final delay = retryAt.toUtc().difference(_clock().toUtc());
-    return delay.isNegative ? Duration.zero : delay;
+    if (seconds == null) return null;
+    return seconds <= 0 ? Duration.zero : Duration(seconds: seconds);
   }
 }
 
 final _rng = Random();
 double _defaultRandom() => _rng.nextDouble();
-
-DateTime _defaultClock() => DateTime.now();
