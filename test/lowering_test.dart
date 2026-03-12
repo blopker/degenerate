@@ -524,6 +524,80 @@ void main() {
     });
   });
 
+  group('primitive-only union collapse', () {
+    test('oneOf of only primitives collapses to Object', () {
+      final lowerer = TypeLowerer();
+      final t = lowerer.lowerInlineSchema({
+        'oneOf': [
+          {'type': 'string'},
+          {'type': 'number'},
+          {'type': 'boolean'},
+        ],
+      });
+      expect(t, isA<IrPrimitive>());
+      expect((t as IrPrimitive).kind, equals(PrimitiveKind.object));
+    });
+
+    test('anyOf of only primitives collapses to Object', () {
+      final lowerer = TypeLowerer();
+      final t = lowerer.lowerInlineSchema({
+        'anyOf': [
+          {'type': 'string'},
+          {'type': 'integer'},
+        ],
+      });
+      expect(t, isA<IrPrimitive>());
+      expect((t as IrPrimitive).kind, equals(PrimitiveKind.object));
+    });
+
+    test('oneOf with objects does NOT collapse', () {
+      final lowerer = TypeLowerer();
+      final t = lowerer.lowerSchema('MixedUnion', {
+        'oneOf': [
+          {'type': 'string'},
+          {
+            'type': 'object',
+            'title': 'Foo',
+            'properties': {
+              'x': {'type': 'integer'},
+            },
+          },
+        ],
+      });
+      expect(t, isA<IrUntaggedUnion>());
+    });
+
+    test('oneOf with refs does NOT collapse', () {
+      final lowerer = TypeLowerer();
+      final t = lowerer.lowerSchema('RefUnion', {
+        'oneOf': [
+          {'type': 'string'},
+          {r'$ref': '#/components/schemas/Pet'},
+        ],
+      });
+      expect(t, isA<IrUntaggedUnion>());
+    });
+
+    test('field with primitive oneOf gets Object type', () {
+      final lowerer = TypeLowerer();
+      final t = lowerer.lowerSchema('FilterObj', {
+        'type': 'object',
+        'properties': {
+          'value': {
+            'oneOf': [
+              {'type': 'string'},
+              {'type': 'number'},
+              {'type': 'boolean'},
+            ],
+          },
+        },
+      }) as IrObject;
+      final field = t.fields.firstWhere((f) => f.name == 'value');
+      expect(field.type, isA<IrPrimitive>());
+      expect((field.type as IrPrimitive).kind, equals(PrimitiveKind.object));
+    });
+  });
+
   group('inline schema naming', () {
     test('inline object with title uses title as name', () {
       final lowerer = TypeLowerer();
@@ -670,6 +744,48 @@ void main() {
       expect(
         lowerer.typeRegistry.keys.where((k) => k.startsWith('InputData')),
         hasLength(greaterThanOrEqualTo(3)), // InputData + 2 variants
+      );
+    });
+
+    test('oneOf inline variants use single-value enum for naming', () {
+      final lowerer = TypeLowerer();
+      lowerer.lowerSchema('RunStreamEvent', {
+        'oneOf': [
+          {
+            'type': 'object',
+            'properties': {
+              'event': {
+                'type': 'string',
+                'enum': ['thread.run.created'],
+              },
+              'data': {'type': 'string'},
+            },
+            'required': ['event', 'data'],
+          },
+          {
+            'type': 'object',
+            'properties': {
+              'event': {
+                'type': 'string',
+                'enum': ['thread.run.completed'],
+              },
+              'data': {'type': 'string'},
+            },
+            'required': ['event', 'data'],
+          },
+        ],
+      });
+      expect(
+        lowerer.typeRegistry,
+        contains('RunStreamEventThreadRunCreated'),
+      );
+      expect(
+        lowerer.typeRegistry,
+        contains('RunStreamEventThreadRunCompleted'),
+      );
+      expect(
+        lowerer.typeRegistry.keys.where((k) => k.contains('Variant')),
+        isEmpty,
       );
     });
 

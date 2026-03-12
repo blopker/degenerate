@@ -13,6 +13,10 @@ class ApiEmitter {
   final Map<String, IrType> typeRegistry;
   const ApiEmitter(this.api, {this.typeRegistry = const {}});
 
+  /// Wrapper around [buildFromJsonCode] that passes the type registry.
+  String _fromJson(IrType type, String accessor, {bool isOptional = false, bool paramIsMap = false}) =>
+      buildFromJsonCode(type, accessor, isOptional: isOptional, paramIsMap: paramIsMap, typeRegistry: typeRegistry);
+
   List<Spec> emit() {
     final hasStreaming = api.operations.any(
       (op) => eventStreamContent(op) != null,
@@ -419,23 +423,23 @@ class ApiEmitter {
       return switch (returnType) {
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList();',
+              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
         IrMap(:final values) =>
-          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
+          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_fromJson(values, 'v')}));',
         IrPrimitive(:final kind) => switch (kind) {
           PrimitiveKind.string => 'return response.body;',
           PrimitiveKind.int => 'return int.parse(response.body);',
           PrimitiveKind.double => 'return double.parse(response.body);',
           PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
           PrimitiveKind.bytes =>
-            'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
+            'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
           _ => 'return jsonDecode(response.body);',
         },
         IrExtensionType() =>
-          'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
+          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
         // All named types with .fromJson(Map)
         _ =>
-          'return ${buildFromJsonCode(returnType, 'jsonDecode(response.body)')};',
+          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
       };
     }
 
@@ -452,7 +456,7 @@ class ApiEmitter {
       },
       IrEnum(:final name) => 'return $name.fromJson(response.body);',
       IrExtensionType() =>
-        'return ${buildFromJsonCode(returnType, 'response.body')};',
+        'return ${_fromJson(returnType, 'response.body')};',
       _ =>
         "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
     };
@@ -1036,7 +1040,7 @@ try {
   }
 
   String _buildSseDeserializeExpr(IrType eventType) {
-    return 'return ${buildFromJsonCode(eventType, 'jsonDecode(data)')};';
+    return 'return ${_fromJson(eventType, 'jsonDecode(data)')};';
   }
 
   Method _buildExecuteStreaming() {
@@ -1167,19 +1171,19 @@ try {
           PrimitiveKind.double => 'return double.parse(response.body);',
           PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
           PrimitiveKind.bytes =>
-            'return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')};',
+            'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
           _ => 'return jsonDecode(response.body);',
         },
         IrEnum(:final name) =>
           'return $name.fromJson(jsonDecode(response.body) as String);',
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${buildFromJsonCode(items, 'e')}).toList();',
+              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
         IrMap(:final values) =>
-          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${buildFromJsonCode(values, 'v')}));',
+          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_fromJson(values, 'v')}));',
         // All named types with .fromJson(Map)
         _ =>
-          'return ${buildFromJsonCode(errorType, 'jsonDecode(response.body)')};',
+          'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
       };
     }
 

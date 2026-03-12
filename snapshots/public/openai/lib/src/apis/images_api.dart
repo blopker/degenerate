@@ -113,7 +113,7 @@ final request = ApiRequest(
 return _executeStreaming(
   request,
   onEvent: (data) {
-    return ImageEditStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(data), fromA: (v) => ImageEditPartialImageEvent.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ImageEditPartialImageEvent.canParse(v), fromB: (v) => ImageEditCompletedEvent.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ImageEditCompletedEvent.canParse(v),);
   },
 );
  } 
@@ -135,7 +135,7 @@ final request = ApiRequest(
 return _executeStreaming(
   request,
   onEvent: (data) {
-    return ImageGenStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(data), fromA: (v) => ImageGenPartialImageEvent.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ImageGenPartialImageEvent.canParse(v), fromB: (v) => ImageGenCompletedEvent.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ImageGenCompletedEvent.canParse(v),);
   },
 );
  } 

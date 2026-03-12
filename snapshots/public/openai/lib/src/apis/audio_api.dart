@@ -78,7 +78,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return CreateTranscriptionResponse.fromJson(jsonDecode(response.body));
+    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && CreateTranscriptionResponseJson.canParse(v), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && CreateTranscriptionResponseDiarizedJson.canParse(v), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>), canParseC: (v) => v is Map<String, dynamic> && CreateTranscriptionResponseVerboseJson.canParse(v),);
   },
 );
  } 
@@ -106,7 +106,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return CreateTranslationResponse.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && CreateTranslationResponseJson.canParse(v), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && CreateTranslationResponseVerboseJson.canParse(v),);
   },
 );
  } 
@@ -295,7 +295,7 @@ final request = ApiRequest(
 return _executeStreaming(
   request,
   onEvent: (data) {
-    return CreateSpeechResponseStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(data), fromA: (v) => SpeechAudioDeltaEvent.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && SpeechAudioDeltaEvent.canParse(v), fromB: (v) => SpeechAudioDoneEvent.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && SpeechAudioDoneEvent.canParse(v),);
   },
 );
  } 
@@ -341,7 +341,7 @@ final request = ApiRequest(
 return _executeStreaming(
   request,
   onEvent: (data) {
-    return CreateTranscriptionResponseStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
+    return OneOf3.parse(jsonDecode(data), fromA: (v) => TranscriptTextSegmentEvent.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && TranscriptTextSegmentEvent.canParse(v), fromB: (v) => TranscriptTextDeltaEvent.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && TranscriptTextDeltaEvent.canParse(v), fromC: (v) => TranscriptTextDoneEvent.fromJson(v as Map<String, dynamic>), canParseC: (v) => v is Map<String, dynamic> && TranscriptTextDoneEvent.canParse(v),);
   },
 );
  } 

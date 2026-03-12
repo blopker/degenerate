@@ -461,7 +461,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return ActivityListStargazersForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => (v as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(), canParseA: (v) => v is List, fromB: (v) => (v as List<dynamic>).map((e) => Stargazer.fromJson(e as Map<String, dynamic>)).toList(), canParseB: (v) => v is List,);
   },
   onError: (response) {
     return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -886,7 +886,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return ActivityListReposStarredByUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => (v as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList(), canParseA: (v) => v is List, fromB: (v) => (v as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(), canParseB: (v) => v is List,);
   },
 );
  } 

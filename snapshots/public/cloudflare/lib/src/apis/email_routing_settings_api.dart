@@ -56,7 +56,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return EmailRoutingSettingsEmailRoutingDnsSettingsResponse.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon30.canParse(v), fromB: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommon30.canParse(v),);
   },
 );
  } 
@@ -125,7 +125,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return EmailRoutingSettingsDisableEmailRoutingDnsResponse.fromJson(jsonDecode(response.body));
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon30.canParse(v), fromB: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommon30.canParse(v),);
   },
 );
  } 
