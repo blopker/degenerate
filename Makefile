@@ -1,4 +1,4 @@
-.PHONY: *
+.PHONY: test update_snapshots update_example
 
 test:
 	dart test
