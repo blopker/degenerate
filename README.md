@@ -7,6 +7,7 @@
     <a href="#quick-start">Quick Start</a> &middot;
     <a href="#usage">Usage</a> &middot;
     <a href="#middleware">Middleware</a> &middot;
+    <a href="#state-management">State Management</a> &middot;
     <a href="#tested-specs">Tested Specs</a>
   </p>
   <p>
@@ -407,6 +408,65 @@ final result = await sdk.pet.listPets(
 ```
 
 Cancel tokens work at the socket level. Both adapters abort the underlying connection rather than just abandoning the future. A cancelled request surfaces as `ApiException(CancelledException())`. A timed-out request surfaces as `ApiException(TimeoutException(...))`.
+
+## State Management
+
+Generated models are designed to work well with Riverpod, Bloc, and other Flutter state management solutions: immutable `final class` with `const` constructors, `==`/`hashCode` for change detection, `copyWith` for state updates, and `toJson`/`fromJson` for cache persistence.
+
+### dataOrThrow
+
+Every `ApiResult` has a `dataOrThrow` getter that returns the success data or throws. This bridges the gap between `ApiResult` and `AsyncValue`:
+
+```dart
+@riverpod
+Future<List<Pet>> pets(Ref ref) async {
+  final result = await ref.watch(sdkProvider).pet.listPets();
+  return result.dataOrThrow;
+}
+```
+
+On `ApiError`, it throws the error itself (which implements `Exception` and carries `statusCode` and typed `error`). On `ApiException`, it rethrows the original exception with its stack trace preserved.
+
+### Cancellation with Riverpod
+
+Wire a `CancelToken` to `ref.onDispose` so in-flight requests are cancelled when the provider is disposed (e.g. user navigates away):
+
+```dart
+@riverpod
+Future<List<Pet>> pets(Ref ref) async {
+  final token = CancelToken();
+  ref.onDispose(token.cancel);
+
+  final result = await ref.watch(sdkProvider).pet.listPets(
+    options: RequestOptions(cancelToken: token),
+  );
+  return result.dataOrThrow;
+}
+```
+
+### Error handling
+
+`ApiError` implements `Exception`, so Riverpod surfaces it through `AsyncValue.error`. You can inspect the status code and typed error in your UI:
+
+```dart
+ref.watch(petsProvider).when(
+  data: (pets) => PetList(pets),
+  loading: () => CircularProgressIndicator(),
+  error: (error, stack) => switch (error) {
+    ApiError(:final statusCode) => Text('Server error: $statusCode'),
+    _ => Text('Something went wrong'),
+  },
+);
+```
+
+### Granular rebuilds
+
+Generated models implement `==` and `hashCode`, so Riverpod's `select()` works out of the box to prevent unnecessary widget rebuilds:
+
+```dart
+// Only rebuilds when the pet's name changes
+final name = ref.watch(petProvider.select((pet) => pet.name));
+```
 
 ## Tested Specs
 
