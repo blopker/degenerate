@@ -1,20 +1,20 @@
 import '../ir/ir_types.dart';
 import '../naming.dart';
 import '../parser/openapi_document.dart';
-import 'type_lowerer.dart';
+import 'ir_mapper.dart';
 
 /// Converts OpenAPI path items and operations into IR operation groups.
 ///
 /// Operations are grouped by their first tag into [IrApi] instances. Each
 /// [IrApi] corresponds to a generated API client class.
 class OperationLowerer {
-  final TypeLowerer typeLowerer;
+  final IrMapper irMapper;
   final OpenApiDocument? _doc;
 
-  OperationLowerer(this.typeLowerer, {OpenApiDocument? doc}) : _doc = doc;
+  OperationLowerer(this.irMapper, {OpenApiDocument? doc}) : _doc = doc;
 
   /// Convenience accessor for the type registry.
-  Map<String, IrType> get typeRegistry => typeLowerer.typeRegistry;
+  Map<String, IrType> get typeRegistry => irMapper.typeRegistry;
 
   /// Lower all paths into [IrApi] groups, keyed by tag.
   ///
@@ -241,7 +241,7 @@ class OperationLowerer {
       paramNameHint = '${_currentOpPascal!}${toPascalCase(name)}';
     }
     final type = rawSchema != null
-        ? typeLowerer.lowerUntypedInlineSchema(
+        ? irMapper.lowerUntypedInlineSchema(
             rawSchema,
             nameHint: paramNameHint,
           )
@@ -347,7 +347,7 @@ class OperationLowerer {
       if (_currentOperationId != null) {
         bodyNameHint = '${_currentOpPascal!}Request';
       }
-      final irSchema = typeLowerer.lowerUntypedInlineSchema(
+      final irSchema = irMapper.lowerUntypedInlineSchema(
         rawSchema,
         nameHint: bodyNameHint,
       );
@@ -391,7 +391,7 @@ class OperationLowerer {
           }
         }
 
-        final irSchema = typeLowerer.lowerUntypedInlineSchema(
+        final irSchema = irMapper.lowerUntypedInlineSchema(
           rawSchema,
           nameHint: nameHint,
         );
@@ -410,7 +410,7 @@ class OperationLowerer {
 
         final rawSchema = headerMap['schema'];
         final headerType = rawSchema != null
-            ? typeLowerer.lowerUntypedInlineSchema(rawSchema)
+            ? irMapper.lowerUntypedInlineSchema(rawSchema)
             : const IrPrimitive(PrimitiveKind.object, isNullable: true);
         final headerDescription = headerMap['description'] as String?;
 

@@ -105,7 +105,7 @@ Items from review3.md added where they don't duplicate existing entries:
 - [x] **Request-body preparation layer** — media-type-aware serialization: JSON (`jsonEncode`), text (raw), bytes (raw), multipart/form-data (`List<ApiMultipartField>`). Shared `media_type_utils.dart` handles media-type normalization and preference selection. HTTP and Dio adapters convert multipart fields to platform-specific types.
 - [x] **Response decoding layer** — media-type-aware deserialization: JSON (all types), text (primitives/enums), bytes (`Uint8List` from `bodyBytes`). Shared logic in `media_type_utils.dart`.
 - [ ] **Migrate serialization helpers to `code_builder` Expressions** — `buildFromJsonCode`/`buildToJsonCode` return raw strings mixed with AST construction. Refactoring to return `code_builder` `Expression` objects would enable automatic import tracking and eliminate string-templating edge cases. High effort, low urgency. *(review3.md #3)*
-- [ ] **Split `TypeLowerer` into normalizer + mapper** — `TypeLowerer` handles ref resolution, allOf flattening, name canonicalization, *and* IR mapping in one class with multipass resolution. Separating into `SchemaNormalizer` (produces a fully resolved graph) and `IrMapper` (purely translates to `IrType`) would simplify cycle handling and make the pipeline more testable. *(review3.md #4)*
+- [x] **Split `TypeLowerer` into normalizer + mapper** — `SchemaNormalizer` handles name canonicalization and discriminator detection; `IrMapper` handles schema→IR translation. `TypeLowerer` deleted. *(review3.md #4)*
 
 ---
 

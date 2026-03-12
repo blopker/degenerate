@@ -5,8 +5,9 @@ import 'package:path/path.dart' as p;
 import 'parser/openapi_document.dart';
 import 'parser/ref_inliner.dart';
 
-import 'lowering/type_lowerer.dart';
+import 'lowering/ir_mapper.dart';
 import 'lowering/operation_lowerer.dart';
+import 'normalizer/schema_normalizer.dart';
 import 'emitter/file_emitter.dart';
 import 'ir/ir_types.dart';
 
@@ -93,14 +94,15 @@ class Generator {
     final inlinedRoot = inliner.inline(doc.root);
     final inlinedDoc = OpenApiDocument(inlinedRoot);
 
-    // Note: local $ref resolution and allOf flattening are handled inline
-    // during type lowering (TypeLowerer handles $ref directly, and uses
-    // AllOfFlattener for allOf compositions).
+    // 3. Normalize schemas (name allocation, discriminator detection)
+    _log('Normalizing schemas...');
+    final normalizer = SchemaNormalizer();
+    final normContext = normalizer.normalize(inlinedDoc.schemas);
 
     // 4. Lower schemas to IR types
     _log('Lowering schemas to IR...');
-    final typeLowerer = TypeLowerer();
-    final irTypes = typeLowerer.lowerSchemas(inlinedDoc.schemas);
+    final irMapper = IrMapper(normContext);
+    final irTypes = irMapper.lowerSchemas(inlinedDoc.schemas);
 
     if (config.verbose) {
       _log('  ${irTypes.length} types lowered');
@@ -109,15 +111,15 @@ class Generator {
       }
     }
 
-    if (typeLowerer.warnings.isNotEmpty) {
-      for (final w in typeLowerer.warnings) {
+    if (irMapper.warnings.isNotEmpty) {
+      for (final w in irMapper.warnings) {
         _log('  Warning: $w');
       }
     }
 
     // 5. Lower operations to IR operations
     _log('Lowering operations to IR...');
-    final opLowerer = OperationLowerer(typeLowerer, doc: inlinedDoc);
+    final opLowerer = OperationLowerer(irMapper, doc: inlinedDoc);
     var irApis = opLowerer.lowerPaths(inlinedDoc.paths);
 
     // Build a set of names already in irTypes for deduplication.
@@ -127,7 +129,7 @@ class Generator {
         .toSet();
 
     // Add inline types generated during operation lowering (deduplicated).
-    final inlineTypes = typeLowerer.inlineTypes;
+    final inlineTypes = irMapper.inlineTypes;
     var inlineAdded = 0;
     for (final t in inlineTypes) {
       final name = _irTypeNameOf(t);
@@ -141,7 +143,7 @@ class Generator {
 
     // Add any registered types (e.g., inline enums from inline objects)
     // that aren't already in the results list.
-    for (final entry in typeLowerer.typeRegistry.entries) {
+    for (final entry in irMapper.typeRegistry.entries) {
       final regName = _irTypeNameOf(entry.value);
       if (regName != null && !existingNames.add(regName)) continue;
       irTypes.add(entry.value);
@@ -150,13 +152,13 @@ class Generator {
     // Final pass: resolve all type refs across all types (including inline
     // and registry types that may not have been resolved by lowerSchemas).
     for (var i = 0; i < irTypes.length; i++) {
-      irTypes[i] = typeLowerer.resolveTypeRefs(irTypes[i]);
+      irTypes[i] = irMapper.resolveTypeRefs(irTypes[i]);
     }
 
     // Also resolve type refs in API operations (parameters, request bodies,
     // responses) so that refs to non-emittable types (e.g., IrList aliases)
     // are replaced with the actual types.
-    irApis = _resolveApiTypeRefs(typeLowerer, irApis);
+    irApis = _resolveApiTypeRefs(irMapper, irApis);
 
     // Filter deprecated operations if not included
     if (!config.includeDeprecated) {
@@ -377,7 +379,7 @@ class Generator {
   ///
   /// Uses `identical` checks to avoid rebuilding objects when nothing changed.
   static List<IrApi> _resolveApiTypeRefs(
-    TypeLowerer typeLowerer,
+    IrMapper irMapper,
     List<IrApi> apis,
   ) {
     return apis.map((api) {
@@ -386,7 +388,7 @@ class Generator {
         var opChanged = false;
 
         final params = op.parameters.map((p) {
-          final resolved = typeLowerer.resolveTypeRefs(p.type);
+          final resolved = irMapper.resolveTypeRefs(p.type);
           if (identical(resolved, p.type)) return p;
           opChanged = true;
           return IrParameter(
@@ -405,7 +407,7 @@ class Generator {
           var rbChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final entry in rb.content.entries) {
-            final resolved = typeLowerer.resolveTypeRefs(entry.value.schema);
+            final resolved = irMapper.resolveTypeRefs(entry.value.schema);
             if (!identical(resolved, entry.value.schema)) rbChanged = true;
             newContent[entry.key] = IrMediaType(resolved);
           }
@@ -422,7 +424,7 @@ class Generator {
           var entryChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final ce in resp.content.entries) {
-            final resolved = typeLowerer.resolveTypeRefs(ce.value.schema);
+            final resolved = irMapper.resolveTypeRefs(ce.value.schema);
             if (!identical(resolved, ce.value.schema)) entryChanged = true;
             newContent[ce.key] = IrMediaType(resolved);
           }
@@ -445,7 +447,7 @@ class Generator {
           var drChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final ce in resp.content.entries) {
-            final resolved = typeLowerer.resolveTypeRefs(ce.value.schema);
+            final resolved = irMapper.resolveTypeRefs(ce.value.schema);
             if (!identical(resolved, ce.value.schema)) drChanged = true;
             newContent[ce.key] = IrMediaType(resolved);
           }

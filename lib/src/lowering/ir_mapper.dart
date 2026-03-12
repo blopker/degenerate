@@ -1,72 +1,43 @@
 import '../ir/ir_types.dart';
 import '../naming.dart';
 import '../normalizer/allof_flattener.dart';
+import '../normalizer/schema_normalizer.dart';
 
-/// Converts normalized OpenAPI schemas into IR types.
+/// Maps normalized OpenAPI schemas to IR types.
 ///
-/// The lowerer expects schemas where `$ref` pointers are still present (not
-/// pre-resolved). It creates [IrTypeRef] nodes for `$ref` and `_cycleRef`
-/// markers, and lowers everything else to concrete IR types. `allOf` schemas
-/// are flattened inline via [AllOfFlattener].
-class TypeLowerer {
-  final Set<String> _usedNames = {};
+/// Expects a [NormalizationContext] with pre-computed name mappings and
+/// discriminator properties. The mapper purely translates schemas to IR
+/// types without worrying about name conflicts or discriminator detection.
+///
+/// `$ref` pointers are kept as [IrTypeRef] nodes. `allOf` schemas are
+/// flattened inline via [AllOfFlattener].
+class IrMapper {
+  final Set<String> _usedNames;
   final Map<String, IrType> typeRegistry = {};
   final AllOfFlattener _flattener = AllOfFlattener();
 
   /// Maps original OpenAPI schema name → Dart type name (after renaming).
-  /// Used to resolve $ref names to their renamed counterparts.
-  final Map<String, String> _nameMapping = {};
+  final Map<String, String> _nameMapping;
 
-  /// Maps schema name → discriminator property name for schemas that participate
-  /// in a discriminated union. Populated during a pre-scan of schemas.
-  final Map<String, String> _discriminatorProperties = {};
+  /// Maps schema name → discriminator property name for schemas that
+  /// participate in a discriminated union.
+  final Map<String, String> _discriminatorProperties;
 
   /// Warnings collected during lowering (e.g., unknown schema fallbacks).
-  final List<String> warnings = [];
+  final List<String> warnings;
+
+  /// Create an IrMapper from a [NormalizationContext].
+  IrMapper(NormalizationContext context)
+      : _usedNames = context.usedNames,
+        _nameMapping = context.nameMapping,
+        _discriminatorProperties = context.discriminatorProperties,
+        warnings = context.warnings;
 
   /// Lower all named schemas from `components.schemas`.
   ///
   /// Each entry in [schemas] is a raw schema map keyed by its OpenAPI name.
   /// Returns the list of top-level IR types and populates [typeRegistry].
   List<IrType> lowerSchemas(Map<String, dynamic> schemas) {
-    // Pre-scan: find discriminated unions and record which schemas have
-    // discriminator properties, so we can emit those fields as String.
-    for (final entry in schemas.entries) {
-      final schema = entry.value;
-      if (schema is! Map<String, dynamic>) continue;
-      if (schema.containsKey('oneOf') && schema.containsKey('discriminator')) {
-        final disc = schema['discriminator'] as Map<String, dynamic>;
-        final propName = disc['propertyName'] as String;
-        final mapping = disc['mapping'] as Map<String, dynamic>?;
-        if (mapping != null) {
-          for (final ref in mapping.values) {
-            if (ref is String) {
-              final refName = ref.split('/').last;
-              _discriminatorProperties[refName] = propName;
-            }
-          }
-        } else {
-          final oneOf = schema['oneOf'] as List;
-          for (final variant in oneOf) {
-            if (variant is Map<String, dynamic> &&
-                variant.containsKey(r'$ref')) {
-              final refName = (variant[r'$ref'] as String).split('/').last;
-              _discriminatorProperties[refName] = propName;
-            }
-          }
-        }
-      }
-    }
-
-    // Pre-scan: compute all name mappings before lowering, so that $ref
-    // resolution can find the correct Dart name for any schema regardless
-    // of declaration order.
-    for (final entry in schemas.entries) {
-      if (entry.value is! Map<String, dynamic>) continue;
-      final dartName = _uniqueTypeName(entry.key);
-      _nameMapping[entry.key] = dartName;
-    }
-
     final results = <IrType>[];
     for (final entry in schemas.entries) {
       final name = entry.key;

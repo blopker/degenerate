@@ -5,8 +5,9 @@ import 'package:dart_style/dart_style.dart';
 import 'package:test/test.dart';
 
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/lowering/type_lowerer.dart';
+import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
+import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
@@ -17,21 +18,23 @@ import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/file_emitter.dart';
 
-/// Full pipeline helper: parse YAML -> lower types -> lower operations.
-({List<IrType> types, List<IrApi> apis, TypeLowerer typeLowerer})
+/// Full pipeline helper: parse YAML -> normalize -> lower types -> lower operations.
+({List<IrType> types, List<IrApi> apis, IrMapper irMapper})
 _lowerPetstore() {
   final yamlContent = File(
     'test/fixtures/public/petstore-v3.0-oai.yaml',
   ).readAsStringSync();
   final doc = OpenApiDocument.parseYaml(yamlContent);
 
-  final typeLowerer = TypeLowerer();
-  final types = typeLowerer.lowerSchemas(doc.schemas);
+  final normalizer = SchemaNormalizer();
+  final context = normalizer.normalize(doc.schemas);
+  final irMapper = IrMapper(context);
+  final types = irMapper.lowerSchemas(doc.schemas);
 
-  final opLowerer = OperationLowerer(typeLowerer, doc: doc);
+  final opLowerer = OperationLowerer(irMapper, doc: doc);
   final apis = opLowerer.lowerPaths(doc.paths);
 
-  return (types: types, apis: apis, typeLowerer: typeLowerer);
+  return (types: types, apis: apis, irMapper: irMapper);
 }
 
 final _formatter = DartFormatter(
@@ -44,13 +47,13 @@ String _formatOrFail(String source) => _formatter.format(source);
 void main() {
   late List<IrType> types;
   late List<IrApi> apis;
-  late TypeLowerer typeLowerer;
+  late IrMapper irMapper;
 
   setUpAll(() {
     final result = _lowerPetstore();
     types = result.types;
     apis = result.apis;
-    typeLowerer = result.typeLowerer;
+    irMapper = result.irMapper;
   });
 
   // ─── Model emission ──────────────────────────────────────────
@@ -60,7 +63,7 @@ void main() {
       late String source;
 
       setUp(() {
-        final pet = typeLowerer.typeRegistry['Pet']! as IrObject;
+        final pet = irMapper.typeRegistry['Pet']! as IrObject;
         final specs = ModelEmitter(pet).emit();
         final library = Library((b) => b..body.addAll(specs));
         source = emitRaw(library);
@@ -131,7 +134,7 @@ void main() {
       late String source;
 
       setUp(() {
-        final error = typeLowerer.typeRegistry['ErrorModel']! as IrObject;
+        final error = irMapper.typeRegistry['ErrorModel']! as IrObject;
         final specs = ModelEmitter(error).emit();
         final library = Library((b) => b..body.addAll(specs));
         source = emitRaw(library);
@@ -1865,7 +1868,8 @@ void main() {
       ).readAsStringSync();
       final doc = OpenApiDocument.parseJson(jsonContent);
 
-      final tl = TypeLowerer();
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final tl = IrMapper(ctx);
       final irTypes = tl.lowerSchemas(doc.schemas);
 
       final opLowerer = OperationLowerer(tl, doc: doc);
@@ -2010,7 +2014,8 @@ void main() {
           },
         },
       });
-      final tl = TypeLowerer();
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final tl = IrMapper(ctx);
       final types = tl.lowerSchemas(doc.schemas);
       final opLowerer = OperationLowerer(tl, doc: doc);
       final apis = opLowerer.lowerPaths(doc.paths);
