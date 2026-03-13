@@ -129,7 +129,7 @@ final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest {const Worker
 
 factory WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(
   targetLanguage: WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage.fromJson(json['target_language'] as String),
-  text: OneOf2.parse(json['text'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,),
+  text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 /// Target langauge to translate to

@@ -69,7 +69,7 @@ final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.h
 factory WorkersVersionAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersVersionAssetsConfig(
   htmlHandling: json.containsKey('html_handling') ? WorkersVersionAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash,
   notFoundHandling: json.containsKey('not_found_handling') ? WorkersVersionAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : WorkersVersionAssetsConfigNotFoundHandling.none,
-  runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseA: (v) => v is List, fromB: (v) => v as bool, canParseB: (v) => v is bool,) : null,
+  runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => v as bool,) : null,
 ); }
 
 /// Determines the redirects and rewrites of requests for HTML content.

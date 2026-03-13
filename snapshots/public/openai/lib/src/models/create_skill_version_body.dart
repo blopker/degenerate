@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_skill
 final class CreateSkillVersionBody {const CreateSkillVersionBody({required this.files, this.$default, });
 
 factory CreateSkillVersionBody.fromJson(Map<String, dynamic> json) { return CreateSkillVersionBody(
-  files: OneOf2.parse(json['files'], fromA: (v) => (v as List<dynamic>).map((e) => base64Decode(e as String)).toList(), canParseA: (v) => v is List, fromB: (v) => base64Decode(v as String),),
+  files: OneOf2.parse(json['files'], fromA: (v) => (v as List<dynamic>).map((e) => base64Decode(e as String)).toList(), fromB: (v) => base64Decode(v as String),),
   $default: json['default'] as bool?,
 ); }
 

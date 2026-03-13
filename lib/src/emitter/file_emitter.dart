@@ -393,10 +393,22 @@ class FileEmitter {
         }
       case IrDiscriminatedUnion(:final name):
         names.add(name);
-      case IrUntaggedUnion(:final name):
+      case IrUntaggedUnion(:final name, :final variants):
         names.add(name);
-      case IrAnyOf(:final name):
+        // When resolving imports (typeRegistry provided), collect variant type names
+        // because OneOf.parse() code references them directly.
+        if (typeRegistry != null && isOneOfEligible(variants)) {
+          for (final v in variants) {
+            _collectTopLevelTypeName(v, names, typeRegistry, resolving);
+          }
+        }
+      case IrAnyOf(:final name, :final variants):
         names.add(name);
+        if (typeRegistry != null && isOneOfEligible(variants)) {
+          for (final v in variants) {
+            _collectTopLevelTypeName(v, names, typeRegistry, resolving);
+          }
+        }
       case IrExtensionType(:final name):
         names.add(name);
       case IrList(:final items):
@@ -460,7 +472,7 @@ class FileEmitter {
       case IrDiscriminatedUnion(:final name, :final mapping):
         names.add(name);
         for (final variant in mapping.values) {
-          _collectTopLevelTypeName(variant, names);
+          _collectTopLevelTypeName(variant, names, typeRegistry);
           if (variant is IrObject) {
             for (final f in variant.fields) {
               if (isListType(f.type)) needsCollection = true;
@@ -472,14 +484,14 @@ class FileEmitter {
         names.add(name);
         if (isOneOfEligible(variants)) needsOneOf = true;
         for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names);
+          _collectTopLevelTypeName(variant, names, typeRegistry);
           if (isBytesType(variant)) needsTypedData = true;
         }
       case IrAnyOf(:final name, :final variants):
         names.add(name);
         if (isOneOfEligible(variants)) needsOneOf = true;
         for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names);
+          _collectTopLevelTypeName(variant, names, typeRegistry);
           if (isBytesType(variant)) {
             needsTypedData = true;
             needsConvert = true;
@@ -492,9 +504,9 @@ class FileEmitter {
           needsConvert = true;
         }
       case IrList(:final items):
-        _collectTopLevelTypeName(items, names);
+        _collectTopLevelTypeName(items, names, typeRegistry);
       case IrMap(:final values):
-        _collectTopLevelTypeName(values, names);
+        _collectTopLevelTypeName(values, names, typeRegistry);
       case IrPrimitive():
         break;
     }

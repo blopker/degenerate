@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 
 factory WebhookPackagePublishedPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersion(
   author: json['author'] != null ? WebhookPackagePublishedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
-  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseB: (v) => v is Map,) : null,
+  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),) : null,
   bodyHtml: json['body_html'] as String?,
   containerMetadata: json['container_metadata'] != null ? WebhookPackagePublishedPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,

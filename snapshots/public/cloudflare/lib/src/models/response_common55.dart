@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 
 factory ResponseCommon55.fromJson(Map<String, dynamic> json) { return ResponseCommon55(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceSharingV4error.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseA: (v) => v is Map, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), canParseB: (v) => v is List, fromC: (v) => v as String, canParseC: (v) => v is String,) : null,
+  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null,
   success: json['success'] as bool,
 ); }
 

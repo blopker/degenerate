@@ -12,7 +12,7 @@ factory ValidationErrorErrors.fromJson(Map<String, dynamic> json) { return Valid
   message: json['message'] as String?,
   code: json['code'] as String,
   index: json['index'] != null ? (json['index'] as num).toInt() : null,
-  value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as num).toInt(), canParseB: (v) => v is num, fromC: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseC: (v) => v is List,) : null,
+  value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(), fromC: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
 ); }
 
 final String? resource;

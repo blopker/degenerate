@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 factory ResponseCommon46.fromJson(Map<String, dynamic> json) { return ResponseCommon46(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseA: (v) => v is Map, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), canParseB: (v) => v is List, fromC: (v) => v as String, canParseC: (v) => v is String,),
+  result: OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,),
   success: json['success'] as bool,
 ); }
 

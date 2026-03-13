@@ -20,3 +20,7 @@ update_snapshots:
 
 update_example:
 	dart run bin/degenerate.dart -i example/petstore3.json -o example/petstore_client --clean -n petstore_client
+
+# WARNING: This takes a long time, but these are not checked with `make test`
+analyze_snapshots:
+	dart analyze snapshots/public/*

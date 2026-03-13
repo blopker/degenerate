@@ -100,7 +100,7 @@ factory CustomProperty.fromJson(Map<String, dynamic> json) { return CustomProper
   sourceType: json['source_type'] != null ? CustomPropertySourceType.fromJson(json['source_type'] as String) : null,
   valueType: CustomPropertyValueType.fromJson(json['value_type'] as String),
   $required: json['required'] as bool?,
-  defaultValue: json['default_value'] != null ? OneOf2.parse(json['default_value'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,) : null,
+  defaultValue: json['default_value'] != null ? OneOf2.parse(json['default_value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   description: json['description'] as String?,
   allowedValues: (json['allowed_values'] as List<dynamic>?)?.map((e) => e as String).toList(),
   valuesEditableBy: json['values_editable_by'] != null ? CustomPropertyValuesEditableBy.fromJson(json['values_editable_by'] as String) : null,

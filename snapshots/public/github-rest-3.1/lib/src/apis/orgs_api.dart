@@ -108,7 +108,7 @@ return _execute(
     return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ValidationError.canParse(v), fromB: (v) => ValidationErrorSimple.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ValidationErrorSimple.canParse(v),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => ValidationErrorSimple.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 

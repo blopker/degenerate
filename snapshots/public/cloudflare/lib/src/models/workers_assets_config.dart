@@ -71,7 +71,7 @@ factory WorkersAssetsConfig.fromJson(Map<String, dynamic> json) { return Workers
   redirects: json['_redirects'] as String?,
   htmlHandling: json['html_handling'] != null ? WorkersAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : null,
   notFoundHandling: json['not_found_handling'] != null ? WorkersAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : null,
-  runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseA: (v) => v is List, fromB: (v) => v as bool, canParseB: (v) => v is bool,) : null,
+  runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => v as bool,) : null,
   serveDirectly: json['serve_directly'] as bool?,
 ); }
 

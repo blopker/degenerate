@@ -7,7 +7,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_bulk_get_result_values_value.dart';final class WorkersKvBulkGetResult {const WorkersKvBulkGetResult({this.values});
 
 factory WorkersKvBulkGetResult.fromJson(Map<String, dynamic> json) { return WorkersKvBulkGetResult(
-  values: (json['values'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as num).toDouble(), canParseB: (v) => v is num, fromC: (v) => v as bool, canParseC: (v) => v is bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseD: (v) => v is Map,))),
+  values: (json['values'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),))),
 ); }
 
 /// Requested keys are paired with their values in an object.

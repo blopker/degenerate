@@ -32,7 +32,7 @@ factory WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent.fromJson(Map<
   error: WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError.fromJson(json['error'] as Map<String, dynamic>),
   finished: json['finished'] as bool,
   name: json['name'] as String,
-  output: OneOf4.parse(json['output'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseA: (v) => v is Map, fromB: (v) => v as String, canParseB: (v) => v is String, fromC: (v) => (v as num).toDouble(), canParseC: (v) => v is num, fromD: (v) => v as bool, canParseD: (v) => v is bool,),
+  output: OneOf4.parse(json['output'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String, fromC: (v) => (v as num).toDouble(), fromD: (v) => v as bool,),
   start: DateTime.parse(json['start'] as String),
   type: WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType.fromJson(json['type'] as String),
 ); }

@@ -97,7 +97,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && CreditCard.canParse(v), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && BankAccount.canParse(v),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 

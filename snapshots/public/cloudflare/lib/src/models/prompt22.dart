@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt22_ima
 
 factory Prompt22.fromJson(Map<String, dynamic> json) { return Prompt22(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
-  image: json['image'] != null ? OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), canParseA: (v) => v is List, fromB: (v) => base64Decode(v as String),) : null,
+  image: json['image'] != null ? OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => base64Decode(v as String),) : null,
   lora: json['lora'] as String?,
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,

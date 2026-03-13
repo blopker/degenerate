@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 
 factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsColumn(
   dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metrics: json['metrics'] != null ? OneOf2.parse(json['metrics'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), canParseA: (v) => v is List, fromB: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList()).toList(), canParseB: (v) => v is List,) : null,
+  metrics: json['metrics'] != null ? OneOf2.parse(json['metrics'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList()).toList(),) : null,
 ); }
 
 final List<String>? dimensions;

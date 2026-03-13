@@ -41,7 +41,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>), canParseA: (v) => v is Map<String, dynamic> && ResponseCommon35.canParse(v), fromB: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>), canParseB: (v) => v is Map<String, dynamic> && ResponseCommon35.canParse(v),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 

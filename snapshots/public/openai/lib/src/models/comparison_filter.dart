@@ -57,7 +57,7 @@ final class ComparisonFilter {const ComparisonFilter({this.type = ComparisonFilt
 factory ComparisonFilter.fromJson(Map<String, dynamic> json) { return ComparisonFilter(
   type: ComparisonFilterType.fromJson(json['type'] as String),
   key: json['key'] as String,
-  value: OneOf4.parse(json['value'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as num).toDouble(), canParseB: (v) => v is num, fromC: (v) => v as bool, canParseC: (v) => v is bool, fromD: (v) => (v as List<dynamic>).map((e) => e).toList(), canParseD: (v) => v is List,),
+  value: OneOf4.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as List<dynamic>).map((e) => e).toList(),),
 ); }
 
 /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.

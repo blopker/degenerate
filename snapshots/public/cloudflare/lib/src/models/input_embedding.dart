@@ -7,7 +7,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_embedding_text.dart';final class InputEmbedding {const InputEmbedding({required this.text, this.truncateInputs = false, });
 
 factory InputEmbedding.fromJson(Map<String, dynamic> json) { return InputEmbedding(
-  text: OneOf2.parse(json['text'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,),
+  text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
   truncateInputs: json.containsKey('truncate_inputs') ? json['truncate_inputs'] as bool : false,
 ); }
 

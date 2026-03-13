@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_to_tex
 
 factory ImageToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
-  image: OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), canParseA: (v) => v is List, fromB: (v) => base64Decode(v as String),),
+  image: OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => base64Decode(v as String),),
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 512,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String?,

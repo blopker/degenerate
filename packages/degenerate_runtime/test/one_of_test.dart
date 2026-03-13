@@ -66,19 +66,18 @@ void main() {
   });
 
   group('OneOf.parse()', () {
-    test('uses canParse to select variant', () {
+    test('falls back to try/catch when type matching fails', () {
       final v = OneOf2.parse<String, int>(
         '42',
         fromA: (v) => v as String,
         fromB: (v) => int.parse(v as String),
-        canParseB: (v) => v is String && int.tryParse(v) != null,
       );
-      // canParseB matches first, so it picks B
-      expect(v, isA<OneOf2B<String, int>>());
-      expect(v.value, 42);
+      // '42' is a String, so type matching picks A
+      expect(v, isA<OneOf2A<String, int>>());
+      expect(v.value, '42');
     });
 
-    test('falls back to type matching when no canParse', () {
+    test('type matching selects correct variant', () {
       final v = OneOf2.parse<String, int>(
         'hello',
         fromA: (v) => v as String,
@@ -88,17 +87,92 @@ void main() {
       expect(v.value, 'hello');
     });
 
-    test('parse with object-like types', () {
-      // Simulate object parsing with Maps
+    test('parse with object-like types via try/catch', () {
       final catJson = {'type': 'cat', 'name': 'Whiskers'};
       final v = OneOf2.parse<Map<String, dynamic>, String>(
         catJson,
         fromA: (v) => v as Map<String, dynamic>,
         fromB: (v) => v as String,
-        canParseA: (v) => v is Map<String, dynamic>,
       );
       expect(v, isA<OneOf2A<Map<String, dynamic>, String>>());
       expect(v.value, catJson);
+    });
+
+    test('OneOf5.parse selects correct variant by type', () {
+      final v = OneOf5.parse<String, int, double, bool, List>(
+        42,
+        fromA: (v) => v.toString(),
+        fromB: (v) => v as int,
+        fromC: (v) => (v as num).toDouble(),
+        fromD: (v) => v as bool,
+        fromE: (v) => v as List,
+      );
+      expect(v, isA<OneOf5B<String, int, double, bool, List>>());
+      expect(v.value, 42);
+    });
+
+    test('OneOf6.parse selects correct variant by type', () {
+      final v = OneOf6.parse<String, int, double, bool, List, Map>(
+        'hello',
+        fromA: (v) => v as String,
+        fromB: (v) => v as int,
+        fromC: (v) => v as double,
+        fromD: (v) => v as bool,
+        fromE: (v) => v as List,
+        fromF: (v) => v as Map,
+      );
+      expect(v, isA<OneOf6A<String, int, double, bool, List, Map>>());
+      expect(v.value, 'hello');
+    });
+
+    test('OneOf7.parse selects correct variant by type', () {
+      final v = OneOf7.parse<String, int, double, bool, List, Map, Set>(
+        true,
+        fromA: (v) => v as String,
+        fromB: (v) => v as int,
+        fromC: (v) => v as double,
+        fromD: (v) => v as bool,
+        fromE: (v) => v as List,
+        fromF: (v) => v as Map,
+        fromG: (v) => v as Set,
+      );
+      expect(v, isA<OneOf7D<String, int, double, bool, List, Map, Set>>());
+      expect(v.value, true);
+    });
+
+    test('OneOf8.parse selects correct variant by type', () {
+      final v = OneOf8.parse<String, int, double, bool, List, Map, Set, Uri>(
+        [1, 2, 3],
+        fromA: (v) => v as String,
+        fromB: (v) => v as int,
+        fromC: (v) => v as double,
+        fromD: (v) => v as bool,
+        fromE: (v) => v as List,
+        fromF: (v) => v as Map,
+        fromG: (v) => v as Set,
+        fromH: (v) => v as Uri,
+      );
+      expect(v, isA<OneOf8E<String, int, double, bool, List, Map, Set, Uri>>());
+      expect(v.value, [1, 2, 3]);
+    });
+
+    test('OneOf9.parse selects correct variant by type', () {
+      final v =
+          OneOf9.parse<String, int, double, bool, List, Map, Set, Uri, Symbol>(
+        #test,
+        fromA: (v) => v as String,
+        fromB: (v) => v as int,
+        fromC: (v) => v as double,
+        fromD: (v) => v as bool,
+        fromE: (v) => v as List,
+        fromF: (v) => v as Map,
+        fromG: (v) => v as Set,
+        fromH: (v) => v as Uri,
+        fromI: (v) => v as Symbol,
+      );
+      expect(v,
+          isA<OneOf9I<String, int, double, bool, List, Map, Set, Uri, Symbol>>());
+      expect(v.value, #test);
     });
   });
 }

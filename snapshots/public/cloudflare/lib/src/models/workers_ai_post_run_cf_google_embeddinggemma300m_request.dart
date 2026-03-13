@@ -7,7 +7,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_google_embeddinggemma300m_request_text.dart';final class WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest {const WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest({required this.text});
 
 factory WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest(
-  text: OneOf2.parse(json['text'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,),
+  text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 final WorkersAiPostRunCfGoogleEmbeddinggemma300mRequestText text;

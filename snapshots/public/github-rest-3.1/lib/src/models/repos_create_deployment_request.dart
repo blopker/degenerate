@@ -11,7 +11,7 @@ factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { retur
   task: json.containsKey('task') ? json['task'] as String : 'deploy',
   autoMerge: json.containsKey('auto_merge') ? json['auto_merge'] as bool : true,
   requiredContexts: (json['required_contexts'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), canParseA: (v) => v is Map, fromB: (v) => v as String, canParseB: (v) => v is String,) : null,
+  payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,) : null,
   environment: json.containsKey('environment') ? json['environment'] as String : 'production',
   description: json.containsKey('description') ? json['description'] as String : '',
   transientEnvironment: json.containsKey('transient_environment') ? json['transient_environment'] as bool : false,

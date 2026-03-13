@@ -33,7 +33,7 @@ final class $5Request3Variant1 {const $5Request3Variant1({this.pooling = $5Reque
 
 factory $5Request3Variant1.fromJson(Map<String, dynamic> json) { return $5Request3Variant1(
   pooling: json.containsKey('pooling') ? $5Request3Variant1Pooling.fromJson(json['pooling'] as String) : $5Request3Variant1Pooling.mean,
-  text: OneOf2.parse(json['text'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,),
+  text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 /// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.

@@ -26,20 +26,15 @@ sealed class OneOf2<A, B> {
 
   /// Deserializes from JSON using typed parsers.
   ///
-  /// Tries [canParseA]/[canParseB] first (if provided), then falls back to
-  /// runtime type matching on the raw [json] value.
+  /// Tries runtime type matching first, then attempts each parser in order,
+  /// catching errors to find the first successful match.
   static OneOf2<A, B> parse<A, B>(
     Object? json, {
     required A Function(Object?) fromA,
     required B Function(Object?) fromB,
-    bool Function(Object?)? canParseA,
-    bool Function(Object?)? canParseB,
   }) {
-    if (canParseB != null && canParseB(json)) return OneOf2B(fromB(json));
-    if (canParseA != null && canParseA(json)) return OneOf2A(fromA(json));
     if (json is A) return OneOf2A(json);
     if (json is B) return OneOf2B(json);
-    // Last resort: try fromA, then fromB.
     try {
       return OneOf2A(fromA(json));
     } catch (_) {
@@ -99,13 +94,7 @@ sealed class OneOf3<A, B, C> {
     required A Function(Object?) fromA,
     required B Function(Object?) fromB,
     required C Function(Object?) fromC,
-    bool Function(Object?)? canParseA,
-    bool Function(Object?)? canParseB,
-    bool Function(Object?)? canParseC,
   }) {
-    if (canParseC != null && canParseC(json)) return OneOf3C(fromC(json));
-    if (canParseB != null && canParseB(json)) return OneOf3B(fromB(json));
-    if (canParseA != null && canParseA(json)) return OneOf3A(fromA(json));
     if (json is A) return OneOf3A(json);
     if (json is B) return OneOf3B(json);
     if (json is C) return OneOf3C(json);
@@ -188,15 +177,7 @@ sealed class OneOf4<A, B, C, D> {
     required B Function(Object?) fromB,
     required C Function(Object?) fromC,
     required D Function(Object?) fromD,
-    bool Function(Object?)? canParseA,
-    bool Function(Object?)? canParseB,
-    bool Function(Object?)? canParseC,
-    bool Function(Object?)? canParseD,
   }) {
-    if (canParseD != null && canParseD(json)) return OneOf4D(fromD(json));
-    if (canParseC != null && canParseC(json)) return OneOf4C(fromC(json));
-    if (canParseB != null && canParseB(json)) return OneOf4B(fromB(json));
-    if (canParseA != null && canParseA(json)) return OneOf4A(fromA(json));
     if (json is A) return OneOf4A(json);
     if (json is B) return OneOf4B(json);
     if (json is C) return OneOf4C(json);
@@ -294,6 +275,27 @@ sealed class OneOf5<A, B, C, D, E> {
     throw ArgumentError('Value $value does not match any variant of OneOf5');
   }
 
+  static OneOf5<A, B, C, D, E> parse<A, B, C, D, E>(
+    Object? json, {
+    required A Function(Object?) fromA,
+    required B Function(Object?) fromB,
+    required C Function(Object?) fromC,
+    required D Function(Object?) fromD,
+    required E Function(Object?) fromE,
+  }) {
+    if (json is A) return OneOf5A(json);
+    if (json is B) return OneOf5B(json);
+    if (json is C) return OneOf5C(json);
+    if (json is D) return OneOf5D(json);
+    if (json is E) return OneOf5E(json);
+    try { return OneOf5A(fromA(json)); } catch (_) {}
+    try { return OneOf5B(fromB(json)); } catch (_) {}
+    try { return OneOf5C(fromC(json)); } catch (_) {}
+    try { return OneOf5D(fromD(json)); } catch (_) {
+      return OneOf5E(fromE(json));
+    }
+  }
+
   Object? toJson() {
     final v = value;
     if (v == null || v is String || v is num || v is bool) return v;
@@ -383,6 +385,30 @@ sealed class OneOf6<A, B, C, D, E, F> {
     if (value is E) return OneOf6E(value);
     if (value is F) return OneOf6F(value);
     throw ArgumentError('Value $value does not match any variant of OneOf6');
+  }
+
+  static OneOf6<A, B, C, D, E, F> parse<A, B, C, D, E, F>(
+    Object? json, {
+    required A Function(Object?) fromA,
+    required B Function(Object?) fromB,
+    required C Function(Object?) fromC,
+    required D Function(Object?) fromD,
+    required E Function(Object?) fromE,
+    required F Function(Object?) fromF,
+  }) {
+    if (json is A) return OneOf6A(json);
+    if (json is B) return OneOf6B(json);
+    if (json is C) return OneOf6C(json);
+    if (json is D) return OneOf6D(json);
+    if (json is E) return OneOf6E(json);
+    if (json is F) return OneOf6F(json);
+    try { return OneOf6A(fromA(json)); } catch (_) {}
+    try { return OneOf6B(fromB(json)); } catch (_) {}
+    try { return OneOf6C(fromC(json)); } catch (_) {}
+    try { return OneOf6D(fromD(json)); } catch (_) {}
+    try { return OneOf6E(fromE(json)); } catch (_) {
+      return OneOf6F(fromF(json));
+    }
   }
 
   Object? toJson() {
@@ -489,6 +515,33 @@ sealed class OneOf7<A, B, C, D, E, F, G> {
     if (value is F) return OneOf7F(value);
     if (value is G) return OneOf7G(value);
     throw ArgumentError('Value $value does not match any variant of OneOf7');
+  }
+
+  static OneOf7<A, B, C, D, E, F, G> parse<A, B, C, D, E, F, G>(
+    Object? json, {
+    required A Function(Object?) fromA,
+    required B Function(Object?) fromB,
+    required C Function(Object?) fromC,
+    required D Function(Object?) fromD,
+    required E Function(Object?) fromE,
+    required F Function(Object?) fromF,
+    required G Function(Object?) fromG,
+  }) {
+    if (json is A) return OneOf7A(json);
+    if (json is B) return OneOf7B(json);
+    if (json is C) return OneOf7C(json);
+    if (json is D) return OneOf7D(json);
+    if (json is E) return OneOf7E(json);
+    if (json is F) return OneOf7F(json);
+    if (json is G) return OneOf7G(json);
+    try { return OneOf7A(fromA(json)); } catch (_) {}
+    try { return OneOf7B(fromB(json)); } catch (_) {}
+    try { return OneOf7C(fromC(json)); } catch (_) {}
+    try { return OneOf7D(fromD(json)); } catch (_) {}
+    try { return OneOf7E(fromE(json)); } catch (_) {}
+    try { return OneOf7F(fromF(json)); } catch (_) {
+      return OneOf7G(fromG(json));
+    }
   }
 
   Object? toJson() {
@@ -610,6 +663,36 @@ sealed class OneOf8<A, B, C, D, E, F, G, H> {
     if (value is G) return OneOf8G(value);
     if (value is H) return OneOf8H(value);
     throw ArgumentError('Value $value does not match any variant of OneOf8');
+  }
+
+  static OneOf8<A, B, C, D, E, F, G, H> parse<A, B, C, D, E, F, G, H>(
+    Object? json, {
+    required A Function(Object?) fromA,
+    required B Function(Object?) fromB,
+    required C Function(Object?) fromC,
+    required D Function(Object?) fromD,
+    required E Function(Object?) fromE,
+    required F Function(Object?) fromF,
+    required G Function(Object?) fromG,
+    required H Function(Object?) fromH,
+  }) {
+    if (json is A) return OneOf8A(json);
+    if (json is B) return OneOf8B(json);
+    if (json is C) return OneOf8C(json);
+    if (json is D) return OneOf8D(json);
+    if (json is E) return OneOf8E(json);
+    if (json is F) return OneOf8F(json);
+    if (json is G) return OneOf8G(json);
+    if (json is H) return OneOf8H(json);
+    try { return OneOf8A(fromA(json)); } catch (_) {}
+    try { return OneOf8B(fromB(json)); } catch (_) {}
+    try { return OneOf8C(fromC(json)); } catch (_) {}
+    try { return OneOf8D(fromD(json)); } catch (_) {}
+    try { return OneOf8E(fromE(json)); } catch (_) {}
+    try { return OneOf8F(fromF(json)); } catch (_) {}
+    try { return OneOf8G(fromG(json)); } catch (_) {
+      return OneOf8H(fromH(json));
+    }
   }
 
   Object? toJson() {
@@ -754,6 +837,39 @@ sealed class OneOf9<A, B, C, D, E, F, G, H, I> {
     if (value is H) return OneOf9H(value);
     if (value is I) return OneOf9I(value);
     throw ArgumentError('Value $value does not match any variant of OneOf9');
+  }
+
+  static OneOf9<A, B, C, D, E, F, G, H, I> parse<A, B, C, D, E, F, G, H, I>(
+    Object? json, {
+    required A Function(Object?) fromA,
+    required B Function(Object?) fromB,
+    required C Function(Object?) fromC,
+    required D Function(Object?) fromD,
+    required E Function(Object?) fromE,
+    required F Function(Object?) fromF,
+    required G Function(Object?) fromG,
+    required H Function(Object?) fromH,
+    required I Function(Object?) fromI,
+  }) {
+    if (json is A) return OneOf9A(json);
+    if (json is B) return OneOf9B(json);
+    if (json is C) return OneOf9C(json);
+    if (json is D) return OneOf9D(json);
+    if (json is E) return OneOf9E(json);
+    if (json is F) return OneOf9F(json);
+    if (json is G) return OneOf9G(json);
+    if (json is H) return OneOf9H(json);
+    if (json is I) return OneOf9I(json);
+    try { return OneOf9A(fromA(json)); } catch (_) {}
+    try { return OneOf9B(fromB(json)); } catch (_) {}
+    try { return OneOf9C(fromC(json)); } catch (_) {}
+    try { return OneOf9D(fromD(json)); } catch (_) {}
+    try { return OneOf9E(fromE(json)); } catch (_) {}
+    try { return OneOf9F(fromF(json)); } catch (_) {}
+    try { return OneOf9G(fromG(json)); } catch (_) {}
+    try { return OneOf9H(fromH(json)); } catch (_) {
+      return OneOf9I(fromI(json));
+    }
   }
 
   Object? toJson() {

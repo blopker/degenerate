@@ -7,7 +7,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_google_omni_embeddinggemma300m_request_text.dart';final class WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest {const WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest({required this.text});
 
 factory WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest(
-  text: OneOf2.parse(json['text'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,),
+  text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 /// Input text to embed. Can be a single string or a list of strings.

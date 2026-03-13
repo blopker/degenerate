@@ -63,7 +63,7 @@ final class GetEventListGetSearch {const GetEventListGetSearch({this.field, this
 factory GetEventListGetSearch.fromJson(Map<String, dynamic> json) { return GetEventListGetSearch(
   field: json['field'] as String?,
   op: json['op'] != null ? GetEventListGetSearchOp.fromJson(json['op'] as String) : null,
-  value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as num).toDouble(), canParseB: (v) => v is num, fromC: (v) => (v as List<dynamic>).map((e) => e).toList(), canParseC: (v) => v is List,) : null,
+  value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => (v as List<dynamic>).map((e) => e).toList(),) : null,
 ); }
 
 final String? field;

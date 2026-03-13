@@ -319,40 +319,11 @@ String buildOneOfParseCode(
   for (var i = 0; i < variants.length; i++) {
     final variant = variants[i];
     args.add('from${_oneOfLetters[i]}: (v) => ${_buildFromJsonNonNull(variant, 'v')}');
-
-    // Add canParse for objects/refs that have canParse
-    final canParseExpr = _buildCanParseExpr(variant);
-    if (canParseExpr != null) {
-      args.add(
-        'canParse${_oneOfLetters[i]}: (v) => $canParseExpr',
-      );
-    }
   }
 
   final call = 'OneOf$n.parse($accessor, ${args.join(', ')},)';
   if (!isOptional) return call;
   return '$accessor != null ? $call : null';
-}
-
-/// Build a canParse expression for a variant type, if applicable.
-String? _buildCanParseExpr(IrType type) {
-  return switch (type) {
-    IrObject(:final name) =>
-      'v is Map<String, dynamic> && $name.canParse(v)',
-    IrTypeRef(:final name) =>
-      'v is Map<String, dynamic> && $name.canParse(v)',
-    IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.string => 'v is String',
-      PrimitiveKind.int || PrimitiveKind.double || PrimitiveKind.num =>
-        'v is num',
-      PrimitiveKind.bool => 'v is bool',
-      _ => null,
-    },
-    IrEnum() => 'v is String',
-    IrList() => 'v is List',
-    IrMap() => 'v is Map',
-    _ => null,
-  };
 }
 
 /// Get the variant class name for a discriminated union variant.

@@ -7,10 +7,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_documents.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_queries.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_text.dart';final class WorkersAiPostRunCfQwenQwen3Embedding06bRequest {const WorkersAiPostRunCfQwenQwen3Embedding06bRequest({this.documents, this.instruction = 'Given a web search query, retrieve relevant passages that answer the query', this.queries, this.text, });
 
 factory WorkersAiPostRunCfQwenQwen3Embedding06bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
-  documents: json['documents'] != null ? OneOf2.parse(json['documents'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,) : null,
+  documents: json['documents'] != null ? OneOf2.parse(json['documents'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   instruction: json.containsKey('instruction') ? json['instruction'] as String : 'Given a web search query, retrieve relevant passages that answer the query',
-  queries: json['queries'] != null ? OneOf2.parse(json['queries'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,) : null,
-  text: json['text'] != null ? OneOf2.parse(json['text'], fromA: (v) => v as String, canParseA: (v) => v is String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), canParseB: (v) => v is List,) : null,
+  queries: json['queries'] != null ? OneOf2.parse(json['queries'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
+  text: json['text'] != null ? OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
 ); }
 
 final WorkersAiPostRunCfQwenQwen3Embedding06bRequestDocuments? documents;
