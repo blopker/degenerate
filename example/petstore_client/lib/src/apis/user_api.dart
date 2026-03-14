@@ -6,7 +6,7 @@
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/user.dart';/// UserApi operations.
 ///
-/// All operations return [ApiResult] — use pattern matching to handle
+/// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
 final class UserApi {const UserApi(this._config);
 

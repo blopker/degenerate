@@ -11,16 +11,10 @@ test:
 	dart analyze example
 	dart analyze test
 	dart analyze packages
-
-# test_unit:
-	# todo
+	dart analyze snapshots/public/*
 
 update_snapshots:
 	UPDATE_SNAPSHOTS=1 dart test test/snapshot_test.dart
 
 update_example:
 	dart run bin/degenerate.dart -i example/petstore3.json -o example/petstore_client --clean -n petstore_client
-
-# WARNING: This takes a long time, but these are not checked with `make test`
-analyze_snapshots:
-	dart analyze snapshots/public/*

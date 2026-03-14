@@ -6,7 +6,7 @@
 
 import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/find_pets_by_status_status.dart';import '../models/pet.dart';import '../models/response.dart';/// PetApi operations.
 ///
-/// All operations return [ApiResult] — use pattern matching to handle
+/// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
 final class PetApi {const PetApi(this._config);
 
