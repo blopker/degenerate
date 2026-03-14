@@ -54,7 +54,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'To=${Uri.encodeQueryComponent(body.to)}',
     if (body.statusCallback case final statusCallback$?)
       'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
@@ -142,7 +142,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.body case final body$?)
       'Body=${Uri.encodeQueryComponent(body$)}',
     if (body.status case final status$?)

@@ -51,7 +51,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
   ].join('&'),
@@ -94,7 +94,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
     if (body.status case final status$?)

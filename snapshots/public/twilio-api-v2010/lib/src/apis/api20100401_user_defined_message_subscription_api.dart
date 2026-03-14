@@ -22,7 +22,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessageSubscriptions.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'Callback=${Uri.encodeQueryComponent(body.callback.toString())}',
     if (body.idempotencyKey case final idempotencyKey$?)
       'IdempotencyKey=${Uri.encodeQueryComponent(idempotencyKey$)}',

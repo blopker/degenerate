@@ -22,7 +22,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Streams.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'Url=${Uri.encodeQueryComponent(body.url.toString())}',
     if (body.name case final name$?)
       'Name=${Uri.encodeQueryComponent(name$)}',
@@ -449,7 +449,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Streams/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
   ].join('&'),
   options: options,

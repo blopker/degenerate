@@ -387,7 +387,7 @@ class ApiEmitter {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
       buf.writeln("  contentType: 'multipart/form-data',");
     } else if (formUrlencodedFields != null) {
-      _writeFormUrlencodedBody(buf, formUrlencodedFields);
+      _writeFormUrlencodedBody(buf, formUrlencodedFields, op.requestBody!.isRequired);
     } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
       final bodyExpr = _buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired);
@@ -1039,7 +1039,7 @@ try {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
       buf.writeln("  contentType: 'multipart/form-data',");
     } else if (formUrlencodedFields != null) {
-      _writeFormUrlencodedBody(buf, formUrlencodedFields);
+      _writeFormUrlencodedBody(buf, formUrlencodedFields, op.requestBody!.isRequired);
     } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
       buf.writeln('  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},');
@@ -1375,8 +1375,13 @@ try {
   void _writeFormUrlencodedBody(
     StringBuffer buf,
     List<IrField> fields,
+    bool isRequired,
   ) {
-    buf.writeln('  body: [');
+    if (!isRequired) {
+      buf.writeln('  body: body == null ? null : [');
+    } else {
+      buf.writeln('  body: [');
+    }
     for (final f in fields) {
       final fieldAccessor = 'body.${f.name}';
       final isNullable =
@@ -1444,7 +1449,8 @@ try {
   String _multipartFieldValueExpr(IrType type, String accessor) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object || PrimitiveKind.string => accessor,
+        PrimitiveKind.string => accessor,
+        PrimitiveKind.object => '$accessor.toString()',
         PrimitiveKind.bool ||
         PrimitiveKind.int ||
         PrimitiveKind.double ||

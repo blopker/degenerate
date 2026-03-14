@@ -168,7 +168,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountToken case final accountToken$?)
       'account_token=${Uri.encodeQueryComponent(accountToken$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -277,7 +277,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountToken case final accountToken$?)
       'account_token=${Uri.encodeQueryComponent(accountToken$)}',
     if (body.businessProfile case final businessProfile$?)
@@ -340,7 +340,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -367,7 +367,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.bankAccount case final bankAccount$?)
       'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
     if (body.defaultForCurrency case final defaultForCurrency$?)
@@ -442,7 +442,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -501,7 +501,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -592,7 +592,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/capabilities/${Uri.encodeComponent(capability)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.requested case final requested$?)
@@ -659,7 +659,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.bankAccount case final bankAccount$?)
       'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
     if (body.defaultForCurrency case final defaultForCurrency$?)
@@ -734,7 +734,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -793,7 +793,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -822,7 +822,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/login_links',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -894,7 +894,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1011,7 +1011,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1096,7 +1096,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -1166,7 +1166,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1283,7 +1283,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1368,7 +1368,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -1521,7 +1521,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/apple_pay/domains/${Uri.encodeComponent(domain)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -1621,7 +1621,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(fee)}/refunds/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -1683,7 +1683,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refund',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.directive case final directive$?)
@@ -1759,7 +1759,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refunds',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.expand case final expand$?)
@@ -2074,7 +2074,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/balance_settings',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.payments case final payments$?)
@@ -2285,7 +2285,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/activate',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2314,7 +2314,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/archive',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2343,7 +2343,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2595,7 +2595,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -2628,7 +2628,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/expire',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2657,7 +2657,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/void',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2860,7 +2860,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.displayName case final displayName$?)
       'display_name=${Uri.encodeQueryComponent(displayName$)}',
     if (body.expand case final expand$?)
@@ -2891,7 +2891,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2959,7 +2959,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/reactivate',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -3097,7 +3097,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.businessProfile case final businessProfile$?)
@@ -3140,7 +3140,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/sessions',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.configuration case final configuration$?)
       'configuration=${Uri.encodeQueryComponent(configuration$)}',
     if (body.customer case final customer$?)
@@ -3225,7 +3225,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.applicationFee case final applicationFee$?)
@@ -3362,7 +3362,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
     if (body.description case final description$?)
@@ -3409,7 +3409,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/capture',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.applicationFee case final applicationFee$?)
@@ -3484,7 +3484,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.evidence case final evidence$?)
       'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
     if (body.expand case final expand$?)
@@ -3518,7 +3518,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute/close',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -3557,7 +3557,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refund',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.expand case final expand$?)
@@ -3645,7 +3645,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -3724,7 +3724,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -3802,7 +3802,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.adaptivePricing case final adaptivePricing$?)
       'adaptive_pricing=${Uri.encodeQueryComponent(adaptivePricing$.toString())}',
     if (body.afterExpiration case final afterExpiration$?)
@@ -3961,7 +3961,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.collectedInformation case final collectedInformation$?)
       'collected_information=${Uri.encodeQueryComponent(collectedInformation$.toString())}',
     if (body.expand case final expand$?)
@@ -4000,7 +4000,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}/expire',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -4173,7 +4173,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.beneficiary case final beneficiary$?)
       'beneficiary=${Uri.encodeQueryComponent(beneficiary$.toString())}',
     if (body.expand case final expand$?)
@@ -4209,7 +4209,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -4511,7 +4511,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amountOff case final amountOff$?)
       'amount_off=${Uri.encodeQueryComponent(amountOff$.toString())}',
     if (body.appliesTo case final appliesTo$?)
@@ -4596,7 +4596,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.currencyOptions case final currencyOptions$?)
       'currency_options=${Uri.encodeQueryComponent(currencyOptions$.toString())}',
     if (body.expand case final expand$?)
@@ -4631,7 +4631,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -4945,7 +4945,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.memo case final memo$?)
@@ -4978,7 +4978,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}/void',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -5081,7 +5081,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.balance case final balance$?)
@@ -5224,7 +5224,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.balance case final balance$?)
@@ -5301,7 +5301,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -5434,7 +5434,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$)}',
     if (body.expand case final expand$?)
@@ -5471,7 +5471,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.alipayAccount case final alipayAccount$?)
       'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -5509,7 +5509,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -5564,7 +5564,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -5593,7 +5593,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}/verify',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.expand case final expand$?)
@@ -5628,7 +5628,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.alipayAccount case final alipayAccount$?)
       'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -5666,7 +5666,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -5721,7 +5721,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -5782,7 +5782,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.settings case final settings$?)
@@ -5911,7 +5911,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/discount',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -6080,7 +6080,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.alipayAccount case final alipayAccount$?)
       'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -6149,7 +6149,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -6204,7 +6204,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -6233,7 +6233,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}/verify',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.expand case final expand$?)
@@ -6299,7 +6299,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -6416,7 +6416,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -6505,7 +6505,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.invoiceNow case final invoiceNow$?)
@@ -6569,7 +6569,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -6694,7 +6694,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -6795,7 +6795,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.evidence case final evidence$?)
       'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
     if (body.expand case final expand$?)
@@ -6832,7 +6832,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}/close',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -7031,7 +7031,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/entitlements/features/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -7066,7 +7066,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/ephemeral_keys',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
     if (body.expand case final expand$?)
@@ -7103,7 +7103,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/ephemeral_keys/${Uri.encodeComponent(key)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -7284,7 +7284,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -7449,7 +7449,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/file_links/${Uri.encodeComponent(link)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -7661,7 +7661,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -8189,7 +8189,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.clientReferenceId case final clientReferenceId$?)
       'client_reference_id=${Uri.encodeQueryComponent(clientReferenceId$)}',
     if (body.expand case final expand$?)
@@ -8276,7 +8276,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -8315,7 +8315,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -8362,7 +8362,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/redact',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -8537,7 +8537,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/archive',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -8566,7 +8566,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/unarchive',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -8637,7 +8637,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -8734,7 +8734,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.description case final description$?)
@@ -8789,7 +8789,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -8862,7 +8862,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountTaxIds case final accountTaxIds$?)
       'account_tax_ids=${Uri.encodeQueryComponent(accountTaxIds$.toString())}',
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
@@ -8963,7 +8963,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/create_preview',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.automaticTax case final automaticTax$?)
       'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
     if (body.currency case final currency$?)
@@ -9095,7 +9095,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.accountTaxIds case final accountTaxIds$?)
       'account_tax_ids=${Uri.encodeQueryComponent(accountTaxIds$.toString())}',
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
@@ -9176,7 +9176,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -9244,7 +9244,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/attach_payment',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.paymentIntent case final paymentIntent$?)
@@ -9277,7 +9277,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/finalize',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.autoAdvance case final autoAdvance$?)
       'auto_advance=${Uri.encodeQueryComponent(autoAdvance$.toString())}',
     if (body.expand case final expand$?)
@@ -9346,7 +9346,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/lines/${Uri.encodeComponent(lineItemId)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.description case final description$?)
@@ -9397,7 +9397,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/mark_uncollectible',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -9426,7 +9426,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/pay',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.forgive case final forgive$?)
@@ -9501,7 +9501,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/send',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -9564,7 +9564,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/void',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -9666,7 +9666,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/authorizations/${Uri.encodeComponent(authorization)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -9820,7 +9820,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cardholders/${Uri.encodeComponent(cardholder)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.billing case final billing$?)
       'billing=${Uri.encodeQueryComponent(billing$.toString())}',
     if (body.company case final company$?)
@@ -10001,7 +10001,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cards/${Uri.encodeComponent(card)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.cancellationReason case final cancellationReason$?)
       'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
     if (body.expand case final expand$?)
@@ -10084,7 +10084,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.evidence case final evidence$?)
@@ -10155,7 +10155,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.evidence case final evidence$?)
@@ -10190,7 +10190,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}/submit',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -10340,7 +10340,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.cardLogo case final cardLogo$?)
       'card_logo=${Uri.encodeQueryComponent(cardLogo$.toString())}',
     if (body.carrierText case final carrierText$?)
@@ -10486,7 +10486,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/settlements/${Uri.encodeComponent(settlement)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -10692,7 +10692,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -10865,7 +10865,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -11288,7 +11288,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.amountDetails case final amountDetails$?)
@@ -11400,7 +11400,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/apply_customer_balance',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -11437,7 +11437,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.cancellationReason case final cancellationReason$?)
       'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
     if (body.expand case final expand$?)
@@ -11472,7 +11472,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/capture',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amountDetails case final amountDetails$?)
       'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
     if (body.amountToCapture case final amountToCapture$?)
@@ -11550,7 +11550,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amountDetails case final amountDetails$?)
       'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
     if (body.captureMethod case final captureMethod$?)
@@ -11690,7 +11690,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.clientSecret case final clientSecret$?)
@@ -11879,7 +11879,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_links/${Uri.encodeComponent(paymentLink)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.afterCompletion case final afterCompletion$?)
@@ -12027,7 +12027,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.acssDebit case final acssDebit$?)
       'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
     if (body.affirm case final affirm$?)
@@ -12204,7 +12204,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.acssDebit case final acssDebit$?)
       'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
     if (body.active case final active$?)
@@ -12450,7 +12450,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.enabled case final enabled$?)
       'enabled=${Uri.encodeQueryComponent(enabled$.toString())}',
     if (body.expand case final expand$?)
@@ -12486,7 +12486,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}/validate',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -12556,7 +12556,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.acssDebit case final acssDebit$?)
       'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
     if (body.affirm case final affirm$?)
@@ -12735,7 +12735,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.allowRedisplay case final allowRedisplay$?)
       'allow_redisplay=${Uri.encodeQueryComponent(allowRedisplay$.toJson())}',
     if (body.billingDetails case final billingDetails$?)
@@ -12788,7 +12788,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/attach',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
     if (body.customerAccount case final customerAccount$?)
@@ -12821,7 +12821,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/detach',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -13078,7 +13078,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_informational',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.customerDetails case final customerDetails$?)
       'customer_details=${Uri.encodeQueryComponent(customerDetails$.toString())}',
     if (body.description case final description$?)
@@ -13278,7 +13278,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -13309,7 +13309,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -13340,7 +13340,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/reverse',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -13504,7 +13504,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -13543,7 +13543,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -13754,7 +13754,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/prices/${Uri.encodeComponent(price)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.currencyOptions case final currencyOptions$?)
@@ -13967,7 +13967,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/products/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.defaultPrice case final defaultPrice$?)
@@ -14022,7 +14022,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -14146,7 +14146,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(product)}/features/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -14294,7 +14294,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/promotion_codes/${Uri.encodeComponent(promotionCode)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -14368,7 +14368,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
       'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -14469,7 +14469,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
       'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -14534,7 +14534,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/accept',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -14563,7 +14563,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -14627,7 +14627,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/finalize',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -14937,7 +14937,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_list_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -15071,7 +15071,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.alias case final alias$?)
       'alias=${Uri.encodeQueryComponent(alias$)}',
     if (body.expand case final expand$?)
@@ -15106,7 +15106,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -15183,7 +15183,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.charge case final charge$?)
@@ -15268,7 +15268,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -15301,7 +15301,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -15566,7 +15566,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/reviews/${Uri.encodeComponent(review)}/approve',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -15679,7 +15679,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.attachToSelf case final attachToSelf$?)
       'attach_to_self=${Uri.encodeQueryComponent(attachToSelf$.toString())}',
     if (body.automaticPaymentMethods case final automaticPaymentMethods$?)
@@ -15787,7 +15787,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.attachToSelf case final attachToSelf$?)
       'attach_to_self=${Uri.encodeQueryComponent(attachToSelf$.toString())}',
     if (body.customer case final customer$?)
@@ -15842,7 +15842,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.cancellationReason case final cancellationReason$?)
       'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
     if (body.expand case final expand$?)
@@ -15886,7 +15886,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.clientSecret case final clientSecret$?)
       'client_secret=${Uri.encodeQueryComponent(clientSecret$)}',
     if (body.confirmationToken case final confirmationToken$?)
@@ -15931,7 +15931,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.clientSecret case final clientSecret$?)
@@ -16080,7 +16080,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/shipping_rates/${Uri.encodeComponent(shippingRateToken)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -16117,7 +16117,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sigma/saved_queries/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.name case final name$?)
@@ -16217,7 +16217,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -16311,7 +16311,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources/${Uri.encodeComponent(source)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.expand case final expand$?)
@@ -16595,7 +16595,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.billingThresholds case final billingThresholds$?)
       'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
     if (body.discounts case final discounts$?)
@@ -16646,7 +16646,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.clearUsage case final clearUsage$?)
       'clear_usage=${Uri.encodeQueryComponent(clearUsage$.toString())}',
     if (body.paymentBehavior case final paymentBehavior$?)
@@ -16731,7 +16731,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.billingMode case final billingMode$?)
       'billing_mode=${Uri.encodeQueryComponent(billingMode$.toString())}',
     if (body.customer case final customer$?)
@@ -16810,7 +16810,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.defaultSettings case final defaultSettings$?)
       'default_settings=${Uri.encodeQueryComponent(defaultSettings$.toString())}',
     if (body.endBehavior case final endBehavior$?)
@@ -16849,7 +16849,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.invoiceNow case final invoiceNow$?)
@@ -16882,7 +16882,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/release',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.preserveCancelDate case final preserveCancelDate$?)
@@ -16972,7 +16972,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -17159,7 +17159,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -17252,7 +17252,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.cancellationDetails case final cancellationDetails$?)
       'cancellation_details=${Uri.encodeQueryComponent(cancellationDetails$.toString())}',
     if (body.expand case final expand$?)
@@ -17287,7 +17287,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -17344,7 +17344,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/resume',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.billingCycleAnchor case final billingCycleAnchor$?)
       'billing_cycle_anchor=${Uri.encodeQueryComponent(billingCycleAnchor$.toJson())}',
     if (body.expand case final expand$?)
@@ -17624,7 +17624,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/registrations/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.activeFrom case final activeFrom$?)
       'active_from=${Uri.encodeQueryComponent(activeFrom$.toString())}',
     if (body.expand case final expand$?)
@@ -17689,7 +17689,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/settings',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.defaults case final defaults$?)
       'defaults=${Uri.encodeQueryComponent(defaults$.toString())}',
     if (body.expand case final expand$?)
@@ -18037,7 +18037,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/tax_ids/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -18182,7 +18182,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_rates/${Uri.encodeComponent(taxRate)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.country case final country$?)
@@ -18263,7 +18263,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.bbposWisepad3 case final bbposWisepad3$?)
       'bbpos_wisepad3=${Uri.encodeQueryComponent(bbposWisepad3$.toString())}',
     if (body.bbposWiseposE case final bbposWiseposE$?)
@@ -18346,7 +18346,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.bbposWisepad3 case final bbposWisepad3$?)
       'bbpos_wisepad3=${Uri.encodeQueryComponent(bbposWisepad3$.toString())}',
     if (body.bbposWiseposE case final bbposWiseposE$?)
@@ -18397,7 +18397,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -18424,7 +18424,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/connection_tokens',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.location case final location$?)
@@ -18491,7 +18491,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.addressKana case final addressKana$?)
@@ -18570,7 +18570,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.addressKana case final addressKana$?)
@@ -18617,7 +18617,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -18784,7 +18784,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.label case final label$?)
@@ -18817,7 +18817,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -18844,7 +18844,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/cancel_action',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19034,7 +19034,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/refund_payment',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.charge case final charge$?)
@@ -19112,7 +19112,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/refunds',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.charge case final charge$?)
@@ -19155,7 +19155,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/confirmation_tokens',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.paymentMethod case final paymentMethod$?)
@@ -19289,7 +19289,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/capture',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.captureAmount case final captureAmount$?)
       'capture_amount=${Uri.encodeQueryComponent(captureAmount$.toString())}',
     if (body.closeAuthorization case final closeAuthorization$?)
@@ -19324,7 +19324,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/expire',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19449,7 +19449,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/reverse',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.reverseAmount case final reverseAmount$?)
@@ -19480,7 +19480,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/deliver',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19509,7 +19509,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/fail',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19538,7 +19538,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/return',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19567,7 +19567,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/ship',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19596,7 +19596,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/submit',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19625,7 +19625,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/activate',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19654,7 +19654,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/deactivate',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19756,7 +19756,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/settlements/${Uri.encodeComponent(settlement)}/complete',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19859,7 +19859,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/${Uri.encodeComponent(transaction)}/refund',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.refundAmount case final refundAmount$?)
@@ -19890,7 +19890,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/refunds/${Uri.encodeComponent(refund)}/expire',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -19919,7 +19919,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/present_payment_method',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amountTip case final amountTip$?)
       'amount_tip=${Uri.encodeQueryComponent(amountTip$.toString())}',
     if (body.card case final card$?)
@@ -19958,7 +19958,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/succeed_input_collection',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.skipNonRequiredInputs case final skipNonRequiredInputs$?)
@@ -19989,7 +19989,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/timeout_input_collection',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20117,7 +20117,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );
@@ -20174,7 +20174,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/fail',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.failureDetails case final failureDetails$?)
@@ -20205,7 +20205,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/return',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20234,7 +20234,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/succeed',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20293,7 +20293,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/fail',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20322,7 +20322,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/post',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20351,7 +20351,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/return',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.returnedDetails case final returnedDetails$?)
@@ -20412,7 +20412,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/fail',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20441,7 +20441,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/post',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20470,7 +20470,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/return',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.returnedDetails case final returnedDetails$?)
@@ -20576,7 +20576,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tokens',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.account case final account$?)
       'account=${Uri.encodeQueryComponent(account$.toString())}',
     if (body.bankAccount case final bankAccount$?)
@@ -20766,7 +20766,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$)}',
     if (body.expand case final expand$?)
@@ -20799,7 +20799,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20950,7 +20950,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(id)}/reversals',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.description case final description$?)
@@ -21021,7 +21021,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$)}',
     if (body.expand case final expand$?)
@@ -21088,7 +21088,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}/reversals/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -21433,7 +21433,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.features case final features$?)
@@ -21472,7 +21472,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/close',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.forwardingSettings case final forwardingSettings$?)
@@ -21535,7 +21535,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/features',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.cardIssuing case final cardIssuing$?)
       'card_issuing=${Uri.encodeQueryComponent(cardIssuing$.toString())}',
     if (body.depositInsurance case final depositInsurance$?)
@@ -21686,7 +21686,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/inbound_transfers/${Uri.encodeComponent(inboundTransfer)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21836,7 +21836,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_payments/${Uri.encodeComponent(id)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21978,7 +21978,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/cancel',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -22406,7 +22406,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$.toString())}',
     if (body.disabled case final disabled$?)
@@ -22445,7 +22445,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
   headers: headers,
-  body: [
+  body: body == null ? null : [
   ].join('&'),
   options: options,
 );

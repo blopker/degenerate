@@ -22,7 +22,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Tokens.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.ttl case final ttl$?)
       'Ttl=${Uri.encodeQueryComponent(ttl$.toString())}',
   ].join('&'),

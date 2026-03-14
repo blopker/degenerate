@@ -22,7 +22,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
     'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
     if (body.bankAccountType case final bankAccountType$?)
@@ -38,7 +38,7 @@ final request = ApiRequest(
     if (body.minPostalCodeLength case final minPostalCodeLength$?)
       'MinPostalCodeLength=${Uri.encodeQueryComponent(minPostalCodeLength$.toString())}',
     if (body.parameter case final parameter$?)
-      'Parameter=${Uri.encodeQueryComponent(parameter$)}',
+      'Parameter=${Uri.encodeQueryComponent(parameter$.toString())}',
     if (body.paymentConnector case final paymentConnector$?)
       'PaymentConnector=${Uri.encodeQueryComponent(paymentConnector$)}',
     if (body.paymentMethod case final paymentMethod$?)
@@ -74,7 +74,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
     'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
     if (body.capture case final capture$?)

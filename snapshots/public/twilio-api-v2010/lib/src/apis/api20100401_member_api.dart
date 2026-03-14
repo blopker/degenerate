@@ -41,7 +41,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues/${Uri.encodeComponent(queueSid)}/Members/${Uri.encodeComponent(callSid)}.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'Url=${Uri.encodeQueryComponent(body.url.toString())}',
     if (body.method case final method$?)
       'Method=${Uri.encodeQueryComponent(method$.toJson())}',

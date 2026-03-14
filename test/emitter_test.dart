@@ -2271,4 +2271,112 @@ void main() {
       expect(apiFile, isNot(contains('final headers')));
     });
   });
+
+  group('ApiEmitter form-urlencoded body null safety', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      final bodyType = IrObject('CreateRequest', [
+        IrField('name', 'Name', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField('tag', 'Tag', IrPrimitive(PrimitiveKind.string)),
+      ]);
+      final types = <IrType>[bodyType];
+
+      final apis = <IrApi>[
+        IrApi('TestApi', [
+          IrOperation(
+            'createThing',
+            'createThing',
+            HttpMethod.post,
+            '/things',
+            requestBody: IrRequestBody(
+              {
+                'application/x-www-form-urlencoded': IrMediaType(
+                  IrTypeRef('CreateRequest'),
+                ),
+              },
+              isRequired: false,
+            ),
+            responses: {
+              200: IrResponse(
+                description: 'OK',
+                content: {
+                  'application/json': IrMediaType(
+                    IrPrimitive(PrimitiveKind.string),
+                  ),
+                },
+              ),
+            },
+          ),
+        ]),
+      ];
+
+      files = FileEmitter().emitAll(
+        types: types,
+        apis: apis,
+        packageName: 'form_test',
+        specFileName: 'test.yaml',
+        specVersion: '1.0.0',
+      );
+    });
+
+    test('optional body is null-checked in form-urlencoded serialization', () {
+      final apiFile = files['lib/src/apis/test_api.dart']!;
+      // When body is optional, field access should be guarded
+      expect(apiFile, contains('body == null ? null :'));
+    });
+  });
+
+  group('ApiEmitter form-urlencoded Object field uses toString', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      final bodyType = IrObject('ObjRequest', [
+        IrField('data', 'Data', IrPrimitive(PrimitiveKind.object)),
+      ]);
+      final types = <IrType>[bodyType];
+
+      final apis = <IrApi>[
+        IrApi('TestApi', [
+          IrOperation(
+            'sendData',
+            'sendData',
+            HttpMethod.post,
+            '/data',
+            requestBody: IrRequestBody(
+              {
+                'application/x-www-form-urlencoded': IrMediaType(
+                  IrTypeRef('ObjRequest'),
+                ),
+              },
+              isRequired: true,
+            ),
+            responses: {
+              200: IrResponse(
+                description: 'OK',
+                content: {
+                  'application/json': IrMediaType(
+                    IrPrimitive(PrimitiveKind.string),
+                  ),
+                },
+              ),
+            },
+          ),
+        ]),
+      ];
+
+      files = FileEmitter().emitAll(
+        types: types,
+        apis: apis,
+        packageName: 'obj_test',
+        specFileName: 'test.yaml',
+        specVersion: '1.0.0',
+      );
+    });
+
+    test('Object fields are converted to String with toString()', () {
+      final apiFile = files['lib/src/apis/test_api.dart']!;
+      expect(apiFile, contains('.toString()'));
+    });
+  });
 }

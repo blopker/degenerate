@@ -49,7 +49,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Calls/CredentialListMappings.json',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     'CredentialListSid=${Uri.encodeQueryComponent(body.credentialListSid)}',
   ].join('&'),
   options: options,
