@@ -131,6 +131,15 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 
 ## Session History
 
+### Session 14 (2026-03-14): Code dedup, OneOf errors, doc comment escaping
+
+- Extracted `ApiExecutor` mixin into `degenerate_runtime` with `execute()` and `executeStreaming()` methods, eliminating ~75 lines of duplicated pipeline code per generated API tag class (408 files in Cloudflare alone)
+- Generated API classes now use `with ApiExecutor` and public `apiConfig` field instead of inlined `_execute`/`_executeStreaming` private methods
+- `OneOf.parse` now collects all variant parse errors and throws a single `ArgumentError` listing each variant type name and its specific error, instead of propagating the last variant's raw exception
+- Broadened `escapeDocComment` regex from `<\w+>` to `<[^>]+>` to handle multi-word angle brackets like `<target portal>:<volume name>` in Kubernetes spec descriptions
+- 4 new runtime tests (ApiExecutor), 2 new OneOf error tests, 4 new escapeDocComment tests
+- All tests passing, zero analyzer issues across all snapshots
+
 ### Session 13 (2026-03-13): Zero analyzer issues across all snapshots
 
 - Fixed unused imports for inlined OneOf typedef variant types (`skipInlinedOneOfRefs` in `_collectTopLevelTypeName`)
