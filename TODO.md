@@ -1,6 +1,6 @@
 # Degenerate: OpenAPI to Dart Code Generator TODO
 
-## Current State (2026-03-12)
+## Current State (2026-03-13)
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
@@ -130,6 +130,19 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 13 (2026-03-13): Zero analyzer issues across all snapshots
+
+- Fixed unused imports for inlined OneOf typedef variant types (`skipInlinedOneOfRefs` in `_collectTopLevelTypeName`)
+- Fixed false `dart:convert` imports on OneOf typedef files and parent models with non-eligible unions
+- Fixed `hasBytesAnywhere` to guard direct union variants with `isOneOfEligible`
+- Fixed early-throw methods emitting unused variable declarations (moved throw before query/header vars)
+- Fixed nullable body null-check for `application/x-www-form-urlencoded` serialization
+- Fixed `PrimitiveKind.object` multipart fields using `.toString()` instead of raw `Object`
+- Fixed SDK facade class name starting with digit (`0OaiApi` → `$0OaiApi`) via `sanitizeDartName`
+- Fixed nullable public property promotion in deepObject/form-exploded query params using `case final` pattern
+- All 9 public snapshots now pass `dart analyze` with 0 issues (was 646 Cloudflare + 854 Twilio + 25 others)
+- 11 new emitter tests covering all fixes
 
 ### Session 12 (2026-03-12): Inline naming, OneOf generics, union code reduction
 
