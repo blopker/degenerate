@@ -2379,4 +2379,136 @@ void main() {
       expect(apiFile, contains('.toString()'));
     });
   });
+
+  // ─── SDK facade class name sanitization ───────────────────────
+
+  group('SDK facade class name with leading digit', () {
+    test('sanitizes class name starting with digit', () {
+      final files = FileEmitter().emitAll(
+        types: const [],
+        apis: [
+          IrApi('PetsApi', [
+            IrOperation(
+              'listPets',
+              'listPets',
+              HttpMethod.get,
+              '/pets',
+              responses: const {200: IrResponse()},
+            ),
+          ]),
+        ],
+        packageName: 'pub_petstore_v3_0_oai',
+        specFileName: 'petstore.yaml',
+        specVersion: '1.0.0',
+      );
+      final sdkFile =
+          files['lib/src/client/pub_petstore_v3_0_oai_api.dart']!;
+      // Class name must be a valid Dart identifier (not start with digit without $)
+      expect(sdkFile, isNot(contains('class 0')));
+      // $0OaiApi is valid: $ prefix makes leading digit ok
+      expect(sdkFile, contains(r'class $0OaiApi'));
+    });
+  });
+
+  // ─── Deep object nullable field promotion ─────────────────────
+
+  group('deepObject nullable field promotion', () {
+    test('uses case-final pattern for nullable deepObject fields', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listItems',
+          'listItems',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              'scope',
+              'scope',
+              ParameterLocation.query,
+              IrObject(
+                'Scope',
+                [
+                  IrField(
+                    'type',
+                    'type',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: true,
+                  ),
+                  IrField(
+                    'user',
+                    'user',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: false,
+                  ),
+                ],
+                requiredFields: ['type'],
+              ),
+              isRequired: true,
+              style: 'deepObject',
+              explode: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      // Required field should still use direct access
+      expect(source, contains("queryParameters['scope[type]'] = scope.type;"));
+      // Optional field must NOT use raw property access after null check
+      // (would fail dart analyze: can't promote public property)
+      expect(source, isNot(contains("queryParameters['scope[user]'] = scope.user;")));
+      // Should use case-final pattern for promotion
+      expect(source, contains("case final user\$?"));
+    });
+
+    test('uses case-final pattern for nullable form-exploded fields', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listItems',
+          'listItems',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              'filter',
+              'filter',
+              ParameterLocation.query,
+              IrObject(
+                'Filter',
+                [
+                  IrField(
+                    'status',
+                    'status',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: true,
+                  ),
+                  IrField(
+                    'meter',
+                    'meter',
+                    IrPrimitive(PrimitiveKind.string),
+                    isRequired: false,
+                  ),
+                ],
+                requiredFields: ['status'],
+              ),
+              isRequired: true,
+              style: 'form',
+              explode: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+
+      // Optional field must use case-final for promotion
+      expect(source, isNot(contains("filter.meter != null")));
+      expect(source, contains("case final meter\$?"));
+    });
+  });
 }

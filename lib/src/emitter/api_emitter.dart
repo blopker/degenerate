@@ -591,16 +591,18 @@ class ApiEmitter {
     final name = _sanitizeParameterName(p.name);
     if (style == 'deepObject') {
       for (final field in fields) {
-        final valueExpr = _queryScalarExpr(
-          field.type,
-          '$accessor.${field.name}',
-        );
         final key = '$name[${field.originalName}]';
         if (!field.isRequired) {
+          final localVar = '${field.name}\$';
+          final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} != null) queryParameters['$key'] = $valueExpr;",
+            "if ($accessor.${field.name} case final $localVar?) queryParameters['$key'] = $valueExpr;",
           );
         } else {
+          final valueExpr = _queryScalarExpr(
+            field.type,
+            '$accessor.${field.name}',
+          );
           buf.writeln("queryParameters['$key'] = $valueExpr;");
         }
       }
@@ -609,15 +611,17 @@ class ApiEmitter {
 
     if (style == 'form' && explode) {
       for (final field in fields) {
-        final valueExpr = _queryScalarExpr(
-          field.type,
-          '$accessor.${field.name}',
-        );
         if (!field.isRequired) {
+          final localVar = '${field.name}\$';
+          final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} != null) queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+            "if ($accessor.${field.name} case final $localVar?) queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
           );
         } else {
+          final valueExpr = _queryScalarExpr(
+            field.type,
+            '$accessor.${field.name}',
+          );
           buf.writeln(
             "queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
           );

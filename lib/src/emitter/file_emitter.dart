@@ -1,7 +1,7 @@
 import 'package:code_builder/code_builder.dart';
 
 import '../ir/ir_types.dart';
-import '../naming.dart' show sanitizeFieldName, toPascalCase;
+import '../naming.dart' show sanitizeDartName, sanitizeFieldName, toPascalCase;
 import 'api_emitter.dart';
 import 'emit_utils.dart';
 import 'enum_emitter.dart';
@@ -708,7 +708,7 @@ class FileEmitter {
     required String specVersion,
     String? defaultServerUrl,
   }) {
-    final className = '${toPascalCase(packageName)}Api';
+    final className = '${sanitizeDartName(toPascalCase(packageName))}Api';
     final buf = StringBuffer();
     buf.writeln('// dart format off');
     buf.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
@@ -784,7 +784,7 @@ class FileEmitter {
     required String specFileName,
     required String specVersion,
   }) {
-    final className = '${toPascalCase(packageName)}Security';
+    final className = '${sanitizeDartName(toPascalCase(packageName))}Security';
     final buf = StringBuffer();
     buf.writeln('// dart format off');
     buf.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
@@ -930,7 +930,7 @@ class FileEmitter {
     String packageName,
     IrSecurityScheme scheme,
   ) {
-    final securityClass = '${toPascalCase(packageName)}Security';
+    final securityClass = '${sanitizeDartName(toPascalCase(packageName))}Security';
     final suffix = _securityMethodSuffix(scheme.name);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';
