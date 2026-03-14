@@ -15,12 +15,18 @@ factory ShieldRuleProperties.fromJson(Map<String, dynamic> json) { return Shield
   title: json['title'] != null ? ShieldSchemasTitle.fromJson(json['title'] as String) : null,
 ); }
 
+/// Action to take on requests that match operations included in `selector` and fail `expression`.
 final ShieldAction? action;
 
 final ShieldSchemasDescription? description;
 
+/// Toggle rule on or off.
 final ShieldEnabled? enabled;
 
+/// Rule expression. Requests that fail to match this expression will be subject to `action`.
+/// 
+/// For details on expressions, see the [Cloudflare Docs](https://developers.cloudflare.com/api-shield/security/jwt-validation/).
+/// 
 final ShieldExpression? expression;
 
 final ShieldSelector? selector;

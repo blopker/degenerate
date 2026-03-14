@@ -11,8 +11,10 @@ factory CloudflareTunnelUpdateAWarpConnectorTunnelRequest.fromJson(Map<String, d
   tunnelSecret: json['tunnel_secret'] != null ? TunnelTunnelSecret.fromJson(json['tunnel_secret'] as String) : null,
 ); }
 
+/// A user-friendly name for a tunnel.
 final TunnelTunnelName? name;
 
+/// Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.
 final TunnelTunnelSecret? tunnelSecret;
 
 Map<String, dynamic> toJson() { return {

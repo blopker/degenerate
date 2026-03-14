@@ -90,8 +90,10 @@ factory ImagesImageVariantOptions.fromJson(Map<String, dynamic> json) { return I
   width: ImagesImageVariantWidth.fromJson(json['width'] as num),
 ); }
 
+/// The fit property describes how the width and height dimensions should be interpreted.
 final ImagesImageVariantFit fit;
 
+/// Maximum height in image pixels.
 final ImagesImageVariantHeight height;
 
 final ImagesImageVariantSchemasMetadata metadata;

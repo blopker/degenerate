@@ -10,7 +10,7 @@ factory ImagesImageDirectUploadRequest.fromJson(Map<String, dynamic> json) { ret
   creator: json['creator'] as String?,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
   id: json['id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json.containsKey('requireSignedURLs') ? json['requireSignedURLs'] as bool : false,
 ); }
 
@@ -24,7 +24,7 @@ final DateTime? expiry;
 final String? id;
 
 /// User modifiable key-value store. Can be used for keeping references to another system of record, for managing images.
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 /// Indicates whether the image requires a signature token to be accessed.
 final bool requireSignedUrLs;
@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'requireSignedURLs': requireSignedUrLs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ImagesImageDirectUploadRequest copyWith({String Function()? creator, DateTime Function()? expiry, String Function()? id, Map<String, Object> Function()? metadata, bool Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(
+ImagesImageDirectUploadRequest copyWith({String Function()? creator, DateTime Function()? expiry, String Function()? id, Map<String, dynamic> Function()? metadata, bool Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,
   id: id != null ? id() : this.id,

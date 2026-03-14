@@ -14,10 +14,13 @@ factory MagicLanDhcpServer.fromJson(Map<String, dynamic> json) { return MagicLan
   reservations: (json['reservations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
+/// A valid IPv4 address.
 final MagicIpAddress? dhcpPoolEnd;
 
+/// A valid IPv4 address.
 final MagicIpAddress? dhcpPoolStart;
 
+/// A valid IPv4 address.
 final MagicIpAddress? dnsServer;
 
 final List<MagicIpAddress>? dnsServers;

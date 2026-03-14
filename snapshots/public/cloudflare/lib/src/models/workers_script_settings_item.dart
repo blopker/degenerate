@@ -13,6 +13,7 @@ factory WorkersScriptSettingsItem.fromJson(Map<String, dynamic> json) { return W
   tailConsumers: (json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Whether Logpush is turned on for the Worker.
 final WorkersLogpush? logpush;
 
 final WorkersObservability? observability;

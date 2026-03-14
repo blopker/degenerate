@@ -18,6 +18,7 @@ factory FirewallDeletedFilter.fromJson(Map<String, dynamic> json) { return Firew
   id: FirewallFiltersComponentsSchemasId.fromJson(json['id'] as String),
 ); }
 
+/// When true, indicates that the firewall rule was deleted.
 final FirewallDeleted deleted;
 
 final FirewallFiltersComponentsSchemasId id;

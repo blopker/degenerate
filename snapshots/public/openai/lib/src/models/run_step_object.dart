@@ -135,16 +135,28 @@ final RunStepObjectStatus status;
 /// The details of the run step.
 final RunStepObjectStepDetails stepDetails;
 
+/// The last error associated with this run step. Will be `null` if there are no errors.
 final RunStepObjectLastError? lastError;
 
+/// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
 final int? expiredAt;
 
+/// The Unix timestamp (in seconds) for when the run step was cancelled.
 final int? cancelledAt;
 
+/// The Unix timestamp (in seconds) for when the run step failed.
 final int? failedAt;
 
+/// The Unix timestamp (in seconds) for when the run step completed.
 final int? completedAt;
 
+/// Set of 16 key-value pairs that can be attached to an object. This can be
+/// useful for storing additional information about the object in a structured
+/// format, and querying for objects via API or the dashboard.
+/// 
+/// Keys are strings with a maximum length of 64 characters. Values are strings
+/// with a maximum length of 512 characters.
+/// 
 final Map<String,String>? metadata;
 
 final RunStepCompletionUsage usage;

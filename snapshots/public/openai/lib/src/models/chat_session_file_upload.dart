@@ -16,8 +16,10 @@ factory ChatSessionFileUpload.fromJson(Map<String, dynamic> json) { return ChatS
 /// Indicates if uploads are enabled for the session.
 final bool enabled;
 
+/// Maximum upload size in megabytes.
 final int? maxFileSize;
 
+/// Maximum number of uploads allowed during the session.
 final int? maxFiles;
 
 Map<String, dynamic> toJson() { return {

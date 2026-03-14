@@ -16,18 +16,23 @@ factory NotificationPoliciesCreateANotificationPolicyRequest.fromJson(Map<String
   name: AaaSchemasName.fromJson(json['name'] as String),
 ); }
 
+/// Optional specification of how often to re-alert from the same incident, not support on all alert types.
 final AaaAlertInterval? alertInterval;
 
+/// Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.
 final AaaAlertType alertType;
 
+/// Optional description for the Notification policy.
 final AaaSchemasDescription? description;
 
+/// Whether or not the Notification policy is enabled.
 final AaaEnabled enabled;
 
 final AaaFilters? filters;
 
 final AaaMechanisms mechanisms;
 
+/// Name of the policy.
 final AaaSchemasName name;
 
 Map<String, dynamic> toJson() { return {

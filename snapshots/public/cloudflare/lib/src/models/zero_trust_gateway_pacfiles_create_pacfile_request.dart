@@ -13,10 +13,13 @@ factory ZeroTrustGatewayPacfilesCreatePacfileRequest.fromJson(Map<String, dynami
   slug: json['slug'] as String?,
 ); }
 
+/// Actual contents of the PAC file
 final ZeroTrustGatewayContents contents;
 
+/// Detailed description of the PAC file.
 final ZeroTrustGatewayPacfilesComponentsSchemasDescription? description;
 
+/// Name of the PAC file.
 final ZeroTrustGatewayPacfilesComponentsSchemasName name;
 
 /// URL-friendly version of the PAC file name. If not provided, it will be auto-generated

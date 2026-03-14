@@ -12,7 +12,7 @@ factory AccountSipSipIpAccessControlList.fromJson(Map<String, dynamic> json) { r
   friendlyName: json['friendly_name'] as String?,
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   uri: json['uri'] as String?,
 ); }
 
@@ -32,7 +32,7 @@ final String? dateCreated;
 final String? dateUpdated;
 
 /// A list of the IpAddress resources associated with this IP access control list resource.
-final Map<String,Object?>? subresourceUris;
+final Map<String,dynamic>? subresourceUris;
 
 /// The URI for this resource, relative to `https://api.twilio.com`
 final String? uri;
@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountSipSipIpAccessControlList copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, Map<String, Object>? Function()? subresourceUris, String? Function()? uri, }) { return AccountSipSipIpAccessControlList(
+AccountSipSipIpAccessControlList copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, }) { return AccountSipSipIpAccessControlList(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

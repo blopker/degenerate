@@ -25,6 +25,7 @@ factory LogcontrolCmbConfig.fromJson(Map<String, dynamic> json) { return Logcont
   regions: json['regions'] != null ? LogcontrolRegions.fromJson(json['regions'] as String) : null,
 ); }
 
+/// Allow out of region access
 final LogcontrolAllowOutOfRegionAccess? allowOutOfRegionAccess;
 
 final LogcontrolRegions? regions;

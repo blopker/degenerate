@@ -36,6 +36,7 @@ final String? value;
 /// The Unix timestamp (in seconds) of when the API key was created
 final int createdAt;
 
+/// The Unix timestamp (in seconds) of when the API key was last used
 final int? lastUsedAt;
 
 final KeyOwner owner;

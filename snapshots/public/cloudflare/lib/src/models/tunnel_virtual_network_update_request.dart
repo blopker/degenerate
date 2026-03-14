@@ -12,10 +12,13 @@ factory TunnelVirtualNetworkUpdateRequest.fromJson(Map<String, dynamic> json) { 
   name: json['name'] != null ? TunnelVirtualNetworkName.fromJson(json['name'] as String) : null,
 ); }
 
+/// Optional remark describing the virtual network.
 final TunnelVirtualNetworkComment? comment;
 
+/// If `true`, this virtual network is the default for the account.
 final TunnelIsDefaultNetworkOptional? isDefaultNetwork;
 
+/// A user-friendly name for the virtual network.
 final TunnelVirtualNetworkName? name;
 
 Map<String, dynamic> toJson() { return {

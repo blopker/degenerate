@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-01
 ///
 /// `GET /admin/api/2020-01/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202001GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetInventoryItems({dynamic idsRequired, dynamic limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -63,7 +63,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,7 +84,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-04
 ///
 /// `GET /admin/api/2020-04/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202004GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetInventoryItems({dynamic idsRequired, dynamic limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -130,7 +130,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -151,7 +151,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-07
 ///
 /// `GET /admin/api/2020-07/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202007GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetInventoryItems({dynamic idsRequired, dynamic limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -197,7 +197,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -218,7 +218,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-10
 ///
 /// `GET /admin/api/2020-10/inventory_items.json`
-Future<ApiResult<void, Never>> getInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getInventoryItems({dynamic idsRequired, dynamic limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -264,7 +264,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> updateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateInventoryItemsParamInventoryItemId({required String inventoryItemId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -285,7 +285,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2021-01
 ///
 /// `GET /admin/api/2021-01/inventory_items.json`
-Future<ApiResult<void, Never>> deprecated202101GetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetInventoryItems({dynamic idsRequired, dynamic limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -331,7 +331,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -352,7 +352,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-unstable
 ///
 /// `GET /admin/api/unstable/inventory_items.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryItems({Object? idsRequired, Object? limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryItems({dynamic idsRequired, dynamic limit, int? ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (idsRequired != null) queryParameters['ids required'] = idsRequired.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
@@ -398,7 +398,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-unstable
 ///
 /// `PUT /admin/api/unstable/inventory_items/{inventory_item_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateInventoryItemsParamInventoryItemId({required String inventoryItemId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -421,7 +421,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-01
 ///
 /// `GET /admin/api/2020-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202001GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetInventoryLevels({dynamic inventoryItemIds, dynamic locationIds, dynamic limit, dynamic updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds.toString();
 if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
@@ -452,7 +452,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001DeleteInventoryLevels({dynamic inventoryItemIdRequired, dynamic locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -480,7 +480,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-01
 ///
 /// `POST /admin/api/2020-01/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsAdjust({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableAdjustmentRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -511,7 +511,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-01
 ///
 /// `POST /admin/api/2020-01/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsConnect({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic relocateIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -543,7 +543,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-01
 ///
 /// `POST /admin/api/2020-01/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateInventoryLevelsSet({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableRequired, dynamic disconnectIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -575,7 +575,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-04
 ///
 /// `GET /admin/api/2020-04/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202004GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetInventoryLevels({dynamic inventoryItemIds, dynamic locationIds, dynamic limit, dynamic updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds.toString();
 if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
@@ -606,7 +606,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004DeleteInventoryLevels({dynamic inventoryItemIdRequired, dynamic locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -634,7 +634,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-04
 ///
 /// `POST /admin/api/2020-04/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsAdjust({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableAdjustmentRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -665,7 +665,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-04
 ///
 /// `POST /admin/api/2020-04/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsConnect({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic relocateIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -697,7 +697,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-04
 ///
 /// `POST /admin/api/2020-04/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateInventoryLevelsSet({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableRequired, dynamic disconnectIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -729,7 +729,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-07
 ///
 /// `GET /admin/api/2020-07/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202007GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetInventoryLevels({dynamic inventoryItemIds, dynamic locationIds, dynamic limit, dynamic updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds.toString();
 if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
@@ -760,7 +760,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007DeleteInventoryLevels({dynamic inventoryItemIdRequired, dynamic locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -788,7 +788,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-07
 ///
 /// `POST /admin/api/2020-07/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsAdjust({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableAdjustmentRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -819,7 +819,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-07
 ///
 /// `POST /admin/api/2020-07/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsConnect({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic relocateIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -851,7 +851,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-07
 ///
 /// `POST /admin/api/2020-07/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateInventoryLevelsSet({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableRequired, dynamic disconnectIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -883,7 +883,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2020-10
 ///
 /// `GET /admin/api/2020-10/inventory_levels.json`
-Future<ApiResult<void, Never>> getInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getInventoryLevels({dynamic inventoryItemIds, dynamic locationIds, dynamic limit, dynamic updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds.toString();
 if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
@@ -914,7 +914,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/inventory_levels.json`
-Future<ApiResult<void, Never>> deleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deleteInventoryLevels({dynamic inventoryItemIdRequired, dynamic locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -942,7 +942,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-10
 ///
 /// `POST /admin/api/2020-10/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> createInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createInventoryLevelsAdjust({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableAdjustmentRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -973,7 +973,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2020-10
 ///
 /// `POST /admin/api/2020-10/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> createInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createInventoryLevelsConnect({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic relocateIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1005,7 +1005,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2020-10
 ///
 /// `POST /admin/api/2020-10/inventory_levels/set.json`
-Future<ApiResult<void, Never>> createInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createInventoryLevelsSet({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableRequired, dynamic disconnectIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1037,7 +1037,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-2021-01
 ///
 /// `GET /admin/api/2021-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202101GetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetInventoryLevels({dynamic inventoryItemIds, dynamic locationIds, dynamic limit, dynamic updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds.toString();
 if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
@@ -1068,7 +1068,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101DeleteInventoryLevels({dynamic inventoryItemIdRequired, dynamic locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1096,7 +1096,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2021-01
 ///
 /// `POST /admin/api/2021-01/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsAdjust({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableAdjustmentRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1127,7 +1127,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-2021-01
 ///
 /// `POST /admin/api/2021-01/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsConnect({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic relocateIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1159,7 +1159,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-2021-01
 ///
 /// `POST /admin/api/2021-01/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateInventoryLevelsSet({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableRequired, dynamic disconnectIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1191,7 +1191,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#index-unstable
 ///
 /// `GET /admin/api/unstable/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryLevels({Object? inventoryItemIds, Object? locationIds, Object? limit, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetInventoryLevels({dynamic inventoryItemIds, dynamic locationIds, dynamic limit, dynamic updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIds != null) queryParameters['inventory_item_ids'] = inventoryItemIds.toString();
 if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
@@ -1222,7 +1222,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/inventory_levels.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteInventoryLevels({Object? inventoryItemIdRequired, Object? locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteInventoryLevels({dynamic inventoryItemIdRequired, dynamic locationIdRequired, int? inventoryItemId, int? locationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1250,7 +1250,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-unstable
 ///
 /// `POST /admin/api/unstable/inventory_levels/adjust.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsAdjust({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableAdjustmentRequired, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsAdjust({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableAdjustmentRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1281,7 +1281,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#connect-unstable
 ///
 /// `POST /admin/api/unstable/inventory_levels/connect.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsConnect({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? relocateIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsConnect({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic relocateIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();
@@ -1313,7 +1313,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#set-unstable
 ///
 /// `POST /admin/api/unstable/inventory_levels/set.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsSet({Object? inventoryItemIdRequired, Object? locationIdRequired, Object? availableRequired, Object? disconnectIfNecessary, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateInventoryLevelsSet({dynamic inventoryItemIdRequired, dynamic locationIdRequired, dynamic availableRequired, dynamic disconnectIfNecessary, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (inventoryItemIdRequired != null) queryParameters['inventory_item_id required'] = inventoryItemIdRequired.toString();
 if (locationIdRequired != null) queryParameters['location_id required'] = locationIdRequired.toString();

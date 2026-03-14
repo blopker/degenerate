@@ -15,6 +15,7 @@ factory ListsItemBase.fromJson(Map<String, dynamic> json) { return ListsItemBase
 
 final ListsItemComment? comment;
 
+/// The RFC 3339 timestamp of when the list was created.
 final ListsCreatedOn createdOn;
 
 final ListsItemId id;

@@ -10,6 +10,7 @@ factory MagicVisibilityPcapsPcapsOwnershipRequest.fromJson(Map<String, dynamic> 
   destinationConf: MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String),
 ); }
 
+/// The full URI for the bucket. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsDestinationConf destinationConf;
 
 Map<String, dynamic> toJson() { return {

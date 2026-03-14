@@ -38,10 +38,13 @@ factory IamPolicyWithPermissionGroupsAndResources.fromJson(Map<String, dynamic> 
   resources: OneOf2.parse(json['resources'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)))),),
 ); }
 
+/// Allow or deny operations against the resources.
 final IamEffect effect;
 
+/// Policy identifier.
 final IamPolicyIdentifier id;
 
+/// A set of permission groups that are specified to the policy.
 final List<IamPermissionGroup> permissionGroups;
 
 final IamResources resources;

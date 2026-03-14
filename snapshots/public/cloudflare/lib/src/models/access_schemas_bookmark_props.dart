@@ -8,19 +8,21 @@ import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';
 
 factory AccessSchemasBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessSchemasBookmarkProps(
   appLauncherVisible: json['app_launcher_visible'],
-  domain: json['domain'] as Object,
+  domain: json['domain'],
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] as String,
 ); }
 
-final Object? appLauncherVisible;
+final dynamic appLauncherVisible;
 
 /// The URL or domain of the bookmark.
-final Object? domain;
+final dynamic domain;
 
+/// The image URL for the logo shown in the App Launcher dashboard.
 final AccessLogoUrl? logoUrl;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
 /// The application type.
@@ -35,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
       json.containsKey('type') && json['type'] is String; } 
-AccessSchemasBookmarkProps copyWith({Object? Function()? appLauncherVisible, Object? Function()? domain, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
+AccessSchemasBookmarkProps copyWith({dynamic Function()? appLauncherVisible, dynamic Function()? domain, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
   domain: domain != null ? domain() : this.domain,
   logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,

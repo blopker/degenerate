@@ -14,6 +14,7 @@ factory RepositoryAdvisoryCredits.fromJson(Map<String, dynamic> json) { return R
 /// The username of the user credited.
 final String? login;
 
+/// The type of credit the user is receiving.
 final SecurityAdvisoryCreditTypes? type;
 
 Map<String, dynamic> toJson() { return {

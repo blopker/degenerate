@@ -12,6 +12,7 @@ factory PublicIpIps.fromJson(Map<String, dynamic> json) { return PublicIpIps(
   ipv6Cidrs: (json['ipv6_cidrs'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// A digest of the IP data. Useful for determining if the data has changed.
 final PublicIpEtag? etag;
 
 final List<String>? ipv4Cidrs;

@@ -27,28 +27,39 @@ factory CodeScanningOrganizationAlertItems.fromJson(Map<String, dynamic> json) {
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// The security alert number.
 final AlertNumber number;
 
+/// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertCreatedAt createdAt;
 
+/// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertUpdatedAt? updatedAt;
 
+/// The REST API URL of the alert resource.
 final AlertUrl url;
 
+/// The GitHub URL of the alert resource.
 final AlertHtmlUrl htmlUrl;
 
+/// The REST API URL for fetching the list of instances for an alert.
 final AlertInstancesUrl instancesUrl;
 
+/// State of a code scanning alert.
 final CodeScanningAlertState? state;
 
+/// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertFixedAt? fixedAt;
 
 final SimpleUser? dismissedBy;
 
+/// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertDismissedAt? dismissedAt;
 
+/// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
 final CodeScanningAlertDismissedReason? dismissedReason;
 
+/// The dismissal comment associated with the dismissal of the alert.
 final CodeScanningAlertDismissedComment? dismissedComment;
 
 final CodeScanningAlertRuleSummary rule;

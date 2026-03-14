@@ -23,7 +23,7 @@ final DigitalExperienceMonitoringUuid id;
 /// The interval at which the Traceroute synthetic application test is set to run.
 final String? interval;
 
-final Object? kind;
+final dynamic kind;
 
 final String? name;
 
@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String Function()? deviceName, DigitalExperienceMonitoringUuid? id, String Function()? interval, Object? Function()? kind, String Function()? name, DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath? Function()? networkPath, String Function()? url, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
+DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String Function()? deviceName, DigitalExperienceMonitoringUuid? id, String Function()? interval, dynamic Function()? kind, String Function()? name, DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath? Function()? networkPath, String Function()? url, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   id: id ?? this.id,
   interval: interval != null ? interval() : this.interval,

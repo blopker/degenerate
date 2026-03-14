@@ -95,6 +95,7 @@ factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotA
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// The security alert number.
 final AlertNumber number;
 
 /// The state of the Dependabot alert.
@@ -107,14 +108,19 @@ final DependabotAlertSecurityAdvisory securityAdvisory;
 
 final DependabotAlertSecurityVulnerability securityVulnerability;
 
+/// The REST API URL of the alert resource.
 final AlertUrl url;
 
+/// The GitHub URL of the alert resource.
 final AlertHtmlUrl htmlUrl;
 
+/// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertCreatedAt createdAt;
 
+/// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertUpdatedAt updatedAt;
 
+/// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertDismissedAt? dismissedAt;
 
 final SimpleUser? dismissedBy;
@@ -125,8 +131,10 @@ final DependabotAlertDismissedReason? dismissedReason;
 /// An optional comment associated with the alert's dismissal.
 final String? dismissedComment;
 
+/// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertFixedAt? fixedAt;
 
+/// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertAutoDismissedAt? autoDismissedAt;
 
 final DependabotAlertDismissalRequestSimple? dismissalRequest;

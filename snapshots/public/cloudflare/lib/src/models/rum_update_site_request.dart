@@ -28,12 +28,16 @@ factory RumUpdateSiteRequest.fromJson(Map<String, dynamic> json) { return RumUpd
   zoneTag: json['zone_tag'] != null ? RumZoneTag.fromJson(json['zone_tag'] as String) : null,
 ); }
 
+/// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 final RumAutoInstall? autoInstall;
 
+/// Enables or disables RUM. This option can be used only when auto_install is set to true.
 final RumEnabled? enabled;
 
+/// The hostname to use for gray-clouded sites.
 final RumHost? host;
 
+/// If enabled, the JavaScript snippet will not be injected for visitors from the EU.
 final RumLite? lite;
 
 final RumZoneTag? zoneTag;

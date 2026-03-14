@@ -11,7 +11,7 @@ factory RunGraderResponseMetadata.fromJson(Map<String, dynamic> json) { return R
   type: json['type'] as String,
   errors: RunGraderResponseMetadataErrors.fromJson(json['errors'] as Map<String, dynamic>),
   executionTime: (json['execution_time'] as num).toDouble(),
-  scores: (json['scores'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  scores: (json['scores'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   tokenUsage: (json['token_usage'] as num).toInt(),
   sampledModelName: json['sampled_model_name'] as String,
 ); }
@@ -24,7 +24,7 @@ final RunGraderResponseMetadataErrors errors;
 
 final double executionTime;
 
-final Map<String,Object?> scores;
+final Map<String,dynamic> scores;
 
 final int? tokenUsage;
 
@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('scores') &&
       json.containsKey('token_usage') && json['token_usage'] is num &&
       json.containsKey('sampled_model_name') && json['sampled_model_name'] is String; } 
-RunGraderResponseMetadata copyWith({String? name, String? type, RunGraderResponseMetadataErrors? errors, double? executionTime, Map<String,Object?>? scores, int? Function()? tokenUsage, String? Function()? sampledModelName, }) { return RunGraderResponseMetadata(
+RunGraderResponseMetadata copyWith({String? name, String? type, RunGraderResponseMetadataErrors? errors, double? executionTime, Map<String,dynamic>? scores, int? Function()? tokenUsage, String? Function()? sampledModelName, }) { return RunGraderResponseMetadata(
   name: name ?? this.name,
   type: type ?? this.type,
   errors: errors ?? this.errors,

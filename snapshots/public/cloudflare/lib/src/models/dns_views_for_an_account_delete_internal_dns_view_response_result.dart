@@ -10,6 +10,7 @@ factory DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(Map<Str
   id: json['id'] != null ? DnsSettingsIdentifier.fromJson(json['id'] as String) : null,
 ); }
 
+/// Identifier.
 final DnsSettingsIdentifier? id;
 
 Map<String, dynamic> toJson() { return {

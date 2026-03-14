@@ -11,6 +11,13 @@ factory ShieldOldOperationSchemaValidationSettings.fromJson(Map<String, dynamic>
   operationId: json['operation_id'] != null ? ShieldUuid.fromJson(json['operation_id'] as String) : null,
 ); }
 
+/// When set, this applies a mitigation action to this operation
+/// 
+///   - `log` log request when request does not conform to schema for this operation
+///   - `block` deny access to the site when request does not conform to schema for this operation
+///   - `none` will skip mitigation for this operation
+///   - `null` indicates that no operation level mitigation is in place, see Zone Level Schema Validation Settings for mitigation action that will be applied
+/// 
 final ShieldOldOperationMitigationAction? mitigationAction;
 
 final ShieldUuid? operationId;

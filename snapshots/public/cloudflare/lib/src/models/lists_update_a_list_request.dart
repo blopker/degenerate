@@ -10,6 +10,7 @@ factory ListsUpdateAListRequest.fromJson(Map<String, dynamic> json) { return Lis
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
 ); }
 
+/// An informative summary of the list.
 final ListsDescription? description;
 
 Map<String, dynamic> toJson() { return {

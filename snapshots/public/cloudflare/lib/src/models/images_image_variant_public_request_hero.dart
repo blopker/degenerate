@@ -14,6 +14,7 @@ factory ImagesImageVariantPublicRequestHero.fromJson(Map<String, dynamic> json) 
 
 final ImagesImageVariantIdentifier id;
 
+/// Indicates whether the variant can access an image without a signature, regardless of image access control.
 final ImagesImageVariantNeverRequireSignedUrLs? neverRequireSignedUrLs;
 
 final ImagesImageVariantOptions options;

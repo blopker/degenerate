@@ -31,6 +31,7 @@ final String id;
 /// Specify the timestamp of when the rule was last modified.
 final DateTime lastUpdated;
 
+/// Identify the snippet.
 final SnippetsSnippetName snippetName;
 
 Map<String, dynamic> toJson() { return {

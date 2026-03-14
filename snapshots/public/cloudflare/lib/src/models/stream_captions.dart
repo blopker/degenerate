@@ -61,6 +61,7 @@ final StreamLabel? label;
 
 final StreamLanguage? language;
 
+/// The status of a generated caption.
 final StreamCaptionStatus? status;
 
 Map<String, dynamic> toJson() { return {

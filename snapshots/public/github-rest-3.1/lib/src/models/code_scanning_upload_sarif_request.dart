@@ -31,10 +31,14 @@ factory CodeScanningUploadSarifRequest.fromJson(Map<String, dynamic> json) { ret
   validate: json['validate'] as bool?,
 ); }
 
+/// The SHA of the commit to which the analysis you are uploading relates.
 final CodeScanningAnalysisCommitSha commitSha;
 
+/// The full Git reference, formatted as `refs/heads/<branch name>`,
+/// `refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
 final CodeScanningRefFull ref;
 
+/// A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
 final CodeScanningAnalysisSarifFile sarif;
 
 /// The base directory used in the analysis, as it appears in the SARIF file.

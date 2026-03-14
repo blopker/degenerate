@@ -20,6 +20,10 @@ factory WaitingroomZoneSettings.fromJson(Map<String, dynamic> json) { return Wai
   searchEngineCrawlerBypass: json['search_engine_crawler_bypass'] != null ? WaitingroomSearchEngineCrawlerBypass.fromJson(json['search_engine_crawler_bypass'] as bool) : null,
 ); }
 
+/// Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone.
+/// Verified search engine crawlers will not be tracked or counted by the waiting room system,
+/// and will not appear in waiting room analytics.
+/// 
 final WaitingroomSearchEngineCrawlerBypass? searchEngineCrawlerBypass;
 
 Map<String, dynamic> toJson() { return {

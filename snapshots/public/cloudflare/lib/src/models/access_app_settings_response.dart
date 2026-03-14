@@ -11,6 +11,7 @@ factory AccessAppSettingsResponse.fromJson(Map<String, dynamic> json) { return A
   skipInterstitial: json['skip_interstitial'] != null ? AccessSkipInterstitial.fromJson(json['skip_interstitial'] as bool) : null,
 ); }
 
+/// Enables loading application content in an iFrame.
 final AccessAllowIframe? allowIframe;
 
 final AccessSkipInterstitial? skipInterstitial;

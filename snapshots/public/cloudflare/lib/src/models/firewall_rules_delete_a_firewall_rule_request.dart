@@ -17,6 +17,7 @@ factory FirewallRulesDeleteAFirewallRuleRequest.fromJson(Map<String, dynamic> js
   deleteFilterIfUnused: json['delete_filter_if_unused'] != null ? FirewallDeleteFilterIfUnused.fromJson(json['delete_filter_if_unused'] as bool) : null,
 ); }
 
+/// When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.
 final FirewallDeleteFilterIfUnused? deleteFilterIfUnused;
 
 Map<String, dynamic> toJson() { return {

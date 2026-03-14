@@ -14,7 +14,7 @@ factory ErrorResponse2.fromJson(Map<String, dynamic> json) { return ErrorRespons
 
 final List<PayPerCrawlRestError>? errors;
 
-final Object? result;
+final dynamic result;
 
 final bool? success;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ErrorResponse2 copyWith({List<PayPerCrawlRestError> Function()? errors, Object? Function()? result, bool Function()? success, }) { return ErrorResponse2(
+ErrorResponse2 copyWith({List<PayPerCrawlRestError> Function()? errors, dynamic Function()? result, bool Function()? success, }) { return ErrorResponse2(
   errors: errors != null ? errors() : this.errors,
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,

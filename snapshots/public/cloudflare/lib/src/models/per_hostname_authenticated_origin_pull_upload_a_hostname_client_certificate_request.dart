@@ -18,8 +18,10 @@ factory PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateReques
   privateKey: TlsCertificatesAndHostnamesSchemasPrivateKey.fromJson(json['private_key'] as String),
 ); }
 
+/// The hostname certificate.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate certificate;
 
+/// The hostname certificate's private key.
 final TlsCertificatesAndHostnamesSchemasPrivateKey privateKey;
 
 Map<String, dynamic> toJson() { return {

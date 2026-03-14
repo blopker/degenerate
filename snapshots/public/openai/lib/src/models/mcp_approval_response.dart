@@ -20,6 +20,8 @@ factory McpApprovalResponse.fromJson(Map<String, dynamic> json) { return McpAppr
 /// 
 final String type;
 
+/// The unique ID of the approval response
+/// 
 final String? id;
 
 /// The ID of the approval request being answered.
@@ -30,6 +32,8 @@ final String approvalRequestId;
 /// 
 final bool approve;
 
+/// Optional reason for the decision.
+/// 
 final String? reason;
 
 Map<String, dynamic> toJson() { return {

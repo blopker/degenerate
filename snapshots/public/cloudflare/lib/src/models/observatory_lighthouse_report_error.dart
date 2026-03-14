@@ -46,6 +46,7 @@ factory ObservatoryLighthouseReportError.fromJson(Map<String, dynamic> json) { r
   finalDisplayedUrl: json['finalDisplayedUrl'] as String?,
 ); }
 
+/// The error code of the Lighthouse result.
 final ObservatoryLighthouseErrorCode? code;
 
 /// Detailed error message.

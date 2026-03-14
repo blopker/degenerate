@@ -13,9 +13,13 @@ factory R2DataCatalogCompactionUpdateParams.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Updates the state optionally.
+/// 
+/// Specifies the state of maintenance operations.
 final R2DataCatalogCatalogMaintenanceState? state;
 
 /// Updates the target file size optionally.
+/// 
+/// Sets the target file size for compaction in megabytes. Defaults to "128".
 final R2DataCatalogCatalogTargetFileSize? targetSizeMb;
 
 Map<String, dynamic> toJson() { return {

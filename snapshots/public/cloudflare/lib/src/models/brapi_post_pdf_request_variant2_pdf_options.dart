@@ -91,7 +91,11 @@ final BrapiPostPdfRequestVariant2PdfOptionsFormat format;
 final String? headerTemplate;
 
 /// Sets the height of paper. Can be a number or string with unit.
-final Object? height;
+/// 
+/// Sets the height of paper. Can be a number or string with unit.
+/// 
+/// One of: String, double
+final dynamic height;
 
 /// Whether to print in landscape orientation.
 final bool landscape;
@@ -124,7 +128,11 @@ final bool tagged;
 final double timeout;
 
 /// Sets the width of paper. Can be a number or string with unit.
-final Object? width;
+/// 
+/// Sets the width of paper. Can be a number or string with unit.
+/// 
+/// One of: String, double
+final dynamic width;
 
 Map<String, dynamic> toJson() { return {
   'displayHeaderFooter': displayHeaderFooter,
@@ -145,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   'width': ?width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-BrapiPostPdfRequestVariant2PdfOptions copyWith({bool Function()? displayHeaderFooter, String Function()? footerTemplate, BrapiPostPdfRequestVariant2PdfOptionsFormat Function()? format, String Function()? headerTemplate, Object Function()? height, bool Function()? landscape, BrapiPostPdfRequestVariant2PdfOptionsMargin Function()? margin, bool Function()? omitBackground, bool Function()? outline, String Function()? pageRanges, bool Function()? preferCssPageSize, bool Function()? printBackground, double Function()? scale, bool Function()? tagged, double Function()? timeout, Object Function()? width, }) { return BrapiPostPdfRequestVariant2PdfOptions(
+BrapiPostPdfRequestVariant2PdfOptions copyWith({bool Function()? displayHeaderFooter, String Function()? footerTemplate, BrapiPostPdfRequestVariant2PdfOptionsFormat Function()? format, String Function()? headerTemplate, dynamic Function()? height, bool Function()? landscape, BrapiPostPdfRequestVariant2PdfOptionsMargin Function()? margin, bool Function()? omitBackground, bool Function()? outline, String Function()? pageRanges, bool Function()? preferCssPageSize, bool Function()? printBackground, double Function()? scale, bool Function()? tagged, double Function()? timeout, dynamic Function()? width, }) { return BrapiPostPdfRequestVariant2PdfOptions(
   displayHeaderFooter: displayHeaderFooter != null ? displayHeaderFooter() : this.displayHeaderFooter,
   footerTemplate: footerTemplate != null ? footerTemplate() : this.footerTemplate,
   format: format != null ? format() : this.format,

@@ -15,32 +15,43 @@ factory TunnelWarpConnectorTunnel.fromJson(Map<String, dynamic> json) { return T
   createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,
   deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
   id: json['id'] != null ? TunnelTunnelId.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   name: json['name'] != null ? TunnelTunnelName.fromJson(json['name'] as String) : null,
   status: json['status'] != null ? TunnelStatus.fromJson(json['status'] as String) : null,
   tunType: json['tun_type'] != null ? TunnelTunnelType.fromJson(json['tun_type'] as String) : null,
 ); }
 
+/// Cloudflare account ID
 final TunnelAccountId? accountTag;
 
+/// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
 final List<TunnelSchemasConnection>? connections;
 
+/// Timestamp of when the tunnel established at least one connection to Cloudflare's edge. If `null`, the tunnel is inactive.
 final TunnelConnsActiveAt? connsActiveAt;
 
+/// Timestamp of when the tunnel became inactive (no connections to Cloudflare's edge). If `null`, the tunnel is active.
 final TunnelConnsInactiveAt? connsInactiveAt;
 
+/// Timestamp of when the resource was created.
 final TunnelCreatedAt? createdAt;
 
+/// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
 final TunnelDeletedAt? deletedAt;
 
+/// UUID of the tunnel.
 final TunnelTunnelId? id;
 
-final Map<String,Object?>? metadata;
+/// Metadata associated with the tunnel.
+final Map<String,dynamic>? metadata;
 
+/// A user-friendly name for a tunnel.
 final TunnelTunnelName? name;
 
+/// The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
 final TunnelStatus? status;
 
+/// The type of tunnel.
 final TunnelTunnelType? tunType;
 
 Map<String, dynamic> toJson() { return {
@@ -57,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (tunType != null) 'tun_type': tunType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-TunnelWarpConnectorTunnel copyWith({TunnelAccountId Function()? accountTag, List<TunnelSchemasConnection> Function()? connections, TunnelConnsActiveAt Function()? connsActiveAt, TunnelConnsInactiveAt Function()? connsInactiveAt, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId Function()? id, Map<String, Object> Function()? metadata, TunnelTunnelName Function()? name, TunnelStatus Function()? status, TunnelTunnelType Function()? tunType, }) { return TunnelWarpConnectorTunnel(
+TunnelWarpConnectorTunnel copyWith({TunnelAccountId Function()? accountTag, List<TunnelSchemasConnection> Function()? connections, TunnelConnsActiveAt Function()? connsActiveAt, TunnelConnsInactiveAt Function()? connsInactiveAt, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId Function()? id, Map<String, dynamic> Function()? metadata, TunnelTunnelName Function()? name, TunnelStatus Function()? status, TunnelTunnelType Function()? tunType, }) { return TunnelWarpConnectorTunnel(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   connections: connections != null ? connections() : this.connections,
   connsActiveAt: connsActiveAt != null ? connsActiveAt() : this.connsActiveAt,

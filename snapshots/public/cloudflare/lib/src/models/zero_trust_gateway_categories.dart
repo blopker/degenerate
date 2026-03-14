@@ -15,6 +15,7 @@ factory ZeroTrustGatewayCategories.fromJson(Map<String, dynamic> json) { return 
   subcategories: (json['subcategories'] as List<dynamic>?)?.map((e) => ZeroTrustGatewaySubcategory.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Indicate whether the category is in beta and subject to change.
 final ZeroTrustGatewayBeta? beta;
 
 final ZeroTrustGatewayClass? $class;

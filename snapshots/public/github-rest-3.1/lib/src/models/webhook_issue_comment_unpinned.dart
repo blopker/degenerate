@@ -47,6 +47,8 @@ final EnterpriseWebhooks? enterprise;
 final SimpleInstallation? installation;
 
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
+/// 
+/// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
 final WebhookIssueCommentUnpinnedIssue issue;
 
 final OrganizationSimpleWebhooks? organization;

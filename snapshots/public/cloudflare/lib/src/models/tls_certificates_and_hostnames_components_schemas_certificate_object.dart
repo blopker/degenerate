@@ -18,6 +18,7 @@ factory TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(M
   uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn.fromJson(json['uploaded_on'] as String) : null,
 ); }
 
+/// Indicates whether the certificate is a CA or leaf certificate.
 final TlsCertificatesAndHostnamesCa? ca;
 
 final TlsCertificatesAndHostnamesSchemasCertificates? certificates;

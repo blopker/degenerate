@@ -10,6 +10,7 @@ factory ListsItemCommentObject.fromJson(Map<String, dynamic> json) { return List
   comment: json['comment'] != null ? ListsItemComment.fromJson(json['comment'] as String) : null,
 ); }
 
+/// Defines an informative summary of the list item.
 final ListsItemComment? comment;
 
 Map<String, dynamic> toJson() { return {

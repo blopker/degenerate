@@ -10,13 +10,13 @@ factory ChecksUpdateRequestVariant2.fromJson(Map<String, dynamic> json) { return
   status: json['status'],
 ); }
 
-final Object? status;
+final dynamic status;
 
 Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ChecksUpdateRequestVariant2 copyWith({Object? Function()? status}) { return ChecksUpdateRequestVariant2(
+ChecksUpdateRequestVariant2 copyWith({dynamic Function()? status}) { return ChecksUpdateRequestVariant2(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

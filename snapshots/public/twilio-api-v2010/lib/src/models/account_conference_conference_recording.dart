@@ -110,7 +110,7 @@ final ConferenceRecordingEnumSource? source;
 final int? errorCode;
 
 /// How to decrypt the recording if it was encrypted using [Call Recording Encryption](https://www.twilio.com/docs/voice/tutorials/voice-recording-encryption) feature.
-final Object? encryptionDetails;
+final dynamic encryptionDetails;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final String? uri;
@@ -135,7 +135,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountConferenceConferenceRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, ConferenceRecordingEnumStatus Function()? status, int Function()? channels, ConferenceRecordingEnumSource Function()? source, int? Function()? errorCode, Object? Function()? encryptionDetails, String? Function()? uri, }) { return AccountConferenceConferenceRecording(
+AccountConferenceConferenceRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, ConferenceRecordingEnumStatus Function()? status, int Function()? channels, ConferenceRecordingEnumSource Function()? source, int? Function()? errorCode, dynamic Function()? encryptionDetails, String? Function()? uri, }) { return AccountConferenceConferenceRecording(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   callSid: callSid != null ? callSid() : this.callSid,

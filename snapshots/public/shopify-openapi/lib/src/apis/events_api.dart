@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-01
 ///
 /// `GET /admin/api/2020-01/events.json`
-Future<ApiResult<void, Never>> deprecated202001GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetEvents({dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic filter, dynamic verb, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -48,7 +48,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-01
 ///
 /// `GET /admin/api/2020-01/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetEventsParamEventId({required String eventId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -73,7 +73,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-01
 ///
 /// `GET /admin/api/2020-01/events/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetEventsCount({dynamic createdAtMin, dynamic createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -99,7 +99,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-04
 ///
 /// `GET /admin/api/2020-04/events.json`
-Future<ApiResult<void, Never>> deprecated202004GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetEvents({dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic filter, dynamic verb, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -130,7 +130,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-04
 ///
 /// `GET /admin/api/2020-04/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetEventsParamEventId({required String eventId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -155,7 +155,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-04
 ///
 /// `GET /admin/api/2020-04/events/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetEventsCount({dynamic createdAtMin, dynamic createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -181,7 +181,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-07
 ///
 /// `GET /admin/api/2020-07/events.json`
-Future<ApiResult<void, Never>> deprecated202007GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetEvents({dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic filter, dynamic verb, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -212,7 +212,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-07
 ///
 /// `GET /admin/api/2020-07/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetEventsParamEventId({required String eventId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -237,7 +237,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-07
 ///
 /// `GET /admin/api/2020-07/events/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetEventsCount({dynamic createdAtMin, dynamic createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -263,7 +263,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-10
 ///
 /// `GET /admin/api/2020-10/events.json`
-Future<ApiResult<void, Never>> getEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getEvents({dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic filter, dynamic verb, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -294,7 +294,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-10
 ///
 /// `GET /admin/api/2020-10/events/{event_id}.json`
-Future<ApiResult<void, Never>> getEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getEventsParamEventId({required String eventId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -319,7 +319,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-10
 ///
 /// `GET /admin/api/2020-10/events/count.json`
-Future<ApiResult<void, Never>> getEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getEventsCount({dynamic createdAtMin, dynamic createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -345,7 +345,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2021-01
 ///
 /// `GET /admin/api/2021-01/events.json`
-Future<ApiResult<void, Never>> deprecated202101GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetEvents({dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic filter, dynamic verb, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -376,7 +376,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2021-01
 ///
 /// `GET /admin/api/2021-01/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetEventsParamEventId({required String eventId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -401,7 +401,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2021-01
 ///
 /// `GET /admin/api/2021-01/events/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetEventsCount({dynamic createdAtMin, dynamic createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -427,7 +427,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-unstable
 ///
 /// `GET /admin/api/unstable/events.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetEvents({dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic filter, dynamic verb, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -458,7 +458,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-unstable
 ///
 /// `GET /admin/api/unstable/events/{event_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetEventsParamEventId({required String eventId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -483,7 +483,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-unstable
 ///
 /// `GET /admin/api/unstable/events/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetEventsCount({dynamic createdAtMin, dynamic createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -509,7 +509,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-01
 ///
 /// `GET /admin/api/2020-01/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202001GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetWebhooks({dynamic address, dynamic createdAtMax, dynamic createdAtMin, dynamic fields, dynamic limit, dynamic sinceId, dynamic topic, dynamic updatedAtMin, dynamic updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -542,7 +542,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-01
 ///
 /// `POST /admin/api/2020-01/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202001CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateWebhooks({dynamic format, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toString();
 
@@ -569,7 +569,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-01
 ///
 /// `GET /admin/api/2020-01/webhooks/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetWebhooksCount({dynamic address, dynamic topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (topic != null) queryParameters['topic'] = topic.toString();
@@ -595,7 +595,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-01
 ///
 /// `GET /admin/api/2020-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetWebhooksParamWebhookId({required String webhookId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -620,7 +620,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateWebhooksParamWebhookId({required String webhookId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateWebhooksParamWebhookId({required String webhookId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -660,7 +660,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-04
 ///
 /// `GET /admin/api/2020-04/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202004GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetWebhooks({dynamic address, dynamic createdAtMax, dynamic createdAtMin, dynamic fields, dynamic limit, dynamic sinceId, dynamic topic, dynamic updatedAtMin, dynamic updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -693,7 +693,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-04
 ///
 /// `POST /admin/api/2020-04/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202004CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateWebhooks({dynamic format, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toString();
 
@@ -720,7 +720,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-04
 ///
 /// `GET /admin/api/2020-04/webhooks/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetWebhooksCount({dynamic address, dynamic topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (topic != null) queryParameters['topic'] = topic.toString();
@@ -746,7 +746,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-04
 ///
 /// `GET /admin/api/2020-04/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetWebhooksParamWebhookId({required String webhookId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -771,7 +771,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateWebhooksParamWebhookId({required String webhookId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateWebhooksParamWebhookId({required String webhookId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -811,7 +811,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-07
 ///
 /// `GET /admin/api/2020-07/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202007GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetWebhooks({dynamic address, dynamic createdAtMax, dynamic createdAtMin, dynamic fields, dynamic limit, dynamic sinceId, dynamic topic, dynamic updatedAtMin, dynamic updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -844,7 +844,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-07
 ///
 /// `POST /admin/api/2020-07/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202007CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateWebhooks({dynamic format, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toString();
 
@@ -871,7 +871,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-07
 ///
 /// `GET /admin/api/2020-07/webhooks/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetWebhooksCount({dynamic address, dynamic topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (topic != null) queryParameters['topic'] = topic.toString();
@@ -897,7 +897,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-07
 ///
 /// `GET /admin/api/2020-07/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetWebhooksParamWebhookId({required String webhookId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -922,7 +922,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateWebhooksParamWebhookId({required String webhookId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateWebhooksParamWebhookId({required String webhookId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -962,7 +962,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-10
 ///
 /// `GET /admin/api/2020-10/webhooks.json`
-Future<ApiResult<void, Never>> getWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getWebhooks({dynamic address, dynamic createdAtMax, dynamic createdAtMin, dynamic fields, dynamic limit, dynamic sinceId, dynamic topic, dynamic updatedAtMin, dynamic updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -995,7 +995,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-10
 ///
 /// `POST /admin/api/2020-10/webhooks.json`
-Future<ApiResult<void, Never>> createWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> createWebhooks({dynamic format, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toString();
 
@@ -1022,7 +1022,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-10
 ///
 /// `GET /admin/api/2020-10/webhooks/count.json`
-Future<ApiResult<void, Never>> getWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getWebhooksCount({dynamic address, dynamic topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (topic != null) queryParameters['topic'] = topic.toString();
@@ -1048,7 +1048,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-10
 ///
 /// `GET /admin/api/2020-10/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> getWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getWebhooksParamWebhookId({required String webhookId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -1073,7 +1073,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> updateWebhooksParamWebhookId({required String webhookId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateWebhooksParamWebhookId({required String webhookId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1113,7 +1113,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2021-01
 ///
 /// `GET /admin/api/2021-01/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202101GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetWebhooks({dynamic address, dynamic createdAtMax, dynamic createdAtMin, dynamic fields, dynamic limit, dynamic sinceId, dynamic topic, dynamic updatedAtMin, dynamic updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -1146,7 +1146,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2021-01
 ///
 /// `POST /admin/api/2021-01/webhooks.json`
-Future<ApiResult<void, Never>> deprecated202101CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateWebhooks({dynamic format, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toString();
 
@@ -1173,7 +1173,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2021-01
 ///
 /// `GET /admin/api/2021-01/webhooks/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetWebhooksCount({dynamic address, dynamic topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (topic != null) queryParameters['topic'] = topic.toString();
@@ -1199,7 +1199,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2021-01
 ///
 /// `GET /admin/api/2021-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetWebhooksParamWebhookId({required String webhookId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -1224,7 +1224,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateWebhooksParamWebhookId({required String webhookId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateWebhooksParamWebhookId({required String webhookId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1264,7 +1264,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-unstable
 ///
 /// `GET /admin/api/unstable/webhooks.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooks({dynamic address, dynamic createdAtMax, dynamic createdAtMin, dynamic fields, dynamic limit, dynamic sinceId, dynamic topic, dynamic updatedAtMin, dynamic updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
@@ -1297,7 +1297,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-unstable
 ///
 /// `POST /admin/api/unstable/webhooks.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateWebhooks({dynamic format, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toString();
 
@@ -1324,7 +1324,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-unstable
 ///
 /// `GET /admin/api/unstable/webhooks/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksCount({dynamic address, dynamic topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (address != null) queryParameters['address'] = address.toString();
 if (topic != null) queryParameters['topic'] = topic.toString();
@@ -1350,7 +1350,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-unstable
 ///
 /// `GET /admin/api/unstable/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksParamWebhookId({required String webhookId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
@@ -1375,7 +1375,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-unstable
 ///
 /// `PUT /admin/api/unstable/webhooks/{webhook_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateWebhooksParamWebhookId({required String webhookId, Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateWebhooksParamWebhookId({required String webhookId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

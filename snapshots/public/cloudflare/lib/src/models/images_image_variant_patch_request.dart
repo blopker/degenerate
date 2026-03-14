@@ -11,6 +11,7 @@ factory ImagesImageVariantPatchRequest.fromJson(Map<String, dynamic> json) { ret
   options: ImagesImageVariantOptions.fromJson(json['options'] as Map<String, dynamic>),
 ); }
 
+/// Indicates whether the variant can access an image without a signature, regardless of image access control.
 final ImagesImageVariantNeverRequireSignedUrLs? neverRequireSignedUrLs;
 
 final ImagesImageVariantOptions options;

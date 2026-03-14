@@ -8,7 +8,7 @@ final class Prompt28 {const Prompt28({this.frequencyPenalty, this.guidedJson, th
 
 factory Prompt28.fromJson(Map<String, dynamic> json) { return Prompt28(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
-  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String,
@@ -25,7 +25,7 @@ factory Prompt28.fromJson(Map<String, dynamic> json) { return Prompt28(
 final double? frequencyPenalty;
 
 /// JSON schema that should be fulfilled for the response.
-final Map<String,Object?>? guidedJson;
+final Map<String,dynamic>? guidedJson;
 
 /// The maximum number of tokens to generate in the response.
 final int maxTokens;
@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt28 copyWith({double Function()? frequencyPenalty, Map<String, Object> Function()? guidedJson, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt28(
+Prompt28 copyWith({double Function()? frequencyPenalty, Map<String, dynamic> Function()? guidedJson, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt28(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

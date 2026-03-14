@@ -13,6 +13,9 @@ factory FineTuningJobHyperparameters.fromJson(Map<String, dynamic> json) { retur
   nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => FineTuningJobHyperparametersNEpochsVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
 ); }
 
+/// Number of examples in each batch. A larger batch size means that model parameters
+/// are updated less frequently, but with lower variance.
+/// 
 final FineTuningJobHyperparametersBatchSize? batchSize;
 
 /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid

@@ -17,7 +17,7 @@ factory WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(Map<String, dyna
   updatedAt: json['updated_at'] as String?,
 ); }
 
-final Object? conclusion;
+final dynamic conclusion;
 
 final String? createdAt;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': ?updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({Object? Function()? conclusion, String Function()? createdAt, String Function()? environment, String Function()? htmlUrl, int Function()? id, String? Function()? name, String Function()? status, String Function()? updatedAt, }) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
+WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({dynamic Function()? conclusion, String Function()? createdAt, String Function()? environment, String Function()? htmlUrl, int Function()? id, String? Function()? name, String Function()? status, String Function()? updatedAt, }) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   environment: environment != null ? environment() : this.environment,

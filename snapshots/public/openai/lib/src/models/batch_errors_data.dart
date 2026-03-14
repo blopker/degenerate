@@ -19,8 +19,10 @@ final String? code;
 /// A human-readable message providing more details about the error.
 final String? message;
 
+/// The name of the parameter that caused the error, if applicable.
 final String? param;
 
+/// The line number of the input file where the error occurred, if applicable.
 final int? line;
 
 Map<String, dynamic> toJson() { return {

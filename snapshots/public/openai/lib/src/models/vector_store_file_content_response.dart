@@ -45,6 +45,7 @@ final List<VectorStoreFileContentResponseData> data;
 /// Indicates if there are more content pages to fetch.
 final bool hasMore;
 
+/// The token for the next page, if any.
 final String? nextPage;
 
 Map<String, dynamic> toJson() { return {

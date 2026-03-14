@@ -219,7 +219,7 @@ return _execute(
 /// Add an issue or pull request item to the specified organization owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForOrg({required String org, required int projectNumber, required Object body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForOrg({required String org, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -617,7 +617,7 @@ return _execute(
 /// Add an issue or pull request item to the specified user owned project.
 ///
 /// `POST /users/{username}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForUser({required String username, required int projectNumber, required Object body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForUser({required String username, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

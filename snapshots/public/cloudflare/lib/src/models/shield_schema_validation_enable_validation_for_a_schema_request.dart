@@ -10,6 +10,7 @@ factory ShieldSchemaValidationEnableValidationForASchemaRequest.fromJson(Map<Str
   validationEnabled: json['validation_enabled'] != null ? ShieldOldValidationEnabled.fromJson(json['validation_enabled'] as bool) : null,
 ); }
 
+/// Flag whether schema is enabled for validation.
 final ShieldOldValidationEnabled? validationEnabled;
 
 Map<String, dynamic> toJson() { return {

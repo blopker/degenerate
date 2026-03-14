@@ -13,12 +13,16 @@ factory ZeroTrustListsCreateZeroTrustListRequest.fromJson(Map<String, dynamic> j
   type: ZeroTrustGatewaySchemasType.fromJson(json['type'] as String),
 ); }
 
+/// Provide the list description.
 final ZeroTrustGatewayDescription? description;
 
+/// Add items to the list.
 final List<ZeroTrustGatewayItemsInput2>? items;
 
+/// Specify the list name.
 final ZeroTrustGatewayName name;
 
+/// Specify the list type.
 final ZeroTrustGatewaySchemasType type;
 
 Map<String, dynamic> toJson() { return {

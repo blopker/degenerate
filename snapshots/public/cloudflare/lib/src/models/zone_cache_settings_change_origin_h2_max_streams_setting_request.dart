@@ -17,6 +17,7 @@ factory ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest.fromJson(Map<Str
   value: CacheRulesOriginH2MaxStreamsValue.fromJson(json['value'] as num),
 ); }
 
+/// Value of the Origin H2 Max Streams Setting.
 final CacheRulesOriginH2MaxStreamsValue value;
 
 Map<String, dynamic> toJson() { return {

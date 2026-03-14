@@ -10,6 +10,7 @@ factory MconnConduitConnector.fromJson(Map<String, dynamic> json) { return Mconn
   accountId: MconnAccountId.fromJson(json['account_id'] as String),
 ); }
 
+/// Account identifier
 final MconnAccountId accountId;
 
 Map<String, dynamic> toJson() { return {

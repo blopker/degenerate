@@ -28,12 +28,15 @@ factory MagicAppConfigUpdateRequest.fromJson(Map<String, dynamic> json) { return
   priority: json['priority'] != null ? MagicAppPriority.fromJson(json['priority'] as num) : null,
 ); }
 
+/// Magic account app ID.
 final MagicAccountAppId? accountAppId;
 
+/// Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
 final MagicAppBreakout? breakout;
 
 final MagicManagedAppId? managedAppId;
 
+/// WAN interfaces to prefer over default WANs, highest-priority first. Can only be specified for breakout rules (breakout must be true).
 final List<MagicIdentifier>? preferredWans;
 
 final MagicAppPriority? priority;

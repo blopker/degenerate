@@ -29,12 +29,16 @@ factory WaitingroomEventResult.fromJson(Map<String, dynamic> json) { return Wait
 
 final WaitingroomTimestamp? createdOn;
 
+/// If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
 final WaitingroomEventCustomPageHtml? customPageHtml;
 
+/// A note that you can use to add more details about the event.
 final WaitingroomEventDescription? description;
 
+/// If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it.
 final WaitingroomEventDisableSessionRenewal? disableSessionRenewal;
 
+/// An ISO 8601 timestamp that marks the end of the event.
 final WaitingroomEventEndTime? eventEndTime;
 
 final WaitingroomEventStartTime? eventStartTime;
@@ -43,12 +47,16 @@ final WaitingroomEventId? id;
 
 final WaitingroomTimestamp? modifiedOn;
 
+/// A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed.
 final WaitingroomEventName? name;
 
+/// If set, the event will override the waiting room's `new_users_per_minute` property while it is active. If null, the event will inherit it. This can only be set if the event's `total_active_users` property is also set.
 final WaitingroomEventNewUsersPerMinute? newUsersPerMinute;
 
+/// An ISO 8601 timestamp that marks when to begin queueing all users before the event starts. The prequeue must start at least five minutes before `event_start_time`.
 final WaitingroomEventPrequeueStartTime? prequeueStartTime;
 
+/// If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it.
 final WaitingroomEventQueueingMethod? queueingMethod;
 
 final WaitingroomEventSessionDuration? sessionDuration;

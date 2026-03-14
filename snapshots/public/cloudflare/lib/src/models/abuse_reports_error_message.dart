@@ -11,7 +11,8 @@ factory AbuseReportsErrorMessage.fromJson(Map<String, dynamic> json) { return Ab
   message: json['message'] as String,
 ); }
 
-final Object? code;
+/// One of: String, double
+final dynamic code;
 
 final String message;
 
@@ -20,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-AbuseReportsErrorMessage copyWith({Object Function()? code, String? message, }) { return AbuseReportsErrorMessage(
+AbuseReportsErrorMessage copyWith({dynamic Function()? code, String? message, }) { return AbuseReportsErrorMessage(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
 ); } 

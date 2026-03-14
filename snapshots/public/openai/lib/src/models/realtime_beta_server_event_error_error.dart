@@ -19,13 +19,17 @@ factory RealtimeBetaServerEventErrorError.fromJson(Map<String, dynamic> json) { 
 /// 
 final String type;
 
+/// Error code, if any.
 final String? code;
 
 /// A human-readable error message.
 final String message;
 
+/// Parameter related to the error, if any.
 final String? param;
 
+/// The event_id of the client event that caused the error, if applicable.
+/// 
 final String? eventId;
 
 Map<String, dynamic> toJson() { return {

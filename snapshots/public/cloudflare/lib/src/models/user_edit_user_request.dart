@@ -35,14 +35,19 @@ factory UserEditUserRequest.fromJson(Map<String, dynamic> json) { return UserEdi
   zipcode: json['zipcode'] != null ? IamZipcode.fromJson(json['zipcode'] as String) : null,
 ); }
 
+/// The country in which the user lives.
 final IamCountry? country;
 
+/// User's first name
 final IamFirstName? firstName;
 
+/// User's last name
 final IamLastName? lastName;
 
+/// User's telephone number
 final IamTelephone? telephone;
 
+/// The zipcode or postal code where the user lives.
 final IamZipcode? zipcode;
 
 Map<String, dynamic> toJson() { return {

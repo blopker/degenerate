@@ -81,10 +81,12 @@ factory AaaHistory.fromJson(Map<String, dynamic> json) { return AaaHistory(
   sent: json['sent'] != null ? AaaSent.fromJson(json['sent'] as String) : null,
 ); }
 
+/// Message body included in the notification sent.
 final AaaAlertBody? alertBody;
 
 final AaaSchemasAlertType? alertType;
 
+/// Description of the notification policy (if present).
 final AaaComponentsSchemasDescription? description;
 
 final AaaUuid? id;

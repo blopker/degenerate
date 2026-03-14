@@ -7,7 +7,7 @@
 final class UrlscannerGetScanResponse2DataRequestsRequestRequest {const UrlscannerGetScanResponse2DataRequestsRequestRequest({this.headers, required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, });
 
 factory UrlscannerGetScanResponse2DataRequestsRequestRequest.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestRequest(
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   initialPriority: json['initialPriority'] as String,
   isSameSite: json['isSameSite'] as bool,
   method: json['method'] as String,
@@ -16,7 +16,7 @@ factory UrlscannerGetScanResponse2DataRequestsRequestRequest.fromJson(Map<String
   url: json['url'] as String,
 ); }
 
-final Map<String,Object?>? headers;
+final Map<String,dynamic>? headers;
 
 final String initialPriority;
 
@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('initi
       json.containsKey('mixedContentType') && json['mixedContentType'] is String &&
       json.containsKey('referrerPolicy') && json['referrerPolicy'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2DataRequestsRequestRequest copyWith({Map<String, Object> Function()? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestRequest(
+UrlscannerGetScanResponse2DataRequestsRequestRequest copyWith({Map<String, dynamic> Function()? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestRequest(
   headers: headers != null ? headers() : this.headers,
   initialPriority: initialPriority ?? this.initialPriority,
   isSameSite: isSameSite ?? this.isSameSite,

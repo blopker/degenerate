@@ -67,10 +67,12 @@ factory TlsCertificatesAndHostnamesFallbackorigin.fromJson(Map<String, dynamic> 
 
 final TlsCertificatesAndHostnamesSchemasCreatedAt? createdAt;
 
+/// These are errors that were encountered while trying to activate a fallback origin.
 final List<String>? errors;
 
 final TlsCertificatesAndHostnamesOrigin? origin;
 
+/// Status of the fallback origin's activation.
 final TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus? status;
 
 final TlsCertificatesAndHostnamesUpdatedAt? updatedAt;

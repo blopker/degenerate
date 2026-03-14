@@ -20,12 +20,16 @@ factory MTlsCertificateManagementUploadMTlsCertificateRequest.fromJson(Map<Strin
   privateKey: json['private_key'] != null ? TlsCertificatesAndHostnamesComponentsSchemasPrivateKey.fromJson(json['private_key'] as String) : null,
 ); }
 
+/// Indicates whether the certificate is a CA or leaf certificate.
 final TlsCertificatesAndHostnamesCa ca;
 
+/// The uploaded root CA certificate.
 final TlsCertificatesAndHostnamesSchemasCertificates certificates;
 
+/// Optional unique name for the certificate. Only used for human readability.
 final TlsCertificatesAndHostnamesSchemasName? name;
 
+/// The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
 final TlsCertificatesAndHostnamesComponentsSchemasPrivateKey? privateKey;
 
 Map<String, dynamic> toJson() { return {

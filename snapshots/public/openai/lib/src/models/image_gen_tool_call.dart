@@ -59,6 +59,8 @@ final String id;
 /// 
 final ImageGenToolCallStatus status;
 
+/// The generated image encoded in base64.
+/// 
 final String? result;
 
 Map<String, dynamic> toJson() { return {

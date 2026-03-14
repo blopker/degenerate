@@ -75,10 +75,10 @@ String toJson() => value;
 
 }
 /// Status of DNSSEC, based on user-desired state and presence of necessary records.
-extension type DnssecStatus(Object? value) {
-factory DnssecStatus.fromJson(Object? json) => DnssecStatus(json);
+extension type DnssecStatus(dynamic value) {
+factory DnssecStatus.fromJson(dynamic json) => DnssecStatus(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }
 final class DnssecDnssec {const DnssecDnssec({this.algorithm, this.digest, this.digestAlgorithm, this.digestType, this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.ds, this.flags, this.keyTag, this.keyType, this.modifiedOn, this.publicKey, this.status, });
@@ -97,15 +97,19 @@ factory DnssecDnssec.fromJson(Map<String, dynamic> json) { return DnssecDnssec(
   keyType: json['key_type'] != null ? DnssecKeyType.fromJson(json['key_type'] as String) : null,
   modifiedOn: json['modified_on'] != null ? DnssecModifiedOn.fromJson(json['modified_on'] as String) : null,
   publicKey: json['public_key'] != null ? DnssecPublicKey.fromJson(json['public_key'] as String) : null,
-  status: json['status'] != null ? DnssecStatus.fromJson(json['status'] as Object?) : null,
+  status: json['status'] != null ? DnssecStatus.fromJson(json['status'] as dynamic) : null,
 ); }
 
+/// Algorithm key code.
 final DnssecAlgorithm? algorithm;
 
+/// Digest hash.
 final DnssecDigest? digest;
 
+/// Type of digest algorithm.
 final DnssecDigestAlgorithm? digestAlgorithm;
 
+/// Coded type for digest algorithm.
 final DnssecDigestType? digestType;
 
 final DnssecDnssecMultiSigner? dnssecMultiSigner;

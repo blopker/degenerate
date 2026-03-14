@@ -14,14 +14,19 @@ factory AccessGroupsUpdateAnAccessGroupRequest.fromJson(Map<String, dynamic> jso
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
 
+/// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 final List<AccessRule> include;
 
+/// Whether this is the default group
 final AccessIsDefault? isDefault;
 
+/// The name of the Access group.
 final AccessGroupsComponentsSchemasName name;
 
+/// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
 Map<String, dynamic> toJson() { return {

@@ -17,14 +17,18 @@ factory TunnelSchemasConnection.fromJson(Map<String, dynamic> json) { return Tun
   uuid: json['uuid'] != null ? TunnelConnectionId.fromJson(json['uuid'] as String) : null,
 ); }
 
+/// UUID of the Cloudflare Tunnel connector.
 final TunnelClientId? clientId;
 
 final TunnelVersion? clientVersion;
 
+/// The Cloudflare data center used for this connection.
 final TunnelColoName? coloName;
 
+/// UUID of the Cloudflare Tunnel connection.
 final TunnelConnectionId? id;
 
+/// Cloudflare continues to track connections for several minutes after they disconnect. This is an optimization to improve latency and reliability of reconnecting.  If `true`, the connection has disconnected but is still being tracked. If `false`, the connection is actively serving traffic.
 final TunnelIsPendingReconnect? isPendingReconnect;
 
 /// Timestamp of when the connection was established.
@@ -33,6 +37,7 @@ final DateTime? openedAt;
 /// The public IP address of the host running cloudflared.
 final TunnelIp? originIp;
 
+/// UUID of the Cloudflare Tunnel connection.
 final TunnelConnectionId? uuid;
 
 Map<String, dynamic> toJson() { return {

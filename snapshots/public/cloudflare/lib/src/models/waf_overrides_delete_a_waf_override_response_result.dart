@@ -10,6 +10,7 @@ factory WafOverridesDeleteAWafOverrideResponseResult.fromJson(Map<String, dynami
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
 ); }
 
+/// The unique identifier of the WAF override.
 final FirewallOverridesId? id;
 
 Map<String, dynamic> toJson() { return {

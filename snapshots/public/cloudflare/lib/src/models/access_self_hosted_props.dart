@@ -60,56 +60,86 @@ factory AccessSelfHostedProps.fromJson(Map<String, dynamic> json) { return Acces
   useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
 ); }
 
+/// When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
 final AccessSchemasAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
 
+/// Enables loading application content in an iFrame.
 final AccessAllowIframe? allowIframe;
 
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
 
+/// Displays the application in the App Launcher.
 final AccessAppLauncherVisible? appLauncherVisible;
 
+/// When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
 final AccessCorsHeaders? corsHeaders;
 
+/// The custom error message shown to a user when they are denied access to the application.
 final AccessCustomDenyMessage? customDenyMessage;
 
+/// The custom URL a user is redirected to when they are denied access to the application when failing identity-based rules.
 final AccessCustomDenyUrl? customDenyUrl;
 
+/// The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
 final AccessCustomNonIdentityDenyUrl? customNonIdentityDenyUrl;
 
+/// The custom pages that will be displayed when applicable for this application
 final List<String>? customPages;
 
+/// List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored.
+/// 
 final List<AccessDestinations2>? destinations;
 
+/// The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
 final AccessDomain domain;
 
+/// Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 final AccessEnableBindingCookie? enableBindingCookie;
 
+/// Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 final AccessHttpOnlyCookieAttribute? httpOnlyCookieAttribute;
 
+/// The image URL for the logo shown in the App Launcher dashboard.
 final AccessLogoUrl? logoUrl;
 
 final AccessMfaConfig? mfaConfig;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
 final AccessOauthConfiguration? oauthConfiguration;
 
+/// Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set.
 final AccessOptionsPreflightBypass? optionsPreflightBypass;
 
+/// Enables cookie paths to scope an application's JWT to the application path. If disabled, the JWT will scope to the hostname by default
 final AccessPathCookieAttribute? pathCookieAttribute;
 
+/// Allows matching Access Service Tokens passed HTTP in a single header with this name.
+/// This works as an alternative to the (CF-Access-Client-Id, CF-Access-Client-Secret) pair of headers.
+/// The header value will be interpreted as a json object similar to:
+///   {
+///     "cf-access-client-id": "88bf3b6d86161464f6509f7219099e57.access.example.com",
+///     "cf-access-client-secret": "bdd31cbc4dec990953e39163fbbb194c93313ca9f0a6e420346af9d326b1d2a5"
+///   }
+/// 
 final AccessReadServiceTokensFromHeader? readServiceTokensFromHeader;
 
+/// Sets the SameSite cookie setting, which provides increased security against CSRF attacks.
 final AccessSameSiteCookieAttribute? sameSiteCookieAttribute;
 
 final AccessScimConfig? scimConfig;
 
+/// List of public domains that Access will secure. This field is deprecated in favor of `destinations` and will be supported until **November 21, 2025.** If `destinations` are provided, then `self_hosted_domains` will be ignored.
+/// 
 final List<String>? selfHostedDomains;
 
 final AccessServiceAuth401Redirect? serviceAuth401Redirect;
 
+/// The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
 final AccessSchemasSessionDuration? sessionDuration;
 
 final AccessSkipInterstitial? skipInterstitial;

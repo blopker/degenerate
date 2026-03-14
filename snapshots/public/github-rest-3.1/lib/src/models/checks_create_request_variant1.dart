@@ -7,16 +7,16 @@
 final class ChecksCreateRequestVariant1 {const ChecksCreateRequestVariant1({required this.status});
 
 factory ChecksCreateRequestVariant1.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestVariant1(
-  status: json['status'] as Object,
+  status: json['status'],
 ); }
 
-final Object? status;
+final dynamic status;
 
 Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-ChecksCreateRequestVariant1 copyWith({Object? Function()? status}) { return ChecksCreateRequestVariant1(
+ChecksCreateRequestVariant1 copyWith({dynamic Function()? status}) { return ChecksCreateRequestVariant1(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -10,6 +10,7 @@ factory VectorizeUpdateIndexRequest.fromJson(Map<String, dynamic> json) { return
   description: VectorizeIndexDescription.fromJson(json['description'] as String),
 ); }
 
+/// Specifies the description of the index.
 final VectorizeIndexDescription description;
 
 Map<String, dynamic> toJson() { return {

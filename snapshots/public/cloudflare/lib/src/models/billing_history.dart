@@ -59,8 +59,10 @@ factory BillingHistory.fromJson(Map<String, dynamic> json) { return BillingHisto
   zone: SchemasZone.fromJson(json['zone'] as Map<String, dynamic>),
 ); }
 
+/// The billing item action.
 final Action action;
 
+/// The amount associated with this billing item.
 final Amount amount;
 
 final Currency currency;

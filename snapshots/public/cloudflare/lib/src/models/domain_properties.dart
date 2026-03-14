@@ -84,16 +84,21 @@ factory DomainProperties.fromJson(Map<String, dynamic> json) { return DomainProp
   updatedAt: json['updated_at'] != null ? UpdatedAt.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// Shows if a domain is available for transferring into Cloudflare Registrar.
 final Available? available;
 
+/// Indicates if the domain can be registered as a new domain.
 final CanRegister? canRegister;
 
+/// Shows time of creation.
 final CreatedAt? createdAt;
 
+/// Shows name of current registrar.
 final CurrentRegistrar? currentRegistrar;
 
 final ExpiresAt? expiresAt;
 
+/// Domain identifier.
 final DomainIdentifier? id;
 
 final Locked? locked;

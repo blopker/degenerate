@@ -24,19 +24,22 @@ factory ListsList.fromJson(Map<String, dynamic> json) { return ListsList(
   createdOn: ListsCreatedOn.fromJson(json['created_on'] as String),
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
   id: ListsListId.fromJson(json['id'] as String),
-  kind: ListsKind.fromJson(json['kind'] as Object?),
+  kind: ListsKind.fromJson(json['kind'] as dynamic),
   modifiedOn: ListsModifiedOn.fromJson(json['modified_on'] as String),
   name: ListsName.fromJson(json['name'] as String),
   numItems: ListsNumItems.fromJson(json['num_items'] as num),
   numReferencingFilters: ListsNumReferencingFilters.fromJson(json['num_referencing_filters'] as num),
 ); }
 
+/// The RFC 3339 timestamp of when the list was created.
 final ListsCreatedOn createdOn;
 
+/// An informative summary of the list.
 final ListsDescription? description;
 
 final ListsListId id;
 
+/// The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).
 final ListsKind? kind;
 
 final ListsModifiedOn modifiedOn;

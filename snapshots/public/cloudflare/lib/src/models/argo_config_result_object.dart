@@ -34,10 +34,12 @@ factory ArgoConfigResultObject.fromJson(Map<String, dynamic> json) { return Argo
   value: ArgoConfigSettingValue.fromJson(json['value'] as String),
 ); }
 
+/// Specifies if the setting is editable.
 final ArgoConfigEditable editable;
 
 final ArgoConfigSettingId id;
 
+/// Specifies the time when the setting was last modified.
 final ArgoConfigModifiedOn? modifiedOn;
 
 final ArgoConfigSettingValue value;

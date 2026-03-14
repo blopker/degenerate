@@ -11,8 +11,10 @@ factory CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates.fromJson
   priority: json['priority'] != null ? TlsCertificatesAndHostnamesPriority.fromJson(json['priority'] as num) : null,
 ); }
 
+/// Identifier.
 final TlsCertificatesAndHostnamesIdentifier? id;
 
+/// The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
 final TlsCertificatesAndHostnamesPriority? priority;
 
 Map<String, dynamic> toJson() { return {

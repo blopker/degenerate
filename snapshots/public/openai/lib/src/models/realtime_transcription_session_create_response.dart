@@ -28,7 +28,7 @@ final RealtimeTranscriptionSessionCreateResponseClientSecret clientSecret;
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to ["text"].
 /// 
-final Object? modalities;
+final dynamic modalities;
 
 /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret'); } 
-RealtimeTranscriptionSessionCreateResponse copyWith({RealtimeTranscriptionSessionCreateResponseClientSecret? clientSecret, Object? Function()? modalities, String Function()? inputAudioFormat, AudioTranscription Function()? inputAudioTranscription, RealtimeTranscriptionSessionCreateResponseTurnDetection Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponse(
+RealtimeTranscriptionSessionCreateResponse copyWith({RealtimeTranscriptionSessionCreateResponseClientSecret? clientSecret, dynamic Function()? modalities, String Function()? inputAudioFormat, AudioTranscription Function()? inputAudioTranscription, RealtimeTranscriptionSessionCreateResponseTurnDetection Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponse(
   clientSecret: clientSecret ?? this.clientSecret,
   modalities: modalities != null ? modalities() : this.modalities,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,

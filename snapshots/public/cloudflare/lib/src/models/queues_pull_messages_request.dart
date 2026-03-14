@@ -11,8 +11,10 @@ factory QueuesPullMessagesRequest.fromJson(Map<String, dynamic> json) { return Q
   visibilityTimeoutMs: json['visibility_timeout_ms'] != null ? MqVisibilityTimeout.fromJson(json['visibility_timeout_ms'] as num) : null,
 ); }
 
+/// The maximum number of messages to include in a batch.
 final MqBatchSize? batchSize;
 
+/// The number of milliseconds that a message is exclusively leased. After the timeout, the message becomes available for another attempt.
 final MqVisibilityTimeout? visibilityTimeoutMs;
 
 Map<String, dynamic> toJson() { return {

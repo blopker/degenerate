@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'wor_create_new_workflow_inst
 factory WorCreateNewWorkflowInstanceResponse404.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorCreateNewWorkflowInstanceResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<WorCreateNewWorkflowInstanceResponse404Errors> errors;
 
 final List<String> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorCreateNewWorkflowInstanceResponse404 copyWith({List<WorCreateNewWorkflowInstanceResponse404Errors>? errors, List<String>? messages, Map<String, Object>? Function()? result, bool? success, }) { return WorCreateNewWorkflowInstanceResponse404(
+WorCreateNewWorkflowInstanceResponse404 copyWith({List<WorCreateNewWorkflowInstanceResponse404Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return WorCreateNewWorkflowInstanceResponse404(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

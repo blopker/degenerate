@@ -14,13 +14,17 @@ factory BrapiPostPdfRequestVariant1PdfOptionsMargin.fromJson(Map<String, dynamic
   top: json['top'],
 ); }
 
-final Object? bottom;
+/// One of: String, double
+final dynamic bottom;
 
-final Object? left;
+/// One of: String, double
+final dynamic left;
 
-final Object? right;
+/// One of: String, double
+final dynamic right;
 
-final Object? top;
+/// One of: String, double
+final dynamic top;
 
 Map<String, dynamic> toJson() { return {
   'bottom': ?bottom,
@@ -29,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'top': ?top,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-BrapiPostPdfRequestVariant1PdfOptionsMargin copyWith({Object Function()? bottom, Object Function()? left, Object Function()? right, Object Function()? top, }) { return BrapiPostPdfRequestVariant1PdfOptionsMargin(
+BrapiPostPdfRequestVariant1PdfOptionsMargin copyWith({dynamic Function()? bottom, dynamic Function()? left, dynamic Function()? right, dynamic Function()? top, }) { return BrapiPostPdfRequestVariant1PdfOptionsMargin(
   bottom: bottom != null ? bottom() : this.bottom,
   left: left != null ? left() : this.left,
   right: right != null ? right() : this.right,

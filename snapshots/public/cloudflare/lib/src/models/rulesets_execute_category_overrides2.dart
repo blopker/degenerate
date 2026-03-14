@@ -14,12 +14,16 @@ factory RulesetsExecuteCategoryOverrides2.fromJson(Map<String, dynamic> json) { 
   sensitivityLevel: json['sensitivity_level'] != null ? RulesetsExecuteSensitivityLevel.fromJson(json['sensitivity_level'] as String) : null,
 ); }
 
+/// The action to override rules in the category with.
 final RulesetsRuleAction? action;
 
+/// The name of the category to override.
 final RulesetsRuleCategory category;
 
+/// Whether to enable execution of rules in the category.
 final RulesetsRuleEnabled? enabled;
 
+/// The sensitivity level to use for rules in the category. This option is only applicable for DDoS phases.
 final RulesetsExecuteSensitivityLevel? sensitivityLevel;
 
 Map<String, dynamic> toJson() { return {

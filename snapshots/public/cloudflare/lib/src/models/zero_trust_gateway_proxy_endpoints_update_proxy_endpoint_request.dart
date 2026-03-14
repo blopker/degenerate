@@ -11,8 +11,10 @@ factory ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest.fromJson(Map<St
   name: json['name'] != null ? ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String) : null,
 ); }
 
+/// Specify the list of CIDRs to restrict ingress connections.
 final List<String>? ips;
 
+/// Specify the name of the proxy endpoint.
 final ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

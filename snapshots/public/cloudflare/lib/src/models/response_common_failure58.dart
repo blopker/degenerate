@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'resource_sharing_v4error.dar
 
 factory ResponseCommonFailure58.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure58(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceSharingV4error.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<ResourceSharingV4error> errors;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure58 copyWith({List<ResourceSharingV4error>? errors, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure58(
+ResponseCommonFailure58 copyWith({List<ResourceSharingV4error>? errors, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure58(
   errors: errors ?? this.errors,
   result: result != null ? result() : this.result,
   success: success ?? this.success,

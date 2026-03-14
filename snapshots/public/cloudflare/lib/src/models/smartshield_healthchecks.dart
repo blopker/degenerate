@@ -71,18 +71,24 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
 ); }
 
+/// The hostname or IP address of the origin server to run health checks on.
 final SmartshieldAddress? address;
 
+/// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
 final List<SmartshieldCheckRegions2>? checkRegions;
 
+/// The number of consecutive fails required from a health check before changing the health to unhealthy.
 final SmartshieldConsecutiveFails? consecutiveFails;
 
+/// The number of consecutive successes required from a health check before changing the health to healthy.
 final SmartshieldConsecutiveSuccesses? consecutiveSuccesses;
 
 final SmartshieldTimestamp? createdOn;
 
+/// A human-readable description of the health check.
 final SmartshieldDescription? description;
 
+/// The current failure reason if status is unhealthy.
 final SmartshieldFailureReason? failureReason;
 
 final SmartshieldHttpConfig? httpConfig;

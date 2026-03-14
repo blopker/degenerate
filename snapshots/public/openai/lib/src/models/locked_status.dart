@@ -37,6 +37,7 @@ factory LockedStatus.fromJson(Map<String, dynamic> json) { return LockedStatus(
 /// Status discriminator that is always `locked`.
 final LockedStatusType type;
 
+/// Reason that the thread was locked. Defaults to null when no reason is recorded.
 final String? reason;
 
 Map<String, dynamic> toJson() { return {

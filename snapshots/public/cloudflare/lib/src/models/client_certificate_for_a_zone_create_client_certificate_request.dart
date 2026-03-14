@@ -11,8 +11,10 @@ factory ClientCertificateForAZoneCreateClientCertificateRequest.fromJson(Map<Str
   validityDays: TlsCertificatesAndHostnamesSchemasValidityDays.fromJson(json['validity_days'] as num),
 ); }
 
+/// The Certificate Signing Request (CSR). Must be newline-encoded.
 final TlsCertificatesAndHostnamesSchemasCsr csr;
 
+/// The number of days the Client Certificate will be valid after the issued_on date
 final TlsCertificatesAndHostnamesSchemasValidityDays validityDays;
 
 Map<String, dynamic> toJson() { return {

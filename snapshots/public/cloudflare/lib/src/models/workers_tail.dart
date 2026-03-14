@@ -14,6 +14,7 @@ factory WorkersTail.fromJson(Map<String, dynamic> json) { return WorkersTail(
 
 final String expiresAt;
 
+/// Identifier.
 final WorkersIdentifier id;
 
 final String url;

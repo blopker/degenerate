@@ -14,8 +14,10 @@ factory SecondaryDnsSingleRequestOutgoing.fromJson(Map<String, dynamic> json) { 
 
 final SecondaryDnsIdentifier id;
 
+/// Zone name.
 final SecondaryDnsName name;
 
+/// A list of peer tags.
 final List<SecondaryDnsIdentifier> peers;
 
 Map<String, dynamic> toJson() { return {

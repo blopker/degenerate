@@ -28,22 +28,28 @@ factory MagicIpsecTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) { r
   replayProtection: json['replay_protection'] != null ? MagicReplayProtection.fromJson(json['replay_protection'] as bool) : null,
 ); }
 
+/// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
 
 final MagicBgpConfig? bgp;
 
+/// The IP address assigned to the Cloudflare side of the IPsec tunnel.
 final MagicCloudflareIpsecEndpoint cloudflareEndpoint;
 
 final MagicCustomRemoteIdentities? customRemoteIdentities;
 
+/// The IP address assigned to the customer side of the IPsec tunnel. Not required, but must be set for proactive traceroutes to work.
 final MagicCustomerIpsecEndpoint? customerEndpoint;
 
+/// An optional description forthe IPsec tunnel.
 final MagicComponentsSchemasDescription? description;
 
 final MagicHealthCheckBase? healthCheck;
 
+/// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 final MagicInterfaceAddress interfaceAddress;
 
+/// A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
 final MagicInterfaceAddress6? interfaceAddress6;
 
 final MagicIpsecTunnelName name;

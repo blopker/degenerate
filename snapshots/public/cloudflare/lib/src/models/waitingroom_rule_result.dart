@@ -23,14 +23,19 @@ factory WaitingroomRuleResult.fromJson(Map<String, dynamic> json) { return Waiti
   version: json['version'] != null ? WaitingroomRuleVersion.fromJson(json['version'] as String) : null,
 ); }
 
+/// The action to take when the expression matches.
 final WaitingroomRuleAction? action;
 
+/// The description of the rule.
 final WaitingroomRuleDescription? description;
 
+/// When set to true, the rule is enabled.
 final WaitingroomRuleEnabled? enabled;
 
+/// Criteria defining when there is a match for the current rule.
 final WaitingroomRuleExpression? expression;
 
+/// The ID of the rule.
 final WaitingroomRuleId? id;
 
 final WaitingroomTimestamp? lastUpdated;

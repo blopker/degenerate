@@ -37,6 +37,7 @@ factory ClosedStatus.fromJson(Map<String, dynamic> json) { return ClosedStatus(
 /// Status discriminator that is always `closed`.
 final ClosedStatusType type;
 
+/// Reason that the thread was closed. Defaults to null when no reason is recorded.
 final String? reason;
 
 Map<String, dynamic> toJson() { return {

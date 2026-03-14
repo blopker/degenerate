@@ -12,10 +12,13 @@ factory ZeroTrustApplicationsReviewStatusUpdateRequest.fromJson(Map<String, dyna
   unapprovedApps: (json['unapproved_apps'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
 ); }
 
+/// Contains the ids of the approved applications.
 final List<int> approvedApps;
 
+/// Contains the ids of the applications in review.
 final List<int> inReviewApps;
 
+/// Contains the ids of the unapproved applications.
 final List<int> unapprovedApps;
 
 Map<String, dynamic> toJson() { return {

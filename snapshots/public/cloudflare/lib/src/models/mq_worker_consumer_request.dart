@@ -15,6 +15,7 @@ factory MqWorkerConsumerRequest.fromJson(Map<String, dynamic> json) { return MqW
 
 final MqQueueName? deadLetterQueue;
 
+/// Name of a Worker
 final MqScriptName scriptName;
 
 final MqWorkerConsumerRequestSettings? settings;

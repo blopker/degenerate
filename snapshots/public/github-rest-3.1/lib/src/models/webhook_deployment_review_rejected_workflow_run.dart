@@ -92,7 +92,7 @@ factory WebhookDeploymentReviewRejectedWorkflowRun.fromJson(Map<String, dynamic>
   createdAt: DateTime.parse(json['created_at'] as String),
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
-  headCommit: (json['head_commit'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  headCommit: (json['head_commit'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   headRepository: json['head_repository'] != null ? WebhookDeploymentReviewRejectedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>) : null,
   headSha: json['head_sha'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -139,7 +139,7 @@ final String event;
 
 final String headBranch;
 
-final Map<String,Object?>? headCommit;
+final Map<String,dynamic>? headCommit;
 
 final WebhookDeploymentReviewRejectedWorkflowRunHeadRepository? headRepository;
 
@@ -249,7 +249,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num &&
       json.containsKey('display_title') && json['display_title'] is String; } 
-WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentReviewRejectedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentReviewRejectedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? headBranch, Map<String, Object>? Function()? headCommit, WebhookDeploymentReviewRejectedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, String? Function()? previousAttemptUrl, List<WebhookDeploymentReviewRejectedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentReviewRejectedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentReviewRejectedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewRejectedWorkflowRunStatus? status, WebhookDeploymentReviewRejectedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, String? displayTitle, }) { return WebhookDeploymentReviewRejectedWorkflowRun(
+WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentReviewRejectedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentReviewRejectedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? headBranch, Map<String, dynamic>? Function()? headCommit, WebhookDeploymentReviewRejectedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, String? Function()? previousAttemptUrl, List<WebhookDeploymentReviewRejectedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentReviewRejectedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentReviewRejectedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewRejectedWorkflowRunStatus? status, WebhookDeploymentReviewRejectedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, String? displayTitle, }) { return WebhookDeploymentReviewRejectedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl != null ? artifactsUrl() : this.artifactsUrl,
   cancelUrl: cancelUrl != null ? cancelUrl() : this.cancelUrl,

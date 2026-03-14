@@ -11,8 +11,10 @@ factory QueuesAckMessagesRequestRetries.fromJson(Map<String, dynamic> json) { re
   leaseId: json['lease_id'] != null ? MqLeaseId.fromJson(json['lease_id'] as String) : null,
 ); }
 
+/// The number of seconds to delay before making the message available for another attempt.
 final MqRetryDelay? delaySeconds;
 
+/// An ID that represents an "in-flight" message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.
 final MqLeaseId? leaseId;
 
 Map<String, dynamic> toJson() { return {

@@ -44,6 +44,7 @@ final WebhookCodeScanningAlertCreatedAction action;
 /// The code scanning alert involved in the event.
 final WebhookCodeScanningAlertCreatedAlert alert;
 
+/// The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
 final WebhooksCodeScanningCommitOid commitOid;
 
 final EnterpriseWebhooks? enterprise;
@@ -52,6 +53,7 @@ final SimpleInstallation? installation;
 
 final OrganizationSimpleWebhooks? organization;
 
+/// The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
 final WebhooksCodeScanningRef ref;
 
 final RepositoryWebhooks repository;

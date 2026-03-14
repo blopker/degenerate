@@ -12,10 +12,13 @@ factory CloudflareTunnelCreateACloudflareTunnelRequest.fromJson(Map<String, dyna
   tunnelSecret: json['tunnel_secret'] != null ? TunnelTunnelSecret.fromJson(json['tunnel_secret'] as String) : null,
 ); }
 
+/// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.
 final TunnelConfigSrc? configSrc;
 
+/// A user-friendly name for a tunnel.
 final TunnelTunnelName name;
 
+/// Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.
 final TunnelTunnelSecret? tunnelSecret;
 
 Map<String, dynamic> toJson() { return {

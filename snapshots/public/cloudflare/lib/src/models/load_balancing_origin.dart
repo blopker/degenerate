@@ -47,8 +47,10 @@ factory LoadBalancingOrigin.fromJson(Map<String, dynamic> json) { return LoadBal
   weight: json['weight'] != null ? LoadBalancingWeight.fromJson(json['weight'] as num) : null,
 ); }
 
+/// The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.
 final LoadBalancingAddress? address;
 
+/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
 final LoadBalancingDisabledAt? disabledAt;
 
 final LoadBalancingSchemasEnabled? enabled;

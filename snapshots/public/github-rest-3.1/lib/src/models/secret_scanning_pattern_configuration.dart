@@ -13,6 +13,7 @@ factory SecretScanningPatternConfiguration.fromJson(Map<String, dynamic> json) {
   customPatternOverrides: (json['custom_pattern_overrides'] as List<dynamic>?)?.map((e) => SecretScanningPatternOverride.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
 final SecretScanningRowVersion? patternConfigVersion;
 
 /// Overrides for partner patterns.

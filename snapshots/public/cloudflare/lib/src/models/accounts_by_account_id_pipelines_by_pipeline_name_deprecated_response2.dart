@@ -13,6 +13,7 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse2.fromJson(M
 
 final CloudflarePipelinesWorkersPipelinesPipeline result;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

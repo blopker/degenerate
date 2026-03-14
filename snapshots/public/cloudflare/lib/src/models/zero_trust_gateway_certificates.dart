@@ -77,6 +77,7 @@ factory ZeroTrustGatewayCertificates.fromJson(Map<String, dynamic> json) { retur
   uploadedOn: json['uploaded_on'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['uploaded_on'] as String) : null,
 ); }
 
+/// Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
 final ZeroTrustGatewayBindingStatus? bindingStatus;
 
 /// Provide the CA certificate (read-only).

@@ -75,6 +75,7 @@ final String name;
 /// The Unix timestamp (in seconds) of when the project was created.
 final int createdAt;
 
+/// The Unix timestamp (in seconds) of when the project was archived or `null`.
 final int? archivedAt;
 
 /// `active` or `archived`

@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 final class CcInstanceType {const CcInstanceType({this.ccInstanceTypeVariant1});
 
-factory CcInstanceType.fromJson(Object? json) { return CcInstanceType(
+factory CcInstanceType.fromJson(dynamic json) { return CcInstanceType(
   ccInstanceTypeVariant1: json is String ? CcInstanceTypeVariant1.fromJson(json) : null,
 ); }
 

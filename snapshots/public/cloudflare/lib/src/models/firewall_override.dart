@@ -29,18 +29,20 @@ final class FirewallOverride {const FirewallOverride({this.description, this.gro
 
 factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOverride(
   description: json['description'] != null ? FirewallComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
   paused: json['paused'] != null ? FirewallPaused.fromJson(json['paused'] as bool) : null,
   priority: json['priority'] != null ? FirewallPriority.fromJson(json['priority'] as num) : null,
   rewriteAction: json['rewrite_action'] != null ? FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>) : null,
-  rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as Object?))),
+  rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as dynamic))),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// An informative summary of the current URI-based WAF override.
 final FirewallComponentsSchemasDescription? description;
 
-final Map<String,Object?>? groups;
+/// An object that allows you to enable or disable WAF rule groups for the current WAF override. Each key of this object must be the ID of a WAF rule group, and each value must be a valid WAF action (usually `default` or `disable`). When creating a new URI-based WAF override, you must provide a `groups` object or a `rules` object.
+final Map<String,dynamic>? groups;
 
 final FirewallOverridesId? id;
 
@@ -65,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'urls': ?urls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, Object> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
+FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, dynamic> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
   description: description != null ? description() : this.description,
   groups: groups != null ? groups() : this.groups,
   id: id != null ? id() : this.id,

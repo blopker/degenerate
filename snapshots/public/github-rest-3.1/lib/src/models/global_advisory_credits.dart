@@ -13,6 +13,7 @@ factory GlobalAdvisoryCredits.fromJson(Map<String, dynamic> json) { return Globa
 
 final SimpleUser user;
 
+/// The type of credit the user is receiving.
 final SecurityAdvisoryCreditTypes type;
 
 Map<String, dynamic> toJson() { return {

@@ -17,6 +17,7 @@ factory ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest.fromJson(Ma
   enabled: TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled.fromJson(json['enabled'] as bool),
 ); }
 
+/// Indicates whether zone-level authenticated origin pulls is enabled.
 final TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled enabled;
 
 Map<String, dynamic> toJson() { return {

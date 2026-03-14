@@ -33,21 +33,21 @@ final class CreateEvalLogsDataSourceConfig {const CreateEvalLogsDataSourceConfig
 
 factory CreateEvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalLogsDataSourceConfig(
   type: CreateEvalLogsDataSourceConfigType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The type of data source. Always `logs`.
 final CreateEvalLogsDataSourceConfigType type;
 
 /// Metadata filters for the logs data source.
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-CreateEvalLogsDataSourceConfig copyWith({CreateEvalLogsDataSourceConfigType? type, Map<String, Object> Function()? metadata, }) { return CreateEvalLogsDataSourceConfig(
+CreateEvalLogsDataSourceConfig copyWith({CreateEvalLogsDataSourceConfigType? type, Map<String, dynamic> Function()? metadata, }) { return CreateEvalLogsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

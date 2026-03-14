@@ -44,6 +44,7 @@ factory VectorizeIndexPresetConfiguration.fromJson(Map<String, dynamic> json) { 
   preset: VectorizeIndexPreset.fromJson(json['preset'] as String),
 ); }
 
+/// Specifies the preset to use for the index.
 final VectorizeIndexPreset preset;
 
 Map<String, dynamic> toJson() { return {

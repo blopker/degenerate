@@ -12,6 +12,7 @@ factory RumCreateSiteRequest.fromJson(Map<String, dynamic> json) { return RumCre
   zoneTag: json['zone_tag'] != null ? RumZoneTag.fromJson(json['zone_tag'] as String) : null,
 ); }
 
+/// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 final RumAutoInstall? autoInstall;
 
 final RumHost? host;

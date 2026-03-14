@@ -5,9 +5,9 @@
 //  OpenAPI spec version: 3.0.3
 
 /// The unique identifier for the async mutation operation containing the changeset.
-extension type VectorizeMutationUuid(Object? value) {
-factory VectorizeMutationUuid.fromJson(Object? json) => VectorizeMutationUuid(json);
+extension type VectorizeMutationUuid(dynamic value) {
+factory VectorizeMutationUuid.fromJson(dynamic json) => VectorizeMutationUuid(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }

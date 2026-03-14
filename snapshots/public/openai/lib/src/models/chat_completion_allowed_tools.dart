@@ -41,7 +41,7 @@ final class ChatCompletionAllowedTools {const ChatCompletionAllowedTools({requir
 
 factory ChatCompletionAllowedTools.fromJson(Map<String, dynamic> json) { return ChatCompletionAllowedTools(
   mode: ChatCompletionAllowedToolsMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 /// Constrains the tools available to the model to a pre-defined set.
@@ -63,7 +63,7 @@ final ChatCompletionAllowedToolsMode mode;
 /// ]
 /// ````
 /// 
-final List<Map<String,Object?>> tools;
+final List<Map<String,dynamic>> tools;
 
 Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
       json.containsKey('tools'); } 
-ChatCompletionAllowedTools copyWith({ChatCompletionAllowedToolsMode? mode, List<Map<String,Object?>>? tools, }) { return ChatCompletionAllowedTools(
+ChatCompletionAllowedTools copyWith({ChatCompletionAllowedToolsMode? mode, List<Map<String,dynamic>>? tools, }) { return ChatCompletionAllowedTools(
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,
 ); } 

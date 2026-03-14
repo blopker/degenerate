@@ -20,7 +20,7 @@ final DateTime? minTime;
 
 final bool? scan;
 
-final Object? stringMatches;
+final dynamic stringMatches;
 
 final String? tag;
 
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'tag': ?tag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Query copyWith({DateTime? Function()? maxTime, DateTime? Function()? minTime, bool Function()? scan, Object? Function()? stringMatches, String Function()? tag, }) { return Query(
+Query copyWith({DateTime? Function()? maxTime, DateTime? Function()? minTime, bool Function()? scan, dynamic Function()? stringMatches, String Function()? tag, }) { return Query(
   maxTime: maxTime != null ? maxTime() : this.maxTime,
   minTime: minTime != null ? minTime() : this.minTime,
   scan: scan != null ? scan() : this.scan,

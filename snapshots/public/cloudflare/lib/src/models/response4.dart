@@ -7,7 +7,7 @@
 import 'vectorize_mutation_uuid.dart';final class Response4 {const Response4({this.mutationId});
 
 factory Response4.fromJson(Map<String, dynamic> json) { return Response4(
-  mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as Object?) : null,
+  mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as dynamic) : null,
 ); }
 
 final VectorizeMutationUuid? mutationId;

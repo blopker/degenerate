@@ -11,6 +11,7 @@ factory ReposCreateOrUpdateEnvironmentRequestReviewers.fromJson(Map<String, dyna
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
 ); }
 
+/// The type of reviewer.
 final DeploymentReviewerType? type;
 
 /// The id of the user or team who can review the deployment

@@ -37,6 +37,7 @@ factory FirewallFilter.fromJson(Map<String, dynamic> json) { return FirewallFilt
 
 final FirewallFiltersComponentsSchemasDescription? description;
 
+/// The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
 final FirewallExpression? expression;
 
 final FirewallFiltersComponentsSchemasId? id;

@@ -57,6 +57,7 @@ final int outputIndex;
 /// The JSON-encoded arguments delta.
 final String delta;
 
+/// If present, indicates the delta text was obfuscated.
 final String? obfuscation;
 
 Map<String, dynamic> toJson() { return {

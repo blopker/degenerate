@@ -30,6 +30,7 @@ factory LogpushInstantLogsJob.fromJson(Map<String, dynamic> json) { return Logpu
 
 final LogpushSchemasDestinationConf? destinationConf;
 
+/// Comma-separated list of fields.
 final LogpushFields? fields;
 
 final LogpushSchemasFilter? filter;

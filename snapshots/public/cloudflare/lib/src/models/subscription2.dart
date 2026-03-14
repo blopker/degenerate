@@ -114,22 +114,30 @@ factory Subscription2.fromJson(Map<String, dynamic> json) { return Subscription2
 
 final Subscription2App? app;
 
+/// The list of add-ons subscribed to.
 final List<ComponentValue2>? componentValues;
 
+/// The monetary unit in which pricing information is displayed.
 final Currency? currency;
 
+/// The end of the current period and also when the next billing is due.
 final CurrentPeriodEnd? currentPeriodEnd;
 
+/// When the current billing period started. May match initial_period_start if this is the first period.
 final CurrentPeriodStart? currentPeriodStart;
 
+/// How often the subscription is renewed automatically.
 final Frequency? frequency;
 
+/// Subscription identifier tag.
 final SchemasIdentifier? id;
 
+/// The price of the subscription that will be billed, in US dollars.
 final Price? price;
 
 final RatePlan2? ratePlan;
 
+/// The state that the subscription is in.
 final State? state;
 
 final Zone? zone;

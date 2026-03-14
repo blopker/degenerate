@@ -80,6 +80,7 @@ factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) {
 /// The user-specified name of this Transcription, if one was given when the Transcription was created. This may be used to stop the Transcription.
 final String? name;
 
+/// One of `inbound_track`, `outbound_track`, `both_tracks`.
 final RealtimeTranscriptionEnumTrack? track;
 
 /// Absolute URL of the status callback.

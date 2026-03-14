@@ -8,14 +8,18 @@
 final class PageDeployment {const PageDeployment({required this.id, required this.statusUrl, required this.pageUrl, this.previewUrl, });
 
 factory PageDeployment.fromJson(Map<String, dynamic> json) { return PageDeployment(
-  id: json['id'] as Object,
+  id: json['id'],
   statusUrl: Uri.parse(json['status_url'] as String),
   pageUrl: Uri.parse(json['page_url'] as String),
   previewUrl: json['preview_url'] != null ? Uri.parse(json['preview_url'] as String) : null,
 ); }
 
 /// The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
-final Object id;
+/// 
+/// The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
+/// 
+/// One of: int, String
+final dynamic id;
 
 /// The URI to monitor GitHub Pages deployment status.
 final Uri statusUrl;
@@ -35,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('status_url') && json['status_url'] is String &&
       json.containsKey('page_url') && json['page_url'] is String; } 
-PageDeployment copyWith({Object? id, Uri? statusUrl, Uri? pageUrl, Uri Function()? previewUrl, }) { return PageDeployment(
+PageDeployment copyWith({dynamic id, Uri? statusUrl, Uri? pageUrl, Uri Function()? previewUrl, }) { return PageDeployment(
   id: id ?? this.id,
   statusUrl: statusUrl ?? this.statusUrl,
   pageUrl: pageUrl ?? this.pageUrl,

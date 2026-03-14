@@ -20,12 +20,15 @@ factory ZeroTrustGatewayApplication.fromJson(Map<String, dynamic> json) { return
   name: json['name'] != null ? ZeroTrustGatewayAppTypesComponentsSchemasName.fromJson(json['name'] as String) : null,
 ); }
 
+/// Identify the type of this application. Multiple applications can share the same type. Refers to the `id` of a returned application type.
 final ZeroTrustGatewayAppTypeId? applicationTypeId;
 
 final ZeroTrustGatewayTimestamp? createdAt;
 
+/// Identify this application. Only one application per ID.
 final ZeroTrustGatewayAppId? id;
 
+/// Specify the name of the application or application type.
 final ZeroTrustGatewayAppTypesComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

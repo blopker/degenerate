@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'load_balancing_origin_analyt
 factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingAnalytics(
   id: json.containsKey('id') ? (json['id'] as num).toInt() : 1,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginAnalytics.fromJson(e as Map<String, dynamic>)).toList(),
-  pool: (json['pool'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  pool: (json['pool'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
 ); }
 
@@ -17,7 +17,7 @@ final int id;
 
 final List<LoadBalancingOriginAnalytics>? origins;
 
-final Map<String,Object?>? pool;
+final Map<String,dynamic>? pool;
 
 final DateTime? timestamp;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-LoadBalancingAnalytics copyWith({int Function()? id, List<LoadBalancingOriginAnalytics> Function()? origins, Map<String, Object> Function()? pool, DateTime Function()? timestamp, }) { return LoadBalancingAnalytics(
+LoadBalancingAnalytics copyWith({int Function()? id, List<LoadBalancingOriginAnalytics> Function()? origins, Map<String, dynamic> Function()? pool, DateTime Function()? timestamp, }) { return LoadBalancingAnalytics(
   id: id != null ? id() : this.id,
   origins: origins != null ? origins() : this.origins,
   pool: pool != null ? pool() : this.pool,

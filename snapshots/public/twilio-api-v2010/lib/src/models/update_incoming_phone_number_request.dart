@@ -205,6 +205,7 @@ final UpdateIncomingPhoneNumberRequestVoiceMethod? voiceMethod;
 /// The URL that we should call to answer a call to the phone number. The `voice_url` will not be called if a `voice_application_sid` or a `trunk_sid` is set.
 final Uri? voiceUrl;
 
+/// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
 final IncomingPhoneNumberEnumEmergencyStatus? emergencyStatus;
 
 /// The SID of the emergency address configuration to use for emergency calling from this phone number.

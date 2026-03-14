@@ -23,6 +23,7 @@ final String maxSnapshotAge;
 /// Specifies the minimum number of snapshots to retain. Defaults to 100.
 final int minSnapshotsToKeep;
 
+/// Specifies the state of maintenance operations.
 final R2DataCatalogCatalogMaintenanceState state;
 
 Map<String, dynamic> toJson() { return {

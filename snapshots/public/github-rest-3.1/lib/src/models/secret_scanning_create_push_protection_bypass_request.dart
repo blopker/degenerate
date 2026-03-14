@@ -11,8 +11,10 @@ factory SecretScanningCreatePushProtectionBypassRequest.fromJson(Map<String, dyn
   placeholderId: SecretScanningPushProtectionBypassPlaceholderId.fromJson(json['placeholder_id'] as String),
 ); }
 
+/// The reason for bypassing push protection.
 final SecretScanningPushProtectionBypassReason reason;
 
+/// The ID of the push protection bypass placeholder. This value is returned on any push protected routes.
 final SecretScanningPushProtectionBypassPlaceholderId placeholderId;
 
 Map<String, dynamic> toJson() { return {

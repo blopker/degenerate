@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'email_security_message.dart'
 factory EmailSecurityUpdateDomainResponse4Xx.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDomainResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<EmailSecurityMessage> errors;
 
 final List<EmailSecurityMessage> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-EmailSecurityUpdateDomainResponse4Xx copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, Map<String, Object>? Function()? result, bool? success, }) { return EmailSecurityUpdateDomainResponse4Xx(
+EmailSecurityUpdateDomainResponse4Xx copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return EmailSecurityUpdateDomainResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

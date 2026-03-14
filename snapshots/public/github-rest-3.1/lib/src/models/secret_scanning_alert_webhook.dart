@@ -100,19 +100,25 @@ factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) { return 
   assignedTo: json['assigned_to'] != null ? SimpleUser.fromJson(json['assigned_to'] as Map<String, dynamic>) : null,
 ); }
 
+/// The security alert number.
 final AlertNumber? number;
 
+/// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertCreatedAt? createdAt;
 
+/// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertUpdatedAt? updatedAt;
 
+/// The REST API URL of the alert resource.
 final AlertUrl? url;
 
+/// The GitHub URL of the alert resource.
 final AlertHtmlUrl? htmlUrl;
 
 /// The REST API URL of the code locations for this alert.
 final Uri? locationsUrl;
 
+/// The reason for resolving the alert.
 final SecretScanningAlertResolutionWebhook? resolution;
 
 /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

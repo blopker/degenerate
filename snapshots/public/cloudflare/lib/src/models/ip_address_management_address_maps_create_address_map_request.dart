@@ -13,12 +13,15 @@ factory IpAddressManagementAddressMapsCreateAddressMapRequest.fromJson(Map<Strin
   memberships: (json['memberships'] as List<dynamic>?)?.map((e) => AddressingAddressMapsMembershipRequest.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// An optional description field which may be used to describe the types of IPs or zones on the map.
 final AddressingSchemasDescription? description;
 
+/// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
 final AddressingEnabled? enabled;
 
 final List<AddressingIpAddress>? ips;
 
+/// Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
 final List<AddressingAddressMapsMembershipRequest>? memberships;
 
 Map<String, dynamic> toJson() { return {

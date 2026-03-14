@@ -19,8 +19,10 @@ factory DnsAnalyticsQuery.fromJson(Map<String, dynamic> json) { return DnsAnalyt
 /// Array of dimension names.
 final List<String> dimensions;
 
+/// Segmentation filter in 'attribute operator value' format.
 final DnsAnalyticsFilters? filters;
 
+/// Limit number of returned metrics.
 final DnsAnalyticsLimit limit;
 
 /// Array of metric names.

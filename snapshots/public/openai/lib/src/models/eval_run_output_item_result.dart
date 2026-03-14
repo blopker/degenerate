@@ -13,7 +13,7 @@ factory EvalRunOutputItemResult.fromJson(Map<String, dynamic> json) { return Eva
   type: json['type'] as String?,
   score: (json['score'] as num).toDouble(),
   passed: json['passed'] as bool,
-  sample: (json['sample'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  sample: (json['sample'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The name of the grader.
@@ -29,7 +29,7 @@ final double score;
 final bool passed;
 
 /// Optional sample or intermediate data produced by the grader.
-final Map<String,Object?>? sample;
+final Map<String,dynamic>? sample;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('passed') && json['passed'] is bool; } 
-EvalRunOutputItemResult copyWith({String? name, String Function()? type, double? score, bool? passed, Map<String, Object>? Function()? sample, }) { return EvalRunOutputItemResult(
+EvalRunOutputItemResult copyWith({String? name, String Function()? type, double? score, bool? passed, Map<String, dynamic>? Function()? sample, }) { return EvalRunOutputItemResult(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
   score: score ?? this.score,

@@ -34,6 +34,7 @@ factory DnsSettingsDnsView.fromJson(Map<String, dynamic> json) { return DnsSetti
   zones: (json['zones'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// When the view was created.
 final DnsSettingsCreatedTime? createdTime;
 
 final DnsSettingsModifiedTime? modifiedTime;

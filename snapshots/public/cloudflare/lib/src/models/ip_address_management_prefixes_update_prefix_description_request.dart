@@ -10,6 +10,7 @@ factory IpAddressManagementPrefixesUpdatePrefixDescriptionRequest.fromJson(Map<S
   description: AddressingDescription.fromJson(json['description'] as String),
 ); }
 
+/// Description of the prefix.
 final AddressingDescription description;
 
 Map<String, dynamic> toJson() { return {

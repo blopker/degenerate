@@ -29,6 +29,7 @@ factory DnsRecordsDnsRecordSharedFields.fromJson(Map<String, dynamic> json) { re
   ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => (v as num).toDouble(),) : null,
 ); }
 
+/// Comments or notes about the DNS record. This field has no effect on DNS responses.
 final DnsRecordsComment? comment;
 
 final DnsRecordsName? name;

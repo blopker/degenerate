@@ -29,24 +29,33 @@ factory AccessMcpProps.fromJson(Map<String, dynamic> json) { return AccessMcpPro
 
 final AccessSchemasAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
 
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
 
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
+/// The custom error message shown to a user when they are denied access to the application.
 final AccessCustomDenyMessage? customDenyMessage;
 
+/// The custom URL a user is redirected to when they are denied access to the application when failing identity-based rules.
 final AccessCustomDenyUrl? customDenyUrl;
 
+/// The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
 final AccessCustomNonIdentityDenyUrl? customNonIdentityDenyUrl;
 
 final List<String>? customPages;
 
+/// List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored.
+/// 
 final List<AccessDestinations2>? destinations;
 
+/// Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 final AccessHttpOnlyCookieAttribute? httpOnlyCookieAttribute;
 
+/// The image URL for the logo shown in the App Launcher dashboard.
 final AccessLogoUrl? logoUrl;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
 final AccessOauthConfiguration? oauthConfiguration;

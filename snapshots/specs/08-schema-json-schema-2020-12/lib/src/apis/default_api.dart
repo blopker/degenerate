@@ -28,7 +28,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return Shape.fromJson(jsonDecode(response.body) as Object?);
+    return Shape.fromJson(jsonDecode(response.body) as dynamic);
   },
 );
  } 

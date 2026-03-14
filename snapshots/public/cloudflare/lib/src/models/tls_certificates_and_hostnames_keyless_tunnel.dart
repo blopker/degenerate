@@ -26,6 +26,7 @@ factory TlsCertificatesAndHostnamesKeylessTunnel.fromJson(Map<String, dynamic> j
   vnetId: TlsCertificatesAndHostnamesKeylessVnetId.fromJson(json['vnet_id'] as String),
 ); }
 
+/// Private IP of the Key Server Host
 final TlsCertificatesAndHostnamesKeylessPrivateIp privateIp;
 
 final TlsCertificatesAndHostnamesKeylessVnetId vnetId;

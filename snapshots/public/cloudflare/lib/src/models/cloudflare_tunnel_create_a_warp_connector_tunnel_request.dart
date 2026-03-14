@@ -10,6 +10,7 @@ factory CloudflareTunnelCreateAWarpConnectorTunnelRequest.fromJson(Map<String, d
   name: TunnelTunnelName.fromJson(json['name'] as String),
 ); }
 
+/// A user-friendly name for a tunnel.
 final TunnelTunnelName name;
 
 Map<String, dynamic> toJson() { return {

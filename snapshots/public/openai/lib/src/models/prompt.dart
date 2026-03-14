@@ -18,6 +18,7 @@ factory Prompt.fromJson(Map<String, dynamic> json) { return Prompt(
 /// The unique identifier of the prompt template to use.
 final String id;
 
+/// Optional version of the prompt template.
 final String? version;
 
 final Map<String,ResponsePromptVariablesValue>? variables;

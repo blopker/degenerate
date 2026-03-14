@@ -9,7 +9,7 @@ final class Messages51ToolsFunctionFunction {const Messages51ToolsFunctionFuncti
 factory Messages51ToolsFunctionFunction.fromJson(Map<String, dynamic> json) { return Messages51ToolsFunctionFunction(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool?,
 ); }
 
@@ -20,7 +20,7 @@ final String? description;
 final String name;
 
 /// The parameters the function accepts, described as a JSON Schema object.
-final Map<String,Object?>? parameters;
+final Map<String,dynamic>? parameters;
 
 final bool? strict;
 
@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'strict': ?strict,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Messages51ToolsFunctionFunction copyWith({String Function()? description, String? name, Map<String, Object> Function()? parameters, bool? Function()? strict, }) { return Messages51ToolsFunctionFunction(
+Messages51ToolsFunctionFunction copyWith({String Function()? description, String? name, Map<String, dynamic> Function()? parameters, bool? Function()? strict, }) { return Messages51ToolsFunctionFunction(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,

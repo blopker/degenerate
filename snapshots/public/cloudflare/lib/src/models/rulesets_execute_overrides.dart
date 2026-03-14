@@ -15,14 +15,18 @@ factory RulesetsExecuteOverrides.fromJson(Map<String, dynamic> json) { return Ru
   sensitivityLevel: json['sensitivity_level'] != null ? RulesetsExecuteSensitivityLevel.fromJson(json['sensitivity_level'] as String) : null,
 ); }
 
+/// An action to override all rules with. This option has lower precedence than rule and category overrides.
 final RulesetsRuleAction? action;
 
+/// A list of category-level overrides. This option has the second-highest precedence after rule-level overrides.
 final List<RulesetsExecuteCategoryOverrides2>? categories;
 
+/// Whether to enable execution of all rules. This option has lower precedence than rule and category overrides.
 final RulesetsRuleEnabled? enabled;
 
 final List<RulesetsExecuteRuleOverrides2>? rules;
 
+/// A sensitivity level to set for all rules. This option has lower precedence than rule and category overrides and is only applicable for DDoS phases.
 final RulesetsExecuteSensitivityLevel? sensitivityLevel;
 
 Map<String, dynamic> toJson() { return {

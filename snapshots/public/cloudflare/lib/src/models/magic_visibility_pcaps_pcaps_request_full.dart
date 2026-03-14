@@ -17,14 +17,18 @@ factory MagicVisibilityPcapsPcapsRequestFull.fromJson(Map<String, dynamic> json)
   type: MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String),
 ); }
 
+/// The maximum number of bytes to capture. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsByteLimit? byteLimit;
 
+/// The name of the data center used for the packet capture. This can be a specific colo (ord02) or a multi-colo name (ORD). This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsColoName coloName;
 
+/// The full URI for the bucket. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsDestinationConf destinationConf;
 
 final MagicVisibilityPcapsPcapsFilter? filterV1;
 
+/// The limit of packets contained in a packet capture.
 final MagicVisibilityPcapsPcapsPacketLimit? packetLimit;
 
 final MagicVisibilityPcapsPcapsSystem system;

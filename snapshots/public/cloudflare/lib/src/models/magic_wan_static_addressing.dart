@@ -13,10 +13,13 @@ factory MagicWanStaticAddressing.fromJson(Map<String, dynamic> json) { return Ma
   secondaryAddress: json['secondary_address'] != null ? MagicCidr.fromJson(json['secondary_address'] as String) : null,
 ); }
 
+/// A valid CIDR notation representing an IP range.
 final MagicCidr address;
 
+/// A valid IPv4 address.
 final MagicIpAddress gatewayAddress;
 
+/// A valid CIDR notation representing an IP range.
 final MagicCidr? secondaryAddress;
 
 Map<String, dynamic> toJson() { return {

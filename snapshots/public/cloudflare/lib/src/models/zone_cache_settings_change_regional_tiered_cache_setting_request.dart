@@ -35,6 +35,7 @@ factory ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest.fromJson(Map<St
   value: CacheRulesRegionalTieredCacheValue.fromJson(json['value'] as String),
 ); }
 
+/// Value of the Regional Tiered Cache zone setting.
 final CacheRulesRegionalTieredCacheValue value;
 
 Map<String, dynamic> toJson() { return {

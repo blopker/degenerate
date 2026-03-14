@@ -17,18 +17,22 @@ factory AccessServiceTokens.fromJson(Map<String, dynamic> json) { return AccessS
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// The Client ID for the service token. Access will check for this value in the `CF-Access-Client-ID` request header.
 final AccessClientId? clientId;
 
 final AccessTimestamp? createdAt;
 
+/// The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
 final AccessDuration? duration;
 
 final AccessTimestamp? expiresAt;
 
+/// The ID of the service token.
 final AccessUuid? id;
 
 final AccessTimestamp? lastSeenAt;
 
+/// The name of the service token.
 final AccessSchemasName? name;
 
 final AccessTimestamp? updatedAt;

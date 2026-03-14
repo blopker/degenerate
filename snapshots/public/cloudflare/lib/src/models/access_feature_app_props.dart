@@ -18,18 +18,23 @@ factory AccessFeatureAppProps.fromJson(Map<String, dynamic> json) { return Acces
   type: AccessType.fromJson(json['type'] as String),
 ); }
 
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
 
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
+/// The custom URL a user is redirected to when they are denied access to the application when failing identity-based rules.
 final AccessCustomDenyUrl? customDenyUrl;
 
+/// The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
 final AccessCustomNonIdentityDenyUrl? customNonIdentityDenyUrl;
 
 final List<String>? customPages;
 
+/// The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
 final AccessDomain? domain;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
 final AccessSchemasSessionDuration? sessionDuration;

@@ -11,6 +11,7 @@ factory RulesetsResultInfoCursors.fromJson(Map<String, dynamic> json) { return R
   after: RulesetsCursor.fromJson(json['after'] as String),
 ); }
 
+/// The cursor to use for the next page.
 final RulesetsCursor after;
 
 Map<String, dynamic> toJson() { return {

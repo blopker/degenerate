@@ -35,6 +35,7 @@ factory ZoneSettingsChangeFontsSettingRequest.fromJson(Map<String, dynamic> json
   value: SpeedCloudflareFontsValue.fromJson(json['value'] as String),
 ); }
 
+/// Whether the feature is enabled or disabled.
 final SpeedCloudflareFontsValue value;
 
 Map<String, dynamic> toJson() { return {

@@ -21,28 +21,37 @@ factory ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest.fromJson(Map<Stri
   traffic: json['traffic'] != null ? ZeroTrustGatewayTraffic.fromJson(json['traffic'] as String) : null,
 ); }
 
+/// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
 final ZeroTrustGatewayAction action;
 
+/// Specify the rule description.
 final ZeroTrustGatewaySchemasDescription? description;
 
+/// Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 final ZeroTrustGatewayDevicePosture? devicePosture;
 
+/// Specify whether the rule is enabled.
 final ZeroTrustGatewayEnabled? enabled;
 
 final ZeroTrustGatewayExpiration? expiration;
 
+/// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
 final List<ZeroTrustGatewayFilters2>? filters;
 
+/// Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 final ZeroTrustGatewayIdentity? identity;
 
+/// Specify the rule name.
 final ZeroTrustGatewayComponentsSchemasName name;
 
+/// Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
 final ZeroTrustGatewayPrecedence? precedence;
 
 final ZeroTrustGatewayRuleSettings? ruleSettings;
 
 final ZeroTrustGatewaySchedule? schedule;
 
+/// Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 final ZeroTrustGatewayTraffic? traffic;
 
 Map<String, dynamic> toJson() { return {

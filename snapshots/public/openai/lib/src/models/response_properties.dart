@@ -51,6 +51,10 @@ factory ResponseProperties.fromJson(Map<String, dynamic> json) { return Response
   truncation: json['truncation'] != null ? ResponsePropertiesTruncation.fromJson(json['truncation'] as String) : null,
 ); }
 
+/// The unique ID of the previous response to the model. Use this to
+/// create multi-turn conversations. Learn more about
+/// [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
+/// 
 final String? previousResponseId;
 
 /// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI
@@ -62,10 +66,17 @@ final ModelIdsResponses? model;
 
 final Reasoning? reasoning;
 
+/// Whether to run the model response in the background.
+/// [Learn more](/docs/guides/background).
+/// 
 final bool? background;
 
+/// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+/// 
 final int? maxOutputTokens;
 
+/// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
+/// 
 final int? maxToolCalls;
 
 final ResponseTextParam? text;
@@ -76,6 +87,13 @@ final ToolChoiceParam? toolChoice;
 
 final Prompt? prompt;
 
+/// The truncation strategy to use for the model response.
+/// - `auto`: If the input to this Response exceeds
+///   the model's context window size, the model will truncate the
+///   response to fit the context window by dropping items from the beginning of the conversation.
+/// - `disabled` (default): If the input size will exceed the context window
+///   size for a model, the request will fail with a 400 error.
+/// 
 final ResponsePropertiesTruncation? truncation;
 
 Map<String, dynamic> toJson() { return {

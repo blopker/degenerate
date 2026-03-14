@@ -68,6 +68,7 @@ final int contentIndex;
 /// The transcribed text.
 final String transcript;
 
+/// The log probabilities of the transcription.
 final List<LogProbProperties>? logprobs;
 
 /// Usage statistics for the transcription.

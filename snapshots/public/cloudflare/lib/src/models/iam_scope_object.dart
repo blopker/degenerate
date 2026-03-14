@@ -5,17 +5,17 @@
 //  OpenAPI spec version: 3.0.3
 
 /// This is a combination of pre-defined resource name and identifier (like Zone ID etc.)
-extension type IamScopeObjectKey(Object? value) {
-factory IamScopeObjectKey.fromJson(Object? json) => IamScopeObjectKey(json);
+extension type IamScopeObjectKey(dynamic value) {
+factory IamScopeObjectKey.fromJson(dynamic json) => IamScopeObjectKey(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }
 /// A scope object represents any resource that can have actions applied against invite.
 final class IamScopeObject {const IamScopeObject({required this.key});
 
 factory IamScopeObject.fromJson(Map<String, dynamic> json) { return IamScopeObject(
-  key: IamScopeObjectKey.fromJson(json['key'] as Object?),
+  key: IamScopeObjectKey.fromJson(json['key'] as dynamic),
 ); }
 
 final IamScopeObjectKey? key;

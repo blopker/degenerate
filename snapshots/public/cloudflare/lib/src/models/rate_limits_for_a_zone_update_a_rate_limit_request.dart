@@ -17,8 +17,10 @@ final FirewallAction action;
 
 final FirewallMatch match;
 
+/// The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.
 final FirewallPeriod period;
 
+/// The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period.
 final FirewallThreshold threshold;
 
 Map<String, dynamic> toJson() { return {

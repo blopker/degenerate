@@ -20,6 +20,7 @@ factory SpectrumConfigBaseAppConfig.fromJson(Map<String, dynamic> json) { return
 
 final SpectrumConfigTimestamp createdOn;
 
+/// App identifier.
 final SpectrumConfigIdentifier id;
 
 final SpectrumConfigTimestamp modifiedOn;

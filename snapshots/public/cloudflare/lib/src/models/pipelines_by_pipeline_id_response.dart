@@ -13,6 +13,7 @@ factory PipelinesByPipelineIdResponse.fromJson(Map<String, dynamic> json) { retu
 
 final PipelinesByPipelineIdResponseResult result;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

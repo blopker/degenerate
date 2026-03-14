@@ -20,26 +20,37 @@ factory ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest.fromJson(Map<String, 
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Administrators who can approve a temporary authentication request.
 final List<AccessSchemasApprovalGroup>? approvalGroups;
 
+/// Requires the user to request access from an administrator at the start of each session.
 final AccessSchemasApprovalRequired? approvalRequired;
 
+/// The action Access will take if a user matches this policy.
 final AccessSchemasDecision decision;
 
+/// Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
 
+/// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 final List<AccessRule> include;
 
+/// Require this application to be served in an isolated browser for users matching this policy.
 final AccessSchemasIsolationRequired? isolationRequired;
 
+/// The name of the Access policy.
 final AccessPoliciesComponentsSchemasName name;
 
+/// The order of execution for this policy. Must be unique for each policy.
 final AccessSchemasPrecedence? precedence;
 
+/// A custom message that will appear on the purpose justification screen.
 final AccessPurposeJustificationPrompt? purposeJustificationPrompt;
 
+/// Require users to enter a justification when they log in to the application.
 final AccessSchemasPurposeJustificationRequired? purposeJustificationRequired;
 
+/// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
 Map<String, dynamic> toJson() { return {

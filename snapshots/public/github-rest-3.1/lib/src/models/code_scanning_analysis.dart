@@ -45,18 +45,25 @@ factory CodeScanningAnalysis.fromJson(Map<String, dynamic> json) { return CodeSc
   warning: json['warning'] as String,
 ); }
 
+/// The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
+/// `refs/heads/<branch name>` or simply `<branch name>`.
 final CodeScanningRef ref;
 
+/// The SHA of the commit to which the analysis you are uploading relates.
 final CodeScanningAnalysisCommitSha commitSha;
 
+/// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
 final CodeScanningAnalysisAnalysisKey analysisKey;
 
+/// Identifies the variable values associated with the environment in which this analysis was performed.
 final CodeScanningAnalysisEnvironment environment;
 
+/// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
 final CodeScanningAnalysisCategory? category;
 
 final String error;
 
+/// The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final CodeScanningAnalysisCreatedAt createdAt;
 
 /// The total number of results in the analysis.
@@ -68,8 +75,10 @@ final int rulesCount;
 /// Unique identifier for this analysis.
 final int id;
 
+/// The REST API URL of the analysis resource.
 final CodeScanningAnalysisUrl url;
 
+/// An identifier for the upload.
 final CodeScanningAnalysisSarifId sarifId;
 
 final CodeScanningAnalysisTool tool;

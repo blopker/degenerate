@@ -50,10 +50,13 @@ factory AccessLandingPageDesign.fromJson(Map<String, dynamic> json) { return Acc
   title: json['title'] != null ? AccessTitle.fromJson(json['title'] as String) : null,
 ); }
 
+/// The background color of the log in button on the landing page.
 final AccessButtonColor? buttonColor;
 
+/// The color of the text in the log in button on the landing page.
 final AccessButtonTextColor? buttonTextColor;
 
+/// The URL of the image shown on the landing page.
 final AccessImageUrl? imageUrl;
 
 final AccessMessage? message;

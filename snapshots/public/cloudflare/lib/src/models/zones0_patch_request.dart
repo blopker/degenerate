@@ -48,6 +48,10 @@ factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) { return Zones0Pa
   vanityNameServers: (json['vanity_name_servers'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Indicates whether the zone is only using Cloudflare DNS services. A
+/// true value means the zone will not receive security or performance
+/// benefits.
+/// 
 final ZonesPaused? paused;
 
 /// (Deprecated) Please use the `/zones/{zone_id}/subscription` API
@@ -64,6 +68,8 @@ final Zones0PatchRequestPlan? plan;
 /// 
 final Zones0PatchRequestType? type;
 
+/// An array of domains used for custom name servers. This is only
+/// available for Business and Enterprise plans.
 final List<String>? vanityNameServers;
 
 Map<String, dynamic> toJson() { return {

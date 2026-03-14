@@ -7,7 +7,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_input.dart';import 'responses_reasoning.dart';final class Responses {const Responses({required this.input, this.reasoning, });
 
 factory Responses.fromJson(Map<String, dynamic> json) { return Responses(
-  input: OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as Object).toList(),),
+  input: OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(),),
   reasoning: json['reasoning'] != null ? ResponsesReasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
 ); }
 

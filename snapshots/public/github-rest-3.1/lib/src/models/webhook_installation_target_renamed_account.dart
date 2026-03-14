@@ -52,7 +52,7 @@ final String avatarUrl;
 
 final String? createdAt;
 
-final Object? description;
+final dynamic description;
 
 final String? eventsUrl;
 
@@ -116,7 +116,7 @@ final String? updatedAt;
 
 final String? url;
 
-final Object? websiteUrl;
+final dynamic websiteUrl;
 
 final String? userViewType;
 
@@ -163,7 +163,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avata
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-WebhookInstallationTargetRenamedAccount copyWith({String? Function()? archivedAt, String? avatarUrl, String Function()? createdAt, Object? Function()? description, String Function()? eventsUrl, int Function()? followers, String Function()? followersUrl, int Function()? following, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, bool Function()? hasOrganizationProjects, bool Function()? hasRepositoryProjects, String Function()? hooksUrl, String? htmlUrl, int? id, bool Function()? isVerified, String Function()? issuesUrl, String Function()? login, String Function()? membersUrl, String Function()? name, String? nodeId, String Function()? organizationsUrl, int Function()? publicGists, String Function()? publicMembersUrl, int Function()? publicRepos, String Function()? receivedEventsUrl, String Function()? reposUrl, bool Function()? siteAdmin, String Function()? slug, String Function()? starredUrl, String Function()? subscriptionsUrl, String Function()? type, String Function()? updatedAt, String Function()? url, Object? Function()? websiteUrl, String Function()? userViewType, }) { return WebhookInstallationTargetRenamedAccount(
+WebhookInstallationTargetRenamedAccount copyWith({String? Function()? archivedAt, String? avatarUrl, String Function()? createdAt, dynamic Function()? description, String Function()? eventsUrl, int Function()? followers, String Function()? followersUrl, int Function()? following, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, bool Function()? hasOrganizationProjects, bool Function()? hasRepositoryProjects, String Function()? hooksUrl, String? htmlUrl, int? id, bool Function()? isVerified, String Function()? issuesUrl, String Function()? login, String Function()? membersUrl, String Function()? name, String? nodeId, String Function()? organizationsUrl, int Function()? publicGists, String Function()? publicMembersUrl, int Function()? publicRepos, String Function()? receivedEventsUrl, String Function()? reposUrl, bool Function()? siteAdmin, String Function()? slug, String Function()? starredUrl, String Function()? subscriptionsUrl, String Function()? type, String Function()? updatedAt, String Function()? url, dynamic Function()? websiteUrl, String Function()? userViewType, }) { return WebhookInstallationTargetRenamedAccount(
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
   avatarUrl: avatarUrl ?? this.avatarUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

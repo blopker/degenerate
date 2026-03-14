@@ -10,6 +10,7 @@ factory MagicRouteDeleteId.fromJson(Map<String, dynamic> json) { return MagicRou
   id: MagicIdentifier.fromJson(json['id'] as String),
 ); }
 
+/// Identifier
 final MagicIdentifier id;
 
 Map<String, dynamic> toJson() { return {

@@ -93,10 +93,13 @@ final int progress;
 /// Unix timestamp (seconds) for when the job was created.
 final int createdAt;
 
+/// Unix timestamp (seconds) for when the job completed, if finished.
 final int? completedAt;
 
+/// Unix timestamp (seconds) for when the downloadable assets expire, if set.
 final int? expiresAt;
 
+/// The prompt that was used to generate the video.
 final String? prompt;
 
 /// The resolution of the generated video.
@@ -105,8 +108,10 @@ final VideoSize size;
 /// Duration of the generated clip in seconds. For extensions, this is the stitched total duration.
 final String seconds;
 
+/// Identifier of the source video if this video is a remix.
 final String? remixedFromVideoId;
 
+/// Error payload that explains why generation failed, if applicable.
 final Error2? error;
 
 Map<String, dynamic> toJson() { return {

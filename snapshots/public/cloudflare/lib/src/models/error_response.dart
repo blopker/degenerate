@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'message3.dart';final class E
 factory ErrorResponse.fromJson(Map<String, dynamic> json) { return ErrorResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<Message3> errors;
 
 final List<Message3> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 final bool success;
 
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ErrorResponse copyWith({List<Message3>? errors, List<Message3>? messages, Map<String, Object> Function()? result, bool? success, }) { return ErrorResponse(
+ErrorResponse copyWith({List<Message3>? errors, List<Message3>? messages, Map<String, dynamic> Function()? result, bool? success, }) { return ErrorResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

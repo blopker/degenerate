@@ -13,10 +13,13 @@ factory ReposUpdateWebhookConfigForRepoRequest.fromJson(Map<String, dynamic> jso
   insecureSsl: json['insecure_ssl'] != null ? OneOf2.parse(json['insecure_ssl'], fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),) : null,
 ); }
 
+/// The URL to which the payloads will be delivered.
 final WebhookConfigUrl? url;
 
+/// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
 final WebhookConfigContentType? contentType;
 
+/// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
 final WebhookConfigSecret? secret;
 
 final WebhookConfigInsecureSsl? insecureSsl;

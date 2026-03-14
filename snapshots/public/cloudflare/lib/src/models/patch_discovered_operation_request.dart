@@ -10,6 +10,10 @@ factory PatchDiscoveredOperationRequest.fromJson(Map<String, dynamic> json) { re
   state: json['state'] != null ? DiscoveryStatePatch.fromJson(json['state'] as String) : null,
 ); }
 
+/// Mark state of operation in API Discovery
+///   * `review` - Mark operation as for review
+///   * `ignored` - Mark operation as ignored
+/// 
 final DiscoveryStatePatch? state;
 
 Map<String, dynamic> toJson() { return {

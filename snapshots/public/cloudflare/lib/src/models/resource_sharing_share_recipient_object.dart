@@ -46,14 +46,19 @@ factory ResourceSharingShareRecipientObject.fromJson(Map<String, dynamic> json) 
   resources: (json['resources'] as List<dynamic>?)?.map((e) => ResourceSharingShareRecipientResourceObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Account identifier.
 final ResourceSharingAccountId accountId;
 
+/// Share Recipient association status.
 final ResourceSharingRecipientAssociationStatus associationStatus;
 
+/// When the share was created.
 final ResourceSharingCreated created;
 
+/// Share Recipient identifier tag.
 final ResourceSharingRecipientId id;
 
+/// When the share was modified.
 final ResourceSharingModified modified;
 
 final List<ResourceSharingShareRecipientResourceObject>? resources;

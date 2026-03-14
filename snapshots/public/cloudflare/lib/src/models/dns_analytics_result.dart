@@ -9,23 +9,24 @@ import 'package:collection/collection.dart';import 'dns_analytics_data2.dart';im
 factory DnsAnalyticsResult.fromJson(Map<String, dynamic> json) { return DnsAnalyticsResult(
   data: (json['data'] as List<dynamic>).map((e) => DnsAnalyticsData2.fromJson(e as Map<String, dynamic>)).toList(),
   dataLag: (json['data_lag'] as num).toDouble(),
-  max: (json['max'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
-  min: (json['min'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  max: (json['max'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  min: (json['min'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   query: DnsAnalyticsQuery.fromJson(json['query'] as Map<String, dynamic>),
   rows: (json['rows'] as num).toDouble(),
-  totals: (json['totals'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  totals: (json['totals'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
+/// Array with one row per combination of dimension values.
 final List<DnsAnalyticsData2> data;
 
 /// Number of seconds between current time and last processed event, in another words how many seconds of data could be missing.
 final double dataLag;
 
 /// Maximum results for each metric (object mapping metric names to values). Currently always an empty object.
-final Map<String,Object?> max;
+final Map<String,dynamic> max;
 
 /// Minimum results for each metric (object mapping metric names to values). Currently always an empty object.
-final Map<String,Object?> min;
+final Map<String,dynamic> min;
 
 final DnsAnalyticsQuery query;
 
@@ -33,7 +34,7 @@ final DnsAnalyticsQuery query;
 final double rows;
 
 /// Total results for metrics across all data (object mapping metric names to values).
-final Map<String,Object?> totals;
+final Map<String,dynamic> totals;
 
 Map<String, dynamic> toJson() { return {
   'data': data.map((e) => e.toJson()).toList(),
@@ -51,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('query') &&
       json.containsKey('rows') && json['rows'] is num &&
       json.containsKey('totals'); } 
-DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map<String,Object?>? max, Map<String,Object?>? min, DnsAnalyticsQuery? query, double? rows, Map<String,Object?>? totals, }) { return DnsAnalyticsResult(
+DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map<String,dynamic>? max, Map<String,dynamic>? min, DnsAnalyticsQuery? query, double? rows, Map<String,dynamic>? totals, }) { return DnsAnalyticsResult(
   data: data ?? this.data,
   dataLag: dataLag ?? this.dataLag,
   max: max ?? this.max,

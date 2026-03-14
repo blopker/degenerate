@@ -53,6 +53,7 @@ final DateTime endsAt;
 /// The date and time the campaign was closed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the campaign is still open.
 final DateTime? closedAt;
 
+/// Indicates whether a campaign is open or closed
 final CampaignState state;
 
 /// The contact link of the campaign.

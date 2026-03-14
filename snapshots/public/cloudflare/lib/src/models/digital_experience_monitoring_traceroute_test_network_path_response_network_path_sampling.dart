@@ -8,11 +8,11 @@
 final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling({required this.unit, required this.value, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
-  unit: json['unit'] as Object,
+  unit: json['unit'],
   value: (json['value'] as num).toInt(),
 ); }
 
-final Object? unit;
+final dynamic unit;
 
 final int value;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
       json.containsKey('value') && json['value'] is num; } 
-DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling copyWith({Object? Function()? unit, int? value, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
+DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling copyWith({dynamic Function()? unit, int? value, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
   unit: unit != null ? unit() : this.unit,
   value: value ?? this.value,
 ); } 

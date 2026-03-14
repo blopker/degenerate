@@ -25,6 +25,7 @@ factory ImagesImagesStatsCount.fromJson(Map<String, dynamic> json) { return Imag
   current: json['current'] != null ? ImagesImagesStatsCurrent.fromJson(json['current'] as num) : null,
 ); }
 
+/// Cloudflare Images allowed usage.
 final ImagesImagesStatsAllowed? allowed;
 
 final ImagesImagesStatsCurrent? current;

@@ -32,21 +32,21 @@ final class CreateEvalStoredCompletionsDataSourceConfig {const CreateEvalStoredC
 
 factory CreateEvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalStoredCompletionsDataSourceConfig(
   type: CreateEvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The type of data source. Always `stored_completions`.
 final CreateEvalStoredCompletionsDataSourceConfigType type;
 
 /// Metadata filters for the stored completions data source.
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-CreateEvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Map<String, Object> Function()? metadata, }) { return CreateEvalStoredCompletionsDataSourceConfig(
+CreateEvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Map<String, dynamic> Function()? metadata, }) { return CreateEvalStoredCompletionsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

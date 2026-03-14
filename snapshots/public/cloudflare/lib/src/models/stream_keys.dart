@@ -38,6 +38,7 @@ final StreamSigningKeyCreated? created;
 
 final StreamSchemasIdentifier? id;
 
+/// The signing key in JWK format.
 final StreamJwk? jwk;
 
 final StreamPem? pem;

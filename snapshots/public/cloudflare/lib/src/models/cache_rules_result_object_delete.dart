@@ -12,10 +12,12 @@ factory CacheRulesResultObjectDelete.fromJson(Map<String, dynamic> json) { retur
   modifiedOn: json['modified_on'] != null ? CacheRulesModifiedOn.fromJson(json['modified_on'] as String) : null,
 ); }
 
+/// Whether the setting is editable.
 final CacheRulesEditable editable;
 
 final CacheRulesSettingId id;
 
+/// The time when the setting was last modified.
 final CacheRulesModifiedOn? modifiedOn;
 
 Map<String, dynamic> toJson() { return {

@@ -46,6 +46,7 @@ factory IamOrganization.fromJson(Map<String, dynamic> json) { return IamOrganiza
   status: json['status'] != null ? IamComponentsSchemasStatus.fromJson(json['status'] as String) : null,
 ); }
 
+/// Identifier
 final IamCommonComponentsSchemasIdentifier? id;
 
 final IamSchemasName? name;
@@ -55,6 +56,7 @@ final List<String>? permissions;
 /// List of roles that a user has within an organization.
 final List<String>? roles;
 
+/// Whether the user is a member of the organization or has an invitation pending.
 final IamComponentsSchemasStatus? status;
 
 Map<String, dynamic> toJson() { return {

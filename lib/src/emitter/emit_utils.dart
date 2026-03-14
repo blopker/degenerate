@@ -50,8 +50,10 @@ Reference irTypeToReference(
 }
 
 Reference _primitiveRef(PrimitiveKind kind, bool nullable) {
+  // dynamic is already nullable — never append '?'.
+  if (kind == PrimitiveKind.dynamic_) return refer('dynamic');
   final symbol = switch (kind) {
-    PrimitiveKind.object => 'Object',
+    PrimitiveKind.dynamic_ => 'dynamic', // unreachable, handled above
     PrimitiveKind.string => 'String',
     PrimitiveKind.int => 'int',
     PrimitiveKind.double => 'double',
@@ -85,7 +87,7 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 String irTypeName(IrType type) {
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.object => 'Object',
+      PrimitiveKind.dynamic_ => 'dynamic',
       PrimitiveKind.string => 'String',
       PrimitiveKind.int => 'int',
       PrimitiveKind.double => 'double',
@@ -169,7 +171,7 @@ bool _isSelfReferencingUnion(String typeName, List<IrType> variants) {
 String? _simpleCastFromJson(IrType type, String accessor, {Map<String, IrType> typeRegistry = const {}, Set<String>? resolving}) {
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.object => accessor,
+      PrimitiveKind.dynamic_ => accessor,
       PrimitiveKind.string => '$accessor as String?',
       PrimitiveKind.num => '$accessor as num?',
       PrimitiveKind.bool => '$accessor as bool?',
@@ -195,7 +197,7 @@ String _buildFromJsonNonNull(
   final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
   return switch (resolved) {
     IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.object => '$accessor as Object',
+      PrimitiveKind.dynamic_ => accessor,
       PrimitiveKind.string => '$accessor as String',
       PrimitiveKind.int => '($accessor as num).toInt()',
       PrimitiveKind.double => '($accessor as num).toDouble()',
@@ -240,7 +242,7 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
   final q = nullable ? '?' : '';
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.object => accessor,
+      PrimitiveKind.dynamic_ => accessor,
       PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
       PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
       PrimitiveKind.duration => '$accessor$q.inMilliseconds',
@@ -300,7 +302,7 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
     PrimitiveKind.bigInt => 'String',
     PrimitiveKind.duration => 'num',
     PrimitiveKind.bytes => 'String',
-    PrimitiveKind.object => 'Object?',
+    PrimitiveKind.dynamic_ => 'dynamic',
     PrimitiveKind.int => 'num',
     PrimitiveKind.double => 'num',
     _ => irTypeName(inner),

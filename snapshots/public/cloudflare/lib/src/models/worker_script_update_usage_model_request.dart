@@ -11,6 +11,7 @@ factory WorkerScriptUpdateUsageModelRequest.fromJson(Map<String, dynamic> json) 
   userLimits: json['user_limits'] != null ? WorkersUserLimits.fromJson(json['user_limits'] as Map<String, dynamic>) : null,
 ); }
 
+/// Usage model for the Worker invocations.
 final WorkersUsageModel? usageModel;
 
 final WorkersUserLimits? userLimits;

@@ -61,12 +61,16 @@ factory StreamLiveInputRecordingSettings.fromJson(Map<String, dynamic> json) { r
   timeoutSeconds: json['timeoutSeconds'] != null ? StreamLiveInputRecordingTimeoutSeconds.fromJson(json['timeoutSeconds'] as num) : null,
 ); }
 
+/// Lists the origins allowed to display videos created with this input. Enter allowed origin domains in an array and use `*` for wildcard subdomains. An empty array allows videos to be viewed on any origin.
 final List<String>? allowedOrigins;
 
+/// Disables reporting the number of live viewers when this property is set to `true`.
 final StreamLiveInputRecordingHideLiveViewerCount? hideLiveViewerCount;
 
+/// Specifies the recording behavior for the live input. Set this value to `off` to prevent a recording. Set the value to `automatic` to begin a recording and transition to on-demand after Stream Live stops receiving input.
 final StreamLiveInputRecordingMode? mode;
 
+/// Indicates if a video using the live input has the `requireSignedURLs` property set. Also enforces access controls on any video recording of the livestream with the live input.
 final StreamLiveInputRecordingRequireSignedUrLs? requireSignedUrLs;
 
 final StreamLiveInputRecordingTimeoutSeconds? timeoutSeconds;

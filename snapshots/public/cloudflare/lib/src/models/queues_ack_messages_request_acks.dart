@@ -10,6 +10,7 @@ factory QueuesAckMessagesRequestAcks.fromJson(Map<String, dynamic> json) { retur
   leaseId: json['lease_id'] != null ? MqLeaseId.fromJson(json['lease_id'] as String) : null,
 ); }
 
+/// An ID that represents an "in-flight" message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.
 final MqLeaseId? leaseId;
 
 Map<String, dynamic> toJson() { return {

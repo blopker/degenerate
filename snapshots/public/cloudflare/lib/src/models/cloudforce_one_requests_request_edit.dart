@@ -14,6 +14,7 @@ factory CloudforceOneRequestsRequestEdit.fromJson(Map<String, dynamic> json) { r
   tlp: json['tlp'] != null ? CloudforceOneRequestsTlp.fromJson(json['tlp'] as String) : null,
 ); }
 
+/// Request content.
 final CloudforceOneRequestsRequestContent? content;
 
 /// Priority for analyzing the request.

@@ -19,6 +19,7 @@ final int? duration;
 /// Indicates whether the policy is expired.
 final bool? expired;
 
+/// Show the timestamp when the policy expires and stops applying.  The value must follow RFC 3339 and include a UTC offset.  The system accepts non-zero offsets but converts them to the equivalent UTC+00:00  value and returns timestamps with a trailing Z. Expiration policies ignore client  timezones and expire globally at the specified expires_at time.
 final ZeroTrustGatewayTimestamp expiresAt;
 
 Map<String, dynamic> toJson() { return {

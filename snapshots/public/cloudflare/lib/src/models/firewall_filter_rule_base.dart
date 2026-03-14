@@ -130,8 +130,10 @@ final FirewallFirewallRulesComponentsSchemasDescription? description;
 
 final FirewallFirewallRulesComponentsSchemasId? id;
 
+/// When true, indicates that the firewall rule is currently paused.
 final FirewallComponentsSchemasPaused? paused;
 
+/// The priority of the rule. Optional value used to define the processing order. A lower number indicates a higher priority. If not provided, rules with a defined priority will be processed before rules without a priority.
 final FirewallComponentsSchemasPriority? priority;
 
 final List<FirewallProducts2>? products;

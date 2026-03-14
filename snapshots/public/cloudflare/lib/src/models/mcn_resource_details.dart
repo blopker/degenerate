@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'mcn_account_id.dart';import 
 factory McnResourceDetails.fromJson(Map<String, dynamic> json) { return McnResourceDetails(
   accountId: McnAccountId.fromJson(json['account_id'] as String),
   cloudType: McnCloudType.fromJson(json['cloud_type'] as String),
-  config: (json['config'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  config: (json['config'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   deploymentProvider: McnProviderId.fromJson(json['deployment_provider'] as String),
   id: McnResourceId.fromJson(json['id'] as String),
   managed: json['managed'] as bool,
@@ -24,7 +24,7 @@ factory McnResourceDetails.fromJson(Map<String, dynamic> json) { return McnResou
   resourceGroup: json['resource_group'] as String,
   resourceType: McnResourceType.fromJson(json['resource_type'] as String),
   sections: (json['sections'] as List<dynamic>).map((e) => McnResourceDetailsSection.fromJson(e as Map<String, dynamic>)).toList(),
-  state: (json['state'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  state: (json['state'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,
@@ -34,7 +34,7 @@ final McnAccountId accountId;
 
 final McnCloudType cloudType;
 
-final Map<String,Object?> config;
+final Map<String,dynamic> config;
 
 final McnProviderId deploymentProvider;
 
@@ -64,7 +64,7 @@ final McnResourceType resourceType;
 
 final List<McnResourceDetailsSection> sections;
 
-final Map<String,Object?> state;
+final Map<String,dynamic> state;
 
 final Map<String,String> tags;
 
@@ -115,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('tags') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, Map<String,Object?>? config, McnProviderId? deploymentProvider, McnResourceId? id, bool? managed, List<McnCloudPlatformClient> Function()? managedBy, McnCost? monthlyCostEstimate, String? name, String? nativeId, Map<String,McnObservation>? observations, List<McnProviderId>? providerIds, Map<String,String>? providerNamesById, String? region, String? resourceGroup, McnResourceType? resourceType, List<McnResourceDetailsSection>? sections, Map<String,Object?>? state, Map<String,String>? tags, String? updatedAt, String? url, }) { return McnResourceDetails(
+McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, Map<String,dynamic>? config, McnProviderId? deploymentProvider, McnResourceId? id, bool? managed, List<McnCloudPlatformClient> Function()? managedBy, McnCost? monthlyCostEstimate, String? name, String? nativeId, Map<String,McnObservation>? observations, List<McnProviderId>? providerIds, Map<String,String>? providerNamesById, String? region, String? resourceGroup, McnResourceType? resourceType, List<McnResourceDetailsSection>? sections, Map<String,dynamic>? state, Map<String,String>? tags, String? updatedAt, String? url, }) { return McnResourceDetails(
   accountId: accountId ?? this.accountId,
   cloudType: cloudType ?? this.cloudType,
   config: config ?? this.config,

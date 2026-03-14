@@ -19,8 +19,10 @@ factory MagicVisibilityPcapsPcapsResponseSimple.fromJson(Map<String, dynamic> js
 
 final MagicVisibilityPcapsPcapsFilter? filterV1;
 
+/// The ID for the packet capture.
 final MagicVisibilityPcapsPcapsId? id;
 
+/// The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
 final MagicVisibilityPcapsPcapsOffsetTime? offsetTime;
 
 final MagicVisibilityPcapsPcapsStatus? status;

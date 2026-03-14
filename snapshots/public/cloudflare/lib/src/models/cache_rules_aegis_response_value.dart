@@ -10,6 +10,7 @@ factory CacheRulesAegisResponseValue.fromJson(Map<String, dynamic> json) { retur
   result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
+/// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 final CacheRulesBase? result;
 
 Map<String, dynamic> toJson() { return {

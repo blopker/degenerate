@@ -25,7 +25,7 @@ final String? message;
 
 /// Meta object containing non-standard meta-information about the error.
 /// This field must be an object or null!
-final Object? meta;
+final dynamic meta;
 
 final PayPerCrawlSource? source;
 
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PayPerCrawlMsg copyWith({int Function()? code, String Function()? documentationUrl, List<PayPerCrawlMsg> Function()? errorChain, String Function()? message, Object? Function()? meta, PayPerCrawlSource Function()? source, }) { return PayPerCrawlMsg(
+PayPerCrawlMsg copyWith({int Function()? code, String Function()? documentationUrl, List<PayPerCrawlMsg> Function()? errorChain, String Function()? message, dynamic Function()? meta, PayPerCrawlSource Function()? source, }) { return PayPerCrawlMsg(
   code: code != null ? code() : this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   errorChain: errorChain != null ? errorChain() : this.errorChain,

@@ -15,10 +15,13 @@ factory DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest.fromJson(
 
 final TeamsDevicesConfigRequest? config;
 
+/// The interval between each posture check with the third-party API. Use `m` for minutes (e.g. `5m`) and `h` for hours (e.g. `12h`).
 final TeamsDevicesInterval? interval;
 
+/// The name of the device posture integration.
 final TeamsDevicesComponentsSchemasName? name;
 
+/// The type of device posture integration.
 final TeamsDevicesSchemasType? type;
 
 Map<String, dynamic> toJson() { return {

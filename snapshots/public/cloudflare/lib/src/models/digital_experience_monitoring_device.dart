@@ -62,6 +62,7 @@ final int? batteryCycles;
 
 final double? batteryPct;
 
+/// Cloudflare colo
 final DigitalExperienceMonitoringColo colo;
 
 final String? connectionType;

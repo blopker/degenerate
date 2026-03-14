@@ -17,6 +17,7 @@ factory TeamsDevicesDevicePostureRules.fromJson(Map<String, dynamic> json) { ret
   type: json['type'] != null ? TeamsDevicesType.fromJson(json['type'] as String) : null,
 ); }
 
+/// The description of the device posture rule.
 final TeamsDevicesDescription? description;
 
 final TeamsDevicesExpiration? expiration;

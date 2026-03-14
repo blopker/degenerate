@@ -14,8 +14,10 @@ factory MagicRoutedSubnet.fromJson(Map<String, dynamic> json) { return MagicRout
 
 final MagicNat? nat;
 
+/// A valid IPv4 address.
 final MagicIpAddress nextHop;
 
+/// A valid CIDR notation representing an IP range.
 final MagicCidr prefix;
 
 Map<String, dynamic> toJson() { return {

@@ -10,6 +10,7 @@ factory AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest.fromJson(Ma
   keyRotationIntervalDays: AccessKeyRotationIntervalDays.fromJson(json['key_rotation_interval_days'] as num),
 ); }
 
+/// The number of days between key rotations.
 final AccessKeyRotationIntervalDays keyRotationIntervalDays;
 
 Map<String, dynamic> toJson() { return {

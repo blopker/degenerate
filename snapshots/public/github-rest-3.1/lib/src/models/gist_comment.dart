@@ -33,6 +33,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
+/// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
 Map<String, dynamic> toJson() { return {

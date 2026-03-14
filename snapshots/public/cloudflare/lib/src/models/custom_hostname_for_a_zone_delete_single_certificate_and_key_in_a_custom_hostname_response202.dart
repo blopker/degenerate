@@ -10,6 +10,7 @@ factory CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResp
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
 ); }
 
+/// Identifier.
 final TlsCertificatesAndHostnamesIdentifier? id;
 
 Map<String, dynamic> toJson() { return {

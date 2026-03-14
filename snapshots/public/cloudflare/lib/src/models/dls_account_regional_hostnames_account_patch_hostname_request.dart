@@ -10,6 +10,7 @@ factory DlsAccountRegionalHostnamesAccountPatchHostnameRequest.fromJson(Map<Stri
   regionKey: DlsRegionKey.fromJson(json['region_key'] as String),
 ); }
 
+/// Identifying key for the region
 final DlsRegionKey regionKey;
 
 Map<String, dynamic> toJson() { return {

@@ -18,6 +18,7 @@ factory TeamsDevicesGlobalWarpOverrideRequest.fromJson(Map<String, dynamic> json
   justification: json['justification'] != null ? TeamsDevicesJustification.fromJson(json['justification'] as String) : null,
 ); }
 
+/// Disconnects all devices on the account using Global WARP override.
 final TeamsDevicesDisconnect disconnect;
 
 final TeamsDevicesJustification? justification;

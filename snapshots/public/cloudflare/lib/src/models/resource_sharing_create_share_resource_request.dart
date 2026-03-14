@@ -7,14 +7,15 @@
 import 'resource_sharing_account_id.dart';import 'resource_sharing_resource_resource_id.dart';import 'resource_sharing_resource_type.dart';final class ResourceSharingCreateShareResourceRequest {const ResourceSharingCreateShareResourceRequest({required this.meta, required this.resourceAccountId, required this.resourceId, required this.resourceType, });
 
 factory ResourceSharingCreateShareResourceRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingCreateShareResourceRequest(
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   resourceAccountId: ResourceSharingAccountId.fromJson(json['resource_account_id'] as String),
   resourceId: ResourceSharingResourceResourceId.fromJson(json['resource_id'] as String),
   resourceType: ResourceSharingResourceType.fromJson(json['resource_type'] as String),
 ); }
 
-final Map<String,Object?> meta;
+final Map<String,dynamic> meta;
 
+/// Account identifier.
 final ResourceSharingAccountId resourceAccountId;
 
 final ResourceSharingResourceResourceId resourceId;
@@ -31,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta'
       json.containsKey('resource_account_id') &&
       json.containsKey('resource_id') &&
       json.containsKey('resource_type'); } 
-ResourceSharingCreateShareResourceRequest copyWith({Map<String,Object?>? meta, ResourceSharingAccountId? resourceAccountId, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceType? resourceType, }) { return ResourceSharingCreateShareResourceRequest(
+ResourceSharingCreateShareResourceRequest copyWith({Map<String,dynamic>? meta, ResourceSharingAccountId? resourceAccountId, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceType? resourceType, }) { return ResourceSharingCreateShareResourceRequest(
   meta: meta ?? this.meta,
   resourceAccountId: resourceAccountId ?? this.resourceAccountId,
   resourceId: resourceId ?? this.resourceId,

@@ -12,10 +12,13 @@ factory ZeroTrustNetworksRouteHostnameUpdateRequest.fromJson(Map<String, dynamic
   tunnelId: json['tunnel_id'] != null ? TunnelComponentsSchemasTunnelId.fromJson(json['tunnel_id'] as String) : null,
 ); }
 
+/// An optional description of the hostname route.
 final TunnelHostnameComment? comment;
 
+/// The hostname of the route.
 final TunnelHostname? hostname;
 
+/// UUID of the tunnel.
 final TunnelComponentsSchemasTunnelId? tunnelId;
 
 Map<String, dynamic> toJson() { return {

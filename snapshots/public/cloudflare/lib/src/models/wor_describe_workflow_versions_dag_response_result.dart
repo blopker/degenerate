@@ -9,7 +9,7 @@ final class WorDescribeWorkflowVersionsDagResponseResult {const WorDescribeWorkf
 factory WorDescribeWorkflowVersionsDagResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowVersionsDagResponseResult(
   className: json['class_name'] as String,
   createdOn: DateTime.parse(json['created_on'] as String),
-  dag: (json['dag'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  dag: (json['dag'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   id: json['id'] as String,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   workflowId: json['workflow_id'] as String,
@@ -19,7 +19,7 @@ final String className;
 
 final DateTime createdOn;
 
-final Map<String,Object?>? dag;
+final Map<String,dynamic>? dag;
 
 final String id;
 
@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is String; } 
-WorDescribeWorkflowVersionsDagResponseResult copyWith({String? className, DateTime? createdOn, Map<String, Object>? Function()? dag, String? id, DateTime? modifiedOn, String? workflowId, }) { return WorDescribeWorkflowVersionsDagResponseResult(
+WorDescribeWorkflowVersionsDagResponseResult copyWith({String? className, DateTime? createdOn, Map<String, dynamic>? Function()? dag, String? id, DateTime? modifiedOn, String? workflowId, }) { return WorDescribeWorkflowVersionsDagResponseResult(
   className: className ?? this.className,
   createdOn: createdOn ?? this.createdOn,
   dag: dag != null ? dag() : this.dag,

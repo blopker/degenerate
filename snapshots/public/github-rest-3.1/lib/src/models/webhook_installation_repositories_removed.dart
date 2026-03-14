@@ -48,6 +48,7 @@ final Installation installation;
 
 final OrganizationSimpleWebhooks? organization;
 
+/// An array of repository objects, which were added to the installation.
 final List<WebhooksRepositoriesAdded2> repositoriesAdded;
 
 /// An array of repository objects, which were removed from the installation.
@@ -55,6 +56,7 @@ final List<WebhookInstallationRepositoriesRemovedRepositoriesRemoved> repositori
 
 final RepositoryWebhooks? repository;
 
+/// Describe whether all repositories have been selected or there's a selection involved
 final WebhooksRepositorySelection repositorySelection;
 
 final WebhooksUser requester;

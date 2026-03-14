@@ -56,6 +56,8 @@ final String id;
 /// 
 final String output;
 
+/// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
+/// 
 final LocalShellToolCallOutputStatus? status;
 
 Map<String, dynamic> toJson() { return {

@@ -68,6 +68,7 @@ factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return WebSea
 /// The type of the web search tool. One of `web_search_preview` or `web_search_preview_2025_03_11`.
 final String type;
 
+/// The user's location.
 final ApproximateLocation? userLocation;
 
 /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.

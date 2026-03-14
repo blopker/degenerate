@@ -64,16 +64,22 @@ final int? outputAudioTokens;
 /// The count of requests made to the model.
 final int numModelRequests;
 
+/// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
 final String? projectId;
 
+/// When `group_by=user_id`, this field provides the user ID of the grouped usage result.
 final String? userId;
 
+/// When `group_by=api_key_id`, this field provides the API key ID of the grouped usage result.
 final String? apiKeyId;
 
+/// When `group_by=model`, this field provides the model name of the grouped usage result.
 final String? model;
 
+/// When `group_by=batch`, this field tells whether the grouped usage result is batch or not.
 final bool? batch;
 
+/// When `group_by=service_tier`, this field provides the service tier of the grouped usage result.
 final String? serviceTier;
 
 Map<String, dynamic> toJson() { return {

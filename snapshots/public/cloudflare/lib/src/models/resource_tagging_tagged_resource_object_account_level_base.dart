@@ -14,10 +14,17 @@ factory ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(Map<String,
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
 ); }
 
+/// ETag identifier for optimistic concurrency control. Formatted as "v1:`<hash>`" where
+/// the hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags map
+/// canonicalized using RFC 8785 (JSON Canonicalization Scheme). Clients should treat
+/// ETags as opaque strings and pass them back via the If-Match header on write operations.
+/// 
 final ResourceTaggingEtag etag;
 
+/// Identifies the unique resource.
 final ResourceTaggingResourceId id;
 
+/// Human-readable name of the resource.
 final ResourceTaggingResourceName name;
 
 final Map<String,String> tags;

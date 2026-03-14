@@ -245,7 +245,7 @@ class OperationLowerer {
             rawSchema,
             nameHint: paramNameHint,
           )
-        : const IrPrimitive(PrimitiveKind.object, isNullable: true);
+        : const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
     final defaultValue =
         param['default'] ??
         (rawSchema is Map<String, dynamic> ? rawSchema['default'] : null);
@@ -411,7 +411,7 @@ class OperationLowerer {
         final rawSchema = headerMap['schema'];
         final headerType = rawSchema != null
             ? irMapper.lowerUntypedInlineSchema(rawSchema)
-            : const IrPrimitive(PrimitiveKind.object, isNullable: true);
+            : const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
         final headerDescription = headerMap['description'] as String?;
 
         headers.add(

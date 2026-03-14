@@ -13,6 +13,7 @@ factory StreamsByStreamIdResponse.fromJson(Map<String, dynamic> json) { return S
 
 final StreamsByStreamIdResponseResult result;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

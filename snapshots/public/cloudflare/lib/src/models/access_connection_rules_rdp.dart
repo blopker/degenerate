@@ -34,8 +34,10 @@ factory AccessConnectionRulesRdp.fromJson(Map<String, dynamic> json) { return Ac
   allowedClipboardRemoteToLocalFormats: (json['allowed_clipboard_remote_to_local_formats'] as List<dynamic>?)?.map((e) => AccessRdpClipboardFormat.fromJson(e as String)).toList(),
 ); }
 
+/// Clipboard formats allowed when copying from local machine to remote RDP session.
 final List<AccessRdpClipboardFormat>? allowedClipboardLocalToRemoteFormats;
 
+/// Clipboard formats allowed when copying from remote RDP session to local machine.
 final List<AccessRdpClipboardFormat>? allowedClipboardRemoteToLocalFormats;
 
 Map<String, dynamic> toJson() { return {

@@ -8,13 +8,17 @@ import 'wor_describe_workflow_instance_response_result_steps_step_config_retries
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepConfig.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfig(
   retries: WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(json['retries'] as Map<String, dynamic>),
-  timeout: json['timeout'] as Object,
+  timeout: json['timeout'],
 ); }
 
 final WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries retries;
 
 /// Specifies the timeout duration.
-final Object timeout;
+/// 
+/// Specifies the timeout duration.
+/// 
+/// One of: String, double
+final dynamic timeout;
 
 Map<String, dynamic> toJson() { return {
   'retries': retries.toJson(),
@@ -22,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('retries') &&
       json.containsKey('timeout'); } 
-WorDescribeWorkflowInstanceResponseResultStepsStepConfig copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries? retries, Object? timeout, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfig(
+WorDescribeWorkflowInstanceResponseResultStepsStepConfig copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries? retries, dynamic timeout, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfig(
   retries: retries ?? this.retries,
   timeout: timeout ?? this.timeout,
 ); } 

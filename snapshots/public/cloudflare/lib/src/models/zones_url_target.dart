@@ -16,14 +16,14 @@ factory ZonesUrlTarget.fromJson(Map<String, dynamic> json) { return ZonesUrlTarg
 final ZonesStringConstraint? constraint;
 
 /// A target based on the URL of the request.
-final Object? target;
+final dynamic target;
 
 Map<String, dynamic> toJson() { return {
   if (constraint != null) 'constraint': constraint?.toJson(),
   'target': ?target,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ZonesUrlTarget copyWith({ZonesStringConstraint Function()? constraint, Object? Function()? target, }) { return ZonesUrlTarget(
+ZonesUrlTarget copyWith({ZonesStringConstraint Function()? constraint, dynamic Function()? target, }) { return ZonesUrlTarget(
   constraint: constraint != null ? constraint() : this.constraint,
   target: target != null ? target() : this.target,
 ); } 

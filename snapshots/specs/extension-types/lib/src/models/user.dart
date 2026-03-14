@@ -41,12 +41,15 @@ factory User.fromJson(Map<String, dynamic> json) { return User(
   active: json['active'] != null ? Active.fromJson(json['active'] as bool) : null,
 ); }
 
+/// A unique user identifier.
 final UserId id;
 
 final String name;
 
+/// An ISO 8601 timestamp.
 final Timestamp createdAt;
 
+/// A numeric score.
 final Score? score;
 
 final Ratio? ratio;

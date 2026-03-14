@@ -62,22 +62,28 @@ factory AccessSchemasUsers.fromJson(Map<String, dynamic> json) { return AccessSc
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// True if the user has authenticated with Cloudflare Access.
 final AccessSchemasAccessSeat? accessSeat;
 
+/// The number of active devices registered to the user.
 final AccessActiveDeviceCount? activeDeviceCount;
 
 final AccessTimestamp? createdAt;
 
+/// The email of the user.
 final AccessSchemasEmail? email;
 
+/// True if the user has logged into the WARP client.
 final AccessSchemasGatewaySeat? gatewaySeat;
 
 final AccessUuid? id;
 
+/// The time at which the user last successfully logged in.
 final AccessLastSuccessfulLogin? lastSuccessfulLogin;
 
 final AccessUsersComponentsSchemasName? name;
 
+/// The unique API identifier for the Zero Trust seat.
 final AccessSchemasSeatUid? seatUid;
 
 final AccessUid? uid;

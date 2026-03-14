@@ -15,12 +15,15 @@ factory AddressingIpamDelegations.fromJson(Map<String, dynamic> json) { return A
   parentPrefixId: json['parent_prefix_id'] != null ? AddressingPrefixIdentifier.fromJson(json['parent_prefix_id'] as String) : null,
 ); }
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final AddressingCidr? cidr;
 
 final AddressingTimestamp? createdAt;
 
+/// Account identifier for the account to which prefix is being delegated.
 final AddressingDelegatedAccountIdentifier? delegatedAccountId;
 
+/// Identifier of a Delegation.
 final AddressingDelegationIdentifier? id;
 
 final AddressingTimestamp? modifiedAt;

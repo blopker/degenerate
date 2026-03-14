@@ -37,10 +37,12 @@ factory RumSite.fromJson(Map<String, dynamic> json) { return RumSite(
   snippet: json['snippet'] != null ? RumSnippet.fromJson(json['snippet'] as String) : null,
 ); }
 
+/// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 final RumAutoInstall? autoInstall;
 
 final RumTimestamp? created;
 
+/// A list of rules.
 final List<RumRule>? rules;
 
 final RumRuleset? ruleset;

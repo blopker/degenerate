@@ -17,20 +17,37 @@ factory AccountsTurnstileWidgetCreateRequest.fromJson(Map<String, dynamic> json)
   region: json['region'] != null ? TurnstileRegion.fromJson(json['region'] as String) : null,
 ); }
 
+/// If bot_fight_mode is set to `true`, Cloudflare issues computationally
+/// expensive challenges in response to malicious bots (ENT only).
+/// 
 final TurnstileBotFightMode? botFightMode;
 
+/// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,
+/// this setting can determine the clearance level to be set
+/// 
 final TurnstileClearanceLevel? clearanceLevel;
 
 final List<String> domains;
 
+/// Return the Ephemeral ID in /siteverify (ENT only).
+/// 
 final TurnstileEphemeralId? ephemeralId;
 
+/// Widget Mode
 final TurnstileWidgetMode mode;
 
+/// Human readable widget name. Not unique. Cloudflare suggests that you
+/// set this to a meaningful string to make it easier to identify your
+/// widget, and where it is used.
+/// 
 final TurnstileName name;
 
+/// Do not show any Cloudflare branding on the widget (ENT only).
+/// 
 final TurnstileOfflabel? offlabel;
 
+/// Region where this widget can be used. This cannot be changed after creation.
+/// 
 final TurnstileRegion? region;
 
 Map<String, dynamic> toJson() { return {

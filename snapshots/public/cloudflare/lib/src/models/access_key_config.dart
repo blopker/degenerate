@@ -26,6 +26,7 @@ factory AccessKeyConfig.fromJson(Map<String, dynamic> json) { return AccessKeyCo
   lastKeyRotationAt: json['last_key_rotation_at'] != null ? AccessLastKeyRotationAt.fromJson(json['last_key_rotation_at'] as String) : null,
 ); }
 
+/// The number of days until the next key rotation.
 final AccessDaysUntilNextRotation? daysUntilNextRotation;
 
 final AccessKeyRotationIntervalDays? keyRotationIntervalDays;

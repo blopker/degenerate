@@ -10,6 +10,7 @@ factory ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(Map<String, d
   id: json['id'] != null ? FirewallLockdownsComponentsSchemasId.fromJson(json['id'] as String) : null,
 ); }
 
+/// The unique identifier of the Zone Lockdown rule.
 final FirewallLockdownsComponentsSchemasId? id;
 
 Map<String, dynamic> toJson() { return {

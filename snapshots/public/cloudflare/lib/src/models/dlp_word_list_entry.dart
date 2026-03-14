@@ -13,7 +13,7 @@ factory DlpWordListEntry.fromJson(Map<String, dynamic> json) { return DlpWordLis
   name: json['name'] as String,
   profileId: json['profile_id'] as String?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  wordList: json['word_list'] as Object,
+  wordList: json['word_list'],
 ); }
 
 final DateTime createdAt;
@@ -28,7 +28,7 @@ final String? profileId;
 
 final DateTime updatedAt;
 
-final Object? wordList;
+final dynamic wordList;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('word_list'); } 
-DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, Object? Function()? wordList, }) { return DlpWordListEntry(
+DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, dynamic Function()? wordList, }) { return DlpWordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,

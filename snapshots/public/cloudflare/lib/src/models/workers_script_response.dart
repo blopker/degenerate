@@ -104,19 +104,25 @@ factory WorkersScriptResponse.fromJson(Map<String, dynamic> json) { return Worke
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
 ); }
 
+/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 final WorkersCompatibilityDate? compatibilityDate;
 
+/// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
 final List<WorkersCompatibilityFlag>? compatibilityFlags;
 
+/// When the script was created.
 final WorkersCreatedOn? createdOn;
 
+/// Hashed script content, can be used in a If-None-Match header when updating.
 final WorkersEtag? etag;
 
 /// The names of handlers exported as part of the default export.
 final List<String>? handlers;
 
+/// Whether a Worker contains assets.
 final WorkersHasAssets? hasAssets;
 
+/// Whether a Worker contains modules.
 final WorkersHasModules? hasModules;
 
 /// The name used to identify the script.
@@ -125,11 +131,13 @@ final String? id;
 /// The client most recently used to deploy this Worker.
 final String? lastDeployedFrom;
 
+/// Whether Logpush is turned on for the Worker.
 final WorkersLogpush? logpush;
 
 /// The tag of the Durable Object migration that was most recently applied for this Worker.
 final String? migrationTag;
 
+/// When the script was last modified.
 final WorkersModifiedOn? modifiedOn;
 
 /// Named exports, such as Durable Object class implementations and named entrypoints.
@@ -139,8 +147,10 @@ final WorkersObservability? observability;
 
 final WorkersPlacementInfo? placement;
 
+/// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode='smart' for Smart Placement, or one of region/hostname/host.
 final WorkersPlacementMode? placementMode;
 
+/// Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
 final WorkersPlacementStatus? placementStatus;
 
 /// The immutable ID of the script.

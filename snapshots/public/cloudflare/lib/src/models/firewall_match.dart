@@ -13,8 +13,8 @@ factory FirewallMatch.fromJson(Map<String, dynamic> json) {   if (FirewallMatchV
   return FirewallMatch$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class FirewallMatchFirewallMatchVariant1 extends FirewallMatch {const FirewallMatchFirewallMatchVariant1(this._value);
 
@@ -29,9 +29,9 @@ final FirewallMatchVariant1 _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class FirewallMatch$Unknown extends FirewallMatch {const FirewallMatch$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FirewallMatch$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

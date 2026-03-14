@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
-  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),) : null,
+  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),) : null,
   bodyHtml: json['body_html'] as String?,
   containerMetadata: json['container_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,
@@ -19,7 +19,7 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Ma
   id: (json['id'] as num).toInt(),
   installationCommand: json['installation_command'] as String,
   manifest: json['manifest'] as String?,
-  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   name: json['name'] as String,
   npmMetadata: json['npm_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>) : null,
   nugetMetadata: (json['nuget_metadata'] as List<dynamic>?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.fromJson(e as Map<String, dynamic>)).toList(),
@@ -60,7 +60,7 @@ final String installationCommand;
 
 final String? manifest;
 
-final List<Map<String,Object?>> metadata;
+final List<Map<String,dynamic>> metadata;
 
 final String name;
 
@@ -129,7 +129,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('package_url') && json['package_url'] is String &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor Function()? author, WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody Function()? body, String Function()? bodyHtml, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata Function()? containerMetadata, String Function()? createdAt, String? description, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, String? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,Object?>>? metadata, String? name, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? Function()? npmMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>? Function()? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, String? summary, String Function()? tagName, String Function()? targetCommitish, String Function()? targetOid, String Function()? updatedAt, String? version, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor Function()? author, WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody Function()? body, String Function()? bodyHtml, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata Function()? containerMetadata, String Function()? createdAt, String? description, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, String? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? Function()? npmMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>? Function()? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, String? summary, String Function()? tagName, String Function()? targetCommitish, String Function()? targetOid, String Function()? updatedAt, String? version, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: author != null ? author() : this.author,
   body: body != null ? body() : this.body,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,

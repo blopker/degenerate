@@ -27,12 +27,16 @@ factory ResourceSharingShareRecipientResourceObject.fromJson(Map<String, dynamic
   terminal: ResourceSharingRecipientResourceErrorTerminal.fromJson(json['terminal'] as bool),
 ); }
 
+/// Share Recipient error message.
 final ResourceSharingRecipientResourceError error;
 
+/// Share Resource identifier.
 final ResourceSharingResourceResourceId resourceId;
 
+/// Resource Version.
 final ResourceSharingResourceVersion resourceVersion;
 
+/// Whether the error is terminal or will be continually retried.
 final ResourceSharingRecipientResourceErrorTerminal terminal;
 
 Map<String, dynamic> toJson() { return {

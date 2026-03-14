@@ -13,6 +13,7 @@ factory SinksBySinkIdResponse.fromJson(Map<String, dynamic> json) { return Sinks
 
 final SinksBySinkIdResponseResult result;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

@@ -38,7 +38,7 @@ factory PagesDeploymentConfigValues.fromJson(Map<String, dynamic> json) { return
   aiBindings: (json['ai_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesAiBindingsValue.fromJson(v as Map<String, dynamic>))),
   alwaysUseLatestCompatibilityDate: json['always_use_latest_compatibility_date'] as bool,
   analyticsEngineDatasets: (json['analytics_engine_datasets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue.fromJson(v as Map<String, dynamic>))),
-  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)))),
+  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
   buildImageMajorVersion: (json['build_image_major_version'] as num).toInt(),
   compatibilityDate: json['compatibility_date'] as String,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>).map((e) => e as String).toList(),
@@ -69,7 +69,7 @@ final bool alwaysUseLatestCompatibilityDate;
 final Map<String,PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue>? analyticsEngineDatasets;
 
 /// Browser bindings used for Pages Functions.
-final Map<String,Map<String,Object?>?>? browsers;
+final Map<String,Map<String,dynamic>?>? browsers;
 
 /// The major version of the build image to use for Pages Functions.
 final int buildImageMajorVersion;
@@ -155,7 +155,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alway
       json.containsKey('env_vars') &&
       json.containsKey('fail_open') && json['fail_open'] is bool &&
       json.containsKey('usage_model'); } 
-PagesDeploymentConfigValues copyWith({Map<String, PagesDeploymentConfigValuesAiBindingsValue> Function()? aiBindings, bool? alwaysUseLatestCompatibilityDate, Map<String, PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue> Function()? analyticsEngineDatasets, Map<String, Map<String, Object>> Function()? browsers, int? buildImageMajorVersion, String? compatibilityDate, List<String>? compatibilityFlags, Map<String, PagesDeploymentConfigValuesD1DatabasesValue> Function()? d1Databases, Map<String, PagesDeploymentConfigValuesDurableObjectNamespacesValue> Function()? durableObjectNamespaces, Map<String, PagesEnvVarsValue>? Function()? envVars, bool? failOpen, Map<String, PagesDeploymentConfigValuesHyperdriveBindingsValue> Function()? hyperdriveBindings, Map<String, PagesDeploymentConfigValuesKvNamespacesValue> Function()? kvNamespaces, PagesDeploymentConfigValuesLimits Function()? limits, Map<String, PagesDeploymentConfigValuesMtlsCertificatesValue> Function()? mtlsCertificates, PagesDeploymentConfigValuesPlacement Function()? placement, Map<String, PagesDeploymentConfigValuesQueueProducersValue> Function()? queueProducers, Map<String, PagesDeploymentConfigValuesR2BucketsValue> Function()? r2Buckets, Map<String, PagesDeploymentConfigValuesServicesValue> Function()? services, PagesDeploymentConfigValuesUsageModel? usageModel, Map<String, PagesDeploymentConfigValuesVectorizeBindingsValue> Function()? vectorizeBindings, String Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValues(
+PagesDeploymentConfigValues copyWith({Map<String, PagesDeploymentConfigValuesAiBindingsValue> Function()? aiBindings, bool? alwaysUseLatestCompatibilityDate, Map<String, PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue> Function()? analyticsEngineDatasets, Map<String, Map<String, dynamic>> Function()? browsers, int? buildImageMajorVersion, String? compatibilityDate, List<String>? compatibilityFlags, Map<String, PagesDeploymentConfigValuesD1DatabasesValue> Function()? d1Databases, Map<String, PagesDeploymentConfigValuesDurableObjectNamespacesValue> Function()? durableObjectNamespaces, Map<String, PagesEnvVarsValue>? Function()? envVars, bool? failOpen, Map<String, PagesDeploymentConfigValuesHyperdriveBindingsValue> Function()? hyperdriveBindings, Map<String, PagesDeploymentConfigValuesKvNamespacesValue> Function()? kvNamespaces, PagesDeploymentConfigValuesLimits Function()? limits, Map<String, PagesDeploymentConfigValuesMtlsCertificatesValue> Function()? mtlsCertificates, PagesDeploymentConfigValuesPlacement Function()? placement, Map<String, PagesDeploymentConfigValuesQueueProducersValue> Function()? queueProducers, Map<String, PagesDeploymentConfigValuesR2BucketsValue> Function()? r2Buckets, Map<String, PagesDeploymentConfigValuesServicesValue> Function()? services, PagesDeploymentConfigValuesUsageModel? usageModel, Map<String, PagesDeploymentConfigValuesVectorizeBindingsValue> Function()? vectorizeBindings, String Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValues(
   aiBindings: aiBindings != null ? aiBindings() : this.aiBindings,
   alwaysUseLatestCompatibilityDate: alwaysUseLatestCompatibilityDate ?? this.alwaysUseLatestCompatibilityDate,
   analyticsEngineDatasets: analyticsEngineDatasets != null ? analyticsEngineDatasets() : this.analyticsEngineDatasets,

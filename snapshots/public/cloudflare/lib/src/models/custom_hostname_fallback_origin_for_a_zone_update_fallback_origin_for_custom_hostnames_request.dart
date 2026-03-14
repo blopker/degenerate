@@ -10,6 +10,7 @@ factory CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnam
   origin: TlsCertificatesAndHostnamesOrigin.fromJson(json['origin'] as String),
 ); }
 
+/// Your origin hostname that requests to your custom hostnames will be sent to.
 final TlsCertificatesAndHostnamesOrigin origin;
 
 Map<String, dynamic> toJson() { return {

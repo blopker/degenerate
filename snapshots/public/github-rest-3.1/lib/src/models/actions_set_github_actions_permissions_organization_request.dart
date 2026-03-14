@@ -12,10 +12,13 @@ factory ActionsSetGithubActionsPermissionsOrganizationRequest.fromJson(Map<Strin
   shaPinningRequired: json['sha_pinning_required'] != null ? ShaPinningRequired.fromJson(json['sha_pinning_required'] as bool) : null,
 ); }
 
+/// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
 final EnabledRepositories enabledRepositories;
 
+/// The permissions policy that controls the actions and reusable workflows that are allowed to run.
 final AllowedActions? allowedActions;
 
+/// Whether actions must be pinned to a full-length commit SHA.
 final ShaPinningRequired? shaPinningRequired;
 
 Map<String, dynamic> toJson() { return {

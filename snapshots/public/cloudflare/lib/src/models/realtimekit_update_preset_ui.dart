@@ -7,11 +7,11 @@
 import 'realtimekit_update_preset_ui_design_tokens.dart';final class RealtimekitUpdatePresetUi {const RealtimekitUpdatePresetUi({this.configDiff, this.designTokens, });
 
 factory RealtimekitUpdatePresetUi.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUi(
-  configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   designTokens: json['design_tokens'] != null ? RealtimekitUpdatePresetUiDesignTokens.fromJson(json['design_tokens'] as Map<String, dynamic>) : null,
 ); }
 
-final Map<String,Object?>? configDiff;
+final Map<String,dynamic>? configDiff;
 
 final RealtimekitUpdatePresetUiDesignTokens? designTokens;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (designTokens != null) 'design_tokens': designTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-RealtimekitUpdatePresetUi copyWith({Map<String, Object> Function()? configDiff, RealtimekitUpdatePresetUiDesignTokens Function()? designTokens, }) { return RealtimekitUpdatePresetUi(
+RealtimekitUpdatePresetUi copyWith({Map<String, dynamic> Function()? configDiff, RealtimekitUpdatePresetUiDesignTokens Function()? designTokens, }) { return RealtimekitUpdatePresetUi(
   configDiff: configDiff != null ? configDiff() : this.configDiff,
   designTokens: designTokens != null ? designTokens() : this.designTokens,
 ); } 

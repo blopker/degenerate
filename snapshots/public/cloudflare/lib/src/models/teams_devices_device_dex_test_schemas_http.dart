@@ -54,8 +54,10 @@ factory TeamsDevicesDeviceDexTestSchemasHttp.fromJson(Map<String, dynamic> json)
 
 final TeamsDevicesDeviceDexTestSchemasData data;
 
+/// Additional details about the test.
 final TeamsDevicesDeviceDexTestSchemasDescription? description;
 
+/// Determines whether or not the test is active.
 final TeamsDevicesDeviceDexTestSchemasEnabled enabled;
 
 final TeamsDevicesDeviceDexTestSchemasInterval interval;

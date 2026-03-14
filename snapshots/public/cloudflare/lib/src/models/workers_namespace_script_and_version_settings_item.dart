@@ -22,14 +22,18 @@ factory WorkersNamespaceScriptAndVersionSettingsItem.fromJson(Map<String, dynami
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
 ); }
 
+/// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItem>? bindings;
 
+/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 final WorkersCompatibilityDate? compatibilityDate;
 
+/// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
 final List<WorkersCompatibilityFlag>? compatibilityFlags;
 
 final WorkersLimits? limits;
 
+/// Whether Logpush is turned on for the Worker.
 final WorkersLogpush? logpush;
 
 /// Migrations to apply for Durable Objects associated with this Worker.

@@ -28,7 +28,7 @@ final List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo>? httpS
 /// The interval at which the HTTP synthetic application test is set to run.
 final String? interval;
 
-final Object? kind;
+final dynamic kind;
 
 /// The HTTP method to use when running the test
 final String? method;
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'targeted': ?targeted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DigitalExperienceMonitoringHttpDetailsResponse copyWith({String Function()? host, DigitalExperienceMonitoringHttpDetailsResponseHttpStats? Function()? httpStats, List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo> Function()? httpStatsByColo, String Function()? interval, Object? Function()? kind, String Function()? method, String Function()? name, List<DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
+DigitalExperienceMonitoringHttpDetailsResponse copyWith({String Function()? host, DigitalExperienceMonitoringHttpDetailsResponseHttpStats? Function()? httpStats, List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo> Function()? httpStatsByColo, String Function()? interval, dynamic Function()? kind, String Function()? method, String Function()? name, List<DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: host != null ? host() : this.host,
   httpStats: httpStats != null ? httpStats() : this.httpStats,
   httpStatsByColo: httpStatsByColo != null ? httpStatsByColo() : this.httpStatsByColo,

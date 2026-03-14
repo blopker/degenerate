@@ -156,6 +156,7 @@ final DateTime updatedAt;
 
 final TeamOrganization organization;
 
+/// The [distinguished name](https://www.ldap.com/ldap-dns-and-rdns) (DN) of the LDAP entry to map to a team.
 final LdapDn? ldapDn;
 
 /// The ownership type of the team

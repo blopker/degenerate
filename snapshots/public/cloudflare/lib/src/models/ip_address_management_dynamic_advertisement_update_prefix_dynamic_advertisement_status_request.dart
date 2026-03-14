@@ -19,6 +19,9 @@ factory IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementS
   advertised: AddressingComponentsSchemasAdvertised.fromJson(json['advertised'] as bool),
 ); }
 
+/// Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If
+/// `false`, the BGP route is withdrawn.
+/// 
 final AddressingComponentsSchemasAdvertised advertised;
 
 Map<String, dynamic> toJson() { return {

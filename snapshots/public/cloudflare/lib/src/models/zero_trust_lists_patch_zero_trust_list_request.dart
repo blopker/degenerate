@@ -11,6 +11,7 @@ factory ZeroTrustListsPatchZeroTrustListRequest.fromJson(Map<String, dynamic> js
   remove: (json['remove'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayValue.fromJson(e as String)).toList(),
 ); }
 
+/// Add items to the list.
 final List<ZeroTrustGatewayItemsInput2>? append;
 
 /// Lists of item values you want to remove.

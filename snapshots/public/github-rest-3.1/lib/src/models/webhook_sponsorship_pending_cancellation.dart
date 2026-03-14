@@ -40,6 +40,7 @@ factory WebhookSponsorshipPendingCancellation.fromJson(Map<String, dynamic> json
 
 final WebhookSponsorshipPendingCancellationAction action;
 
+/// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
 final WebhooksEffectiveDate? effectiveDate;
 
 final EnterpriseWebhooks? enterprise;

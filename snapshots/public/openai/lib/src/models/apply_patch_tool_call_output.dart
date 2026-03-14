@@ -28,6 +28,7 @@ final String callId;
 /// The status of the apply patch tool call output. One of `completed` or `failed`.
 final ApplyPatchCallOutputStatus status;
 
+/// Optional textual output returned by the apply patch tool.
 final String? output;
 
 /// The ID of the entity that created this tool call output.

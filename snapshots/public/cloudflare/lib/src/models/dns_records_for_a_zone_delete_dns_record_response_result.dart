@@ -10,6 +10,7 @@ factory DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(Map<String, dyn
   id: json['id'] != null ? DnsRecordsIdentifier.fromJson(json['id'] as String) : null,
 ); }
 
+/// Identifier.
 final DnsRecordsIdentifier? id;
 
 Map<String, dynamic> toJson() { return {

@@ -114,10 +114,13 @@ final String threadId;
 /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
 final MessageObjectStatus status;
 
+/// On an incomplete message, details about why the message is incomplete.
 final MessageObjectIncompleteDetails? incompleteDetails;
 
+/// The Unix timestamp (in seconds) for when the message was completed.
 final int? completedAt;
 
+/// The Unix timestamp (in seconds) for when the message was marked as incomplete.
 final int? incompleteAt;
 
 /// The entity that produced the message. One of `user` or `assistant`.
@@ -126,10 +129,13 @@ final MessageObjectRole role;
 /// The content of the message in array of text and/or images.
 final List<MessageObjectContent> content;
 
+/// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
 final String? assistantId;
 
+/// The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
 final String? runId;
 
+/// A list of files attached to the message, and the tools they were added to.
 final List<MessageObjectAttachments2>? attachments;
 
 final Map<String,String>? metadata;

@@ -10,7 +10,7 @@ factory ZonesSchemasBase.fromJson(Map<String, dynamic> json) { return ZonesSchem
   editable: json['editable'] as bool?,
   id: json['id'] as String,
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
-  value: json['value'] as Object,
+  value: json['value'],
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
@@ -23,7 +23,7 @@ final String id;
 final DateTime? modifiedOn;
 
 /// Current value of the zone setting.
-final Object? value;
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'editable': ?editable,
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('value'); } 
-ZonesSchemasBase copyWith({bool Function()? editable, String? id, DateTime? Function()? modifiedOn, Object? Function()? value, }) { return ZonesSchemasBase(
+ZonesSchemasBase copyWith({bool Function()? editable, String? id, DateTime? Function()? modifiedOn, dynamic Function()? value, }) { return ZonesSchemasBase(
   editable: editable != null ? editable() : this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

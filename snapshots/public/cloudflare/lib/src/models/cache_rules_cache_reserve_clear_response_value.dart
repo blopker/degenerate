@@ -10,6 +10,7 @@ factory CacheRulesCacheReserveClearResponseValue.fromJson(Map<String, dynamic> j
   result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
+/// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 final CacheRulesBase? result;
 
 Map<String, dynamic> toJson() { return {

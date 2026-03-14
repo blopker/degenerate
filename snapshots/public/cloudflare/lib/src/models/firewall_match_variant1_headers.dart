@@ -51,10 +51,13 @@ factory FirewallMatchVariant1Headers.fromJson(Map<String, dynamic> json) { retur
   value: json['value'] != null ? FirewallHeaderValue.fromJson(json['value'] as String) : null,
 ); }
 
+/// The name of the response header to match.
 final FirewallHeaderName? name;
 
+/// The operator used when matching: `eq` means "equal" and `ne` means "not equal".
 final FirewallHeaderOp? op;
 
+/// The value of the response header, which must match exactly.
 final FirewallHeaderValue? value;
 
 Map<String, dynamic> toJson() { return {

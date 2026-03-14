@@ -61,6 +61,9 @@ final String callId;
 
 final ComputerAction? action;
 
+/// Flattened batched actions for `computer_use`. Each action includes an
+/// `type` discriminator and action-specific fields.
+/// 
 final List<ComputerAction>? actions;
 
 /// The pending safety checks for the computer call.

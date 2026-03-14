@@ -15,6 +15,7 @@ factory IamMemberWithPolicies.fromJson(Map<String, dynamic> json) { return IamMe
   user: json['user'] != null ? IamMemberWithPoliciesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
+/// The contact email address of the user.
 final IamEmail? email;
 
 final IamMembershipComponentsSchemasIdentifier? id;
@@ -26,7 +27,7 @@ final List<IamListMemberPolicy>? policies;
 final List<IamRole>? roles;
 
 /// A member's status in the account.
-final Object? status;
+final dynamic status;
 
 /// Details of the user associated to the membership.
 final IamMemberWithPoliciesUser? user;
@@ -40,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (user != null) 'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-IamMemberWithPolicies copyWith({IamEmail Function()? email, IamMembershipComponentsSchemasIdentifier Function()? id, List<IamListMemberPolicy> Function()? policies, List<IamRole> Function()? roles, Object? Function()? status, IamMemberWithPoliciesUser Function()? user, }) { return IamMemberWithPolicies(
+IamMemberWithPolicies copyWith({IamEmail Function()? email, IamMembershipComponentsSchemasIdentifier Function()? id, List<IamListMemberPolicy> Function()? policies, List<IamRole> Function()? roles, dynamic Function()? status, IamMemberWithPoliciesUser Function()? user, }) { return IamMemberWithPolicies(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,
   policies: policies != null ? policies() : this.policies,

@@ -39,6 +39,7 @@ final UsageCodeInterpreterSessionsResultObject object;
 /// The number of code interpreter sessions.
 final int? numSessions;
 
+/// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
 final String? projectId;
 
 Map<String, dynamic> toJson() { return {

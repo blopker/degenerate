@@ -33,16 +33,21 @@ factory FirewallRatelimit.fromJson(Map<String, dynamic> json) { return FirewallR
 
 final FirewallAction? action;
 
+/// Criteria specifying when the current rate limit should be bypassed. You can specify that the rate limit should not apply to one or more URLs.
 final List<FirewallBypass2>? bypass;
 
+/// An informative summary of the rule. This value is sanitized and any tags will be removed.
 final FirewallDescription? description;
 
+/// When true, indicates that the rate limit is currently disabled.
 final FirewallDisabled? disabled;
 
+/// The unique identifier of the rate limit.
 final FirewallId? id;
 
 final FirewallMatch? match;
 
+/// The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.
 final FirewallPeriod? period;
 
 final FirewallThreshold? threshold;

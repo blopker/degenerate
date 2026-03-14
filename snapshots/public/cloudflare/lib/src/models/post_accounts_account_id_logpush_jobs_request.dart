@@ -22,18 +22,25 @@ factory PostAccountsAccountIdLogpushJobsRequest.fromJson(Map<String, dynamic> js
   ownershipChallenge: json['ownership_challenge'] != null ? LogpushOwnershipChallenge.fromJson(json['ownership_challenge'] as String) : null,
 ); }
 
+/// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
 final LogpushDataset? dataset;
 
+/// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
 
+/// Flag that indicates if the job is enabled.
 final LogpushEnabled? enabled;
 
+/// The filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/filters/).
 final LogpushFilter? filter;
 
+/// This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.
 final LogpushFrequency? frequency;
 
+/// The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).
 final LogpushKind? kind;
 
+/// This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.
 final LogpushLogpullOptions? logpullOptions;
 
 final LogpushMaxUploadBytes? maxUploadBytes;
@@ -42,10 +49,12 @@ final LogpushMaxUploadIntervalSeconds? maxUploadIntervalSeconds;
 
 final LogpushMaxUploadRecords? maxUploadRecords;
 
+/// Optional human readable job name. Not unique. Cloudflare suggests. that you set this to a meaningful string, like the domain name, to make it easier to identify your job.
 final LogpushName? name;
 
 final LogpushOutputOptions? outputOptions;
 
+/// Ownership challenge token to prove destination ownership.
 final LogpushOwnershipChallenge? ownershipChallenge;
 
 Map<String, dynamic> toJson() { return {

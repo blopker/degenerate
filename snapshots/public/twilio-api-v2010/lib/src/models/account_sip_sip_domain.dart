@@ -97,7 +97,7 @@ factory AccountSipSipDomain.fromJson(Map<String, dynamic> json) { return Account
   voiceStatusCallbackMethod: json['voice_status_callback_method'] != null ? AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(json['voice_status_callback_method'] as String) : null,
   voiceStatusCallbackUrl: json['voice_status_callback_url'] != null ? Uri.parse(json['voice_status_callback_url'] as String) : null,
   voiceUrl: json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   sipRegistration: json['sip_registration'] as bool?,
   emergencyCallingEnabled: json['emergency_calling_enabled'] as bool?,
   secure: json['secure'] as bool?,
@@ -151,7 +151,7 @@ final Uri? voiceStatusCallbackUrl;
 final Uri? voiceUrl;
 
 /// A list of mapping resources associated with the SIP Domain resource identified by their relative URIs.
-final Map<String,Object?>? subresourceUris;
+final Map<String,dynamic>? subresourceUris;
 
 /// Whether to allow SIP Endpoints to register with the domain to receive calls.
 final bool? sipRegistration;
@@ -192,7 +192,7 @@ Map<String, dynamic> toJson() { return {
   'emergency_caller_sid': ?emergencyCallerSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? authType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainName, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, AccountSipSipDomainVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountSipSipDomainVoiceMethod? Function()? voiceMethod, AccountSipSipDomainVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, Map<String, Object>? Function()? subresourceUris, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return AccountSipSipDomain(
+AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? authType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainName, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, AccountSipSipDomainVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountSipSipDomainVoiceMethod? Function()? voiceMethod, AccountSipSipDomainVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, Map<String, dynamic>? Function()? subresourceUris, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return AccountSipSipDomain(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   authType: authType != null ? authType() : this.authType,

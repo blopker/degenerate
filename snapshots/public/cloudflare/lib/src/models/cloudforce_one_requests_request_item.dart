@@ -24,6 +24,7 @@ factory CloudforceOneRequestsRequestItem.fromJson(Map<String, dynamic> json) { r
 
 final CloudforceOneRequestsTime? completed;
 
+/// Request content.
 final CloudforceOneRequestsRequestContent content;
 
 final CloudforceOneRequestsTime created;

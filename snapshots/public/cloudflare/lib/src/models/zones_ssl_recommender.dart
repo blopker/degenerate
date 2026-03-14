@@ -15,14 +15,14 @@ factory ZonesSslRecommender.fromJson(Map<String, dynamic> json) { return ZonesSs
 final ZonesSslRecommenderEnabled? enabled;
 
 /// Enrollment value for SSL/TLS Recommender.
-final Object? id;
+final dynamic id;
 
 Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   'id': ?id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled Function()? enabled, Object? Function()? id, }) { return ZonesSslRecommender(
+ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled Function()? enabled, dynamic Function()? id, }) { return ZonesSslRecommender(
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,
 ); } 

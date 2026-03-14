@@ -15,6 +15,7 @@ factory ChatCompletionRequestFunctionMessage.fromJson(Map<String, dynamic> json)
 /// The role of the messages author, in this case `function`.
 final String role;
 
+/// The contents of the function message.
 final String? content;
 
 /// The name of the function to call.

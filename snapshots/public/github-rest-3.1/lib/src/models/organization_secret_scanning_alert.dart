@@ -66,21 +66,28 @@ factory OrganizationSecretScanningAlert.fromJson(Map<String, dynamic> json) { re
   assignedTo: json['assigned_to'] != null ? SimpleUser.fromJson(json['assigned_to'] as Map<String, dynamic>) : null,
 ); }
 
+/// The security alert number.
 final AlertNumber? number;
 
+/// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertCreatedAt? createdAt;
 
+/// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final AlertUpdatedAt? updatedAt;
 
+/// The REST API URL of the alert resource.
 final AlertUrl? url;
 
+/// The GitHub URL of the alert resource.
 final AlertHtmlUrl? htmlUrl;
 
 /// The REST API URL of the code locations for this alert.
 final Uri? locationsUrl;
 
+/// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
 final SecretScanningAlertState? state;
 
+/// **Required when the `state` is `resolved`.** The reason for resolving the alert.
 final SecretScanningAlertResolution? resolution;
 
 /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

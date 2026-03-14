@@ -25,6 +25,7 @@ factory MconnSupportConnector.fromJson(Map<String, dynamic> json) { return Mconn
   upgradeAsap: json['upgrade_asap'] as bool,
 ); }
 
+/// Account identifier
 final MconnAccountId accountId;
 
 final bool activated;

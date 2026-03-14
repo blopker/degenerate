@@ -16,16 +16,21 @@ factory MagicManagedApp.fromJson(Map<String, dynamic> json) { return MagicManage
   type: json['type'] != null ? MagicAppType.fromJson(json['type'] as String) : null,
 ); }
 
+/// FQDNs to associate with traffic decisions.
 final List<String>? hostnames;
 
+/// IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
 final List<MagicCidr>? ipSubnets;
 
 final MagicManagedAppId managedAppId;
 
+/// Display name for the app.
 final MagicAppName? name;
 
+/// IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
 final List<MagicCidr>? sourceSubnets;
 
+/// Category of the app.
 final MagicAppType? type;
 
 Map<String, dynamic> toJson() { return {

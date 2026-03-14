@@ -38,6 +38,7 @@ factory ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest.fromJso
   value: CacheRulesOriginPostQuantumEncryptionValue.fromJson(json['value'] as String),
 ); }
 
+/// Value of the Origin Post Quantum Encryption Setting.
 final CacheRulesOriginPostQuantumEncryptionValue value;
 
 Map<String, dynamic> toJson() { return {

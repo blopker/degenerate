@@ -25,8 +25,9 @@ final AccessTimestamp? expiresOn;
 final AccessFingerprint? fingerprint;
 
 /// The ID of the application that will use this certificate.
-final Object? id;
+final dynamic id;
 
+/// The name of the certificate.
 final AccessCertificatesComponentsSchemasName2? name;
 
 final AccessTimestamp? updatedAt;
@@ -41,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccessComponentsSchemasCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, Object? Function()? id, AccessCertificatesComponentsSchemasName2 Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessComponentsSchemasCertificates(
+AccessComponentsSchemasCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, dynamic Function()? id, AccessCertificatesComponentsSchemasName2 Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessComponentsSchemasCertificates(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

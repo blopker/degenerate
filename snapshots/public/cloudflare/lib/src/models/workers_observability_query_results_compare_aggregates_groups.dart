@@ -8,12 +8,13 @@ final class WorkersObservabilityQueryResultsCompareAggregatesGroups {const Worke
 
 factory WorkersObservabilityQueryResultsCompareAggregatesGroups.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCompareAggregatesGroups(
   key: json['key'] as String,
-  value: json['value'] as Object,
+  value: json['value'],
 ); }
 
 final String key;
 
-final Object value;
+/// One of: String, double, bool
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'key': key,
@@ -21,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('value'); } 
-WorkersObservabilityQueryResultsCompareAggregatesGroups copyWith({String? key, Object? value, }) { return WorkersObservabilityQueryResultsCompareAggregatesGroups(
+WorkersObservabilityQueryResultsCompareAggregatesGroups copyWith({String? key, dynamic value, }) { return WorkersObservabilityQueryResultsCompareAggregatesGroups(
   key: key ?? this.key,
   value: value ?? this.value,
 ); } 

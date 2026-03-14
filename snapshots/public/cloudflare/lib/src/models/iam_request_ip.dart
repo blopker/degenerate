@@ -12,8 +12,10 @@ factory IamRequestIp.fromJson(Map<String, dynamic> json) { return IamRequestIp(
   notIn: (json['not_in'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// List of IPv4/IPv6 CIDR addresses.
 final List<String>? $in;
 
+/// List of IPv4/IPv6 CIDR addresses.
 final List<String>? notIn;
 
 Map<String, dynamic> toJson() { return {

@@ -8,7 +8,7 @@
 final class WatchEvent {const WatchEvent({required this.object, this.type = '', });
 
 factory WatchEvent.fromJson(Map<String, dynamic> json) { return WatchEvent(
-  object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   type: json['type'] as String,
 ); }
 
@@ -17,7 +17,7 @@ factory WatchEvent.fromJson(Map<String, dynamic> json) { return WatchEvent(
 ///  * If Type is Deleted: the state of the object immediately before deletion.
 ///  * If Type is Error: *Status is recommended; other types may make sense
 ///    depending on context.
-final Map<String,Object?> object;
+final Map<String,dynamic> object;
 
 final String type;
 
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('type') && json['type'] is String; } 
-WatchEvent copyWith({Map<String,Object?>? object, String? type, }) { return WatchEvent(
+WatchEvent copyWith({Map<String,dynamic>? object, String? type, }) { return WatchEvent(
   object: object ?? this.object,
   type: type ?? this.type,
 ); } 

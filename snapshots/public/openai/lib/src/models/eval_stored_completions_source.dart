@@ -44,12 +44,16 @@ final EvalStoredCompletionsSourceType type;
 
 final Map<String,String>? metadata;
 
+/// An optional model to filter by (e.g., 'gpt-4o').
 final String? model;
 
+/// An optional Unix timestamp to filter items created after this time.
 final int? createdAfter;
 
+/// An optional Unix timestamp to filter items created before this time.
 final int? createdBefore;
 
+/// An optional maximum number of items to return.
 final int? limit;
 
 Map<String, dynamic> toJson() { return {

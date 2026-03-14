@@ -11,6 +11,7 @@ factory RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders.fro
   tokenType: json['token_type'] as String?,
 ); }
 
+/// The ID of the push protection bypass placeholder. This value is returned on any push protected routes.
 final SecretScanningPushProtectionBypassPlaceholderId? placeholderId;
 
 final String? tokenType;

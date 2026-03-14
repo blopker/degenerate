@@ -58,13 +58,13 @@ factory WebhookForkForkee.fromJson(Map<String, dynamic> json) { return WebhookFo
   issuesUrl: json['issues_url'] as String,
   keysUrl: json['keys_url'] as String,
   labelsUrl: json['labels_url'] as String,
-  language: json['language'] as Object,
+  language: json['language'],
   languagesUrl: json['languages_url'] as String,
-  license: (json['license'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  license: (json['license'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   masterBranch: json['master_branch'] as String?,
   mergesUrl: json['merges_url'] as String,
   milestonesUrl: json['milestones_url'] as String,
-  mirrorUrl: json['mirror_url'] as Object,
+  mirrorUrl: json['mirror_url'],
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   notificationsUrl: json['notifications_url'] as String,
@@ -90,7 +90,7 @@ factory WebhookForkForkee.fromJson(Map<String, dynamic> json) { return WebhookFo
   svnUrl: json['svn_url'] as String,
   tagsUrl: json['tags_url'] as String,
   teamsUrl: json['teams_url'] as String,
-  topics: (json['topics'] as List<dynamic>).map((e) => e as Object).toList(),
+  topics: (json['topics'] as List<dynamic>).map((e) => e).toList(),
   treesUrl: json['trees_url'] as String,
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,
@@ -205,11 +205,11 @@ final String keysUrl;
 
 final String labelsUrl;
 
-final Object? language;
+final dynamic language;
 
 final String languagesUrl;
 
-final Map<String,Object?>? license;
+final Map<String,dynamic>? license;
 
 final String? masterBranch;
 
@@ -217,7 +217,7 @@ final String mergesUrl;
 
 final String milestonesUrl;
 
-final Object? mirrorUrl;
+final dynamic mirrorUrl;
 
 final String name;
 
@@ -269,7 +269,7 @@ final String tagsUrl;
 
 final String teamsUrl;
 
-final List<Object?> topics;
+final List<dynamic> topics;
 
 final String treesUrl;
 
@@ -452,7 +452,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('visibility') && json['visibility'] is String &&
       json.containsKey('watchers') && json['watchers'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num; } 
-WebhookForkForkee copyWith({bool Function()? allowAutoMerge, bool Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, String? contributorsUrl, String? createdAt, String? defaultBranch, bool Function()? deleteBranchOnMerge, String? deploymentsUrl, String? Function()? description, bool Function()? disabled, String? downloadsUrl, String? eventsUrl, bool? fork, int? forks, int? forksCount, String? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, String? hooksUrl, String? htmlUrl, int? id, bool Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Object? Function()? language, String? languagesUrl, Map<String, Object>? Function()? license, String Function()? masterBranch, String? mergesUrl, String? milestonesUrl, Object? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String Function()? organization, WebhookForkForkeeOwner? owner, WebhookForkForkeePermissions Function()? permissions, bool? private, bool Function()? public, String? pullsUrl, String? pushedAt, String? releasesUrl, String? Function()? roleName, int? size, String? sshUrl, int Function()? stargazers, int? stargazersCount, String? stargazersUrl, String? statusesUrl, String? subscribersUrl, String? subscriptionUrl, String? svnUrl, String? tagsUrl, String? teamsUrl, List<Object?>? topics, String? treesUrl, String? updatedAt, String? url, String? visibility, int? watchers, int? watchersCount, bool Function()? webCommitSignoffRequired, }) { return WebhookForkForkee(
+WebhookForkForkee copyWith({bool Function()? allowAutoMerge, bool Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, String? contributorsUrl, String? createdAt, String? defaultBranch, bool Function()? deleteBranchOnMerge, String? deploymentsUrl, String? Function()? description, bool Function()? disabled, String? downloadsUrl, String? eventsUrl, bool? fork, int? forks, int? forksCount, String? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, String? hooksUrl, String? htmlUrl, int? id, bool Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, dynamic Function()? language, String? languagesUrl, Map<String, dynamic>? Function()? license, String Function()? masterBranch, String? mergesUrl, String? milestonesUrl, dynamic Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String Function()? organization, WebhookForkForkeeOwner? owner, WebhookForkForkeePermissions Function()? permissions, bool? private, bool Function()? public, String? pullsUrl, String? pushedAt, String? releasesUrl, String? Function()? roleName, int? size, String? sshUrl, int Function()? stargazers, int? stargazersCount, String? stargazersUrl, String? statusesUrl, String? subscribersUrl, String? subscriptionUrl, String? svnUrl, String? tagsUrl, String? teamsUrl, List<dynamic>? topics, String? treesUrl, String? updatedAt, String? url, String? visibility, int? watchers, int? watchersCount, bool Function()? webCommitSignoffRequired, }) { return WebhookForkForkee(
   allowAutoMerge: allowAutoMerge != null ? allowAutoMerge() : this.allowAutoMerge,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   allowMergeCommit: allowMergeCommit != null ? allowMergeCommit() : this.allowMergeCommit,

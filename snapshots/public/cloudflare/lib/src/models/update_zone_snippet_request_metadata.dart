@@ -18,6 +18,7 @@ factory UpdateZoneSnippetRequestMetadata.fromJson(Map<String, dynamic> json) { r
   mainModule: SnippetsSnippetMainModule.fromJson(json['main_module'] as String),
 ); }
 
+/// Specify the name of the file that contains the main module of the snippet.
 final SnippetsSnippetMainModule mainModule;
 
 Map<String, dynamic> toJson() { return {

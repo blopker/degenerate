@@ -56,10 +56,13 @@ final String name;
 /// A JSON string of the arguments passed to the tool.
 final String arguments;
 
+/// The ID of an associated approval request, if any.
 final String? approvalRequestId;
 
+/// The output from the tool call.
 final String? output;
 
+/// The error from the tool call, if any.
 final RealtimeMcpToolCallError? error;
 
 Map<String, dynamic> toJson() { return {

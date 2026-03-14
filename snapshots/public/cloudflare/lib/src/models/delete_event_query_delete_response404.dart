@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'delete_event_query_delete_re
 
 factory DeleteEventQueryDeleteResponse404.fromJson(Map<String, dynamic> json) { return DeleteEventQueryDeleteResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteEventQueryDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<DeleteEventQueryDeleteResponse404Errors> errors;
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-DeleteEventQueryDeleteResponse404 copyWith({List<DeleteEventQueryDeleteResponse404Errors>? errors, Map<String,Object?>? result, bool? success, }) { return DeleteEventQueryDeleteResponse404(
+DeleteEventQueryDeleteResponse404 copyWith({List<DeleteEventQueryDeleteResponse404Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return DeleteEventQueryDeleteResponse404(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

@@ -15,15 +15,19 @@ factory RulesetsExecuteRuleOverrides2.fromJson(Map<String, dynamic> json) { retu
   sensitivityLevel: json['sensitivity_level'] != null ? RulesetsExecuteSensitivityLevel.fromJson(json['sensitivity_level'] as String) : null,
 ); }
 
+/// The action to override the rule with.
 final RulesetsRuleAction? action;
 
+/// Whether to enable execution of the rule.
 final RulesetsRuleEnabled? enabled;
 
+/// The ID of the rule to override.
 final RulesetsRuleId id;
 
 /// The score threshold to use for the rule.
 final int? scoreThreshold;
 
+/// The sensitivity level to use for the rule. This option is only applicable for DDoS phases.
 final RulesetsExecuteSensitivityLevel? sensitivityLevel;
 
 Map<String, dynamic> toJson() { return {

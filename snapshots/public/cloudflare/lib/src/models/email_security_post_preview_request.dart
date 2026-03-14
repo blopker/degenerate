@@ -10,6 +10,7 @@ factory EmailSecurityPostPreviewRequest.fromJson(Map<String, dynamic> json) { re
   postfixId: EmailSecurityPostfixId.fromJson(json['postfix_id'] as String),
 ); }
 
+/// The identifier of the message.
 final EmailSecurityPostfixId postfixId;
 
 Map<String, dynamic> toJson() { return {

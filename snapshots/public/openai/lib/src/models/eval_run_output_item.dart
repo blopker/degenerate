@@ -38,7 +38,7 @@ factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOu
   createdAt: (json['created_at'] as num).toInt(),
   status: json['status'] as String,
   datasourceItemId: (json['datasource_item_id'] as num).toInt(),
-  datasourceItem: (json['datasource_item'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  datasourceItem: (json['datasource_item'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   results: (json['results'] as List<dynamic>).map((e) => EvalRunOutputItemResult.fromJson(e as Map<String, dynamic>)).toList(),
   sample: EvalRunOutputItemSample.fromJson(json['sample'] as Map<String, dynamic>),
 ); }
@@ -65,7 +65,7 @@ final String status;
 final int datasourceItemId;
 
 /// Details of the input data source item.
-final Map<String,Object?> datasourceItem;
+final Map<String,dynamic> datasourceItem;
 
 /// A list of grader results for this output item.
 final List<EvalRunOutputItemResult> results;
@@ -95,7 +95,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('datasource_item') &&
       json.containsKey('results') &&
       json.containsKey('sample'); } 
-EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,Object?>? datasourceItem, List<EvalRunOutputItemResult>? results, EvalRunOutputItemSample? sample, }) { return EvalRunOutputItem(
+EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,dynamic>? datasourceItem, List<EvalRunOutputItemResult>? results, EvalRunOutputItemSample? sample, }) { return EvalRunOutputItem(
   object: object ?? this.object,
   id: id ?? this.id,
   runId: runId ?? this.runId,

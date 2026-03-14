@@ -14,6 +14,7 @@ factory UpdateSsoConnectorStateRequest.fromJson(Map<String, dynamic> json) { ret
 /// SSO Connector enabled state
 final bool? enabled;
 
+/// Controls the display of FedRAMP language to the user during SSO login
 final IamUseFedrampLanguage? useFedrampLanguage;
 
 Map<String, dynamic> toJson() { return {

@@ -9,14 +9,14 @@ import 'wor_create_new_workflow_instance_request_instance_retention.dart';final 
 factory WorCreateNewWorkflowInstanceRequest.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceRequest(
   instanceId: json['instance_id'] as String?,
   instanceRetention: json['instance_retention'] != null ? WorCreateNewWorkflowInstanceRequestInstanceRetention.fromJson(json['instance_retention'] as Map<String, dynamic>) : null,
-  params: (json['params'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  params: (json['params'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 final String? instanceId;
 
 final WorCreateNewWorkflowInstanceRequestInstanceRetention? instanceRetention;
 
-final Map<String,Object?>? params;
+final Map<String,dynamic>? params;
 
 Map<String, dynamic> toJson() { return {
   'instance_id': ?instanceId,
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'params': ?params,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WorCreateNewWorkflowInstanceRequest copyWith({String Function()? instanceId, WorCreateNewWorkflowInstanceRequestInstanceRetention Function()? instanceRetention, Map<String, Object> Function()? params, }) { return WorCreateNewWorkflowInstanceRequest(
+WorCreateNewWorkflowInstanceRequest copyWith({String Function()? instanceId, WorCreateNewWorkflowInstanceRequestInstanceRetention Function()? instanceRetention, Map<String, dynamic> Function()? params, }) { return WorCreateNewWorkflowInstanceRequest(
   instanceId: instanceId != null ? instanceId() : this.instanceId,
   instanceRetention: instanceRetention != null ? instanceRetention() : this.instanceRetention,
   params: params != null ? params() : this.params,

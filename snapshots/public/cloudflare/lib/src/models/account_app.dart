@@ -10,6 +10,7 @@ factory AccountApp.fromJson(Map<String, dynamic> json) { return AccountApp(
   accountAppId: MagicAccountAppId.fromJson(json['account_app_id'] as String),
 ); }
 
+/// Magic account app ID.
 final MagicAccountAppId accountAppId;
 
 Map<String, dynamic> toJson() { return {

@@ -7,20 +7,20 @@
 import 'package:collection/collection.dart';final class UrlSubmit {const UrlSubmit({this.skippedUrls, this.submittedUrls, });
 
 factory UrlSubmit.fromJson(Map<String, dynamic> json) { return UrlSubmit(
-  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
-  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
-final List<Map<String,Object?>>? skippedUrls;
+final List<Map<String,dynamic>>? skippedUrls;
 
-final List<Map<String,Object?>>? submittedUrls;
+final List<Map<String,dynamic>>? submittedUrls;
 
 Map<String, dynamic> toJson() { return {
   if (skippedUrls != null) 'skipped_urls': skippedUrls?.map((e) => e).toList(),
   if (submittedUrls != null) 'submitted_urls': submittedUrls?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-UrlSubmit copyWith({List<Map<String, Object>> Function()? skippedUrls, List<Map<String, Object>> Function()? submittedUrls, }) { return UrlSubmit(
+UrlSubmit copyWith({List<Map<String, dynamic>> Function()? skippedUrls, List<Map<String, dynamic>> Function()? submittedUrls, }) { return UrlSubmit(
   skippedUrls: skippedUrls != null ? skippedUrls() : this.skippedUrls,
   submittedUrls: submittedUrls != null ? submittedUrls() : this.submittedUrls,
 ); } 

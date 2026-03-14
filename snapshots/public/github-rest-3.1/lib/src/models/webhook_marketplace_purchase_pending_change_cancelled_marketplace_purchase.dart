@@ -9,7 +9,7 @@ import 'webhook_marketplace_purchase_pending_change_cancelled_marketplace_purcha
 factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(
   account: WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
-  freeTrialEndsOn: json['free_trial_ends_on'] as Object,
+  freeTrialEndsOn: json['free_trial_ends_on'],
   nextBillingDate: json['next_billing_date'] as String,
   onFreeTrial: json['on_free_trial'] as bool,
   plan: WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),
@@ -20,7 +20,7 @@ final WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseAccount
 
 final String billingCycle;
 
-final Object? freeTrialEndsOn;
+final dynamic freeTrialEndsOn;
 
 final String? nextBillingDate;
 
@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('plan') &&
       json.containsKey('unit_count') && json['unit_count'] is num; } 
-WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase copyWith({WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseAccount? account, String? billingCycle, Object? Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(
+WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase copyWith({WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseAccount? account, String? billingCycle, dynamic Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(
   account: account ?? this.account,
   billingCycle: billingCycle ?? this.billingCycle,
   freeTrialEndsOn: freeTrialEndsOn != null ? freeTrialEndsOn() : this.freeTrialEndsOn,

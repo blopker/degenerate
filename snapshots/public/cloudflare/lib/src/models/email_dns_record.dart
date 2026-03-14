@@ -98,7 +98,11 @@ final String? name;
 final double? priority;
 
 /// Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for 'automatic'.
-final Object? ttl;
+/// 
+/// Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for 'automatic'.
+/// 
+/// One of: double, double
+final dynamic ttl;
 
 /// DNS record type.
 final EmailDnsRecordType? type;
@@ -111,7 +115,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-EmailDnsRecord copyWith({String Function()? content, String Function()? name, double Function()? priority, Object Function()? ttl, EmailDnsRecordType Function()? type, }) { return EmailDnsRecord(
+EmailDnsRecord copyWith({String Function()? content, String Function()? name, double Function()? priority, dynamic Function()? ttl, EmailDnsRecordType Function()? type, }) { return EmailDnsRecord(
   content: content != null ? content() : this.content,
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,

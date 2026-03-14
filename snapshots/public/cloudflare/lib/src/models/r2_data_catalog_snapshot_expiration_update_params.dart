@@ -20,6 +20,8 @@ final String? maxSnapshotAge;
 final int? minSnapshotsToKeep;
 
 /// Updates the state optionally.
+/// 
+/// Specifies the state of maintenance operations.
 final R2DataCatalogCatalogMaintenanceState? state;
 
 Map<String, dynamic> toJson() { return {

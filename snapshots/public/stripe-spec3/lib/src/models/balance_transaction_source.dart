@@ -7,7 +7,7 @@
 import 'application_fee.dart';import 'charge.dart';import 'connect_collection_transfer.dart';import 'customer_cash_balance_transaction.dart';import 'dispute.dart';import 'fee_refund.dart';import 'issuing_authorization.dart';import 'issuing_dispute.dart';import 'issuing_transaction.dart';import 'payout.dart';import 'refund.dart';import 'reserve_transaction.dart';import 'tax_deducted_at_source.dart';import 'topup.dart';import 'transfer.dart';import 'transfer_reversal.dart';/// This transaction relates to the Stripe object.
 final class BalanceTransactionSource {const BalanceTransactionSource({this.string, this.applicationFee, this.charge, this.connectCollectionTransfer, this.customerCashBalanceTransaction, this.dispute, this.feeRefund, this.issuingAuthorization, this.issuingDispute, this.issuingTransaction, this.payout, this.refund, this.reserveTransaction, this.taxDeductedAtSource, this.topup, this.transfer, this.transferReversal, });
 
-factory BalanceTransactionSource.fromJson(Object? json) { final map = json is Map<String, dynamic> ? json : null;
+factory BalanceTransactionSource.fromJson(dynamic json) { final map = json is Map<String, dynamic> ? json : null;
 return BalanceTransactionSource(
   string: json is String ? json : null,
   applicationFee: map != null && ApplicationFee.canParse(map) ? ApplicationFee.fromJson(map) : null,

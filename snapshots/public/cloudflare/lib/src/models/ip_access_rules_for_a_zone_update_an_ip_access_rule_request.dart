@@ -11,8 +11,10 @@ factory IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest.fromJson(Map<String, dy
   notes: json['notes'] != null ? FirewallNotes.fromJson(json['notes'] as String) : null,
 ); }
 
+/// The action to apply to a matched request.
 final FirewallSchemasMode? mode;
 
+/// An informative summary of the rule, typically used as a reminder or explanation.
 final FirewallNotes? notes;
 
 Map<String, dynamic> toJson() { return {

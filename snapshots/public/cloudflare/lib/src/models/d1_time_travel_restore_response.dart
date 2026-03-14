@@ -13,11 +13,13 @@ factory D1TimeTravelRestoreResponse.fromJson(Map<String, dynamic> json) { return
   previousBookmark: json['previous_bookmark'] != null ? D1TimeTravelBookmark.fromJson(json['previous_bookmark'] as String) : null,
 ); }
 
+/// A bookmark representing a specific state of the database at a specific point in time.
 final D1TimeTravelBookmark? bookmark;
 
 /// A message describing the result of the restore operation.
 final String? message;
 
+/// A bookmark representing a specific state of the database at a specific point in time.
 final D1TimeTravelBookmark? previousBookmark;
 
 Map<String, dynamic> toJson() { return {

@@ -12,8 +12,10 @@ factory R2DataCatalogTableCompactionConfig.fromJson(Map<String, dynamic> json) {
   targetSizeMb: R2DataCatalogCatalogTargetFileSize.fromJson(json['target_size_mb'] as String),
 ); }
 
+/// Specifies the state of maintenance operations.
 final R2DataCatalogCatalogMaintenanceState state;
 
+/// Sets the target file size for compaction in megabytes. Defaults to "128".
 final R2DataCatalogCatalogTargetFileSize targetSizeMb;
 
 Map<String, dynamic> toJson() { return {

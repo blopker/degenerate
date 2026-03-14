@@ -12,8 +12,10 @@ factory CreateChatCompletionResponseChoicesLogprobs.fromJson(Map<String, dynamic
   refusal: (json['refusal'] as List<dynamic>).map((e) => ChatCompletionTokenLogprob.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// A list of message content tokens with log probability information.
 final List<ChatCompletionTokenLogprob>? content;
 
+/// A list of message refusal tokens with log probability information.
 final List<ChatCompletionTokenLogprob>? refusal;
 
 Map<String, dynamic> toJson() { return {

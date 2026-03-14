@@ -14,14 +14,19 @@ factory IpAddressManagementPrefixesAddPrefixRequest.fromJson(Map<String, dynamic
   loaDocumentId: json['loa_document_id'] != null ? AddressingLoaDocumentIdentifier.fromJson(json['loa_document_id'] as String) : null,
 ); }
 
+/// Autonomous System Number (ASN) the prefix will be advertised under.
 final AddressingAsn asn;
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final AddressingCidr cidr;
 
+/// Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.
 final AddressingDelegateLoaCreation? delegateLoaCreation;
 
+/// Description of the prefix.
 final AddressingDescription? description;
 
+/// Identifier for the uploaded LOA document.
 final AddressingLoaDocumentIdentifier? loaDocumentId;
 
 Map<String, dynamic> toJson() { return {

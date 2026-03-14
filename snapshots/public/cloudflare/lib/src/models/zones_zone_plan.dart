@@ -32,6 +32,7 @@ final bool? externallyManaged;
 /// How often the customer is billed.
 final String? frequency;
 
+/// Identifier
 final ZonesIdentifier? id;
 
 /// States if the subscription active.

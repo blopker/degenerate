@@ -55,7 +55,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-01
 ///
 /// `POST /admin/api/2020-01/storefront_access_tokens.json`
-Future<ApiResult<void, Never>> deprecated202001CreateStorefrontAccessTokens({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateStorefrontAccessTokens({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -114,7 +114,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-04
 ///
 /// `POST /admin/api/2020-04/storefront_access_tokens.json`
-Future<ApiResult<void, Never>> deprecated202004CreateStorefrontAccessTokens({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateStorefrontAccessTokens({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -173,7 +173,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-07
 ///
 /// `POST /admin/api/2020-07/storefront_access_tokens.json`
-Future<ApiResult<void, Never>> deprecated202007CreateStorefrontAccessTokens({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateStorefrontAccessTokens({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -232,7 +232,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-10
 ///
 /// `POST /admin/api/2020-10/storefront_access_tokens.json`
-Future<ApiResult<void, Never>> createStorefrontAccessTokens({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createStorefrontAccessTokens({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -291,7 +291,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2021-01
 ///
 /// `POST /admin/api/2021-01/storefront_access_tokens.json`
-Future<ApiResult<void, Never>> deprecated202101CreateStorefrontAccessTokens({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateStorefrontAccessTokens({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -350,7 +350,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-unstable
 ///
 /// `POST /admin/api/unstable/storefront_access_tokens.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateStorefrontAccessTokens({Object? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateStorefrontAccessTokens({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

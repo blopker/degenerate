@@ -11,6 +11,7 @@ factory ZeroTrustGatewayItemsInput2.fromJson(Map<String, dynamic> json) { return
   value: json['value'] != null ? ZeroTrustGatewayValue.fromJson(json['value'] as String) : null,
 ); }
 
+/// Provide the list item description (optional).
 final ZeroTrustGatewayDescriptionItem? description;
 
 final ZeroTrustGatewayValue? value;

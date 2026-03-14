@@ -9,7 +9,7 @@ import 'dependency.dart';import 'manifest_file.dart';final class Manifest {const
 factory Manifest.fromJson(Map<String, dynamic> json) { return Manifest(
   name: json['name'] as String,
   file: json['file'] != null ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   resolved: (json['resolved'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Dependency.fromJson(v as Map<String, dynamic>))),
 ); }
 
@@ -18,7 +18,8 @@ final String name;
 
 final ManifestFile? file;
 
-final Map<String,Object?>? metadata;
+/// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
+final Map<String,dynamic>? metadata;
 
 /// A collection of resolved package dependencies.
 final Map<String,Dependency>? resolved;
@@ -30,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (resolved != null) 'resolved': resolved?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Manifest copyWith({String? name, ManifestFile Function()? file, Map<String, Object> Function()? metadata, Map<String, Dependency> Function()? resolved, }) { return Manifest(
+Manifest copyWith({String? name, ManifestFile Function()? file, Map<String, dynamic> Function()? metadata, Map<String, Dependency> Function()? resolved, }) { return Manifest(
   name: name ?? this.name,
   file: file != null ? file() : this.file,
   metadata: metadata != null ? metadata() : this.metadata,

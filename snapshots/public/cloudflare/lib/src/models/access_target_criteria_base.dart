@@ -18,8 +18,10 @@ factory AccessTargetCriteriaBase.fromJson(Map<String, dynamic> json) { return Ac
   targetAttributes: (json['target_attributes'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
 ); }
 
+/// The port that the targets use for the chosen communication protocol. A port cannot be assigned to multiple protocols.
 final AccessPort port;
 
+/// Contains a map of target attribute keys to target attribute values.
 final Map<String,List<String>> targetAttributes;
 
 Map<String, dynamic> toJson() { return {

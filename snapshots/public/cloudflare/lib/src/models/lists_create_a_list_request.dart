@@ -8,14 +8,17 @@ import 'lists_description.dart';import 'lists_kind.dart';import 'lists_name.dart
 
 factory ListsCreateAListRequest.fromJson(Map<String, dynamic> json) { return ListsCreateAListRequest(
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
-  kind: ListsKind.fromJson(json['kind'] as Object?),
+  kind: ListsKind.fromJson(json['kind'] as dynamic),
   name: ListsName.fromJson(json['name'] as String),
 ); }
 
+/// An informative summary of the list.
 final ListsDescription? description;
 
+/// The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).
 final ListsKind? kind;
 
+/// An informative name for the list. Use this name in filter and rule expressions.
 final ListsName name;
 
 Map<String, dynamic> toJson() { return {

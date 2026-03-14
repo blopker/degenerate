@@ -18,6 +18,7 @@ factory TeamsDevicesGlobalWarpOverride.fromJson(Map<String, dynamic> json) { ret
   timestamp: json['timestamp'] != null ? TeamsDevicesTimestamp.fromJson(json['timestamp'] as String) : null,
 ); }
 
+/// Disconnects all devices on the account using Global WARP override.
 final TeamsDevicesDisconnect? disconnect;
 
 final TeamsDevicesTimestamp? timestamp;

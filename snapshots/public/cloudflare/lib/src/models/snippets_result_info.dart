@@ -18,8 +18,10 @@ factory SnippetsResultInfo.fromJson(Map<String, dynamic> json) { return Snippets
 /// Specify the number of results in the current page.
 final int count;
 
+/// Specifies the current page number.
 final SnippetsPage page;
 
+/// Specifies how many results to return per page.
 final SnippetsPerPage perPage;
 
 /// Specify the total number of results.

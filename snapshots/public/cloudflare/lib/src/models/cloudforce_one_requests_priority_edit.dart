@@ -13,6 +13,7 @@ factory CloudforceOneRequestsPriorityEdit.fromJson(Map<String, dynamic> json) { 
   tlp: CloudforceOneRequestsTlp.fromJson(json['tlp'] as String),
 ); }
 
+/// List of labels.
 final List<String> labels;
 
 /// Priority.

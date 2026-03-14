@@ -271,6 +271,7 @@ final String? name;
 /// Unique name used when configuring the connector via Marketplace Add-on.
 final String? connectorName;
 
+/// One of `inbound_track`, `outbound_track`, `both_tracks`.
 final SiprecEnumTrack? track;
 
 /// Absolute URL of the status callback.

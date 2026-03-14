@@ -20,6 +20,7 @@ factory SecretsStoreCreateSecretObject.fromJson(Map<String, dynamic> json) { ret
   value: SecretsStoreValue.fromJson(json['value'] as String),
 ); }
 
+/// Freeform text describing the secret
 final SecretsStoreComment? comment;
 
 final SecretsStoreSecretName name;

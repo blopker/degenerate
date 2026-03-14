@@ -13,8 +13,10 @@ factory MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsReque
   warpDevices: (json['warp_devices'] as List<dynamic>?)?.map((e) => MagicVisibilityMnmMnmConfigWarpDevice.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Fallback sampling rate of flow messages being sent in packets per second. This should match the packet sampling rate configured on the router.
 final MagicVisibilityMnmMnmConfigDefaultSampling? defaultSampling;
 
+/// The account name.
 final MagicVisibilityMnmMnmConfigName? name;
 
 final List<MagicVisibilityMnmMnmConfigRouterIp>? routerIps;

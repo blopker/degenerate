@@ -14,6 +14,8 @@ factory SubmitToolOutputsRunRequest.fromJson(Map<String, dynamic> json) { return
 /// A list of tools for which the outputs are being submitted.
 final List<SubmitToolOutputsRunRequestToolOutputs> toolOutputs;
 
+/// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+/// 
 final bool? stream;
 
 Map<String, dynamic> toJson() { return {

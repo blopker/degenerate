@@ -96,14 +96,14 @@ final class AigConfigCreateDatasetRequestFilters {const AigConfigCreateDatasetRe
 factory AigConfigCreateDatasetRequestFilters.fromJson(Map<String, dynamic> json) { return AigConfigCreateDatasetRequestFilters(
   key: AigConfigCreateDatasetRequestFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigCreateDatasetRequestFiltersOperator.fromJson(json['operator'] as String),
-  value: (json['value'] as List<dynamic>).map((e) => e as Object).toList(),
+  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
 ); }
 
 final AigConfigCreateDatasetRequestFiltersKey key;
 
 final AigConfigCreateDatasetRequestFiltersOperator $operator;
 
-final List<Object> value;
+final List<dynamic> value;
 
 Map<String, dynamic> toJson() { return {
   'key': key.toJson(),
@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
       json.containsKey('operator') &&
       json.containsKey('value'); } 
-AigConfigCreateDatasetRequestFilters copyWith({AigConfigCreateDatasetRequestFiltersKey? key, AigConfigCreateDatasetRequestFiltersOperator? $operator, List<Object>? value, }) { return AigConfigCreateDatasetRequestFilters(
+AigConfigCreateDatasetRequestFilters copyWith({AigConfigCreateDatasetRequestFiltersKey? key, AigConfigCreateDatasetRequestFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigCreateDatasetRequestFilters(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,

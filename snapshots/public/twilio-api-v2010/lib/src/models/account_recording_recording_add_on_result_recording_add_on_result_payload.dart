@@ -17,7 +17,7 @@ factory AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
   referenceSid: json['reference_sid'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The unique string that that we created to identify the Recording AddOnResult Payload resource.
@@ -51,7 +51,7 @@ final String? dateUpdated;
 final String? referenceSid;
 
 /// A list of related resources identified by their relative URIs.
-final Map<String,Object?>? subresourceUris;
+final Map<String,dynamic>? subresourceUris;
 
 Map<String, dynamic> toJson() { return {
   'sid': ?sid,
@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({String? Function()? sid, String? Function()? addOnResultSid, String? Function()? accountSid, String? Function()? label, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? contentType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? referenceSid, Map<String, Object>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
+AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({String? Function()? sid, String? Function()? addOnResultSid, String? Function()? accountSid, String? Function()? label, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? contentType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? referenceSid, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
   sid: sid != null ? sid() : this.sid,
   addOnResultSid: addOnResultSid != null ? addOnResultSid() : this.addOnResultSid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

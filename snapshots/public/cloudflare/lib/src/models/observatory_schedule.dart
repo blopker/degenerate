@@ -15,6 +15,7 @@ factory ObservatorySchedule.fromJson(Map<String, dynamic> json) { return Observa
 
 final ObservatoryScheduleFrequency? frequency;
 
+/// A test region.
 final ObservatoryRegion? region;
 
 final ObservatoryUrl? url;

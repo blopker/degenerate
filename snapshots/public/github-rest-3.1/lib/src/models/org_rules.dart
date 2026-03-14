@@ -73,8 +73,8 @@ factory OrgRules.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreat
   return OrgRules$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class OrgRulesRepositoryRuleCreation extends OrgRules {const OrgRulesRepositoryRuleCreation(this._value);
 
@@ -289,9 +289,9 @@ final RepositoryRuleCopilotCodeReview _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class OrgRules$Unknown extends OrgRules {const OrgRules$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRules$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

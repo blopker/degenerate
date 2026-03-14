@@ -90,6 +90,7 @@ factory ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(Map<String, dy
 
 final ResourceTaggingResourceId resourceId;
 
+/// Enum for base account-level resource types (those with no extra required fields).
 final ResourceTaggingAccountResourceTypeBaseEnum resourceType;
 
 Map<String, dynamic> toJson() { return {

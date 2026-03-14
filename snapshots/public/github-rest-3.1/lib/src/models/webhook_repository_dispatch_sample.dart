@@ -9,7 +9,7 @@ import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';imp
 factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) { return WebhookRepositoryDispatchSample(
   action: json['action'] as String,
   branch: json['branch'] as String,
-  clientPayload: (json['client_payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  clientPayload: (json['client_payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -23,7 +23,7 @@ final String action;
 final String branch;
 
 /// The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
-final Map<String,Object?>? clientPayload;
+final Map<String,dynamic>? clientPayload;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('installation') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<String, Object>? Function()? clientPayload, EnterpriseWebhooks Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryDispatchSample(
+WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<String, dynamic>? Function()? clientPayload, EnterpriseWebhooks Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryDispatchSample(
   action: action ?? this.action,
   branch: branch ?? this.branch,
   clientPayload: clientPayload != null ? clientPayload() : this.clientPayload,

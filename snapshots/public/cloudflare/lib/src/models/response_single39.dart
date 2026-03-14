@@ -19,8 +19,10 @@ factory ResponseSingle39.fromJson(Map<String, dynamic> json) { return ResponseSi
   success: ResponseSuccess.fromJson(json['success'] as bool),
 ); }
 
+/// Contains errors if the API call was unsuccessful.
 final List<ResponseErrors3> errors;
 
+/// Contains informational messages.
 final List<ResponseMessages2> messages;
 
 final ResponseSuccess success;

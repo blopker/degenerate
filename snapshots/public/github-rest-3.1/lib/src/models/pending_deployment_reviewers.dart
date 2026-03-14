@@ -11,6 +11,7 @@ factory PendingDeploymentReviewers.fromJson(Map<String, dynamic> json) { return 
   reviewer: json['reviewer'] != null ? OneOf2.parse(json['reviewer'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Team.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
+/// The type of reviewer.
 final DeploymentReviewerType? type;
 
 final PendingDeploymentReviewersReviewer? reviewer;

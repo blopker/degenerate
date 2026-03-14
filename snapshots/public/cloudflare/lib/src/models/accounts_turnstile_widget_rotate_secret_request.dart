@@ -20,6 +20,10 @@ factory AccountsTurnstileWidgetRotateSecretRequest.fromJson(Map<String, dynamic>
   invalidateImmediately: json['invalidate_immediately'] != null ? TurnstileInvalidateImmediately.fromJson(json['invalidate_immediately'] as bool) : null,
 ); }
 
+/// If `invalidate_immediately` is set to `false`, the previous secret will
+/// remain valid for two hours. Otherwise, the secret is immediately
+/// invalidated, and requests using it will be rejected.
+/// 
 final TurnstileInvalidateImmediately? invalidateImmediately;
 
 Map<String, dynamic> toJson() { return {

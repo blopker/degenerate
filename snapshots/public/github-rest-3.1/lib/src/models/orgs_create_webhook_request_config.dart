@@ -16,10 +16,13 @@ factory OrgsCreateWebhookRequestConfig.fromJson(Map<String, dynamic> json) { ret
   password: json['password'] as String?,
 ); }
 
+/// The URL to which the payloads will be delivered.
 final WebhookConfigUrl url;
 
+/// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
 final WebhookConfigContentType? contentType;
 
+/// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
 final WebhookConfigSecret? secret;
 
 final WebhookConfigInsecureSsl? insecureSsl;

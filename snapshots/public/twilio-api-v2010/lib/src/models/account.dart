@@ -39,7 +39,7 @@ factory Account.fromJson(Map<String, dynamic> json) { return Account(
   ownerAccountSid: json['owner_account_sid'] as String?,
   sid: json['sid'] as String?,
   status: json['status'] != null ? AccountEnumStatus.fromJson(json['status'] as String) : null,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   type: json['type'] != null ? AccountEnumType.fromJson(json['type'] as String) : null,
   uri: json['uri'] as String?,
 ); }
@@ -65,7 +65,7 @@ final String? sid;
 final AccountEnumStatus? status;
 
 /// A Map of various subresources available for the given Account Instance
-final Map<String,Object?>? subresourceUris;
+final Map<String,dynamic>? subresourceUris;
 
 final AccountEnumType? type;
 
@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Account copyWith({String? Function()? authToken, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? ownerAccountSid, String? Function()? sid, AccountEnumStatus Function()? status, Map<String, Object>? Function()? subresourceUris, AccountEnumType Function()? type, String? Function()? uri, }) { return Account(
+Account copyWith({String? Function()? authToken, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? ownerAccountSid, String? Function()? sid, AccountEnumStatus Function()? status, Map<String, dynamic>? Function()? subresourceUris, AccountEnumType Function()? type, String? Function()? uri, }) { return Account(
   authToken: authToken != null ? authToken() : this.authToken,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,

@@ -15,6 +15,7 @@ factory AaaSilenceCreateRequest.fromJson(Map<String, dynamic> json) { return Aaa
 /// When the silence ends.
 final String? endTime;
 
+/// The unique identifier of a notification policy
 final AaaPolicyId? policyId;
 
 /// When the silence starts.

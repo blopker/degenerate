@@ -15,8 +15,10 @@ factory FunctionShellAction.fromJson(Map<String, dynamic> json) { return Functio
 
 final List<String> commands;
 
+/// Optional timeout in milliseconds for the commands.
 final int? timeoutMs;
 
+/// Optional maximum number of characters to return from each command.
 final int? maxOutputLength;
 
 Map<String, dynamic> toJson() { return {

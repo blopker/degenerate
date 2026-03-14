@@ -12,6 +12,7 @@ factory RemoveDirective3.fromJson(Map<String, dynamic> json) { return RemoveDire
   operation: RulesetsSetCacheControlOperation.fromJson(json['operation'] as String),
 ); }
 
+/// Whether the directive should only be applied to the Cloudflare CDN cache.
 final RulesetsSetCacheControlCloudflareOnly? cloudflareOnly;
 
 final RulesetsSetCacheControlOperation operation;

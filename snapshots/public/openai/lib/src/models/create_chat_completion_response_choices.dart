@@ -63,6 +63,7 @@ final int index;
 
 final ChatCompletionResponseMessage message;
 
+/// Log probability information for the choice.
 final CreateChatCompletionResponseChoicesLogprobs? logprobs;
 
 Map<String, dynamic> toJson() { return {

@@ -10,6 +10,7 @@ factory CacheRulesRegionalTieredCacheResponseValue.fromJson(Map<String, dynamic>
   result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
+/// Instructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.
 final CacheRulesBase? result;
 
 Map<String, dynamic> toJson() { return {

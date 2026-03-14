@@ -25,8 +25,10 @@ factory ZeroTrustAccountsPatchConnectivitySettingsRequest.fromJson(Map<String, d
   offrampWarpEnabled: json['offramp_warp_enabled'] != null ? TunnelOfframpWarpEnabled.fromJson(json['offramp_warp_enabled'] as bool) : null,
 ); }
 
+/// A flag to enable the ICMP proxy for the account network.
 final TunnelIcmpProxyEnabled? icmpProxyEnabled;
 
+/// A flag to enable WARP to WARP traffic.
 final TunnelOfframpWarpEnabled? offrampWarpEnabled;
 
 Map<String, dynamic> toJson() { return {

@@ -17,6 +17,7 @@ factory IamMembership.fromJson(Map<String, dynamic> json) { return IamMembership
 
 final IamAccount? account;
 
+/// Enterprise only. Indicates whether or not API access is enabled specifically for this user on a given account.
 final AccessEnabled? apiAccessEnabled;
 
 final IamMembershipComponentsSchemasIdentifier? id;

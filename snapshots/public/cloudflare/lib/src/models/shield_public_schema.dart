@@ -46,6 +46,7 @@ final ShieldPublicSchemaKind kind;
 /// A human-readable name for the schema
 final String name;
 
+/// A unique identifier of this schema
 final ShieldUuid schemaId;
 
 /// The raw schema, e.g., the OpenAPI schema, either as JSON or YAML

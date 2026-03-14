@@ -58,8 +58,10 @@ final String type;
 /// Subtype for the task.
 final TaskType taskType;
 
+/// Optional heading for the task. Defaults to null when not provided.
 final String? heading;
 
+/// Optional summary that describes the task. Defaults to null when omitted.
 final String? summary;
 
 Map<String, dynamic> toJson() { return {

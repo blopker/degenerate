@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';final class CodespacesCreateOrUpdate
 factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: json['encrypted_value'] as String?,
   keyId: json['key_id'] as String,
-  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e as Object).toList(),
+  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e).toList(),
 ); }
 
 /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user) endpoint.
@@ -19,7 +19,7 @@ final String? encryptedValue;
 final String keyId;
 
 /// An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
-final List<Object>? selectedRepositoryIds;
+final List<dynamic>? selectedRepositoryIds;
 
 Map<String, dynamic> toJson() { return {
   'encrypted_value': ?encryptedValue,
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String; } 
-CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String Function()? encryptedValue, String? keyId, List<Object> Function()? selectedRepositoryIds, }) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
+CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String Function()? encryptedValue, String? keyId, List<dynamic> Function()? selectedRepositoryIds, }) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId ?? this.keyId,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,

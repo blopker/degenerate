@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'builds_pagination_info.dart'
 factory Response.fromJson(Map<String, dynamic> json) { return Response(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   resultInfo: json['result_info'] != null ? BuildsPaginationInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
@@ -18,7 +18,7 @@ final List<ResponseErrors2> errors;
 
 final List<String> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 final BuildsPaginationInfo? resultInfo;
 
@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-Response copyWith({List<ResponseErrors2>? errors, List<String>? messages, Map<String, Object>? Function()? result, BuildsPaginationInfo Function()? resultInfo, bool? success, }) { return Response(
+Response copyWith({List<ResponseErrors2>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, BuildsPaginationInfo Function()? resultInfo, bool? success, }) { return Response(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

@@ -13,6 +13,7 @@ factory ZonesZoneOwner.fromJson(Map<String, dynamic> json) { return ZonesZoneOwn
   type: json['type'] as String?,
 ); }
 
+/// Identifier
 final ZonesIdentifier? id;
 
 /// Name of the owner.

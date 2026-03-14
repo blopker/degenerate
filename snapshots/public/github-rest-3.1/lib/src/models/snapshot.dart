@@ -13,7 +13,7 @@ factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
   sha: json['sha'] as String,
   ref: json['ref'] as String,
   detector: SnapshotDetector.fromJson(json['detector'] as Map<String, dynamic>),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   manifests: (json['manifests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Manifest.fromJson(v as Map<String, dynamic>))),
   scanned: DateTime.parse(json['scanned'] as String),
 ); }
@@ -32,7 +32,8 @@ final String ref;
 /// A description of the detector used.
 final SnapshotDetector detector;
 
-final Map<String,Object?>? metadata;
+/// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
+final Map<String,dynamic>? metadata;
 
 /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
 final Map<String,Manifest>? manifests;
@@ -56,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('versi
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('detector') &&
       json.containsKey('scanned') && json['scanned'] is String; } 
-Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, SnapshotDetector? detector, Map<String, Object> Function()? metadata, Map<String, Manifest> Function()? manifests, DateTime? scanned, }) { return Snapshot(
+Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, SnapshotDetector? detector, Map<String, dynamic> Function()? metadata, Map<String, Manifest> Function()? manifests, DateTime? scanned, }) { return Snapshot(
   version: version ?? this.version,
   job: job ?? this.job,
   sha: sha ?? this.sha,

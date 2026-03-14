@@ -12,10 +12,13 @@ factory PostZonesZoneIdLogpushEdgeJobsRequest.fromJson(Map<String, dynamic> json
   sample: json['sample'] != null ? LogpushSample.fromJson(json['sample'] as num) : null,
 ); }
 
+/// Comma-separated list of fields.
 final LogpushFields? fields;
 
+/// Filters to drill down into specific events.
 final LogpushSchemasFilter? filter;
 
+/// The sample parameter is the sample rate of the records set by the client: "sample": 1 is 100% of records "sample": 10 is 10% and so on.
 final LogpushSample? sample;
 
 Map<String, dynamic> toJson() { return {

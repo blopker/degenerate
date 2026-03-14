@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'turnstile_messages2.dart';fi
 factory ResponseCommonFailure74.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure74(
   errors: (json['errors'] as List<dynamic>).map((e) => TurnstileMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TurnstileMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<TurnstileMessages2> errors;
 
 final List<TurnstileMessages2> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 /// Whether the API call was successful
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure74 copyWith({List<TurnstileMessages2>? errors, List<TurnstileMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure74(
+ResponseCommonFailure74 copyWith({List<TurnstileMessages2>? errors, List<TurnstileMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure74(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

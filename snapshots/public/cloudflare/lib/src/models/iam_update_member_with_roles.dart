@@ -13,13 +13,14 @@ factory IamUpdateMemberWithRoles.fromJson(Map<String, dynamic> json) { return Ia
   user: json['user'] != null ? IamUpdateMemberWithRolesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
+/// Membership identifier tag.
 final IamMembershipComponentsSchemasIdentifier? id;
 
 /// Roles assigned to this member.
 final List<IamRole>? roles;
 
 /// A member's status in the account.
-final Object? status;
+final dynamic status;
 
 /// Details of the user associated to the membership.
 final IamUpdateMemberWithRolesUser? user;
@@ -31,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (user != null) 'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier Function()? id, List<IamRole> Function()? roles, Object? Function()? status, IamUpdateMemberWithRolesUser Function()? user, }) { return IamUpdateMemberWithRoles(
+IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier Function()? id, List<IamRole> Function()? roles, dynamic Function()? status, IamUpdateMemberWithRolesUser Function()? user, }) { return IamUpdateMemberWithRoles(
   id: id != null ? id() : this.id,
   roles: roles != null ? roles() : this.roles,
   status: status != null ? status() : this.status,

@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'get_bin_db_get_binary_respon
 
 factory GetBinDbGetBinaryResponse400.fromJson(Map<String, dynamic> json) { return GetBinDbGetBinaryResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetBinDbGetBinaryResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<GetBinDbGetBinaryResponse400Errors> errors;
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetBinDbGetBinaryResponse400 copyWith({List<GetBinDbGetBinaryResponse400Errors>? errors, Map<String,Object?>? result, bool? success, }) { return GetBinDbGetBinaryResponse400(
+GetBinDbGetBinaryResponse400 copyWith({List<GetBinDbGetBinaryResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return GetBinDbGetBinaryResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

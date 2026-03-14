@@ -8,7 +8,7 @@ final class ActionsCreateWorkflowDispatchRequest {const ActionsCreateWorkflowDis
 
 factory ActionsCreateWorkflowDispatchRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateWorkflowDispatchRequest(
   ref: json['ref'] as String,
-  inputs: (json['inputs'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  inputs: (json['inputs'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   returnRunDetails: json['return_run_details'] as bool?,
 ); }
 
@@ -16,7 +16,7 @@ factory ActionsCreateWorkflowDispatchRequest.fromJson(Map<String, dynamic> json)
 final String ref;
 
 /// Input keys and values configured in the workflow file. The maximum number of properties is 25. Any default properties configured in the workflow file will be used when `inputs` are omitted.
-final Map<String,Object?>? inputs;
+final Map<String,dynamic>? inputs;
 
 /// Whether the response should include the workflow run ID and URLs.
 final bool? returnRunDetails;
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'return_run_details': ?returnRunDetails,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String; } 
-ActionsCreateWorkflowDispatchRequest copyWith({String? ref, Map<String, Object> Function()? inputs, bool Function()? returnRunDetails, }) { return ActionsCreateWorkflowDispatchRequest(
+ActionsCreateWorkflowDispatchRequest copyWith({String? ref, Map<String, dynamic> Function()? inputs, bool Function()? returnRunDetails, }) { return ActionsCreateWorkflowDispatchRequest(
   ref: ref ?? this.ref,
   inputs: inputs != null ? inputs() : this.inputs,
   returnRunDetails: returnRunDetails != null ? returnRunDetails() : this.returnRunDetails,

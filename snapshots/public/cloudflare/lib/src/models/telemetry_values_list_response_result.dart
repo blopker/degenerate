@@ -37,7 +37,7 @@ factory TelemetryValuesListResponseResult.fromJson(Map<String, dynamic> json) { 
   dataset: json['dataset'] as String,
   key: json['key'] as String,
   type: TelemetryValuesListResponseResultType.fromJson(json['type'] as String),
-  value: json['value'] as Object,
+  value: json['value'],
 ); }
 
 final String dataset;
@@ -46,7 +46,8 @@ final String key;
 
 final TelemetryValuesListResponseResultType type;
 
-final Object value;
+/// One of: String, double, bool
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'dataset': dataset,
@@ -58,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('datas
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('type') &&
       json.containsKey('value'); } 
-TelemetryValuesListResponseResult copyWith({String? dataset, String? key, TelemetryValuesListResponseResultType? type, Object? value, }) { return TelemetryValuesListResponseResult(
+TelemetryValuesListResponseResult copyWith({String? dataset, String? key, TelemetryValuesListResponseResultType? type, dynamic value, }) { return TelemetryValuesListResponseResult(
   dataset: dataset ?? this.dataset,
   key: key ?? this.key,
   type: type ?? this.type,

@@ -26,8 +26,10 @@ factory MagicScope.fromJson(Map<String, dynamic> json) { return MagicScope(
   coloRegions: (json['colo_regions'] as List<dynamic>?)?.map((e) => MagicColoRegion.fromJson(e as String)).toList(),
 ); }
 
+/// List of colo names for the ECMP scope.
 final List<MagicColoName>? coloNames;
 
+/// List of colo regions for the ECMP scope.
 final List<MagicColoRegion>? coloRegions;
 
 Map<String, dynamic> toJson() { return {

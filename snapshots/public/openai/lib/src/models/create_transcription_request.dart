@@ -120,6 +120,8 @@ final String? language;
 /// 
 final String? prompt;
 
+/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
+/// 
 final AudioResponseFormat? responseFormat;
 
 /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
@@ -139,8 +141,16 @@ final List<TranscriptionInclude>? include;
 /// 
 final List<CreateTranscriptionRequestTimestampGranularities>? timestampGranularities;
 
+/// If set to true, the model response data will be streamed to the client
+/// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).
+/// See the [Streaming section of the Speech-to-Text guide](/docs/guides/speech-to-text?lang=curl#streaming-transcriptions)
+/// for more information.
+/// 
+/// Note: Streaming is not supported for the `whisper-1` model and will be ignored.
+/// 
 final bool? stream;
 
+/// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. Required when using `gpt-4o-transcribe-diarize` for inputs longer than 30 seconds.
 final CreateTranscriptionRequestChunkingStrategy? chunkingStrategy;
 
 /// Optional list of speaker names that correspond to the audio samples provided in `known_speaker_references[]`. Each entry should be a short identifier (for example `customer` or `agent`). Up to 4 speakers are supported.

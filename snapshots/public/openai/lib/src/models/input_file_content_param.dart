@@ -65,12 +65,16 @@ factory InputFileContentParam.fromJson(Map<String, dynamic> json) { return Input
 /// The type of the input item. Always `input_file`.
 final InputFileContentParamType type;
 
+/// The ID of the file to be sent to the model.
 final String? fileId;
 
+/// The name of the file to be sent to the model.
 final String? filename;
 
+/// The base64-encoded data of the file to be sent to the model.
 final String? fileData;
 
+/// The URL of the file to be sent to the model.
 final String? fileUrl;
 
 /// The detail level of the file to be sent to the model. One of `high` or `low`. Defaults to `high`.

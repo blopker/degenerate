@@ -14,14 +14,19 @@ factory MqWorkerConsumerResponseSettings.fromJson(Map<String, dynamic> json) { r
   retryDelay: json['retry_delay'] != null ? MqRetryDelay.fromJson(json['retry_delay'] as num) : null,
 ); }
 
+/// The maximum number of messages to include in a batch.
 final MqBatchSize? batchSize;
 
+/// Maximum number of concurrent consumers that may consume from this Queue. Set to `null` to automatically opt in to the platform's maximum (recommended).
 final MqMaxConcurrency? maxConcurrency;
 
+/// The maximum number of retries
 final MqMaxRetries? maxRetries;
 
+/// The number of milliseconds to wait for a batch to fill up before attempting to deliver it
 final MqMaxWaitTime? maxWaitTimeMs;
 
+/// The number of seconds to delay before making the message available for another attempt.
 final MqRetryDelay? retryDelay;
 
 Map<String, dynamic> toJson() { return {

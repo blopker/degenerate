@@ -14,12 +14,15 @@ factory AccessSeats.fromJson(Map<String, dynamic> json) { return AccessSeats(
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// True if the seat is part of Access.
 final AccessAccessSeat? accessSeat;
 
 final AccessTimestamp? createdAt;
 
+/// True if the seat is part of Gateway.
 final AccessGatewaySeat? gatewaySeat;
 
+/// The unique API identifier for the Zero Trust seat.
 final AccessSeatUid? seatUid;
 
 final AccessTimestamp? updatedAt;

@@ -8,17 +8,17 @@
 final class AccessAnyValidServiceTokenRule {const AccessAnyValidServiceTokenRule({required this.anyValidServiceToken});
 
 factory AccessAnyValidServiceTokenRule.fromJson(Map<String, dynamic> json) { return AccessAnyValidServiceTokenRule(
-  anyValidServiceToken: (json['any_valid_service_token'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  anyValidServiceToken: (json['any_valid_service_token'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// An empty object which matches on all service tokens.
-final Map<String,Object?> anyValidServiceToken;
+final Map<String,dynamic> anyValidServiceToken;
 
 Map<String, dynamic> toJson() { return {
   'any_valid_service_token': anyValidServiceToken,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('any_valid_service_token'); } 
-AccessAnyValidServiceTokenRule copyWith({Map<String,Object?>? anyValidServiceToken}) { return AccessAnyValidServiceTokenRule(
+AccessAnyValidServiceTokenRule copyWith({Map<String,dynamic>? anyValidServiceToken}) { return AccessAnyValidServiceTokenRule(
   anyValidServiceToken: anyValidServiceToken ?? this.anyValidServiceToken,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

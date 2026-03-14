@@ -77,7 +77,7 @@ factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
   input: json['input'] != null ? StreamInput.fromJson(json['input'] as Map<String, dynamic>) : null,
   liveInput: json['liveInput'] != null ? StreamLiveInput2.fromJson(json['liveInput'] as String) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamModified.fromJson(json['modified'] as String) : null,
   playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
   preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,
@@ -95,48 +95,67 @@ factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
   watermark: json['watermark'] != null ? StreamWatermarks.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
+/// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
 
+/// The date and time the media item was created.
 final StreamCreated? created;
 
+/// A user-defined identifier for the media creator.
 final StreamCreator? creator;
 
+/// The duration of the video in seconds. A value of `-1` means the duration is unknown. The duration becomes available after the upload and before the video is ready.
 final StreamDuration? duration;
 
 final StreamInput? input;
 
+/// The live input ID used to upload a video with Stream Live.
 final StreamLiveInput2? liveInput;
 
+/// The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
 final StreamMaxDurationSeconds? maxDurationSeconds;
 
-final Map<String,Object?>? meta;
+/// A user modifiable key-value store used to reference other systems of record for managing videos.
+final Map<String,dynamic>? meta;
 
+/// The date and time the media item was last modified.
 final StreamModified? modified;
 
 final StreamPlayback? playback;
 
+/// The video's preview page URI. This field is omitted until encoding is complete.
 final StreamPreview? preview;
 
+/// Indicates whether the video is playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
 final StreamReadyToStream? readyToStream;
 
+/// Indicates the time at which the video became playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
 final StreamReadyToStreamAt? readyToStreamAt;
 
+/// Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
 final StreamRequireSignedUrLs? requireSignedUrLs;
 
+/// Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
 final StreamScheduledDeletion? scheduledDeletion;
 
+/// The size of the media item in bytes.
 final StreamSize? size;
 
 final StreamMediaStatus? status;
 
+/// The media item's thumbnail URI. This field is omitted until encoding is complete.
 final StreamThumbnailUrl? thumbnail;
 
+/// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.
 final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 
+/// A Cloudflare-generated unique identifier for a media item.
 final StreamIdentifier? uid;
 
+/// The date and time when the video upload URL is no longer valid for direct user uploads.
 final StreamOneTimeUploadExpiry? uploadExpiry;
 
+/// The date and time the media item was uploaded.
 final StreamUploaded? uploaded;
 
 final StreamWatermarks? watermark;
@@ -167,7 +186,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-StreamVideos copyWith({List<String> Function()? allowedOrigins, StreamCreated Function()? created, StreamCreator Function()? creator, StreamDuration Function()? duration, StreamInput Function()? input, StreamLiveInput2 Function()? liveInput, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, Object> Function()? meta, StreamModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamReadyToStream Function()? readyToStream, StreamReadyToStreamAt Function()? readyToStreamAt, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamSize Function()? size, StreamMediaStatus Function()? status, StreamThumbnailUrl Function()? thumbnail, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamIdentifier Function()? uid, StreamOneTimeUploadExpiry Function()? uploadExpiry, StreamUploaded Function()? uploaded, StreamWatermarks Function()? watermark, }) { return StreamVideos(
+StreamVideos copyWith({List<String> Function()? allowedOrigins, StreamCreated Function()? created, StreamCreator Function()? creator, StreamDuration Function()? duration, StreamInput Function()? input, StreamLiveInput2 Function()? liveInput, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, dynamic> Function()? meta, StreamModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamReadyToStream Function()? readyToStream, StreamReadyToStreamAt Function()? readyToStreamAt, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamSize Function()? size, StreamMediaStatus Function()? status, StreamThumbnailUrl Function()? thumbnail, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamIdentifier Function()? uid, StreamOneTimeUploadExpiry Function()? uploadExpiry, StreamUploaded Function()? uploaded, StreamWatermarks Function()? watermark, }) { return StreamVideos(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   created: created != null ? created() : this.created,
   creator: creator != null ? creator() : this.creator,

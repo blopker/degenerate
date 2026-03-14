@@ -20,10 +20,12 @@ factory CacheRulesResultObject.fromJson(Map<String, dynamic> json) { return Cach
   value: CacheRulesSettingValue.fromJson(json['value'] as String),
 ); }
 
+/// Whether the setting is editable.
 final CacheRulesEditable editable;
 
 final CacheRulesSettingId id;
 
+/// The time when the setting was last modified.
 final CacheRulesModifiedOn? modifiedOn;
 
 final CacheRulesSettingValue value;

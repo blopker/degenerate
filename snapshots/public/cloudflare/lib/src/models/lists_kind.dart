@@ -5,9 +5,9 @@
 //  OpenAPI spec version: 3.0.3
 
 /// The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).
-extension type ListsKind(Object? value) {
-factory ListsKind.fromJson(Object? json) => ListsKind(json);
+extension type ListsKind(dynamic value) {
+factory ListsKind.fromJson(dynamic json) => ListsKind(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }

@@ -76,22 +76,30 @@ factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) { return Addr
   rpkiValidationState: json['rpki_validation_state'] != null ? AddressingValidationState.fromJson(json['rpki_validation_state'] as String) : null,
 ); }
 
+/// Identifier of a Cloudflare account.
 final AddressingAccountIdentifier? accountId;
 
+/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
 final AddressingAdvertised? advertised;
 
+/// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
 final AddressingAdvertisedModifiedAtNullable? advertisedModifiedAt;
 
+/// Approval state of the prefix (P = pending, V = active).
 final AddressingApproved? approved;
 
+/// Autonomous System Number (ASN) the prefix will be advertised under.
 final AddressingAsn? asn;
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final AddressingCidr? cidr;
 
 final AddressingTimestamp? createdAt;
 
+/// Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.
 final AddressingDelegateLoaCreation? delegateLoaCreation;
 
+/// Description of the prefix.
 final AddressingDescription? description;
 
 final AddressingPrefixIdentifier? id;

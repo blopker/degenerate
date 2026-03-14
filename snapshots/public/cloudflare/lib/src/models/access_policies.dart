@@ -31,10 +31,12 @@ final AccessTimestamp? createdAt;
 
 final AccessSchemasDecision? decision;
 
+/// Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
 
 final AccessUuid? id;
 
+/// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 final List<AccessRule>? include;
 
 final AccessSchemasIsolationRequired? isolationRequired;
@@ -47,6 +49,7 @@ final AccessPurposeJustificationPrompt? purposeJustificationPrompt;
 
 final AccessSchemasPurposeJustificationRequired? purposeJustificationRequired;
 
+/// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
 final AccessTimestamp? updatedAt;

@@ -4467,7 +4467,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}`
-Future<ApiResult<Workflow, Never>> actionsGetWorkflow({required String owner, required String repo, required Object workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Workflow, Never>> actionsGetWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4490,7 +4490,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable`
-Future<ApiResult<void, Never>> actionsDisableWorkflow({required String owner, required String repo, required Object workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDisableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4513,7 +4513,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`
-Future<ApiResult<WorkflowDispatchResponse, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required Object workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkflowDispatchResponse, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4538,7 +4538,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable`
-Future<ApiResult<void, Never>> actionsEnableWorkflow({required String owner, required String repo, required Object workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsEnableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4563,7 +4563,7 @@ return _execute(
 /// This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
 ///
 /// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs`
-Future<ApiResult<ActionsListWorkflowRunsResponse, Never>> actionsListWorkflowRuns({required String owner, required String repo, required Object workflowId, String? actor, String? branch, String? event, ActionsListWorkflowRunsStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListWorkflowRunsResponse, Never>> actionsListWorkflowRuns({required String owner, required String repo, required dynamic workflowId, String? actor, String? branch, String? event, ActionsListWorkflowRunsStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (actor != null) queryParameters['actor'] = actor;
 if (branch != null) queryParameters['branch'] = branch;
@@ -4608,7 +4608,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing`
-Future<ApiResult<WorkflowUsage, Never>> actionsGetWorkflowUsage({required String owner, required String repo, required Object workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkflowUsage, Never>> actionsGetWorkflowUsage({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',

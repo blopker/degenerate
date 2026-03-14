@@ -23,32 +23,44 @@ factory ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest.fromJson(Map
   warpAuthSessionDuration: json['warp_auth_session_duration'] != null ? AccessWarpAuthSessionDuration.fromJson(json['warp_auth_session_duration'] as String) : null,
 ); }
 
+/// When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
 final AccessAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
 
+/// The unique subdomain assigned to your Zero Trust organization.
 final AccessAuthDomain authDomain;
 
+/// When set to `true`, users skip the identity provider selection step during login.
 final AccessAutoRedirectToIdentity? autoRedirectToIdentity;
 
+/// Determines whether to deny all requests to Cloudflare-protected resources that lack an associated Access application. If enabled, you must explicitly configure an Access application and policy to allow traffic to your Cloudflare-protected resources. For domains you want to be public across all subdomains, add the domain to the `deny_unmatched_requests_exempted_zone_names` array.
 final AccessDenyUnmatchedRequests? denyUnmatchedRequests;
 
+/// Contains zone names to exempt from the `deny_unmatched_requests` feature. Requests to a subdomain in an exempted zone will block unauthenticated traffic by default if there is a configured Access application and policy that matches the request.
 final List<String>? denyUnmatchedRequestsExemptedZoneNames;
 
+/// Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
 final AccessIsUiReadOnly? isUiReadOnly;
 
 final AccessLoginDesign? loginDesign;
 
 final AccessOrgMfaConfig? mfaConfig;
 
+/// Determines whether global MFA settings apply to applications by default. The organization must have MFA enabled with at least one authentication method and a session duration configured.
 final AccessMfaRequiredForAllApps? mfaRequiredForAllApps;
 
+/// The name of your Zero Trust organization.
 final AccessName name;
 
+/// The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 final AccessSessionDuration? sessionDuration;
 
+/// A description of the reason why the UI read only field is being toggled.
 final AccessUiReadOnlyToggleReason? uiReadOnlyToggleReason;
 
+/// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
 final AccessUserSeatExpirationInactiveTime? userSeatExpirationInactiveTime;
 
+/// The amount of time that tokens issued for applications will be valid. Must be in the format `30m` or `2h45m`. Valid time units are: m, h.
 final AccessWarpAuthSessionDuration? warpAuthSessionDuration;
 
 Map<String, dynamic> toJson() { return {

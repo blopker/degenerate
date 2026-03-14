@@ -156,6 +156,13 @@ final String instructions;
 /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
 final List<RunObjectTools> tools;
 
+/// Set of 16 key-value pairs that can be attached to an object. This can be
+/// useful for storing additional information about the object in a structured
+/// format, and querying for objects via API or the dashboard.
+/// 
+/// Keys are strings with a maximum length of 64 characters. Values are strings
+/// with a maximum length of 512 characters.
+/// 
 final Map<String,String>? metadata;
 
 final RunCompletionUsage usage;
@@ -178,6 +185,7 @@ final TruncationObject? truncationStrategy;
 
 final ToolChoiceOption? toolChoice;
 
+/// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
 final ParallelToolCalls parallelToolCalls;
 
 final ResponseFormatOption? responseFormat;

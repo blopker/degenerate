@@ -35,7 +35,7 @@ final class CreateEvalCustomDataSourceConfig {const CreateEvalCustomDataSourceCo
 
 factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalCustomDataSourceConfig(
   type: CreateEvalCustomDataSourceConfigType.fromJson(json['type'] as String),
-  itemSchema: (json['item_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  itemSchema: (json['item_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   includeSampleSchema: json.containsKey('include_sample_schema') ? json['include_sample_schema'] as bool : false,
 ); }
 
@@ -43,7 +43,7 @@ factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { r
 final CreateEvalCustomDataSourceConfigType type;
 
 /// The json schema for each row in the data source.
-final Map<String,Object?> itemSchema;
+final Map<String,dynamic> itemSchema;
 
 /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)
 final bool includeSampleSchema;
@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('item_schema'); } 
-CreateEvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type, Map<String,Object?>? itemSchema, bool Function()? includeSampleSchema, }) { return CreateEvalCustomDataSourceConfig(
+CreateEvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type, Map<String,dynamic>? itemSchema, bool Function()? includeSampleSchema, }) { return CreateEvalCustomDataSourceConfig(
   type: type ?? this.type,
   itemSchema: itemSchema ?? this.itemSchema,
   includeSampleSchema: includeSampleSchema != null ? includeSampleSchema() : this.includeSampleSchema,

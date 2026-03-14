@@ -10,6 +10,7 @@ factory CustomOriginTrustStoreCreateRequest.fromJson(Map<String, dynamic> json) 
   certificate: TlsCertificatesAndHostnamesComponentsSchemasCertificate.fromJson(json['certificate'] as String),
 ); }
 
+/// The zone's SSL certificate or certificate and the intermediate(s).
 final TlsCertificatesAndHostnamesComponentsSchemasCertificate certificate;
 
 Map<String, dynamic> toJson() { return {

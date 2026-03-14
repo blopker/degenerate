@@ -49,8 +49,8 @@ factory SecretScanningFirstDetectedLocation.fromJson(Map<String, dynamic> json) 
   return SecretScanningFirstDetectedLocation$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class SecretScanningFirstDetectedLocationSecretScanningLocationCommit extends SecretScanningFirstDetectedLocation {const SecretScanningFirstDetectedLocationSecretScanningLocationCommit(this._value);
 
@@ -185,9 +185,9 @@ final SecretScanningLocationPullRequestReviewComment _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class SecretScanningFirstDetectedLocation$Unknown extends SecretScanningFirstDetectedLocation {const SecretScanningFirstDetectedLocation$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is SecretScanningFirstDetectedLocation$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

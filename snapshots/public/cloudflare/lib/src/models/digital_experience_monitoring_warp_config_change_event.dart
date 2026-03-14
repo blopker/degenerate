@@ -17,8 +17,10 @@ factory DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(Map<String, dy
   userEmail: json['user_email'] as String?,
 ); }
 
+/// API Resource UUID tag.
 final DigitalExperienceMonitoringUuid? deviceId;
 
+/// API Resource UUID tag.
 final DigitalExperienceMonitoringUuid? deviceRegistration;
 
 final DigitalExperienceMonitoringWarpConfigDetails? from;
@@ -29,6 +31,7 @@ final String? hostname;
 /// The serial number of the machine the event is from
 final String? serialNumber;
 
+/// Timestamp in ISO format
 final DigitalExperienceMonitoringTimestamp? timestamp;
 
 final DigitalExperienceMonitoringWarpConfigDetails? to;

@@ -57,10 +57,13 @@ factory CodeScanningAutofix.fromJson(Map<String, dynamic> json) { return CodeSca
   startedAt: CodeScanningAutofixStartedAt.fromJson(json['started_at'] as String),
 ); }
 
+/// The status of an autofix.
 final CodeScanningAutofixStatus status;
 
+/// The description of an autofix.
 final CodeScanningAutofixDescription? description;
 
+/// The start time of an autofix in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final CodeScanningAutofixStartedAt startedAt;
 
 Map<String, dynamic> toJson() { return {

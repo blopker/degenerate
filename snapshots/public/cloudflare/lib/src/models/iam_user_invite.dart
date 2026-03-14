@@ -48,17 +48,22 @@ factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite
   status: json['status'],
 ); }
 
+/// When the invite is no longer active.
 final IamSchemasExpiresOn? expiresOn;
 
+/// Invite identifier tag.
 final IamInviteComponentsSchemasIdentifier? id;
 
+/// The email address of the user who created the invite.
 final IamInvitedBy? invitedBy;
 
+/// Email address of the user to add to the organization.
 final IamInvitedMemberEmail? invitedMemberEmail;
 
 /// ID of the user to add to the organization.
 final String? invitedMemberId;
 
+/// When the invite was sent.
 final IamInvitedOn? invitedOn;
 
 /// ID of the organization the user will be added to.
@@ -69,10 +74,11 @@ final bool? organizationIsEnforcingTwofactor;
 /// Organization name.
 final String? organizationName;
 
+/// List of role names the membership has for this account.
 final List<String>? roles;
 
 /// Current status of the invitation.
-final Object? status;
+final dynamic status;
 
 Map<String, dynamic> toJson() { return {
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
@@ -89,7 +95,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invited_member_id') && json['invited_member_id'] is String &&
       json.containsKey('organization_id') && json['organization_id'] is String; } 
-IamUserInvite copyWith({IamSchemasExpiresOn Function()? expiresOn, IamInviteComponentsSchemasIdentifier Function()? id, IamInvitedBy Function()? invitedBy, IamInvitedMemberEmail Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn Function()? invitedOn, String? organizationId, bool Function()? organizationIsEnforcingTwofactor, String Function()? organizationName, List<String> Function()? roles, Object? Function()? status, }) { return IamUserInvite(
+IamUserInvite copyWith({IamSchemasExpiresOn Function()? expiresOn, IamInviteComponentsSchemasIdentifier Function()? id, IamInvitedBy Function()? invitedBy, IamInvitedMemberEmail Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn Function()? invitedOn, String? organizationId, bool Function()? organizationIsEnforcingTwofactor, String Function()? organizationName, List<String> Function()? roles, dynamic Function()? status, }) { return IamUserInvite(
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,
   invitedBy: invitedBy != null ? invitedBy() : this.invitedBy,

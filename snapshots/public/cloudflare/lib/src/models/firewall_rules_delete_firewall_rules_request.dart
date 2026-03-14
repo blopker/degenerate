@@ -10,6 +10,7 @@ factory FirewallRulesDeleteFirewallRulesRequest.fromJson(Map<String, dynamic> js
   id: FirewallFirewallRulesComponentsSchemasId.fromJson(json['id'] as String),
 ); }
 
+/// The unique identifier of the firewall rule.
 final FirewallFirewallRulesComponentsSchemasId id;
 
 Map<String, dynamic> toJson() { return {

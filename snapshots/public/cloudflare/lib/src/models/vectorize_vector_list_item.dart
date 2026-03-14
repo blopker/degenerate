@@ -10,6 +10,7 @@ factory VectorizeVectorListItem.fromJson(Map<String, dynamic> json) { return Vec
   id: VectorizeVectorIdentifier.fromJson(json['id'] as String),
 ); }
 
+/// Identifier for a Vector
 final VectorizeVectorIdentifier id;
 
 Map<String, dynamic> toJson() { return {

@@ -13,13 +13,16 @@ factory TunnelVirtualNetworkCreateAVirtualNetworkRequest.fromJson(Map<String, dy
   name: TunnelVirtualNetworkName.fromJson(json['name'] as String),
 ); }
 
+/// Optional remark describing the virtual network.
 final TunnelVirtualNetworkComment? comment;
 
 /// If `true`, this virtual network is the default for the account.
 final bool? isDefault;
 
+/// If `true`, this virtual network is the default for the account.
 final TunnelIsDefaultNetworkOptional? isDefaultNetwork;
 
+/// A user-friendly name for the virtual network.
 final TunnelVirtualNetworkName name;
 
 Map<String, dynamic> toJson() { return {

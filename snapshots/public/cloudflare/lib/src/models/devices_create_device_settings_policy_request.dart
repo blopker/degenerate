@@ -31,50 +31,69 @@ factory DevicesCreateDeviceSettingsPolicyRequest.fromJson(Map<String, dynamic> j
   tunnelProtocol: json['tunnel_protocol'] != null ? TeamsDevicesTunnelProtocol.fromJson(json['tunnel_protocol'] as String) : null,
 ); }
 
+/// Whether to allow the user to switch WARP between modes.
 final TeamsDevicesAllowModeSwitch? allowModeSwitch;
 
+/// Whether to receive update notifications when a new version of the client is available.
 final TeamsDevicesAllowUpdates? allowUpdates;
 
+/// Whether to allow devices to leave the organization.
 final TeamsDevicesAllowedToLeave? allowedToLeave;
 
+/// The amount of time in seconds to reconnect after having been disabled.
 final TeamsDevicesAutoConnect? autoConnect;
 
+/// Turn on the captive portal after the specified amount of time.
 final TeamsDevicesCaptivePortal? captivePortal;
 
+/// A description of the policy.
 final TeamsDevicesSchemasDescription? description;
 
+/// If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
 final TeamsDevicesDisableAutoFallback? disableAutoFallback;
 
 /// Whether the policy will be applied to matching devices.
 final bool enabled;
 
+/// List of routes excluded in the WARP client's tunnel. Both 'exclude' and 'include' cannot be set in the same request.
 final List<TeamsDevicesSplitTunnel>? exclude;
 
+/// Whether to add Microsoft IPs to Split Tunnel exclusions.
 final TeamsDevicesExcludeOfficeIps? excludeOfficeIps;
 
+/// List of routes included in the WARP client's tunnel. Both 'exclude' and 'include' cannot be set in the same request.
 final List<TeamsDevicesSplitTunnelInclude>? include;
 
+/// The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.
 final TeamsDevicesLanAllowMinutes? lanAllowMinutes;
 
+/// The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.
 final TeamsDevicesLanAllowSubnetSize? lanAllowSubnetSize;
 
+/// The wirefilter expression to match devices. Available values: "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.service_token_uuid", "identity.saml_attributes", "network", "os.name", "os.version".
 final TeamsDevicesSchemasMatch match;
 
 /// The name of the device settings profile.
 final String name;
 
+/// The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.
 final TeamsDevicesPrecedence precedence;
 
+/// Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
 final TeamsDevicesRegisterInterfaceIpWithDns? registerInterfaceIpWithDns;
 
+/// Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
 final TeamsDevicesSccmVpnBoundarySupport? sccmVpnBoundarySupport;
 
 final TeamsDevicesServiceMode? serviceModeV2;
 
+/// The URL to launch when the Send Feedback button is clicked.
 final TeamsDevicesSupportUrl? supportUrl;
 
+/// Whether to allow the user to turn off the WARP switch and disconnect the client.
 final TeamsDevicesSwitchLocked? switchLocked;
 
+/// Determines which tunnel protocol to use.
 final TeamsDevicesTunnelProtocol? tunnelProtocol;
 
 Map<String, dynamic> toJson() { return {

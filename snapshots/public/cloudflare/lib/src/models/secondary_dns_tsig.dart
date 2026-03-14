@@ -34,12 +34,15 @@ factory SecondaryDnsTsig.fromJson(Map<String, dynamic> json) { return SecondaryD
   secret: SecondaryDnsSecret.fromJson(json['secret'] as String),
 ); }
 
+/// TSIG algorithm.
 final SecondaryDnsAlgo algo;
 
 final SecondaryDnsSchemasIdentifier id;
 
+/// TSIG key name.
 final SecondaryDnsSchemasName name;
 
+/// TSIG secret.
 final SecondaryDnsSecret secret;
 
 Map<String, dynamic> toJson() { return {

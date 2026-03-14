@@ -112,6 +112,7 @@ final String idempotencyKey;
 /// Provide an absolute or relative URL to receive status updates regarding your Pay session. Read more about the [expected StatusCallback values](https://www.twilio.com/docs/voice/api/payment-resource#statuscallback)
 final Uri statusCallback;
 
+/// Type of bank account if payment source is ACH. One of `consumer-checking`, `consumer-savings`, or `commercial-checking`. The default value is `consumer-checking`.
 final PaymentsEnumBankAccountType? bankAccountType;
 
 /// A positive decimal value less than 1,000,000 to charge against the credit card or bank account. Default currency can be overwritten with `currency` field. Leave blank or set to 0 to tokenize.
@@ -130,11 +131,12 @@ final String? input;
 final int? minPostalCodeLength;
 
 /// A single-level JSON object used to pass custom parameters to payment processors. (Required for ACH payments). The information that has to be included here depends on the `<Pay>` Connector. [Read more](https://www.twilio.com/console/voice/pay-connectors).
-final Object? parameter;
+final dynamic parameter;
 
 /// This is the unique name corresponding to the Pay Connector installed in the Twilio Add-ons. Learn more about [`<Pay>` Connectors](https://www.twilio.com/console/voice/pay-connectors). The default value is `Default`.
 final String? paymentConnector;
 
+/// Type of payment being captured. One of `credit-card` or `ach-debit`. The default value is `credit-card`.
 final PaymentsEnumPaymentMethod? paymentMethod;
 
 /// Indicates whether the credit card postal code (zip code) is a required piece of payment information that must be provided by the caller. The default is `true`.
@@ -146,6 +148,7 @@ final bool? securityCode;
 /// The number of seconds that `<Pay>` should wait for the caller to press a digit between each subsequent digit, after the first one, before moving on to validate the digits captured. The default is `5`, maximum is `600`.
 final int? timeout;
 
+/// Indicates whether the payment method should be tokenized as a `one-time`, `reusable`, or `payment-method` token. The default value is `reusable`. Do not enter a charge amount when tokenizing. If a charge amount is entered, the payment method will be charged and not tokenized.
 final PaymentsEnumTokenType? tokenType;
 
 /// Credit card types separated by space that Pay should accept. The default value is `visa mastercard amex`
@@ -171,7 +174,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
       json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType Function()? bankAccountType, double Function()? chargeAmount, String Function()? currency, String Function()? description, String Function()? input, int Function()? minPostalCodeLength, Object? Function()? parameter, String Function()? paymentConnector, PaymentsEnumPaymentMethod Function()? paymentMethod, bool Function()? postalCode, bool Function()? securityCode, int Function()? timeout, PaymentsEnumTokenType Function()? tokenType, String Function()? validCardTypes, }) { return CreatePaymentsRequest(
+CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType Function()? bankAccountType, double Function()? chargeAmount, String Function()? currency, String Function()? description, String Function()? input, int Function()? minPostalCodeLength, dynamic Function()? parameter, String Function()? paymentConnector, PaymentsEnumPaymentMethod Function()? paymentMethod, bool Function()? postalCode, bool Function()? securityCode, int Function()? timeout, PaymentsEnumTokenType Function()? tokenType, String Function()? validCardTypes, }) { return CreatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   bankAccountType: bankAccountType != null ? bankAccountType() : this.bankAccountType,

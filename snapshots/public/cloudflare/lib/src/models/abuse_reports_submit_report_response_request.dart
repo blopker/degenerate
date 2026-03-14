@@ -10,6 +10,7 @@ factory AbuseReportsSubmitReportResponseRequest.fromJson(Map<String, dynamic> js
   act: AbuseReportsSubmissionReportType.fromJson(json['act'] as String),
 ); }
 
+/// The report type for submitted reports.
 final AbuseReportsSubmissionReportType act;
 
 Map<String, dynamic> toJson() { return {

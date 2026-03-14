@@ -330,7 +330,11 @@ enum HttpMethod { get, post, put, patch, delete, head, options, trace }
 enum ParameterLocation { path, query, header, cookie }
 
 enum PrimitiveKind {
-  object,
+  /// Untyped/free-form value — emits as `dynamic` in generated Dart.
+  ///
+  /// Used for schemas with no explicit type, boolean schemas, free-form
+  /// objects, and collapsed inline primitive unions.
+  dynamic_,
   string,
   int,
   double,

@@ -7,13 +7,13 @@
 import 'package:collection/collection.dart';import 'message3.dart';final class TenantsValidAccountTypesResponse {const TenantsValidAccountTypesResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory TenantsValidAccountTypesResponse.fromJson(Map<String, dynamic> json) { return TenantsValidAccountTypesResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => e as String).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,Object?>> errors;
+final List<Map<String,dynamic>> errors;
 
 final List<Message3> messages;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-TenantsValidAccountTypesResponse copyWith({List<Map<String,Object?>>? errors, List<Message3>? messages, List<String>? result, bool? success, }) { return TenantsValidAccountTypesResponse(
+TenantsValidAccountTypesResponse copyWith({List<Map<String,dynamic>>? errors, List<Message3>? messages, List<String>? result, bool? success, }) { return TenantsValidAccountTypesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

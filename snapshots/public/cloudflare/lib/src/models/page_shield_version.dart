@@ -18,20 +18,28 @@ factory PageShieldVersion.fromJson(Map<String, dynamic> json) { return PageShiel
   obfuscationScore: json['obfuscation_score'] != null ? PageShieldObfuscationScore.fromJson(json['obfuscation_score'] as num) : null,
 ); }
 
+/// The cryptomining score of the JavaScript content.
 final PageShieldCryptominingScore? cryptominingScore;
 
+/// The dataflow score of the JavaScript content.
 final PageShieldDataflowScore? dataflowScore;
 
+/// The timestamp of when the script was last fetched.
 final PageShieldFetchedAt? fetchedAt;
 
+/// The computed hash of the analyzed script.
 final PageShieldHash? hash;
 
+/// The integrity score of the JavaScript content.
 final PageShieldJsIntegrityScore? jsIntegrityScore;
 
+/// The magecart score of the JavaScript content.
 final PageShieldMagecartScore? magecartScore;
 
+/// The malware score of the JavaScript content.
 final PageShieldMalwareScore? malwareScore;
 
+/// The obfuscation score of the JavaScript content.
 final PageShieldObfuscationScore? obfuscationScore;
 
 Map<String, dynamic> toJson() { return {

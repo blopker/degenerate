@@ -192,6 +192,7 @@ factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { r
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesSslDvBundleMethod bundleMethod;
 
+/// The Certificate Authority that will issue the certificate
 final TlsCertificatesAndHostnamesCertificateAuthority? certificateAuthority;
 
 /// If a custom uploaded certificate is used.

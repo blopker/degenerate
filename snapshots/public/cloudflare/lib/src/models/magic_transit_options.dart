@@ -76,6 +76,7 @@ factory MagicTransitOptions.fromJson(Map<String, dynamic> json) { return MagicTr
   waitTime: json['wait_time'] != null ? MagicTransitWaitTime.fromJson(json['wait_time'] as num) : null,
 ); }
 
+/// Max TTL.
 final MagicTransitMaxTtl? maxTtl;
 
 final MagicTransitPacketType? packetType;

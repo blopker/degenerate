@@ -26,6 +26,7 @@ final MagicBondId? bondId;
 /// mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
 final bool? haLink;
 
+/// Identifier
 final MagicIdentifier? id;
 
 /// mark true to use this LAN for source-based breakout traffic
@@ -42,6 +43,7 @@ final MagicPort? physport;
 
 final List<MagicRoutedSubnet>? routedSubnets;
 
+/// Identifier
 final MagicIdentifier? siteId;
 
 final MagicLanStaticAddressing? staticAddressing;

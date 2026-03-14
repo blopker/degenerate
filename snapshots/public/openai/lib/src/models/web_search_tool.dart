@@ -47,6 +47,8 @@ factory WebSearchTool.fromJson(Map<String, dynamic> json) { return WebSearchTool
 /// The type of the web search tool. One of `web_search` or `web_search_2025_08_26`.
 final String type;
 
+/// Filters for the search.
+/// 
 final WebSearchToolFilters? filters;
 
 final WebSearchApproximateLocation? userLocation;

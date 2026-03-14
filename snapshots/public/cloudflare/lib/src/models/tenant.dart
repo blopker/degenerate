@@ -14,7 +14,7 @@ factory Tenant.fromJson(Map<String, dynamic> json) { return Tenant(
   tenantLabels: (json['tenant_labels'] as List<dynamic>).map((e) => e as String).toList(),
   tenantMetadata: TenantTenantMetadata.fromJson(json['tenant_metadata'] as Map<String, dynamic>),
   tenantName: json['tenant_name'] as String,
-  tenantNetwork: (json['tenant_network'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  tenantNetwork: (json['tenant_network'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   tenantStatus: json['tenant_status'] as String,
   tenantTag: json['tenant_tag'] as String,
   tenantType: json['tenant_type'] as String,
@@ -35,7 +35,7 @@ final TenantTenantMetadata tenantMetadata;
 
 final String tenantName;
 
-final Map<String,Object?> tenantNetwork;
+final Map<String,dynamic> tenantNetwork;
 
 final String tenantStatus;
 
@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cdate
       json.containsKey('tenant_tag') && json['tenant_tag'] is String &&
       json.containsKey('tenant_type') && json['tenant_type'] is String &&
       json.containsKey('tenant_units'); } 
-Tenant copyWith({DateTime? cdate, String Function()? customerId, DateTime? edate, TenantTenantContacts? tenantContacts, List<String>? tenantLabels, TenantTenantMetadata? tenantMetadata, String? tenantName, Map<String,Object?>? tenantNetwork, String? tenantStatus, String? tenantTag, String? tenantType, List<TenantUnit>? tenantUnits, }) { return Tenant(
+Tenant copyWith({DateTime? cdate, String Function()? customerId, DateTime? edate, TenantTenantContacts? tenantContacts, List<String>? tenantLabels, TenantTenantMetadata? tenantMetadata, String? tenantName, Map<String,dynamic>? tenantNetwork, String? tenantStatus, String? tenantTag, String? tenantType, List<TenantUnit>? tenantUnits, }) { return Tenant(
   cdate: cdate ?? this.cdate,
   customerId: customerId != null ? customerId() : this.customerId,
   edate: edate ?? this.edate,

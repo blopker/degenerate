@@ -539,7 +539,7 @@ class UntaggedUnionEmitter {
               (m) => m
                 ..name = 'value'
                 ..type = MethodType.getter
-                ..returns = refer('Object?')
+                ..returns = refer('dynamic')
                 ..docs.add('/// The underlying raw value.'),
             ),
           )
@@ -548,7 +548,7 @@ class UntaggedUnionEmitter {
             Method(
               (m) => m
                 ..name = 'toJson'
-                ..returns = refer('Object?')
+                ..returns = refer('dynamic')
                 ..body = const Code('return value;'),
             ),
           ),
@@ -762,7 +762,7 @@ class UntaggedUnionEmitter {
               ..name = 'value'
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
-              ..returns = refer('Object')
+              ..returns = refer('dynamic')
               ..body = const Code("return _value ?? '';"),
           ),
         )
@@ -771,7 +771,7 @@ class UntaggedUnionEmitter {
             (f) => f
               ..name = '_value'
               ..modifier = FieldModifier.final$
-              ..type = refer('Object?'),
+              ..type = refer('dynamic'),
           ),
         )
         ..constructors.add(
@@ -957,7 +957,7 @@ class AnyOfEmitter {
           f.type is IrAnyOf ||
           _isUnionType(f.type),
     );
-    final paramType = allObjectLike ? 'Map<String, dynamic>' : 'Object?';
+    final paramType = allObjectLike ? 'Map<String, dynamic>' : 'dynamic';
 
     // Only declare 'map' when we actually need it (non-primitive, non-enum variants
     // in a mixed-type anyOf).
@@ -1037,7 +1037,7 @@ class AnyOfEmitter {
   /// prevent breaking type promotion across named arguments in constructor calls.
   static String _primitiveAnyOfExpr(IrPrimitive p, String accessor) {
     return switch (p.kind) {
-      PrimitiveKind.object => accessor,
+      PrimitiveKind.dynamic_ => accessor,
       PrimitiveKind.string => '$accessor is String ? $accessor : null',
       PrimitiveKind.int => '$accessor is num ? $accessor.toInt() : null',
       PrimitiveKind.double => '$accessor is num ? $accessor.toDouble() : null',
@@ -1098,7 +1098,7 @@ class AnyOfEmitter {
       PrimitiveKind.bigInt ||
       PrimitiveKind.bytes ||
       PrimitiveKind.string => 'String',
-      PrimitiveKind.object => 'Object?',
+      PrimitiveKind.dynamic_ => 'dynamic',
       PrimitiveKind.int ||
       PrimitiveKind.double ||
       PrimitiveKind.duration ||

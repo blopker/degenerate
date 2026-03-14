@@ -17,6 +17,7 @@ factory ShieldOldPublicSchema.fromJson(Map<String, dynamic> json) { return Shiel
 
 final ShieldTimestamp createdAt;
 
+/// Kind of schema
 final ShieldOldKind kind;
 
 /// Name of the schema

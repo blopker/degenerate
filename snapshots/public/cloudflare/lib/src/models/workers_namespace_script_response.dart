@@ -14,10 +14,13 @@ factory WorkersNamespaceScriptResponse.fromJson(Map<String, dynamic> json) { ret
   script: json['script'] != null ? WorkersScriptResponse.fromJson(json['script'] as Map<String, dynamic>) : null,
 ); }
 
+/// When the script was created.
 final WorkersCreatedOn? createdOn;
 
+/// Name of the Workers for Platforms dispatch namespace.
 final WorkersDispatchNamespaceName? dispatchNamespace;
 
+/// When the script was last modified.
 final WorkersModifiedOn? modifiedOn;
 
 final WorkersScriptResponse? script;

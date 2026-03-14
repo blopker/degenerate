@@ -32,7 +32,7 @@ final class EvalResponsesSource {const EvalResponsesSource({required this.type, 
 
 factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
   type: EvalResponsesSourceType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   model: json['model'] as String?,
   instructionsSearch: json['instructions_search'] as String?,
   createdAfter: json['created_after'] != null ? (json['created_after'] as num).toInt() : null,
@@ -47,24 +47,34 @@ factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalRes
 /// The type of run data source. Always `responses`.
 final EvalResponsesSourceType type;
 
-final Map<String,Object?>? metadata;
+/// Metadata filter for the responses. This is a query parameter used to select responses.
+final Map<String,dynamic>? metadata;
 
+/// The name of the model to find responses for. This is a query parameter used to select responses.
 final String? model;
 
+/// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
 final String? instructionsSearch;
 
+/// Only include items created after this timestamp (inclusive). This is a query parameter used to select responses.
 final int? createdAfter;
 
+/// Only include items created before this timestamp (inclusive). This is a query parameter used to select responses.
 final int? createdBefore;
 
+/// Optional reasoning effort parameter. This is a query parameter used to select responses.
 final ReasoningEffort? reasoningEffort;
 
+/// Sampling temperature. This is a query parameter used to select responses.
 final double? temperature;
 
+/// Nucleus sampling parameter. This is a query parameter used to select responses.
 final double? topP;
 
+/// List of user identifiers. This is a query parameter used to select responses.
 final List<String>? users;
 
+/// List of tool names. This is a query parameter used to select responses.
 final List<String>? tools;
 
 Map<String, dynamic> toJson() { return {
@@ -81,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'tools': ?tools,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EvalResponsesSource copyWith({EvalResponsesSourceType? type, Map<String, Object>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
+EvalResponsesSource copyWith({EvalResponsesSourceType? type, Map<String, dynamic>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
   model: model != null ? model() : this.model,

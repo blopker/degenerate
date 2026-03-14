@@ -19,6 +19,7 @@ final String code;
 /// A human-readable error message.
 final String message;
 
+/// The parameter that was invalid, usually `training_file` or `validation_file`. This field will be null if the failure was not parameter-specific.
 final String? param;
 
 Map<String, dynamic> toJson() { return {

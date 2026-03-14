@@ -35,7 +35,7 @@ factory Prompt23ResponseFormat.fromJson(Map<String, dynamic> json) { return Prom
   type: json['type'] != null ? Prompt23ResponseFormatType.fromJson(json['type'] as String) : null,
 ); }
 
-final Object? jsonSchema;
+final dynamic jsonSchema;
 
 final Prompt23ResponseFormatType? type;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Prompt23ResponseFormat copyWith({Object? Function()? jsonSchema, Prompt23ResponseFormatType Function()? type, }) { return Prompt23ResponseFormat(
+Prompt23ResponseFormat copyWith({dynamic Function()? jsonSchema, Prompt23ResponseFormatType Function()? type, }) { return Prompt23ResponseFormat(
   jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
   type: type != null ? type() : this.type,
 ); } 

@@ -10,6 +10,7 @@ factory MagicNat.fromJson(Map<String, dynamic> json) { return MagicNat(
   staticPrefix: json['static_prefix'] != null ? MagicCidr.fromJson(json['static_prefix'] as String) : null,
 ); }
 
+/// A valid CIDR notation representing an IP range.
 final MagicCidr? staticPrefix;
 
 Map<String, dynamic> toJson() { return {

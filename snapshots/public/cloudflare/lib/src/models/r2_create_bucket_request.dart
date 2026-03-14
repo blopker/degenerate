@@ -12,10 +12,13 @@ factory R2CreateBucketRequest.fromJson(Map<String, dynamic> json) { return R2Cre
   storageClass: json['storageClass'] != null ? R2StorageClass.fromJson(json['storageClass'] as String) : null,
 ); }
 
+/// Location of the bucket.
 final R2BucketLocation? locationHint;
 
+/// Name of the bucket.
 final R2BucketName name;
 
+/// Storage class for newly uploaded objects, unless specified otherwise.
 final R2StorageClass? storageClass;
 
 Map<String, dynamic> toJson() { return {

@@ -10,14 +10,15 @@ final class TelemetryKeysListRequestKeyNeedle {const TelemetryKeysListRequestKey
 factory TelemetryKeysListRequestKeyNeedle.fromJson(Map<String, dynamic> json) { return TelemetryKeysListRequestKeyNeedle(
   isRegex: json['isRegex'] as bool?,
   matchCase: json['matchCase'] as bool?,
-  value: json['value'] as Object,
+  value: json['value'],
 ); }
 
 final bool? isRegex;
 
 final bool? matchCase;
 
-final Object value;
+/// One of: String, double, bool
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'isRegex': ?isRegex,
@@ -25,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-TelemetryKeysListRequestKeyNeedle copyWith({bool Function()? isRegex, bool Function()? matchCase, Object? value, }) { return TelemetryKeysListRequestKeyNeedle(
+TelemetryKeysListRequestKeyNeedle copyWith({bool Function()? isRegex, bool Function()? matchCase, dynamic value, }) { return TelemetryKeysListRequestKeyNeedle(
   isRegex: isRegex != null ? isRegex() : this.isRegex,
   matchCase: matchCase != null ? matchCase() : this.matchCase,
   value: value ?? this.value,

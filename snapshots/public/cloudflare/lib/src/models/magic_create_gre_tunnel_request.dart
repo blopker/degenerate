@@ -20,10 +20,12 @@ factory MagicCreateGreTunnelRequest.fromJson(Map<String, dynamic> json) { return
   ttl: json['ttl'] != null ? MagicTtl.fromJson(json['ttl'] as num) : null,
 ); }
 
+/// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
 
 final MagicBgpConfig? bgp;
 
+/// The IP address assigned to the Cloudflare side of the GRE tunnel.
 final MagicCloudflareGreEndpoint cloudflareGreEndpoint;
 
 final MagicCustomerGreEndpoint customerGreEndpoint;

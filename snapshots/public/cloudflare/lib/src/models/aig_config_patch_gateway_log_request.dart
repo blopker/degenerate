@@ -8,13 +8,13 @@ final class AigConfigPatchGatewayLogRequest {const AigConfigPatchGatewayLogReque
 
 factory AigConfigPatchGatewayLogRequest.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogRequest(
   feedback: json['feedback'] != null ? (json['feedback'] as num).toDouble() : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
 ); }
 
 final double? feedback;
 
-final Map<String,Object>? metadata;
+final Map<String,dynamic>? metadata;
 
 final double? score;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'score': ?score,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AigConfigPatchGatewayLogRequest copyWith({double? Function()? feedback, Map<String, Object>? Function()? metadata, double? Function()? score, }) { return AigConfigPatchGatewayLogRequest(
+AigConfigPatchGatewayLogRequest copyWith({double? Function()? feedback, Map<String, dynamic>? Function()? metadata, double? Function()? score, }) { return AigConfigPatchGatewayLogRequest(
   feedback: feedback != null ? feedback() : this.feedback,
   metadata: metadata != null ? metadata() : this.metadata,
   score: score != null ? score() : this.score,

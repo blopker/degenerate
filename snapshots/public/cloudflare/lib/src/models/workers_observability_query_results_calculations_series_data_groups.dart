@@ -8,12 +8,13 @@ final class WorkersObservabilityQueryResultsCalculationsSeriesDataGroups {const 
 
 factory WorkersObservabilityQueryResultsCalculationsSeriesDataGroups.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCalculationsSeriesDataGroups(
   key: json['key'] as String,
-  value: json['value'] as Object,
+  value: json['value'],
 ); }
 
 final String key;
 
-final Object value;
+/// One of: String, double, bool
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'key': key,
@@ -21,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('value'); } 
-WorkersObservabilityQueryResultsCalculationsSeriesDataGroups copyWith({String? key, Object? value, }) { return WorkersObservabilityQueryResultsCalculationsSeriesDataGroups(
+WorkersObservabilityQueryResultsCalculationsSeriesDataGroups copyWith({String? key, dynamic value, }) { return WorkersObservabilityQueryResultsCalculationsSeriesDataGroups(
   key: key ?? this.key,
   value: value ?? this.value,
 ); } 

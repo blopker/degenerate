@@ -31,6 +31,7 @@ factory ZeroTrustGatewayPacfile.fromJson(Map<String, dynamic> json) { return Zer
   url: json['url'] != null ? ZeroTrustGatewayUrl.fromJson(json['url'] as String) : null,
 ); }
 
+/// Actual contents of the PAC file
 final ZeroTrustGatewayContents? contents;
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;

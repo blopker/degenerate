@@ -28,8 +28,10 @@ factory MagicInterconnect.fromJson(Map<String, dynamic> json) { return MagicInte
   name: json['name'] != null ? MagicComponentsSchemasName.fromJson(json['name'] as String) : null,
 ); }
 
+/// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
 
+/// The name of the interconnect. The name cannot share a name with other tunnels.
 final MagicComponentsSchemasName? coloName;
 
 final MagicSchemasCreatedOn? createdOn;
@@ -50,6 +52,7 @@ final MagicSchemasModifiedOn? modifiedOn;
 
 final MagicSchemasMtu? mtu;
 
+/// The name of the interconnect. The name cannot share a name with other tunnels.
 final MagicComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

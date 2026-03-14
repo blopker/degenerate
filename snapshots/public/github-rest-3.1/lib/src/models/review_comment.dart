@@ -151,6 +151,7 @@ final Uri htmlUrl;
 
 final Uri pullRequestUrl;
 
+/// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
 final ReviewCommentLinks links;

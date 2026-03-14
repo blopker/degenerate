@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'response_message.dart';final
 factory DeleteDeviceResponse.fromJson(Map<String, dynamic> json) { return DeleteDeviceResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<ResponseMessage> errors;
 
 final List<ResponseMessage> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DeleteDeviceResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Map<String, Object>? Function()? result, bool? success, }) { return DeleteDeviceResponse(
+DeleteDeviceResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return DeleteDeviceResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

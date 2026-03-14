@@ -39,18 +39,25 @@ factory TlsCertificatesAndHostnamesHostnameCertidObject.fromJson(Map<String, dyn
 
 final TlsCertificatesAndHostnamesIdentifier? certId;
 
+/// Status of the certificate or the association.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? certStatus;
 
+/// The time when the certificate was updated.
 final TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt? certUpdatedAt;
 
+/// The time when the certificate was uploaded.
 final TlsCertificatesAndHostnamesComponentsSchemasUploadedOn? certUploadedOn;
 
+/// The hostname certificate.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate? certificate;
 
+/// The time when the certificate was created.
 final TlsCertificatesAndHostnamesComponentsSchemasCreatedAt? createdAt;
 
+/// Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled? enabled;
 
+/// The date when the certificate expires.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn? expiresOn;
 
 final TlsCertificatesAndHostnamesSchemasHostname? hostname;
@@ -61,8 +68,10 @@ final TlsCertificatesAndHostnamesSerialNumber? serialNumber;
 
 final TlsCertificatesAndHostnamesSignature? signature;
 
+/// Status of the certificate or the association.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? status;
 
+/// The time when the certificate was updated.
 final TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt? updatedAt;
 
 Map<String, dynamic> toJson() { return {

@@ -86,8 +86,26 @@ factory ShieldOldZoneSchemaValidationSettingsPatch.fromJson(Map<String, dynamic>
   validationOverrideMitigationAction: json['validation_override_mitigation_action'] != null ? ShieldOldValidationOverrideMitigationActionPatch.fromJson(json['validation_override_mitigation_action'] as String) : null,
 ); }
 
+/// The default mitigation action used when there is no mitigation action defined on the operation
+/// Mitigation actions are as follows:
+/// 
+///   * `log` - log request when request does not conform to schema
+///   * `block` - deny access to the site when request does not conform to schema
+/// 
+/// A special value of of `none` will skip running schema validation entirely for the request when there is no mitigation action defined on the operation
+/// 
+/// `null` will have no effect.
+/// 
 final ShieldOldValidationDefaultMitigationActionPatch? validationDefaultMitigationAction;
 
+/// When set, this overrides both zone level and operation level mitigation actions.
+/// 
+///   - `none` will skip running schema validation entirely for the request
+/// 
+/// To clear any override, use the special value `disable_override`
+/// 
+/// `null` will have no effect.
+/// 
 final ShieldOldValidationOverrideMitigationActionPatch? validationOverrideMitigationAction;
 
 Map<String, dynamic> toJson() { return {

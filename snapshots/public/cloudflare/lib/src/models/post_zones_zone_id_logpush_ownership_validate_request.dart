@@ -11,8 +11,10 @@ factory PostZonesZoneIdLogpushOwnershipValidateRequest.fromJson(Map<String, dyna
   ownershipChallenge: LogpushOwnershipChallenge.fromJson(json['ownership_challenge'] as String),
 ); }
 
+/// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
 
+/// Ownership challenge token to prove destination ownership.
 final LogpushOwnershipChallenge ownershipChallenge;
 
 Map<String, dynamic> toJson() { return {

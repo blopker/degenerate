@@ -20,6 +20,7 @@ factory AaaPagerduty.fromJson(Map<String, dynamic> json) { return AaaPagerduty(
 
 final AaaUuid? id;
 
+/// The name of the pagerduty service.
 final AaaName? name;
 
 Map<String, dynamic> toJson() { return {

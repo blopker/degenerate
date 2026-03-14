@@ -43,6 +43,7 @@ final WebhookSponsorshipPendingTierChangeAction action;
 
 final WebhooksChanges8 changes;
 
+/// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
 final WebhooksEffectiveDate? effectiveDate;
 
 final EnterpriseWebhooks? enterprise;

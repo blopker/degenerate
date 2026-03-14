@@ -11,8 +11,10 @@ factory CustomPagesForAnAccountUpdateACustomPageRequest.fromJson(Map<String, dyn
   url: CustomPagesUrl.fromJson(json['url'] as String),
 ); }
 
+/// The custom page state.
 final CustomPagesState state;
 
+/// The URL associated with the custom page.
 final CustomPagesUrl url;
 
 Map<String, dynamic> toJson() { return {

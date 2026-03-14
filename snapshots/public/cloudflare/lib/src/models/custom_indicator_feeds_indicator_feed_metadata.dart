@@ -74,8 +74,10 @@ factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> 
 /// The date and time when the data entry was created
 final DateTime? createdOn;
 
+/// The description of the example test
 final CustomIndicatorFeedsDescription? description;
 
+/// The unique identifier for the indicator feed
 final CustomIndicatorFeedsId? id;
 
 final CustomIndicatorFeedsIsAttributable? isAttributable;

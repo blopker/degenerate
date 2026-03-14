@@ -43,8 +43,10 @@ final ThreadListResourceObject object;
 /// A list of items
 final List<ThreadResource> data;
 
+/// The ID of the first item in the list.
 final String? firstId;
 
+/// The ID of the last item in the list.
 final String? lastId;
 
 /// Whether there are more items available.

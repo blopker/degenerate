@@ -10,6 +10,7 @@ factory ZonesPostRequestAccount.fromJson(Map<String, dynamic> json) { return Zon
   id: json['id'] != null ? ZonesIdentifier.fromJson(json['id'] as String) : null,
 ); }
 
+/// Identifier
 final ZonesIdentifier? id;
 
 Map<String, dynamic> toJson() { return {

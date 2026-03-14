@@ -10,6 +10,7 @@ factory PagesDomainsAddDomainRequest.fromJson(Map<String, dynamic> json) { retur
   name: PagesDomainName.fromJson(json['name'] as String),
 ); }
 
+/// The domain name.
 final PagesDomainName name;
 
 Map<String, dynamic> toJson() { return {

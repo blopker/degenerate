@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issues_create_request_labels.dart';import 'issues_create_request_labels_variant2.dart';final class IssuesCreateRequest {const IssuesCreateRequest({required this.title, this.body, this.assignee, this.milestone, this.labels, this.assignees, this.type, });
 
 factory IssuesCreateRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateRequest(
-  title: json['title'] as Object,
+  title: json['title'],
   body: json['body'] as String?,
   assignee: json['assignee'] as String?,
   milestone: json['milestone'],
@@ -17,7 +17,11 @@ factory IssuesCreateRequest.fromJson(Map<String, dynamic> json) { return IssuesC
 ); }
 
 /// The title of the issue.
-final Object title;
+/// 
+/// The title of the issue.
+/// 
+/// One of: String, int
+final dynamic title;
 
 /// The contents of the issue.
 final String? body;
@@ -25,7 +29,8 @@ final String? body;
 /// Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is closing down.**_
 final String? assignee;
 
-final Object? milestone;
+/// One of: String, int
+final dynamic milestone;
 
 /// Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
 final List<IssuesCreateRequestLabels>? labels;
@@ -46,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('title'); } 
-IssuesCreateRequest copyWith({Object? title, String Function()? body, String? Function()? assignee, Object? Function()? milestone, List<IssuesCreateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesCreateRequest(
+IssuesCreateRequest copyWith({dynamic title, String Function()? body, String? Function()? assignee, dynamic Function()? milestone, List<IssuesCreateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesCreateRequest(
   title: title ?? this.title,
   body: body != null ? body() : this.body,
   assignee: assignee != null ? assignee() : this.assignee,

@@ -10,6 +10,7 @@ factory LoadBalancerPoolsPatchPoolsRequest.fromJson(Map<String, dynamic> json) {
   notificationEmail: json['notification_email'] != null ? LoadBalancingPatchPoolsNotificationEmail.fromJson(json['notification_email'] as String) : null,
 ); }
 
+/// The email address to send health status notifications to. This field is now deprecated in favor of Cloudflare Notifications for Load Balancing, so only resetting this field with an empty string `""` is accepted.
 final LoadBalancingPatchPoolsNotificationEmail? notificationEmail;
 
 Map<String, dynamic> toJson() { return {

@@ -84,7 +84,7 @@ factory WorkersObservabilityTelemetryEvent$workersVariant2.fromJson(Map<String, 
   dispatchNamespace: json['dispatchNamespace'] as String?,
   durableObjectId: json['durableObjectId'] as String?,
   entrypoint: json['entrypoint'] as String?,
-  event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   eventType: WorkersObservabilityTelemetryEvent$workersVariant2EventType.fromJson(json['eventType'] as String),
   executionModel: json['executionModel'] != null ? WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel.fromJson(json['executionModel'] as String) : null,
   outcome: json['outcome'] as String,
@@ -105,7 +105,7 @@ final String? durableObjectId;
 
 final String? entrypoint;
 
-final Map<String,Object>? event;
+final Map<String,dynamic>? event;
 
 final WorkersObservabilityTelemetryEvent$workersVariant2EventType eventType;
 
@@ -145,7 +145,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cpuTi
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('scriptName') && json['scriptName'] is String &&
       json.containsKey('wallTimeMs') && json['wallTimeMs'] is num; } 
-WorkersObservabilityTelemetryEvent$workersVariant2 copyWith({double? cpuTimeMs, List<WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents> Function()? diagnosticsChannelEvents, String Function()? dispatchNamespace, String Function()? durableObjectId, String Function()? entrypoint, Map<String, Object> Function()? event, WorkersObservabilityTelemetryEvent$workersVariant2EventType? eventType, WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel Function()? executionModel, String? outcome, String? requestId, String? scriptName, WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion Function()? scriptVersion, bool Function()? truncated, double? wallTimeMs, }) { return WorkersObservabilityTelemetryEvent$workersVariant2(
+WorkersObservabilityTelemetryEvent$workersVariant2 copyWith({double? cpuTimeMs, List<WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents> Function()? diagnosticsChannelEvents, String Function()? dispatchNamespace, String Function()? durableObjectId, String Function()? entrypoint, Map<String, dynamic> Function()? event, WorkersObservabilityTelemetryEvent$workersVariant2EventType? eventType, WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel Function()? executionModel, String? outcome, String? requestId, String? scriptName, WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion Function()? scriptVersion, bool Function()? truncated, double? wallTimeMs, }) { return WorkersObservabilityTelemetryEvent$workersVariant2(
   cpuTimeMs: cpuTimeMs ?? this.cpuTimeMs,
   diagnosticsChannelEvents: diagnosticsChannelEvents != null ? diagnosticsChannelEvents() : this.diagnosticsChannelEvents,
   dispatchNamespace: dispatchNamespace != null ? dispatchNamespace() : this.dispatchNamespace,

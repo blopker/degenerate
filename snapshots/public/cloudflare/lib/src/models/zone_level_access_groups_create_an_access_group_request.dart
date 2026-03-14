@@ -13,12 +13,16 @@ factory ZoneLevelAccessGroupsCreateAnAccessGroupRequest.fromJson(Map<String, dyn
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
 
+/// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 final List<AccessRule> include;
 
+/// The name of the Access group.
 final AccessGroupsComponentsSchemasName2 name;
 
+/// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
 Map<String, dynamic> toJson() { return {

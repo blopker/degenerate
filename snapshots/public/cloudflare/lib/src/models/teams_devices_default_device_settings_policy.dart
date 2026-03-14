@@ -28,14 +28,19 @@ factory TeamsDevicesDefaultDeviceSettingsPolicy.fromJson(Map<String, dynamic> js
   tunnelProtocol: json['tunnel_protocol'] != null ? TeamsDevicesTunnelProtocol.fromJson(json['tunnel_protocol'] as String) : null,
 ); }
 
+/// Whether to allow the user to switch WARP between modes.
 final TeamsDevicesAllowModeSwitch? allowModeSwitch;
 
+/// Whether to receive update notifications when a new version of the client is available.
 final TeamsDevicesAllowUpdates? allowUpdates;
 
+/// Whether to allow devices to leave the organization.
 final TeamsDevicesAllowedToLeave? allowedToLeave;
 
+/// The amount of time in seconds to reconnect after having been disabled.
 final TeamsDevicesAutoConnect? autoConnect;
 
+/// Turn on the captive portal after the specified amount of time.
 final TeamsDevicesCaptivePortal? captivePortal;
 
 /// Whether the policy will be applied to matching devices.

@@ -14,6 +14,7 @@ factory ZeroTrustGatewayItems2.fromJson(Map<String, dynamic> json) { return Zero
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
+/// Provide the list item description (optional).
 final ZeroTrustGatewayDescriptionItem? description;
 
 final ZeroTrustGatewayValue? value;

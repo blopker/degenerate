@@ -10,6 +10,7 @@ factory ShieldObjectWithOperationId.fromJson(Map<String, dynamic> json) { return
   operationId: ShieldUuid.fromJson(json['operation_id'] as String),
 ); }
 
+/// The ID of the operation
 final ShieldUuid operationId;
 
 Map<String, dynamic> toJson() { return {

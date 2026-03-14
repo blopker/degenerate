@@ -12,7 +12,7 @@ factory GpgKeySubkeys.fromJson(Map<String, dynamic> json) { return GpgKeySubkeys
   keyId: json['key_id'] as String?,
   publicKey: json['public_key'] as String?,
   emails: (json['emails'] as List<dynamic>?)?.map((e) => GpgKeySubkeysEmails.fromJson(e as Map<String, dynamic>)).toList(),
-  subkeys: (json['subkeys'] as List<dynamic>?)?.map((e) => e as Object).toList(),
+  subkeys: (json['subkeys'] as List<dynamic>?)?.map((e) => e).toList(),
   canSign: json['can_sign'] as bool?,
   canEncryptComms: json['can_encrypt_comms'] as bool?,
   canEncryptStorage: json['can_encrypt_storage'] as bool?,
@@ -33,7 +33,7 @@ final String? publicKey;
 
 final List<GpgKeySubkeysEmails>? emails;
 
-final List<Object?>? subkeys;
+final List<dynamic>? subkeys;
 
 final bool? canSign;
 
@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'revoked': ?revoked,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GpgKeySubkeys copyWith({int Function()? id, int Function()? primaryKeyId, String Function()? keyId, String Function()? publicKey, List<GpgKeySubkeysEmails> Function()? emails, List<Object> Function()? subkeys, bool Function()? canSign, bool Function()? canEncryptComms, bool Function()? canEncryptStorage, bool Function()? canCertify, String Function()? createdAt, String? Function()? expiresAt, String? Function()? rawKey, bool Function()? revoked, }) { return GpgKeySubkeys(
+GpgKeySubkeys copyWith({int Function()? id, int Function()? primaryKeyId, String Function()? keyId, String Function()? publicKey, List<GpgKeySubkeysEmails> Function()? emails, List<dynamic> Function()? subkeys, bool Function()? canSign, bool Function()? canEncryptComms, bool Function()? canEncryptStorage, bool Function()? canCertify, String Function()? createdAt, String? Function()? expiresAt, String? Function()? rawKey, bool Function()? revoked, }) { return GpgKeySubkeys(
   id: id != null ? id() : this.id,
   primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,
   keyId: keyId != null ? keyId() : this.keyId,

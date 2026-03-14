@@ -21,6 +21,7 @@ final List<String> hosts;
 /// Name of the schema
 final String name;
 
+/// A unique identifier of this schema
 final ShieldUuid schemaId;
 
 Map<String, dynamic> toJson() { return {

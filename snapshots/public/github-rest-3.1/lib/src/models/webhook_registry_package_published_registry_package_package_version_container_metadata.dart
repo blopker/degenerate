@@ -7,14 +7,14 @@
 import 'webhook_registry_package_published_registry_package_package_version_container_metadata_tag.dart';final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata({this.labels, this.manifest, this.tag, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata(
-  labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
-  manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   tag: json['tag'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag.fromJson(json['tag'] as Map<String, dynamic>) : null,
 ); }
 
-final Map<String,Object?>? labels;
+final Map<String,dynamic>? labels;
 
-final Map<String,Object?>? manifest;
+final Map<String,dynamic>? manifest;
 
 final WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag? tag;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (tag != null) 'tag': tag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata copyWith({Map<String, Object>? Function()? labels, Map<String, Object>? Function()? manifest, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag Function()? tag, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata(
+WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata copyWith({Map<String, dynamic>? Function()? labels, Map<String, dynamic>? Function()? manifest, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag Function()? tag, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata(
   labels: labels != null ? labels() : this.labels,
   manifest: manifest != null ? manifest() : this.manifest,
   tag: tag != null ? tag() : this.tag,

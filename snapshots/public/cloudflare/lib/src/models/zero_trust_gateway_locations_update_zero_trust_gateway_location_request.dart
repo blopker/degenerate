@@ -15,16 +15,21 @@ factory ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest.fromJson(
   networks: (json['networks'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayIpv4Network.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Indicate whether this location is the default location.
 final ZeroTrustGatewayClientDefault? clientDefault;
 
+/// Specify the identifier of the pair of IPv4 addresses assigned to this location. When creating a location, if this field is absent or set to null, the pair of shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When updating a location, if this field is absent or set to null, the pre-assigned pair remains unchanged.
 final ZeroTrustGatewayDnsDestinationIpsIdWrite? dnsDestinationIpsId;
 
+/// Indicate whether the location must resolve EDNS queries.
 final ZeroTrustGatewayEcsSupport? ecsSupport;
 
 final ZeroTrustGatewayEndpoints? endpoints;
 
+/// Specify the location name.
 final ZeroTrustGatewaySchemasName name;
 
+/// Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
 final List<ZeroTrustGatewayIpv4Network>? networks;
 
 Map<String, dynamic> toJson() { return {

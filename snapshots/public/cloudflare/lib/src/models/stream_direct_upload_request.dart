@@ -11,15 +11,17 @@ factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) { return S
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
   maxDurationSeconds: StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num),
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
   watermark: json['watermark'] != null ? StreamWatermarkAtUpload.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
+/// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
 
+/// A user-defined identifier for the media creator.
 final StreamCreator? creator;
 
 /// The date and time after upload when videos will not be accepted.
@@ -27,7 +29,7 @@ final DateTime? expiry;
 
 final StreamMaxDurationSeconds maxDurationSeconds;
 
-final Map<String,Object?>? meta;
+final Map<String,dynamic>? meta;
 
 final StreamRequireSignedUrLs? requireSignedUrLs;
 
@@ -49,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxDurationSeconds'); } 
-StreamDirectUploadRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, DateTime Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, Object> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload Function()? watermark, }) { return StreamDirectUploadRequest(
+StreamDirectUploadRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, DateTime Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, dynamic> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload Function()? watermark, }) { return StreamDirectUploadRequest(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,

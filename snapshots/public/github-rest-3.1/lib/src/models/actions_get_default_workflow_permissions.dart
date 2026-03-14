@@ -11,8 +11,10 @@ factory ActionsGetDefaultWorkflowPermissions.fromJson(Map<String, dynamic> json)
   canApprovePullRequestReviews: ActionsCanApprovePullRequestReviews.fromJson(json['can_approve_pull_request_reviews'] as bool),
 ); }
 
+/// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
 final ActionsDefaultWorkflowPermissions defaultWorkflowPermissions;
 
+/// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
 final ActionsCanApprovePullRequestReviews canApprovePullRequestReviews;
 
 Map<String, dynamic> toJson() { return {

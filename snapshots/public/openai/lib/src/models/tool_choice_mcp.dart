@@ -43,6 +43,8 @@ final ToolChoiceMcpType type;
 /// 
 final String serverLabel;
 
+/// The name of the tool to call on the server.
+/// 
 final String? name;
 
 Map<String, dynamic> toJson() { return {

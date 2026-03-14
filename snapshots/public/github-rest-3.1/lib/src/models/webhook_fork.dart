@@ -19,6 +19,8 @@ factory WebhookFork.fromJson(Map<String, dynamic> json) { return WebhookFork(
 final EnterpriseWebhooks? enterprise;
 
 /// The created [`repository`](https://docs.github.com/rest/repos/repos#get-a-repository) resource.
+/// 
+/// A git repository
 final WebhookForkForkee forkee;
 
 final SimpleInstallation? installation;

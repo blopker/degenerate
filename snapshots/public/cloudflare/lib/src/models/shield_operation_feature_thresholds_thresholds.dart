@@ -74,8 +74,10 @@ factory ShieldOperationFeatureThresholdsThresholds.fromJson(Map<String, dynamic>
   suggestedThreshold: json['suggested_threshold'] != null ? ShieldSuggestedThreshold.fromJson(json['suggested_threshold'] as num) : null,
 ); }
 
+/// The total number of auth-ids seen across this calculation.
 final ShieldAuthIdTokens? authIdTokens;
 
+/// The number of data points used for the threshold suggestion calculation.
 final ShieldDataPoints? dataPoints;
 
 final ShieldTimestamp? lastUpdated;

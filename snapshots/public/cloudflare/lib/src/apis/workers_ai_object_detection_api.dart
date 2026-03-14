@@ -17,7 +17,7 @@ final ApiConfig _config;
 /// Runs inference on the @cf/facebook/nonomni-detr-resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-detr-resnet-50`
-Future<ApiResult<Map<String, Object>, WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400>> workersAiPostRunCfFacebookNonomniDetrResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400>> workersAiPostRunCfFacebookNonomniDetrResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
@@ -38,7 +38,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

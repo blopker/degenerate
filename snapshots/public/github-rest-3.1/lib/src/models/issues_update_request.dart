@@ -78,7 +78,11 @@ factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesU
 ); }
 
 /// The title of the issue.
-final Object? title;
+/// 
+/// The title of the issue.
+/// 
+/// One of: String, int
+final dynamic title;
 
 /// The contents of the issue.
 final String? body;
@@ -92,7 +96,8 @@ final IssuesUpdateRequestState? state;
 /// The reason for the state change. Ignored unless `state` is changed.
 final IssuesUpdateRequestStateReason? stateReason;
 
-final Object? milestone;
+/// One of: String, int
+final dynamic milestone;
 
 /// Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
 final List<IssuesUpdateRequestLabels>? labels;
@@ -115,7 +120,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-IssuesUpdateRequest copyWith({Object? Function()? title, String? Function()? body, String? Function()? assignee, IssuesUpdateRequestState Function()? state, IssuesUpdateRequestStateReason? Function()? stateReason, Object? Function()? milestone, List<IssuesUpdateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
+IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? body, String? Function()? assignee, IssuesUpdateRequestState Function()? state, IssuesUpdateRequestStateReason? Function()? stateReason, dynamic Function()? milestone, List<IssuesUpdateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,
   assignee: assignee != null ? assignee() : this.assignee,

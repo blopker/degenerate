@@ -44,13 +44,16 @@ final LocalShellExecActionType type;
 /// The command to run.
 final List<String> command;
 
+/// Optional timeout in milliseconds for the command.
 final int? timeoutMs;
 
+/// Optional working directory to run the command in.
 final String? workingDirectory;
 
 /// Environment variables to set for the command.
 final Map<String,String> env;
 
+/// Optional user to run the command as.
 final String? user;
 
 Map<String, dynamic> toJson() { return {

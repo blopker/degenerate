@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'get_event_query_alert_list_r
 
 factory GetEventQueryAlertListResponse500.fromJson(Map<String, dynamic> json) { return GetEventQueryAlertListResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => GetEventQueryAlertListResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<GetEventQueryAlertListResponse500Errors> errors;
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetEventQueryAlertListResponse500 copyWith({List<GetEventQueryAlertListResponse500Errors>? errors, Map<String,Object?>? result, bool? success, }) { return GetEventQueryAlertListResponse500(
+GetEventQueryAlertListResponse500 copyWith({List<GetEventQueryAlertListResponse500Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return GetEventQueryAlertListResponse500(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

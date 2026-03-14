@@ -13,13 +13,14 @@ factory IamUserGroupMember.fromJson(Map<String, dynamic> json) { return IamUserG
   status: json['status'],
 ); }
 
+/// The contact email address of the user.
 final IamEmail? email;
 
 /// Account member identifier.
 final String id;
 
 /// The member's status in the account.
-final Object? status;
+final dynamic status;
 
 Map<String, dynamic> toJson() { return {
   if (email != null) 'email': email?.toJson(),
@@ -27,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-IamUserGroupMember copyWith({IamEmail Function()? email, String? id, Object? Function()? status, }) { return IamUserGroupMember(
+IamUserGroupMember copyWith({IamEmail Function()? email, String? id, dynamic Function()? status, }) { return IamUserGroupMember(
   email: email != null ? email() : this.email,
   id: id ?? this.id,
   status: status != null ? status() : this.status,

@@ -11,8 +11,10 @@ factory ZeroTrustUsersCreateUserRequest.fromJson(Map<String, dynamic> json) { re
   name: json['name'] != null ? AccessUsersComponentsSchemasName.fromJson(json['name'] as String) : null,
 ); }
 
+/// The email of the user.
 final AccessSchemasEmail email;
 
+/// The name of the user.
 final AccessUsersComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

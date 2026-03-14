@@ -12,6 +12,7 @@ factory MconnControllerConnectorIdentity.fromJson(Map<String, dynamic> json) { r
   id: MconnUuid.fromJson(json['id'] as String),
 ); }
 
+/// Account identifier
 final MconnAccountId accountId;
 
 final bool activated;

@@ -104,7 +104,7 @@ factory AccountRecording.fromJson(Map<String, dynamic> json) { return AccountRec
   errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
   uri: json['uri'] as String?,
   encryptionDetails: json['encryption_details'],
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   mediaUrl: json['media_url'] != null ? Uri.parse(json['media_url'] as String) : null,
 ); }
 
@@ -155,10 +155,10 @@ final int? errorCode;
 final String? uri;
 
 /// How to decrypt the recording if it was encrypted using [Call Recording Encryption](https://www.twilio.com/docs/voice/tutorials/voice-recording-encryption) feature.
-final Object? encryptionDetails;
+final dynamic encryptionDetails;
 
 /// A list of related resources identified by their relative URIs.
-final Map<String,Object?>? subresourceUris;
+final Map<String,dynamic>? subresourceUris;
 
 /// The URL of the media file associated with this recording resource. When stored externally, this is the full URL location of the media file.
 final Uri? mediaUrl;
@@ -185,7 +185,7 @@ Map<String, dynamic> toJson() { return {
   if (mediaUrl != null) 'media_url': mediaUrl?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, RecordingEnumStatus Function()? status, int? Function()? channels, RecordingEnumSource Function()? source, int? Function()? errorCode, String? Function()? uri, Object? Function()? encryptionDetails, Map<String, Object>? Function()? subresourceUris, Uri? Function()? mediaUrl, }) { return AccountRecording(
+AccountRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, RecordingEnumStatus Function()? status, int? Function()? channels, RecordingEnumSource Function()? source, int? Function()? errorCode, String? Function()? uri, dynamic Function()? encryptionDetails, Map<String, dynamic>? Function()? subresourceUris, Uri? Function()? mediaUrl, }) { return AccountRecording(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   callSid: callSid != null ? callSid() : this.callSid,

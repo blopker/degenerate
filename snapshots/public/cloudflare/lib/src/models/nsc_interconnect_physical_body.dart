@@ -34,6 +34,7 @@ final String type;
 
 final NscFacilityInfo facility;
 
+/// A Cloudflare site name.
 final NscCloudflareSite site;
 
 final String slotId;

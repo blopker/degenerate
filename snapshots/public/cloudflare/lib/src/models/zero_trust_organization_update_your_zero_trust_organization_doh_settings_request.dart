@@ -18,6 +18,7 @@ factory ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest.f
   serviceTokenId: json['service_token_id'] as String?,
 ); }
 
+/// The duration the DoH JWT is valid for. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.  Note that the maximum duration for this setting is the same as the key rotation period on the account. Default expiration is 24h
 final AccessDohJwtDuration? dohJwtDuration;
 
 /// The uuid of the service token you want to use for DoH authentication

@@ -135,14 +135,14 @@ final class AigConfigListGatewayLogsFilters {const AigConfigListGatewayLogsFilte
 factory AigConfigListGatewayLogsFilters.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayLogsFilters(
   key: AigConfigListGatewayLogsFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigListGatewayLogsFiltersOperator.fromJson(json['operator'] as String),
-  value: (json['value'] as List<dynamic>).map((e) => e as Object).toList(),
+  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
 ); }
 
 final AigConfigListGatewayLogsFiltersKey key;
 
 final AigConfigListGatewayLogsFiltersOperator $operator;
 
-final List<Object> value;
+final List<dynamic> value;
 
 Map<String, dynamic> toJson() { return {
   'key': key.toJson(),
@@ -152,7 +152,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
       json.containsKey('operator') &&
       json.containsKey('value'); } 
-AigConfigListGatewayLogsFilters copyWith({AigConfigListGatewayLogsFiltersKey? key, AigConfigListGatewayLogsFiltersOperator? $operator, List<Object>? value, }) { return AigConfigListGatewayLogsFilters(
+AigConfigListGatewayLogsFilters copyWith({AigConfigListGatewayLogsFiltersKey? key, AigConfigListGatewayLogsFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigListGatewayLogsFilters(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,

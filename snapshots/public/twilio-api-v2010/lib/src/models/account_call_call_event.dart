@@ -12,17 +12,17 @@ factory AccountCallCallEvent.fromJson(Map<String, dynamic> json) { return Accoun
 ); }
 
 /// Contains a dictionary representing the request of the call.
-final Object? request;
+final dynamic request;
 
 /// Contains a dictionary representing the call response, including a list of the call events.
-final Object? response;
+final dynamic response;
 
 Map<String, dynamic> toJson() { return {
   'request': ?request,
   'response': ?response,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountCallCallEvent copyWith({Object? Function()? request, Object? Function()? response, }) { return AccountCallCallEvent(
+AccountCallCallEvent copyWith({dynamic Function()? request, dynamic Function()? response, }) { return AccountCallCallEvent(
   request: request != null ? request() : this.request,
   response: response != null ? response() : this.response,
 ); } 

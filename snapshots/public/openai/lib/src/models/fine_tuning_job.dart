@@ -95,10 +95,13 @@ final String id;
 /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
 final int createdAt;
 
+/// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
 final FineTuningJobError? error;
 
+/// The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
 final String? fineTunedModel;
 
+/// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
 final int? finishedAt;
 
 /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
@@ -119,18 +122,22 @@ final List<String> resultFiles;
 /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
 final FineTuningJobStatus status;
 
+/// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
 final int? trainedTokens;
 
 /// The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
 final String trainingFile;
 
+/// The file ID used for validation. You can retrieve the validation results with the [Files API](/docs/api-reference/files/retrieve-contents).
 final String? validationFile;
 
+/// A list of integrations to enable for this fine-tuning job.
 final List<FineTuningJobIntegrations2>? integrations;
 
 /// The seed used for the fine-tuning job.
 final int seed;
 
+/// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
 final int? estimatedFinish;
 
 final FineTuneMethod? method;

@@ -15,14 +15,19 @@ factory IamUpdateMemberWithRolesUser.fromJson(Map<String, dynamic> json) { retur
   twoFactorAuthenticationEnabled: json['two_factor_authentication_enabled'] != null ? IamTwoFactorAuthenticationEnabled.fromJson(json['two_factor_authentication_enabled'] as bool) : null,
 ); }
 
+/// The contact email address of the user.
 final IamEmail email;
 
+/// User's first name
 final IamFirstName? firstName;
 
+/// Identifier
 final IamCommonComponentsSchemasIdentifier? id;
 
+/// User's last name
 final IamLastName? lastName;
 
+/// Indicates whether two-factor authentication is enabled for the user account. Does not apply to API authentication.
 final IamTwoFactorAuthenticationEnabled? twoFactorAuthenticationEnabled;
 
 Map<String, dynamic> toJson() { return {

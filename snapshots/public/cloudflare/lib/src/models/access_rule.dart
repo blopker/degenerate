@@ -85,8 +85,8 @@ factory AccessRule.fromJson(Map<String, dynamic> json) {   if (AccessAccessGroup
   return AccessRule$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class AccessRuleAccessAccessGroupRule extends AccessRule {const AccessRuleAccessAccessGroupRule(this._value);
 
@@ -341,9 +341,9 @@ final AccessUserRiskScoreRule _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class AccessRule$Unknown extends AccessRule {const AccessRule$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRule$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

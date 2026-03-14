@@ -56,8 +56,10 @@ factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) { return TeamsDev
 
 final TeamsDevicesAccount? account;
 
+/// When the device was created.
 final TeamsDevicesCreated? created;
 
+/// True if the device was deleted.
 final TeamsDevicesDeleted? deleted;
 
 final TeamsDevicesDeviceType? deviceType;

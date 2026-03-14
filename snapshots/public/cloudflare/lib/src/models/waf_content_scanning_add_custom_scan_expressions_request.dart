@@ -10,6 +10,7 @@ factory WafContentScanningAddCustomScanExpressionsRequest.fromJson(Map<String, d
   payload: BundleCustomScanPayload.fromJson(json['payload'] as String),
 ); }
 
+/// Defines the ruleset expression to use in matching content objects.
 final BundleCustomScanPayload payload;
 
 Map<String, dynamic> toJson() { return {

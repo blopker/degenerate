@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'wor_send_event_workflow_inst
 factory WorSendEventWorkflowInstanceResponse.fromJson(Map<String, dynamic> json) { return WorSendEventWorkflowInstanceResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorSendEventWorkflowInstanceResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorSendEventWorkflowInstanceResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   resultInfo: json['result_info'] != null ? WorSendEventWorkflowInstanceResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
@@ -18,7 +18,7 @@ final List<WorSendEventWorkflowInstanceResponseErrors> errors;
 
 final List<WorSendEventWorkflowInstanceResponseMessages> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 final WorSendEventWorkflowInstanceResponseResultInfo? resultInfo;
 
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorSendEventWorkflowInstanceResponse copyWith({List<WorSendEventWorkflowInstanceResponseErrors>? errors, List<WorSendEventWorkflowInstanceResponseMessages>? messages, Map<String, Object> Function()? result, WorSendEventWorkflowInstanceResponseResultInfo Function()? resultInfo, bool? success, }) { return WorSendEventWorkflowInstanceResponse(
+WorSendEventWorkflowInstanceResponse copyWith({List<WorSendEventWorkflowInstanceResponseErrors>? errors, List<WorSendEventWorkflowInstanceResponseMessages>? messages, Map<String, dynamic> Function()? result, WorSendEventWorkflowInstanceResponseResultInfo Function()? resultInfo, bool? success, }) { return WorSendEventWorkflowInstanceResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

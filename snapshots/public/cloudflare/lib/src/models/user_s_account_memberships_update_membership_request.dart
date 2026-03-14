@@ -7,17 +7,17 @@
 final class UserSAccountMembershipsUpdateMembershipRequest {const UserSAccountMembershipsUpdateMembershipRequest({required this.status});
 
 factory UserSAccountMembershipsUpdateMembershipRequest.fromJson(Map<String, dynamic> json) { return UserSAccountMembershipsUpdateMembershipRequest(
-  status: json['status'] as Object,
+  status: json['status'],
 ); }
 
 /// Whether to accept or reject this account invitation.
-final Object? status;
+final dynamic status;
 
 Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-UserSAccountMembershipsUpdateMembershipRequest copyWith({Object? Function()? status}) { return UserSAccountMembershipsUpdateMembershipRequest(
+UserSAccountMembershipsUpdateMembershipRequest copyWith({dynamic Function()? status}) { return UserSAccountMembershipsUpdateMembershipRequest(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

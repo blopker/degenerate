@@ -8,14 +8,15 @@ import 'package:collection/collection.dart';import 'accounts_by_account_id_pipel
 
 factory AccountsByAccountIdPipelinesDeprecatedResponse4Xx2.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedResponse4Xx2(
   errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  results: (json['results'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  results: (json['results'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
 ); }
 
 final List<AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors> errors;
 
-final Map<String,Object?>? results;
+final Map<String,dynamic>? results;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {
@@ -26,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('results') &&
       json.containsKey('success'); } 
-AccountsByAccountIdPipelinesDeprecatedResponse4Xx2 copyWith({List<AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors>? errors, Map<String, Object>? Function()? results, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return AccountsByAccountIdPipelinesDeprecatedResponse4Xx2(
+AccountsByAccountIdPipelinesDeprecatedResponse4Xx2 copyWith({List<AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors>? errors, Map<String, dynamic>? Function()? results, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return AccountsByAccountIdPipelinesDeprecatedResponse4Xx2(
   errors: errors ?? this.errors,
   results: results != null ? results() : this.results,
   success: success ?? this.success,

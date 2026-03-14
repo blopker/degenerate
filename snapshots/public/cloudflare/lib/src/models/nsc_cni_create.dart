@@ -13,6 +13,7 @@ factory NscCniCreate.fromJson(Map<String, dynamic> json) { return NscCniCreate(
   magic: NscMagicSettings.fromJson(json['magic'] as Map<String, dynamic>),
 ); }
 
+/// Customer account tag
 final NscAccountTag account;
 
 final NscBgpControl? bgp;

@@ -149,6 +149,7 @@ factory TlsCertificatesAndHostnamesClientCertificate.fromJson(Map<String, dynami
   validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesSchemasValidityDays.fromJson(json['validity_days'] as num) : null,
 ); }
 
+/// The Client Certificate PEM
 final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate? certificate;
 
 final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority? certificateAuthority;
@@ -181,6 +182,7 @@ final TlsCertificatesAndHostnamesSki? ski;
 
 final TlsCertificatesAndHostnamesState? state;
 
+/// Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions
 final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus? status;
 
 final TlsCertificatesAndHostnamesSchemasValidityDays? validityDays;

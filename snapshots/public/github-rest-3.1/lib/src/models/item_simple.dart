@@ -29,6 +29,7 @@ final String? nodeId;
 /// The content represented by the item.
 final ItemSimpleContent? content;
 
+/// The type of content tracked in a project item
 final ItemContentType contentType;
 
 final SimpleUser? creator;

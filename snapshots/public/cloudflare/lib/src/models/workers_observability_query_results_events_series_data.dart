@@ -10,7 +10,7 @@ factory WorkersObservabilityQueryResultsEventsSeriesData.fromJson(Map<String, dy
   aggregates: WorkersObservabilityQueryResultsEventsSeriesDataAggregates.fromJson(json['aggregates'] as Map<String, dynamic>),
   count: (json['count'] as num).toDouble(),
   errors: json['errors'] != null ? (json['errors'] as num).toDouble() : null,
-  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   interval: (json['interval'] as num).toDouble(),
   sampleInterval: (json['sampleInterval'] as num).toDouble(),
 ); }
@@ -22,7 +22,7 @@ final double count;
 final double? errors;
 
 /// Groups in the query results.
-final Map<String,Object>? groups;
+final Map<String,dynamic>? groups;
 
 final double interval;
 
@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggre
       json.containsKey('count') && json['count'] is num &&
       json.containsKey('interval') && json['interval'] is num &&
       json.containsKey('sampleInterval') && json['sampleInterval'] is num; } 
-WorkersObservabilityQueryResultsEventsSeriesData copyWith({WorkersObservabilityQueryResultsEventsSeriesDataAggregates? aggregates, double? count, double Function()? errors, Map<String, Object> Function()? groups, double? interval, double? sampleInterval, }) { return WorkersObservabilityQueryResultsEventsSeriesData(
+WorkersObservabilityQueryResultsEventsSeriesData copyWith({WorkersObservabilityQueryResultsEventsSeriesDataAggregates? aggregates, double? count, double Function()? errors, Map<String, dynamic> Function()? groups, double? interval, double? sampleInterval, }) { return WorkersObservabilityQueryResultsEventsSeriesData(
   aggregates: aggregates ?? this.aggregates,
   count: count ?? this.count,
   errors: errors != null ? errors() : this.errors,

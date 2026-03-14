@@ -11,6 +11,7 @@ factory StreamCopyAudioTrack.fromJson(Map<String, dynamic> json) { return Stream
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
+/// A string to uniquely identify the track amongst other audio track labels for the specified video.
 final StreamAudioLabel label;
 
 /// An audio track URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.

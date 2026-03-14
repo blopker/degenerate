@@ -11,6 +11,7 @@ factory SecretsStorePatchSecretObject.fromJson(Map<String, dynamic> json) { retu
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Freeform text describing the secret
 final SecretsStoreComment? comment;
 
 final List<String>? scopes;

@@ -7,16 +7,16 @@
 final class AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties {const AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties({this.conditions});
 
 factory AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(
-  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
-final Map<String,Object?>? conditions;
+final Map<String,dynamic>? conditions;
 
 Map<String, dynamic> toJson() { return {
   'conditions': ?conditions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties copyWith({Map<String, Object> Function()? conditions}) { return AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(
+AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties copyWith({Map<String, dynamic> Function()? conditions}) { return AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

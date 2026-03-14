@@ -22,14 +22,19 @@ factory KeylessSslForAZoneCreateKeylessSslConfigurationRequest.fromJson(Map<Stri
   tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
 ); }
 
+/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
 
+/// The zone's SSL certificate or SSL certificate and intermediate(s).
 final TlsCertificatesAndHostnamesSchemasCertificate certificate;
 
+/// The keyless SSL name.
 final TlsCertificatesAndHostnamesHost host;
 
+/// The keyless SSL name.
 final TlsCertificatesAndHostnamesNameWrite? name;
 
+/// The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
 final TlsCertificatesAndHostnamesPort port;
 
 final TlsCertificatesAndHostnamesKeylessTunnel? tunnel;

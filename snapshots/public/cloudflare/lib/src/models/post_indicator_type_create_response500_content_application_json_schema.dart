@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'post_indicator_type_create_r
 
 factory PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema(
   errors: (json['errors'] as List<dynamic>).map((e) => PostIndicatorTypeCreateResponse500ContentApplicationJsonSchemaErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<PostIndicatorTypeCreateResponse500ContentApplicationJsonSchemaErrors> errors;
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema copyWith({List<PostIndicatorTypeCreateResponse500ContentApplicationJsonSchemaErrors>? errors, Map<String,Object?>? result, bool? success, }) { return PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema(
+PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema copyWith({List<PostIndicatorTypeCreateResponse500ContentApplicationJsonSchemaErrors>? errors, Map<String,dynamic>? result, bool? success, }) { return PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

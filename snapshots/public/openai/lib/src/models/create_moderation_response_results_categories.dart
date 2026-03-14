@@ -35,8 +35,10 @@ final bool harassment;
 /// Harassment content that also includes violence or serious harm towards any target.
 final bool harassmentThreatening;
 
+/// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing, or that gives advice or instruction on how to commit illicit acts. For example, "how to shoplift" would fit this category.
 final bool? illicit;
 
+/// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.
 final bool? illicitViolent;
 
 /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.

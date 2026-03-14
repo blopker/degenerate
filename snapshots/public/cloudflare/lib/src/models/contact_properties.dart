@@ -113,10 +113,13 @@ factory ContactProperties.fromJson(Map<String, dynamic> json) { return ContactPr
   zip: Zipcode.fromJson(json['zip'] as String),
 ); }
 
+/// Address.
 final Address address;
 
+/// Optional address line for unit, floor, suite, etc.
 final Address2? address2;
 
+/// City.
 final City city;
 
 final Country? country;
@@ -127,6 +130,7 @@ final Fax? fax;
 
 final FirstName? firstName;
 
+/// Contact Identifier.
 final ContactIdentifier? id;
 
 final LastName? lastName;

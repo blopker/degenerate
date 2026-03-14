@@ -96,12 +96,12 @@ factory Messages51.fromJson(Map<String, dynamic> json) { return Messages51(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => Messages51FunctionCallVariant1.fromJson(v as String), fromB: (v) => Messages51FunctionCallVariant2.fromJson(v as Map<String, dynamic>),) : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages51Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   logprobs: json['logprobs'] as bool?,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => Messages51MessagesDeveloper.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages51MessagesSystem.fromJson(v as Map<String, dynamic>), fromC: (v) => Messages51MessagesUser.fromJson(v as Map<String, dynamic>), fromD: (v) => Messages51MessagesAssistant.fromJson(v as Map<String, dynamic>), fromE: (v) => Messages51MessagesTool.fromJson(v as Map<String, dynamic>), fromF: (v) => Messages51MessagesFunction.fromJson(v as Map<String, dynamic>),)).toList(),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Messages51Modalities.fromJson(e as String)).toList(),
   model: json['model'] as String?,
   n: json['n'] != null ? (json['n'] as num).toInt() : null,
@@ -135,7 +135,7 @@ final Messages51FunctionCall? functionCall;
 
 final List<Messages51Functions>? functions;
 
-final Map<String,Object?>? logitBias;
+final Map<String,dynamic>? logitBias;
 
 final bool? logprobs;
 
@@ -146,7 +146,7 @@ final int? maxTokens;
 /// A list of messages comprising the conversation so far.
 final List<Messages51Messages> messages;
 
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 final List<Messages51Modalities>? modalities;
 
@@ -229,7 +229,7 @@ Map<String, dynamic> toJson() { return {
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-Messages51 copyWith({Messages51Audio Function()? audio, Messages51ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, Messages51FunctionCall Function()? functionCall, List<Messages51Functions> Function()? functions, Map<String, Object>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, List<Messages51Messages>? messages, Map<String, Object>? Function()? metadata, List<Messages51Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, Messages51Prediction Function()? prediction, double? Function()? presencePenalty, Messages51ReasoningEffort? Function()? reasoningEffort, Messages51ResponseFormat Function()? responseFormat, int? Function()? seed, Messages51ServiceTier? Function()? serviceTier, Messages51Stop Function()? stop, bool? Function()? store, bool? Function()? stream, Messages51StreamOptions Function()? streamOptions, double? Function()? temperature, Messages51ToolChoice Function()? toolChoice, List<Messages51Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, Messages51WebSearchOptions Function()? webSearchOptions, }) { return Messages51(
+Messages51 copyWith({Messages51Audio Function()? audio, Messages51ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, Messages51FunctionCall Function()? functionCall, List<Messages51Functions> Function()? functions, Map<String, dynamic>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, List<Messages51Messages>? messages, Map<String, dynamic>? Function()? metadata, List<Messages51Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, Messages51Prediction Function()? prediction, double? Function()? presencePenalty, Messages51ReasoningEffort? Function()? reasoningEffort, Messages51ResponseFormat Function()? responseFormat, int? Function()? seed, Messages51ServiceTier? Function()? serviceTier, Messages51Stop Function()? stop, bool? Function()? store, bool? Function()? stream, Messages51StreamOptions Function()? streamOptions, double? Function()? temperature, Messages51ToolChoice Function()? toolChoice, List<Messages51Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, Messages51WebSearchOptions Function()? webSearchOptions, }) { return Messages51(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,

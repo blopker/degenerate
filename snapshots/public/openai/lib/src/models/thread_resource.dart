@@ -47,6 +47,7 @@ final ThreadResourceObject object;
 /// Unix timestamp (in seconds) for when the thread was created.
 final int createdAt;
 
+/// Optional human-readable title for the thread. Defaults to null when no title has been generated.
 final String? title;
 
 /// Current status for the thread. Defaults to `active` for newly created threads.

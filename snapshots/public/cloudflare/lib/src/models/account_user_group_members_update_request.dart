@@ -10,6 +10,7 @@ factory AccountUserGroupMembersUpdateRequest.fromJson(Map<String, dynamic> json)
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),
 ); }
 
+/// Identifier
 final IamCommonComponentsSchemasIdentifier id;
 
 Map<String, dynamic> toJson() { return {

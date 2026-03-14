@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'radar_get_search_global_resp
 
 factory RadarGetSearchGlobalResponse400.fromJson(Map<String, dynamic> json) { return RadarGetSearchGlobalResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetSearchGlobalResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<RadarGetSearchGlobalResponse400Errors> errors;
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetSearchGlobalResponse400 copyWith({List<RadarGetSearchGlobalResponse400Errors>? errors, Map<String,Object?>? result, bool? success, }) { return RadarGetSearchGlobalResponse400(
+RadarGetSearchGlobalResponse400 copyWith({List<RadarGetSearchGlobalResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return RadarGetSearchGlobalResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

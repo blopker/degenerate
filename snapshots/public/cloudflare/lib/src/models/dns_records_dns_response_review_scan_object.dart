@@ -7,11 +7,11 @@
 import 'package:collection/collection.dart';import 'dns_records_identifier.dart';final class DnsRecordsDnsResponseReviewScanObject {const DnsRecordsDnsResponseReviewScanObject({this.accepts, this.rejects, });
 
 factory DnsRecordsDnsResponseReviewScanObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseReviewScanObject(
-  accepts: (json['accepts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  accepts: (json['accepts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   rejects: (json['rejects'] as List<dynamic>?)?.map((e) => DnsRecordsIdentifier.fromJson(e as String)).toList(),
 ); }
 
-final List<Map<String,Object?>>? accepts;
+final List<Map<String,dynamic>>? accepts;
 
 final List<DnsRecordsIdentifier>? rejects;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (rejects != null) 'rejects': rejects?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DnsRecordsDnsResponseReviewScanObject copyWith({List<Map<String, Object>> Function()? accepts, List<DnsRecordsIdentifier> Function()? rejects, }) { return DnsRecordsDnsResponseReviewScanObject(
+DnsRecordsDnsResponseReviewScanObject copyWith({List<Map<String, dynamic>> Function()? accepts, List<DnsRecordsIdentifier> Function()? rejects, }) { return DnsRecordsDnsResponseReviewScanObject(
   accepts: accepts != null ? accepts() : this.accepts,
   rejects: rejects != null ? rejects() : this.rejects,
 ); } 

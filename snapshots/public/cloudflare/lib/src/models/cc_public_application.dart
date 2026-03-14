@@ -53,14 +53,17 @@ factory CcPublicApplication.fromJson(Map<String, dynamic> json) { return CcPubli
   version: (json['version'] as num).toInt(),
 ); }
 
+/// UTC timestamp string in ISO 8601 format
 final CcIso8601Timestamp createdAt;
 
 final CcDurableObjectsConfigurationNamespaceId? durableObject;
 
 final CcApplicationHealthInstances health;
 
+/// An Application ID represents an identifier of an application
 final CcApplicationId id;
 
+/// Image url
 final CcImage image;
 
 final CcPublicInstanceType instanceType;
@@ -75,8 +78,12 @@ final CcApplicationNetwork? network;
 
 final CcObservability? observability;
 
+/// Grace period for active instances to stay alive before becoming eligible for shutdown signal due to a rollout, in seconds.
+/// Defaults to 0.
+/// 
 final CcApplicationRolloutActiveGracePeriod? rolloutActiveGracePeriod;
 
+/// UTC timestamp string in ISO 8601 format
 final CcIso8601Timestamp updatedAt;
 
 /// The current version number of this application. This increments with application rollouts.

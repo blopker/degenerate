@@ -176,8 +176,8 @@ final class EditImageBodyJsonParam {const EditImageBodyJsonParam({this.model, re
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
   model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v as String,) : null,
-  images: (json['images'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as Object, fromB: (v) => v as Object,)).toList(),
-  mask: json['mask'] != null ? OneOf2.parse(json['mask'], fromA: (v) => v as Object, fromB: (v) => v as Object,) : null,
+  images: (json['images'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v, fromB: (v) => v,)).toList(),
+  mask: json['mask'] != null ? OneOf2.parse(json['mask'], fromA: (v) => v, fromB: (v) => v,) : null,
   prompt: json['prompt'] as String,
   n: json.containsKey('n') ? (json['n'] as num).toInt() : 1,
   quality: json.containsKey('quality') ? EditImageBodyJsonParamQuality.fromJson(json['quality'] as String) : EditImageBodyJsonParamQuality.auto,

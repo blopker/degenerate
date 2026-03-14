@@ -10,6 +10,7 @@ factory Web3ContentListDetails.fromJson(Map<String, dynamic> json) { return Web3
   action: json['action'] != null ? Web3ContentListAction.fromJson(json['action'] as String) : null,
 ); }
 
+/// Behavior of the content list.
 final Web3ContentListAction? action;
 
 Map<String, dynamic> toJson() { return {

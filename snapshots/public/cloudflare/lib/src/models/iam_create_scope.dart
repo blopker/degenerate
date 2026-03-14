@@ -5,17 +5,17 @@
 //  OpenAPI spec version: 3.0.3
 
 import 'package:collection/collection.dart';import 'iam_create_resource_group_scope_scope_object.dart';/// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
-extension type IamCreateResourceGroupScopeScopeKey(Object? value) {
-factory IamCreateResourceGroupScopeScopeKey.fromJson(Object? json) => IamCreateResourceGroupScopeScopeKey(json);
+extension type IamCreateResourceGroupScopeScopeKey(dynamic value) {
+factory IamCreateResourceGroupScopeScopeKey.fromJson(dynamic json) => IamCreateResourceGroupScopeScopeKey(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }
 /// A scope is a combination of scope objects which provides additional context.
 final class IamCreateScope {const IamCreateScope({required this.key, required this.objects, });
 
 factory IamCreateScope.fromJson(Map<String, dynamic> json) { return IamCreateScope(
-  key: IamCreateResourceGroupScopeScopeKey.fromJson(json['key'] as Object?),
+  key: IamCreateResourceGroupScopeScopeKey.fromJson(json['key'] as dynamic),
   objects: (json['objects'] as List<dynamic>).map((e) => IamCreateResourceGroupScopeScopeObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

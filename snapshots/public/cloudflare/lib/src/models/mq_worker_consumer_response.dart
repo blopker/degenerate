@@ -16,6 +16,7 @@ factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) { return Mq
   type: json['type'] as String?,
 ); }
 
+/// A Resource identifier.
 final MqIdentifier? consumerId;
 
 final DateTime? createdOn;
@@ -25,6 +26,7 @@ final String? deadLetterQueue;
 
 final MqQueueName? queueName;
 
+/// Name of a Worker
 final MqScriptName? scriptName;
 
 final MqWorkerConsumerResponseSettings? settings;

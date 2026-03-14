@@ -99,11 +99,12 @@ factory DnsFirewallDnsFirewallCluster.fromJson(Map<String, dynamic> json) { retu
   negativeCacheTtl: json['negative_cache_ttl'] != null ? DnsFirewallNegativeCacheTtl.fromJson(json['negative_cache_ttl'] as num) : null,
   ratelimit: json['ratelimit'] != null ? DnsFirewallRatelimit.fromJson(json['ratelimit'] as num) : null,
   retries: json['retries'] != null ? DnsFirewallRetries.fromJson(json['retries'] as num) : null,
-  upstreamIps: (json['upstream_ips'] as List<dynamic>?)?.map((e) => e as Object).toList(),
+  upstreamIps: (json['upstream_ips'] as List<dynamic>?)?.map((e) => e).toList(),
 ); }
 
 final DnsFirewallAttackMitigation? attackMitigation;
 
+/// Whether to refuse to answer queries for the ANY type
 final DnsFirewallDeprecateAnyRequests? deprecateAnyRequests;
 
 final DnsFirewallEcsFallback? ecsFallback;
@@ -120,7 +121,7 @@ final DnsFirewallRatelimit? ratelimit;
 
 final DnsFirewallRetries? retries;
 
-final List<Object>? upstreamIps;
+final List<dynamic>? upstreamIps;
 
 Map<String, dynamic> toJson() { return {
   if (attackMitigation != null) 'attack_mitigation': attackMitigation?.toJson(),
@@ -135,7 +136,7 @@ Map<String, dynamic> toJson() { return {
   'upstream_ips': ?upstreamIps,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DnsFirewallDnsFirewallCluster copyWith({DnsFirewallAttackMitigation Function()? attackMitigation, DnsFirewallDeprecateAnyRequests Function()? deprecateAnyRequests, DnsFirewallEcsFallback Function()? ecsFallback, DnsFirewallMaximumCacheTtl Function()? maximumCacheTtl, DnsFirewallMinimumCacheTtl Function()? minimumCacheTtl, DnsFirewallName Function()? name, DnsFirewallNegativeCacheTtl? Function()? negativeCacheTtl, DnsFirewallRatelimit? Function()? ratelimit, DnsFirewallRetries Function()? retries, List<Object> Function()? upstreamIps, }) { return DnsFirewallDnsFirewallCluster(
+DnsFirewallDnsFirewallCluster copyWith({DnsFirewallAttackMitigation Function()? attackMitigation, DnsFirewallDeprecateAnyRequests Function()? deprecateAnyRequests, DnsFirewallEcsFallback Function()? ecsFallback, DnsFirewallMaximumCacheTtl Function()? maximumCacheTtl, DnsFirewallMinimumCacheTtl Function()? minimumCacheTtl, DnsFirewallName Function()? name, DnsFirewallNegativeCacheTtl? Function()? negativeCacheTtl, DnsFirewallRatelimit? Function()? ratelimit, DnsFirewallRetries Function()? retries, List<dynamic> Function()? upstreamIps, }) { return DnsFirewallDnsFirewallCluster(
   attackMitigation: attackMitigation != null ? attackMitigation() : this.attackMitigation,
   deprecateAnyRequests: deprecateAnyRequests != null ? deprecateAnyRequests() : this.deprecateAnyRequests,
   ecsFallback: ecsFallback != null ? ecsFallback() : this.ecsFallback,

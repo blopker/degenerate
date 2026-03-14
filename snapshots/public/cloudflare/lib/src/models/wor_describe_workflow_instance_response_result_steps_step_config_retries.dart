@@ -35,14 +35,18 @@ final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries {con
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
   backoff: json['backoff'] != null ? WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff.fromJson(json['backoff'] as String) : null,
-  delay: json['delay'] as Object,
+  delay: json['delay'],
   limit: (json['limit'] as num).toDouble(),
 ); }
 
 final WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff? backoff;
 
 /// Specifies the delay duration.
-final Object delay;
+/// 
+/// Specifies the delay duration.
+/// 
+/// One of: String, double
+final dynamic delay;
 
 final double limit;
 
@@ -53,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay') &&
       json.containsKey('limit') && json['limit'] is num; } 
-WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff Function()? backoff, Object? delay, double? limit, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
+WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff Function()? backoff, dynamic delay, double? limit, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
   backoff: backoff != null ? backoff() : this.backoff,
   delay: delay ?? this.delay,
   limit: limit ?? this.limit,

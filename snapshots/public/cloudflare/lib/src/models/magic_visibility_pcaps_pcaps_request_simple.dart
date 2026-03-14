@@ -17,8 +17,10 @@ factory MagicVisibilityPcapsPcapsRequestSimple.fromJson(Map<String, dynamic> jso
 
 final MagicVisibilityPcapsPcapsFilter? filterV1;
 
+/// The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
 final MagicVisibilityPcapsPcapsOffsetTime? offsetTime;
 
+/// The limit of packets contained in a packet capture.
 final MagicVisibilityPcapsPcapsPacketLimit packetLimit;
 
 final MagicVisibilityPcapsPcapsSystem system;

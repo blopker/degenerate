@@ -10,6 +10,7 @@ factory UserSOrganizationsLeaveOrganizationResponse.fromJson(Map<String, dynamic
   id: json['id'] != null ? IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
 ); }
 
+/// Identifier
 final IamCommonComponentsSchemasIdentifier? id;
 
 Map<String, dynamic> toJson() { return {

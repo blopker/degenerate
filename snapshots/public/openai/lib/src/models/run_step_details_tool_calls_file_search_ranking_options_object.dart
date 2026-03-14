@@ -12,6 +12,7 @@ factory RunStepDetailsToolCallsFileSearchRankingOptionsObject.fromJson(Map<Strin
   scoreThreshold: (json['score_threshold'] as num).toDouble(),
 ); }
 
+/// The ranker to use for the file search. If not specified will use the `auto` ranker.
 final FileSearchRanker ranker;
 
 /// The score threshold for the file search. All values must be a floating point number between 0 and 1.

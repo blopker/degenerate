@@ -13,12 +13,16 @@ factory AlexandriaUpdateApplicationVersionRequest.fromJson(Map<String, dynamic> 
   supportDomains: (json['support_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Returns the list of hostnames for the application.
 final List<String>? hostnames;
 
+/// Returns the list of IP subnets for the application.
 final List<String>? ipSubnets;
 
+/// Returns the list of port protocols for the application.
 final List<String>? portProtocols;
 
+/// Returns the list of support domains for the application.
 final List<String>? supportDomains;
 
 Map<String, dynamic> toJson() { return {

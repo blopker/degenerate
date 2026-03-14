@@ -39,6 +39,7 @@ factory AbuseReportsMitigationAppeal.fromJson(Map<String, dynamic> json) { retur
 /// ID of the mitigation to appeal.
 final String id;
 
+/// Reason why the customer is appealing.
 final AbuseReportsAppealReason reason;
 
 Map<String, dynamic> toJson() { return {

@@ -17,12 +17,15 @@ factory TunnelVirtualNetwork.fromJson(Map<String, dynamic> json) { return Tunnel
 
 final TunnelVirtualNetworkComment comment;
 
+/// Timestamp of when the resource was created.
 final TunnelCreatedAt createdAt;
 
+/// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
 final TunnelDeletedAt? deletedAt;
 
 final TunnelVirtualNetworkId id;
 
+/// If `true`, this virtual network is the default for the account.
 final TunnelIsDefaultNetwork isDefaultNetwork;
 
 final TunnelVirtualNetworkName name;

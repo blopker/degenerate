@@ -35,7 +35,7 @@ factory AsyncBatch2RequestsResponseFormat.fromJson(Map<String, dynamic> json) { 
   type: json['type'] != null ? AsyncBatch2RequestsResponseFormatType.fromJson(json['type'] as String) : null,
 ); }
 
-final Object? jsonSchema;
+final dynamic jsonSchema;
 
 final AsyncBatch2RequestsResponseFormatType? type;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AsyncBatch2RequestsResponseFormat copyWith({Object? Function()? jsonSchema, AsyncBatch2RequestsResponseFormatType Function()? type, }) { return AsyncBatch2RequestsResponseFormat(
+AsyncBatch2RequestsResponseFormat copyWith({dynamic Function()? jsonSchema, AsyncBatch2RequestsResponseFormatType Function()? type, }) { return AsyncBatch2RequestsResponseFormat(
   jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
   type: type != null ? type() : this.type,
 ); } 

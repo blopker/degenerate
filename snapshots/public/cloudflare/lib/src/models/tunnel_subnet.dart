@@ -44,8 +44,10 @@ factory TunnelSubnet.fromJson(Map<String, dynamic> json) { return TunnelSubnet(
 
 final TunnelSubnetComment? comment;
 
+/// Timestamp of when the resource was created.
 final TunnelCreatedAt? createdAt;
 
+/// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
 final TunnelDeletedAt? deletedAt;
 
 final TunnelSubnetId? id;

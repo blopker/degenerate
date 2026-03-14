@@ -15,14 +15,15 @@ factory CreateAssistantRequestToolResources.fromJson(Map<String, dynamic> json) 
 
 final CreateAssistantRequestToolResourcesCodeInterpreter? codeInterpreter;
 
-final Object? fileSearch;
+/// One of: dynamic, dynamic
+final dynamic fileSearch;
 
 Map<String, dynamic> toJson() { return {
   if (codeInterpreter != null) 'code_interpreter': codeInterpreter?.toJson(),
   'file_search': ?fileSearch,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-CreateAssistantRequestToolResources copyWith({CreateAssistantRequestToolResourcesCodeInterpreter Function()? codeInterpreter, Object Function()? fileSearch, }) { return CreateAssistantRequestToolResources(
+CreateAssistantRequestToolResources copyWith({CreateAssistantRequestToolResourcesCodeInterpreter Function()? codeInterpreter, dynamic Function()? fileSearch, }) { return CreateAssistantRequestToolResources(
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
 ); } 

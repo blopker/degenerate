@@ -19,16 +19,22 @@ factory AlexandriaCreateApplicationRequest.fromJson(Map<String, dynamic> json) {
 /// Provide as string to perform a lookup to check if the source exists.
 final String applicationTypeId;
 
+/// Returns the list of hostnames for the application.
 final List<String>? hostnames;
 
+/// Returns the human readable ID.
 final AlexandriaApplicationHumanId humanId;
 
+/// Returns the list of IP subnets for the application.
 final List<String>? ipSubnets;
 
+/// Returns the application name.
 final AlexandriaApplicationName name;
 
+/// Returns the list of port protocols for the application.
 final List<String>? portProtocols;
 
+/// Returns the list of support domains for the application.
 final List<String>? supportDomains;
 
 Map<String, dynamic> toJson() { return {

@@ -48,6 +48,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
+/// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
 final ReactionRollup? reactions;

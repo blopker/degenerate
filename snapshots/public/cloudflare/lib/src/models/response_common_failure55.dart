@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'response_common_failure55_er
 
 factory ResponseCommonFailure55.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure55(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ResponseCommonFailure55Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  messages: (json['messages'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   success: json['success'] as bool?,
 ); }
 
 final List<ResponseCommonFailure55Errors>? errors;
 
-final List<Map<String,Object?>>? messages;
+final List<Map<String,dynamic>>? messages;
 
 final bool? success;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors> Function()? errors, List<Map<String, Object>> Function()? messages, bool Function()? success, }) { return ResponseCommonFailure55(
+ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors> Function()? errors, List<Map<String, dynamic>> Function()? messages, bool Function()? success, }) { return ResponseCommonFailure55(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

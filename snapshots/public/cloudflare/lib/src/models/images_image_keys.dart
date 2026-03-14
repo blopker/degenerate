@@ -25,8 +25,10 @@ factory ImagesImageKeys.fromJson(Map<String, dynamic> json) { return ImagesImage
   value: json['value'] != null ? ImagesImageKeyValue.fromJson(json['value'] as String) : null,
 ); }
 
+/// Key name.
 final ImagesImageKeyName? name;
 
+/// Key value.
 final ImagesImageKeyValue? value;
 
 Map<String, dynamic> toJson() { return {

@@ -21,12 +21,16 @@ factory KeylessSslForAZoneEditKeylessSslConfigurationRequest.fromJson(Map<String
   tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
 ); }
 
+/// Whether or not the Keyless SSL is on or off.
 final TlsCertificatesAndHostnamesEnabledWrite? enabled;
 
+/// The keyless SSL name.
 final TlsCertificatesAndHostnamesHost? host;
 
+/// The keyless SSL name.
 final TlsCertificatesAndHostnamesNameWrite? name;
 
+/// The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
 final TlsCertificatesAndHostnamesPort? port;
 
 final TlsCertificatesAndHostnamesKeylessTunnel? tunnel;

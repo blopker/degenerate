@@ -10,6 +10,7 @@ factory FirewallRulesUpdatePriorityOfAFirewallRuleRequest.fromJson(Map<String, d
   id: FirewallComponentsSchemasIdentifier.fromJson(json['id'] as String),
 ); }
 
+/// The unique identifier of the resource.
 final FirewallComponentsSchemasIdentifier id;
 
 Map<String, dynamic> toJson() { return {

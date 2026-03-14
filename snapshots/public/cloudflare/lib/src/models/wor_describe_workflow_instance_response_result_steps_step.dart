@@ -32,7 +32,7 @@ factory WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(Map<String, 
   config: WorDescribeWorkflowInstanceResponseResultStepsStepConfig.fromJson(json['config'] as Map<String, dynamic>),
   end: DateTime.parse(json['end'] as String),
   name: json['name'] as String,
-  output: (json['output'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  output: (json['output'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   start: DateTime.parse(json['start'] as String),
   success: json['success'] as bool,
   type: WorDescribeWorkflowInstanceResponseResultStepsStepType.fromJson(json['type'] as String),
@@ -46,7 +46,7 @@ final DateTime? end;
 
 final String name;
 
-final Map<String,Object?> output;
+final Map<String,dynamic> output;
 
 final DateTime start;
 
@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('attem
       json.containsKey('start') && json['start'] is String &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('type'); } 
-WorDescribeWorkflowInstanceResponseResultStepsStep copyWith({List<WorDescribeWorkflowInstanceResponseResultStepsStepAttempts>? attempts, WorDescribeWorkflowInstanceResponseResultStepsStepConfig? config, DateTime? Function()? end, String? name, Map<String,Object?>? output, DateTime? start, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultStepsStepType? type, }) { return WorDescribeWorkflowInstanceResponseResultStepsStep(
+WorDescribeWorkflowInstanceResponseResultStepsStep copyWith({List<WorDescribeWorkflowInstanceResponseResultStepsStepAttempts>? attempts, WorDescribeWorkflowInstanceResponseResultStepsStepConfig? config, DateTime? Function()? end, String? name, Map<String,dynamic>? output, DateTime? start, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultStepsStepType? type, }) { return WorDescribeWorkflowInstanceResponseResultStepsStep(
   attempts: attempts ?? this.attempts,
   config: config ?? this.config,
   end: end != null ? end() : this.end,

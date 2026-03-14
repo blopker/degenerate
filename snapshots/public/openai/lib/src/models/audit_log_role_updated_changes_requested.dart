@@ -14,7 +14,7 @@ factory AuditLogRoleUpdatedChangesRequested.fromJson(Map<String, dynamic> json) 
   permissionsAdded: (json['permissions_added'] as List<dynamic>?)?.map((e) => e as String).toList(),
   permissionsRemoved: (json['permissions_removed'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The updated role name, when provided.
@@ -36,7 +36,7 @@ final List<String>? permissionsRemoved;
 final String? description;
 
 /// Additional metadata stored on the role.
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 Map<String, dynamic> toJson() { return {
   'role_name': ?roleName,
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AuditLogRoleUpdatedChangesRequested copyWith({String Function()? roleName, String Function()? resourceId, String Function()? resourceType, List<String> Function()? permissionsAdded, List<String> Function()? permissionsRemoved, String Function()? description, Map<String, Object> Function()? metadata, }) { return AuditLogRoleUpdatedChangesRequested(
+AuditLogRoleUpdatedChangesRequested copyWith({String Function()? roleName, String Function()? resourceId, String Function()? resourceType, List<String> Function()? permissionsAdded, List<String> Function()? permissionsRemoved, String Function()? description, Map<String, dynamic> Function()? metadata, }) { return AuditLogRoleUpdatedChangesRequested(
   roleName: roleName != null ? roleName() : this.roleName,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceType: resourceType != null ? resourceType() : this.resourceType,

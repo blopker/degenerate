@@ -8,12 +8,12 @@
 final class ZonesStringConstraint {const ZonesStringConstraint({required this.$operator, required this.value, });
 
 factory ZonesStringConstraint.fromJson(Map<String, dynamic> json) { return ZonesStringConstraint(
-  $operator: json['operator'] as Object,
+  $operator: json['operator'],
   value: json['value'] as String,
 ); }
 
 /// The matches operator can use asterisks and pipes as wildcard and 'or' operators.
-final Object? $operator;
+final dynamic $operator;
 
 /// The value to apply the operator to.
 final String value;
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') &&
       json.containsKey('value') && json['value'] is String; } 
-ZonesStringConstraint copyWith({Object? Function()? $operator, String? value, }) { return ZonesStringConstraint(
+ZonesStringConstraint copyWith({dynamic Function()? $operator, String? value, }) { return ZonesStringConstraint(
   $operator: $operator != null ? $operator() : this.$operator,
   value: value ?? this.value,
 ); } 

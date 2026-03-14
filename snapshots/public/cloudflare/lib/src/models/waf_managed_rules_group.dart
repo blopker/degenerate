@@ -36,8 +36,10 @@ factory WafManagedRulesGroup.fromJson(Map<String, dynamic> json) { return WafMan
   rulesCount: json['rules_count'] != null ? WafManagedRulesRulesCount.fromJson(json['rules_count'] as num) : null,
 ); }
 
+/// Defines an informative summary of what the rule group does.
 final WafManagedRulesDescription? description;
 
+/// Defines the unique identifier of the rule group.
 final WafManagedRulesComponentsSchemasIdentifier? id;
 
 final WafManagedRulesModifiedRulesCount? modifiedRulesCount;

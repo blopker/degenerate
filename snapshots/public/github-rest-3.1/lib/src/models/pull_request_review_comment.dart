@@ -165,6 +165,7 @@ final Uri htmlUrl;
 /// URL for the pull request that the review comment belongs to.
 final Uri pullRequestUrl;
 
+/// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
 final PullRequestReviewCommentLinks links;

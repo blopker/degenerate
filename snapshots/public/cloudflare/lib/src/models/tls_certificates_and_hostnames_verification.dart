@@ -152,14 +152,19 @@ factory TlsCertificatesAndHostnamesVerification.fromJson(Map<String, dynamic> js
   verificationType: json['verification_type'] != null ? TlsCertificatesAndHostnamesVerificationType.fromJson(json['verification_type'] as String) : null,
 ); }
 
+/// Certificate Authority is manually reviewing the order.
 final TlsCertificatesAndHostnamesBrandCheck? brandCheck;
 
+/// Certificate Pack UUID.
 final TlsCertificatesAndHostnamesCertPackUuid? certPackUuid;
 
+/// Current status of certificate.
 final TlsCertificatesAndHostnamesCertificateStatus certificateStatus;
 
+/// Certificate's signature algorithm.
 final TlsCertificatesAndHostnamesSchemasSignature? signature;
 
+/// Validation method in use for a certificate pack order.
 final TlsCertificatesAndHostnamesSchemasValidationMethod? validationMethod;
 
 final TlsCertificatesAndHostnamesVerificationInfo? verificationInfo;

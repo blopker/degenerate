@@ -14,6 +14,7 @@ factory AccessSchemasBasicAppResponseProps.fromJson(Map<String, dynamic> json) {
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// Audience tag.
 final AccessSchemasAud? aud;
 
 final AccessTimestamp? createdAt;

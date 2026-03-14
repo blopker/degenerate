@@ -12,8 +12,10 @@ factory TunnelTunnelLink.fromJson(Map<String, dynamic> json) { return TunnelTunn
   linkedTunnelId: json['linked_tunnel_id'] != null ? TunnelTunnelId.fromJson(json['linked_tunnel_id'] as String) : null,
 ); }
 
+/// Timestamp of when the resource was created.
 final TunnelCreatedAt? createdAt;
 
+/// UUID of the tunnel.
 final TunnelTunnelId? linkedTunnelId;
 
 Map<String, dynamic> toJson() { return {

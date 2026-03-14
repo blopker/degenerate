@@ -7,12 +7,12 @@
 final class Circle {const Circle({required this.kind, required this.radius, this.color, });
 
 factory Circle.fromJson(Map<String, dynamic> json) { return Circle(
-  kind: json['kind'] as Object,
+  kind: json['kind'],
   radius: (json['radius'] as num).toDouble(),
   color: json['color'] as String?,
 ); }
 
-final Object? kind;
+final dynamic kind;
 
 final double radius;
 
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
       json.containsKey('radius') && json['radius'] is num; } 
-Circle copyWith({Object? Function()? kind, double? radius, String? Function()? color, }) { return Circle(
+Circle copyWith({dynamic Function()? kind, double? radius, String? Function()? color, }) { return Circle(
   kind: kind != null ? kind() : this.kind,
   radius: radius ?? this.radius,
   color: color != null ? color() : this.color,

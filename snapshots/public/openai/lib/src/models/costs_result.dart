@@ -40,8 +40,10 @@ final CostsResultObject object;
 /// The monetary value in its associated currency.
 final CostsResultAmount? amount;
 
+/// When `group_by=line_item`, this field provides the line item of the grouped costs result.
 final String? lineItem;
 
+/// When `group_by=project_id`, this field provides the project ID of the grouped costs result.
 final String? projectId;
 
 Map<String, dynamic> toJson() { return {

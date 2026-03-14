@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'd1_query_meta.dart';final cl
 
 factory D1QueryResultResponse.fromJson(Map<String, dynamic> json) { return D1QueryResultResponse(
   meta: json['meta'] != null ? D1QueryMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
-  results: (json['results'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  results: (json['results'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   success: json['success'] as bool?,
 ); }
 
 final D1QueryMeta? meta;
 
-final List<Map<String,Object?>>? results;
+final List<Map<String,dynamic>>? results;
 
 final bool? success;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-D1QueryResultResponse copyWith({D1QueryMeta Function()? meta, List<Map<String, Object>> Function()? results, bool Function()? success, }) { return D1QueryResultResponse(
+D1QueryResultResponse copyWith({D1QueryMeta Function()? meta, List<Map<String, dynamic>> Function()? results, bool Function()? success, }) { return D1QueryResultResponse(
   meta: meta != null ? meta() : this.meta,
   results: results != null ? results() : this.results,
   success: success != null ? success() : this.success,

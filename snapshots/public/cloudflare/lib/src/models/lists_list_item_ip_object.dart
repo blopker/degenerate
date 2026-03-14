@@ -17,6 +17,7 @@ factory ListsListItemIpObject.fromJson(Map<String, dynamic> json) { return Lists
   ip: ListsItemIp.fromJson(json['ip'] as String),
 ); }
 
+/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
 final ListsItemIp ip;
 
 Map<String, dynamic> toJson() { return {

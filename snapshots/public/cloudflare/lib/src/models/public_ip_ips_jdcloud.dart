@@ -13,6 +13,7 @@ factory PublicIpIpsJdcloud.fromJson(Map<String, dynamic> json) { return PublicIp
   jdcloudCidrs: (json['jdcloud_cidrs'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// A digest of the IP data. Useful for determining if the data has changed.
 final PublicIpEtag? etag;
 
 final List<String>? ipv4Cidrs;

@@ -23,6 +23,7 @@ final String? endTime;
 
 final AaaSilenceId? id;
 
+/// The unique identifier of a notification policy
 final AaaPolicyId? policyId;
 
 /// When the silence starts.

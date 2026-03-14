@@ -17,6 +17,7 @@ factory TlsCertificatesAndHostnamesUuidObject.fromJson(Map<String, dynamic> json
   uuid: json['uuid'] != null ? TlsCertificatesAndHostnamesUuid.fromJson(json['uuid'] as String) : null,
 ); }
 
+/// The DCV Delegation unique identifier.
 final TlsCertificatesAndHostnamesUuid? uuid;
 
 Map<String, dynamic> toJson() { return {

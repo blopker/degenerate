@@ -7,13 +7,13 @@
 import 'package:collection/collection.dart';import 'message3.dart';import 'profile.dart';final class AccountsGetAccountProfileResponse {const AccountsGetAccountProfileResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory AccountsGetAccountProfileResponse.fromJson(Map<String, dynamic> json) { return AccountsGetAccountProfileResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: Profile.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,Object?>> errors;
+final List<Map<String,dynamic>> errors;
 
 final List<Message3> messages;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AccountsGetAccountProfileResponse copyWith({List<Map<String,Object?>>? errors, List<Message3>? messages, Profile? result, bool? success, }) { return AccountsGetAccountProfileResponse(
+AccountsGetAccountProfileResponse copyWith({List<Map<String,dynamic>>? errors, List<Message3>? messages, Profile? result, bool? success, }) { return AccountsGetAccountProfileResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

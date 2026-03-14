@@ -15,12 +15,16 @@ factory MagicRouteAddSingleRequest.fromJson(Map<String, dynamic> json) { return 
   weight: json['weight'] != null ? MagicWeight.fromJson(json['weight'] as num) : null,
 ); }
 
+/// An optional human provided description of the static route.
 final MagicDescription? description;
 
+/// The next-hop IP Address for the static route.
 final MagicNexthop nexthop;
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final MagicPrefix prefix;
 
+/// Priority of the static route.
 final MagicPriority priority;
 
 final MagicScope? scope;

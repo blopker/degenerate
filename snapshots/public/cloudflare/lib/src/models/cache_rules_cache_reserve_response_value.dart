@@ -10,6 +10,7 @@ factory CacheRulesCacheReserveResponseValue.fromJson(Map<String, dynamic> json) 
   result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
+/// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
 final CacheRulesBase? result;
 
 Map<String, dynamic> toJson() { return {

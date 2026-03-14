@@ -35,12 +35,15 @@ factory StreamMediaStatus.fromJson(Map<String, dynamic> json) { return StreamMed
   state: json['state'] != null ? StreamMediaState.fromJson(json['state'] as String) : null,
 ); }
 
+/// Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.
 final StreamErrorReasonCode? errorReasonCode;
 
+/// Specifies why the video failed to encode using a human readable error message in English. This field is empty if the video is not in an `error` state.
 final StreamErrorReasonText? errorReasonText;
 
 final StreamPctComplete? pctComplete;
 
+/// Specifies the processing status for all quality levels for a video.
 final StreamMediaState? state;
 
 Map<String, dynamic> toJson() { return {

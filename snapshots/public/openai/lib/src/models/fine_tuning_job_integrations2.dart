@@ -13,8 +13,8 @@ factory FineTuningJobIntegrations2.fromJson(Map<String, dynamic> json) {   if (F
   return FineTuningJobIntegrations2$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class FineTuningJobIntegrations2FineTuningIntegration extends FineTuningJobIntegrations2 {const FineTuningJobIntegrations2FineTuningIntegration(this._value);
 
@@ -29,9 +29,9 @@ final FineTuningIntegration _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class FineTuningJobIntegrations2$Unknown extends FineTuningJobIntegrations2 {const FineTuningJobIntegrations2$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FineTuningJobIntegrations2$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

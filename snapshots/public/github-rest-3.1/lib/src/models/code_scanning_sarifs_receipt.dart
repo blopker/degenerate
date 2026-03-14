@@ -11,6 +11,7 @@ factory CodeScanningSarifsReceipt.fromJson(Map<String, dynamic> json) { return C
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
+/// An identifier for the upload.
 final CodeScanningAnalysisSarifId? id;
 
 /// The REST API URL for checking the status of the upload.

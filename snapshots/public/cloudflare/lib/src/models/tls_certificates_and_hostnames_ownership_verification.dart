@@ -13,8 +13,8 @@ factory TlsCertificatesAndHostnamesOwnershipVerification.fromJson(Map<String, dy
   return TlsCertificatesAndHostnamesOwnershipVerification$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class TlsCertificatesAndHostnamesOwnershipVerificationTlsCertificatesAndHostnamesOwnershipVerificationTxt extends TlsCertificatesAndHostnamesOwnershipVerification {const TlsCertificatesAndHostnamesOwnershipVerificationTlsCertificatesAndHostnamesOwnershipVerificationTxt(this._value);
 
@@ -29,9 +29,9 @@ final TlsCertificatesAndHostnamesOwnershipVerificationTxt _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class TlsCertificatesAndHostnamesOwnershipVerification$Unknown extends TlsCertificatesAndHostnamesOwnershipVerification {const TlsCertificatesAndHostnamesOwnershipVerification$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TlsCertificatesAndHostnamesOwnershipVerification$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

@@ -70,6 +70,8 @@ final FileSearchToolCallStatus status;
 /// 
 final List<String> queries;
 
+/// The results of the file search tool call.
+/// 
 final List<FileSearchToolCallResults2>? results;
 
 Map<String, dynamic> toJson() { return {

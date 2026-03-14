@@ -16,18 +16,24 @@ factory DevicePostureRulesCreateDevicePostureRuleRequest.fromJson(Map<String, dy
   type: TeamsDevicesType.fromJson(json['type'] as String),
 ); }
 
+/// The description of the device posture rule.
 final TeamsDevicesDescription? description;
 
+/// Sets the expiration time for a posture check result. If empty, the result remains valid until it is overwritten by new data from the WARP client.
 final TeamsDevicesExpiration? expiration;
 
 final TeamsDevicesInput? input;
 
+/// The conditions that the client must match to run the rule.
 final List<TeamsDevicesMatchItem>? match;
 
+/// The name of the device posture rule.
 final TeamsDevicesName name;
 
+/// Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`.
 final TeamsDevicesSchedule? schedule;
 
+/// The type of device posture rule.
 final TeamsDevicesType type;
 
 Map<String, dynamic> toJson() { return {

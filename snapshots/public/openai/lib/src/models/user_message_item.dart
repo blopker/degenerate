@@ -60,6 +60,7 @@ final List<UserMessageItemContent> content;
 /// Attachments associated with the user message. Defaults to an empty list.
 final List<Attachment> attachments;
 
+/// Inference overrides applied to the message. Defaults to null when unset.
 final InferenceOptions? inferenceOptions;
 
 Map<String, dynamic> toJson() { return {

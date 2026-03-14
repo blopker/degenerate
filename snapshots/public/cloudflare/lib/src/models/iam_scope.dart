@@ -5,17 +5,17 @@
 //  OpenAPI spec version: 3.0.3
 
 import 'package:collection/collection.dart';import 'iam_scope_object.dart';/// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
-extension type IamScopeKey(Object? value) {
-factory IamScopeKey.fromJson(Object? json) => IamScopeKey(json);
+extension type IamScopeKey(dynamic value) {
+factory IamScopeKey.fromJson(dynamic json) => IamScopeKey(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }
 /// A scope is a combination of scope objects which provides additional context.
 final class IamScope {const IamScope({required this.key, required this.objects, });
 
 factory IamScope.fromJson(Map<String, dynamic> json) { return IamScope(
-  key: IamScopeKey.fromJson(json['key'] as Object?),
+  key: IamScopeKey.fromJson(json['key'] as dynamic),
   objects: (json['objects'] as List<dynamic>).map((e) => IamScopeObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

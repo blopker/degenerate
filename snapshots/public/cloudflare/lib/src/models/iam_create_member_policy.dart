@@ -13,6 +13,7 @@ factory IamCreateMemberPolicy.fromJson(Map<String, dynamic> json) { return IamCr
   resourceGroups: (json['resource_groups'] as List<dynamic>).map((e) => IamMemberResourceGroup.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Allow or deny operations against the resources.
 final IamAccess access;
 
 final IamPolicyIdentifier id;

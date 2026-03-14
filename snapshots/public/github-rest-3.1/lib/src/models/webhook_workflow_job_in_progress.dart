@@ -50,6 +50,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
+/// The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a [`check_run`](#check_run) object.
 final WebhookWorkflowJobInProgressWorkflowJob workflowJob;
 
 final Deployment? deployment;

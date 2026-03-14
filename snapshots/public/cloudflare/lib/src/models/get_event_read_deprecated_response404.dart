@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'get_event_read_deprecated_re
 
 factory GetEventReadDeprecatedResponse404.fromJson(Map<String, dynamic> json) { return GetEventReadDeprecatedResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => GetEventReadDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<GetEventReadDeprecatedResponse404Errors> errors;
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetEventReadDeprecatedResponse404 copyWith({List<GetEventReadDeprecatedResponse404Errors>? errors, Map<String,Object?>? result, bool? success, }) { return GetEventReadDeprecatedResponse404(
+GetEventReadDeprecatedResponse404 copyWith({List<GetEventReadDeprecatedResponse404Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return GetEventReadDeprecatedResponse404(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

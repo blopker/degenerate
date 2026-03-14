@@ -44,6 +44,7 @@ final EnterpriseWebhooks? enterprise;
 
 final Milestone? milestone;
 
+/// The pull request number.
 final WebhooksNumber number;
 
 final OrganizationSimpleWebhooks? organization;

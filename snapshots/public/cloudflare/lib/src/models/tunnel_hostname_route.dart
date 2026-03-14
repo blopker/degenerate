@@ -23,16 +23,21 @@ factory TunnelHostnameRoute.fromJson(Map<String, dynamic> json) { return TunnelH
   tunnelName: json['tunnel_name'] != null ? TunnelSchemasTunnelName.fromJson(json['tunnel_name'] as String) : null,
 ); }
 
+/// An optional description of the hostname route.
 final TunnelHostnameComment? comment;
 
+/// Timestamp of when the resource was created.
 final TunnelCreatedAt? createdAt;
 
+/// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
 final TunnelDeletedAt? deletedAt;
 
+/// The hostname of the route.
 final TunnelHostname? hostname;
 
 final TunnelHostnameRouteId? id;
 
+/// UUID of the tunnel.
 final TunnelComponentsSchemasTunnelId? tunnelId;
 
 final TunnelSchemasTunnelName? tunnelName;

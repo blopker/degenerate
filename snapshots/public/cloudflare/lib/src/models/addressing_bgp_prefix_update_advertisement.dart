@@ -12,8 +12,10 @@ factory AddressingBgpPrefixUpdateAdvertisement.fromJson(Map<String, dynamic> jso
   onDemand: json['on_demand'] != null ? AddressingBgpPrefixUpdateAdvertisementOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
 ); }
 
+/// Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute
 final AddressingAsnPrependCount? asnPrependCount;
 
+/// Determines if Cloudflare advertises a BYOIP BGP prefix even when there is no matching BGP prefix in the Magic routing table. When true, Cloudflare will automatically withdraw the BGP prefix when there are no matching BGP routes, and will resume advertising when there is at least one matching BGP route.
 final AddressingAutoAdvertiseWithdraw? autoAdvertiseWithdraw;
 
 final AddressingBgpPrefixUpdateAdvertisementOnDemand? onDemand;

@@ -19,10 +19,13 @@ factory CodeScanningAnalysisTool.fromJson(Map<String, dynamic> json) { return Co
   guid: json['guid'] != null ? CodeScanningAnalysisToolGuid.fromJson(json['guid'] as String) : null,
 ); }
 
+/// The name of the tool used to generate the code scanning analysis.
 final CodeScanningAnalysisToolName? name;
 
+/// The version of the tool used to generate the code scanning analysis.
 final CodeScanningAnalysisToolVersion? version;
 
+/// The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
 final CodeScanningAnalysisToolGuid? guid;
 
 Map<String, dynamic> toJson() { return {

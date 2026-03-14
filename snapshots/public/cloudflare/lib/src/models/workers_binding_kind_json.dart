@@ -7,13 +7,13 @@
 import 'workers_binding_name.dart';final class WorkersBindingKindJson {const WorkersBindingKindJson({required this.json, required this.name, required this.type, });
 
 factory WorkersBindingKindJson.fromJson(Map<String, dynamic> json) { return WorkersBindingKindJson(
-  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
 ); }
 
 /// JSON data to use.
-final Map<String,Object?> json;
+final Map<String,dynamic> json;
 
 final WorkersBindingName name;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('json') &&
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindJson copyWith({Map<String,Object?>? json, WorkersBindingName? name, String? type, }) { return WorkersBindingKindJson(
+WorkersBindingKindJson copyWith({Map<String,dynamic>? json, WorkersBindingName? name, String? type, }) { return WorkersBindingKindJson(
   json: json ?? this.json,
   name: name ?? this.name,
   type: type ?? this.type,

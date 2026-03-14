@@ -10,6 +10,7 @@ factory UserSubscriptionDeleteUserSubscriptionResponse.fromJson(Map<String, dyna
   subscriptionId: json['subscription_id'] != null ? SchemasIdentifier.fromJson(json['subscription_id'] as String) : null,
 ); }
 
+/// Subscription identifier tag.
 final SchemasIdentifier? subscriptionId;
 
 Map<String, dynamic> toJson() { return {

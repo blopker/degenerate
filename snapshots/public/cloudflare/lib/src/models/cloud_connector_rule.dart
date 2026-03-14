@@ -57,6 +57,7 @@ final String? id;
 /// Parameters of Cloud Connector Rule
 final CloudConnectorRuleParameters? parameters;
 
+/// Cloud Provider type
 final CloudConnectorProvider? provider;
 
 Map<String, dynamic> toJson() { return {

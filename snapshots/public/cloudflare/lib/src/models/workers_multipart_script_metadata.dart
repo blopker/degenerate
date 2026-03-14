@@ -28,13 +28,16 @@ factory WorkersMultipartScriptMetadata.fromJson(Map<String, dynamic> json) { ret
 
 final WorkersAssets? assets;
 
+/// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItem>? bindings;
 
 /// Name of the uploaded file that contains the script (e.g. the file adding a listener to the `fetch` event). Indicates a `service worker syntax` Worker.
 final String? bodyPart;
 
+/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 final WorkersCompatibilityDate? compatibilityDate;
 
+/// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
 final List<WorkersCompatibilityFlag>? compatibilityFlags;
 
 /// Retain assets which exist for a previously uploaded Worker version; used in lieu of providing a completion token.
@@ -45,6 +48,7 @@ final List<String>? keepBindings;
 
 final WorkersLimits? limits;
 
+/// Whether Logpush is turned on for the Worker.
 final WorkersLogpush? logpush;
 
 /// Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker.

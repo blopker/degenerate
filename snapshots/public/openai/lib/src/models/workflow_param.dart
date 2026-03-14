@@ -10,7 +10,7 @@ final class WorkflowParam {const WorkflowParam({required this.id, this.version, 
 factory WorkflowParam.fromJson(Map<String, dynamic> json) { return WorkflowParam(
   id: json['id'] as String,
   version: json['version'] as String?,
-  stateVariables: (json['state_variables'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  stateVariables: (json['state_variables'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   tracing: json['tracing'] != null ? WorkflowTracingParam.fromJson(json['tracing'] as Map<String, dynamic>) : null,
 ); }
 
@@ -21,7 +21,7 @@ final String id;
 final String? version;
 
 /// State variables forwarded to the workflow. Keys may be up to 64 characters, values must be primitive types, and the map defaults to an empty object.
-final Map<String,Object>? stateVariables;
+final Map<String,dynamic>? stateVariables;
 
 /// Optional tracing overrides for the workflow invocation. When omitted, tracing is enabled by default.
 final WorkflowTracingParam? tracing;
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (tracing != null) 'tracing': tracing?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-WorkflowParam copyWith({String? id, String Function()? version, Map<String, Object> Function()? stateVariables, WorkflowTracingParam Function()? tracing, }) { return WorkflowParam(
+WorkflowParam copyWith({String? id, String Function()? version, Map<String, dynamic> Function()? stateVariables, WorkflowTracingParam Function()? tracing, }) { return WorkflowParam(
   id: id ?? this.id,
   version: version != null ? version() : this.version,
   stateVariables: stateVariables != null ? stateVariables() : this.stateVariables,

@@ -11,8 +11,10 @@ factory IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest.fromJso
   delegatedAccountId: AddressingDelegatedAccountIdentifier.fromJson(json['delegated_account_id'] as String),
 ); }
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final AddressingCidr cidr;
 
+/// Account identifier for the account to which prefix is being delegated.
 final AddressingDelegatedAccountIdentifier delegatedAccountId;
 
 Map<String, dynamic> toJson() { return {

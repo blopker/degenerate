@@ -144,7 +144,7 @@ final RealtimeSessionObject? object;
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to ["text"].
 /// 
-final Object? modalities;
+final dynamic modalities;
 
 /// The Realtime model used for this session.
 /// 
@@ -184,6 +184,8 @@ final RealtimeSessionInputAudioFormat inputAudioFormat;
 /// 
 final RealtimeSessionOutputAudioFormat outputAudioFormat;
 
+/// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
+/// 
 final AudioTranscription? inputAudioTranscription;
 
 final RealtimeTurnDetection? turnDetection;
@@ -200,6 +202,12 @@ final RealtimeSessionInputAudioNoiseReduction? inputAudioNoiseReduction;
 /// 
 final double speed;
 
+/// Configuration options for tracing. Set to null to disable tracing. Once
+/// tracing is enabled for a session, the configuration cannot be modified.
+/// 
+/// `auto` will create a trace for the session with default values for the
+/// workflow name, group id, and metadata.
+/// 
 final RealtimeSessionTracing? tracing;
 
 /// Tools (functions) available to the model.
@@ -226,6 +234,9 @@ final int? expiresAt;
 
 final Prompt? prompt;
 
+/// Additional fields to include in server outputs.
+/// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
+/// 
 final List<RealtimeSessionInclude2>? include;
 
 Map<String, dynamic> toJson() { return {
@@ -251,7 +262,7 @@ Map<String, dynamic> toJson() { return {
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-RealtimeSession copyWith({String Function()? id, RealtimeSessionObject Function()? object, Object? Function()? modalities, RealtimeSessionModel Function()? model, String Function()? instructions, VoiceIdsShared Function()? voice, RealtimeSessionInputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection Function()? turnDetection, RealtimeSessionInputAudioNoiseReduction Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionTracing? Function()? tracing, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, double Function()? temperature, RealtimeSessionMaxResponseOutputTokens Function()? maxResponseOutputTokens, int Function()? expiresAt, Prompt? Function()? prompt, List<RealtimeSessionInclude2>? Function()? include, }) { return RealtimeSession(
+RealtimeSession copyWith({String Function()? id, RealtimeSessionObject Function()? object, dynamic Function()? modalities, RealtimeSessionModel Function()? model, String Function()? instructions, VoiceIdsShared Function()? voice, RealtimeSessionInputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection Function()? turnDetection, RealtimeSessionInputAudioNoiseReduction Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionTracing? Function()? tracing, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, double Function()? temperature, RealtimeSessionMaxResponseOutputTokens Function()? maxResponseOutputTokens, int Function()? expiresAt, Prompt? Function()? prompt, List<RealtimeSessionInclude2>? Function()? include, }) { return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   modalities: modalities != null ? modalities() : this.modalities,

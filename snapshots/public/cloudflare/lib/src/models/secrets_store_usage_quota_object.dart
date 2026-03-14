@@ -25,8 +25,10 @@ factory SecretsStoreUsageQuotaObject.fromJson(Map<String, dynamic> json) { retur
   usage: SecretsStoreUsage.fromJson(json['usage'] as num),
 ); }
 
+/// The number of secrets the account is entitlted to use
 final SecretsStoreQuota quota;
 
+/// The number of secrets the account is currently using
 final SecretsStoreUsage usage;
 
 Map<String, dynamic> toJson() { return {

@@ -5,21 +5,21 @@
 //  OpenAPI spec version: 3.0.3
 
 /// The WAF rule action to apply.
-extension type FirewallWafRewriteAction(Object? value) {
-factory FirewallWafRewriteAction.fromJson(Object? json) => FirewallWafRewriteAction(json);
+extension type FirewallWafRewriteAction(dynamic value) {
+factory FirewallWafRewriteAction.fromJson(dynamic json) => FirewallWafRewriteAction(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }
 /// Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.
 final class FirewallRewriteAction {const FirewallRewriteAction({this.block, this.challenge, this.$default, this.disable, this.simulate, });
 
 factory FirewallRewriteAction.fromJson(Map<String, dynamic> json) { return FirewallRewriteAction(
-  block: json['block'] != null ? FirewallWafRewriteAction.fromJson(json['block'] as Object?) : null,
-  challenge: json['challenge'] != null ? FirewallWafRewriteAction.fromJson(json['challenge'] as Object?) : null,
-  $default: json['default'] != null ? FirewallWafRewriteAction.fromJson(json['default'] as Object?) : null,
-  disable: json['disable'] != null ? FirewallWafRewriteAction.fromJson(json['disable'] as Object?) : null,
-  simulate: json['simulate'] != null ? FirewallWafRewriteAction.fromJson(json['simulate'] as Object?) : null,
+  block: json['block'] != null ? FirewallWafRewriteAction.fromJson(json['block'] as dynamic) : null,
+  challenge: json['challenge'] != null ? FirewallWafRewriteAction.fromJson(json['challenge'] as dynamic) : null,
+  $default: json['default'] != null ? FirewallWafRewriteAction.fromJson(json['default'] as dynamic) : null,
+  disable: json['disable'] != null ? FirewallWafRewriteAction.fromJson(json['disable'] as dynamic) : null,
+  simulate: json['simulate'] != null ? FirewallWafRewriteAction.fromJson(json['simulate'] as dynamic) : null,
 ); }
 
 final FirewallWafRewriteAction? block;

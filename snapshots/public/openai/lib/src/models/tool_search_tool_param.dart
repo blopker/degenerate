@@ -20,8 +20,10 @@ final String type;
 /// Whether tool search is executed by the server or by the client.
 final ToolSearchExecutionType? execution;
 
+/// Description shown to the model for a client-executed tool search tool.
 final String? description;
 
+/// Parameter schema for a client-executed tool search tool.
 final EmptyModelParam? parameters;
 
 Map<String, dynamic> toJson() { return {

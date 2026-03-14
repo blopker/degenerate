@@ -7,7 +7,7 @@
 final class WebhookDeploymentReviewRequestedWorkflowJobRun {const WebhookDeploymentReviewRequestedWorkflowJobRun({required this.conclusion, required this.createdAt, required this.environment, required this.htmlUrl, required this.id, required this.name, required this.status, required this.updatedAt, });
 
 factory WebhookDeploymentReviewRequestedWorkflowJobRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedWorkflowJobRun(
-  conclusion: json['conclusion'] as Object,
+  conclusion: json['conclusion'],
   createdAt: json['created_at'] as String,
   environment: json['environment'] as String,
   htmlUrl: json['html_url'] as String,
@@ -17,7 +17,7 @@ factory WebhookDeploymentReviewRequestedWorkflowJobRun.fromJson(Map<String, dyna
   updatedAt: json['updated_at'] as String,
 ); }
 
-final Object? conclusion;
+final dynamic conclusion;
 
 final String createdAt;
 
@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('concl
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookDeploymentReviewRequestedWorkflowJobRun copyWith({Object? Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, String? Function()? name, String? status, String? updatedAt, }) { return WebhookDeploymentReviewRequestedWorkflowJobRun(
+WebhookDeploymentReviewRequestedWorkflowJobRun copyWith({dynamic Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, String? Function()? name, String? status, String? updatedAt, }) { return WebhookDeploymentReviewRequestedWorkflowJobRun(
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   createdAt: createdAt ?? this.createdAt,
   environment: environment ?? this.environment,

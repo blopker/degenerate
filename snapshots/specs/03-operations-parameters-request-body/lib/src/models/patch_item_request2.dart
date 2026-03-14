@@ -13,14 +13,14 @@ factory PatchItemRequest2.fromJson(Map<String, dynamic> json) { return PatchItem
 
 final String? name;
 
-final Object? avatar;
+final dynamic avatar;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   'avatar': ?avatar,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PatchItemRequest2 copyWith({String Function()? name, Object? Function()? avatar, }) { return PatchItemRequest2(
+PatchItemRequest2 copyWith({String Function()? name, dynamic Function()? avatar, }) { return PatchItemRequest2(
   name: name != null ? name() : this.name,
   avatar: avatar != null ? avatar() : this.avatar,
 ); } 

@@ -17,6 +17,7 @@ factory IntelUrlParam.fromJson(Map<String, dynamic> json) { return IntelUrlParam
   url: json['url'] != null ? IntelUrl.fromJson(json['url'] as String) : null,
 ); }
 
+/// URL(s) to filter submissions results by.
 final IntelUrl? url;
 
 Map<String, dynamic> toJson() { return {

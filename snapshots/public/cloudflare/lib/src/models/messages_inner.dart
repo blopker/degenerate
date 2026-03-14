@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 factory MessagesInner.fromJson(Map<String, dynamic> json) { return MessagesInner(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => MessagesInnerFunctions.fromJson(e as Map<String, dynamic>)).toList(),
-  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   messages: (json['messages'] as List<dynamic>).map((e) => MessagesInnerMessages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
@@ -30,7 +30,7 @@ final double? frequencyPenalty;
 final List<MessagesInnerFunctions>? functions;
 
 /// JSON schema that should be fufilled for the response.
-final Map<String,Object?>? guidedJson;
+final Map<String,dynamic>? guidedJson;
 
 /// The maximum number of tokens to generate in the response.
 final int maxTokens;
@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-MessagesInner copyWith({double Function()? frequencyPenalty, List<MessagesInnerFunctions> Function()? functions, Map<String, Object> Function()? guidedJson, int Function()? maxTokens, List<MessagesInnerMessages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, MessagesInnerResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, List<MessagesInnerTools> Function()? tools, int Function()? topK, double Function()? topP, }) { return MessagesInner(
+MessagesInner copyWith({double Function()? frequencyPenalty, List<MessagesInnerFunctions> Function()? functions, Map<String, dynamic> Function()? guidedJson, int Function()? maxTokens, List<MessagesInnerMessages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, MessagesInnerResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, List<MessagesInnerTools> Function()? tools, int Function()? topK, double Function()? topP, }) { return MessagesInner(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,

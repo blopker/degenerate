@@ -48,7 +48,7 @@ factory View.fromJson(Map<String, dynamic> json) { return View(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   filter: json['filter'] as String?,
   visibleFields: (json['visible_fields'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-  sortBy: (json['sort_by'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => e as Object).toList()).toList(),
+  sortBy: (json['sort_by'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
   groupBy: (json['group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   verticalGroupBy: (json['vertical_group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
 ); }
@@ -89,7 +89,7 @@ final String? filter;
 final List<int> visibleFields;
 
 /// The sorting configuration for the view. Each element is a tuple of [field_id, direction] where direction is "asc" or "desc".
-final List<List<Object>> sortBy;
+final List<List<dynamic>> sortBy;
 
 /// The list of field IDs used for horizontal grouping.
 final List<int> groupBy;
@@ -128,7 +128,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('sort_by') &&
       json.containsKey('group_by') &&
       json.containsKey('vertical_group_by'); } 
-View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, String? Function()? filter, List<int>? visibleFields, List<List<Object>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
+View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, String? Function()? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
   id: id ?? this.id,
   number: number ?? this.number,
   name: name ?? this.name,

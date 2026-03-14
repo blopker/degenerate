@@ -10,7 +10,7 @@ factory VectorStoreSearchResultItem.fromJson(Map<String, dynamic> json) { return
   fileId: json['file_id'] as String,
   filename: json['filename'] as String,
   score: (json['score'] as num).toDouble(),
-  attributes: (json['attributes'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  attributes: (json['attributes'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   content: (json['content'] as List<dynamic>).map((e) => VectorStoreSearchResultContentObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -23,7 +23,13 @@ final String filename;
 /// The similarity score for the result.
 final double score;
 
-final Map<String,Object>? attributes;
+/// Set of 16 key-value pairs that can be attached to an object. This can be
+/// useful for storing additional information about the object in a structured
+/// format, and querying for objects via API or the dashboard. Keys are strings
+/// with a maximum length of 64 characters. Values are strings with a maximum
+/// length of 512 characters, booleans, or numbers.
+/// 
+final Map<String,dynamic>? attributes;
 
 /// Content chunks from the file.
 final List<VectorStoreSearchResultContentObject> content;
@@ -40,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('attributes') &&
       json.containsKey('content'); } 
-VectorStoreSearchResultItem copyWith({String? fileId, String? filename, double? score, Map<String, Object>? Function()? attributes, List<VectorStoreSearchResultContentObject>? content, }) { return VectorStoreSearchResultItem(
+VectorStoreSearchResultItem copyWith({String? fileId, String? filename, double? score, Map<String, dynamic>? Function()? attributes, List<VectorStoreSearchResultContentObject>? content, }) { return VectorStoreSearchResultItem(
   fileId: fileId ?? this.fileId,
   filename: filename ?? this.filename,
   score: score ?? this.score,

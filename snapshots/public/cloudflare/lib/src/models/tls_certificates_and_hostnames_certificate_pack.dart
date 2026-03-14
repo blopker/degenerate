@@ -171,6 +171,7 @@ final TlsCertificatesAndHostnamesIdentifier id;
 
 final TlsCertificatesAndHostnamesPrimary? primaryCertificate;
 
+/// Status of certificate pack.
 final TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus status;
 
 final TlsCertificatesAndHostnamesSchemasType type;

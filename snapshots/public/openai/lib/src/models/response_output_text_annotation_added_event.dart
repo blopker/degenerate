@@ -37,7 +37,7 @@ factory ResponseOutputTextAnnotationAddedEvent.fromJson(Map<String, dynamic> jso
   contentIndex: (json['content_index'] as num).toInt(),
   annotationIndex: (json['annotation_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-  annotation: (json['annotation'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  annotation: (json['annotation'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The type of the event. Always 'response.output_text.annotation.added'.
@@ -59,7 +59,7 @@ final int annotationIndex;
 final int sequenceNumber;
 
 /// The annotation object being added. (See annotation schema for details.)
-final Map<String,Object?> annotation;
+final Map<String,dynamic> annotation;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('annotation_index') && json['annotation_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('annotation'); } 
-ResponseOutputTextAnnotationAddedEvent copyWith({ResponseOutputTextAnnotationAddedEventType? type, String? itemId, int? outputIndex, int? contentIndex, int? annotationIndex, int? sequenceNumber, Map<String,Object?>? annotation, }) { return ResponseOutputTextAnnotationAddedEvent(
+ResponseOutputTextAnnotationAddedEvent copyWith({ResponseOutputTextAnnotationAddedEventType? type, String? itemId, int? outputIndex, int? contentIndex, int? annotationIndex, int? sequenceNumber, Map<String,dynamic>? annotation, }) { return ResponseOutputTextAnnotationAddedEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,

@@ -43,6 +43,7 @@ factory RepositoryAdvisoryCredit.fromJson(Map<String, dynamic> json) { return Re
 
 final SimpleUser user;
 
+/// The type of credit the user is receiving.
 final SecurityAdvisoryCreditTypes type;
 
 /// The state of the user's acceptance of the credit.

@@ -18,6 +18,7 @@ factory CloudforceOneRequestsRequestMessageItem.fromJson(Map<String, dynamic> js
 /// Author of message.
 final String author;
 
+/// Content of message.
 final CloudforceOneRequestsMessageContent content;
 
 /// Defines the message creation time.

@@ -43,14 +43,19 @@ factory SecretsStoreSecretObject.fromJson(Map<String, dynamic> json) { return Se
   storeId: SecretsStoreStoreIdentifier.fromJson(json['store_id'] as String),
 ); }
 
+/// Freeform text describing the secret
 final SecretsStoreComment? comment;
 
+/// Whenthe secret was created.
 final SecretsStoreCreated created;
 
+/// Secret identifier tag.
 final SecretsStoreIdentifier id;
 
+/// When the secret was modified.
 final SecretsStoreModified modified;
 
+/// The name of the secret
 final SecretsStoreSecretName name;
 
 final SecretsStoreSecretStatus status;

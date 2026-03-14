@@ -10,6 +10,7 @@ factory DeleteAccountsAccountIdLogpushValidateDestinationRequest.fromJson(Map<St
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
 ); }
 
+/// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
 
 Map<String, dynamic> toJson() { return {

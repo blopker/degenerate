@@ -38,12 +38,15 @@ factory AsnIntelligenceGetAsnSubnetsResponse.fromJson(Map<String, dynamic> json)
 
 final IntelAsn? asn;
 
+/// Total results returned based on your search parameters.
 final IntelCount? count;
 
 final int? ipCountTotal;
 
+/// Current page within paginated list of results.
 final IntelPage? page;
 
+/// Number of results per page of results.
 final IntelPerPage? perPage;
 
 final List<String>? subnets;

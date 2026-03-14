@@ -14,12 +14,16 @@ factory IamUserGroupPolicies.fromJson(Map<String, dynamic> json) { return IamUse
   resourceGroups: (json['resource_groups'] as List<dynamic>?)?.map((e) => IamResourceGroup.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Allow or deny operations against the resources.
 final IamAccess? access;
 
+/// Policy identifier.
 final IamPolicyIdentifier? id;
 
+/// A set of permission groups that are specified to the policy.
 final List<IamPermissionGroup>? permissionGroups;
 
+/// A list of resource groups that the policy applies to.
 final List<IamResourceGroup>? resourceGroups;
 
 Map<String, dynamic> toJson() { return {

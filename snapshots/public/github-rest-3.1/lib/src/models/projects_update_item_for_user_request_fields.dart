@@ -8,7 +8,7 @@ final class ProjectsUpdateItemForUserRequestFields {const ProjectsUpdateItemForU
 
 factory ProjectsUpdateItemForUserRequestFields.fromJson(Map<String, dynamic> json) { return ProjectsUpdateItemForUserRequestFields(
   id: (json['id'] as num).toInt(),
-  value: json['value'] as Object,
+  value: json['value'],
 ); }
 
 /// The ID of the project field to update.
@@ -18,7 +18,14 @@ final int id;
 /// - For text, number, and date fields, provide the new value directly.
 /// - For single select and iteration fields, provide the ID of the option or iteration.
 /// - To clear the field, set this to null.
-final Object? value;
+/// 
+/// The new value for the field:
+/// - For text, number, and date fields, provide the new value directly.
+/// - For single select and iteration fields, provide the ID of the option or iteration.
+/// - To clear the field, set this to null.
+/// 
+/// One of: String, double
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -26,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('value'); } 
-ProjectsUpdateItemForUserRequestFields copyWith({int? id, Object? Function()? value, }) { return ProjectsUpdateItemForUserRequestFields(
+ProjectsUpdateItemForUserRequestFields copyWith({int? id, dynamic Function()? value, }) { return ProjectsUpdateItemForUserRequestFields(
   id: id ?? this.id,
   value: value != null ? value() : this.value,
 ); } 

@@ -20,6 +20,7 @@ final TeamsDevicesUuid? id;
 
 final TeamsDevicesInterval? interval;
 
+/// The name of the device posture integration.
 final TeamsDevicesComponentsSchemasName? name;
 
 final TeamsDevicesSchemasType? type;

@@ -16,6 +16,7 @@ final FirewallAction action;
 
 final FirewallFilter filter;
 
+/// The unique identifier of the resource.
 final FirewallComponentsSchemasIdentifier id;
 
 Map<String, dynamic> toJson() { return {

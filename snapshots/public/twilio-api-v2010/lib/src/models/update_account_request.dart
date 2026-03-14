@@ -14,6 +14,7 @@ factory UpdateAccountRequest.fromJson(Map<String, dynamic> json) { return Update
 /// Update the human-readable description of this Account
 final String? friendlyName;
 
+/// The status of this account. Usually `active`, but can be `suspended` or `closed`.
 final AccountEnumStatus? status;
 
 Map<String, dynamic> toJson() { return {

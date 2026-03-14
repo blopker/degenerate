@@ -13,6 +13,7 @@ factory MqHttpConsumerRequestSettings.fromJson(Map<String, dynamic> json) { retu
   visibilityTimeoutMs: json['visibility_timeout_ms'] != null ? MqVisibilityTimeout.fromJson(json['visibility_timeout_ms'] as num) : null,
 ); }
 
+/// The maximum number of messages to include in a batch.
 final MqBatchSize? batchSize;
 
 final MqMaxRetries? maxRetries;

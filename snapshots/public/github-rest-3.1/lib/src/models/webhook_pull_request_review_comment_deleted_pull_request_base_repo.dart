@@ -198,7 +198,7 @@ factory WebhookPullRequestReviewCommentDeletedPullRequestBaseRepo.fromJson(Map<S
   compareUrl: json['compare_url'] as String,
   contentsUrl: json['contents_url'] as String,
   contributorsUrl: Uri.parse(json['contributors_url'] as String),
-  createdAt: json['created_at'] as Object,
+  createdAt: json['created_at'],
   defaultBranch: json['default_branch'] as String,
   deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
   deploymentsUrl: Uri.parse(json['deployments_url'] as String),
@@ -253,7 +253,7 @@ factory WebhookPullRequestReviewCommentDeletedPullRequestBaseRepo.fromJson(Map<S
   private: json['private'] as bool,
   public: json['public'] as bool?,
   pullsUrl: json['pulls_url'] as String,
-  pushedAt: json['pushed_at'] as Object,
+  pushedAt: json['pushed_at'],
   releasesUrl: json['releases_url'] as String,
   roleName: json['role_name'] as String?,
   size: (json['size'] as num).toInt(),
@@ -322,7 +322,8 @@ final String contentsUrl;
 
 final Uri contributorsUrl;
 
-final Object createdAt;
+/// One of: int, DateTime
+final dynamic createdAt;
 
 /// The default branch of the repository.
 final String defaultBranch;
@@ -454,7 +455,8 @@ final bool? public;
 
 final String pullsUrl;
 
-final Object? pushedAt;
+/// One of: int, DateTime
+final dynamic pushedAt;
 
 final String releasesUrl;
 
@@ -690,7 +692,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('visibility') &&
       json.containsKey('watchers') && json['watchers'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num; } 
-WebhookPullRequestReviewCommentDeletedPullRequestBaseRepo copyWith({bool Function()? allowAutoMerge, bool Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Object? createdAt, String? defaultBranch, bool Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, bool? hasDiscussions, bool Function()? hasPullRequests, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoPullRequestCreationPolicy Function()? pullRequestCreationPolicy, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense? Function()? license, String Function()? masterBranch, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoMergeCommitMessage Function()? mergeCommitMessage, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoMergeCommitTitle Function()? mergeCommitTitle, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String Function()? organization, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoOwner? Function()? owner, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoPermissions Function()? permissions, bool? private, bool Function()? public, String? pullsUrl, Object? Function()? pushedAt, String? releasesUrl, String? Function()? roleName, int? size, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoSquashMergeCommitMessage Function()? squashMergeCommitMessage, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoSquashMergeCommitTitle Function()? squashMergeCommitTitle, String? sshUrl, int Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, bool Function()? useSquashPrTitleAsDefault, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoVisibility? visibility, int? watchers, int? watchersCount, bool Function()? webCommitSignoffRequired, }) { return WebhookPullRequestReviewCommentDeletedPullRequestBaseRepo(
+WebhookPullRequestReviewCommentDeletedPullRequestBaseRepo copyWith({bool Function()? allowAutoMerge, bool Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, dynamic createdAt, String? defaultBranch, bool Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, bool? hasDiscussions, bool Function()? hasPullRequests, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoPullRequestCreationPolicy Function()? pullRequestCreationPolicy, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense? Function()? license, String Function()? masterBranch, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoMergeCommitMessage Function()? mergeCommitMessage, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoMergeCommitTitle Function()? mergeCommitTitle, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String Function()? organization, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoOwner? Function()? owner, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoPermissions Function()? permissions, bool? private, bool Function()? public, String? pullsUrl, dynamic Function()? pushedAt, String? releasesUrl, String? Function()? roleName, int? size, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoSquashMergeCommitMessage Function()? squashMergeCommitMessage, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoSquashMergeCommitTitle Function()? squashMergeCommitTitle, String? sshUrl, int Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, bool Function()? useSquashPrTitleAsDefault, WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoVisibility? visibility, int? watchers, int? watchersCount, bool Function()? webCommitSignoffRequired, }) { return WebhookPullRequestReviewCommentDeletedPullRequestBaseRepo(
   allowAutoMerge: allowAutoMerge != null ? allowAutoMerge() : this.allowAutoMerge,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   allowMergeCommit: allowMergeCommit != null ? allowMergeCommit() : this.allowMergeCommit,

@@ -40,16 +40,21 @@ factory LoadBalancingLoadBalancer.fromJson(Map<String, dynamic> json) { return L
 
 final LoadBalancingAdaptiveRouting? adaptiveRouting;
 
+/// A mapping of country codes to a list of pool IDs (ordered by their failover priority) for the given country. Any country not explicitly defined will fall back to using the corresponding region_pool mapping if it exists else to default_pools.
 final Map<String,List<String>>? countryPools;
 
 final LoadBalancingTimestamp? createdOn;
 
+/// A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.
 final List<String>? defaultPools;
 
+/// Object description.
 final LoadBalancingComponentsSchemasDescription? description;
 
+/// Whether to enable (the default) this load balancer.
 final LoadBalancingComponentsSchemasEnabled? enabled;
 
+/// The pool ID to use when all other pools are detected as unhealthy.
 final LoadBalancingFallbackPool? fallbackPool;
 
 final LoadBalancingLoadBalancerComponentsSchemasIdentifier? id;
@@ -58,6 +63,7 @@ final LoadBalancingLocationStrategy? locationStrategy;
 
 final LoadBalancingTimestamp? modifiedOn;
 
+/// The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare's DNS, the Load Balancer will take precedence and the DNS record will not be used.
 final LoadBalancingComponentsSchemasName? name;
 
 final List<String>? networks;

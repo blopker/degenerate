@@ -12,8 +12,10 @@ factory InferenceOptions.fromJson(Map<String, dynamic> json) { return InferenceO
   model: json['model'] as String,
 ); }
 
+/// Preferred tool to invoke. Defaults to null when ChatKit should auto-select.
 final ToolChoice? toolChoice;
 
+/// Model name that generated the response. Defaults to null when using the session default.
 final String? model;
 
 Map<String, dynamic> toJson() { return {

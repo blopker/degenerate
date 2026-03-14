@@ -11,6 +11,7 @@ factory AddressingCreateBindingRequest.fromJson(Map<String, dynamic> json) { ret
   serviceId: AddressingServiceIdentifier.fromJson(json['service_id'] as String),
 ); }
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final AddressingCidr cidr;
 
 final AddressingServiceIdentifier serviceId;

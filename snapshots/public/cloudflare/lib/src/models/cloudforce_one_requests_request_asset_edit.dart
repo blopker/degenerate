@@ -17,6 +17,7 @@ factory CloudforceOneRequestsRequestAssetEdit.fromJson(Map<String, dynamic> json
   source: json['source'] != null ? CloudforceOneRequestsAssetContent.fromJson(json['source'] as String) : null,
 ); }
 
+/// Asset file to upload.
 final CloudforceOneRequestsAssetContent? source;
 
 Map<String, dynamic> toJson() { return {

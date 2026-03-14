@@ -132,7 +132,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/disputes.json`
-Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsDisputes({Object? sinceId, Object? lastId, Object? status, Object? initiatedAt, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsDisputes({dynamic sinceId, dynamic lastId, dynamic status, dynamic initiatedAt, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -180,7 +180,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#index-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/disputes.json`
-Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsDisputes({Object? sinceId, Object? lastId, Object? status, Object? initiatedAt, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsDisputes({dynamic sinceId, dynamic lastId, dynamic status, dynamic initiatedAt, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -209,7 +209,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsPayouts({dynamic sinceId, dynamic lastId, dynamic dateMin, dynamic dateMax, dynamic date, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -259,7 +259,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-04
 ///
 /// `GET /admin/api/2020-04/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetShopifyPaymentsPayouts({dynamic sinceId, dynamic lastId, dynamic dateMin, dynamic dateMax, dynamic date, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -309,7 +309,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-07
 ///
 /// `GET /admin/api/2020-07/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202007GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetShopifyPaymentsPayouts({dynamic sinceId, dynamic lastId, dynamic dateMin, dynamic dateMax, dynamic date, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -359,7 +359,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2020-10
 ///
 /// `GET /admin/api/2020-10/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> getShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getShopifyPaymentsPayouts({dynamic sinceId, dynamic lastId, dynamic dateMin, dynamic dateMax, dynamic date, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -409,7 +409,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-2021-01
 ///
 /// `GET /admin/api/2021-01/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecated202101GetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetShopifyPaymentsPayouts({dynamic sinceId, dynamic lastId, dynamic dateMin, dynamic dateMax, dynamic date, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -459,7 +459,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#index-unstable
 ///
 /// `GET /admin/api/unstable/shopify_payments/payouts.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetShopifyPaymentsPayouts({Object? sinceId, Object? lastId, Object? dateMin, Object? dateMax, Object? date, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetShopifyPaymentsPayouts({dynamic sinceId, dynamic lastId, dynamic dateMin, dynamic dateMax, dynamic date, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();
@@ -510,7 +510,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/transaction#index-2020-01
 ///
 /// `GET /admin/api/2020-01/shopify_payments/balance/transactions.json`
-Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsBalanceTransactions({Object? sinceId, Object? lastId, Object? test, Object? payoutId, Object? payoutStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetShopifyPaymentsBalanceTransactions({dynamic sinceId, dynamic lastId, dynamic test, dynamic payoutId, dynamic payoutStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (lastId != null) queryParameters['last_id'] = lastId.toString();

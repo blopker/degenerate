@@ -27,6 +27,7 @@ final List<AccessUsersEmails>? emails;
 /// The IdP-generated Id of the SCIM resource.
 final String? externalId;
 
+/// The unique Cloudflare-generated Id of the SCIM resource.
 final AccessId? id;
 
 final AccessMeta? meta;

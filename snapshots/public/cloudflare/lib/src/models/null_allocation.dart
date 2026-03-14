@@ -29,19 +29,19 @@ final class NullAllocation {const NullAllocation({required this.type, this.value
 
 factory NullAllocation.fromJson(Map<String, dynamic> json) { return NullAllocation(
   type: NullAllocationType.fromJson(json['type'] as String),
-  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 final NullAllocationType type;
 
-final Map<String,Object?>? value;
+final Map<String,dynamic>? value;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-NullAllocation copyWith({NullAllocationType? type, Map<String, Object> Function()? value, }) { return NullAllocation(
+NullAllocation copyWith({NullAllocationType? type, Map<String, dynamic> Function()? value, }) { return NullAllocation(
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 

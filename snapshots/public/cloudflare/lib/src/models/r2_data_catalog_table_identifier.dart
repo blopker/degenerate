@@ -15,6 +15,9 @@ factory R2DataCatalogTableIdentifier.fromJson(Map<String, dynamic> json) { retur
 /// Specifies the table name.
 final String name;
 
+/// Specifies the hierarchical namespace parts as an array of strings.
+/// For example, ["bronze", "analytics"] represents the namespace "bronze.analytics".
+/// 
 final List<String> namespace;
 
 Map<String, dynamic> toJson() { return {

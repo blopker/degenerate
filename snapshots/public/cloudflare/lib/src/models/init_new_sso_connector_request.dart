@@ -18,6 +18,7 @@ final bool beginVerification;
 /// Email domain of the new SSO connector
 final String emailDomain;
 
+/// Controls the display of FedRAMP language to the user during SSO login
 final IamUseFedrampLanguage? useFedrampLanguage;
 
 Map<String, dynamic> toJson() { return {

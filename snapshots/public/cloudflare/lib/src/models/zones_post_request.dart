@@ -21,8 +21,12 @@ factory ZonesPostRequest.fromJson(Map<String, dynamic> json) { return ZonesPostR
 
 final ZonesPostRequestAccount account;
 
+/// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
 final ZonesName name;
 
+/// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+/// typically a partner-hosted zone or a CNAME setup.
+/// 
 final ZonesType? type;
 
 Map<String, dynamic> toJson() { return {

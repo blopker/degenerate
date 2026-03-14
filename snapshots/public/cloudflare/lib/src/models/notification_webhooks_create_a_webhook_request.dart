@@ -12,10 +12,13 @@ factory NotificationWebhooksCreateAWebhookRequest.fromJson(Map<String, dynamic> 
   url: AaaUrl.fromJson(json['url'] as String),
 ); }
 
+/// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
 final AaaComponentsSchemasName name;
 
+/// Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
 final AaaSecret? secret;
 
+/// The POST endpoint to call when dispatching a notification.
 final AaaUrl url;
 
 Map<String, dynamic> toJson() { return {

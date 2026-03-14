@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_multi
 
 factory RunGraderRequest.fromJson(Map<String, dynamic> json) { return RunGraderRequest(
   grader: OneOf5.parse(json['grader'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderMulti.fromJson(v as Map<String, dynamic>),),
-  item: (json['item'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  item: (json['item'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modelSample: json['model_sample'] as String,
 ); }
 
@@ -18,7 +18,7 @@ final RunGraderRequestGrader grader;
 /// The dataset item provided to the grader. This will be used to populate
 /// the `item` namespace. See [the guide](/docs/guides/graders) for more details.
 /// 
-final Map<String,Object?>? item;
+final Map<String,dynamic>? item;
 
 /// The model sample to be evaluated. This value will be used to populate
 /// the `sample` namespace. See [the guide](/docs/guides/graders) for more details.
@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('grader') &&
       json.containsKey('model_sample') && json['model_sample'] is String; } 
-RunGraderRequest copyWith({RunGraderRequestGrader? grader, Map<String, Object> Function()? item, String? modelSample, }) { return RunGraderRequest(
+RunGraderRequest copyWith({RunGraderRequestGrader? grader, Map<String, dynamic> Function()? item, String? modelSample, }) { return RunGraderRequest(
   grader: grader ?? this.grader,
   item: item != null ? item() : this.item,
   modelSample: modelSample ?? this.modelSample,

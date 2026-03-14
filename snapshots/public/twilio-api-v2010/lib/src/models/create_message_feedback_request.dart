@@ -10,6 +10,7 @@ factory CreateMessageFeedbackRequest.fromJson(Map<String, dynamic> json) { retur
   outcome: json['Outcome'] != null ? MessageFeedbackEnumOutcome.fromJson(json['Outcome'] as String) : null,
 ); }
 
+/// Reported outcome indicating whether there is confirmation that the Message recipient performed a tracked user action. Can be: `unconfirmed` or `confirmed`. For more details see [How to Optimize Message Deliverability with Message Feedback](https://www.twilio.com/docs/messaging/guides/send-message-feedback-to-twilio).
 final MessageFeedbackEnumOutcome? outcome;
 
 Map<String, dynamic> toJson() { return {

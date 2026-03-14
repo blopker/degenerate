@@ -43,18 +43,24 @@ factory MagicVisibilityPcapsPcapsResponseFull.fromJson(Map<String, dynamic> json
   type: json['type'] != null ? MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String) : null,
 ); }
 
+/// The maximum number of bytes to capture. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsByteLimit? byteLimit;
 
+/// The name of the data center used for the packet capture. This can be a specific colo (ord02) or a multi-colo name (ORD). This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsColoName? coloName;
 
+/// The full URI for the bucket. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsDestinationConf? destinationConf;
 
+/// An error message that describes why the packet capture failed. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsErrorMessage? errorMessage;
 
 final MagicVisibilityPcapsPcapsFilter? filterV1;
 
+/// The ID for the packet capture.
 final MagicVisibilityPcapsPcapsId? id;
 
+/// The number of packets captured.
 final MagicVisibilityPcapsPcapsPacketsCaptured? packetsCaptured;
 
 final MagicVisibilityPcapsPcapsStatus? status;

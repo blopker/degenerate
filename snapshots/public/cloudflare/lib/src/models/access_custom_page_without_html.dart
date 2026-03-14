@@ -19,6 +19,7 @@ final AccessSchemasAppCount? appCount;
 
 final AccessTimestamp? createdAt;
 
+/// Custom page name.
 final AccessCustomPagesComponentsSchemasName name;
 
 final AccessSchemasType type;

@@ -15,16 +15,21 @@ factory ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest.fro
   userSeatExpirationInactiveTime: json['user_seat_expiration_inactive_time'] != null ? AccessSchemasUserSeatExpirationInactiveTime.fromJson(json['user_seat_expiration_inactive_time'] as String) : null,
 ); }
 
+/// The unique subdomain assigned to your Zero Trust organization.
 final AccessSchemasAuthDomain authDomain;
 
+/// Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
 final AccessSchemasIsUiReadOnly? isUiReadOnly;
 
 final AccessSchemasLoginDesign? loginDesign;
 
+/// The name of your Zero Trust organization.
 final AccessOrganizationsComponentsSchemasName name;
 
+/// A description of the reason why the UI read only field is being toggled.
 final AccessUiReadOnlyToggleReason? uiReadOnlyToggleReason;
 
+/// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
 final AccessSchemasUserSeatExpirationInactiveTime? userSeatExpirationInactiveTime;
 
 Map<String, dynamic> toJson() { return {

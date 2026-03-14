@@ -70,8 +70,10 @@ factory WafPackagesUpdateAWafPackageRequest.fromJson(Map<String, dynamic> json) 
   sensitivity: json['sensitivity'] != null ? FirewallSensitivity.fromJson(json['sensitivity'] as String) : null,
 ); }
 
+/// The default action performed by the rules in the WAF package.
 final FirewallActionMode? actionMode;
 
+/// The sensitivity of the WAF package.
 final FirewallSensitivity? sensitivity;
 
 Map<String, dynamic> toJson() { return {

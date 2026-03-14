@@ -16,8 +16,10 @@ factory MagicInterconnectTunnelUpdateRequest.fromJson(Map<String, dynamic> json)
   mtu: json['mtu'] != null ? MagicSchemasMtu.fromJson(json['mtu'] as num) : null,
 ); }
 
+/// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
 
+/// An optional description of the interconnect.
 final MagicInterconnectComponentsSchemasDescription? description;
 
 final MagicGre? gre;

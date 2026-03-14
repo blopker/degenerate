@@ -19,8 +19,10 @@ factory CustomHostnameForAZoneCreateCustomHostnameRequest.fromJson(Map<String, d
   ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl'] as Map<String, dynamic>) : null,
 ); }
 
+/// Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
 final Map<String,String>? customMetadata;
 
+/// The custom hostname that will point to your hostname via CNAME.
 final TlsCertificatesAndHostnamesHostnamePost hostname;
 
 final TlsCertificatesAndHostnamesSslpost? ssl;

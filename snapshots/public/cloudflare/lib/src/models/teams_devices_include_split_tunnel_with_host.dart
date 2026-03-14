@@ -18,8 +18,10 @@ factory TeamsDevicesIncludeSplitTunnelWithHost.fromJson(Map<String, dynamic> jso
   host: TeamsDevicesIncludeSplitTunnelHost.fromJson(json['host'] as String),
 ); }
 
+/// A description of the Split Tunnel item, displayed in the client UI.
 final TeamsDevicesIncludeSplitTunnelDescription? description;
 
+/// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
 final TeamsDevicesIncludeSplitTunnelHost host;
 
 Map<String, dynamic> toJson() { return {

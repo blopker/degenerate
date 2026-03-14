@@ -45,6 +45,9 @@ final String eventId;
 /// The event type, must be `conversation.item.done`.
 final RealtimeServerEventConversationItemDoneType type;
 
+/// The ID of the item that precedes this one, if any. This is used to
+/// maintain ordering when items are inserted.
+/// 
 final String? previousItemId;
 
 final RealtimeConversationItem item;

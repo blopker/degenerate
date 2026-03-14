@@ -40,6 +40,7 @@ factory SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings.fromJs
 /// The ID of the pattern to configure.
 final String? tokenType;
 
+/// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
 final SecretScanningRowVersion? customPatternVersion;
 
 /// Push protection setting to set for the pattern.

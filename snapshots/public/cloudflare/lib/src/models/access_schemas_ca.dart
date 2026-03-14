@@ -26,10 +26,13 @@ factory AccessSchemasCa.fromJson(Map<String, dynamic> json) { return AccessSchem
   publicKey: json['public_key'] != null ? AccessPublicKey.fromJson(json['public_key'] as String) : null,
 ); }
 
+/// The Application Audience (AUD) tag. Identifies the application associated with the CA.
 final AccessComponentsSchemasAud? aud;
 
+/// The ID of the CA.
 final AccessComponentsSchemasId? id;
 
+/// The public key to add to your SSH server configuration.
 final AccessPublicKey? publicKey;
 
 Map<String, dynamic> toJson() { return {

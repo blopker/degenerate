@@ -9,17 +9,17 @@ import 'run_grader_response_metadata.dart';final class RunGraderResponse {const 
 factory RunGraderResponse.fromJson(Map<String, dynamic> json) { return RunGraderResponse(
   reward: (json['reward'] as num).toDouble(),
   metadata: RunGraderResponseMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
-  subRewards: (json['sub_rewards'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
-  modelGraderTokenUsagePerModel: (json['model_grader_token_usage_per_model'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  subRewards: (json['sub_rewards'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  modelGraderTokenUsagePerModel: (json['model_grader_token_usage_per_model'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 final double reward;
 
 final RunGraderResponseMetadata metadata;
 
-final Map<String,Object?> subRewards;
+final Map<String,dynamic> subRewards;
 
-final Map<String,Object?> modelGraderTokenUsagePerModel;
+final Map<String,dynamic> modelGraderTokenUsagePerModel;
 
 Map<String, dynamic> toJson() { return {
   'reward': reward,
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('rewar
       json.containsKey('metadata') &&
       json.containsKey('sub_rewards') &&
       json.containsKey('model_grader_token_usage_per_model'); } 
-RunGraderResponse copyWith({double? reward, RunGraderResponseMetadata? metadata, Map<String,Object?>? subRewards, Map<String,Object?>? modelGraderTokenUsagePerModel, }) { return RunGraderResponse(
+RunGraderResponse copyWith({double? reward, RunGraderResponseMetadata? metadata, Map<String,dynamic>? subRewards, Map<String,dynamic>? modelGraderTokenUsagePerModel, }) { return RunGraderResponse(
   reward: reward ?? this.reward,
   metadata: metadata ?? this.metadata,
   subRewards: subRewards ?? this.subRewards,

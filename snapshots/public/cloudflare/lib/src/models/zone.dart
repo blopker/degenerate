@@ -19,8 +19,10 @@ factory Zone.fromJson(Map<String, dynamic> json) { return Zone(
   name: json['name'] != null ? Name.fromJson(json['name'] as String) : null,
 ); }
 
+/// Identifier
 final Identifier? id;
 
+/// The domain name
 final Name? name;
 
 Map<String, dynamic> toJson() { return {

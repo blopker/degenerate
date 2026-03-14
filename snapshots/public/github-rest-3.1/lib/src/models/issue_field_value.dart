@@ -42,7 +42,7 @@ factory IssueFieldValue.fromJson(Map<String, dynamic> json) { return IssueFieldV
   issueFieldId: (json['issue_field_id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   dataType: IssueFieldValueDataType.fromJson(json['data_type'] as String),
-  value: json['value'] as Object,
+  value: json['value'],
   singleSelectOption: json['single_select_option'] != null ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>) : null,
 ); }
 
@@ -55,7 +55,11 @@ final String nodeId;
 final IssueFieldValueDataType dataType;
 
 /// The value of the issue field
-final Object? value;
+/// 
+/// The value of the issue field
+/// 
+/// One of: String, double, int
+final dynamic value;
 
 /// Details about the selected option (only present for single_select fields)
 final IssueFieldValueSingleSelectOption? singleSelectOption;
@@ -71,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('data_type') &&
       json.containsKey('value'); } 
-IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueDataType? dataType, Object? Function()? value, IssueFieldValueSingleSelectOption? Function()? singleSelectOption, }) { return IssueFieldValue(
+IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueDataType? dataType, dynamic Function()? value, IssueFieldValueSingleSelectOption? Function()? singleSelectOption, }) { return IssueFieldValue(
   issueFieldId: issueFieldId ?? this.issueFieldId,
   nodeId: nodeId ?? this.nodeId,
   dataType: dataType ?? this.dataType,

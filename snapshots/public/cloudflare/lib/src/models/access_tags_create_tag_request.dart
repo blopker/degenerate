@@ -10,6 +10,7 @@ factory AccessTagsCreateTagRequest.fromJson(Map<String, dynamic> json) { return 
   name: json['name'] != null ? AccessTagsComponentsSchemasName.fromJson(json['name'] as String) : null,
 ); }
 
+/// The name of the tag
 final AccessTagsComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

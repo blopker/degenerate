@@ -12,17 +12,25 @@ factory WorCreateNewWorkflowInstanceRequestInstanceRetention.fromJson(Map<String
 ); }
 
 /// Specifies the duration in milliseconds or as a string like '5 minutes'.
-final Object? errorRetention;
+/// 
+/// Specifies the duration in milliseconds or as a string like '5 minutes'.
+/// 
+/// One of: int, String
+final dynamic errorRetention;
 
 /// Specifies the duration in milliseconds or as a string like '5 minutes'.
-final Object? successRetention;
+/// 
+/// Specifies the duration in milliseconds or as a string like '5 minutes'.
+/// 
+/// One of: int, String
+final dynamic successRetention;
 
 Map<String, dynamic> toJson() { return {
   'error_retention': ?errorRetention,
   'success_retention': ?successRetention,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WorCreateNewWorkflowInstanceRequestInstanceRetention copyWith({Object Function()? errorRetention, Object Function()? successRetention, }) { return WorCreateNewWorkflowInstanceRequestInstanceRetention(
+WorCreateNewWorkflowInstanceRequestInstanceRetention copyWith({dynamic Function()? errorRetention, dynamic Function()? successRetention, }) { return WorCreateNewWorkflowInstanceRequestInstanceRetention(
   errorRetention: errorRetention != null ? errorRetention() : this.errorRetention,
   successRetention: successRetention != null ? successRetention() : this.successRetention,
 ); } 

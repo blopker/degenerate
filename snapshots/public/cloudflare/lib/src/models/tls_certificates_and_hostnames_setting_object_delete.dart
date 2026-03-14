@@ -14,12 +14,16 @@ factory TlsCertificatesAndHostnamesSettingObjectDelete.fromJson(Map<String, dyna
   value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => TlsCertificatesAndHostnamesValueVariant2.fromJson(v as String), fromC: (v) => TlsCertificatesAndHostnamesValueVariant3.fromJson(v as String),) : null,
 ); }
 
+/// This is the time the tls setting was originally created for this hostname.
 final TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasCreatedAt? createdAt;
 
+/// The hostname for which the tls settings are set.
 final TlsCertificatesAndHostnamesComponentsSchemasHostname? hostname;
 
+/// Deployment status for the given tls setting.
 final TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasStatus? status;
 
+/// This is the time the tls setting was updated.
 final TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasUpdatedAt? updatedAt;
 
 final TlsCertificatesAndHostnamesValue? value;

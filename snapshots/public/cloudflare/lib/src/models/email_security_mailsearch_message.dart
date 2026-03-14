@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, this.alertId, required this.clientRecipients, this.deliveryMode, required this.detectionReasons, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, required this.isPhishSubmission, required this.isQuarantined, this.messageId, this.postDeliveryOperations, required this.postfixId, this.postfixIdOutbound, required this.properties, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, required this.ts, this.validation, required this.id, });
 
 factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessage(
-  actionLog: json['action_log'] as Object,
+  actionLog: json['action_log'],
   alertId: json['alert_id'] as String?,
   clientRecipients: (json['client_recipients'] as List<dynamic>).map((e) => e as String).toList(),
   deliveryMode: json['delivery_mode'] != null ? EmailSecurityMessageDeliveryMode.fromJson(json['delivery_mode'] as String) : null,
@@ -119,7 +119,7 @@ factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { ret
   id: json['id'] as String,
 ); }
 
-final Object? actionLog;
+final dynamic actionLog;
 
 final String? alertId;
 
@@ -217,7 +217,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('properties') &&
       json.containsKey('ts') && json['ts'] is String &&
       json.containsKey('id') && json['id'] is String; } 
-EmailSecurityMailsearchMessage copyWith({Object? Function()? actionLog, String? Function()? alertId, List<String>? clientRecipients, EmailSecurityMessageDeliveryMode? Function()? deliveryMode, List<String>? detectionReasons, String? Function()? edfHash, String? Function()? envelopeFrom, List<String>? Function()? envelopeTo, EmailSecurityDispositionLabel? Function()? finalDisposition, List<EmailSecurityMailsearchMessageFindings>? Function()? findings, String? Function()? from, String? Function()? fromName, String? Function()? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, String? Function()? messageId, List<EmailSecurityMailsearchMessagePostDeliveryOperations> Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, String? Function()? postfixIdOutbound, EmailSecurityMailsearchMessageProperties? properties, String? Function()? replyto, String? Function()? sentDate, String? Function()? subject, List<String>? Function()? threatCategories, List<String>? Function()? to, List<String>? Function()? toName, String? ts, EmailSecurityMailsearchMessageValidation? Function()? validation, String? id, }) { return EmailSecurityMailsearchMessage(
+EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, String? Function()? alertId, List<String>? clientRecipients, EmailSecurityMessageDeliveryMode? Function()? deliveryMode, List<String>? detectionReasons, String? Function()? edfHash, String? Function()? envelopeFrom, List<String>? Function()? envelopeTo, EmailSecurityDispositionLabel? Function()? finalDisposition, List<EmailSecurityMailsearchMessageFindings>? Function()? findings, String? Function()? from, String? Function()? fromName, String? Function()? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, String? Function()? messageId, List<EmailSecurityMailsearchMessagePostDeliveryOperations> Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, String? Function()? postfixIdOutbound, EmailSecurityMailsearchMessageProperties? properties, String? Function()? replyto, String? Function()? sentDate, String? Function()? subject, List<String>? Function()? threatCategories, List<String>? Function()? to, List<String>? Function()? toName, String? ts, EmailSecurityMailsearchMessageValidation? Function()? validation, String? id, }) { return EmailSecurityMailsearchMessage(
   actionLog: actionLog != null ? actionLog() : this.actionLog,
   alertId: alertId != null ? alertId() : this.alertId,
   clientRecipients: clientRecipients ?? this.clientRecipients,

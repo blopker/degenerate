@@ -26,6 +26,7 @@ factory AccessCa.fromJson(Map<String, dynamic> json) { return AccessCa(
   publicKey: json['public_key'] != null ? AccessPublicKey.fromJson(json['public_key'] as String) : null,
 ); }
 
+/// The Application Audience (AUD) tag. Identifies the application associated with the CA.
 final AccessAud? aud;
 
 final AccessSchemasId? id;

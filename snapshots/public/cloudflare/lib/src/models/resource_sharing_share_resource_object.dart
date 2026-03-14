@@ -9,7 +9,7 @@ import 'resource_sharing_account_id.dart';import 'resource_sharing_created.dart'
 factory ResourceSharingShareResourceObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareResourceObject(
   created: ResourceSharingCreated.fromJson(json['created'] as String),
   id: ResourceSharingResourceId.fromJson(json['id'] as String),
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   modified: ResourceSharingModified.fromJson(json['modified'] as String),
   resourceAccountId: ResourceSharingAccountId.fromJson(json['resource_account_id'] as String),
   resourceId: ResourceSharingResourceResourceId.fromJson(json['resource_id'] as String),
@@ -18,22 +18,31 @@ factory ResourceSharingShareResourceObject.fromJson(Map<String, dynamic> json) {
   status: ResourceSharingResourceStatus.fromJson(json['status'] as String),
 ); }
 
+/// When the share was created.
 final ResourceSharingCreated created;
 
+/// Share Resource identifier.
 final ResourceSharingResourceId id;
 
-final Map<String,Object?> meta;
+/// Resource Metadata.
+final Map<String,dynamic> meta;
 
+/// When the share was modified.
 final ResourceSharingModified modified;
 
+/// Account identifier.
 final ResourceSharingAccountId resourceAccountId;
 
+/// Share Resource identifier.
 final ResourceSharingResourceResourceId resourceId;
 
+/// Resource Type.
 final ResourceSharingResourceType resourceType;
 
+/// Resource Version.
 final ResourceSharingResourceVersion resourceVersion;
 
+/// Resource Status.
 final ResourceSharingResourceStatus status;
 
 Map<String, dynamic> toJson() { return {
@@ -56,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('resource_type') &&
       json.containsKey('resource_version') &&
       json.containsKey('status'); } 
-ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, ResourceSharingResourceId? id, Map<String,Object?>? meta, ResourceSharingModified? modified, ResourceSharingAccountId? resourceAccountId, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceType? resourceType, ResourceSharingResourceVersion? resourceVersion, ResourceSharingResourceStatus? status, }) { return ResourceSharingShareResourceObject(
+ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, ResourceSharingResourceId? id, Map<String,dynamic>? meta, ResourceSharingModified? modified, ResourceSharingAccountId? resourceAccountId, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceType? resourceType, ResourceSharingResourceVersion? resourceVersion, ResourceSharingResourceStatus? status, }) { return ResourceSharingShareResourceObject(
   created: created ?? this.created,
   id: id ?? this.id,
   meta: meta ?? this.meta,

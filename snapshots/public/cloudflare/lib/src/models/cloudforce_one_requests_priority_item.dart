@@ -21,6 +21,7 @@ final CloudforceOneRequestsTime created;
 
 final CloudforceOneRequestsUuid id;
 
+/// List of labels.
 final List<String> labels;
 
 /// Priority.

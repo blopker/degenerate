@@ -35,7 +35,7 @@ final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({this.t
 
 factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
   type: EvalCustomDataSourceConfigType.fromJson(json['type'] as String),
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The type of data source. Always `custom`.
@@ -44,7 +44,7 @@ final EvalCustomDataSourceConfigType type;
 /// The json schema for the run data source items.
 /// Learn how to build JSON schemas [here](https://json-schema.org/).
 /// 
-final Map<String,Object?> schema;
+final Map<String,dynamic> schema;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('schema'); } 
-EvalCustomDataSourceConfig copyWith({EvalCustomDataSourceConfigType? type, Map<String,Object?>? schema, }) { return EvalCustomDataSourceConfig(
+EvalCustomDataSourceConfig copyWith({EvalCustomDataSourceConfigType? type, Map<String,dynamic>? schema, }) { return EvalCustomDataSourceConfig(
   type: type ?? this.type,
   schema: schema ?? this.schema,
 ); } 

@@ -12,6 +12,12 @@ factory DlpPayloadLogSettingUpdateLegacy.fromJson(Map<String, dynamic> json) { r
   publicKey: json['public_key'] as String?,
 ); }
 
+/// Masking level for payload logs.
+/// 
+/// - `full`: The entire payload is masked.
+/// - `partial`: Only partial payload content is masked.
+/// - `clear`: No masking is applied to the payload content.
+/// - `default`: DLP uses its default masking behavior.
 final DlpPayloadLogMaskingLevel? maskingLevel;
 
 /// Base64-encoded public key for encrypting payload logs.

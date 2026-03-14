@@ -15,6 +15,7 @@ factory DigitalExperienceMonitoringWarpConfigDetails.fromJson(Map<String, dynami
 /// The account name.
 final String? accountName;
 
+/// API Resource UUID tag.
 final DigitalExperienceMonitoringUuid? accountTag;
 
 /// The name of the WARP configuration.

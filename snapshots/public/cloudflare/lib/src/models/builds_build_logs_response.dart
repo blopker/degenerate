@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'builds_cursor.dart';final cl
 
 factory BuildsBuildLogsResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildLogsResponse(
   cursor: json['cursor'] != null ? BuildsCursor.fromJson(json['cursor'] as String) : null,
-  lines: (json['lines'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e as Object).toList()).toList(),
+  lines: (json['lines'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
   truncated: json['truncated'] as bool?,
 ); }
 
 final BuildsCursor? cursor;
 
-final List<List<Object>>? lines;
+final List<List<dynamic>>? lines;
 
 final bool? truncated;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'truncated': ?truncated,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-BuildsBuildLogsResponse copyWith({BuildsCursor Function()? cursor, List<List<Object>> Function()? lines, bool Function()? truncated, }) { return BuildsBuildLogsResponse(
+BuildsBuildLogsResponse copyWith({BuildsCursor Function()? cursor, List<List<dynamic>> Function()? lines, bool Function()? truncated, }) { return BuildsBuildLogsResponse(
   cursor: cursor != null ? cursor() : this.cursor,
   lines: lines != null ? lines() : this.lines,
   truncated: truncated != null ? truncated() : this.truncated,

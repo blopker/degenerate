@@ -16,8 +16,10 @@ factory ComputerCallSafetyCheckParam.fromJson(Map<String, dynamic> json) { retur
 /// The ID of the pending safety check.
 final String id;
 
+/// The type of the pending safety check.
 final String? code;
 
+/// Details about the pending safety check.
 final String? message;
 
 Map<String, dynamic> toJson() { return {

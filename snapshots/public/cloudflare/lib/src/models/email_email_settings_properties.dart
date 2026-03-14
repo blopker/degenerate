@@ -93,20 +93,28 @@ factory EmailEmailSettingsProperties.fromJson(Map<String, dynamic> json) { retur
   tag: json['tag'] != null ? EmailEmailSettingTag.fromJson(json['tag'] as String) : null,
 ); }
 
+/// The date and time the settings have been created.
 final EmailEmailSettingCreated? created;
 
+/// State of the zone settings for Email Routing.
 final EmailEmailSettingEnabled enabled;
 
+/// Email Routing settings identifier.
 final EmailEmailSettingIdentifier id;
 
+/// The date and time the settings have been modified.
 final EmailEmailSettingModified? modified;
 
+/// Domain of your zone.
 final EmailEmailSettingName name;
 
+/// Flag to check if the user skipped the configuration wizard.
 final EmailEmailSettingSkipWizard? skipWizard;
 
+/// Show the state of your account, and the type or configuration error.
 final EmailEmailSettingStatus? status;
 
+/// Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)
 final EmailEmailSettingTag? tag;
 
 Map<String, dynamic> toJson() { return {

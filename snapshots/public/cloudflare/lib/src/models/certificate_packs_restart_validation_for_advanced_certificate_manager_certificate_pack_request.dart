@@ -10,6 +10,7 @@ factory CertificatePacksRestartValidationForAdvancedCertificateManagerCertificat
   cloudflareBranding: json['cloudflare_branding'] != null ? TlsCertificatesAndHostnamesCloudflareBranding.fromJson(json['cloudflare_branding'] as bool) : null,
 ); }
 
+/// Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
 final TlsCertificatesAndHostnamesCloudflareBranding? cloudflareBranding;
 
 Map<String, dynamic> toJson() { return {

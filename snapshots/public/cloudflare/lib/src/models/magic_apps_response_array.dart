@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'magic_messages2.dart';final 
 factory MagicAppsResponseArray.fromJson(Map<String, dynamic> json) { return MagicAppsResponseArray(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => e as Object).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => e).toList(),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<MagicMessages2> errors;
 
 final List<MagicMessages2> messages;
 
-final List<Object?>? result;
+final List<dynamic>? result;
 
 /// Whether the API call was successful
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-MagicAppsResponseArray copyWith({List<MagicMessages2>? errors, List<MagicMessages2>? messages, List<Object>? Function()? result, bool? success, }) { return MagicAppsResponseArray(
+MagicAppsResponseArray copyWith({List<MagicMessages2>? errors, List<MagicMessages2>? messages, List<dynamic>? Function()? result, bool? success, }) { return MagicAppsResponseArray(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

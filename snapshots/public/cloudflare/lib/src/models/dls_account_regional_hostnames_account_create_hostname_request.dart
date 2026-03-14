@@ -12,10 +12,13 @@ factory DlsAccountRegionalHostnamesAccountCreateHostnameRequest.fromJson(Map<Str
   routing: json['routing'] != null ? DlsRouting.fromJson(json['routing'] as String) : null,
 ); }
 
+/// DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
 final DlsHostname hostname;
 
+/// Identifying key for the region
 final DlsRegionKey regionKey;
 
+/// Configure which routing method to use for the regional hostname
 final DlsRouting? routing;
 
 Map<String, dynamic> toJson() { return {

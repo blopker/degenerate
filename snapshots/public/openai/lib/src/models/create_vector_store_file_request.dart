@@ -9,7 +9,7 @@ import 'chunking_strategy_request_param.dart';final class CreateVectorStoreFileR
 factory CreateVectorStoreFileRequest.fromJson(Map<String, dynamic> json) { return CreateVectorStoreFileRequest(
   fileId: json['file_id'] as String,
   chunkingStrategy: json['chunking_strategy'] != null ? ChunkingStrategyRequestParam.fromJson(json['chunking_strategy'] as Map<String, dynamic>) : null,
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
@@ -17,7 +17,7 @@ final String fileId;
 
 final ChunkingStrategyRequestParam? chunkingStrategy;
 
-final Map<String,Object>? attributes;
+final Map<String,dynamic>? attributes;
 
 Map<String, dynamic> toJson() { return {
   'file_id': fileId,
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'attributes': ?attributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String; } 
-CreateVectorStoreFileRequest copyWith({String? fileId, ChunkingStrategyRequestParam Function()? chunkingStrategy, Map<String, Object>? Function()? attributes, }) { return CreateVectorStoreFileRequest(
+CreateVectorStoreFileRequest copyWith({String? fileId, ChunkingStrategyRequestParam Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return CreateVectorStoreFileRequest(
   fileId: fileId ?? this.fileId,
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
   attributes: attributes != null ? attributes() : this.attributes,

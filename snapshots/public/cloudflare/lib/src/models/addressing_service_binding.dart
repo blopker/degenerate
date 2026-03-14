@@ -21,6 +21,7 @@ factory AddressingServiceBinding.fromJson(Map<String, dynamic> json) { return Ad
   serviceName: json['service_name'] != null ? AddressingServiceName.fromJson(json['service_name'] as String) : null,
 ); }
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final AddressingCidr? cidr;
 
 final AddressingServiceBindingIdentifier? id;

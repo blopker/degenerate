@@ -10,6 +10,7 @@ factory ZeroTrustUpdateAuditSshSettingsRequest.fromJson(Map<String, dynamic> jso
   publicKey: ZeroTrustGatewayPublicKey.fromJson(json['public_key'] as String),
 ); }
 
+/// Provide the Base64-encoded HPKE public key that encrypts SSH session logs. See https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/#enable-ssh-command-logging.
 final ZeroTrustGatewayPublicKey publicKey;
 
 Map<String, dynamic> toJson() { return {

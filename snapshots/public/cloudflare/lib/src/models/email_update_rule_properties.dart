@@ -14,14 +14,19 @@ factory EmailUpdateRuleProperties.fromJson(Map<String, dynamic> json) { return E
   priority: json['priority'] != null ? EmailRulePriority.fromJson(json['priority'] as num) : null,
 ); }
 
+/// List actions patterns.
 final List<EmailRuleAction> actions;
 
+/// Routing rule status.
 final EmailRuleEnabled? enabled;
 
+/// Matching patterns to forward to your actions.
 final List<EmailRuleMatcher> matchers;
 
+/// Routing rule name.
 final EmailRuleName? name;
 
+/// Priority of the routing rule.
 final EmailRulePriority? priority;
 
 Map<String, dynamic> toJson() { return {

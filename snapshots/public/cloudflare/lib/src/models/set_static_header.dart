@@ -12,8 +12,10 @@ factory SetStaticHeader.fromJson(Map<String, dynamic> json) { return SetStaticHe
   value: RulesetsRewriteHeaderValue.fromJson(json['value'] as String),
 ); }
 
+/// The operation to perform on the header.
 final RulesetsRewriteHeaderOperation operation;
 
+/// A static value for the header.
 final RulesetsRewriteHeaderValue value;
 
 Map<String, dynamic> toJson() { return {

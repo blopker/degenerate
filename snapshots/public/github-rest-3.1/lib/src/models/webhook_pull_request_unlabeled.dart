@@ -47,6 +47,7 @@ final SimpleInstallation? installation;
 
 final WebhooksLabel? label;
 
+/// The pull request number.
 final WebhooksNumber number;
 
 final OrganizationSimpleWebhooks? organization;

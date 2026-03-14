@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';final class GetParticipantDataFromPe
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantQualityStats.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantQualityStats(
   audioBandwidth: json['audio_bandwidth'] != null ? (json['audio_bandwidth'] as num).toInt() : null,
-  audioStats: (json['audio_stats'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  audioStats: (json['audio_stats'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   averageQuality: json['average_quality'] != null ? (json['average_quality'] as num).toInt() : null,
   end: json['end'] as String?,
   firstAudioPacketReceived: json['first_audio_packet_received'] as String?,
@@ -22,12 +22,12 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantQualityStats.fromJson
   totalVideoPackets: json['total_video_packets'] != null ? (json['total_video_packets'] as num).toInt() : null,
   totalVideoPacketsLost: json['total_video_packets_lost'] != null ? (json['total_video_packets_lost'] as num).toInt() : null,
   videoBandwidth: json['video_bandwidth'] != null ? (json['video_bandwidth'] as num).toInt() : null,
-  videoStats: (json['video_stats'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  videoStats: (json['video_stats'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 final int? audioBandwidth;
 
-final List<Map<String,Object?>>? audioStats;
+final List<Map<String,dynamic>>? audioStats;
 
 final int? averageQuality;
 
@@ -55,7 +55,7 @@ final int? totalVideoPacketsLost;
 
 final int? videoBandwidth;
 
-final List<Map<String,Object?>>? videoStats;
+final List<Map<String,dynamic>>? videoStats;
 
 Map<String, dynamic> toJson() { return {
   'audio_bandwidth': ?audioBandwidth,
@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   if (videoStats != null) 'video_stats': videoStats?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetParticipantDataFromPeerIdResponseDataParticipantQualityStats copyWith({int Function()? audioBandwidth, List<Map<String, Object>> Function()? audioStats, int Function()? averageQuality, String? Function()? end, String Function()? firstAudioPacketReceived, String Function()? firstVideoPacketReceived, String Function()? lastAudioPacketReceived, String Function()? lastVideoPacketReceived, List<String> Function()? peerIds, String? Function()? start, int Function()? totalAudioPackets, int Function()? totalAudioPacketsLost, int Function()? totalVideoPackets, int Function()? totalVideoPacketsLost, int Function()? videoBandwidth, List<Map<String, Object>> Function()? videoStats, }) { return GetParticipantDataFromPeerIdResponseDataParticipantQualityStats(
+GetParticipantDataFromPeerIdResponseDataParticipantQualityStats copyWith({int Function()? audioBandwidth, List<Map<String, dynamic>> Function()? audioStats, int Function()? averageQuality, String? Function()? end, String Function()? firstAudioPacketReceived, String Function()? firstVideoPacketReceived, String Function()? lastAudioPacketReceived, String Function()? lastVideoPacketReceived, List<String> Function()? peerIds, String? Function()? start, int Function()? totalAudioPackets, int Function()? totalAudioPacketsLost, int Function()? totalVideoPackets, int Function()? totalVideoPacketsLost, int Function()? videoBandwidth, List<Map<String, dynamic>> Function()? videoStats, }) { return GetParticipantDataFromPeerIdResponseDataParticipantQualityStats(
   audioBandwidth: audioBandwidth != null ? audioBandwidth() : this.audioBandwidth,
   audioStats: audioStats != null ? audioStats() : this.audioStats,
   averageQuality: averageQuality != null ? averageQuality() : this.averageQuality,

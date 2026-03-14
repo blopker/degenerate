@@ -7,14 +7,14 @@
 import 'package:collection/collection.dart';import 'message3.dart';import 'organization.dart';import 'page_token_result_info.dart';final class OrganizationListOrganizationsResponse {const OrganizationListOrganizationsResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
 
 factory OrganizationListOrganizationsResponse.fromJson(Map<String, dynamic> json) { return OrganizationListOrganizationsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => Organization.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: PageTokenResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,Object?>> errors;
+final List<Map<String,dynamic>> errors;
 
 final List<Message3> messages;
 
@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('result') &&
       json.containsKey('result_info') &&
       json.containsKey('success') && json['success'] is bool; } 
-OrganizationListOrganizationsResponse copyWith({List<Map<String,Object?>>? errors, List<Message3>? messages, List<Organization>? result, PageTokenResultInfo? resultInfo, bool? success, }) { return OrganizationListOrganizationsResponse(
+OrganizationListOrganizationsResponse copyWith({List<Map<String,dynamic>>? errors, List<Message3>? messages, List<Organization>? result, PageTokenResultInfo? resultInfo, bool? success, }) { return OrganizationListOrganizationsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

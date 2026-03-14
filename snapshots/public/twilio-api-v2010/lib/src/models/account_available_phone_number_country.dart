@@ -11,7 +11,7 @@ factory AccountAvailablePhoneNumberCountry.fromJson(Map<String, dynamic> json) {
   country: json['country'] as String?,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
   beta: json['beta'] as bool?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country.
@@ -27,7 +27,7 @@ final Uri? uri;
 final bool? beta;
 
 /// A list of related AvailablePhoneNumber resources identified by their URIs relative to `https://api.twilio.com`.
-final Map<String,Object?>? subresourceUris;
+final Map<String,dynamic>? subresourceUris;
 
 Map<String, dynamic> toJson() { return {
   'country_code': ?countryCode,
@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountAvailablePhoneNumberCountry copyWith({String? Function()? countryCode, String? Function()? country, Uri? Function()? uri, bool? Function()? beta, Map<String, Object>? Function()? subresourceUris, }) { return AccountAvailablePhoneNumberCountry(
+AccountAvailablePhoneNumberCountry copyWith({String? Function()? countryCode, String? Function()? country, Uri? Function()? uri, bool? Function()? beta, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountAvailablePhoneNumberCountry(
   countryCode: countryCode != null ? countryCode() : this.countryCode,
   country: country != null ? country() : this.country,
   uri: uri != null ? uri() : this.uri,

@@ -47,8 +47,10 @@ factory DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(Map<String,
 
 final DigitalExperienceMonitoringDeviceDexTestSchemasData data;
 
+/// Additional details about the test.
 final DigitalExperienceMonitoringDeviceDexTestSchemasDescription? description;
 
+/// Determines whether or not the test is active.
 final DigitalExperienceMonitoringDeviceDexTestSchemasEnabled enabled;
 
 final DigitalExperienceMonitoringDeviceDexTestSchemasInterval interval;

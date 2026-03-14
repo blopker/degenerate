@@ -32,12 +32,12 @@ final class Messages51ToolChoiceVariant1AllowedToolsAllowedTools {const Messages
 
 factory Messages51ToolChoiceVariant1AllowedToolsAllowedTools.fromJson(Map<String, dynamic> json) { return Messages51ToolChoiceVariant1AllowedToolsAllowedTools(
   mode: Messages51ToolChoiceVariant1AllowedToolsAllowedToolsMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 final Messages51ToolChoiceVariant1AllowedToolsAllowedToolsMode mode;
 
-final List<Map<String,Object?>> tools;
+final List<Map<String,dynamic>> tools;
 
 Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
       json.containsKey('tools'); } 
-Messages51ToolChoiceVariant1AllowedToolsAllowedTools copyWith({Messages51ToolChoiceVariant1AllowedToolsAllowedToolsMode? mode, List<Map<String,Object?>>? tools, }) { return Messages51ToolChoiceVariant1AllowedToolsAllowedTools(
+Messages51ToolChoiceVariant1AllowedToolsAllowedTools copyWith({Messages51ToolChoiceVariant1AllowedToolsAllowedToolsMode? mode, List<Map<String,dynamic>>? tools, }) { return Messages51ToolChoiceVariant1AllowedToolsAllowedTools(
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,
 ); } 

@@ -73,14 +73,21 @@ final String name;
 /// 
 final String arguments;
 
+/// The output from the tool call.
+/// 
 final String? output;
 
+/// The error from the tool call, if any.
+/// 
 final String? error;
 
 /// The status of the tool call. One of `in_progress`, `completed`, `incomplete`, `calling`, or `failed`.
 /// 
 final McpToolCallStatus? status;
 
+/// Unique identifier for the MCP tool call approval request.
+/// Include this value in a subsequent `mcp_approval_response` input to approve or reject the corresponding tool call.
+/// 
 final String? approvalRequestId;
 
 Map<String, dynamic> toJson() { return {

@@ -46,8 +46,10 @@ factory InteractionLimit.fromJson(Map<String, dynamic> json) { return Interactio
   expiry: json['expiry'] != null ? InteractionExpiry.fromJson(json['expiry'] as String) : null,
 ); }
 
+/// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
 final InteractionGroup limit;
 
+/// The duration of the interaction restriction. Default: `one_day`.
 final InteractionExpiry? expiry;
 
 Map<String, dynamic> toJson() { return {

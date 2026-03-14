@@ -35,7 +35,7 @@ final class AuthenticationToken {const AuthenticationToken({required this.token,
 factory AuthenticationToken.fromJson(Map<String, dynamic> json) { return AuthenticationToken(
   token: json['token'] as String,
   expiresAt: DateTime.parse(json['expires_at'] as String),
-  permissions: (json['permissions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  permissions: (json['permissions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
   singleFile: json['single_file'] as String?,
   repositorySelection: json['repository_selection'] != null ? AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String) : null,
@@ -47,7 +47,7 @@ final String token;
 /// The time this token expires
 final DateTime expiresAt;
 
-final Map<String,Object?>? permissions;
+final Map<String,dynamic>? permissions;
 
 /// The repositories this token has access to
 final List<Repository>? repositories;
@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
       json.containsKey('expires_at') && json['expires_at'] is String; } 
-AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, Object> Function()? permissions, List<Repository> Function()? repositories, String? Function()? singleFile, AuthenticationTokenRepositorySelection Function()? repositorySelection, }) { return AuthenticationToken(
+AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dynamic> Function()? permissions, List<Repository> Function()? repositories, String? Function()? singleFile, AuthenticationTokenRepositorySelection Function()? repositorySelection, }) { return AuthenticationToken(
   token: token ?? this.token,
   expiresAt: expiresAt ?? this.expiresAt,
   permissions: permissions != null ? permissions() : this.permissions,

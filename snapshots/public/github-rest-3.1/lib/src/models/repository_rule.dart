@@ -76,8 +76,8 @@ factory RepositoryRule.fromJson(Map<String, dynamic> json) {   if (RepositoryRul
   return RepositoryRule$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class RepositoryRuleRepositoryRuleCreation extends RepositoryRule {const RepositoryRuleRepositoryRuleCreation(this._value);
 
@@ -302,9 +302,9 @@ final RepositoryRuleCopilotCodeReview _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class RepositoryRule$Unknown extends RepositoryRule {const RepositoryRule$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RepositoryRule$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

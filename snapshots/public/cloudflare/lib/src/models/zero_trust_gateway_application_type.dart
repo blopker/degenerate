@@ -18,8 +18,10 @@ final ZeroTrustGatewayTimestamp? createdAt;
 /// Provide a short summary of applications with this type.
 final String? description;
 
+/// Identify the type of this application. Multiple applications can share the same type. Refers to the `id` of a returned application type.
 final ZeroTrustGatewayAppTypeId? id;
 
+/// Specify the name of the application or application type.
 final ZeroTrustGatewayAppTypesComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

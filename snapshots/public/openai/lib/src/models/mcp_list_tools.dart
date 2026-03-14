@@ -32,6 +32,8 @@ final String serverLabel;
 /// 
 final List<McpListToolsTool> tools;
 
+/// Error message if the server could not list tools.
+/// 
 final String? error;
 
 Map<String, dynamic> toJson() { return {

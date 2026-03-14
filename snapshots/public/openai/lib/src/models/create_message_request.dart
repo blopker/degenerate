@@ -49,6 +49,7 @@ final CreateMessageRequestRole role;
 
 final CreateMessageRequestContent content;
 
+/// A list of files attached to the message, and the tools they should be added to.
 final List<CreateMessageRequestAttachments2>? attachments;
 
 final Map<String,String>? metadata;

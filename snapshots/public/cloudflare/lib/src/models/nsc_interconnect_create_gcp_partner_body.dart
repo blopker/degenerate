@@ -17,6 +17,7 @@ final String account;
 
 final String type;
 
+/// Bandwidth structure as visible through the customer-facing API.
 final Bandwidth bandwidth;
 
 /// Pairing key provided by GCP

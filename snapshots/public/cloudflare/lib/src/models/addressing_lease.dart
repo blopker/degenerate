@@ -58,6 +58,7 @@ final DateTime? activeFrom;
 /// CIDRs attached to the lease
 final List<AddressingSchemasCidr>? cidrs;
 
+/// Timestamp of the moment the object was created.
 final AddressingCreatedAt? createdAt;
 
 final AddressingLeaseId? id;

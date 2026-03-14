@@ -76,6 +76,8 @@ factory RoomErrorResponse.fromJson(Map<String, dynamic> json) { return RoomError
   detail: json['detail'] as String?,
 ); }
 
+/// Machine-readable error codes. Clients switch on these, not on messages.
+/// Add new codes here as needed — the OpenAPI spec will update automatically.
 final ErrorCode code;
 
 final String message;

@@ -12,11 +12,13 @@ factory AccessMtlsAuthenticationAddAnMtlsCertificateRequest.fromJson(Map<String,
   name: AccessCertificatesComponentsSchemasName.fromJson(json['name'] as String),
 ); }
 
+/// The hostnames of the applications that will use this certificate.
 final List<String>? associatedHostnames;
 
 /// The certificate content.
 final String certificate;
 
+/// The name of the certificate.
 final AccessCertificatesComponentsSchemasName name;
 
 Map<String, dynamic> toJson() { return {

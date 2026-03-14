@@ -35,6 +35,7 @@ factory WafRuleGroupsUpdateAWafRuleGroupRequest.fromJson(Map<String, dynamic> js
   mode: json['mode'] != null ? WafManagedRulesMode.fromJson(json['mode'] as String) : null,
 ); }
 
+/// Defines the state of the rules contained in the rule group. When `on`, the rules in the group are configurable/usable.
 final WafManagedRulesMode? mode;
 
 Map<String, dynamic> toJson() { return {

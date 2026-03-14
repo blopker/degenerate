@@ -11,6 +11,7 @@ factory IamPermissionGroupIds2.fromJson(Map<String, dynamic> json) { return IamP
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),
 ); }
 
+/// Identifier
 final IamCommonComponentsSchemasIdentifier id;
 
 Map<String, dynamic> toJson() { return {

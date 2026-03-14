@@ -12,10 +12,13 @@ factory IamUserGroupPolicyWriteBody.fromJson(Map<String, dynamic> json) { return
   resourceGroups: (json['resource_groups'] as List<dynamic>).map((e) => IamResourceGroupIds2.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Allow or deny operations against the resources.
 final IamAccess access;
 
+/// A set of permission groups that are specified to the policy.
 final List<IamPermissionGroupIds2> permissionGroups;
 
+/// A set of resource groups that are specified to the policy.
 final List<IamResourceGroupIds2> resourceGroups;
 
 Map<String, dynamic> toJson() { return {

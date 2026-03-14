@@ -14,14 +14,19 @@ factory ZeroTrustGatewaySubcategory.fromJson(Map<String, dynamic> json) { return
   name: json['name'] != null ? ZeroTrustGatewayCategoriesComponentsSchemasName.fromJson(json['name'] as String) : null,
 ); }
 
+/// Indicate whether the category is in beta and subject to change.
 final ZeroTrustGatewayBeta? beta;
 
+/// Specify which account types can create policies for this category. `blocked` Blocks unconditionally for all accounts. `removalPending` Allows removal from policies but disables addition. `noBlock` Prevents blocking.
 final ZeroTrustGatewayClass? $class;
 
+/// Provide a short summary of domains in the category.
 final ZeroTrustGatewayComponentsSchemasDescription? description;
 
+/// Identify this category. Only one category per ID.
 final ZeroTrustGatewayId? id;
 
+/// Specify the category name.
 final ZeroTrustGatewayCategoriesComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

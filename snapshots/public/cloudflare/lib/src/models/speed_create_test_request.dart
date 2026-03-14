@@ -10,6 +10,7 @@ factory SpeedCreateTestRequest.fromJson(Map<String, dynamic> json) { return Spee
   region: json['region'] != null ? ObservatoryRegion.fromJson(json['region'] as String) : null,
 ); }
 
+/// A test region.
 final ObservatoryRegion? region;
 
 Map<String, dynamic> toJson() { return {

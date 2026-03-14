@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'stream_creator.dart';import 
 factory StreamVideoCopyRequest.fromJson(Map<String, dynamic> json) { return StreamVideoCopyRequest(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
@@ -17,16 +17,22 @@ factory StreamVideoCopyRequest.fromJson(Map<String, dynamic> json) { return Stre
   watermark: json['watermark'] != null ? StreamWatermarkAtUpload.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
+/// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
 
+/// A user-defined identifier for the media creator.
 final StreamCreator? creator;
 
-final Map<String,Object?>? meta;
+/// A user modifiable key-value store used to reference other systems of record for managing videos.
+final Map<String,dynamic>? meta;
 
+/// Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
 final StreamRequireSignedUrLs? requireSignedUrLs;
 
+/// Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
 final StreamScheduledDeletion? scheduledDeletion;
 
+/// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.
 final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 
 /// A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.
@@ -45,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-StreamVideoCopyRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, Map<String, Object> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, Uri? url, StreamWatermarkAtUpload Function()? watermark, }) { return StreamVideoCopyRequest(
+StreamVideoCopyRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, Map<String, dynamic> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, Uri? url, StreamWatermarkAtUpload Function()? watermark, }) { return StreamVideoCopyRequest(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   meta: meta != null ? meta() : this.meta,

@@ -48,6 +48,7 @@ factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
 /// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
 final MagicWanHealthCheckRate healthCheckRate;
 
+/// Identifier
 final MagicIdentifier? id;
 
 final String? name;
@@ -57,10 +58,12 @@ final MagicPort? physport;
 /// Priority of WAN for traffic loadbalancing.
 final int? priority;
 
+/// Identifier
 final MagicIdentifier? siteId;
 
 final MagicWanStaticAddressing? staticAddressing;
 
+/// VLAN ID. Use zero for untagged.
 final MagicVlanTag? vlanTag;
 
 Map<String, dynamic> toJson() { return {

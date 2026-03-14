@@ -13,12 +13,16 @@ factory WorkerDomainAttachToDomainRequest.fromJson(Map<String, dynamic> json) { 
   zoneId: WorkersZoneIdentifier.fromJson(json['zone_id'] as String),
 ); }
 
+/// Worker environment associated with the zone and hostname.
 final WorkersSchemasEnvironment? environment;
 
+/// Hostname of the Worker Domain.
 final WorkersHostname hostname;
 
+/// Worker service associated with the zone and hostname.
 final WorkersSchemasService service;
 
+/// Identifier of the zone.
 final WorkersZoneIdentifier zoneId;
 
 Map<String, dynamic> toJson() { return {

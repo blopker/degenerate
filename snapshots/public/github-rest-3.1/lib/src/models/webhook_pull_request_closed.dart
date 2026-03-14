@@ -44,6 +44,7 @@ final EnterpriseWebhooks? enterprise;
 
 final SimpleInstallation? installation;
 
+/// The pull request number.
 final WebhooksNumber number;
 
 final OrganizationSimpleWebhooks? organization;

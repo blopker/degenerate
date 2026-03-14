@@ -13,6 +13,7 @@ factory CompactionSummaryItemParam.fromJson(Map<String, dynamic> json) { return 
   encryptedContent: json['encrypted_content'] as String,
 ); }
 
+/// The ID of the compaction item.
 final String? id;
 
 /// The type of the item. Always `compaction`.

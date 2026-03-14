@@ -61,6 +61,7 @@ factory TlsCertificatesAndHostnamesCustomTrustStore.fromJson(Map<String, dynamic
   uploadedOn: TlsCertificatesAndHostnamesUploadedOn.fromJson(json['uploaded_on'] as String),
 ); }
 
+/// The zone's SSL certificate or certificate and the intermediate(s).
 final TlsCertificatesAndHostnamesComponentsSchemasCertificate certificate;
 
 final TlsCertificatesAndHostnamesSchemasExpiresOn expiresOn;

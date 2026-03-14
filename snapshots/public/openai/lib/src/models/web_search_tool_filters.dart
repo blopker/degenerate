@@ -12,6 +12,11 @@ factory WebSearchToolFilters.fromJson(Map<String, dynamic> json) { return WebSea
   allowedDomains: (json['allowed_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Allowed domains for the search. If not provided, all domains are allowed.
+/// Subdomains of the provided domains are allowed as well.
+/// 
+/// Example: `["pubmed.ncbi.nlm.nih.gov"]`
+/// 
 final List<String>? allowedDomains;
 
 Map<String, dynamic> toJson() { return {

@@ -13,6 +13,7 @@ factory PageShieldGetZoneSettingsResponse.fromJson(Map<String, dynamic> json) { 
   useConnectionUrlPath: PageShieldUseConnectionUrlPath.fromJson(json['use_connection_url_path'] as bool),
 ); }
 
+/// When true, indicates that Page Shield is enabled.
 final PageShieldEnabled enabled;
 
 final PageShieldUpdatedAt updatedAt;

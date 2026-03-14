@@ -50,7 +50,7 @@ factory AccountConference.fromJson(Map<String, dynamic> json) { return AccountCo
   sid: json['sid'] as String?,
   status: json['status'] != null ? ConferenceEnumStatus.fromJson(json['status'] as String) : null,
   uri: json['uri'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   reasonConferenceEnded: json['reason_conference_ended'] != null ? ConferenceEnumReasonConferenceEnded.fromJson(json['reason_conference_ended'] as String) : null,
   callSidEndingConference: json['call_sid_ending_conference'] as String?,
 ); }
@@ -82,7 +82,7 @@ final ConferenceEnumStatus? status;
 final String? uri;
 
 /// A list of related resources identified by their URIs relative to `https://api.twilio.com`.
-final Map<String,Object?>? subresourceUris;
+final Map<String,dynamic>? subresourceUris;
 
 final ConferenceEnumReasonConferenceEnded? reasonConferenceEnded;
 
@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   'call_sid_ending_conference': ?callSidEndingConference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountConference copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? region, String? Function()? sid, ConferenceEnumStatus Function()? status, String? Function()? uri, Map<String, Object>? Function()? subresourceUris, ConferenceEnumReasonConferenceEnded Function()? reasonConferenceEnded, String? Function()? callSidEndingConference, }) { return AccountConference(
+AccountConference copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? region, String? Function()? sid, ConferenceEnumStatus Function()? status, String? Function()? uri, Map<String, dynamic>? Function()? subresourceUris, ConferenceEnumReasonConferenceEnded Function()? reasonConferenceEnded, String? Function()? callSidEndingConference, }) { return AccountConference(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,

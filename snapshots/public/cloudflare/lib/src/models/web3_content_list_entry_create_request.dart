@@ -12,6 +12,7 @@ factory Web3ContentListEntryCreateRequest.fromJson(Map<String, dynamic> json) { 
   type: Web3ContentListEntryType.fromJson(json['type'] as String),
 ); }
 
+/// Specify the CID or content path of content to block.
 final Web3ContentListEntryContent content;
 
 final Web3ContentListEntryDescription? description;

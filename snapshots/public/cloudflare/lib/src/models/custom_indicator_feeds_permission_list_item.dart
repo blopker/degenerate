@@ -15,16 +15,22 @@ factory CustomIndicatorFeedsPermissionListItem.fromJson(Map<String, dynamic> jso
   name: json['name'] != null ? CustomIndicatorFeedsName.fromJson(json['name'] as String) : null,
 ); }
 
+/// The description of the example test
 final CustomIndicatorFeedsDescription? description;
 
+/// The unique identifier for the indicator feed
 final CustomIndicatorFeedsId? id;
 
+/// Whether the indicator feed can be attributed to a provider
 final CustomIndicatorFeedsIsAttributable? isAttributable;
 
+/// Whether the indicator feed can be downloaded
 final CustomIndicatorFeedsIsDownloadable? isDownloadable;
 
+/// Whether the indicator feed is exposed to customers
 final CustomIndicatorFeedsIsPublic? isPublic;
 
+/// The name of the indicator feed
 final CustomIndicatorFeedsName? name;
 
 Map<String, dynamic> toJson() { return {

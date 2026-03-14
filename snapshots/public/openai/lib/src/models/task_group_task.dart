@@ -16,8 +16,10 @@ factory TaskGroupTask.fromJson(Map<String, dynamic> json) { return TaskGroupTask
 /// Subtype for the grouped task.
 final TaskType type;
 
+/// Optional heading for the grouped task. Defaults to null when not provided.
 final String? heading;
 
+/// Optional summary that describes the grouped task. Defaults to null when omitted.
 final String? summary;
 
 Map<String, dynamic> toJson() { return {

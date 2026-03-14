@@ -35,6 +35,7 @@ factory ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest.fromJson(Map<S
   value: CacheRulesOriginMaxHttpVersionValue.fromJson(json['value'] as String),
 ); }
 
+/// Value of the Origin Max HTTP Version Setting.
 final CacheRulesOriginMaxHttpVersionValue value;
 
 Map<String, dynamic> toJson() { return {

@@ -19,14 +19,19 @@ factory TunnelTeamnet.fromJson(Map<String, dynamic> json) { return TunnelTeamnet
   virtualNetworkName: json['virtual_network_name'] != null ? TunnelVirtualNetworkName.fromJson(json['virtual_network_name'] as String) : null,
 ); }
 
+/// Optional remark describing the route.
 final TunnelRouteComment? comment;
 
+/// Timestamp of when the resource was created.
 final TunnelCreatedAt? createdAt;
 
+/// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
 final TunnelDeletedAt? deletedAt;
 
+/// UUID of the route.
 final TunnelRouteId? id;
 
+/// The private IPv4 or IPv6 range connected by the route, in CIDR notation.
 final TunnelIpNetwork? network;
 
 final TunnelTunnelType? tunType;

@@ -12,6 +12,7 @@ factory TunnelConnection.fromJson(Map<String, dynamic> json) { return TunnelConn
   uuid: json['uuid'] != null ? TunnelConnectionId.fromJson(json['uuid'] as String) : null,
 ); }
 
+/// The Cloudflare data center used for this connection.
 final TunnelColoName? coloName;
 
 final TunnelIsPendingReconnect? isPendingReconnect;

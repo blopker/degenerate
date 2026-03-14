@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'digital_experience_monitorin
 factory DigitalExperienceMonitoringTracerouteDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
   host: json['host'] as String,
   interval: json['interval'] as String,
-  kind: json['kind'] as Object,
+  kind: json['kind'],
   name: json['name'] as String,
   targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,
@@ -23,7 +23,7 @@ final String host;
 /// The interval at which the Traceroute synthetic application test is set to run.
 final String interval;
 
-final Object? kind;
+final dynamic kind;
 
 /// The name of the Traceroute synthetic application test
 final String name;
@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('host'
       json.containsKey('interval') && json['interval'] is String &&
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String; } 
-DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, String? interval, Object? Function()? kind, String? name, List<DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? Function()? tracerouteStats, List<DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo> Function()? tracerouteStatsByColo, }) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
+DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, String? interval, dynamic Function()? kind, String? name, List<DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? Function()? tracerouteStats, List<DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo> Function()? tracerouteStatsByColo, }) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
   host: host ?? this.host,
   interval: interval ?? this.interval,
   kind: kind != null ? kind() : this.kind,

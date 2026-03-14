@@ -17,6 +17,7 @@ factory ListsListItemAsnObject.fromJson(Map<String, dynamic> json) { return List
   asn: ListsItemAsn.fromJson(json['asn'] as num),
 ); }
 
+/// Defines a non-negative 32 bit integer.
 final ListsItemAsn asn;
 
 Map<String, dynamic> toJson() { return {

@@ -11,8 +11,10 @@ factory MagicVisibilityPcapsPcapsOwnershipValidateRequest.fromJson(Map<String, d
   ownershipChallenge: MagicVisibilityPcapsPcapsOwnershipChallenge.fromJson(json['ownership_challenge'] as String),
 ); }
 
+/// The full URI for the bucket. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsDestinationConf destinationConf;
 
+/// The ownership challenge filename stored in the bucket.
 final MagicVisibilityPcapsPcapsOwnershipChallenge ownershipChallenge;
 
 Map<String, dynamic> toJson() { return {

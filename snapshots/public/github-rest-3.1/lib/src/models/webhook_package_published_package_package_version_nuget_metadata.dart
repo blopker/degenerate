@@ -12,7 +12,8 @@ factory WebhookPackagePublishedPackagePackageVersionNugetMetadata.fromJson(Map<S
   value: json['value'] != null ? OneOf4.parse(json['value'], fromA: (v) => v as bool, fromB: (v) => v as String, fromC: (v) => (v as num).toInt(), fromD: (v) => WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
-final Object? id;
+/// One of: int, String
+final dynamic id;
 
 final String? name;
 
@@ -24,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-WebhookPackagePublishedPackagePackageVersionNugetMetadata copyWith({Object Function()? id, String Function()? name, WebhookPackagePublishedPackagePackageVersionNugetMetadataValue Function()? value, }) { return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
+WebhookPackagePublishedPackagePackageVersionNugetMetadata copyWith({dynamic Function()? id, String Function()? name, WebhookPackagePublishedPackagePackageVersionNugetMetadataValue Function()? value, }) { return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,

@@ -10,6 +10,7 @@ factory ResourceSharingUpdateShareRequest.fromJson(Map<String, dynamic> json) { 
   name: ResourceSharingShareName.fromJson(json['name'] as String),
 ); }
 
+/// The name of the share.
 final ResourceSharingShareName name;
 
 Map<String, dynamic> toJson() { return {

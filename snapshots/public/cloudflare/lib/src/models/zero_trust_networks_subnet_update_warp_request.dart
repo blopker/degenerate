@@ -13,12 +13,16 @@ factory ZeroTrustNetworksSubnetUpdateWarpRequest.fromJson(Map<String, dynamic> j
   network: json['network'] != null ? TunnelSubnetIpNetwork.fromJson(json['network'] as String) : null,
 ); }
 
+/// An optional description of the subnet.
 final TunnelSubnetComment? comment;
 
+/// If `true`, this is the default subnet for the account. There can only be one default subnet per account.
 final TunnelSubnetIsDefaultNetwork? isDefaultNetwork;
 
+/// A user-friendly name for the subnet.
 final TunnelSubnetName? name;
 
+/// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
 final TunnelSubnetIpNetwork? network;
 
 Map<String, dynamic> toJson() { return {

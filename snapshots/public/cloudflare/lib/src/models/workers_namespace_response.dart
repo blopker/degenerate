@@ -24,16 +24,21 @@ factory WorkersNamespaceResponse.fromJson(Map<String, dynamic> json) { return Wo
   trustedWorkers: json['trusted_workers'] != null ? WorkersTrustedWorkers.fromJson(json['trusted_workers'] as bool) : null,
 ); }
 
+/// Identifier.
 final WorkersIdentifier? createdBy;
 
+/// When the script was created.
 final WorkersCreatedOn? createdOn;
 
+/// Identifier.
 final WorkersIdentifier? modifiedBy;
 
+/// When the script was last modified.
 final WorkersModifiedOn? modifiedOn;
 
 final WorkersUuid? namespaceId;
 
+/// Name of the Workers for Platforms dispatch namespace.
 final WorkersDispatchNamespaceName? namespaceName;
 
 final WorkersScriptCount? scriptCount;

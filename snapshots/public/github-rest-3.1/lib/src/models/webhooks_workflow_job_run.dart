@@ -7,17 +7,17 @@
 final class WebhooksWorkflowJobRun {const WebhooksWorkflowJobRun({required this.conclusion, required this.createdAt, required this.environment, required this.htmlUrl, required this.id, required this.name, required this.status, required this.updatedAt, });
 
 factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) { return WebhooksWorkflowJobRun(
-  conclusion: json['conclusion'] as Object,
+  conclusion: json['conclusion'],
   createdAt: json['created_at'] as String,
   environment: json['environment'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
-  name: json['name'] as Object,
+  name: json['name'],
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
 ); }
 
-final Object? conclusion;
+final dynamic conclusion;
 
 final String createdAt;
 
@@ -27,7 +27,7 @@ final String htmlUrl;
 
 final int id;
 
-final Object? name;
+final dynamic name;
 
 final String status;
 
@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('concl
       json.containsKey('name') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhooksWorkflowJobRun copyWith({Object? Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, Object? Function()? name, String? status, String? updatedAt, }) { return WebhooksWorkflowJobRun(
+WebhooksWorkflowJobRun copyWith({dynamic Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, dynamic Function()? name, String? status, String? updatedAt, }) { return WebhooksWorkflowJobRun(
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   createdAt: createdAt ?? this.createdAt,
   environment: environment ?? this.environment,

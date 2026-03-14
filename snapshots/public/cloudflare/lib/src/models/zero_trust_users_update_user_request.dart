@@ -11,8 +11,10 @@ factory ZeroTrustUsersUpdateUserRequest.fromJson(Map<String, dynamic> json) { re
   name: AccessUsersComponentsSchemasName.fromJson(json['name'] as String),
 ); }
 
+/// The email of the user.
 final AccessSchemasEmail email;
 
+/// The name of the user.
 final AccessUsersComponentsSchemasName name;
 
 Map<String, dynamic> toJson() { return {

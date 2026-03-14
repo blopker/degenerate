@@ -13,10 +13,13 @@ factory CustomHostnameForAZoneEditCustomHostnameRequest.fromJson(Map<String, dyn
   ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl'] as Map<String, dynamic>) : null,
 ); }
 
+/// Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
 final Map<String,String>? customMetadata;
 
+/// a valid hostname that’s been added to your DNS zone as an A, AAAA, or CNAME record.
 final TlsCertificatesAndHostnamesCustomOriginServer? customOriginServer;
 
+/// A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string ':request_host_header:' which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.
 final TlsCertificatesAndHostnamesCustomOriginSni? customOriginSni;
 
 final TlsCertificatesAndHostnamesSslpost? ssl;

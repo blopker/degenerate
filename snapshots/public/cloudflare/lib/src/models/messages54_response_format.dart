@@ -35,7 +35,7 @@ factory Messages54ResponseFormat.fromJson(Map<String, dynamic> json) { return Me
   type: json['type'] != null ? Messages54ResponseFormatType.fromJson(json['type'] as String) : null,
 ); }
 
-final Object? jsonSchema;
+final dynamic jsonSchema;
 
 final Messages54ResponseFormatType? type;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Messages54ResponseFormat copyWith({Object? Function()? jsonSchema, Messages54ResponseFormatType Function()? type, }) { return Messages54ResponseFormat(
+Messages54ResponseFormat copyWith({dynamic Function()? jsonSchema, Messages54ResponseFormatType Function()? type, }) { return Messages54ResponseFormat(
   jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
   type: type != null ? type() : this.type,
 ); } 

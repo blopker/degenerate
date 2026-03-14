@@ -148,7 +148,8 @@ final WorkersObservabilityQueryParametersFiltersOperation operation;
 
 final WorkersObservabilityQueryParametersFiltersType type;
 
-final Object? value;
+/// One of: String, double, bool
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'key': key,
@@ -159,7 +160,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('operation') &&
       json.containsKey('type'); } 
-WorkersObservabilityQueryParametersFilters copyWith({String? key, WorkersObservabilityQueryParametersFiltersOperation? operation, WorkersObservabilityQueryParametersFiltersType? type, Object Function()? value, }) { return WorkersObservabilityQueryParametersFilters(
+WorkersObservabilityQueryParametersFilters copyWith({String? key, WorkersObservabilityQueryParametersFiltersOperation? operation, WorkersObservabilityQueryParametersFiltersType? type, dynamic Function()? value, }) { return WorkersObservabilityQueryParametersFilters(
   key: key ?? this.key,
   operation: operation ?? this.operation,
   type: type ?? this.type,

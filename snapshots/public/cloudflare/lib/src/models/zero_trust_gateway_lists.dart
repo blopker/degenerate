@@ -24,14 +24,17 @@ factory ZeroTrustGatewayLists.fromJson(Map<String, dynamic> json) { return ZeroT
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// Indicate the number of items in the list.
 final ZeroTrustGatewayCount? count;
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
+/// Provide the list description.
 final ZeroTrustGatewayDescription? description;
 
 final ZeroTrustGatewaySchemasUuid? id;
 
+/// Provide the list items.
 final List<ZeroTrustGatewayItems2>? items;
 
 final ZeroTrustGatewayName? name;

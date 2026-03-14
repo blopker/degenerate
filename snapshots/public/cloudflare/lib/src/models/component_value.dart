@@ -5,10 +5,10 @@
 //  OpenAPI spec version: 3.0.3
 
 /// The unique component.
-extension type ComponentsSchemasName(Object? value) {
-factory ComponentsSchemasName.fromJson(Object? json) => ComponentsSchemasName(json);
+extension type ComponentsSchemasName(dynamic value) {
+factory ComponentsSchemasName.fromJson(dynamic json) => ComponentsSchemasName(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }
 /// The default amount allocated.
@@ -29,7 +29,7 @@ final class ComponentValue {const ComponentValue({this.$default, this.name, this
 
 factory ComponentValue.fromJson(Map<String, dynamic> json) { return ComponentValue(
   $default: json['default'] != null ? Default.fromJson(json['default'] as num) : null,
-  name: json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as Object?) : null,
+  name: json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as dynamic) : null,
   unitPrice: json['unit_price'] != null ? UnitPrice.fromJson(json['unit_price'] as num) : null,
 ); }
 

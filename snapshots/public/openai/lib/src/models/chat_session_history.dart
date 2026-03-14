@@ -15,6 +15,7 @@ factory ChatSessionHistory.fromJson(Map<String, dynamic> json) { return ChatSess
 /// Indicates if chat history is persisted for the session.
 final bool enabled;
 
+/// Number of prior threads surfaced in history views. Defaults to null when all history is retained.
 final int? recentThreads;
 
 Map<String, dynamic> toJson() { return {

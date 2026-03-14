@@ -58,6 +58,9 @@ final String type;
 /// 
 final String id;
 
+/// The encrypted content of the reasoning item - populated when a response is
+/// generated with `reasoning.encrypted_content` in the `include` parameter.
+/// 
 final String? encryptedContent;
 
 /// Reasoning summary content.

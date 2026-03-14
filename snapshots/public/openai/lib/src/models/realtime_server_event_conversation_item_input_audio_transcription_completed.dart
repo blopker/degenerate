@@ -68,6 +68,7 @@ final int contentIndex;
 /// The transcribed text.
 final String transcript;
 
+/// The log probabilities of the transcription.
 final List<LogProbProperties>? logprobs;
 
 /// Usage statistics for the transcription, this is billed according to the ASR model's pricing rather than the realtime model's pricing.

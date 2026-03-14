@@ -10,21 +10,26 @@ factory StreamLiveInputObjectWithoutUrl.fromJson(Map<String, dynamic> json) { re
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   uid: json['uid'] != null ? StreamLiveInputIdentifier.fromJson(json['uid'] as String) : null,
 ); }
 
+/// The date and time the live input was created.
 final StreamLiveInputCreated? created;
 
 final StreamLiveInputRecordingDeletion? deleteRecordingAfterDays;
 
+/// Indicates whether the live input is enabled and can accept streams.
 final StreamLiveInputEnabled? enabled;
 
-final Map<String,Object?>? meta;
+/// A user modifiable key-value store used to reference other systems of record for managing live inputs.
+final Map<String,dynamic>? meta;
 
+/// The date and time the live input was last modified.
 final StreamLiveInputModified? modified;
 
+/// A unique identifier for a live input.
 final StreamLiveInputIdentifier? uid;
 
 Map<String, dynamic> toJson() { return {
@@ -36,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (uid != null) 'uid': uid?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated Function()? created, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, Object> Function()? meta, StreamLiveInputModified Function()? modified, StreamLiveInputIdentifier Function()? uid, }) { return StreamLiveInputObjectWithoutUrl(
+StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated Function()? created, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, dynamic> Function()? meta, StreamLiveInputModified Function()? modified, StreamLiveInputIdentifier Function()? uid, }) { return StreamLiveInputObjectWithoutUrl(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,

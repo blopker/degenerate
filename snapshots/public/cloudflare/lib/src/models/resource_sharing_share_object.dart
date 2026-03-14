@@ -31,8 +31,10 @@ factory ResourceSharingShareObject.fromJson(Map<String, dynamic> json) { return 
   targetType: ResourceSharingShareTargetType.fromJson(json['target_type'] as String),
 ); }
 
+/// Account identifier.
 final ResourceSharingAccountId accountId;
 
+/// The display name of an account.
 final ResourceSharingAccountName accountName;
 
 /// The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
@@ -41,6 +43,7 @@ final int? associatedRecipientCount;
 /// The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
 final int? associatingRecipientCount;
 
+/// When the share was created.
 final ResourceSharingCreated created;
 
 /// The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
@@ -49,14 +52,18 @@ final int? disassociatedRecipientCount;
 /// The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
 final int? disassociatingRecipientCount;
 
+/// Share identifier tag.
 final ResourceSharingShareId id;
 
 final ResourceSharingShareKind? kind;
 
+/// When the share was modified.
 final ResourceSharingModified modified;
 
+/// The name of the share.
 final ResourceSharingShareName name;
 
+/// Organization identifier.
 final ResourceSharingOrganizationId organizationId;
 
 /// A list of resources that are part of the share. This field is only included when requested via the 'include_resources' parameter.

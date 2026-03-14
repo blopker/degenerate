@@ -22,6 +22,7 @@ final int? priority;
 
 final MagicWanStaticAddressing? staticAddressing;
 
+/// VLAN ID. Use zero for untagged.
 final MagicVlanTag? vlanTag;
 
 Map<String, dynamic> toJson() { return {

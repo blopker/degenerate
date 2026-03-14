@@ -7,12 +7,12 @@
 import 'package:collection/collection.dart';import 'realtimekit_paging_response_paging.dart';final class RealtimekitPagingResponse {const RealtimekitPagingResponse({required this.data, required this.paging, required this.success, });
 
 factory RealtimekitPagingResponse.fromJson(Map<String, dynamic> json) { return RealtimekitPagingResponse(
-  data: (json['data'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  data: (json['data'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   paging: RealtimekitPagingResponsePaging.fromJson(json['paging'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,Object?>> data;
+final List<Map<String,dynamic>> data;
 
 final RealtimekitPagingResponsePaging paging;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('paging') &&
       json.containsKey('success') && json['success'] is bool; } 
-RealtimekitPagingResponse copyWith({List<Map<String,Object?>>? data, RealtimekitPagingResponsePaging? paging, bool? success, }) { return RealtimekitPagingResponse(
+RealtimekitPagingResponse copyWith({List<Map<String,dynamic>>? data, RealtimekitPagingResponsePaging? paging, bool? success, }) { return RealtimekitPagingResponse(
   data: data ?? this.data,
   paging: paging ?? this.paging,
   success: success ?? this.success,

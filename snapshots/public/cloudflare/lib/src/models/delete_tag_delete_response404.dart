@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'delete_tag_delete_response40
 
 factory DeleteTagDeleteResponse404.fromJson(Map<String, dynamic> json) { return DeleteTagDeleteResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteTagDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
 final List<DeleteTagDeleteResponse404Errors> errors;
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-DeleteTagDeleteResponse404 copyWith({List<DeleteTagDeleteResponse404Errors>? errors, Map<String,Object?>? result, bool? success, }) { return DeleteTagDeleteResponse404(
+DeleteTagDeleteResponse404 copyWith({List<DeleteTagDeleteResponse404Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return DeleteTagDeleteResponse404(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

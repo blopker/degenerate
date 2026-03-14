@@ -12,10 +12,13 @@ factory ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest.fromJson(Map<String
   network: json['network'] != null ? TunnelSubnetIpNetwork.fromJson(json['network'] as String) : null,
 ); }
 
+/// An optional description of the subnet.
 final TunnelSubnetComment? comment;
 
+/// A user-friendly name for the subnet.
 final TunnelSubnetName? name;
 
+/// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
 final TunnelSubnetIpNetwork? network;
 
 Map<String, dynamic> toJson() { return {

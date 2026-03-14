@@ -11,6 +11,7 @@ factory UpdateConferenceRecordingRequest.fromJson(Map<String, dynamic> json) { r
   pauseBehavior: json['PauseBehavior'] as String?,
 ); }
 
+/// The status of the recording. Can be: `processing`, `completed` and `absent`. For more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
 final ConferenceRecordingEnumStatus status;
 
 /// Whether to record during a pause. Can be: `skip` or `silence` and the default is `silence`. `skip` does not record during the pause period, while `silence` will replace the actual audio of the call with silence during the pause period. This parameter only applies when setting `status` is set to `paused`.

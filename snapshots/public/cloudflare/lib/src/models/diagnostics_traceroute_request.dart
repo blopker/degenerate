@@ -12,6 +12,7 @@ factory DiagnosticsTracerouteRequest.fromJson(Map<String, dynamic> json) { retur
   targets: (json['targets'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
+/// If no source colo names specified, all colos will be used. China colos are unavailable for traceroutes.
 final List<String>? colos;
 
 final MagicTransitOptions? options;

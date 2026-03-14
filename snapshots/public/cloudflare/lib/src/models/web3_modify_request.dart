@@ -11,8 +11,10 @@ factory Web3ModifyRequest.fromJson(Map<String, dynamic> json) { return Web3Modif
   dnslink: json['dnslink'] != null ? Web3Dnslink.fromJson(json['dnslink'] as String) : null,
 ); }
 
+/// Specify an optional description of the hostname.
 final Web3Description? description;
 
+/// Specify the DNSLink value used if the target is ipfs.
 final Web3Dnslink? dnslink;
 
 Map<String, dynamic> toJson() { return {

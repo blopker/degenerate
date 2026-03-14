@@ -14,14 +14,19 @@ factory ZoneLockdownCreateAZoneLockdownRuleRequest.fromJson(Map<String, dynamic>
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
+/// A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
 final List<FirewallConfigurations2> configurations;
 
+/// An informative summary of the rule. This value is sanitized and any tags will be removed.
 final FirewallDescription? description;
 
+/// When true, indicates that the rule is currently paused.
 final FirewallSchemasPaused? paused;
 
+/// The priority of the rule to control the processing order. A lower number indicates higher priority. If not provided, any rules with a configured priority will be processed before rules without a priority.
 final FirewallSchemasPriority? priority;
 
+/// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 final List<String> urls;
 
 Map<String, dynamic> toJson() { return {

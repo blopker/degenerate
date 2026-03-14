@@ -7,14 +7,14 @@
 import 'package:collection/collection.dart';import 'autorag_config_ai_search_response_result_data_content.dart';final class AutoragConfigAiSearchResponseResultData {const AutoragConfigAiSearchResponseResultData({this.attributes, this.content, this.fileId, this.filename, required this.score, });
 
 factory AutoragConfigAiSearchResponseResultData.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchResponseResultData(
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   content: (json['content'] as List<dynamic>?)?.map((e) => AutoragConfigAiSearchResponseResultDataContent.fromJson(e as Map<String, dynamic>)).toList(),
   fileId: json['file_id'] as String?,
   filename: json['filename'] as String?,
   score: (json['score'] as num).toDouble(),
 ); }
 
-final Map<String,Object?>? attributes;
+final Map<String,dynamic>? attributes;
 
 final List<AutoragConfigAiSearchResponseResultDataContent>? content;
 
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'score': score,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num; } 
-AutoragConfigAiSearchResponseResultData copyWith({Map<String, Object> Function()? attributes, List<AutoragConfigAiSearchResponseResultDataContent> Function()? content, String Function()? fileId, String Function()? filename, double? score, }) { return AutoragConfigAiSearchResponseResultData(
+AutoragConfigAiSearchResponseResultData copyWith({Map<String, dynamic> Function()? attributes, List<AutoragConfigAiSearchResponseResultDataContent> Function()? content, String Function()? fileId, String Function()? filename, double? score, }) { return AutoragConfigAiSearchResponseResultData(
   attributes: attributes != null ? attributes() : this.attributes,
   content: content != null ? content() : this.content,
   fileId: fileId != null ? fileId() : this.fileId,

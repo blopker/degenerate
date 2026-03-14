@@ -10,6 +10,7 @@ factory ZonesZoneSettingsSingleRequestVariant1.fromJson(Map<String, dynamic> jso
   enabled: json['enabled'] != null ? ZonesSslRecommenderEnabled.fromJson(json['enabled'] as bool) : null,
 ); }
 
+/// ssl-recommender enrollment setting.
 final ZonesSslRecommenderEnabled? enabled;
 
 Map<String, dynamic> toJson() { return {

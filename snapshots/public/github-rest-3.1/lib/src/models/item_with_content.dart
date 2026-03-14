@@ -12,13 +12,13 @@ factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithCon
   nodeId: json['node_id'] as String?,
   projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
   contentType: ItemContentType.fromJson(json['content_type'] as String),
-  content: (json['content'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  content: (json['content'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: DateTime.parse(json['archived_at'] as String),
   itemUrl: json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null,
-  fields: (json['fields'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  fields: (json['fields'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 /// The unique identifier of the project item.
@@ -30,10 +30,11 @@ final String? nodeId;
 /// The API URL of the project that contains this item.
 final Uri? projectUrl;
 
+/// The type of content tracked in a project item
 final ItemContentType contentType;
 
 /// The content of the item, which varies by content type.
-final Map<String,Object?>? content;
+final Map<String,dynamic>? content;
 
 final SimpleUser? creator;
 
@@ -50,7 +51,7 @@ final DateTime? archivedAt;
 final Uri? itemUrl;
 
 /// The fields and values associated with this item.
-final List<Map<String,Object?>>? fields;
+final List<Map<String,dynamic>>? fields;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -70,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('archived_at') && json['archived_at'] is String; } 
-ItemWithContent copyWith({double? id, String Function()? nodeId, Uri Function()? projectUrl, ItemContentType? contentType, Map<String, Object>? Function()? content, SimpleUser Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? itemUrl, List<Map<String, Object>> Function()? fields, }) { return ItemWithContent(
+ItemWithContent copyWith({double? id, String Function()? nodeId, Uri Function()? projectUrl, ItemContentType? contentType, Map<String, dynamic>? Function()? content, SimpleUser Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? itemUrl, List<Map<String, dynamic>> Function()? fields, }) { return ItemWithContent(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   projectUrl: projectUrl != null ? projectUrl() : this.projectUrl,

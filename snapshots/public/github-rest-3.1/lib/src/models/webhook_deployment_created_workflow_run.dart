@@ -144,7 +144,7 @@ final String event;
 
 final String headBranch;
 
-final Object? headCommit;
+final dynamic headCommit;
 
 final WebhookDeploymentCreatedWorkflowRunHeadRepository? headRepository;
 
@@ -164,7 +164,7 @@ final String nodeId;
 
 final String path;
 
-final Object? previousAttemptUrl;
+final dynamic previousAttemptUrl;
 
 final List<WebhookDeploymentCreatedWorkflowRunPullRequests> pullRequests;
 
@@ -251,7 +251,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num; } 
-WebhookDeploymentCreatedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentCreatedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, Object? Function()? headCommit, WebhookDeploymentCreatedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, Object? Function()? previousAttemptUrl, List<WebhookDeploymentCreatedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentCreatedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentCreatedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentCreatedWorkflowRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, }) { return WebhookDeploymentCreatedWorkflowRun(
+WebhookDeploymentCreatedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentCreatedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, dynamic Function()? headCommit, WebhookDeploymentCreatedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, dynamic Function()? previousAttemptUrl, List<WebhookDeploymentCreatedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentCreatedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentCreatedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentCreatedWorkflowRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, }) { return WebhookDeploymentCreatedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl != null ? artifactsUrl() : this.artifactsUrl,
   cancelUrl: cancelUrl != null ? cancelUrl() : this.cancelUrl,

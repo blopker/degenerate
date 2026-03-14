@@ -7,12 +7,12 @@
 final class PostEventCreateRequestRaw {const PostEventCreateRequestRaw({required this.data, this.source, this.tlp, });
 
 factory PostEventCreateRequestRaw.fromJson(Map<String, dynamic> json) { return PostEventCreateRequestRaw(
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   source: json['source'] as String?,
   tlp: json['tlp'] as String?,
 ); }
 
-final Map<String,Object?>? data;
+final Map<String,dynamic>? data;
 
 final String? source;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'tlp': ?tlp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'); } 
-PostEventCreateRequestRaw copyWith({Map<String, Object>? Function()? data, String Function()? source, String Function()? tlp, }) { return PostEventCreateRequestRaw(
+PostEventCreateRequestRaw copyWith({Map<String, dynamic>? Function()? data, String Function()? source, String Function()? tlp, }) { return PostEventCreateRequestRaw(
   data: data != null ? data() : this.data,
   source: source != null ? source() : this.source,
   tlp: tlp != null ? tlp() : this.tlp,

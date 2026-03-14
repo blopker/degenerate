@@ -25,6 +25,7 @@ final String type;
 
 final String region;
 
+/// Bandwidth structure as visible through the customer-facing API.
 final Bandwidth? speed;
 
 Map<String, dynamic> toJson() { return {

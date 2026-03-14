@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'wor_describe_workflow_instan
 factory WorDescribeWorkflowInstanceResponse400.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorDescribeWorkflowInstanceResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<WorDescribeWorkflowInstanceResponse400Errors> errors;
 
 final List<String> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorDescribeWorkflowInstanceResponse400 copyWith({List<WorDescribeWorkflowInstanceResponse400Errors>? errors, List<String>? messages, Map<String, Object>? Function()? result, bool? success, }) { return WorDescribeWorkflowInstanceResponse400(
+WorDescribeWorkflowInstanceResponse400 copyWith({List<WorDescribeWorkflowInstanceResponse400Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return WorDescribeWorkflowInstanceResponse400(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

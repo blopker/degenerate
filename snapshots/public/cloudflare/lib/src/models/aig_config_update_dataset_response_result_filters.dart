@@ -96,14 +96,14 @@ final class AigConfigUpdateDatasetResponseResultFilters {const AigConfigUpdateDa
 factory AigConfigUpdateDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetResponseResultFilters(
   key: AigConfigUpdateDatasetResponseResultFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigUpdateDatasetResponseResultFiltersOperator.fromJson(json['operator'] as String),
-  value: (json['value'] as List<dynamic>).map((e) => e as Object).toList(),
+  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
 ); }
 
 final AigConfigUpdateDatasetResponseResultFiltersKey key;
 
 final AigConfigUpdateDatasetResponseResultFiltersOperator $operator;
 
-final List<Object> value;
+final List<dynamic> value;
 
 Map<String, dynamic> toJson() { return {
   'key': key.toJson(),
@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
       json.containsKey('operator') &&
       json.containsKey('value'); } 
-AigConfigUpdateDatasetResponseResultFilters copyWith({AigConfigUpdateDatasetResponseResultFiltersKey? key, AigConfigUpdateDatasetResponseResultFiltersOperator? $operator, List<Object>? value, }) { return AigConfigUpdateDatasetResponseResultFilters(
+AigConfigUpdateDatasetResponseResultFilters copyWith({AigConfigUpdateDatasetResponseResultFiltersKey? key, AigConfigUpdateDatasetResponseResultFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigUpdateDatasetResponseResultFilters(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,

@@ -46,6 +46,9 @@ final String eventId;
 /// The event type, must be `input_audio_buffer.committed`.
 final RealtimeServerEventInputAudioBufferCommittedType type;
 
+/// The ID of the preceding item after which the new item will be inserted.
+/// Can be `null` if the item has no predecessor.
+/// 
 final String? previousItemId;
 
 /// The ID of the user message item that will be created.

@@ -36,11 +36,13 @@ final String? accountTag;
 /// The date and time when the sinkhole was created
 final DateTime? createdOn;
 
+/// The unique identifier for the sinkhole
 final IntelSinkholesId? id;
 
 /// The date and time when the sinkhole was last modified
 final DateTime? modifiedOn;
 
+/// The name of the sinkhole
 final IntelSinkholesName? name;
 
 /// The name of the R2 bucket to store results

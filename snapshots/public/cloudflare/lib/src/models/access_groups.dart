@@ -24,6 +24,7 @@ factory AccessGroups.fromJson(Map<String, dynamic> json) { return AccessGroups(
 /// The display name of the SCIM Group resource.
 final String? displayName;
 
+/// The IdP-generated Id of the SCIM resource.
 final AccessExternalId? externalId;
 
 final AccessId? id;

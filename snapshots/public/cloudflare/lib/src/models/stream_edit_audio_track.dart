@@ -11,8 +11,10 @@ factory StreamEditAudioTrack.fromJson(Map<String, dynamic> json) { return Stream
   label: json['label'] != null ? StreamAudioLabel.fromJson(json['label'] as String) : null,
 ); }
 
+/// Denotes whether the audio track will be played by default in a player.
 final StreamAudioDefault? $default;
 
+/// A string to uniquely identify the track amongst other audio track labels for the specified video.
 final StreamAudioLabel? label;
 
 Map<String, dynamic> toJson() { return {

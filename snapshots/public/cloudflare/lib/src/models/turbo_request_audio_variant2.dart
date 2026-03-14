@@ -7,11 +7,11 @@
 final class TurboRequestAudioVariant2 {const TurboRequestAudioVariant2({this.body, this.contentType, });
 
 factory TurboRequestAudioVariant2.fromJson(Map<String, dynamic> json) { return TurboRequestAudioVariant2(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   contentType: json['contentType'] as String?,
 ); }
 
-final Map<String,Object?>? body;
+final Map<String,dynamic>? body;
 
 final String? contentType;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'contentType': ?contentType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-TurboRequestAudioVariant2 copyWith({Map<String, Object> Function()? body, String Function()? contentType, }) { return TurboRequestAudioVariant2(
+TurboRequestAudioVariant2 copyWith({Map<String, dynamic> Function()? body, String Function()? contentType, }) { return TurboRequestAudioVariant2(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

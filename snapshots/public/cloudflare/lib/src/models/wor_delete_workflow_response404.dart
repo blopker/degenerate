@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'wor_delete_workflow_response
 factory WorDeleteWorkflowResponse404.fromJson(Map<String, dynamic> json) { return WorDeleteWorkflowResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorDeleteWorkflowResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<WorDeleteWorkflowResponse404Errors> errors;
 
 final List<String> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorDeleteWorkflowResponse404 copyWith({List<WorDeleteWorkflowResponse404Errors>? errors, List<String>? messages, Map<String, Object>? Function()? result, bool? success, }) { return WorDeleteWorkflowResponse404(
+WorDeleteWorkflowResponse404 copyWith({List<WorDeleteWorkflowResponse404Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return WorDeleteWorkflowResponse404(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

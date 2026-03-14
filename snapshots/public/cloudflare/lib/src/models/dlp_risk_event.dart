@@ -14,7 +14,7 @@ factory DlpRiskEvent.fromJson(Map<String, dynamic> json) { return DlpRiskEvent(
   timestamp: DateTime.parse(json['timestamp'] as String),
 ); }
 
-final Object? eventDetails;
+final dynamic eventDetails;
 
 final String id;
 
@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('risk_level') &&
       json.containsKey('timestamp') && json['timestamp'] is String; } 
-DlpRiskEvent copyWith({Object? Function()? eventDetails, String? id, String? name, DlpRiskLevel? riskLevel, DateTime? timestamp, }) { return DlpRiskEvent(
+DlpRiskEvent copyWith({dynamic Function()? eventDetails, String? id, String? name, DlpRiskLevel? riskLevel, DateTime? timestamp, }) { return DlpRiskEvent(
   eventDetails: eventDetails != null ? eventDetails() : this.eventDetails,
   id: id ?? this.id,
   name: name ?? this.name,

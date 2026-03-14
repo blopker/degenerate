@@ -69,7 +69,7 @@ factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return Vecto
   status: VectorStoreFileObjectStatus.fromJson(json['status'] as String),
   lastError: VectorStoreFileObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>),
   chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),) : null,
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The identifier, which can be referenced in API endpoints.
@@ -90,12 +90,19 @@ final String vectorStoreId;
 /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
 final VectorStoreFileObjectStatus status;
 
+/// The last error associated with this vector store file. Will be `null` if there are no errors.
 final VectorStoreFileObjectLastError? lastError;
 
 /// The strategy used to chunk the file.
 final VectorStoreFileObjectChunkingStrategy? chunkingStrategy;
 
-final Map<String,Object>? attributes;
+/// Set of 16 key-value pairs that can be attached to an object. This can be
+/// useful for storing additional information about the object in a structured
+/// format, and querying for objects via API or the dashboard. Keys are strings
+/// with a maximum length of 64 characters. Values are strings with a maximum
+/// length of 512 characters, booleans, or numbers.
+/// 
+final Map<String,dynamic>? attributes;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -115,7 +122,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('vector_store_id') && json['vector_store_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('last_error'); } 
-VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy Function()? chunkingStrategy, Map<String, Object>? Function()? attributes, }) { return VectorStoreFileObject(
+VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return VectorStoreFileObject(
   id: id ?? this.id,
   object: object ?? this.object,
   usageBytes: usageBytes ?? this.usageBytes,

@@ -19,10 +19,13 @@ factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic>
 
 final WorkerVersionsUploadVersionRequestMetadataAnnotations? annotations;
 
+/// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItem>? bindings;
 
+/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 final WorkersCompatibilityDate? compatibilityDate;
 
+/// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
 final List<WorkersCompatibilityFlag>? compatibilityFlags;
 
 /// List of binding types to keep from previous_upload.
@@ -31,6 +34,7 @@ final List<String>? keepBindings;
 /// Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.
 final String mainModule;
 
+/// Usage model for the Worker invocations.
 final WorkersUsageModel? usageModel;
 
 Map<String, dynamic> toJson() { return {

@@ -96,11 +96,11 @@ factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => Prompt43FunctionCallVariant1.fromJson(v as String), fromB: (v) => Prompt43FunctionCallVariant2.fromJson(v as Map<String, dynamic>),) : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Prompt43Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   logprobs: json['logprobs'] as bool?,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Prompt43Modalities.fromJson(e as String)).toList(),
   model: json['model'] as String?,
   n: json['n'] != null ? (json['n'] as num).toInt() : null,
@@ -135,7 +135,7 @@ final Prompt43FunctionCall? functionCall;
 
 final List<Prompt43Functions>? functions;
 
-final Map<String,Object?>? logitBias;
+final Map<String,dynamic>? logitBias;
 
 final bool? logprobs;
 
@@ -143,7 +143,7 @@ final int? maxCompletionTokens;
 
 final int? maxTokens;
 
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 final List<Prompt43Modalities>? modalities;
 
@@ -229,7 +229,7 @@ Map<String, dynamic> toJson() { return {
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt43 copyWith({Prompt43Audio Function()? audio, Prompt43ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, Prompt43FunctionCall Function()? functionCall, List<Prompt43Functions> Function()? functions, Map<String, Object>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, Map<String, Object>? Function()? metadata, List<Prompt43Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, Prompt43Prediction Function()? prediction, double? Function()? presencePenalty, String? prompt, Prompt43ReasoningEffort? Function()? reasoningEffort, Prompt43ResponseFormat Function()? responseFormat, int? Function()? seed, Prompt43ServiceTier? Function()? serviceTier, Prompt43Stop Function()? stop, bool? Function()? store, bool? Function()? stream, Prompt43StreamOptions Function()? streamOptions, double? Function()? temperature, Prompt43ToolChoice Function()? toolChoice, List<Prompt43Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, Prompt43WebSearchOptions Function()? webSearchOptions, }) { return Prompt43(
+Prompt43 copyWith({Prompt43Audio Function()? audio, Prompt43ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, Prompt43FunctionCall Function()? functionCall, List<Prompt43Functions> Function()? functions, Map<String, dynamic>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, Map<String, dynamic>? Function()? metadata, List<Prompt43Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, Prompt43Prediction Function()? prediction, double? Function()? presencePenalty, String? prompt, Prompt43ReasoningEffort? Function()? reasoningEffort, Prompt43ResponseFormat Function()? responseFormat, int? Function()? seed, Prompt43ServiceTier? Function()? serviceTier, Prompt43Stop Function()? stop, bool? Function()? store, bool? Function()? stream, Prompt43StreamOptions Function()? streamOptions, double? Function()? temperature, Prompt43ToolChoice Function()? toolChoice, List<Prompt43Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, Prompt43WebSearchOptions Function()? webSearchOptions, }) { return Prompt43(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,

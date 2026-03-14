@@ -13,7 +13,7 @@ factory UrlscannerGetScanHarResponseResultHarLogEntries.fromJson(Map<String, dyn
   requestId: json['_requestId'] as String,
   requestTime: (json['_requestTime'] as num).toDouble(),
   resourceType: json['_resourceType'] as String,
-  cache: (json['cache'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  cache: (json['cache'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   connection: json['connection'] as String,
   pageref: json['pageref'] as String,
   request: UrlscannerGetScanHarResponseResultHarLogEntriesRequest.fromJson(json['request'] as Map<String, dynamic>),
@@ -35,7 +35,7 @@ final double requestTime;
 
 final String resourceType;
 
-final Map<String,Object?> cache;
+final Map<String,dynamic> cache;
 
 final String connection;
 
@@ -81,7 +81,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_init
       json.containsKey('serverIPAddress') && json['serverIPAddress'] is String &&
       json.containsKey('startedDateTime') && json['startedDateTime'] is String &&
       json.containsKey('time') && json['time'] is num; } 
-UrlscannerGetScanHarResponseResultHarLogEntries copyWith({String? initialPriority, String? initiatorType, String? priority, String? requestId, double? requestTime, String? resourceType, Map<String,Object?>? cache, String? connection, String? pageref, UrlscannerGetScanHarResponseResultHarLogEntriesRequest? request, UrlscannerGetScanHarResponseResultHarLogEntriesResponse? response, String? serverIpAddress, String? startedDateTime, double? time, }) { return UrlscannerGetScanHarResponseResultHarLogEntries(
+UrlscannerGetScanHarResponseResultHarLogEntries copyWith({String? initialPriority, String? initiatorType, String? priority, String? requestId, double? requestTime, String? resourceType, Map<String,dynamic>? cache, String? connection, String? pageref, UrlscannerGetScanHarResponseResultHarLogEntriesRequest? request, UrlscannerGetScanHarResponseResultHarLogEntriesResponse? response, String? serverIpAddress, String? startedDateTime, double? time, }) { return UrlscannerGetScanHarResponseResultHarLogEntries(
   initialPriority: initialPriority ?? this.initialPriority,
   initiatorType: initiatorType ?? this.initiatorType,
   priority: priority ?? this.priority,

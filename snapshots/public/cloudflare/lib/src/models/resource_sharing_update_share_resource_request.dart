@@ -7,16 +7,17 @@
 final class ResourceSharingUpdateShareResourceRequest {const ResourceSharingUpdateShareResourceRequest({required this.meta});
 
 factory ResourceSharingUpdateShareResourceRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingUpdateShareResourceRequest(
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
-final Map<String,Object?> meta;
+/// Resource Metadata.
+final Map<String,dynamic> meta;
 
 Map<String, dynamic> toJson() { return {
   'meta': meta,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta'); } 
-ResourceSharingUpdateShareResourceRequest copyWith({Map<String,Object?>? meta}) { return ResourceSharingUpdateShareResourceRequest(
+ResourceSharingUpdateShareResourceRequest copyWith({Map<String,dynamic>? meta}) { return ResourceSharingUpdateShareResourceRequest(
   meta: meta ?? this.meta,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

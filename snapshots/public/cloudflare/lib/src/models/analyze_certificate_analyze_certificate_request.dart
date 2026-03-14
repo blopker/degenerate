@@ -11,8 +11,10 @@ factory AnalyzeCertificateAnalyzeCertificateRequest.fromJson(Map<String, dynamic
   certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesCertificate.fromJson(json['certificate'] as String) : null,
 ); }
 
+/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
 
+/// The zone's SSL certificate or certificate and the intermediate(s).
 final TlsCertificatesAndHostnamesCertificate? certificate;
 
 Map<String, dynamic> toJson() { return {

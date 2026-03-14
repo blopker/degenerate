@@ -107,6 +107,7 @@ final SimpleRepository controllerRepo;
 
 final SimpleUser actor;
 
+/// The language targeted by the CodeQL query
 final CodeScanningVariantAnalysisLanguage queryLanguage;
 
 /// The download url for the query pack.

@@ -44,27 +44,36 @@ factory TokenCountsBody.fromJson(Map<String, dynamic> json) { return TokenCounts
   parallelToolCalls: json['parallel_tool_calls'] as bool?,
 ); }
 
+/// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](/docs/models) to browse and compare available models.
 final String? model;
 
+/// Text, image, or file inputs to the model, used to generate a response
 final TokenCountsBodyInput? input;
 
+/// The unique ID of the previous response to the model. Use this to create multi-turn conversations. Learn more about [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
 final String? previousResponseId;
 
+/// An array of tools the model may call while generating a response. You can specify which tool to use by setting the `tool_choice` parameter.
 final List<Tool>? tools;
 
 final ResponseTextParam? text;
 
+/// **gpt-5 and o-series models only** Configuration options for [reasoning models](https://platform.openai.com/docs/guides/reasoning).
 final Reasoning? reasoning;
 
 /// The truncation strategy to use for the model response. - `auto`: If the input to this Response exceeds the model's context window size, the model will truncate the response to fit the context window by dropping items from the beginning of the conversation. - `disabled` (default): If the input size will exceed the context window size for a model, the request will fail with a 400 error.
 final TruncationEnum? truncation;
 
+/// A system (or developer) message inserted into the model's context.
+/// When used along with `previous_response_id`, the instructions from a previous response will not be carried over to the next response. This makes it simple to swap out system (or developer) messages in new responses.
 final String? instructions;
 
 final ConversationParam? conversation;
 
+/// Controls which tool the model should use, if any.
 final ToolChoiceParam? toolChoice;
 
+/// Whether to allow the model to run tool calls in parallel.
 final bool? parallelToolCalls;
 
 Map<String, dynamic> toJson() { return {

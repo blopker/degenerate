@@ -8,13 +8,13 @@ import 'package:collection/collection.dart';import 'brapi_post_json_response_err
 
 factory BrapiPostJsonResponse.fromJson(Map<String, dynamic> json) { return BrapiPostJsonResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostJsonResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)))),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
   success: json['success'] as bool,
 ); }
 
 final List<BrapiPostJsonResponseErrors>? errors;
 
-final Map<String,Map<String,Object?>?> result;
+final Map<String,Map<String,dynamic>?> result;
 
 /// Response status
 final bool success;
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-BrapiPostJsonResponse copyWith({List<BrapiPostJsonResponseErrors> Function()? errors, Map<String,Map<String,Object?>?>? result, bool? success, }) { return BrapiPostJsonResponse(
+BrapiPostJsonResponse copyWith({List<BrapiPostJsonResponseErrors> Function()? errors, Map<String,Map<String,dynamic>?>? result, bool? success, }) { return BrapiPostJsonResponse(
   errors: errors != null ? errors() : this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

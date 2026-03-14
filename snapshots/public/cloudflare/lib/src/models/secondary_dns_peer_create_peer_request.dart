@@ -10,6 +10,7 @@ factory SecondaryDnsPeerCreatePeerRequest.fromJson(Map<String, dynamic> json) { 
   name: SecondaryDnsComponentsSchemasName.fromJson(json['name'] as String),
 ); }
 
+/// The name of the peer.
 final SecondaryDnsComponentsSchemasName name;
 
 Map<String, dynamic> toJson() { return {

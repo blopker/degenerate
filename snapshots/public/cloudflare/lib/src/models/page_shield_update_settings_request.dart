@@ -12,10 +12,13 @@ factory PageShieldUpdateSettingsRequest.fromJson(Map<String, dynamic> json) { re
   useConnectionUrlPath: json['use_connection_url_path'] != null ? PageShieldUseConnectionUrlPath.fromJson(json['use_connection_url_path'] as bool) : null,
 ); }
 
+/// When true, indicates that Page Shield is enabled.
 final PageShieldEnabled? enabled;
 
+/// When true, CSP reports will be sent to https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report
 final PageShieldUseCloudflareReportingEndpoint? useCloudflareReportingEndpoint;
 
+/// When true, the paths associated with connections URLs will also be analyzed.
 final PageShieldUseConnectionUrlPath? useConnectionUrlPath;
 
 Map<String, dynamic> toJson() { return {

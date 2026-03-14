@@ -30,12 +30,18 @@ factory ZonesPageRule.fromJson(Map<String, dynamic> json) { return ZonesPageRule
   targets: (json['targets'] as List<dynamic>).map((e) => ZonesTarget.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// The set of actions to perform if the targets of this rule match the
+/// request. Actions can redirect to another URL or override settings, but
+/// not both.
+/// 
 final List<ZonesActions2> actions;
 
+/// The timestamp of when the Page Rule was created.
 final ZonesCreatedOn createdOn;
 
 final ZonesSchemasIdentifier id;
 
+/// The timestamp of when the Page Rule was last modified.
 final ZonesModifiedOn modifiedOn;
 
 final ZonesPriority priority;

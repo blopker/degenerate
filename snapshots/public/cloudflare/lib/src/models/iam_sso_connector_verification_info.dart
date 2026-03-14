@@ -49,6 +49,7 @@ factory IamSsoConnectorVerificationInfo.fromJson(Map<String, dynamic> json) { re
   status: json['status'] != null ? IamSsoConnectorVerificationInfoStatus.fromJson(json['status'] as String) : null,
 ); }
 
+/// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
 final IamDnsVerificationCode? code;
 
 /// The status of the verification code from the verification process.

@@ -14,6 +14,7 @@ factory ContextManagementParam.fromJson(Map<String, dynamic> json) { return Cont
 /// The context management entry type. Currently only 'compaction' is supported.
 final String type;
 
+/// Token threshold at which compaction should be triggered for this entry.
 final int? compactThreshold;
 
 Map<String, dynamic> toJson() { return {

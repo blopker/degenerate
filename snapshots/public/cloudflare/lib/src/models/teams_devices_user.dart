@@ -26,8 +26,10 @@ factory TeamsDevicesUser.fromJson(Map<String, dynamic> json) { return TeamsDevic
   name: json['name'] as String?,
 ); }
 
+/// The contact email address of the user.
 final TeamsDevicesEmail? email;
 
+/// UUID.
 final TeamsDevicesComponentsSchemasUuid? id;
 
 /// The enrolled device user's name.

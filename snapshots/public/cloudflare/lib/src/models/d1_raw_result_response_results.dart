@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 
 factory D1RawResultResponseResults.fromJson(Map<String, dynamic> json) { return D1RawResultResponseResults(
   columns: (json['columns'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  rows: (json['rows'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => (v as num).toDouble(), fromB: (v) => v as String, fromC: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),)).toList()).toList(),
+  rows: (json['rows'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => (v as num).toDouble(), fromB: (v) => v as String, fromC: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),)).toList()).toList(),
 ); }
 
 final List<String>? columns;

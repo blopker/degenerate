@@ -64,8 +64,10 @@ factory TeamsDevicesDevices.fromJson(Map<String, dynamic> json) { return TeamsDe
   version: json['version'] != null ? TeamsDevicesVersion.fromJson(json['version'] as String) : null,
 ); }
 
+/// When the device was created.
 final TeamsDevicesCreated? created;
 
+/// True if the device was deleted.
 final TeamsDevicesDeleted? deleted;
 
 final TeamsDevicesPlatform? deviceType;

@@ -13,12 +13,16 @@ factory TunnelRouteUpdateATunnelRouteRequest.fromJson(Map<String, dynamic> json)
   virtualNetworkId: json['virtual_network_id'] != null ? TunnelVirtualNetworkIdComputedOptional.fromJson(json['virtual_network_id'] as String) : null,
 ); }
 
+/// Optional remark describing the route.
 final TunnelRouteComment? comment;
 
+/// The private IPv4 or IPv6 range connected by the route, in CIDR notation.
 final TunnelIpNetwork? network;
 
+/// UUID of the tunnel.
 final TunnelTunnelId? tunnelId;
 
+/// UUID of the virtual network.
 final TunnelVirtualNetworkIdComputedOptional? virtualNetworkId;
 
 Map<String, dynamic> toJson() { return {

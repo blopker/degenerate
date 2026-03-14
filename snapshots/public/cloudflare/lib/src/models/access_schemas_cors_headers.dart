@@ -11,26 +11,34 @@ factory AccessSchemasCorsHeaders.fromJson(Map<String, dynamic> json) { return Ac
   allowAllMethods: json['allow_all_methods'] != null ? AccessAllowAllMethods.fromJson(json['allow_all_methods'] as bool) : null,
   allowAllOrigins: json['allow_all_origins'] != null ? AccessAllowAllOrigins.fromJson(json['allow_all_origins'] as bool) : null,
   allowCredentials: json['allow_credentials'] != null ? AccessAllowCredentials.fromJson(json['allow_credentials'] as bool) : null,
-  allowedHeaders: (json['allowed_headers'] as List<dynamic>?)?.map((e) => e as Object).toList(),
+  allowedHeaders: (json['allowed_headers'] as List<dynamic>?)?.map((e) => e).toList(),
   allowedMethods: (json['allowed_methods'] as List<dynamic>?)?.map((e) => AccessAllowedMethods2.fromJson(e as String)).toList(),
-  allowedOrigins: (json['allowed_origins'] as List<dynamic>?)?.map((e) => e as Object).toList(),
+  allowedOrigins: (json['allowed_origins'] as List<dynamic>?)?.map((e) => e).toList(),
   maxAge: json['max_age'] != null ? AccessMaxAge.fromJson(json['max_age'] as num) : null,
 ); }
 
+/// Allows all HTTP request headers.
 final AccessAllowAllHeaders? allowAllHeaders;
 
+/// Allows all HTTP request methods.
 final AccessAllowAllMethods? allowAllMethods;
 
+/// Allows all origins.
 final AccessAllowAllOrigins? allowAllOrigins;
 
+/// When set to `true`, includes credentials (cookies, authorization headers, or TLS client certificates) with requests.
 final AccessAllowCredentials? allowCredentials;
 
-final List<Object?>? allowedHeaders;
+/// Allowed HTTP request headers.
+final List<dynamic>? allowedHeaders;
 
+/// Allowed HTTP request methods.
 final List<AccessAllowedMethods2>? allowedMethods;
 
-final List<Object?>? allowedOrigins;
+/// Allowed origins.
+final List<dynamic>? allowedOrigins;
 
+/// The maximum number of seconds the results of a preflight request can be cached.
 final AccessMaxAge? maxAge;
 
 Map<String, dynamic> toJson() { return {
@@ -44,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (maxAge != null) 'max_age': maxAge?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccessSchemasCorsHeaders copyWith({AccessAllowAllHeaders Function()? allowAllHeaders, AccessAllowAllMethods Function()? allowAllMethods, AccessAllowAllOrigins Function()? allowAllOrigins, AccessAllowCredentials Function()? allowCredentials, List<Object> Function()? allowedHeaders, List<AccessAllowedMethods2> Function()? allowedMethods, List<Object> Function()? allowedOrigins, AccessMaxAge Function()? maxAge, }) { return AccessSchemasCorsHeaders(
+AccessSchemasCorsHeaders copyWith({AccessAllowAllHeaders Function()? allowAllHeaders, AccessAllowAllMethods Function()? allowAllMethods, AccessAllowAllOrigins Function()? allowAllOrigins, AccessAllowCredentials Function()? allowCredentials, List<dynamic> Function()? allowedHeaders, List<AccessAllowedMethods2> Function()? allowedMethods, List<dynamic> Function()? allowedOrigins, AccessMaxAge Function()? maxAge, }) { return AccessSchemasCorsHeaders(
   allowAllHeaders: allowAllHeaders != null ? allowAllHeaders() : this.allowAllHeaders,
   allowAllMethods: allowAllMethods != null ? allowAllMethods() : this.allowAllMethods,
   allowAllOrigins: allowAllOrigins != null ? allowAllOrigins() : this.allowAllOrigins,

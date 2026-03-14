@@ -16,6 +16,7 @@ factory NscCni.fromJson(Map<String, dynamic> json) { return NscCni(
   p2pIp: json['p2p_ip'] as String,
 ); }
 
+/// Customer account tag
 final NscAccountTag account;
 
 final NscBgpControl? bgp;

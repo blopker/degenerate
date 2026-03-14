@@ -9,21 +9,21 @@ final class Pageviews {const Pageviews({this.all, this.searchEngine, });
 
 factory Pageviews.fromJson(Map<String, dynamic> json) { return Pageviews(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
-  searchEngine: (json['search_engine'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  searchEngine: (json['search_engine'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The total number of pageviews served within the time range.
 final int? all;
 
 /// A variable list of key/value pairs representing the search engine and number of hits.
-final Map<String,Object?>? searchEngine;
+final Map<String,dynamic>? searchEngine;
 
 Map<String, dynamic> toJson() { return {
   'all': ?all,
   'search_engine': ?searchEngine,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Pageviews copyWith({int Function()? all, Map<String, Object> Function()? searchEngine, }) { return Pageviews(
+Pageviews copyWith({int Function()? all, Map<String, dynamic> Function()? searchEngine, }) { return Pageviews(
   all: all != null ? all() : this.all,
   searchEngine: searchEngine != null ? searchEngine() : this.searchEngine,
 ); } 

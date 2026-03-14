@@ -130,6 +130,41 @@ void main() {
       });
     });
 
+    group('dynamic fields from PrimitiveKind.dynamic_', () {
+      late String source;
+
+      setUp(() {
+        final model = IrObject('DynModel', [
+          IrField(
+            'data',
+            'data',
+            IrPrimitive(PrimitiveKind.dynamic_,
+                description: 'One of: String, int'),
+            description: 'One of: String, int',
+          ),
+          IrField('payload', 'payload', IrPrimitive(PrimitiveKind.dynamic_)),
+        ]);
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('emits dynamic instead of Object', () {
+        expect(source, contains('final dynamic data;'));
+        expect(source, contains('final dynamic payload;'));
+        expect(source, isNot(contains('Object data')));
+        expect(source, isNot(contains('Object payload')));
+      });
+
+      test('emits doc comment with variant types', () {
+        expect(source, contains('/// One of: String, int'));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
     group('ErrorModel model', () {
       late String source;
 
@@ -2332,7 +2367,7 @@ void main() {
 
     setUpAll(() {
       final bodyType = IrObject('ObjRequest', [
-        IrField('data', 'Data', IrPrimitive(PrimitiveKind.object)),
+        IrField('data', 'Data', IrPrimitive(PrimitiveKind.dynamic_)),
       ]);
       final types = <IrType>[bodyType];
 

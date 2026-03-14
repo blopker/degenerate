@@ -58,7 +58,7 @@ final class Dependency {const Dependency({this.packageUrl, this.metadata, this.r
 
 factory Dependency.fromJson(Map<String, dynamic> json) { return Dependency(
   packageUrl: json['package_url'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   relationship: json['relationship'] != null ? DependencyRelationship.fromJson(json['relationship'] as String) : null,
   scope: json['scope'] != null ? DependencyScope.fromJson(json['scope'] as String) : null,
   dependencies: (json['dependencies'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -67,7 +67,8 @@ factory Dependency.fromJson(Map<String, dynamic> json) { return Dependency(
 /// Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.
 final String? packageUrl;
 
-final Map<String,Object?>? metadata;
+/// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
+final Map<String,dynamic>? metadata;
 
 /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
 final DependencyRelationship? relationship;
@@ -86,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'dependencies': ?dependencies,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-Dependency copyWith({String Function()? packageUrl, Map<String, Object> Function()? metadata, DependencyRelationship Function()? relationship, DependencyScope Function()? scope, List<String> Function()? dependencies, }) { return Dependency(
+Dependency copyWith({String Function()? packageUrl, Map<String, dynamic> Function()? metadata, DependencyRelationship Function()? relationship, DependencyScope Function()? scope, List<String> Function()? dependencies, }) { return Dependency(
   packageUrl: packageUrl != null ? packageUrl() : this.packageUrl,
   metadata: metadata != null ? metadata() : this.metadata,
   relationship: relationship != null ? relationship() : this.relationship,

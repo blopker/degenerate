@@ -8,16 +8,16 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_obse
 final class WorkersObservabilityTelemetryEvent {const WorkersObservabilityTelemetryEvent({this.$containers, required this.$metadata, this.$workers, required this.dataset, required this.source, required this.timestamp, });
 
 factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent(
-  $containers: (json['\$containers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  $containers: (json['\$containers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   $metadata: WorkersObservabilityTelemetryEvent$metadata.fromJson(json['\$metadata'] as Map<String, dynamic>),
   $workers: json['\$workers'] != null ? OneOf2.parse(json['\$workers'], fromA: (v) => WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersObservabilityTelemetryEvent$workersVariant2.fromJson(v as Map<String, dynamic>),) : null,
   dataset: json['dataset'] as String,
-  source: OneOf2.parse(json['source'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),),
+  source: OneOf2.parse(json['source'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),),
   timestamp: (json['timestamp'] as num).toInt(),
 ); }
 
 /// Cloudflare Containers event information enriches your logs so you can easily identify and debug issues.
-final Map<String,Object?>? $containers;
+final Map<String,dynamic>? $containers;
 
 final WorkersObservabilityTelemetryEvent$metadata $metadata;
 
@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('\$met
       json.containsKey('dataset') && json['dataset'] is String &&
       json.containsKey('source') &&
       json.containsKey('timestamp') && json['timestamp'] is num; } 
-WorkersObservabilityTelemetryEvent copyWith({Map<String, Object> Function()? $containers, WorkersObservabilityTelemetryEvent$metadata? $metadata, WorkersObservabilityTelemetryEvent$workers Function()? $workers, String? dataset, WorkersObservabilityTelemetryEventSource? source, int? timestamp, }) { return WorkersObservabilityTelemetryEvent(
+WorkersObservabilityTelemetryEvent copyWith({Map<String, dynamic> Function()? $containers, WorkersObservabilityTelemetryEvent$metadata? $metadata, WorkersObservabilityTelemetryEvent$workers Function()? $workers, String? dataset, WorkersObservabilityTelemetryEventSource? source, int? timestamp, }) { return WorkersObservabilityTelemetryEvent(
   $containers: $containers != null ? $containers() : this.$containers,
   $metadata: $metadata ?? this.$metadata,
   $workers: $workers != null ? $workers() : this.$workers,

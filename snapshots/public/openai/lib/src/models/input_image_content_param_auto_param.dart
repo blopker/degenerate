@@ -69,8 +69,10 @@ factory InputImageContentParamAutoParam.fromJson(Map<String, dynamic> json) { re
 /// The type of the input item. Always `input_image`.
 final InputImageContentParamAutoParamType type;
 
+/// The URL of the image to be sent to the model. A fully qualified URL or base64 encoded image in a data URL.
 final String? imageUrl;
 
+/// The ID of the file to be sent to the model.
 final String? fileId;
 
 final DetailEnum? detail;

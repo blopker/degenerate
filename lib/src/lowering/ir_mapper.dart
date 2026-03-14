@@ -90,7 +90,7 @@ class IrMapper {
         ? _lowerSchemaImpl(dartName, schema, discriminatorProperty: discProp)
         : _lowerBooleanSchema(schema, nameHint: dartName);
     if (irType is IrPrimitive) {
-      final preserveNullableInner = irType.kind == PrimitiveKind.object;
+      final preserveNullableInner = irType.kind == PrimitiveKind.dynamic_;
       final inner = irType.isNullable && !preserveNullableInner
           ? IrPrimitive(irType.kind, format: irType.format)
           : irType;
@@ -166,9 +166,9 @@ class IrMapper {
       return _lowerBooleanSchema(schema, nameHint: nameHint);
     }
     warnings.add(
-      'Encountered invalid non-object schema; defaulting to Object?.',
+      'Encountered invalid non-object schema; defaulting to dynamic.',
     );
-    return const IrPrimitive(PrimitiveKind.object);
+    return const IrPrimitive(PrimitiveKind.dynamic_);
   }
 
   /// Check if a schema will produce a named type that needs registration
@@ -378,9 +378,9 @@ class IrMapper {
       return _lowerPrimitive(type, flattened);
     }
 
-    // Fallback: no explicit type - treat as Object?.
+    // Fallback: no explicit type - treat as dynamic.
     return IrPrimitive(
-      PrimitiveKind.object,
+      PrimitiveKind.dynamic_,
       description: description,
       isNullable: true,
     );
@@ -429,9 +429,9 @@ class IrMapper {
 
   IrType _lowerBooleanSchema(bool schema, {String? nameHint}) {
     warnings.add(
-      'Boolean schema${nameHint != null ? ' for $nameHint' : ''} lowered as Object? fallback.',
+      'Boolean schema${nameHint != null ? ' for $nameHint' : ''} lowered as dynamic fallback.',
     );
-    return const IrPrimitive(PrimitiveKind.object, isNullable: true);
+    return const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
   }
 
   // ─── Enum ─────────────────────────────────────────────────────
@@ -463,7 +463,7 @@ class IrMapper {
     if (itemsSchema != null) {
       itemsType = lowerInlineSchema(itemsSchema, nameHint: itemNameHint);
     } else {
-      itemsType = const IrPrimitive(PrimitiveKind.object, isNullable: true);
+      itemsType = const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
     }
     return IrList(itemsType, description: description, isNullable: nullable);
   }
@@ -481,7 +481,7 @@ class IrMapper {
       valueType = lowerInlineSchema(addProps, nameHint: valueHint);
     } else {
       // additionalProperties: true or absent → Map<String, dynamic>
-      valueType = const IrPrimitive(PrimitiveKind.object, isNullable: true);
+      valueType = const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
     }
     return IrMap(valueType, description: description, isNullable: nullable);
   }
@@ -514,10 +514,10 @@ class IrMapper {
       // Property values can be boolean schemas (true/false) in JSON Schema.
       // Treat boolean schemas as unconstrained (true) or impossible (false).
       if (entry.value is! Map<String, dynamic>) {
-        // true/false boolean schema → accept anything via Object? fallback.
+        // true/false boolean schema → accept anything via dynamic fallback.
         // false → nothing valid, but we still emit the field
         final fieldType = const IrPrimitive(
-          PrimitiveKind.object,
+          PrimitiveKind.dynamic_,
           isNullable: true,
         );
         fields.add(
@@ -580,6 +580,15 @@ class IrMapper {
         fieldType = fieldType.copyAsNullable();
       }
 
+      // Merge type-level description (e.g. "One of: String, int" from
+      // collapsed unions) into the field description for doc comments.
+      final effectiveDescription = fieldType.description != null &&
+              fieldType.description != fieldDescription
+          ? fieldDescription != null
+              ? '$fieldDescription\n\n${fieldType.description}'
+              : fieldType.description
+          : fieldDescription;
+
       fields.add(
         IrField(
           fieldDartName,
@@ -587,7 +596,7 @@ class IrMapper {
           fieldType,
           isRequired: isRequired,
           defaultValue: fieldDefault,
-          description: fieldDescription,
+          description: effectiveDescription,
         ),
       );
     }
@@ -724,14 +733,14 @@ class IrMapper {
       }
     }
 
-    // Collapse inline primitive-only unions to Object - generating sealed
+    // Collapse inline primitive-only unions to dynamic - generating sealed
     // wrapper types for oneOf: [string, number, bool] adds ceremony without
     // value. Named schemas (name was passed in) are kept as unions since the
     // spec author intentionally defined them.
     if (isInline && _allPrimitives(variants)) {
       return IrPrimitive(
-        PrimitiveKind.object,
-        description: description,
+        PrimitiveKind.dynamic_,
+        description: _descriptionWithVariants(description, variants),
         isNullable: nullable,
       );
     }
@@ -774,11 +783,11 @@ class IrMapper {
       }
     }
 
-    // Collapse inline primitive-only unions to Object.
+    // Collapse inline primitive-only unions to dynamic.
     if (isInline && _allPrimitives(variants)) {
       return IrPrimitive(
-        PrimitiveKind.object,
-        description: description,
+        PrimitiveKind.dynamic_,
+        description: _descriptionWithVariants(description, variants),
         isNullable: nullable,
       );
     }
@@ -811,9 +820,35 @@ class IrMapper {
   }
 
   /// Returns true if all variants are primitives (no objects, enums, refs, or
-  /// unions), meaning a sealed wrapper type adds no value over plain Object.
+  /// unions), meaning a sealed wrapper type adds no value over plain dynamic.
   bool _allPrimitives(List<IrType> variants) {
     return variants.isNotEmpty && variants.every((v) => v is IrPrimitive);
+  }
+
+  /// Builds a description that includes the collapsed variant type names.
+  String _descriptionWithVariants(String? description, List<IrType> variants) {
+    final typeNames = variants
+        .whereType<IrPrimitive>()
+        .map((p) => _dartTypeName(p.kind))
+        .join(', ');
+    final suffix = 'One of: $typeNames';
+    return description != null ? '$description\n\n$suffix' : suffix;
+  }
+
+  static String _dartTypeName(PrimitiveKind kind) {
+    return switch (kind) {
+      PrimitiveKind.dynamic_ => 'dynamic',
+      PrimitiveKind.string => 'String',
+      PrimitiveKind.int => 'int',
+      PrimitiveKind.double => 'double',
+      PrimitiveKind.num => 'num',
+      PrimitiveKind.bool => 'bool',
+      PrimitiveKind.dateTime => 'DateTime',
+      PrimitiveKind.uri => 'Uri',
+      PrimitiveKind.bigInt => 'BigInt',
+      PrimitiveKind.duration => 'Duration',
+      PrimitiveKind.bytes => 'Uint8List',
+    };
   }
 
   /// Derives a name hint from an inline object's single-value enum property.

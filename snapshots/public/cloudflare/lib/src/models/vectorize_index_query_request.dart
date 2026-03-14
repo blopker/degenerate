@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class VectorizeIndexQueryRequest {const VectorizeIndexQueryRequest({this.filter, this.returnMetadata = false, this.returnValues = false, this.topK = 5.0, required this.vector, });
 
 factory VectorizeIndexQueryRequest.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryRequest(
-  filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   returnMetadata: json.containsKey('returnMetadata') ? json['returnMetadata'] as bool : false,
   returnValues: json.containsKey('returnValues') ? json['returnValues'] as bool : false,
   topK: json.containsKey('topK') ? (json['topK'] as num).toDouble() : 5.0,
@@ -15,7 +15,7 @@ factory VectorizeIndexQueryRequest.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// A metadata filter expression used to limit nearest neighbor results.
-final Map<String,Object?>? filter;
+final Map<String,dynamic>? filter;
 
 /// Whether to return the metadata associated with the closest vectors.
 final bool returnMetadata;
@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'vector': vector,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-VectorizeIndexQueryRequest copyWith({Map<String, Object> Function()? filter, bool Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return VectorizeIndexQueryRequest(
+VectorizeIndexQueryRequest copyWith({Map<String, dynamic> Function()? filter, bool Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return VectorizeIndexQueryRequest(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,

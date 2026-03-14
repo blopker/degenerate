@@ -65,6 +65,7 @@ final int? domainCount;
 
 final List<String>? topDomains;
 
+/// Infrastructure type of this ASN.
 final IntelAsnType? type;
 
 Map<String, dynamic> toJson() { return {

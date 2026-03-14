@@ -60,6 +60,7 @@ factory SpectrumConfigOriginDns.fromJson(Map<String, dynamic> json) { return Spe
 
 final SpectrumConfigOriginDnsName? name;
 
+/// The TTL of our resolution of your DNS record in seconds.
 final SpectrumConfigDnsTtl? ttl;
 
 final SpectrumConfigOriginDnsType? type;

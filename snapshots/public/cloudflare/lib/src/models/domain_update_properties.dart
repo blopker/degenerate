@@ -26,6 +26,7 @@ factory DomainUpdateProperties.fromJson(Map<String, dynamic> json) { return Doma
   privacy: json['privacy'] != null ? Privacy.fromJson(json['privacy'] as bool) : null,
 ); }
 
+/// Auto-renew controls whether subscription is automatically renewed upon domain expiration.
 final AutoRenew? autoRenew;
 
 final Locked? locked;

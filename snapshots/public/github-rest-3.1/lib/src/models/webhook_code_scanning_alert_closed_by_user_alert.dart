@@ -91,13 +91,14 @@ final DateTime dismissedAt;
 
 final WebhookCodeScanningAlertClosedByUserAlertDismissedBy? dismissedBy;
 
+/// The dismissal comment associated with the dismissal of the alert.
 final CodeScanningAlertDismissedComment? dismissedComment;
 
 /// The reason for dismissing or closing the alert.
 final WebhookCodeScanningAlertClosedByUserAlertDismissedReason? dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final Object? fixedAt;
+final dynamic fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
@@ -145,7 +146,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, DateTime? dismissedAt, WebhookCodeScanningAlertClosedByUserAlertDismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, WebhookCodeScanningAlertClosedByUserAlertDismissedReason? Function()? dismissedReason, Object? Function()? fixedAt, Uri? htmlUrl, WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertClosedByUserAlertRule? rule, WebhookCodeScanningAlertClosedByUserAlertState? state, WebhookCodeScanningAlertClosedByUserAlertTool? tool, Uri? url, WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy? Function()? dismissalApprovedBy, }) { return WebhookCodeScanningAlertClosedByUserAlert(
+WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, DateTime? dismissedAt, WebhookCodeScanningAlertClosedByUserAlertDismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, WebhookCodeScanningAlertClosedByUserAlertDismissedReason? Function()? dismissedReason, dynamic Function()? fixedAt, Uri? htmlUrl, WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertClosedByUserAlertRule? rule, WebhookCodeScanningAlertClosedByUserAlertState? state, WebhookCodeScanningAlertClosedByUserAlertTool? tool, Uri? url, WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy? Function()? dismissalApprovedBy, }) { return WebhookCodeScanningAlertClosedByUserAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt ?? this.dismissedAt,

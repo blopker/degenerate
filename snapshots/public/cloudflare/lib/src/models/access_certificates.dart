@@ -16,6 +16,7 @@ factory AccessCertificates.fromJson(Map<String, dynamic> json) { return AccessCe
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// The hostnames of the applications that will use this certificate.
 final List<String>? associatedHostnames;
 
 final AccessTimestamp? createdAt;

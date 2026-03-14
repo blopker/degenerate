@@ -54,6 +54,7 @@ final int? contentIndex;
 /// The text delta.
 final String? delta;
 
+/// The log probabilities of the transcription.
 final List<LogProbProperties>? logprobs;
 
 Map<String, dynamic> toJson() { return {

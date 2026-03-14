@@ -23,6 +23,7 @@ final AccessTimestamp? createdAt;
 /// Custom page HTML.
 final String customHtml;
 
+/// Custom page name.
 final AccessCustomPagesComponentsSchemasName name;
 
 final AccessSchemasType type;

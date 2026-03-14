@@ -51,6 +51,18 @@ final bool createResponse;
 /// 
 final bool interruptResponse;
 
+/// Optional timeout after which a model response will be triggered automatically. This is
+/// useful for situations in which a long pause from the user is unexpected, such as a phone
+/// call. The model will effectively prompt the user to continue the conversation based
+/// on the current context.
+/// 
+/// The timeout value will be applied after the last model response's audio has finished playing,
+/// i.e. it's set to the `response.done` time plus audio playback duration.
+/// 
+/// An `input_audio_buffer.timeout_triggered` event (plus events
+/// associated with the Response) will be emitted when the timeout is reached.
+/// Idle timeout is currently only supported for `server_vad` mode.
+/// 
 final int? idleTimeoutMs;
 
 Map<String, dynamic> toJson() { return {

@@ -45,14 +45,15 @@ final class AutoragConfigAiSearchRequestFiltersVariant2Filters {const AutoragCon
 factory AutoragConfigAiSearchRequestFiltersVariant2Filters.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequestFiltersVariant2Filters(
   key: json['key'] as String,
   type: AutoragConfigAiSearchRequestFiltersVariant2FiltersType.fromJson(json['type'] as String),
-  value: json['value'] as Object,
+  value: json['value'],
 ); }
 
 final String key;
 
 final AutoragConfigAiSearchRequestFiltersVariant2FiltersType type;
 
-final Object value;
+/// One of: String, double, bool
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'key': key,
@@ -62,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('type') &&
       json.containsKey('value'); } 
-AutoragConfigAiSearchRequestFiltersVariant2Filters copyWith({String? key, AutoragConfigAiSearchRequestFiltersVariant2FiltersType? type, Object? value, }) { return AutoragConfigAiSearchRequestFiltersVariant2Filters(
+AutoragConfigAiSearchRequestFiltersVariant2Filters copyWith({String? key, AutoragConfigAiSearchRequestFiltersVariant2FiltersType? type, dynamic value, }) { return AutoragConfigAiSearchRequestFiltersVariant2Filters(
   key: key ?? this.key,
   type: type ?? this.type,
   value: value ?? this.value,

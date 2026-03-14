@@ -11,6 +11,7 @@ factory WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest.fromJson(Map<Stri
   value: OneOf2.parse(json['value'], fromA: (v) => v as String, fromB: (v) => base64Decode(v as String),),
 ); }
 
+/// Associates arbitrary JSON data with a key/value pair.
 final WorkersKvAny? metadata;
 
 final WorkersKvValue value;

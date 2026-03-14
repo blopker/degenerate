@@ -12,10 +12,13 @@ factory TunnelRouteCreateATunnelRouteWithCidrRequest.fromJson(Map<String, dynami
   virtualNetworkId: json['virtual_network_id'] != null ? TunnelVirtualNetworkId.fromJson(json['virtual_network_id'] as String) : null,
 ); }
 
+/// Optional remark describing the route.
 final TunnelRouteComment? comment;
 
+/// UUID of the tunnel.
 final TunnelTunnelId tunnelId;
 
+/// UUID of the virtual network.
 final TunnelVirtualNetworkId? virtualNetworkId;
 
 Map<String, dynamic> toJson() { return {

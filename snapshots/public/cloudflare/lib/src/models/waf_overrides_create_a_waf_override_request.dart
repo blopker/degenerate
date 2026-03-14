@@ -10,6 +10,7 @@ factory WafOverridesCreateAWafOverrideRequest.fromJson(Map<String, dynamic> json
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
+/// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 final List<String> urls;
 
 Map<String, dynamic> toJson() { return {

@@ -118,10 +118,16 @@ final String? authorization;
 /// 
 final String? serverDescription;
 
+/// Optional HTTP headers to send to the MCP server. Use for authentication
+/// or other purposes.
+/// 
 final Map<String,String>? headers;
 
+/// List of allowed tool names or a filter object.
+/// 
 final McpToolAllowedTools? allowedTools;
 
+/// Specify which of the MCP server's tools require approval.
 final McpToolRequireApproval? requireApproval;
 
 /// Whether this MCP tool is deferred and discovered via tool search.

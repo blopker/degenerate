@@ -148,7 +148,8 @@ final TelemetryQueryRequestParametersFiltersOperation operation;
 
 final TelemetryQueryRequestParametersFiltersType type;
 
-final Object? value;
+/// One of: String, double, bool
+final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'key': key,
@@ -159,7 +160,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('operation') &&
       json.containsKey('type'); } 
-TelemetryQueryRequestParametersFilters copyWith({String? key, TelemetryQueryRequestParametersFiltersOperation? operation, TelemetryQueryRequestParametersFiltersType? type, Object Function()? value, }) { return TelemetryQueryRequestParametersFilters(
+TelemetryQueryRequestParametersFilters copyWith({String? key, TelemetryQueryRequestParametersFiltersOperation? operation, TelemetryQueryRequestParametersFiltersType? type, dynamic Function()? value, }) { return TelemetryQueryRequestParametersFilters(
   key: key ?? this.key,
   operation: operation ?? this.operation,
   type: type ?? this.type,

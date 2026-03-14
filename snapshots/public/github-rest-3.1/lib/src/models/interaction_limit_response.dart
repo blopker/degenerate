@@ -13,6 +13,7 @@ factory InteractionLimitResponse.fromJson(Map<String, dynamic> json) { return In
   expiresAt: DateTime.parse(json['expires_at'] as String),
 ); }
 
+/// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
 final InteractionGroup limit;
 
 final String origin;

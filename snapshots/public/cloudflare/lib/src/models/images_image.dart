@@ -38,7 +38,7 @@ factory ImagesImage.fromJson(Map<String, dynamic> json) { return ImagesImage(
   creator: json['creator'] != null ? ImagesImageCreator.fromJson(json['creator'] as String) : null,
   filename: json['filename'] != null ? ImagesImageFilename.fromJson(json['filename'] as String) : null,
   id: json['id'] != null ? ImagesImageIdentifier.fromJson(json['id'] as String) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json['requireSignedURLs'] != null ? ImagesImageRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   uploaded: json['uploaded'] != null ? ImagesImageUploaded.fromJson(json['uploaded'] as String) : null,
   variants: (json['variants'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => ImagesImageThumbnailUrl.fromJson(v as String), fromB: (v) => ImagesImageHeroUrl.fromJson(v as String), fromC: (v) => ImagesImageOriginalUrl.fromJson(v as String),)).toList(),
@@ -50,7 +50,7 @@ final ImagesImageFilename? filename;
 
 final ImagesImageIdentifier? id;
 
-final Map<String,Object?>? meta;
+final Map<String,dynamic>? meta;
 
 final ImagesImageRequireSignedUrLs? requireSignedUrLs;
 
@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (variants != null) 'variants': variants?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilename Function()? filename, ImagesImageIdentifier Function()? id, Map<String, Object> Function()? meta, ImagesImageRequireSignedUrLs Function()? requireSignedUrLs, ImagesImageUploaded Function()? uploaded, List<ImagesImageVariants2> Function()? variants, }) { return ImagesImage(
+ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilename Function()? filename, ImagesImageIdentifier Function()? id, Map<String, dynamic> Function()? meta, ImagesImageRequireSignedUrLs Function()? requireSignedUrLs, ImagesImageUploaded Function()? uploaded, List<ImagesImageVariants2> Function()? variants, }) { return ImagesImage(
   creator: creator != null ? creator() : this.creator,
   filename: filename != null ? filename() : this.filename,
   id: id != null ? id() : this.id,

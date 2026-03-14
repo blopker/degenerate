@@ -74,18 +74,25 @@ factory MagicTransitNodeResult.fromJson(Map<String, dynamic> json) { return Magi
   stdDevRttMs: json['std_dev_rtt_ms'] != null ? MagicTransitStdDevRttMs.fromJson(json['std_dev_rtt_ms'] as num) : null,
 ); }
 
+/// AS number associated with the node object.
 final MagicTransitAsn? asn;
 
+/// IP address of the node.
 final MagicTransitIp? ip;
 
+/// Field appears if there is an additional annotation printed when the probe returns. Field also appears when running a GRE+ICMP traceroute to denote which traceroute a node comes from.
 final List<String>? labels;
 
+/// Maximum RTT in ms.
 final MagicTransitMaxRttMs? maxRttMs;
 
+/// Mean RTT in ms.
 final MagicTransitMeanRttMs? meanRttMs;
 
+/// Minimum RTT in ms.
 final MagicTransitMinRttMs? minRttMs;
 
+/// Host name of the address, this may be the same as the IP address.
 final MagicTransitName? name;
 
 final MagicTransitPacketCount? packetCount;

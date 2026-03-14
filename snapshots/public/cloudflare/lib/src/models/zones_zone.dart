@@ -82,6 +82,7 @@ final DateTime createdOn;
 /// domain. If development mode has never been enabled, this value is 0.
 final double developmentMode;
 
+/// Identifier
 final ZonesIdentifier id;
 
 /// Metadata about the zone.
@@ -108,6 +109,10 @@ final String? originalRegistrar;
 /// The owner of the zone.
 final ZonesZoneOwner owner;
 
+/// Indicates whether the zone is only using Cloudflare DNS services. A
+/// true value means the zone will not receive security or performance
+/// benefits.
+/// 
 final ZonesPaused? paused;
 
 /// Legacy permissions based on legacy user membership information.
@@ -125,6 +130,9 @@ final ZonesZoneTenant? tenant;
 /// The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).
 final ZonesZoneTenantUnit? tenantUnit;
 
+/// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+/// typically a partner-hosted zone or a CNAME setup.
+/// 
 final ZonesType? type;
 
 /// An array of domains used for custom name servers. This is only available for Business and Enterprise plans.

@@ -271,6 +271,7 @@ final Uri url;
 /// The user-specified name of this Stream, if one was given when the Stream was created. This can be used to stop the Stream.
 final String? name;
 
+/// The tracks to be included in the Stream. Possible values are `inbound_track`, `outbound_track`, `both_tracks`. Default value is `inbound_track`.
 final StreamEnumTrack? track;
 
 /// Absolute URL to which Twilio sends status callback HTTP requests.

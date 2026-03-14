@@ -32,18 +32,25 @@ factory MagicRoute.fromJson(Map<String, dynamic> json) { return MagicRoute(
   weight: json['weight'] != null ? MagicWeight.fromJson(json['weight'] as num) : null,
 ); }
 
+/// When the route was created.
 final MagicCreatedOn? createdOn;
 
+/// An optional human provided description of the static route.
 final MagicDescription? description;
 
+/// Identifier
 final MagicIdentifier id;
 
+/// When the route was last modified.
 final MagicModifiedOn? modifiedOn;
 
+/// The next-hop IP Address for the static route.
 final MagicNexthop nexthop;
 
+/// IP Prefix in Classless Inter-Domain Routing format.
 final MagicPrefix prefix;
 
+/// Priority of the static route.
 final MagicPriority priority;
 
 final MagicScope? scope;

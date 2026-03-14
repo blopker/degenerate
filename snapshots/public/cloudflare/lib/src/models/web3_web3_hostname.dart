@@ -50,18 +50,24 @@ factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) { return Web3Web3Ho
 
 final Web3Timestamp? createdOn;
 
+/// Specify an optional description of the hostname.
 final Web3Description? description;
 
+/// Specify the DNSLink value used if the target is ipfs.
 final Web3Dnslink? dnslink;
 
+/// Specify the identifier of the hostname.
 final Web3Identifier? id;
 
 final Web3Timestamp? modifiedOn;
 
+/// Specify the hostname that points to the target gateway via CNAME.
 final Web3Name? name;
 
+/// Specifies the status of the hostname's activation.
 final Web3Status? status;
 
+/// Specify the target gateway of the hostname.
 final Web3Target? target;
 
 Map<String, dynamic> toJson() { return {

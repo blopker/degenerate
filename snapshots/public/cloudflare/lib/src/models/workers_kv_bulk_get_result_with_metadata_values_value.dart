@@ -14,8 +14,10 @@ factory WorkersKvBulkGetResultWithMetadataValuesValue.fromJson(Map<String, dynam
 
 final WorkersKvExpiration? expiration;
 
+/// The metadata associated with the key.
 final WorkersKvAny metadata;
 
+/// The value associated with the key.
 final WorkersKvAny value;
 
 Map<String, dynamic> toJson() { return {

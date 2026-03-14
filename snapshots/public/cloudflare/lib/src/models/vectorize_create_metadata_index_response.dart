@@ -7,7 +7,7 @@
 import 'vectorize_mutation_uuid.dart';final class VectorizeCreateMetadataIndexResponse {const VectorizeCreateMetadataIndexResponse({this.mutationId});
 
 factory VectorizeCreateMetadataIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeCreateMetadataIndexResponse(
-  mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as Object?) : null,
+  mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as dynamic) : null,
 ); }
 
 final VectorizeMutationUuid? mutationId;

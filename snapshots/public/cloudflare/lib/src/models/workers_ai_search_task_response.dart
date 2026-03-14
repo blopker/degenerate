@@ -7,17 +7,17 @@
 import 'package:collection/collection.dart';final class WorkersAiSearchTaskResponse {const WorkersAiSearchTaskResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorkersAiSearchTaskResponse.fromJson(Map<String, dynamic> json) { return WorkersAiSearchTaskResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<Map<String,Object?>> errors;
+final List<Map<String,dynamic>> errors;
 
 final List<String> messages;
 
-final List<Map<String,Object?>> result;
+final List<Map<String,dynamic>> result;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorkersAiSearchTaskResponse copyWith({List<Map<String,Object?>>? errors, List<String>? messages, List<Map<String,Object?>>? result, bool? success, }) { return WorkersAiSearchTaskResponse(
+WorkersAiSearchTaskResponse copyWith({List<Map<String,dynamic>>? errors, List<String>? messages, List<Map<String,dynamic>>? result, bool? success, }) { return WorkersAiSearchTaskResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

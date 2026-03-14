@@ -93,6 +93,7 @@ final String name;
 /// JSON-encoded arguments that were sent to the tool.
 final String arguments;
 
+/// JSON-encoded output captured from the tool. Defaults to null while execution is in progress.
 final String? output;
 
 Map<String, dynamic> toJson() { return {

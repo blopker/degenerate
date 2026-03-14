@@ -63,7 +63,7 @@ return _execute(
 /// in the campaign.
 ///
 /// `POST /orgs/{org}/campaigns`
-Future<ApiResult<CampaignSummary, BasicError>> campaignsCreateCampaign({required String org, required Object body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CampaignSummary, BasicError>> campaignsCreateCampaign({required String org, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

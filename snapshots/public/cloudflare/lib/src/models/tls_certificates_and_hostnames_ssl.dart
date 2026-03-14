@@ -13,8 +13,8 @@ factory TlsCertificatesAndHostnamesSsl.fromJson(Map<String, dynamic> json) {   i
   return TlsCertificatesAndHostnamesSsl$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class TlsCertificatesAndHostnamesSslTlsCertificatesAndHostnamesSslDv extends TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSslTlsCertificatesAndHostnamesSslDv(this._value);
 
@@ -29,9 +29,9 @@ final TlsCertificatesAndHostnamesSslDv _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class TlsCertificatesAndHostnamesSsl$Unknown extends TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSsl$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TlsCertificatesAndHostnamesSsl$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

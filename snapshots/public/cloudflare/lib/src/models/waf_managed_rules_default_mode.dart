@@ -5,9 +5,9 @@
 //  OpenAPI spec version: 3.0.3
 
 /// Defines the default action/mode of a rule.
-extension type WafManagedRulesDefaultMode(Object? value) {
-factory WafManagedRulesDefaultMode.fromJson(Object? json) => WafManagedRulesDefaultMode(json);
+extension type WafManagedRulesDefaultMode(dynamic value) {
+factory WafManagedRulesDefaultMode.fromJson(dynamic json) => WafManagedRulesDefaultMode(json);
 
-Object? toJson() => value;
+dynamic toJson() => value;
 
 }

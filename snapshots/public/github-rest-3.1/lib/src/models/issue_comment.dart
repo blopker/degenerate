@@ -50,6 +50,7 @@ final DateTime updatedAt;
 
 final Uri issueUrl;
 
+/// How the author is associated with the repository.
 final AuthorAssociation? authorAssociation;
 
 final Integration? performedViaGithubApp;

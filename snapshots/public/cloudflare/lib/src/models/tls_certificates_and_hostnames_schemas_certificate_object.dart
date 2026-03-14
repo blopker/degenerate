@@ -17,20 +17,26 @@ factory TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(Map<String,
   uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesComponentsSchemasUploadedOn.fromJson(json['uploaded_on'] as String) : null,
 ); }
 
+/// The hostname certificate.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate? certificate;
 
+/// The date when the certificate expires.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn? expiresOn;
 
+/// Identifier.
 final TlsCertificatesAndHostnamesIdentifier? id;
 
+/// The certificate authority that issued the certificate.
 final TlsCertificatesAndHostnamesIssuer? issuer;
 
 final TlsCertificatesAndHostnamesSerialNumber? serialNumber;
 
 final TlsCertificatesAndHostnamesSignature? signature;
 
+/// Status of the certificate or the association.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? status;
 
+/// The time when the certificate was uploaded.
 final TlsCertificatesAndHostnamesComponentsSchemasUploadedOn? uploadedOn;
 
 Map<String, dynamic> toJson() { return {

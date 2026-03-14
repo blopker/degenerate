@@ -51,6 +51,7 @@ final String name;
 /// MIME type of the attachment.
 final String mimeType;
 
+/// Preview URL for rendering the attachment inline.
 final String? previewUrl;
 
 Map<String, dynamic> toJson() { return {

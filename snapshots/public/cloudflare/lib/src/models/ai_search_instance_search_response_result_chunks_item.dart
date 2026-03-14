@@ -8,13 +8,13 @@ final class AiSearchInstanceSearchResponseResultChunksItem {const AiSearchInstan
 
 factory AiSearchInstanceSearchResponseResultChunksItem.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchResponseResultChunksItem(
   key: json['key'] as String,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toDouble() : null,
 ); }
 
 final String key;
 
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 final double? timestamp;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'timestamp': ?timestamp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-AiSearchInstanceSearchResponseResultChunksItem copyWith({String? key, Map<String, Object> Function()? metadata, double Function()? timestamp, }) { return AiSearchInstanceSearchResponseResultChunksItem(
+AiSearchInstanceSearchResponseResultChunksItem copyWith({String? key, Map<String, dynamic> Function()? metadata, double Function()? timestamp, }) { return AiSearchInstanceSearchResponseResultChunksItem(
   key: key ?? this.key,
   metadata: metadata != null ? metadata() : this.metadata,
   timestamp: timestamp != null ? timestamp() : this.timestamp,

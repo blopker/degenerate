@@ -46,9 +46,9 @@ factory DeleteServersResponseResult.fromJson(Map<String, dynamic> json) { return
   modifiedAt: json['modified_at'] != null ? DateTime.parse(json['modified_at'] as String) : null,
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
-  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   status: json.containsKey('status') ? json['status'] as String : 'waiting',
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 final DeleteServersResponseResultAuthType authType;
@@ -76,11 +76,11 @@ final String? modifiedBy;
 
 final String name;
 
-final List<Map<String,Object?>> prompts;
+final List<Map<String,dynamic>> prompts;
 
 final String status;
 
-final List<Map<String,Object?>> tools;
+final List<Map<String,dynamic>> tools;
 
 Map<String, dynamic> toJson() { return {
   'auth_type': authType.toJson(),
@@ -105,7 +105,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('prompts') &&
       json.containsKey('tools'); } 
-DeleteServersResponseResult copyWith({DeleteServersResponseResultAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, List<Map<String,Object?>>? prompts, String Function()? status, List<Map<String,Object?>>? tools, }) { return DeleteServersResponseResult(
+DeleteServersResponseResult copyWith({DeleteServersResponseResultAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return DeleteServersResponseResult(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,

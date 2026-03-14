@@ -19,16 +19,21 @@ factory AccessSchemasGroups.fromJson(Map<String, dynamic> json) { return AccessS
 
 final AccessTimestamp? createdAt;
 
+/// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
 
 final AccessUuid? id;
 
+/// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 final List<AccessRule>? include;
 
+/// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
 final List<AccessRule>? isDefault;
 
+/// The name of the Access group.
 final AccessGroupsComponentsSchemasName? name;
 
+/// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
 final AccessTimestamp? updatedAt;

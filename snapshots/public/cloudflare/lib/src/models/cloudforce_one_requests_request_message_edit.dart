@@ -10,6 +10,7 @@ factory CloudforceOneRequestsRequestMessageEdit.fromJson(Map<String, dynamic> js
   content: json['content'] != null ? CloudforceOneRequestsMessageContent.fromJson(json['content'] as String) : null,
 ); }
 
+/// Content of message.
 final CloudforceOneRequestsMessageContent? content;
 
 Map<String, dynamic> toJson() { return {

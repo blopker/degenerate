@@ -14,8 +14,10 @@ factory IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest.fromJson(Map<String
 
 final FirewallConfiguration configuration;
 
+/// The action to apply to a matched request.
 final FirewallSchemasMode mode;
 
+/// An informative summary of the rule, typically used as a reminder or explanation.
 final FirewallNotes? notes;
 
 Map<String, dynamic> toJson() { return {

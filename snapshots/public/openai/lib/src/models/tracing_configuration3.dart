@@ -11,7 +11,7 @@ final class TracingConfiguration3 {const TracingConfiguration3({this.workflowNam
 factory TracingConfiguration3.fromJson(Map<String, dynamic> json) { return TracingConfiguration3(
   workflowName: json['workflow_name'] as String?,
   groupId: json['group_id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The name of the workflow to attach to this trace. This is used to
@@ -27,7 +27,7 @@ final String? groupId;
 /// The arbitrary metadata to attach to this trace to enable
 /// filtering in the Traces Dashboard.
 /// 
-final Map<String,Object?>? metadata;
+final Map<String,dynamic>? metadata;
 
 Map<String, dynamic> toJson() { return {
   'workflow_name': ?workflowName,
@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-TracingConfiguration3 copyWith({String Function()? workflowName, String Function()? groupId, Map<String, Object> Function()? metadata, }) { return TracingConfiguration3(
+TracingConfiguration3 copyWith({String Function()? workflowName, String Function()? groupId, Map<String, dynamic> Function()? metadata, }) { return TracingConfiguration3(
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   groupId: groupId != null ? groupId() : this.groupId,
   metadata: metadata != null ? metadata() : this.metadata,

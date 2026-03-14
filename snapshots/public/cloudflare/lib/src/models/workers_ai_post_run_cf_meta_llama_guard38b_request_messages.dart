@@ -8,14 +8,14 @@ final class WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages {const WorkersAiP
 
 factory WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
   content: json['content'] as String,
-  role: json['role'] as Object,
+  role: json['role'],
 ); }
 
 /// The content of the message as a string.
 final String content;
 
 /// The role of the message sender must alternate between 'user' and 'assistant'.
-final Object? role;
+final dynamic role;
 
 Map<String, dynamic> toJson() { return {
   'content': content,
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
       json.containsKey('role'); } 
-WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages copyWith({String? content, Object? Function()? role, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
+WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages copyWith({String? content, dynamic Function()? role, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
   content: content ?? this.content,
   role: role != null ? role() : this.role,
 ); } 

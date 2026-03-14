@@ -51,7 +51,7 @@ factory MagicTransitColoResult.fromJson(Map<String, dynamic> json) { return Magi
   colo: json['colo'] != null ? MagicTransitColo.fromJson(json['colo'] as Map<String, dynamic>) : null,
   error: json['error'] != null ? MagicTransitError.fromJson(json['error'] as String) : null,
   hops: (json['hops'] as List<dynamic>?)?.map((e) => MagicTransitHopResult.fromJson(e as Map<String, dynamic>)).toList(),
-  targetSummary: (json['target_summary'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  targetSummary: (json['target_summary'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   tracerouteTimeMs: json['traceroute_time_ms'] != null ? MagicTransitTracerouteTimeMs.fromJson(json['traceroute_time_ms'] as num) : null,
 ); }
 
@@ -61,7 +61,7 @@ final MagicTransitError? error;
 
 final List<MagicTransitHopResult>? hops;
 
-final Map<String,Object?>? targetSummary;
+final Map<String,dynamic>? targetSummary;
 
 final MagicTransitTracerouteTimeMs? tracerouteTimeMs;
 
@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   if (tracerouteTimeMs != null) 'traceroute_time_ms': tracerouteTimeMs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-MagicTransitColoResult copyWith({MagicTransitColo Function()? colo, MagicTransitError Function()? error, List<MagicTransitHopResult> Function()? hops, Map<String, Object> Function()? targetSummary, MagicTransitTracerouteTimeMs Function()? tracerouteTimeMs, }) { return MagicTransitColoResult(
+MagicTransitColoResult copyWith({MagicTransitColo Function()? colo, MagicTransitError Function()? error, List<MagicTransitHopResult> Function()? hops, Map<String, dynamic> Function()? targetSummary, MagicTransitTracerouteTimeMs Function()? tracerouteTimeMs, }) { return MagicTransitColoResult(
   colo: colo != null ? colo() : this.colo,
   error: error != null ? error() : this.error,
   hops: hops != null ? hops() : this.hops,

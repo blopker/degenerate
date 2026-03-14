@@ -10,7 +10,7 @@ factory FileSearchToolCallResults2.fromJson(Map<String, dynamic> json) { return 
   fileId: json['file_id'] as String?,
   text: json['text'] as String?,
   filename: json['filename'] as String?,
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
 ); }
 
@@ -26,7 +26,7 @@ final String? text;
 /// 
 final String? filename;
 
-final Map<String,Object>? attributes;
+final Map<String,dynamic>? attributes;
 
 /// The relevance score of the file - a value between 0 and 1.
 /// 
@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'score': ?score,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-FileSearchToolCallResults2 copyWith({String Function()? fileId, String Function()? text, String Function()? filename, Map<String, Object>? Function()? attributes, double Function()? score, }) { return FileSearchToolCallResults2(
+FileSearchToolCallResults2 copyWith({String Function()? fileId, String Function()? text, String Function()? filename, Map<String, dynamic>? Function()? attributes, double Function()? score, }) { return FileSearchToolCallResults2(
   fileId: fileId != null ? fileId() : this.fileId,
   text: text != null ? text() : this.text,
   filename: filename != null ? filename() : this.filename,

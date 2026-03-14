@@ -7,11 +7,11 @@
 final class AigConfigPatchGatewayLogResponse {const AigConfigPatchGatewayLogResponse({required this.result, required this.success, });
 
 factory AigConfigPatchGatewayLogResponse.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogResponse(
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
-final Map<String,Object?> result;
+final Map<String,dynamic> result;
 
 final bool success;
 
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AigConfigPatchGatewayLogResponse copyWith({Map<String,Object?>? result, bool? success, }) { return AigConfigPatchGatewayLogResponse(
+AigConfigPatchGatewayLogResponse copyWith({Map<String,dynamic>? result, bool? success, }) { return AigConfigPatchGatewayLogResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

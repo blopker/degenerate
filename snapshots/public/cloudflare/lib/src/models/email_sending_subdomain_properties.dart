@@ -17,6 +17,7 @@ factory EmailSendingSubdomainProperties.fromJson(Map<String, dynamic> json) { re
   tag: EmailSendingSubdomainIdentifier.fromJson(json['tag'] as String),
 ); }
 
+/// The date and time the destination address has been created.
 final EmailCreated? created;
 
 /// The DKIM selector used for email signing.
@@ -31,11 +32,13 @@ final String? emailSendingReturnPathDomain;
 /// Whether Email Routing (receiving) is enabled on this subdomain. Read-only; included for informational purposes since both services share the subdomain row.
 final bool? enabled;
 
+/// The date and time the destination address was last modified.
 final EmailModified? modified;
 
 /// The subdomain domain name.
 final String name;
 
+/// Sending subdomain identifier.
 final EmailSendingSubdomainIdentifier tag;
 
 Map<String, dynamic> toJson() { return {

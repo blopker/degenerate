@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';final class ZarazBaseTool {const Zar
 
 factory ZarazBaseTool.fromJson(Map<String, dynamic> json) { return ZarazBaseTool(
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
-  defaultFields: (json['defaultFields'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  defaultFields: (json['defaultFields'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   defaultPurpose: json['defaultPurpose'] as String?,
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
@@ -20,7 +20,7 @@ factory ZarazBaseTool.fromJson(Map<String, dynamic> json) { return ZarazBaseTool
 final List<String> blockingTriggers;
 
 /// Default fields for tool's actions
-final Map<String,Object> defaultFields;
+final Map<String,dynamic> defaultFields;
 
 /// Default consent purpose ID
 final String? defaultPurpose;
@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('block
       json.containsKey('defaultFields') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String; } 
-ZarazBaseTool copyWith({List<String>? blockingTriggers, Map<String,Object>? defaultFields, String Function()? defaultPurpose, bool? enabled, String? name, String Function()? vendorName, String Function()? vendorPolicyUrl, }) { return ZarazBaseTool(
+ZarazBaseTool copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String Function()? defaultPurpose, bool? enabled, String? name, String Function()? vendorName, String Function()? vendorPolicyUrl, }) { return ZarazBaseTool(
   blockingTriggers: blockingTriggers ?? this.blockingTriggers,
   defaultFields: defaultFields ?? this.defaultFields,
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,

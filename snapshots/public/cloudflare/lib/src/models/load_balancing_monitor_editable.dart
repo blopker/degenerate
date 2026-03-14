@@ -160,24 +160,34 @@ factory LoadBalancingMonitorEditable.fromJson(Map<String, dynamic> json) { retur
   type: json['type'] != null ? LoadBalancingType.fromJson(json['type'] as String) : null,
 ); }
 
+/// Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTP and HTTPS monitors.
 final LoadBalancingAllowInsecure? allowInsecure;
 
+/// To be marked unhealthy the monitored origin must fail this healthcheck N consecutive times.
 final LoadBalancingConsecutiveDown? consecutiveDown;
 
+/// To be marked healthy the monitored origin must pass this healthcheck N consecutive times.
 final LoadBalancingConsecutiveUp? consecutiveUp;
 
+/// Object description.
 final LoadBalancingDescription? description;
 
+/// A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy. This parameter is only valid for HTTP and HTTPS monitors.
 final LoadBalancingExpectedBody? expectedBody;
 
+/// The expected HTTP response code or code range of the health check. This parameter is only valid for HTTP and HTTPS monitors.
 final LoadBalancingExpectedCodes? expectedCodes;
 
+/// Follow redirects if returned by the origin. This parameter is only valid for HTTP and HTTPS monitors.
 final LoadBalancingFollowRedirects? followRedirects;
 
+/// The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden. This parameter is only valid for HTTP and HTTPS monitors.
 final Map<String,List<String>>? header;
 
+/// The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations.
 final LoadBalancingInterval? interval;
 
+/// The method to use for the health check. This defaults to 'GET' for HTTP/HTTPS based checks and 'connection_established' for TCP based health checks.
 final LoadBalancingMethod? method;
 
 final LoadBalancingPath? path;

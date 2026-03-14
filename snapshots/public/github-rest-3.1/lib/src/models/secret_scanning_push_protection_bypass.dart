@@ -12,6 +12,7 @@ factory SecretScanningPushProtectionBypass.fromJson(Map<String, dynamic> json) {
   tokenType: json['token_type'] as String?,
 ); }
 
+/// The reason for bypassing push protection.
 final SecretScanningPushProtectionBypassReason? reason;
 
 /// The time that the bypass will expire in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

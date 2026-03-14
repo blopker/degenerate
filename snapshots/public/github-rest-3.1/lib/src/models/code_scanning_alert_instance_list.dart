@@ -47,14 +47,20 @@ factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { retu
   classifications: (json['classifications'] as List<dynamic>?)?.map((e) => CodeScanningAlertClassification.fromJson(e as String)).toList(),
 ); }
 
+/// The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
+/// `refs/heads/<branch name>` or simply `<branch name>`.
 final CodeScanningRef? ref;
 
+/// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
 final CodeScanningAnalysisAnalysisKey? analysisKey;
 
+/// Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
 final CodeScanningAlertEnvironment? environment;
 
+/// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
 final CodeScanningAnalysisCategory? category;
 
+/// State of a code scanning alert instance.
 final CodeScanningAlertInstanceState? state;
 
 final String? commitSha;

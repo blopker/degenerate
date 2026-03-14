@@ -10,9 +10,9 @@ final class AaaAuditLogs2Resource {const AaaAuditLogs2Resource({this.id, this.pr
 factory AaaAuditLogs2Resource.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Resource(
   id: json['id'] as String?,
   product: json['product'] as String?,
-  request: (json['request'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
-  response: (json['response'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
-  scope: (json['scope'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  request: (json['request'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  response: (json['response'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  scope: (json['scope'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   type: json['type'] as String?,
 ); }
 
@@ -22,12 +22,12 @@ final String? id;
 /// The Cloudflare product associated with the resource.
 final String? product;
 
-final Map<String,Object?>? request;
+final Map<String,dynamic>? request;
 
-final Map<String,Object?>? response;
+final Map<String,dynamic>? response;
 
 /// The scope of the resource.
-final Map<String,Object?>? scope;
+final Map<String,dynamic>? scope;
 
 /// The type of the resource.
 final String? type;
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AaaAuditLogs2Resource copyWith({String Function()? id, String Function()? product, Map<String, Object> Function()? request, Map<String, Object> Function()? response, Map<String, Object> Function()? scope, String Function()? type, }) { return AaaAuditLogs2Resource(
+AaaAuditLogs2Resource copyWith({String Function()? id, String Function()? product, Map<String, dynamic> Function()? request, Map<String, dynamic> Function()? response, Map<String, dynamic> Function()? scope, String Function()? type, }) { return AaaAuditLogs2Resource(
   id: id != null ? id() : this.id,
   product: product != null ? product() : this.product,
   request: request != null ? request() : this.request,

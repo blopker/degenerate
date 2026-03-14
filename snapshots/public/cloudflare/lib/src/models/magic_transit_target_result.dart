@@ -20,6 +20,7 @@ factory MagicTransitTargetResult.fromJson(Map<String, dynamic> json) { return Ma
 
 final List<MagicTransitColoResult>? colos;
 
+/// The target hostname, IPv6, or IPv6 address.
 final MagicTransitTarget? target;
 
 Map<String, dynamic> toJson() { return {

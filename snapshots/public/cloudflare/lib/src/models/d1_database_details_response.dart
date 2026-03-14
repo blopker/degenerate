@@ -31,6 +31,7 @@ factory D1DatabaseDetailsResponse.fromJson(Map<String, dynamic> json) { return D
   version: json['version'] != null ? D1DatabaseVersion.fromJson(json['version'] as String) : null,
 ); }
 
+/// Specifies the timestamp the resource was created as an ISO8601 string.
 final D1CreatedAt? createdAt;
 
 final D1FileSize? fileSize;

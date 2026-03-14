@@ -17,6 +17,7 @@ factory LogcontrolRetentionFlag.fromJson(Map<String, dynamic> json) { return Log
   flag: json['flag'] != null ? LogcontrolFlag.fromJson(json['flag'] as bool) : null,
 ); }
 
+/// The log retention flag for Logpull API.
 final LogcontrolFlag? flag;
 
 Map<String, dynamic> toJson() { return {

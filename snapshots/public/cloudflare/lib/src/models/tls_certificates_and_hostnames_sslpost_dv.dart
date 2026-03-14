@@ -100,11 +100,13 @@ factory TlsCertificatesAndHostnamesSslpostDv.fromJson(Map<String, dynamic> json)
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesSslpostDvBundleMethod bundleMethod;
 
+/// The Certificate Authority that will issue the certificate
 final TlsCertificatesAndHostnamesCertificateAuthority? certificateAuthority;
 
 /// Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true
 final bool? cloudflareBranding;
 
+/// Array of custom certificate and key pairs (1 or 2 pairs allowed)
 final List<TlsCertificatesAndHostnamesCustomCertAndKey>? customCertBundle;
 
 /// If a custom uploaded certificate is used.

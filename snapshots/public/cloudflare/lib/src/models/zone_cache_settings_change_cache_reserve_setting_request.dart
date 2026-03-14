@@ -35,6 +35,7 @@ factory ZoneCacheSettingsChangeCacheReserveSettingRequest.fromJson(Map<String, d
   value: CacheRulesCacheReserveValue.fromJson(json['value'] as String),
 ); }
 
+/// Value of the Cache Reserve zone setting.
 final CacheRulesCacheReserveValue value;
 
 Map<String, dynamic> toJson() { return {

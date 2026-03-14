@@ -85,8 +85,20 @@ factory Reasoning.fromJson(Map<String, dynamic> json) { return Reasoning(
 
 final ReasoningEffort? effort;
 
+/// A summary of the reasoning performed by the model. This can be
+/// useful for debugging and understanding the model's reasoning process.
+/// One of `auto`, `concise`, or `detailed`.
+/// 
+/// `concise` is supported for `computer-use-preview` models and all reasoning models after `gpt-5`.
+/// 
 final ReasoningSummary? summary;
 
+/// **Deprecated:** use `summary` instead.
+/// 
+/// A summary of the reasoning performed by the model. This can be
+/// useful for debugging and understanding the model's reasoning process.
+/// One of `auto`, `concise`, or `detailed`.
+/// 
 final ReasoningGenerateSummary? generateSummary;
 
 Map<String, dynamic> toJson() { return {

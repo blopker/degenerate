@@ -22,8 +22,10 @@ factory ZeroTrustGatewaySettings.fromJson(Map<String, dynamic> json) { return Ze
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
+/// Provide the Base64-encoded HPKE public key that encrypts SSH session logs. See https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/#enable-ssh-command-logging.
 final ZeroTrustGatewayPublicKey? publicKey;
 
+/// Identify the seed ID.
 final ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid? seedId;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;

@@ -48,11 +48,11 @@ factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) {
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
   onBehalf: json.containsKey('on_behalf') ? json['on_behalf'] as bool : true,
-  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   status: json.containsKey('status') ? json['status'] as String : 'waiting',
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
-  updatedPrompts: (json['updated_prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
-  updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  updatedPrompts: (json['updated_prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }
 
 final FetchGatewaysResponseResultServersAuthType authType;
@@ -84,15 +84,15 @@ final String name;
 
 final bool onBehalf;
 
-final List<Map<String,Object?>> prompts;
+final List<Map<String,dynamic>> prompts;
 
 final String status;
 
-final List<Map<String,Object?>> tools;
+final List<Map<String,dynamic>> tools;
 
-final List<Map<String,Object>> updatedPrompts;
+final List<Map<String,dynamic>> updatedPrompts;
 
-final List<Map<String,Object>> updatedTools;
+final List<Map<String,dynamic>> updatedTools;
 
 Map<String, dynamic> toJson() { return {
   'auth_type': authType.toJson(),
@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('tools') &&
       json.containsKey('updated_prompts') &&
       json.containsKey('updated_tools'); } 
-FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, bool Function()? defaultDisabled, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,Object?>>? prompts, String Function()? status, List<Map<String,Object?>>? tools, List<Map<String,Object>>? updatedPrompts, List<Map<String,Object>>? updatedTools, }) { return FetchGatewaysResponseResultServers(
+FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, bool Function()? defaultDisabled, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return FetchGatewaysResponseResultServers(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,

@@ -32,36 +32,45 @@ factory PageShieldScript.fromJson(Map<String, dynamic> json) { return PageShield
 
 final DateTime addedAt;
 
+/// The cryptomining score of the JavaScript content.
 final PageShieldCryptominingScore? cryptominingScore;
 
+/// The dataflow score of the JavaScript content.
 final PageShieldDataflowScore? dataflowScore;
 
 final bool? domainReportedMalicious;
 
+/// The timestamp of when the script was last fetched.
 final PageShieldFetchedAt? fetchedAt;
 
 final String? firstPageUrl;
 
 final DateTime firstSeenAt;
 
+/// The computed hash of the analyzed script.
 final PageShieldHash? hash;
 
 final String host;
 
+/// Identifier
 final PageShieldId id;
 
+/// The integrity score of the JavaScript content.
 final PageShieldJsIntegrityScore? jsIntegrityScore;
 
 final DateTime lastSeenAt;
 
+/// The magecart score of the JavaScript content.
 final PageShieldMagecartScore? magecartScore;
 
 final List<String>? maliciousDomainCategories;
 
 final List<String>? maliciousUrlCategories;
 
+/// The malware score of the JavaScript content.
 final PageShieldMalwareScore? malwareScore;
 
+/// The obfuscation score of the JavaScript content.
 final PageShieldObfuscationScore? obfuscationScore;
 
 final List<String>? pageUrls;

@@ -21,6 +21,8 @@ factory SecondaryDnsDnsSecondarySecondaryZone.fromJson(Map<String, dynamic> json
   peers: (json['peers'] as List<dynamic>).map((e) => SecondaryDnsIdentifier.fromJson(e as String)).toList(),
 ); }
 
+/// How often should a secondary zone auto refresh regardless of DNS NOTIFY.
+/// Not applicable for primary zones.
 final SecondaryDnsAutoRefreshSeconds autoRefreshSeconds;
 
 final SecondaryDnsIdentifier id;

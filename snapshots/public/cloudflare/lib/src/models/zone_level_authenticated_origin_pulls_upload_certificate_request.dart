@@ -11,8 +11,10 @@ factory ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest.fromJson(Map<S
   privateKey: TlsCertificatesAndHostnamesPrivateKey.fromJson(json['private_key'] as String),
 ); }
 
+/// The zone's leaf certificate.
 final TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasCertificate certificate;
 
+/// The zone's private key.
 final TlsCertificatesAndHostnamesPrivateKey privateKey;
 
 Map<String, dynamic> toJson() { return {

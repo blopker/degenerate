@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Request {const Request({this.filter, this.returnMetadata = RequestReturnMetadata.none, this.returnValues = false, this.topK = 5.0, required this.vector, });
 
 factory Request.fromJson(Map<String, dynamic> json) { return Request(
-  filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   returnMetadata: json.containsKey('returnMetadata') ? RequestReturnMetadata.fromJson(json['returnMetadata'] as String) : RequestReturnMetadata.none,
   returnValues: json.containsKey('returnValues') ? json['returnValues'] as bool : false,
   topK: json.containsKey('topK') ? (json['topK'] as num).toDouble() : 5.0,
@@ -43,7 +43,7 @@ factory Request.fromJson(Map<String, dynamic> json) { return Request(
 ); }
 
 /// A metadata filter expression used to limit nearest neighbor results.
-final Map<String,Object?>? filter;
+final Map<String,dynamic>? filter;
 
 /// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
 final RequestReturnMetadata returnMetadata;
@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   'vector': vector,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-Request copyWith({Map<String, Object> Function()? filter, RequestReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
+Request copyWith({Map<String, dynamic> Function()? filter, RequestReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,

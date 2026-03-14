@@ -17,6 +17,7 @@ factory Subscription2App.fromJson(Map<String, dynamic> json) { return Subscripti
   installId: json['install_id'] != null ? InstallId.fromJson(json['install_id'] as String) : null,
 ); }
 
+/// app install id.
 final InstallId? installId;
 
 Map<String, dynamic> toJson() { return {

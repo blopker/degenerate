@@ -9,10 +9,11 @@ import 'vectorize_index_dimensions.dart';import 'vectorize_mutation_uuid.dart';f
 factory VectorizeIndexInfoResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexInfoResponse(
   dimensions: json['dimensions'] != null ? VectorizeIndexDimensions.fromJson(json['dimensions'] as num) : null,
   processedUpToDatetime: json['processedUpToDatetime'] != null ? DateTime.parse(json['processedUpToDatetime'] as String) : null,
-  processedUpToMutation: json['processedUpToMutation'] != null ? VectorizeMutationUuid.fromJson(json['processedUpToMutation'] as Object?) : null,
+  processedUpToMutation: json['processedUpToMutation'] != null ? VectorizeMutationUuid.fromJson(json['processedUpToMutation'] as dynamic) : null,
   vectorCount: json['vectorCount'] != null ? (json['vectorCount'] as num).toInt() : null,
 ); }
 
+/// Specifies the number of dimensions for the index
 final VectorizeIndexDimensions? dimensions;
 
 /// Specifies the timestamp the last mutation batch was processed as an ISO8601 string.

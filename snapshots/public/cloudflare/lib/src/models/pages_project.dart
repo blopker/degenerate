@@ -27,6 +27,7 @@ factory PagesProject.fromJson(Map<String, dynamic> json) { return PagesProject(
 
 final PagesBuildConfig? buildConfig;
 
+/// Most recent production deployment of the project.
 final PagesDeployment? canonicalDeployment;
 
 /// When the project was created.
@@ -47,6 +48,7 @@ final String frameworkVersion;
 /// ID of the project.
 final String id;
 
+/// Most recent deployment of the project.
 final PagesDeployment? latestDeployment;
 
 final PagesProjectName name;

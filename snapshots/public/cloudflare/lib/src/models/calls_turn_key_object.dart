@@ -13,12 +13,16 @@ factory CallsTurnKeyObject.fromJson(Map<String, dynamic> json) { return CallsTur
   uid: json['uid'] != null ? CallsIdentifier.fromJson(json['uid'] as String) : null,
 ); }
 
+/// The date and time the item was created.
 final CallsCreated? created;
 
+/// The date and time the item was last modified.
 final CallsModified? modified;
 
+/// A short description of Calls app, not shown to end users.
 final CallsName? name;
 
+/// A Cloudflare-generated unique identifier for a item.
 final CallsIdentifier? uid;
 
 Map<String, dynamic> toJson() { return {

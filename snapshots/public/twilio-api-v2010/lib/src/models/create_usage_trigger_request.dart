@@ -56,8 +56,10 @@ final CreateUsageTriggerRequestCallbackMethod? callbackMethod;
 /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
 final String? friendlyName;
 
+/// The frequency of a recurring UsageTrigger.  Can be: `daily`, `monthly`, or `yearly` for recurring triggers or empty for non-recurring triggers. A trigger will only fire once during each period. Recurring times are in GMT.
 final UsageTriggerEnumRecurring? recurring;
 
+/// The field in the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource that fires the trigger.  Can be: `count`, `usage`, or `price`, as described in the [UsageRecords documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-count-price).
 final UsageTriggerEnumTriggerField? triggerBy;
 
 Map<String, dynamic> toJson() { return {

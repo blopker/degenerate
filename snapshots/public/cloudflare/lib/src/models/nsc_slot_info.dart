@@ -15,6 +15,7 @@ factory NscSlotInfo.fromJson(Map<String, dynamic> json) { return NscSlotInfo(
   speed: json['speed'] as String,
 ); }
 
+/// Customer account tag
 final NscAccountTag? account;
 
 final NscFacilityInfo facility;

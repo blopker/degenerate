@@ -39,6 +39,7 @@ final UsageVectorStoresResultObject object;
 /// The vector stores usage in bytes.
 final int usageBytes;
 
+/// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
 final String? projectId;
 
 Map<String, dynamic> toJson() { return {

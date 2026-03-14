@@ -19,6 +19,7 @@ final String name;
 /// The arguments passed to the function.
 final String arguments;
 
+/// The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
 final String? output;
 
 Map<String, dynamic> toJson() { return {

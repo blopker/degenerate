@@ -19,18 +19,23 @@ factory AccessSchemasOrganizations.fromJson(Map<String, dynamic> json) { return 
   userSeatExpirationInactiveTime: json['user_seat_expiration_inactive_time'] != null ? AccessSchemasUserSeatExpirationInactiveTime.fromJson(json['user_seat_expiration_inactive_time'] as String) : null,
 ); }
 
+/// The unique subdomain assigned to your Zero Trust organization.
 final AccessSchemasAuthDomain? authDomain;
 
 final AccessTimestamp? createdAt;
 
+/// Determines whether to deny all requests to Cloudflare-protected resources that lack an associated Access application. If enabled, you must explicitly configure an Access application and policy to allow traffic to your Cloudflare-protected resources. For domains you want to be public across all subdomains, add the domain to the `deny_unmatched_requests_exempted_zone_names` array.
 final AccessDenyUnmatchedRequests? denyUnmatchedRequests;
 
+/// Contains zone names to exempt from the `deny_unmatched_requests` feature. Requests to a subdomain in an exempted zone will block unauthenticated traffic by default if there is a configured Access application and policy that matches the request.
 final List<String>? denyUnmatchedRequestsExemptedZoneNames;
 
+/// Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
 final AccessSchemasIsUiReadOnly? isUiReadOnly;
 
 final AccessSchemasLoginDesign? loginDesign;
 
+/// The name of your Zero Trust organization.
 final AccessOrganizationsComponentsSchemasName? name;
 
 final AccessUiReadOnlyToggleReason? uiReadOnlyToggleReason;

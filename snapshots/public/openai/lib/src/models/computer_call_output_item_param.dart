@@ -16,6 +16,7 @@ factory ComputerCallOutputItemParam.fromJson(Map<String, dynamic> json) { return
   status: json['status'] != null ? FunctionCallItemStatus.fromJson(json['status'] as String) : null,
 ); }
 
+/// The ID of the computer tool call output.
 final String? id;
 
 /// The ID of the computer tool call that produced the output.
@@ -26,6 +27,7 @@ final String type;
 
 final ComputerScreenshotImage output;
 
+/// The safety checks reported by the API that have been acknowledged by the developer.
 final List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks;
 
 final FunctionCallItemStatus? status;

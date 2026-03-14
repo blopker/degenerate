@@ -27,6 +27,7 @@ final int? maxNumResults;
 /// Ranking options for search.
 final RankingOptions? rankingOptions;
 
+/// A filter to apply.
 final Filters? filters;
 
 Map<String, dynamic> toJson() { return {

@@ -17,6 +17,7 @@ factory StreamWebhookRequest.fromJson(Map<String, dynamic> json) { return Stream
   notificationUrl: StreamNotificationUrl.fromJson(json['notificationUrl'] as String),
 ); }
 
+/// The URL where webhooks will be sent.
 final StreamNotificationUrl notificationUrl;
 
 Map<String, dynamic> toJson() { return {

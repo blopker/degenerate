@@ -17,18 +17,25 @@ factory AccessCorsHeaders.fromJson(Map<String, dynamic> json) { return AccessCor
   maxAge: json['max_age'] != null ? AccessMaxAge.fromJson(json['max_age'] as num) : null,
 ); }
 
+/// Allows all HTTP request headers.
 final AccessAllowAllHeaders? allowAllHeaders;
 
+/// Allows all HTTP request methods.
 final AccessAllowAllMethods? allowAllMethods;
 
+/// Allows all origins.
 final AccessAllowAllOrigins? allowAllOrigins;
 
+/// When set to `true`, includes credentials (cookies, authorization headers, or TLS client certificates) with requests.
 final AccessAllowCredentials? allowCredentials;
 
+/// Allowed HTTP request headers.
 final List<String>? allowedHeaders;
 
+/// Allowed HTTP request methods.
 final List<AccessAllowedMethods2>? allowedMethods;
 
+/// Allowed origins.
 final List<String>? allowedOrigins;
 
 final AccessMaxAge? maxAge;

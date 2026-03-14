@@ -16,10 +16,12 @@ factory WebhookStatusCommitCommit.fromJson(Map<String, dynamic> json) { return W
   verification: WebhookStatusCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>),
 ); }
 
+/// Metaproperties for Git author/committer information.
 final WebhookStatusCommitCommitAuthor author;
 
 final int commentCount;
 
+/// Metaproperties for Git author/committer information.
 final WebhookStatusCommitCommitCommitter committer;
 
 final String message;

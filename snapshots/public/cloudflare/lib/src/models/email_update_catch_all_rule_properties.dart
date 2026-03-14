@@ -13,12 +13,16 @@ factory EmailUpdateCatchAllRuleProperties.fromJson(Map<String, dynamic> json) { 
   name: json['name'] != null ? EmailRuleName.fromJson(json['name'] as String) : null,
 ); }
 
+/// List actions for the catch-all routing rule.
 final List<EmailRuleCatchallAction> actions;
 
+/// Routing rule status.
 final EmailRuleEnabled? enabled;
 
+/// List of matchers for the catch-all routing rule.
 final List<EmailRuleCatchallMatcher> matchers;
 
+/// Routing rule name.
 final EmailRuleName? name;
 
 Map<String, dynamic> toJson() { return {

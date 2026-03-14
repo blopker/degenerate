@@ -19,8 +19,10 @@ factory TlsCertificatesAndHostnamesHostnameCertidInput.fromJson(Map<String, dyna
   hostname: json['hostname'] != null ? TlsCertificatesAndHostnamesSchemasHostname.fromJson(json['hostname'] as String) : null,
 ); }
 
+/// Certificate identifier tag.
 final TlsCertificatesAndHostnamesCertId? certId;
 
+/// Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled? enabled;
 
 final TlsCertificatesAndHostnamesSchemasHostname? hostname;

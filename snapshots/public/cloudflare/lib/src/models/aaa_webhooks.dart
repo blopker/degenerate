@@ -81,20 +81,28 @@ factory AaaWebhooks.fromJson(Map<String, dynamic> json) { return AaaWebhooks(
   url: json['url'] != null ? AaaUrl.fromJson(json['url'] as String) : null,
 ); }
 
+/// Timestamp of when the webhook destination was created.
 final AaaCreatedAt? createdAt;
 
+/// The unique identifier of a webhook
 final AaaWebhookId? id;
 
+/// Timestamp of the last time an attempt to dispatch a notification to this webhook failed.
 final AaaLastFailure? lastFailure;
 
+/// Timestamp of the last time Cloudflare was able to successfully dispatch a notification using this webhook.
 final AaaLastSuccess? lastSuccess;
 
+/// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
 final AaaComponentsSchemasName? name;
 
+/// Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
 final AaaSecret? secret;
 
+/// Type of webhook endpoint.
 final AaaComponentsSchemasType? type;
 
+/// The POST endpoint to call when dispatching a notification.
 final AaaUrl? url;
 
 Map<String, dynamic> toJson() { return {

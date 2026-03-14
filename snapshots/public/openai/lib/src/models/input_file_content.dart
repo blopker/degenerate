@@ -43,6 +43,7 @@ factory InputFileContent.fromJson(Map<String, dynamic> json) { return InputFileC
 /// The type of the input item. Always `input_file`.
 final String type;
 
+/// The ID of the file to be sent to the model.
 final String? fileId;
 
 /// The name of the file to be sent to the model.

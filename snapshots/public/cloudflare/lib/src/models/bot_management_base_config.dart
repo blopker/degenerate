@@ -115,6 +115,7 @@ factory BotManagementBaseConfig.fromJson(Map<String, dynamic> json) { return Bot
   usingLatestModel: json['using_latest_model'] != null ? BotManagementUsingLatestModel.fromJson(json['using_latest_model'] as bool) : null,
 ); }
 
+/// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
 final BotManagementAiBotsProtection? aiBotsProtection;
 
 final BotManagementCfRobotsVariant? cfRobotsVariant;

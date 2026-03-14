@@ -15,14 +15,17 @@ factory MagicLanStaticAddressing.fromJson(Map<String, dynamic> json) { return Ma
   virtualAddress: json['virtual_address'] != null ? MagicCidr.fromJson(json['virtual_address'] as String) : null,
 ); }
 
+/// A valid CIDR notation representing an IP range.
 final MagicCidr address;
 
 final MagicLanDhcpRelay? dhcpRelay;
 
 final MagicLanDhcpServer? dhcpServer;
 
+/// A valid CIDR notation representing an IP range.
 final MagicCidr? secondaryAddress;
 
+/// A valid CIDR notation representing an IP range.
 final MagicCidr? virtualAddress;
 
 Map<String, dynamic> toJson() { return {

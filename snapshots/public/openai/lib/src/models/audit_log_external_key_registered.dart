@@ -9,21 +9,21 @@ final class AuditLogExternalKeyRegistered {const AuditLogExternalKeyRegistered({
 
 factory AuditLogExternalKeyRegistered.fromJson(Map<String, dynamic> json) { return AuditLogExternalKeyRegistered(
   id: json['id'] as String?,
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The ID of the external key configuration.
 final String? id;
 
 /// The configuration for the external key.
-final Map<String,Object?>? data;
+final Map<String,dynamic>? data;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   'data': ?data,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AuditLogExternalKeyRegistered copyWith({String Function()? id, Map<String, Object> Function()? data, }) { return AuditLogExternalKeyRegistered(
+AuditLogExternalKeyRegistered copyWith({String Function()? id, Map<String, dynamic> Function()? data, }) { return AuditLogExternalKeyRegistered(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
 ); } 

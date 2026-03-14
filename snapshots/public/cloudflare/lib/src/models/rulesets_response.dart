@@ -10,16 +10,18 @@ final class RulesetsResponse {const RulesetsResponse({required this.errors, requ
 factory RulesetsResponse.fromJson(Map<String, dynamic> json) { return RulesetsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as Object,
+  result: json['result'],
   success: json['success'] as bool,
 ); }
 
+/// A list of error messages.
 final List<RulesetsMessage> errors;
 
+/// A list of warning messages.
 final List<RulesetsMessage> messages;
 
 /// A result.
-final Object? result;
+final dynamic result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -34,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RulesetsResponse copyWith({List<RulesetsMessage>? errors, List<RulesetsMessage>? messages, Object? Function()? result, bool? success, }) { return RulesetsResponse(
+RulesetsResponse copyWith({List<RulesetsMessage>? errors, List<RulesetsMessage>? messages, dynamic Function()? result, bool? success, }) { return RulesetsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

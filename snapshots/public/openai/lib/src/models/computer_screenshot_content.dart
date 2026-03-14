@@ -39,8 +39,10 @@ factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return C
 /// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.
 final ComputerScreenshotContentType type;
 
+/// The URL of the screenshot image.
 final String? imageUrl;
 
+/// The identifier of an uploaded file that contains the screenshot.
 final String? fileId;
 
 /// The detail level of the screenshot image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.

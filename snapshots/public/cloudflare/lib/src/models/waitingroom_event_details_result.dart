@@ -65,6 +65,7 @@ final WaitingroomTimestamp? createdOn;
 
 final WaitingroomEventDetailsCustomPageHtml? customPageHtml;
 
+/// A note that you can use to add more details about the event.
 final WaitingroomEventDescription? description;
 
 final WaitingroomEventDetailsDisableSessionRenewal? disableSessionRenewal;

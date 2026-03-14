@@ -10,6 +10,7 @@ factory MembersDeleteRequest.fromJson(Map<String, dynamic> json) { return Member
   memberId: MemberId.fromJson(json['member_id'] as String),
 ); }
 
+/// Organization Member ID
 final MemberId memberId;
 
 Map<String, dynamic> toJson() { return {

@@ -49,8 +49,10 @@ final String? accountName;
 /// The public account identifier.
 final String? accountTag;
 
+/// API Resource UUID tag.
 final DigitalExperienceMonitoringUuid? deviceId;
 
+/// API Resource UUID tag.
 final DigitalExperienceMonitoringUuid? deviceRegistration;
 
 /// The hostname of the machine the event is from
@@ -59,6 +61,7 @@ final String? hostname;
 /// The serial number of the machine the event is from
 final String? serialNumber;
 
+/// Timestamp in ISO format
 final DigitalExperienceMonitoringTimestamp? timestamp;
 
 /// The state of the WARP toggle.

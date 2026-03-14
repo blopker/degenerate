@@ -19,6 +19,7 @@ final TeamsDevicesDeviceManagedNetworksComponentsSchemasName? name;
 
 final TeamsDevicesUuid? networkId;
 
+/// The type of device managed network.
 final TeamsDevicesComponentsSchemasType? type;
 
 Map<String, dynamic> toJson() { return {

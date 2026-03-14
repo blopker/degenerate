@@ -53,6 +53,7 @@ factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return
 /// Cumulative Layout Shift.
 final double? cls;
 
+/// The type of device.
 final ObservatoryDeviceType? deviceType;
 
 final ObservatoryLighthouseReportError? error;

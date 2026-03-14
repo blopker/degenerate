@@ -10,16 +10,18 @@ final class ChatkitWorkflow {const ChatkitWorkflow({required this.id, required t
 factory ChatkitWorkflow.fromJson(Map<String, dynamic> json) { return ChatkitWorkflow(
   id: json['id'] as String,
   version: json['version'] as String,
-  stateVariables: (json['state_variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  stateVariables: (json['state_variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   tracing: ChatkitWorkflowTracing.fromJson(json['tracing'] as Map<String, dynamic>),
 ); }
 
 /// Identifier of the workflow backing the session.
 final String id;
 
+/// Specific workflow version used for the session. Defaults to null when using the latest deployment.
 final String? version;
 
-final Map<String,Object>? stateVariables;
+/// State variable key-value pairs applied when invoking the workflow. Defaults to null when no overrides were provided.
+final Map<String,dynamic>? stateVariables;
 
 /// Tracing settings applied to the workflow.
 final ChatkitWorkflowTracing tracing;
@@ -34,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('version') && json['version'] is String &&
       json.containsKey('state_variables') &&
       json.containsKey('tracing'); } 
-ChatkitWorkflow copyWith({String? id, String? Function()? version, Map<String, Object>? Function()? stateVariables, ChatkitWorkflowTracing? tracing, }) { return ChatkitWorkflow(
+ChatkitWorkflow copyWith({String? id, String? Function()? version, Map<String, dynamic>? Function()? stateVariables, ChatkitWorkflowTracing? tracing, }) { return ChatkitWorkflow(
   id: id ?? this.id,
   version: version != null ? version() : this.version,
   stateVariables: stateVariables != null ? stateVariables() : this.stateVariables,

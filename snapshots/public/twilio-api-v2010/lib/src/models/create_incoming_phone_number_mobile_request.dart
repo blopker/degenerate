@@ -211,6 +211,7 @@ final String? identitySid;
 /// The SID of the Address resource we should associate with the new phone number. Some regions require addresses to meet local regulations.
 final String? addressSid;
 
+/// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
 final IncomingPhoneNumberMobileEnumEmergencyStatus? emergencyStatus;
 
 /// The SID of the emergency address configuration to use for emergency calling from the new phone number.

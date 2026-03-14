@@ -51,6 +51,10 @@ final String eventId;
 /// The event type, must be `conversation.item.created`.
 final RealtimeServerEventConversationItemCreatedType type;
 
+/// The ID of the preceding item in the Conversation context, allows the
+/// client to understand the order of the conversation. Can be `null` if the
+/// item has no predecessor.
+/// 
 final String? previousItemId;
 
 final RealtimeConversationItem item;

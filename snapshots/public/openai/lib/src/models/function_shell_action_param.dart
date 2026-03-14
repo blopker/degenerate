@@ -16,8 +16,10 @@ factory FunctionShellActionParam.fromJson(Map<String, dynamic> json) { return Fu
 /// Ordered shell commands for the execution environment to run.
 final List<String> commands;
 
+/// Maximum wall-clock time in milliseconds to allow the shell commands to run.
 final int? timeoutMs;
 
+/// Maximum number of UTF-8 characters to capture from combined stdout and stderr output.
 final int? maxOutputLength;
 
 Map<String, dynamic> toJson() { return {

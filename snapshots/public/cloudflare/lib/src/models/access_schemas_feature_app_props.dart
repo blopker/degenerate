@@ -61,16 +61,22 @@ factory AccessSchemasFeatureAppProps.fromJson(Map<String, dynamic> json) { retur
   type: AccessComponentsSchemasType.fromJson(json['type'] as String),
 ); }
 
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
 
+/// When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
+/// The domain and path that Access will secure.
 final AccessComponentsSchemasDomain? domain;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
+/// The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 
+/// The application type.
 final AccessComponentsSchemasType type;
 
 Map<String, dynamic> toJson() { return {

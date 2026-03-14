@@ -13,12 +13,16 @@ factory ActionsRepositoryPermissions.fromJson(Map<String, dynamic> json) { retur
   shaPinningRequired: json['sha_pinning_required'] != null ? ShaPinningRequired.fromJson(json['sha_pinning_required'] as bool) : null,
 ); }
 
+/// Whether GitHub Actions is enabled on the repository.
 final ActionsEnabled enabled;
 
+/// The permissions policy that controls the actions and reusable workflows that are allowed to run.
 final AllowedActions? allowedActions;
 
+/// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
 final SelectedActionsUrl? selectedActionsUrl;
 
+/// Whether actions must be pinned to a full-length commit SHA.
 final ShaPinningRequired? shaPinningRequired;
 
 Map<String, dynamic> toJson() { return {

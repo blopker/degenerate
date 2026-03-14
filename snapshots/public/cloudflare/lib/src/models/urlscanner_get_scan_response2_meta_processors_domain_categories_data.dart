@@ -7,12 +7,12 @@
 final class UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData {const UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData({required this.inherited, required this.isPrimary, required this.name, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData(
-  inherited: (json['inherited'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  inherited: (json['inherited'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   isPrimary: json['isPrimary'] as bool,
   name: json['name'] as String,
 ); }
 
-final Map<String,Object?> inherited;
+final Map<String,dynamic> inherited;
 
 final bool isPrimary;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('inherited') &&
       json.containsKey('isPrimary') && json['isPrimary'] is bool &&
       json.containsKey('name') && json['name'] is String; } 
-UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData copyWith({Map<String,Object?>? inherited, bool? isPrimary, String? name, }) { return UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData(
+UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData copyWith({Map<String,dynamic>? inherited, bool? isPrimary, String? name, }) { return UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData(
   inherited: inherited ?? this.inherited,
   isPrimary: isPrimary ?? this.isPrimary,
   name: name ?? this.name,

@@ -21,14 +21,19 @@ factory CallsTurnKeyWithKey.fromJson(Map<String, dynamic> json) { return CallsTu
   uid: json['uid'] != null ? CallsIdentifier.fromJson(json['uid'] as String) : null,
 ); }
 
+/// The date and time the item was created.
 final CallsCreated? created;
 
+/// Bearer token
 final CallsTurnKey? key;
 
+/// The date and time the item was last modified.
 final CallsModified? modified;
 
+/// A short description of a TURN key, not shown to end users.
 final CallsTurnKeyName? name;
 
+/// A Cloudflare-generated unique identifier for a item.
 final CallsIdentifier? uid;
 
 Map<String, dynamic> toJson() { return {

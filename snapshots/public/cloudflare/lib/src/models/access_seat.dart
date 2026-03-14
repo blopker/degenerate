@@ -12,8 +12,10 @@ factory AccessSeat.fromJson(Map<String, dynamic> json) { return AccessSeat(
   seatUid: AccessSeatUid.fromJson(json['seat_uid'] as String),
 ); }
 
+/// True if the seat is part of Access.
 final AccessAccessSeat accessSeat;
 
+/// True if the seat is part of Gateway.
 final AccessGatewaySeat gatewaySeat;
 
 final AccessSeatUid seatUid;

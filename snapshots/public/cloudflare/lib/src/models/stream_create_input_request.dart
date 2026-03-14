@@ -10,7 +10,7 @@ factory StreamCreateInputRequest.fromJson(Map<String, dynamic> json) { return St
   defaultCreator: json['defaultCreator'] != null ? StreamLiveInputDefaultCreator.fromJson(json['defaultCreator'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   recording: json['recording'] != null ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>) : null,
 ); }
 
@@ -20,7 +20,7 @@ final StreamLiveInputRecordingDeletion? deleteRecordingAfterDays;
 
 final StreamLiveInputEnabled? enabled;
 
-final Map<String,Object?>? meta;
+final Map<String,dynamic>? meta;
 
 final StreamLiveInputRecordingSettings? recording;
 
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (recording != null) 'recording': recording?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-StreamCreateInputRequest copyWith({StreamLiveInputDefaultCreator Function()? defaultCreator, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, Object> Function()? meta, StreamLiveInputRecordingSettings Function()? recording, }) { return StreamCreateInputRequest(
+StreamCreateInputRequest copyWith({StreamLiveInputDefaultCreator Function()? defaultCreator, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, dynamic> Function()? meta, StreamLiveInputRecordingSettings Function()? recording, }) { return StreamCreateInputRequest(
   defaultCreator: defaultCreator != null ? defaultCreator() : this.defaultCreator,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,

@@ -15,12 +15,20 @@ factory GraderScoreModelSamplingParams.fromJson(Map<String, dynamic> json) { ret
   reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
 ); }
 
+/// A seed value to initialize the randomness, during sampling.
+/// 
 final int? seed;
 
+/// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.
+/// 
 final double? topP;
 
+/// A higher temperature increases randomness in the outputs.
+/// 
 final double? temperature;
 
+/// The maximum number of tokens the grader model may generate in its response.
+/// 
 final int? maxCompletionsTokens;
 
 final ReasoningEffort? reasoningEffort;

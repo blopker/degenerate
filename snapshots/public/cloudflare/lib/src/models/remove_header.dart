@@ -11,6 +11,7 @@ factory RemoveHeader.fromJson(Map<String, dynamic> json) { return RemoveHeader(
   operation: RulesetsRewriteHeaderOperation.fromJson(json['operation'] as String),
 ); }
 
+/// The operation to perform on the header.
 final RulesetsRewriteHeaderOperation operation;
 
 Map<String, dynamic> toJson() { return {

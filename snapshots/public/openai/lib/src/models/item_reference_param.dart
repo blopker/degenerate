@@ -34,6 +34,7 @@ factory ItemReferenceParam.fromJson(Map<String, dynamic> json) { return ItemRefe
   id: json['id'] as String,
 ); }
 
+/// The type of item to reference. Always `item_reference`.
 final ItemReferenceParamType? type;
 
 /// The ID of the item to reference.

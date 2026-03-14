@@ -19,6 +19,7 @@ factory AccessConnectionRulesSsh.fromJson(Map<String, dynamic> json) { return Ac
   usernames: (json['usernames'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
+/// Enables using Identity Provider email alias as SSH username.
 final AccessAllowEmailAlias? allowEmailAlias;
 
 final List<String> usernames;

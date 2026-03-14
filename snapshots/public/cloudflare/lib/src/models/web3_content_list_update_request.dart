@@ -11,8 +11,10 @@ factory Web3ContentListUpdateRequest.fromJson(Map<String, dynamic> json) { retur
   entries: (json['entries'] as List<dynamic>).map((e) => Web3ContentListEntry.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Behavior of the content list.
 final Web3ContentListAction action;
 
+/// Provides content list entries.
 final List<Web3ContentListEntry> entries;
 
 Map<String, dynamic> toJson() { return {

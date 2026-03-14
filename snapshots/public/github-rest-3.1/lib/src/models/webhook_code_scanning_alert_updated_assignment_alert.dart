@@ -96,13 +96,14 @@ final DateTime? dismissedAt;
 
 final WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedBy? dismissedBy;
 
+/// The dismissal comment associated with the dismissal of the alert.
 final CodeScanningAlertDismissedComment? dismissedComment;
 
 /// The reason for dismissing or closing the alert.
 final WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason? dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final Object? fixedAt;
+final dynamic fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
@@ -147,7 +148,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertUpdatedAssignmentAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason? Function()? dismissedReason, Object? Function()? fixedAt, Uri? htmlUrl, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertUpdatedAssignmentAlertRule? rule, WebhookCodeScanningAlertUpdatedAssignmentAlertState? Function()? state, WebhookCodeScanningAlertUpdatedAssignmentAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertUpdatedAssignmentAlert(
+WebhookCodeScanningAlertUpdatedAssignmentAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason? Function()? dismissedReason, dynamic Function()? fixedAt, Uri? htmlUrl, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertUpdatedAssignmentAlertRule? rule, WebhookCodeScanningAlertUpdatedAssignmentAlertState? Function()? state, WebhookCodeScanningAlertUpdatedAssignmentAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertUpdatedAssignmentAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,

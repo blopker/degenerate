@@ -79,7 +79,7 @@ class ExtensionTypeEmitter {
   /// and Duration/bytes are num/string respectively.
   String _jsonTypeName(PrimitiveKind kind) {
     return switch (kind) {
-      PrimitiveKind.object => 'Object?',
+      PrimitiveKind.dynamic_ => 'dynamic',
       PrimitiveKind.dateTime => 'String',
       PrimitiveKind.uri => 'String',
       PrimitiveKind.bigInt => 'String',
@@ -99,7 +99,7 @@ class ExtensionTypeEmitter {
       PrimitiveKind.double ||
       PrimitiveKind.num ||
       PrimitiveKind.bool => true,
-      PrimitiveKind.object => false,
+      PrimitiveKind.dynamic_ => false,
       _ => false,
     };
   }
@@ -116,7 +116,7 @@ class ExtensionTypeEmitter {
       PrimitiveKind.bytes => '$typeName(base64Decode(json))',
       PrimitiveKind.int => '$typeName(json.toInt())',
       PrimitiveKind.double => '$typeName(json.toDouble())',
-      PrimitiveKind.object => '$typeName(json)',
+      PrimitiveKind.dynamic_ => '$typeName(json)',
       _ => '$typeName(json)',
     };
   }

@@ -12,7 +12,7 @@ factory CodeSecurityDefaultConfigurations2.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// The visibility of newly created repositories for which the code security configuration will be applied to by default
-final Object? defaultForNewRepos;
+final dynamic defaultForNewRepos;
 
 final CodeSecurityConfiguration? configuration;
 
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (configuration != null) 'configuration': configuration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-CodeSecurityDefaultConfigurations2 copyWith({Object? Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecurityDefaultConfigurations2(
+CodeSecurityDefaultConfigurations2 copyWith({dynamic Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecurityDefaultConfigurations2(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
   configuration: configuration != null ? configuration() : this.configuration,
 ); } 

@@ -74,10 +74,13 @@ factory D1CreateDatabaseRequest.fromJson(Map<String, dynamic> json) { return D1C
   primaryLocationHint: json['primary_location_hint'] != null ? D1PrimaryLocationHint.fromJson(json['primary_location_hint'] as String) : null,
 ); }
 
+/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
 final D1Jurisdiction? jurisdiction;
 
+/// D1 database name.
 final D1DatabaseName name;
 
+/// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
 final D1PrimaryLocationHint? primaryLocationHint;
 
 Map<String, dynamic> toJson() { return {

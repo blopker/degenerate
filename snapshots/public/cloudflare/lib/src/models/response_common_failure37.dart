@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'hyperdrive_messages2.dart';f
 factory ResponseCommonFailure37.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure37(
   errors: (json['errors'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final List<HyperdriveMessages2> errors;
 
 final List<HyperdriveMessages2> messages;
 
-final Map<String,Object?>? result;
+final Map<String,dynamic>? result;
 
 /// Return the status of the API call success.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure37 copyWith({List<HyperdriveMessages2>? errors, List<HyperdriveMessages2>? messages, Map<String, Object>? Function()? result, bool? success, }) { return ResponseCommonFailure37(
+ResponseCommonFailure37 copyWith({List<HyperdriveMessages2>? errors, List<HyperdriveMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure37(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

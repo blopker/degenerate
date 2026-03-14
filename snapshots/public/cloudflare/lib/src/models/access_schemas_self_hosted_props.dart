@@ -42,36 +42,50 @@ factory AccessSchemasSelfHostedProps.fromJson(Map<String, dynamic> json) { retur
   useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
 ); }
 
+/// Enables loading application content in an iFrame.
 final AccessAllowIframe? allowIframe;
 
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
 
+/// Displays the application in the App Launcher.
 final AccessAppLauncherVisible? appLauncherVisible;
 
+/// When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
 final AccessSchemasCorsHeaders? corsHeaders;
 
+/// The custom error message shown to a user when they are denied access to the application.
 final AccessCustomDenyMessage? customDenyMessage;
 
+/// The custom URL a user is redirected to when they are denied access to the application.
 final AccessSchemasCustomDenyUrl? customDenyUrl;
 
+/// The domain and path that Access will secure.
 final AccessComponentsSchemasDomain domain;
 
+/// Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 final AccessEnableBindingCookie? enableBindingCookie;
 
+/// Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 final AccessHttpOnlyCookieAttribute? httpOnlyCookieAttribute;
 
+/// The image URL for the logo shown in the App Launcher dashboard.
 final AccessLogoUrl? logoUrl;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
+/// Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set.
 final AccessSchemasOptionsPreflightBypass? optionsPreflightBypass;
 
+/// Sets the SameSite cookie setting, which provides increased security against CSRF attacks.
 final AccessSameSiteCookieAttribute? sameSiteCookieAttribute;
 
 final AccessServiceAuth401Redirect? serviceAuth401Redirect;
 
+/// The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 
 final AccessSkipInterstitial? skipInterstitial;

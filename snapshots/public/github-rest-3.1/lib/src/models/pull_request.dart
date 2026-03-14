@@ -152,6 +152,7 @@ final PullRequestBase base;
 
 final PullRequestLinks links;
 
+/// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
 final AutoMerge autoMerge;

@@ -46,6 +46,7 @@ final Installation installation;
 
 final OrganizationSimpleWebhooks? organization;
 
+/// An array of repository objects that the installation can access.
 final List<WebhooksRepositories2>? repositories;
 
 final RepositoryWebhooks? repository;

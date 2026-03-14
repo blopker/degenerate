@@ -48,8 +48,10 @@ final SimpleInstallation? installation;
 
 final OrganizationSimpleWebhooks? organization;
 
+/// The pusher type for the event. Can be either `user` or a deploy key.
 final WebhooksDeployPusherType pusherType;
 
+/// The [`git ref`](https://docs.github.com/rest/git/refs#get-a-reference) resource.
 final WebhooksRef0 ref;
 
 /// The type of Git ref object deleted in the repository.

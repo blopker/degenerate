@@ -457,7 +457,7 @@ class ApiEmitter {
         'Cannot decode $mediaType response into ${irTypeName(returnType)}';
     return switch (returnType) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object || PrimitiveKind.string => 'return response.body;',
+        PrimitiveKind.dynamic_ || PrimitiveKind.string => 'return response.body;',
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
         PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
@@ -1216,7 +1216,7 @@ try {
         'Cannot decode $mediaType error into ${irTypeName(errorType)}';
     return switch (errorType) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object || PrimitiveKind.string =>
+        PrimitiveKind.dynamic_ || PrimitiveKind.string =>
           'return response.body;',
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
@@ -1275,7 +1275,7 @@ try {
         'Cannot encode non-JSON $mediaType request body from ${irTypeName(bodyType)}';
     return switch (bodyType) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object => 'body',
+        PrimitiveKind.dynamic_ => 'body',
         PrimitiveKind.string => 'body',
         PrimitiveKind.bytes => 'body',
         _ => buildToJsonCode(bodyType, 'body'),
@@ -1289,7 +1289,7 @@ try {
   bool _supportsNonJsonDecode(IrType type) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object => true,
+        PrimitiveKind.dynamic_ => true,
         PrimitiveKind.string ||
         PrimitiveKind.int ||
         PrimitiveKind.double ||
@@ -1305,7 +1305,7 @@ try {
   bool _supportsNonJsonEncode(IrType type) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object => true,
+        PrimitiveKind.dynamic_ => true,
         PrimitiveKind.string ||
         PrimitiveKind.int ||
         PrimitiveKind.double ||
@@ -1454,7 +1454,7 @@ try {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.string => accessor,
-        PrimitiveKind.object => '$accessor.toString()',
+        PrimitiveKind.dynamic_ => '$accessor.toString()',
         PrimitiveKind.bool ||
         PrimitiveKind.int ||
         PrimitiveKind.double ||

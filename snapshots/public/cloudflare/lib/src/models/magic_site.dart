@@ -16,6 +16,7 @@ factory MagicSite.fromJson(Map<String, dynamic> json) { return MagicSite(
   secondaryConnectorId: json['secondary_connector_id'] != null ? MagicSecondaryConnectorId.fromJson(json['secondary_connector_id'] as String) : null,
 ); }
 
+/// Magic Connector identifier tag.
 final MagicConnectorId? connectorId;
 
 final String? description;
@@ -23,12 +24,14 @@ final String? description;
 /// Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
 final bool? haMode;
 
+/// Identifier
 final MagicIdentifier? id;
 
 final MagicSiteLocation? location;
 
 final MagicSiteName? name;
 
+/// Magic Connector identifier tag. Used when high availability mode is on.
 final MagicSecondaryConnectorId? secondaryConnectorId;
 
 Map<String, dynamic> toJson() { return {

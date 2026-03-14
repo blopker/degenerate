@@ -25,18 +25,23 @@ factory LoadBalancingRules2Overrides.fromJson(Map<String, dynamic> json) { retur
 
 final LoadBalancingAdaptiveRouting? adaptiveRouting;
 
+/// A mapping of country codes to a list of pool IDs (ordered by their failover priority) for the given country. Any country not explicitly defined will fall back to using the corresponding region_pool mapping if it exists else to default_pools.
 final Map<String,List<String>>? countryPools;
 
+/// A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.
 final List<String>? defaultPools;
 
+/// The pool ID to use when all other pools are detected as unhealthy.
 final LoadBalancingFallbackPool? fallbackPool;
 
 final LoadBalancingLocationStrategy? locationStrategy;
 
+/// Enterprise only: A mapping of Cloudflare PoP identifiers to a list of pool IDs (ordered by their failover priority) for the PoP (datacenter). Any PoPs not explicitly defined will fall back to using the corresponding country_pool, then region_pool mapping if it exists else to default_pools.
 final Map<String,List<String>>? popPools;
 
 final LoadBalancingRandomSteering? randomSteering;
 
+/// A mapping of region codes to a list of pool IDs (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using default_pools.
 final Map<String,List<String>>? regionPools;
 
 final LoadBalancingSessionAffinity? sessionAffinity;

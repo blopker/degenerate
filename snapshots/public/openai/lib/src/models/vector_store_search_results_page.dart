@@ -47,6 +47,7 @@ final List<VectorStoreSearchResultItem> data;
 /// Indicates if there are more results to fetch.
 final bool hasMore;
 
+/// The token for the next page, if any.
 final String? nextPage;
 
 Map<String, dynamic> toJson() { return {

@@ -16,6 +16,7 @@ final List<PipelinesResponseResult> result;
 
 final PipelinesResponseResultInfo resultInfo;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

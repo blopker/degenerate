@@ -263,14 +263,14 @@ void main() {
         expect(t, isA<IrMap>());
         final m = t as IrMap;
         expect(m.values, isA<IrPrimitive>());
-        expect((m.values as IrPrimitive).kind, equals(PrimitiveKind.object));
+        expect((m.values as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
       });
 
       test('untyped schema falls back to Object?', () {
         final t = lowerer.lowerInlineSchema({});
 
         expect(t, isA<IrPrimitive>());
-        expect((t as IrPrimitive).kind, equals(PrimitiveKind.object));
+        expect((t as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
       });
 
       test('additionalProperties true falls back to Map<String, Object?>', () {
@@ -281,7 +281,7 @@ void main() {
 
         expect(t, isA<IrMap>());
         final m = t as IrMap;
-        expect((m.values as IrPrimitive).kind, equals(PrimitiveKind.object));
+        expect((m.values as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
       });
 
       test('boolean schema property falls back to Object?', () {
@@ -295,7 +295,7 @@ void main() {
         expect(t.fields.single.type, isA<IrPrimitive>());
         expect(
           (t.fields.single.type as IrPrimitive).kind,
-          equals(PrimitiveKind.object),
+          equals(PrimitiveKind.dynamic_),
         );
       });
 
@@ -410,7 +410,7 @@ void main() {
 
         final param = apis.single.operations.single.parameters.single;
         expect(param.type, isA<IrPrimitive>());
-        expect((param.type as IrPrimitive).kind, equals(PrimitiveKind.object));
+        expect((param.type as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
       });
     });
 
@@ -556,7 +556,7 @@ void main() {
   });
 
   group('primitive-only union collapse', () {
-    test('oneOf of only primitives collapses to Object', () {
+    test('oneOf of only primitives collapses to dynamic', () {
       final lowerer = IrMapper(NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
@@ -570,10 +570,10 @@ void main() {
         ],
       });
       expect(t, isA<IrPrimitive>());
-      expect((t as IrPrimitive).kind, equals(PrimitiveKind.object));
+      expect((t as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
     });
 
-    test('anyOf of only primitives collapses to Object', () {
+    test('anyOf of only primitives collapses to dynamic', () {
       final lowerer = IrMapper(NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
@@ -586,7 +586,43 @@ void main() {
         ],
       });
       expect(t, isA<IrPrimitive>());
-      expect((t as IrPrimitive).kind, equals(PrimitiveKind.object));
+      expect((t as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
+    });
+
+    test('collapsed oneOf includes variant types in description', () {
+      final lowerer = IrMapper(NormalizationContext(
+          nameMapping: {},
+          discriminatorProperties: {},
+          usedNames: {},
+        ));
+      final t = lowerer.lowerInlineSchema({
+        'oneOf': [
+          {'type': 'string'},
+          {'type': 'number'},
+        ],
+      });
+      expect(t, isA<IrPrimitive>());
+      expect(t.description, contains('String'));
+      expect(t.description, contains('double'));
+    });
+
+    test('collapsed anyOf preserves original description with variant types', () {
+      final lowerer = IrMapper(NormalizationContext(
+          nameMapping: {},
+          discriminatorProperties: {},
+          usedNames: {},
+        ));
+      final t = lowerer.lowerInlineSchema({
+        'anyOf': [
+          {'type': 'string'},
+          {'type': 'integer'},
+        ],
+        'description': 'A flexible value.',
+      });
+      expect(t, isA<IrPrimitive>());
+      expect(t.description, contains('A flexible value.'));
+      expect(t.description, contains('String'));
+      expect(t.description, contains('int'));
     });
 
     test('oneOf with objects does NOT collapse', () {
@@ -625,7 +661,7 @@ void main() {
       expect(t, isA<IrUntaggedUnion>());
     });
 
-    test('field with primitive oneOf gets Object type', () {
+    test('field with primitive oneOf gets dynamic type', () {
       final lowerer = IrMapper(NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
@@ -645,7 +681,7 @@ void main() {
       }) as IrObject;
       final field = t.fields.firstWhere((f) => f.name == 'value');
       expect(field.type, isA<IrPrimitive>());
-      expect((field.type as IrPrimitive).kind, equals(PrimitiveKind.object));
+      expect((field.type as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
     });
   });
 

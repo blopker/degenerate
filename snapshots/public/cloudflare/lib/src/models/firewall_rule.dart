@@ -38,6 +38,7 @@ final FirewallSchemasMode mode;
 /// The timestamp of when the rule was last modified.
 final DateTime? modifiedOn;
 
+/// An informative summary of the rule, typically used as a reminder or explanation.
 final FirewallNotes? notes;
 
 Map<String, dynamic> toJson() { return {

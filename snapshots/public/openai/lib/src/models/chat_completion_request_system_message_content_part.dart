@@ -13,8 +13,8 @@ factory ChatCompletionRequestSystemMessageContentPart.fromJson(Map<String, dynam
   return ChatCompletionRequestSystemMessageContentPart$Unknown(json); }
 
 /// The underlying raw value.
-Object? get value;
-Object? toJson() { return value; } 
+dynamic get value;
+dynamic toJson() { return value; } 
  }
 final class ChatCompletionRequestSystemMessageContentPartChatCompletionRequestMessageContentPartText extends ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPartChatCompletionRequestMessageContentPartText(this._value);
 
@@ -29,9 +29,9 @@ final ChatCompletionRequestMessageContentPartText _value;
 /// An unknown variant not defined in the OpenAPI spec.
 final class ChatCompletionRequestSystemMessageContentPart$Unknown extends ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPart$Unknown(this._value);
 
-final Object? _value;
+final dynamic _value;
 
-@override Object get value { return _value ?? ''; } 
+@override dynamic get value { return _value ?? ''; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestSystemMessageContentPart$Unknown && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

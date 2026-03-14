@@ -15,12 +15,16 @@ factory IamMemberWithPoliciesUser.fromJson(Map<String, dynamic> json) { return I
   twoFactorAuthenticationEnabled: json['two_factor_authentication_enabled'] != null ? IamTwoFactorAuthenticationEnabled.fromJson(json['two_factor_authentication_enabled'] as bool) : null,
 ); }
 
+/// The contact email address of the user.
 final IamEmail email;
 
+/// User's first name
 final IamFirstName? firstName;
 
+/// Identifier
 final IamCommonComponentsSchemasIdentifier? id;
 
+/// User's last name
 final IamLastName? lastName;
 
 final IamTwoFactorAuthenticationEnabled? twoFactorAuthenticationEnabled;

@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'urlscanner_get_scan_response
 
 factory UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
   charset: json['charset'] as String,
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   mimeType: json['mimeType'] as String,
   protocol: json['protocol'] as String,
   remoteIpAddress: json['remoteIPAddress'] as String,
@@ -22,7 +22,7 @@ factory UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(M
 
 final String charset;
 
-final Map<String,Object?>? headers;
+final Map<String,dynamic>? headers;
 
 final String mimeType;
 
@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chars
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('statusText') && json['statusText'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? charset, Map<String, Object> Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<UrlscannerGetScanResponse2DataRequestsRequestRedirectResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
+UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? charset, Map<String, dynamic> Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<UrlscannerGetScanResponse2DataRequestsRequestRedirectResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
   charset: charset ?? this.charset,
   headers: headers != null ? headers() : this.headers,
   mimeType: mimeType ?? this.mimeType,

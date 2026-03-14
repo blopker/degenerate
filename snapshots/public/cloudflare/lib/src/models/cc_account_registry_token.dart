@@ -21,6 +21,7 @@ factory CcAccountRegistryToken.fromJson(Map<String, dynamic> json) { return CcAc
   username: json['username'] as String,
 ); }
 
+/// A unique identifier for the user's account
 final CcAccountId accountId;
 
 /// The password to use when authenticating to the image registry.

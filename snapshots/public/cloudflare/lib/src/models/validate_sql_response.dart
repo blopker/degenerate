@@ -13,6 +13,7 @@ factory ValidateSqlResponse.fromJson(Map<String, dynamic> json) { return Validat
 
 final ValidateSqlResponseResult result;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

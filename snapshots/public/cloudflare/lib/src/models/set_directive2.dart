@@ -13,6 +13,7 @@ factory SetDirective2.fromJson(Map<String, dynamic> json) { return SetDirective2
   qualifiers: (json['qualifiers'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Whether the directive should only be applied to the Cloudflare CDN cache.
 final RulesetsSetCacheControlCloudflareOnly? cloudflareOnly;
 
 final RulesetsSetCacheControlOperation operation;

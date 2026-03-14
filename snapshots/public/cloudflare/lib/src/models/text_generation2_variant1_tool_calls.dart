@@ -7,12 +7,12 @@
 final class TextGeneration2Variant1ToolCalls {const TextGeneration2Variant1ToolCalls({this.arguments, this.name, });
 
 factory TextGeneration2Variant1ToolCalls.fromJson(Map<String, dynamic> json) { return TextGeneration2Variant1ToolCalls(
-  arguments: (json['arguments'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  arguments: (json['arguments'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   name: json['name'] as String?,
 ); }
 
 /// The arguments passed to be passed to the tool call request
-final Map<String,Object?>? arguments;
+final Map<String,dynamic>? arguments;
 
 /// The name of the tool to be called
 final String? name;
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-TextGeneration2Variant1ToolCalls copyWith({Map<String, Object> Function()? arguments, String Function()? name, }) { return TextGeneration2Variant1ToolCalls(
+TextGeneration2Variant1ToolCalls copyWith({Map<String, dynamic> Function()? arguments, String Function()? name, }) { return TextGeneration2Variant1ToolCalls(
   arguments: arguments != null ? arguments() : this.arguments,
   name: name != null ? name() : this.name,
 ); } 

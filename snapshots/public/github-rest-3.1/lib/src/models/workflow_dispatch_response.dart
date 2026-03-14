@@ -20,6 +20,7 @@ factory WorkflowDispatchResponse.fromJson(Map<String, dynamic> json) { return Wo
   htmlUrl: Uri.parse(json['html_url'] as String),
 ); }
 
+/// The ID of the workflow run.
 final WorkflowRunId workflowRunId;
 
 /// The URL to the workflow run.

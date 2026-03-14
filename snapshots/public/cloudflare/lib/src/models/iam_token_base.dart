@@ -70,18 +70,24 @@ factory IamTokenBase.fromJson(Map<String, dynamic> json) { return IamTokenBase(
 
 final IamCondition? condition;
 
+/// The expiration time on or after which the JWT MUST NOT be accepted for processing.
 final IamExpiresOn? expiresOn;
 
 final IamTokenIdentifier? id;
 
+/// The time on which the token was created.
 final IamIssuedOn? issuedOn;
 
+/// Last time the token was used.
 final IamLastUsedOn? lastUsedOn;
 
+/// Last time the token was modified.
 final IamModifiedOn? modifiedOn;
 
+/// Token name.
 final IamName? name;
 
+/// The time before which the token MUST NOT be accepted for processing.
 final IamNotBefore? notBefore;
 
 final List<IamPolicyWithPermissionGroupsAndResources>? policies;

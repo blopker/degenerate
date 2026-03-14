@@ -18,20 +18,28 @@ factory StreamVideoClipStandard.fromJson(Map<String, dynamic> json) { return Str
   watermark: json['watermark'] != null ? StreamWatermarkAtUpload2.fromJson(json['watermark'] as Map<String, dynamic>) : null,
 ); }
 
+/// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
 
+/// The unique video identifier (UID).
 final StreamClippedFromVideoUid clippedFromVideoUid;
 
+/// A user-defined identifier for the media creator.
 final StreamCreator? creator;
 
+/// Specifies the end time for the video clip in seconds.
 final StreamEndTimeSeconds endTimeSeconds;
 
+/// The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
 final StreamMaxDurationSeconds? maxDurationSeconds;
 
+/// Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
 final StreamRequireSignedUrLs? requireSignedUrLs;
 
+/// Specifies the start time for the video clip in seconds.
 final StreamStartTimeSeconds startTimeSeconds;
 
+/// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.
 final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 
 final StreamWatermarkAtUpload2? watermark;

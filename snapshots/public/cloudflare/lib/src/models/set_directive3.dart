@@ -13,6 +13,7 @@ factory SetDirective3.fromJson(Map<String, dynamic> json) { return SetDirective3
   value: (json['value'] as num).toInt(),
 ); }
 
+/// Whether the directive should only be applied to the Cloudflare CDN cache.
 final RulesetsSetCacheControlCloudflareOnly? cloudflareOnly;
 
 final RulesetsSetCacheControlOperation operation;

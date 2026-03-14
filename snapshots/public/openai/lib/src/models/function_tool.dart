@@ -11,7 +11,7 @@ factory FunctionTool.fromJson(Map<String, dynamic> json) { return FunctionTool(
   type: json['type'] as String,
   name: json['name'] as String,
   description: json['description'] as String?,
-  parameters: (json['parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  parameters: (json['parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool,
   deferLoading: json['defer_loading'] as bool?,
 ); }
@@ -22,10 +22,13 @@ final String type;
 /// The name of the function to call.
 final String name;
 
+/// A description of the function. Used by the model to determine whether or not to call the function.
 final String? description;
 
-final Map<String,Object?>? parameters;
+/// A JSON schema object describing the parameters of the function.
+final Map<String,dynamic>? parameters;
 
+/// Whether to enforce strict parameter validation. Default `true`.
 final bool? strict;
 
 /// Whether this function is deferred and loaded via tool search.
@@ -43,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('parameters') &&
       json.containsKey('strict') && json['strict'] is bool; } 
-FunctionTool copyWith({String? type, String? name, String? Function()? description, Map<String, Object>? Function()? parameters, bool? Function()? strict, bool Function()? deferLoading, }) { return FunctionTool(
+FunctionTool copyWith({String? type, String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool Function()? deferLoading, }) { return FunctionTool(
   type: type ?? this.type,
   name: name ?? this.name,
   description: description != null ? description() : this.description,

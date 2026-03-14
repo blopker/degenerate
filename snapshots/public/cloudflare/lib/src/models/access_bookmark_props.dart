@@ -15,6 +15,7 @@ factory AccessBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessB
   type: json['type'] != null ? AccessType.fromJson(json['type'] as String) : null,
 ); }
 
+/// Displays the application in the App Launcher.
 final AccessAppLauncherVisible? appLauncherVisible;
 
 /// The URL or domain of the bookmark.
@@ -22,6 +23,7 @@ final String? domain;
 
 final AccessLogoUrl? logoUrl;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
 final List<String>? tags;

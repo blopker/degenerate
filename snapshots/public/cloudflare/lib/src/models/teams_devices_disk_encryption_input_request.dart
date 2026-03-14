@@ -18,6 +18,7 @@ factory TeamsDevicesDiskEncryptionInputRequest.fromJson(Map<String, dynamic> jso
   requireAll: json['requireAll'] != null ? TeamsDevicesRequireAll.fromJson(json['requireAll'] as bool) : null,
 ); }
 
+/// List of volume names to be checked for encryption.
 final List<String>? checkDisks;
 
 final TeamsDevicesRequireAll? requireAll;

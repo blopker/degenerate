@@ -41,6 +41,7 @@ factory ShieldSchemaValidationPostSchemaRequest.fromJson(Map<String, dynamic> js
 /// Schema file bytes
 final Uint8List file;
 
+/// Kind of schema
 final ShieldOldKind kind;
 
 /// Name of the schema

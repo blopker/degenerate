@@ -22,6 +22,7 @@ final List<String>? undelivered;
 
 final String id;
 
+/// The identifier of the message.
 final EmailSecurityPostfixId postfixId;
 
 Map<String, dynamic> toJson() { return {

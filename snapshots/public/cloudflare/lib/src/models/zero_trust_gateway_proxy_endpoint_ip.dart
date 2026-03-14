@@ -20,6 +20,7 @@ final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
 final ZeroTrustGatewayComponentsSchemasUuid? id;
 
+/// Specify the list of CIDRs to restrict ingress connections.
 final List<String> ips;
 
 /// The proxy endpoint kind

@@ -12,8 +12,10 @@ factory AddDynamicHeader.fromJson(Map<String, dynamic> json) { return AddDynamic
   operation: RulesetsRewriteHeaderOperation.fromJson(json['operation'] as String),
 ); }
 
+/// An expression that evaluates to a value for the header.
 final RulesetsRewriteHeaderExpression expression;
 
+/// The operation to perform on the header.
 final RulesetsRewriteHeaderOperation operation;
 
 Map<String, dynamic> toJson() { return {

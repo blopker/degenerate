@@ -14,12 +14,15 @@ factory D1DatabaseResponse.fromJson(Map<String, dynamic> json) { return D1Databa
   version: json['version'] != null ? D1DatabaseVersion.fromJson(json['version'] as String) : null,
 ); }
 
+/// Specifies the timestamp the resource was created as an ISO8601 string.
 final D1CreatedAt? createdAt;
 
 final D1JurisdictionNullable? jurisdiction;
 
+/// D1 database name.
 final D1DatabaseName? name;
 
+/// D1 database identifier (UUID).
 final D1DatabaseIdentifier? uuid;
 
 final D1DatabaseVersion? version;

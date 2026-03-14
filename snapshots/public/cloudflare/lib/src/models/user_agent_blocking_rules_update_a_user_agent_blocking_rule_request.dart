@@ -16,12 +16,16 @@ factory UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest.fromJson(Map<S
 
 final FirewallConfiguration configuration;
 
+/// An informative summary of the rule. This value is sanitized and any tags will be removed.
 final FirewallDescription? description;
 
+/// The unique identifier of the resource.
 final FirewallComponentsSchemasIdentifier id;
 
+/// The action to apply to a matched request.
 final FirewallSchemasMode mode;
 
+/// When true, indicates that the rule is currently paused.
 final FirewallSchemasPaused? paused;
 
 Map<String, dynamic> toJson() { return {

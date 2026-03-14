@@ -12,10 +12,13 @@ factory ZeroTrustGatewayPacfilesUpdateRequest.fromJson(Map<String, dynamic> json
   name: ZeroTrustGatewayPacfilesComponentsSchemasName.fromJson(json['name'] as String),
 ); }
 
+/// Actual contents of the PAC file
 final ZeroTrustGatewayContents contents;
 
+/// Detailed description of the PAC file.
 final ZeroTrustGatewayPacfilesComponentsSchemasDescription description;
 
+/// Name of the PAC file.
 final ZeroTrustGatewayPacfilesComponentsSchemasName name;
 
 Map<String, dynamic> toJson() { return {

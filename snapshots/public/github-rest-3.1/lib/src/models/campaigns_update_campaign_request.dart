@@ -34,6 +34,7 @@ final DateTime? endsAt;
 /// The contact link of the campaign. Must be a URI.
 final Uri? contactLink;
 
+/// Indicates whether a campaign is open or closed
 final CampaignState? state;
 
 Map<String, dynamic> toJson() { return {

@@ -51,22 +51,27 @@ factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return Z
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
 
+/// Indicate whether this location is the default location.
 final ZeroTrustGatewayClientDefault? clientDefault;
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
+/// Indicate the identifier of the pair of IPv4 addresses assigned to this location.
 final ZeroTrustGatewayDnsDestinationIpsIdRead? dnsDestinationIpsId;
 
+/// Specify the UUID of the IPv6 block brought to the gateway so that this location's IPv6 address is allocated from the Bring Your Own IPv6 (BYOIPv6) block rather than the standard Cloudflare IPv6 block.
 final ZeroTrustGatewayDnsDestinationIpv6BlockId? dnsDestinationIpv6BlockId;
 
 final ZeroTrustGatewaySubdomain? dohSubdomain;
 
+/// Indicate whether the location must resolve EDNS queries.
 final ZeroTrustGatewayEcsSupport? ecsSupport;
 
 final ZeroTrustGatewayEndpoints? endpoints;
 
 final ZeroTrustGatewayComponentsSchemasUuid? id;
 
+/// Defines the automatically generated IPv6 destination IP assigned to this location. Gateway counts all DNS requests sent to this IP as requests under this location.
 final ZeroTrustGatewayIp? ip;
 
 /// Show the primary destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.
@@ -77,6 +82,7 @@ final String? ipv4DestinationBackup;
 
 final ZeroTrustGatewaySchemasName? name;
 
+/// Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
 final List<ZeroTrustGatewayIpv4Network>? networks;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;

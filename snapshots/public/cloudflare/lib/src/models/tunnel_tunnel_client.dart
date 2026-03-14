@@ -38,16 +38,22 @@ factory TunnelTunnelClient.fromJson(Map<String, dynamic> json) { return TunnelTu
   version: json['version'] != null ? TunnelVersion.fromJson(json['version'] as String) : null,
 ); }
 
+/// The cloudflared OS architecture used to establish this connection.
 final TunnelArch? arch;
 
+/// The version of the remote tunnel configuration. Used internally to sync cloudflared with the Zero Trust dashboard.
 final TunnelConfigVersion? configVersion;
 
+/// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
 final List<TunnelSchemasConnection>? conns;
 
+/// Features enabled for the Cloudflare Tunnel.
 final List<String>? features;
 
+/// UUID of the Cloudflare Tunnel connection.
 final TunnelConnectionId? id;
 
+/// Timestamp of when the tunnel connection was started.
 final TunnelRunAt? runAt;
 
 final TunnelVersion? version;

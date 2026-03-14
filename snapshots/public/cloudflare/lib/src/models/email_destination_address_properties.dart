@@ -29,10 +29,12 @@ factory EmailDestinationAddressProperties.fromJson(Map<String, dynamic> json) { 
   verified: json['verified'] != null ? EmailVerified.fromJson(json['verified'] as String) : null,
 ); }
 
+/// The date and time the destination address has been created.
 final EmailCreated? created;
 
 final EmailEmail? email;
 
+/// Destination address identifier.
 final EmailDestinationAddressIdentifier? id;
 
 final EmailModified? modified;

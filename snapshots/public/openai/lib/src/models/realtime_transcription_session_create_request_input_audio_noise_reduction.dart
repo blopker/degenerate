@@ -14,6 +14,8 @@ factory RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction.fromJs
   type: json['type'] != null ? NoiseReductionType.fromJson(json['type'] as String) : null,
 ); }
 
+/// Type of noise reduction. `near_field` is for close-talking microphones such as headphones, `far_field` is for far-field microphones such as laptop or conference room microphones.
+/// 
 final NoiseReductionType? type;
 
 Map<String, dynamic> toJson() { return {

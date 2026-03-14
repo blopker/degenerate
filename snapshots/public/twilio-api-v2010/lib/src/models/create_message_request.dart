@@ -175,8 +175,10 @@ final int? validityPeriod;
 /// Reserved
 final bool? forceDelivery;
 
+/// Determines if the message content can be stored or redacted based on privacy settings
 final MessageEnumContentRetention? contentRetention;
 
+/// Determines if the address can be stored or obfuscated based on privacy settings
 final MessageEnumAddressRetention? addressRetention;
 
 /// Whether to detect Unicode characters that have a similar GSM-7 character and replace them. Can be: `true` or `false`.
@@ -190,6 +192,7 @@ final MessageEnumTrafficType? trafficType;
 /// For Messaging Services with [Link Shortening configured](https://www.twilio.com/docs/messaging/features/link-shortening) only: A Boolean indicating whether or not Twilio should shorten links in the `body` of the Message. Default value is `false`. If `true`, the `messaging_service_sid` parameter must also be provided.
 final bool? shortenUrls;
 
+/// For Messaging Services only: Include this parameter with a value of `fixed` in conjuction with the `send_time` parameter in order to [schedule a Message](https://www.twilio.com/docs/messaging/features/message-scheduling).
 final MessageEnumScheduleType? scheduleType;
 
 /// The time that Twilio will send the message. Must be in ISO 8601 format.
@@ -201,6 +204,7 @@ final bool? sendAsMms;
 /// For [Content Editor/API](https://www.twilio.com/docs/content) only: Key-value pairs of [Template variables](https://www.twilio.com/docs/content/using-variables-with-content-api) and their substitution values. `content_sid` parameter must also be provided. If values are not defined in the `content_variables` parameter, the [Template's default placeholder values](https://www.twilio.com/docs/content/content-api-resources#create-templates) are used.
 final String? contentVariables;
 
+/// Include this parameter with a value of `disable` to skip any kind of risk check on the respective message request.
 final MessageEnumRiskCheck? riskCheck;
 
 /// The sender's Twilio phone number (in [E.164](https://en.wikipedia.org/wiki/E.164) format), [alphanumeric sender ID](https://www.twilio.com/docs/sms/quickstart), [Wireless SIM](https://www.twilio.com/docs/iot/wireless/programmable-wireless-send-machine-machine-sms-commands), [short code](https://www.twilio.com/en-us/messaging/channels/sms/short-codes), or [channel address](https://www.twilio.com/docs/messaging/channels) (e.g., `whatsapp:+15554449999`). The value of the `from` parameter must be a sender that is hosted within Twilio and belongs to the Account creating the Message. If you are using `messaging_service_sid`, this parameter can be empty (Twilio assigns a `from` value from the Messaging Service's Sender Pool) or you can provide a specific sender from your Sender Pool.

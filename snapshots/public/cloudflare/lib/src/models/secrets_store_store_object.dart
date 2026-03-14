@@ -13,12 +13,16 @@ factory SecretsStoreStoreObject.fromJson(Map<String, dynamic> json) { return Sec
   name: SecretsStoreStoreName.fromJson(json['name'] as String),
 ); }
 
+/// Whenthe secret was created.
 final SecretsStoreCreated created;
 
+/// Store Identifier
 final SecretsStoreStoreIdentifier id;
 
+/// When the secret was modified.
 final SecretsStoreModified modified;
 
+/// The name of the store
 final SecretsStoreStoreName name;
 
 Map<String, dynamic> toJson() { return {

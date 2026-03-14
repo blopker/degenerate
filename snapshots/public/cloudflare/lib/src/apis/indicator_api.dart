@@ -178,7 +178,7 @@ return _execute(
 /// Returns all mirrored tags from the indicator dataset (DO mirror table). No pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags`
-Future<ApiResult<List<Map<String, Object>>, GetIndicatorTagsListResponse400>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>, GetIndicatorTagsListResponse400>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -191,7 +191,7 @@ return _execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList();
+    return json.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
   },
   onError: (response) {
     return GetIndicatorTagsListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

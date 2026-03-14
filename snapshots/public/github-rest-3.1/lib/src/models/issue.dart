@@ -157,6 +157,7 @@ final Repository? repository;
 
 final Integration? performedViaGithubApp;
 
+/// How the author is associated with the repository.
 final AuthorAssociation? authorAssociation;
 
 final ReactionRollup? reactions;

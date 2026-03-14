@@ -11,8 +11,10 @@ factory AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest.fromJson(Map<Stri
   name: json['name'] != null ? AccessCertificatesComponentsSchemasName.fromJson(json['name'] as String) : null,
 ); }
 
+/// The hostnames of the applications that will use this certificate.
 final List<String> associatedHostnames;
 
+/// The name of the certificate.
 final AccessCertificatesComponentsSchemasName? name;
 
 Map<String, dynamic> toJson() { return {

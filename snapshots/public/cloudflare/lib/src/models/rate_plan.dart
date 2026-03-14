@@ -31,8 +31,10 @@ factory RatePlan.fromJson(Map<String, dynamic> json) { return RatePlan(
 
 final List<ComponentValue>? components;
 
+/// The monetary unit in which pricing information is displayed.
 final Currency? currency;
 
+/// The duration of the plan subscription.
 final Duration? duration;
 
 final SchemasFrequency? frequency;

@@ -32,7 +32,7 @@ factory RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(Map<String, dy
   index: (json['index'] as num).toInt(),
   id: json['id'] as String?,
   type: RunStepDeltaStepDetailsToolCallsFileSearchObjectType.fromJson(json['type'] as String),
-  fileSearch: (json['file_search'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  fileSearch: (json['file_search'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
 ); }
 
 /// The index of the tool call in the tool calls array.
@@ -45,7 +45,7 @@ final String? id;
 final RunStepDeltaStepDetailsToolCallsFileSearchObjectType type;
 
 /// For now, this is always going to be an empty object.
-final Map<String,Object?> fileSearch;
+final Map<String,dynamic> fileSearch;
 
 Map<String, dynamic> toJson() { return {
   'index': index,
@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type') &&
       json.containsKey('file_search'); } 
-RunStepDeltaStepDetailsToolCallsFileSearchObject copyWith({int? index, String Function()? id, RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type, Map<String,Object?>? fileSearch, }) { return RunStepDeltaStepDetailsToolCallsFileSearchObject(
+RunStepDeltaStepDetailsToolCallsFileSearchObject copyWith({int? index, String Function()? id, RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type, Map<String,dynamic>? fileSearch, }) { return RunStepDeltaStepDetailsToolCallsFileSearchObject(
   index: index ?? this.index,
   id: id != null ? id() : this.id,
   type: type ?? this.type,

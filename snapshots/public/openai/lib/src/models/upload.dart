@@ -97,6 +97,7 @@ final int expiresAt;
 /// The object type, which is always "upload".
 final UploadObject? object;
 
+/// The ready File object after the Upload is completed.
 final OpenAiFile? file;
 
 Map<String, dynamic> toJson() { return {

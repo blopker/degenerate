@@ -16,6 +16,7 @@ final AccountsByAccountIdPipelinesDeprecatedResponseResultInfo resultInfo;
 
 final List<CloudflarePipelinesWorkersPipelinesPipeline> results;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

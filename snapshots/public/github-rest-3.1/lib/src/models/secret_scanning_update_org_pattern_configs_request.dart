@@ -12,6 +12,7 @@ factory SecretScanningUpdateOrgPatternConfigsRequest.fromJson(Map<String, dynami
   customPatternSettings: (json['custom_pattern_settings'] as List<dynamic>?)?.map((e) => SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
 final SecretScanningRowVersion? patternConfigVersion;
 
 /// Pattern settings for provider patterns.

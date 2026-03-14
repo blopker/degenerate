@@ -32,6 +32,8 @@ final String approvalRequestId;
 /// 
 final bool approve;
 
+/// Optional reason for the decision.
+/// 
 final String? reason;
 
 Map<String, dynamic> toJson() { return {

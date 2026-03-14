@@ -18,8 +18,10 @@ factory TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(Map<String, dynamic> 
   description: json['description'] != null ? TeamsDevicesIncludeSplitTunnelDescription.fromJson(json['description'] as String) : null,
 ); }
 
+/// The address in CIDR format to include in the tunnel. If `address` is present, `host` must not be present.
 final TeamsDevicesIncludeSplitTunnelAddress address;
 
+/// A description of the Split Tunnel item, displayed in the client UI.
 final TeamsDevicesIncludeSplitTunnelDescription? description;
 
 Map<String, dynamic> toJson() { return {

@@ -35,7 +35,7 @@ factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { retur
   type: TextResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   strict: json['strict'] as bool?,
 ); }
 
@@ -52,8 +52,17 @@ final String? description;
 /// 
 final String name;
 
-final Map<String,Object?> schema;
+/// The schema for the response format, described as a JSON Schema object.
+/// Learn how to build JSON schemas [here](https://json-schema.org/).
+/// 
+final Map<String,dynamic> schema;
 
+/// Whether to enable strict schema adherence when generating the output.
+/// If set to true, the model will always follow the exact schema defined
+/// in the `schema` field. Only a subset of JSON Schema is supported when
+/// `strict` is `true`. To learn more, read the [Structured Outputs
+/// guide](/docs/guides/structured-outputs).
+/// 
 final bool? strict;
 
 Map<String, dynamic> toJson() { return {
@@ -66,7 +75,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema'); } 
-TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,Object?>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
+TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,dynamic>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
   type: type ?? this.type,
   description: description != null ? description() : this.description,
   name: name ?? this.name,

@@ -16,16 +16,22 @@ factory EmailRuleProperties.fromJson(Map<String, dynamic> json) { return EmailRu
   tag: json['tag'] != null ? EmailRuleTag.fromJson(json['tag'] as String) : null,
 ); }
 
+/// List actions patterns.
 final List<EmailRuleAction>? actions;
 
+/// Routing rule status.
 final EmailRuleEnabled? enabled;
 
+/// Routing rule identifier.
 final EmailRuleIdentifier? id;
 
+/// Matching patterns to forward to your actions.
 final List<EmailRuleMatcher>? matchers;
 
+/// Routing rule name.
 final EmailRuleName? name;
 
+/// Priority of the routing rule.
 final EmailRulePriority? priority;
 
 final EmailRuleTag? tag;

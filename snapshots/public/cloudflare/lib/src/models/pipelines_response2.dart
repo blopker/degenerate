@@ -13,6 +13,7 @@ factory PipelinesResponse2.fromJson(Map<String, dynamic> json) { return Pipeline
 
 final PipelinesResponse2Result result;
 
+/// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

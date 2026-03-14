@@ -9,7 +9,7 @@ final class RequestTracerTrace2 {const RequestTracerTrace2({this.action, this.ac
 
 factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return RequestTracerTrace2(
   action: json['action'] as String?,
-  actionParameters: (json['action_parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  actionParameters: (json['action_parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   description: json['description'] as String?,
   expression: json['expression'] as String?,
   kind: json['kind'] as String?,
@@ -24,7 +24,7 @@ factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return Request
 final String? action;
 
 /// If step type is rule, then action parameters of this rule as JSON
-final Map<String,Object?>? actionParameters;
+final Map<String,dynamic>? actionParameters;
 
 /// If step type is rule or ruleset, the description of this entity
 final String? description;
@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-RequestTracerTrace2 copyWith({String Function()? action, Map<String, Object> Function()? actionParameters, String Function()? description, String Function()? expression, String Function()? kind, bool Function()? matched, String Function()? name, String Function()? stepName, List<RequestTracerTrace2> Function()? trace, String Function()? type, }) { return RequestTracerTrace2(
+RequestTracerTrace2 copyWith({String Function()? action, Map<String, dynamic> Function()? actionParameters, String Function()? description, String Function()? expression, String Function()? kind, bool Function()? matched, String Function()? name, String Function()? stepName, List<RequestTracerTrace2> Function()? trace, String Function()? type, }) { return RequestTracerTrace2(
   action: action != null ? action() : this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   description: description != null ? description() : this.description,

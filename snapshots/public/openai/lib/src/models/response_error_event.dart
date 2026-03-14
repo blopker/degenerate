@@ -42,12 +42,16 @@ factory ResponseErrorEvent.fromJson(Map<String, dynamic> json) { return Response
 /// 
 final ResponseErrorEventType type;
 
+/// The error code.
+/// 
 final String? code;
 
 /// The error message.
 /// 
 final String message;
 
+/// The error parameter.
+/// 
 final String? param;
 
 /// The sequence number of this event.

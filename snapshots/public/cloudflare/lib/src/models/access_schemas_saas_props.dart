@@ -16,14 +16,19 @@ factory AccessSchemasSaasProps.fromJson(Map<String, dynamic> json) { return Acce
   type: json['type'] as String?,
 ); }
 
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
 
+/// Displays the application in the App Launcher.
 final AccessAppLauncherVisible? appLauncherVisible;
 
+/// When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
+/// The image URL for the logo shown in the App Launcher dashboard.
 final AccessLogoUrl? logoUrl;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
 final AccessSchemasSaasPropsSaasApp? saasApp;

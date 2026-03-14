@@ -7,12 +7,12 @@
 import 'package:collection/collection.dart';final class UrlscannerGetScanResponse2TaskOptions {const UrlscannerGetScanResponse2TaskOptions({this.customHeaders, this.screenshotsResolutions, });
 
 factory UrlscannerGetScanResponse2TaskOptions.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2TaskOptions(
-  customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   screenshotsResolutions: (json['screenshotsResolutions'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
 /// Custom headers set.
-final Map<String,Object?>? customHeaders;
+final Map<String,dynamic>? customHeaders;
 
 final List<String>? screenshotsResolutions;
 
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'screenshotsResolutions': ?screenshotsResolutions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-UrlscannerGetScanResponse2TaskOptions copyWith({Map<String, Object> Function()? customHeaders, List<String> Function()? screenshotsResolutions, }) { return UrlscannerGetScanResponse2TaskOptions(
+UrlscannerGetScanResponse2TaskOptions copyWith({Map<String, dynamic> Function()? customHeaders, List<String> Function()? screenshotsResolutions, }) { return UrlscannerGetScanResponse2TaskOptions(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,
 ); } 

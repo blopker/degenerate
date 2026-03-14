@@ -11,6 +11,7 @@ factory UpdateZoneSnippetRulesRequest.fromJson(Map<String, dynamic> json) { retu
   rules: (json['rules'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Lists snippet rules.
 final List<SnippetsSnippetRules2> rules;
 
 Map<String, dynamic> toJson() { return {

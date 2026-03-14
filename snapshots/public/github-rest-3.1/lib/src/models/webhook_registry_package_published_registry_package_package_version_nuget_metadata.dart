@@ -7,7 +7,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_id.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_value.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_value_variant4.dart';final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata(
-  id: json['id'] != null ? OneOf3.parse(json['id'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)), fromC: (v) => (v as num).toInt(),) : null,
+  id: json['id'] != null ? OneOf3.parse(json['id'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromC: (v) => (v as num).toInt(),) : null,
   name: json['name'] as String?,
   value: json['value'] != null ? OneOf4.parse(json['value'], fromA: (v) => v as bool, fromB: (v) => v as String, fromC: (v) => (v as num).toInt(), fromD: (v) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValueVariant4.fromJson(v as Map<String, dynamic>),) : null,
 ); }

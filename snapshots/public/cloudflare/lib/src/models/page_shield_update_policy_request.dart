@@ -14,14 +14,19 @@ factory PageShieldUpdatePolicyRequest.fromJson(Map<String, dynamic> json) { retu
   value: json['value'] != null ? PageShieldPolicyValue.fromJson(json['value'] as String) : null,
 ); }
 
+/// The action to take if the expression matches
 final PageShieldPolicyAction? action;
 
+/// A description for the policy
 final PageShieldPolicyDescription? description;
 
+/// Whether the policy is enabled
 final PageShieldPolicyEnabled? enabled;
 
+/// The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax
 final PageShieldPolicyExpression? expression;
 
+/// The policy which will be applied
 final PageShieldPolicyValue? value;
 
 Map<String, dynamic> toJson() { return {

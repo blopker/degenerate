@@ -14,8 +14,10 @@ factory DeviceManagedNetworksCreateDeviceManagedNetworkRequest.fromJson(Map<Stri
 
 final TeamsDevicesSchemasConfigRequest config;
 
+/// The name of the device managed network. This name must be unique.
 final TeamsDevicesDeviceManagedNetworksComponentsSchemasName name;
 
+/// The type of device managed network.
 final TeamsDevicesComponentsSchemasType type;
 
 Map<String, dynamic> toJson() { return {

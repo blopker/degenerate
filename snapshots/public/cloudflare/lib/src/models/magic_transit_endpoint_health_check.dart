@@ -34,6 +34,7 @@ factory MagicTransitEndpointHealthCheck.fromJson(Map<String, dynamic> json) { re
   name: json['name'] as String?,
 ); }
 
+/// type of check to perform
 final MagicTransitCheckType checkType;
 
 /// the IP address of the host to perform checks against

@@ -19,16 +19,20 @@ factory AccessSaasProps.fromJson(Map<String, dynamic> json) { return AccessSaasP
   type: json['type'] != null ? AccessType.fromJson(json['type'] as String) : null,
 ); }
 
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
 
+/// Displays the application in the App Launcher.
 final AccessAppLauncherVisible? appLauncherVisible;
 
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
 final List<String>? customPages;
 
+/// The image URL for the logo shown in the App Launcher dashboard.
 final AccessLogoUrl? logoUrl;
 
+/// The name of the application.
 final AccessAppsComponentsSchemasName? name;
 
 final AccessSaasPropsSaasApp? saasApp;

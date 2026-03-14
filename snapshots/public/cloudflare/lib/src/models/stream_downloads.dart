@@ -54,10 +54,13 @@ factory StreamDownloads.fromJson(Map<String, dynamic> json) { return StreamDownl
   url: json['url'] != null ? StreamDownloadUrl.fromJson(json['url'] as String) : null,
 ); }
 
+/// Indicates the progress as a percentage between 0 and 100.
 final StreamDownloadPercentComplete? percentComplete;
 
+/// The status of a generated download.
 final StreamDownloadStatus? status;
 
+/// The URL to access the generated download.
 final StreamDownloadUrl? url;
 
 Map<String, dynamic> toJson() { return {

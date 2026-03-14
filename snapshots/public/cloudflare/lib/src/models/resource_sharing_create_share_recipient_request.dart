@@ -12,6 +12,7 @@ factory ResourceSharingCreateShareRecipientRequest.fromJson(Map<String, dynamic>
   organizationId: json['organization_id'] != null ? ResourceSharingOrganizationId.fromJson(json['organization_id'] as String) : null,
 ); }
 
+/// Account identifier.
 final ResourceSharingAccountId? accountId;
 
 final ResourceSharingOrganizationId? organizationId;

@@ -71,18 +71,24 @@ factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) { return He
   type: json['type'] != null ? HealthchecksType.fromJson(json['type'] as String) : null,
 ); }
 
+/// The hostname or IP address of the origin server to run health checks on.
 final HealthchecksAddress? address;
 
+/// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
 final List<HealthchecksCheckRegions2>? checkRegions;
 
+/// The number of consecutive fails required from a health check before changing the health to unhealthy.
 final HealthchecksConsecutiveFails? consecutiveFails;
 
+/// The number of consecutive successes required from a health check before changing the health to healthy.
 final HealthchecksConsecutiveSuccesses? consecutiveSuccesses;
 
 final HealthchecksTimestamp? createdOn;
 
+/// A human-readable description of the health check.
 final HealthchecksDescription? description;
 
+/// The current failure reason if status is unhealthy.
 final HealthchecksFailureReason? failureReason;
 
 final HealthchecksHttpConfig? httpConfig;

@@ -46,8 +46,10 @@ factory TotalTlsEnableOrDisableTotalTlsRequest.fromJson(Map<String, dynamic> jso
   enabled: TlsCertificatesAndHostnamesComponentsSchemasEnabled.fromJson(json['enabled'] as bool),
 ); }
 
+/// The Certificate Authority that Total TLS certificates will be issued through.
 final TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority? certificateAuthority;
 
+/// If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.
 final TlsCertificatesAndHostnamesComponentsSchemasEnabled enabled;
 
 Map<String, dynamic> toJson() { return {

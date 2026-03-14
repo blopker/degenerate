@@ -25,8 +25,10 @@ factory FirewallCustomResponseVariant1.fromJson(Map<String, dynamic> json) { ret
   contentType: json['content_type'] != null ? FirewallContentType.fromJson(json['content_type'] as String) : null,
 ); }
 
+/// The response body to return. The value must conform to the configured content type.
 final FirewallBody? body;
 
+/// The content type of the body. Must be one of the following: `text/plain`, `text/xml`, or `application/json`.
 final FirewallContentType? contentType;
 
 Map<String, dynamic> toJson() { return {
