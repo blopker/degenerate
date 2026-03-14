@@ -7,7 +7,7 @@
 final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalProperties {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalProperties({this.conditions});
 
 factory AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalProperties.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalProperties(
-  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final Map<String,Object?>? conditions;

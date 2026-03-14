@@ -11,7 +11,7 @@ final class TracingConfiguration2 {const TracingConfiguration2({this.workflowNam
 factory TracingConfiguration2.fromJson(Map<String, dynamic> json) { return TracingConfiguration2(
   workflowName: json['workflow_name'] as String?,
   groupId: json['group_id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The name of the workflow to attach to this trace. This is used to

@@ -38,7 +38,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object));
   },
   onError: (response) {
     return WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

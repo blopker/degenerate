@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'message3.dart';import 'tenant_membership.dart';final class TenantsListMembershipsResponse {const TenantsListMembershipsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory TenantsListMembershipsResponse.fromJson(Map<String, dynamic> json) { return TenantsListMembershipsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => TenantMembership.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,

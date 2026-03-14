@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'workers_ai_post_websocket_ru
 
 factory WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

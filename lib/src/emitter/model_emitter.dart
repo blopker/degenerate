@@ -9,7 +9,8 @@ import 'emit_utils.dart';
 /// operator ==, hashCode, toString, canParse.
 class ModelEmitter {
   final IrObject model;
-  const ModelEmitter(this.model);
+  final Map<String, IrType> typeRegistry;
+  const ModelEmitter(this.model, {this.typeRegistry = const {}});
 
   List<Spec> emit() {
     return [
@@ -84,6 +85,7 @@ class ModelEmitter {
             f.type,
             accessor,
             isOptional: isOptional,
+            typeRegistry: typeRegistry,
           );
           if (!f.isRequired && _hasDefault(f)) {
             // Optional with default: use null-safe extraction or skip entirely.

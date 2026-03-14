@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'n0_response400_errors.dart';
 
 factory $0Response400.fromJson(Map<String, dynamic> json) { return $0Response400(
   errors: (json['errors'] as List<dynamic>).map((e) => $0Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

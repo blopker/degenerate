@@ -8,7 +8,7 @@ final class ProjectsUpdateItemForOrgRequestFields {const ProjectsUpdateItemForOr
 
 factory ProjectsUpdateItemForOrgRequestFields.fromJson(Map<String, dynamic> json) { return ProjectsUpdateItemForOrgRequestFields(
   id: (json['id'] as num).toInt(),
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 /// The ID of the project field to update.

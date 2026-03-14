@@ -30,7 +30,7 @@ final class AaaAlertTypes {const AaaAlertTypes({this.description, this.displayNa
 factory AaaAlertTypes.fromJson(Map<String, dynamic> json) { return AaaAlertTypes(
   description: json['description'] != null ? AaaDescription.fromJson(json['description'] as String) : null,
   displayName: json['display_name'] != null ? AaaDisplayName.fromJson(json['display_name'] as String) : null,
-  filterOptions: (json['filter_options'] as List<dynamic>?)?.map((e) => e).toList(),
+  filterOptions: (json['filter_options'] as List<dynamic>?)?.map((e) => e as Object).toList(),
   type: json['type'] != null ? AaaType.fromJson(json['type'] as String) : null,
 ); }
 

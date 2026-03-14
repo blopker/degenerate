@@ -32,7 +32,7 @@ final class Messages51ToolChoiceVariant1AllowedToolsAllowedTools {const Messages
 
 factory Messages51ToolChoiceVariant1AllowedToolsAllowedTools.fromJson(Map<String, dynamic> json) { return Messages51ToolChoiceVariant1AllowedToolsAllowedTools(
   mode: Messages51ToolChoiceVariant1AllowedToolsAllowedToolsMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 final Messages51ToolChoiceVariant1AllowedToolsAllowedToolsMode mode;

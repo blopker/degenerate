@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'delete_group_delete_response
 
 factory DeleteGroupDeleteResponse400.fromJson(Map<String, dynamic> json) { return DeleteGroupDeleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteGroupDeleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

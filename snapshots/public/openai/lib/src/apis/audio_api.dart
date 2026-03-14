@@ -61,7 +61,8 @@ final request = ApiRequest(
     ApiMultipartField.text('temperature', body.temperature.toString()),
     if (body.include case final include$?)
       ApiMultipartField.text('include', include$.toString()),
-    ApiMultipartField.text('timestamp_granularities', body.timestampGranularities.toString()),
+    if (body.timestampGranularities case final timestampGranularities$?)
+      ApiMultipartField.text('timestamp_granularities', timestampGranularities$.toString()),
     if (body.stream case final stream$?)
       ApiMultipartField.text('stream', stream$.toString()),
     if (body.chunkingStrategy case final chunkingStrategy$?)
@@ -324,7 +325,8 @@ final request = ApiRequest(
     ApiMultipartField.text('temperature', body.temperature.toString()),
     if (body.include case final include$?)
       ApiMultipartField.text('include', include$.toString()),
-    ApiMultipartField.text('timestamp_granularities', body.timestampGranularities.toString()),
+    if (body.timestampGranularities case final timestampGranularities$?)
+      ApiMultipartField.text('timestamp_granularities', timestampGranularities$.toString()),
     if (body.stream case final stream$?)
       ApiMultipartField.text('stream', stream$.toString()),
     if (body.chunkingStrategy case final chunkingStrategy$?)

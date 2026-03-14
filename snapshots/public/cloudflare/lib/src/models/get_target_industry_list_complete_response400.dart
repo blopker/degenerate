@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'get_target_industry_list_com
 
 factory GetTargetIndustryListCompleteResponse400.fromJson(Map<String, dynamic> json) { return GetTargetIndustryListCompleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetTargetIndustryListCompleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

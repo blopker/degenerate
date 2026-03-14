@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'radar_get_dns_as112_summary_
 
 factory RadarGetDnsAs112SummaryResponse400.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112SummaryResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetDnsAs112SummaryResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

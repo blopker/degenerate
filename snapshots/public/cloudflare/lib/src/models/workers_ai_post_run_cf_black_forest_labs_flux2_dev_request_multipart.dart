@@ -7,7 +7,7 @@
 final class WorkersAiPostRunCfBlackForestLabsFlux2DevRequestMultipart {const WorkersAiPostRunCfBlackForestLabsFlux2DevRequestMultipart({this.body, this.contentType, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux2DevRequestMultipart.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2DevRequestMultipart(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   contentType: json['contentType'] as String?,
 ); }
 

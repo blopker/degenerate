@@ -162,7 +162,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tomarkdown',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     ApiMultipartField.text('files', body.files.toString()),
   ],
   contentType: 'multipart/form-data',

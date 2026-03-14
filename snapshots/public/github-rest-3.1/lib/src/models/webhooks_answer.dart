@@ -58,7 +58,7 @@ factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnsw
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
-  parentId: json['parent_id'],
+  parentId: json['parent_id'] as Object,
   reactions: json['reactions'] != null ? WebhooksAnswerReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   repositoryUrl: json['repository_url'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),

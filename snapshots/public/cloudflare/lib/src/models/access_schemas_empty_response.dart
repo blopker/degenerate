@@ -7,7 +7,7 @@
 final class AccessSchemasEmptyResponse {const AccessSchemasEmptyResponse({this.result, this.success, });
 
 factory AccessSchemasEmptyResponse.fromJson(Map<String, dynamic> json) { return AccessSchemasEmptyResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool?,
 ); }
 

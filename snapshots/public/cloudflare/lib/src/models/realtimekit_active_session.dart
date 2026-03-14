@@ -68,7 +68,7 @@ factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return Re
   liveParticipants: (json['live_participants'] as num).toDouble(),
   maxConcurrentParticipants: (json['max_concurrent_participants'] as num).toDouble(),
   meetingDisplayName: json['meeting_display_name'] as String,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   minutesConsumed: (json['minutes_consumed'] as num).toDouble(),
   organizationId: json['organization_id'] as String,
   startedAt: json['started_at'] as String,

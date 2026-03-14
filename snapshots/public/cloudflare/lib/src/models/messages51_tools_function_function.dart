@@ -9,7 +9,7 @@ final class Messages51ToolsFunctionFunction {const Messages51ToolsFunctionFuncti
 factory Messages51ToolsFunctionFunction.fromJson(Map<String, dynamic> json) { return Messages51ToolsFunctionFunction(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   strict: json['strict'] as bool?,
 ); }
 

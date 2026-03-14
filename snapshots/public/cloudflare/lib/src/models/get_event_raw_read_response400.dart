@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'get_event_raw_read_response4
 
 factory GetEventRawReadResponse400.fromJson(Map<String, dynamic> json) { return GetEventRawReadResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetEventRawReadResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

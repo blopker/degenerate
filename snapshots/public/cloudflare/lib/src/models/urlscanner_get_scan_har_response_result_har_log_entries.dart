@@ -13,7 +13,7 @@ factory UrlscannerGetScanHarResponseResultHarLogEntries.fromJson(Map<String, dyn
   requestId: json['_requestId'] as String,
   requestTime: (json['_requestTime'] as num).toDouble(),
   resourceType: json['_resourceType'] as String,
-  cache: (json['cache'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  cache: (json['cache'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   connection: json['connection'] as String,
   pageref: json['pageref'] as String,
   request: UrlscannerGetScanHarResponseResultHarLogEntriesRequest.fromJson(json['request'] as Map<String, dynamic>),

@@ -296,6 +296,27 @@ class ApiEmitter {
       return '\${$encodeExpr}';
     });
 
+    // Pre-compute multipart/form/unsupported body before emitting variables,
+    // so we can return early for unsupported bodies without unused locals.
+    final multipartFields = bodyType != null &&
+            isMultipartMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+
+    final formUrlencodedFields = bodyType != null &&
+            isFormUrlencodedMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+
+    // Check for unsupported body before building any variables to avoid dead code.
+    if (bodyType != null && multipartFields == null && formUrlencodedFields == null) {
+      final bodyExpr = _buildRequestBodyExpr(requestBodyContent!.$1, requestBodyContent.$2.schema, op.requestBody!.isRequired);
+      if (bodyExpr.startsWith('throw ')) {
+        buf.writeln('$bodyExpr;');
+        return buf.toString();
+      }
+    }
+
     if (queryParams.isNotEmpty) {
       buf.writeln(
         'final queryParameters = <String, String>{..._config.defaultQueryParameters};',
@@ -362,16 +383,6 @@ class ApiEmitter {
       buf.writeln('  cookies: cookies,');
     }
 
-    final multipartFields = bodyType != null &&
-            isMultipartMediaType(requestBodyContent!.$1)
-        ? _resolveObjectFields(requestBodyContent.$2.schema)
-        : null;
-
-    final formUrlencodedFields = bodyType != null &&
-            isFormUrlencodedMediaType(requestBodyContent!.$1)
-        ? _resolveObjectFields(requestBodyContent.$2.schema)
-        : null;
-
     if (multipartFields != null) {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
       buf.writeln("  contentType: 'multipart/form-data',");
@@ -379,9 +390,8 @@ class ApiEmitter {
       _writeFormUrlencodedBody(buf, formUrlencodedFields);
     } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
-      buf.writeln(
-        '  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},',
-      );
+      final bodyExpr = _buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired);
+      buf.writeln('  body: $bodyExpr,');
     }
 
     buf.writeln('  options: options,');
@@ -467,7 +477,7 @@ class ApiEmitter {
     final type = p.type;
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object || PrimitiveKind.string => p.dartName,
+        PrimitiveKind.string => p.dartName,
         _ => '${p.dartName}.toString()',
       },
       IrEnum() => '${p.dartName}.toJson()',
@@ -544,6 +554,9 @@ class ApiEmitter {
     final itemExpr = _queryScalarExpr(items, 'item');
     if (style == 'form' && explode) {
       buf.writeln('for (final item in $accessor) {');
+      if (items.isNullable) {
+        buf.writeln('  if (item == null) continue;');
+      }
       buf.writeln(
         "  queryParametersList.add(ApiQueryParameter(name: '$name', value: $itemExpr, allowReserved: ${p.allowReserved}));",
       );
@@ -668,9 +681,7 @@ class ApiEmitter {
   String _queryScalarExpr(IrType type, String accessor) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.object => '$accessor.toString()',
         PrimitiveKind.string => accessor,
-        PrimitiveKind.bool => '$accessor.toString()',
         PrimitiveKind.dateTime ||
         PrimitiveKind.uri ||
         PrimitiveKind.bigInt ||
@@ -943,6 +954,26 @@ try {
       return '\${$encodeExpr}';
     });
 
+    // Pre-compute multipart/form/unsupported body before emitting variables,
+    // so we can return early for unsupported bodies without unused locals.
+    final multipartFields = bodyType != null &&
+            isMultipartMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+    final formUrlencodedFields = bodyType != null &&
+            isFormUrlencodedMediaType(requestBodyContent!.$1)
+        ? _resolveObjectFields(requestBodyContent.$2.schema)
+        : null;
+
+    // Check for unsupported body before building any variables to avoid dead code.
+    if (bodyType != null && multipartFields == null && formUrlencodedFields == null) {
+      final bodyExpr = _buildRequestBodyExpr(requestBodyContent!.$1, requestBodyContent.$2.schema, op.requestBody!.isRequired);
+      if (bodyExpr.startsWith('throw ')) {
+        buf.writeln('$bodyExpr;');
+        return buf.toString();
+      }
+    }
+
     if (queryParams.isNotEmpty) {
       buf.writeln(
         'final queryParameters = <String, String>{..._config.defaultQueryParameters};',
@@ -1003,14 +1034,6 @@ try {
     if (cookieParams.isNotEmpty) {
       buf.writeln('  cookies: cookies,');
     }
-    final multipartFields = bodyType != null &&
-            isMultipartMediaType(requestBodyContent!.$1)
-        ? _resolveObjectFields(requestBodyContent.$2.schema)
-        : null;
-    final formUrlencodedFields = bodyType != null &&
-            isFormUrlencodedMediaType(requestBodyContent!.$1)
-        ? _resolveObjectFields(requestBodyContent.$2.schema)
-        : null;
 
     if (multipartFields != null) {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
@@ -1019,9 +1042,7 @@ try {
       _writeFormUrlencodedBody(buf, formUrlencodedFields);
     } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
-      buf.writeln(
-        '  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},',
-      );
+      buf.writeln('  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},');
     }
     buf.writeln('  options: options,');
     buf.writeln(');');
@@ -1257,7 +1278,7 @@ try {
       },
       IrEnum() => 'body.toJson()',
       IrExtensionType() => 'body.toJson()',
-      _ => "throw UnsupportedError('$unsupportedMessage');",
+      _ => "throw UnsupportedError('$unsupportedMessage')",
     };
   }
 
@@ -1319,15 +1340,20 @@ try {
     List<IrField> fields,
     bool isRequired,
   ) {
-    buf.writeln('  body: [');
+    if (!isRequired) {
+      buf.writeln('  body: body == null ? null : [');
+    } else {
+      buf.writeln('  body: [');
+    }
     for (final f in fields) {
       final fieldAccessor = 'body.${f.name}';
       final isBytes = f.type is IrPrimitive &&
           (f.type as IrPrimitive).kind == PrimitiveKind.bytes;
       // Emit null guard only when the Dart field type is actually nullable.
-      // Fields with defaults are non-nullable even if not required.
+      // Fields with defaults are non-nullable even if not required,
+      // but only if the default can be represented as a Dart constant.
       final isNullable =
-          (!f.isRequired && f.defaultValue == null) || f.type.isNullable;
+          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
 
       if (isNullable) {
         // Use a case-pattern variable to enable type promotion on nullable public fields.
@@ -1354,7 +1380,7 @@ try {
     for (final f in fields) {
       final fieldAccessor = 'body.${f.name}';
       final isNullable =
-          (!f.isRequired && f.defaultValue == null) || f.type.isNullable;
+          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =
           "'${f.originalName}=\${Uri.encodeQueryComponent($valueExpr)}'";
@@ -1375,6 +1401,10 @@ try {
 
   /// Get the string expression for a form-urlencoded field value.
   String _formFieldValueExpr(IrType type, String accessor) {
+    // Bytes must be base64-encoded for form-urlencoded bodies.
+    if (type is IrPrimitive && type.kind == PrimitiveKind.bytes) {
+      return 'base64Encode($accessor)';
+    }
     return _multipartFieldValueExpr(type, accessor);
   }
 
@@ -1392,6 +1422,24 @@ try {
     }
   }
 
+  /// Whether a field has a default value that the model emitter can represent
+  /// as a Dart compile-time constant. Only these defaults produce non-nullable
+  /// fields in the generated model class.
+  static bool _hasUsableDartDefault(IrField f) {
+    if (f.defaultValue == null) return false;
+    final v = f.defaultValue;
+    return switch (f.type) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.bool => v is bool,
+        PrimitiveKind.int || PrimitiveKind.double || PrimitiveKind.num => v is num,
+        PrimitiveKind.string => v is String,
+        _ => false,
+      },
+      IrEnum() => v is String,
+      _ => false,
+    };
+  }
+
   /// Get the string expression for a multipart text field value.
   String _multipartFieldValueExpr(IrType type, String accessor) {
     return switch (type) {
@@ -1407,7 +1455,7 @@ try {
         PrimitiveKind.bytes => accessor, // handled separately as file
       },
       IrEnum() => '$accessor.toJson()',
-      IrExtensionType() => '$accessor.toJson()',
+      IrExtensionType() => '$accessor.toJson().toString()',
       _ => '$accessor.toString()',
     };
   }

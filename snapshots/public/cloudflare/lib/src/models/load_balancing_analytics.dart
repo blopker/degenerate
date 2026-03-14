@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'load_balancing_origin_analyt
 factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingAnalytics(
   id: json.containsKey('id') ? (json['id'] as num).toInt() : 1,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginAnalytics.fromJson(e as Map<String, dynamic>)).toList(),
-  pool: (json['pool'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  pool: (json['pool'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
 ); }
 

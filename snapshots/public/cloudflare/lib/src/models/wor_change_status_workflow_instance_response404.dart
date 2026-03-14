@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'wor_change_status_workflow_i
 factory WorChangeStatusWorkflowInstanceResponse404.fromJson(Map<String, dynamic> json) { return WorChangeStatusWorkflowInstanceResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorChangeStatusWorkflowInstanceResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

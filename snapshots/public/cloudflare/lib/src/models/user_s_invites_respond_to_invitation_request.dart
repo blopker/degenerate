@@ -7,7 +7,7 @@
 final class UserSInvitesRespondToInvitationRequest {const UserSInvitesRespondToInvitationRequest({required this.status});
 
 factory UserSInvitesRespondToInvitationRequest.fromJson(Map<String, dynamic> json) { return UserSInvitesRespondToInvitationRequest(
-  status: json['status'],
+  status: json['status'] as Object,
 ); }
 
 /// Status of your response to the invitation (rejected or accepted).

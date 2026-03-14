@@ -10,9 +10,9 @@ final class AaaAuditLogs2Resource {const AaaAuditLogs2Resource({this.id, this.pr
 factory AaaAuditLogs2Resource.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Resource(
   id: json['id'] as String?,
   product: json['product'] as String?,
-  request: (json['request'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  response: (json['response'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  scope: (json['scope'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  request: (json['request'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  response: (json['response'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  scope: (json['scope'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   type: json['type'] as String?,
 ); }
 

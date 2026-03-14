@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'turbo_response400_errors.dar
 
 factory TurboResponse400.fromJson(Map<String, dynamic> json) { return TurboResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => TurboResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

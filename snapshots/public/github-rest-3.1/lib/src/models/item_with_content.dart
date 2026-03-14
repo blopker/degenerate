@@ -12,13 +12,13 @@ factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithCon
   nodeId: json['node_id'] as String?,
   projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
   contentType: ItemContentType.fromJson(json['content_type'] as String),
-  content: (json['content'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  content: (json['content'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: DateTime.parse(json['archived_at'] as String),
   itemUrl: json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null,
-  fields: (json['fields'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  fields: (json['fields'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 /// The unique identifier of the project item.

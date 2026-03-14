@@ -10,7 +10,7 @@ factory ZonesSchemasBase.fromJson(Map<String, dynamic> json) { return ZonesSchem
   editable: json['editable'] as bool?,
   id: json['id'] as String,
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).

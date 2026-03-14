@@ -9,7 +9,7 @@ import 'dependency.dart';import 'manifest_file.dart';final class Manifest {const
 factory Manifest.fromJson(Map<String, dynamic> json) { return Manifest(
   name: json['name'] as String,
   file: json['file'] != null ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   resolved: (json['resolved'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Dependency.fromJson(v as Map<String, dynamic>))),
 ); }
 

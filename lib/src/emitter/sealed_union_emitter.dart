@@ -387,7 +387,7 @@ class DiscriminatedUnionEmitter {
     final typeName = irTypeName(type);
     // Sanitize type names like "List<String>" by removing angle brackets
     final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
-    final fieldName = sanitizeDartName(toCamelCase(safeTypeName));
+    final fieldName = sanitizeFieldName(toCamelCase(safeTypeName));
 
     return Class(
       (b) => b
@@ -482,13 +482,22 @@ class DiscriminatedUnionEmitter {
         )
         ..methods.add(
           Method(
-            (m) => m
-              ..name = 'toString'
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code(
-                "return '${escapeNameForString(className)}($fieldName: \$$fieldName)';",
-              ),
+            (m) {
+              final String fieldStr;
+              if (fieldName.startsWith(r'$')) {
+                final escaped = fieldName.replaceAll(r'$', r'\$');
+                fieldStr = '$escaped: \${$fieldName}';
+              } else {
+                fieldStr = '$fieldName: \$$fieldName';
+              }
+              m
+                ..name = 'toString'
+                ..annotations.add(refer('override'))
+                ..returns = refer('String')
+                ..body = Code(
+                  "return '${escapeNameForString(className)}($fieldStr)';",
+                );
+            },
           ),
         ),
     );
@@ -840,6 +849,30 @@ class AnyOfEmitter {
         resolved is IrAnyOf;
   }
 
+  /// Check if a type resolves to a OneOf-eligible union typedef
+  /// (excluding self-referencing types which can't be Dart typedefs).
+  bool _isOneOfType(IrType type) {
+    final resolved = _resolveType(type);
+    return switch (resolved) {
+      IrUntaggedUnion(:final name, :final variants)
+          when isOneOfEligible(variants) && !_isSelfReferencingUnion(name, variants) => true,
+      IrAnyOf(:final name, :final variants)
+          when isOneOfEligible(variants) && !_isSelfReferencingUnion(name, variants) => true,
+      _ => false,
+    };
+  }
+
+  /// Check if any variant (recursively through List/Map) references [typeName].
+  static bool _isSelfReferencingUnion(String typeName, List<IrType> variants) {
+    bool check(IrType type) => switch (type) {
+      IrTypeRef(:final name) => name == typeName,
+      IrList(:final items) => check(items),
+      IrMap(:final values) => check(values),
+      _ => false,
+    };
+    return variants.any(check);
+  }
+
   List<Spec> emit() {
     // Deduplicate variants by type name - anyOf specs can list the same type
     // multiple times (e.g., 29 String variants). Only keep the first of each.
@@ -957,6 +990,15 @@ class AnyOfEmitter {
           // Lists/maps don't have canParse/fromJson as static methods.
           if (f.type is IrList || f.type is IrMap) {
             return '  // ${f.name}: skipped (collection type in anyOf not supported)';
+          }
+          // OneOf typedef types use OneOf.parse() instead of .fromJson().
+          if (_isOneOfType(f.type)) {
+            final accessor = allObjectLike ? 'json' : 'map';
+            final parseCode = buildFromJsonCode(f.type, accessor, paramIsMap: true, typeRegistry: typeRegistry);
+            if (allObjectLike) {
+              return '  ${f.name}: $parseCode,';
+            }
+            return '  ${f.name}: map != null ? $parseCode : null,';
           }
           // Union/AnyOf types don't have canParse - just try fromJson.
           // If the data doesn't match, it'll parse as the $Unknown variant.

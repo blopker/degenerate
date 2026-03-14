@@ -23,9 +23,9 @@ if (hostname != null) queryParameters['hostname'] = hostname;
 if (id != null) queryParameters['id'] = id;
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
-if (ssl != null) queryParameters['ssl'] = ssl;
+if (order != null) queryParameters['order'] = order.toString();
+if (direction != null) queryParameters['direction'] = direction.toString();
+if (ssl != null) queryParameters['ssl'] = ssl.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 

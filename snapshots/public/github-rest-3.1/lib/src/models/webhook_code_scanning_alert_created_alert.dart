@@ -37,10 +37,10 @@ final class WebhookCodeScanningAlertCreatedAlert {const WebhookCodeScanningAlert
 
 factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlert(
   createdAt: DateTime.parse(json['created_at'] as String),
-  dismissedAt: json['dismissed_at'],
-  dismissedBy: json['dismissed_by'],
+  dismissedAt: json['dismissed_at'] as Object,
+  dismissedBy: json['dismissed_by'] as Object,
   dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
-  dismissedReason: json['dismissed_reason'],
+  dismissedReason: json['dismissed_reason'] as Object,
   fixedAt: json['fixed_at'],
   htmlUrl: Uri.parse(json['html_url'] as String),
   instancesUrl: json['instances_url'] as String?,

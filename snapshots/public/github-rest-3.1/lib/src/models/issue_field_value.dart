@@ -42,7 +42,7 @@ factory IssueFieldValue.fromJson(Map<String, dynamic> json) { return IssueFieldV
   issueFieldId: (json['issue_field_id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   dataType: IssueFieldValueDataType.fromJson(json['data_type'] as String),
-  value: json['value'],
+  value: json['value'] as Object,
   singleSelectOption: json['single_select_option'] != null ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>) : null,
 ); }
 

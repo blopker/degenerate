@@ -96,7 +96,7 @@ final class AigConfigUpdateDatasetResponseResultFilters {const AigConfigUpdateDa
 factory AigConfigUpdateDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetResponseResultFilters(
   key: AigConfigUpdateDatasetResponseResultFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigUpdateDatasetResponseResultFiltersOperator.fromJson(json['operator'] as String),
-  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
+  value: (json['value'] as List<dynamic>).map((e) => e as Object).toList(),
 ); }
 
 final AigConfigUpdateDatasetResponseResultFiltersKey key;

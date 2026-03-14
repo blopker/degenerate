@@ -35,7 +35,7 @@ final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({this.t
 
 factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
   type: EvalCustomDataSourceConfigType.fromJson(json['type'] as String),
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The type of data source. Always `custom`.

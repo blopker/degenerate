@@ -20,7 +20,7 @@ final ApiConfig _config;
 Future<ApiResult<ResponseCommon3, Never>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, Object? direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
-if (direction != null) queryParameters['direction'] = direction;
+if (direction != null) queryParameters['direction'] = direction.toString();
 if (since != null) queryParameters['since'] = since.toString();
 if (until != null) queryParameters['until'] = until.toString();
 if (page != null) queryParameters['page'] = page.toString();

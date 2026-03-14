@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class UrlInfo {const UrlInfo({this.result});
 
 factory UrlInfo.fromJson(Map<String, dynamic> json) { return UrlInfo(
-  result: (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 final List<Map<String,Object?>>? result;

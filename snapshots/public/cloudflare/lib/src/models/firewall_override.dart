@@ -29,7 +29,7 @@ final class FirewallOverride {const FirewallOverride({this.description, this.gro
 
 factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOverride(
   description: json['description'] != null ? FirewallComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
   paused: json['paused'] != null ? FirewallPaused.fromJson(json['paused'] as bool) : null,
   priority: json['priority'] != null ? FirewallPriority.fromJson(json['priority'] as num) : null,

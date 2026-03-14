@@ -219,7 +219,7 @@ factory RepositoryWebhooks.fromJson(Map<String, dynamic> json) { return Reposito
   openIssuesCount: (json['open_issues_count'] as num).toInt(),
   isTemplate: json.containsKey('is_template') ? json['is_template'] as bool : false,
   topics: (json['topics'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   hasIssues: json['has_issues'] as bool,
   hasProjects: json['has_projects'] as bool,
   hasWiki: json['has_wiki'] as bool,

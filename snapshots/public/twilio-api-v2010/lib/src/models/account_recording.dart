@@ -104,7 +104,7 @@ factory AccountRecording.fromJson(Map<String, dynamic> json) { return AccountRec
   errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
   uri: json['uri'] as String?,
   encryptionDetails: json['encryption_details'],
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   mediaUrl: json['media_url'] != null ? Uri.parse(json['media_url'] as String) : null,
 ); }
 

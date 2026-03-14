@@ -33,7 +33,7 @@ final class EvalStoredCompletionsDataSourceConfig {const EvalStoredCompletionsDa
 factory EvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsDataSourceConfig(
   type: EvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The type of data source. Always `stored_completions`.

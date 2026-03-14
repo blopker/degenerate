@@ -9,7 +9,7 @@ final class Messages51ResponseFormatVariant1JsonSchemaJsonSchema {const Messages
 factory Messages51ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(Map<String, dynamic> json) { return Messages51ResponseFormatVariant1JsonSchemaJsonSchema(
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   strict: json['strict'] as bool?,
 ); }
 

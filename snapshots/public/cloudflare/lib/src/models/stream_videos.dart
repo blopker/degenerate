@@ -77,7 +77,7 @@ factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
   input: json['input'] != null ? StreamInput.fromJson(json['input'] as Map<String, dynamic>) : null,
   liveInput: json['liveInput'] != null ? StreamLiveInput2.fromJson(json['liveInput'] as String) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   modified: json['modified'] != null ? StreamModified.fromJson(json['modified'] as String) : null,
   playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
   preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,

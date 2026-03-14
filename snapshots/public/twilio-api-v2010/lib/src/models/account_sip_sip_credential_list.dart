@@ -12,7 +12,7 @@ factory AccountSipSipCredentialList.fromJson(Map<String, dynamic> json) { return
   dateUpdated: json['date_updated'] as String?,
   friendlyName: json['friendly_name'] as String?,
   sid: json['sid'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   uri: json['uri'] as String?,
 ); }
 

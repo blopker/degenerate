@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'member.dart';import 'message3.dart';final class MembersBatchCreateResponse {const MembersBatchCreateResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory MembersBatchCreateResponse.fromJson(Map<String, dynamic> json) { return MembersBatchCreateResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => Member.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,

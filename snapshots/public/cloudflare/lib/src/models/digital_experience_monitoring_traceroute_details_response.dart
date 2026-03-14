@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'digital_experience_monitorin
 factory DigitalExperienceMonitoringTracerouteDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
   host: json['host'] as String,
   interval: json['interval'] as String,
-  kind: json['kind'],
+  kind: json['kind'] as Object,
   name: json['name'] as String,
   targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,

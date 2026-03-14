@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'post_event_move_to_new_ds_re
 
 factory PostEventMoveToNewDsResponse400.fromJson(Map<String, dynamic> json) { return PostEventMoveToNewDsResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostEventMoveToNewDsResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

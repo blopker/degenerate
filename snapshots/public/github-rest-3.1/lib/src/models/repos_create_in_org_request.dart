@@ -180,7 +180,7 @@ factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) { return Rep
   squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? ReposCreateInOrgRequestSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
   mergeCommitTitle: json['merge_commit_title'] != null ? ReposCreateInOrgRequestMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
   mergeCommitMessage: json['merge_commit_message'] != null ? ReposCreateInOrgRequestMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
-  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The name of the repository.

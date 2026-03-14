@@ -45,7 +45,7 @@ final class AutoragConfigAiSearchRequestFiltersVariant1 {const AutoragConfigAiSe
 factory AutoragConfigAiSearchRequestFiltersVariant1.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequestFiltersVariant1(
   key: json['key'] as String,
   type: AutoragConfigAiSearchRequestFiltersVariant1Type.fromJson(json['type'] as String),
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 final String key;

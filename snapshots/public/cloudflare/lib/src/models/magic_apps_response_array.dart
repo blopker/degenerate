@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'magic_messages2.dart';final 
 factory MagicAppsResponseArray.fromJson(Map<String, dynamic> json) { return MagicAppsResponseArray(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => e).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => e as Object).toList(),
   success: json['success'] as bool,
 ); }
 

@@ -80,18 +80,18 @@ final Float64 float64;
 @override int get hashCode { return float64.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesFieldTypeFloat64(float64: $float64)'; } 
  }
-final class CloudflarePipelinesFieldTypeBool extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeBool(this.bool);
+final class CloudflarePipelinesFieldTypeBool extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeBool(this.$bool);
 
 factory CloudflarePipelinesFieldTypeBool.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFieldTypeBool(Bool.fromJson(json)); }
 
-final Bool bool;
+final Bool $bool;
 
 @override String get type { return 'bool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...bool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...$bool.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFieldTypeBool && bool == other.bool; } 
-@override int get hashCode { return bool.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeBool(bool: $bool)'; } 
+    other is CloudflarePipelinesFieldTypeBool && $bool == other.$bool; } 
+@override int get hashCode { return $bool.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesFieldTypeBool(\$bool: ${$bool})'; } 
  }
 final class CloudflarePipelinesFieldTypeString extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeString(this.stringModel);
 

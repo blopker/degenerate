@@ -99,7 +99,7 @@ factory DnsFirewallDnsFirewallCluster.fromJson(Map<String, dynamic> json) { retu
   negativeCacheTtl: json['negative_cache_ttl'] != null ? DnsFirewallNegativeCacheTtl.fromJson(json['negative_cache_ttl'] as num) : null,
   ratelimit: json['ratelimit'] != null ? DnsFirewallRatelimit.fromJson(json['ratelimit'] as num) : null,
   retries: json['retries'] != null ? DnsFirewallRetries.fromJson(json['retries'] as num) : null,
-  upstreamIps: (json['upstream_ips'] as List<dynamic>?)?.map((e) => e).toList(),
+  upstreamIps: (json['upstream_ips'] as List<dynamic>?)?.map((e) => e as Object).toList(),
 ); }
 
 final DnsFirewallAttackMitigation? attackMitigation;

@@ -7,7 +7,7 @@
 final class PatchEventRawUpdateResponse {const PatchEventRawUpdateResponse({required this.data, required this.id, });
 
 factory PatchEventRawUpdateResponse.fromJson(Map<String, dynamic> json) { return PatchEventRawUpdateResponse(
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   id: json['id'] as String,
 ); }
 

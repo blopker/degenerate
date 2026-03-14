@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, this.alertId, required this.clientRecipients, this.deliveryMode, required this.detectionReasons, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, required this.isPhishSubmission, required this.isQuarantined, this.messageId, this.postDeliveryOperations, required this.postfixId, this.postfixIdOutbound, required this.properties, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, required this.ts, this.validation, required this.id, });
 
 factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessage(
-  actionLog: json['action_log'],
+  actionLog: json['action_log'] as Object,
   alertId: json['alert_id'] as String?,
   clientRecipients: (json['client_recipients'] as List<dynamic>).map((e) => e as String).toList(),
   deliveryMode: json['delivery_mode'] != null ? EmailSecurityMessageDeliveryMode.fromJson(json['delivery_mode'] as String) : null,

@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'aig_config_list_gateway_logs
 
 factory AigConfigListGatewayLogsResponse400.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayLogsResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

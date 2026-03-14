@@ -10,7 +10,7 @@ final class WorkflowParam {const WorkflowParam({required this.id, this.version, 
 factory WorkflowParam.fromJson(Map<String, dynamic> json) { return WorkflowParam(
   id: json['id'] as String,
   version: json['version'] as String?,
-  stateVariables: (json['state_variables'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  stateVariables: (json['state_variables'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   tracing: json['tracing'] != null ? WorkflowTracingParam.fromJson(json['tracing'] as Map<String, dynamic>) : null,
 ); }
 

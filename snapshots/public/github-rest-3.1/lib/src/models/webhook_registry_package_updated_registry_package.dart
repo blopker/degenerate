@@ -8,7 +8,7 @@ import 'webhook_registry_package_updated_registry_package_owner.dart';import 'we
 
 factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackage(
   createdAt: json['created_at'] as String,
-  description: json['description'],
+  description: json['description'] as Object,
   ecosystem: json['ecosystem'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
@@ -17,7 +17,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynami
   owner: WebhookRegistryPackageUpdatedRegistryPackageOwner.fromJson(json['owner'] as Map<String, dynamic>),
   packageType: json['package_type'] as String,
   packageVersion: WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
-  registry: (json['registry'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  registry: (json['registry'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   updatedAt: json['updated_at'] as String,
 ); }
 

@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class LogoMatch {const LogoMatch({this.matches, this.total, });
 
 factory LogoMatch.fromJson(Map<String, dynamic> json) { return LogoMatch(
-  matches: (json['matches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  matches: (json['matches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   total: json['total'] != null ? (json['total'] as num).toInt() : null,
 ); }
 

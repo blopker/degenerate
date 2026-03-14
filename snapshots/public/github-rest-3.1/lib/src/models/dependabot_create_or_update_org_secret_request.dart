@@ -38,7 +38,7 @@ factory DependabotCreateOrUpdateOrgSecretRequest.fromJson(Map<String, dynamic> j
   encryptedValue: json['encrypted_value'] as String?,
   keyId: json['key_id'] as String?,
   visibility: DependabotCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
-  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e).toList(),
+  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e as Object).toList(),
 ); }
 
 /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/dependabot/secrets#get-an-organization-public-key) endpoint.

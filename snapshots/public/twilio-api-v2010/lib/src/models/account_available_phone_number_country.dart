@@ -11,7 +11,7 @@ factory AccountAvailablePhoneNumberCountry.fromJson(Map<String, dynamic> json) {
   country: json['country'] as String?,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
   beta: json['beta'] as bool?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country.

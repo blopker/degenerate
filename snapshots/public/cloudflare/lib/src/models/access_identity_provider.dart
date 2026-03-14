@@ -68,7 +68,7 @@ bool get isUnknown { return !values.contains(this); }
 final class AccessIdentityProvider {const AccessIdentityProvider({required this.config, this.id, required this.name, this.scimConfig, required this.type, });
 
 factory AccessIdentityProvider.fromJson(Map<String, dynamic> json) { return AccessIdentityProvider(
-  config: (json['config'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  config: (json['config'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
   scimConfig: json['scim_config'] != null ? AccessIdentityProviderScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,

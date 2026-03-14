@@ -7,7 +7,7 @@
 final class RealtimekitGenericSuccessResponse {const RealtimekitGenericSuccessResponse({this.data, this.success = true, });
 
 factory RealtimekitGenericSuccessResponse.fromJson(Map<String, dynamic> json) { return RealtimekitGenericSuccessResponse(
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

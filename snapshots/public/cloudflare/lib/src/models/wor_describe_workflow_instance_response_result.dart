@@ -51,8 +51,8 @@ final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflow
 factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResult(
   end: DateTime.parse(json['end'] as String),
   error: WorDescribeWorkflowInstanceResponseResultError.fromJson(json['error'] as Map<String, dynamic>),
-  output: json['output'],
-  params: (json['params'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  output: json['output'] as Object,
+  params: (json['params'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   queued: DateTime.parse(json['queued'] as String),
   start: DateTime.parse(json['start'] as String),
   status: WorDescribeWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),

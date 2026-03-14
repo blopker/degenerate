@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'post_event_tag_create_respon
 
 factory PostEventTagCreateResponse400.fromJson(Map<String, dynamic> json) { return PostEventTagCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostEventTagCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

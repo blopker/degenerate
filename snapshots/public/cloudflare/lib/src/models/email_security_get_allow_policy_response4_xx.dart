@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'email_security_message.dart'
 factory EmailSecurityGetAllowPolicyResponse4Xx.fromJson(Map<String, dynamic> json) { return EmailSecurityGetAllowPolicyResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

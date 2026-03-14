@@ -9,7 +9,7 @@ final class Messages51Functions {const Messages51Functions({this.description, re
 factory Messages51Functions.fromJson(Map<String, dynamic> json) { return Messages51Functions(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   strict: json['strict'] as bool?,
 ); }
 

@@ -19,13 +19,13 @@ final ApiConfig _config;
 /// `GET /admin/api/2020-01/events.json`
 Future<ApiResult<void, Never>> deprecated202001GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (filter != null) queryParameters['filter'] = filter;
-if (verb != null) queryParameters['verb'] = verb;
-if (fields != null) queryParameters['fields'] = fields;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (filter != null) queryParameters['filter'] = filter.toString();
+if (verb != null) queryParameters['verb'] = verb.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -50,7 +50,7 @@ return _execute(
 /// `GET /admin/api/2020-01/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -75,8 +75,8 @@ return _execute(
 /// `GET /admin/api/2020-01/events/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -101,13 +101,13 @@ return _execute(
 /// `GET /admin/api/2020-04/events.json`
 Future<ApiResult<void, Never>> deprecated202004GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (filter != null) queryParameters['filter'] = filter;
-if (verb != null) queryParameters['verb'] = verb;
-if (fields != null) queryParameters['fields'] = fields;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (filter != null) queryParameters['filter'] = filter.toString();
+if (verb != null) queryParameters['verb'] = verb.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -132,7 +132,7 @@ return _execute(
 /// `GET /admin/api/2020-04/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -157,8 +157,8 @@ return _execute(
 /// `GET /admin/api/2020-04/events/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -183,13 +183,13 @@ return _execute(
 /// `GET /admin/api/2020-07/events.json`
 Future<ApiResult<void, Never>> deprecated202007GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (filter != null) queryParameters['filter'] = filter;
-if (verb != null) queryParameters['verb'] = verb;
-if (fields != null) queryParameters['fields'] = fields;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (filter != null) queryParameters['filter'] = filter.toString();
+if (verb != null) queryParameters['verb'] = verb.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -214,7 +214,7 @@ return _execute(
 /// `GET /admin/api/2020-07/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -239,8 +239,8 @@ return _execute(
 /// `GET /admin/api/2020-07/events/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -265,13 +265,13 @@ return _execute(
 /// `GET /admin/api/2020-10/events.json`
 Future<ApiResult<void, Never>> getEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (filter != null) queryParameters['filter'] = filter;
-if (verb != null) queryParameters['verb'] = verb;
-if (fields != null) queryParameters['fields'] = fields;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (filter != null) queryParameters['filter'] = filter.toString();
+if (verb != null) queryParameters['verb'] = verb.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -296,7 +296,7 @@ return _execute(
 /// `GET /admin/api/2020-10/events/{event_id}.json`
 Future<ApiResult<void, Never>> getEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -321,8 +321,8 @@ return _execute(
 /// `GET /admin/api/2020-10/events/count.json`
 Future<ApiResult<void, Never>> getEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -347,13 +347,13 @@ return _execute(
 /// `GET /admin/api/2021-01/events.json`
 Future<ApiResult<void, Never>> deprecated202101GetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (filter != null) queryParameters['filter'] = filter;
-if (verb != null) queryParameters['verb'] = verb;
-if (fields != null) queryParameters['fields'] = fields;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (filter != null) queryParameters['filter'] = filter.toString();
+if (verb != null) queryParameters['verb'] = verb.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -378,7 +378,7 @@ return _execute(
 /// `GET /admin/api/2021-01/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -403,8 +403,8 @@ return _execute(
 /// `GET /admin/api/2021-01/events/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -429,13 +429,13 @@ return _execute(
 /// `GET /admin/api/unstable/events.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetEvents({Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? filter, Object? verb, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (filter != null) queryParameters['filter'] = filter;
-if (verb != null) queryParameters['verb'] = verb;
-if (fields != null) queryParameters['fields'] = fields;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (filter != null) queryParameters['filter'] = filter.toString();
+if (verb != null) queryParameters['verb'] = verb.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -460,7 +460,7 @@ return _execute(
 /// `GET /admin/api/unstable/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetEventsParamEventId({required String eventId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -485,8 +485,8 @@ return _execute(
 /// `GET /admin/api/unstable/events/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetEventsCount({Object? createdAtMin, Object? createdAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -511,15 +511,15 @@ return _execute(
 /// `GET /admin/api/2020-01/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202001GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (topic != null) queryParameters['topic'] = topic;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (address != null) queryParameters['address'] = address.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -544,7 +544,7 @@ return _execute(
 /// `POST /admin/api/2020-01/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202001CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format;
+if (format != null) queryParameters['format'] = format.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -571,8 +571,8 @@ return _execute(
 /// `GET /admin/api/2020-01/webhooks/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (topic != null) queryParameters['topic'] = topic;
+if (address != null) queryParameters['address'] = address.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -597,7 +597,7 @@ return _execute(
 /// `GET /admin/api/2020-01/webhooks/{webhook_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -662,15 +662,15 @@ return _execute(
 /// `GET /admin/api/2020-04/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202004GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (topic != null) queryParameters['topic'] = topic;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (address != null) queryParameters['address'] = address.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -695,7 +695,7 @@ return _execute(
 /// `POST /admin/api/2020-04/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202004CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format;
+if (format != null) queryParameters['format'] = format.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -722,8 +722,8 @@ return _execute(
 /// `GET /admin/api/2020-04/webhooks/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (topic != null) queryParameters['topic'] = topic;
+if (address != null) queryParameters['address'] = address.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -748,7 +748,7 @@ return _execute(
 /// `GET /admin/api/2020-04/webhooks/{webhook_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -813,15 +813,15 @@ return _execute(
 /// `GET /admin/api/2020-07/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202007GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (topic != null) queryParameters['topic'] = topic;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (address != null) queryParameters['address'] = address.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -846,7 +846,7 @@ return _execute(
 /// `POST /admin/api/2020-07/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202007CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format;
+if (format != null) queryParameters['format'] = format.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -873,8 +873,8 @@ return _execute(
 /// `GET /admin/api/2020-07/webhooks/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (topic != null) queryParameters['topic'] = topic;
+if (address != null) queryParameters['address'] = address.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -899,7 +899,7 @@ return _execute(
 /// `GET /admin/api/2020-07/webhooks/{webhook_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -964,15 +964,15 @@ return _execute(
 /// `GET /admin/api/2020-10/webhooks.json`
 Future<ApiResult<void, Never>> getWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (topic != null) queryParameters['topic'] = topic;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (address != null) queryParameters['address'] = address.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -997,7 +997,7 @@ return _execute(
 /// `POST /admin/api/2020-10/webhooks.json`
 Future<ApiResult<void, Never>> createWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format;
+if (format != null) queryParameters['format'] = format.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1024,8 +1024,8 @@ return _execute(
 /// `GET /admin/api/2020-10/webhooks/count.json`
 Future<ApiResult<void, Never>> getWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (topic != null) queryParameters['topic'] = topic;
+if (address != null) queryParameters['address'] = address.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1050,7 +1050,7 @@ return _execute(
 /// `GET /admin/api/2020-10/webhooks/{webhook_id}.json`
 Future<ApiResult<void, Never>> getWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1115,15 +1115,15 @@ return _execute(
 /// `GET /admin/api/2021-01/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202101GetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (topic != null) queryParameters['topic'] = topic;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (address != null) queryParameters['address'] = address.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1148,7 +1148,7 @@ return _execute(
 /// `POST /admin/api/2021-01/webhooks.json`
 Future<ApiResult<void, Never>> deprecated202101CreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format;
+if (format != null) queryParameters['format'] = format.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1175,8 +1175,8 @@ return _execute(
 /// `GET /admin/api/2021-01/webhooks/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (topic != null) queryParameters['topic'] = topic;
+if (address != null) queryParameters['address'] = address.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1201,7 +1201,7 @@ return _execute(
 /// `GET /admin/api/2021-01/webhooks/{webhook_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1266,15 +1266,15 @@ return _execute(
 /// `GET /admin/api/unstable/webhooks.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooks({Object? address, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? topic, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (topic != null) queryParameters['topic'] = topic;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (address != null) queryParameters['address'] = address.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1299,7 +1299,7 @@ return _execute(
 /// `POST /admin/api/unstable/webhooks.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateWebhooks({Object? format, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format;
+if (format != null) queryParameters['format'] = format.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1326,8 +1326,8 @@ return _execute(
 /// `GET /admin/api/unstable/webhooks/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksCount({Object? address, Object? topic, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (address != null) queryParameters['address'] = address;
-if (topic != null) queryParameters['topic'] = topic;
+if (address != null) queryParameters['address'] = address.toString();
+if (topic != null) queryParameters['topic'] = topic.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1352,7 +1352,7 @@ return _execute(
 /// `GET /admin/api/unstable/webhooks/{webhook_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetWebhooksParamWebhookId({required String webhookId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 

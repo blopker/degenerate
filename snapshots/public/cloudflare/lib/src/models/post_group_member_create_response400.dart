@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'post_group_member_create_res
 
 factory PostGroupMemberCreateResponse400.fromJson(Map<String, dynamic> json) { return PostGroupMemberCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostGroupMemberCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

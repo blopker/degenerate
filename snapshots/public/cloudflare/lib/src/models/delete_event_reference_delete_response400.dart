@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'delete_event_reference_delet
 
 factory DeleteEventReferenceDeleteResponse400.fromJson(Map<String, dynamic> json) { return DeleteEventReferenceDeleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteEventReferenceDeleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

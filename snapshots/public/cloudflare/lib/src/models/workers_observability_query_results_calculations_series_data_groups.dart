@@ -8,7 +8,7 @@ final class WorkersObservabilityQueryResultsCalculationsSeriesDataGroups {const 
 
 factory WorkersObservabilityQueryResultsCalculationsSeriesDataGroups.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCalculationsSeriesDataGroups(
   key: json['key'] as String,
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 final String key;

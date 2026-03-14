@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'ai_search_instance_create_jo
 
 factory AiSearchInstanceCreateJobResponse400.fromJson(Map<String, dynamic> json) { return AiSearchInstanceCreateJobResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceCreateJobResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

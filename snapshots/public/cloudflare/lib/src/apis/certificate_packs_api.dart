@@ -21,8 +21,8 @@ Future<ApiResult<ResponseCommon68, Never>> certificatePacksListCertificatePacks(
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (status != null) queryParameters['status'] = status;
-if (deploy != null) queryParameters['deploy'] = deploy;
+if (status != null) queryParameters['status'] = status.toString();
+if (deploy != null) queryParameters['deploy'] = deploy.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 

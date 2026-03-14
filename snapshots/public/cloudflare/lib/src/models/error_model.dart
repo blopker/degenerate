@@ -8,7 +8,7 @@ final class ErrorModel {const ErrorModel({this.code, this.errors, this.message, 
 
 factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
-  errors: (json['errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  errors: (json['errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   message: json['message'] as String?,
   status: json['status'] as String?,
 ); }

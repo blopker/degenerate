@@ -7,7 +7,7 @@
 final class PatchEventUpdateRequestRaw {const PatchEventUpdateRequestRaw({this.data, this.source, this.tlp, });
 
 factory PatchEventUpdateRequestRaw.fromJson(Map<String, dynamic> json) { return PatchEventUpdateRequestRaw(
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   source: json['source'] as String?,
   tlp: json['tlp'] as String?,
 ); }

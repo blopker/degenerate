@@ -10,9 +10,9 @@ final class Requests {const Requests({this.all, this.cached, this.contentType, t
 factory Requests.fromJson(Map<String, dynamic> json) { return Requests(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
   cached: json['cached'] != null ? (json['cached'] as num).toInt() : null,
-  contentType: (json['content_type'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  httpStatus: (json['http_status'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  contentType: (json['content_type'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  httpStatus: (json['http_status'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   ssl: json['ssl'] != null ? RequestsSsl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
   sslProtocols: json['ssl_protocols'] != null ? RequestsSslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,

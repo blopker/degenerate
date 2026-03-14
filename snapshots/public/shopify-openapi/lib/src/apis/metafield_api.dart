@@ -85,7 +85,7 @@ return _execute(
 /// `GET /admin/api/2020-01/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetMetafieldsParamMetafieldId({required String metafieldId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -216,7 +216,7 @@ return _execute(
 /// `GET /admin/api/2020-04/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetMetafieldsParamMetafieldId({required String metafieldId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -347,7 +347,7 @@ return _execute(
 /// `GET /admin/api/2020-07/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetMetafieldsParamMetafieldId({required String metafieldId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -478,7 +478,7 @@ return _execute(
 /// `GET /admin/api/2020-10/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> getMetafieldsParamMetafieldId({required String metafieldId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -609,7 +609,7 @@ return _execute(
 /// `GET /admin/api/2021-01/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetMetafieldsParamMetafieldId({required String metafieldId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -740,7 +740,7 @@ return _execute(
 /// `GET /admin/api/unstable/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetMetafieldsParamMetafieldId({required String metafieldId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 

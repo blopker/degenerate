@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'autorag_config_search_response_result_data_content.dart';final class AutoragConfigSearchResponseResultData {const AutoragConfigSearchResponseResultData({this.attributes, this.content, this.fileId, this.filename, required this.score, });
 
 factory AutoragConfigSearchResponseResultData.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchResponseResultData(
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   content: (json['content'] as List<dynamic>?)?.map((e) => AutoragConfigSearchResponseResultDataContent.fromJson(e as Map<String, dynamic>)).toList(),
   fileId: json['file_id'] as String?,
   filename: json['filename'] as String?,

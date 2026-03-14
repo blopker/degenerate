@@ -85,7 +85,7 @@ final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval {const
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
   contextExpansion: json.containsKey('context_expansion') ? (json['context_expansion'] as num).toInt() : 0,
-  filters: (json['filters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  filters: (json['filters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   fusionMethod: json['fusion_method'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod.fromJson(json['fusion_method'] as String) : null,
   keywordMatchMode: json.containsKey('keyword_match_mode') ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch,
   matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,

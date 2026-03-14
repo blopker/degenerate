@@ -7,8 +7,8 @@
 import 'package:collection/collection.dart';final class UrlSubmit {const UrlSubmit({this.skippedUrls, this.submittedUrls, });
 
 factory UrlSubmit.fromJson(Map<String, dynamic> json) { return UrlSubmit(
-  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
+  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 final List<Map<String,Object?>>? skippedUrls;

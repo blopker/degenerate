@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'workers_ai_post_run_cf_googl
 
 factory WorkersAiPostRunCfGoogleGemma312bItResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfGoogleGemma312bItResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfGoogleGemma312bItResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

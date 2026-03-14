@@ -37,7 +37,7 @@ factory ResponseOutputTextAnnotationAddedEvent.fromJson(Map<String, dynamic> jso
   contentIndex: (json['content_index'] as num).toInt(),
   annotationIndex: (json['annotation_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-  annotation: (json['annotation'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  annotation: (json['annotation'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The type of the event. Always 'response.output_text.annotation.added'.

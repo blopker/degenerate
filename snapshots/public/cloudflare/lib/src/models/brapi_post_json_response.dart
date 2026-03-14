@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'brapi_post_json_response_err
 
 factory BrapiPostJsonResponse.fromJson(Map<String, dynamic> json) { return BrapiPostJsonResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostJsonResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)))),
   success: json['success'] as bool,
 ); }
 

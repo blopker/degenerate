@@ -37,7 +37,7 @@ factory TelemetryValuesListResponseResult.fromJson(Map<String, dynamic> json) { 
   dataset: json['dataset'] as String,
   key: json['key'] as String,
   type: TelemetryValuesListResponseResultType.fromJson(json['type'] as String),
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 final String dataset;

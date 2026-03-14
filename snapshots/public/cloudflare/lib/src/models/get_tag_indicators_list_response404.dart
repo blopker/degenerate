@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'get_tag_indicators_list_resp
 
 factory GetTagIndicatorsListResponse404.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => GetTagIndicatorsListResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

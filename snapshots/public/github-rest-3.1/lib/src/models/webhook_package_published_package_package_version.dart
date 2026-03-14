@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 
 factory WebhookPackagePublishedPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersion(
   author: json['author'] != null ? WebhookPackagePublishedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
-  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),) : null,
+  body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),) : null,
   bodyHtml: json['body_html'] as String?,
   containerMetadata: json['container_metadata'] != null ? WebhookPackagePublishedPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,
@@ -19,7 +19,7 @@ factory WebhookPackagePublishedPackagePackageVersion.fromJson(Map<String, dynami
   id: (json['id'] as num).toInt(),
   installationCommand: json['installation_command'] as String,
   manifest: json['manifest'] as String?,
-  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   name: json['name'] as String,
   npmMetadata: json['npm_metadata'] != null ? WebhookPackagePublishedPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>) : null,
   nugetMetadata: (json['nuget_metadata'] as List<dynamic>?)?.map((e) => WebhookPackagePublishedPackagePackageVersionNugetMetadata.fromJson(e as Map<String, dynamic>)).toList(),

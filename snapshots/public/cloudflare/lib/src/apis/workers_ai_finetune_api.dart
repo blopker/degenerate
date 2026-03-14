@@ -67,7 +67,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId)}/ai/finetunes/${Uri.encodeComponent(finetuneId)}/finetune-assets',
   headers: headers,
-  body: [
+  body: body == null ? null : [
     if (body.file case final file$?)
       ApiMultipartField.file('file', file$),
     if (body.fileName case final fileName$?)

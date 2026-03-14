@@ -8,7 +8,7 @@ final class AigConfigPatchGatewayLogRequest {const AigConfigPatchGatewayLogReque
 
 factory AigConfigPatchGatewayLogRequest.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogRequest(
   feedback: json['feedback'] != null ? (json['feedback'] as num).toDouble() : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
 ); }
 

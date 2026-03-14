@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'radar_get_ai_inference_summa
 
 factory RadarGetAiInferenceSummaryByTaskResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceSummaryByTaskResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAiInferenceSummaryByTaskResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

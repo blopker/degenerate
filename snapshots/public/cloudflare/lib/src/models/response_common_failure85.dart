@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'zone_activation_messages2.da
 factory ResponseCommonFailure85.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure85(
   errors: (json['errors'] as List<dynamic>).map((e) => ZoneActivationMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZoneActivationMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

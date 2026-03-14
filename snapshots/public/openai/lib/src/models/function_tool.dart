@@ -11,7 +11,7 @@ factory FunctionTool.fromJson(Map<String, dynamic> json) { return FunctionTool(
   type: json['type'] as String,
   name: json['name'] as String,
   description: json['description'] as String?,
-  parameters: (json['parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  parameters: (json['parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   strict: json['strict'] as bool,
   deferLoading: json['defer_loading'] as bool?,
 ); }

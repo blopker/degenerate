@@ -12,7 +12,7 @@ factory GpgKeySubkeys.fromJson(Map<String, dynamic> json) { return GpgKeySubkeys
   keyId: json['key_id'] as String?,
   publicKey: json['public_key'] as String?,
   emails: (json['emails'] as List<dynamic>?)?.map((e) => GpgKeySubkeysEmails.fromJson(e as Map<String, dynamic>)).toList(),
-  subkeys: (json['subkeys'] as List<dynamic>?)?.map((e) => e).toList(),
+  subkeys: (json['subkeys'] as List<dynamic>?)?.map((e) => e as Object).toList(),
   canSign: json['can_sign'] as bool?,
   canEncryptComms: json['can_encrypt_comms'] as bool?,
   canEncryptStorage: json['can_encrypt_storage'] as bool?,

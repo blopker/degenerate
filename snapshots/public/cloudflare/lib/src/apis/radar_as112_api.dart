@@ -51,6 +51,7 @@ for (final item in continent) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }
@@ -128,6 +129,7 @@ for (final item in continent) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }
@@ -204,6 +206,7 @@ for (final item in continent) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }

@@ -8,7 +8,7 @@
 final class AccessEveryoneRule {const AccessEveryoneRule({required this.everyone});
 
 factory AccessEveryoneRule.fromJson(Map<String, dynamic> json) { return AccessEveryoneRule(
-  everyone: (json['everyone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  everyone: (json['everyone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// An empty object which matches on all users.

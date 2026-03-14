@@ -7,7 +7,7 @@
 final class UrlscannerGetScanResponse2DataRequestsRequestRequest {const UrlscannerGetScanResponse2DataRequestsRequestRequest({this.headers, required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, });
 
 factory UrlscannerGetScanResponse2DataRequestsRequestRequest.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestRequest(
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   initialPriority: json['initialPriority'] as String,
   isSameSite: json['isSameSite'] as bool,
   method: json['method'] as String,

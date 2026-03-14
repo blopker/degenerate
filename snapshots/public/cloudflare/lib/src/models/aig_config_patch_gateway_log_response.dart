@@ -7,7 +7,7 @@
 final class AigConfigPatchGatewayLogResponse {const AigConfigPatchGatewayLogResponse({required this.result, required this.success, });
 
 factory AigConfigPatchGatewayLogResponse.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogResponse(
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

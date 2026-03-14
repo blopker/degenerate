@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'rulesets_rule_action.dart';i
 
 factory RulesetsRule.fromJson(Map<String, dynamic> json) { return RulesetsRule(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
-  actionParameters: json.containsKey('action_parameters') ? (json['action_parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)) : const {},
+  actionParameters: json.containsKey('action_parameters') ? (json['action_parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)) : const {},
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
   description: json.containsKey('description') ? json['description'] as String : '',
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,

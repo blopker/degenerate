@@ -2074,4 +2074,201 @@ void main() {
       expect(containerFile, isNot(contains("'container_value_variant2.dart'")));
     });
   });
+
+  // ─── Unused import regression tests ───────────────────────────
+
+  group('FileEmitter skips imports for inlined OneOf typedef variants', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      // Create a type chain: Parent has field of type OuterOneOf,
+      // which is OneOf2<InnerOneOf, String>. InnerOneOf is OneOf2<A, B>.
+      // InnerOneOf should NOT be imported by Parent because it's inlined.
+      final types = <IrType>[
+        IrObject('A', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ]),
+        IrObject('B', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ]),
+        IrUntaggedUnion('InnerOneOf', [
+          IrTypeRef('A'),
+          IrTypeRef('B'),
+        ]),
+        IrUntaggedUnion('OuterOneOf', [
+          IrTypeRef('InnerOneOf'),
+          IrPrimitive(PrimitiveKind.string),
+        ]),
+        IrObject('Parent', [
+          IrField('value', 'value', IrTypeRef('OuterOneOf'), isRequired: true),
+        ]),
+      ];
+
+      files = FileEmitter().emitAll(
+        types: types,
+        apis: [],
+        packageName: 'import_test',
+        specFileName: 'test.yaml',
+        specVersion: '1.0.0',
+      );
+    });
+
+    test('parent model does not import inlined OneOf typedef', () {
+      final parentFile = files['lib/src/models/parent.dart']!;
+      // OuterOneOf is used as the field type, so it should be imported
+      expect(parentFile, contains("'outer_one_of.dart'"));
+      // InnerOneOf is an inlined OneOf typedef - its parse code is inlined
+      // as OneOf2.parse(...), so the import should NOT be present
+      expect(parentFile, isNot(contains("'inner_one_of.dart'")));
+      // But A and B should be imported (they appear in inlined .fromJson calls)
+      expect(parentFile, contains("'a.dart'"));
+      expect(parentFile, contains("'b.dart'"));
+    });
+  });
+
+  group('FileEmitter does not import dart:convert for typedef with bytes', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      final types = <IrType>[
+        IrUntaggedUnion('BytesOrStringOneOf', [
+          IrPrimitive(PrimitiveKind.bytes),
+          IrPrimitive(PrimitiveKind.string),
+        ]),
+        IrAnyOf('BytesOrStringAnyOf', [
+          IrPrimitive(PrimitiveKind.bytes),
+          IrPrimitive(PrimitiveKind.string),
+        ]),
+      ];
+
+      files = FileEmitter().emitAll(
+        types: types,
+        apis: [],
+        packageName: 'bytes_test',
+        specFileName: 'test.yaml',
+        specVersion: '1.0.0',
+      );
+    });
+
+    test('IrUntaggedUnion typedef file does not import dart:convert', () {
+      final file = files['lib/src/models/bytes_or_string_one_of.dart']!;
+      expect(file, isNot(contains("import 'dart:convert'")));
+      expect(file, contains("import 'dart:typed_data'"));
+    });
+
+    test('IrAnyOf typedef file does not import dart:convert', () {
+      final file = files['lib/src/models/bytes_or_string_any_of.dart']!;
+      expect(file, isNot(contains("import 'dart:convert'")));
+      expect(file, contains("import 'dart:typed_data'"));
+    });
+  });
+
+  group('FileEmitter does not import dart:convert for model with non-OneOf bytes ref', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      // Create a sealed class (non-OneOf-eligible, 10 variants) that has bytes.
+      // Parent model should NOT import dart:convert because it just calls .fromJson().
+      final variants = <IrType>[
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+        IrPrimitive(PrimitiveKind.double),
+        IrPrimitive(PrimitiveKind.bool),
+        IrPrimitive(PrimitiveKind.bytes),
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+        IrPrimitive(PrimitiveKind.double),
+        IrPrimitive(PrimitiveKind.bool),
+        IrPrimitive(PrimitiveKind.num),
+      ];
+      final types = <IrType>[
+        IrAnyOf('BigResult', variants),
+        IrObject('ParentModel', [
+          IrField('result', 'result', IrTypeRef('BigResult')),
+        ]),
+      ];
+
+      files = FileEmitter().emitAll(
+        types: types,
+        apis: [],
+        packageName: 'big_result_test',
+        specFileName: 'test.yaml',
+        specVersion: '1.0.0',
+      );
+    });
+
+    test('parent model does not import dart:convert', () {
+      final file = files['lib/src/models/parent_model.dart']!;
+      // The parent just calls BigResult.fromJson() - no direct base64 usage
+      expect(file, isNot(contains("import 'dart:convert'")));
+    });
+  });
+
+  group('ApiEmitter early throw does not emit unused variables', () {
+    late Map<String, String> files;
+
+    setUpAll(() {
+      final types = <IrType>[
+        IrObject('SomeResponse', [
+          IrField('ok', 'ok', IrPrimitive(PrimitiveKind.bool), isRequired: true),
+        ]),
+      ];
+
+      final apis = <IrApi>[
+        IrApi('TestApi', [
+          IrOperation(
+            'unsupportedUpload',
+            'unsupportedUpload',
+            HttpMethod.post,
+            '/upload',
+            parameters: [
+              IrParameter(
+                'tag',
+                'tag',
+                ParameterLocation.query,
+                IrPrimitive(PrimitiveKind.string),
+                isRequired: false,
+              ),
+            ],
+            requestBody: IrRequestBody(
+              {
+                'multipart/form-data': IrMediaType(
+                  // Non-object schema that can't be resolved to fields
+                  IrMap(IrPrimitive(PrimitiveKind.string)),
+                ),
+              },
+              isRequired: true,
+            ),
+            responses: {
+              200: IrResponse(
+                description: 'OK',
+                content: {
+                  'application/json': IrMediaType(
+                    IrTypeRef('SomeResponse'),
+                  ),
+                },
+              ),
+            },
+          ),
+        ]),
+      ];
+
+      files = FileEmitter().emitAll(
+        types: types,
+        apis: apis,
+        packageName: 'throw_test',
+        specFileName: 'test.yaml',
+        specVersion: '1.0.0',
+      );
+    });
+
+    test('method with early throw does not declare unused variables', () {
+      final apiFile = files['lib/src/apis/test_api.dart']!;
+      // The method should throw before declaring queryParametersList/headers
+      expect(apiFile, contains('throw UnsupportedError'));
+      // These variables should NOT be present since they'd be unused
+      expect(apiFile, isNot(contains('queryParametersList')));
+      expect(apiFile, isNot(contains('final headers')));
+    });
+  });
 }

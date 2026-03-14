@@ -22,7 +22,7 @@ factory PaymentIntentNextAction.fromJson(Map<String, dynamic> json) { return Pay
   redirectToUrl: json['redirect_to_url'] != null ? PaymentIntentNextActionRedirectToUrl.fromJson(json['redirect_to_url'] as Map<String, dynamic>) : null,
   swishHandleRedirectOrDisplayQrCode: json['swish_handle_redirect_or_display_qr_code'] != null ? PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode.fromJson(json['swish_handle_redirect_or_display_qr_code'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-  useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   verifyWithMicrodeposits: json['verify_with_microdeposits'] != null ? PaymentIntentNextActionVerifyWithMicrodeposits.fromJson(json['verify_with_microdeposits'] as Map<String, dynamic>) : null,
   wechatPayDisplayQrCode: json['wechat_pay_display_qr_code'] != null ? PaymentIntentNextActionWechatPayDisplayQrCode.fromJson(json['wechat_pay_display_qr_code'] as Map<String, dynamic>) : null,
   wechatPayRedirectToAndroidApp: json['wechat_pay_redirect_to_android_app'] != null ? PaymentIntentNextActionWechatPayRedirectToAndroidApp.fromJson(json['wechat_pay_redirect_to_android_app'] as Map<String, dynamic>) : null,

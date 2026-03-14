@@ -9,7 +9,7 @@ final class Prompt43ResponseFormatVariant1JsonSchemaJsonSchema {const Prompt43Re
 factory Prompt43ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(Map<String, dynamic> json) { return Prompt43ResponseFormatVariant1JsonSchemaJsonSchema(
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   strict: json['strict'] as bool?,
 ); }
 

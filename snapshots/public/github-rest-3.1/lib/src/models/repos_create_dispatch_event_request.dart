@@ -8,7 +8,7 @@ final class ReposCreateDispatchEventRequest {const ReposCreateDispatchEventReque
 
 factory ReposCreateDispatchEventRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDispatchEventRequest(
   eventType: json['event_type'] as String,
-  clientPayload: (json['client_payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  clientPayload: (json['client_payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// A custom webhook event name. Must be 100 characters or fewer.

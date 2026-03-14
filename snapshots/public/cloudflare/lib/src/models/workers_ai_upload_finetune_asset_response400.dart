@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class WorkersAiUploadFinetuneAssetResponse400 {const WorkersAiUploadFinetuneAssetResponse400({required this.errors, required this.success, });
 
 factory WorkersAiUploadFinetuneAssetResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiUploadFinetuneAssetResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   success: json['success'] as bool,
 ); }
 

@@ -46,9 +46,9 @@ factory DeleteServersResponseResult.fromJson(Map<String, dynamic> json) { return
   modifiedAt: json['modified_at'] != null ? DateTime.parse(json['modified_at'] as String) : null,
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
-  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   status: json.containsKey('status') ? json['status'] as String : 'waiting',
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 final DeleteServersResponseResultAuthType authType;

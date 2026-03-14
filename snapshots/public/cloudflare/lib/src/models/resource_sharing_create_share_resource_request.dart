@@ -7,7 +7,7 @@
 import 'resource_sharing_account_id.dart';import 'resource_sharing_resource_resource_id.dart';import 'resource_sharing_resource_type.dart';final class ResourceSharingCreateShareResourceRequest {const ResourceSharingCreateShareResourceRequest({required this.meta, required this.resourceAccountId, required this.resourceId, required this.resourceType, });
 
 factory ResourceSharingCreateShareResourceRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingCreateShareResourceRequest(
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   resourceAccountId: ResourceSharingAccountId.fromJson(json['resource_account_id'] as String),
   resourceId: ResourceSharingResourceResourceId.fromJson(json['resource_id'] as String),
   resourceType: ResourceSharingResourceType.fromJson(json['resource_type'] as String),

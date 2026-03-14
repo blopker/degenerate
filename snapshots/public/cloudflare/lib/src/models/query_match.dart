@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class QueryMatch {const QueryMatch({this.matches, this.total, });
 
 factory QueryMatch.fromJson(Map<String, dynamic> json) { return QueryMatch(
-  matches: (json['matches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  matches: (json['matches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   total: json['total'] != null ? (json['total'] as num).toInt() : null,
 ); }
 

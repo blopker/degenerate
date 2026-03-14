@@ -35,7 +35,7 @@ final class CreateEvalCustomDataSourceConfig {const CreateEvalCustomDataSourceCo
 
 factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalCustomDataSourceConfig(
   type: CreateEvalCustomDataSourceConfigType.fromJson(json['type'] as String),
-  itemSchema: (json['item_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  itemSchema: (json['item_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   includeSampleSchema: json.containsKey('include_sample_schema') ? json['include_sample_schema'] as bool : false,
 ); }
 

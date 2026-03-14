@@ -8,7 +8,7 @@ final class ImagesImagePatchRequest {const ImagesImagePatchRequest({this.creator
 
 factory ImagesImagePatchRequest.fromJson(Map<String, dynamic> json) { return ImagesImagePatchRequest(
   creator: json['creator'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   requireSignedUrLs: json['requireSignedURLs'] as bool?,
 ); }
 

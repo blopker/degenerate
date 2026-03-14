@@ -7,7 +7,7 @@
 final class ChecksCreateRequestVariant1 {const ChecksCreateRequestVariant1({required this.status});
 
 factory ChecksCreateRequestVariant1.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestVariant1(
-  status: json['status'],
+  status: json['status'] as Object,
 ); }
 
 final Object? status;

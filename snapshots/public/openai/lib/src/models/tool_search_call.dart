@@ -38,7 +38,7 @@ factory ToolSearchCall.fromJson(Map<String, dynamic> json) { return ToolSearchCa
   id: json['id'] as String,
   callId: json['call_id'] as String,
   execution: ToolSearchExecutionType.fromJson(json['execution'] as String),
-  arguments: json['arguments'],
+  arguments: json['arguments'] as Object,
   status: FunctionCallStatus.fromJson(json['status'] as String),
   createdBy: json['created_by'] as String?,
 ); }

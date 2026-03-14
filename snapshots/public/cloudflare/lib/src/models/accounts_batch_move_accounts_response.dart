@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'batch_account_move_response.dart';import 'message3.dart';final class AccountsBatchMoveAccountsResponse {const AccountsBatchMoveAccountsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory AccountsBatchMoveAccountsResponse.fromJson(Map<String, dynamic> json) { return AccountsBatchMoveAccountsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: BatchAccountMoveResponse.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,

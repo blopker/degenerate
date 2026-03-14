@@ -13,7 +13,7 @@ factory DlpWordListEntry.fromJson(Map<String, dynamic> json) { return DlpWordLis
   name: json['name'] as String,
   profileId: json['profile_id'] as String?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  wordList: json['word_list'],
+  wordList: json['word_list'] as Object,
 ); }
 
 final DateTime createdAt;

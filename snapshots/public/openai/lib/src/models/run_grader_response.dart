@@ -9,8 +9,8 @@ import 'run_grader_response_metadata.dart';final class RunGraderResponse {const 
 factory RunGraderResponse.fromJson(Map<String, dynamic> json) { return RunGraderResponse(
   reward: (json['reward'] as num).toDouble(),
   metadata: RunGraderResponseMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
-  subRewards: (json['sub_rewards'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  modelGraderTokenUsagePerModel: (json['model_grader_token_usage_per_model'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  subRewards: (json['sub_rewards'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  modelGraderTokenUsagePerModel: (json['model_grader_token_usage_per_model'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final double reward;

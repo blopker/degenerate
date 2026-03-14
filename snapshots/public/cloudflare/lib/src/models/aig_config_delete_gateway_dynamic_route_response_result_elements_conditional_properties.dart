@@ -7,7 +7,7 @@
 final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalProperties {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalProperties({this.conditions});
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalProperties.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalProperties(
-  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final Map<String,Object?>? conditions;

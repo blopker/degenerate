@@ -7,8 +7,8 @@
 final class HookDeliveryResponse {const HookDeliveryResponse({required this.headers, required this.payload, });
 
 factory HookDeliveryResponse.fromJson(Map<String, dynamic> json) { return HookDeliveryResponse(
-  headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The response headers received when the delivery was made.

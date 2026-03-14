@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'post_bin_db_post_response400
 
 factory PostBinDbPostResponse400.fromJson(Map<String, dynamic> json) { return PostBinDbPostResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostBinDbPostResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

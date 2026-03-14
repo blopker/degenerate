@@ -244,7 +244,8 @@ final request = ApiRequest(
   body: [
     if (body.creator case final creator$?)
       ApiMultipartField.text('creator', creator$),
-    ApiMultipartField.text('expiry', body.expiry.toIso8601String()),
+    if (body.expiry case final expiry$?)
+      ApiMultipartField.text('expiry', expiry$.toIso8601String()),
     if (body.id case final id$?)
       ApiMultipartField.text('id', id$),
     if (body.metadata case final metadata$?)

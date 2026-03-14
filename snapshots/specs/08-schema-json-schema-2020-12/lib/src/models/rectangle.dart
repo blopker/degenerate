@@ -7,7 +7,7 @@
 final class Rectangle {const Rectangle({required this.kind, required this.width, required this.height, this.meta, });
 
 factory Rectangle.fromJson(Map<String, dynamic> json) { return Rectangle(
-  kind: json['kind'],
+  kind: json['kind'] as Object,
   width: (json['width'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
   meta: json['meta'],

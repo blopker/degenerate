@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'workers_ai_post_run_cf_meta_
 
 factory WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

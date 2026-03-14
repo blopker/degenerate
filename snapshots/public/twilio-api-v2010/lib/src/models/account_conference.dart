@@ -50,7 +50,7 @@ factory AccountConference.fromJson(Map<String, dynamic> json) { return AccountCo
   sid: json['sid'] as String?,
   status: json['status'] != null ? ConferenceEnumStatus.fromJson(json['status'] as String) : null,
   uri: json['uri'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   reasonConferenceEnded: json['reason_conference_ended'] != null ? ConferenceEnumReasonConferenceEnded.fromJson(json['reason_conference_ended'] as String) : null,
   callSidEndingConference: json['call_sid_ending_conference'] as String?,
 ); }

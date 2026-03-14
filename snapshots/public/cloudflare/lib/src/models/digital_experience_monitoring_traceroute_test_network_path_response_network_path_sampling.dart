@@ -8,7 +8,7 @@
 final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling({required this.unit, required this.value, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
-  unit: json['unit'],
+  unit: json['unit'] as Object,
   value: (json['value'] as num).toInt(),
 ); }
 

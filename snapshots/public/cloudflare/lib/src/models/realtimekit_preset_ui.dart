@@ -7,7 +7,7 @@
 import 'realtimekit_preset_ui_design_tokens.dart';final class RealtimekitPresetUi {const RealtimekitPresetUi({this.configDiff, required this.designTokens, });
 
 factory RealtimekitPresetUi.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUi(
-  configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   designTokens: RealtimekitPresetUiDesignTokens.fromJson(json['design_tokens'] as Map<String, dynamic>),
 ); }
 

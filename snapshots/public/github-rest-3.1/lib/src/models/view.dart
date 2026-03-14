@@ -48,7 +48,7 @@ factory View.fromJson(Map<String, dynamic> json) { return View(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   filter: json['filter'] as String?,
   visibleFields: (json['visible_fields'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-  sortBy: (json['sort_by'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
+  sortBy: (json['sort_by'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => e as Object).toList()).toList(),
   groupBy: (json['group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   verticalGroupBy: (json['vertical_group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
 ); }

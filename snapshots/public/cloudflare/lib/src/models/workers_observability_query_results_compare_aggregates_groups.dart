@@ -8,7 +8,7 @@ final class WorkersObservabilityQueryResultsCompareAggregatesGroups {const Worke
 
 factory WorkersObservabilityQueryResultsCompareAggregatesGroups.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCompareAggregatesGroups(
   key: json['key'] as String,
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 final String key;

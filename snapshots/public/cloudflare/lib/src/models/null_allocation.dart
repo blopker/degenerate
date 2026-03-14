@@ -29,7 +29,7 @@ final class NullAllocation {const NullAllocation({required this.type, this.value
 
 factory NullAllocation.fromJson(Map<String, dynamic> json) { return NullAllocation(
   type: NullAllocationType.fromJson(json['type'] as String),
-  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final NullAllocationType type;

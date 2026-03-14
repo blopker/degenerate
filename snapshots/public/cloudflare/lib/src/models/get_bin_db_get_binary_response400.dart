@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'get_bin_db_get_binary_respon
 
 factory GetBinDbGetBinaryResponse400.fromJson(Map<String, dynamic> json) { return GetBinDbGetBinaryResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetBinDbGetBinaryResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

@@ -35,7 +35,7 @@ final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries {con
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
   backoff: json['backoff'] != null ? WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff.fromJson(json['backoff'] as String) : null,
-  delay: json['delay'],
+  delay: json['delay'] as Object,
   limit: (json['limit'] as num).toDouble(),
 ); }
 

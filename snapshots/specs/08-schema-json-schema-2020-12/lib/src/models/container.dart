@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';final class Container {const Contain
 
 factory Container.fromJson(Map<String, dynamic> json) { return Container(
   payload: json['payload'],
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => e).toList(),
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as Object).toList(),
 ); }
 
 final Object? payload;

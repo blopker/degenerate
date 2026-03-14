@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'realtimekit_paging_response_paging.dart';final class RealtimekitPagingResponse {const RealtimekitPagingResponse({required this.data, required this.paging, required this.success, });
 
 factory RealtimekitPagingResponse.fromJson(Map<String, dynamic> json) { return RealtimekitPagingResponse(
-  data: (json['data'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  data: (json['data'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   paging: RealtimekitPagingResponsePaging.fromJson(json['paging'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }

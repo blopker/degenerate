@@ -7,7 +7,7 @@
 import 'workers_binding_name.dart';final class WorkersBindingKindJson {const WorkersBindingKindJson({required this.json, required this.name, required this.type, });
 
 factory WorkersBindingKindJson.fromJson(Map<String, dynamic> json) { return WorkersBindingKindJson(
-  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
 ); }

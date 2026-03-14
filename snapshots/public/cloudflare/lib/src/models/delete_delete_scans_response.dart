@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';final class DeleteDeleteScansRespons
 factory DeleteDeleteScansResponse.fromJson(Map<String, dynamic> json) { return DeleteDeleteScansResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => e as String).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

@@ -14,7 +14,7 @@ factory Deployment.fromJson(Map<String, dynamic> json) { return Deployment(
   sha: json['sha'] as String,
   ref: json['ref'] as String,
   task: json['task'] as String,
-  payload: OneOf2.parse(json['payload'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,),
+  payload: OneOf2.parse(json['payload'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)), fromB: (v) => v as String,),
   originalEnvironment: json['original_environment'] as String?,
   environment: json['environment'] as String,
   description: json['description'] as String,

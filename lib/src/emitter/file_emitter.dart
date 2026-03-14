@@ -113,13 +113,15 @@ class FileEmitter {
         }
       }
 
-      final sortedRefs =
+      final sortedFiles =
           modelAnalysis.referencedNames
               .where((n) => typeToFile.containsKey(n))
+              .map((n) => typeToFile[n]!)
+              .toSet()
               .toList()
             ..sort();
-      final modelImports = sortedRefs
-          .map((n) => Directive.import('${typeToFile[n]}.dart'))
+      final modelImports = sortedFiles
+          .map((f) => Directive.import('$f.dart'))
           .toList();
 
       final needsCollection = modelAnalysis.needsCollection;
@@ -163,13 +165,15 @@ class FileEmitter {
       final analysis = _analyzeApi(api, typeRegistry);
 
       // Derive imports directly from referenced types using pre-built lookup
-      final sortedApiRefs =
+      final sortedApiFiles =
           analysis.referencedTypes
               .where((n) => typeToFile.containsKey(n))
+              .map((n) => typeToFile[n]!)
+              .toSet()
               .toList()
             ..sort();
-      final modelImports = sortedApiRefs
-          .map((n) => Directive.import('../models/${typeToFile[n]}.dart'))
+      final modelImports = sortedApiFiles
+          .map((f) => Directive.import('../models/$f.dart'))
           .toList();
 
       final needsConvert = analysis.needsConvert;
@@ -245,18 +249,22 @@ class FileEmitter {
 
   List<Spec> _emitType(IrType type, Map<String, IrType> typeRegistry) {
     return switch (type) {
-      IrObject() => ModelEmitter(type).emit(),
+      IrObject() => ModelEmitter(type, typeRegistry: typeRegistry).emit(),
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
       IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type).emit(),
-      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description),
+      IrUntaggedUnion(:final variants)
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencing(type.name, variants) =>
+        _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
       IrUntaggedUnion() => UntaggedUnionEmitter(
         type,
         typeRegistry: typeRegistry,
       ).emit(),
-      IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description),
+      IrAnyOf(:final variants)
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencing(type.name, variants) =>
+        _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
       IrAnyOf() => AnyOfEmitter(type, typeRegistry: typeRegistry).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
       _ => [],
@@ -264,14 +272,42 @@ class FileEmitter {
   }
 
   /// Emit a `typedef X = OneOfN<A, B, ...>;` for a union type.
+  ///
+  /// For self-referencing types (e.g., `WorkersKvAny = OneOf6<..., List<WorkersKvAny>>`),
+  /// also emits a top-level `parseTypeName` function for recursive deserialization.
   List<Spec> _emitOneOfTypedef(
     String name,
     List<IrType> variants,
     String? description,
+    Map<String, IrType> typeRegistry,
   ) {
     final oneOfRef = oneOfTypeReference(variants);
-    final code = Code('typedef $name = ${oneOfRef.accept(_dartEmitter)};');
-    return [code];
+    final specs = <Spec>[
+      Code('typedef $name = ${oneOfRef.accept(_dartEmitter)};'),
+    ];
+    // Check if any variant references this type (direct self-reference).
+    if (_isSelfReferencing(name, variants)) {
+      final resolving = {name};
+      final parseBody = buildOneOfParseCode(
+        variants,
+        'json',
+        typeRegistry: typeRegistry,
+        resolving: resolving,
+      );
+      specs.add(Code('$name parse$name(Object? json) => $parseBody;'));
+    }
+    return specs;
+  }
+
+  /// Check if any variant (recursively through List/Map) references [typeName].
+  bool _isSelfReferencing(String typeName, List<IrType> variants) {
+    bool check(IrType type) => switch (type) {
+      IrTypeRef(:final name) => name == typeName,
+      IrList(:final items) => check(items),
+      IrMap(:final values) => check(values),
+      _ => false,
+    };
+    return variants.any(check);
   }
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
@@ -291,8 +327,12 @@ class FileEmitter {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
-    bool isBytesType(IrType t) =>
-        t is IrPrimitive && t.kind == PrimitiveKind.bytes;
+    bool isBytesType(IrType t) => switch (t) {
+      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
+      IrList(:final items) => isBytesType(items),
+      IrMap(:final values) => isBytesType(values),
+      _ => false,
+    };
 
     for (final op in api.operations) {
       for (final param in op.parameters) {
@@ -335,21 +375,24 @@ class FileEmitter {
         needsConvert = true;
         _collectTopLevelTypeName(sseContent.$2.schema, names, typeRegistry);
       }
-      // Collect types from error responses (default and 4xx/5xx)
-      if (op.defaultResponse != null) {
-        final content = preferredContent(op.defaultResponse!.content);
-        if (content != null) {
-          if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-          _collectTopLevelTypeName(content.$2.schema, names, typeRegistry);
+      // Collect error response type (matching ApiEmitter._errorResponseContent
+      // logic: prefer default, then first 4xx+, only one error type per operation).
+      {
+        (String, IrMediaType)? errorContent;
+        if (op.defaultResponse != null) {
+          errorContent = preferredContent(op.defaultResponse!.content);
         }
-      }
-      for (final entry in op.responses.entries) {
-        if (entry.key >= 400) {
-          final content = preferredContent(entry.value.content);
-          if (content != null) {
-            if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-            _collectTopLevelTypeName(content.$2.schema, names, typeRegistry);
+        if (errorContent == null) {
+          for (final entry in op.responses.entries) {
+            if (entry.key >= 400) {
+              errorContent = preferredContent(entry.value.content);
+              if (errorContent != null) break;
+            }
           }
+        }
+        if (errorContent != null) {
+          if (isJsonLikeMediaType(errorContent.$1)) needsConvert = true;
+          _collectTopLevelTypeName(errorContent.$2.schema, names, typeRegistry);
         }
       }
     }
@@ -364,14 +407,29 @@ class FileEmitter {
   /// into fields. For lists/maps, collect the item/value types.
   /// When [typeRegistry] is provided, resolves IrTypeRef to OneOf-eligible
   /// unions and collects their variant type names (needed for parse code imports).
-  void _collectTopLevelTypeName(IrType type, Set<String> names, [Map<String, IrType>? typeRegistry, Set<String>? resolving]) {
+  ///
+  /// When [skipInlinedOneOfRefs] is true (used during variant resolution),
+  /// refs that resolve to non-self-referencing OneOf typedefs are NOT added
+  /// to [names] because they are fully inlined in the parse code.
+  void _collectTopLevelTypeName(IrType type, Set<String> names, [Map<String, IrType>? typeRegistry, Set<String>? resolving, bool skipInlinedOneOfRefs = false]) {
     switch (type) {
       case IrObject(:final name):
         names.add(name);
       case IrEnum(:final name):
         names.add(name);
       case IrTypeRef(:final name):
-        names.add(name);
+        // Check if this ref points to a non-self-referencing OneOf typedef
+        // that will be inlined in parse code (no explicit reference in output).
+        final isInlinedOneOf = skipInlinedOneOfRefs && typeRegistry != null && switch (typeRegistry[name]) {
+          IrUntaggedUnion(:final variants)
+              when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+          IrAnyOf(:final variants)
+              when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+          _ => false,
+        };
+        if (!isInlinedOneOf) {
+          names.add(name);
+        }
         // If the ref points to a OneOf-eligible union (typedef), the generated
         // parse code references the variant types directly - collect them too.
         // Use resolving set to avoid infinite recursion on circular refs.
@@ -386,7 +444,8 @@ class FileEmitter {
             };
             if (variants != null) {
               for (final v in variants) {
-                _collectTopLevelTypeName(v, names, typeRegistry, resolving);
+                // Variant refs to other OneOf typedefs are also inlined
+                _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
               }
             }
           }
@@ -394,27 +453,37 @@ class FileEmitter {
       case IrDiscriminatedUnion(:final name):
         names.add(name);
       case IrUntaggedUnion(:final name, :final variants):
-        names.add(name);
+        // Skip adding the name if this is a non-self-referencing OneOf typedef
+        // that will be inlined in parse code.
+        final skipUntagged = skipInlinedOneOfRefs &&
+            isOneOfEligible(variants) && !_isSelfReferencing(name, variants);
+        if (!skipUntagged) {
+          names.add(name);
+        }
         // When resolving imports (typeRegistry provided), collect variant type names
         // because OneOf.parse() code references them directly.
         if (typeRegistry != null && isOneOfEligible(variants)) {
           for (final v in variants) {
-            _collectTopLevelTypeName(v, names, typeRegistry, resolving);
+            _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
           }
         }
       case IrAnyOf(:final name, :final variants):
-        names.add(name);
+        final skipAnyOf = skipInlinedOneOfRefs &&
+            isOneOfEligible(variants) && !_isSelfReferencing(name, variants);
+        if (!skipAnyOf) {
+          names.add(name);
+        }
         if (typeRegistry != null && isOneOfEligible(variants)) {
           for (final v in variants) {
-            _collectTopLevelTypeName(v, names, typeRegistry, resolving);
+            _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
           }
         }
       case IrExtensionType(:final name):
         names.add(name);
       case IrList(:final items):
-        _collectTopLevelTypeName(items, names, typeRegistry, resolving);
+        _collectTopLevelTypeName(items, names, typeRegistry, resolving, skipInlinedOneOfRefs);
       case IrMap(:final values):
-        _collectTopLevelTypeName(values, names, typeRegistry, resolving);
+        _collectTopLevelTypeName(values, names, typeRegistry, resolving, skipInlinedOneOfRefs);
       case IrPrimitive():
         break;
     }
@@ -436,16 +505,45 @@ class FileEmitter {
     var needsConvert = false;
     var needsOneOf = false;
 
-    bool isBytesType(IrType t) => switch (t) {
+    /// Direct bytes check (no union/ref traversal) - for needsTypedData.
+    bool isDirectBytes(IrType t) => switch (t) {
       IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => isBytesType(items),
-      IrMap(:final values) => isBytesType(values),
+      IrList(:final items) => isDirectBytes(items),
+      IrMap(:final values) => isDirectBytes(values),
+      _ => false,
+    };
+
+    /// Deep bytes check (traverses OneOf-eligible unions and refs) - for needsConvert.
+    /// Only recurses into OneOf-eligible unions because their parse code is inlined
+    /// in the current file. Non-OneOf-eligible unions (sealed classes) handle bytes
+    /// in their own fromJson method.
+    final bytesVisited = <String>{};
+    bool hasBytesAnywhere(IrType t) => switch (t) {
+      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
+      IrList(:final items) => hasBytesAnywhere(items),
+      IrMap(:final values) => hasBytesAnywhere(values),
+      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
+      IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
+      IrTypeRef(:final name) when typeRegistry != null && bytesVisited.add(name) => switch (typeRegistry[name]) {
+        IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
+        IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
+        _ => false,
+      },
       _ => false,
     };
 
     bool isOneOfType(IrType t) => switch (t) {
-      IrUntaggedUnion(:final variants) => isOneOfEligible(variants),
-      IrAnyOf(:final variants) => isOneOfEligible(variants),
+      IrUntaggedUnion(:final name, :final variants)
+          when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+      IrAnyOf(:final name, :final variants)
+          when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+      IrTypeRef(:final name) when typeRegistry != null => switch (typeRegistry[name]) {
+        IrUntaggedUnion(:final variants)
+            when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+        IrAnyOf(:final variants)
+            when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+        _ => false,
+      },
       IrList(:final items) => isOneOfType(items),
       IrMap(:final values) => isOneOfType(values),
       _ => false,
@@ -454,7 +552,12 @@ class FileEmitter {
     void checkField(IrType fieldType) {
       _collectTopLevelTypeName(fieldType, names, typeRegistry);
       if (isListType(fieldType)) needsCollection = true;
-      if (isBytesType(fieldType)) needsTypedData = true;
+      if (isDirectBytes(fieldType)) {
+        needsTypedData = true;
+        needsConvert = true;
+      } else if (hasBytesAnywhere(fieldType)) {
+        needsConvert = true;
+      }
       if (isOneOfType(fieldType)) needsOneOf = true;
     }
 
@@ -463,7 +566,6 @@ class FileEmitter {
         names.add(name);
         for (final field in fields) {
           checkField(field.type);
-          if (isBytesType(field.type)) needsConvert = true;
         }
       case IrEnum(:final name):
         names.add(name);
@@ -472,34 +574,48 @@ class FileEmitter {
       case IrDiscriminatedUnion(:final name, :final mapping):
         names.add(name);
         for (final variant in mapping.values) {
-          _collectTopLevelTypeName(variant, names, typeRegistry);
+          // Discriminated union files only reference variant types by name,
+          // no transitive resolution needed.
+          _collectTopLevelTypeName(variant, names);
           if (variant is IrObject) {
             for (final f in variant.fields) {
               if (isListType(f.type)) needsCollection = true;
             }
           }
-          if (isBytesType(variant)) needsTypedData = true;
+          if (isDirectBytes(variant)) needsTypedData = true;
         }
       case IrUntaggedUnion(:final name, :final variants):
         names.add(name);
         if (isOneOfEligible(variants)) needsOneOf = true;
         for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names, typeRegistry);
-          if (isBytesType(variant)) needsTypedData = true;
+          // Typedef/sealed union files only reference direct variant types.
+          _collectTopLevelTypeName(variant, names);
+          if (isDirectBytes(variant)) needsTypedData = true;
         }
       case IrAnyOf(:final name, :final variants):
         names.add(name);
-        if (isOneOfEligible(variants)) needsOneOf = true;
-        for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names, typeRegistry);
-          if (isBytesType(variant)) {
-            needsTypedData = true;
-            needsConvert = true;
+        if (isOneOfEligible(variants) && !_isSelfReferencing(name, variants)) {
+          // OneOf typedef: only direct variant types needed.
+          // Typedef files don't contain base64 code, so only needsTypedData.
+          needsOneOf = true;
+          for (final variant in variants) {
+            _collectTopLevelTypeName(variant, names);
+            if (isDirectBytes(variant)) needsTypedData = true;
+          }
+        } else {
+          // AnyOf class: fromJson may inline OneOf.parse for variant types.
+          for (final variant in variants) {
+            _collectTopLevelTypeName(variant, names, typeRegistry);
+            if (isOneOfType(variant)) needsOneOf = true;
+            if (isDirectBytes(variant)) {
+              needsTypedData = true;
+              needsConvert = true;
+            }
           }
         }
       case IrExtensionType(:final name, :final inner):
         names.add(name);
-        if (isBytesType(inner)) {
+        if (isDirectBytes(inner)) {
           needsTypedData = true;
           needsConvert = true;
         }

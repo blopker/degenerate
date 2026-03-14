@@ -7,12 +7,12 @@
 final class WebhooksWorkflowJobRun {const WebhooksWorkflowJobRun({required this.conclusion, required this.createdAt, required this.environment, required this.htmlUrl, required this.id, required this.name, required this.status, required this.updatedAt, });
 
 factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) { return WebhooksWorkflowJobRun(
-  conclusion: json['conclusion'],
+  conclusion: json['conclusion'] as Object,
   createdAt: json['created_at'] as String,
   environment: json['environment'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
-  name: json['name'],
+  name: json['name'] as Object,
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
 ); }

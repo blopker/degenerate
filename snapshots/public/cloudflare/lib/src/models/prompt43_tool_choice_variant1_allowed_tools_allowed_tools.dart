@@ -32,7 +32,7 @@ final class Prompt43ToolChoiceVariant1AllowedToolsAllowedTools {const Prompt43To
 
 factory Prompt43ToolChoiceVariant1AllowedToolsAllowedTools.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1AllowedToolsAllowedTools(
   mode: Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 final Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode mode;

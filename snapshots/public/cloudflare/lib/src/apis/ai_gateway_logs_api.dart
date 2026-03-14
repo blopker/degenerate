@@ -41,7 +41,7 @@ if (minTotalTokens != null) queryParameters['min_total_tokens'] = minTotalTokens
 if (maxTotalTokens != null) queryParameters['max_total_tokens'] = maxTotalTokens.toString();
 if (minDuration != null) queryParameters['min_duration'] = minDuration.toString();
 if (maxDuration != null) queryParameters['max_duration'] = maxDuration.toString();
-if (feedback != null) queryParameters['feedback'] = feedback;
+if (feedback != null) queryParameters['feedback'] = feedback.toString();
 if (success != null) queryParameters['success'] = success.toString();
 if (cached != null) queryParameters['cached'] = cached.toString();
 if (model != null) queryParameters['model'] = model;
@@ -173,7 +173,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object));
   },
   onError: (response) {
     return AigConfigGetGatewayLogRequestResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -197,7 +197,7 @@ final request = ApiRequest(
 return _execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object));
   },
   onError: (response) {
     return AigConfigGetGatewayLogResponseResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

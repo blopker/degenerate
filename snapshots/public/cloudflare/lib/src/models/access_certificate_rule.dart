@@ -8,7 +8,7 @@
 final class AccessCertificateRule {const AccessCertificateRule({required this.certificate});
 
 factory AccessCertificateRule.fromJson(Map<String, dynamic> json) { return AccessCertificateRule(
-  certificate: (json['certificate'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  certificate: (json['certificate'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final Map<String,Object?> certificate;

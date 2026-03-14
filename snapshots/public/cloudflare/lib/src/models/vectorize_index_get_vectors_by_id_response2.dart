@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'vectorize_vector_identifier.
 
 factory VectorizeIndexGetVectorsByIdResponse2.fromJson(Map<String, dynamic> json) { return VectorizeIndexGetVectorsByIdResponse2(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   namespace: json['namespace'] as String?,
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
 ); }

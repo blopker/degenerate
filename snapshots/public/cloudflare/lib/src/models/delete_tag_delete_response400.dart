@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'delete_tag_delete_response40
 
 factory DeleteTagDeleteResponse400.fromJson(Map<String, dynamic> json) { return DeleteTagDeleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteTagDeleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

@@ -11,9 +11,9 @@ factory AccessSchemasCorsHeaders.fromJson(Map<String, dynamic> json) { return Ac
   allowAllMethods: json['allow_all_methods'] != null ? AccessAllowAllMethods.fromJson(json['allow_all_methods'] as bool) : null,
   allowAllOrigins: json['allow_all_origins'] != null ? AccessAllowAllOrigins.fromJson(json['allow_all_origins'] as bool) : null,
   allowCredentials: json['allow_credentials'] != null ? AccessAllowCredentials.fromJson(json['allow_credentials'] as bool) : null,
-  allowedHeaders: (json['allowed_headers'] as List<dynamic>?)?.map((e) => e).toList(),
+  allowedHeaders: (json['allowed_headers'] as List<dynamic>?)?.map((e) => e as Object).toList(),
   allowedMethods: (json['allowed_methods'] as List<dynamic>?)?.map((e) => AccessAllowedMethods2.fromJson(e as String)).toList(),
-  allowedOrigins: (json['allowed_origins'] as List<dynamic>?)?.map((e) => e).toList(),
+  allowedOrigins: (json['allowed_origins'] as List<dynamic>?)?.map((e) => e as Object).toList(),
   maxAge: json['max_age'] != null ? AccessMaxAge.fromJson(json['max_age'] as num) : null,
 ); }
 

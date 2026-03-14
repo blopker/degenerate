@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_candidate_pairs_producing_transport.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs({this.consumingTransport, this.producingTransport, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs(
-  consumingTransport: (json['consuming_transport'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  consumingTransport: (json['consuming_transport'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   producingTransport: (json['producing_transport'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

@@ -8,7 +8,7 @@
 final class ZonesStringConstraint {const ZonesStringConstraint({required this.$operator, required this.value, });
 
 factory ZonesStringConstraint.fromJson(Map<String, dynamic> json) { return ZonesStringConstraint(
-  $operator: json['operator'],
+  $operator: json['operator'] as Object,
   value: json['value'] as String,
 ); }
 

@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'builds_cursor.dart';final cl
 
 factory BuildsBuildLogsResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildLogsResponse(
   cursor: json['cursor'] != null ? BuildsCursor.fromJson(json['cursor'] as String) : null,
-  lines: (json['lines'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
+  lines: (json['lines'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e as Object).toList()).toList(),
   truncated: json['truncated'] as bool?,
 ); }
 

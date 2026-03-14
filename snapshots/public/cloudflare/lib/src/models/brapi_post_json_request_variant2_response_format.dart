@@ -7,7 +7,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_request_variant2_response_format_json_schema_value.dart';final class BrapiPostJsonRequestVariant2ResponseFormat {const BrapiPostJsonRequestVariant2ResponseFormat({this.jsonSchema, required this.type, });
 
 factory BrapiPostJsonRequestVariant2ResponseFormat.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant2ResponseFormat(
-  jsonSchema: (json['json_schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf5.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromE: (v) => (v as List<dynamic>).map((e) => e as String).toList(),))),
+  jsonSchema: (json['json_schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf5.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)), fromE: (v) => (v as List<dynamic>).map((e) => e as String).toList(),))),
   type: json['type'] as String,
 ); }
 

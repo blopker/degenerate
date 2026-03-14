@@ -11,8 +11,8 @@ final class McpListToolsTool {const McpListToolsTool({required this.name, this.d
 factory McpListToolsTool.fromJson(Map<String, dynamic> json) { return McpListToolsTool(
   name: json['name'] as String,
   description: json['description'] as String?,
-  inputSchema: (json['input_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  inputSchema: (json['input_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The name of the tool.

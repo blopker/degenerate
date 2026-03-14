@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issues_create_request_labels.dart';import 'issues_create_request_labels_variant2.dart';final class IssuesCreateRequest {const IssuesCreateRequest({required this.title, this.body, this.assignee, this.milestone, this.labels, this.assignees, this.type, });
 
 factory IssuesCreateRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateRequest(
-  title: json['title'],
+  title: json['title'] as Object,
   body: json['body'] as String?,
   assignee: json['assignee'] as String?,
   milestone: json['milestone'],

@@ -10,8 +10,8 @@ final class RequestsByColo {const RequestsByColo({this.all, this.cached, this.co
 factory RequestsByColo.fromJson(Map<String, dynamic> json) { return RequestsByColo(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
   cached: json['cached'] != null ? (json['cached'] as num).toInt() : null,
-  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  httpStatus: (json['http_status'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  httpStatus: (json['http_status'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,
 ); }
 

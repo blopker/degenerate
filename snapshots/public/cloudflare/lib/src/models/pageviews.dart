@@ -9,7 +9,7 @@ final class Pageviews {const Pageviews({this.all, this.searchEngine, });
 
 factory Pageviews.fromJson(Map<String, dynamic> json) { return Pageviews(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
-  searchEngine: (json['search_engine'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  searchEngine: (json['search_engine'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The total number of pageviews served within the time range.

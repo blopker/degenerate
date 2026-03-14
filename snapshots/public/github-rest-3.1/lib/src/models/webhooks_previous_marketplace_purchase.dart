@@ -9,7 +9,7 @@ import 'webhooks_previous_marketplace_purchase_account.dart';import 'webhooks_pr
 factory WebhooksPreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhooksPreviousMarketplacePurchase(
   account: WebhooksPreviousMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
-  freeTrialEndsOn: json['free_trial_ends_on'],
+  freeTrialEndsOn: json['free_trial_ends_on'] as Object,
   nextBillingDate: json['next_billing_date'] as String?,
   onFreeTrial: json['on_free_trial'] as bool,
   plan: WebhooksPreviousMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),

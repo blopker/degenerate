@@ -9,7 +9,7 @@ final class Prompt43ToolsFunctionFunction {const Prompt43ToolsFunctionFunction({
 factory Prompt43ToolsFunctionFunction.fromJson(Map<String, dynamic> json) { return Prompt43ToolsFunctionFunction(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   strict: json['strict'] as bool?,
 ); }
 

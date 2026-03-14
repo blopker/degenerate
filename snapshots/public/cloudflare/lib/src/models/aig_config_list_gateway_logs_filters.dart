@@ -135,7 +135,7 @@ final class AigConfigListGatewayLogsFilters {const AigConfigListGatewayLogsFilte
 factory AigConfigListGatewayLogsFilters.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayLogsFilters(
   key: AigConfigListGatewayLogsFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigListGatewayLogsFiltersOperator.fromJson(json['operator'] as String),
-  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
+  value: (json['value'] as List<dynamic>).map((e) => e as Object).toList(),
 ); }
 
 final AigConfigListGatewayLogsFiltersKey key;

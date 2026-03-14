@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'n1_awq_response400_errors.da
 
 factory $1AwqResponse400.fromJson(Map<String, dynamic> json) { return $1AwqResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => $1AwqResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

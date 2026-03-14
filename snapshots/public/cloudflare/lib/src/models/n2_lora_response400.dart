@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'n2_lora_response400_errors.d
 
 factory $2LoraResponse400.fromJson(Map<String, dynamic> json) { return $2LoraResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => $2LoraResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

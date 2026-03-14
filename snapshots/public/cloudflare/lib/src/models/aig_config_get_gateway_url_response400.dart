@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'aig_config_get_gateway_url_r
 
 factory AigConfigGetGatewayUrlResponse400.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayUrlResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigGetGatewayUrlResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

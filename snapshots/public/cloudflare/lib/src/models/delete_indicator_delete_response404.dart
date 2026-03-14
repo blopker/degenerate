@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'delete_indicator_delete_resp
 
 factory DeleteIndicatorDeleteResponse404.fromJson(Map<String, dynamic> json) { return DeleteIndicatorDeleteResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteIndicatorDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

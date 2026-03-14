@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'post_tag_category_create_res
 
 factory PostTagCategoryCreateResponse409.fromJson(Map<String, dynamic> json) { return PostTagCategoryCreateResponse409(
   errors: (json['errors'] as List<dynamic>).map((e) => PostTagCategoryCreateResponse409Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

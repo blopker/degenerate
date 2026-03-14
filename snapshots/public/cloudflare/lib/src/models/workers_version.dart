@@ -47,7 +47,7 @@ factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersi
   migrations: json['migrations'] != null ? OneOf2.parse(json['migrations'], fromA: (v) => WorkersMigrationTagConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersMigrationTagConditions.fromJson(v as Map<String, dynamic>),) : null,
   modules: (json['modules'] as List<dynamic>?)?.map((e) => WorkersVersionModules.fromJson(e as Map<String, dynamic>)).toList(),
   number: (json['number'] as num).toInt(),
-  placement: json['placement'] != null ? WorkersPlacementInfoNoStatus.fromJson(json['placement'] as Map<String, dynamic>) : null,
+  placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => WorkersPlacementInfoNoStatusSmart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoNoStatusVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoNoStatusVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoNoStatusVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoNoStatusTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoNoStatusTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoNoStatusTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoNoStatusTargeted4.fromJson(v as Map<String, dynamic>),) : null,
   source: json['source'] as String?,
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,
   urls: (json['urls'] as List<dynamic>).map((e) => Uri.parse(e as String)).toList(),

@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';final class CodespacesCreateOrUpdate
 factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: json['encrypted_value'] as String?,
   keyId: json['key_id'] as String,
-  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e).toList(),
+  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e as Object).toList(),
 ); }
 
 /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user) endpoint.

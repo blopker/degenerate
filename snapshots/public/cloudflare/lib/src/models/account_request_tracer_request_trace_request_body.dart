@@ -8,7 +8,7 @@ final class AccountRequestTracerRequestTraceRequestBody {const AccountRequestTra
 
 factory AccountRequestTracerRequestTraceRequestBody.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequestBody(
   base64: json['base64'] as String?,
-  json: (json['json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  json: (json['json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   plainText: json['plain_text'] as String?,
 ); }
 

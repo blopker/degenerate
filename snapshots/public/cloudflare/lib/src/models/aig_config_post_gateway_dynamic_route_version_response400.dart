@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'aig_config_post_gateway_dyna
 
 factory AigConfigPostGatewayDynamicRouteVersionResponse400.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigPostGatewayDynamicRouteVersionResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

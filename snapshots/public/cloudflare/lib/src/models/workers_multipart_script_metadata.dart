@@ -20,7 +20,7 @@ factory WorkersMultipartScriptMetadata.fromJson(Map<String, dynamic> json) { ret
   mainModule: json['main_module'] as String?,
   migrations: json['migrations'] != null ? OneOf2.parse(json['migrations'], fromA: (v) => WorkersMigrationTagConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersMigrationTagConditions.fromJson(v as Map<String, dynamic>),) : null,
   observability: json['observability'] != null ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
-  placement: json['placement'] != null ? WorkersPlacementInfo.fromJson(json['placement'] as Map<String, dynamic>) : null,
+  placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => WorkersPlacementInfoSmart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoTargeted4.fromJson(v as Map<String, dynamic>),) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   tailConsumers: (json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,

@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'urlscanner_get_scan_response
 
 factory UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
   charset: json['charset'] as String,
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   mimeType: json['mimeType'] as String,
   protocol: json['protocol'] as String,
   remoteIpAddress: json['remoteIPAddress'] as String,

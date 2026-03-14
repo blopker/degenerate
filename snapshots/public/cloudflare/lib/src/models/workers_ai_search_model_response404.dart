@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class WorkersAiSearchModelResponse404 {const WorkersAiSearchModelResponse404({required this.errors, required this.success, });
 
 factory WorkersAiSearchModelResponse404.fromJson(Map<String, dynamic> json) { return WorkersAiSearchModelResponse404(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   success: json['success'] as bool,
 ); }
 

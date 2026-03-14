@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// `GET /zones/{zone_id}/ssl/verification`
 Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection, Never>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, Object? retry, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (retry != null) queryParameters['retry'] = retry;
+if (retry != null) queryParameters['retry'] = retry.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 

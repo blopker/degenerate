@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'account.dart';import 'message3.dart';import 'page_token_result_info.dart';final class OrganizationsGetAccountsResponse {const OrganizationsGetAccountsResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
 
 factory OrganizationsGetAccountsResponse.fromJson(Map<String, dynamic> json) { return OrganizationsGetAccountsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => Account.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: PageTokenResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),

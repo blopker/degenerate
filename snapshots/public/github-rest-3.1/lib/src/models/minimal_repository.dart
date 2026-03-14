@@ -122,7 +122,7 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   allowForking: json['allow_forking'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   securityAndAnalysis: json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,
-  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final int id;

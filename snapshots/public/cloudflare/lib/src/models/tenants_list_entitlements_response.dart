@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'innate_entitlements.dart';import 'message3.dart';final class TenantsListEntitlementsResponse {const TenantsListEntitlementsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory TenantsListEntitlementsResponse.fromJson(Map<String, dynamic> json) { return TenantsListEntitlementsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: InnateEntitlements.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,

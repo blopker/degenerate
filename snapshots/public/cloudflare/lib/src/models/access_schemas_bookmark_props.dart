@@ -8,7 +8,7 @@ import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';
 
 factory AccessSchemasBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessSchemasBookmarkProps(
   appLauncherVisible: json['app_launcher_visible'],
-  domain: json['domain'],
+  domain: json['domain'] as Object,
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] as String,

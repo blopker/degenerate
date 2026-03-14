@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class QueryBulk {const QueryBulk({this.queries});
 
 factory QueryBulk.fromJson(Map<String, dynamic> json) { return QueryBulk(
-  queries: (json['queries'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  queries: (json['queries'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 final List<Map<String,Object?>>? queries;

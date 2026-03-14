@@ -89,7 +89,7 @@ factory FineTuningJobEvent.fromJson(Map<String, dynamic> json) { return FineTuni
   level: FineTuningJobEventLevel.fromJson(json['level'] as String),
   message: json['message'] as String,
   type: json['type'] != null ? FineTuningJobEventType.fromJson(json['type'] as String) : null,
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The object type, which is always "fine_tuning.job.event".

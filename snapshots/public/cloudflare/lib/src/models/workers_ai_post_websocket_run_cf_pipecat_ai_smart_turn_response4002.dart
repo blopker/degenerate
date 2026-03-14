@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'workers_ai_post_websocket_ru
 
 factory WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(Map<String, dynamic> json) { return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

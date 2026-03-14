@@ -9,7 +9,7 @@ final class RequestTracerTrace2 {const RequestTracerTrace2({this.action, this.ac
 
 factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return RequestTracerTrace2(
   action: json['action'] as String?,
-  actionParameters: (json['action_parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  actionParameters: (json['action_parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   description: json['description'] as String?,
   expression: json['expression'] as String?,
   kind: json['kind'] as String?,

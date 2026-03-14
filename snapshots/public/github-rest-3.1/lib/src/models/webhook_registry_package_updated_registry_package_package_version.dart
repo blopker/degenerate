@@ -18,7 +18,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(Map<
   id: (json['id'] as num).toInt(),
   installationCommand: json['installation_command'] as String,
   manifest: json['manifest'] as String?,
-  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   name: json['name'] as String,
   packageFiles: (json['package_files'] as List<dynamic>).map((e) => WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles.fromJson(e as Map<String, dynamic>)).toList(),
   packageUrl: json['package_url'] as String,

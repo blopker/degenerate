@@ -9,7 +9,7 @@ final class ChatCompletionFunctions {const ChatCompletionFunctions({this.descrip
 factory ChatCompletionFunctions.fromJson(Map<String, dynamic> json) { return ChatCompletionFunctions(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// A description of what the function does, used by the model to choose when and how to call the function.

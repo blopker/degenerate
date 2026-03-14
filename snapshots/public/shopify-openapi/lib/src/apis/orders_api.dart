@@ -19,12 +19,12 @@ final ApiConfig _config;
 /// `GET /admin/api/2020-01/checkouts/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetCheckoutsCount({Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -49,12 +49,12 @@ return _execute(
 /// `GET /admin/api/2020-04/checkouts/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetCheckoutsCount({Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -79,12 +79,12 @@ return _execute(
 /// `GET /admin/api/2020-07/checkouts/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetCheckoutsCount({Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -109,12 +109,12 @@ return _execute(
 /// `GET /admin/api/2020-10/checkouts/count.json`
 Future<ApiResult<void, Never>> getCheckoutsCount({Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -139,12 +139,12 @@ return _execute(
 /// `GET /admin/api/2021-01/checkouts/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetCheckoutsCount({Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -169,12 +169,12 @@ return _execute(
 /// `GET /admin/api/unstable/checkouts/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsCount({Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -199,20 +199,20 @@ return _execute(
 /// `GET /admin/api/2020-01/orders.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrders({Object? ids, Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? processedAtMin, Object? processedAtMax, Object? attributionAppId, Object? status, Object? financialStatus, Object? fulfillmentStatus, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
-if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId;
-if (status != null) queryParameters['status'] = status;
-if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
-if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
-if (fields != null) queryParameters['fields'] = fields;
+if (ids != null) queryParameters['ids'] = ids.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
+if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId.toString();
+if (status != null) queryParameters['status'] = status.toString();
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus.toString();
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -281,7 +281,7 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderId({required String orderId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -346,13 +346,13 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersCount({Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, Object? financialStatus, Object? fulfillmentStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
-if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
-if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus.toString();
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -422,12 +422,12 @@ return _execute(
 /// `POST /admin/api/2020-01/orders/{order_id}/cancel.json`
 Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdCancel({required String orderId, Object? amount, Object? currency, Object? restockDeprecated, Object? reason, Object? email, Object? refund, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amount != null) queryParameters['amount'] = amount;
-if (currency != null) queryParameters['currency'] = currency;
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (reason != null) queryParameters['reason'] = reason;
-if (email != null) queryParameters['email'] = email;
-if (refund != null) queryParameters['refund'] = refund;
+if (amount != null) queryParameters['amount'] = amount.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (reason != null) queryParameters['reason'] = reason.toString();
+if (email != null) queryParameters['email'] = email.toString();
+if (refund != null) queryParameters['refund'] = refund.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -454,20 +454,20 @@ return _execute(
 /// `GET /admin/api/2020-04/orders.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrders({Object? ids, Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? processedAtMin, Object? processedAtMax, Object? attributionAppId, Object? status, Object? financialStatus, Object? fulfillmentStatus, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
-if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId;
-if (status != null) queryParameters['status'] = status;
-if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
-if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
-if (fields != null) queryParameters['fields'] = fields;
+if (ids != null) queryParameters['ids'] = ids.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
+if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId.toString();
+if (status != null) queryParameters['status'] = status.toString();
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus.toString();
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -536,7 +536,7 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderId({required String orderId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -601,13 +601,13 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersCount({Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? status, Object? financialStatus, Object? fulfillmentStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (status != null) queryParameters['status'] = status;
-if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
-if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (status != null) queryParameters['status'] = status.toString();
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus.toString();
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -677,12 +677,12 @@ return _execute(
 /// `POST /admin/api/2020-04/orders/{order_id}/cancel.json`
 Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdCancel({required String orderId, Object? amount, Object? currency, Object? restockDeprecated, Object? reason, Object? email, Object? refund, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amount != null) queryParameters['amount'] = amount;
-if (currency != null) queryParameters['currency'] = currency;
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (reason != null) queryParameters['reason'] = reason;
-if (email != null) queryParameters['email'] = email;
-if (refund != null) queryParameters['refund'] = refund;
+if (amount != null) queryParameters['amount'] = amount.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (reason != null) queryParameters['reason'] = reason.toString();
+if (email != null) queryParameters['email'] = email.toString();
+if (refund != null) queryParameters['refund'] = refund.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -709,20 +709,20 @@ return _execute(
 /// `GET /admin/api/2020-07/orders.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrders({Object? ids, Object? limit, Object? sinceId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, Object? processedAtMin, Object? processedAtMax, Object? attributionAppId, Object? status, Object? financialStatus, Object? fulfillmentStatus, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin;
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax;
-if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId;
-if (status != null) queryParameters['status'] = status;
-if (financialStatus != null) queryParameters['financial_status'] = financialStatus;
-if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus;
-if (fields != null) queryParameters['fields'] = fields;
+if (ids != null) queryParameters['ids'] = ids.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
+if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
+if (attributionAppId != null) queryParameters['attribution_app_id'] = attributionAppId.toString();
+if (status != null) queryParameters['status'] = status.toString();
+if (financialStatus != null) queryParameters['financial_status'] = financialStatus.toString();
+if (fulfillmentStatus != null) queryParameters['fulfillment_status'] = fulfillmentStatus.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1389,9 +1389,9 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefunds({required String orderId, Object? limit, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1423,14 +1423,14 @@ return _execute(
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefunds({required String orderId, Object? restockDeprecated, Object? notify, Object? note, Object? discrepancyReason, Object? shipping, Object? refundLineItems, Object? transactions, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (notify != null) queryParameters['notify'] = notify;
-if (note != null) queryParameters['note'] = note;
-if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (transactions != null) queryParameters['transactions'] = transactions;
-if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (notify != null) queryParameters['notify'] = notify.toString();
+if (note != null) queryParameters['note'] = note.toString();
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason.toString();
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (transactions != null) queryParameters['transactions'] = transactions.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1457,8 +1457,8 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds/{refund_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1492,9 +1492,9 @@ return _execute(
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds/calculate.json`
 Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefundsCalculate({required String orderId, Object? shipping, Object? refundLineItems, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (currency != null) queryParameters['currency'] = currency;
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1521,9 +1521,9 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefunds({required String orderId, Object? limit, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1555,14 +1555,14 @@ return _execute(
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefunds({required String orderId, Object? restockDeprecated, Object? notify, Object? note, Object? discrepancyReason, Object? shipping, Object? refundLineItems, Object? transactions, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (notify != null) queryParameters['notify'] = notify;
-if (note != null) queryParameters['note'] = note;
-if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (transactions != null) queryParameters['transactions'] = transactions;
-if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (notify != null) queryParameters['notify'] = notify.toString();
+if (note != null) queryParameters['note'] = note.toString();
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason.toString();
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (transactions != null) queryParameters['transactions'] = transactions.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1589,8 +1589,8 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds/{refund_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1624,9 +1624,9 @@ return _execute(
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds/calculate.json`
 Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefundsCalculate({required String orderId, Object? shipping, Object? refundLineItems, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (currency != null) queryParameters['currency'] = currency;
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1653,9 +1653,9 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefunds({required String orderId, Object? limit, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1687,14 +1687,14 @@ return _execute(
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefunds({required String orderId, Object? restockDeprecated, Object? notify, Object? note, Object? discrepancyReason, Object? shipping, Object? refundLineItems, Object? transactions, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (notify != null) queryParameters['notify'] = notify;
-if (note != null) queryParameters['note'] = note;
-if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (transactions != null) queryParameters['transactions'] = transactions;
-if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (notify != null) queryParameters['notify'] = notify.toString();
+if (note != null) queryParameters['note'] = note.toString();
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason.toString();
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (transactions != null) queryParameters['transactions'] = transactions.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1721,8 +1721,8 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds/{refund_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1756,9 +1756,9 @@ return _execute(
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds/calculate.json`
 Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefundsCalculate({required String orderId, Object? shipping, Object? refundLineItems, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (currency != null) queryParameters['currency'] = currency;
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1785,9 +1785,9 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdRefunds({required String orderId, Object? limit, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1819,14 +1819,14 @@ return _execute(
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> createOrdersParamOrderIdRefunds({required String orderId, Object? restockDeprecated, Object? notify, Object? note, Object? discrepancyReason, Object? shipping, Object? refundLineItems, Object? transactions, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (notify != null) queryParameters['notify'] = notify;
-if (note != null) queryParameters['note'] = note;
-if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (transactions != null) queryParameters['transactions'] = transactions;
-if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (notify != null) queryParameters['notify'] = notify.toString();
+if (note != null) queryParameters['note'] = note.toString();
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason.toString();
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (transactions != null) queryParameters['transactions'] = transactions.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1853,8 +1853,8 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds/{refund_id}.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1888,9 +1888,9 @@ return _execute(
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds/calculate.json`
 Future<ApiResult<void, Never>> createOrdersParamOrderIdRefundsCalculate({required String orderId, Object? shipping, Object? refundLineItems, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (currency != null) queryParameters['currency'] = currency;
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1917,9 +1917,9 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefunds({required String orderId, Object? limit, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1951,14 +1951,14 @@ return _execute(
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefunds({required String orderId, Object? restockDeprecated, Object? notify, Object? note, Object? discrepancyReason, Object? shipping, Object? refundLineItems, Object? transactions, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (notify != null) queryParameters['notify'] = notify;
-if (note != null) queryParameters['note'] = note;
-if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (transactions != null) queryParameters['transactions'] = transactions;
-if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (notify != null) queryParameters['notify'] = notify.toString();
+if (note != null) queryParameters['note'] = note.toString();
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason.toString();
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (transactions != null) queryParameters['transactions'] = transactions.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1985,8 +1985,8 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds/{refund_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2020,9 +2020,9 @@ return _execute(
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds/calculate.json`
 Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefundsCalculate({required String orderId, Object? shipping, Object? refundLineItems, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (currency != null) queryParameters['currency'] = currency;
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2049,9 +2049,9 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefunds({required String orderId, Object? limit, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit;
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2083,14 +2083,14 @@ return _execute(
 /// `POST /admin/api/unstable/orders/{order_id}/refunds.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefunds({required String orderId, Object? restockDeprecated, Object? notify, Object? note, Object? discrepancyReason, Object? shipping, Object? refundLineItems, Object? transactions, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated;
-if (notify != null) queryParameters['notify'] = notify;
-if (note != null) queryParameters['note'] = note;
-if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason;
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (transactions != null) queryParameters['transactions'] = transactions;
-if (currency != null) queryParameters['currency'] = currency;
+if (restockDeprecated != null) queryParameters['restock deprecated'] = restockDeprecated.toString();
+if (notify != null) queryParameters['notify'] = notify.toString();
+if (note != null) queryParameters['note'] = note.toString();
+if (discrepancyReason != null) queryParameters['discrepancy_reason'] = discrepancyReason.toString();
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (transactions != null) queryParameters['transactions'] = transactions.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2117,8 +2117,8 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/refunds/{refund_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, Object? fields, Object? inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
-if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency;
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (inShopCurrency != null) queryParameters['in_shop_currency'] = inShopCurrency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2152,9 +2152,9 @@ return _execute(
 /// `POST /admin/api/unstable/orders/{order_id}/refunds/calculate.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefundsCalculate({required String orderId, Object? shipping, Object? refundLineItems, Object? currency, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (shipping != null) queryParameters['shipping'] = shipping;
-if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems;
-if (currency != null) queryParameters['currency'] = currency;
+if (shipping != null) queryParameters['shipping'] = shipping.toString();
+if (refundLineItems != null) queryParameters['refund_line_items'] = refundLineItems.toString();
+if (currency != null) queryParameters['currency'] = currency.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';

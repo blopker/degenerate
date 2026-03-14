@@ -96,7 +96,7 @@ final class AigConfigUpdateDatasetRequestFilters {const AigConfigUpdateDatasetRe
 factory AigConfigUpdateDatasetRequestFilters.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetRequestFilters(
   key: AigConfigUpdateDatasetRequestFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigUpdateDatasetRequestFiltersOperator.fromJson(json['operator'] as String),
-  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
+  value: (json['value'] as List<dynamic>).map((e) => e as Object).toList(),
 ); }
 
 final AigConfigUpdateDatasetRequestFiltersKey key;

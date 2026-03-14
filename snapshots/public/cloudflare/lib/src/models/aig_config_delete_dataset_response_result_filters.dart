@@ -96,7 +96,7 @@ final class AigConfigDeleteDatasetResponseResultFilters {const AigConfigDeleteDa
 factory AigConfigDeleteDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) { return AigConfigDeleteDatasetResponseResultFilters(
   key: AigConfigDeleteDatasetResponseResultFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigDeleteDatasetResponseResultFiltersOperator.fromJson(json['operator'] as String),
-  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
+  value: (json['value'] as List<dynamic>).map((e) => e as Object).toList(),
 ); }
 
 final AigConfigDeleteDatasetResponseResultFiltersKey key;

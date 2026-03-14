@@ -64,7 +64,7 @@ final class ToolChoiceAllowed {const ToolChoiceAllowed({required this.type, requ
 factory ToolChoiceAllowed.fromJson(Map<String, dynamic> json) { return ToolChoiceAllowed(
   type: ToolChoiceAllowedType.fromJson(json['type'] as String),
   mode: ToolChoiceAllowedMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
 ); }
 
 /// Allowed tool configuration type. Always `allowed_tools`.

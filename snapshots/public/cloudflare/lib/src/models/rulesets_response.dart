@@ -10,7 +10,7 @@ final class RulesetsResponse {const RulesetsResponse({required this.errors, requ
 factory RulesetsResponse.fromJson(Map<String, dynamic> json) { return RulesetsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'],
+  result: json['result'] as Object,
   success: json['success'] as bool,
 ); }
 

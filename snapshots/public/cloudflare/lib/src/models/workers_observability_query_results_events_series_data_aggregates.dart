@@ -11,7 +11,7 @@ factory WorkersObservabilityQueryResultsEventsSeriesDataAggregates.fromJson(Map<
   firstSeen: json['_firstSeen'] as String,
   interval: (json['_interval'] as num).toInt(),
   lastSeen: json['_lastSeen'] as String,
-  bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final int count;

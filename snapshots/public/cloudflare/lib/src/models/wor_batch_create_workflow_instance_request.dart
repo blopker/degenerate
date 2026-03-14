@@ -9,7 +9,7 @@ import 'wor_batch_create_workflow_instance_request_instance_retention.dart';fina
 factory WorBatchCreateWorkflowInstanceRequest.fromJson(Map<String, dynamic> json) { return WorBatchCreateWorkflowInstanceRequest(
   instanceId: json['instance_id'] as String?,
   instanceRetention: json['instance_retention'] != null ? WorBatchCreateWorkflowInstanceRequestInstanceRetention.fromJson(json['instance_retention'] as Map<String, dynamic>) : null,
-  params: (json['params'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  params: (json['params'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final String? instanceId;

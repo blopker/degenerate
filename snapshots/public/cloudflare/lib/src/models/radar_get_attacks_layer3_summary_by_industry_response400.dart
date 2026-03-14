@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'radar_get_attacks_layer3_sum
 
 factory RadarGetAttacksLayer3SummaryByIndustryResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByIndustryResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAttacksLayer3SummaryByIndustryResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

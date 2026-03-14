@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'get_tag_category_list_respon
 
 factory GetTagCategoryListResponse400.fromJson(Map<String, dynamic> json) { return GetTagCategoryListResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetTagCategoryListResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

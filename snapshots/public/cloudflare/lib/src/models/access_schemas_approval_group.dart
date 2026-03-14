@@ -9,7 +9,7 @@ final class AccessSchemasApprovalGroup {const AccessSchemasApprovalGroup({requir
 
 factory AccessSchemasApprovalGroup.fromJson(Map<String, dynamic> json) { return AccessSchemasApprovalGroup(
   approvalsNeeded: (json['approvals_needed'] as num).toDouble(),
-  emailAddresses: (json['email_addresses'] as List<dynamic>?)?.map((e) => e).toList(),
+  emailAddresses: (json['email_addresses'] as List<dynamic>?)?.map((e) => e as Object).toList(),
   emailListUuid: json['email_list_uuid'] as String?,
 ); }
 

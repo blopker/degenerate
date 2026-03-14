@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'get_indicator_read_response4
 
 factory GetIndicatorReadResponse404.fromJson(Map<String, dynamic> json) { return GetIndicatorReadResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => GetIndicatorReadResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

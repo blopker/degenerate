@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'n5_img2img_response400_error
 
 factory $5Img2imgResponse400.fromJson(Map<String, dynamic> json) { return $5Img2imgResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => $5Img2imgResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

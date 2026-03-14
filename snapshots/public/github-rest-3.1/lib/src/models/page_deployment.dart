@@ -8,7 +8,7 @@
 final class PageDeployment {const PageDeployment({required this.id, required this.statusUrl, required this.pageUrl, this.previewUrl, });
 
 factory PageDeployment.fromJson(Map<String, dynamic> json) { return PageDeployment(
-  id: json['id'],
+  id: json['id'] as Object,
   statusUrl: Uri.parse(json['status_url'] as String),
   pageUrl: Uri.parse(json['page_url'] as String),
   previewUrl: json['preview_url'] != null ? Uri.parse(json['preview_url'] as String) : null,

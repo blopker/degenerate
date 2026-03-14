@@ -17,7 +17,7 @@ factory AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
   referenceSid: json['reference_sid'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The unique string that that we created to identify the Recording AddOnResult Payload resource.

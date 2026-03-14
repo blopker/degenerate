@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';final class VectorizeIndexQueryRequest {const VectorizeIndexQueryRequest({this.filter, this.returnMetadata = false, this.returnValues = false, this.topK = 5.0, required this.vector, });
 
 factory VectorizeIndexQueryRequest.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryRequest(
-  filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   returnMetadata: json.containsKey('returnMetadata') ? json['returnMetadata'] as bool : false,
   returnValues: json.containsKey('returnValues') ? json['returnValues'] as bool : false,
   topK: json.containsKey('topK') ? (json['topK'] as num).toDouble() : 5.0,

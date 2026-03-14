@@ -33,7 +33,7 @@ final class CreateEvalLogsDataSourceConfig {const CreateEvalLogsDataSourceConfig
 
 factory CreateEvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalLogsDataSourceConfig(
   type: CreateEvalLogsDataSourceConfigType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The type of data source. Always `logs`.

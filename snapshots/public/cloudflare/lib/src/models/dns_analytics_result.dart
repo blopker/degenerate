@@ -9,11 +9,11 @@ import 'package:collection/collection.dart';import 'dns_analytics_data2.dart';im
 factory DnsAnalyticsResult.fromJson(Map<String, dynamic> json) { return DnsAnalyticsResult(
   data: (json['data'] as List<dynamic>).map((e) => DnsAnalyticsData2.fromJson(e as Map<String, dynamic>)).toList(),
   dataLag: (json['data_lag'] as num).toDouble(),
-  max: (json['max'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  min: (json['min'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  max: (json['max'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  min: (json['min'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   query: DnsAnalyticsQuery.fromJson(json['query'] as Map<String, dynamic>),
   rows: (json['rows'] as num).toDouble(),
-  totals: (json['totals'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  totals: (json['totals'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final List<DnsAnalyticsData2> data;

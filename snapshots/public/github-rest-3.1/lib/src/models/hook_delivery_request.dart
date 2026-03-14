@@ -7,8 +7,8 @@
 final class HookDeliveryRequest {const HookDeliveryRequest({required this.headers, required this.payload, });
 
 factory HookDeliveryRequest.fromJson(Map<String, dynamic> json) { return HookDeliveryRequest(
-  headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
+  payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The request headers sent with the webhook delivery.

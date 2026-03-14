@@ -7,7 +7,7 @@
 final class Circle {const Circle({required this.kind, required this.radius, this.color, });
 
 factory Circle.fromJson(Map<String, dynamic> json) { return Circle(
-  kind: json['kind'],
+  kind: json['kind'] as Object,
   radius: (json['radius'] as num).toDouble(),
   color: json['color'] as String?,
 ); }

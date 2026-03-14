@@ -8,7 +8,7 @@ final class AiSearchInstanceSearchResponseResultChunksItem {const AiSearchInstan
 
 factory AiSearchInstanceSearchResponseResultChunksItem.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchResponseResultChunksItem(
   key: json['key'] as String,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toDouble() : null,
 ); }
 

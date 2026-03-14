@@ -7,7 +7,7 @@
 final class FirewallPackageResponseSingleVariant2 {const FirewallPackageResponseSingleVariant2({this.result});
 
 factory FirewallPackageResponseSingleVariant2.fromJson(Map<String, dynamic> json) { return FirewallPackageResponseSingleVariant2(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final Map<String,Object?>? result;

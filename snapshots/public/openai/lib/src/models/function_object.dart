@@ -9,7 +9,7 @@ final class FunctionObject {const FunctionObject({this.description, required thi
 factory FunctionObject.fromJson(Map<String, dynamic> json) { return FunctionObject(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   strict: json['strict'] as bool?,
 ); }
 

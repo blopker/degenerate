@@ -7,7 +7,7 @@
 final class PostEventCreateRequestRaw {const PostEventCreateRequestRaw({required this.data, this.source, this.tlp, });
 
 factory PostEventCreateRequestRaw.fromJson(Map<String, dynamic> json) { return PostEventCreateRequestRaw(
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   source: json['source'] as String?,
   tlp: json['tlp'] as String?,
 ); }

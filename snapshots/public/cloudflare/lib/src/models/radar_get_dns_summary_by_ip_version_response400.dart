@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'radar_get_dns_summary_by_ip_
 
 factory RadarGetDnsSummaryByIpVersionResponse400.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByIpVersionResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetDnsSummaryByIpVersionResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

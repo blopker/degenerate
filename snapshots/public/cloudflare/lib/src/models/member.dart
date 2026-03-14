@@ -33,7 +33,7 @@ final class Member {const Member({required this.createTime, required this.id, re
 factory Member.fromJson(Map<String, dynamic> json) { return Member(
   createTime: DateTime.parse(json['create_time'] as String),
   id: MemberId.fromJson(json['id'] as String),
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)))),
   status: MemberStatus.fromJson(json['status'] as String),
   updateTime: DateTime.parse(json['update_time'] as String),
   user: MemberSubjectUser.fromJson(json['user'] as Map<String, dynamic>),

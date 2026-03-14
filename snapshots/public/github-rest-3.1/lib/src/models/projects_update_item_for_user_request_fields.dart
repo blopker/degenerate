@@ -8,7 +8,7 @@ final class ProjectsUpdateItemForUserRequestFields {const ProjectsUpdateItemForU
 
 factory ProjectsUpdateItemForUserRequestFields.fromJson(Map<String, dynamic> json) { return ProjectsUpdateItemForUserRequestFields(
   id: (json['id'] as num).toInt(),
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 /// The ID of the project field to update.

@@ -8,7 +8,7 @@ final class WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages {const WorkersAiP
 
 factory WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
   content: json['content'] as String,
-  role: json['role'],
+  role: json['role'] as Object,
 ); }
 
 /// The content of the message as a string.

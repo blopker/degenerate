@@ -71,6 +71,7 @@ for (final item in protocol) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }
@@ -198,6 +199,7 @@ for (final item in protocol) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }
@@ -324,6 +326,7 @@ for (final item in protocol) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }
@@ -457,6 +460,7 @@ for (final item in protocol) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }
@@ -583,6 +587,7 @@ for (final item in protocol) {
 }
 if (queryType != null) {
 for (final item in queryType) {
+  if (item == null) continue;
   queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
 }
 }

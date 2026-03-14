@@ -19,8 +19,8 @@ final ApiConfig _config;
 /// `GET /admin/api/2020-01/assigned_fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202001GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
-if (locationIds != null) queryParameters['location_ids'] = locationIds;
+if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus.toString();
+if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
 if (locationIds2 != null) queryParameters['location_ids[]'] = locationIds2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
@@ -46,8 +46,8 @@ return _execute(
 /// `GET /admin/api/2020-04/assigned_fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202004GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
-if (locationIds != null) queryParameters['location_ids'] = locationIds;
+if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus.toString();
+if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
 if (locationIds2 != null) queryParameters['location_ids[]'] = locationIds2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
@@ -73,8 +73,8 @@ return _execute(
 /// `GET /admin/api/2020-07/assigned_fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202007GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
-if (locationIds != null) queryParameters['location_ids'] = locationIds;
+if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus.toString();
+if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
 if (locationIds2 != null) queryParameters['location_ids[]'] = locationIds2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
@@ -100,8 +100,8 @@ return _execute(
 /// `GET /admin/api/2020-10/assigned_fulfillment_orders.json`
 Future<ApiResult<void, Never>> getAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
-if (locationIds != null) queryParameters['location_ids'] = locationIds;
+if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus.toString();
+if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
 if (locationIds2 != null) queryParameters['location_ids[]'] = locationIds2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
@@ -127,8 +127,8 @@ return _execute(
 /// `GET /admin/api/2021-01/assigned_fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202101GetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
-if (locationIds != null) queryParameters['location_ids'] = locationIds;
+if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus.toString();
+if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
 if (locationIds2 != null) queryParameters['location_ids[]'] = locationIds2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
@@ -154,8 +154,8 @@ return _execute(
 /// `GET /admin/api/unstable/assigned_fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetAssignedFulfillmentOrders({Object? assignmentStatus, Object? locationIds, int? locationIds2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus;
-if (locationIds != null) queryParameters['location_ids'] = locationIds;
+if (assignmentStatus != null) queryParameters['assignment_status'] = assignmentStatus.toString();
+if (locationIds != null) queryParameters['location_ids'] = locationIds.toString();
 if (locationIds2 != null) queryParameters['location_ids[]'] = locationIds2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
@@ -181,7 +181,7 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -208,7 +208,7 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -235,7 +235,7 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -262,7 +262,7 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -289,7 +289,7 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -316,7 +316,7 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -343,7 +343,7 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -370,7 +370,7 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -397,7 +397,7 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -424,7 +424,7 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -451,7 +451,7 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -478,7 +478,7 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -505,7 +505,7 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -532,7 +532,7 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -559,7 +559,7 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -586,7 +586,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/cancellation_request.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequest({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -613,7 +613,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/cancellation_request/accept.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -640,7 +640,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/cancellation_request/reject.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdCancellationRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1261,13 +1261,13 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1335,7 +1335,7 @@ return _execute(
 /// `GET /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202001GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1360,10 +1360,10 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1388,7 +1388,7 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1560,13 +1560,13 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1634,7 +1634,7 @@ return _execute(
 /// `GET /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202004GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1659,10 +1659,10 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1687,7 +1687,7 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1859,13 +1859,13 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1933,7 +1933,7 @@ return _execute(
 /// `GET /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202007GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1958,10 +1958,10 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -1986,7 +1986,7 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2158,13 +2158,13 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2232,7 +2232,7 @@ return _execute(
 /// `GET /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> getFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2257,10 +2257,10 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/count.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2285,7 +2285,7 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2457,13 +2457,13 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2531,7 +2531,7 @@ return _execute(
 /// `GET /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecated202101GetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2556,10 +2556,10 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2584,7 +2584,7 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2756,13 +2756,13 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillments({required String orderId, Object? createdAtMax, Object? createdAtMin, Object? fields, Object? limit, Object? sinceId, Object? updatedAtMax, Object? updatedAtMin, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (fields != null) queryParameters['fields'] = fields;
-if (limit != null) queryParameters['limit'] = limit;
-if (sinceId != null) queryParameters['since_id'] = sinceId;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2830,7 +2830,7 @@ return _execute(
 /// `GET /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillments.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentOrdersParamFulfillmentOrderIdFulfillments({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2855,10 +2855,10 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsCount({required String orderId, Object? createdAtMin, Object? createdAtMax, Object? updatedAtMin, Object? updatedAtMax, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin;
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax;
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin;
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax;
+if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
+if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
+if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
+if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -2883,7 +2883,7 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentId({required String orderId, required String fulfillmentId, Object? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields;
+if (fields != null) queryParameters['fields'] = fields.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3055,8 +3055,8 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2.toString();
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3102,7 +3102,7 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (eventId2 != null) queryParameters['event_id'] = eventId2;
+if (eventId2 != null) queryParameters['event_id'] = eventId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3146,8 +3146,8 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2.toString();
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3193,7 +3193,7 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (eventId2 != null) queryParameters['event_id'] = eventId2;
+if (eventId2 != null) queryParameters['event_id'] = eventId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3237,8 +3237,8 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2.toString();
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3284,7 +3284,7 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (eventId2 != null) queryParameters['event_id'] = eventId2;
+if (eventId2 != null) queryParameters['event_id'] = eventId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3328,8 +3328,8 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2.toString();
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3375,7 +3375,7 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (eventId2 != null) queryParameters['event_id'] = eventId2;
+if (eventId2 != null) queryParameters['event_id'] = eventId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3419,8 +3419,8 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2.toString();
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3466,7 +3466,7 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (eventId2 != null) queryParameters['event_id'] = eventId2;
+if (eventId2 != null) queryParameters['event_id'] = eventId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3510,8 +3510,8 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/events.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEvents({required String orderId, required String fulfillmentId, Object? fulfillmentId2, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2;
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (fulfillmentId2 != null) queryParameters['fulfillment_id'] = fulfillmentId2.toString();
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3557,7 +3557,7 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillments/{fulfillment_id}/events/{event_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentsParamFulfillmentIdEventsParamEventId({required String orderId, required String fulfillmentId, required String eventId, Object? eventId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (eventId2 != null) queryParameters['event_id'] = eventId2;
+if (eventId2 != null) queryParameters['event_id'] = eventId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3601,7 +3601,7 @@ return _execute(
 /// `GET /admin/api/2020-01/orders/{order_id}/fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3667,7 +3667,7 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/close.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3694,7 +3694,7 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/move.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
+if (newLocationId != null) queryParameters['new_location_id'] = newLocationId.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3721,7 +3721,7 @@ return _execute(
 /// `GET /admin/api/2020-04/orders/{order_id}/fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3787,7 +3787,7 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/close.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3814,7 +3814,7 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/move.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
+if (newLocationId != null) queryParameters['new_location_id'] = newLocationId.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3841,7 +3841,7 @@ return _execute(
 /// `GET /admin/api/2020-07/orders/{order_id}/fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -3907,7 +3907,7 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/close.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3934,7 +3934,7 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/move.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
+if (newLocationId != null) queryParameters['new_location_id'] = newLocationId.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3961,7 +3961,7 @@ return _execute(
 /// `GET /admin/api/2020-10/orders/{order_id}/fulfillment_orders.json`
 Future<ApiResult<void, Never>> getOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -4027,7 +4027,7 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/close.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4054,7 +4054,7 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/move.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
+if (newLocationId != null) queryParameters['new_location_id'] = newLocationId.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4081,7 +4081,7 @@ return _execute(
 /// `GET /admin/api/2021-01/orders/{order_id}/fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -4147,7 +4147,7 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/close.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4174,7 +4174,7 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/move.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
+if (newLocationId != null) queryParameters['new_location_id'] = newLocationId.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4245,7 +4245,7 @@ return _execute(
 /// `GET /admin/api/unstable/orders/{order_id}/fulfillment_orders.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdFulfillmentOrders({required String orderId, Object? orderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderId2 != null) queryParameters['order_id'] = orderId2;
+if (orderId2 != null) queryParameters['order_id'] = orderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -4311,7 +4311,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/release_hold.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersReleaseHold({Object? orderId, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderId != null) queryParameters['order_id'] = orderId;
+if (orderId != null) queryParameters['order_id'] = orderId.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4339,7 +4339,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/close.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdClose({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4366,7 +4366,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/move.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdMove({required String fulfillmentOrderId, Object? newLocationId, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (newLocationId != null) queryParameters['new_location_id'] = newLocationId;
+if (newLocationId != null) queryParameters['new_location_id'] = newLocationId.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4437,8 +4437,8 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
-if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
+if (message != null) queryParameters['message'] = message.toString();
+if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4465,7 +4465,7 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4492,7 +4492,7 @@ return _execute(
 /// `POST /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202001CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4519,8 +4519,8 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
-if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
+if (message != null) queryParameters['message'] = message.toString();
+if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4547,7 +4547,7 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4574,7 +4574,7 @@ return _execute(
 /// `POST /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202004CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4601,8 +4601,8 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
-if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
+if (message != null) queryParameters['message'] = message.toString();
+if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4629,7 +4629,7 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4656,7 +4656,7 @@ return _execute(
 /// `POST /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202007CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4683,8 +4683,8 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
-if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
+if (message != null) queryParameters['message'] = message.toString();
+if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4711,7 +4711,7 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4738,7 +4738,7 @@ return _execute(
 /// `POST /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
 Future<ApiResult<void, Never>> createFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4765,8 +4765,8 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
-if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
+if (message != null) queryParameters['message'] = message.toString();
+if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4793,7 +4793,7 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4820,7 +4820,7 @@ return _execute(
 /// `POST /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
 Future<ApiResult<void, Never>> deprecated202101CreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4847,8 +4847,8 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillment_request.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequest({required String fulfillmentOrderId, Object? message, Object? fulfillmentOrderLineItems, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
-if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems;
+if (message != null) queryParameters['message'] = message.toString();
+if (fulfillmentOrderLineItems != null) queryParameters['fulfillment_order_line_items'] = fulfillmentOrderLineItems.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4875,7 +4875,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/accept.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestAccept({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4902,7 +4902,7 @@ return _execute(
 /// `POST /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/fulfillment_request/reject.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateFulfillmentOrdersParamFulfillmentOrderIdFulfillmentRequestReject({required String fulfillmentOrderId, Object? message, Object? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (message != null) queryParameters['message'] = message;
+if (message != null) queryParameters['message'] = message.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4929,8 +4929,8 @@ return _execute(
 /// `GET /fetch_tracking_numbers`
 Future<ApiResult<void, Never>> deprecatedUnknownVersionGetFetchTrackingNumbers({Object? orderNames, Object? shop, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderNames != null) queryParameters['order_names'] = orderNames;
-if (shop != null) queryParameters['shop'] = shop;
+if (orderNames != null) queryParameters['order_names'] = orderNames.toString();
+if (shop != null) queryParameters['shop'] = shop.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -4955,10 +4955,10 @@ return _execute(
 /// `GET /fetch_stock`
 Future<ApiResult<void, Never>> deprecatedUnknownVersionGetFetchStock({Object? maxRetries, Object? shop, Object? sku, Object? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (maxRetries != null) queryParameters['max_retries'] = maxRetries;
-if (shop != null) queryParameters['shop'] = shop;
-if (sku != null) queryParameters['sku'] = sku;
-if (timestamp != null) queryParameters['timestamp'] = timestamp;
+if (maxRetries != null) queryParameters['max_retries'] = maxRetries.toString();
+if (shop != null) queryParameters['shop'] = shop.toString();
+if (sku != null) queryParameters['sku'] = sku.toString();
+if (timestamp != null) queryParameters['timestamp'] = timestamp.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -4983,7 +4983,7 @@ return _execute(
 /// `GET /admin/api/2020-01/fulfillment_services.json`
 Future<ApiResult<void, Never>> deprecated202001GetFulfillmentServices({Object? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (scope != null) queryParameters['scope'] = scope;
+if (scope != null) queryParameters['scope'] = scope.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5091,7 +5091,7 @@ return _execute(
 /// `GET /admin/api/2020-04/fulfillment_services.json`
 Future<ApiResult<void, Never>> deprecated202004GetFulfillmentServices({Object? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (scope != null) queryParameters['scope'] = scope;
+if (scope != null) queryParameters['scope'] = scope.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5199,7 +5199,7 @@ return _execute(
 /// `GET /admin/api/2020-07/fulfillment_services.json`
 Future<ApiResult<void, Never>> deprecated202007GetFulfillmentServices({Object? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (scope != null) queryParameters['scope'] = scope;
+if (scope != null) queryParameters['scope'] = scope.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5307,7 +5307,7 @@ return _execute(
 /// `GET /admin/api/2020-10/fulfillment_services.json`
 Future<ApiResult<void, Never>> getFulfillmentServices({Object? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (scope != null) queryParameters['scope'] = scope;
+if (scope != null) queryParameters['scope'] = scope.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5415,7 +5415,7 @@ return _execute(
 /// `GET /admin/api/2021-01/fulfillment_services.json`
 Future<ApiResult<void, Never>> deprecated202101GetFulfillmentServices({Object? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (scope != null) queryParameters['scope'] = scope;
+if (scope != null) queryParameters['scope'] = scope.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5523,7 +5523,7 @@ return _execute(
 /// `GET /admin/api/unstable/fulfillment_services.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentServices({Object? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (scope != null) queryParameters['scope'] = scope;
+if (scope != null) queryParameters['scope'] = scope.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5632,7 +5632,7 @@ return _execute(
 /// `GET /admin/api/2020-01/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
 Future<ApiResult<void, Never>> deprecated202001GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5658,7 +5658,7 @@ return _execute(
 /// `GET /admin/api/2020-04/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
 Future<ApiResult<void, Never>> deprecated202004GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5684,7 +5684,7 @@ return _execute(
 /// `GET /admin/api/2020-07/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
 Future<ApiResult<void, Never>> deprecated202007GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5710,7 +5710,7 @@ return _execute(
 /// `GET /admin/api/2020-10/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
 Future<ApiResult<void, Never>> getFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5736,7 +5736,7 @@ return _execute(
 /// `GET /admin/api/2021-01/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
 Future<ApiResult<void, Never>> deprecated202101GetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
@@ -5762,7 +5762,7 @@ return _execute(
 /// `GET /admin/api/unstable/fulfillment_orders/{fulfillment_order_id}/locations_for_move.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetFulfillmentOrdersParamFulfillmentOrderIdLocationsForMove({required String fulfillmentOrderId, Object? fulfillmentOrderId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2;
+if (fulfillmentOrderId2 != null) queryParameters['fulfillment_order_id'] = fulfillmentOrderId2.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 

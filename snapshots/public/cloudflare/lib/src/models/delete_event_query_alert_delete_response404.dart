@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'delete_event_query_alert_del
 
 factory DeleteEventQueryAlertDeleteResponse404.fromJson(Map<String, dynamic> json) { return DeleteEventQueryAlertDeleteResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteEventQueryAlertDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

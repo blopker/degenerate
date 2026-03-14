@@ -8,7 +8,7 @@ import 'wor_describe_workflow_instance_response_result_steps_step_config_retries
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepConfig.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfig(
   retries: WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(json['retries'] as Map<String, dynamic>),
-  timeout: json['timeout'],
+  timeout: json['timeout'] as Object,
 ); }
 
 final WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries retries;

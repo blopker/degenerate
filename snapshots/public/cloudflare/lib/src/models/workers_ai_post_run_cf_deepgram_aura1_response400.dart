@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'workers_ai_post_run_cf_deepg
 
 factory WorkersAiPostRunCfDeepgramAura1Response400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura1Response400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfDeepgramAura1Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

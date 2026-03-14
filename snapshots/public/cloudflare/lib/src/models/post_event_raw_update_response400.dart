@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'post_event_raw_update_respon
 
 factory PostEventRawUpdateResponse400.fromJson(Map<String, dynamic> json) { return PostEventRawUpdateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostEventRawUpdateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

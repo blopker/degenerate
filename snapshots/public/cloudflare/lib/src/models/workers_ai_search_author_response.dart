@@ -7,9 +7,9 @@
 import 'package:collection/collection.dart';final class WorkersAiSearchAuthorResponse {const WorkersAiSearchAuthorResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorkersAiSearchAuthorResponse.fromJson(Map<String, dynamic> json) { return WorkersAiSearchAuthorResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object))).toList(),
   success: json['success'] as bool,
 ); }
 

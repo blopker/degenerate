@@ -10,7 +10,7 @@ final class TelemetryKeysListRequestKeyNeedle {const TelemetryKeysListRequestKey
 factory TelemetryKeysListRequestKeyNeedle.fromJson(Map<String, dynamic> json) { return TelemetryKeysListRequestKeyNeedle(
   isRegex: json['isRegex'] as bool?,
   matchCase: json['matchCase'] as bool?,
-  value: json['value'],
+  value: json['value'] as Object,
 ); }
 
 final bool? isRegex;

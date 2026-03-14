@@ -7,8 +7,8 @@
 import 'webhook_package_published_package_package_version_container_metadata_tag.dart';final class WebhookPackagePublishedPackagePackageVersionContainerMetadata {const WebhookPackagePublishedPackagePackageVersionContainerMetadata({this.labels, this.manifest, this.tag, });
 
 factory WebhookPackagePublishedPackagePackageVersionContainerMetadata.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionContainerMetadata(
-  labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   tag: json['tag'] != null ? WebhookPackagePublishedPackagePackageVersionContainerMetadataTag.fromJson(json['tag'] as Map<String, dynamic>) : null,
 ); }
 

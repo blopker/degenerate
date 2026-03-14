@@ -9,8 +9,8 @@ final class AiSearchStatsResponseResult {const AiSearchStatsResponseResult({this
 factory AiSearchStatsResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchStatsResponseResult(
   completed: json['completed'] != null ? (json['completed'] as num).toInt() : null,
   error: json['error'] != null ? (json['error'] as num).toInt() : null,
-  fileEmbedErrors: (json['file_embed_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  indexSourceErrors: (json['index_source_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  fileEmbedErrors: (json['file_embed_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
+  indexSourceErrors: (json['index_source_errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   lastActivity: json['last_activity'] != null ? DateTime.parse(json['last_activity'] as String) : null,
   queued: json['queued'] != null ? (json['queued'] as num).toInt() : null,
   running: json['running'] != null ? (json['running'] as num).toInt() : null,

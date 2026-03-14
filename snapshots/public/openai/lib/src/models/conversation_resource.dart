@@ -31,7 +31,7 @@ final class ConversationResource {const ConversationResource({required this.id, 
 factory ConversationResource.fromJson(Map<String, dynamic> json) { return ConversationResource(
   id: json['id'] as String,
   object: ConversationResourceObject.fromJson(json['object'] as String),
-  metadata: json['metadata'],
+  metadata: json['metadata'] as Object,
   createdAt: (json['created_at'] as num).toInt(),
 ); }
 

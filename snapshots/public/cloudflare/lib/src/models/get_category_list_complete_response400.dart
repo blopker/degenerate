@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'get_category_list_complete_r
 
 factory GetCategoryListCompleteResponse400.fromJson(Map<String, dynamic> json) { return GetCategoryListCompleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetCategoryListCompleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

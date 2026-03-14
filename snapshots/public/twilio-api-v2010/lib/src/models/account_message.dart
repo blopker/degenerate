@@ -115,7 +115,7 @@ factory AccountMessage.fromJson(Map<String, dynamic> json) { return AccountMessa
   errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
   priceUnit: json['price_unit'] as String?,
   apiVersion: json['api_version'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 /// The text content of the message

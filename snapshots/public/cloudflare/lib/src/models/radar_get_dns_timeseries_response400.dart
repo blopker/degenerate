@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'radar_get_dns_timeseries_res
 
 factory RadarGetDnsTimeseriesResponse400.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetDnsTimeseriesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

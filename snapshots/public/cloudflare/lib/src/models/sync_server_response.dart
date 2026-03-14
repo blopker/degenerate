@@ -7,7 +7,7 @@
 final class SyncServerResponse {const SyncServerResponse({required this.result, required this.success, });
 
 factory SyncServerResponse.fromJson(Map<String, dynamic> json) { return SyncServerResponse(
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
   success: json['success'] as bool,
 ); }
 

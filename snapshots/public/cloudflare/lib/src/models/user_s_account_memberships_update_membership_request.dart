@@ -7,7 +7,7 @@
 final class UserSAccountMembershipsUpdateMembershipRequest {const UserSAccountMembershipsUpdateMembershipRequest({required this.status});
 
 factory UserSAccountMembershipsUpdateMembershipRequest.fromJson(Map<String, dynamic> json) { return UserSAccountMembershipsUpdateMembershipRequest(
-  status: json['status'],
+  status: json['status'] as Object,
 ); }
 
 /// Whether to accept or reject this account invitation.

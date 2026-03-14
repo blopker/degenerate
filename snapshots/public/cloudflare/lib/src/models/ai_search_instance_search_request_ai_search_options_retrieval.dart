@@ -85,7 +85,7 @@ final class AiSearchInstanceSearchRequestAiSearchOptionsRetrieval {const AiSearc
 factory AiSearchInstanceSearchRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsRetrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceSearchRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
   contextExpansion: json.containsKey('context_expansion') ? (json['context_expansion'] as num).toInt() : 0,
-  filters: (json['filters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  filters: (json['filters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Object)),
   fusionMethod: json['fusion_method'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod.fromJson(json['fusion_method'] as String) : null,
   keywordMatchMode: json.containsKey('keyword_match_mode') ? AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch,
   matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,

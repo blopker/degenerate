@@ -19,7 +19,7 @@ final ApiConfig _config;
 /// `GET /accounts/{account_id}/members`
 Future<ApiResult<ResponseCommon35, Never>> accountMembersListMembers({required IamCommonComponentsSchemasIdentifier accountId, Object? order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order;
+if (order != null) queryParameters['order'] = order.toString();
 if (status != null) queryParameters['status'] = status.toJson();
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();

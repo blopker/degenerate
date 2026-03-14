@@ -7,7 +7,7 @@
 final class ResourceSharingUpdateShareResourceRequest {const ResourceSharingUpdateShareResourceRequest({required this.meta});
 
 factory ResourceSharingUpdateShareResourceRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingUpdateShareResourceRequest(
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Object)),
 ); }
 
 final Map<String,Object?> meta;

@@ -22,7 +22,7 @@ final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (match != null) queryParameters['match'] = match.toJson();
-if (status != null) queryParameters['status'] = status;
+if (status != null) queryParameters['status'] = status.toString();
 
 final headers = <String, String>{..._config.defaultHeaders};
 
