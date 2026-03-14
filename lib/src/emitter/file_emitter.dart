@@ -25,7 +25,6 @@ class FileEmitter {
     required String packageName,
     required String specFileName,
     required String specVersion,
-    String runtimePath = 'degenerate_runtime',
     bool workspace = false,
     String? defaultServerUrl,
     List<String>? warnings,
@@ -240,7 +239,6 @@ class FileEmitter {
     // Emit pubspec.yaml
     files['pubspec.yaml'] = _emitPubspec(
       packageName: packageName,
-      runtimePath: runtimePath,
       workspace: workspace,
     );
 
@@ -970,7 +968,6 @@ class FileEmitter {
 
   String _emitPubspec({
     required String packageName,
-    required String runtimePath,
     bool workspace = false,
   }) {
     final buf = StringBuffer();
@@ -987,8 +984,7 @@ class FileEmitter {
     buf.writeln();
     buf.writeln('dependencies:');
     buf.writeln('  collection: ^1.18.0');
-    buf.writeln('  degenerate_runtime:');
-    buf.writeln('    path: $runtimePath');
+    buf.writeln('  degenerate_runtime: ^0.1.0');
     return buf.toString();
   }
 }

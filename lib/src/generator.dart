@@ -28,11 +28,6 @@ class GeneratorConfig {
   final bool clean;
   final bool quiet;
 
-  /// Path to the degenerate_runtime package as it should appear in the
-  /// generated pubspec.yaml `dependencies` section.
-  /// Example: `../../packages/degenerate_runtime`
-  final String runtimePath;
-
   /// If non-empty, only include API groups whose tag matches one of these
   /// patterns (case-insensitive substring match).
   final List<String> tags;
@@ -53,7 +48,6 @@ class GeneratorConfig {
     this.dryRun = false,
     this.clean = false,
     this.quiet = false,
-    this.runtimePath = 'packages/degenerate_runtime',
     this.tags = const [],
     this.paths = const [],
     this.workspace = false,
@@ -257,7 +251,6 @@ class Generator {
       packageName: packageName,
       specFileName: specFileName,
       specVersion: specVersion,
-      runtimePath: config.runtimePath,
       workspace: config.workspace,
       defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,

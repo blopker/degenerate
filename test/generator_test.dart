@@ -5,16 +5,6 @@ import 'package:test/test.dart';
 
 import 'package:degenerate/src/generator.dart';
 
-/// Compute the runtime path relative to [outputDir], resolving symlinks.
-String _runtimePathFor(String outputDir) {
-  final outDir = Directory(p.absolute(outputDir));
-  if (!outDir.existsSync()) outDir.createSync(recursive: true);
-  final resolvedOut = outDir.resolveSymbolicLinksSync();
-  final resolvedRuntime = Directory(
-    p.join(Directory.current.path, 'packages', 'degenerate_runtime'),
-  ).resolveSymbolicLinksSync();
-  return p.relative(resolvedRuntime, from: resolvedOut);
-}
 
 void main() {
   group('Generator end-to-end', () {
@@ -46,7 +36,6 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         verbose: true,
-        runtimePath: _runtimePathFor(tempDir.path),
       );
 
       final generator = Generator(config);
@@ -95,6 +84,18 @@ void main() {
               .readAsStringSync();
       expect(barrel, contains("export 'src/models/pet.dart'"));
       expect(barrel, contains("export 'src/apis/pets_api.dart'"));
+
+      // Add dependency_overrides so pub get resolves degenerate_runtime
+      // from the local workspace (it's not yet published on pub.dev).
+      final pubspecFile = File(p.join(tempDir.path, 'pubspec.yaml'));
+      final pubspecContent = pubspecFile.readAsStringSync();
+      final runtimeDir = p.join(Directory.current.path, 'packages', 'degenerate_runtime');
+      pubspecFile.writeAsStringSync(
+        '$pubspecContent\n'
+        'dependency_overrides:\n'
+        '  degenerate_runtime:\n'
+        '    path: $runtimeDir\n',
+      );
 
       // Run dart analyze on generated output
       // First, run dart pub get
@@ -146,7 +147,6 @@ void main() {
         outputDir: outputDir,
         packageName: 'petstore_api',
         dryRun: true,
-        runtimePath: 'packages/degenerate_runtime',
       );
 
       final generator = Generator(config);
@@ -189,7 +189,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         clean: true,
-        runtimePath: _runtimePathFor(tempDir.path),
+
       );
 
       final generator = Generator(config);
@@ -224,7 +224,7 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         // clean defaults to false
-        runtimePath: _runtimePathFor(tempDir.path),
+
       );
 
       final generator = Generator(config);
@@ -248,7 +248,7 @@ void main() {
       final config = GeneratorConfig(
         inputPath: specPath,
         outputDir: tempDir.path,
-        runtimePath: _runtimePathFor(tempDir.path),
+
       );
 
       final generator = Generator(config);

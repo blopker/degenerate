@@ -8,8 +8,7 @@ environment:
 dependencies:
   spec_03_operations_parameters_request_body:
     path: ../../../snapshots/specs/03-operations-parameters-request-body
-  degenerate_runtime:
-    path: ../../../packages/degenerate_runtime
+  degenerate_runtime: ^0.1.0
 
 dev_dependencies:
   test: ^1.25.6

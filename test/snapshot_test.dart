@@ -60,7 +60,7 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
             inputPath: specFile.path,
             outputDir: 'unused',
             packageName: packageName,
-            runtimePath: '../../../packages/degenerate_runtime',
+
             workspace: workspace,
             dryRun: true,
             quiet: true,
@@ -100,7 +100,7 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
             inputPath: specFile.path,
             outputDir: 'unused',
             packageName: packageName,
-            runtimePath: '../../../packages/degenerate_runtime',
+
             workspace: workspace,
             dryRun: true,
             quiet: true,
@@ -166,6 +166,7 @@ void main() {
     _specFiles(p.join(_fixturesDir, 'public'))
         .where((f) => !_externalRefSpecs.contains(p.basenameWithoutExtension(f.path)))
         .toList(),
+    workspace: true,
   );
 
   group('public - external refs', () {
@@ -177,7 +178,7 @@ void main() {
           inputPath: specFile.path,
           outputDir: 'unused',
           packageName: 'test_api',
-          runtimePath: '../../../packages/degenerate_runtime',
+
           dryRun: true,
           quiet: true,
         );

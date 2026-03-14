@@ -2,11 +2,11 @@ name: petstore_client
 description: Generated API client.
 version: 1.0.0
 publish_to: none
+resolution: workspace
 
 environment:
   sdk: ^3.8.0
 
 dependencies:
   collection: ^1.18.0
-  degenerate_runtime:
-    path: ../../packages/degenerate_runtime
+  degenerate_runtime: ^0.1.0

@@ -1,11 +1,9 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:path/path.dart' as p;
-
 import 'package:degenerate/src/generator.dart';
 
-const String version = '0.0.1';
+const String version = '0.1.0';
 
 ArgParser buildParser() {
   return ArgParser()
@@ -122,18 +120,7 @@ Future<void> main(List<String> arguments) async {
       exit(1);
     }
 
-    // Compute relative path from output dir to the runtime package.
-    final scriptDir = p.dirname(Platform.script.toFilePath());
-    final generatorRoot = p.dirname(scriptDir);
-    final runtimeDir = Directory(
-      p.join(generatorRoot, 'packages', 'degenerate_runtime'),
-    );
-
     final outputDir = results.option('output') ?? 'lib/src/generated';
-    final runtimePath = _relativePath(
-      from: p.absolute(outputDir),
-      to: runtimeDir.path,
-    );
 
     final config = GeneratorConfig(
       inputPath: input,
@@ -145,7 +132,6 @@ Future<void> main(List<String> arguments) async {
       clean: results.flag('clean'),
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
-      runtimePath: runtimePath,
       workspace: results.flag('workspace'),
     );
 
@@ -159,20 +145,5 @@ Future<void> main(List<String> arguments) async {
   } on GeneratorException catch (e) {
     stderr.writeln('Error: ${e.message}');
     exit(1);
-  }
-}
-
-/// Compute a relative path, resolving symlinks so it works on macOS
-/// where /var is a symlink to /private/var.
-String _relativePath({required String from, required String to}) {
-  try {
-    final fromDir = Directory(from);
-    if (!fromDir.existsSync()) fromDir.createSync(recursive: true);
-    final resolvedFrom = fromDir.resolveSymbolicLinksSync();
-    final resolvedTo = Directory(to).resolveSymbolicLinksSync();
-    return p.relative(resolvedTo, from: resolvedFrom);
-  } catch (_) {
-    // Fallback to simple relative if symlink resolution fails
-    return p.relative(p.absolute(to), from: p.absolute(from));
   }
 }
