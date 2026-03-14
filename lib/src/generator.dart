@@ -26,6 +26,7 @@ class GeneratorConfig {
   final bool verbose;
   final bool dryRun;
   final bool clean;
+  final bool quiet;
 
   /// Path to the degenerate_runtime package as it should appear in the
   /// generated pubspec.yaml `dependencies` section.
@@ -51,6 +52,7 @@ class GeneratorConfig {
     this.verbose = false,
     this.dryRun = false,
     this.clean = false,
+    this.quiet = false,
     this.runtimePath = 'packages/degenerate_runtime',
     this.tags = const [],
     this.paths = const [],
@@ -63,8 +65,10 @@ class Generator {
 
   Generator(this.config);
 
-  /// Run the full pipeline: parse -> normalize -> lower -> emit -> write
-  Future<void> generate() async {
+  /// Run the full pipeline: parse -> normalize -> lower -> emit -> write.
+  ///
+  /// Returns the map of relative file paths to their generated contents.
+  Future<Map<String, String>> generate() async {
     // 1. Read and parse spec
     final inputFile = File(config.inputPath);
     if (!inputFile.existsSync()) {
@@ -282,7 +286,7 @@ class Generator {
       for (final filePath in files.keys.toList()..sort()) {
         _log('  Would write: ${p.join(config.outputDir, filePath)}');
       }
-      return;
+      return files;
     }
 
     _log('Writing to ${config.outputDir}...');
@@ -316,6 +320,8 @@ class Generator {
       'Done! Wrote $written files to ${config.outputDir}'
       '${skipped > 0 ? ' ($skipped unchanged)' : ''}',
     );
+
+    return files;
   }
 
   List<IrSecurityScheme> _lowerSecuritySchemes(Map<String, dynamic> raw) {
@@ -379,6 +385,7 @@ class Generator {
   }
 
   void _log(String message) {
+    if (config.quiet) return;
     // ignore: avoid_print
     print(message);
   }

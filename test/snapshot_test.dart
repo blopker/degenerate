@@ -51,101 +51,105 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
       final specName = p.basenameWithoutExtension(specFile.path);
 
       test(specName, () async {
-        final tempDir =
-            Directory.systemTemp.createTempSync('degenerate_snap_');
-        try {
-          final packageName = _packageNameFromSpec(groupName, specName);
+        final packageName = _packageNameFromSpec(groupName, specName);
+        final snapshotDir = p.join(_snapshotsDir, groupName, specName);
+
+        if (_updateSnapshots) {
+          // Generate in-memory, then write directly to snapshot dir
           final config = GeneratorConfig(
             inputPath: specFile.path,
-            outputDir: tempDir.path,
+            outputDir: 'unused',
             packageName: packageName,
             runtimePath: '../../../packages/degenerate_runtime',
             workspace: workspace,
+            dryRun: true,
+            quiet: true,
           );
 
-          final generator = Generator(config);
-          await generator.generate();
+          final generated = await Generator(config).generate();
 
-          final snapshotDir = p.join(_snapshotsDir, groupName, specName);
+          // Write snapshot files
+          final dir = Directory(snapshotDir);
+          if (dir.existsSync()) {
+            dir.deleteSync(recursive: true);
+          }
+          for (final entry in generated.entries) {
+            if (!_isSnapshotFile(entry.key)) continue;
+            final outFile = File(p.join(snapshotDir, entry.key));
+            outFile.parent.createSync(recursive: true);
+            outFile.writeAsStringSync(entry.value);
+          }
+          // Run dart pub get so the snapshot is ready for testing
+          final pubGet = await Process.run(
+            'dart',
+            ['pub', 'get'],
+            workingDirectory: snapshotDir,
+          );
+          if (pubGet.exitCode != 0) {
+            fail(
+              'dart pub get failed for $specName:\n'
+              'stdout: ${pubGet.stdout}\n'
+              'stderr: ${pubGet.stderr}',
+            );
+          }
+          // ignore: avoid_print
+          print('  Updated ${generated.length} snapshot files for $specName');
+        } else {
+          // Generate in-memory only (dryRun avoids disk writes)
+          final config = GeneratorConfig(
+            inputPath: specFile.path,
+            outputDir: 'unused',
+            packageName: packageName,
+            runtimePath: '../../../packages/degenerate_runtime',
+            workspace: workspace,
+            dryRun: true,
+            quiet: true,
+          );
 
-          // Collect all generated files
-          final generated = <String, String>{};
-          for (final entity in tempDir.listSync(recursive: true)) {
+          final generated = await Generator(config).generate();
+
+          // Compare against existing snapshots
+          final snapshotDirObj = Directory(snapshotDir);
+          expect(snapshotDirObj.existsSync(), isTrue,
+              reason:
+                  'Snapshot directory missing for $specName. '
+                  'Run with UPDATE_SNAPSHOTS=1 to create.');
+
+          // Collect existing snapshots
+          final existing = <String, String>{};
+          for (final entity
+              in snapshotDirObj.listSync(recursive: true)) {
             if (entity is File) {
               final relativePath =
-                  p.relative(entity.path, from: tempDir.path);
+                  p.relative(entity.path, from: snapshotDir);
               if (!_isSnapshotFile(relativePath)) continue;
-              generated[relativePath] = entity.readAsStringSync();
+              existing[relativePath] = entity.readAsStringSync();
             }
           }
 
-          if (_updateSnapshots) {
-            // Write snapshot files
-            final dir = Directory(snapshotDir);
-            if (dir.existsSync()) {
-              dir.deleteSync(recursive: true);
-            }
-            for (final entry in generated.entries) {
-              final outFile = File(p.join(snapshotDir, entry.key));
-              outFile.parent.createSync(recursive: true);
-              outFile.writeAsStringSync(entry.value);
-            }
-            // Run dart pub get so the snapshot is ready for testing
-            final pubGet = await Process.run(
-              'dart',
-              ['pub', 'get'],
-              workingDirectory: snapshotDir,
-            );
-            if (pubGet.exitCode != 0) {
-              fail(
-                'dart pub get failed for $specName:\n'
-                'stdout: ${pubGet.stdout}\n'
-                'stderr: ${pubGet.stderr}',
-              );
-            }
-            // ignore: avoid_print
-            print('  Updated ${generated.length} snapshot files for $specName');
-          } else {
-            // Compare against existing snapshots
-            final snapshotDirObj = Directory(snapshotDir);
-            expect(snapshotDirObj.existsSync(), isTrue,
+          // Filter generated to only snapshot-relevant files
+          final filteredGenerated = Map.fromEntries(
+            generated.entries.where((e) => _isSnapshotFile(e.key)),
+          );
+
+          // Check that the same set of files was generated
+          final generatedKeys = filteredGenerated.keys.toSet();
+          final existingKeys = existing.keys.toSet();
+          final missing = existingKeys.difference(generatedKeys);
+          final extra = generatedKeys.difference(existingKeys);
+
+          expect(missing, isEmpty,
+              reason: 'Files in snapshot but not generated: $missing');
+          expect(extra, isEmpty,
+              reason: 'Files generated but not in snapshot: $extra');
+
+          // Compare each file's content
+          for (final path in generatedKeys) {
+            expect(filteredGenerated[path], equals(existing[path]),
                 reason:
-                    'Snapshot directory missing for $specName. '
-                    'Run with UPDATE_SNAPSHOTS=1 to create.');
-
-            // Collect existing snapshots
-            final existing = <String, String>{};
-            for (final entity
-                in snapshotDirObj.listSync(recursive: true)) {
-              if (entity is File) {
-                final relativePath =
-                    p.relative(entity.path, from: snapshotDir);
-                if (!_isSnapshotFile(relativePath)) continue;
-                existing[relativePath] = entity.readAsStringSync();
-              }
-            }
-
-            // Check that the same set of files was generated
-            final generatedKeys = generated.keys.toSet();
-            final existingKeys = existing.keys.toSet();
-            final missing = existingKeys.difference(generatedKeys);
-            final extra = generatedKeys.difference(existingKeys);
-
-            expect(missing, isEmpty,
-                reason: 'Files in snapshot but not generated: $missing');
-            expect(extra, isEmpty,
-                reason: 'Files generated but not in snapshot: $extra');
-
-            // Compare each file's content
-            for (final path in generatedKeys) {
-              expect(generated[path], equals(existing[path]),
-                  reason:
-                      'Snapshot mismatch for $specName/$path. '
-                      'Run with UPDATE_SNAPSHOTS=1 to update.');
-            }
+                    'Snapshot mismatch for $specName/$path. '
+                    'Run with UPDATE_SNAPSHOTS=1 to update.');
           }
-        } finally {
-          tempDir.deleteSync(recursive: true);
         }
       });
     }
@@ -169,22 +173,18 @@ void main() {
       test('$specName fails with FileSystemException for missing refs', () async {
         final specFile = _specFiles(p.join(_fixturesDir, 'public'))
             .firstWhere((f) => p.basenameWithoutExtension(f.path) == specName);
-        final tempDir =
-            Directory.systemTemp.createTempSync('degenerate_snap_');
-        try {
-          final config = GeneratorConfig(
-            inputPath: specFile.path,
-            outputDir: tempDir.path,
-            packageName: 'test_api',
-            runtimePath: '../../../packages/degenerate_runtime',
-          );
-          await expectLater(
-            Generator(config).generate(),
-            throwsA(isA<FileSystemException>()),
-          );
-        } finally {
-          tempDir.deleteSync(recursive: true);
-        }
+        final config = GeneratorConfig(
+          inputPath: specFile.path,
+          outputDir: 'unused',
+          packageName: 'test_api',
+          runtimePath: '../../../packages/degenerate_runtime',
+          dryRun: true,
+          quiet: true,
+        );
+        await expectLater(
+          Generator(config).generate(),
+          throwsA(isA<FileSystemException>()),
+        );
       });
     }
   });
