@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class UsersApi {const UsersApi(this._config);
+final class UsersApi with ApiExecutor {const UsersApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get the authenticated user
 ///
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
 ///
 /// `GET /user`
-Future<ApiResult<UsersGetAuthenticatedResponse, BasicError>> usersGetAuthenticated({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UsersGetAuthenticatedResponse, BasicError>> usersGetAuthenticated({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsersGetAuthenticatedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -41,7 +41,7 @@ return _execute(
 /// **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
 ///
 /// `PATCH /user`
-Future<ApiResult<PrivateUser, BasicError>> usersUpdateAuthenticated({UsersUpdateAuthenticatedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PrivateUser, BasicError>> usersUpdateAuthenticated({UsersUpdateAuthenticatedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PrivateUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -67,12 +67,12 @@ return _execute(
 /// List the users you've blocked on your personal account.
 ///
 /// `GET /user/blocks`
-Future<ApiResult<List<SimpleUser>, BasicError>> usersListBlockedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, BasicError>> usersListBlockedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +83,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -99,7 +99,7 @@ return _execute(
 /// Returns a 204 if the given user is blocked by the authenticated user. Returns a 404 if the given user is not blocked by the authenticated user, or if the given user account has been identified as spam by GitHub.
 ///
 /// `GET /user/blocks/{username}`
-Future<ApiResult<void, BasicError>> usersCheckBlocked({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersCheckBlocked({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -108,7 +108,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -121,7 +121,7 @@ return _execute(
 /// Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.
 ///
 /// `PUT /user/blocks/{username}`
-Future<ApiResult<void, BasicError>> usersBlock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersBlock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -130,7 +130,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -143,7 +143,7 @@ return _execute(
 /// Unblocks the given user and returns a 204.
 ///
 /// `DELETE /user/blocks/{username}`
-Future<ApiResult<void, BasicError>> usersUnblock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersUnblock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -152,7 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -165,7 +165,7 @@ return _execute(
 /// Sets the visibility for your primary email addresses.
 ///
 /// `PATCH /user/email/visibility`
-Future<ApiResult<List<Email>, BasicError>> usersSetPrimaryEmailVisibilityForAuthenticatedUser({required UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Email>, BasicError>> usersSetPrimaryEmailVisibilityForAuthenticatedUser({required UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -176,7 +176,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -195,12 +195,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 ///
 /// `GET /user/emails`
-Future<ApiResult<List<Email>, BasicError>> usersListEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Email>, BasicError>> usersListEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -211,7 +211,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -227,7 +227,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `POST /user/emails`
-Future<ApiResult<List<Email>, ValidationError>> usersAddEmailForAuthenticatedUser({UsersAddEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Email>, ValidationError>> usersAddEmailForAuthenticatedUser({UsersAddEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -238,7 +238,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -254,7 +254,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `DELETE /user/emails`
-Future<ApiResult<void, BasicError>> usersDeleteEmailForAuthenticatedUser({UsersDeleteEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersDeleteEmailForAuthenticatedUser({UsersDeleteEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -265,7 +265,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -278,12 +278,12 @@ return _execute(
 /// Lists the people following the authenticated user.
 ///
 /// `GET /user/followers`
-Future<ApiResult<List<SimpleUser>, BasicError>> usersListFollowersForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, BasicError>> usersListFollowersForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -294,7 +294,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -310,12 +310,12 @@ return _execute(
 /// Lists the people who the authenticated user follows.
 ///
 /// `GET /user/following`
-Future<ApiResult<List<SimpleUser>, BasicError>> usersListFollowedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, BasicError>> usersListFollowedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -326,7 +326,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -342,7 +342,7 @@ return _execute(
 /// 
 ///
 /// `GET /user/following/{username}`
-Future<ApiResult<void, BasicError>> usersCheckPersonIsFollowedByAuthenticated({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersCheckPersonIsFollowedByAuthenticated({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -351,7 +351,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -366,7 +366,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 ///
 /// `PUT /user/following/{username}`
-Future<ApiResult<void, BasicError>> usersFollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersFollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -375,7 +375,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -388,7 +388,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 ///
 /// `DELETE /user/following/{username}`
-Future<ApiResult<void, BasicError>> usersUnfollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersUnfollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -397,7 +397,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -412,12 +412,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
 ///
 /// `GET /user/gpg_keys`
-Future<ApiResult<List<GpgKey>, BasicError>> usersListGpgKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<GpgKey>, BasicError>> usersListGpgKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -428,7 +428,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -446,7 +446,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
 ///
 /// `POST /user/gpg_keys`
-Future<ApiResult<GpgKey, ValidationError>> usersCreateGpgKeyForAuthenticatedUser({required UsersCreateGpgKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GpgKey, ValidationError>> usersCreateGpgKeyForAuthenticatedUser({required UsersCreateGpgKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -457,7 +457,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -474,7 +474,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
 ///
 /// `GET /user/gpg_keys/{gpg_key_id}`
-Future<ApiResult<GpgKey, BasicError>> usersGetGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GpgKey, BasicError>> usersGetGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -483,7 +483,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -500,7 +500,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.
 ///
 /// `DELETE /user/gpg_keys/{gpg_key_id}`
-Future<ApiResult<void, BasicError>> usersDeleteGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersDeleteGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -509,7 +509,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -524,12 +524,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
 ///
 /// `GET /user/keys`
-Future<ApiResult<List<Key>, BasicError>> usersListPublicSshKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Key>, BasicError>> usersListPublicSshKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -540,7 +540,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -558,7 +558,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:public_key` scope to use this endpoint.
 ///
 /// `POST /user/keys`
-Future<ApiResult<Key, ValidationError>> usersCreatePublicSshKeyForAuthenticatedUser({required UsersCreatePublicSshKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Key, ValidationError>> usersCreatePublicSshKeyForAuthenticatedUser({required UsersCreatePublicSshKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -569,7 +569,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -586,7 +586,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
 ///
 /// `GET /user/keys/{key_id}`
-Future<ApiResult<Key, BasicError>> usersGetPublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Key, BasicError>> usersGetPublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -595,7 +595,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -612,7 +612,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:public_key` scope to use this endpoint.
 ///
 /// `DELETE /user/keys/{key_id}`
-Future<ApiResult<void, BasicError>> usersDeletePublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersDeletePublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -621,7 +621,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -638,12 +638,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 ///
 /// `GET /user/public_emails`
-Future<ApiResult<List<Email>, BasicError>> usersListPublicEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Email>, BasicError>> usersListPublicEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -654,7 +654,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -670,12 +670,12 @@ return _execute(
 /// Lists all of your social accounts.
 ///
 /// `GET /user/social_accounts`
-Future<ApiResult<List<SocialAccount>, BasicError>> usersListSocialAccountsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SocialAccount>, BasicError>> usersListSocialAccountsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -686,7 +686,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -704,7 +704,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `POST /user/social_accounts`
-Future<ApiResult<List<SocialAccount>, ValidationError>> usersAddSocialAccountForAuthenticatedUser({required UsersAddSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<SocialAccount>, ValidationError>> usersAddSocialAccountForAuthenticatedUser({required UsersAddSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -715,7 +715,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -733,7 +733,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `DELETE /user/social_accounts`
-Future<ApiResult<void, ValidationError>> usersDeleteSocialAccountForAuthenticatedUser({required UsersDeleteSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationError>> usersDeleteSocialAccountForAuthenticatedUser({required UsersDeleteSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -744,7 +744,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -759,12 +759,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
 ///
 /// `GET /user/ssh_signing_keys`
-Future<ApiResult<List<SshSigningKey>, BasicError>> usersListSshSigningKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SshSigningKey>, BasicError>> usersListSshSigningKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -775,7 +775,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -793,7 +793,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:ssh_signing_key` scope to use this endpoint.
 ///
 /// `POST /user/ssh_signing_keys`
-Future<ApiResult<SshSigningKey, ValidationError>> usersCreateSshSigningKeyForAuthenticatedUser({required UsersCreateSshSigningKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SshSigningKey, ValidationError>> usersCreateSshSigningKeyForAuthenticatedUser({required UsersCreateSshSigningKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -804,7 +804,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -821,7 +821,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
 ///
 /// `GET /user/ssh_signing_keys/{ssh_signing_key_id}`
-Future<ApiResult<SshSigningKey, BasicError>> usersGetSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SshSigningKey, BasicError>> usersGetSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -830,7 +830,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -847,7 +847,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.
 ///
 /// `DELETE /user/ssh_signing_keys/{ssh_signing_key_id}`
-Future<ApiResult<void, BasicError>> usersDeleteSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersDeleteSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -856,7 +856,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -875,7 +875,7 @@ return _execute(
 /// The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see [Emails API](https://docs.github.com/rest/users/emails).
 ///
 /// `GET /user/{account_id}`
-Future<ApiResult<UsersGetByIdResponse, BasicError>> usersGetById({required int accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UsersGetByIdResponse, BasicError>> usersGetById({required int accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -884,7 +884,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsersGetByIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -901,12 +901,12 @@ return _execute(
 /// Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of users.
 ///
 /// `GET /users`
-Future<ApiResult<List<SimpleUser>, Never>> usersList({int? since, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> usersList({int? since, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) queryParameters['since'] = since.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -917,7 +917,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -936,7 +936,7 @@ return _execute(
 /// The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see [Emails API](https://docs.github.com/rest/users/emails).
 ///
 /// `GET /users/{username}`
-Future<ApiResult<UsersGetByUsernameResponse, BasicError>> usersGetByUsername({required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UsersGetByUsernameResponse, BasicError>> usersGetByUsername({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -945,7 +945,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsersGetByUsernameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -964,13 +964,13 @@ return _execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `POST /users/{username}/attestations/bulk-list`
-Future<ApiResult<UsersListAttestationsBulkResponse, Never>> usersListAttestationsBulk({required String username, int? perPage, String? before, String? after, required UsersListAttestationsBulkRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsersListAttestationsBulkResponse, Never>> usersListAttestationsBulk({required String username, int? perPage, String? before, String? after, required UsersListAttestationsBulkRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (before != null) queryParameters['before'] = before;
 if (after != null) queryParameters['after'] = after;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -983,7 +983,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsersListAttestationsBulkResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -995,7 +995,7 @@ return _execute(
 /// Delete artifact attestations in bulk by either subject digests or unique ID.
 ///
 /// `POST /users/{username}/attestations/delete-request`
-Future<ApiResult<void, BasicError>> usersDeleteAttestationsBulk({required String username, required UsersDeleteAttestationsBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersDeleteAttestationsBulk({required String username, required UsersDeleteAttestationsBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1006,7 +1006,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1019,7 +1019,7 @@ return _execute(
 /// Delete an artifact attestation by subject digest.
 ///
 /// `DELETE /users/{username}/attestations/digest/{subject_digest}`
-Future<ApiResult<void, BasicError>> usersDeleteAttestationsBySubjectDigest({required String username, required String subjectDigest, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersDeleteAttestationsBySubjectDigest({required String username, required String subjectDigest, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1028,7 +1028,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1041,7 +1041,7 @@ return _execute(
 /// Delete an artifact attestation by unique ID that is associated with a repository owned by a user.
 ///
 /// `DELETE /users/{username}/attestations/{attestation_id}`
-Future<ApiResult<void, BasicError>> usersDeleteAttestationsById({required String username, required int attestationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> usersDeleteAttestationsById({required String username, required int attestationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1050,7 +1050,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1067,14 +1067,14 @@ return _execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `GET /users/{username}/attestations/{subject_digest}`
-Future<ApiResult<UsersListAttestationsResponse, BasicError>> usersListAttestations({required String username, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsersListAttestationsResponse, BasicError>> usersListAttestations({required String username, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (before != null) queryParameters['before'] = before;
 if (after != null) queryParameters['after'] = after;
 if (predicateType != null) queryParameters['predicate_type'] = predicateType;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1085,7 +1085,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsersListAttestationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1100,12 +1100,12 @@ return _execute(
 /// Lists the people following the specified user.
 ///
 /// `GET /users/{username}/followers`
-Future<ApiResult<List<SimpleUser>, Never>> usersListFollowersForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> usersListFollowersForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1116,7 +1116,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1129,12 +1129,12 @@ return _execute(
 /// Lists the people who the specified user follows.
 ///
 /// `GET /users/{username}/following`
-Future<ApiResult<List<SimpleUser>, Never>> usersListFollowingForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> usersListFollowingForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1145,7 +1145,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1158,7 +1158,7 @@ return _execute(
 /// 
 ///
 /// `GET /users/{username}/following/{target_user}`
-Future<ApiResult<void, Never>> usersCheckFollowingForUser({required String username, required String targetUser, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> usersCheckFollowingForUser({required String username, required String targetUser, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1167,7 +1167,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1177,12 +1177,12 @@ return _execute(
 /// Lists the GPG keys for a user. This information is accessible by anyone.
 ///
 /// `GET /users/{username}/gpg_keys`
-Future<ApiResult<List<GpgKey>, Never>> usersListGpgKeysForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<GpgKey>, Never>> usersListGpgKeysForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1193,7 +1193,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1210,12 +1210,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /users/{username}/hovercard`
-Future<ApiResult<Hovercard, BasicError>> usersGetContextForUser({required String username, UsersGetContextForUserSubjectType? subjectType, String? subjectId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Hovercard, BasicError>> usersGetContextForUser({required String username, UsersGetContextForUserSubjectType? subjectType, String? subjectId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subjectType != null) queryParameters['subject_type'] = subjectType.toJson();
 if (subjectId != null) queryParameters['subject_id'] = subjectId;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1226,7 +1226,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Hovercard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1241,12 +1241,12 @@ return _execute(
 /// Lists the _verified_ public SSH keys for a user. This is accessible by anyone.
 ///
 /// `GET /users/{username}/keys`
-Future<ApiResult<List<KeySimple>, Never>> usersListPublicKeysForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<KeySimple>, Never>> usersListPublicKeysForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1257,7 +1257,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1270,12 +1270,12 @@ return _execute(
 /// Lists social media accounts for a user. This endpoint is accessible by anyone.
 ///
 /// `GET /users/{username}/social_accounts`
-Future<ApiResult<List<SocialAccount>, Never>> usersListSocialAccountsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SocialAccount>, Never>> usersListSocialAccountsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1286,7 +1286,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1299,12 +1299,12 @@ return _execute(
 /// Lists the SSH signing keys for a user. This operation is accessible by anyone.
 ///
 /// `GET /users/{username}/ssh_signing_keys`
-Future<ApiResult<List<SshSigningKey>, Never>> usersListSshSigningKeysForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<SshSigningKey>, Never>> usersListSshSigningKeysForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1315,87 +1315,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

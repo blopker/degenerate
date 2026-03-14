@@ -8,14 +8,14 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ConversationsApi {const ConversationsApi(this._config);
+final class ConversationsApi with ApiExecutor {const ConversationsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List all items for a conversation with the given ID.
 ///
 /// `GET /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -26,7 +26,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -47,7 +47,7 @@ return _execute(
 /// Create items in a conversation with the given ID.
 ///
 /// `POST /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, List<IncludeEnum>? include, required CreateConversationItemsRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, List<IncludeEnum>? include, required CreateConversationItemsRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -55,7 +55,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -78,7 +78,7 @@ return _execute(
 /// Get a single item from a conversation with the given IDs.
 ///
 /// `GET /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationItem, Never>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ConversationItem, Never>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -86,7 +86,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -97,7 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ConversationItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -107,7 +107,7 @@ return _execute(
 /// Delete an item from a conversation with the given IDs.
 ///
 /// `DELETE /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationResource, Never>> deleteConversationItem({required String conversationId, required String itemId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> deleteConversationItem({required String conversationId, required String itemId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -116,7 +116,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -126,7 +126,7 @@ return _execute(
 /// Create a conversation.
 ///
 /// `POST /conversations`
-Future<ApiResult<ConversationResource, Never>> createConversation({CreateConversationBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> createConversation({CreateConversationBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,7 +137,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -147,7 +147,7 @@ return _execute(
 /// Get a conversation
 ///
 /// `GET /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource, Never>> getConversation({required String conversationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> getConversation({required String conversationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -156,7 +156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -166,7 +166,7 @@ return _execute(
 /// Update a conversation
 ///
 /// `POST /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource, Never>> updateConversation({required String conversationId, UpdateConversationBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> updateConversation({required String conversationId, UpdateConversationBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -177,7 +177,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -187,7 +187,7 @@ return _execute(
 /// Delete a conversation. Items in the conversation will not be deleted.
 ///
 /// `DELETE /conversations/{conversation_id}`
-Future<ApiResult<DeletedConversationResource, Never>> deleteConversation({required String conversationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletedConversationResource, Never>> deleteConversation({required String conversationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -196,86 +196,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeletedConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

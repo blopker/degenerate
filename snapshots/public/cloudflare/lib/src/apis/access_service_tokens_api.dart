@@ -8,23 +8,23 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class AccessServiceTokensApi {const AccessServiceTokensApi(this._config);
+final class AccessServiceTokensApi with ApiExecutor {const AccessServiceTokensApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List service tokens
 ///
 /// Lists all service tokens.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensListServiceTokens({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensListServiceTokens({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (search != null) queryParameters['search'] = search;
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -47,7 +47,7 @@ return _execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to rotate the Client Secret or create a new service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensCreateAServiceToken({required AccessIdentifier accountId, required AccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensCreateAServiceToken({required AccessIdentifier accountId, required AccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,7 +58,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -70,7 +70,7 @@ return _execute(
 /// Fetches a single service token.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,7 +79,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -91,7 +91,7 @@ return _execute(
 /// Updates a configured service token.
 ///
 /// `PUT /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,7 +102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -114,7 +114,7 @@ return _execute(
 /// Deletes a service token.
 ///
 /// `DELETE /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -123,7 +123,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -135,7 +135,7 @@ return _execute(
 /// Refreshes the expiration of a service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/refresh`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRefreshAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRefreshAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -156,7 +156,7 @@ return _execute(
 /// Generates a new Client Secret for a service token and revokes the old one.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/rotate`
-Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRotateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, AccessServiceTokensRotateAServiceTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon3, Never>> accessServiceTokensRotateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, AccessServiceTokensRotateAServiceTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -167,86 +167,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

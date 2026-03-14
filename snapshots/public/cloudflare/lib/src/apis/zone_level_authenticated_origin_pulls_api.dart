@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ZoneLevelAuthenticatedOriginPullsApi {const ZoneLevelAuthenticatedOriginPullsApi(this._config);
+final class ZoneLevelAuthenticatedOriginPullsApi with ApiExecutor {const ZoneLevelAuthenticatedOriginPullsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List Certificates
 ///
 /// Lists all client certificates configured for zone-level authenticated origin pulls.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -38,7 +38,7 @@ return _execute(
 /// Upload your own certificate you want Cloudflare to use for edge-to-origin communication to override the shared certificate. Please note that it is important to keep only one certificate active. Also, make sure to enable zone-level authenticated origin pulls by making a PUT call to settings endpoint to see the uploaded certificate in use.
 ///
 /// `POST /zones/{zone_id}/origin_tls_client_auth`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsUploadCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsUploadCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,7 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -61,7 +61,7 @@ return _execute(
 /// Retrieves details for a specific client certificate used in zone-level authenticated origin pulls.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetCertificateDetails({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetCertificateDetails({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -70,7 +70,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -82,7 +82,7 @@ return _execute(
 /// Removes a client certificate used for zone-level authenticated origin pulls.
 ///
 /// `DELETE /zones/{zone_id}/origin_tls_client_auth/{certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsDeleteCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsDeleteCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -91,7 +91,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -103,7 +103,7 @@ return _execute(
 /// Get whether zone-level authenticated origin pulls is enabled or not. It is false by default.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/settings`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,7 +112,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -124,7 +124,7 @@ return _execute(
 /// Enable or disable zone-level authenticated origin pulls. 'enabled' should be set true either before/after the certificate is uploaded to see the certificate in use.
 ///
 /// `PUT /zones/{zone_id}/origin_tls_client_auth/settings`
-Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsSetEnablementForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon68, Never>> zoneLevelAuthenticatedOriginPullsSetEnablementForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -135,86 +135,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

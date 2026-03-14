@@ -8,23 +8,23 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class PlusApi {const PlusApi(this._config);
+final class PlusApi with ApiExecutor {const PlusApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Retrieves a list of gift cards. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-01
 ///
 /// `GET /admin/api/2020-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202001GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -45,7 +45,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-01
 ///
 /// `POST /admin/api/2020-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202001CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,7 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -66,7 +66,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-01
 ///
 /// `GET /admin/api/2020-01/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,7 +75,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -86,7 +86,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,7 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -107,11 +107,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-01
 ///
 /// `GET /admin/api/2020-01/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,7 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -132,7 +132,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-01
 ///
 /// `POST /admin/api/2020-01/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202001CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -143,7 +143,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -164,14 +164,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-01
 ///
 /// `GET /admin/api/2020-01/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202001GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order.toString();
 if (query != null) queryParameters['query'] = query.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -182,7 +182,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -192,14 +192,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-04
 ///
 /// `GET /admin/api/2020-04/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202004GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -210,7 +210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -220,7 +220,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-04
 ///
 /// `POST /admin/api/2020-04/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202004CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -231,7 +231,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -241,7 +241,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-04
 ///
 /// `GET /admin/api/2020-04/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -250,7 +250,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -261,7 +261,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -272,7 +272,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -282,11 +282,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-04
 ///
 /// `GET /admin/api/2020-04/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -297,7 +297,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -307,7 +307,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-04
 ///
 /// `POST /admin/api/2020-04/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202004CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -318,7 +318,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -339,14 +339,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-04
 ///
 /// `GET /admin/api/2020-04/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202004GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order.toString();
 if (query != null) queryParameters['query'] = query.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -357,7 +357,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -367,14 +367,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-07
 ///
 /// `GET /admin/api/2020-07/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202007GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -385,7 +385,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -395,7 +395,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-07
 ///
 /// `POST /admin/api/2020-07/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202007CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -406,7 +406,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -416,7 +416,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-07
 ///
 /// `GET /admin/api/2020-07/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -425,7 +425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -436,7 +436,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -447,7 +447,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -457,11 +457,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-07
 ///
 /// `GET /admin/api/2020-07/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -472,7 +472,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -482,7 +482,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-07
 ///
 /// `POST /admin/api/2020-07/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202007CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -493,7 +493,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -514,14 +514,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-07
 ///
 /// `GET /admin/api/2020-07/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202007GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order.toString();
 if (query != null) queryParameters['query'] = query.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -532,7 +532,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -542,14 +542,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-10
 ///
 /// `GET /admin/api/2020-10/gift_cards.json`
-Future<ApiResult<void, Never>> getGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -560,7 +560,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -570,7 +570,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-10
 ///
 /// `POST /admin/api/2020-10/gift_cards.json`
-Future<ApiResult<void, Never>> createGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -581,7 +581,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -591,7 +591,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-10
 ///
 /// `GET /admin/api/2020-10/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> getGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -600,7 +600,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -611,7 +611,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> updateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -622,7 +622,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -632,11 +632,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-10
 ///
 /// `GET /admin/api/2020-10/gift_cards/count.json`
-Future<ApiResult<void, Never>> getGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -647,7 +647,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -657,7 +657,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-10
 ///
 /// `POST /admin/api/2020-10/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> createGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -668,7 +668,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -689,14 +689,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2020-10
 ///
 /// `GET /admin/api/2020-10/gift_cards/search.json`
-Future<ApiResult<void, Never>> getGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order.toString();
 if (query != null) queryParameters['query'] = query.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -707,7 +707,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -717,14 +717,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2021-01
 ///
 /// `GET /admin/api/2021-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202101GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -735,7 +735,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -745,7 +745,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2021-01
 ///
 /// `POST /admin/api/2021-01/gift_cards.json`
-Future<ApiResult<void, Never>> deprecated202101CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -756,7 +756,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -766,7 +766,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2021-01
 ///
 /// `GET /admin/api/2021-01/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -775,7 +775,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -786,7 +786,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -797,7 +797,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -807,11 +807,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2021-01
 ///
 /// `GET /admin/api/2021-01/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -822,7 +822,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -832,7 +832,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2021-01
 ///
 /// `POST /admin/api/2021-01/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecated202101CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -843,7 +843,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -864,14 +864,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-2021-01
 ///
 /// `GET /admin/api/2021-01/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecated202101GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order.toString();
 if (query != null) queryParameters['query'] = query.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -882,7 +882,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -892,14 +892,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-unstable
 ///
 /// `GET /admin/api/unstable/gift_cards.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -910,7 +910,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -920,7 +920,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-unstable
 ///
 /// `POST /admin/api/unstable/gift_cards.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCards({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -931,7 +931,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -941,7 +941,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-unstable
 ///
 /// `GET /admin/api/unstable/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsParamGiftCardId({required String giftCardId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -950,7 +950,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -961,7 +961,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#update-unstable
 ///
 /// `PUT /admin/api/unstable/gift_cards/{gift_card_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateGiftCardsParamGiftCardId({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -972,7 +972,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -982,11 +982,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-unstable
 ///
 /// `GET /admin/api/unstable/gift_cards/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) queryParameters['status'] = status.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -997,7 +997,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1007,7 +1007,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-unstable
 ///
 /// `POST /admin/api/unstable/gift_cards/{gift_card_id}/disable.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateGiftCardsParamGiftCardIdDisable({required String giftCardId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1018,7 +1018,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1039,14 +1039,14 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#search-unstable
 ///
 /// `GET /admin/api/unstable/gift_cards/search.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) queryParameters['order'] = order.toString();
 if (query != null) queryParameters['query'] = query.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1057,7 +1057,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1067,12 +1067,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-01
 ///
 /// `GET /admin/api/2020-01/users.json`
-Future<ApiResult<void, Never>> deprecated202001GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1083,7 +1083,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1093,7 +1093,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-01
 ///
 /// `GET /admin/api/2020-01/users/{user_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1102,7 +1102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1112,7 +1112,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-01
 ///
 /// `GET /admin/api/2020-01/users/current.json`
-Future<ApiResult<void, Never>> deprecated202001GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1121,7 +1121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1131,12 +1131,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-04
 ///
 /// `GET /admin/api/2020-04/users.json`
-Future<ApiResult<void, Never>> deprecated202004GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1147,7 +1147,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1157,7 +1157,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-04
 ///
 /// `GET /admin/api/2020-04/users/{user_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1166,7 +1166,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1176,7 +1176,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-04
 ///
 /// `GET /admin/api/2020-04/users/current.json`
-Future<ApiResult<void, Never>> deprecated202004GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1185,7 +1185,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1195,12 +1195,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-07
 ///
 /// `GET /admin/api/2020-07/users.json`
-Future<ApiResult<void, Never>> deprecated202007GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1211,7 +1211,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1221,7 +1221,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-07
 ///
 /// `GET /admin/api/2020-07/users/{user_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1230,7 +1230,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1240,7 +1240,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-07
 ///
 /// `GET /admin/api/2020-07/users/current.json`
-Future<ApiResult<void, Never>> deprecated202007GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1249,7 +1249,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1259,12 +1259,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-10
 ///
 /// `GET /admin/api/2020-10/users.json`
-Future<ApiResult<void, Never>> getUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1275,7 +1275,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1285,7 +1285,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-10
 ///
 /// `GET /admin/api/2020-10/users/{user_id}.json`
-Future<ApiResult<void, Never>> getUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1294,7 +1294,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1304,7 +1304,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-10
 ///
 /// `GET /admin/api/2020-10/users/current.json`
-Future<ApiResult<void, Never>> getUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1313,7 +1313,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1323,12 +1323,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2021-01
 ///
 /// `GET /admin/api/2021-01/users.json`
-Future<ApiResult<void, Never>> deprecated202101GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1339,7 +1339,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1349,7 +1349,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2021-01
 ///
 /// `GET /admin/api/2021-01/users/{user_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1358,7 +1358,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1368,7 +1368,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2021-01
 ///
 /// `GET /admin/api/2021-01/users/current.json`
-Future<ApiResult<void, Never>> deprecated202101GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1377,7 +1377,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1387,12 +1387,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-unstable
 ///
 /// `GET /admin/api/unstable/users.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1403,7 +1403,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1413,7 +1413,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-unstable
 ///
 /// `GET /admin/api/unstable/users/{user_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetUsersParamUserId({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1422,7 +1422,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1432,7 +1432,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-unstable
 ///
 /// `GET /admin/api/unstable/users/current.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetUsersCurrent({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1441,84 +1441,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

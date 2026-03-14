@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class RadarDomainsRankingApi {const RadarDomainsRankingApi(this._config);
+final class RadarDomainsRankingApi with ApiExecutor {const RadarDomainsRankingApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get domain rank details
 ///
 /// Retrieves domain rank details. Cloudflare provides an ordered rank for the top 100 domains, but for the remainder it only provides ranking buckets like top 200 thousand, top one million, etc.. These are available through Radar datasets endpoints.
 ///
 /// `GET /radar/ranking/domain/{domain}`
-Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
@@ -34,7 +34,7 @@ for (final item in date) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -45,7 +45,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetRankingDomainDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -60,7 +60,7 @@ return _execute(
 /// Retrieves domains rank over time.
 ///
 /// `GET /radar/ranking/timeseries_groups`
-Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
@@ -101,7 +101,7 @@ for (final item in dateEnd) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,7 +112,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetRankingDomainTimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -127,7 +127,7 @@ return _execute(
 /// Retrieves the top or trending domains based on their rank. Popular domains are domains of broad appeal based on how people use the Internet. Trending domains are domains that are generating a surge in interest. For more information on top domains, see https://blog.cloudflare.com/radar-domain-rankings/.
 ///
 /// `GET /radar/ranking/top`
-Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -153,7 +153,7 @@ for (final item in date) {
 if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -164,7 +164,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetRankingTopDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -173,80 +173,5 @@ return _execute(
     return RadarGetRankingTopDomainsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

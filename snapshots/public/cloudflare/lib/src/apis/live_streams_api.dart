@@ -8,21 +8,21 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class LiveStreamsApi {const LiveStreamsApi(this._config);
+final class LiveStreamsApi with ApiExecutor {const LiveStreamsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Fetch complete analytics data for your livestreams
 ///
 /// Returns livestream analytics for the specified time range.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/analytics/livestreams/overall`
-Future<ApiResult<GetLivestreamAnalyticsCompleteResponse, Never>> getLivestreamAnalyticsComplete({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, DateTime? startTime, DateTime? endTime, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetLivestreamAnalyticsCompleteResponse, Never>> getLivestreamAnalyticsComplete({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, DateTime? startTime, DateTime? endTime, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (startTime != null) queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -33,7 +33,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetLivestreamAnalyticsCompleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -45,7 +45,7 @@ return _execute(
 /// Returns details of livestreams associated with the given App ID. It includes livestreams created by your App and RealtimeKit meetings that are livestreamed by your App. If you only want details of livestreams created by your App and not RealtimeKit meetings, you can use the `exclude_meetings` query parameter.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams`
-Future<ApiResult<FetchAllLivestreamsResponse, Never>> fetchAllLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, bool? excludeMeetings, int? perPage, int? pageNo, FetchAllLivestreamsStatus? status, DateTime? startTime, DateTime? endTime, FetchAllLivestreamsSortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<FetchAllLivestreamsResponse, Never>> fetchAllLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, bool? excludeMeetings, int? perPage, int? pageNo, FetchAllLivestreamsStatus? status, DateTime? startTime, DateTime? endTime, FetchAllLivestreamsSortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (excludeMeetings != null) queryParameters['exclude_meetings'] = excludeMeetings.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -55,7 +55,7 @@ if (startTime != null) queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
 if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,7 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FetchAllLivestreamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -78,7 +78,7 @@ return _execute(
 /// Creates a livestream for the given App ID and returns ingest server, stream key, and playback URL. You can pass custom input to the ingest server and stream key, and freely distribute the content using the playback URL on any player that supports HLS/LHLS.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/livestreams`
-Future<ApiResult<PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse, Never>> postAccountsRealtimeKitLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse, Never>> postAccountsRealtimeKitLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,7 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -101,12 +101,12 @@ return _execute(
 /// Returns details of a livestream with sessions for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}`
-Future<ApiResult<LivestreamSessionLivestreamIdResponse, Never>> getV2LivestreamSessionLivestreamId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, int? pageNo, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<LivestreamSessionLivestreamIdResponse, Never>> getV2LivestreamSessionLivestreamId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, int? pageNo, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -117,7 +117,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return LivestreamSessionLivestreamIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -129,7 +129,7 @@ return _execute(
 /// Returns details of all active livestreams for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}/active-livestream-session`
-Future<ApiResult<ActiveLivestreamSessionDetailsResponse, Never>> getV2ActiveLivestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActiveLivestreamSessionDetailsResponse, Never>> getV2ActiveLivestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -138,7 +138,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActiveLivestreamSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -150,7 +150,7 @@ return _execute(
 /// Returns livestream session details for the given livestream session ID. Retrieve the `livestream_session_id`using the `Fetch livestream session details using a session ID` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams/sessions/{livestream-session-id}`
-Future<ApiResult<LivestreamsLivestreamSessionIdResponse, Never>> getV2LivestreamsLivestreamSessionId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamSessionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<LivestreamsLivestreamSessionIdResponse, Never>> getV2LivestreamsLivestreamSessionId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamSessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -159,7 +159,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return LivestreamsLivestreamSessionIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -171,7 +171,7 @@ return _execute(
 /// Returns details of all active livestreams for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream`
-Future<ApiResult<MeetingsMeetingIdActiveLivestreamResponse, Never>> getV2MeetingsMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MeetingsMeetingIdActiveLivestreamResponse, Never>> getV2MeetingsMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -180,7 +180,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MeetingsMeetingIdActiveLivestreamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -192,7 +192,7 @@ return _execute(
 /// Stops the active livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream/stop`
-Future<ApiResult<StopLivestreamingResponse, Never>> stopLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<StopLivestreamingResponse, Never>> stopLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -201,7 +201,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return StopLivestreamingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -213,12 +213,12 @@ return _execute(
 /// Returns livestream session details for the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestream`
-Future<ApiResult<LivestreamSessionDetailsResponse, Never>> livestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, int? pageNo, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<LivestreamSessionDetailsResponse, Never>> livestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, int? pageNo, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -229,7 +229,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return LivestreamSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -241,7 +241,7 @@ return _execute(
 /// Starts livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestreams`
-Future<ApiResult<StartLivestreamingResponse, Never>> startLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required StartLivestreamingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<StartLivestreamingResponse, Never>> startLivestreaming({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required StartLivestreamingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -252,7 +252,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return StartLivestreamingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -264,12 +264,12 @@ return _execute(
 /// Returns livestream session details for the given session ID. Retreive the session ID using the `Fetch all sessions of an App` API.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/livestream-sessions`
-Future<ApiResult<LivestreamsessionSessionMeetingIdActiveLivestreamResponse, Never>> getV2LivestreamsessionSessionMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, double? perPage, double? pageNo, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<LivestreamsessionSessionMeetingIdActiveLivestreamResponse, Never>> getV2LivestreamsessionSessionMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, double? perPage, double? pageNo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -280,86 +280,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return LivestreamsessionSessionMeetingIdActiveLivestreamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

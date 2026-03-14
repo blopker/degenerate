@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class InfrastructureAccessTargetsApi {const InfrastructureAccessTargetsApi(this._config);
+final class InfrastructureAccessTargetsApi with ApiExecutor {const InfrastructureAccessTargetsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List all targets
 ///
@@ -18,7 +18,7 @@ final ApiConfig _config;
 /// together.
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hostname != null) queryParameters['hostname'] = hostname;
 if (hostnameContains != null) queryParameters['hostname_contains'] = hostnameContains;
@@ -49,7 +49,7 @@ if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (order != null) queryParameters['order'] = order.toJson();
 if (direction != null) queryParameters['direction'] = direction.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -60,7 +60,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -70,7 +70,7 @@ return _execute(
 /// Create new target
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,7 +81,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -91,7 +91,7 @@ return _execute(
 /// Get target
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -100,7 +100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -110,7 +110,7 @@ return _execute(
 /// Update target
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,7 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -131,7 +131,7 @@ return _execute(
 /// Delete target
 ///
 /// `DELETE /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<void, Never>> infraTargetsDelete({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> infraTargetsDelete({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -140,7 +140,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -150,7 +150,7 @@ return _execute(
 /// Adds one or more targets.
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/batch`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon37, Never>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -161,7 +161,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -173,7 +173,7 @@ return _execute(
 /// Removes one or more targets.
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets/batch_delete`
-Future<ApiResult<void, Never>> infraTargetsDeleteBatchPost({required InfraAccountTag accountId, required InfraTargetsDeleteBatchPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> infraTargetsDeleteBatchPost({required InfraAccountTag accountId, required InfraTargetsDeleteBatchPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -184,84 +184,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

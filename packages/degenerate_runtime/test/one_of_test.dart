@@ -174,5 +174,67 @@ void main() {
           isA<OneOf9I<String, int, double, bool, List, Map, Set, Uri, Symbol>>());
       expect(v.value, #test);
     });
+
+    test('parse throws ArgumentError listing all variants when none match', () {
+      expect(
+        () => OneOf2.parse<_Cat, _Dog>(
+          {'type': 'fish', 'name': 'Nemo'},
+          fromA: _Cat.fromJson,
+          fromB: _Dog.fromJson,
+        ),
+        throwsA(
+          isA<ArgumentError>().having(
+            (e) => e.message,
+            'message',
+            allOf(
+              contains('_Cat'),
+              contains('_Dog'),
+            ),
+          ),
+        ),
+      );
+    });
+
+    test('parse throws ArgumentError for OneOf3 when none match', () {
+      expect(
+        () => OneOf3.parse<_Cat, _Dog, int>(
+          {'type': 'fish', 'name': 'Nemo'},
+          fromA: _Cat.fromJson,
+          fromB: _Dog.fromJson,
+          fromC: (v) => v as int,
+        ),
+        throwsA(
+          isA<ArgumentError>().having(
+            (e) => e.message,
+            'message',
+            allOf(
+              contains('_Cat'),
+              contains('_Dog'),
+              contains('int'),
+            ),
+          ),
+        ),
+      );
+    });
   });
+}
+
+class _Cat {
+  final String name;
+  _Cat(this.name);
+  static _Cat fromJson(Object? json) {
+    final map = json as Map<String, dynamic>;
+    if (map['type'] != 'cat') throw FormatException('Not a cat');
+    return _Cat(map['name'] as String);
+  }
+}
+
+class _Dog {
+  final String name;
+  _Dog(this.name);
+  static _Dog fromJson(Object? json) {
+    final map = json as Map<String, dynamic>;
+    if (map['type'] != 'dog') throw FormatException('Not a dog');
+    return _Dog(map['name'] as String);
+  }
 }

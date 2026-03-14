@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ImagesApi {const ImagesApi(this._config);
+final class ImagesApi with ApiExecutor {const ImagesApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`.
 ///
@@ -23,7 +23,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /images/edits`
-Future<ApiResult<ImagesResponse, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ImagesResponse, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -45,7 +45,7 @@ return _execute(
 /// 
 ///
 /// `POST /images/generations`
-Future<ApiResult<ImagesResponse, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ImagesResponse, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,7 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -66,7 +66,7 @@ return _execute(
 /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
 ///
 /// `POST /images/variations`
-Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateImageVariationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateImageVariationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -89,7 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -99,7 +99,7 @@ return _execute(
 /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`. (streaming)
 ///
 /// `POST /images/edits`
-Stream<ImageEditStreamEvent> createImageEditStream({required EditImageBodyJsonParam body, RequestOptions? options, }) { final headers = <String, String>{..._config.defaultHeaders};
+Stream<ImageEditStreamEvent> createImageEditStream({required EditImageBodyJsonParam body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -110,7 +110,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _executeStreaming(
+return executeStreaming(
   request,
   onEvent: (data) {
     return OneOf2.parse(jsonDecode(data), fromA: (v) => ImageEditPartialImageEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => ImageEditCompletedEvent.fromJson(v as Map<String, dynamic>),);
@@ -121,7 +121,7 @@ return _executeStreaming(
 ///  (streaming)
 ///
 /// `POST /images/generations`
-Stream<ImageGenStreamEvent> createImageStream({required CreateImageRequest body, RequestOptions? options, }) { final headers = <String, String>{..._config.defaultHeaders};
+Stream<ImageGenStreamEvent> createImageStream({required CreateImageRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,145 +132,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _executeStreaming(
+return executeStreaming(
   request,
   onEvent: (data) {
     return OneOf2.parse(jsonDecode(data), fromA: (v) => ImageGenPartialImageEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => ImageGenCompletedEvent.fromJson(v as Map<String, dynamic>),);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
- } 
-/// Streaming execution pipeline: send -> SSE parse -> deserialize.
-Stream<T> _executeStreaming<T>(ApiRequest request, {required T Function(String data) onEvent, }) async*  { final userCancelToken = request.options?.cancelToken;
-if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-final extraHeaders = request.options?.extraHeaders;
-
-final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-    ? CancelToken()
-    : null;
-Timer? timeoutTimer;
-bool timedOut = false;
-
-if (adapterToken != null) {
-  if (userCancelToken != null) {
-    final token = adapterToken;
-    userCancelToken.whenCancelled.then((_) {
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-  if (effectiveTimeout != null) {
-    final token = adapterToken;
-    timeoutTimer = Timer(effectiveTimeout, () {
-      timedOut = true;
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-}
-
-final effectiveRequest = request.copyWith(
-  headers: extraHeaders != null
-      ? {...request.headers, ...extraHeaders}
-      : null,
-  options: RequestOptions(cancelToken: adapterToken),
-);
-
-try {
-  final streamedResponse = await _config.client.sendStreaming(effectiveRequest);
-  timeoutTimer?.cancel();
-
-  if (!streamedResponse.isSuccessful) {
-    final buffered = await streamedResponse.toApiResponse();
-    throw ApiStreamError(
-      statusCode: buffered.statusCode,
-      rawError: buffered.body,
-      headers: buffered.headers,
-    );
-  }
-
-  yield* parseSseStream(streamedResponse.byteStream)
-      .map((event) => onEvent(event.data));
-} on CancelledException {
-  timeoutTimer?.cancel();
-  if (timedOut) {
-    throw TimeoutException('Request timed out', effectiveTimeout);
-  }
-  rethrow;
-}
  } 
  }

@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class BrandProtectionApi {const BrandProtectionApi(this._config);
+final class BrandProtectionApi with ApiExecutor {const BrandProtectionApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Read all alerts on submitted domains
 ///
 /// Return all alerts on submitted domains
 ///
 /// `GET /accounts/{account_id}/brand-protection/alerts`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -39,7 +39,7 @@ return _execute(
 /// Return a success message after updating alerts on submitted domains by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -61,7 +61,7 @@ return _execute(
 /// Return a success message after updating verification statuses of tracked URLs to awaiting by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/clear`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -70,7 +70,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -83,7 +83,7 @@ return _execute(
 /// Return a success message after updating verification statuses of tracked URLs to disproven by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/refute`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -92,7 +92,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -105,7 +105,7 @@ return _execute(
 /// Return a success message after updating verification statuses of tracked URLs to confirmed by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/verify`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -114,7 +114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -127,7 +127,7 @@ return _execute(
 /// Return all brands
 ///
 /// `GET /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -149,7 +149,7 @@ return _execute(
 /// Return new brands
 ///
 /// `POST /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -158,7 +158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -171,7 +171,7 @@ return _execute(
 /// Return a success message after deleting brands by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -180,7 +180,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -193,7 +193,7 @@ return _execute(
 /// Return patterns for brands based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -202,7 +202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -215,7 +215,7 @@ return _execute(
 /// Return a success message after creating new patterns for brands by ID
 ///
 /// `POST /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -224,7 +224,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -237,7 +237,7 @@ return _execute(
 /// Return a success message after deleting patterns for brands by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -246,7 +246,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -259,7 +259,7 @@ return _execute(
 /// Return a success message after updating verification statuses of submitted URLs to awaiting by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/clear`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -268,7 +268,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -281,7 +281,7 @@ return _execute(
 /// Return submitted domains based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/domain-info`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionDomainInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionDomainInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -290,7 +290,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -303,7 +303,7 @@ return _execute(
 /// Return recent URL submissions
 ///
 /// `GET /accounts/{account_id}/brand-protection/recent-submissions`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionRecentSubmissions({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionRecentSubmissions({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -312,7 +312,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -325,7 +325,7 @@ return _execute(
 /// Return a success message after updating verification statuses of submitted URLs to disproven by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/refute`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -334,7 +334,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -347,7 +347,7 @@ return _execute(
 /// Return URL submissions based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/submission-info`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionSubmissionInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionSubmissionInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -356,7 +356,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -369,7 +369,7 @@ return _execute(
 /// Return new URL submissions
 ///
 /// `POST /accounts/{account_id}/brand-protection/submit`
-Future<ApiResult<UrlSubmit, ErrorModel>> postAccountsBrandProtectionSubmit({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UrlSubmit, ErrorModel>> postAccountsBrandProtectionSubmit({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -378,7 +378,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UrlSubmit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -393,7 +393,7 @@ return _execute(
 /// Return submitted domains based on pattern
 ///
 /// `GET /accounts/{account_id}/brand-protection/tracked-domains`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTrackedDomains({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTrackedDomains({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -402,7 +402,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -415,7 +415,7 @@ return _execute(
 /// Return submitted URLs based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/url-info`
-Future<ApiResult<UrlInfo, ErrorModel>> getAccountsBrandProtectionUrlInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UrlInfo, ErrorModel>> getAccountsBrandProtectionUrlInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -424,7 +424,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UrlInfo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -439,7 +439,7 @@ return _execute(
 /// Return a success message after updating verification statuses of submitted URLs to confirmed by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/verify`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -448,7 +448,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -459,7 +459,7 @@ return _execute(
 /// Internal route for testing URL submissions
 ///
 /// `POST /internal/submit`
-Future<ApiResult<void, ErrorModel>> postInternalSubmit({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> postInternalSubmit({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -468,7 +468,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -481,7 +481,7 @@ return _execute(
 /// Return a success message after running liveness checks
 ///
 /// `GET /live`
-Future<ApiResult<void, ErrorModel>> getLive({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getLive({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -490,7 +490,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -503,7 +503,7 @@ return _execute(
 /// Return a success message after running readiness checks
 ///
 /// `GET /ready`
-Future<ApiResult<void, ErrorModel>> getReady({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> getReady({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -512,87 +512,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

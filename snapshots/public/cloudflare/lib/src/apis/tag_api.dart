@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class TagApi {const TagApi(this._config);
+final class TagApi with ApiExecutor {const TagApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List indicators related to a tag
 ///
 /// Returns indicators associated with the provided tag UUID across all indicator datasets, with pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators`
-Future<ApiResult<GetTagIndicatorsListResponse, GetTagIndicatorsListResponse400>> getTagIndicatorsList({required String accountId, required String tagUuid, required String datasetId, double? page, double? pageSize, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetTagIndicatorsListResponse, GetTagIndicatorsListResponse400>> getTagIndicatorsList({required String accountId, required String tagUuid, required String datasetId, double? page, double? pageSize, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
@@ -28,7 +28,7 @@ for (final item in relatedEvent) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,7 +39,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetTagIndicatorsListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -54,14 +54,14 @@ return _execute(
 /// Returns all Source-of-Truth tags for an account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/tags`
-Future<ApiResult<GetTagListResponse, GetTagListResponse400>> getTagList({required String accountId, double? page, double? pageSize, String? search, String? categoryUuid, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetTagListResponse, GetTagListResponse400>> getTagList({required String accountId, double? page, double? pageSize, String? search, String? categoryUuid, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
 if (search != null) queryParameters['search'] = search;
 if (categoryUuid != null) queryParameters['categoryUuid'] = categoryUuid;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,7 +72,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetTagListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -87,7 +87,7 @@ return _execute(
 /// Updates a Source-of-Truth tag by UUID.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}`
-Future<ApiResult<PatchTagUpdateResponse, PatchTagUpdateResponse400>> patchTagUpdate({required String accountId, required String tagUuid, PatchTagUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchTagUpdateResponse, PatchTagUpdateResponse400>> patchTagUpdate({required String accountId, required String tagUuid, PatchTagUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,7 +98,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PatchTagUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -113,7 +113,7 @@ return _execute(
 /// Deletes a Source-of-Truth tag by UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}`
-Future<ApiResult<DeleteTagDeleteResponse, DeleteTagDeleteResponse400>> deleteTagDelete({required String accountId, required String tagUuid, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteTagDeleteResponse, DeleteTagDeleteResponse400>> deleteTagDelete({required String accountId, required String tagUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -122,7 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeleteTagDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -137,7 +137,7 @@ return _execute(
 /// Creates a new tag to be used accross threat events.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/tags/create`
-Future<ApiResult<PostTagCreateResponse, PostTagCreateResponse400>> postTagCreate({required String accountId, PostTagCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostTagCreateResponse, PostTagCreateResponse400>> postTagCreate({required String accountId, PostTagCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -148,7 +148,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostTagCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -157,80 +157,5 @@ return _execute(
     return PostTagCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

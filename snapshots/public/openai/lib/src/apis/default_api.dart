@@ -8,23 +8,23 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class DefaultApi {const DefaultApi(this._config);
+final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List Containers
 ///
 /// Lists containers.
 ///
 /// `GET /containers`
-Future<ApiResult<ContainerListResource, Never>> listContainers({int? limit, ListContainersOrder? order, String? after, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ContainerListResource, Never>> listContainers({int? limit, ListContainersOrder? order, String? after, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
 if (after != null) queryParameters['after'] = after;
 if (name != null) queryParameters['name'] = name;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContainerListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -47,7 +47,7 @@ return _execute(
 /// Creates a container.
 ///
 /// `POST /containers`
-Future<ApiResult<ContainerResource, Never>> createContainer({CreateContainerBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ContainerResource, Never>> createContainer({CreateContainerBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,7 +58,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -70,7 +70,7 @@ return _execute(
 /// Retrieves a container.
 ///
 /// `GET /containers/{container_id}`
-Future<ApiResult<ContainerResource, Never>> retrieveContainer({required String containerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ContainerResource, Never>> retrieveContainer({required String containerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,7 +79,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -91,7 +91,7 @@ return _execute(
 /// Delete a container.
 ///
 /// `DELETE /containers/{container_id}`
-Future<ApiResult<void, Never>> deleteContainer({required String containerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteContainer({required String containerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -100,7 +100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -110,13 +110,13 @@ return _execute(
 /// Lists container files.
 ///
 /// `GET /containers/{container_id}/files`
-Future<ApiResult<ContainerFileListResource, Never>> listContainerFiles({required String containerId, int? limit, ListContainerFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ContainerFileListResource, Never>> listContainerFiles({required String containerId, int? limit, ListContainerFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
 if (after != null) queryParameters['after'] = after;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -127,7 +127,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContainerFileListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -143,7 +143,7 @@ return _execute(
 /// 
 ///
 /// `POST /containers/{container_id}/files`
-Future<ApiResult<ContainerFileResource, Never>> createContainerFile({required String containerId, required CreateContainerFileBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ContainerFileResource, Never>> createContainerFile({required String containerId, required CreateContainerFileBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,7 +154,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -166,7 +166,7 @@ return _execute(
 /// Retrieves a container file.
 ///
 /// `GET /containers/{container_id}/files/{file_id}`
-Future<ApiResult<ContainerFileResource, Never>> retrieveContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ContainerFileResource, Never>> retrieveContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -175,7 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -187,7 +187,7 @@ return _execute(
 /// Delete a container file.
 ///
 /// `DELETE /containers/{container_id}/files/{file_id}`
-Future<ApiResult<void, Never>> deleteContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -196,7 +196,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -206,7 +206,7 @@ return _execute(
 /// Retrieves a container file content.
 ///
 /// `GET /containers/{container_id}/files/{file_id}/content`
-Future<ApiResult<void, Never>> retrieveContainerFileContent({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> retrieveContainerFileContent({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -225,13 +225,13 @@ return _execute(
 /// Retrieve a paginated list of organization admin API keys.
 ///
 /// `GET /organization/admin_api_keys`
-Future<ApiResult<KeyList, Never>> adminApiKeysList({String? after, KeysListOrder? order, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<KeyList, Never>> adminApiKeysList({String? after, KeysListOrder? order, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (order != null) queryParameters['order'] = order.toJson();
 if (limit != null) queryParameters['limit'] = limit.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -242,7 +242,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return KeyList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -254,7 +254,7 @@ return _execute(
 /// Create a new admin-level API key for the organization.
 ///
 /// `POST /organization/admin_api_keys`
-Future<ApiResult<Key, Never>> adminApiKeysCreate({required KeysCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Key, Never>> adminApiKeysCreate({required KeysCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -265,7 +265,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -277,7 +277,7 @@ return _execute(
 /// Get details for a specific organization API key by its ID.
 ///
 /// `GET /organization/admin_api_keys/{key_id}`
-Future<ApiResult<Key, Never>> adminApiKeysGet({required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Key, Never>> adminApiKeysGet({required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -286,7 +286,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -298,7 +298,7 @@ return _execute(
 /// Delete the specified admin API key.
 ///
 /// `DELETE /organization/admin_api_keys/{key_id}`
-Future<ApiResult<KeysDeleteResponse, Never>> adminApiKeysDelete({required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<KeysDeleteResponse, Never>> adminApiKeysDelete({required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -307,7 +307,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return KeysDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -319,7 +319,7 @@ return _execute(
 /// Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.
 ///
 /// `POST /responses/input_tokens`
-Future<ApiResult<TokenCountsResource, Never>> getinputtokencounts({TokenCountsBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<TokenCountsResource, Never>> getinputtokencounts({TokenCountsBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -330,7 +330,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return TokenCountsResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -342,7 +342,7 @@ return _execute(
 /// Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).
 ///
 /// `POST /responses/compact`
-Future<ApiResult<CompactResource, Never>> compactconversation({CompactResponseMethodPublicBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CompactResource, Never>> compactconversation({CompactResponseMethodPublicBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -353,7 +353,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CompactResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -365,7 +365,7 @@ return _execute(
 /// Cancelling prevents new requests from using the issued client secret.
 ///
 /// `POST /chatkit/sessions/{session_id}/cancel`
-Future<ApiResult<ChatSessionResource, Never>> cancelChatSessionMethod({required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ChatSessionResource, Never>> cancelChatSessionMethod({required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -374,7 +374,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -384,7 +384,7 @@ return _execute(
 /// Create a ChatKit session.
 ///
 /// `POST /chatkit/sessions`
-Future<ApiResult<ChatSessionResource, Never>> createChatSessionMethod({CreateChatSessionBody? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ChatSessionResource, Never>> createChatSessionMethod({CreateChatSessionBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -395,7 +395,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -405,14 +405,14 @@ return _execute(
 /// List items that belong to a ChatKit thread.
 ///
 /// `GET /chatkit/threads/{thread_id}/items`
-Future<ApiResult<ThreadItemListResource, Never>> listThreadItemsMethod({required String threadId, int? limit, OrderEnum? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ThreadItemListResource, Never>> listThreadItemsMethod({required String threadId, int? limit, OrderEnum? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
 if (after != null) queryParameters['after'] = after;
 if (before != null) queryParameters['before'] = before;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -423,7 +423,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ThreadItemListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -433,7 +433,7 @@ return _execute(
 /// Retrieve a ChatKit thread by its identifier.
 ///
 /// `GET /chatkit/threads/{thread_id}`
-Future<ApiResult<ThreadResource, Never>> getThreadMethod({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ThreadResource, Never>> getThreadMethod({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -442,7 +442,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -452,7 +452,7 @@ return _execute(
 /// Delete a ChatKit thread along with its items and stored attachments.
 ///
 /// `DELETE /chatkit/threads/{thread_id}`
-Future<ApiResult<DeletedThreadResource, Never>> deleteThreadMethod({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeletedThreadResource, Never>> deleteThreadMethod({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -461,7 +461,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeletedThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -471,7 +471,7 @@ return _execute(
 /// List ChatKit threads with optional pagination and user filters.
 ///
 /// `GET /chatkit/threads`
-Future<ApiResult<ThreadListResource, Never>> listThreadsMethod({int? limit, OrderEnum? order, String? after, String? before, String? user, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ThreadListResource, Never>> listThreadsMethod({int? limit, OrderEnum? order, String? after, String? before, String? user, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -479,7 +479,7 @@ if (after != null) queryParameters['after'] = after;
 if (before != null) queryParameters['before'] = before;
 if (user != null) queryParameters['user'] = user;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -490,86 +490,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ThreadListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

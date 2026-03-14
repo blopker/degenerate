@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class UrlScannerApi {const UrlScannerApi(this._config);
+final class UrlScannerApi with ApiExecutor {const UrlScannerApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Bulk create URL Scans
 ///
 /// Submit URLs to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/ and take into account scans submitted in bulk have lower priority and may take longer to finish.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/bulk`
-Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkResponse400>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkResponse400>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -28,7 +28,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -44,7 +44,7 @@ return _execute(
 /// Returns a plain text response, with the scan's DOM content as rendered by Chrome.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/dom/{scan_id}`
-Future<ApiResult<String, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -53,7 +53,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -68,7 +68,7 @@ return _execute(
 /// Get a URL scan's HAR file. See HAR spec at http://www.softwareishard.com/blog/har-12-spec/.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/har/{scan_id}`
-Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarResponse4002>> urlscannerGetScanHarV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarResponse4002>> urlscannerGetScanHarV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,7 +77,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UrlscannerGetScanHarResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -92,7 +92,7 @@ return _execute(
 /// Returns the raw response of the network request. Find the `response_id` in the `data.requests.response.hash`.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/responses/{response_id}`
-Future<ApiResult<String, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<String, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -101,7 +101,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -116,7 +116,7 @@ return _execute(
 /// Get URL scan by uuid
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/result/{scan_id}`
-Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanResponse4002>> urlscannerGetScanV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanResponse4002>> urlscannerGetScanV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,7 +125,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UrlscannerGetScanResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -140,7 +140,7 @@ return _execute(
 /// Submit a URL to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/scan`
-Future<ApiResult<UrlscannerCreateScanResponse2, UrlscannerCreateScanResponse4002>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UrlscannerCreateScanResponse2, UrlscannerCreateScanResponse4002>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -151,7 +151,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UrlscannerCreateScanResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -166,11 +166,11 @@ return _execute(
 /// Get scan's screenshot by resolution (desktop/mobile/tablet).
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png`
-Future<ApiResult<String, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<String, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (resolution != null) queryParameters['resolution'] = resolution.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -181,7 +181,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return response.body;
@@ -193,15 +193,15 @@ return _execute(
  } 
 /// Search URL scans
 ///
-/// Use a subset of ElasticSearch Query syntax to filter scans. Some example queries:<br/> <br/>- 'path:"/bundles/jquery.js"': Searches for scans who requested resources with the given path.<br/>- 'page.asn:AS24940 AND hash:xxx': Websites hosted in AS24940 where a resource with the given hash was downloaded.<br/>- 'page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com': malicious scans whose hostname starts with "microsoft".<br/>- 'apikey:me AND date:[2025-01 TO 2025-02]': my scans from 2025 January to 2025 February.
+/// Use a subset of ElasticSearch Query syntax to filter scans. Some example queries:`<br/>` `<br/>`- 'path:"/bundles/jquery.js"': Searches for scans who requested resources with the given path.`<br/>`- 'page.asn:AS24940 AND hash:xxx': Websites hosted in AS24940 where a resource with the given hash was downloaded.`<br/>`- 'page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com': malicious scans whose hostname starts with "microsoft".`<br/>`- 'apikey:me AND date:[2025-01 TO 2025-02]': my scans from 2025 January to 2025 February.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/search`
-Future<ApiResult<UrlscannerSearchScansResponse2, UrlscannerSearchScansResponse4002>> urlscannerSearchScansV2({required String accountId, int? size, String? q, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UrlscannerSearchScansResponse2, UrlscannerSearchScansResponse4002>> urlscannerSearchScansV2({required String accountId, int? size, String? q, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (size != null) queryParameters['size'] = size.toString();
 if (q != null) queryParameters['q'] = q;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -212,7 +212,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UrlscannerSearchScansResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -221,80 +221,5 @@ return _execute(
     return UrlscannerSearchScansResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

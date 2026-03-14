@@ -18,20 +18,19 @@ class ApiEmitter {
       buildFromJsonCode(type, accessor, isOptional: isOptional, paramIsMap: paramIsMap, typeRegistry: typeRegistry);
 
   List<Spec> emit() {
-    final hasStreaming = api.operations.any(
-      (op) => eventStreamContent(op) != null,
-    );
     return [
       Class(
         (b) => b
           ..name = api.name
           ..modifier = ClassModifier.final$
+          ..mixins.add(refer('ApiExecutor'))
           ..docs.addAll(_buildDocs())
           ..fields.add(
             Field(
               (f) => f
-                ..name = '_config'
+                ..name = 'apiConfig'
                 ..modifier = FieldModifier.final$
+                ..annotations.add(refer('override'))
                 ..type = refer('ApiConfig'),
             ),
           )
@@ -42,7 +41,7 @@ class ApiEmitter {
                 ..requiredParameters.add(
                   Parameter(
                     (p) => p
-                      ..name = '_config'
+                      ..name = 'apiConfig'
                       ..toThis = true,
                   ),
                 ),
@@ -51,9 +50,7 @@ class ApiEmitter {
           ..methods.addAll(api.operations.map(_buildOperation))
           ..methods.addAll(api.operations
               .where((op) => eventStreamContent(op) != null)
-              .map(_buildStreamingOperation))
-          ..methods.add(_buildExecute())
-          ..methods.addAll(hasStreaming ? [_buildExecuteStreaming()] : []),
+              .map(_buildStreamingOperation)),
       ),
     ];
   }
@@ -319,7 +316,7 @@ class ApiEmitter {
 
     if (queryParams.isNotEmpty) {
       buf.writeln(
-        'final queryParameters = <String, String>{..._config.defaultQueryParameters};',
+        'final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};',
       );
       buf.writeln('final queryParametersList = <ApiQueryParameter>[];');
       for (final p in queryParams) {
@@ -330,7 +327,7 @@ class ApiEmitter {
 
     if (cookieParams.isNotEmpty) {
       buf.writeln(
-        'final cookies = <String, String>{..._config.defaultCookies};',
+        'final cookies = <String, String>{...apiConfig.defaultCookies};',
       );
       for (final p in cookieParams) {
         final sanitizedName = _sanitizeParameterName(p.name);
@@ -346,7 +343,7 @@ class ApiEmitter {
       buf.writeln();
     }
 
-    buf.writeln('final headers = <String, String>{..._config.defaultHeaders};');
+    buf.writeln('final headers = <String, String>{...apiConfig.defaultHeaders};');
     if (requestBodyContent case (final mediaType, _)
         when !isMultipartMediaType(mediaType)) {
       // Use application/json for wildcard content types since we serialize as JSON.
@@ -404,13 +401,13 @@ class ApiEmitter {
         successResponseContent!.$1,
         returnType,
       );
-      buf.writeln('return _execute(');
+      buf.writeln('return execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
       buf.writeln('    $deserialize');
       buf.writeln('  },');
     } else {
-      buf.writeln('return _execute(');
+      buf.writeln('return execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
     }
@@ -715,118 +712,6 @@ class ApiEmitter {
   String _sanitizeParameterName(String value) =>
       value.replaceAll('\n', '').replaceAll('\r', '').trim();
 
-  Method _buildExecute() {
-    return Method(
-      (m) => m
-        ..name = '_execute'
-        ..types.addAll([refer('T'), refer('E')])
-        ..modifier = MethodModifier.async
-        ..returns = refer('Future<ApiResult<T, E>>')
-        ..requiredParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'request'
-              ..type = refer('ApiRequest'),
-          ),
-        )
-        ..optionalParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'onSuccess'
-              ..named = true
-              ..required = true
-              ..type = refer('T Function(ApiResponse)'),
-          ),
-        )
-        ..optionalParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'onError'
-              ..named = true
-              ..type = refer('E? Function(ApiResponse)?'),
-          ),
-        )
-        ..docs.add(
-          '/// Shared execution pipeline: interceptors -> send -> deserialize.',
-        )
-        ..body = const Code('''
-try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
-'''),
-    );
-  }
-
   Method _buildStreamingOperation(IrOperation op) {
     final params = <Parameter>[];
 
@@ -980,7 +865,7 @@ try {
 
     if (queryParams.isNotEmpty) {
       buf.writeln(
-        'final queryParameters = <String, String>{..._config.defaultQueryParameters};',
+        'final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};',
       );
       buf.writeln('final queryParametersList = <ApiQueryParameter>[];');
       for (final p in queryParams) {
@@ -991,7 +876,7 @@ try {
 
     if (cookieParams.isNotEmpty) {
       buf.writeln(
-        'final cookies = <String, String>{..._config.defaultCookies};',
+        'final cookies = <String, String>{...apiConfig.defaultCookies};',
       );
       for (final p in cookieParams) {
         final sanitizedName = _sanitizeParameterName(p.name);
@@ -1007,7 +892,7 @@ try {
       buf.writeln();
     }
 
-    buf.writeln('final headers = <String, String>{..._config.defaultHeaders};');
+    buf.writeln('final headers = <String, String>{...apiConfig.defaultHeaders};');
     if (requestBodyContent case (final mediaType, _)
         when !isMultipartMediaType(mediaType)) {
       final contentType =
@@ -1054,7 +939,7 @@ try {
 
     // Build the deserialize expression for each SSE event
     final deserializeExpr = _buildSseDeserializeExpr(eventType);
-    buf.writeln('return _executeStreaming(');
+    buf.writeln('return executeStreaming(');
     buf.writeln('  request,');
     buf.writeln('  onEvent: (data) {');
     buf.writeln('    $deserializeExpr');
@@ -1066,94 +951,6 @@ try {
 
   String _buildSseDeserializeExpr(IrType eventType) {
     return 'return ${_fromJson(eventType, 'jsonDecode(data)')};';
-  }
-
-  Method _buildExecuteStreaming() {
-    return Method(
-      (m) => m
-        ..name = '_executeStreaming'
-        ..types.add(refer('T'))
-        ..modifier = MethodModifier.asyncStar
-        ..returns = refer('Stream<T>')
-        ..requiredParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'request'
-              ..type = refer('ApiRequest'),
-          ),
-        )
-        ..optionalParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'onEvent'
-              ..named = true
-              ..required = true
-              ..type = refer('T Function(String data)'),
-          ),
-        )
-        ..docs.add(
-          '/// Streaming execution pipeline: send -> SSE parse -> deserialize.',
-        )
-        ..body = const Code('''
-final userCancelToken = request.options?.cancelToken;
-if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-final extraHeaders = request.options?.extraHeaders;
-
-final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-    ? CancelToken()
-    : null;
-Timer? timeoutTimer;
-bool timedOut = false;
-
-if (adapterToken != null) {
-  if (userCancelToken != null) {
-    final token = adapterToken;
-    userCancelToken.whenCancelled.then((_) {
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-  if (effectiveTimeout != null) {
-    final token = adapterToken;
-    timeoutTimer = Timer(effectiveTimeout, () {
-      timedOut = true;
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-}
-
-final effectiveRequest = request.copyWith(
-  headers: extraHeaders != null
-      ? {...request.headers, ...extraHeaders}
-      : null,
-  options: RequestOptions(cancelToken: adapterToken),
-);
-
-try {
-  final streamedResponse = await _config.client.sendStreaming(effectiveRequest);
-  timeoutTimer?.cancel();
-
-  if (!streamedResponse.isSuccessful) {
-    final buffered = await streamedResponse.toApiResponse();
-    throw ApiStreamError(
-      statusCode: buffered.statusCode,
-      rawError: buffered.body,
-      headers: buffered.headers,
-    );
-  }
-
-  yield* parseSseStream(streamedResponse.byteStream)
-      .map((event) => onEvent(event.data));
-} on CancelledException {
-  timeoutTimer?.cancel();
-  if (timedOut) {
-    throw TimeoutException('Request timed out', effectiveTimeout);
-  }
-  rethrow;
-}
-'''),
-    );
   }
 
   (String, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>

@@ -8,20 +8,20 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ProjectsApi {const ProjectsApi(this._config);
+final class ProjectsApi with ApiExecutor {const ProjectsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Returns a list of projects.
 ///
 /// `GET /organization/projects`
-Future<ApiResult<ProjectListResponse, Never>> listProjects({int? limit, String? after, bool? includeArchived, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectListResponse, Never>> listProjects({int? limit, String? after, bool? includeArchived, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
 if (includeArchived != null) queryParameters['include_archived'] = includeArchived.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -42,7 +42,7 @@ return _execute(
 /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
 ///
 /// `POST /organization/projects`
-Future<ApiResult<Project, Never>> createProject({required ProjectCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, Never>> createProject({required ProjectCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,7 +53,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -63,7 +63,7 @@ return _execute(
 /// Retrieves a project.
 ///
 /// `GET /organization/projects/{project_id}`
-Future<ApiResult<Project, Never>> retrieveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, Never>> retrieveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,7 +72,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -82,7 +82,7 @@ return _execute(
 /// Modifies a project in the organization.
 ///
 /// `POST /organization/projects/{project_id}`
-Future<ApiResult<Project, ErrorResponse>> modifyProject({required String projectId, required ProjectUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, ErrorResponse>> modifyProject({required String projectId, required ProjectUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,7 +93,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -106,12 +106,12 @@ return _execute(
 /// Returns a list of API keys in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys`
-Future<ApiResult<KeyListResponse, Never>> listProjectApiKeys({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<KeyListResponse, Never>> listProjectApiKeys({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,7 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return KeyListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -132,7 +132,7 @@ return _execute(
 /// Retrieves an API key in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys/{key_id}`
-Future<ApiResult<Key3, Never>> retrieveProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Key3, Never>> retrieveProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -141,7 +141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Key3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -155,7 +155,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/api_keys/{key_id}`
-Future<ApiResult<KeyDeleteResponse, ErrorResponse>> deleteProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<KeyDeleteResponse, ErrorResponse>> deleteProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -164,7 +164,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return KeyDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -177,7 +177,7 @@ return _execute(
 /// Archives a project in the organization. Archived projects cannot be used or updated.
 ///
 /// `POST /organization/projects/{project_id}/archive`
-Future<ApiResult<Project, Never>> archiveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Project, Never>> archiveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -186,7 +186,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -196,13 +196,13 @@ return _execute(
 /// Returns the rate limits per model for a project.
 ///
 /// `GET /organization/projects/{project_id}/rate_limits`
-Future<ApiResult<ProjectRateLimitListResponse, Never>> listProjectRateLimits({required String projectId, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectRateLimitListResponse, Never>> listProjectRateLimits({required String projectId, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
 if (before != null) queryParameters['before'] = before;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -213,7 +213,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectRateLimitListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -223,7 +223,7 @@ return _execute(
 /// Updates a project rate limit.
 ///
 /// `POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}`
-Future<ApiResult<ProjectRateLimit, ErrorResponse>> updateProjectRateLimits({required String projectId, required String rateLimitId, required ProjectRateLimitUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectRateLimit, ErrorResponse>> updateProjectRateLimits({required String projectId, required String rateLimitId, required ProjectRateLimitUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -234,7 +234,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectRateLimit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -247,12 +247,12 @@ return _execute(
 /// Returns a list of service accounts in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts`
-Future<ApiResult<ProjectServiceAccountListResponse, ErrorResponse>> listProjectServiceAccounts({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectServiceAccountListResponse, ErrorResponse>> listProjectServiceAccounts({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -263,7 +263,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccountListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -276,7 +276,7 @@ return _execute(
 /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
 ///
 /// `POST /organization/projects/{project_id}/service_accounts`
-Future<ApiResult<ProjectServiceAccountCreateResponse, ErrorResponse>> createProjectServiceAccount({required String projectId, required ProjectServiceAccountCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectServiceAccountCreateResponse, ErrorResponse>> createProjectServiceAccount({required String projectId, required ProjectServiceAccountCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -287,7 +287,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccountCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -300,7 +300,7 @@ return _execute(
 /// Retrieves a service account in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts/{service_account_id}`
-Future<ApiResult<ProjectServiceAccount, Never>> retrieveProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectServiceAccount, Never>> retrieveProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -309,7 +309,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -323,7 +323,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/service_accounts/{service_account_id}`
-Future<ApiResult<ProjectServiceAccountDeleteResponse, Never>> deleteProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectServiceAccountDeleteResponse, Never>> deleteProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -332,7 +332,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectServiceAccountDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -342,12 +342,12 @@ return _execute(
 /// Returns a list of users in the project.
 ///
 /// `GET /organization/projects/{project_id}/users`
-Future<ApiResult<ProjectUserListResponse, ErrorResponse>> listProjectUsers({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ProjectUserListResponse, ErrorResponse>> listProjectUsers({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -358,7 +358,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectUserListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -371,7 +371,7 @@ return _execute(
 /// Adds a user to the project. Users must already be members of the organization to be added to a project.
 ///
 /// `POST /organization/projects/{project_id}/users`
-Future<ApiResult<ProjectUser, ErrorResponse>> createProjectUser({required String projectId, required ProjectUserCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUser, ErrorResponse>> createProjectUser({required String projectId, required ProjectUserCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -382,7 +382,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -395,7 +395,7 @@ return _execute(
 /// Retrieves a user in the project.
 ///
 /// `GET /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUser, Never>> retrieveProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUser, Never>> retrieveProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -404,7 +404,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -414,7 +414,7 @@ return _execute(
 /// Modifies a user's role in the project.
 ///
 /// `POST /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUser, ErrorResponse>> modifyProjectUser({required String projectId, required String userId, required ProjectUserUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUser, ErrorResponse>> modifyProjectUser({required String projectId, required String userId, required ProjectUserUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -425,7 +425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -442,7 +442,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUserDeleteResponse, ErrorResponse>> deleteProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProjectUserDeleteResponse, ErrorResponse>> deleteProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -451,7 +451,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProjectUserDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -460,80 +460,5 @@ return _execute(
     return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

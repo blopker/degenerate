@@ -8,16 +8,16 @@ import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class TendertransactionApi {const TendertransactionApi(this._config);
+final class TendertransactionApi with ApiExecutor {const TendertransactionApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Retrieves a list of tender transactions. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-01
 ///
 /// `GET /admin/api/2020-01/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -26,7 +26,7 @@ if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax
 if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
 if (order != null) queryParameters['order'] = order.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -47,7 +47,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-04
 ///
 /// `GET /admin/api/2020-04/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -56,7 +56,7 @@ if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax
 if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
 if (order != null) queryParameters['order'] = order.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -67,7 +67,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -77,7 +77,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-07
 ///
 /// `GET /admin/api/2020-07/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -86,7 +86,7 @@ if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax
 if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
 if (order != null) queryParameters['order'] = order.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -97,7 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -107,7 +107,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2020-10
 ///
 /// `GET /admin/api/2020-10/tender_transactions.json`
-Future<ApiResult<void, Never>> getTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -116,7 +116,7 @@ if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax
 if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
 if (order != null) queryParameters['order'] = order.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -127,7 +127,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -137,7 +137,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-2021-01
 ///
 /// `GET /admin/api/2021-01/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -146,7 +146,7 @@ if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax
 if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
 if (order != null) queryParameters['order'] = order.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -157,7 +157,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -167,7 +167,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/tendertransaction#index-unstable
 ///
 /// `GET /admin/api/unstable/tender_transactions.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
@@ -176,7 +176,7 @@ if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax
 if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
 if (order != null) queryParameters['order'] = order.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -187,84 +187,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

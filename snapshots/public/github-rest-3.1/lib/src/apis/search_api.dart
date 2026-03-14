@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class SearchApi {const SearchApi(this._config);
+final class SearchApi with ApiExecutor {const SearchApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Search code
 ///
@@ -36,7 +36,7 @@ final ApiConfig _config;
 /// This endpoint requires you to authenticate and limits you to 10 requests per minute.
 ///
 /// `GET /search/code`
-Future<ApiResult<SearchCodeResponse, SearchCodeResponse503>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SearchCodeResponse, SearchCodeResponse503>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -44,7 +44,7 @@ if (order != null) queryParameters['order'] = order.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -55,7 +55,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SearchCodeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -77,7 +77,7 @@ return _execute(
 /// `q=repo:octocat/Spoon-Knife+css`
 ///
 /// `GET /search/commits`
-Future<ApiResult<SearchCommitsResponse, Never>> searchCommits({required String q, SearchCommitsSort? sort, SearchCommitsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SearchCommitsResponse, Never>> searchCommits({required String q, SearchCommitsSort? sort, SearchCommitsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -85,7 +85,7 @@ if (order != null) queryParameters['order'] = order.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SearchCommitsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -120,7 +120,7 @@ return _execute(
 /// > For requests made by GitHub Apps with a user access token, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
 ///
 /// `GET /search/issues`
-Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsResponse503>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsResponse503>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -129,7 +129,7 @@ if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 if (advancedSearch != null) queryParameters['advanced_search'] = advancedSearch;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -140,7 +140,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SearchIssuesAndPullRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -163,7 +163,7 @@ return _execute(
 /// The labels that best match the query appear first in the search results.
 ///
 /// `GET /search/labels`
-Future<ApiResult<SearchLabelsResponse, BasicError>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SearchLabelsResponse, BasicError>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['repository_id'] = repositoryId.toString();
 queryParameters['q'] = q;
@@ -172,7 +172,7 @@ if (order != null) queryParameters['order'] = order.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -183,7 +183,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SearchLabelsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -206,7 +206,7 @@ return _execute(
 /// This query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.
 ///
 /// `GET /search/repositories`
-Future<ApiResult<SearchReposResponse, SearchReposResponse503>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SearchReposResponse, SearchReposResponse503>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -214,7 +214,7 @@ if (order != null) queryParameters['order'] = order.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -225,7 +225,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SearchReposResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -248,13 +248,13 @@ return _execute(
 /// This query searches for topics with the keyword `ruby` and limits the results to find only topics that are featured. The topics that are the best match for the query appear first in the search results.
 ///
 /// `GET /search/topics`
-Future<ApiResult<SearchTopicsResponse, Never>> searchTopics({required String q, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SearchTopicsResponse, Never>> searchTopics({required String q, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -265,7 +265,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SearchTopicsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -287,7 +287,7 @@ return _execute(
 /// This endpoint does not accept authentication and will only include publicly visible users. As an alternative, you can use the GraphQL API. The GraphQL API requires authentication and will return private users, including Enterprise Managed Users (EMUs), that you are authorized to view. For more information, see "[GraphQL Queries](https://docs.github.com/graphql/reference/queries#search)."
 ///
 /// `GET /search/users`
-Future<ApiResult<SearchUsersResponse, SearchUsersResponse503>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<SearchUsersResponse, SearchUsersResponse503>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -295,7 +295,7 @@ if (order != null) queryParameters['order'] = order.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -306,7 +306,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SearchUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -315,80 +315,5 @@ return _execute(
     return SearchUsersResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

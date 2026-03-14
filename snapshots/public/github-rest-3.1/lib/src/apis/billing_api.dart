@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class BillingApi {const BillingApi(this._config);
+final class BillingApi with ApiExecutor {const BillingApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get all budgets for an organization
 ///
@@ -21,13 +21,13 @@ final ApiConfig _config;
 /// Each page returns up to 10 budgets.
 ///
 /// `GET /organizations/{org}/settings/billing/budgets`
-Future<ApiResult<GetAllBudgets, BasicError>> billingGetAllBudgetsOrg({required String org, int? page, int? perPage, BillingGetAllBudgetsOrgScope? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetAllBudgets, BasicError>> billingGetAllBudgetsOrg({required String org, int? page, int? perPage, BillingGetAllBudgetsOrgScope? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (scope != null) queryParameters['scope'] = scope.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -38,7 +38,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetAllBudgets.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -56,7 +56,7 @@ return _execute(
 /// Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
 ///
 /// `GET /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<GetBudget, BasicError>> billingGetBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetBudget, BasicError>> billingGetBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -83,7 +83,7 @@ return _execute(
 /// Updates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `PATCH /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<BillingUpdateBudgetOrgResponse, BasicError>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<BillingUpdateBudgetOrgResponse, BasicError>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,7 +94,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BillingUpdateBudgetOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -112,7 +112,7 @@ return _execute(
 /// Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `DELETE /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<DeleteBudget, BasicError>> billingDeleteBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteBudget, BasicError>> billingDeleteBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -121,7 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeleteBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -138,7 +138,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportOrg, BasicError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportOrg, BasicError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -147,7 +147,7 @@ if (user != null) queryParameters['user'] = user;
 if (model != null) queryParameters['model'] = model;
 if (product != null) queryParameters['product'] = product;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -158,7 +158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BillingPremiumRequestUsageReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -175,13 +175,13 @@ return _execute(
 /// **Note:** This endpoint is only available to organizations with access to the enhanced billing platform. For more information, see "[About the enhanced billing platform](https://docs.github.com/billing/using-the-new-billing-platform)."
 ///
 /// `GET /organizations/{org}/settings/billing/usage`
-Future<ApiResult<BillingUsageReport, BasicError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageReport, BasicError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
 if (day != null) queryParameters['day'] = day.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -192,7 +192,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BillingUsageReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -212,7 +212,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportOrg, BasicError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportOrg, BasicError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -221,7 +221,7 @@ if (repository != null) queryParameters['repository'] = repository;
 if (product != null) queryParameters['product'] = product;
 if (sku != null) queryParameters['sku'] = sku;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -232,7 +232,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BillingUsageSummaryReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -249,7 +249,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportUser, BasicError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportUser, BasicError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -257,7 +257,7 @@ if (day != null) queryParameters['day'] = day.toString();
 if (model != null) queryParameters['model'] = model;
 if (product != null) queryParameters['product'] = product;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -268,7 +268,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BillingPremiumRequestUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -285,13 +285,13 @@ return _execute(
 /// **Note:** This endpoint is only available to users with access to the enhanced billing platform.
 ///
 /// `GET /users/{username}/settings/billing/usage`
-Future<ApiResult<BillingUsageReportUser, BasicError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageReportUser, BasicError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
 if (day != null) queryParameters['day'] = day.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -302,7 +302,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BillingUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -322,7 +322,7 @@ return _execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportUser, BasicError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportUser, BasicError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) queryParameters['year'] = year.toString();
 if (month != null) queryParameters['month'] = month.toString();
@@ -331,7 +331,7 @@ if (repository != null) queryParameters['repository'] = repository;
 if (product != null) queryParameters['product'] = product;
 if (sku != null) queryParameters['sku'] = sku;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -342,7 +342,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BillingUsageSummaryReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -351,80 +351,5 @@ return _execute(
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

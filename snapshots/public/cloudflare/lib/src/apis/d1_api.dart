@@ -8,22 +8,22 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class D1Api {const D1Api(this._config);
+final class D1Api with ApiExecutor {const D1Api(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List D1 Databases
 ///
 /// Returns a list of D1 databases.
 ///
 /// `GET /accounts/{account_id}/d1/database`
-Future<ApiResult<ResponseCommon18, Never>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon18, Never>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -46,7 +46,7 @@ return _execute(
 /// Returns the created D1 database.
 ///
 /// `POST /accounts/{account_id}/d1/database`
-Future<ApiResult<ResponseCommon18, Never>> d1CreateDatabase({required D1AccountIdentifier accountId, required D1CreateDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1CreateDatabase({required D1AccountIdentifier accountId, required D1CreateDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,7 +57,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -69,7 +69,7 @@ return _execute(
 /// Returns the specified D1 database.
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18, Never>> d1GetDatabase({required D1AccountIdentifier accountId, required D1GetDatabaseDatabaseId databaseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1GetDatabase({required D1AccountIdentifier accountId, required D1GetDatabaseDatabaseId databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,7 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -90,7 +90,7 @@ return _execute(
 /// Updates the specified D1 database.
 ///
 /// `PUT /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18, Never>> d1UpdateDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdateRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1UpdateDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdateRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,7 +101,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -113,7 +113,7 @@ return _execute(
 /// Updates partially the specified D1 database.
 ///
 /// `PATCH /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18, Never>> d1UpdatePartialDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdatePartialRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1UpdatePartialDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdatePartialRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,7 +124,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -136,7 +136,7 @@ return _execute(
 /// Deletes the specified D1 database.
 ///
 /// `DELETE /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<ResponseCommon18, Never>> d1DeleteDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1DeleteDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -145,7 +145,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -160,7 +160,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/export`
-Future<ApiResult<ResponseCommon18, Never>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -171,7 +171,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -185,7 +185,7 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/import`
-Future<ApiResult<ResponseCommon18, Never>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -196,7 +196,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -208,7 +208,7 @@ return _execute(
 /// Returns the query result as an object.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/query`
-Future<ApiResult<ResponseCommon18, Never>> d1QueryDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1QueryDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -219,7 +219,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -231,7 +231,7 @@ return _execute(
 /// Returns the query result rows as arrays rather than objects. This is a performance-optimized version of the /query endpoint.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/raw`
-Future<ApiResult<ResponseCommon18, Never>> d1RawDatabaseQuery({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon18, Never>> d1RawDatabaseQuery({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -242,7 +242,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -256,11 +256,11 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}/time_travel/bookmark`
-Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (timestamp != null) queryParameters['timestamp'] = timestamp.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -271,7 +271,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -284,12 +284,12 @@ return _execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/time_travel/restore`
-Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bookmark != null) queryParameters['bookmark'] = bookmark.toString();
 if (timestamp != null) queryParameters['timestamp'] = timestamp.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -300,86 +300,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

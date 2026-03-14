@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class RadarNetFlowsApi {const RadarNetFlowsApi(this._config);
+final class RadarNetFlowsApi with ApiExecutor {const RadarNetFlowsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get network traffic distribution by dimension
 ///
 /// Retrieves the distribution of network traffic (NetFlows) by the specified dimension.
 ///
 /// `GET /radar/netflows/summary/{dimension}`
-Future<ApiResult<RadarGetNetflowsSummaryResponse, RadarGetNetflowsSummaryResponse400>> radarGetNetflowsSummary({required RadarGetNetflowsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetNetflowsSummaryProduct>? product, int? limitPerGroup, RadarGetNetflowsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetNetflowsSummaryResponse, RadarGetNetflowsSummaryResponse400>> radarGetNetflowsSummary({required RadarGetNetflowsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetNetflowsSummaryProduct>? product, int? limitPerGroup, RadarGetNetflowsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -67,7 +67,7 @@ for (final item in product) {
 if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,7 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetNetflowsSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -93,7 +93,7 @@ return _execute(
 /// Retrieves network traffic (NetFlows) over time.
 ///
 /// `GET /radar/netflows/timeseries`
-Future<ApiResult<RadarGetNetflowsTimeseriesResponse, RadarGetNetflowsTimeseriesResponse400>> radarGetNetflowsTimeseries({RadarGetNetflowsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetNetflowsTimeseriesProduct>? product, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTimeseriesNormalization? normalization, RadarGetNetflowsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetNetflowsTimeseriesResponse, RadarGetNetflowsTimeseriesResponse400>> radarGetNetflowsTimeseries({RadarGetNetflowsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetNetflowsTimeseriesProduct>? product, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTimeseriesNormalization? normalization, RadarGetNetflowsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -144,7 +144,7 @@ for (final item in geoId) {
 if (normalization != null) queryParameters['normalization'] = normalization.toJson();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -155,7 +155,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetNetflowsTimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -170,7 +170,7 @@ return _execute(
 /// Retrieves the distribution of NetFlows traffic, grouped by the specified dimension over time.
 ///
 /// `GET /radar/netflows/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetNetflowsTimeseriesGroupResponse, RadarGetNetflowsTimeseriesGroupResponse400>> radarGetNetflowsTimeseriesGroup({required RadarGetNetflowsTimeseriesGroupDimension dimension, RadarGetNetflowsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, int? limitPerGroup, RadarGetNetflowsTimeseriesGroupNormalization? normalization, List<RadarGetNetflowsTimeseriesGroupProduct>? product, RadarGetNetflowsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetNetflowsTimeseriesGroupResponse, RadarGetNetflowsTimeseriesGroupResponse400>> radarGetNetflowsTimeseriesGroup({required RadarGetNetflowsTimeseriesGroupDimension dimension, RadarGetNetflowsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, int? limitPerGroup, RadarGetNetflowsTimeseriesGroupNormalization? normalization, List<RadarGetNetflowsTimeseriesGroupProduct>? product, RadarGetNetflowsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -222,7 +222,7 @@ for (final item in product) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -233,7 +233,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetNetflowsTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -248,7 +248,7 @@ return _execute(
 /// Retrieves the top autonomous systems by network traffic (NetFlows).
 ///
 /// `GET /radar/netflows/top/ases`
-Future<ApiResult<RadarGetNetflowsTopAsesResponse, RadarGetNetflowsTopAsesResponse404>> radarGetNetflowsTopAses({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetNetflowsTopAsesResponse, RadarGetNetflowsTopAsesResponse404>> radarGetNetflowsTopAses({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -293,7 +293,7 @@ for (final item in geoId) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -304,7 +304,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetNetflowsTopAsesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -319,7 +319,7 @@ return _execute(
 /// Retrieves the top locations by network traffic (NetFlows).
 ///
 /// `GET /radar/netflows/top/locations`
-Future<ApiResult<RadarGetNetflowsTopLocationsResponse, RadarGetNetflowsTopLocationsResponse404>> radarGetNetflowsTopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetNetflowsTopLocationsResponse, RadarGetNetflowsTopLocationsResponse404>> radarGetNetflowsTopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -364,7 +364,7 @@ for (final item in geoId) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -375,7 +375,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetNetflowsTopLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -384,80 +384,5 @@ return _execute(
     return RadarGetNetflowsTopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

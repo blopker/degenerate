@@ -8,20 +8,20 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class CertificatesApi {const CertificatesApi(this._config);
+final class CertificatesApi with ApiExecutor {const CertificatesApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List uploaded certificates for this organization.
 ///
 /// `GET /organization/certificates`
-Future<ApiResult<ListCertificatesResponse, Never>> listOrganizationCertificates({int? limit, String? after, ListOrganizationCertificatesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListCertificatesResponse, Never>> listOrganizationCertificates({int? limit, String? after, ListOrganizationCertificatesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
 if (order != null) queryParameters['order'] = order.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -45,7 +45,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates`
-Future<ApiResult<Certificate, Never>> uploadCertificate({required UploadCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Certificate, Never>> uploadCertificate({required UploadCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,7 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Certificate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -69,7 +69,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/activate`
-Future<ApiResult<ListCertificatesResponse, Never>> activateOrganizationCertificates({required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ListCertificatesResponse, Never>> activateOrganizationCertificates({required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -80,7 +80,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -93,7 +93,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/deactivate`
-Future<ApiResult<ListCertificatesResponse, Never>> deactivateOrganizationCertificates({required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ListCertificatesResponse, Never>> deactivateOrganizationCertificates({required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,7 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -117,7 +117,7 @@ return _execute(
 /// 
 ///
 /// `GET /organization/certificates/{certificate_id}`
-Future<ApiResult<Certificate, Never>> getCertificate({required String certificateId, List<GetCertificateInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Certificate, Never>> getCertificate({required String certificateId, List<GetCertificateInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -125,7 +125,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Certificate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -147,7 +147,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/certificates/{certificate_id}`
-Future<ApiResult<Certificate, Never>> modifyCertificate({required String certificateId, required ModifyCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Certificate, Never>> modifyCertificate({required String certificateId, required ModifyCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -158,7 +158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Certificate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -171,7 +171,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /organization/certificates/{certificate_id}`
-Future<ApiResult<DeleteCertificateResponse, Never>> deleteCertificate({required String certificateId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteCertificateResponse, Never>> deleteCertificate({required String certificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -180,7 +180,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeleteCertificateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -190,13 +190,13 @@ return _execute(
 /// List certificates for this project.
 ///
 /// `GET /organization/projects/{project_id}/certificates`
-Future<ApiResult<ListCertificatesResponse, Never>> listProjectCertificates({required String projectId, int? limit, String? after, ListProjectCertificatesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListCertificatesResponse, Never>> listProjectCertificates({required String projectId, int? limit, String? after, ListProjectCertificatesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (after != null) queryParameters['after'] = after;
 if (order != null) queryParameters['order'] = order.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -207,7 +207,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -220,7 +220,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/projects/{project_id}/certificates/activate`
-Future<ApiResult<ListCertificatesResponse, Never>> activateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ListCertificatesResponse, Never>> activateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -231,7 +231,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -243,7 +243,7 @@ return _execute(
 /// 
 ///
 /// `POST /organization/projects/{project_id}/certificates/deactivate`
-Future<ApiResult<ListCertificatesResponse, Never>> deactivateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ListCertificatesResponse, Never>> deactivateProjectCertificates({required String projectId, required ToggleCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -254,86 +254,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

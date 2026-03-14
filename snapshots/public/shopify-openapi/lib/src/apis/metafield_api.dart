@@ -8,21 +8,21 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class MetafieldApi {const MetafieldApi(this._config);
+final class MetafieldApi with ApiExecutor {const MetafieldApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Retrieves a list of metafields that belong to a Product Image resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2020-01
 ///
 /// `GET /admin/api/2020-01/metafields.json`
-Future<ApiResult<void, Never>> deprecated202001GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
 if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -33,7 +33,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -43,7 +43,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-01
 ///
 /// `POST /admin/api/2020-01/metafields.json`
-Future<ApiResult<void, Never>> deprecated202001CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,7 +54,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -64,7 +64,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-01
 ///
 /// `GET /admin/api/2020-01/metafields/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -73,7 +73,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -83,11 +83,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-01
 ///
 /// `GET /admin/api/2020-01/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -108,7 +108,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -129,7 +129,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -138,7 +138,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -148,12 +148,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2020-04
 ///
 /// `GET /admin/api/2020-04/metafields.json`
-Future<ApiResult<void, Never>> deprecated202004GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
 if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -164,7 +164,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -174,7 +174,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-04
 ///
 /// `POST /admin/api/2020-04/metafields.json`
-Future<ApiResult<void, Never>> deprecated202004CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -185,7 +185,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -195,7 +195,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-04
 ///
 /// `GET /admin/api/2020-04/metafields/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -204,7 +204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -214,11 +214,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-04
 ///
 /// `GET /admin/api/2020-04/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -229,7 +229,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -239,7 +239,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -250,7 +250,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -260,7 +260,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -269,7 +269,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -279,12 +279,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2020-07
 ///
 /// `GET /admin/api/2020-07/metafields.json`
-Future<ApiResult<void, Never>> deprecated202007GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
 if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -295,7 +295,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -305,7 +305,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-07
 ///
 /// `POST /admin/api/2020-07/metafields.json`
-Future<ApiResult<void, Never>> deprecated202007CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -316,7 +316,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -326,7 +326,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-07
 ///
 /// `GET /admin/api/2020-07/metafields/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -335,7 +335,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -345,11 +345,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-07
 ///
 /// `GET /admin/api/2020-07/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -360,7 +360,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -370,7 +370,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -381,7 +381,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -391,7 +391,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -400,7 +400,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -410,12 +410,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2020-10
 ///
 /// `GET /admin/api/2020-10/metafields.json`
-Future<ApiResult<void, Never>> getMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
 if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -426,7 +426,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -436,7 +436,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-10
 ///
 /// `POST /admin/api/2020-10/metafields.json`
-Future<ApiResult<void, Never>> createMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> createMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -447,7 +447,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -457,7 +457,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-10
 ///
 /// `GET /admin/api/2020-10/metafields/count.json`
-Future<ApiResult<void, Never>> getMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> getMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -466,7 +466,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -476,11 +476,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-10
 ///
 /// `GET /admin/api/2020-10/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> getMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> getMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -491,7 +491,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -501,7 +501,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> updateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> updateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -512,7 +512,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -522,7 +522,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -531,7 +531,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -541,12 +541,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2021-01
 ///
 /// `GET /admin/api/2021-01/metafields.json`
-Future<ApiResult<void, Never>> deprecated202101GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
 if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -557,7 +557,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -567,7 +567,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2021-01
 ///
 /// `POST /admin/api/2021-01/metafields.json`
-Future<ApiResult<void, Never>> deprecated202101CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -578,7 +578,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -588,7 +588,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2021-01
 ///
 /// `GET /admin/api/2021-01/metafields/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -597,7 +597,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -607,11 +607,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2021-01
 ///
 /// `GET /admin/api/2021-01/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -622,7 +622,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -632,7 +632,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -643,7 +643,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -653,7 +653,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -662,7 +662,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -672,12 +672,12 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-unstable
 ///
 /// `GET /admin/api/unstable/metafields.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
 if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -688,7 +688,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -698,7 +698,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-unstable
 ///
 /// `POST /admin/api/unstable/metafields.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateMetafields({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -709,7 +709,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -719,7 +719,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-unstable
 ///
 /// `GET /admin/api/unstable/metafields/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetMetafieldsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -728,7 +728,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -738,11 +738,11 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-unstable
 ///
 /// `GET /admin/api/unstable/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) queryParameters['fields'] = fields.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -753,7 +753,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -763,7 +763,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-unstable
 ///
 /// `PUT /admin/api/unstable/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateMetafieldsParamMetafieldId({required String metafieldId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -774,7 +774,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -784,7 +784,7 @@ return _execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/metafields/{metafield_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteMetafieldsParamMetafieldId({required String metafieldId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -793,84 +793,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class RoomsApi {const RoomsApi(this._config);
+final class RoomsApi with ApiExecutor {const RoomsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Submit a state transition event
 ///
 /// All state mutations go through this endpoint. The server validates the transition, persists it, and broadcasts the new state to LiveKit.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/event`
-Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiPostEvent({required String sessionSlug, required EventRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiPostEvent({required String sessionSlug, required EventRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -28,7 +28,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RoomState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -43,7 +43,7 @@ return _execute(
 /// Returns the current state snapshot. Used by clients on reconnect or as a fallback poll when LiveKit data messages may have been missed.
 ///
 /// `GET /api/mobile/protected/rooms/{session_slug}/state`
-Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiGetState({required String sessionSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RoomState, RoomErrorResponse>> totemRoomsApiGetState({required String sessionSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RoomState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -67,7 +67,7 @@ return _execute(
 /// Returns a LiveKit access token. Creates the Room if needed.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/join`
-Future<ApiResult<JoinResponse, RoomErrorResponse>> totemRoomsApiJoinRoom({required String sessionSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<JoinResponse, RoomErrorResponse>> totemRoomsApiJoinRoom({required String sessionSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -76,7 +76,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return JoinResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -91,7 +91,7 @@ return _execute(
 /// Keeper mutes a specific participant's audio.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/mute/{participant_identity}`
-Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMute({required String sessionSlug, required String participantIdentity, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMute({required String sessionSlug, required String participantIdentity, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -100,7 +100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -113,7 +113,7 @@ return _execute(
 /// Keeper mutes everyone except themselves.
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/mute-all`
-Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMuteAll({required String sessionSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, RoomErrorResponse>> totemRoomsApiMuteAll({required String sessionSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -122,7 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -135,11 +135,11 @@ return _execute(
 /// Emits a remove event to a specific participant
 ///
 /// `POST /api/mobile/protected/rooms/{session_slug}/remove/{participant_identity}`
-Future<ApiResult<RemoveParticipantPayload, RoomErrorResponse>> totemRoomsApiRemove({required String sessionSlug, required String participantIdentity, RemoveReason? reason, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RemoveParticipantPayload, RoomErrorResponse>> totemRoomsApiRemove({required String sessionSlug, required String participantIdentity, RemoveReason? reason, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (reason != null) queryParameters['reason'] = reason.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -150,7 +150,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RemoveParticipantPayload.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -159,80 +159,5 @@ return _execute(
     return RoomErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

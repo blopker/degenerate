@@ -369,7 +369,7 @@ void main() {
     });
 
     test('has ApiConfig field', () {
-      expect(source, contains('final ApiConfig _config'));
+      expect(source, contains('final ApiConfig apiConfig'));
     });
 
     test('has listPets method', () {
@@ -388,14 +388,12 @@ void main() {
       expect(source, contains('/pets/'));
     });
 
-    test('has _execute method', () {
-      expect(source, contains('_execute'));
-      expect(source, contains('ApiSuccess'));
-      expect(source, contains('ApiError'));
-      expect(source, contains('ApiException'));
+    test('uses ApiExecutor mixin', () {
+      expect(source, contains('with ApiExecutor'));
+      expect(source, contains('execute('));
     });
 
-    test('_execute passes onError callback for typed error parsing', () {
+    test('operations pass onError callback for typed error parsing', () {
       expect(source, contains('onError'));
     });
 
@@ -403,10 +401,6 @@ void main() {
       // Petstore has default error responses with Error schema.
       // The generated code should try to parse errors as ErrorModel.
       expect(source, contains('ErrorModel.fromJson'));
-    });
-
-    test('_execute uses middleware chain', () {
-      expect(source, contains('buildInterceptorChain'));
     });
 
     test('is valid Dart (formats without error)', () {
@@ -892,7 +886,7 @@ void main() {
         expect(
           source,
           contains(
-            'final cookies = <String, String>{..._config.defaultCookies};',
+            'final cookies = <String, String>{...apiConfig.defaultCookies};',
           ),
         );
         expect(source, contains("cookies['session_id'] = sessionId;"));
@@ -2544,6 +2538,32 @@ void main() {
       // Optional field must use case-final for promotion
       expect(source, isNot(contains("filter.meter != null")));
       expect(source, contains("case final meter\$?"));
+    });
+  });
+
+  // ─── escapeDocComment ──────────────────────────────────────────
+
+  group('escapeDocComment', () {
+    test('escapes single-word angle brackets', () {
+      expect(escapeDocComment('use <ip> here'), 'use `<ip>` here');
+    });
+
+    test('escapes multi-word angle brackets', () {
+      expect(
+        escapeDocComment('interface <target portal>:<volume name>'),
+        'interface `<target portal>`:`<volume name>`',
+      );
+    });
+
+    test('does not double-escape already backticked content', () {
+      expect(escapeDocComment('use `<ip>` here'), 'use `<ip>` here');
+    });
+
+    test('escapes angle brackets with special chars', () {
+      expect(
+        escapeDocComment('type <Foo.Bar> end'),
+        'type `<Foo.Bar>` end',
+      );
     });
   });
 }

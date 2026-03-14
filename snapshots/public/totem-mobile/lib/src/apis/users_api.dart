@@ -8,14 +8,14 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class UsersApi {const UsersApi(this._config);
+final class UsersApi with ApiExecutor {const UsersApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get Current User
 ///
 /// `GET /api/mobile/protected/users/current`
-Future<ApiResult<UserSchema, Never>> totemUsersMobileApiGetCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UserSchema, Never>> totemUsersMobileApiGetCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -24,7 +24,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UserSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -34,7 +34,7 @@ return _execute(
 /// Get User Profile
 ///
 /// `GET /api/mobile/protected/users/profile/{user_slug}`
-Future<ApiResult<PublicUserSchema, Never>> totemUsersMobileApiGetUserProfile({required String userSlug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PublicUserSchema, Never>> totemUsersMobileApiGetUserProfile({required String userSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -43,7 +43,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PublicUserSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -53,7 +53,7 @@ return _execute(
 /// Update Current User
 ///
 /// `POST /api/mobile/protected/users/update`
-Future<ApiResult<UserSchema, Never>> totemUsersMobileApiUpdateCurrentUser({required UserUpdateSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<UserSchema, Never>> totemUsersMobileApiUpdateCurrentUser({required UserUpdateSchema body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,7 +64,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UserSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -74,7 +74,7 @@ return _execute(
 /// Update Current User Image
 ///
 /// `POST /api/mobile/protected/users/update_image`
-Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({required UpdateCurrentUserImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<bool, Never>> totemUsersMobileApiUpdateCurrentUserImage({required UpdateCurrentUserImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -87,7 +87,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as bool;
@@ -97,7 +97,7 @@ return _execute(
 /// Delete Current User
 ///
 /// `DELETE /api/mobile/protected/users/delete`
-Future<ApiResult<bool, Never>> totemUsersMobileApiDeleteCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<bool, Never>> totemUsersMobileApiDeleteCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as bool;
@@ -116,7 +116,7 @@ return _execute(
 /// Keeper
 ///
 /// `GET /api/mobile/protected/users/keeper/{slug}`
-Future<ApiResult<KeeperProfileSchema, Never>> totemUsersMobileApiKeeper({required String slug, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<KeeperProfileSchema, Never>> totemUsersMobileApiKeeper({required String slug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,7 +125,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return KeeperProfileSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -135,7 +135,7 @@ return _execute(
 /// Submit Feedback
 ///
 /// `POST /api/mobile/protected/users/feedback`
-Future<ApiResult<bool, Never>> totemUsersMobileApiSubmitFeedback({required FeedbackSchema body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<bool, Never>> totemUsersMobileApiSubmitFeedback({required FeedbackSchema body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,86 +146,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as bool;
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

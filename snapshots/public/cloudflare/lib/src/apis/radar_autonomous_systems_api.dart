@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class RadarAutonomousSystemsApi {const RadarAutonomousSystemsApi(this._config);
+final class RadarAutonomousSystemsApi with ApiExecutor {const RadarAutonomousSystemsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List autonomous systems
 ///
 /// Retrieves a list of autonomous systems.
 ///
 /// `GET /radar/entities/asns`
-Future<ApiResult<RadarGetEntitiesAsnListResponse, RadarGetEntitiesAsnListResponse400>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnListResponse, RadarGetEntitiesAsnListResponse400>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -26,7 +26,7 @@ if (location != null) queryParameters['location'] = location;
 if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetEntitiesAsnListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -52,11 +52,11 @@ return _execute(
 /// Retrieves the requested autonomous system information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this AS). Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/{asn}`
-Future<ApiResult<RadarGetEntitiesAsnByIdResponse, RadarGetEntitiesAsnByIdResponse404>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnByIdResponse, RadarGetEntitiesAsnByIdResponse404>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -67,7 +67,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetEntitiesAsnByIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -82,11 +82,11 @@ return _execute(
 /// Retrieves Internet Routing Registry AS-SETs that an AS is a member of.
 ///
 /// `GET /radar/entities/asns/{asn}/as_set`
-Future<ApiResult<RadarGetAsnsAsSetResponse, RadarGetAsnsAsSetResponse400>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAsnsAsSetResponse, RadarGetAsnsAsSetResponse400>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -97,7 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAsnsAsSetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -112,12 +112,12 @@ return _execute(
 /// Retrieves AS-level relationship for given networks.
 ///
 /// `GET /radar/entities/asns/{asn}/rel`
-Future<ApiResult<RadarGetAsnsRelResponse, RadarGetAsnsRelResponse400>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAsnsRelResponse, RadarGetAsnsRelResponse400>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (asn2 != null) queryParameters['asn2'] = asn2.toString();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -128,7 +128,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAsnsRelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -143,7 +143,7 @@ return _execute(
 /// Retrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. Rankings can be sorted by offense count or number of bad IPs. Optionally compare to a previous date to see rank changes.
 ///
 /// `GET /radar/entities/asns/botnet_threat_feed`
-Future<ApiResult<RadarGetAsBotnetThreatFeedResponse, RadarGetAsBotnetThreatFeedResponse400>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAsBotnetThreatFeedResponse, RadarGetAsBotnetThreatFeedResponse400>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (offset != null) queryParameters['offset'] = offset.toString();
@@ -159,7 +159,7 @@ for (final item in asn) {
 if (sortOrder != null) queryParameters['sortOrder'] = sortOrder.toJson();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -170,7 +170,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAsBotnetThreatFeedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -185,12 +185,12 @@ return _execute(
 /// Retrieves the requested autonomous system information based on IP address. Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/ip`
-Future<ApiResult<RadarGetEntitiesAsnByIpResponse, RadarGetEntitiesAsnByIpResponse404>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnByIpResponse, RadarGetEntitiesAsnByIpResponse404>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ip'] = ip;
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -201,7 +201,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetEntitiesAsnByIpResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -210,80 +210,5 @@ return _execute(
     return RadarGetEntitiesAsnByIpResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

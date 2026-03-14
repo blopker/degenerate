@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ResponsesApi {const ResponsesApi(this._config);
+final class ResponsesApi with ApiExecutor {const ResponsesApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Creates a model response. Provide [text](/docs/guides/text) or
 /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)
@@ -22,7 +22,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<ModelResponseProperties, Never>> createResponse({required ModelResponseProperties body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ModelResponseProperties, Never>> createResponse({required ModelResponseProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -33,7 +33,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ModelResponseProperties.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -44,7 +44,7 @@ return _execute(
 /// 
 ///
 /// `GET /responses/{response_id}`
-Future<ApiResult<ModelResponseProperties, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ModelResponseProperties, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -55,7 +55,7 @@ if (stream != null) queryParameters['stream'] = stream.toString();
 if (startingAfter != null) queryParameters['starting_after'] = startingAfter.toString();
 if (includeObfuscation != null) queryParameters['include_obfuscation'] = includeObfuscation.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,7 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ModelResponseProperties.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -77,7 +77,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /responses/{response_id}`
-Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -86,7 +86,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -100,7 +100,7 @@ return _execute(
 /// 
 ///
 /// `POST /responses/{response_id}/cancel`
-Future<ApiResult<ModelResponseProperties, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ModelResponseProperties, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -109,7 +109,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ModelResponseProperties.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -122,7 +122,7 @@ return _execute(
 /// Returns a list of input items for a given response.
 ///
 /// `GET /responses/{response_id}/input_items`
-Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -133,7 +133,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -161,7 +161,7 @@ return _execute(
 ///  (streaming)
 ///
 /// `POST /responses`
-Stream<ResponseStreamEvent> createResponseStream({required ModelResponseProperties body, RequestOptions? options, }) { final headers = <String, String>{..._config.defaultHeaders};
+Stream<ResponseStreamEvent> createResponseStream({required ModelResponseProperties body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -172,145 +172,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _executeStreaming(
+return executeStreaming(
   request,
   onEvent: (data) {
     return ResponseStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
- } 
-/// Streaming execution pipeline: send -> SSE parse -> deserialize.
-Stream<T> _executeStreaming<T>(ApiRequest request, {required T Function(String data) onEvent, }) async*  { final userCancelToken = request.options?.cancelToken;
-if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-final extraHeaders = request.options?.extraHeaders;
-
-final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-    ? CancelToken()
-    : null;
-Timer? timeoutTimer;
-bool timedOut = false;
-
-if (adapterToken != null) {
-  if (userCancelToken != null) {
-    final token = adapterToken;
-    userCancelToken.whenCancelled.then((_) {
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-  if (effectiveTimeout != null) {
-    final token = adapterToken;
-    timeoutTimer = Timer(effectiveTimeout, () {
-      timedOut = true;
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-}
-
-final effectiveRequest = request.copyWith(
-  headers: extraHeaders != null
-      ? {...request.headers, ...extraHeaders}
-      : null,
-  options: RequestOptions(cancelToken: adapterToken),
-);
-
-try {
-  final streamedResponse = await _config.client.sendStreaming(effectiveRequest);
-  timeoutTimer?.cancel();
-
-  if (!streamedResponse.isSuccessful) {
-    final buffered = await streamedResponse.toApiResponse();
-    throw ApiStreamError(
-      statusCode: buffered.statusCode,
-      rawError: buffered.body,
-      headers: buffered.headers,
-    );
-  }
-
-  yield* parseSseStream(streamedResponse.byteStream)
-      .map((event) => onEvent(event.data));
-} on CancelledException {
-  timeoutTimer?.cancel();
-  if (timedOut) {
-    throw TimeoutException('Request timed out', effectiveTimeout);
-  }
-  rethrow;
-}
  } 
  }

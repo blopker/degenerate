@@ -1,4 +1,5 @@
 export 'src/api_client.dart';
+export 'src/api_executor.dart';
 export 'src/one_of.dart';
 export 'src/api_config.dart';
 export 'src/api_result.dart';

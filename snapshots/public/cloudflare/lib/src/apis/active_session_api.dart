@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ActiveSessionApi {const ActiveSessionApi(this._config);
+final class ActiveSessionApi with ApiExecutor {const ActiveSessionApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Fetch details of an active session
 ///
 /// Returns details of an ongoing active session for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session`
-Future<ApiResult<GetActiveSessionResponse, RealtimekitGenericErrorResponse>> getActiveSession({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetActiveSessionResponse, RealtimekitGenericErrorResponse>> getActiveSession({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetActiveSessionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -41,7 +41,7 @@ return _execute(
 /// Kicks one or more participants from an active session using user ID or custom participant ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick`
-Future<ApiResult<KickPartcipantsResponse, RealtimekitGenericErrorResponse>> kickPartcipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required KickPartcipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<KickPartcipantsResponse, RealtimekitGenericErrorResponse>> kickPartcipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required KickPartcipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return KickPartcipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -67,7 +67,7 @@ return _execute(
 /// Kicks all participants from an active session for the given meeting ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all`
-Future<ApiResult<KickAllParticipantsResponse, Never>> kickAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<KickAllParticipantsResponse, Never>> kickAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -76,7 +76,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return KickAllParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -88,7 +88,7 @@ return _execute(
 /// Mutes one or more participants from an active session using user ID or custom participant ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute`
-Future<ApiResult<MuteParticipantsResponse, Never>> muteParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteParticipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MuteParticipantsResponse, Never>> muteParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteParticipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,7 +99,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MuteParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -111,7 +111,7 @@ return _execute(
 /// Mutes all participants of an active session for the given meeting ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute-all`
-Future<ApiResult<MuteAllParticipantsResponse, Never>> muteAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteAllParticipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MuteAllParticipantsResponse, Never>> muteAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteAllParticipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,7 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MuteAllParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -134,7 +134,7 @@ return _execute(
 /// Creates a new poll in an active session for the given meeting ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/poll`
-Future<ApiResult<CreatePollResponse, Never>> createPoll({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required CreatePollRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreatePollResponse, Never>> createPoll({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required CreatePollRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -145,86 +145,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CreatePollResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

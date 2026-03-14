@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ActionsApi {const ActionsApi(this._config);
+final class ActionsApi with ApiExecutor {const ActionsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get GitHub Actions cache retention limit for an enterprise
 ///
@@ -20,7 +20,7 @@ final ApiConfig _config;
 /// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/actions/cache/retention-limit`
-Future<ApiResult<ActionsCacheRetentionLimitForEnterprise, BasicError>> actionsGetActionsCacheRetentionLimitForEnterprise({required String enterprise, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheRetentionLimitForEnterprise, BasicError>> actionsGetActionsCacheRetentionLimitForEnterprise({required String enterprise, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,7 +29,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheRetentionLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -47,7 +47,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `PUT /enterprises/{enterprise}/actions/cache/retention-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForEnterprise({required String enterprise, required ActionsCacheRetentionLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForEnterprise({required String enterprise, required ActionsCacheRetentionLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,7 +58,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -74,7 +74,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/actions/cache/storage-limit`
-Future<ApiResult<ActionsCacheStorageLimitForEnterprise, BasicError>> actionsGetActionsCacheStorageLimitForEnterprise({required String enterprise, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheStorageLimitForEnterprise, BasicError>> actionsGetActionsCacheStorageLimitForEnterprise({required String enterprise, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +83,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheStorageLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -101,7 +101,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `PUT /enterprises/{enterprise}/actions/cache/storage-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForEnterprise({required String enterprise, required ActionsCacheStorageLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForEnterprise({required String enterprise, required ActionsCacheStorageLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -112,7 +112,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -128,7 +128,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// `GET /organizations/{org}/actions/cache/retention-limit`
-Future<ApiResult<ActionsCacheRetentionLimitForOrganization, BasicError>> actionsGetActionsCacheRetentionLimitForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheRetentionLimitForOrganization, BasicError>> actionsGetActionsCacheRetentionLimitForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -137,7 +137,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheRetentionLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -155,7 +155,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// `PUT /organizations/{org}/actions/cache/retention-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForOrganization({required String org, required ActionsCacheRetentionLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForOrganization({required String org, required ActionsCacheRetentionLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,7 +166,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -182,7 +182,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// `GET /organizations/{org}/actions/cache/storage-limit`
-Future<ApiResult<ActionsCacheStorageLimitForOrganization, BasicError>> actionsGetActionsCacheStorageLimitForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheStorageLimitForOrganization, BasicError>> actionsGetActionsCacheStorageLimitForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -191,7 +191,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheStorageLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -209,7 +209,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// `PUT /organizations/{org}/actions/cache/storage-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForOrganization({required String org, required ActionsCacheStorageLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForOrganization({required String org, required ActionsCacheStorageLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -220,7 +220,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -236,7 +236,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/cache/usage`
-Future<ApiResult<ActionsCacheUsageOrgEnterprise, Never>> actionsGetActionsCacheUsageForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheUsageOrgEnterprise, Never>> actionsGetActionsCacheUsageForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -245,7 +245,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheUsageOrgEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -260,12 +260,12 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/cache/usage-by-repository`
-Future<ApiResult<ActionsGetActionsCacheUsageByRepoForOrgResponse, Never>> actionsGetActionsCacheUsageByRepoForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsGetActionsCacheUsageByRepoForOrgResponse, Never>> actionsGetActionsCacheUsageByRepoForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -276,7 +276,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -290,12 +290,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `manage_runner:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners`
-Future<ApiResult<ActionsListHostedRunnersForOrgResponse, Never>> actionsListHostedRunnersForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListHostedRunnersForOrgResponse, Never>> actionsListHostedRunnersForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -306,7 +306,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListHostedRunnersForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -319,7 +319,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/hosted-runners`
-Future<ApiResult<ActionsHostedRunner, Never>> actionsCreateHostedRunnerForOrg({required String org, required ActionsCreateHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsHostedRunner, Never>> actionsCreateHostedRunnerForOrg({required String org, required ActionsCreateHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -330,7 +330,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -344,7 +344,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/images/custom`
-Future<ApiResult<ActionsListCustomImagesForOrgResponse, Never>> actionsListCustomImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsListCustomImagesForOrgResponse, Never>> actionsListCustomImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -353,7 +353,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListCustomImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -367,7 +367,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}`
-Future<ApiResult<ActionsHostedRunnerCustomImage, Never>> actionsGetCustomImageForOrg({required String org, required int imageDefinitionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsHostedRunnerCustomImage, Never>> actionsGetCustomImageForOrg({required String org, required int imageDefinitionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -376,7 +376,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsHostedRunnerCustomImage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -390,7 +390,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}`
-Future<ApiResult<void, Never>> actionsDeleteCustomImageFromOrg({required String org, required int imageDefinitionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteCustomImageFromOrg({required String org, required int imageDefinitionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -399,7 +399,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -411,7 +411,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions`
-Future<ApiResult<ActionsListCustomImageVersionsForOrgResponse, Never>> actionsListCustomImageVersionsForOrg({required int imageDefinitionId, required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsListCustomImageVersionsForOrgResponse, Never>> actionsListCustomImageVersionsForOrg({required int imageDefinitionId, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -420,7 +420,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListCustomImageVersionsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -434,7 +434,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}`
-Future<ApiResult<ActionsHostedRunnerCustomImageVersion, Never>> actionsGetCustomImageVersionForOrg({required String org, required int imageDefinitionId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsHostedRunnerCustomImageVersion, Never>> actionsGetCustomImageVersionForOrg({required String org, required int imageDefinitionId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -443,7 +443,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsHostedRunnerCustomImageVersion.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -457,7 +457,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}`
-Future<ApiResult<void, Never>> actionsDeleteCustomImageVersionFromOrg({required String org, required int imageDefinitionId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteCustomImageVersionFromOrg({required String org, required int imageDefinitionId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -466,7 +466,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -476,7 +476,7 @@ return _execute(
 /// Get the list of GitHub-owned images available for GitHub-hosted runners for an organization.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/images/github-owned`
-Future<ApiResult<ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse, Never>> actionsGetHostedRunnersGithubOwnedImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse, Never>> actionsGetHostedRunnersGithubOwnedImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -485,7 +485,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -497,7 +497,7 @@ return _execute(
 /// Get the list of partner images available for GitHub-hosted runners for an organization.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/images/partner`
-Future<ApiResult<ActionsGetHostedRunnersPartnerImagesForOrgResponse, Never>> actionsGetHostedRunnersPartnerImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGetHostedRunnersPartnerImagesForOrgResponse, Never>> actionsGetHostedRunnersPartnerImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -506,7 +506,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -518,7 +518,7 @@ return _execute(
 /// Get the GitHub-hosted runners limits for an organization.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/limits`
-Future<ApiResult<ActionsHostedRunnerLimits, Never>> actionsGetHostedRunnersLimitsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsHostedRunnerLimits, Never>> actionsGetHostedRunnersLimitsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -527,7 +527,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsHostedRunnerLimits.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -539,7 +539,7 @@ return _execute(
 /// Get the list of machine specs available for GitHub-hosted runners for an organization.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/machine-sizes`
-Future<ApiResult<ActionsGetHostedRunnersMachineSpecsForOrgResponse, Never>> actionsGetHostedRunnersMachineSpecsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGetHostedRunnersMachineSpecsForOrgResponse, Never>> actionsGetHostedRunnersMachineSpecsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -548,7 +548,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -560,7 +560,7 @@ return _execute(
 /// Get the list of platforms available for GitHub-hosted runners for an organization.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/platforms`
-Future<ApiResult<ActionsGetHostedRunnersPlatformsForOrgResponse, Never>> actionsGetHostedRunnersPlatformsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGetHostedRunnersPlatformsForOrgResponse, Never>> actionsGetHostedRunnersPlatformsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -569,7 +569,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -583,7 +583,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}`
-Future<ApiResult<ActionsHostedRunner, Never>> actionsGetHostedRunnerForOrg({required String org, required int hostedRunnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsHostedRunner, Never>> actionsGetHostedRunnerForOrg({required String org, required int hostedRunnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -592,7 +592,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -605,7 +605,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}`
-Future<ApiResult<ActionsHostedRunner, Never>> actionsUpdateHostedRunnerForOrg({required String org, required int hostedRunnerId, required ActionsUpdateHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsHostedRunner, Never>> actionsUpdateHostedRunnerForOrg({required String org, required int hostedRunnerId, required ActionsUpdateHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -616,7 +616,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -628,7 +628,7 @@ return _execute(
 /// Deletes a GitHub-hosted runner for an organization.
 ///
 /// `DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}`
-Future<ApiResult<ActionsHostedRunner, Never>> actionsDeleteHostedRunnerForOrg({required String org, required int hostedRunnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsHostedRunner, Never>> actionsDeleteHostedRunnerForOrg({required String org, required int hostedRunnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -637,7 +637,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -651,7 +651,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions`
-Future<ApiResult<ActionsOrganizationPermissions, Never>> actionsGetGithubActionsPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsOrganizationPermissions, Never>> actionsGetGithubActionsPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -660,7 +660,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsOrganizationPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -674,7 +674,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions`
-Future<ApiResult<void, Never>> actionsSetGithubActionsPermissionsOrganization({required String org, required ActionsSetGithubActionsPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetGithubActionsPermissionsOrganization({required String org, required ActionsSetGithubActionsPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -685,7 +685,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -697,7 +697,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<ActionsArtifactAndLogRetentionResponse, BasicError>> actionsGetArtifactAndLogRetentionSettingsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsArtifactAndLogRetentionResponse, BasicError>> actionsGetArtifactAndLogRetentionSettingsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -706,7 +706,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -723,7 +723,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsOrganization({required String org, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsOrganization({required String org, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -734,7 +734,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -749,7 +749,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<ActionsForkPrContributorApproval, BasicError>> actionsGetForkPrContributorApprovalPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsForkPrContributorApproval, BasicError>> actionsGetForkPrContributorApprovalPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -758,7 +758,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -775,7 +775,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsOrganization({required String org, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsOrganization({required String org, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -786,7 +786,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -799,7 +799,7 @@ return _execute(
 /// Gets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
 ///
 /// `GET /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<ActionsForkPrWorkflowsPrivateRepos, BasicError>> actionsGetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsForkPrWorkflowsPrivateRepos, BasicError>> actionsGetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -808,7 +808,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -823,7 +823,7 @@ return _execute(
 /// Sets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
 ///
 /// `PUT /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -834,7 +834,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -849,12 +849,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions/repositories`
-Future<ApiResult<ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse, Never>> actionsListSelectedRepositoriesEnabledGithubActionsOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse, Never>> actionsListSelectedRepositoriesEnabledGithubActionsOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -865,7 +865,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -880,7 +880,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/repositories`
-Future<ApiResult<void, Never>> actionsSetSelectedRepositoriesEnabledGithubActionsOrganization({required String org, required ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetSelectedRepositoriesEnabledGithubActionsOrganization({required String org, required ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -891,7 +891,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -903,7 +903,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsEnableSelectedRepositoryGithubActionsOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsEnableSelectedRepositoryGithubActionsOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -912,7 +912,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -924,7 +924,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsDisableSelectedRepositoryGithubActionsOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDisableSelectedRepositoryGithubActionsOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -933,7 +933,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -945,7 +945,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions/selected-actions`
-Future<ApiResult<SelectedActions, Never>> actionsGetAllowedActionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SelectedActions, Never>> actionsGetAllowedActionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -954,7 +954,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SelectedActions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -968,7 +968,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/selected-actions`
-Future<ApiResult<void, Never>> actionsSetAllowedActionsOrganization({required String org, SelectedActions? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetAllowedActionsOrganization({required String org, SelectedActions? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -979,7 +979,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -991,7 +991,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions/self-hosted-runners`
-Future<ApiResult<SelfHostedRunnersSettings, BasicError>> actionsGetSelfHostedRunnersPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SelfHostedRunnersSettings, BasicError>> actionsGetSelfHostedRunnersPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1000,7 +1000,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SelfHostedRunnersSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1017,7 +1017,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners`
-Future<ApiResult<void, BasicError>> actionsSetSelfHostedRunnersPermissionsOrganization({required String org, required ActionsSetSelfHostedRunnersPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetSelfHostedRunnersPermissionsOrganization({required String org, required ActionsSetSelfHostedRunnersPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1028,7 +1028,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1043,12 +1043,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions/self-hosted-runners/repositories`
-Future<ApiResult<ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse, BasicError>> actionsListSelectedRepositoriesSelfHostedRunnersOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse, BasicError>> actionsListSelectedRepositoriesSelfHostedRunnersOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1059,7 +1059,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1076,7 +1076,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories`
-Future<ApiResult<void, BasicError>> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization({required String org, required ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization({required String org, required ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1087,7 +1087,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1102,7 +1102,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> actionsEnableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsEnableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1111,7 +1111,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1126,7 +1126,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> actionsDisableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsDisableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1135,7 +1135,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1152,7 +1152,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/permissions/workflow`
-Future<ApiResult<ActionsGetDefaultWorkflowPermissions, Never>> actionsGetGithubActionsDefaultWorkflowPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGetDefaultWorkflowPermissions, Never>> actionsGetGithubActionsDefaultWorkflowPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1161,7 +1161,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGetDefaultWorkflowPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1177,7 +1177,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/workflow`
-Future<ApiResult<void, Never>> actionsSetGithubActionsDefaultWorkflowPermissionsOrganization({required String org, ActionsSetDefaultWorkflowPermissions? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetGithubActionsDefaultWorkflowPermissionsOrganization({required String org, ActionsSetDefaultWorkflowPermissions? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1188,7 +1188,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1200,13 +1200,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/runner-groups`
-Future<ApiResult<ActionsListSelfHostedRunnerGroupsForOrgResponse, Never>> actionsListSelfHostedRunnerGroupsForOrg({required String org, int? perPage, int? page, String? visibleToRepository, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelfHostedRunnerGroupsForOrgResponse, Never>> actionsListSelfHostedRunnerGroupsForOrg({required String org, int? perPage, int? page, String? visibleToRepository, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 if (visibleToRepository != null) queryParameters['visible_to_repository'] = visibleToRepository;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1217,7 +1217,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1231,7 +1231,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runner-groups`
-Future<ApiResult<RunnerGroupsOrg, Never>> actionsCreateSelfHostedRunnerGroupForOrg({required String org, required ActionsCreateSelfHostedRunnerGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunnerGroupsOrg, Never>> actionsCreateSelfHostedRunnerGroupForOrg({required String org, required ActionsCreateSelfHostedRunnerGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1242,7 +1242,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1256,7 +1256,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}`
-Future<ApiResult<RunnerGroupsOrg, Never>> actionsGetSelfHostedRunnerGroupForOrg({required String org, required int runnerGroupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunnerGroupsOrg, Never>> actionsGetSelfHostedRunnerGroupForOrg({required String org, required int runnerGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1265,7 +1265,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1279,7 +1279,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}`
-Future<ApiResult<RunnerGroupsOrg, Never>> actionsUpdateSelfHostedRunnerGroupForOrg({required String org, required int runnerGroupId, required ActionsUpdateSelfHostedRunnerGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunnerGroupsOrg, Never>> actionsUpdateSelfHostedRunnerGroupForOrg({required String org, required int runnerGroupId, required ActionsUpdateSelfHostedRunnerGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1290,7 +1290,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1304,7 +1304,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}`
-Future<ApiResult<void, Never>> actionsDeleteSelfHostedRunnerGroupFromOrg({required String org, required int runnerGroupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteSelfHostedRunnerGroupFromOrg({required String org, required int runnerGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1313,7 +1313,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1325,12 +1325,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners`
-Future<ApiResult<ActionsListGithubHostedRunnersInGroupForOrgResponse, Never>> actionsListGithubHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListGithubHostedRunnersInGroupForOrgResponse, Never>> actionsListGithubHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1341,7 +1341,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1355,12 +1355,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories`
-Future<ApiResult<ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse, Never>> actionsListRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse, Never>> actionsListRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1371,7 +1371,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1385,7 +1385,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories`
-Future<ApiResult<void, Never>> actionsSetRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1396,7 +1396,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1408,7 +1408,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsAddRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsAddRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1417,7 +1417,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1429,7 +1429,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsRemoveRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsRemoveRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1438,7 +1438,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1450,12 +1450,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners`
-Future<ApiResult<ActionsListSelfHostedRunnersInGroupForOrgResponse, Never>> actionsListSelfHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelfHostedRunnersInGroupForOrgResponse, Never>> actionsListSelfHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1466,7 +1466,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1480,7 +1480,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners`
-Future<ApiResult<void, Never>> actionsSetSelfHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, required ActionsSetSelfHostedRunnersInGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetSelfHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, required ActionsSetSelfHostedRunnersInGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1491,7 +1491,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1503,7 +1503,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}`
-Future<ApiResult<void, Never>> actionsAddSelfHostedRunnerToGroupForOrg({required String org, required int runnerGroupId, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsAddSelfHostedRunnerToGroupForOrg({required String org, required int runnerGroupId, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1512,7 +1512,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1524,7 +1524,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}`
-Future<ApiResult<void, Never>> actionsRemoveSelfHostedRunnerFromGroupForOrg({required String org, required int runnerGroupId, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsRemoveSelfHostedRunnerFromGroupForOrg({required String org, required int runnerGroupId, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1533,7 +1533,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1547,13 +1547,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/runners`
-Future<ApiResult<ActionsListSelfHostedRunnersForOrgResponse, Never>> actionsListSelfHostedRunnersForOrg({required String org, String? name, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelfHostedRunnersForOrgResponse, Never>> actionsListSelfHostedRunnersForOrg({required String org, String? name, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1564,7 +1564,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelfHostedRunnersForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1580,7 +1580,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.  If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/runners/downloads`
-Future<ApiResult<List<RunnerApplication>, Never>> actionsListRunnerApplicationsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<RunnerApplication>, Never>> actionsListRunnerApplicationsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1589,7 +1589,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1606,7 +1606,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/generate-jitconfig`
-Future<ApiResult<ActionsGenerateRunnerJitconfigForOrgResponse, BasicError>> actionsGenerateRunnerJitconfigForOrg({required String org, required ActionsGenerateRunnerJitconfigForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGenerateRunnerJitconfigForOrgResponse, BasicError>> actionsGenerateRunnerJitconfigForOrg({required String org, required ActionsGenerateRunnerJitconfigForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1617,7 +1617,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1642,7 +1642,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/registration-token`
-Future<ApiResult<AuthenticationToken, Never>> actionsCreateRegistrationTokenForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRegistrationTokenForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -1651,7 +1651,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1673,7 +1673,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/remove-token`
-Future<ApiResult<AuthenticationToken, Never>> actionsCreateRemoveTokenForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRemoveTokenForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -1682,7 +1682,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1698,7 +1698,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/runners/{runner_id}`
-Future<ApiResult<Runner, Never>> actionsGetSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Runner, Never>> actionsGetSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1707,7 +1707,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Runner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1723,7 +1723,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/runners/{runner_id}`
-Future<ApiResult<void, ValidationErrorSimple>> actionsDeleteSelfHostedRunnerFromOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationErrorSimple>> actionsDeleteSelfHostedRunnerFromOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1732,7 +1732,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1749,7 +1749,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsListLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsListLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsListLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsListLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1758,7 +1758,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1777,7 +1777,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1788,7 +1788,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1808,7 +1808,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `PUT /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1819,7 +1819,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1839,7 +1839,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `DELETE /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1848,7 +1848,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1871,7 +1871,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}`
-Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg({required String org, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg({required String org, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1880,7 +1880,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1900,12 +1900,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/secrets`
-Future<ApiResult<ActionsListOrgSecretsResponse, Never>> actionsListOrgSecrets({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListOrgSecretsResponse, Never>> actionsListOrgSecrets({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1916,7 +1916,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListOrgSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1933,7 +1933,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/secrets/public-key`
-Future<ApiResult<ActionsPublicKey, Never>> actionsGetOrgPublicKey({required String org, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsPublicKey, Never>> actionsGetOrgPublicKey({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1942,7 +1942,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1958,7 +1958,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/secrets/{secret_name}`
-Future<ApiResult<OrganizationActionsSecret, Never>> actionsGetOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationActionsSecret, Never>> actionsGetOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1967,7 +1967,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return OrganizationActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1984,7 +1984,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateOrgSecret({required String org, required String secretName, required ActionsCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateOrgSecret({required String org, required String secretName, required ActionsCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1995,7 +1995,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2011,7 +2011,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/secrets/{secret_name}`
-Future<ApiResult<void, Never>> actionsDeleteOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2020,7 +2020,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2035,12 +2035,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/secrets/{secret_name}/repositories`
-Future<ApiResult<ActionsListSelectedReposForOrgSecretResponse, Never>> actionsListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelectedReposForOrgSecretResponse, Never>> actionsListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2051,7 +2051,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelectedReposForOrgSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2069,7 +2069,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `PUT /orgs/{org}/actions/secrets/{secret_name}/repositories`
-Future<ApiResult<void, Never>> actionsSetSelectedReposForOrgSecret({required String org, required String secretName, required ActionsSetSelectedReposForOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetSelectedReposForOrgSecret({required String org, required String secretName, required ActionsSetSelectedReposForOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2080,7 +2080,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2096,7 +2096,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -2105,7 +2105,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2121,7 +2121,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2130,7 +2130,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2144,12 +2144,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/variables`
-Future<ApiResult<ActionsListOrgVariablesResponse, Never>> actionsListOrgVariables({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListOrgVariablesResponse, Never>> actionsListOrgVariables({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2160,7 +2160,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListOrgVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2176,7 +2176,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/variables`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrgVariable({required String org, required ActionsCreateOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrgVariable({required String org, required ActionsCreateOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2187,7 +2187,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2203,7 +2203,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/variables/{name}`
-Future<ApiResult<OrganizationActionsVariable, Never>> actionsGetOrgVariable({required String org, required String name, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OrganizationActionsVariable, Never>> actionsGetOrgVariable({required String org, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2212,7 +2212,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return OrganizationActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2228,7 +2228,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `PATCH /orgs/{org}/actions/variables/{name}`
-Future<ApiResult<void, Never>> actionsUpdateOrgVariable({required String org, required String name, required ActionsUpdateOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsUpdateOrgVariable({required String org, required String name, required ActionsUpdateOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2239,7 +2239,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2253,7 +2253,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/variables/{name}`
-Future<ApiResult<void, Never>> actionsDeleteOrgVariable({required String org, required String name, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteOrgVariable({required String org, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2262,7 +2262,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2277,12 +2277,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `GET /orgs/{org}/actions/variables/{name}/repositories`
-Future<ApiResult<ActionsListSelectedReposForOrgVariableResponse, Never>> actionsListSelectedReposForOrgVariable({required String org, required String name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelectedReposForOrgVariableResponse, Never>> actionsListSelectedReposForOrgVariable({required String org, required String name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2293,7 +2293,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelectedReposForOrgVariableResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2311,7 +2311,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `PUT /orgs/{org}/actions/variables/{name}/repositories`
-Future<ApiResult<void, Never>> actionsSetSelectedReposForOrgVariable({required String org, required String name, required ActionsSetSelectedReposForOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetSelectedReposForOrgVariable({required String org, required String name, required ActionsSetSelectedReposForOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2322,7 +2322,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2337,7 +2337,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsAddSelectedRepoToOrgVariable({required String org, required String name, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsAddSelectedRepoToOrgVariable({required String org, required String name, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -2346,7 +2346,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2362,7 +2362,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}`
-Future<ApiResult<void, Never>> actionsRemoveSelectedRepoFromOrgVariable({required String org, required String name, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsRemoveSelectedRepoFromOrgVariable({required String org, required String name, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2371,7 +2371,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2385,13 +2385,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/artifacts`
-Future<ApiResult<ActionsListArtifactsForRepoResponse, Never>> actionsListArtifactsForRepo({required String owner, required String repo, int? perPage, int? page, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListArtifactsForRepoResponse, Never>> actionsListArtifactsForRepo({required String owner, required String repo, int? perPage, int? page, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 if (name != null) queryParameters['name'] = name;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2402,7 +2402,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListArtifactsForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2418,7 +2418,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}`
-Future<ApiResult<Artifact, Never>> actionsGetArtifact({required String owner, required String repo, required int artifactId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Artifact, Never>> actionsGetArtifact({required String owner, required String repo, required int artifactId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2427,7 +2427,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Artifact.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2440,7 +2440,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}`
-Future<ApiResult<void, Never>> actionsDeleteArtifact({required String owner, required String repo, required int artifactId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteArtifact({required String owner, required String repo, required int artifactId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2449,7 +2449,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2462,7 +2462,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}`
-Future<ApiResult<void, BasicError>> actionsDownloadArtifact({required String owner, required String repo, required int artifactId, required String archiveFormat, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsDownloadArtifact({required String owner, required String repo, required int artifactId, required String archiveFormat, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2471,7 +2471,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -2487,7 +2487,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/cache/retention-limit`
-Future<ApiResult<ActionsCacheRetentionLimitForRepository, BasicError>> actionsGetActionsCacheRetentionLimitForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheRetentionLimitForRepository, BasicError>> actionsGetActionsCacheRetentionLimitForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2496,7 +2496,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheRetentionLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2514,7 +2514,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/cache/retention-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForRepository({required String owner, required String repo, required ActionsCacheRetentionLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForRepository({required String owner, required String repo, required ActionsCacheRetentionLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2525,7 +2525,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -2541,7 +2541,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/cache/storage-limit`
-Future<ApiResult<ActionsCacheStorageLimitForRepository, BasicError>> actionsGetActionsCacheStorageLimitForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheStorageLimitForRepository, BasicError>> actionsGetActionsCacheStorageLimitForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2550,7 +2550,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheStorageLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2568,7 +2568,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/cache/storage-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForRepository({required String owner, required String repo, required ActionsCacheStorageLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForRepository({required String owner, required String repo, required ActionsCacheStorageLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2579,7 +2579,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -2597,7 +2597,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/cache/usage`
-Future<ApiResult<ActionsCacheUsageByRepository, Never>> actionsGetActionsCacheUsage({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsCacheUsageByRepository, Never>> actionsGetActionsCacheUsage({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2606,7 +2606,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheUsageByRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2620,7 +2620,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/caches`
-Future<ApiResult<ActionsCacheList, Never>> actionsGetActionsCacheList({required String owner, required String repo, int? perPage, int? page, String? ref, String? key, ActionsGetActionsCacheListSort? sort, ActionsGetActionsCacheListDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsCacheList, Never>> actionsGetActionsCacheList({required String owner, required String repo, int? perPage, int? page, String? ref, String? key, ActionsGetActionsCacheListSort? sort, ActionsGetActionsCacheListDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -2629,7 +2629,7 @@ if (key != null) queryParameters['key'] = key;
 if (sort != null) queryParameters['sort'] = sort.toJson();
 if (direction != null) queryParameters['direction'] = direction.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2640,7 +2640,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2654,12 +2654,12 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/caches`
-Future<ApiResult<ActionsCacheList, Never>> actionsDeleteActionsCacheByKey({required String owner, required String repo, required String key, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsCacheList, Never>> actionsDeleteActionsCacheByKey({required String owner, required String repo, required String key, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['key'] = key;
 if (ref != null) queryParameters['ref'] = ref;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2670,7 +2670,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsCacheList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2684,7 +2684,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}`
-Future<ApiResult<void, Never>> actionsDeleteActionsCacheById({required String owner, required String repo, required int cacheId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteActionsCacheById({required String owner, required String repo, required int cacheId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2693,7 +2693,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2707,7 +2707,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/jobs/{job_id}`
-Future<ApiResult<Job, Never>> actionsGetJobForWorkflowRun({required String owner, required String repo, required int jobId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Job, Never>> actionsGetJobForWorkflowRun({required String owner, required String repo, required int jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2716,7 +2716,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2733,7 +2733,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs`
-Future<ApiResult<void, Never>> actionsDownloadJobLogsForWorkflowRun({required String owner, required String repo, required int jobId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDownloadJobLogsForWorkflowRun({required String owner, required String repo, required int jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2742,7 +2742,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2754,7 +2754,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun`
-Future<ApiResult<EmptyObject, BasicError>> actionsReRunJobForWorkflowRun({required String owner, required String repo, required int jobId, ActionsReRunJobForWorkflowRunRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, BasicError>> actionsReRunJobForWorkflowRun({required String owner, required String repo, required int jobId, ActionsReRunJobForWorkflowRunRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2765,7 +2765,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2782,7 +2782,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/oidc/customization/sub`
-Future<ApiResult<OidcCustomSubRepo, BasicError>> actionsGetCustomOidcSubClaimForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<OidcCustomSubRepo, BasicError>> actionsGetCustomOidcSubClaimForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2791,7 +2791,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return OidcCustomSubRepo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2808,7 +2808,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/oidc/customization/sub`
-Future<ApiResult<EmptyObject, BasicError>> actionsSetCustomOidcSubClaimForRepo({required String owner, required String repo, required ActionsSetCustomOidcSubClaimForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, BasicError>> actionsSetCustomOidcSubClaimForRepo({required String owner, required String repo, required ActionsSetCustomOidcSubClaimForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2819,7 +2819,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2839,12 +2839,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/organization-secrets`
-Future<ApiResult<ActionsListRepoOrganizationSecretsResponse, Never>> actionsListRepoOrganizationSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListRepoOrganizationSecretsResponse, Never>> actionsListRepoOrganizationSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2855,7 +2855,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListRepoOrganizationSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2871,12 +2871,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/organization-variables`
-Future<ApiResult<ActionsListRepoOrganizationVariablesResponse, Never>> actionsListRepoOrganizationVariables({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListRepoOrganizationVariablesResponse, Never>> actionsListRepoOrganizationVariables({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2887,7 +2887,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListRepoOrganizationVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2901,7 +2901,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/permissions`
-Future<ApiResult<ActionsRepositoryPermissions, Never>> actionsGetGithubActionsPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsRepositoryPermissions, Never>> actionsGetGithubActionsPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2910,7 +2910,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsRepositoryPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2924,7 +2924,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions`
-Future<ApiResult<void, Never>> actionsSetGithubActionsPermissionsRepository({required String owner, required String repo, required ActionsSetGithubActionsPermissionsRepositoryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetGithubActionsPermissionsRepository({required String owner, required String repo, required ActionsSetGithubActionsPermissionsRepositoryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2935,7 +2935,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2949,7 +2949,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/permissions/access`
-Future<ApiResult<ActionsWorkflowAccessToRepository, Never>> actionsGetWorkflowAccessToRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsWorkflowAccessToRepository, Never>> actionsGetWorkflowAccessToRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2958,7 +2958,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsWorkflowAccessToRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2974,7 +2974,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/access`
-Future<ApiResult<void, Never>> actionsSetWorkflowAccessToRepository({required String owner, required String repo, required ActionsWorkflowAccessToRepository body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetWorkflowAccessToRepository({required String owner, required String repo, required ActionsWorkflowAccessToRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2985,7 +2985,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2997,7 +2997,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<ActionsArtifactAndLogRetentionResponse, BasicError>> actionsGetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsArtifactAndLogRetentionResponse, BasicError>> actionsGetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3006,7 +3006,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3023,7 +3023,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3034,7 +3034,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3049,7 +3049,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<ActionsForkPrContributorApproval, BasicError>> actionsGetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsForkPrContributorApproval, BasicError>> actionsGetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3058,7 +3058,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3075,7 +3075,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3086,7 +3086,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3101,7 +3101,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<ActionsForkPrWorkflowsPrivateRepos, BasicError>> actionsGetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsForkPrWorkflowsPrivateRepos, BasicError>> actionsGetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3110,7 +3110,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3127,7 +3127,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3138,7 +3138,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3153,7 +3153,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/permissions/selected-actions`
-Future<ApiResult<SelectedActions, Never>> actionsGetAllowedActionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<SelectedActions, Never>> actionsGetAllowedActionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3162,7 +3162,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return SelectedActions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3176,7 +3176,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/selected-actions`
-Future<ApiResult<void, Never>> actionsSetAllowedActionsRepository({required String owner, required String repo, SelectedActions? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetAllowedActionsRepository({required String owner, required String repo, SelectedActions? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3187,7 +3187,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3201,7 +3201,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/permissions/workflow`
-Future<ApiResult<ActionsGetDefaultWorkflowPermissions, Never>> actionsGetGithubActionsDefaultWorkflowPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGetDefaultWorkflowPermissions, Never>> actionsGetGithubActionsDefaultWorkflowPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3210,7 +3210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGetDefaultWorkflowPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3226,7 +3226,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/workflow`
-Future<ApiResult<void, Never>> actionsSetGithubActionsDefaultWorkflowPermissionsRepository({required String owner, required String repo, required ActionsSetDefaultWorkflowPermissions body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsSetGithubActionsDefaultWorkflowPermissionsRepository({required String owner, required String repo, required ActionsSetDefaultWorkflowPermissions body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3237,7 +3237,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3251,13 +3251,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runners`
-Future<ApiResult<ActionsListSelfHostedRunnersForRepoResponse, Never>> actionsListSelfHostedRunnersForRepo({required String owner, required String repo, String? name, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListSelfHostedRunnersForRepoResponse, Never>> actionsListSelfHostedRunnersForRepo({required String owner, required String repo, String? name, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3268,7 +3268,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListSelfHostedRunnersForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3284,7 +3284,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runners/downloads`
-Future<ApiResult<List<RunnerApplication>, Never>> actionsListRunnerApplicationsForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<RunnerApplication>, Never>> actionsListRunnerApplicationsForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3293,7 +3293,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3310,7 +3310,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig`
-Future<ApiResult<ActionsGenerateRunnerJitconfigForRepoResponse, BasicError>> actionsGenerateRunnerJitconfigForRepo({required String owner, required String repo, required ActionsGenerateRunnerJitconfigForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsGenerateRunnerJitconfigForRepoResponse, BasicError>> actionsGenerateRunnerJitconfigForRepo({required String owner, required String repo, required ActionsGenerateRunnerJitconfigForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3321,7 +3321,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3346,7 +3346,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/registration-token`
-Future<ApiResult<AuthenticationToken, Never>> actionsCreateRegistrationTokenForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRegistrationTokenForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3355,7 +3355,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3377,7 +3377,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/remove-token`
-Future<ApiResult<AuthenticationToken, Never>> actionsCreateRemoveTokenForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRemoveTokenForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3386,7 +3386,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3402,7 +3402,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runners/{runner_id}`
-Future<ApiResult<Runner, Never>> actionsGetSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Runner, Never>> actionsGetSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3411,7 +3411,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Runner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3427,7 +3427,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}`
-Future<ApiResult<void, ValidationErrorSimple>> actionsDeleteSelfHostedRunnerFromRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationErrorSimple>> actionsDeleteSelfHostedRunnerFromRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3436,7 +3436,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3453,7 +3453,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsListLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsListLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsListLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsListLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3462,7 +3462,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3481,7 +3481,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3492,7 +3492,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3512,7 +3512,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3523,7 +3523,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3543,7 +3543,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3552,7 +3552,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3575,7 +3575,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}`
-Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3584,7 +3584,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3605,7 +3605,7 @@ return _execute(
 /// This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs`
-Future<ApiResult<ActionsListWorkflowRunsForRepoResponse, Never>> actionsListWorkflowRunsForRepo({required String owner, required String repo, String? actor, String? branch, String? event, ActionsListWorkflowRunsForRepoStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListWorkflowRunsForRepoResponse, Never>> actionsListWorkflowRunsForRepo({required String owner, required String repo, String? actor, String? branch, String? event, ActionsListWorkflowRunsForRepoStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (actor != null) queryParameters['actor'] = actor;
 if (branch != null) queryParameters['branch'] = branch;
@@ -3618,7 +3618,7 @@ if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excl
 if (checkSuiteId != null) queryParameters['check_suite_id'] = checkSuiteId.toString();
 if (headSha != null) queryParameters['head_sha'] = headSha;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3629,7 +3629,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListWorkflowRunsForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3645,11 +3645,11 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}`
-Future<ApiResult<WorkflowRun, Never>> actionsGetWorkflowRun({required String owner, required String repo, required int runId, bool? excludePullRequests, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<WorkflowRun, Never>> actionsGetWorkflowRun({required String owner, required String repo, required int runId, bool? excludePullRequests, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excludePullRequests.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3660,7 +3660,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkflowRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3676,7 +3676,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/runs/{run_id}`
-Future<ApiResult<void, Never>> actionsDeleteWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3685,7 +3685,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3697,7 +3697,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals`
-Future<ApiResult<List<EnvironmentApprovals>, Never>> actionsGetReviewsForRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<EnvironmentApprovals>, Never>> actionsGetReviewsForRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3706,7 +3706,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3721,7 +3721,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve`
-Future<ApiResult<EmptyObject, BasicError>> actionsApproveWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, BasicError>> actionsApproveWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3730,7 +3730,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3749,14 +3749,14 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts`
-Future<ApiResult<ActionsListWorkflowRunArtifactsResponse, Never>> actionsListWorkflowRunArtifacts({required String owner, required String repo, required int runId, int? perPage, int? page, String? name, ActionsListWorkflowRunArtifactsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListWorkflowRunArtifactsResponse, Never>> actionsListWorkflowRunArtifacts({required String owner, required String repo, required int runId, int? perPage, int? page, String? name, ActionsListWorkflowRunArtifactsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 if (name != null) queryParameters['name'] = name;
 if (direction != null) queryParameters['direction'] = direction.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3767,7 +3767,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListWorkflowRunArtifactsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3783,11 +3783,11 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}`
-Future<ApiResult<WorkflowRun, Never>> actionsGetWorkflowRunAttempt({required String owner, required String repo, required int runId, required int attemptNumber, bool? excludePullRequests, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<WorkflowRun, Never>> actionsGetWorkflowRunAttempt({required String owner, required String repo, required int runId, required int attemptNumber, bool? excludePullRequests, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excludePullRequests.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3798,7 +3798,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkflowRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3815,12 +3815,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint  with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs`
-Future<ApiResult<ActionsListJobsForWorkflowRunAttemptResponse, BasicError>> actionsListJobsForWorkflowRunAttempt({required String owner, required String repo, required int runId, required int attemptNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListJobsForWorkflowRunAttemptResponse, BasicError>> actionsListJobsForWorkflowRunAttempt({required String owner, required String repo, required int runId, required int attemptNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3831,7 +3831,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListJobsForWorkflowRunAttemptResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3851,7 +3851,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs`
-Future<ApiResult<void, Never>> actionsDownloadWorkflowRunAttemptLogs({required String owner, required String repo, required int runId, required int attemptNumber, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDownloadWorkflowRunAttemptLogs({required String owner, required String repo, required int runId, required int attemptNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3860,7 +3860,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3872,7 +3872,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel`
-Future<ApiResult<EmptyObject, BasicError>> actionsCancelWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, BasicError>> actionsCancelWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3881,7 +3881,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3901,7 +3901,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule`
-Future<ApiResult<void, Never>> actionsReviewCustomGatesForRun({required String owner, required String repo, required int runId, required ActionsReviewCustomGatesForRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsReviewCustomGatesForRun({required String owner, required String repo, required int runId, required ActionsReviewCustomGatesForRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3912,7 +3912,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3925,7 +3925,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel`
-Future<ApiResult<EmptyObject, BasicError>> actionsForceCancelWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, BasicError>> actionsForceCancelWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3934,7 +3934,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3954,13 +3954,13 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs`
-Future<ApiResult<ActionsListJobsForWorkflowRunResponse, Never>> actionsListJobsForWorkflowRun({required String owner, required String repo, required int runId, ActionsListJobsForWorkflowRunFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListJobsForWorkflowRunResponse, Never>> actionsListJobsForWorkflowRun({required String owner, required String repo, required int runId, ActionsListJobsForWorkflowRunFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) queryParameters['filter'] = filter.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3971,7 +3971,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListJobsForWorkflowRunResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3988,7 +3988,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs`
-Future<ApiResult<void, Never>> actionsDownloadWorkflowRunLogs({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDownloadWorkflowRunLogs({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3997,7 +3997,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4009,7 +4009,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs`
-Future<ApiResult<void, BasicError>> actionsDeleteWorkflowRunLogs({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> actionsDeleteWorkflowRunLogs({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4018,7 +4018,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -4035,7 +4035,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`
-Future<ApiResult<List<PendingDeployment>, Never>> actionsGetPendingDeploymentsForRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<PendingDeployment>, Never>> actionsGetPendingDeploymentsForRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4044,7 +4044,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4061,7 +4061,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`
-Future<ApiResult<List<Deployment>, Never>> actionsReviewPendingDeploymentsForRun({required String owner, required String repo, required int runId, required ActionsReviewPendingDeploymentsForRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Deployment>, Never>> actionsReviewPendingDeploymentsForRun({required String owner, required String repo, required int runId, required ActionsReviewPendingDeploymentsForRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4072,7 +4072,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4087,7 +4087,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun`
-Future<ApiResult<EmptyObject, Never>> actionsReRunWorkflow({required String owner, required String repo, required int runId, ActionsReRunWorkflowRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsReRunWorkflow({required String owner, required String repo, required int runId, ActionsReRunWorkflowRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4098,7 +4098,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4112,7 +4112,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs`
-Future<ApiResult<EmptyObject, Never>> actionsReRunWorkflowFailedJobs({required String owner, required String repo, required int runId, ActionsReRunWorkflowFailedJobsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsReRunWorkflowFailedJobs({required String owner, required String repo, required int runId, ActionsReRunWorkflowFailedJobsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4123,7 +4123,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4142,7 +4142,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing`
-Future<ApiResult<WorkflowRunUsage, Never>> actionsGetWorkflowRunUsage({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkflowRunUsage, Never>> actionsGetWorkflowRunUsage({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4151,7 +4151,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkflowRunUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4168,12 +4168,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/secrets`
-Future<ApiResult<ActionsListRepoSecretsResponse, Never>> actionsListRepoSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListRepoSecretsResponse, Never>> actionsListRepoSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4184,7 +4184,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListRepoSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4201,7 +4201,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/secrets/public-key`
-Future<ApiResult<ActionsPublicKey, Never>> actionsGetRepoPublicKey({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsPublicKey, Never>> actionsGetRepoPublicKey({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4210,7 +4210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4226,7 +4226,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-Future<ApiResult<ActionsSecret, Never>> actionsGetRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsSecret, Never>> actionsGetRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4235,7 +4235,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4252,7 +4252,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required ActionsCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required ActionsCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4263,7 +4263,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4279,7 +4279,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-Future<ApiResult<void, Never>> actionsDeleteRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4288,7 +4288,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4302,12 +4302,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/variables`
-Future<ApiResult<ActionsListRepoVariablesResponse, Never>> actionsListRepoVariables({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListRepoVariablesResponse, Never>> actionsListRepoVariables({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4318,7 +4318,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListRepoVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4334,7 +4334,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/variables`
-Future<ApiResult<EmptyObject, Never>> actionsCreateRepoVariable({required String owner, required String repo, required ActionsCreateRepoVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsCreateRepoVariable({required String owner, required String repo, required ActionsCreateRepoVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4345,7 +4345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4361,7 +4361,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/variables/{name}`
-Future<ApiResult<ActionsVariable, Never>> actionsGetRepoVariable({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsVariable, Never>> actionsGetRepoVariable({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4370,7 +4370,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4386,7 +4386,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/actions/variables/{name}`
-Future<ApiResult<void, Never>> actionsUpdateRepoVariable({required String owner, required String repo, required String name, required ActionsUpdateRepoVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsUpdateRepoVariable({required String owner, required String repo, required String name, required ActionsUpdateRepoVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4397,7 +4397,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4411,7 +4411,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/variables/{name}`
-Future<ApiResult<void, Never>> actionsDeleteRepoVariable({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteRepoVariable({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4420,7 +4420,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4434,12 +4434,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/workflows`
-Future<ApiResult<ActionsListRepoWorkflowsResponse, Never>> actionsListRepoWorkflows({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListRepoWorkflowsResponse, Never>> actionsListRepoWorkflows({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4450,7 +4450,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListRepoWorkflowsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4467,7 +4467,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}`
-Future<ApiResult<Workflow, Never>> actionsGetWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Workflow, Never>> actionsGetWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4476,7 +4476,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Workflow.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4490,7 +4490,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable`
-Future<ApiResult<void, Never>> actionsDisableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDisableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4499,7 +4499,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4513,7 +4513,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`
-Future<ApiResult<WorkflowDispatchResponse, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkflowDispatchResponse, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4524,7 +4524,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkflowDispatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4538,7 +4538,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable`
-Future<ApiResult<void, Never>> actionsEnableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsEnableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4547,7 +4547,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4563,7 +4563,7 @@ return _execute(
 /// This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
 ///
 /// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs`
-Future<ApiResult<ActionsListWorkflowRunsResponse, Never>> actionsListWorkflowRuns({required String owner, required String repo, required dynamic workflowId, String? actor, String? branch, String? event, ActionsListWorkflowRunsStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListWorkflowRunsResponse, Never>> actionsListWorkflowRuns({required String owner, required String repo, required dynamic workflowId, String? actor, String? branch, String? event, ActionsListWorkflowRunsStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (actor != null) queryParameters['actor'] = actor;
 if (branch != null) queryParameters['branch'] = branch;
@@ -4576,7 +4576,7 @@ if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excl
 if (checkSuiteId != null) queryParameters['check_suite_id'] = checkSuiteId.toString();
 if (headSha != null) queryParameters['head_sha'] = headSha;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4587,7 +4587,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListWorkflowRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4608,7 +4608,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing`
-Future<ApiResult<WorkflowUsage, Never>> actionsGetWorkflowUsage({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkflowUsage, Never>> actionsGetWorkflowUsage({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4617,7 +4617,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkflowUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4634,12 +4634,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/secrets`
-Future<ApiResult<ActionsListEnvironmentSecretsResponse, Never>> actionsListEnvironmentSecrets({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListEnvironmentSecretsResponse, Never>> actionsListEnvironmentSecrets({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4650,7 +4650,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListEnvironmentSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4667,7 +4667,7 @@ return _execute(
 /// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key`
-Future<ApiResult<ActionsPublicKey, Never>> actionsGetEnvironmentPublicKey({required String owner, required String repo, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsPublicKey, Never>> actionsGetEnvironmentPublicKey({required String owner, required String repo, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4676,7 +4676,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4692,7 +4692,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
-Future<ApiResult<ActionsSecret, Never>> actionsGetEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsSecret, Never>> actionsGetEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4701,7 +4701,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4718,7 +4718,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, required ActionsCreateOrUpdateEnvironmentSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, required ActionsCreateOrUpdateEnvironmentSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4729,7 +4729,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4745,7 +4745,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
-Future<ApiResult<void, Never>> actionsDeleteEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4754,7 +4754,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4768,12 +4768,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/variables`
-Future<ApiResult<ActionsListEnvironmentVariablesResponse, Never>> actionsListEnvironmentVariables({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ActionsListEnvironmentVariablesResponse, Never>> actionsListEnvironmentVariables({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4784,7 +4784,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsListEnvironmentVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4800,7 +4800,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/environments/{environment_name}/variables`
-Future<ApiResult<EmptyObject, Never>> actionsCreateEnvironmentVariable({required String owner, required String repo, required String environmentName, required ActionsCreateEnvironmentVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> actionsCreateEnvironmentVariable({required String owner, required String repo, required String environmentName, required ActionsCreateEnvironmentVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4811,7 +4811,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4827,7 +4827,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}`
-Future<ApiResult<ActionsVariable, Never>> actionsGetEnvironmentVariable({required String owner, required String repo, required String environmentName, required String name, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ActionsVariable, Never>> actionsGetEnvironmentVariable({required String owner, required String repo, required String environmentName, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4836,7 +4836,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4852,7 +4852,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}`
-Future<ApiResult<void, Never>> actionsUpdateEnvironmentVariable({required String owner, required String repo, required String name, required String environmentName, required ActionsUpdateEnvironmentVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsUpdateEnvironmentVariable({required String owner, required String repo, required String name, required String environmentName, required ActionsUpdateEnvironmentVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4863,7 +4863,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4877,7 +4877,7 @@ return _execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}`
-Future<ApiResult<void, Never>> actionsDeleteEnvironmentVariable({required String owner, required String repo, required String name, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> actionsDeleteEnvironmentVariable({required String owner, required String repo, required String name, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4886,84 +4886,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

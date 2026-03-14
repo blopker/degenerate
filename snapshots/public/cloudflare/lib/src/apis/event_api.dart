@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class EventApi {const EventApi(this._config);
+final class EventApi with ApiExecutor {const EventApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Filter and list events
 ///
 /// When `datasetId` is unspecified, events will be listed from the `Cloudforce One Threat Events` dataset. To list existing datasets (and their IDs), use the [`List Datasets`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/list/) endpoint). Also, must provide query parameters.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events`
-Future<ApiResult<List<GetEventListGetResponse>, GetEventListGetResponse400>> getEventListGet({required String accountId, String? cursor, List<GetEventListGetSearch>? search, double? page, double? pageSize, String? orderBy, GetEventListGetOrder? order, List<String>? datasetId, bool? forceRefresh, GetEventListGetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<GetEventListGetResponse>, GetEventListGetResponse400>> getEventListGet({required String accountId, String? cursor, List<GetEventListGetSearch>? search, double? page, double? pageSize, String? orderBy, GetEventListGetOrder? order, List<String>? datasetId, bool? forceRefresh, GetEventListGetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) queryParameters['cursor'] = cursor;
 if (search != null) {
@@ -37,7 +37,7 @@ for (final item in datasetId) {
 if (forceRefresh != null) queryParameters['forceRefresh'] = forceRefresh.toString();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -62,13 +62,13 @@ return _execute(
 /// Deletes one or more events
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete`
-Future<ApiResult<double, DeleteEventDeleteResponse400>> deleteEventDelete({required String accountId, required String datasetId, required List<String> eventIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<double, DeleteEventDeleteResponse400>> deleteEventDelete({required String accountId, required String datasetId, required List<String> eventIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in eventIds) {
   queryParametersList.add(ApiQueryParameter(name: 'eventIds', value: item, allowReserved: false));
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -79,7 +79,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return double.parse(response.body);
@@ -92,7 +92,7 @@ return _execute(
 /// Revert an Events Durable Object to a point in time
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/{dataset_id}/revert-do`
-Future<ApiResult<PostEventDoRevertResponse, PostEventDoRevertResponse400>> postEventDoRevert({required String accountId, required String datasetId, PostEventDoRevertRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventDoRevertResponse, PostEventDoRevertResponse400>> postEventDoRevert({required String accountId, required String datasetId, PostEventDoRevertRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,7 +103,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventDoRevertResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -116,7 +116,7 @@ return _execute(
 /// Updates an event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/{event_id}`
-Future<ApiResult<PostEventUpdateResponse, PostEventUpdateResponse400>> postEventUpdate({required String accountId, required String eventId, PostEventUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventUpdateResponse, PostEventUpdateResponse400>> postEventUpdate({required String accountId, required String eventId, PostEventUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,7 +127,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -140,7 +140,7 @@ return _execute(
 /// Updates an event
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}`
-Future<ApiResult<PatchEventUpdateResponse, PatchEventUpdateResponse400>> patchEventUpdate({required String accountId, required String eventId, PatchEventUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchEventUpdateResponse, PatchEventUpdateResponse400>> patchEventUpdate({required String accountId, required String eventId, PatchEventUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -151,7 +151,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PatchEventUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -164,7 +164,7 @@ return _execute(
 /// Reads data for a raw event
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}`
-Future<ApiResult<GetEventRawReadResponse, GetEventRawReadResponse400>> getEventRawRead({required String accountId, required String eventId, required String rawId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetEventRawReadResponse, GetEventRawReadResponse400>> getEventRawRead({required String accountId, required String eventId, required String rawId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -173,7 +173,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetEventRawReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -186,7 +186,7 @@ return _execute(
 /// Updates a raw event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}`
-Future<ApiResult<PostEventRawUpdateResponse, PostEventRawUpdateResponse400>> postEventRawUpdate({required String accountId, required String eventId, required String rawId, PostEventRawUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventRawUpdateResponse, PostEventRawUpdateResponse400>> postEventRawUpdate({required String accountId, required String eventId, required String rawId, PostEventRawUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -197,7 +197,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventRawUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -210,7 +210,7 @@ return _execute(
 /// Updates a raw event
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}`
-Future<ApiResult<PatchEventRawUpdateResponse, PatchEventRawUpdateResponse400>> patchEventRawUpdate({required String accountId, required String eventId, required String rawId, PatchEventRawUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchEventRawUpdateResponse, PatchEventRawUpdateResponse400>> patchEventRawUpdate({required String accountId, required String eventId, required String rawId, PatchEventRawUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -221,7 +221,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PatchEventRawUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -236,7 +236,7 @@ return _execute(
 /// The `event_id` must be defined (to list existing events (and their IDs), use the [`Filter and List Events`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/methods/list/) endpoint). Also, must provide query parameters.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/{event_id}/relationships`
-Future<ApiResult<List<GetEventRelationshipsResponse>, GetEventRelationshipsResponse400>> getEventRelationships({required String accountId, required String eventId, GetEventRelationshipsDirection? direction, double? maxDepth, GetEventRelationshipsRelationshipTypes? relationshipTypes, List<String>? indicatorTypeIds, required String datasetId, bool? includeParent, double? page, double? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<GetEventRelationshipsResponse>, GetEventRelationshipsResponse400>> getEventRelationships({required String accountId, required String eventId, GetEventRelationshipsDirection? direction, double? maxDepth, GetEventRelationshipsRelationshipTypes? relationshipTypes, List<String>? indicatorTypeIds, required String datasetId, bool? includeParent, double? page, double? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) queryParameters['direction'] = direction.toJson();
 if (maxDepth != null) queryParameters['maxDepth'] = maxDepth.toString();
@@ -253,7 +253,7 @@ if (includeParent != null) queryParameters['includeParent'] = includeParent.toSt
 if (page != null) queryParameters['page'] = page.toString();
 if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -264,7 +264,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -280,7 +280,7 @@ return _execute(
 /// Aggregate threat events by one or more columns (e.g., attacker, targetIndustry) with optional date filtering and daily grouping. Supports multi-dimensional aggregation for cross-analysis.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/aggregate`
-Future<ApiResult<GetEventAggregateResponse, GetEventAggregateResponse400>> getEventAggregate({required String accountId, required String aggregateBy, GetEventAggregateDatasetId? datasetId, String? startDate, String? endDate, bool? groupByDate, double? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetEventAggregateResponse, GetEventAggregateResponse400>> getEventAggregate({required String accountId, required String aggregateBy, GetEventAggregateDatasetId? datasetId, String? startDate, String? endDate, bool? groupByDate, double? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['aggregateBy'] = aggregateBy;
 if (datasetId != null) {
@@ -291,7 +291,7 @@ if (endDate != null) queryParameters['endDate'] = endDate;
 if (groupByDate != null) queryParameters['groupByDate'] = groupByDate.toString();
 if (limit != null) queryParameters['limit'] = limit.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -302,7 +302,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetEventAggregateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -317,7 +317,7 @@ return _execute(
 /// To create a dataset, see the [`Create Dataset`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/create/) endpoint. When `datasetId` parameter is unspecified, it will be created in a default dataset named `Cloudforce One Threat Events`.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/create`
-Future<ApiResult<PostEventCreateResponse, PostEventCreateResponse400>> postEventCreate({required String accountId, PostEventCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventCreateResponse, PostEventCreateResponse400>> postEventCreate({required String accountId, PostEventCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -328,7 +328,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -343,7 +343,7 @@ return _execute(
 /// The `datasetId` parameter must be defined. To list existing datasets (and their IDs) in your account, use the [`List Datasets`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/list/) endpoint.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/create/bulk`
-Future<ApiResult<PostEventCreateBulkResponse202, PostEventCreateBulkResponse400>> postEventCreateBulk({required String accountId, PostEventCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventCreateBulkResponse202, PostEventCreateBulkResponse400>> postEventCreateBulk({required String accountId, PostEventCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -354,7 +354,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventCreateBulkResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -369,7 +369,7 @@ return _execute(
 /// Retrieves a specific event by its UUID.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}`
-Future<ApiResult<GetEventReadResponse, GetEventReadResponse404>> getEventRead({required String accountId, required String datasetId, required String eventId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetEventReadResponse, GetEventReadResponse404>> getEventRead({required String accountId, required String datasetId, required String eventId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -378,7 +378,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetEventReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -391,11 +391,11 @@ return _execute(
 /// Moves specified events from one dataset to another dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move`
-Future<ApiResult<double, PostEventMoveToNewDsResponse400>> postEventMoveToNewDs({required String accountId, required String datasetId, bool? keepRawData, PostEventMoveToNewDsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<double, PostEventMoveToNewDsResponse400>> postEventMoveToNewDs({required String accountId, required String datasetId, bool? keepRawData, PostEventMoveToNewDsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (keepRawData != null) queryParameters['keepRawData'] = keepRawData.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -408,7 +408,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return double.parse(response.body);
@@ -421,7 +421,7 @@ return _execute(
 /// Removes a tag from an event
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}`
-Future<ApiResult<DeleteEventTagDeleteResponse, DeleteEventTagDeleteResponse400>> deleteEventTagDelete({required String accountId, required String eventId, DeleteEventTagDeleteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteEventTagDeleteResponse, DeleteEventTagDeleteResponse400>> deleteEventTagDelete({required String accountId, required String eventId, DeleteEventTagDeleteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -432,7 +432,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeleteEventTagDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -445,7 +445,7 @@ return _execute(
 /// Adds a tag to an event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create`
-Future<ApiResult<PostEventTagCreateResponse, PostEventTagCreateResponse400>> postEventTagCreate({required String accountId, required String eventId, PostEventTagCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventTagCreateResponse, PostEventTagCreateResponse400>> postEventTagCreate({required String accountId, required String eventId, PostEventTagCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -456,7 +456,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventTagCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -471,7 +471,7 @@ return _execute(
 /// Retrieve all saved event queries for the account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/queries`
-Future<ApiResult<List<GetEventQueryListResponse>, GetEventQueryListResponse500>> getEventQueryList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<GetEventQueryListResponse>, GetEventQueryListResponse500>> getEventQueryList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -480,7 +480,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -496,7 +496,7 @@ return _execute(
 /// Retrieve a saved event query by its ID
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<GetEventQueryReadResponse, GetEventQueryReadResponse404>> getEventQueryRead({required String accountId, required int queryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetEventQueryReadResponse, GetEventQueryReadResponse404>> getEventQueryRead({required String accountId, required int queryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -505,7 +505,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetEventQueryReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -520,7 +520,7 @@ return _execute(
 /// Update an existing saved event query by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PostEventQueryUpdateResponse, PostEventQueryUpdateResponse400>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventQueryUpdateResponse, PostEventQueryUpdateResponse400>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -531,7 +531,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -546,7 +546,7 @@ return _execute(
 /// Update an existing saved event query by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PatchEventQueryUpdateResponse, PatchEventQueryUpdateResponse400>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchEventQueryUpdateResponse, PatchEventQueryUpdateResponse400>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -557,7 +557,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PatchEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -572,7 +572,7 @@ return _execute(
 /// Delete a saved event query by its ID
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<void, DeleteEventQueryDeleteResponse404>> deleteEventQueryDelete({required String accountId, required int queryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, DeleteEventQueryDeleteResponse404>> deleteEventQueryDelete({required String accountId, required int queryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -581,7 +581,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -594,7 +594,7 @@ return _execute(
 /// Retrieve all event query alerts for the account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/queries/alerts`
-Future<ApiResult<List<GetEventQueryAlertListResponse>, GetEventQueryAlertListResponse500>> getEventQueryAlertList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<GetEventQueryAlertListResponse>, GetEventQueryAlertListResponse500>> getEventQueryAlertList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -603,7 +603,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -619,7 +619,7 @@ return _execute(
 /// Retrieve an event query alert by its ID
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<GetEventQueryAlertReadResponse, GetEventQueryAlertReadResponse404>> getEventQueryAlertRead({required String accountId, required int alertId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetEventQueryAlertReadResponse, GetEventQueryAlertReadResponse404>> getEventQueryAlertRead({required String accountId, required int alertId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -628,7 +628,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetEventQueryAlertReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -643,7 +643,7 @@ return _execute(
 /// Update an existing event query alert by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PostEventQueryAlertUpdateResponse, PostEventQueryAlertUpdateResponse400>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventQueryAlertUpdateResponse, PostEventQueryAlertUpdateResponse400>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -654,7 +654,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -669,7 +669,7 @@ return _execute(
 /// Update an existing event query alert by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PatchEventQueryAlertUpdateResponse, PatchEventQueryAlertUpdateResponse400>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PatchEventQueryAlertUpdateResponse, PatchEventQueryAlertUpdateResponse400>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -680,7 +680,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PatchEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -695,7 +695,7 @@ return _execute(
 /// Delete an event query alert subscription by its ID
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<void, DeleteEventQueryAlertDeleteResponse404>> deleteEventQueryAlertDelete({required String accountId, required int alertId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, DeleteEventQueryAlertDeleteResponse404>> deleteEventQueryAlertDelete({required String accountId, required int alertId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -704,7 +704,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -717,7 +717,7 @@ return _execute(
 /// Create a new alert subscription for an event query
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/alerts/create`
-Future<ApiResult<PostEventQueryAlertCreateResponse, PostEventQueryAlertCreateResponse400>> postEventQueryAlertCreate({required String accountId, PostEventQueryAlertCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventQueryAlertCreateResponse, PostEventQueryAlertCreateResponse400>> postEventQueryAlertCreate({required String accountId, PostEventQueryAlertCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -728,7 +728,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventQueryAlertCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -743,7 +743,7 @@ return _execute(
 /// Create a new saved event query for the account
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/create`
-Future<ApiResult<PostEventQueryCreateResponse, PostEventQueryCreateResponse400>> postEventQueryCreate({required String accountId, PostEventQueryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventQueryCreateResponse, PostEventQueryCreateResponse400>> postEventQueryCreate({required String accountId, PostEventQueryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -754,7 +754,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventQueryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -769,7 +769,7 @@ return _execute(
 /// Retrieves the raw data associated with an event. Searches across all shards in the dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}`
-Future<ApiResult<GetEventRawReadDsResponse, GetEventRawReadDsResponse404>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetEventRawReadDsResponse, GetEventRawReadDsResponse404>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -778,7 +778,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetEventRawReadDsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -791,7 +791,7 @@ return _execute(
 /// Removes an event reference
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/relate/{event_id}`
-Future<ApiResult<DeleteEventReferenceDeleteResponse, DeleteEventReferenceDeleteResponse400>> deleteEventReferenceDelete({required String accountId, required String eventId, DeleteEventReferenceDeleteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteEventReferenceDeleteResponse, DeleteEventReferenceDeleteResponse400>> deleteEventReferenceDelete({required String accountId, required String eventId, DeleteEventReferenceDeleteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -802,7 +802,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeleteEventReferenceDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -815,7 +815,7 @@ return _execute(
 /// Creates event references for a event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create`
-Future<ApiResult<PostEventReferenceCreateResponse, PostEventReferenceCreateResponse400>> postEventReferenceCreate({required String accountId, required String eventId, PostEventReferenceCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventReferenceCreateResponse, PostEventReferenceCreateResponse400>> postEventReferenceCreate({required String accountId, required String eventId, PostEventReferenceCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -826,7 +826,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventReferenceCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -841,7 +841,7 @@ return _execute(
 /// Creates a directed relationship between two events. The relationship is from parent to child with a specified type.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/relationships/create`
-Future<ApiResult<PostCreateEventRelationshipResponse, PostCreateEventRelationshipResponse400>> postCreateEventRelationship({required String accountId, PostCreateEventRelationshipRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostCreateEventRelationshipResponse, PostCreateEventRelationshipResponse400>> postCreateEventRelationship({required String accountId, PostCreateEventRelationshipRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -852,7 +852,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostCreateEventRelationshipResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -867,7 +867,7 @@ return _execute(
 /// Execute GraphQL aggregations over threat events. Supports multi-dimensional group-bys, optional date range filtering, and multi-dataset aggregation.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/v2/events/graphql`
-Future<ApiResult<PostEventGraphQlResponse, PostEventGraphQlResponse400>> postEventGraphQl({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PostEventGraphQlResponse, PostEventGraphQlResponse400>> postEventGraphQl({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -876,7 +876,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PostEventGraphQlResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -885,80 +885,5 @@ return _execute(
     return PostEventGraphQlResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

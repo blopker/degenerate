@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'packa
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class AudioApi {const AudioApi(this._config);
+final class AudioApi with ApiExecutor {const AudioApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Generates audio from the input text.
 /// 
@@ -18,7 +18,7 @@ final ApiConfig _config;
 /// 
 ///
 /// `POST /audio/speech`
-Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,7 +29,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
@@ -43,7 +43,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/transcriptions`
-Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -76,7 +76,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
@@ -86,7 +86,7 @@ return _execute(
 /// Translates audio into English.
 ///
 /// `POST /audio/translations`
-Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -104,7 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
@@ -119,12 +119,12 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents`
-Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -135,7 +135,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return VoiceConsentListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -150,7 +150,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents`
-Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -165,7 +165,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -180,7 +180,7 @@ return _execute(
 /// 
 ///
 /// `GET /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -189,7 +189,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -204,7 +204,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -230,7 +230,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -239,7 +239,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return VoiceConsentDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -254,7 +254,7 @@ return _execute(
 /// 
 ///
 /// `POST /audio/voices`
-Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -269,7 +269,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return VoiceResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -282,7 +282,7 @@ return _execute(
 ///  (streaming)
 ///
 /// `POST /audio/speech`
-Stream<CreateSpeechResponseStreamEvent> createSpeechStream({required CreateSpeechRequest body, RequestOptions? options, }) { final headers = <String, String>{..._config.defaultHeaders};
+Stream<CreateSpeechResponseStreamEvent> createSpeechStream({required CreateSpeechRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -293,7 +293,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _executeStreaming(
+return executeStreaming(
   request,
   onEvent: (data) {
     return OneOf2.parse(jsonDecode(data), fromA: (v) => SpeechAudioDeltaEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => SpeechAudioDoneEvent.fromJson(v as Map<String, dynamic>),);
@@ -307,7 +307,7 @@ return _executeStreaming(
 ///  (streaming)
 ///
 /// `POST /audio/transcriptions`
-Stream<CreateTranscriptionResponseStreamEvent> createTranscriptionStream({required CreateTranscriptionRequest body, RequestOptions? options, }) { final headers = <String, String>{..._config.defaultHeaders};
+Stream<CreateTranscriptionResponseStreamEvent> createTranscriptionStream({required CreateTranscriptionRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -340,145 +340,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _executeStreaming(
+return executeStreaming(
   request,
   onEvent: (data) {
     return OneOf3.parse(jsonDecode(data), fromA: (v) => TranscriptTextSegmentEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextDeltaEvent.fromJson(v as Map<String, dynamic>), fromC: (v) => TranscriptTextDoneEvent.fromJson(v as Map<String, dynamic>),);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
- } 
-/// Streaming execution pipeline: send -> SSE parse -> deserialize.
-Stream<T> _executeStreaming<T>(ApiRequest request, {required T Function(String data) onEvent, }) async*  { final userCancelToken = request.options?.cancelToken;
-if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-final extraHeaders = request.options?.extraHeaders;
-
-final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-    ? CancelToken()
-    : null;
-Timer? timeoutTimer;
-bool timedOut = false;
-
-if (adapterToken != null) {
-  if (userCancelToken != null) {
-    final token = adapterToken;
-    userCancelToken.whenCancelled.then((_) {
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-  if (effectiveTimeout != null) {
-    final token = adapterToken;
-    timeoutTimer = Timer(effectiveTimeout, () {
-      timedOut = true;
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-}
-
-final effectiveRequest = request.copyWith(
-  headers: extraHeaders != null
-      ? {...request.headers, ...extraHeaders}
-      : null,
-  options: RequestOptions(cancelToken: adapterToken),
-);
-
-try {
-  final streamedResponse = await _config.client.sendStreaming(effectiveRequest);
-  timeoutTimer?.cancel();
-
-  if (!streamedResponse.isSuccessful) {
-    final buffered = await streamedResponse.toApiResponse();
-    throw ApiStreamError(
-      statusCode: buffered.statusCode,
-      rawError: buffered.body,
-      headers: buffered.headers,
-    );
-  }
-
-  yield* parseSseStream(streamedResponse.byteStream)
-      .map((event) => onEvent(event.data));
-} on CancelledException {
-  timeoutTimer?.cancel();
-  if (timedOut) {
-    throw TimeoutException('Request timed out', effectiveTimeout);
-  }
-  rethrow;
-}
  } 
  }

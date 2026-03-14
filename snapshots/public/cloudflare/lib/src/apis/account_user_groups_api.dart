@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class AccountUserGroupsApi {const AccountUserGroupsApi(this._config);
+final class AccountUserGroupsApi with ApiExecutor {const AccountUserGroupsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List User Groups
 ///
 /// List all the user groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/user_groups`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, String? fuzzyName, double? page, double? perPage, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, String? fuzzyName, double? page, double? perPage, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) queryParameters['id'] = id.toString();
 if (name != null) queryParameters['name'] = name;
@@ -26,7 +26,7 @@ if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (direction != null) queryParameters['direction'] = direction;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -49,7 +49,7 @@ return _execute(
 /// Create a new user group under the specified account.
 ///
 /// `POST /accounts/{account_id}/iam/user_groups`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCreateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCreateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,7 +60,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -72,7 +72,7 @@ return _execute(
 /// Get information about a specific user group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/user_groups/{user_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -81,7 +81,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -93,7 +93,7 @@ return _execute(
 /// Modify an existing user group.
 ///
 /// `PUT /accounts/{account_id}/iam/user_groups/{user_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamUpdateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamUpdateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,7 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -116,7 +116,7 @@ return _execute(
 /// Remove a user group from an account.
 ///
 /// `DELETE /accounts/{account_id}/iam/user_groups/{user_group_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,7 +125,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -137,12 +137,12 @@ return _execute(
 /// List all the members attached to a user group.
 ///
 /// `GET /accounts/{account_id}/iam/user_groups/{user_group_id}/members`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMemberList({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMemberList({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -153,7 +153,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -165,7 +165,7 @@ return _execute(
 /// Add members to a User Group.
 ///
 /// `POST /accounts/{account_id}/iam/user_groups/{user_group_id}/members`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMemberCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMemberCreateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMemberCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMemberCreateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -176,7 +176,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -188,7 +188,7 @@ return _execute(
 /// Replace the set of members attached to a User Group.
 ///
 /// `PUT /accounts/{account_id}/iam/user_groups/{user_group_id}/members`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMembersUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMembersUpdateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMembersUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMembersUpdateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -199,7 +199,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -211,7 +211,7 @@ return _execute(
 /// Remove a member from User Group
 ///
 /// `DELETE /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMemberDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamCommonComponentsSchemasIdentifier memberId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMemberDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamCommonComponentsSchemasIdentifier memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -220,86 +220,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

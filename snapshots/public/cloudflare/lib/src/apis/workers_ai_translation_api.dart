@@ -8,21 +8,21 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class WorkersAiTranslationApi {const WorkersAiTranslationApi(this._config);
+final class WorkersAiTranslationApi with ApiExecutor {const WorkersAiTranslationApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Execute @cf/ai4bharat/indictrans2-en-indic-1B model.
 ///
 /// Runs inference on the @cf/ai4bharat/indictrans2-en-indic-1B model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/indictrans2-en-indic-1B`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
@@ -50,12 +50,12 @@ return _execute(
 /// Runs inference on the @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/omni-indictrans2-en-indic-1b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
@@ -83,12 +83,12 @@ return _execute(
 /// Runs inference on the @cf/meta/m2m100-1.2b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/m2m100-1.2b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
 if (tags != null) queryParameters['tags'] = tags;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,7 +101,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
@@ -110,80 +110,5 @@ return _execute(
     return WorkersAiPostRunCfMetaM2m10012bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

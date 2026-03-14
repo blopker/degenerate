@@ -11,7 +11,7 @@ factory WorkerEnvironmentPutScriptContentRequest.fromJson(Map<String, dynamic> j
   metadata: WorkerEnvironmentPutScriptContentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
 ); }
 
-/// An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.<br/>Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
+/// An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.`<br/>`Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
 final List<Uint8List>? files;
 
 /// JSON-encoded metadata about the uploaded parts and Worker configuration.

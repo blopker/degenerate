@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class SessionsApi {const SessionsApi(this._config);
+final class SessionsApi with ApiExecutor {const SessionsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Fetch all sessions of an App
 ///
 /// Returns details of all sessions of an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions`
-Future<ApiResult<GetSessionsResponse, Never>> getSessions({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? pageNo, double? perPage, GetSessionsSortBy? sortBy, GetSessionsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, String? participants, GetSessionsStatus? status, String? search, String? associatedId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetSessionsResponse, Never>> getSessions({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? pageNo, double? perPage, GetSessionsSortBy? sortBy, GetSessionsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, String? participants, GetSessionsStatus? status, String? search, String? associatedId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -30,7 +30,7 @@ if (status != null) queryParameters['status'] = status.toJson();
 if (search != null) queryParameters['search'] = search;
 if (associatedId != null) queryParameters['associated_id'] = associatedId;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -41,7 +41,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -53,11 +53,11 @@ return _execute(
 /// Returns data of the given session ID including recording details.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}`
-Future<ApiResult<GetSessionDetailsResponse, Never>> getSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, bool? includeBreakoutRooms, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetSessionDetailsResponse, Never>> getSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, bool? includeBreakoutRooms, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeBreakoutRooms != null) queryParameters['include_breakout_rooms'] = includeBreakoutRooms.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -81,7 +81,7 @@ return _execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/chat`
-Future<ApiResult<GetSessionChatResponse, Never>> getSessionChat({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetSessionChatResponse, Never>> getSessionChat({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,7 +90,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetSessionChatResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -102,7 +102,7 @@ return _execute(
 /// Returns a list of participants for the given session ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants`
-Future<ApiResult<GetSessionParticipantsResponse, Never>> getSessionParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, String? search, double? pageNo, double? perPage, GetSessionParticipantsSortOrder? sortOrder, GetSessionParticipantsSortBy? sortBy, bool? includePeerEvents, GetSessionParticipantsView? view, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetSessionParticipantsResponse, Never>> getSessionParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, String? search, double? pageNo, double? perPage, GetSessionParticipantsSortOrder? sortOrder, GetSessionParticipantsSortBy? sortBy, bool? includePeerEvents, GetSessionParticipantsView? view, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (search != null) queryParameters['search'] = search;
 if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
@@ -112,7 +112,7 @@ if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
 if (includePeerEvents != null) queryParameters['include_peer_events'] = includePeerEvents.toString();
 if (view != null) queryParameters['view'] = view.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,7 +123,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetSessionParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -135,12 +135,12 @@ return _execute(
 /// Returns details of the given participant ID along with call statistics for the given session ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants/{participant_id}`
-Future<ApiResult<GetParticipantDetailsResponse, Never>> getParticipantDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String participantId, required String sessionId, GetParticipantDetailsFilters? filters, bool? includePeerEvents, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetParticipantDetailsResponse, Never>> getParticipantDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String participantId, required String sessionId, GetParticipantDetailsFilters? filters, bool? includePeerEvents, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filters != null) queryParameters['filters'] = filters.toJson();
 if (includePeerEvents != null) queryParameters['include_peer_events'] = includePeerEvents.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -151,7 +151,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetParticipantDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -163,7 +163,7 @@ return _execute(
 /// Returns a Summary URL to download the Summary of Transcripts for the session ID as plain text.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary`
-Future<ApiResult<GetSessionSummaryResponse, Never>> getSessionSummary({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetSessionSummaryResponse, Never>> getSessionSummary({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -172,7 +172,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetSessionSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -184,7 +184,7 @@ return _execute(
 /// Trigger Summary generation of Transcripts for the session ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary`
-Future<ApiResult<void, Never>> postSessionsSessionIdSummary({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> postSessionsSessionIdSummary({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -193,7 +193,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -203,7 +203,7 @@ return _execute(
 /// Returns a URL to download the transcript for the session ID in CSV format.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/transcript`
-Future<ApiResult<GetSessionTranscriptResponse, Never>> getSessionTranscript({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GetSessionTranscriptResponse, Never>> getSessionTranscript({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -212,7 +212,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetSessionTranscriptResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -224,11 +224,11 @@ return _execute(
 /// Returns details of the given peer ID along with call statistics for the given session ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/peer-report/{peer_id}`
-Future<ApiResult<GetParticipantDataFromPeerIdResponse, Never>> getParticipantDataFromPeerId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String peerId, GetParticipantDataFromPeerIdFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GetParticipantDataFromPeerIdResponse, Never>> getParticipantDataFromPeerId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String peerId, GetParticipantDataFromPeerIdFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filters != null) queryParameters['filters'] = filters.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -239,86 +239,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GetParticipantDataFromPeerIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class EmailSecuritySettingsApi {const EmailSecuritySettingsApi(this._config);
+final class EmailSecuritySettingsApi with ApiExecutor {const EmailSecuritySettingsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List email allow policies
 ///
 /// Lists, searches, and sorts an account’s email allow policies.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/allow_policies`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListAllowPolicies({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListAllowPoliciesOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isSender, bool? isTrustedSender, bool? isRecipient, bool? isExemptRecipient, bool? isSpoof, bool? isAcceptableSender, bool? verifySender, EmailSecurityPatternType? patternType, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListAllowPolicies({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListAllowPoliciesOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isSender, bool? isTrustedSender, bool? isRecipient, bool? isExemptRecipient, bool? isSpoof, bool? isAcceptableSender, bool? verifySender, EmailSecurityPatternType? patternType, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -34,7 +34,7 @@ if (verifySender != null) queryParameters['verify_sender'] = verifySender.toStri
 if (patternType != null) queryParameters['pattern_type'] = patternType.toJson();
 if (pattern != null) queryParameters['pattern'] = pattern;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -45,7 +45,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -58,7 +58,7 @@ return _execute(
 /// to bypass security scanning.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/allow_policies`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityCreateAllowPolicy body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityCreateAllowPolicy body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,7 +69,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -82,7 +82,7 @@ return _execute(
 /// and scope.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -91,7 +91,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -103,7 +103,7 @@ return _execute(
 /// Updates an existing email allow policy, modifying its matching criteria or scope.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, required EmailSecurityUpdateAllowPolicy body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, required EmailSecurityUpdateAllowPolicy body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -114,7 +114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -127,7 +127,7 @@ return _execute(
 /// security scanning.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -148,7 +148,7 @@ return _execute(
 /// Send a Batch of Allow Policies API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/allow_policies/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchAllowPolicies({required EmailSecurityAccountId accountId, required EmailSecurityBatchAllowPoliciesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchAllowPolicies({required EmailSecurityAccountId accountId, required EmailSecurityBatchAllowPoliciesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -159,7 +159,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -171,7 +171,7 @@ return _execute(
 /// Lists all blocked sender entries with their patterns and block reasons.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/block_senders`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListBlockedSenders({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListBlockedSendersOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityPatternType? patternType, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListBlockedSenders({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListBlockedSendersOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityPatternType? patternType, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -181,7 +181,7 @@ if (search != null) queryParameters['search'] = search;
 if (patternType != null) queryParameters['pattern_type'] = patternType.toJson();
 if (pattern != null) queryParameters['pattern'] = pattern;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -192,7 +192,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -205,7 +205,7 @@ return _execute(
 /// senders from being delivered.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/block_senders`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityCreateBlockedSender body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityCreateBlockedSender body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -216,7 +216,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -229,7 +229,7 @@ return _execute(
 /// block reason.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -238,7 +238,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -250,7 +250,7 @@ return _execute(
 /// Modifies a blocked sender entry, updating its pattern or block reason.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, required EmailSecurityUpdateBlockedSender body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, required EmailSecurityUpdateBlockedSender body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -261,7 +261,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -274,7 +274,7 @@ return _execute(
 /// normally.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -283,7 +283,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -295,7 +295,7 @@ return _execute(
 /// Send a Batch of Block Senders API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/block_senders/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchBlockedSenders({required EmailSecurityAccountId accountId, required EmailSecurityBatchBlockedSendersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchBlockedSenders({required EmailSecurityAccountId accountId, required EmailSecurityBatchBlockedSendersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -306,7 +306,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -318,7 +318,7 @@ return _execute(
 /// Lists, searches, and sorts an account’s email domains.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityDeliveryMode? allowedDeliveryMode, List<String>? domain, EmailSecurityDeliveryMode? activeDeliveryMode, String? integrationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityDeliveryMode? allowedDeliveryMode, List<String>? domain, EmailSecurityDeliveryMode? activeDeliveryMode, String? integrationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -334,7 +334,7 @@ for (final item in domain) {
 if (activeDeliveryMode != null) queryParameters['active_delivery_mode'] = activeDeliveryMode.toJson();
 if (integrationId != null) queryParameters['integration_id'] = integrationId;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -345,7 +345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -357,7 +357,7 @@ return _execute(
 /// Bulk removes multiple domains from email security configuration in a single request.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomains({required EmailSecurityAccountId accountId, required List<EmailSecurityDeleteDomainsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomains({required EmailSecurityAccountId accountId, required List<EmailSecurityDeleteDomainsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -368,7 +368,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -380,7 +380,7 @@ return _execute(
 /// Gets configuration details for a specific domain in email security.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDomain({required EmailSecurityAccountId accountId, required int domainId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDomain({required EmailSecurityAccountId accountId, required int domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -389,7 +389,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -401,7 +401,7 @@ return _execute(
 /// Updates configuration for a domain in email security.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDomain({required EmailSecurityAccountId accountId, required int domainId, required EmailSecurityUpdateDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDomain({required EmailSecurityAccountId accountId, required int domainId, required EmailSecurityUpdateDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -412,7 +412,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -422,7 +422,7 @@ return _execute(
 /// Unprotect an email domain
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomain({required EmailSecurityAccountId accountId, required int domainId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDomain({required EmailSecurityAccountId accountId, required int domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -431,7 +431,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -443,7 +443,7 @@ return _execute(
 /// Lists, searches, and sorts entries in the impersonation registry.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/impersonation_registry`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDisplayNames({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDisplayNamesOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityListDisplayNamesProvenance? provenance, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDisplayNames({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDisplayNamesOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityListDisplayNamesProvenance? provenance, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -452,7 +452,7 @@ if (direction != null) queryParameters['direction'] = direction.toJson();
 if (search != null) queryParameters['search'] = search;
 if (provenance != null) queryParameters['provenance'] = provenance.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -463,7 +463,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -475,7 +475,7 @@ return _execute(
 /// Creates a display name entry for email security impersonation protection.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/impersonation_registry`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateDisplayName({required EmailSecurityAccountId accountId, required EmailSecurityCreateDisplayName body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateDisplayName({required EmailSecurityAccountId accountId, required EmailSecurityCreateDisplayName body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -486,7 +486,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -498,7 +498,7 @@ return _execute(
 /// Retrieves a display name entry used for impersonation protection.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -507,7 +507,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -519,7 +519,7 @@ return _execute(
 /// Updates a display name entry used for impersonation protection.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, required EmailSecurityUpdateDisplayNameRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, required EmailSecurityUpdateDisplayNameRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -530,7 +530,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -542,7 +542,7 @@ return _execute(
 /// Removes a display name from impersonation protection monitoring.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -551,7 +551,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -563,7 +563,7 @@ return _execute(
 /// Send a Batch of `sending_domain_restrictions` API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/sending_domain_restrictions/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchSendingDomainRestrictions({required EmailSecurityAccountId accountId, required EmailSecurityBatchSendingDomainRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchSendingDomainRestrictions({required EmailSecurityAccountId accountId, required EmailSecurityBatchSendingDomainRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -574,7 +574,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -586,7 +586,7 @@ return _execute(
 /// Lists, searches, and sorts an account’s trusted email domains.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/trusted_domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityListTrustedDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListTrustedDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isRecent, bool? isSimilarity, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityListTrustedDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListTrustedDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isRecent, bool? isSimilarity, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -597,7 +597,7 @@ if (isRecent != null) queryParameters['is_recent'] = isRecent.toString();
 if (isSimilarity != null) queryParameters['is_similarity'] = isSimilarity.toString();
 if (pattern != null) queryParameters['pattern'] = pattern;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -608,7 +608,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -621,7 +621,7 @@ return _execute(
 /// detections.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/trusted_domains`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityCreateTrustedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityCreateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityCreateTrustedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -632,7 +632,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -644,7 +644,7 @@ return _execute(
 /// Gets information about a specific trusted domain entry.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -653,7 +653,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -665,7 +665,7 @@ return _execute(
 /// Modifies a trusted domain entry's configuration.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, required EmailSecurityUpdateTrustedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityUpdateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, required EmailSecurityUpdateTrustedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -676,7 +676,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -689,7 +689,7 @@ return _execute(
 /// scanning.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityDeleteTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -698,7 +698,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -710,7 +710,7 @@ return _execute(
 /// Send a Batch of Trusted Domains API calls to be executed together.
 ///
 /// `POST /accounts/{account_id}/email-security/settings/trusted_domains/batch`
-Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchTrustedDomains({required EmailSecurityAccountId accountId, required EmailSecurityBatchTrustedDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon29, Never>> emailSecurityBatchTrustedDomains({required EmailSecurityAccountId accountId, required EmailSecurityBatchTrustedDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -721,86 +721,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon29.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

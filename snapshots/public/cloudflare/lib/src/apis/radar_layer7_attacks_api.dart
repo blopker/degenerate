@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class RadarLayer7AttacksApi {const RadarLayer7AttacksApi(this._config);
+final class RadarLayer7AttacksApi with ApiExecutor {const RadarLayer7AttacksApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get layer 7 attacks summary by dimension
 ///
 /// Retrieves the distribution of layer 7 attacks by the specified dimension.
 ///
 /// `GET /radar/attacks/layer7/summary/{dimension}`
-Future<ApiResult<RadarGetAttacksLayer7SummaryResponse, RadarGetAttacksLayer7SummaryResponse400>> radarGetAttacksLayer7Summary({required RadarGetAttacksLayer7SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7SummaryIpVersion>? ipVersion, List<RadarGetAttacksLayer7SummaryHttpVersion>? httpVersion, List<RadarGetAttacksLayer7SummaryHttpMethod>? httpMethod, List<RadarGetAttacksLayer7SummaryMitigationProduct>? mitigationProduct, int? limitPerGroup, RadarGetAttacksLayer7SummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer7SummaryResponse, RadarGetAttacksLayer7SummaryResponse400>> radarGetAttacksLayer7Summary({required RadarGetAttacksLayer7SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7SummaryIpVersion>? ipVersion, List<RadarGetAttacksLayer7SummaryHttpVersion>? httpVersion, List<RadarGetAttacksLayer7SummaryHttpMethod>? httpMethod, List<RadarGetAttacksLayer7SummaryMitigationProduct>? mitigationProduct, int? limitPerGroup, RadarGetAttacksLayer7SummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -77,7 +77,7 @@ for (final item in mitigationProduct) {
 if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAttacksLayer7SummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -103,7 +103,7 @@ return _execute(
 /// Retrieves layer 7 attacks over time.
 ///
 /// `GET /radar/attacks/layer7/timeseries`
-Future<ApiResult<RadarGetAttacksLayer7TimeseriesResponse, RadarGetAttacksLayer7TimeseriesResponse400>> radarGetAttacksLayer7Timeseries({RadarGetAttacksLayer7TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetAttacksLayer7TimeseriesNormalization? normalization, List<RadarGetAttacksLayer7TimeseriesIpVersion>? ipVersion, List<RadarGetAttacksLayer7TimeseriesHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TimeseriesHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TimeseriesMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer7TimeseriesResponse, RadarGetAttacksLayer7TimeseriesResponse400>> radarGetAttacksLayer7Timeseries({RadarGetAttacksLayer7TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetAttacksLayer7TimeseriesNormalization? normalization, List<RadarGetAttacksLayer7TimeseriesIpVersion>? ipVersion, List<RadarGetAttacksLayer7TimeseriesHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TimeseriesHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TimeseriesMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -164,7 +164,7 @@ for (final item in mitigationProduct) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -175,7 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAttacksLayer7TimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -190,7 +190,7 @@ return _execute(
 /// Retrieves the distribution of layer 7 attacks grouped by dimension over time.
 ///
 /// `GET /radar/attacks/layer7/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAttacksLayer7TimeseriesGroupResponse, RadarGetAttacksLayer7TimeseriesGroupResponse400>> radarGetAttacksLayer7TimeseriesGroup({required RadarGetAttacksLayer7TimeseriesGroupDimension dimension, RadarGetAttacksLayer7TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TimeseriesGroupIpVersion>? ipVersion, List<RadarGetAttacksLayer7TimeseriesGroupHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TimeseriesGroupHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TimeseriesGroupMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TimeseriesGroupNormalization? normalization, int? limitPerGroup, RadarGetAttacksLayer7TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer7TimeseriesGroupResponse, RadarGetAttacksLayer7TimeseriesGroupResponse400>> radarGetAttacksLayer7TimeseriesGroup({required RadarGetAttacksLayer7TimeseriesGroupDimension dimension, RadarGetAttacksLayer7TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TimeseriesGroupIpVersion>? ipVersion, List<RadarGetAttacksLayer7TimeseriesGroupHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TimeseriesGroupHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TimeseriesGroupMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TimeseriesGroupNormalization? normalization, int? limitPerGroup, RadarGetAttacksLayer7TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
 if (name != null) {
@@ -252,7 +252,7 @@ if (normalization != null) queryParameters['normalization'] = normalization.toJs
 if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -263,7 +263,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAttacksLayer7TimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -278,7 +278,7 @@ return _execute(
 /// Retrieves the top origin autonomous systems of layer 7 attacks. Values are percentages of the total layer 7 attacks, with the origin autonomous systems determined by the client IP address.
 ///
 /// `GET /radar/attacks/layer7/top/ases/origin`
-Future<ApiResult<RadarGetAttacksLayer7TopOriginAsResponse, RadarGetAttacksLayer7TopOriginAsResponse404>> radarGetAttacksLayer7TopOriginAs({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TopOriginAsIpVersion>? ipVersion, List<RadarGetAttacksLayer7TopOriginAsHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TopOriginAsHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TopOriginAsMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopOriginAsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer7TopOriginAsResponse, RadarGetAttacksLayer7TopOriginAsResponse404>> radarGetAttacksLayer7TopOriginAs({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TopOriginAsIpVersion>? ipVersion, List<RadarGetAttacksLayer7TopOriginAsHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TopOriginAsHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TopOriginAsMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopOriginAsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -333,7 +333,7 @@ for (final item in mitigationProduct) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -344,7 +344,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAttacksLayer7TopOriginAsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -359,7 +359,7 @@ return _execute(
 /// Retrieves the top attacks from origin to target location. Values are percentages of the total layer 7 attacks (with billing country). The attack magnitude can be defined by the number of mitigated requests or by the number of zones affected. You can optionally limit the number of attacks by origin/target location (useful if all the top attacks are from or to the same location).
 ///
 /// `GET /radar/attacks/layer7/top/attacks`
-Future<ApiResult<RadarGetAttacksLayer7TopAttacksResponse, RadarGetAttacksLayer7TopAttacksResponse404>> radarGetAttacksLayer7TopAttacks({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TopAttacksMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopAttacksLimitDirection? limitDirection, int? limitPerLocation, RadarGetAttacksLayer7TopAttacksNormalization? normalization, RadarGetAttacksLayer7TopAttacksFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer7TopAttacksResponse, RadarGetAttacksLayer7TopAttacksResponse404>> radarGetAttacksLayer7TopAttacks({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TopAttacksMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopAttacksLimitDirection? limitDirection, int? limitPerLocation, RadarGetAttacksLayer7TopAttacksNormalization? normalization, RadarGetAttacksLayer7TopAttacksFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -407,7 +407,7 @@ if (limitPerLocation != null) queryParameters['limitPerLocation'] = limitPerLoca
 if (normalization != null) queryParameters['normalization'] = normalization.toJson();
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -418,7 +418,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAttacksLayer7TopAttacksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -433,7 +433,7 @@ return _execute(
 /// Retrieves the top origin locations of layer 7 attacks. Values are percentages of the total layer 7 attacks, with the origin location determined by the client IP address.
 ///
 /// `GET /radar/attacks/layer7/top/locations/origin`
-Future<ApiResult<RadarGetAttacksLayer7TopOriginLocationResponse, RadarGetAttacksLayer7TopOriginLocationResponse404>> radarGetAttacksLayer7TopOriginLocation({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? continent, List<RadarGetAttacksLayer7TopOriginLocationIpVersion>? ipVersion, List<RadarGetAttacksLayer7TopOriginLocationHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TopOriginLocationHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TopOriginLocationMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopOriginLocationFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer7TopOriginLocationResponse, RadarGetAttacksLayer7TopOriginLocationResponse404>> radarGetAttacksLayer7TopOriginLocation({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? continent, List<RadarGetAttacksLayer7TopOriginLocationIpVersion>? ipVersion, List<RadarGetAttacksLayer7TopOriginLocationHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TopOriginLocationHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TopOriginLocationMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopOriginLocationFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -488,7 +488,7 @@ for (final item in mitigationProduct) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -499,7 +499,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAttacksLayer7TopOriginLocationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -514,7 +514,7 @@ return _execute(
 /// Retrieves the top target locations of and by layer 7 attacks. Values are a percentage out of the total layer 7 attacks. The target location is determined by the attacked zone's billing country, when available.
 ///
 /// `GET /radar/attacks/layer7/top/locations/target`
-Future<ApiResult<RadarGetAttacksLayer7TopTargetLocationResponse, RadarGetAttacksLayer7TopTargetLocationResponse404>> radarGetAttacksLayer7TopTargetLocation({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? continent, List<RadarGetAttacksLayer7TopTargetLocationMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopTargetLocationFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer7TopTargetLocationResponse, RadarGetAttacksLayer7TopTargetLocationResponse404>> radarGetAttacksLayer7TopTargetLocation({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? continent, List<RadarGetAttacksLayer7TopTargetLocationMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopTargetLocationFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (name != null) {
@@ -549,7 +549,7 @@ for (final item in mitigationProduct) {
 }
 if (format != null) queryParameters['format'] = format.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -560,7 +560,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RadarGetAttacksLayer7TopTargetLocationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -569,80 +569,5 @@ return _execute(
     return RadarGetAttacksLayer7TopTargetLocationResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

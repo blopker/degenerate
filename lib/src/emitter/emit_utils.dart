@@ -416,9 +416,9 @@ String escapeDocComment(String line) {
       // Inside backticks - pass through unchanged.
       buf.write('`${parts[i]}`');
     } else {
-      // Outside backticks - escape bare <word> tags.
+      // Outside backticks - escape bare <...> tags.
       buf.write(
-        parts[i].replaceAllMapped(RegExp(r'<(\w+)>'), (m) => '`<${m[1]}>`'),
+        parts[i].replaceAllMapped(RegExp(r'<([^>]+)>'), (m) => '`<${m[1]}>`'),
       );
     }
   }

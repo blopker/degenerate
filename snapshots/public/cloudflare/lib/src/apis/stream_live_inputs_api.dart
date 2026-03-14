@@ -8,20 +8,20 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class StreamLiveInputsApi {const StreamLiveInputsApi(this._config);
+final class StreamLiveInputsApi with ApiExecutor {const StreamLiveInputsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List live inputs
 ///
 /// Lists the live inputs created for an account. To get the credentials needed to stream to a specific live input, request a single live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListLiveInputs({required StreamSchemasIdentifier accountId, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListLiveInputs({required StreamSchemasIdentifier accountId, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeCounts != null) queryParameters['include_counts'] = includeCounts.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -44,7 +44,7 @@ return _execute(
 /// Creates a live input, and returns credentials that you or your users can use to stream live video to Cloudflare Stream.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateALiveInput({required StreamSchemasIdentifier accountId, required StreamCreateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateALiveInput({required StreamSchemasIdentifier accountId, required StreamCreateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,7 +55,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -67,7 +67,7 @@ return _execute(
 /// Retrieves details of an existing live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsRetrieveALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsRetrieveALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,7 +76,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -88,7 +88,7 @@ return _execute(
 /// Updates a specified live input.
 ///
 /// `PUT /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,7 +99,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -111,7 +111,7 @@ return _execute(
 /// Prevents a live input from being streamed to and makes the live input inaccessible to any future API calls.
 ///
 /// `DELETE /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<void, Never>> streamLiveInputsDeleteALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> streamLiveInputsDeleteALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -120,7 +120,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -130,7 +130,7 @@ return _execute(
 /// Prevents a live input from being streamed to and makes the live input inaccessible to any future API calls until enabled.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/disable`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsDisableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsDisableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -139,7 +139,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -151,7 +151,7 @@ return _execute(
 /// Allows a live input to be streamed to and makes the live input accessible to any future API calls.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/enable`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsEnableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsEnableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -160,7 +160,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -172,7 +172,7 @@ return _execute(
 /// Retrieves all outputs associated with a specified live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -181,7 +181,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -193,7 +193,7 @@ return _execute(
 /// Creates a new output that can be used to simulcast or restream live video to other RTMP or SRT destinations. Outputs are always linked to a specific live input — one live input can have many outputs.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateANewOutputConnectedToALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamCreateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsCreateANewOutputConnectedToALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamCreateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -204,7 +204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -216,7 +216,7 @@ return _execute(
 /// Updates the state of an output.
 ///
 /// `PUT /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsUpdateAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -227,7 +227,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -239,7 +239,7 @@ return _execute(
 /// Deletes an output and removes it from the associated live input.
 ///
 /// `DELETE /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}`
-Future<ApiResult<void, Never>> streamLiveInputsDeleteAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> streamLiveInputsDeleteAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -248,84 +248,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

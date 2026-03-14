@@ -9,6 +9,11 @@
 /// Reading: `switch (v.value) { case String s: ... }`
 library;
 
+String _oneOfError(Object? json, List<(String, Object)> errors) {
+  final variants = errors.map((e) => '  ${e.$1}: ${e.$2}').join('\n');
+  return 'No variant matched for value ($json):\n$variants';
+}
+
 // ─── OneOf2 ──────────────────────────────────────────────────────
 
 sealed class OneOf2<A, B> {
@@ -35,11 +40,18 @@ sealed class OneOf2<A, B> {
   }) {
     if (json is A) return OneOf2A(json);
     if (json is B) return OneOf2B(json);
+    final errors = <(String, Object)>[];
     try {
       return OneOf2A(fromA(json));
-    } catch (_) {
-      return OneOf2B(fromB(json));
+    } catch (e) {
+      errors.add(('$A', e));
     }
+    try {
+      return OneOf2B(fromB(json));
+    } catch (e) {
+      errors.add(('$B', e));
+    }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
@@ -98,14 +110,11 @@ sealed class OneOf3<A, B, C> {
     if (json is A) return OneOf3A(json);
     if (json is B) return OneOf3B(json);
     if (json is C) return OneOf3C(json);
-    try {
-      return OneOf3A(fromA(json));
-    } catch (_) {}
-    try {
-      return OneOf3B(fromB(json));
-    } catch (_) {
-      return OneOf3C(fromC(json));
-    }
+    final errors = <(String, Object)>[];
+    try { return OneOf3A(fromA(json)); } catch (e) { errors.add(('$A', e)); }
+    try { return OneOf3B(fromB(json)); } catch (e) { errors.add(('$B', e)); }
+    try { return OneOf3C(fromC(json)); } catch (e) { errors.add(('$C', e)); }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   Object? toJson() {
@@ -182,17 +191,12 @@ sealed class OneOf4<A, B, C, D> {
     if (json is B) return OneOf4B(json);
     if (json is C) return OneOf4C(json);
     if (json is D) return OneOf4D(json);
-    try {
-      return OneOf4A(fromA(json));
-    } catch (_) {}
-    try {
-      return OneOf4B(fromB(json));
-    } catch (_) {}
-    try {
-      return OneOf4C(fromC(json));
-    } catch (_) {
-      return OneOf4D(fromD(json));
-    }
+    final errors = <(String, Object)>[];
+    try { return OneOf4A(fromA(json)); } catch (e) { errors.add(('$A', e)); }
+    try { return OneOf4B(fromB(json)); } catch (e) { errors.add(('$B', e)); }
+    try { return OneOf4C(fromC(json)); } catch (e) { errors.add(('$C', e)); }
+    try { return OneOf4D(fromD(json)); } catch (e) { errors.add(('$D', e)); }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   Object? toJson() {
@@ -288,12 +292,13 @@ sealed class OneOf5<A, B, C, D, E> {
     if (json is C) return OneOf5C(json);
     if (json is D) return OneOf5D(json);
     if (json is E) return OneOf5E(json);
-    try { return OneOf5A(fromA(json)); } catch (_) {}
-    try { return OneOf5B(fromB(json)); } catch (_) {}
-    try { return OneOf5C(fromC(json)); } catch (_) {}
-    try { return OneOf5D(fromD(json)); } catch (_) {
-      return OneOf5E(fromE(json));
-    }
+    final errors = <(String, Object)>[];
+    try { return OneOf5A(fromA(json)); } catch (e) { errors.add(('$A', e)); }
+    try { return OneOf5B(fromB(json)); } catch (e) { errors.add(('$B', e)); }
+    try { return OneOf5C(fromC(json)); } catch (e) { errors.add(('$C', e)); }
+    try { return OneOf5D(fromD(json)); } catch (e) { errors.add(('$D', e)); }
+    try { return OneOf5E(fromE(json)); } catch (e) { errors.add(('$E', e)); }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   Object? toJson() {
@@ -402,13 +407,14 @@ sealed class OneOf6<A, B, C, D, E, F> {
     if (json is D) return OneOf6D(json);
     if (json is E) return OneOf6E(json);
     if (json is F) return OneOf6F(json);
-    try { return OneOf6A(fromA(json)); } catch (_) {}
-    try { return OneOf6B(fromB(json)); } catch (_) {}
-    try { return OneOf6C(fromC(json)); } catch (_) {}
-    try { return OneOf6D(fromD(json)); } catch (_) {}
-    try { return OneOf6E(fromE(json)); } catch (_) {
-      return OneOf6F(fromF(json));
-    }
+    final errors = <(String, Object)>[];
+    try { return OneOf6A(fromA(json)); } catch (e) { errors.add(('$A', e)); }
+    try { return OneOf6B(fromB(json)); } catch (e) { errors.add(('$B', e)); }
+    try { return OneOf6C(fromC(json)); } catch (e) { errors.add(('$C', e)); }
+    try { return OneOf6D(fromD(json)); } catch (e) { errors.add(('$D', e)); }
+    try { return OneOf6E(fromE(json)); } catch (e) { errors.add(('$E', e)); }
+    try { return OneOf6F(fromF(json)); } catch (e) { errors.add(('$F', e)); }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   Object? toJson() {
@@ -534,14 +540,15 @@ sealed class OneOf7<A, B, C, D, E, F, G> {
     if (json is E) return OneOf7E(json);
     if (json is F) return OneOf7F(json);
     if (json is G) return OneOf7G(json);
-    try { return OneOf7A(fromA(json)); } catch (_) {}
-    try { return OneOf7B(fromB(json)); } catch (_) {}
-    try { return OneOf7C(fromC(json)); } catch (_) {}
-    try { return OneOf7D(fromD(json)); } catch (_) {}
-    try { return OneOf7E(fromE(json)); } catch (_) {}
-    try { return OneOf7F(fromF(json)); } catch (_) {
-      return OneOf7G(fromG(json));
-    }
+    final errors = <(String, Object)>[];
+    try { return OneOf7A(fromA(json)); } catch (e) { errors.add(('$A', e)); }
+    try { return OneOf7B(fromB(json)); } catch (e) { errors.add(('$B', e)); }
+    try { return OneOf7C(fromC(json)); } catch (e) { errors.add(('$C', e)); }
+    try { return OneOf7D(fromD(json)); } catch (e) { errors.add(('$D', e)); }
+    try { return OneOf7E(fromE(json)); } catch (e) { errors.add(('$E', e)); }
+    try { return OneOf7F(fromF(json)); } catch (e) { errors.add(('$F', e)); }
+    try { return OneOf7G(fromG(json)); } catch (e) { errors.add(('$G', e)); }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   Object? toJson() {
@@ -684,15 +691,16 @@ sealed class OneOf8<A, B, C, D, E, F, G, H> {
     if (json is F) return OneOf8F(json);
     if (json is G) return OneOf8G(json);
     if (json is H) return OneOf8H(json);
-    try { return OneOf8A(fromA(json)); } catch (_) {}
-    try { return OneOf8B(fromB(json)); } catch (_) {}
-    try { return OneOf8C(fromC(json)); } catch (_) {}
-    try { return OneOf8D(fromD(json)); } catch (_) {}
-    try { return OneOf8E(fromE(json)); } catch (_) {}
-    try { return OneOf8F(fromF(json)); } catch (_) {}
-    try { return OneOf8G(fromG(json)); } catch (_) {
-      return OneOf8H(fromH(json));
-    }
+    final errors = <(String, Object)>[];
+    try { return OneOf8A(fromA(json)); } catch (e) { errors.add(('$A', e)); }
+    try { return OneOf8B(fromB(json)); } catch (e) { errors.add(('$B', e)); }
+    try { return OneOf8C(fromC(json)); } catch (e) { errors.add(('$C', e)); }
+    try { return OneOf8D(fromD(json)); } catch (e) { errors.add(('$D', e)); }
+    try { return OneOf8E(fromE(json)); } catch (e) { errors.add(('$E', e)); }
+    try { return OneOf8F(fromF(json)); } catch (e) { errors.add(('$F', e)); }
+    try { return OneOf8G(fromG(json)); } catch (e) { errors.add(('$G', e)); }
+    try { return OneOf8H(fromH(json)); } catch (e) { errors.add(('$H', e)); }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   Object? toJson() {
@@ -860,16 +868,17 @@ sealed class OneOf9<A, B, C, D, E, F, G, H, I> {
     if (json is G) return OneOf9G(json);
     if (json is H) return OneOf9H(json);
     if (json is I) return OneOf9I(json);
-    try { return OneOf9A(fromA(json)); } catch (_) {}
-    try { return OneOf9B(fromB(json)); } catch (_) {}
-    try { return OneOf9C(fromC(json)); } catch (_) {}
-    try { return OneOf9D(fromD(json)); } catch (_) {}
-    try { return OneOf9E(fromE(json)); } catch (_) {}
-    try { return OneOf9F(fromF(json)); } catch (_) {}
-    try { return OneOf9G(fromG(json)); } catch (_) {}
-    try { return OneOf9H(fromH(json)); } catch (_) {
-      return OneOf9I(fromI(json));
-    }
+    final errors = <(String, Object)>[];
+    try { return OneOf9A(fromA(json)); } catch (e) { errors.add(('$A', e)); }
+    try { return OneOf9B(fromB(json)); } catch (e) { errors.add(('$B', e)); }
+    try { return OneOf9C(fromC(json)); } catch (e) { errors.add(('$C', e)); }
+    try { return OneOf9D(fromD(json)); } catch (e) { errors.add(('$D', e)); }
+    try { return OneOf9E(fromE(json)); } catch (e) { errors.add(('$E', e)); }
+    try { return OneOf9F(fromF(json)); } catch (e) { errors.add(('$F', e)); }
+    try { return OneOf9G(fromG(json)); } catch (e) { errors.add(('$G', e)); }
+    try { return OneOf9H(fromH(json)); } catch (e) { errors.add(('$H', e)); }
+    try { return OneOf9I(fromI(json)); } catch (e) { errors.add(('$I', e)); }
+    throw ArgumentError(_oneOfError(json, errors));
   }
 
   Object? toJson() {

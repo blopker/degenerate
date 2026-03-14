@@ -8,14 +8,14 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class AssistantsApi {const AssistantsApi(this._config);
+final class AssistantsApi with ApiExecutor {const AssistantsApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Create a thread.
 ///
 /// `POST /threads`
-Future<ApiResult<ThreadObject, Never>> createThread({CreateThreadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ThreadObject, Never>> createThread({CreateThreadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -36,7 +36,7 @@ return _execute(
 /// Create a thread and run it in one request.
 ///
 /// `POST /threads/runs`
-Future<ApiResult<RunObject, Never>> createThreadAndRun({required CreateThreadAndRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunObject, Never>> createThreadAndRun({required CreateThreadAndRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -47,7 +47,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -57,7 +57,7 @@ return _execute(
 /// Retrieves a thread.
 ///
 /// `GET /threads/{thread_id}`
-Future<ApiResult<ThreadObject, Never>> getThread({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ThreadObject, Never>> getThread({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,7 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -76,7 +76,7 @@ return _execute(
 /// Modifies a thread.
 ///
 /// `POST /threads/{thread_id}`
-Future<ApiResult<ThreadObject, Never>> modifyThread({required String threadId, required ModifyThreadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ThreadObject, Never>> modifyThread({required String threadId, required ModifyThreadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,7 +87,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -97,7 +97,7 @@ return _execute(
 /// Delete a thread.
 ///
 /// `DELETE /threads/{thread_id}`
-Future<ApiResult<DeleteThreadResponse, Never>> deleteThread({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteThreadResponse, Never>> deleteThread({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeleteThreadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -116,7 +116,7 @@ return _execute(
 /// Returns a list of messages for a given thread.
 ///
 /// `GET /threads/{thread_id}/messages`
-Future<ApiResult<ListMessagesResponse, Never>> listMessages({required String threadId, int? limit, ListMessagesOrder? order, String? after, String? before, String? runId, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListMessagesResponse, Never>> listMessages({required String threadId, int? limit, ListMessagesOrder? order, String? after, String? before, String? runId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -124,7 +124,7 @@ if (after != null) queryParameters['after'] = after;
 if (before != null) queryParameters['before'] = before;
 if (runId != null) queryParameters['run_id'] = runId;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -135,7 +135,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListMessagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -145,7 +145,7 @@ return _execute(
 /// Create a message.
 ///
 /// `POST /threads/{thread_id}/messages`
-Future<ApiResult<MessageObject, Never>> createMessage({required String threadId, required CreateMessageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MessageObject, Never>> createMessage({required String threadId, required CreateMessageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,7 +156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -166,7 +166,7 @@ return _execute(
 /// Retrieve a message.
 ///
 /// `GET /threads/{thread_id}/messages/{message_id}`
-Future<ApiResult<MessageObject, Never>> getMessage({required String threadId, required String messageId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MessageObject, Never>> getMessage({required String threadId, required String messageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -175,7 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -185,7 +185,7 @@ return _execute(
 /// Modifies a message.
 ///
 /// `POST /threads/{thread_id}/messages/{message_id}`
-Future<ApiResult<MessageObject, Never>> modifyMessage({required String threadId, required String messageId, required ModifyMessageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MessageObject, Never>> modifyMessage({required String threadId, required String messageId, required ModifyMessageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -196,7 +196,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -206,7 +206,7 @@ return _execute(
 /// Deletes a message.
 ///
 /// `DELETE /threads/{thread_id}/messages/{message_id}`
-Future<ApiResult<DeleteMessageResponse, Never>> deleteMessage({required String threadId, required String messageId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeleteMessageResponse, Never>> deleteMessage({required String threadId, required String messageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeleteMessageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -225,14 +225,14 @@ return _execute(
 /// Returns a list of runs belonging to a thread.
 ///
 /// `GET /threads/{thread_id}/runs`
-Future<ApiResult<ListRunsResponse, Never>> listRuns({required String threadId, int? limit, ListRunsOrder? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListRunsResponse, Never>> listRuns({required String threadId, int? limit, ListRunsOrder? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
 if (after != null) queryParameters['after'] = after;
 if (before != null) queryParameters['before'] = before;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -243,7 +243,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -253,7 +253,7 @@ return _execute(
 /// Create a run.
 ///
 /// `POST /threads/{thread_id}/runs`
-Future<ApiResult<RunObject, Never>> createRun({required String threadId, List<CreateRunInclude>? include, required CreateRunRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RunObject, Never>> createRun({required String threadId, List<CreateRunInclude>? include, required CreateRunRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -261,7 +261,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -274,7 +274,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -284,7 +284,7 @@ return _execute(
 /// Retrieves a run.
 ///
 /// `GET /threads/{thread_id}/runs/{run_id}`
-Future<ApiResult<RunObject, Never>> getRun({required String threadId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunObject, Never>> getRun({required String threadId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -293,7 +293,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -303,7 +303,7 @@ return _execute(
 /// Modifies a run.
 ///
 /// `POST /threads/{thread_id}/runs/{run_id}`
-Future<ApiResult<RunObject, Never>> modifyRun({required String threadId, required String runId, required ModifyRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunObject, Never>> modifyRun({required String threadId, required String runId, required ModifyRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -314,7 +314,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -324,7 +324,7 @@ return _execute(
 /// Cancels a run that is `in_progress`.
 ///
 /// `POST /threads/{thread_id}/runs/{run_id}/cancel`
-Future<ApiResult<RunObject, Never>> cancelRun({required String threadId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunObject, Never>> cancelRun({required String threadId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -333,7 +333,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -343,7 +343,7 @@ return _execute(
 /// Returns a list of run steps belonging to a run.
 ///
 /// `GET /threads/{thread_id}/runs/{run_id}/steps`
-Future<ApiResult<ListRunStepsResponse, Never>> listRunSteps({required String threadId, required String runId, int? limit, ListRunStepsOrder? order, String? after, String? before, List<ListRunStepsInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ListRunStepsResponse, Never>> listRunSteps({required String threadId, required String runId, int? limit, ListRunStepsOrder? order, String? after, String? before, List<ListRunStepsInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
@@ -355,7 +355,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -366,7 +366,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ListRunStepsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -376,7 +376,7 @@ return _execute(
 /// Retrieves a run step.
 ///
 /// `GET /threads/{thread_id}/runs/{run_id}/steps/{step_id}`
-Future<ApiResult<RunStepObject, Never>> getRunStep({required String threadId, required String runId, required String stepId, List<GetRunStepInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RunStepObject, Never>> getRunStep({required String threadId, required String runId, required String stepId, List<GetRunStepInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -384,7 +384,7 @@ for (final item in include) {
 }
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -395,7 +395,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunStepObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -406,7 +406,7 @@ return _execute(
 /// 
 ///
 /// `POST /threads/{thread_id}/runs/{run_id}/submit_tool_outputs`
-Future<ApiResult<RunObject, Never>> submitToolOuputsToRun({required String threadId, required String runId, required SubmitToolOutputsRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RunObject, Never>> submitToolOuputsToRun({required String threadId, required String runId, required SubmitToolOutputsRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -417,86 +417,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

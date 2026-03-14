@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ChatApi {const ChatApi(this._config);
+final class ChatApi with ApiExecutor {const ChatApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List stored Chat Completions. Only Chat Completions that have been stored
 /// with the `store` parameter set to `true` will be returned.
 /// 
 ///
 /// `GET /chat/completions`
-Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (model != null) queryParameters['model'] = model;
 if (metadata != null) {
@@ -29,7 +29,7 @@ if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ChatCompletionList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -68,7 +68,7 @@ return _execute(
 /// 
 ///
 /// `POST /chat/completions`
-Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required ModelResponseProperties body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required ModelResponseProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,7 +79,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -91,7 +91,7 @@ return _execute(
 /// 
 ///
 /// `GET /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse, Never>> getChatCompletion({required String completionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreateChatCompletionResponse, Never>> getChatCompletion({required String completionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -100,7 +100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -113,7 +113,7 @@ return _execute(
 /// 
 ///
 /// `POST /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse, Never>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CreateChatCompletionResponse, Never>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,7 +124,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -136,7 +136,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /chat/completions/{completion_id}`
-Future<ApiResult<ChatCompletionDeleted, Never>> deleteChatCompletion({required String completionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ChatCompletionDeleted, Never>> deleteChatCompletion({required String completionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -145,7 +145,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ChatCompletionDeleted.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -158,13 +158,13 @@ return _execute(
 /// 
 ///
 /// `GET /chat/completions/{completion_id}/messages`
-Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) queryParameters['after'] = after;
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (order != null) queryParameters['order'] = order.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -175,7 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ChatCompletionMessageList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -203,7 +203,7 @@ return _execute(
 ///  (streaming)
 ///
 /// `POST /chat/completions`
-Stream<CreateChatCompletionStreamResponse> createChatCompletionStream({required ModelResponseProperties body, RequestOptions? options, }) { final headers = <String, String>{..._config.defaultHeaders};
+Stream<CreateChatCompletionStreamResponse> createChatCompletionStream({required ModelResponseProperties body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -214,145 +214,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _executeStreaming(
+return executeStreaming(
   request,
   onEvent: (data) {
     return CreateChatCompletionStreamResponse.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
- } 
-/// Streaming execution pipeline: send -> SSE parse -> deserialize.
-Stream<T> _executeStreaming<T>(ApiRequest request, {required T Function(String data) onEvent, }) async*  { final userCancelToken = request.options?.cancelToken;
-if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-final extraHeaders = request.options?.extraHeaders;
-
-final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-    ? CancelToken()
-    : null;
-Timer? timeoutTimer;
-bool timedOut = false;
-
-if (adapterToken != null) {
-  if (userCancelToken != null) {
-    final token = adapterToken;
-    userCancelToken.whenCancelled.then((_) {
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-  if (effectiveTimeout != null) {
-    final token = adapterToken;
-    timeoutTimer = Timer(effectiveTimeout, () {
-      timedOut = true;
-      if (!token.isCancelled) token.cancel();
-    });
-  }
-}
-
-final effectiveRequest = request.copyWith(
-  headers: extraHeaders != null
-      ? {...request.headers, ...extraHeaders}
-      : null,
-  options: RequestOptions(cancelToken: adapterToken),
-);
-
-try {
-  final streamedResponse = await _config.client.sendStreaming(effectiveRequest);
-  timeoutTimer?.cancel();
-
-  if (!streamedResponse.isSuccessful) {
-    final buffered = await streamedResponse.toApiResponse();
-    throw ApiStreamError(
-      statusCode: buffered.statusCode,
-      rawError: buffered.body,
-      headers: buffered.headers,
-    );
-  }
-
-  yield* parseSseStream(streamedResponse.byteStream)
-      .map((event) => onEvent(event.data));
-} on CancelledException {
-  timeoutTimer?.cancel();
-  if (timedOut) {
-    throw TimeoutException('Request timed out', effectiveTimeout);
-  }
-  rethrow;
-}
  } 
  }

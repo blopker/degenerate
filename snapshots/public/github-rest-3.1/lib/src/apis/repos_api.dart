@@ -8,9 +8,9 @@ import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'packa
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class ReposApi {const ReposApi(this._config);
+final class ReposApi with ApiExecutor {const ReposApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// List organization repositories
 ///
@@ -20,7 +20,7 @@ final ApiConfig _config;
 /// > In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 ///
 /// `GET /orgs/{org}/repos`
-Future<ApiResult<List<MinimalRepository>, Never>> reposListForOrg({required String org, ReposListForOrgType? type, ReposListForOrgSort? sort, ReposListForOrgDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, Never>> reposListForOrg({required String org, ReposListForOrgType? type, ReposListForOrgSort? sort, ReposListForOrgDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) queryParameters['type'] = type.toJson();
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -28,7 +28,7 @@ if (direction != null) queryParameters['direction'] = direction.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,7 +39,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -54,7 +54,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
 /// `POST /orgs/{org}/repos`
-Future<ApiResult<FullRepository, BasicError>> reposCreateInOrg({required String org, required ReposCreateInOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FullRepository, BasicError>> reposCreateInOrg({required String org, required ReposCreateInOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -80,13 +80,13 @@ return _execute(
 /// Get all the repository rulesets for an organization.
 ///
 /// `GET /orgs/{org}/rulesets`
-Future<ApiResult<List<RepositoryRuleset>, BasicError>> reposGetOrgRulesets({required String org, int? perPage, int? page, String? targets, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RepositoryRuleset>, BasicError>> reposGetOrgRulesets({required String org, int? perPage, int? page, String? targets, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 if (targets != null) queryParameters['targets'] = targets;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -97,7 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -113,7 +113,7 @@ return _execute(
 /// Create a repository ruleset for an organization.
 ///
 /// `POST /orgs/{org}/rulesets`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposCreateOrgRuleset({required String org, required ReposCreateOrgRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, BasicError>> reposCreateOrgRuleset({required String org, required ReposCreateOrgRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,7 +124,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -140,7 +140,7 @@ return _execute(
 /// For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
 ///
 /// `GET /orgs/{org}/rulesets/rule-suites`
-Future<ApiResult<List<RuleSuites2>, BasicError>> reposGetOrgRuleSuites({required String org, String? ref, String? repositoryName, ReposGetOrgRuleSuitesTimePeriod? timePeriod, String? actorName, ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RuleSuites2>, BasicError>> reposGetOrgRuleSuites({required String org, String? ref, String? repositoryName, ReposGetOrgRuleSuitesTimePeriod? timePeriod, String? actorName, ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref;
 if (repositoryName != null) queryParameters['repository_name'] = repositoryName;
@@ -150,7 +150,7 @@ if (ruleSuiteResult != null) queryParameters['rule_suite_result'] = ruleSuiteRes
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -161,7 +161,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -178,7 +178,7 @@ return _execute(
 /// For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
 ///
 /// `GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}`
-Future<ApiResult<RuleSuite, BasicError>> reposGetOrgRuleSuite({required String org, required int ruleSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RuleSuite, BasicError>> reposGetOrgRuleSuite({required String org, required int ruleSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -187,7 +187,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RuleSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -205,7 +205,7 @@ return _execute(
 /// making the API request has write access to the ruleset.
 ///
 /// `GET /orgs/{org}/rulesets/{ruleset_id}`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposGetOrgRuleset({required String org, required int rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, BasicError>> reposGetOrgRuleset({required String org, required int rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -214,7 +214,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -229,7 +229,7 @@ return _execute(
 /// Update a ruleset for an organization.
 ///
 /// `PUT /orgs/{org}/rulesets/{ruleset_id}`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposUpdateOrgRuleset({required String org, required int rulesetId, ReposUpdateOrgRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, BasicError>> reposUpdateOrgRuleset({required String org, required int rulesetId, ReposUpdateOrgRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -240,7 +240,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -255,7 +255,7 @@ return _execute(
 /// Delete a ruleset for an organization.
 ///
 /// `DELETE /orgs/{org}/rulesets/{ruleset_id}`
-Future<ApiResult<void, BasicError>> reposDeleteOrgRuleset({required String org, required int rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteOrgRuleset({required String org, required int rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -264,7 +264,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -281,7 +281,7 @@ return _execute(
 /// > - To view merge-related settings, you must have the `contents:read` and `contents:write` permissions.
 ///
 /// `GET /repos/{owner}/{repo}`
-Future<ApiResult<FullRepository, BasicError>> reposGet({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FullRepository, BasicError>> reposGet({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -290,7 +290,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -305,7 +305,7 @@ return _execute(
 /// **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}`
-Future<ApiResult<FullRepository, BasicError>> reposUpdate({required String owner, required String repo, ReposUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FullRepository, BasicError>> reposUpdate({required String owner, required String repo, ReposUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -316,7 +316,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -336,7 +336,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `delete_repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}`
-Future<ApiResult<void, ReposDeleteResponse403>> reposDelete({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ReposDeleteResponse403>> reposDelete({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -345,7 +345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -361,7 +361,7 @@ return _execute(
 /// see "[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository)."
 ///
 /// `GET /repos/{owner}/{repo}/activity`
-Future<ApiResult<List<Activity>, ValidationErrorSimple>> reposListActivities({required String owner, required String repo, ReposListActivitiesDirection? direction, int? perPage, String? before, String? after, String? ref, String? actor, ReposListActivitiesTimePeriod? timePeriod, ReposListActivitiesActivityType? activityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Activity>, ValidationErrorSimple>> reposListActivities({required String owner, required String repo, ReposListActivitiesDirection? direction, int? perPage, String? before, String? after, String? ref, String? actor, ReposListActivitiesTimePeriod? timePeriod, ReposListActivitiesActivityType? activityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) queryParameters['direction'] = direction.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
@@ -372,7 +372,7 @@ if (actor != null) queryParameters['actor'] = actor;
 if (timePeriod != null) queryParameters['time_period'] = timePeriod.toJson();
 if (activityType != null) queryParameters['activity_type'] = activityType.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -383,7 +383,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -403,7 +403,7 @@ return _execute(
 /// Artifact attestations are meant to be created using the [attest action](https://github.com/actions/attest). For more information, see our guide on [using artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `POST /repos/{owner}/{repo}/attestations`
-Future<ApiResult<ReposCreateAttestationResponse, BasicError>> reposCreateAttestation({required String owner, required String repo, required ReposCreateAttestationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ReposCreateAttestationResponse, BasicError>> reposCreateAttestation({required String owner, required String repo, required ReposCreateAttestationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -414,7 +414,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposCreateAttestationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -433,14 +433,14 @@ return _execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `GET /repos/{owner}/{repo}/attestations/{subject_digest}`
-Future<ApiResult<ReposListAttestationsResponse, Never>> reposListAttestations({required String owner, required String repo, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReposListAttestationsResponse, Never>> reposListAttestations({required String owner, required String repo, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (before != null) queryParameters['before'] = before;
 if (after != null) queryParameters['after'] = after;
 if (predicateType != null) queryParameters['predicate_type'] = predicateType;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -451,7 +451,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposListAttestationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -465,7 +465,7 @@ return _execute(
 /// Information about autolinks are only available to repository administrators.
 ///
 /// `GET /repos/{owner}/{repo}/autolinks`
-Future<ApiResult<List<Autolink>, Never>> reposListAutolinks({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Autolink>, Never>> reposListAutolinks({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -474,7 +474,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -487,7 +487,7 @@ return _execute(
 /// Users with admin access to the repository can create an autolink.
 ///
 /// `POST /repos/{owner}/{repo}/autolinks`
-Future<ApiResult<Autolink, ValidationError>> reposCreateAutolink({required String owner, required String repo, required ReposCreateAutolinkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Autolink, ValidationError>> reposCreateAutolink({required String owner, required String repo, required ReposCreateAutolinkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -498,7 +498,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Autolink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -515,7 +515,7 @@ return _execute(
 /// Information about autolinks are only available to repository administrators.
 ///
 /// `GET /repos/{owner}/{repo}/autolinks/{autolink_id}`
-Future<ApiResult<Autolink, BasicError>> reposGetAutolink({required String owner, required String repo, required int autolinkId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Autolink, BasicError>> reposGetAutolink({required String owner, required String repo, required int autolinkId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -524,7 +524,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Autolink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -541,7 +541,7 @@ return _execute(
 /// Information about autolinks are only available to repository administrators.
 ///
 /// `DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}`
-Future<ApiResult<void, BasicError>> reposDeleteAutolink({required String owner, required String repo, required int autolinkId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteAutolink({required String owner, required String repo, required int autolinkId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -550,7 +550,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -563,7 +563,7 @@ return _execute(
 /// Shows whether Dependabot security updates are enabled, disabled or paused for a repository. The authenticated user must have admin read access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 ///
 /// `GET /repos/{owner}/{repo}/automated-security-fixes`
-Future<ApiResult<CheckAutomatedSecurityFixes, Never>> reposCheckAutomatedSecurityFixes({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckAutomatedSecurityFixes, Never>> reposCheckAutomatedSecurityFixes({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -572,7 +572,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CheckAutomatedSecurityFixes.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -584,7 +584,7 @@ return _execute(
 /// Enables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 ///
 /// `PUT /repos/{owner}/{repo}/automated-security-fixes`
-Future<ApiResult<void, Never>> reposEnableAutomatedSecurityFixes({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposEnableAutomatedSecurityFixes({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -593,7 +593,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -603,7 +603,7 @@ return _execute(
 /// Disables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 ///
 /// `DELETE /repos/{owner}/{repo}/automated-security-fixes`
-Future<ApiResult<void, Never>> reposDisableAutomatedSecurityFixes({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDisableAutomatedSecurityFixes({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -612,7 +612,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -622,13 +622,13 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/branches`
-Future<ApiResult<List<ShortBranch>, BasicError>> reposListBranches({required String owner, required String repo, bool? protected, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<ShortBranch>, BasicError>> reposListBranches({required String owner, required String repo, bool? protected, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (protected != null) queryParameters['protected'] = protected.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -639,7 +639,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -655,7 +655,7 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}`
-Future<ApiResult<BranchWithProtection, BasicError>> reposGetBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<BranchWithProtection, BasicError>> reposGetBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -664,7 +664,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BranchWithProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -679,7 +679,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection`
-Future<ApiResult<BranchProtection, BasicError>> reposGetBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<BranchProtection, BasicError>> reposGetBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -688,7 +688,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BranchProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -711,7 +711,7 @@ return _execute(
 /// > The list of users, apps, and teams in total is limited to 100 items.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection`
-Future<ApiResult<ProtectedBranch, BasicError>> reposUpdateBranchProtection({required String owner, required String repo, required String branch, required ReposUpdateBranchProtectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProtectedBranch, BasicError>> reposUpdateBranchProtection({required String owner, required String repo, required String branch, required ReposUpdateBranchProtectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -722,7 +722,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProtectedBranch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -737,7 +737,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection`
-Future<ApiResult<void, BasicError>> reposDeleteBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -746,7 +746,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -759,7 +759,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins`
-Future<ApiResult<ProtectedBranchAdminEnforced, Never>> reposGetAdminBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProtectedBranchAdminEnforced, Never>> reposGetAdminBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -768,7 +768,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -782,7 +782,7 @@ return _execute(
 /// Adding admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins`
-Future<ApiResult<ProtectedBranchAdminEnforced, Never>> reposSetAdminBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProtectedBranchAdminEnforced, Never>> reposSetAdminBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -791,7 +791,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -805,7 +805,7 @@ return _execute(
 /// Removing admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins`
-Future<ApiResult<void, BasicError>> reposDeleteAdminBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteAdminBranchProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -814,7 +814,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -827,7 +827,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews`
-Future<ApiResult<ProtectedBranchPullRequestReview, Never>> reposGetPullRequestReviewProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProtectedBranchPullRequestReview, Never>> reposGetPullRequestReviewProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -836,7 +836,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchPullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -853,7 +853,7 @@ return _execute(
 /// > Passing new arrays of `users` and `teams` replaces their previous values.
 ///
 /// `PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews`
-Future<ApiResult<ProtectedBranchPullRequestReview, ValidationError>> reposUpdatePullRequestReviewProtection({required String owner, required String repo, required String branch, ReposUpdatePullRequestReviewProtectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProtectedBranchPullRequestReview, ValidationError>> reposUpdatePullRequestReviewProtection({required String owner, required String repo, required String branch, ReposUpdatePullRequestReviewProtectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -864,7 +864,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchPullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -879,7 +879,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews`
-Future<ApiResult<void, BasicError>> reposDeletePullRequestReviewProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeletePullRequestReviewProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -888,7 +888,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -906,7 +906,7 @@ return _execute(
 /// > You must enable branch protection to require signed commits.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures`
-Future<ApiResult<ProtectedBranchAdminEnforced, BasicError>> reposGetCommitSignatureProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProtectedBranchAdminEnforced, BasicError>> reposGetCommitSignatureProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -915,7 +915,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -932,7 +932,7 @@ return _execute(
 /// When authenticated with admin or owner permissions to the repository, you can use this endpoint to require signed commits on a branch. You must enable branch protection to require signed commits.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures`
-Future<ApiResult<ProtectedBranchAdminEnforced, BasicError>> reposCreateCommitSignatureProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ProtectedBranchAdminEnforced, BasicError>> reposCreateCommitSignatureProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -941,7 +941,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -958,7 +958,7 @@ return _execute(
 /// When authenticated with admin or owner permissions to the repository, you can use this endpoint to disable required signed commits on a branch. You must enable branch protection to require signed commits.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures`
-Future<ApiResult<void, BasicError>> reposDeleteCommitSignatureProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteCommitSignatureProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -967,7 +967,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -980,7 +980,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks`
-Future<ApiResult<StatusCheckPolicy, BasicError>> reposGetStatusChecksProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<StatusCheckPolicy, BasicError>> reposGetStatusChecksProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -989,7 +989,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return StatusCheckPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1006,7 +1006,7 @@ return _execute(
 /// Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
 ///
 /// `PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks`
-Future<ApiResult<StatusCheckPolicy, BasicError>> reposUpdateStatusCheckProtection({required String owner, required String repo, required String branch, ReposUpdateStatusCheckProtectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<StatusCheckPolicy, BasicError>> reposUpdateStatusCheckProtection({required String owner, required String repo, required String branch, ReposUpdateStatusCheckProtectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1017,7 +1017,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return StatusCheckPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1032,7 +1032,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks`
-Future<ApiResult<void, Never>> reposRemoveStatusCheckProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposRemoveStatusCheckProtection({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1041,7 +1041,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1051,7 +1051,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts`
-Future<ApiResult<List<String>, BasicError>> reposGetAllStatusCheckContexts({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<String>, BasicError>> reposGetAllStatusCheckContexts({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1060,7 +1060,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1076,7 +1076,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts`
-Future<ApiResult<List<String>, ValidationError>> reposAddStatusCheckContexts({required String owner, required String repo, required String branch, ReposAddStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<String>, ValidationError>> reposAddStatusCheckContexts({required String owner, required String repo, required String branch, ReposAddStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1087,7 +1087,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1103,7 +1103,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts`
-Future<ApiResult<List<String>, ValidationError>> reposSetStatusCheckContexts({required String owner, required String repo, required String branch, ReposSetStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<String>, ValidationError>> reposSetStatusCheckContexts({required String owner, required String repo, required String branch, ReposSetStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1114,7 +1114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1130,7 +1130,7 @@ return _execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts`
-Future<ApiResult<List<String>, BasicError>> reposRemoveStatusCheckContexts({required String owner, required String repo, required String branch, ReposRemoveStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<String>, BasicError>> reposRemoveStatusCheckContexts({required String owner, required String repo, required String branch, ReposRemoveStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1141,7 +1141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1162,7 +1162,7 @@ return _execute(
 /// > Users, apps, and teams `restrictions` are only available for organization-owned repositories.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions`
-Future<ApiResult<BranchRestrictionPolicy, BasicError>> reposGetAccessRestrictions({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<BranchRestrictionPolicy, BasicError>> reposGetAccessRestrictions({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1171,7 +1171,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BranchRestrictionPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1188,7 +1188,7 @@ return _execute(
 /// Disables the ability to restrict who can push to this branch.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions`
-Future<ApiResult<void, Never>> reposDeleteAccessRestrictions({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDeleteAccessRestrictions({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1197,7 +1197,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1209,7 +1209,7 @@ return _execute(
 /// Lists the GitHub Apps that have push access to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, BasicError>> reposGetAppsWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Integration>, BasicError>> reposGetAppsWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1218,7 +1218,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1236,7 +1236,7 @@ return _execute(
 /// Grants the specified apps push access for this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, ValidationError>> reposAddAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposAddAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Integration>, ValidationError>> reposAddAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposAddAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1247,7 +1247,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1265,7 +1265,7 @@ return _execute(
 /// Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, ValidationError>> reposSetAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposSetAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Integration>, ValidationError>> reposSetAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposSetAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1276,7 +1276,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1294,7 +1294,7 @@ return _execute(
 /// Removes the ability of an app to push to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps`
-Future<ApiResult<List<Integration>, ValidationError>> reposRemoveAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposRemoveAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Integration>, ValidationError>> reposRemoveAppAccessRestrictions({required String owner, required String repo, required String branch, required ReposRemoveAppAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1305,7 +1305,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1323,7 +1323,7 @@ return _execute(
 /// Lists the teams who have push access to this branch. The list includes child teams.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams`
-Future<ApiResult<List<Team>, BasicError>> reposGetTeamsWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Team>, BasicError>> reposGetTeamsWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1332,7 +1332,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1350,7 +1350,7 @@ return _execute(
 /// Grants the specified teams push access for this branch. You can also give push access to child teams.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams`
-Future<ApiResult<List<Team>, ValidationError>> reposAddTeamAccessRestrictions({required String owner, required String repo, required String branch, ReposAddTeamAccessRestrictionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Team>, ValidationError>> reposAddTeamAccessRestrictions({required String owner, required String repo, required String branch, ReposAddTeamAccessRestrictionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1361,7 +1361,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1379,7 +1379,7 @@ return _execute(
 /// Replaces the list of teams that have push access to this branch. This removes all teams that previously had push access and grants push access to the new list of teams. Team restrictions include child teams.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams`
-Future<ApiResult<List<Team>, ValidationError>> reposSetTeamAccessRestrictions({required String owner, required String repo, required String branch, ReposSetTeamAccessRestrictionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Team>, ValidationError>> reposSetTeamAccessRestrictions({required String owner, required String repo, required String branch, ReposSetTeamAccessRestrictionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1390,7 +1390,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1408,7 +1408,7 @@ return _execute(
 /// Removes the ability of a team to push to this branch. You can also remove push access for child teams.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams`
-Future<ApiResult<List<Team>, ValidationError>> reposRemoveTeamAccessRestrictions({required String owner, required String repo, required String branch, ReposRemoveTeamAccessRestrictionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<Team>, ValidationError>> reposRemoveTeamAccessRestrictions({required String owner, required String repo, required String branch, ReposRemoveTeamAccessRestrictionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1419,7 +1419,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1437,7 +1437,7 @@ return _execute(
 /// Lists the people who have push access to this branch.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users`
-Future<ApiResult<List<SimpleUser>, BasicError>> reposGetUsersWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<SimpleUser>, BasicError>> reposGetUsersWithAccessToProtectedBranch({required String owner, required String repo, required String branch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1446,7 +1446,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1468,7 +1468,7 @@ return _execute(
 /// | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users`
-Future<ApiResult<List<SimpleUser>, ValidationError>> reposAddUserAccessRestrictions({required String owner, required String repo, required String branch, required ReposAddUserAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<SimpleUser>, ValidationError>> reposAddUserAccessRestrictions({required String owner, required String repo, required String branch, required ReposAddUserAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1479,7 +1479,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1501,7 +1501,7 @@ return _execute(
 /// | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users`
-Future<ApiResult<List<SimpleUser>, ValidationError>> reposSetUserAccessRestrictions({required String owner, required String repo, required String branch, required ReposSetUserAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<SimpleUser>, ValidationError>> reposSetUserAccessRestrictions({required String owner, required String repo, required String branch, required ReposSetUserAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1512,7 +1512,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1534,7 +1534,7 @@ return _execute(
 /// | `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users`
-Future<ApiResult<List<SimpleUser>, ValidationError>> reposRemoveUserAccessRestrictions({required String owner, required String repo, required String branch, required ReposRemoveUserAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<SimpleUser>, ValidationError>> reposRemoveUserAccessRestrictions({required String owner, required String repo, required String branch, required ReposRemoveUserAccessRestrictionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1545,7 +1545,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1568,7 +1568,7 @@ return _execute(
 /// In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/rename`
-Future<ApiResult<BranchWithProtection, BasicError>> reposRenameBranch({required String owner, required String repo, required String branch, required ReposRenameBranchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<BranchWithProtection, BasicError>> reposRenameBranch({required String owner, required String repo, required String branch, required ReposRenameBranchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1579,7 +1579,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return BranchWithProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1598,11 +1598,11 @@ return _execute(
 /// see "[About code owners](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)."
 ///
 /// `GET /repos/{owner}/{repo}/codeowners/errors`
-Future<ApiResult<CodeownersErrors, Never>> reposCodeownersErrors({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CodeownersErrors, Never>> reposCodeownersErrors({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1613,7 +1613,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CodeownersErrors.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1632,14 +1632,14 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` and `repo` scopes to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/collaborators`
-Future<ApiResult<List<Collaborator>, BasicError>> reposListCollaborators({required String owner, required String repo, ReposListCollaboratorsAffiliation? affiliation, ReposListCollaboratorsPermission? permission, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Collaborator>, BasicError>> reposListCollaborators({required String owner, required String repo, ReposListCollaboratorsAffiliation? affiliation, ReposListCollaboratorsPermission? permission, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (affiliation != null) queryParameters['affiliation'] = affiliation.toJson();
 if (permission != null) queryParameters['permission'] = permission.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1650,7 +1650,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1672,7 +1672,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` and `repo` scopes to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/collaborators/{username}`
-Future<ApiResult<void, Never>> reposCheckCollaborator({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposCheckCollaborator({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1681,7 +1681,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -1715,7 +1715,7 @@ return _execute(
 /// You are limited to sending 50 invitations to a repository per 24 hour period. Note there is no limit if you are inviting organization members to an organization repository.
 ///
 /// `PUT /repos/{owner}/{repo}/collaborators/{username}`
-Future<ApiResult<RepositoryInvitation, ValidationError>> reposAddCollaborator({required String owner, required String repo, required String username, ReposAddCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryInvitation, ValidationError>> reposAddCollaborator({required String owner, required String repo, required String username, ReposAddCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1726,7 +1726,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1762,7 +1762,7 @@ return _execute(
 /// For more information on fork permissions, see "[About permissions and visibility of forks](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)".
 ///
 /// `DELETE /repos/{owner}/{repo}/collaborators/{username}`
-Future<ApiResult<void, ValidationError>> reposRemoveCollaborator({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationError>> reposRemoveCollaborator({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1771,7 +1771,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1792,7 +1792,7 @@ return _execute(
 /// There is presently not a way to differentiate between an organization level grant and a repository level grant from this endpoint response.
 ///
 /// `GET /repos/{owner}/{repo}/collaborators/{username}/permission`
-Future<ApiResult<RepositoryCollaboratorPermission, BasicError>> reposGetCollaboratorPermissionLevel({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryCollaboratorPermission, BasicError>> reposGetCollaboratorPermissionLevel({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1801,7 +1801,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryCollaboratorPermission.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1823,12 +1823,12 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/comments`
-Future<ApiResult<List<CommitComment>, Never>> reposListCommitCommentsForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<CommitComment>, Never>> reposListCommitCommentsForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1839,7 +1839,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -1859,7 +1859,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/comments/{comment_id}`
-Future<ApiResult<CommitComment, BasicError>> reposGetCommitComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CommitComment, BasicError>> reposGetCommitComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1868,7 +1868,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1890,7 +1890,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/comments/{comment_id}`
-Future<ApiResult<CommitComment, BasicError>> reposUpdateCommitComment({required String owner, required String repo, required int commentId, required ReposUpdateCommitCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CommitComment, BasicError>> reposUpdateCommitComment({required String owner, required String repo, required int commentId, required ReposUpdateCommitCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1901,7 +1901,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1916,7 +1916,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /repos/{owner}/{repo}/comments/{comment_id}`
-Future<ApiResult<void, BasicError>> reposDeleteCommitComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteCommitComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1925,7 +1925,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -1966,7 +1966,7 @@ return _execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/commits`
-Future<ApiResult<List<Commit>, BasicError>> reposListCommits({required String owner, required String repo, String? sha, String? path, String? author, String? committer, DateTime? since, DateTime? until, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Commit>, BasicError>> reposListCommits({required String owner, required String repo, String? sha, String? path, String? author, String? committer, DateTime? since, DateTime? until, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sha != null) queryParameters['sha'] = sha;
 if (path != null) queryParameters['path'] = path;
@@ -1977,7 +1977,7 @@ if (until != null) queryParameters['until'] = until.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1988,7 +1988,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2006,7 +2006,7 @@ return _execute(
 /// Returns all branches where the given commit SHA is the HEAD, or latest commit for the branch.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head`
-Future<ApiResult<List<BranchShort>, ValidationError>> reposListBranchesForHeadCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<BranchShort>, ValidationError>> reposListBranchesForHeadCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2015,7 +2015,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2038,12 +2038,12 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{commit_sha}/comments`
-Future<ApiResult<List<CommitComment>, Never>> reposListCommentsForCommit({required String owner, required String repo, required String commitSha, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<CommitComment>, Never>> reposListCommentsForCommit({required String owner, required String repo, required String commitSha, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2054,7 +2054,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2076,7 +2076,7 @@ return _execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/commits/{commit_sha}/comments`
-Future<ApiResult<CommitComment, BasicError>> reposCreateCommitComment({required String owner, required String repo, required String commitSha, required ReposCreateCommitCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CommitComment, BasicError>> reposCreateCommitComment({required String owner, required String repo, required String commitSha, required ReposCreateCommitCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2087,7 +2087,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2104,12 +2104,12 @@ return _execute(
 /// To list the open or merged pull requests associated with a branch, you can set the `commit_sha` parameter to the branch name.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls`
-Future<ApiResult<List<PullRequestSimple>, BasicError>> reposListPullRequestsAssociatedWithCommit({required String owner, required String repo, required String commitSha, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PullRequestSimple>, BasicError>> reposListPullRequestsAssociatedWithCommit({required String owner, required String repo, required String commitSha, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2120,7 +2120,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2175,12 +2175,12 @@ return _execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}`
-Future<ApiResult<Commit, ValidationError>> reposGetCommit({required String owner, required String repo, required String ref, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Commit, ValidationError>> reposGetCommit({required String owner, required String repo, required String ref, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2191,7 +2191,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2213,12 +2213,12 @@ return _execute(
 /// *   **success** if the latest status for all contexts is `success`
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}/status`
-Future<ApiResult<CombinedCommitStatus, BasicError>> reposGetCombinedStatusForRef({required String owner, required String repo, required String ref, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CombinedCommitStatus, BasicError>> reposGetCombinedStatusForRef({required String owner, required String repo, required String ref, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2229,7 +2229,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CombinedCommitStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2246,12 +2246,12 @@ return _execute(
 /// This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}/statuses`
-Future<ApiResult<List<Status>, Never>> reposListCommitStatusesForRef({required String owner, required String repo, required String ref, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Status>, Never>> reposListCommitStatusesForRef({required String owner, required String repo, required String ref, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2262,7 +2262,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2285,7 +2285,7 @@ return _execute(
 /// `content_reports_enabled` is only returned for organization-owned repositories.
 ///
 /// `GET /repos/{owner}/{repo}/community/profile`
-Future<ApiResult<CommunityProfile, Never>> reposGetCommunityProfileMetrics({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CommunityProfile, Never>> reposGetCommunityProfileMetrics({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2294,7 +2294,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CommunityProfile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2356,12 +2356,12 @@ return _execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/compare/{basehead}`
-Future<ApiResult<CommitComparison, BasicError>> reposCompareCommits({required String owner, required String repo, required String basehead, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CommitComparison, BasicError>> reposCompareCommits({required String owner, required String repo, required String basehead, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2372,7 +2372,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CommitComparison.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2411,11 +2411,11 @@ return _execute(
 ///   - Greater than 100 MB: This endpoint is not supported.
 ///
 /// `GET /repos/{owner}/{repo}/contents/{path}`
-Future<ApiResult<ReposGetContentResponse, BasicError>> reposGetContent({required String owner, required String repo, required String path, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReposGetContentResponse, BasicError>> reposGetContent({required String owner, required String repo, required String path, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2426,7 +2426,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposGetContentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2446,7 +2446,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.
 ///
 /// `PUT /repos/{owner}/{repo}/contents/{path}`
-Future<ApiResult<FileCommit, BasicError>> reposCreateOrUpdateFileContents({required String owner, required String repo, required String path, required ReposCreateOrUpdateFileContentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FileCommit, BasicError>> reposCreateOrUpdateFileContents({required String owner, required String repo, required String path, required ReposCreateOrUpdateFileContentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2457,7 +2457,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2481,7 +2481,7 @@ return _execute(
 /// > If you use this endpoint and the "[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
 ///
 /// `DELETE /repos/{owner}/{repo}/contents/{path}`
-Future<ApiResult<FileCommit, ValidationError>> reposDeleteFile({required String owner, required String repo, required String path, required ReposDeleteFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FileCommit, ValidationError>> reposDeleteFile({required String owner, required String repo, required String path, required ReposDeleteFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2492,7 +2492,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2509,13 +2509,13 @@ return _execute(
 /// GitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.
 ///
 /// `GET /repos/{owner}/{repo}/contributors`
-Future<ApiResult<List<Contributor>, BasicError>> reposListContributors({required String owner, required String repo, String? anon, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Contributor>, BasicError>> reposListContributors({required String owner, required String repo, String? anon, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (anon != null) queryParameters['anon'] = anon;
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2526,7 +2526,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2542,7 +2542,7 @@ return _execute(
 /// Simple filtering of deployments is available via query parameters:
 ///
 /// `GET /repos/{owner}/{repo}/deployments`
-Future<ApiResult<List<Deployment>, Never>> reposListDeployments({required String owner, required String repo, String? sha, String? ref, String? task, String? environment, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Deployment>, Never>> reposListDeployments({required String owner, required String repo, String? sha, String? ref, String? task, String? environment, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sha != null) queryParameters['sha'] = sha;
 if (ref != null) queryParameters['ref'] = ref;
@@ -2551,7 +2551,7 @@ if (environment != null) queryParameters['environment'] = environment;
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2562,7 +2562,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2622,7 +2622,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repo_deployment` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/deployments`
-Future<ApiResult<Deployment, ValidationError>> reposCreateDeployment({required String owner, required String repo, required ReposCreateDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Deployment, ValidationError>> reposCreateDeployment({required String owner, required String repo, required ReposCreateDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2633,7 +2633,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Deployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2648,7 +2648,7 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/deployments/{deployment_id}`
-Future<ApiResult<Deployment, BasicError>> reposGetDeployment({required String owner, required String repo, required int deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Deployment, BasicError>> reposGetDeployment({required String owner, required String repo, required int deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2657,7 +2657,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Deployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2681,7 +2681,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repo_deployment` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/deployments/{deployment_id}`
-Future<ApiResult<void, BasicError>> reposDeleteDeployment({required String owner, required String repo, required int deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteDeployment({required String owner, required String repo, required int deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2690,7 +2690,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -2703,12 +2703,12 @@ return _execute(
 /// Users with pull access can view deployment statuses for a deployment:
 ///
 /// `GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses`
-Future<ApiResult<List<DeploymentStatus>, BasicError>> reposListDeploymentStatuses({required String owner, required String repo, required int deploymentId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<DeploymentStatus>, BasicError>> reposListDeploymentStatuses({required String owner, required String repo, required int deploymentId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2719,7 +2719,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -2737,7 +2737,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses`
-Future<ApiResult<DeploymentStatus, ValidationError>> reposCreateDeploymentStatus({required String owner, required String repo, required int deploymentId, required ReposCreateDeploymentStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeploymentStatus, ValidationError>> reposCreateDeploymentStatus({required String owner, required String repo, required int deploymentId, required ReposCreateDeploymentStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2748,7 +2748,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2763,7 +2763,7 @@ return _execute(
 /// Users with pull access can view a deployment status for a deployment:
 ///
 /// `GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}`
-Future<ApiResult<DeploymentStatus, BasicError>> reposGetDeploymentStatus({required String owner, required String repo, required int deploymentId, required int statusId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeploymentStatus, BasicError>> reposGetDeploymentStatus({required String owner, required String repo, required int deploymentId, required int statusId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2772,7 +2772,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2793,7 +2793,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/dispatches`
-Future<ApiResult<void, BasicError>> reposCreateDispatchEvent({required String owner, required String repo, required ReposCreateDispatchEventRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposCreateDispatchEvent({required String owner, required String repo, required ReposCreateDispatchEventRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2804,7 +2804,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -2821,12 +2821,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/environments`
-Future<ApiResult<ReposGetAllEnvironmentsResponse, Never>> reposGetAllEnvironments({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReposGetAllEnvironmentsResponse, Never>> reposGetAllEnvironments({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2837,7 +2837,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposGetAllEnvironmentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2854,7 +2854,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}`
-Future<ApiResult<Environment, Never>> reposGetEnvironment({required String owner, required String repo, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Environment, Never>> reposGetEnvironment({required String owner, required String repo, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2863,7 +2863,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Environment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2883,7 +2883,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/environments/{environment_name}`
-Future<ApiResult<Environment, BasicError>> reposCreateOrUpdateEnvironment({required String owner, required String repo, required String environmentName, ReposCreateOrUpdateEnvironmentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Environment, BasicError>> reposCreateOrUpdateEnvironment({required String owner, required String repo, required String environmentName, ReposCreateOrUpdateEnvironmentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2894,7 +2894,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Environment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2909,7 +2909,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/environments/{environment_name}`
-Future<ApiResult<void, Never>> reposDeleteAnEnvironment({required String owner, required String repo, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDeleteAnEnvironment({required String owner, required String repo, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2918,7 +2918,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -2932,12 +2932,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies`
-Future<ApiResult<ReposListDeploymentBranchPoliciesResponse, Never>> reposListDeploymentBranchPolicies({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReposListDeploymentBranchPoliciesResponse, Never>> reposListDeploymentBranchPolicies({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2948,7 +2948,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposListDeploymentBranchPoliciesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2962,7 +2962,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies`
-Future<ApiResult<DeploymentBranchPolicy, Never>> reposCreateDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required DeploymentBranchPolicyNamePatternWithType body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeploymentBranchPolicy, Never>> reposCreateDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required DeploymentBranchPolicyNamePatternWithType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2973,7 +2973,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeploymentBranchPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2989,7 +2989,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}`
-Future<ApiResult<DeploymentBranchPolicy, Never>> reposGetDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required int branchPolicyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeploymentBranchPolicy, Never>> reposGetDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required int branchPolicyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2998,7 +2998,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeploymentBranchPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3012,7 +3012,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}`
-Future<ApiResult<DeploymentBranchPolicy, Never>> reposUpdateDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required int branchPolicyId, required DeploymentBranchPolicyNamePattern body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeploymentBranchPolicy, Never>> reposUpdateDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required int branchPolicyId, required DeploymentBranchPolicyNamePattern body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3023,7 +3023,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeploymentBranchPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3037,7 +3037,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}`
-Future<ApiResult<void, Never>> reposDeleteDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required int branchPolicyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDeleteDeploymentBranchPolicy({required String owner, required String repo, required String environmentName, required int branchPolicyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3046,7 +3046,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3060,7 +3060,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules`
-Future<ApiResult<ReposGetAllDeploymentProtectionRulesResponse, Never>> reposGetAllDeploymentProtectionRules({required String environmentName, required String repo, required String owner, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ReposGetAllDeploymentProtectionRulesResponse, Never>> reposGetAllDeploymentProtectionRules({required String environmentName, required String repo, required String owner, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3069,7 +3069,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposGetAllDeploymentProtectionRulesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3087,7 +3087,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules`
-Future<ApiResult<DeploymentProtectionRule, Never>> reposCreateDeploymentProtectionRule({required String environmentName, required String repo, required String owner, required ReposCreateDeploymentProtectionRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeploymentProtectionRule, Never>> reposCreateDeploymentProtectionRule({required String environmentName, required String repo, required String owner, required ReposCreateDeploymentProtectionRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3098,7 +3098,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeploymentProtectionRule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3118,12 +3118,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps`
-Future<ApiResult<ReposListCustomDeploymentRuleIntegrationsResponse, Never>> reposListCustomDeploymentRuleIntegrations({required String environmentName, required String repo, required String owner, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReposListCustomDeploymentRuleIntegrationsResponse, Never>> reposListCustomDeploymentRuleIntegrations({required String environmentName, required String repo, required String owner, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3134,7 +3134,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3150,7 +3150,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}`
-Future<ApiResult<DeploymentProtectionRule, Never>> reposGetCustomDeploymentProtectionRule({required String owner, required String repo, required String environmentName, required int protectionRuleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeploymentProtectionRule, Never>> reposGetCustomDeploymentProtectionRule({required String owner, required String repo, required String environmentName, required int protectionRuleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3159,7 +3159,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeploymentProtectionRule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3175,7 +3175,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}`
-Future<ApiResult<void, Never>> reposDisableDeploymentProtectionRule({required String environmentName, required String repo, required String owner, required int protectionRuleId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDisableDeploymentProtectionRule({required String environmentName, required String repo, required String owner, required int protectionRuleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3184,7 +3184,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3194,13 +3194,13 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/forks`
-Future<ApiResult<List<MinimalRepository>, BasicError>> reposListForks({required String owner, required String repo, ReposListForksSort? sort, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, BasicError>> reposListForks({required String owner, required String repo, ReposListForksSort? sort, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) queryParameters['sort'] = sort.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3211,7 +3211,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3233,7 +3233,7 @@ return _execute(
 /// > Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
 ///
 /// `POST /repos/{owner}/{repo}/forks`
-Future<ApiResult<FullRepository, BasicError>> reposCreateFork({required String owner, required String repo, ReposCreateForkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FullRepository, BasicError>> reposCreateFork({required String owner, required String repo, ReposCreateForkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3244,7 +3244,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3259,12 +3259,12 @@ return _execute(
 /// Lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.
 ///
 /// `GET /repos/{owner}/{repo}/hooks`
-Future<ApiResult<List<Hook>, BasicError>> reposListWebhooks({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Hook>, BasicError>> reposListWebhooks({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3275,7 +3275,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3292,7 +3292,7 @@ return _execute(
 /// share the same `config` as long as those webhooks do not have any `events` that overlap.
 ///
 /// `POST /repos/{owner}/{repo}/hooks`
-Future<ApiResult<Hook, BasicError>> reposCreateWebhook({required String owner, required String repo, ReposCreateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Hook, BasicError>> reposCreateWebhook({required String owner, required String repo, ReposCreateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3303,7 +3303,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3318,7 +3318,7 @@ return _execute(
 /// Returns a webhook configured in a repository. To get only the webhook `config` properties, see "[Get a webhook configuration for a repository](/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository)."
 ///
 /// `GET /repos/{owner}/{repo}/hooks/{hook_id}`
-Future<ApiResult<Hook, BasicError>> reposGetWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Hook, BasicError>> reposGetWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3327,7 +3327,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3342,7 +3342,7 @@ return _execute(
 /// Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository)."
 ///
 /// `PATCH /repos/{owner}/{repo}/hooks/{hook_id}`
-Future<ApiResult<Hook, ValidationError>> reposUpdateWebhook({required String owner, required String repo, required int hookId, required ReposUpdateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Hook, ValidationError>> reposUpdateWebhook({required String owner, required String repo, required int hookId, required ReposUpdateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3353,7 +3353,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3370,7 +3370,7 @@ return _execute(
 /// The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.
 ///
 /// `DELETE /repos/{owner}/{repo}/hooks/{hook_id}`
-Future<ApiResult<void, BasicError>> reposDeleteWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3379,7 +3379,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3394,7 +3394,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:repo_hook` or `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/hooks/{hook_id}/config`
-Future<ApiResult<WebhookConfig, Never>> reposGetWebhookConfigForRepo({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WebhookConfig, Never>> reposGetWebhookConfigForRepo({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3403,7 +3403,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WebhookConfig.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3417,7 +3417,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:repo_hook` or `repo` scope to use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config`
-Future<ApiResult<WebhookConfig, Never>> reposUpdateWebhookConfigForRepo({required String owner, required String repo, required int hookId, ReposUpdateWebhookConfigForRepoRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WebhookConfig, Never>> reposUpdateWebhookConfigForRepo({required String owner, required String repo, required int hookId, ReposUpdateWebhookConfigForRepoRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3428,7 +3428,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WebhookConfig.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3440,12 +3440,12 @@ return _execute(
 /// Returns a list of webhook deliveries for a webhook configured in a repository.
 ///
 /// `GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries`
-Future<ApiResult<List<HookDeliveryItem>, BasicError>> reposListWebhookDeliveries({required String owner, required String repo, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<HookDeliveryItem>, BasicError>> reposListWebhookDeliveries({required String owner, required String repo, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (cursor != null) queryParameters['cursor'] = cursor;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3456,7 +3456,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3472,7 +3472,7 @@ return _execute(
 /// Returns a delivery for a webhook configured in a repository.
 ///
 /// `GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}`
-Future<ApiResult<HookDelivery, BasicError>> reposGetWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<HookDelivery, BasicError>> reposGetWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3481,7 +3481,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3496,7 +3496,7 @@ return _execute(
 /// Redeliver a webhook delivery for a webhook configured in a repository.
 ///
 /// `POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts`
-Future<ApiResult<Map<String, dynamic>, BasicError>> reposRedeliverWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, BasicError>> reposRedeliverWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3505,7 +3505,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
@@ -3520,7 +3520,7 @@ return _execute(
 /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
 ///
 /// `POST /repos/{owner}/{repo}/hooks/{hook_id}/pings`
-Future<ApiResult<void, BasicError>> reposPingWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposPingWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3529,7 +3529,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3545,7 +3545,7 @@ return _execute(
 /// > Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 ///
 /// `POST /repos/{owner}/{repo}/hooks/{hook_id}/tests`
-Future<ApiResult<void, BasicError>> reposTestPushWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposTestPushWebhook({required String owner, required String repo, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3554,7 +3554,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3568,7 +3568,7 @@ return _execute(
 /// enforced by the repository owner.  The authenticated user must have admin read access to the repository.
 ///
 /// `GET /repos/{owner}/{repo}/immutable-releases`
-Future<ApiResult<CheckImmutableReleases, Never>> reposCheckImmutableReleases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<CheckImmutableReleases, Never>> reposCheckImmutableReleases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3577,7 +3577,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CheckImmutableReleases.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3589,7 +3589,7 @@ return _execute(
 /// Enables immutable releases for a repository. The authenticated user must have admin access to the repository.
 ///
 /// `PUT /repos/{owner}/{repo}/immutable-releases`
-Future<ApiResult<void, BasicError>> reposEnableImmutableReleases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposEnableImmutableReleases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -3598,7 +3598,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3611,7 +3611,7 @@ return _execute(
 /// Disables immutable releases for a repository. The authenticated user must have admin access to the repository.
 ///
 /// `DELETE /repos/{owner}/{repo}/immutable-releases`
-Future<ApiResult<void, BasicError>> reposDisableImmutableReleases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDisableImmutableReleases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3620,7 +3620,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3633,12 +3633,12 @@ return _execute(
 /// When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.
 ///
 /// `GET /repos/{owner}/{repo}/invitations`
-Future<ApiResult<List<RepositoryInvitation>, Never>> reposListInvitations({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RepositoryInvitation>, Never>> reposListInvitations({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3649,7 +3649,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3662,7 +3662,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /repos/{owner}/{repo}/invitations/{invitation_id}`
-Future<ApiResult<RepositoryInvitation, Never>> reposUpdateInvitation({required String owner, required String repo, required int invitationId, ReposUpdateInvitationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryInvitation, Never>> reposUpdateInvitation({required String owner, required String repo, required int invitationId, ReposUpdateInvitationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3673,7 +3673,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3685,7 +3685,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /repos/{owner}/{repo}/invitations/{invitation_id}`
-Future<ApiResult<void, Never>> reposDeleteInvitation({required String owner, required String repo, required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDeleteInvitation({required String owner, required String repo, required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3694,7 +3694,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3704,12 +3704,12 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/keys`
-Future<ApiResult<List<DeployKey>, Never>> reposListDeployKeys({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<DeployKey>, Never>> reposListDeployKeys({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3720,7 +3720,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -3733,7 +3733,7 @@ return _execute(
 /// You can create a read-only deploy key.
 ///
 /// `POST /repos/{owner}/{repo}/keys`
-Future<ApiResult<DeployKey, ValidationError>> reposCreateDeployKey({required String owner, required String repo, required ReposCreateDeployKeyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeployKey, ValidationError>> reposCreateDeployKey({required String owner, required String repo, required ReposCreateDeployKeyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3744,7 +3744,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeployKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3759,7 +3759,7 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/keys/{key_id}`
-Future<ApiResult<DeployKey, BasicError>> reposGetDeployKey({required String owner, required String repo, required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<DeployKey, BasicError>> reposGetDeployKey({required String owner, required String repo, required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3768,7 +3768,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return DeployKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3783,7 +3783,7 @@ return _execute(
 /// Deploy keys are immutable. If you need to update a key, remove the key and create a new one instead.
 ///
 /// `DELETE /repos/{owner}/{repo}/keys/{key_id}`
-Future<ApiResult<void, Never>> reposDeleteDeployKey({required String owner, required String repo, required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDeleteDeployKey({required String owner, required String repo, required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3792,7 +3792,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -3802,7 +3802,7 @@ return _execute(
 /// Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.
 ///
 /// `GET /repos/{owner}/{repo}/languages`
-Future<ApiResult<Map<String, int>, Never>> reposListLanguages({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, int>, Never>> reposListLanguages({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3811,7 +3811,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));
@@ -3823,7 +3823,7 @@ return _execute(
 /// Sync a branch of a forked repository to keep it up-to-date with the upstream repository.
 ///
 /// `POST /repos/{owner}/{repo}/merge-upstream`
-Future<ApiResult<MergedUpstream, Never>> reposMergeUpstream({required String owner, required String repo, required ReposMergeUpstreamRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MergedUpstream, Never>> reposMergeUpstream({required String owner, required String repo, required ReposMergeUpstreamRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3834,7 +3834,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MergedUpstream.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3846,7 +3846,7 @@ return _execute(
 /// 
 ///
 /// `POST /repos/{owner}/{repo}/merges`
-Future<ApiResult<Commit, BasicError>> reposMerge({required String owner, required String repo, required ReposMergeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Commit, BasicError>> reposMerge({required String owner, required String repo, required ReposMergeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3857,7 +3857,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3874,7 +3874,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/pages`
-Future<ApiResult<Page, BasicError>> reposGetPages({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Page, BasicError>> reposGetPages({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3883,7 +3883,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Page.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3902,7 +3902,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/pages`
-Future<ApiResult<Page, ValidationError>> reposCreatePagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Page, ValidationError>> reposCreatePagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3913,7 +3913,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Page.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3932,7 +3932,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/pages`
-Future<ApiResult<void, ValidationError>> reposUpdateInformationAboutPagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationError>> reposUpdateInformationAboutPagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3943,7 +3943,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3960,7 +3960,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/pages`
-Future<ApiResult<void, ValidationError>> reposDeletePagesSite({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, ValidationError>> reposDeletePagesSite({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3969,7 +3969,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -3984,12 +3984,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/pages/builds`
-Future<ApiResult<List<PageBuild>, Never>> reposListPagesBuilds({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<PageBuild>, Never>> reposListPagesBuilds({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4000,7 +4000,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4015,7 +4015,7 @@ return _execute(
 /// Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
 ///
 /// `POST /repos/{owner}/{repo}/pages/builds`
-Future<ApiResult<PageBuildStatus, Never>> reposRequestPagesBuild({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PageBuildStatus, Never>> reposRequestPagesBuild({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -4024,7 +4024,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PageBuildStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4038,7 +4038,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/pages/builds/latest`
-Future<ApiResult<PageBuild, Never>> reposGetLatestPagesBuild({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PageBuild, Never>> reposGetLatestPagesBuild({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4047,7 +4047,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PageBuild.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4061,7 +4061,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/pages/builds/{build_id}`
-Future<ApiResult<PageBuild, Never>> reposGetPagesBuild({required String owner, required String repo, required int buildId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PageBuild, Never>> reposGetPagesBuild({required String owner, required String repo, required int buildId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4070,7 +4070,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PageBuild.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4084,7 +4084,7 @@ return _execute(
 /// The authenticated user must have write permission to the repository.
 ///
 /// `POST /repos/{owner}/{repo}/pages/deployments`
-Future<ApiResult<PageDeployment, BasicError>> reposCreatePagesDeployment({required String owner, required String repo, required ReposCreatePagesDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PageDeployment, BasicError>> reposCreatePagesDeployment({required String owner, required String repo, required ReposCreatePagesDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4095,7 +4095,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PageDeployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4112,7 +4112,7 @@ return _execute(
 /// The authenticated user must have read permission for the GitHub Pages site.
 ///
 /// `GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}`
-Future<ApiResult<PagesDeploymentStatus, BasicError>> reposGetPagesDeployment({required String owner, required String repo, required dynamic pagesDeploymentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PagesDeploymentStatus, BasicError>> reposGetPagesDeployment({required String owner, required String repo, required dynamic pagesDeploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4121,7 +4121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PagesDeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4138,7 +4138,7 @@ return _execute(
 /// The authenticated user must have write permissions for the GitHub Pages site.
 ///
 /// `POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel`
-Future<ApiResult<void, BasicError>> reposCancelPagesDeployment({required String owner, required String repo, required dynamic pagesDeploymentId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposCancelPagesDeployment({required String owner, required String repo, required dynamic pagesDeploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -4147,7 +4147,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -4166,7 +4166,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/pages/health`
-Future<ApiResult<PagesHealthCheck, BasicError>> reposGetPagesHealthCheck({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<PagesHealthCheck, BasicError>> reposGetPagesHealthCheck({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4175,7 +4175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return PagesHealthCheck.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4190,7 +4190,7 @@ return _execute(
 /// Returns a boolean indicating whether or not private vulnerability reporting is enabled for the repository. For more information, see "[Evaluating the security settings of a repository](https://docs.github.com/code-security/security-advisories/working-with-repository-security-advisories/evaluating-the-security-settings-of-a-repository)".
 ///
 /// `GET /repos/{owner}/{repo}/private-vulnerability-reporting`
-Future<ApiResult<ReposCheckPrivateVulnerabilityReportingResponse, BasicError>> reposCheckPrivateVulnerabilityReporting({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ReposCheckPrivateVulnerabilityReportingResponse, BasicError>> reposCheckPrivateVulnerabilityReporting({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4199,7 +4199,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReposCheckPrivateVulnerabilityReportingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4214,7 +4214,7 @@ return _execute(
 /// Enables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)."
 ///
 /// `PUT /repos/{owner}/{repo}/private-vulnerability-reporting`
-Future<ApiResult<void, BasicError>> reposEnablePrivateVulnerabilityReporting({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposEnablePrivateVulnerabilityReporting({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -4223,7 +4223,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -4236,7 +4236,7 @@ return _execute(
 /// Disables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)".
 ///
 /// `DELETE /repos/{owner}/{repo}/private-vulnerability-reporting`
-Future<ApiResult<void, BasicError>> reposDisablePrivateVulnerabilityReporting({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDisablePrivateVulnerabilityReporting({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4245,7 +4245,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -4259,7 +4259,7 @@ return _execute(
 /// Users with read access to the repository can use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/properties/values`
-Future<ApiResult<List<CustomPropertyValue>, BasicError>> reposCustomPropertiesForReposGetRepositoryValues({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<CustomPropertyValue>, BasicError>> reposCustomPropertiesForReposGetRepositoryValues({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4268,7 +4268,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4287,7 +4287,7 @@ return _execute(
 /// Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/properties/values`
-Future<ApiResult<void, BasicError>> reposCustomPropertiesForReposCreateOrUpdateRepositoryValues({required String owner, required String repo, required ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposCustomPropertiesForReposCreateOrUpdateRepositoryValues({required String owner, required String repo, required ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4298,7 +4298,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -4316,11 +4316,11 @@ return _execute(
 /// - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/readme`
-Future<ApiResult<ContentFile, BasicError>> reposGetReadme({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ContentFile, BasicError>> reposGetReadme({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4331,7 +4331,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4351,11 +4351,11 @@ return _execute(
 /// - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/readme/{dir}`
-Future<ApiResult<ContentFile, BasicError>> reposGetReadmeInDirectory({required String owner, required String repo, required String dir, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ContentFile, BasicError>> reposGetReadmeInDirectory({required String owner, required String repo, required String dir, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4366,7 +4366,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4383,12 +4383,12 @@ return _execute(
 /// Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
 ///
 /// `GET /repos/{owner}/{repo}/releases`
-Future<ApiResult<List<Release>, BasicError>> reposListReleases({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Release>, BasicError>> reposListReleases({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4399,7 +4399,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4417,7 +4417,7 @@ return _execute(
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `POST /repos/{owner}/{repo}/releases`
-Future<ApiResult<Release, BasicError>> reposCreateRelease({required String owner, required String repo, required ReposCreateReleaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Release, BasicError>> reposCreateRelease({required String owner, required String repo, required ReposCreateReleaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4428,7 +4428,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4449,7 +4449,7 @@ return _execute(
 ///   API clients should handle both a `200` or `302` response.
 ///
 /// `GET /repos/{owner}/{repo}/releases/assets/{asset_id}`
-Future<ApiResult<ReleaseAsset, BasicError>> reposGetReleaseAsset({required String owner, required String repo, required int assetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ReleaseAsset, BasicError>> reposGetReleaseAsset({required String owner, required String repo, required int assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4458,7 +4458,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4473,7 +4473,7 @@ return _execute(
 /// Users with push access to the repository can edit a release asset.
 ///
 /// `PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}`
-Future<ApiResult<ReleaseAsset, Never>> reposUpdateReleaseAsset({required String owner, required String repo, required int assetId, ReposUpdateReleaseAssetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ReleaseAsset, Never>> reposUpdateReleaseAsset({required String owner, required String repo, required int assetId, ReposUpdateReleaseAssetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4484,7 +4484,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4496,7 +4496,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}`
-Future<ApiResult<void, Never>> reposDeleteReleaseAsset({required String owner, required String repo, required int assetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDeleteReleaseAsset({required String owner, required String repo, required int assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4505,7 +4505,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4515,7 +4515,7 @@ return _execute(
 /// Generate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
 ///
 /// `POST /repos/{owner}/{repo}/releases/generate-notes`
-Future<ApiResult<ReleaseNotesContent, BasicError>> reposGenerateReleaseNotes({required String owner, required String repo, required ReposGenerateReleaseNotesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ReleaseNotesContent, BasicError>> reposGenerateReleaseNotes({required String owner, required String repo, required ReposGenerateReleaseNotesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4526,7 +4526,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReleaseNotesContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4543,7 +4543,7 @@ return _execute(
 /// The latest release is the most recent non-prerelease, non-draft release, sorted by the `created_at` attribute. The `created_at` attribute is the date of the commit used for the release, and not the date when the release was drafted or published.
 ///
 /// `GET /repos/{owner}/{repo}/releases/latest`
-Future<ApiResult<Release, Never>> reposGetLatestRelease({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Release, Never>> reposGetLatestRelease({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4552,7 +4552,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4564,7 +4564,7 @@ return _execute(
 /// Get a published release with the specified tag.
 ///
 /// `GET /repos/{owner}/{repo}/releases/tags/{tag}`
-Future<ApiResult<Release, BasicError>> reposGetReleaseByTag({required String owner, required String repo, required String tag, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Release, BasicError>> reposGetReleaseByTag({required String owner, required String repo, required String tag, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4573,7 +4573,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4591,7 +4591,7 @@ return _execute(
 /// > This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
 ///
 /// `GET /repos/{owner}/{repo}/releases/{release_id}`
-Future<ApiResult<Release, Never>> reposGetRelease({required String owner, required String repo, required int releaseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Release, Never>> reposGetRelease({required String owner, required String repo, required int releaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4600,7 +4600,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4612,7 +4612,7 @@ return _execute(
 /// Users with push access to the repository can edit a release.
 ///
 /// `PATCH /repos/{owner}/{repo}/releases/{release_id}`
-Future<ApiResult<Release, BasicError>> reposUpdateRelease({required String owner, required String repo, required int releaseId, ReposUpdateReleaseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Release, BasicError>> reposUpdateRelease({required String owner, required String repo, required int releaseId, ReposUpdateReleaseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4623,7 +4623,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4638,7 +4638,7 @@ return _execute(
 /// Users with push access to the repository can delete a release.
 ///
 /// `DELETE /repos/{owner}/{repo}/releases/{release_id}`
-Future<ApiResult<void, Never>> reposDeleteRelease({required String owner, required String repo, required int releaseId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDeleteRelease({required String owner, required String repo, required int releaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4647,7 +4647,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -4657,12 +4657,12 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/releases/{release_id}/assets`
-Future<ApiResult<List<ReleaseAsset>, Never>> reposListReleaseAssets({required String owner, required String repo, required int releaseId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<ReleaseAsset>, Never>> reposListReleaseAssets({required String owner, required String repo, required int releaseId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4673,7 +4673,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4704,12 +4704,12 @@ return _execute(
 /// *   If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.
 ///
 /// `POST /repos/{owner}/{repo}/releases/{release_id}/assets`
-Future<ApiResult<ReleaseAsset, Never>> reposUploadReleaseAsset({required String owner, required String repo, required int releaseId, required String name, String? label, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ReleaseAsset, Never>> reposUploadReleaseAsset({required String owner, required String repo, required int releaseId, required String name, String? label, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['name'] = name;
 if (label != null) queryParameters['label'] = label;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
 
 final request = ApiRequest(
@@ -4722,7 +4722,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4737,12 +4737,12 @@ return _execute(
 /// enforcement statuses are not returned.
 ///
 /// `GET /repos/{owner}/{repo}/rules/branches/{branch}`
-Future<ApiResult<List<RepositoryRuleDetailed>, Never>> reposGetBranchRules({required String owner, required String repo, required String branch, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RepositoryRuleDetailed>, Never>> reposGetBranchRules({required String owner, required String repo, required String branch, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4753,7 +4753,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4766,14 +4766,14 @@ return _execute(
 /// Get all the rulesets for a repository.
 ///
 /// `GET /repos/{owner}/{repo}/rulesets`
-Future<ApiResult<List<RepositoryRuleset>, BasicError>> reposGetRepoRulesets({required String owner, required String repo, int? perPage, int? page, bool? includesParents, String? targets, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RepositoryRuleset>, BasicError>> reposGetRepoRulesets({required String owner, required String repo, int? perPage, int? page, bool? includesParents, String? targets, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 if (includesParents != null) queryParameters['includes_parents'] = includesParents.toString();
 if (targets != null) queryParameters['targets'] = targets;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4784,7 +4784,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4800,7 +4800,7 @@ return _execute(
 /// Create a ruleset for a repository.
 ///
 /// `POST /repos/{owner}/{repo}/rulesets`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposCreateRepoRuleset({required String owner, required String repo, required ReposCreateRepoRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, BasicError>> reposCreateRepoRuleset({required String owner, required String repo, required ReposCreateRepoRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4811,7 +4811,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4827,7 +4827,7 @@ return _execute(
 /// For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
 ///
 /// `GET /repos/{owner}/{repo}/rulesets/rule-suites`
-Future<ApiResult<List<RuleSuites2>, BasicError>> reposGetRepoRuleSuites({required String owner, required String repo, String? ref, ReposGetRepoRuleSuitesTimePeriod? timePeriod, String? actorName, ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RuleSuites2>, BasicError>> reposGetRepoRuleSuites({required String owner, required String repo, String? ref, ReposGetRepoRuleSuitesTimePeriod? timePeriod, String? actorName, ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) queryParameters['ref'] = ref;
 if (timePeriod != null) queryParameters['time_period'] = timePeriod.toJson();
@@ -4836,7 +4836,7 @@ if (ruleSuiteResult != null) queryParameters['rule_suite_result'] = ruleSuiteRes
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4847,7 +4847,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -4864,7 +4864,7 @@ return _execute(
 /// For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
 ///
 /// `GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}`
-Future<ApiResult<RuleSuite, BasicError>> reposGetRepoRuleSuite({required String owner, required String repo, required int ruleSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RuleSuite, BasicError>> reposGetRepoRuleSuite({required String owner, required String repo, required int ruleSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4873,7 +4873,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RuleSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4891,11 +4891,11 @@ return _execute(
 /// making the API request has write access to the ruleset.
 ///
 /// `GET /repos/{owner}/{repo}/rulesets/{ruleset_id}`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposGetRepoRuleset({required String owner, required String repo, required int rulesetId, bool? includesParents, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<RepositoryRuleset, BasicError>> reposGetRepoRuleset({required String owner, required String repo, required int rulesetId, bool? includesParents, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includesParents != null) queryParameters['includes_parents'] = includesParents.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4906,7 +4906,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4921,7 +4921,7 @@ return _execute(
 /// Update a ruleset for a repository.
 ///
 /// `PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposUpdateRepoRuleset({required String owner, required String repo, required int rulesetId, ReposUpdateRepoRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, BasicError>> reposUpdateRepoRuleset({required String owner, required String repo, required int rulesetId, ReposUpdateRepoRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4932,7 +4932,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -4947,7 +4947,7 @@ return _execute(
 /// Delete a ruleset for a repository.
 ///
 /// `DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}`
-Future<ApiResult<void, BasicError>> reposDeleteRepoRuleset({required String owner, required String repo, required int rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeleteRepoRuleset({required String owner, required String repo, required int rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4956,7 +4956,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -4969,12 +4969,12 @@ return _execute(
 /// Get the history of a repository ruleset.
 ///
 /// `GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history`
-Future<ApiResult<List<RulesetVersion>, BasicError>> reposGetRepoRulesetHistory({required String owner, required String repo, required int rulesetId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RulesetVersion>, BasicError>> reposGetRepoRulesetHistory({required String owner, required String repo, required int rulesetId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4985,7 +4985,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5001,7 +5001,7 @@ return _execute(
 /// Get a version of a repository ruleset.
 ///
 /// `GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}`
-Future<ApiResult<RulesetVersion, BasicError>> reposGetRepoRulesetVersion({required String owner, required String repo, required int rulesetId, required int versionId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<RulesetVersion, BasicError>> reposGetRepoRulesetVersion({required String owner, required String repo, required int rulesetId, required int versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5010,7 +5010,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return RulesetVersion.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5028,7 +5028,7 @@ return _execute(
 /// > This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains 10,000 or more commits, a 422 status code will be returned.
 ///
 /// `GET /repos/{owner}/{repo}/stats/code_frequency`
-Future<ApiResult<List<List<int>>, Never>> reposGetCodeFrequencyStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<List<int>>, Never>> reposGetCodeFrequencyStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5037,7 +5037,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5050,7 +5050,7 @@ return _execute(
 /// Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.
 ///
 /// `GET /repos/{owner}/{repo}/stats/commit_activity`
-Future<ApiResult<List<CommitActivity>, Never>> reposGetCommitActivityStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<CommitActivity>, Never>> reposGetCommitActivityStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5059,7 +5059,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5081,7 +5081,7 @@ return _execute(
 /// > This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
 ///
 /// `GET /repos/{owner}/{repo}/stats/contributors`
-Future<ApiResult<List<ContributorActivity>, Never>> reposGetContributorsStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<ContributorActivity>, Never>> reposGetContributorsStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5090,7 +5090,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5107,7 +5107,7 @@ return _execute(
 /// The most recent week is seven days ago at UTC midnight to today at UTC midnight.
 ///
 /// `GET /repos/{owner}/{repo}/stats/participation`
-Future<ApiResult<ParticipationStats, BasicError>> reposGetParticipationStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ParticipationStats, BasicError>> reposGetParticipationStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5116,7 +5116,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ParticipationStats.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5137,7 +5137,7 @@ return _execute(
 /// For example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
 ///
 /// `GET /repos/{owner}/{repo}/stats/punch_card`
-Future<ApiResult<List<List<int>>, Never>> reposGetPunchCardStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<List<int>>, Never>> reposGetPunchCardStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5146,7 +5146,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5161,7 +5161,7 @@ return _execute(
 /// Note: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.
 ///
 /// `POST /repos/{owner}/{repo}/statuses/{sha}`
-Future<ApiResult<Status, Never>> reposCreateCommitStatus({required String owner, required String repo, required String sha, required ReposCreateCommitStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Status, Never>> reposCreateCommitStatus({required String owner, required String repo, required String sha, required ReposCreateCommitStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5172,7 +5172,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5184,12 +5184,12 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/tags`
-Future<ApiResult<List<Tag>, Never>> reposListTags({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Tag>, Never>> reposListTags({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5200,7 +5200,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5218,7 +5218,7 @@ return _execute(
 /// > For private repositories, these links are temporary and expire after five minutes.
 ///
 /// `GET /repos/{owner}/{repo}/tarball/{ref}`
-Future<ApiResult<void, Never>> reposDownloadTarballArchive({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDownloadTarballArchive({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5227,7 +5227,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -5241,12 +5241,12 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to use this endpoint with a public repository, and `repo` scope to use this endpoint with a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/teams`
-Future<ApiResult<List<Team>, BasicError>> reposListTeams({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Team>, BasicError>> reposListTeams({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5257,7 +5257,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5273,12 +5273,12 @@ return _execute(
 /// 
 ///
 /// `GET /repos/{owner}/{repo}/topics`
-Future<ApiResult<Topic, BasicError>> reposGetAllTopics({required String owner, required String repo, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Topic, BasicError>> reposGetAllTopics({required String owner, required String repo, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) queryParameters['page'] = page.toString();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5289,7 +5289,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Topic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5304,7 +5304,7 @@ return _execute(
 /// 
 ///
 /// `PUT /repos/{owner}/{repo}/topics`
-Future<ApiResult<Topic, BasicError>> reposReplaceAllTopics({required String owner, required String repo, required ReposReplaceAllTopicsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Topic, BasicError>> reposReplaceAllTopics({required String owner, required String repo, required ReposReplaceAllTopicsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5315,7 +5315,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Topic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5330,11 +5330,11 @@ return _execute(
 /// Get the total number of clones and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 ///
 /// `GET /repos/{owner}/{repo}/traffic/clones`
-Future<ApiResult<CloneTraffic, BasicError>> reposGetClones({required String owner, required String repo, ReposGetClonesPer? per, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<CloneTraffic, BasicError>> reposGetClones({required String owner, required String repo, ReposGetClonesPer? per, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (per != null) queryParameters['per'] = per.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5345,7 +5345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return CloneTraffic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5360,7 +5360,7 @@ return _execute(
 /// Get the top 10 popular contents over the last 14 days.
 ///
 /// `GET /repos/{owner}/{repo}/traffic/popular/paths`
-Future<ApiResult<List<ContentTraffic>, BasicError>> reposGetTopPaths({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<ContentTraffic>, BasicError>> reposGetTopPaths({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5369,7 +5369,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5385,7 +5385,7 @@ return _execute(
 /// Get the top 10 referrers over the last 14 days.
 ///
 /// `GET /repos/{owner}/{repo}/traffic/popular/referrers`
-Future<ApiResult<List<ReferrerTraffic>, BasicError>> reposGetTopReferrers({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<ReferrerTraffic>, BasicError>> reposGetTopReferrers({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5394,7 +5394,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5410,11 +5410,11 @@ return _execute(
 /// Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 ///
 /// `GET /repos/{owner}/{repo}/traffic/views`
-Future<ApiResult<ViewTraffic, BasicError>> reposGetViews({required String owner, required String repo, ReposGetViewsPer? per, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<ViewTraffic, BasicError>> reposGetViews({required String owner, required String repo, ReposGetViewsPer? per, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (per != null) queryParameters['per'] = per.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5425,7 +5425,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ViewTraffic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5440,7 +5440,7 @@ return _execute(
 /// A transfer request will need to be accepted by the new owner when transferring a personal repository to another user. The response will contain the original `owner`, and the transfer will continue asynchronously. For more details on the requirements to transfer personal and organization-owned repositories, see [about repository transfers](https://docs.github.com/articles/about-repository-transfers/).
 ///
 /// `POST /repos/{owner}/{repo}/transfer`
-Future<ApiResult<MinimalRepository, Never>> reposTransfer({required String owner, required String repo, required ReposTransferRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<MinimalRepository, Never>> reposTransfer({required String owner, required String repo, required ReposTransferRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5451,7 +5451,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return MinimalRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5463,7 +5463,7 @@ return _execute(
 /// Shows whether dependency alerts are enabled or disabled for a repository. The authenticated user must have admin read access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
 ///
 /// `GET /repos/{owner}/{repo}/vulnerability-alerts`
-Future<ApiResult<void, Never>> reposCheckVulnerabilityAlerts({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposCheckVulnerabilityAlerts({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5472,7 +5472,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -5482,7 +5482,7 @@ return _execute(
 /// Enables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
 ///
 /// `PUT /repos/{owner}/{repo}/vulnerability-alerts`
-Future<ApiResult<void, Never>> reposEnableVulnerabilityAlerts({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposEnableVulnerabilityAlerts({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -5491,7 +5491,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -5503,7 +5503,7 @@ return _execute(
 /// see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
 ///
 /// `DELETE /repos/{owner}/{repo}/vulnerability-alerts`
-Future<ApiResult<void, Never>> reposDisableVulnerabilityAlerts({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDisableVulnerabilityAlerts({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5512,7 +5512,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -5527,7 +5527,7 @@ return _execute(
 /// > For private repositories, these links are temporary and expire after five minutes. If the repository is empty, you will receive a 404 when you follow the redirect.
 ///
 /// `GET /repos/{owner}/{repo}/zipball/{ref}`
-Future<ApiResult<void, Never>> reposDownloadZipballArchive({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> reposDownloadZipballArchive({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5536,7 +5536,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -5548,7 +5548,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
 /// `POST /repos/{template_owner}/{template_repo}/generate`
-Future<ApiResult<FullRepository, Never>> reposCreateUsingTemplate({required String templateOwner, required String templateRepo, required ReposCreateUsingTemplateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FullRepository, Never>> reposCreateUsingTemplate({required String templateOwner, required String templateRepo, required ReposCreateUsingTemplateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5559,7 +5559,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5575,11 +5575,11 @@ return _execute(
 /// - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
 ///
 /// `GET /repositories`
-Future<ApiResult<List<MinimalRepository>, ValidationError>> reposListPublic({int? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, ValidationError>> reposListPublic({int? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) queryParameters['since'] = since.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5590,7 +5590,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5608,7 +5608,7 @@ return _execute(
 /// The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
 ///
 /// `GET /user/repos`
-Future<ApiResult<List<Repository>, ValidationError>> reposListForAuthenticatedUser({ReposListForAuthenticatedUserVisibility? visibility, String? affiliation, ReposListForAuthenticatedUserType? type, ReposListForAuthenticatedUserSort? sort, ReposListForAuthenticatedUserDirection? direction, int? perPage, int? page, DateTime? since, DateTime? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Repository>, ValidationError>> reposListForAuthenticatedUser({ReposListForAuthenticatedUserVisibility? visibility, String? affiliation, ReposListForAuthenticatedUserType? type, ReposListForAuthenticatedUserSort? sort, ReposListForAuthenticatedUserDirection? direction, int? perPage, int? page, DateTime? since, DateTime? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (visibility != null) queryParameters['visibility'] = visibility.toJson();
 if (affiliation != null) queryParameters['affiliation'] = affiliation;
@@ -5620,7 +5620,7 @@ if (page != null) queryParameters['page'] = page.toString();
 if (since != null) queryParameters['since'] = since.toString();
 if (before != null) queryParameters['before'] = before.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5631,7 +5631,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5649,7 +5649,7 @@ return _execute(
 /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
 /// `POST /user/repos`
-Future<ApiResult<FullRepository, BasicError>> reposCreateForAuthenticatedUser({required ReposCreateForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<FullRepository, BasicError>> reposCreateForAuthenticatedUser({required ReposCreateForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5660,7 +5660,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5675,12 +5675,12 @@ return _execute(
 /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
 ///
 /// `GET /user/repository_invitations`
-Future<ApiResult<List<RepositoryInvitation>, BasicError>> reposListInvitationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<RepositoryInvitation>, BasicError>> reposListInvitationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5691,7 +5691,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -5707,7 +5707,7 @@ return _execute(
 /// 
 ///
 /// `PATCH /user/repository_invitations/{invitation_id}`
-Future<ApiResult<void, BasicError>> reposAcceptInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposAcceptInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -5716,7 +5716,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -5729,7 +5729,7 @@ return _execute(
 /// 
 ///
 /// `DELETE /user/repository_invitations/{invitation_id}`
-Future<ApiResult<void, BasicError>> reposDeclineInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> reposDeclineInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5738,7 +5738,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -5751,7 +5751,7 @@ return _execute(
 /// Lists public repositories for the specified user.
 ///
 /// `GET /users/{username}/repos`
-Future<ApiResult<List<MinimalRepository>, Never>> reposListForUser({required String username, ReposListForUserType? type, ReposListForUserSort? sort, ReposListForUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, Never>> reposListForUser({required String username, ReposListForUserType? type, ReposListForUserSort? sort, ReposListForUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) queryParameters['type'] = type.toJson();
 if (sort != null) queryParameters['sort'] = sort.toJson();
@@ -5759,7 +5759,7 @@ if (direction != null) queryParameters['direction'] = direction.toJson();
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5770,87 +5770,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

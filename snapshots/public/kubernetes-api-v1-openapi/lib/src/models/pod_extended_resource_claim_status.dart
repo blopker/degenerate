@@ -12,7 +12,7 @@ factory PodExtendedResourceClaimStatus.fromJson(Map<String, dynamic> json) { ret
   resourceClaimName: json['resourceClaimName'] as String,
 ); }
 
-/// RequestMappings identifies the mapping of <container, extended resource backed by DRA> to  device request in the generated ResourceClaim.
+/// RequestMappings identifies the mapping of `<container, extended resource backed by DRA>` to  device request in the generated ResourceClaim.
 final List<ContainerExtendedResourceRequest> requestMappings;
 
 /// ResourceClaimName is the name of the ResourceClaim that was generated for the Pod in the namespace of the Pod.

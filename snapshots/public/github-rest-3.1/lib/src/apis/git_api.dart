@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class GitApi {const GitApi(this._config);
+final class GitApi with ApiExecutor {const GitApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Create a blob
 ///
 /// 
 ///
 /// `POST /repos/{owner}/{repo}/git/blobs`
-Future<ApiResult<ShortBlob, BasicError>> gitCreateBlob({required String owner, required String repo, required GitCreateBlobRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<ShortBlob, BasicError>> gitCreateBlob({required String owner, required String repo, required GitCreateBlobRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -28,7 +28,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return ShortBlob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -50,7 +50,7 @@ return _execute(
 /// **Note** This endpoint supports blobs up to 100 megabytes in size.
 ///
 /// `GET /repos/{owner}/{repo}/git/blobs/{file_sha}`
-Future<ApiResult<Blob, BasicError>> gitGetBlob({required String owner, required String repo, required String fileSha, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Blob, BasicError>> gitGetBlob({required String owner, required String repo, required String fileSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -59,7 +59,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Blob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -104,7 +104,7 @@ return _execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `POST /repos/{owner}/{repo}/git/commits`
-Future<ApiResult<GitCommit, ValidationError>> gitCreateCommit({required String owner, required String repo, required GitCreateCommitRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitCommit, ValidationError>> gitCreateCommit({required String owner, required String repo, required GitCreateCommitRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,7 +115,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -162,7 +162,7 @@ return _execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/git/commits/{commit_sha}`
-Future<ApiResult<GitCommit, BasicError>> gitGetCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitCommit, BasicError>> gitGetCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -171,7 +171,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -193,7 +193,7 @@ return _execute(
 /// If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
 ///
 /// `GET /repos/{owner}/{repo}/git/matching-refs/{ref}`
-Future<ApiResult<List<GitRef>, BasicError>> gitListMatchingRefs({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<List<GitRef>, BasicError>> gitListMatchingRefs({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -202,7 +202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -221,7 +221,7 @@ return _execute(
 /// > You need to explicitly [request a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)".
 ///
 /// `GET /repos/{owner}/{repo}/git/ref/{ref}`
-Future<ApiResult<GitRef, BasicError>> gitGetRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitRef, BasicError>> gitGetRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -230,7 +230,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitRef.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -245,7 +245,7 @@ return _execute(
 /// Creates a reference for your repository. You are unable to create new references for empty repositories, even if the commit SHA-1 hash used exists. Empty repositories are repositories without branches.
 ///
 /// `POST /repos/{owner}/{repo}/git/refs`
-Future<ApiResult<GitRef, ValidationError>> gitCreateRef({required String owner, required String repo, required GitCreateRefRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitRef, ValidationError>> gitCreateRef({required String owner, required String repo, required GitCreateRefRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -256,7 +256,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitRef.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -271,7 +271,7 @@ return _execute(
 /// Updates the provided reference to point to a new SHA. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
 ///
 /// `PATCH /repos/{owner}/{repo}/git/refs/{ref}`
-Future<ApiResult<GitRef, ValidationError>> gitUpdateRef({required String owner, required String repo, required String ref, required GitUpdateRefRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitRef, ValidationError>> gitUpdateRef({required String owner, required String repo, required String ref, required GitUpdateRefRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -282,7 +282,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitRef.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -297,7 +297,7 @@ return _execute(
 /// Deletes the provided reference.
 ///
 /// `DELETE /repos/{owner}/{repo}/git/refs/{ref}`
-Future<ApiResult<void, BasicError>> gitDeleteRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, BasicError>> gitDeleteRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -306,7 +306,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
@@ -349,7 +349,7 @@ return _execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `POST /repos/{owner}/{repo}/git/tags`
-Future<ApiResult<GitTag, ValidationError>> gitCreateTag({required String owner, required String repo, required GitCreateTagRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitTag, ValidationError>> gitCreateTag({required String owner, required String repo, required GitCreateTagRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -360,7 +360,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitTag.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -403,7 +403,7 @@ return _execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/git/tags/{tag_sha}`
-Future<ApiResult<GitTag, BasicError>> gitGetTag({required String owner, required String repo, required String tagSha, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitTag, BasicError>> gitGetTag({required String owner, required String repo, required String tagSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -412,7 +412,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitTag.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -431,7 +431,7 @@ return _execute(
 /// Returns an error if you try to delete a file that does not exist.
 ///
 /// `POST /repos/{owner}/{repo}/git/trees`
-Future<ApiResult<GitTree, ValidationError>> gitCreateTree({required String owner, required String repo, required GitCreateTreeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<GitTree, ValidationError>> gitCreateTree({required String owner, required String repo, required GitCreateTreeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -442,7 +442,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitTree.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -462,11 +462,11 @@ return _execute(
 /// > The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
 ///
 /// `GET /repos/{owner}/{repo}/git/trees/{tree_sha}`
-Future<ApiResult<GitTree, ValidationError>> gitGetTree({required String owner, required String repo, required String treeSha, String? recursive, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<GitTree, ValidationError>> gitGetTree({required String owner, required String repo, required String treeSha, String? recursive, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (recursive != null) queryParameters['recursive'] = recursive;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -477,7 +477,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return GitTree.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -486,80 +486,5 @@ return _execute(
     return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

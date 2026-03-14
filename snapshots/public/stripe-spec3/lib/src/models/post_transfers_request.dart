@@ -55,7 +55,7 @@ final String currency;
 /// An arbitrary string attached to the object. Often useful for displaying to users.
 final String? description;
 
-/// The ID of a connected Stripe account. <a href="/docs/connect/separate-charges-and-transfers">See the Connect documentation</a> for details.
+/// The ID of a connected Stripe account. `<a href="/docs/connect/separate-charges-and-transfers">`See the Connect documentation`</a>` for details.
 final String destination;
 
 /// Specifies which fields in the response should be expanded.

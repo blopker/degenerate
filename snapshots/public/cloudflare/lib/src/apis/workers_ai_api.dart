@@ -8,14 +8,14 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class WorkersAiApi {const WorkersAiApi(this._config);
+final class WorkersAiApi with ApiExecutor {const WorkersAiApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Author Search
 ///
 /// `GET /accounts/{account_id}/ai/authors/search`
-Future<ApiResult<WorkersAiSearchAuthorResponse, WorkersAiSearchAuthorResponse400>> workersAiSearchAuthor({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiSearchAuthorResponse, WorkersAiSearchAuthorResponse400>> workersAiSearchAuthor({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -24,7 +24,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkersAiSearchAuthorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -39,11 +39,11 @@ return _execute(
 /// Retrieves the input and output JSON schema definition for a Workers AI model.
 ///
 /// `GET /accounts/{account_id}/ai/models/schema`
-Future<ApiResult<WorkersAiGetModelSchemaResponse, WorkersAiGetModelSchemaResponse400>> workersAiGetModelSchema({required String accountId, required String model, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<WorkersAiGetModelSchemaResponse, WorkersAiGetModelSchemaResponse400>> workersAiGetModelSchema({required String accountId, required String model, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['model'] = model;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,7 +54,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkersAiGetModelSchemaResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -67,7 +67,7 @@ return _execute(
 /// Model Search
 ///
 /// `GET /accounts/{account_id}/ai/models/search`
-Future<ApiResult<WorkersAiSearchModelResponse, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<WorkersAiSearchModelResponse, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) queryParameters['per_page'] = perPage.toString();
 if (page != null) queryParameters['page'] = page.toString();
@@ -77,7 +77,7 @@ if (source != null) queryParameters['source'] = source.toString();
 if (hideExperimental != null) queryParameters['hide_experimental'] = hideExperimental.toString();
 if (search != null) queryParameters['search'] = search;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkersAiSearchModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -108,7 +108,7 @@ return _execute(
 /// Model specific inputs available in [Cloudflare Docs](https://developers.cloudflare.com/workers-ai/models/).
 ///
 /// `POST /accounts/{account_id}/ai/run/{model_name}`
-Future<ApiResult<WorkersAiPostRunModelResponse, WorkersAiPostRunModelResponse400>> workersAiPostRunModel({required String accountId, required String modelName, WorkersAiPostRunModelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiPostRunModelResponse, WorkersAiPostRunModelResponse400>> workersAiPostRunModel({required String accountId, required String modelName, WorkersAiPostRunModelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkersAiPostRunModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -132,7 +132,7 @@ return _execute(
 /// Task Search
 ///
 /// `GET /accounts/{account_id}/ai/tasks/search`
-Future<ApiResult<WorkersAiSearchTaskResponse, WorkersAiSearchTaskResponse404>> workersAiSearchTask({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiSearchTaskResponse, WorkersAiSearchTaskResponse404>> workersAiSearchTask({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -141,7 +141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkersAiSearchTaskResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -156,7 +156,7 @@ return _execute(
 /// Converts uploaded files into Markdown format using Workers AI.
 ///
 /// `POST /accounts/{account_id}/ai/tomarkdown`
-Future<ApiResult<WorkersAiPostToMarkdownResponse, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiPostToMarkdownResponse, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -169,7 +169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkersAiPostToMarkdownResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -184,7 +184,7 @@ return _execute(
 /// Lists all file formats supported for conversion to Markdown.
 ///
 /// `GET /accounts/{account_id}/ai/tomarkdown/supported`
-Future<ApiResult<WorkersAiGetToMarkdownSupportedResponse, WorkersAiGetToMarkdownSupportedResponse400>> workersAiGetToMarkdownSupported({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<WorkersAiGetToMarkdownSupportedResponse, WorkersAiGetToMarkdownSupportedResponse400>> workersAiGetToMarkdownSupported({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -193,7 +193,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return WorkersAiGetToMarkdownSupportedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -202,80 +202,5 @@ return _execute(
     return WorkersAiGetToMarkdownSupportedResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

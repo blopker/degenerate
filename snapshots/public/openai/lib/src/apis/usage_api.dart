@@ -8,14 +8,14 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class UsageApi {const UsageApi(this._config);
+final class UsageApi with ApiExecutor {const UsageApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Get costs details for the organization.
 ///
 /// `GET /organization/costs`
-Future<ApiResult<UsageResponse, Never>> usageCosts({required int startTime, int? endTime, UsageCostsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCostsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageCosts({required int startTime, int? endTime, UsageCostsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCostsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -33,7 +33,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -54,7 +54,7 @@ return _execute(
 /// Get audio speeches usage details for the organization.
 ///
 /// `GET /organization/usage/audio_speeches`
-Future<ApiResult<UsageResponse, Never>> usageAudioSpeeches({required int startTime, int? endTime, UsageAudioSpeechesBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioSpeechesGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageAudioSpeeches({required int startTime, int? endTime, UsageAudioSpeechesBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioSpeechesGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -87,7 +87,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -108,7 +108,7 @@ return _execute(
 /// Get audio transcriptions usage details for the organization.
 ///
 /// `GET /organization/usage/audio_transcriptions`
-Future<ApiResult<UsageResponse, Never>> usageAudioTranscriptions({required int startTime, int? endTime, UsageAudioTranscriptionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioTranscriptionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageAudioTranscriptions({required int startTime, int? endTime, UsageAudioTranscriptionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioTranscriptionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -141,7 +141,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -152,7 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -162,7 +162,7 @@ return _execute(
 /// Get code interpreter sessions usage details for the organization.
 ///
 /// `GET /organization/usage/code_interpreter_sessions`
-Future<ApiResult<UsageResponse, Never>> usageCodeInterpreterSessions({required int startTime, int? endTime, UsageCodeInterpreterSessionsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCodeInterpreterSessionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageCodeInterpreterSessions({required int startTime, int? endTime, UsageCodeInterpreterSessionsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCodeInterpreterSessionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -180,7 +180,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -191,7 +191,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -201,7 +201,7 @@ return _execute(
 /// Get completions usage details for the organization.
 ///
 /// `GET /organization/usage/completions`
-Future<ApiResult<UsageResponse, Never>> usageCompletions({required int startTime, int? endTime, UsageCompletionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, bool? batch, List<UsageCompletionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageCompletions({required int startTime, int? endTime, UsageCompletionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, bool? batch, List<UsageCompletionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -235,7 +235,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -246,7 +246,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -256,7 +256,7 @@ return _execute(
 /// Get embeddings usage details for the organization.
 ///
 /// `GET /organization/usage/embeddings`
-Future<ApiResult<UsageResponse, Never>> usageEmbeddings({required int startTime, int? endTime, UsageEmbeddingsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageEmbeddingsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageEmbeddings({required int startTime, int? endTime, UsageEmbeddingsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageEmbeddingsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -289,7 +289,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -300,7 +300,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -310,7 +310,7 @@ return _execute(
 /// Get images usage details for the organization.
 ///
 /// `GET /organization/usage/images`
-Future<ApiResult<UsageResponse, Never>> usageImages({required int startTime, int? endTime, UsageImagesBucketWidth? bucketWidth, List<UsageImagesSources>? sources, List<UsageImagesSizes>? sizes, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageImagesGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageImages({required int startTime, int? endTime, UsageImagesBucketWidth? bucketWidth, List<UsageImagesSources>? sources, List<UsageImagesSizes>? sizes, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageImagesGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -353,7 +353,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -364,7 +364,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -374,7 +374,7 @@ return _execute(
 /// Get moderations usage details for the organization.
 ///
 /// `GET /organization/usage/moderations`
-Future<ApiResult<UsageResponse, Never>> usageModerations({required int startTime, int? endTime, UsageModerationsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageModerationsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageModerations({required int startTime, int? endTime, UsageModerationsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageModerationsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -407,7 +407,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -418,7 +418,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -428,7 +428,7 @@ return _execute(
 /// Get vector stores usage details for the organization.
 ///
 /// `GET /organization/usage/vector_stores`
-Future<ApiResult<UsageResponse, Never>> usageVectorStores({required int startTime, int? endTime, UsageVectorStoresBucketWidth? bucketWidth, List<String>? projectIds, List<UsageVectorStoresGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<UsageResponse, Never>> usageVectorStores({required int startTime, int? endTime, UsageVectorStoresBucketWidth? bucketWidth, List<String>? projectIds, List<UsageVectorStoresGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
 if (endTime != null) queryParameters['end_time'] = endTime.toString();
@@ -446,7 +446,7 @@ for (final item in groupBy) {
 if (limit != null) queryParameters['limit'] = limit.toString();
 if (page != null) queryParameters['page'] = page;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -457,86 +457,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return UsageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }
