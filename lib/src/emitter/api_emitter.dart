@@ -58,9 +58,7 @@ class ApiEmitter {
   List<String> collectWarnings() {
     final warnings = <String>[];
     for (final op in api.operations) {
-      final isBodyAllowed =
-          op.method != HttpMethod.get && op.method != HttpMethod.head;
-      final requestBodyContent = op.requestBody != null && isBodyAllowed
+      final requestBodyContent = op.requestBody != null
           ? _preferredRequestBodyContent(op.requestBody!)
           : null;
       final successResponseContent = _successResponseContent(op);
@@ -179,9 +177,7 @@ class ApiEmitter {
     }
 
     // Request body (skip for GET/HEAD - bodies are not standard for these methods)
-    final isBodyAllowed =
-        op.method != HttpMethod.get && op.method != HttpMethod.head;
-    final requestBodyContent = op.requestBody != null && isBodyAllowed
+    final requestBodyContent = op.requestBody != null
         ? _preferredRequestBodyContent(op.requestBody!)
         : null;
     final bodyType = requestBodyContent?.$2.schema;
@@ -762,9 +758,7 @@ class ApiEmitter {
         ..type = irTypeToReference(p.type, forceNullable: !p.isRequired)));
     }
 
-    final isBodyAllowed =
-        op.method != HttpMethod.get && op.method != HttpMethod.head;
-    final requestBodyContent = op.requestBody != null && isBodyAllowed
+    final requestBodyContent = op.requestBody != null
         ? _preferredRequestBodyContent(op.requestBody!)
         : null;
     final bodyType = requestBodyContent?.$2.schema;

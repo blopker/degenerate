@@ -2541,6 +2541,34 @@ void main() {
     });
   });
 
+  // ─── GET with request body ─────────────────────────────────────
+
+  group('ApiEmitter - GET with request body', () {
+    test('emits body parameter for GET requests with requestBody', () {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'getWithBody',
+          'getWithBody',
+          HttpMethod.get,
+          '/test',
+          requestBody: IrRequestBody({
+              'application/json': IrMediaType(
+                IrList(IrPrimitive(PrimitiveKind.string)),
+              ),
+            },
+            isRequired: false,
+          ),
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+      );
+      expect(source, contains('List<String>? body'));
+      expect(source, contains('body: jsonEncode(body)'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
   // ─── escapeDocComment ──────────────────────────────────────────
 
   group('escapeDocComment', () {

@@ -339,11 +339,7 @@ class FileEmitter {
       }
       // Match the type selection logic used by ApiEmitter:
       // prefer application/json, fallback to first content type.
-      // Skip GET/HEAD bodies (ApiEmitter ignores them).
-      final isBodyAllowed =
-          op.method != HttpMethod.get && op.method != HttpMethod.head;
-      if (isBodyAllowed &&
-          op.requestBody != null &&
+      if (op.requestBody != null &&
           op.requestBody!.content.isNotEmpty) {
         final bodyContent = preferredContent(op.requestBody!.content)!;
         if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;

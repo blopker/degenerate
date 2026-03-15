@@ -196,11 +196,12 @@ return execute(
 /// Get Recommended Spaces
 ///
 /// `GET /api/mobile/protected/spaces/sessions/recommended`
-Future<ApiResult<List<SessionDetailSchema>, Never>> totemSpacesMobileApiGetRecommendedSpaces({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SessionDetailSchema>, Never>> totemSpacesMobileApiGetRecommendedSpaces({int? limit, List<String>? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) queryParameters['limit'] = limit.toString();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'GET',
@@ -208,6 +209,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
+  body: jsonEncode(body),
   options: options,
 );
 
