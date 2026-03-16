@@ -9,7 +9,7 @@ final class WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason {const
 
 factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(String json) { return switch (json) {
   'false positive' => falsePositive,
-  'won\'t fix' => wonTFix,
+  'won\'t fix' => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(json),
@@ -17,13 +17,13 @@ factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(S
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason falsePositive = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('false positive');
 
-static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason wonTFix = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('won\'t fix');
+static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason wontFix = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('won\'t fix');
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason usedInTests = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('used in tests');
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason $null = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('null');
 
-static const List<WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason> values = [falsePositive, wonTFix, usedInTests, $null];
+static const List<WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason> values = [falsePositive, wontFix, usedInTests, $null];
 
 final String value;
 

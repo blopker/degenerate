@@ -8,23 +8,23 @@
 final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(this.value);
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(String json) { return switch (json) {
-  'add-chain (new)' => addChainnew,
-  'add-chain (old)' => addChainold,
-  'add-pre-chain (new)' => addPreChainnew,
-  'add-pre-chain (old)' => addPreChainold,
+  'add-chain (new)' => addChainNew,
+  'add-chain (old)' => addChainOld,
+  'add-pre-chain (new)' => addPreChainNew,
+  'add-pre-chain (old)' => addPreChainOld,
   'get-entries' => getEntries,
   'get-roots' => getRoots,
   'get-sth' => getSth,
   _ => RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(json),
 }; }
 
-static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addChainnew = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-chain (new)');
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addChainNew = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-chain (new)');
 
-static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addChainold = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-chain (old)');
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addChainOld = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-chain (old)');
 
-static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addPreChainnew = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-pre-chain (new)');
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addPreChainNew = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-pre-chain (new)');
 
-static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addPreChainold = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-pre-chain (old)');
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addPreChainOld = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-pre-chain (old)');
 
 static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint getEntries = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('get-entries');
 
@@ -32,7 +32,7 @@ static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanc
 
 static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint getSth = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('get-sth');
 
-static const List<RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint> values = [addChainnew, addChainold, addPreChainnew, addPreChainold, getEntries, getRoots, getSth];
+static const List<RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint> values = [addChainNew, addChainOld, addPreChainNew, addPreChainOld, getEntries, getRoots, getSth];
 
 final String value;
 

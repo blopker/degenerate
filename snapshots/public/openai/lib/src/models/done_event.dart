@@ -28,13 +28,13 @@ bool get isUnknown { return !values.contains(this); }
 final class DoneEventData {const DoneEventData._(this.value);
 
 factory DoneEventData.fromJson(String json) { return switch (json) {
-  '[DONE]' => Done,
+  '[DONE]' => done,
   _ => DoneEventData._(json),
 }; }
 
-static const DoneEventData Done = DoneEventData._('[DONE]');
+static const DoneEventData done = DoneEventData._('[DONE]');
 
-static const List<DoneEventData> values = [Done];
+static const List<DoneEventData> values = [done];
 
 final String value;
 

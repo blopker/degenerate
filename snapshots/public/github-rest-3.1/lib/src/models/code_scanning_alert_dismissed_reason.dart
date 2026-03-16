@@ -9,7 +9,7 @@ final class CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedRe
 
 factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (json) {
   'false positive' => falsePositive,
-  'won\'t fix' => wonTFix,
+  'won\'t fix' => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => CodeScanningAlertDismissedReason._(json),
@@ -17,13 +17,13 @@ factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (
 
 static const CodeScanningAlertDismissedReason falsePositive = CodeScanningAlertDismissedReason._('false positive');
 
-static const CodeScanningAlertDismissedReason wonTFix = CodeScanningAlertDismissedReason._('won\'t fix');
+static const CodeScanningAlertDismissedReason wontFix = CodeScanningAlertDismissedReason._('won\'t fix');
 
 static const CodeScanningAlertDismissedReason usedInTests = CodeScanningAlertDismissedReason._('used in tests');
 
 static const CodeScanningAlertDismissedReason $null = CodeScanningAlertDismissedReason._('null');
 
-static const List<CodeScanningAlertDismissedReason> values = [falsePositive, wonTFix, usedInTests, $null];
+static const List<CodeScanningAlertDismissedReason> values = [falsePositive, wontFix, usedInTests, $null];
 
 final String value;
 

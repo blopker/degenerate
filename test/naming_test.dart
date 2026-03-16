@@ -237,6 +237,12 @@ void main() {
       expect(enumValueName('1xx'), r'$1xx');
       expect(enumValueName('+1'), 'plus1');
     });
+
+    test('handles values with brackets and special chars', () {
+      // [DONE] should become lowerCamelCase 'done', not PascalCase 'Done'
+      expect(enumValueName('[DONE]'), 'done');
+      expect(enumValueName('(active)'), 'active');
+    });
   });
 
   group('sanitizeFieldName', () {

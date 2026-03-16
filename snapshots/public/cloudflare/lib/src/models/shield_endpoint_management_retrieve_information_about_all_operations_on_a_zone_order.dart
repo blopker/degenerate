@@ -11,7 +11,7 @@ factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrde
   'method' => method,
   'host' => host,
   'endpoint' => endpoint,
-  'thresholds.\$key' => thresholds$key,
+  'thresholds.\$key' => thresholdsKey,
   _ => ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(json),
 }; }
 
@@ -21,9 +21,9 @@ static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZon
 
 static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder endpoint = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._('endpoint');
 
-static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder thresholds$key = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._('thresholds.\$key');
+static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder thresholdsKey = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._('thresholds.\$key');
 
-static const List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder> values = [method, host, endpoint, thresholds$key];
+static const List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder> values = [method, host, endpoint, thresholdsKey];
 
 final String value;
 

@@ -389,8 +389,13 @@ String escapeDartString(String value) {
 }
 
 /// Convert an enum string value to a valid Dart enum constant name.
+final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
+
 String enumValueName(String value) {
-  var name = toCamelCase(value);
+  // Strip characters that are invalid in identifiers and not recognized as
+  // word separators by _splitWords, so they don't interfere with casing.
+  // e.g. "[DONE]" → "DONE" → toCamelCase → "done" (not "[Done]" → "Done").
+  var name = toCamelCase(value.replaceAll(_nonIdentChars, ''));
   name = sanitizeFieldName(name);
   // Also escape enum-internal reserved names (value, values, json, etc.)
   if (enumReservedNames.contains(name)) {
