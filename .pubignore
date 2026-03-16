@@ -6,6 +6,7 @@ scratch/
 .github/
 .zed/
 .claude/
+openapi_specs/
 review*.md
 TODO.md
 AGENTS.md
