@@ -1,0 +1,14 @@
+snapshots/
+assets/
+test/
+outputs/
+scratch/
+.github/
+.zed/
+.claude/
+review*.md
+TODO.md
+AGENTS.md
+CLAUDE.md
+dartgen-spec.md
+Makefile
