@@ -96,18 +96,18 @@ void main(List<String> args) {
   _updateBinVersion(newVersion);
   _updateEmitterConstraint(newVersion);
 
-  print('\nAll versions updated to $newVersion.');
-  print('');
-  print('Next steps:');
-  print('  1. Review changes: git diff');
-  print('  2. Commit: git commit -am "Release v$newVersion"');
-  print('  3. Tag: git tag v$newVersion');
-  print('  4. Push: git push && git push --tags');
-  print('  5. Publish in order:');
-  print('     cd packages/degenerate_runtime && dart pub publish');
-  print('     cd packages/degenerate_http && dart pub publish');
-  print('     cd packages/degenerate_dio && dart pub publish');
-  print('     dart pub publish');
+  // 9. Commit, tag, and push.
+  print('\nCommitting...');
+  _run('git', ['add', '-A']);
+  _run('git', ['commit', '-m', 'Release v$newVersion']);
+  _run('git', ['tag', 'v$newVersion']);
+
+  print('Pushing...');
+  _run('git', ['push']);
+  _run('git', ['push', '--tags']);
+
+  print('\nReleased v$newVersion!');
+  print('Run `make publish` to publish to pub.dev.');
 }
 
 // ---------------------------------------------------------------------------

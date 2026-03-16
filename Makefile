@@ -1,4 +1,4 @@
-.PHONY: test update_snapshots update_example release
+.PHONY: test update_snapshots update_example release publish
 
 test:
 	dart test
@@ -18,6 +18,12 @@ update_snapshots:
 
 release:
 	dart run scripts/release.dart $(ARGS)
+
+publish:
+	cd packages/degenerate_runtime && dart pub publish
+	cd packages/degenerate_http && dart pub publish
+	cd packages/degenerate_dio && dart pub publish
+	dart pub publish
 
 update_example:
 	dart run bin/degenerate.dart -i example/petstore3.json -o example/petstore_client --clean -n petstore_client
