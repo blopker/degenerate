@@ -1,6 +1,7 @@
 ## 0.1.3
 
 - Fix runtime crash for required+nullable fields in fromJson (`type 'Null' is not a subtype of type 'String' in type cast`)
+- Fix enum values with special characters (e.g. `[DONE]`) generating PascalCase instead of lowerCamelCase
 
 ## 0.1.2
 
