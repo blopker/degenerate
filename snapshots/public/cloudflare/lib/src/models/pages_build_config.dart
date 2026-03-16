@@ -12,8 +12,8 @@ factory PagesBuildConfig.fromJson(Map<String, dynamic> json) { return PagesBuild
   buildCommand: json['build_command'] as String?,
   destinationDir: json['destination_dir'] as String?,
   rootDir: json['root_dir'] as String?,
-  webAnalyticsTag: json['web_analytics_tag'] as String,
-  webAnalyticsToken: json['web_analytics_token'] as String,
+  webAnalyticsTag: json['web_analytics_tag'] as String?,
+  webAnalyticsToken: json['web_analytics_token'] as String?,
 ); }
 
 /// Enable build caching for the project.

@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'r2_errors2.dart';final class
 factory ResponseFailure.fromJson(Map<String, dynamic> json) { return ResponseFailure(
   errors: (json['errors'] as List<dynamic>).map((e) => R2Errors2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 

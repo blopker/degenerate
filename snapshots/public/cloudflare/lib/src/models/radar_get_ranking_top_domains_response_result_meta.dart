@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RadarGetRankingTopDomainsResponseResultMeta {const RadarGetRankingTopDomainsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetRankingTopDomainsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopDomainsResponseResultMeta(
-  confidenceInfo: RadarGetRankingTopDomainsResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  confidenceInfo: json['confidenceInfo'] != null ? RadarGetRankingTopDomainsResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetRankingTopDomainsResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetRankingTopDomainsResponseResultMetaNormalization.fromJson(json['normalization'] as String),

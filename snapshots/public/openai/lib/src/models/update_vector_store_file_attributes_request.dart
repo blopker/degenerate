@@ -7,7 +7,7 @@
 final class UpdateVectorStoreFileAttributesRequest {const UpdateVectorStoreFileAttributesRequest({required this.attributes});
 
 factory UpdateVectorStoreFileAttributesRequest.fromJson(Map<String, dynamic> json) { return UpdateVectorStoreFileAttributesRequest(
-  attributes: (json['attributes'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 final Map<String,dynamic>? attributes;

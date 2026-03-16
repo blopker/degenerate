@@ -37,7 +37,7 @@ final class OrganizationProgrammaticAccessGrantRequest {const OrganizationProgra
 
 factory OrganizationProgrammaticAccessGrantRequest.fromJson(Map<String, dynamic> json) { return OrganizationProgrammaticAccessGrantRequest(
   id: (json['id'] as num).toInt(),
-  reason: json['reason'] as String,
+  reason: json['reason'] as String?,
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   repositorySelection: OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(json['repository_selection'] as String),
   repositoriesUrl: json['repositories_url'] as String,
@@ -46,8 +46,8 @@ factory OrganizationProgrammaticAccessGrantRequest.fromJson(Map<String, dynamic>
   tokenId: (json['token_id'] as num).toInt(),
   tokenName: json['token_name'] as String,
   tokenExpired: json['token_expired'] as bool,
-  tokenExpiresAt: json['token_expires_at'] as String,
-  tokenLastUsedAt: json['token_last_used_at'] as String,
+  tokenExpiresAt: json['token_expires_at'] as String?,
+  tokenLastUsedAt: json['token_last_used_at'] as String?,
 ); }
 
 /// Unique identifier of the request for access via fine-grained personal access token. The `pat_request_id` used to review PAT requests.

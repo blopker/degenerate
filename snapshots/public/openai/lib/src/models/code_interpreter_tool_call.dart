@@ -48,8 +48,8 @@ factory CodeInterpreterToolCall.fromJson(Map<String, dynamic> json) { return Cod
   id: json['id'] as String,
   status: CodeInterpreterToolCallStatus.fromJson(json['status'] as String),
   containerId: json['container_id'] as String,
-  code: json['code'] as String,
-  outputs: (json['outputs'] as List<dynamic>).map((e) => CodeInterpreterToolCallOutputs2.fromJson(e as Map<String, dynamic>)).toList(),
+  code: json['code'] as String?,
+  outputs: (json['outputs'] as List<dynamic>?)?.map((e) => CodeInterpreterToolCallOutputs2.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The type of the code interpreter tool call. Always `code_interpreter_call`.

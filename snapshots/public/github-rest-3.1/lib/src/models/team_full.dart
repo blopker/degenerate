@@ -96,7 +96,7 @@ factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
   htmlUrl: Uri.parse(json['html_url'] as String),
   name: json['name'] as String,
   slug: json['slug'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   privacy: json['privacy'] != null ? TeamFullPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? TeamFullNotificationSetting.fromJson(json['notification_setting'] as String) : null,
   permission: json['permission'] as String,

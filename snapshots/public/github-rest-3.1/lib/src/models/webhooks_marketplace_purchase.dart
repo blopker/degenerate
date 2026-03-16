@@ -9,8 +9,8 @@ import 'webhooks_marketplace_purchase_account.dart';import 'webhooks_marketplace
 factory WebhooksMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhooksMarketplacePurchase(
   account: WebhooksMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
-  freeTrialEndsOn: json['free_trial_ends_on'] as String,
-  nextBillingDate: json['next_billing_date'] as String,
+  freeTrialEndsOn: json['free_trial_ends_on'] as String?,
+  nextBillingDate: json['next_billing_date'] as String?,
   onFreeTrial: json['on_free_trial'] as bool,
   plan: WebhooksMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),
   unitCount: (json['unit_count'] as num).toInt(),

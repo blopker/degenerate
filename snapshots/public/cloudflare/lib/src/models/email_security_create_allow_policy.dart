@@ -16,7 +16,7 @@ factory EmailSecurityCreateAllowPolicy.fromJson(Map<String, dynamic> json) { ret
   isSpoof: json['is_spoof'] as bool?,
   isTrustedSender: json['is_trusted_sender'] as bool,
   pattern: json['pattern'] as String,
-  patternType: EmailSecurityPatternType.fromJson(json['pattern_type'] as String),
+  patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
   verifySender: json['verify_sender'] as bool,
 ); }
 

@@ -9,7 +9,7 @@ final class DependabotAlertSecurityAdvisoryCvss {const DependabotAlertSecurityAd
 
 factory DependabotAlertSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryCvss(
   score: (json['score'] as num).toDouble(),
-  vectorString: json['vector_string'] as String,
+  vectorString: json['vector_string'] as String?,
 ); }
 
 /// The overall CVSS score of the advisory.

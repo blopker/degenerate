@@ -9,13 +9,13 @@ final class WebhookOrganizationMemberInvitedInvitation {const WebhookOrganizatio
 
 factory WebhookOrganizationMemberInvitedInvitation.fromJson(Map<String, dynamic> json) { return WebhookOrganizationMemberInvitedInvitation(
   createdAt: DateTime.parse(json['created_at'] as String),
-  email: json['email'] as String,
-  failedAt: DateTime.parse(json['failed_at'] as String),
-  failedReason: json['failed_reason'] as String,
+  email: json['email'] as String?,
+  failedAt: json['failed_at'] != null ? DateTime.parse(json['failed_at'] as String) : null,
+  failedReason: json['failed_reason'] as String?,
   id: (json['id'] as num).toDouble(),
   invitationTeamsUrl: Uri.parse(json['invitation_teams_url'] as String),
-  inviter: WebhookOrganizationMemberInvitedInvitationInviter.fromJson(json['inviter'] as Map<String, dynamic>),
-  login: json['login'] as String,
+  inviter: json['inviter'] != null ? WebhookOrganizationMemberInvitedInvitationInviter.fromJson(json['inviter'] as Map<String, dynamic>) : null,
+  login: json['login'] as String?,
   nodeId: json['node_id'] as String,
   role: json['role'] as String,
   teamCount: (json['team_count'] as num).toDouble(),

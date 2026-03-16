@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Fix runtime crash for required+nullable fields in fromJson (`type 'Null' is not a subtype of type 'String' in type cast`)
+
 ## 0.1.2
 
 - Add GitHub Actions CI

@@ -31,8 +31,8 @@ final class SkillVersionListResource {const SkillVersionListResource({this.objec
 factory SkillVersionListResource.fromJson(Map<String, dynamic> json) { return SkillVersionListResource(
   object: SkillVersionListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => SkillVersionResource.fromJson(e as Map<String, dynamic>)).toList(),
-  firstId: json['first_id'] as String,
-  lastId: json['last_id'] as String,
+  firstId: json['first_id'] as String?,
+  lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
 ); }
 

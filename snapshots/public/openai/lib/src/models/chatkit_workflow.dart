@@ -9,8 +9,8 @@ final class ChatkitWorkflow {const ChatkitWorkflow({required this.id, required t
 
 factory ChatkitWorkflow.fromJson(Map<String, dynamic> json) { return ChatkitWorkflow(
   id: json['id'] as String,
-  version: json['version'] as String,
-  stateVariables: (json['state_variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  version: json['version'] as String?,
+  stateVariables: (json['state_variables'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   tracing: ChatkitWorkflowTracing.fromJson(json['tracing'] as Map<String, dynamic>),
 ); }
 

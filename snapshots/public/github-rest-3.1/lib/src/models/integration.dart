@@ -14,7 +14,7 @@ factory Integration.fromJson(Map<String, dynamic> json) { return Integration(
   clientId: json['client_id'] as String?,
   owner: OneOf2.parse(json['owner'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Enterprise.fromJson(v as Map<String, dynamic>),),
   name: json['name'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   externalUrl: Uri.parse(json['external_url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),

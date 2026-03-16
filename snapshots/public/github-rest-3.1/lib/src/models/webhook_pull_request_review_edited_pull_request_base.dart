@@ -11,7 +11,7 @@ factory WebhookPullRequestReviewEditedPullRequestBase.fromJson(Map<String, dynam
   ref: json['ref'] as String,
   repo: WebhookPullRequestReviewEditedPullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: WebhookPullRequestReviewEditedPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestReviewEditedPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

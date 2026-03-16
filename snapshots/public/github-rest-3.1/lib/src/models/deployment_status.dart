@@ -52,7 +52,7 @@ factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return Deployment
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   state: DeploymentStatusState.fromJson(json['state'] as String),
-  creator: SimpleUser.fromJson(json['creator'] as Map<String, dynamic>),
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   description: json['description'] as String,
   environment: json.containsKey('environment') ? json['environment'] as String : '',
   targetUrl: Uri.parse(json['target_url'] as String),

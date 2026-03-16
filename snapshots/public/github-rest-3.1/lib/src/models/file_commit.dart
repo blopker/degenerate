@@ -8,7 +8,7 @@ import 'file_commit_commit.dart';import 'file_commit_content.dart';/// File Comm
 final class FileCommit {const FileCommit({required this.content, required this.commit, });
 
 factory FileCommit.fromJson(Map<String, dynamic> json) { return FileCommit(
-  content: FileCommitContent.fromJson(json['content'] as Map<String, dynamic>),
+  content: json['content'] != null ? FileCommitContent.fromJson(json['content'] as Map<String, dynamic>) : null,
   commit: FileCommitCommit.fromJson(json['commit'] as Map<String, dynamic>),
 ); }
 

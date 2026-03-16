@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'dos_messages2.dart';final cl
 factory ResponseCommonFailure33.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure33(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 

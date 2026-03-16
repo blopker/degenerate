@@ -44,7 +44,7 @@ factory PagesDeploymentConfigValues.fromJson(Map<String, dynamic> json) { return
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>).map((e) => e as String).toList(),
   d1Databases: (json['d1_databases'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesD1DatabasesValue.fromJson(v as Map<String, dynamic>))),
   durableObjectNamespaces: (json['durable_object_namespaces'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesDurableObjectNamespacesValue.fromJson(v as Map<String, dynamic>))),
-  envVars: (json['env_vars'] as Map<String, dynamic>).map((k, v) => MapEntry(k, PagesEnvVarsValue.fromJson(v as Map<String, dynamic>))),
+  envVars: (json['env_vars'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesEnvVarsValue.fromJson(v as Map<String, dynamic>))),
   failOpen: json['fail_open'] as bool,
   hyperdriveBindings: (json['hyperdrive_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesHyperdriveBindingsValue.fromJson(v as Map<String, dynamic>))),
   kvNamespaces: (json['kv_namespaces'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesKvNamespacesValue.fromJson(v as Map<String, dynamic>))),

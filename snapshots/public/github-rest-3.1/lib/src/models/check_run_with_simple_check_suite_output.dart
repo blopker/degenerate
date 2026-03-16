@@ -9,9 +9,9 @@ final class CheckRunWithSimpleCheckSuiteOutput {const CheckRunWithSimpleCheckSui
 factory CheckRunWithSimpleCheckSuiteOutput.fromJson(Map<String, dynamic> json) { return CheckRunWithSimpleCheckSuiteOutput(
   annotationsCount: (json['annotations_count'] as num).toInt(),
   annotationsUrl: Uri.parse(json['annotations_url'] as String),
-  summary: json['summary'] as String,
-  text: json['text'] as String,
-  title: json['title'] as String,
+  summary: json['summary'] as String?,
+  text: json['text'] as String?,
+  title: json['title'] as String?,
 ); }
 
 final int annotationsCount;

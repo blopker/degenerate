@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'tls_certificates_and_hostnam
 factory ResponseCommonFailure71.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure71(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 

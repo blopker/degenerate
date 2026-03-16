@@ -9,8 +9,8 @@ final class ResponseCommonFailure11 {const ResponseCommonFailure11({required thi
 
 factory ResponseCommonFailure11.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure11(
   errors: (json['errors'] as List<dynamic>).map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  messages: (json['messages'] as List<dynamic>?)?.map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 

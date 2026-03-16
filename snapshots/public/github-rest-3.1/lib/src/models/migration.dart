@@ -9,7 +9,7 @@ final class Migration {const Migration({required this.id, required this.owner, r
 
 factory Migration.fromJson(Map<String, dynamic> json) { return Migration(
   id: (json['id'] as num).toInt(),
-  owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
+  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
   guid: json['guid'] as String,
   state: json['state'] as String,
   lockRepositories: json['lock_repositories'] as bool,

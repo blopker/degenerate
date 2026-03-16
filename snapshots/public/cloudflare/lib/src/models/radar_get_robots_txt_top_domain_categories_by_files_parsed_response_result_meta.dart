@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMeta {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMeta(
-  confidenceInfo: RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  confidenceInfo: json['confidenceInfo'] != null ? RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaNormalization.fromJson(json['normalization'] as String),

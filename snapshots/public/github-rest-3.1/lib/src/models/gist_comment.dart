@@ -12,7 +12,7 @@ factory GistComment.fromJson(Map<String, dynamic> json) { return GistComment(
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
   body: json['body'] as String,
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),

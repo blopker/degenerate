@@ -10,7 +10,7 @@ final class RunStepDetailsToolCallsFunctionObjectFunction {const RunStepDetailsT
 factory RunStepDetailsToolCallsFunctionObjectFunction.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFunctionObjectFunction(
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-  output: json['output'] as String,
+  output: json['output'] as String?,
 ); }
 
 /// The name of the function.

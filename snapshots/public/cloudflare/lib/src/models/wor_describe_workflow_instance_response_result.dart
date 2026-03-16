@@ -49,16 +49,16 @@ bool get isUnknown { return !values.contains(this); }
 final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
 
 factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResult(
-  end: DateTime.parse(json['end'] as String),
-  error: WorDescribeWorkflowInstanceResponseResultError.fromJson(json['error'] as Map<String, dynamic>),
+  end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
+  error: json['error'] != null ? WorDescribeWorkflowInstanceResponseResultError.fromJson(json['error'] as Map<String, dynamic>) : null,
   output: json['output'],
   params: (json['params'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   queued: DateTime.parse(json['queued'] as String),
-  start: DateTime.parse(json['start'] as String),
+  start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
   status: WorDescribeWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),
   stepCount: (json['step_count'] as num).toInt(),
   steps: (json['steps'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(v as Map<String, dynamic>), fromB: (v) => WorDescribeWorkflowInstanceResponseResultStepsSleep.fromJson(v as Map<String, dynamic>), fromC: (v) => WorDescribeWorkflowInstanceResponseResultStepsTermination.fromJson(v as Map<String, dynamic>), fromD: (v) => WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent.fromJson(v as Map<String, dynamic>),)).toList(),
-  success: json['success'] as bool,
+  success: json['success'] as bool?,
   trigger: WorDescribeWorkflowInstanceResponseResultTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   versionId: json['versionId'] as String,
 ); }

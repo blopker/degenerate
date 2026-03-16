@@ -9,16 +9,16 @@ final class WebhookPackageUpdatedPackage {const WebhookPackageUpdatedPackage({re
 
 factory WebhookPackageUpdatedPackage.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackage(
   createdAt: json['created_at'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   ecosystem: json['ecosystem'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   namespace: json['namespace'] as String,
-  owner: WebhookPackageUpdatedPackageOwner.fromJson(json['owner'] as Map<String, dynamic>),
+  owner: json['owner'] != null ? WebhookPackageUpdatedPackageOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   packageType: json['package_type'] as String,
   packageVersion: WebhookPackageUpdatedPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
-  registry: WebhookPackageUpdatedPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>),
+  registry: json['registry'] != null ? WebhookPackageUpdatedPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String,
 ); }
 

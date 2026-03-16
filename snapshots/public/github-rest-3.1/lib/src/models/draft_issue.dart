@@ -12,7 +12,7 @@ factory DraftIssue.fromJson(Map<String, dynamic> json) { return DraftIssue(
   nodeId: json['node_id'] as String,
   title: json['title'] as String,
   body: json['body'] as String?,
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }

@@ -9,7 +9,7 @@ final class ReviewDismissedIssueEventDismissedReview {const ReviewDismissedIssue
 factory ReviewDismissedIssueEventDismissedReview.fromJson(Map<String, dynamic> json) { return ReviewDismissedIssueEventDismissedReview(
   state: json['state'] as String,
   reviewId: (json['review_id'] as num).toInt(),
-  dismissalMessage: json['dismissal_message'] as String,
+  dismissalMessage: json['dismissal_message'] as String?,
   dismissalCommitId: json['dismissal_commit_id'] as String?,
 ); }
 

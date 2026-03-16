@@ -43,7 +43,7 @@ factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus
   commit: WebhookStatusCommit.fromJson(json['commit'] as Map<String, dynamic>),
   context: json['context'] as String,
   createdAt: json['created_at'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   id: (json['id'] as num).toInt(),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -53,7 +53,7 @@ factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sha: json['sha'] as String,
   state: WebhookStatusState.fromJson(json['state'] as String),
-  targetUrl: json['target_url'] as String,
+  targetUrl: json['target_url'] as String?,
   updatedAt: json['updated_at'] as String,
 ); }
 

@@ -32,12 +32,12 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookIssuesClosedIssue {const WebhookIssuesClosedIssue({required this.activeLockReason, this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft, required this.eventsUrl, required this.htmlUrl, required this.id, this.labels, required this.labelsUrl, this.locked, required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp, this.pullRequest, required this.reactions, required this.repositoryUrl, this.pinnedComment, this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, required this.state, this.stateReason, this.timelineUrl, required this.title, this.type, required this.updatedAt, required this.url, required this.user, });
 
 factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesClosedIssue(
-  activeLockReason: json['active_lock_reason'] as String,
+  activeLockReason: json['active_lock_reason'] as String?,
   assignee: (json['assignee'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   assignees: (json['assignees'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   authorAssociation: json['author_association'] as String,
-  body: json['body'] as String,
-  closedAt: json['closed_at'] as String,
+  body: json['body'] as String?,
+  closedAt: json['closed_at'] as String?,
   comments: (json['comments'] as num).toInt(),
   commentsUrl: json['comments_url'] as String,
   createdAt: json['created_at'] as String,
@@ -48,7 +48,7 @@ factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) { return We
   labels: (json['labels'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
   labelsUrl: json['labels_url'] as String,
   locked: json['locked'] as bool?,
-  milestone: (json['milestone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  milestone: (json['milestone'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   performedViaGithubApp: (json['performed_via_github_app'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

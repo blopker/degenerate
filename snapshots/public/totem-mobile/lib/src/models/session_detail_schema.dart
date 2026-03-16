@@ -21,11 +21,11 @@ factory SessionDetailSchema.fromJson(Map<String, dynamic> json) { return Session
   joinable: json['joinable'] as bool,
   ended: json['ended'] as bool,
   rsvpUrl: json['rsvp_url'] as String,
-  joinUrl: json['join_url'] as String,
+  joinUrl: json['join_url'] as String?,
   subscribeUrl: json['subscribe_url'] as String,
   calLink: json['cal_link'] as String,
-  subscribed: json['subscribed'] as bool,
-  userTimezone: json['user_timezone'] as String,
+  subscribed: json['subscribed'] as bool?,
+  userTimezone: json['user_timezone'] as String?,
   meetingProvider: MeetingProviderEnum.fromJson(json['meeting_provider'] as String),
 ); }
 

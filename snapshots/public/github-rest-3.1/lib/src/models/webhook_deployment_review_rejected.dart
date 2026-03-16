@@ -40,7 +40,7 @@ factory WebhookDeploymentReviewRejected.fromJson(Map<String, dynamic> json) { re
   since: json['since'] as String,
   workflowJobRun: json['workflow_job_run'] != null ? WebhooksWorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>) : null,
   workflowJobRuns: (json['workflow_job_runs'] as List<dynamic>?)?.map((e) => WebhookDeploymentReviewRejectedWorkflowJobRuns.fromJson(e as Map<String, dynamic>)).toList(),
-  workflowRun: WebhookDeploymentReviewRejectedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
+  workflowRun: json['workflow_run'] != null ? WebhookDeploymentReviewRejectedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookDeploymentReviewRejectedAction action;

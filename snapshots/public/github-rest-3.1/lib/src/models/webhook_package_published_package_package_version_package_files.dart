@@ -11,12 +11,12 @@ factory WebhookPackagePublishedPackagePackageVersionPackageFiles.fromJson(Map<St
   createdAt: json['created_at'] as String,
   downloadUrl: Uri.parse(json['download_url'] as String),
   id: (json['id'] as num).toInt(),
-  md5: json['md5'] as String,
+  md5: json['md5'] as String?,
   name: json['name'] as String,
-  sha1: json['sha1'] as String,
-  sha256: json['sha256'] as String,
+  sha1: json['sha1'] as String?,
+  sha256: json['sha256'] as String?,
   size: (json['size'] as num).toInt(),
-  state: json['state'] as String,
+  state: json['state'] as String?,
   updatedAt: json['updated_at'] as String,
 ); }
 

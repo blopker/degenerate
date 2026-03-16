@@ -12,7 +12,7 @@ factory SimpleClassroomOrganization.fromJson(Map<String, dynamic> json) { return
   login: json['login'] as String,
   nodeId: json['node_id'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
-  name: json['name'] as String,
+  name: json['name'] as String?,
   avatarUrl: json['avatar_url'] as String,
 ); }
 

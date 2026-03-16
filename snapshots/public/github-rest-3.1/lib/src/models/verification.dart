@@ -9,9 +9,9 @@ final class Verification {const Verification({required this.verified, required t
 factory Verification.fromJson(Map<String, dynamic> json) { return Verification(
   verified: json['verified'] as bool,
   reason: json['reason'] as String,
-  payload: json['payload'] as String,
-  signature: json['signature'] as String,
-  verifiedAt: json['verified_at'] as String,
+  payload: json['payload'] as String?,
+  signature: json['signature'] as String?,
+  verifiedAt: json['verified_at'] as String?,
 ); }
 
 final bool verified;

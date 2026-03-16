@@ -8,7 +8,7 @@
 final class LoadBalancingFilterOptions {const LoadBalancingFilterOptions({this.disable = false, this.healthy, });
 
 factory LoadBalancingFilterOptions.fromJson(Map<String, dynamic> json) { return LoadBalancingFilterOptions(
-  disable: json.containsKey('disable') ? json['disable'] as bool : false,
+  disable: json.containsKey('disable') ? json['disable'] as bool? : false,
   healthy: json['healthy'] as bool?,
 ); }
 

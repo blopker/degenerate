@@ -7,7 +7,7 @@
 import 'magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';final class MagicVisibilityMnmMnmRuleAdvertisableResponse {const MagicVisibilityMnmMnmRuleAdvertisableResponse({required this.automaticAdvertisement});
 
 factory MagicVisibilityMnmMnmRuleAdvertisableResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRuleAdvertisableResponse(
-  automaticAdvertisement: MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool),
+  automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
 ); }
 
 final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;

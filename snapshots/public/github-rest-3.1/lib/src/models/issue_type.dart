@@ -57,7 +57,7 @@ factory IssueType.fromJson(Map<String, dynamic> json) { return IssueType(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   color: json['color'] != null ? IssueTypeColor.fromJson(json['color'] as String) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,

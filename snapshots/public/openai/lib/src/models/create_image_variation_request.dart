@@ -62,9 +62,9 @@ final class CreateImageVariationRequest {const CreateImageVariationRequest({requ
 factory CreateImageVariationRequest.fromJson(Map<String, dynamic> json) { return CreateImageVariationRequest(
   image: base64Decode(json['image'] as String),
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageVariationRequestModelVariant2.fromJson(v as String),) : null,
-  n: json.containsKey('n') ? (json['n'] as num).toInt() : 1,
-  responseFormat: json.containsKey('response_format') ? CreateImageVariationRequestResponseFormat.fromJson(json['response_format'] as String) : CreateImageVariationRequestResponseFormat.url,
-  size: json.containsKey('size') ? CreateImageVariationRequestSize.fromJson(json['size'] as String) : CreateImageVariationRequestSize.$1024x1024,
+  n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
+  responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageVariationRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageVariationRequestResponseFormat.url,
+  size: json.containsKey('size') ? json['size'] != null ? CreateImageVariationRequestSize.fromJson(json['size'] as String) : null : CreateImageVariationRequestSize.$1024x1024,
   user: json['user'] as String?,
 ); }
 

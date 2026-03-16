@@ -108,14 +108,14 @@ final class WebhookPullRequestReviewSubmittedPullRequest {const WebhookPullReque
 
 factory WebhookPullRequestReviewSubmittedPullRequest.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewSubmittedPullRequest(
   links: WebhookPullRequestReviewSubmittedPullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
-  activeLockReason: WebhookPullRequestReviewSubmittedPullRequestActiveLockReason.fromJson(json['active_lock_reason'] as String),
-  assignee: WebhookPullRequestReviewSubmittedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>),
+  activeLockReason: json['active_lock_reason'] != null ? WebhookPullRequestReviewSubmittedPullRequestActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
+  assignee: json['assignee'] != null ? WebhookPullRequestReviewSubmittedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>).map((e) => WebhookPullRequestReviewSubmittedPullRequestAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookPullRequestReviewSubmittedPullRequestAuthorAssociation.fromJson(json['author_association'] as String),
-  autoMerge: WebhookPullRequestReviewSubmittedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>),
+  autoMerge: json['auto_merge'] != null ? WebhookPullRequestReviewSubmittedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   base: WebhookPullRequestReviewSubmittedPullRequestBase.fromJson(json['base'] as Map<String, dynamic>),
-  body: json['body'] as String,
-  closedAt: json['closed_at'] as String,
+  body: json['body'] as String?,
+  closedAt: json['closed_at'] as String?,
   commentsUrl: Uri.parse(json['comments_url'] as String),
   commitsUrl: Uri.parse(json['commits_url'] as String),
   createdAt: json['created_at'] as String,
@@ -127,9 +127,9 @@ factory WebhookPullRequestReviewSubmittedPullRequest.fromJson(Map<String, dynami
   issueUrl: Uri.parse(json['issue_url'] as String),
   labels: (json['labels'] as List<dynamic>).map((e) => WebhookPullRequestReviewSubmittedPullRequestLabels.fromJson(e as Map<String, dynamic>)).toList(),
   locked: json['locked'] as bool,
-  mergeCommitSha: json['merge_commit_sha'] as String,
-  mergedAt: json['merged_at'] as String,
-  milestone: WebhookPullRequestReviewSubmittedPullRequestMilestone.fromJson(json['milestone'] as Map<String, dynamic>),
+  mergeCommitSha: json['merge_commit_sha'] as String?,
+  mergedAt: json['merged_at'] as String?,
+  milestone: json['milestone'] != null ? WebhookPullRequestReviewSubmittedPullRequestMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   patchUrl: Uri.parse(json['patch_url'] as String),
@@ -142,7 +142,7 @@ factory WebhookPullRequestReviewSubmittedPullRequest.fromJson(Map<String, dynami
   title: json['title'] as String,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
-  user: WebhookPullRequestReviewSubmittedPullRequestUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestReviewSubmittedPullRequestUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookPullRequestReviewSubmittedPullRequestLinks links;

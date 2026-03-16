@@ -99,12 +99,12 @@ factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject
   type: RunStepObjectType.fromJson(json['type'] as String),
   status: RunStepObjectStatus.fromJson(json['status'] as String),
   stepDetails: OneOf2.parse(json['step_details'], fromA: (v) => RunStepDetailsMessageCreationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsObject.fromJson(v as Map<String, dynamic>),),
-  lastError: RunStepObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>),
-  expiredAt: (json['expired_at'] as num).toInt(),
-  cancelledAt: (json['cancelled_at'] as num).toInt(),
-  failedAt: (json['failed_at'] as num).toInt(),
-  completedAt: (json['completed_at'] as num).toInt(),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  lastError: json['last_error'] != null ? RunStepObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
+  expiredAt: json['expired_at'] != null ? (json['expired_at'] as num).toInt() : null,
+  cancelledAt: json['cancelled_at'] != null ? (json['cancelled_at'] as num).toInt() : null,
+  failedAt: json['failed_at'] != null ? (json['failed_at'] as num).toInt() : null,
+  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   usage: RunStepCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
 ); }
 

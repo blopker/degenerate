@@ -47,7 +47,7 @@ factory WebhookCodeScanningAlertCreatedAlertRule.fromJson(Map<String, dynamic> j
   helpUri: json['help_uri'] as String?,
   id: json['id'] as String,
   name: json['name'] as String?,
-  severity: WebhookCodeScanningAlertCreatedAlertRuleSeverity.fromJson(json['severity'] as String),
+  severity: json['severity'] != null ? WebhookCodeScanningAlertCreatedAlertRuleSeverity.fromJson(json['severity'] as String) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 

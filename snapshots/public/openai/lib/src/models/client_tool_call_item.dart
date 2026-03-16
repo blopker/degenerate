@@ -63,7 +63,7 @@ factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientTo
   callId: json['call_id'] as String,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-  output: json['output'] as String,
+  output: json['output'] as String?,
 ); }
 
 /// Identifier of the thread item.

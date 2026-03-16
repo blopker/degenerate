@@ -82,13 +82,13 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookDeploymentReviewRejectedWorkflowRun {const WebhookDeploymentReviewRejectedWorkflowRun({required this.actor, this.artifactsUrl, this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, this.headCommit, this.headRepository, required this.headSha, required this.htmlUrl, required this.id, this.jobsUrl, this.logsUrl, required this.name, required this.nodeId, required this.path, this.previousAttemptUrl, required this.pullRequests, this.referencedWorkflows, this.repository, this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, required this.triggeringActor, required this.updatedAt, required this.url, required this.workflowId, this.workflowUrl, required this.displayTitle, });
 
 factory WebhookDeploymentReviewRejectedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRejectedWorkflowRun(
-  actor: WebhookDeploymentReviewRejectedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>),
+  actor: json['actor'] != null ? WebhookDeploymentReviewRejectedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   artifactsUrl: json['artifacts_url'] as String?,
   cancelUrl: json['cancel_url'] as String?,
   checkSuiteId: (json['check_suite_id'] as num).toInt(),
   checkSuiteNodeId: json['check_suite_node_id'] as String,
   checkSuiteUrl: json['check_suite_url'] as String?,
-  conclusion: WebhookDeploymentReviewRejectedWorkflowRunConclusion.fromJson(json['conclusion'] as String),
+  conclusion: json['conclusion'] != null ? WebhookDeploymentReviewRejectedWorkflowRunConclusion.fromJson(json['conclusion'] as String) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
@@ -111,7 +111,7 @@ factory WebhookDeploymentReviewRejectedWorkflowRun.fromJson(Map<String, dynamic>
   runNumber: (json['run_number'] as num).toInt(),
   runStartedAt: DateTime.parse(json['run_started_at'] as String),
   status: WebhookDeploymentReviewRejectedWorkflowRunStatus.fromJson(json['status'] as String),
-  triggeringActor: WebhookDeploymentReviewRejectedWorkflowRunTriggeringActor.fromJson(json['triggering_actor'] as Map<String, dynamic>),
+  triggeringActor: json['triggering_actor'] != null ? WebhookDeploymentReviewRejectedWorkflowRunTriggeringActor.fromJson(json['triggering_actor'] as Map<String, dynamic>) : null,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   workflowId: (json['workflow_id'] as num).toInt(),

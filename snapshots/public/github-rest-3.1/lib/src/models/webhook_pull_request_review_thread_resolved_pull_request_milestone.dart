@@ -33,12 +33,12 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookPullRequestReviewThreadResolvedPullRequestMilestone {const WebhookPullRequestReviewThreadResolvedPullRequestMilestone({required this.closedAt, required this.closedIssues, required this.createdAt, required this.creator, required this.description, required this.dueOn, required this.htmlUrl, required this.id, required this.labelsUrl, required this.nodeId, required this.number, required this.openIssues, required this.state, required this.title, required this.updatedAt, required this.url, });
 
 factory WebhookPullRequestReviewThreadResolvedPullRequestMilestone.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedPullRequestMilestone(
-  closedAt: DateTime.parse(json['closed_at'] as String),
+  closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   closedIssues: (json['closed_issues'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
-  creator: WebhookPullRequestReviewThreadResolvedPullRequestMilestoneCreator.fromJson(json['creator'] as Map<String, dynamic>),
-  description: json['description'] as String,
-  dueOn: DateTime.parse(json['due_on'] as String),
+  creator: json['creator'] != null ? WebhookPullRequestReviewThreadResolvedPullRequestMilestoneCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
+  description: json['description'] as String?,
+  dueOn: json['due_on'] != null ? DateTime.parse(json['due_on'] as String) : null,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   labelsUrl: Uri.parse(json['labels_url'] as String),

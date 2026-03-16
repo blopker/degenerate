@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 final class AiSearchInstanceChatCompletionResponseChoicesMessage {const AiSearchInstanceChatCompletionResponseChoicesMessage({required this.content, required this.role, });
 
 factory AiSearchInstanceChatCompletionResponseChoicesMessage.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponseChoicesMessage(
-  content: json['content'] as String,
+  content: json['content'] as String?,
   role: AiSearchInstanceChatCompletionResponseChoicesMessageRole.fromJson(json['role'] as String),
 ); }
 

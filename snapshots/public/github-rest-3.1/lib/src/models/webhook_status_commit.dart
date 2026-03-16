@@ -7,10 +7,10 @@
 import 'package:collection/collection.dart';import 'webhook_status_commit_author.dart';import 'webhook_status_commit_commit.dart';import 'webhook_status_commit_committer.dart';import 'webhook_status_commit_parents.dart';final class WebhookStatusCommit {const WebhookStatusCommit({required this.author, required this.commentsUrl, required this.commit, required this.committer, required this.htmlUrl, required this.nodeId, required this.parents, required this.sha, required this.url, });
 
 factory WebhookStatusCommit.fromJson(Map<String, dynamic> json) { return WebhookStatusCommit(
-  author: WebhookStatusCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),
+  author: json['author'] != null ? WebhookStatusCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   commentsUrl: Uri.parse(json['comments_url'] as String),
   commit: WebhookStatusCommitCommit.fromJson(json['commit'] as Map<String, dynamic>),
-  committer: WebhookStatusCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>),
+  committer: json['committer'] != null ? WebhookStatusCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
   htmlUrl: Uri.parse(json['html_url'] as String),
   nodeId: json['node_id'] as String,
   parents: (json['parents'] as List<dynamic>).map((e) => WebhookStatusCommitParents.fromJson(e as Map<String, dynamic>)).toList(),

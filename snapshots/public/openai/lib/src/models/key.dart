@@ -14,7 +14,7 @@ factory Key.fromJson(Map<String, dynamic> json) { return Key(
   redactedValue: json['redacted_value'] as String,
   value: json['value'] as String?,
   createdAt: (json['created_at'] as num).toInt(),
-  lastUsedAt: (json['last_used_at'] as num).toInt(),
+  lastUsedAt: json['last_used_at'] != null ? (json['last_used_at'] as num).toInt() : null,
   owner: KeyOwner.fromJson(json['owner'] as Map<String, dynamic>),
 ); }
 

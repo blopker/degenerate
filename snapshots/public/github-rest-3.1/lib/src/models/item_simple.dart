@@ -15,7 +15,7 @@ factory ItemSimple.fromJson(Map<String, dynamic> json) { return ItemSimple(
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  archivedAt: DateTime.parse(json['archived_at'] as String),
+  archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
   projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
   itemUrl: json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null,
 ); }

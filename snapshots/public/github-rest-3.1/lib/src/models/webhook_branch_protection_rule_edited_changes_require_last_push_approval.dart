@@ -7,7 +7,7 @@
 final class WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval {const WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval(
-  from: json['from'] as bool,
+  from: json['from'] as bool?,
 ); }
 
 final bool? from;

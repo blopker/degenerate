@@ -7,7 +7,7 @@
 final class WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly {const WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly(
-  from: json['from'] as bool,
+  from: json['from'] as bool?,
 ); }
 
 final bool? from;

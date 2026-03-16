@@ -8,7 +8,7 @@ import 'lists_description.dart';import 'lists_kind.dart';import 'lists_name.dart
 
 factory ListsCreateAListRequest.fromJson(Map<String, dynamic> json) { return ListsCreateAListRequest(
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
-  kind: ListsKind.fromJson(json['kind'] as dynamic),
+  kind: json['kind'] != null ? ListsKind.fromJson(json['kind'] as dynamic) : null,
   name: ListsName.fromJson(json['name'] as String),
 ); }
 

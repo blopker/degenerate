@@ -9,8 +9,8 @@ final class TaskGroupTask {const TaskGroupTask({required this.type, required thi
 
 factory TaskGroupTask.fromJson(Map<String, dynamic> json) { return TaskGroupTask(
   type: TaskType.fromJson(json['type'] as String),
-  heading: json['heading'] as String,
-  summary: json['summary'] as String,
+  heading: json['heading'] as String?,
+  summary: json['summary'] as String?,
 ); }
 
 /// Subtype for the grouped task.

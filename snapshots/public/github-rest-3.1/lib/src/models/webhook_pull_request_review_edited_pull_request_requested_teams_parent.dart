@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookPullRequestReviewEditedPullRequestRequestedTeamsParent {const WebhookPullRequestReviewEditedPullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
 factory WebhookPullRequestReviewEditedPullRequestRequestedTeamsParent.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedPullRequestRequestedTeamsParent(
-  description: json['description'] as String,
+  description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String,

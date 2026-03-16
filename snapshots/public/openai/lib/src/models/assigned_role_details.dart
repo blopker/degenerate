@@ -13,12 +13,12 @@ factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return Assigne
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
   resourceType: json['resource_type'] as String,
   predefinedRole: json['predefined_role'] as bool,
-  description: json['description'] as String,
-  createdAt: (json['created_at'] as num).toInt(),
-  updatedAt: (json['updated_at'] as num).toInt(),
-  createdBy: json['created_by'] as String,
-  createdByUserObj: (json['created_by_user_obj'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  description: json['description'] as String?,
+  createdAt: json['created_at'] != null ? (json['created_at'] as num).toInt() : null,
+  updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
+  createdBy: json['created_by'] as String?,
+  createdByUserObj: (json['created_by_user_obj'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }
 
 /// Identifier for the role.

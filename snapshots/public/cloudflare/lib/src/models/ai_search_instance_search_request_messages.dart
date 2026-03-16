@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 final class AiSearchInstanceSearchRequestMessages {const AiSearchInstanceSearchRequestMessages({required this.content, required this.role, });
 
 factory AiSearchInstanceSearchRequestMessages.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestMessages(
-  content: json['content'] as String,
+  content: json['content'] as String?,
   role: AiSearchInstanceSearchRequestMessagesRole.fromJson(json['role'] as String),
 ); }
 

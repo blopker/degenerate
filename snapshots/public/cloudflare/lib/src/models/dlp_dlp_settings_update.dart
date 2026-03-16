@@ -11,8 +11,8 @@ import 'dlp_payload_log_setting_update.dart';/// Request model for updating DLP 
 final class DlpDlpSettingsUpdate {const DlpDlpSettingsUpdate({this.aiContextAnalysis = false, this.ocr = false, this.payloadLogging, });
 
 factory DlpDlpSettingsUpdate.fromJson(Map<String, dynamic> json) { return DlpDlpSettingsUpdate(
-  aiContextAnalysis: json.containsKey('ai_context_analysis') ? json['ai_context_analysis'] as bool : false,
-  ocr: json.containsKey('ocr') ? json['ocr'] as bool : false,
+  aiContextAnalysis: json.containsKey('ai_context_analysis') ? json['ai_context_analysis'] as bool? : false,
+  ocr: json.containsKey('ocr') ? json['ocr'] as bool? : false,
   payloadLogging: json['payload_logging'] != null ? DlpPayloadLogSettingUpdate.fromJson(json['payload_logging'] as Map<String, dynamic>) : null,
 ); }
 

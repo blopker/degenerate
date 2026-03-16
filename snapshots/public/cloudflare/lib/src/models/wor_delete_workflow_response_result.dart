@@ -29,7 +29,7 @@ final class WorDeleteWorkflowResponseResult {const WorDeleteWorkflowResponseResu
 
 factory WorDeleteWorkflowResponseResult.fromJson(Map<String, dynamic> json) { return WorDeleteWorkflowResponseResult(
   status: WorDeleteWorkflowResponseResultStatus.fromJson(json['status'] as String),
-  success: json['success'] as bool,
+  success: json['success'] as bool?,
 ); }
 
 final WorDeleteWorkflowResponseResultStatus status;

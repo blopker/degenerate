@@ -47,7 +47,7 @@ factory WebhookCodeScanningAlertReopenedByUserAlert.fromJson(Map<String, dynamic
   mostRecentInstance: json['most_recent_instance'] != null ? WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertReopenedByUserAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
-  state: WebhookCodeScanningAlertReopenedByUserAlertState.fromJson(json['state'] as String),
+  state: json['state'] != null ? WebhookCodeScanningAlertReopenedByUserAlertState.fromJson(json['state'] as String) : null,
   tool: WebhookCodeScanningAlertReopenedByUserAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
 ); }

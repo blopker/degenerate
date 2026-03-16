@@ -45,7 +45,7 @@ factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return Mark
   yearlyPriceInCents: (json['yearly_price_in_cents'] as num).toInt(),
   priceModel: MarketplaceListingPlanPriceModel.fromJson(json['price_model'] as String),
   hasFreeTrial: json['has_free_trial'] as bool,
-  unitName: json['unit_name'] as String,
+  unitName: json['unit_name'] as String?,
   state: json['state'] as String,
   bullets: (json['bullets'] as List<dynamic>).map((e) => e as String).toList(),
 ); }

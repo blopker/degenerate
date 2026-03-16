@@ -45,8 +45,8 @@ factory OrganizationProgrammaticAccessGrant.fromJson(Map<String, dynamic> json) 
   tokenId: (json['token_id'] as num).toInt(),
   tokenName: json['token_name'] as String,
   tokenExpired: json['token_expired'] as bool,
-  tokenExpiresAt: json['token_expires_at'] as String,
-  tokenLastUsedAt: json['token_last_used_at'] as String,
+  tokenExpiresAt: json['token_expires_at'] as String?,
+  tokenLastUsedAt: json['token_last_used_at'] as String?,
 ); }
 
 /// Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token.

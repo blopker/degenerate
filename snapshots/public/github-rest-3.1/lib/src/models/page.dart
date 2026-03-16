@@ -99,8 +99,8 @@ final class Page {const Page({required this.url, required this.status, required 
 
 factory Page.fromJson(Map<String, dynamic> json) { return Page(
   url: Uri.parse(json['url'] as String),
-  status: PageStatus.fromJson(json['status'] as String),
-  cname: json['cname'] as String,
+  status: json['status'] != null ? PageStatus.fromJson(json['status'] as String) : null,
+  cname: json['cname'] as String?,
   protectedDomainState: json['protected_domain_state'] != null ? PageProtectedDomainState.fromJson(json['protected_domain_state'] as String) : null,
   pendingDomainUnverifiedAt: json['pending_domain_unverified_at'] != null ? DateTime.parse(json['pending_domain_unverified_at'] as String) : null,
   custom404: json['custom_404'] as bool,

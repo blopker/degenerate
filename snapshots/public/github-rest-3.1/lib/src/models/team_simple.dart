@@ -38,7 +38,7 @@ factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
   url: Uri.parse(json['url'] as String),
   membersUrl: json['members_url'] as String,
   name: json['name'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   permission: json['permission'] as String,
   privacy: json['privacy'] as String?,
   notificationSetting: json['notification_setting'] as String?,

@@ -7,9 +7,9 @@
 import 'digital_experience_monitoring_uuid.dart';final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots({required this.clientToAppRttMs, required this.clientToCfEgressRttMs, required this.clientToCfIngressRttMs, this.clientToIspRttMs, required this.id, required this.timestamp, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots(
-  clientToAppRttMs: (json['clientToAppRttMs'] as num).toInt(),
-  clientToCfEgressRttMs: (json['clientToCfEgressRttMs'] as num).toInt(),
-  clientToCfIngressRttMs: (json['clientToCfIngressRttMs'] as num).toInt(),
+  clientToAppRttMs: json['clientToAppRttMs'] != null ? (json['clientToAppRttMs'] as num).toInt() : null,
+  clientToCfEgressRttMs: json['clientToCfEgressRttMs'] != null ? (json['clientToCfEgressRttMs'] as num).toInt() : null,
+  clientToCfIngressRttMs: json['clientToCfIngressRttMs'] != null ? (json['clientToCfIngressRttMs'] as num).toInt() : null,
   clientToIspRttMs: json['clientToIspRttMs'] != null ? (json['clientToIspRttMs'] as num).toInt() : null,
   id: DigitalExperienceMonitoringUuid.fromJson(json['id'] as String),
   timestamp: json['timestamp'] as String,

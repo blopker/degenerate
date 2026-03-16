@@ -9,9 +9,9 @@ final class GitCommitVerification {const GitCommitVerification({required this.ve
 factory GitCommitVerification.fromJson(Map<String, dynamic> json) { return GitCommitVerification(
   verified: json['verified'] as bool,
   reason: json['reason'] as String,
-  signature: json['signature'] as String,
-  payload: json['payload'] as String,
-  verifiedAt: json['verified_at'] as String,
+  signature: json['signature'] as String?,
+  payload: json['payload'] as String?,
+  verifiedAt: json['verified_at'] as String?,
 ); }
 
 final bool verified;

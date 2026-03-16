@@ -11,7 +11,7 @@ factory WebhookPullRequestSynchronizePullRequestHead.fromJson(Map<String, dynami
   ref: json['ref'] as String,
   repo: WebhookPullRequestSynchronizePullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: WebhookPullRequestSynchronizePullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestSynchronizePullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

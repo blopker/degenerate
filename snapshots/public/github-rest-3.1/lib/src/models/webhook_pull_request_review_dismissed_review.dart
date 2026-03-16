@@ -80,7 +80,7 @@ final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestRev
 factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedReview(
   links: WebhookPullRequestReviewDismissedReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(json['author_association'] as String),
-  body: json['body'] as String,
+  body: json['body'] as String?,
   commitId: json['commit_id'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -89,7 +89,7 @@ factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> js
   state: WebhookPullRequestReviewDismissedReviewState.fromJson(json['state'] as String),
   submittedAt: DateTime.parse(json['submitted_at'] as String),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  user: WebhookPullRequestReviewDismissedReviewUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestReviewDismissedReviewUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookPullRequestReviewDismissedReviewLinks links;

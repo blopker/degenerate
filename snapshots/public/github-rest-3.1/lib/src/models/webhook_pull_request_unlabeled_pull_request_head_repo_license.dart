@@ -11,7 +11,7 @@ factory WebhookPullRequestUnlabeledPullRequestHeadRepoLicense.fromJson(Map<Strin
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   spdxId: json['spdx_id'] as String,
-  url: Uri.parse(json['url'] as String),
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
 final String key;

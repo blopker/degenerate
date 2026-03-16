@@ -7,9 +7,9 @@
 final class CheckRunOutput {const CheckRunOutput({required this.title, required this.summary, required this.text, required this.annotationsCount, required this.annotationsUrl, });
 
 factory CheckRunOutput.fromJson(Map<String, dynamic> json) { return CheckRunOutput(
-  title: json['title'] as String,
-  summary: json['summary'] as String,
-  text: json['text'] as String,
+  title: json['title'] as String?,
+  summary: json['summary'] as String?,
+  text: json['text'] as String?,
   annotationsCount: (json['annotations_count'] as num).toInt(),
   annotationsUrl: Uri.parse(json['annotations_url'] as String),
 ); }

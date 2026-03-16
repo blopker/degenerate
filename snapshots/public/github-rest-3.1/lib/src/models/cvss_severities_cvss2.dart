@@ -7,8 +7,8 @@
 final class CvssSeveritiesCvss2 {const CvssSeveritiesCvss2({required this.vectorString, required this.score, });
 
 factory CvssSeveritiesCvss2.fromJson(Map<String, dynamic> json) { return CvssSeveritiesCvss2(
-  vectorString: json['vector_string'] as String,
-  score: (json['score'] as num).toDouble(),
+  vectorString: json['vector_string'] as String?,
+  score: json['score'] != null ? (json['score'] as num).toDouble() : null,
 ); }
 
 /// The CVSS 4 vector string.

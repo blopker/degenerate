@@ -7,8 +7,8 @@
 final class ContentFileLinks {const ContentFileLinks({required this.git, required this.html, required this.self, });
 
 factory ContentFileLinks.fromJson(Map<String, dynamic> json) { return ContentFileLinks(
-  git: Uri.parse(json['git'] as String),
-  html: Uri.parse(json['html'] as String),
+  git: json['git'] != null ? Uri.parse(json['git'] as String) : null,
+  html: json['html'] != null ? Uri.parse(json['html'] as String) : null,
   self: Uri.parse(json['self'] as String),
 ); }
 

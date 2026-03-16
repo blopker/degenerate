@@ -57,14 +57,14 @@ factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) {
   createdAt: json['created_at'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
-  line: (json['line'] as num).toInt(),
+  line: json['line'] != null ? (json['line'] as num).toInt() : null,
   nodeId: json['node_id'] as String,
-  path: json['path'] as String,
-  position: (json['position'] as num).toInt(),
+  path: json['path'] as String?,
+  position: json['position'] != null ? (json['position'] as num).toInt() : null,
   reactions: json['reactions'] != null ? WebhookCommitCommentCreatedCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
-  user: WebhookCommitCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookCommitCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 /// How the author is associated with the repository.

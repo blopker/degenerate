@@ -9,9 +9,9 @@ import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_accou
 factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
   account: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
-  freeTrialEndsOn: json['free_trial_ends_on'] as String,
+  freeTrialEndsOn: json['free_trial_ends_on'] as String?,
   nextBillingDate: json['next_billing_date'] as String?,
-  onFreeTrial: json['on_free_trial'] as bool,
+  onFreeTrial: json['on_free_trial'] as bool?,
   plan: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),
   unitCount: (json['unit_count'] as num).toInt(),
 ); }

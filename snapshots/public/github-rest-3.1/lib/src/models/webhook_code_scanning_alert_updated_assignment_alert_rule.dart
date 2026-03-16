@@ -43,7 +43,7 @@ final class WebhookCodeScanningAlertUpdatedAssignmentAlertRule {const WebhookCod
 factory WebhookCodeScanningAlertUpdatedAssignmentAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignmentAlertRule(
   description: json['description'] as String,
   id: json['id'] as String,
-  severity: WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity.fromJson(json['severity'] as String),
+  severity: json['severity'] != null ? WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity.fromJson(json['severity'] as String) : null,
 ); }
 
 /// A short description of the rule used to detect the alert.

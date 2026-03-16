@@ -41,7 +41,7 @@ factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan.
   monthlyPriceInCents: (json['monthly_price_in_cents'] as num).toInt(),
   name: json['name'] as String,
   priceModel: WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.fromJson(json['price_model'] as String),
-  unitName: json['unit_name'] as String,
+  unitName: json['unit_name'] as String?,
   yearlyPriceInCents: (json['yearly_price_in_cents'] as num).toInt(),
 ); }
 

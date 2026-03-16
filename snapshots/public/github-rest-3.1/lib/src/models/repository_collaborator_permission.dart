@@ -10,7 +10,7 @@ final class RepositoryCollaboratorPermission {const RepositoryCollaboratorPermis
 factory RepositoryCollaboratorPermission.fromJson(Map<String, dynamic> json) { return RepositoryCollaboratorPermission(
   permission: json['permission'] as String,
   roleName: json['role_name'] as String,
-  user: Collaborator.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? Collaborator.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String permission;

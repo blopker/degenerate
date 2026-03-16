@@ -10,7 +10,7 @@ factory EmailSecurityBlockedSender.fromJson(Map<String, dynamic> json) { return 
   comments: json['comments'] as String?,
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
-  patternType: EmailSecurityPatternType.fromJson(json['pattern_type'] as String),
+  patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   id: EmailSecurityBlockedSenderId.fromJson(json['id'] as num),
   lastModified: DateTime.parse(json['last_modified'] as String),

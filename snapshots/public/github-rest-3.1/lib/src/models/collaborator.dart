@@ -14,7 +14,7 @@ factory Collaborator.fromJson(Map<String, dynamic> json) { return Collaborator(
   name: json['name'] as String?,
   nodeId: json['node_id'] as String,
   avatarUrl: Uri.parse(json['avatar_url'] as String),
-  gravatarId: json['gravatar_id'] as String,
+  gravatarId: json['gravatar_id'] as String?,
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   followersUrl: Uri.parse(json['followers_url'] as String),

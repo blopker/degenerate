@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RadarGetEmailSecurityTopTldsByMessagesResponseResultMeta {const RadarGetEmailSecurityTopTldsByMessagesResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetEmailSecurityTopTldsByMessagesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsByMessagesResponseResultMeta(
-  confidenceInfo: RadarGetEmailSecurityTopTldsByMessagesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  confidenceInfo: json['confidenceInfo'] != null ? RadarGetEmailSecurityTopTldsByMessagesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetEmailSecurityTopTldsByMessagesResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetEmailSecurityTopTldsByMessagesResponseResultMetaNormalization.fromJson(json['normalization'] as String),

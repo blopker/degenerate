@@ -10,7 +10,7 @@ final class RepositorySubscription {const RepositorySubscription({required this.
 factory RepositorySubscription.fromJson(Map<String, dynamic> json) { return RepositorySubscription(
   subscribed: json['subscribed'] as bool,
   ignored: json['ignored'] as bool,
-  reason: json['reason'] as String,
+  reason: json['reason'] as String?,
   createdAt: DateTime.parse(json['created_at'] as String),
   url: Uri.parse(json['url'] as String),
   repositoryUrl: Uri.parse(json['repository_url'] as String),

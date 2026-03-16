@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'accounts_by_account_id_pipel
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  results: (json['results'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  results: (json['results'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
 ); }
 

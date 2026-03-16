@@ -31,7 +31,7 @@ final class ClosedStatus {const ClosedStatus({this.type = ClosedStatusType.close
 
 factory ClosedStatus.fromJson(Map<String, dynamic> json) { return ClosedStatus(
   type: ClosedStatusType.fromJson(json['type'] as String),
-  reason: json['reason'] as String,
+  reason: json['reason'] as String?,
 ); }
 
 /// Status discriminator that is always `closed`.

@@ -9,7 +9,7 @@ final class WebhookCheckSuiteCompletedCheckSuiteHeadCommitAuthor {const WebhookC
 
 factory WebhookCheckSuiteCompletedCheckSuiteHeadCommitAuthor.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompletedCheckSuiteHeadCommitAuthor(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-  email: json['email'] as String,
+  email: json['email'] as String?,
   name: json['name'] as String,
   username: json['username'] as String?,
 ); }

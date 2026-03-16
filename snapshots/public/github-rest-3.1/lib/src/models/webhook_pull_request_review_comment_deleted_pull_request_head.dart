@@ -9,9 +9,9 @@ import 'webhook_pull_request_review_comment_deleted_pull_request_head_repo.dart'
 factory WebhookPullRequestReviewCommentDeletedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentDeletedPullRequestHead(
   label: json['label'] as String,
   ref: json['ref'] as String,
-  repo: WebhookPullRequestReviewCommentDeletedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
+  repo: json['repo'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null,
   sha: json['sha'] as String,
-  user: WebhookPullRequestReviewCommentDeletedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

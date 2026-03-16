@@ -9,8 +9,8 @@ final class ChatSessionFileUpload {const ChatSessionFileUpload({required this.en
 
 factory ChatSessionFileUpload.fromJson(Map<String, dynamic> json) { return ChatSessionFileUpload(
   enabled: json['enabled'] as bool,
-  maxFileSize: (json['max_file_size'] as num).toInt(),
-  maxFiles: (json['max_files'] as num).toInt(),
+  maxFileSize: json['max_file_size'] != null ? (json['max_file_size'] as num).toInt() : null,
+  maxFiles: json['max_files'] != null ? (json['max_files'] as num).toInt() : null,
 ); }
 
 /// Indicates if uploads are enabled for the session.

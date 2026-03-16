@@ -7,7 +7,7 @@
 final class WebhookBranchProtectionRuleEditedChangesAdminEnforced {const WebhookBranchProtectionRuleEditedChangesAdminEnforced({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesAdminEnforced(
-  from: json['from'] as bool,
+  from: json['from'] as bool?,
 ); }
 
 final bool? from;

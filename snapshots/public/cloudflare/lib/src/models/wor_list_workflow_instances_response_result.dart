@@ -50,10 +50,10 @@ final class WorListWorkflowInstancesResponseResult {const WorListWorkflowInstanc
 
 factory WorListWorkflowInstancesResponseResult.fromJson(Map<String, dynamic> json) { return WorListWorkflowInstancesResponseResult(
   createdOn: DateTime.parse(json['created_on'] as String),
-  endedOn: DateTime.parse(json['ended_on'] as String),
+  endedOn: json['ended_on'] != null ? DateTime.parse(json['ended_on'] as String) : null,
   id: json['id'] as String,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
-  startedOn: DateTime.parse(json['started_on'] as String),
+  startedOn: json['started_on'] != null ? DateTime.parse(json['started_on'] as String) : null,
   status: WorListWorkflowInstancesResponseResultStatus.fromJson(json['status'] as String),
   versionId: json['version_id'] as String,
   workflowId: json['workflow_id'] as String,

@@ -33,7 +33,7 @@ factory VectorStoreSearchResultsPage.fromJson(Map<String, dynamic> json) { retur
   searchQuery: (json['search_query'] as List<dynamic>).map((e) => e as String).toList(),
   data: (json['data'] as List<dynamic>).map((e) => VectorStoreSearchResultItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  nextPage: json['next_page'] as String,
+  nextPage: json['next_page'] as String?,
 ); }
 
 /// The object type, which is always `vector_store.search_results.page`

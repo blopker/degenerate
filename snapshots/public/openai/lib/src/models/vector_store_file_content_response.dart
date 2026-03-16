@@ -33,7 +33,7 @@ factory VectorStoreFileContentResponse.fromJson(Map<String, dynamic> json) { ret
   object: VectorStoreFileContentResponseObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => VectorStoreFileContentResponseData.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  nextPage: json['next_page'] as String,
+  nextPage: json['next_page'] as String?,
 ); }
 
 /// The object type, which is always `vector_store.file_content.page`

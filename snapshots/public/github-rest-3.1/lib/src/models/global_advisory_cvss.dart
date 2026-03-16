@@ -7,8 +7,8 @@
 final class GlobalAdvisoryCvss {const GlobalAdvisoryCvss({required this.vectorString, required this.score, });
 
 factory GlobalAdvisoryCvss.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryCvss(
-  vectorString: json['vector_string'] as String,
-  score: (json['score'] as num).toDouble(),
+  vectorString: json['vector_string'] as String?,
+  score: json['score'] != null ? (json['score'] as num).toDouble() : null,
 ); }
 
 /// The CVSS vector.

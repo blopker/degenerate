@@ -7,11 +7,11 @@
 import 'webhook_pull_request_locked_pull_request_head_repo.dart';import 'webhook_pull_request_locked_pull_request_head_user.dart';final class WebhookPullRequestLockedPullRequestHead {const WebhookPullRequestLockedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhookPullRequestLockedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestLockedPullRequestHead(
-  label: json['label'] as String,
+  label: json['label'] as String?,
   ref: json['ref'] as String,
-  repo: WebhookPullRequestLockedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
+  repo: json['repo'] != null ? WebhookPullRequestLockedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null,
   sha: json['sha'] as String,
-  user: WebhookPullRequestLockedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestLockedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String? label;

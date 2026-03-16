@@ -10,7 +10,7 @@ final class FineTuningJobError {const FineTuningJobError({required this.code, re
 factory FineTuningJobError.fromJson(Map<String, dynamic> json) { return FineTuningJobError(
   code: json['code'] as String,
   message: json['message'] as String,
-  param: json['param'] as String,
+  param: json['param'] as String?,
 ); }
 
 /// A machine-readable error code.

@@ -15,7 +15,7 @@ dynamic toJson() => value;
 final class IamScopeObject {const IamScopeObject({required this.key});
 
 factory IamScopeObject.fromJson(Map<String, dynamic> json) { return IamScopeObject(
-  key: IamScopeObjectKey.fromJson(json['key'] as dynamic),
+  key: json['key'] != null ? IamScopeObjectKey.fromJson(json['key'] as dynamic) : null,
 ); }
 
 final IamScopeObjectKey? key;

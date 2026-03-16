@@ -101,16 +101,16 @@ factory ContactProperties.fromJson(Map<String, dynamic> json) { return ContactPr
   address: Address.fromJson(json['address'] as String),
   address2: json['address2'] != null ? Address2.fromJson(json['address2'] as String) : null,
   city: City.fromJson(json['city'] as String),
-  country: Country.fromJson(json['country'] as String),
+  country: json['country'] != null ? Country.fromJson(json['country'] as String) : null,
   email: json['email'] != null ? Email.fromJson(json['email'] as String) : null,
   fax: json['fax'] != null ? Fax.fromJson(json['fax'] as String) : null,
-  firstName: FirstName.fromJson(json['first_name'] as String),
+  firstName: json['first_name'] != null ? FirstName.fromJson(json['first_name'] as String) : null,
   id: json['id'] != null ? ContactIdentifier.fromJson(json['id'] as String) : null,
-  lastName: LastName.fromJson(json['last_name'] as String),
+  lastName: json['last_name'] != null ? LastName.fromJson(json['last_name'] as String) : null,
   organization: Organization2.fromJson(json['organization'] as String),
-  phone: Telephone.fromJson(json['phone'] as String),
+  phone: json['phone'] != null ? Telephone.fromJson(json['phone'] as String) : null,
   state: State2.fromJson(json['state'] as String),
-  zip: Zipcode.fromJson(json['zip'] as String),
+  zip: json['zip'] != null ? Zipcode.fromJson(json['zip'] as String) : null,
 ); }
 
 /// Address.

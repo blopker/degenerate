@@ -88,15 +88,15 @@ factory MessageObject.fromJson(Map<String, dynamic> json) { return MessageObject
   createdAt: (json['created_at'] as num).toInt(),
   threadId: json['thread_id'] as String,
   status: MessageObjectStatus.fromJson(json['status'] as String),
-  incompleteDetails: MessageObjectIncompleteDetails.fromJson(json['incomplete_details'] as Map<String, dynamic>),
-  completedAt: (json['completed_at'] as num).toInt(),
-  incompleteAt: (json['incomplete_at'] as num).toInt(),
+  incompleteDetails: json['incomplete_details'] != null ? MessageObjectIncompleteDetails.fromJson(json['incomplete_details'] as Map<String, dynamic>) : null,
+  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
+  incompleteAt: json['incomplete_at'] != null ? (json['incomplete_at'] as num).toInt() : null,
   role: MessageObjectRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => MessageContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageContentImageUrlObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageContentTextObject.fromJson(v as Map<String, dynamic>), fromD: (v) => MessageContentRefusalObject.fromJson(v as Map<String, dynamic>),)).toList(),
-  assistantId: json['assistant_id'] as String,
-  runId: json['run_id'] as String,
-  attachments: (json['attachments'] as List<dynamic>).map((e) => MessageObjectAttachments2.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  assistantId: json['assistant_id'] as String?,
+  runId: json['run_id'] as String?,
+  attachments: (json['attachments'] as List<dynamic>?)?.map((e) => MessageObjectAttachments2.fromJson(e as Map<String, dynamic>)).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
 /// The identifier, which can be referenced in API endpoints.

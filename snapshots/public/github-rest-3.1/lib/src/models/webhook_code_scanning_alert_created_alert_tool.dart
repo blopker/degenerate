@@ -9,7 +9,7 @@ final class WebhookCodeScanningAlertCreatedAlertTool {const WebhookCodeScanningA
 factory WebhookCodeScanningAlertCreatedAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlertTool(
   guid: json['guid'] as String?,
   name: json['name'] as String,
-  version: json['version'] as String,
+  version: json['version'] as String?,
 ); }
 
 final String? guid;

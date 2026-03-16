@@ -7,7 +7,7 @@
 import 'webhooks_security_advisory_vulnerabilities_first_patched_version.dart';import 'webhooks_security_advisory_vulnerabilities_package.dart';final class WebhooksSecurityAdvisoryVulnerabilities {const WebhooksSecurityAdvisoryVulnerabilities({required this.firstPatchedVersion, required this.package, required this.severity, required this.vulnerableVersionRange, });
 
 factory WebhooksSecurityAdvisoryVulnerabilities.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisoryVulnerabilities(
-  firstPatchedVersion: WebhooksSecurityAdvisoryVulnerabilitiesFirstPatchedVersion.fromJson(json['first_patched_version'] as Map<String, dynamic>),
+  firstPatchedVersion: json['first_patched_version'] != null ? WebhooksSecurityAdvisoryVulnerabilitiesFirstPatchedVersion.fromJson(json['first_patched_version'] as Map<String, dynamic>) : null,
   package: WebhooksSecurityAdvisoryVulnerabilitiesPackage.fromJson(json['package'] as Map<String, dynamic>),
   severity: json['severity'] as String,
   vulnerableVersionRange: json['vulnerable_version_range'] as String,

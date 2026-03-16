@@ -8,10 +8,10 @@ final class IssuePullRequest {const IssuePullRequest({this.mergedAt, required th
 
 factory IssuePullRequest.fromJson(Map<String, dynamic> json) { return IssuePullRequest(
   mergedAt: json['merged_at'] != null ? DateTime.parse(json['merged_at'] as String) : null,
-  diffUrl: Uri.parse(json['diff_url'] as String),
-  htmlUrl: Uri.parse(json['html_url'] as String),
-  patchUrl: Uri.parse(json['patch_url'] as String),
-  url: Uri.parse(json['url'] as String),
+  diffUrl: json['diff_url'] != null ? Uri.parse(json['diff_url'] as String) : null,
+  htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
+  patchUrl: json['patch_url'] != null ? Uri.parse(json['patch_url'] as String) : null,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
 final DateTime? mergedAt;

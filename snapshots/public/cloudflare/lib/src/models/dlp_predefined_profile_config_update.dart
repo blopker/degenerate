@@ -8,8 +8,8 @@ import 'package:collection/collection.dart';import 'dlp_predefined_profile_entry
 
 factory DlpPredefinedProfileConfigUpdate.fromJson(Map<String, dynamic> json) { return DlpPredefinedProfileConfigUpdate(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
-  allowedMatchCount: json.containsKey('allowed_match_count') ? (json['allowed_match_count'] as num).toInt() : 0,
-  confidenceThreshold: json.containsKey('confidence_threshold') ? json['confidence_threshold'] as String : 'low',
+  allowedMatchCount: json.containsKey('allowed_match_count') ? json['allowed_match_count'] != null ? (json['allowed_match_count'] as num).toInt() : null : 0,
+  confidenceThreshold: json.containsKey('confidence_threshold') ? json['confidence_threshold'] as String? : 'low',
   enabledEntries: (json['enabled_entries'] as List<dynamic>?)?.map((e) => e as String).toList(),
   entries: (json['entries'] as List<dynamic>?)?.map((e) => DlpPredefinedProfileEntryUpdate.fromJson(e as Map<String, dynamic>)).toList(),
   ocrEnabled: json.containsKey('ocr_enabled') ? json['ocr_enabled'] as bool : false,

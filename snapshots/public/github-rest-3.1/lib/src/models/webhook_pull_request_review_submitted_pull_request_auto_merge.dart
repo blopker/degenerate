@@ -36,9 +36,9 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookPullRequestReviewSubmittedPullRequestAutoMerge {const WebhookPullRequestReviewSubmittedPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
 
 factory WebhookPullRequestReviewSubmittedPullRequestAutoMerge.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewSubmittedPullRequestAutoMerge(
-  commitMessage: json['commit_message'] as String,
-  commitTitle: json['commit_title'] as String,
-  enabledBy: WebhookPullRequestReviewSubmittedPullRequestAutoMergeEnabledBy.fromJson(json['enabled_by'] as Map<String, dynamic>),
+  commitMessage: json['commit_message'] as String?,
+  commitTitle: json['commit_title'] as String?,
+  enabledBy: json['enabled_by'] != null ? WebhookPullRequestReviewSubmittedPullRequestAutoMergeEnabledBy.fromJson(json['enabled_by'] as Map<String, dynamic>) : null,
   mergeMethod: WebhookPullRequestReviewSubmittedPullRequestAutoMergeMergeMethod.fromJson(json['merge_method'] as String),
 ); }
 

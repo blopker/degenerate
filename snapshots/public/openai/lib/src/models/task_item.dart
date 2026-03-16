@@ -36,8 +36,8 @@ factory TaskItem.fromJson(Map<String, dynamic> json) { return TaskItem(
   threadId: json['thread_id'] as String,
   type: json['type'] as String,
   taskType: TaskType.fromJson(json['task_type'] as String),
-  heading: json['heading'] as String,
-  summary: json['summary'] as String,
+  heading: json['heading'] as String?,
+  summary: json['summary'] as String?,
 ); }
 
 /// Identifier of the thread item.

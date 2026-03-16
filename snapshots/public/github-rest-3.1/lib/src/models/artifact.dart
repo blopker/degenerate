@@ -15,9 +15,9 @@ factory Artifact.fromJson(Map<String, dynamic> json) { return Artifact(
   url: json['url'] as String,
   archiveDownloadUrl: json['archive_download_url'] as String,
   expired: json['expired'] as bool,
-  createdAt: DateTime.parse(json['created_at'] as String),
-  expiresAt: DateTime.parse(json['expires_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  expiresAt: json['expires_at'] != null ? DateTime.parse(json['expires_at'] as String) : null,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   digest: json['digest'] as String?,
   workflowRun: json['workflow_run'] != null ? ArtifactWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }

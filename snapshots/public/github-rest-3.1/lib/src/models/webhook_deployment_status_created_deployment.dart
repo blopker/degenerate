@@ -9,13 +9,13 @@ final class WebhookDeploymentStatusCreatedDeployment {const WebhookDeploymentSta
 
 factory WebhookDeploymentStatusCreatedDeployment.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedDeployment(
   createdAt: json['created_at'] as String,
-  creator: WebhookDeploymentStatusCreatedDeploymentCreator.fromJson(json['creator'] as Map<String, dynamic>),
-  description: json['description'] as String,
+  creator: json['creator'] != null ? WebhookDeploymentStatusCreatedDeploymentCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
+  description: json['description'] as String?,
   environment: json['environment'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   originalEnvironment: json['original_environment'] as String,
-  payload: OneOf2.parse(json['payload'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),),
+  payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),) : null,
   performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   productionEnvironment: json['production_environment'] as bool?,
   ref: json['ref'] as String,

@@ -12,7 +12,7 @@ factory CodeOfConduct.fromJson(Map<String, dynamic> json) { return CodeOfConduct
   name: json['name'] as String,
   url: Uri.parse(json['url'] as String),
   body: json['body'] as String?,
-  htmlUrl: Uri.parse(json['html_url'] as String),
+  htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
 ); }
 
 final String key;

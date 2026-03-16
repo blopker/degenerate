@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 factory DlpNewCustomProfile.fromJson(Map<String, dynamic> json) { return DlpNewCustomProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
   allowedMatchCount: json.containsKey('allowed_match_count') ? (json['allowed_match_count'] as num).toInt() : 0,
-  confidenceThreshold: json.containsKey('confidence_threshold') ? json['confidence_threshold'] as String : 'low',
+  confidenceThreshold: json.containsKey('confidence_threshold') ? json['confidence_threshold'] as String? : 'low',
   contextAwareness: json['context_awareness'] != null ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>) : null,
   dataClasses: (json['data_classes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dataTags: (json['data_tags'] as List<dynamic>?)?.map((e) => e as String).toList(),

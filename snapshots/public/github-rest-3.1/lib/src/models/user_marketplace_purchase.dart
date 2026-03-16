@@ -9,11 +9,11 @@ final class UserMarketplacePurchase {const UserMarketplacePurchase({required thi
 
 factory UserMarketplacePurchase.fromJson(Map<String, dynamic> json) { return UserMarketplacePurchase(
   billingCycle: json['billing_cycle'] as String,
-  nextBillingDate: DateTime.parse(json['next_billing_date'] as String),
-  unitCount: (json['unit_count'] as num).toInt(),
+  nextBillingDate: json['next_billing_date'] != null ? DateTime.parse(json['next_billing_date'] as String) : null,
+  unitCount: json['unit_count'] != null ? (json['unit_count'] as num).toInt() : null,
   onFreeTrial: json['on_free_trial'] as bool,
-  freeTrialEndsOn: DateTime.parse(json['free_trial_ends_on'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  freeTrialEndsOn: json['free_trial_ends_on'] != null ? DateTime.parse(json['free_trial_ends_on'] as String) : null,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   account: MarketplaceAccount.fromJson(json['account'] as Map<String, dynamic>),
   plan: MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>),
 ); }

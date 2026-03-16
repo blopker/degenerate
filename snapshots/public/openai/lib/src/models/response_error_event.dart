@@ -32,9 +32,9 @@ final class ResponseErrorEvent {const ResponseErrorEvent({required this.type, re
 
 factory ResponseErrorEvent.fromJson(Map<String, dynamic> json) { return ResponseErrorEvent(
   type: ResponseErrorEventType.fromJson(json['type'] as String),
-  code: json['code'] as String,
+  code: json['code'] as String?,
   message: json['message'] as String,
-  param: json['param'] as String,
+  param: json['param'] as String?,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 

@@ -10,7 +10,7 @@ factory VectorStoreSearchResultItem.fromJson(Map<String, dynamic> json) { return
   fileId: json['file_id'] as String,
   filename: json['filename'] as String,
   score: (json['score'] as num).toDouble(),
-  attributes: (json['attributes'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   content: (json['content'] as List<dynamic>).map((e) => VectorStoreSearchResultContentObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

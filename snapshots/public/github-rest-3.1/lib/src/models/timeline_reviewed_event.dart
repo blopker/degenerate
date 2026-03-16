@@ -12,7 +12,7 @@ factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return Timel
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
-  body: json['body'] as String,
+  body: json['body'] as String?,
   state: json['state'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),

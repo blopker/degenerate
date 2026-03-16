@@ -36,7 +36,7 @@ factory Attachment.fromJson(Map<String, dynamic> json) { return Attachment(
   id: json['id'] as String,
   name: json['name'] as String,
   mimeType: json['mime_type'] as String,
-  previewUrl: json['preview_url'] as String,
+  previewUrl: json['preview_url'] as String?,
 ); }
 
 /// Attachment discriminator.

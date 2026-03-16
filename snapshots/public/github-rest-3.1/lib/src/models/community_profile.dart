@@ -9,10 +9,10 @@ final class CommunityProfile {const CommunityProfile({required this.healthPercen
 
 factory CommunityProfile.fromJson(Map<String, dynamic> json) { return CommunityProfile(
   healthPercentage: (json['health_percentage'] as num).toInt(),
-  description: json['description'] as String,
-  documentation: json['documentation'] as String,
+  description: json['description'] as String?,
+  documentation: json['documentation'] as String?,
   files: CommunityProfileFiles.fromJson(json['files'] as Map<String, dynamic>),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   contentReportsEnabled: json['content_reports_enabled'] as bool?,
 ); }
 

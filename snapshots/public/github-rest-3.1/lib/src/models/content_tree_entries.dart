@@ -13,9 +13,9 @@ factory ContentTreeEntries.fromJson(Map<String, dynamic> json) { return ContentT
   path: json['path'] as String,
   sha: json['sha'] as String,
   url: Uri.parse(json['url'] as String),
-  gitUrl: Uri.parse(json['git_url'] as String),
-  htmlUrl: Uri.parse(json['html_url'] as String),
-  downloadUrl: Uri.parse(json['download_url'] as String),
+  gitUrl: json['git_url'] != null ? Uri.parse(json['git_url'] as String) : null,
+  htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
+  downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   links: ContentTreeEntriesLinks.fromJson(json['_links'] as Map<String, dynamic>),
 ); }
 

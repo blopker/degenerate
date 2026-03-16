@@ -9,7 +9,7 @@ final class WebhooksIssueLabels {const WebhooksIssueLabels({required this.color,
 factory WebhooksIssueLabels.fromJson(Map<String, dynamic> json) { return WebhooksIssueLabels(
   color: json['color'] as String,
   $default: json['default'] as bool,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,

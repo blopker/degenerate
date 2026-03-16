@@ -109,12 +109,12 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookIssuesEditedIssue {const WebhookIssuesEditedIssue({required this.activeLockReason, this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft, required this.eventsUrl, required this.htmlUrl, required this.id, this.labels, required this.labelsUrl, this.locked, required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp, this.pullRequest, required this.reactions, required this.repositoryUrl, this.pinnedComment, this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason, this.timelineUrl, this.type, required this.title, required this.updatedAt, required this.url, required this.user, });
 
 factory WebhookIssuesEditedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesEditedIssue(
-  activeLockReason: WebhookIssuesEditedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String),
+  activeLockReason: json['active_lock_reason'] != null ? WebhookIssuesEditedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   assignee: json['assignee'] != null ? WebhookIssuesEditedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>).map((e) => WebhookIssuesEditedIssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookIssuesEditedIssueAuthorAssociation.fromJson(json['author_association'] as String),
-  body: json['body'] as String,
-  closedAt: DateTime.parse(json['closed_at'] as String),
+  body: json['body'] as String?,
+  closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   comments: (json['comments'] as num).toInt(),
   commentsUrl: Uri.parse(json['comments_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -125,7 +125,7 @@ factory WebhookIssuesEditedIssue.fromJson(Map<String, dynamic> json) { return We
   labels: (json['labels'] as List<dynamic>?)?.map((e) => WebhookIssuesEditedIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
   labelsUrl: json['labels_url'] as String,
   locked: json['locked'] as bool?,
-  milestone: WebhookIssuesEditedIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>),
+  milestone: json['milestone'] != null ? WebhookIssuesEditedIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookIssuesEditedIssuePerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
@@ -143,7 +143,7 @@ factory WebhookIssuesEditedIssue.fromJson(Map<String, dynamic> json) { return We
   title: json['title'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-  user: WebhookIssuesEditedIssueUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookIssuesEditedIssueUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookIssuesEditedIssueActiveLockReason? activeLockReason;

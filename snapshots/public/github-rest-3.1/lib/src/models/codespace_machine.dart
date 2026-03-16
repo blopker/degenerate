@@ -45,7 +45,7 @@ factory CodespaceMachine.fromJson(Map<String, dynamic> json) { return CodespaceM
   storageInBytes: (json['storage_in_bytes'] as num).toInt(),
   memoryInBytes: (json['memory_in_bytes'] as num).toInt(),
   cpus: (json['cpus'] as num).toInt(),
-  prebuildAvailability: CodespaceMachinePrebuildAvailability.fromJson(json['prebuild_availability'] as String),
+  prebuildAvailability: json['prebuild_availability'] != null ? CodespaceMachinePrebuildAvailability.fromJson(json['prebuild_availability'] as String) : null,
 ); }
 
 /// The name of the machine.

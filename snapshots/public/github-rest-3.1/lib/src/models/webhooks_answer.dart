@@ -62,7 +62,7 @@ factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnsw
   reactions: json['reactions'] != null ? WebhooksAnswerReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   repositoryUrl: json['repository_url'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  user: WebhooksAnswerUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhooksAnswerUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 /// How the author is associated with the repository.

@@ -10,7 +10,7 @@ factory WebhooksMarketplacePurchaseAccount.fromJson(Map<String, dynamic> json) {
   id: (json['id'] as num).toInt(),
   login: json['login'] as String,
   nodeId: json['node_id'] as String,
-  organizationBillingEmail: json['organization_billing_email'] as String,
+  organizationBillingEmail: json['organization_billing_email'] as String?,
   type: json['type'] as String,
 ); }
 

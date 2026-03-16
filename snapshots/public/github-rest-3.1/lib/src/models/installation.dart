@@ -34,7 +34,7 @@ final class Installation {const Installation({required this.id, required this.ac
 
 factory Installation.fromJson(Map<String, dynamic> json) { return Installation(
   id: (json['id'] as num).toInt(),
-  account: OneOf2.parse(json['account'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Enterprise.fromJson(v as Map<String, dynamic>),),
+  account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Enterprise.fromJson(v as Map<String, dynamic>),) : null,
   repositorySelection: InstallationRepositorySelection.fromJson(json['repository_selection'] as String),
   accessTokensUrl: Uri.parse(json['access_tokens_url'] as String),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
@@ -47,12 +47,12 @@ factory Installation.fromJson(Map<String, dynamic> json) { return Installation(
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  singleFileName: json['single_file_name'] as String,
+  singleFileName: json['single_file_name'] as String?,
   hasMultipleSingleFiles: json['has_multiple_single_files'] as bool?,
   singleFilePaths: (json['single_file_paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
   appSlug: json['app_slug'] as String,
-  suspendedBy: SimpleUser.fromJson(json['suspended_by'] as Map<String, dynamic>),
-  suspendedAt: DateTime.parse(json['suspended_at'] as String),
+  suspendedBy: json['suspended_by'] != null ? SimpleUser.fromJson(json['suspended_by'] as Map<String, dynamic>) : null,
+  suspendedAt: json['suspended_at'] != null ? DateTime.parse(json['suspended_at'] as String) : null,
   contactEmail: json['contact_email'] as String?,
 ); }
 

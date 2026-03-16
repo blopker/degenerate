@@ -11,7 +11,7 @@ factory Email.fromJson(Map<String, dynamic> json) { return Email(
   email: json['email'] as String,
   primary: json['primary'] as bool,
   verified: json['verified'] as bool,
-  visibility: json['visibility'] as String,
+  visibility: json['visibility'] as String?,
 ); }
 
 final String email;

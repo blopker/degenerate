@@ -31,8 +31,8 @@ final class SkillListResource {const SkillListResource({this.object = SkillListR
 factory SkillListResource.fromJson(Map<String, dynamic> json) { return SkillListResource(
   object: SkillListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => SkillResource.fromJson(e as Map<String, dynamic>)).toList(),
-  firstId: json['first_id'] as String,
-  lastId: json['last_id'] as String,
+  firstId: json['first_id'] as String?,
+  lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
 ); }
 

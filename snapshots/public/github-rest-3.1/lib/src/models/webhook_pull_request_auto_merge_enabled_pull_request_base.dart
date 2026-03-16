@@ -11,7 +11,7 @@ factory WebhookPullRequestAutoMergeEnabledPullRequestBase.fromJson(Map<String, d
   ref: json['ref'] as String,
   repo: WebhookPullRequestAutoMergeEnabledPullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: WebhookPullRequestAutoMergeEnabledPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestAutoMergeEnabledPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

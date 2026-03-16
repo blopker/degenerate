@@ -8,18 +8,18 @@ import 'webhook_package_published_package_owner.dart';import 'webhook_package_pu
 final class WebhookPackagePublishedPackage {const WebhookPackagePublishedPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
 
 factory WebhookPackagePublishedPackage.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackage(
-  createdAt: json['created_at'] as String,
-  description: json['description'] as String,
+  createdAt: json['created_at'] as String?,
+  description: json['description'] as String?,
   ecosystem: json['ecosystem'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   namespace: json['namespace'] as String,
-  owner: WebhookPackagePublishedPackageOwner.fromJson(json['owner'] as Map<String, dynamic>),
+  owner: json['owner'] != null ? WebhookPackagePublishedPackageOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   packageType: json['package_type'] as String,
-  packageVersion: WebhookPackagePublishedPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
-  registry: WebhookPackagePublishedPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>),
-  updatedAt: json['updated_at'] as String,
+  packageVersion: json['package_version'] != null ? WebhookPackagePublishedPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>) : null,
+  registry: json['registry'] != null ? WebhookPackagePublishedPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>) : null,
+  updatedAt: json['updated_at'] as String?,
 ); }
 
 final String? createdAt;

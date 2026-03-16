@@ -8,7 +8,7 @@ final class NullabilityCombos {const NullabilityCombos({required this.requiredNo
 
 factory NullabilityCombos.fromJson(Map<String, dynamic> json) { return NullabilityCombos(
   requiredNonNullable: json['requiredNonNullable'] as String,
-  requiredNullable: json['requiredNullable'] as String,
+  requiredNullable: json['requiredNullable'] as String?,
   optionalNonNullable: json['optionalNonNullable'] as String?,
   optionalNullable: json['optionalNullable'] as String?,
 ); }

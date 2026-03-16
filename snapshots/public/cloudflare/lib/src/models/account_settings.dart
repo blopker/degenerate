@@ -7,12 +7,12 @@
 final class AccountSettings {const AccountSettings({required this.abuseContactEmail, required this.accessApprovalExpiry, required this.apiAccessEnabled, required this.defaultNameservers, required this.enforceTwofactor, required this.useAccountCustomNsByDefault, });
 
 factory AccountSettings.fromJson(Map<String, dynamic> json) { return AccountSettings(
-  abuseContactEmail: json['abuse_contact_email'] as String,
-  accessApprovalExpiry: DateTime.parse(json['access_approval_expiry'] as String),
-  apiAccessEnabled: json['api_access_enabled'] as bool,
-  defaultNameservers: json['default_nameservers'] as String,
-  enforceTwofactor: json['enforce_twofactor'] as bool,
-  useAccountCustomNsByDefault: json['use_account_custom_ns_by_default'] as bool,
+  abuseContactEmail: json['abuse_contact_email'] as String?,
+  accessApprovalExpiry: json['access_approval_expiry'] != null ? DateTime.parse(json['access_approval_expiry'] as String) : null,
+  apiAccessEnabled: json['api_access_enabled'] as bool?,
+  defaultNameservers: json['default_nameservers'] as String?,
+  enforceTwofactor: json['enforce_twofactor'] as bool?,
+  useAccountCustomNsByDefault: json['use_account_custom_ns_by_default'] as bool?,
 ); }
 
 final String? abuseContactEmail;

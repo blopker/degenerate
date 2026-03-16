@@ -14,7 +14,7 @@ factory DeploymentSimple.fromJson(Map<String, dynamic> json) { return Deployment
   task: json['task'] as String,
   originalEnvironment: json['original_environment'] as String?,
   environment: json['environment'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   statusesUrl: Uri.parse(json['statuses_url'] as String),

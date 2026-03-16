@@ -40,7 +40,7 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   private: json['private'] as bool,
   htmlUrl: Uri.parse(json['html_url'] as String),
-  description: json['description'] as String,
+  description: json['description'] as String?,
   fork: json['fork'] as bool,
   url: Uri.parse(json['url'] as String),
   archiveUrl: json['archive_url'] as String,

@@ -9,11 +9,11 @@ final class TopicSearchResultItem {const TopicSearchResultItem({required this.na
 
 factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return TopicSearchResultItem(
   name: json['name'] as String,
-  displayName: json['display_name'] as String,
-  shortDescription: json['short_description'] as String,
-  description: json['description'] as String,
-  createdBy: json['created_by'] as String,
-  released: json['released'] as String,
+  displayName: json['display_name'] as String?,
+  shortDescription: json['short_description'] as String?,
+  description: json['description'] as String?,
+  createdBy: json['created_by'] as String?,
+  released: json['released'] as String?,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   featured: json['featured'] as bool,

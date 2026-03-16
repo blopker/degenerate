@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 final class DiffEntry {const DiffEntry({required this.sha, required this.filename, required this.status, required this.additions, required this.deletions, required this.changes, required this.blobUrl, required this.rawUrl, required this.contentsUrl, this.patch, this.previousFilename, });
 
 factory DiffEntry.fromJson(Map<String, dynamic> json) { return DiffEntry(
-  sha: json['sha'] as String,
+  sha: json['sha'] as String?,
   filename: json['filename'] as String,
   status: DiffEntryStatus.fromJson(json['status'] as String),
   additions: (json['additions'] as num).toInt(),

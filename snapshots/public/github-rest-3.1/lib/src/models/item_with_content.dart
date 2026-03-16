@@ -16,7 +16,7 @@ factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithCon
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  archivedAt: DateTime.parse(json['archived_at'] as String),
+  archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
   itemUrl: json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null,
   fields: (json['fields'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
 ); }

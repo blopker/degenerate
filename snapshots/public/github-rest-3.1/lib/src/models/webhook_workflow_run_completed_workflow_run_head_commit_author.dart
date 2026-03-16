@@ -9,7 +9,7 @@ final class WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor {const Webhoo
 
 factory WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-  email: json['email'] as String,
+  email: json['email'] as String?,
   name: json['name'] as String,
   username: json['username'] as String?,
 ); }

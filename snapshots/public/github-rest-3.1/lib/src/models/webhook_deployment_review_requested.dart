@@ -39,7 +39,7 @@ factory WebhookDeploymentReviewRequested.fromJson(Map<String, dynamic> json) { r
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   since: json['since'] as String,
   workflowJobRun: WebhookDeploymentReviewRequestedWorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>),
-  workflowRun: WebhookDeploymentReviewRequestedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
+  workflowRun: json['workflow_run'] != null ? WebhookDeploymentReviewRequestedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookDeploymentReviewRequestedAction action;

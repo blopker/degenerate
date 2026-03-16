@@ -11,12 +11,12 @@ factory CheckAnnotation.fromJson(Map<String, dynamic> json) { return CheckAnnota
   path: json['path'] as String,
   startLine: (json['start_line'] as num).toInt(),
   endLine: (json['end_line'] as num).toInt(),
-  startColumn: (json['start_column'] as num).toInt(),
-  endColumn: (json['end_column'] as num).toInt(),
-  annotationLevel: json['annotation_level'] as String,
-  title: json['title'] as String,
-  message: json['message'] as String,
-  rawDetails: json['raw_details'] as String,
+  startColumn: json['start_column'] != null ? (json['start_column'] as num).toInt() : null,
+  endColumn: json['end_column'] != null ? (json['end_column'] as num).toInt() : null,
+  annotationLevel: json['annotation_level'] as String?,
+  title: json['title'] as String?,
+  message: json['message'] as String?,
+  rawDetails: json['raw_details'] as String?,
   blobHref: json['blob_href'] as String,
 ); }
 

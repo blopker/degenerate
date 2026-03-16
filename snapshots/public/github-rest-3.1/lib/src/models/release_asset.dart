@@ -38,15 +38,15 @@ factory ReleaseAsset.fromJson(Map<String, dynamic> json) { return ReleaseAsset(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
-  label: json['label'] as String,
+  label: json['label'] as String?,
   state: ReleaseAssetState.fromJson(json['state'] as String),
   contentType: json['content_type'] as String,
   size: (json['size'] as num).toInt(),
-  digest: json['digest'] as String,
+  digest: json['digest'] as String?,
   downloadCount: (json['download_count'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  uploader: SimpleUser.fromJson(json['uploader'] as Map<String, dynamic>),
+  uploader: json['uploader'] != null ? SimpleUser.fromJson(json['uploader'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri url;

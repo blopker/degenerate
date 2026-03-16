@@ -77,10 +77,11 @@ class ModelEmitter {
     final args = model.fields
         .map((f) {
           final accessor = "json['${escapeDartString(f.originalName)}']";
-          // A field is "optional" in fromJson if: it's not required AND has no default.
+          // A field is "nullable in fromJson" if:
+          // 1. It's not required AND has no default, OR
+          // 2. Its type is explicitly nullable (required + nullable is valid in OpenAPI).
           // Fields with defaults have non-nullable types, so fromJson must not produce null.
-          // Instead, we treat them as optional but use the null-check → default pattern.
-          final isOptional = !f.isRequired && !_hasDefault(f);
+          final isOptional = (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
           final code = buildFromJsonCode(
             f.type,
             accessor,

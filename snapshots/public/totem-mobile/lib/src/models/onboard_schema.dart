@@ -55,7 +55,7 @@ factory OnboardSchema.fromJson(Map<String, dynamic> json) { return OnboardSchema
   referralSource: json.containsKey('referral_source') ? ReferralChoices.fromJson(json['referral_source'] as String) : ReferralChoices.$default,
   yearBorn: json['year_born'] != null ? (json['year_born'] as num).toInt() : null,
   hopes: json['hopes'] as String?,
-  referralOther: json.containsKey('referral_other') ? json['referral_other'] as String : '',
+  referralOther: json.containsKey('referral_other') ? json['referral_other'] as String? : '',
 ); }
 
 final ReferralChoices referralSource;

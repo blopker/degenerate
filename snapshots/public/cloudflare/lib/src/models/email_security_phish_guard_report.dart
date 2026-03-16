@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'email_security_disposition_l
 factory EmailSecurityPhishGuardReport.fromJson(Map<String, dynamic> json) { return EmailSecurityPhishGuardReport(
   content: json['content'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
-  disposition: EmailSecurityDispositionLabel.fromJson(json['disposition'] as String),
+  disposition: json['disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['disposition'] as String) : null,
   fields: EmailSecurityPhishGuardReportFields.fromJson(json['fields'] as Map<String, dynamic>),
   id: (json['id'] as num).toInt(),
   priority: json['priority'] as String,

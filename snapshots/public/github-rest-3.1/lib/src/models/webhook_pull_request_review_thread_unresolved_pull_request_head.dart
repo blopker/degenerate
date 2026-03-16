@@ -11,7 +11,7 @@ factory WebhookPullRequestReviewThreadUnresolvedPullRequestHead.fromJson(Map<Str
   ref: json['ref'] as String,
   repo: WebhookPullRequestReviewThreadUnresolvedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: WebhookPullRequestReviewThreadUnresolvedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

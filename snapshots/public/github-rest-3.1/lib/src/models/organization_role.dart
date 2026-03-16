@@ -82,7 +82,7 @@ factory OrganizationRole.fromJson(Map<String, dynamic> json) { return Organizati
   baseRole: json['base_role'] != null ? OrganizationRoleBaseRole.fromJson(json['base_role'] as String) : null,
   source: json['source'] != null ? OrganizationRoleSource.fromJson(json['source'] as String) : null,
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
-  organization: SimpleUser.fromJson(json['organization'] as Map<String, dynamic>),
+  organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }

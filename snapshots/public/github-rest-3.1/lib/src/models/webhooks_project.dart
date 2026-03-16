@@ -32,10 +32,10 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
 
 factory WebhooksProject.fromJson(Map<String, dynamic> json) { return WebhooksProject(
-  body: json['body'] as String,
+  body: json['body'] as String?,
   columnsUrl: Uri.parse(json['columns_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
-  creator: WebhooksProjectCreator.fromJson(json['creator'] as Map<String, dynamic>),
+  creator: json['creator'] != null ? WebhooksProjectCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,

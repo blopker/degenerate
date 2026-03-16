@@ -53,16 +53,16 @@ final class WebhooksReview {const WebhooksReview({required this.links, required 
 factory WebhooksReview.fromJson(Map<String, dynamic> json) { return WebhooksReview(
   links: WebhooksReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: WebhooksReviewAuthorAssociation.fromJson(json['author_association'] as String),
-  body: json['body'] as String,
+  body: json['body'] as String?,
   commitId: json['commit_id'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
   state: json['state'] as String,
-  submittedAt: DateTime.parse(json['submitted_at'] as String),
+  submittedAt: json['submitted_at'] != null ? DateTime.parse(json['submitted_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  user: WebhooksReviewUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhooksReviewUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhooksReviewLinks links;

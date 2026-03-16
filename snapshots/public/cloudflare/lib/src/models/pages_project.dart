@@ -8,21 +8,21 @@ import 'package:collection/collection.dart';import 'pages_build_config.dart';imp
 
 factory PagesProject.fromJson(Map<String, dynamic> json) { return PagesProject(
   buildConfig: json['build_config'] != null ? PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
-  canonicalDeployment: PagesDeployment.fromJson(json['canonical_deployment'] as Map<String, dynamic>),
+  canonicalDeployment: json['canonical_deployment'] != null ? PagesDeployment.fromJson(json['canonical_deployment'] as Map<String, dynamic>) : null,
   createdOn: DateTime.parse(json['created_on'] as String),
   deploymentConfigs: PagesProjectDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>),
   domains: (json['domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
   framework: json['framework'] as String,
   frameworkVersion: json['framework_version'] as String,
   id: json['id'] as String,
-  latestDeployment: PagesDeployment.fromJson(json['latest_deployment'] as Map<String, dynamic>),
+  latestDeployment: json['latest_deployment'] != null ? PagesDeployment.fromJson(json['latest_deployment'] as Map<String, dynamic>) : null,
   name: PagesProjectName.fromJson(json['name'] as String),
   previewScriptName: json['preview_script_name'] as String,
   productionBranch: json['production_branch'] as String,
   productionScriptName: json['production_script_name'] as String,
   source: json['source'] != null ? PagesSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   subdomain: json['subdomain'] as String?,
-  usesFunctions: json['uses_functions'] as bool,
+  usesFunctions: json['uses_functions'] as bool?,
 ); }
 
 final PagesBuildConfig? buildConfig;

@@ -66,13 +66,13 @@ factory VideoResource.fromJson(Map<String, dynamic> json) { return VideoResource
   status: VideoStatus.fromJson(json['status'] as String),
   progress: (json['progress'] as num).toInt(),
   createdAt: (json['created_at'] as num).toInt(),
-  completedAt: (json['completed_at'] as num).toInt(),
-  expiresAt: (json['expires_at'] as num).toInt(),
-  prompt: json['prompt'] as String,
+  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
+  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  prompt: json['prompt'] as String?,
   size: VideoSize.fromJson(json['size'] as String),
   seconds: json['seconds'] as String,
-  remixedFromVideoId: json['remixed_from_video_id'] as String,
-  error: Error2.fromJson(json['error'] as Map<String, dynamic>),
+  remixedFromVideoId: json['remixed_from_video_id'] as String?,
+  error: json['error'] != null ? Error2.fromJson(json['error'] as Map<String, dynamic>) : null,
 ); }
 
 /// Unique identifier for the video job.

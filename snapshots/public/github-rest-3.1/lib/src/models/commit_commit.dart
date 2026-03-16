@@ -8,8 +8,8 @@ import 'commit_commit_tree.dart';import 'git_user.dart';import 'verification.dar
 
 factory CommitCommit.fromJson(Map<String, dynamic> json) { return CommitCommit(
   url: Uri.parse(json['url'] as String),
-  author: GitUser.fromJson(json['author'] as Map<String, dynamic>),
-  committer: GitUser.fromJson(json['committer'] as Map<String, dynamic>),
+  author: json['author'] != null ? GitUser.fromJson(json['author'] as Map<String, dynamic>) : null,
+  committer: json['committer'] != null ? GitUser.fromJson(json['committer'] as Map<String, dynamic>) : null,
   message: json['message'] as String,
   commentCount: (json['comment_count'] as num).toInt(),
   tree: CommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>),

@@ -8,8 +8,8 @@ import 'package:collection/collection.dart';import 'chat_completion_token_logpro
 final class CreateChatCompletionStreamResponseChoicesLogprobs {const CreateChatCompletionStreamResponseChoicesLogprobs({required this.content, required this.refusal, });
 
 factory CreateChatCompletionStreamResponseChoicesLogprobs.fromJson(Map<String, dynamic> json) { return CreateChatCompletionStreamResponseChoicesLogprobs(
-  content: (json['content'] as List<dynamic>).map((e) => ChatCompletionTokenLogprob.fromJson(e as Map<String, dynamic>)).toList(),
-  refusal: (json['refusal'] as List<dynamic>).map((e) => ChatCompletionTokenLogprob.fromJson(e as Map<String, dynamic>)).toList(),
+  content: (json['content'] as List<dynamic>?)?.map((e) => ChatCompletionTokenLogprob.fromJson(e as Map<String, dynamic>)).toList(),
+  refusal: (json['refusal'] as List<dynamic>?)?.map((e) => ChatCompletionTokenLogprob.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// A list of message content tokens with log probability information.

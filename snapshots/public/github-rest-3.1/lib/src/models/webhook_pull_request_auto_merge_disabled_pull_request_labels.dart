@@ -9,7 +9,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestLabels {const WebhookP
 factory WebhookPullRequestAutoMergeDisabledPullRequestLabels.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeDisabledPullRequestLabels(
   color: json['color'] as String,
   $default: json['default'] as bool,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,

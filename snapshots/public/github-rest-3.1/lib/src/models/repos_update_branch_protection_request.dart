@@ -7,10 +7,10 @@
 import 'repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'repos_update_branch_protection_request_required_status_checks.dart';import 'repos_update_branch_protection_request_restrictions.dart';final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes, this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch = false, this.allowForkSyncing = false, });
 
 factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequest(
-  requiredStatusChecks: ReposUpdateBranchProtectionRequestRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>),
-  enforceAdmins: json['enforce_admins'] as bool,
-  requiredPullRequestReviews: ReposUpdateBranchProtectionRequestRequiredPullRequestReviews.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>),
-  restrictions: ReposUpdateBranchProtectionRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>),
+  requiredStatusChecks: json['required_status_checks'] != null ? ReposUpdateBranchProtectionRequestRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
+  enforceAdmins: json['enforce_admins'] as bool?,
+  requiredPullRequestReviews: json['required_pull_request_reviews'] != null ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviews.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>) : null,
+  restrictions: json['restrictions'] != null ? ReposUpdateBranchProtectionRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
   requiredLinearHistory: json['required_linear_history'] as bool?,
   allowForcePushes: json['allow_force_pushes'] as bool?,
   allowDeletions: json['allow_deletions'] as bool?,

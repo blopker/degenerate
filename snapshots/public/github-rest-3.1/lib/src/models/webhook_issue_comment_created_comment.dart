@@ -58,12 +58,12 @@ factory WebhookIssueCommentCreatedComment.fromJson(Map<String, dynamic> json) { 
   id: (json['id'] as num).toInt(),
   issueUrl: Uri.parse(json['issue_url'] as String),
   nodeId: json['node_id'] as String,
-  performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   reactions: WebhookIssueCommentCreatedCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
-  user: WebhookIssueCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookIssueCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 /// How the author is associated with the repository.

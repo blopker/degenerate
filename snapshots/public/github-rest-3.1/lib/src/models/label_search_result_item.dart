@@ -14,7 +14,7 @@ factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) { return Label
   name: json['name'] as String,
   color: json['color'] as String,
   $default: json['default'] as bool,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   score: (json['score'] as num).toDouble(),
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

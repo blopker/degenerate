@@ -8,7 +8,7 @@ final class WebhookCodeScanningAlertAppearedInBranchAlertTool {const WebhookCode
 
 factory WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlertTool(
   name: json['name'] as String,
-  version: json['version'] as String,
+  version: json['version'] as String?,
 ); }
 
 /// The name of the tool used to generate the code scanning analysis alert.

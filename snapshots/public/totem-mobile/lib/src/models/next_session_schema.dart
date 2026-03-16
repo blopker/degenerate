@@ -10,7 +10,7 @@ factory NextSessionSchema.fromJson(Map<String, dynamic> json) { return NextSessi
   slug: json['slug'] as String,
   start: DateTime.parse(json['start'] as String),
   link: json['link'] as String,
-  title: json['title'] as String,
+  title: json['title'] as String?,
   seatsLeft: (json['seats_left'] as num).toInt(),
   duration: (json['duration'] as num).toInt(),
   meetingProvider: MeetingProviderEnum.fromJson(json['meeting_provider'] as String),

@@ -9,16 +9,16 @@ final class Status {const Status({required this.url, required this.avatarUrl, re
 
 factory Status.fromJson(Map<String, dynamic> json) { return Status(
   url: json['url'] as String,
-  avatarUrl: json['avatar_url'] as String,
+  avatarUrl: json['avatar_url'] as String?,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   state: json['state'] as String,
-  description: json['description'] as String,
-  targetUrl: json['target_url'] as String,
+  description: json['description'] as String?,
+  targetUrl: json['target_url'] as String?,
   context: json['context'] as String,
   createdAt: json['created_at'] as String,
   updatedAt: json['updated_at'] as String,
-  creator: SimpleUser.fromJson(json['creator'] as Map<String, dynamic>),
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
 ); }
 
 final String url;

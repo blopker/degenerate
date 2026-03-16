@@ -13,10 +13,10 @@ factory TimelineAssignedIssueEvent.fromJson(Map<String, dynamic> json) { return 
   url: json['url'] as String,
   actor: SimpleUser.fromJson(json['actor'] as Map<String, dynamic>),
   event: json['event'] as String,
-  commitId: json['commit_id'] as String,
-  commitUrl: json['commit_url'] as String,
+  commitId: json['commit_id'] as String?,
+  commitUrl: json['commit_url'] as String?,
   createdAt: json['created_at'] as String,
-  performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   assignee: SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>),
 ); }
 

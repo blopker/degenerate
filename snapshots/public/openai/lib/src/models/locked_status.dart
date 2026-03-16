@@ -31,7 +31,7 @@ final class LockedStatus {const LockedStatus({this.type = LockedStatusType.locke
 
 factory LockedStatus.fromJson(Map<String, dynamic> json) { return LockedStatus(
   type: LockedStatusType.fromJson(json['type'] as String),
-  reason: json['reason'] as String,
+  reason: json['reason'] as String?,
 ); }
 
 /// Status discriminator that is always `locked`.

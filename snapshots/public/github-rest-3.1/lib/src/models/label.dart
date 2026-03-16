@@ -12,7 +12,7 @@ factory Label.fromJson(Map<String, dynamic> json) { return Label(
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
   name: json['name'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   color: json['color'] as String,
   $default: json['default'] as bool,
 ); }

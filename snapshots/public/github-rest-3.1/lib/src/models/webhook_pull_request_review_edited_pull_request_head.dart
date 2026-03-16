@@ -9,9 +9,9 @@ import 'webhook_pull_request_review_edited_pull_request_head_repo.dart';import '
 factory WebhookPullRequestReviewEditedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedPullRequestHead(
   label: json['label'] as String,
   ref: json['ref'] as String,
-  repo: WebhookPullRequestReviewEditedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
+  repo: json['repo'] != null ? WebhookPullRequestReviewEditedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null,
   sha: json['sha'] as String,
-  user: WebhookPullRequestReviewEditedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestReviewEditedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

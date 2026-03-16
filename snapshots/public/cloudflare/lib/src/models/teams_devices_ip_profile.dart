@@ -36,7 +36,7 @@ final class TeamsDevicesIpProfile {const TeamsDevicesIpProfile({required this.cr
 
 factory TeamsDevicesIpProfile.fromJson(Map<String, dynamic> json) { return TeamsDevicesIpProfile(
   createdAt: TeamsDevicesIpProfileCreatedAt.fromJson(json['created_at'] as String),
-  description: TeamsDevicesIpProfileDescription.fromJson(json['description'] as String),
+  description: json['description'] != null ? TeamsDevicesIpProfileDescription.fromJson(json['description'] as String) : null,
   enabled: TeamsDevicesIpProfileEnabled.fromJson(json['enabled'] as bool),
   id: TeamsDevicesIpProfileId.fromJson(json['id'] as String),
   match: TeamsDevicesIpProfileMatch.fromJson(json['match'] as String),

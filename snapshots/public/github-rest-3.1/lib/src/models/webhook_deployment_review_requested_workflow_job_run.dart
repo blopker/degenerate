@@ -12,7 +12,7 @@ factory WebhookDeploymentReviewRequestedWorkflowJobRun.fromJson(Map<String, dyna
   environment: json['environment'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
-  name: json['name'] as String,
+  name: json['name'] as String?,
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
 ); }

@@ -8,7 +8,7 @@ final class ProtectedBranchRequiredStatusCheckChecks {const ProtectedBranchRequi
 
 factory ProtectedBranchRequiredStatusCheckChecks.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredStatusCheckChecks(
   context: json['context'] as String,
-  appId: (json['app_id'] as num).toInt(),
+  appId: json['app_id'] != null ? (json['app_id'] as num).toInt() : null,
 ); }
 
 final String context;

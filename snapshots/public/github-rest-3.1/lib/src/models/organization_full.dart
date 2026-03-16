@@ -19,7 +19,7 @@ factory OrganizationFull.fromJson(Map<String, dynamic> json) { return Organizati
   membersUrl: json['members_url'] as String,
   publicMembersUrl: json['public_members_url'] as String,
   avatarUrl: json['avatar_url'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   name: json['name'] as String?,
   company: json['company'] as String?,
   blog: json['blog'] != null ? Uri.parse(json['blog'] as String) : null,
@@ -73,7 +73,7 @@ factory OrganizationFull.fromJson(Map<String, dynamic> json) { return Organizati
   secretScanningPushProtectionCustomLink: json['secret_scanning_push_protection_custom_link'] as String?,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  archivedAt: DateTime.parse(json['archived_at'] as String),
+  archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
   deployKeysEnabledForRepositories: json['deploy_keys_enabled_for_repositories'] as bool?,
 ); }
 

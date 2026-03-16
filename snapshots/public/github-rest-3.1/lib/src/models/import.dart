@@ -74,7 +74,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Import {const Import({required this.vcs, this.useLfs, required this.vcsUrl, this.svcRoot, this.tfvcProject, required this.status, this.statusText, this.failedStep, this.errorMessage, this.importPercent, this.commitCount, this.pushPercent, this.hasLargeFiles, this.largeFilesSize, this.largeFilesCount, this.projectChoices, this.message, this.authorsCount, required this.url, required this.htmlUrl, required this.authorsUrl, required this.repositoryUrl, this.svnRoot, });
 
 factory Import.fromJson(Map<String, dynamic> json) { return Import(
-  vcs: json['vcs'] as String,
+  vcs: json['vcs'] as String?,
   useLfs: json['use_lfs'] as bool?,
   vcsUrl: json['vcs_url'] as String,
   svcRoot: json['svc_root'] as String?,

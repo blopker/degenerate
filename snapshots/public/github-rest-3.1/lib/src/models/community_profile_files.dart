@@ -7,13 +7,13 @@
 import 'code_of_conduct_simple.dart';import 'community_health_file.dart';import 'license_simple.dart';final class CommunityProfileFiles {const CommunityProfileFiles({required this.codeOfConduct, required this.codeOfConductFile, required this.license, required this.contributing, required this.readme, required this.issueTemplate, required this.pullRequestTemplate, });
 
 factory CommunityProfileFiles.fromJson(Map<String, dynamic> json) { return CommunityProfileFiles(
-  codeOfConduct: CodeOfConductSimple.fromJson(json['code_of_conduct'] as Map<String, dynamic>),
-  codeOfConductFile: CommunityHealthFile.fromJson(json['code_of_conduct_file'] as Map<String, dynamic>),
-  license: LicenseSimple.fromJson(json['license'] as Map<String, dynamic>),
-  contributing: CommunityHealthFile.fromJson(json['contributing'] as Map<String, dynamic>),
-  readme: CommunityHealthFile.fromJson(json['readme'] as Map<String, dynamic>),
-  issueTemplate: CommunityHealthFile.fromJson(json['issue_template'] as Map<String, dynamic>),
-  pullRequestTemplate: CommunityHealthFile.fromJson(json['pull_request_template'] as Map<String, dynamic>),
+  codeOfConduct: json['code_of_conduct'] != null ? CodeOfConductSimple.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null,
+  codeOfConductFile: json['code_of_conduct_file'] != null ? CommunityHealthFile.fromJson(json['code_of_conduct_file'] as Map<String, dynamic>) : null,
+  license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
+  contributing: json['contributing'] != null ? CommunityHealthFile.fromJson(json['contributing'] as Map<String, dynamic>) : null,
+  readme: json['readme'] != null ? CommunityHealthFile.fromJson(json['readme'] as Map<String, dynamic>) : null,
+  issueTemplate: json['issue_template'] != null ? CommunityHealthFile.fromJson(json['issue_template'] as Map<String, dynamic>) : null,
+  pullRequestTemplate: json['pull_request_template'] != null ? CommunityHealthFile.fromJson(json['pull_request_template'] as Map<String, dynamic>) : null,
 ); }
 
 final CodeOfConductSimple? codeOfConduct;

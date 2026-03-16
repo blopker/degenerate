@@ -42,7 +42,7 @@ factory Eval.fromJson(Map<String, dynamic> json) { return Eval(
   dataSourceConfig: OneOf3.parse(json['data_source_config'], fromA: (v) => EvalCustomDataSourceConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalLogsDataSourceConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalStoredCompletionsDataSourceConfig.fromJson(v as Map<String, dynamic>),),
   testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
   createdAt: (json['created_at'] as num).toInt(),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
 /// The object type.

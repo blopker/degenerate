@@ -7,10 +7,10 @@
 import 'wor_describe_workflow_instance_response_result_steps_step_attempts_error.dart';final class WorDescribeWorkflowInstanceResponseResultStepsStepAttempts {const WorDescribeWorkflowInstanceResponseResultStepsStepAttempts({required this.end, required this.error, required this.start, required this.success, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepAttempts.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepAttempts(
-  end: DateTime.parse(json['end'] as String),
-  error: WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError.fromJson(json['error'] as Map<String, dynamic>),
+  end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
+  error: json['error'] != null ? WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError.fromJson(json['error'] as Map<String, dynamic>) : null,
   start: DateTime.parse(json['start'] as String),
-  success: json['success'] as bool,
+  success: json['success'] as bool?,
 ); }
 
 final DateTime? end;

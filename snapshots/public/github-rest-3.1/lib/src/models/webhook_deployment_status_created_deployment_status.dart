@@ -9,7 +9,7 @@ final class WebhookDeploymentStatusCreatedDeploymentStatus {const WebhookDeploym
 
 factory WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedDeploymentStatus(
   createdAt: json['created_at'] as String,
-  creator: WebhookDeploymentStatusCreatedDeploymentStatusCreator.fromJson(json['creator'] as Map<String, dynamic>),
+  creator: json['creator'] != null ? WebhookDeploymentStatusCreatedDeploymentStatusCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
   deploymentUrl: Uri.parse(json['deployment_url'] as String),
   description: json['description'] as String,
   environment: json['environment'] as String,

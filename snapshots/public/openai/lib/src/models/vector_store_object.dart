@@ -67,8 +67,8 @@ factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorSto
   status: VectorStoreObjectStatus.fromJson(json['status'] as String),
   expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  lastActiveAt: (json['last_active_at'] as num).toInt(),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  lastActiveAt: json['last_active_at'] != null ? (json['last_active_at'] as num).toInt() : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
 /// The identifier, which can be referenced in API endpoints.

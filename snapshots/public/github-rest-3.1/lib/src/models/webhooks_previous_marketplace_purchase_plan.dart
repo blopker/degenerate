@@ -41,7 +41,7 @@ factory WebhooksPreviousMarketplacePurchasePlan.fromJson(Map<String, dynamic> js
   monthlyPriceInCents: (json['monthly_price_in_cents'] as num).toInt(),
   name: json['name'] as String,
   priceModel: WebhooksPreviousMarketplacePurchasePlanPriceModel.fromJson(json['price_model'] as String),
-  unitName: json['unit_name'] as String,
+  unitName: json['unit_name'] as String?,
   yearlyPriceInCents: (json['yearly_price_in_cents'] as num).toInt(),
 ); }
 

@@ -37,7 +37,7 @@ factory Team.fromJson(Map<String, dynamic> json) { return Team(
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
   slug: json['slug'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   privacy: json['privacy'] as String?,
   notificationSetting: json['notification_setting'] as String?,
   permission: json['permission'] as String,
@@ -49,7 +49,7 @@ factory Team.fromJson(Map<String, dynamic> json) { return Team(
   type: TeamType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-  parent: TeamSimple.fromJson(json['parent'] as Map<String, dynamic>),
+  parent: json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;

@@ -19,7 +19,7 @@ factory OrganizationSimple.fromJson(Map<String, dynamic> json) { return Organiza
   membersUrl: json['members_url'] as String,
   publicMembersUrl: json['public_members_url'] as String,
   avatarUrl: json['avatar_url'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
 ); }
 
 final String login;

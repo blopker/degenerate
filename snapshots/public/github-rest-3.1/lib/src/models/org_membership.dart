@@ -68,7 +68,7 @@ factory OrgMembership.fromJson(Map<String, dynamic> json) { return OrgMembership
   enterpriseTeamsProvidingIndirectMembership: (json['enterprise_teams_providing_indirect_membership'] as List<dynamic>?)?.map((e) => e as String).toList(),
   organizationUrl: Uri.parse(json['organization_url'] as String),
   organization: OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>),
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   permissions: json['permissions'] != null ? OrgMembershipPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
 ); }
 

@@ -34,7 +34,7 @@ factory WebhookStarCreated.fromJson(Map<String, dynamic> json) { return WebhookS
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  starredAt: json['starred_at'] as String,
+  starredAt: json['starred_at'] as String?,
 ); }
 
 final WebhookStarCreatedAction action;

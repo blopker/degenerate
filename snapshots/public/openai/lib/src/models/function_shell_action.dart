@@ -9,8 +9,8 @@ final class FunctionShellAction {const FunctionShellAction({required this.comman
 
 factory FunctionShellAction.fromJson(Map<String, dynamic> json) { return FunctionShellAction(
   commands: (json['commands'] as List<dynamic>).map((e) => e as String).toList(),
-  timeoutMs: (json['timeout_ms'] as num).toInt(),
-  maxOutputLength: (json['max_output_length'] as num).toInt(),
+  timeoutMs: json['timeout_ms'] != null ? (json['timeout_ms'] as num).toInt() : null,
+  maxOutputLength: json['max_output_length'] != null ? (json['max_output_length'] as num).toInt() : null,
 ); }
 
 final List<String> commands;

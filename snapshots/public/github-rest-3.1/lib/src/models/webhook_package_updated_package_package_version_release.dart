@@ -7,7 +7,7 @@
 import 'webhook_package_updated_package_package_version_release_author.dart';final class WebhookPackageUpdatedPackagePackageVersionRelease {const WebhookPackageUpdatedPackagePackageVersionRelease({required this.author, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.name, required this.prerelease, required this.publishedAt, required this.tagName, required this.targetCommitish, required this.url, });
 
 factory WebhookPackageUpdatedPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackagePackageVersionRelease(
-  author: WebhookPackageUpdatedPackagePackageVersionReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>),
+  author: json['author'] != null ? WebhookPackageUpdatedPackagePackageVersionReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String,
   draft: json['draft'] as bool,
   htmlUrl: Uri.parse(json['html_url'] as String),

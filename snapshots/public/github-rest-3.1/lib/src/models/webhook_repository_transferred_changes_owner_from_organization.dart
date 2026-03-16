@@ -8,7 +8,7 @@ final class WebhookRepositoryTransferredChangesOwnerFromOrganization {const Webh
 
 factory WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(Map<String, dynamic> json) { return WebhookRepositoryTransferredChangesOwnerFromOrganization(
   avatarUrl: Uri.parse(json['avatar_url'] as String),
-  description: json['description'] as String,
+  description: json['description'] as String?,
   eventsUrl: Uri.parse(json['events_url'] as String),
   hooksUrl: Uri.parse(json['hooks_url'] as String),
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,

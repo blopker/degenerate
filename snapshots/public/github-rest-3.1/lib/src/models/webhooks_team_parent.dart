@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhooksTeamParent {const WebhooksTeamParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.notificationSetting, required this.repositoriesUrl, required this.slug, required this.url, required this.type, this.organizationId, this.enterpriseId, });
 
 factory WebhooksTeamParent.fromJson(Map<String, dynamic> json) { return WebhooksTeamParent(
-  description: json['description'] as String,
+  description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String,

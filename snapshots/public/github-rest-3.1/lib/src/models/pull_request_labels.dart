@@ -11,7 +11,7 @@ factory PullRequestLabels.fromJson(Map<String, dynamic> json) { return PullReque
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
   name: json['name'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   color: json['color'] as String,
   $default: json['default'] as bool,
 ); }

@@ -14,13 +14,13 @@ factory RunGraderResponseMetadataErrors.fromJson(Map<String, dynamic> json) { re
   invalidVariableError: json['invalid_variable_error'] as bool,
   otherError: json['other_error'] as bool,
   pythonGraderServerError: json['python_grader_server_error'] as bool,
-  pythonGraderServerErrorType: json['python_grader_server_error_type'] as String,
+  pythonGraderServerErrorType: json['python_grader_server_error_type'] as String?,
   pythonGraderRuntimeError: json['python_grader_runtime_error'] as bool,
-  pythonGraderRuntimeErrorDetails: json['python_grader_runtime_error_details'] as String,
+  pythonGraderRuntimeErrorDetails: json['python_grader_runtime_error_details'] as String?,
   modelGraderServerError: json['model_grader_server_error'] as bool,
   modelGraderRefusalError: json['model_grader_refusal_error'] as bool,
   modelGraderParseError: json['model_grader_parse_error'] as bool,
-  modelGraderServerErrorDetails: json['model_grader_server_error_details'] as String,
+  modelGraderServerErrorDetails: json['model_grader_server_error_details'] as String?,
 ); }
 
 final bool formulaParseError;

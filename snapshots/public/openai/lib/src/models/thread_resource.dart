@@ -33,7 +33,7 @@ factory ThreadResource.fromJson(Map<String, dynamic> json) { return ThreadResour
   id: json['id'] as String,
   object: ThreadResourceObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
-  title: json['title'] as String,
+  title: json['title'] as String?,
   status: ThreadResourceStatus.fromJson(json['status'] as Map<String, dynamic>),
   user: json['user'] as String,
 ); }

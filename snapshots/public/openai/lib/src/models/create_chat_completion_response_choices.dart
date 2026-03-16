@@ -48,7 +48,7 @@ factory CreateChatCompletionResponseChoices.fromJson(Map<String, dynamic> json) 
   finishReason: CreateChatCompletionResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),
   index: (json['index'] as num).toInt(),
   message: ChatCompletionResponseMessage.fromJson(json['message'] as Map<String, dynamic>),
-  logprobs: CreateChatCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>),
+  logprobs: json['logprobs'] != null ? CreateChatCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
 ); }
 
 /// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,

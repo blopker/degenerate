@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'wor_batch_create_workflow_in
 factory WorBatchCreateWorkflowInstanceResponse404.fromJson(Map<String, dynamic> json) { return WorBatchCreateWorkflowInstanceResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 

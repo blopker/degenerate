@@ -14,7 +14,7 @@ factory WebhooksMembership.fromJson(Map<String, dynamic> json) { return Webhooks
   enterpriseTeamsProvidingIndirectMembership: (json['enterprise_teams_providing_indirect_membership'] as List<dynamic>?)?.map((e) => e as String).toList(),
   state: json['state'] as String,
   url: Uri.parse(json['url'] as String),
-  user: WebhooksMembershipUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhooksMembershipUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri organizationUrl;

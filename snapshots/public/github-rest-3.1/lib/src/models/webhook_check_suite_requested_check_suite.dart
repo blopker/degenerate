@@ -88,13 +88,13 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookCheckSuiteRequestedCheckSuite {const WebhookCheckSuiteRequestedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, this.rerequestable, this.runsRerequestable, required this.status, required this.updatedAt, required this.url, });
 
 factory WebhookCheckSuiteRequestedCheckSuite.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequestedCheckSuite(
-  after: json['after'] as String,
+  after: json['after'] as String?,
   app: WebhookCheckSuiteRequestedCheckSuiteApp.fromJson(json['app'] as Map<String, dynamic>),
-  before: json['before'] as String,
+  before: json['before'] as String?,
   checkRunsUrl: Uri.parse(json['check_runs_url'] as String),
-  conclusion: WebhookCheckSuiteRequestedCheckSuiteConclusion.fromJson(json['conclusion'] as String),
+  conclusion: json['conclusion'] != null ? WebhookCheckSuiteRequestedCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
-  headBranch: json['head_branch'] as String,
+  headBranch: json['head_branch'] as String?,
   headCommit: WebhookCheckSuiteRequestedCheckSuiteHeadCommit.fromJson(json['head_commit'] as Map<String, dynamic>),
   headSha: json['head_sha'] as String,
   id: (json['id'] as num).toInt(),
@@ -103,7 +103,7 @@ factory WebhookCheckSuiteRequestedCheckSuite.fromJson(Map<String, dynamic> json)
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => WebhookCheckSuiteRequestedCheckSuitePullRequests.fromJson(e as Map<String, dynamic>)).toList(),
   rerequestable: json['rerequestable'] as bool?,
   runsRerequestable: json['runs_rerequestable'] as bool?,
-  status: WebhookCheckSuiteRequestedCheckSuiteStatus.fromJson(json['status'] as String),
+  status: json['status'] != null ? WebhookCheckSuiteRequestedCheckSuiteStatus.fromJson(json['status'] as String) : null,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
 ); }

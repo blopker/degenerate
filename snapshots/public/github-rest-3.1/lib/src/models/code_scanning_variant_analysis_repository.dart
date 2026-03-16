@@ -13,7 +13,7 @@ factory CodeScanningVariantAnalysisRepository.fromJson(Map<String, dynamic> json
   fullName: json['full_name'] as String,
   private: json['private'] as bool,
   stargazersCount: (json['stargazers_count'] as num).toInt(),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
 ); }
 
 /// A unique identifier of the repository.

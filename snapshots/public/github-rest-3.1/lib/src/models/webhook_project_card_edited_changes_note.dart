@@ -7,7 +7,7 @@
 final class WebhookProjectCardEditedChangesNote {const WebhookProjectCardEditedChangesNote({required this.from});
 
 factory WebhookProjectCardEditedChangesNote.fromJson(Map<String, dynamic> json) { return WebhookProjectCardEditedChangesNote(
-  from: json['from'] as String,
+  from: json['from'] as String?,
 ); }
 
 final String? from;

@@ -8,7 +8,7 @@ final class StatusCheckPolicyChecks {const StatusCheckPolicyChecks({required thi
 
 factory StatusCheckPolicyChecks.fromJson(Map<String, dynamic> json) { return StatusCheckPolicyChecks(
   context: json['context'] as String,
-  appId: (json['app_id'] as num).toInt(),
+  appId: json['app_id'] != null ? (json['app_id'] as num).toInt() : null,
 ); }
 
 final String context;

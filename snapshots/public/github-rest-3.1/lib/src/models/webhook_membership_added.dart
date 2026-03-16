@@ -57,7 +57,7 @@ factory WebhookMembershipAdded.fromJson(Map<String, dynamic> json) { return Webh
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   scope: WebhookMembershipAddedScope.fromJson(json['scope'] as String),
-  sender: WebhookMembershipAddedSender.fromJson(json['sender'] as Map<String, dynamic>),
+  sender: json['sender'] != null ? WebhookMembershipAddedSender.fromJson(json['sender'] as Map<String, dynamic>) : null,
   team: WebhooksTeam.fromJson(json['team'] as Map<String, dynamic>),
 ); }
 

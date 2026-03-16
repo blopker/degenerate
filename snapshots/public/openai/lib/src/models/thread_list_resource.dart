@@ -32,8 +32,8 @@ final class ThreadListResource {const ThreadListResource({this.object = ThreadLi
 factory ThreadListResource.fromJson(Map<String, dynamic> json) { return ThreadListResource(
   object: ThreadListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ThreadResource.fromJson(e as Map<String, dynamic>)).toList(),
-  firstId: json['first_id'] as String,
-  lastId: json['last_id'] as String,
+  firstId: json['first_id'] as String?,
+  lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
 ); }
 

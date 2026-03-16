@@ -8,7 +8,7 @@ final class WebhookCodeScanningAlertUpdatedAssignmentAlertTool {const WebhookCod
 
 factory WebhookCodeScanningAlertUpdatedAssignmentAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignmentAlertTool(
   name: json['name'] as String,
-  version: json['version'] as String,
+  version: json['version'] as String?,
 ); }
 
 /// The name of the tool used to generate the code scanning analysis alert.

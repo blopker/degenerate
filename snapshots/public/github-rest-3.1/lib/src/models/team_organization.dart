@@ -19,7 +19,7 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   membersUrl: json['members_url'] as String,
   publicMembersUrl: json['public_members_url'] as String,
   avatarUrl: json['avatar_url'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   name: json['name'] as String?,
   company: json['company'] as String?,
   blog: json['blog'] != null ? Uri.parse(json['blog'] as String) : null,
@@ -56,7 +56,7 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   membersCanForkPrivateRepositories: json['members_can_fork_private_repositories'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  archivedAt: DateTime.parse(json['archived_at'] as String),
+  archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
 ); }
 
 final String login;

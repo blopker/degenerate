@@ -42,7 +42,7 @@ factory NetworkConfiguration.fromJson(Map<String, dynamic> json) { return Networ
   networkSettingsIds: (json['network_settings_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   failoverNetworkSettingsIds: (json['failover_network_settings_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   failoverNetworkEnabled: json['failover_network_enabled'] as bool?,
-  createdOn: DateTime.parse(json['created_on'] as String),
+  createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
 ); }
 
 /// The unique identifier of the network configuration.

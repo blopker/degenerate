@@ -36,7 +36,7 @@ final class JobSteps {const JobSteps({required this.status, required this.conclu
 
 factory JobSteps.fromJson(Map<String, dynamic> json) { return JobSteps(
   status: JobStepsStatus.fromJson(json['status'] as String),
-  conclusion: json['conclusion'] as String,
+  conclusion: json['conclusion'] as String?,
   name: json['name'] as String,
   number: (json['number'] as num).toInt(),
   startedAt: json['started_at'] != null ? DateTime.parse(json['started_at'] as String) : null,

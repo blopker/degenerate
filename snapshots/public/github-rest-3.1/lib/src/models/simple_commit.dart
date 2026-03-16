@@ -12,8 +12,8 @@ factory SimpleCommit.fromJson(Map<String, dynamic> json) { return SimpleCommit(
   treeId: json['tree_id'] as String,
   message: json['message'] as String,
   timestamp: DateTime.parse(json['timestamp'] as String),
-  author: SimpleCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),
-  committer: SimpleCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>),
+  author: json['author'] != null ? SimpleCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
+  committer: json['committer'] != null ? SimpleCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
 ); }
 
 /// SHA for the commit

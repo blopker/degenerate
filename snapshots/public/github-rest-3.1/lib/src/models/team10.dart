@@ -36,7 +36,7 @@ final class Team10 {const Team10({this.deleted, required this.description, requi
 
 factory Team10.fromJson(Map<String, dynamic> json) { return Team10(
   deleted: json['deleted'] as bool?,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String,

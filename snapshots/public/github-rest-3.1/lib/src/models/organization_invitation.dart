@@ -9,8 +9,8 @@ final class OrganizationInvitation {const OrganizationInvitation({required this.
 
 factory OrganizationInvitation.fromJson(Map<String, dynamic> json) { return OrganizationInvitation(
   id: (json['id'] as num).toInt(),
-  login: json['login'] as String,
-  email: json['email'] as String,
+  login: json['login'] as String?,
+  email: json['email'] as String?,
   role: json['role'] as String,
   createdAt: json['created_at'] as String,
   failedAt: json['failed_at'] as String?,

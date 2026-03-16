@@ -7,7 +7,7 @@
 final class WebhookRepositoryEditedChangesDescription {const WebhookRepositoryEditedChangesDescription({required this.from});
 
 factory WebhookRepositoryEditedChangesDescription.fromJson(Map<String, dynamic> json) { return WebhookRepositoryEditedChangesDescription(
-  from: json['from'] as String,
+  from: json['from'] as String?,
 ); }
 
 final String? from;

@@ -53,7 +53,7 @@ final class CodeScanningAutofix {const CodeScanningAutofix({required this.status
 
 factory CodeScanningAutofix.fromJson(Map<String, dynamic> json) { return CodeScanningAutofix(
   status: CodeScanningAutofixStatus.fromJson(json['status'] as String),
-  description: CodeScanningAutofixDescription.fromJson(json['description'] as String),
+  description: json['description'] != null ? CodeScanningAutofixDescription.fromJson(json['description'] as String) : null,
   startedAt: CodeScanningAutofixStartedAt.fromJson(json['started_at'] as String),
 ); }
 

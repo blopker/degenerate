@@ -40,7 +40,7 @@ factory FunctionShellCall.fromJson(Map<String, dynamic> json) { return FunctionS
   callId: json['call_id'] as String,
   action: FunctionShellAction.fromJson(json['action'] as Map<String, dynamic>),
   status: LocalShellCallStatus.fromJson(json['status'] as String),
-  environment: FunctionShellCallEnvironment.fromJson(json['environment'] as Map<String, dynamic>),
+  environment: json['environment'] != null ? FunctionShellCallEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null,
   createdBy: json['created_by'] as String?,
 ); }
 

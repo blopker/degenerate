@@ -7,9 +7,9 @@
 final class HookResponse {const HookResponse({required this.code, required this.status, required this.message, });
 
 factory HookResponse.fromJson(Map<String, dynamic> json) { return HookResponse(
-  code: (json['code'] as num).toInt(),
-  status: json['status'] as String,
-  message: json['message'] as String,
+  code: json['code'] != null ? (json['code'] as num).toInt() : null,
+  status: json['status'] as String?,
+  message: json['message'] as String?,
 ); }
 
 final int? code;

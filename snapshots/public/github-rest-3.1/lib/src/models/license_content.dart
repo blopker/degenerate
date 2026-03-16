@@ -13,14 +13,14 @@ factory LicenseContent.fromJson(Map<String, dynamic> json) { return LicenseConte
   sha: json['sha'] as String,
   size: (json['size'] as num).toInt(),
   url: Uri.parse(json['url'] as String),
-  htmlUrl: Uri.parse(json['html_url'] as String),
-  gitUrl: Uri.parse(json['git_url'] as String),
-  downloadUrl: Uri.parse(json['download_url'] as String),
+  htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
+  gitUrl: json['git_url'] != null ? Uri.parse(json['git_url'] as String) : null,
+  downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   type: json['type'] as String,
   content: json['content'] as String,
   encoding: json['encoding'] as String,
   links: LicenseContentLinks.fromJson(json['_links'] as Map<String, dynamic>),
-  license: LicenseSimple.fromJson(json['license'] as Map<String, dynamic>),
+  license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
 ); }
 
 final String name;

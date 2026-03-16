@@ -44,18 +44,18 @@ bool get isUnknown { return !values.contains(this); }
 final class RealtimekitRecording {const RealtimekitRecording({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, this.recordingDuration, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, });
 
 factory RealtimekitRecording.fromJson(Map<String, dynamic> json) { return RealtimekitRecording(
-  audioDownloadUrl: Uri.parse(json['audio_download_url'] as String),
-  downloadUrl: Uri.parse(json['download_url'] as String),
-  downloadUrlExpiry: DateTime.parse(json['download_url_expiry'] as String),
-  fileSize: (json['file_size'] as num).toDouble(),
+  audioDownloadUrl: json['audio_download_url'] != null ? Uri.parse(json['audio_download_url'] as String) : null,
+  downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
+  downloadUrlExpiry: json['download_url_expiry'] != null ? DateTime.parse(json['download_url_expiry'] as String) : null,
+  fileSize: json['file_size'] != null ? (json['file_size'] as num).toDouble() : null,
   id: json['id'] as String,
   invokedTime: DateTime.parse(json['invoked_time'] as String),
   outputFileName: json['output_file_name'] as String,
   recordingDuration: json['recording_duration'] != null ? (json['recording_duration'] as num).toInt() : null,
-  sessionId: json['session_id'] as String,
-  startedTime: DateTime.parse(json['started_time'] as String),
+  sessionId: json['session_id'] as String?,
+  startedTime: json['started_time'] != null ? DateTime.parse(json['started_time'] as String) : null,
   status: RealtimekitRecordingStatus.fromJson(json['status'] as String),
-  stoppedTime: DateTime.parse(json['stopped_time'] as String),
+  stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
 ); }
 
 /// If the audio_config is passed, the URL for downloading the audio recording is returned.

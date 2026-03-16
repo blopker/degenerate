@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RadarGetAttacksLayer7TopOriginLocationResponseResultMeta {const RadarGetAttacksLayer7TopOriginLocationResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer7TopOriginLocationResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopOriginLocationResponseResultMeta(
-  confidenceInfo: RadarGetAttacksLayer7TopOriginLocationResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  confidenceInfo: json['confidenceInfo'] != null ? RadarGetAttacksLayer7TopOriginLocationResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetAttacksLayer7TopOriginLocationResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetAttacksLayer7TopOriginLocationResponseResultMetaNormalization.fromJson(json['normalization'] as String),

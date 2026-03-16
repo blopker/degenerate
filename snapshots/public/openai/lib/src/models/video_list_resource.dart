@@ -31,8 +31,8 @@ final class VideoListResource {const VideoListResource({this.object = VideoListR
 factory VideoListResource.fromJson(Map<String, dynamic> json) { return VideoListResource(
   object: VideoListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => VideoResource.fromJson(e as Map<String, dynamic>)).toList(),
-  firstId: json['first_id'] as String,
-  lastId: json['last_id'] as String,
+  firstId: json['first_id'] as String?,
+  lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
 ); }
 

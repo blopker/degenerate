@@ -7,7 +7,7 @@
 import 'package:collection/collection.dart';import 'webhook_package_updated_package_package_version_author.dart';import 'webhook_package_updated_package_package_version_docker_metadata.dart';import 'webhook_package_updated_package_package_version_package_files.dart';import 'webhook_package_updated_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';final class WebhookPackageUpdatedPackagePackageVersion {const WebhookPackageUpdatedPackagePackageVersion({required this.author, required this.body, required this.bodyHtml, required this.createdAt, required this.description, this.dockerMetadata, this.draft, required this.htmlUrl, required this.id, required this.installationCommand, this.manifest, required this.metadata, required this.name, required this.packageFiles, this.packageUrl, this.prerelease, this.release, this.rubygemsMetadata, this.sourceUrl, required this.summary, this.tagName, required this.targetCommitish, required this.targetOid, required this.updatedAt, required this.version, });
 
 factory WebhookPackageUpdatedPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackagePackageVersion(
-  author: WebhookPackageUpdatedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>),
+  author: json['author'] != null ? WebhookPackageUpdatedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   body: json['body'] as String,
   bodyHtml: json['body_html'] as String,
   createdAt: json['created_at'] as String,

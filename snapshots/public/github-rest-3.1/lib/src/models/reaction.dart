@@ -53,7 +53,7 @@ final class Reaction {const Reaction({required this.id, required this.nodeId, re
 factory Reaction.fromJson(Map<String, dynamic> json) { return Reaction(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   content: ReactionContent.fromJson(json['content'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
 ); }

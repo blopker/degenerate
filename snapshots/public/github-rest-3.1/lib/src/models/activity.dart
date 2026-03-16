@@ -52,7 +52,7 @@ factory Activity.fromJson(Map<String, dynamic> json) { return Activity(
   ref: json['ref'] as String,
   timestamp: DateTime.parse(json['timestamp'] as String),
   activityType: ActivityActivityType.fromJson(json['activity_type'] as String),
-  actor: SimpleUser.fromJson(json['actor'] as Map<String, dynamic>),
+  actor: json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;

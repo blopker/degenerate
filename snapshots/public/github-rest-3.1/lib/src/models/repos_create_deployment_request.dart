@@ -13,7 +13,7 @@ factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { retur
   requiredContexts: (json['required_contexts'] as List<dynamic>?)?.map((e) => e as String).toList(),
   payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,) : null,
   environment: json.containsKey('environment') ? json['environment'] as String : 'production',
-  description: json.containsKey('description') ? json['description'] as String : '',
+  description: json.containsKey('description') ? json['description'] as String? : '',
   transientEnvironment: json.containsKey('transient_environment') ? json['transient_environment'] as bool : false,
   productionEnvironment: json['production_environment'] as bool?,
 ); }

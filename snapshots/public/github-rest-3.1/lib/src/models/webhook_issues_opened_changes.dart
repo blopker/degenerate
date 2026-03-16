@@ -7,7 +7,7 @@
 import 'webhook_issues_opened_changes_old_issue.dart';import 'webhook_issues_opened_changes_old_repository.dart';final class WebhookIssuesOpenedChanges {const WebhookIssuesOpenedChanges({required this.oldIssue, required this.oldRepository, });
 
 factory WebhookIssuesOpenedChanges.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpenedChanges(
-  oldIssue: WebhookIssuesOpenedChangesOldIssue.fromJson(json['old_issue'] as Map<String, dynamic>),
+  oldIssue: json['old_issue'] != null ? WebhookIssuesOpenedChangesOldIssue.fromJson(json['old_issue'] as Map<String, dynamic>) : null,
   oldRepository: WebhookIssuesOpenedChangesOldRepository.fromJson(json['old_repository'] as Map<String, dynamic>),
 ); }
 

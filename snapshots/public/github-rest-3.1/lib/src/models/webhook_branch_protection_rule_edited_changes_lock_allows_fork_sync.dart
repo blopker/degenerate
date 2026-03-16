@@ -7,7 +7,7 @@
 final class WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync {const WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync(
-  from: json['from'] as bool,
+  from: json['from'] as bool?,
 ); }
 
 final bool? from;

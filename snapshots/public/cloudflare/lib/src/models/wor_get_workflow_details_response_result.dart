@@ -14,7 +14,7 @@ factory WorGetWorkflowDetailsResponseResult.fromJson(Map<String, dynamic> json) 
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   name: json['name'] as String,
   scriptName: json['script_name'] as String,
-  triggeredOn: DateTime.parse(json['triggered_on'] as String),
+  triggeredOn: json['triggered_on'] != null ? DateTime.parse(json['triggered_on'] as String) : null,
 ); }
 
 final String className;

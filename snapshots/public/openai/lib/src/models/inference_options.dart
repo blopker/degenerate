@@ -8,8 +8,8 @@ import 'tool_choice.dart';/// Model and tool overrides applied when generating t
 final class InferenceOptions {const InferenceOptions({required this.toolChoice, required this.model, });
 
 factory InferenceOptions.fromJson(Map<String, dynamic> json) { return InferenceOptions(
-  toolChoice: ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>),
-  model: json['model'] as String,
+  toolChoice: json['tool_choice'] != null ? ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
+  model: json['model'] as String?,
 ); }
 
 /// Preferred tool to invoke. Defaults to null when ChatKit should auto-select.

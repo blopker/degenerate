@@ -44,7 +44,7 @@ factory ImageGenToolCall.fromJson(Map<String, dynamic> json) { return ImageGenTo
   type: json['type'] as String,
   id: json['id'] as String,
   status: ImageGenToolCallStatus.fromJson(json['status'] as String),
-  result: json['result'] as String,
+  result: json['result'] as String?,
 ); }
 
 /// The type of the image generation call. Always `image_generation_call`.

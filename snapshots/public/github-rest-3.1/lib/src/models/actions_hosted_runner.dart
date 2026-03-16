@@ -45,7 +45,7 @@ factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return Actions
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   runnerGroupId: json['runner_group_id'] != null ? (json['runner_group_id'] as num).toInt() : null,
-  imageDetails: ActionsHostedRunnerPoolImage.fromJson(json['image_details'] as Map<String, dynamic>),
+  imageDetails: json['image_details'] != null ? ActionsHostedRunnerPoolImage.fromJson(json['image_details'] as Map<String, dynamic>) : null,
   machineSizeDetails: ActionsHostedRunnerMachineSpec.fromJson(json['machine_size_details'] as Map<String, dynamic>),
   status: ActionsHostedRunnerStatus.fromJson(json['status'] as String),
   platform: json['platform'] as String,

@@ -10,8 +10,8 @@ final class ThreadSubscription {const ThreadSubscription({required this.subscrib
 factory ThreadSubscription.fromJson(Map<String, dynamic> json) { return ThreadSubscription(
   subscribed: json['subscribed'] as bool,
   ignored: json['ignored'] as bool,
-  reason: json['reason'] as String,
-  createdAt: DateTime.parse(json['created_at'] as String),
+  reason: json['reason'] as String?,
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   url: Uri.parse(json['url'] as String),
   threadUrl: json['thread_url'] != null ? Uri.parse(json['thread_url'] as String) : null,
   repositoryUrl: json['repository_url'] != null ? Uri.parse(json['repository_url'] as String) : null,

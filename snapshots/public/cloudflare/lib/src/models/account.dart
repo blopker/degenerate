@@ -33,7 +33,7 @@ final class Account {const Account({required this.createdOn, required this.id, r
 factory Account.fromJson(Map<String, dynamic> json) { return Account(
   createdOn: DateTime.parse(json['created_on'] as String),
   id: json['id'] as String,
-  name: json['name'] as String,
+  name: json['name'] as String?,
   settings: AccountSettings.fromJson(json['settings'] as Map<String, dynamic>),
   type: AccountType.fromJson(json['type'] as String),
 ); }

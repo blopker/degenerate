@@ -15,7 +15,7 @@ factory EnterpriseTeam.fromJson(Map<String, dynamic> json) { return EnterpriseTe
   url: Uri.parse(json['url'] as String),
   syncToOrganizations: json['sync_to_organizations'] as String?,
   organizationSelectionType: json['organization_selection_type'] as String?,
-  groupId: json['group_id'] as String,
+  groupId: json['group_id'] as String?,
   groupName: json['group_name'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   membersUrl: json['members_url'] as String,

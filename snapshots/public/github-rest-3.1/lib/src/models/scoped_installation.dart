@@ -34,7 +34,7 @@ final class ScopedInstallation {const ScopedInstallation({required this.permissi
 factory ScopedInstallation.fromJson(Map<String, dynamic> json) { return ScopedInstallation(
   permissions: AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
   repositorySelection: ScopedInstallationRepositorySelection.fromJson(json['repository_selection'] as String),
-  singleFileName: json['single_file_name'] as String,
+  singleFileName: json['single_file_name'] as String?,
   hasMultipleSingleFiles: json['has_multiple_single_files'] as bool?,
   singleFilePaths: (json['single_file_paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),

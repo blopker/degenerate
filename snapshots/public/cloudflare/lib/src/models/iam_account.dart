@@ -12,7 +12,7 @@ factory IamAccount.fromJson(Map<String, dynamic> json) { return IamAccount(
   managedBy: json['managed_by'] != null ? IamAccountManagedBy.fromJson(json['managed_by'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   settings: json['settings'] != null ? IamAccountSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
-  type: IamAccountType.fromJson(json['type'] as dynamic),
+  type: json['type'] != null ? IamAccountType.fromJson(json['type'] as dynamic) : null,
 ); }
 
 /// Timestamp for the creation of the account

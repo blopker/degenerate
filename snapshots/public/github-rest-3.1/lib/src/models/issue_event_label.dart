@@ -8,8 +8,8 @@
 final class IssueEventLabel {const IssueEventLabel({required this.name, required this.color, });
 
 factory IssueEventLabel.fromJson(Map<String, dynamic> json) { return IssueEventLabel(
-  name: json['name'] as String,
-  color: json['color'] as String,
+  name: json['name'] as String?,
+  color: json['color'] as String?,
 ); }
 
 final String? name;

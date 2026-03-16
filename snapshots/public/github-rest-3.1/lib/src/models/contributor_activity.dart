@@ -8,7 +8,7 @@ import 'package:collection/collection.dart';import 'contributor_activity_weeks.d
 final class ContributorActivity {const ContributorActivity({required this.author, required this.total, required this.weeks, });
 
 factory ContributorActivity.fromJson(Map<String, dynamic> json) { return ContributorActivity(
-  author: SimpleUser.fromJson(json['author'] as Map<String, dynamic>),
+  author: json['author'] != null ? SimpleUser.fromJson(json['author'] as Map<String, dynamic>) : null,
   total: (json['total'] as num).toInt(),
   weeks: (json['weeks'] as List<dynamic>).map((e) => ContributorActivityWeeks.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

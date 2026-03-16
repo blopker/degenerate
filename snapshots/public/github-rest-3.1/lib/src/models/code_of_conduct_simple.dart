@@ -11,7 +11,7 @@ factory CodeOfConductSimple.fromJson(Map<String, dynamic> json) { return CodeOfC
   url: Uri.parse(json['url'] as String),
   key: json['key'] as String,
   name: json['name'] as String,
-  htmlUrl: Uri.parse(json['html_url'] as String),
+  htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
 ); }
 
 final Uri url;

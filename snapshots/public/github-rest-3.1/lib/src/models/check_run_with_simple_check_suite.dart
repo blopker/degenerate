@@ -95,8 +95,8 @@ final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({re
 factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { return CheckRunWithSimpleCheckSuite(
   app: Integration.fromJson(json['app'] as Map<String, dynamic>),
   checkSuite: SimpleCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
-  completedAt: DateTime.parse(json['completed_at'] as String),
-  conclusion: CheckRunWithSimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String),
+  completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
+  conclusion: json['conclusion'] != null ? CheckRunWithSimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
   deployment: json['deployment'] != null ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>) : null,
   detailsUrl: json['details_url'] as String,
   externalId: json['external_id'] as String,

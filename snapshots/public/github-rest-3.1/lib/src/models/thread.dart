@@ -14,7 +14,7 @@ factory Thread.fromJson(Map<String, dynamic> json) { return Thread(
   reason: json['reason'] as String,
   unread: json['unread'] as bool,
   updatedAt: json['updated_at'] as String,
-  lastReadAt: json['last_read_at'] as String,
+  lastReadAt: json['last_read_at'] as String?,
   url: json['url'] as String,
   subscriptionUrl: json['subscription_url'] as String,
 ); }

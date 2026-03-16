@@ -9,7 +9,7 @@ final class CustomPropertyValue {const CustomPropertyValue({required this.proper
 
 factory CustomPropertyValue.fromJson(Map<String, dynamic> json) { return CustomPropertyValue(
   propertyName: json['property_name'] as String,
-  value: OneOf2.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
+  value: json['value'] != null ? OneOf2.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
 ); }
 
 /// The name of the property

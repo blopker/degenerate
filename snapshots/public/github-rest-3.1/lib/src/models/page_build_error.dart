@@ -7,7 +7,7 @@
 final class PageBuildError {const PageBuildError({required this.message});
 
 factory PageBuildError.fromJson(Map<String, dynamic> json) { return PageBuildError(
-  message: json['message'] as String,
+  message: json['message'] as String?,
 ); }
 
 final String? message;

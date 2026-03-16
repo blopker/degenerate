@@ -10,8 +10,8 @@ final class License {const License({required this.key, required this.name, requi
 factory License.fromJson(Map<String, dynamic> json) { return License(
   key: json['key'] as String,
   name: json['name'] as String,
-  spdxId: json['spdx_id'] as String,
-  url: Uri.parse(json['url'] as String),
+  spdxId: json['spdx_id'] as String?,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   nodeId: json['node_id'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   description: json['description'] as String,

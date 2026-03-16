@@ -15,7 +15,7 @@ factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
   bodyText: json['body_text'] as String?,
   bodyHtml: json['body_html'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   issueUrl: Uri.parse(json['issue_url'] as String),

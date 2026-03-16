@@ -32,11 +32,11 @@ bool get isUnknown { return !values.contains(this); }
 final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });
 
 factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeployment(
-  aliases: (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
+  aliases: (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
   buildConfig: PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>),
   createdOn: DateTime.parse(json['created_on'] as String),
   deploymentTrigger: PagesDeploymentDeploymentTrigger.fromJson(json['deployment_trigger'] as Map<String, dynamic>),
-  envVars: (json['env_vars'] as Map<String, dynamic>).map((k, v) => MapEntry(k, PagesEnvVarsValue.fromJson(v as Map<String, dynamic>))),
+  envVars: (json['env_vars'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesEnvVarsValue.fromJson(v as Map<String, dynamic>))),
   environment: PagesDeploymentEnvironment.fromJson(json['environment'] as String),
   id: json['id'] as String,
   isSkipped: json['is_skipped'] as bool,

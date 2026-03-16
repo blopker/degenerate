@@ -7,9 +7,9 @@
 final class ErrorModel {const ErrorModel({required this.code, required this.message, required this.param, required this.type, });
 
 factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
-  code: json['code'] as String,
+  code: json['code'] as String?,
   message: json['message'] as String,
-  param: json['param'] as String,
+  param: json['param'] as String?,
   type: json['type'] as String,
 ); }
 

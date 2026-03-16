@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RadarGetAttacksLayer3TopAttacksResponseResultMeta {const RadarGetAttacksLayer3TopAttacksResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer3TopAttacksResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopAttacksResponseResultMeta(
-  confidenceInfo: RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  confidenceInfo: json['confidenceInfo'] != null ? RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TopAttacksResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetAttacksLayer3TopAttacksResponseResultMetaNormalization.fromJson(json['normalization'] as String),

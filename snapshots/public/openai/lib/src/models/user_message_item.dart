@@ -37,7 +37,7 @@ factory UserMessageItem.fromJson(Map<String, dynamic> json) { return UserMessage
   type: json['type'] as String,
   content: (json['content'] as List<dynamic>).map((e) => UserMessageItemContent.fromJson(e as Map<String, dynamic>)).toList(),
   attachments: (json['attachments'] as List<dynamic>).map((e) => Attachment.fromJson(e as Map<String, dynamic>)).toList(),
-  inferenceOptions: InferenceOptions.fromJson(json['inference_options'] as Map<String, dynamic>),
+  inferenceOptions: json['inference_options'] != null ? InferenceOptions.fromJson(json['inference_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Identifier of the thread item.

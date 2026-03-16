@@ -39,7 +39,7 @@ factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite
   id: json['id'] != null ? IamInviteComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   invitedBy: json['invited_by'] != null ? IamInvitedBy.fromJson(json['invited_by'] as String) : null,
   invitedMemberEmail: json['invited_member_email'] != null ? IamInvitedMemberEmail.fromJson(json['invited_member_email'] as String) : null,
-  invitedMemberId: json['invited_member_id'] as String,
+  invitedMemberId: json['invited_member_id'] as String?,
   invitedOn: json['invited_on'] != null ? IamInvitedOn.fromJson(json['invited_on'] as String) : null,
   organizationId: json['organization_id'] as String,
   organizationIsEnforcingTwofactor: json['organization_is_enforcing_twofactor'] as bool?,

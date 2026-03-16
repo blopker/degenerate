@@ -87,8 +87,8 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookDeploymentStatusCreatedCheckRun {const WebhookDeploymentStatusCreatedCheckRun({required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.startedAt, required this.status, required this.url, });
 
 factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedCheckRun(
-  completedAt: DateTime.parse(json['completed_at'] as String),
-  conclusion: WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(json['conclusion'] as String),
+  completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
+  conclusion: json['conclusion'] != null ? WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(json['conclusion'] as String) : null,
   detailsUrl: Uri.parse(json['details_url'] as String),
   externalId: json['external_id'] as String,
   headSha: json['head_sha'] as String,

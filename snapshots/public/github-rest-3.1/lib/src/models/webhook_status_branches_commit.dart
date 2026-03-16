@@ -7,8 +7,8 @@
 final class WebhookStatusBranchesCommit {const WebhookStatusBranchesCommit({required this.sha, required this.url, });
 
 factory WebhookStatusBranchesCommit.fromJson(Map<String, dynamic> json) { return WebhookStatusBranchesCommit(
-  sha: json['sha'] as String,
-  url: Uri.parse(json['url'] as String),
+  sha: json['sha'] as String?,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
 final String? sha;

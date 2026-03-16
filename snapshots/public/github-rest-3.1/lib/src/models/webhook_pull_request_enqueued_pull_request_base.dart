@@ -11,7 +11,7 @@ factory WebhookPullRequestEnqueuedPullRequestBase.fromJson(Map<String, dynamic> 
   ref: json['ref'] as String,
   repo: WebhookPullRequestEnqueuedPullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: WebhookPullRequestEnqueuedPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestEnqueuedPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

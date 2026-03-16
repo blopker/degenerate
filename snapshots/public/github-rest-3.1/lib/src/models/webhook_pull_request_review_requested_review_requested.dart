@@ -35,7 +35,7 @@ factory WebhookPullRequestReviewRequestedReviewRequested.fromJson(Map<String, dy
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pullRequest: WebhookPullRequestReviewRequestedReviewRequestedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
-  requestedReviewer: WebhookPullRequestReviewRequestedReviewRequestedRequestedReviewer.fromJson(json['requested_reviewer'] as Map<String, dynamic>),
+  requestedReviewer: json['requested_reviewer'] != null ? WebhookPullRequestReviewRequestedReviewRequestedRequestedReviewer.fromJson(json['requested_reviewer'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 

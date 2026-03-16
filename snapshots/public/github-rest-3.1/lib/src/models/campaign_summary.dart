@@ -19,7 +19,7 @@ factory CampaignSummary.fromJson(Map<String, dynamic> json) { return CampaignSum
   endsAt: DateTime.parse(json['ends_at'] as String),
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   state: CampaignState.fromJson(json['state'] as String),
-  contactLink: Uri.parse(json['contact_link'] as String),
+  contactLink: json['contact_link'] != null ? Uri.parse(json['contact_link'] as String) : null,
   alertStats: json['alert_stats'] != null ? CampaignSummaryAlertStats.fromJson(json['alert_stats'] as Map<String, dynamic>) : null,
 ); }
 

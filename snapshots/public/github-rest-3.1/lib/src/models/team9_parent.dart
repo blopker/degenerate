@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Team9Parent {const Team9Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
 factory Team9Parent.fromJson(Map<String, dynamic> json) { return Team9Parent(
-  description: json['description'] as String,
+  description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String,

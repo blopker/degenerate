@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'builds_error_response_errors
 factory BuildsErrorResponse.fromJson(Map<String, dynamic> json) { return BuildsErrorResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => BuildsErrorResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 

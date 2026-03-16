@@ -9,7 +9,7 @@ final class Stargazer {const Stargazer({required this.starredAt, required this.u
 
 factory Stargazer.fromJson(Map<String, dynamic> json) { return Stargazer(
   starredAt: DateTime.parse(json['starred_at'] as String),
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final DateTime starredAt;

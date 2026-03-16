@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'tunnel_schemas_messages2.dar
 factory ResponseCommonFailure73.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure73(
   errors: (json['errors'] as List<dynamic>).map((e) => TunnelSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TunnelSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   success: json['success'] as bool,
 ); }
 

@@ -9,7 +9,7 @@ final class PinnedIssueComment {const PinnedIssueComment({required this.pinnedAt
 
 factory PinnedIssueComment.fromJson(Map<String, dynamic> json) { return PinnedIssueComment(
   pinnedAt: DateTime.parse(json['pinned_at'] as String),
-  pinnedBy: SimpleUser.fromJson(json['pinned_by'] as Map<String, dynamic>),
+  pinnedBy: json['pinned_by'] != null ? SimpleUser.fromJson(json['pinned_by'] as Map<String, dynamic>) : null,
 ); }
 
 final DateTime pinnedAt;

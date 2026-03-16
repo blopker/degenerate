@@ -36,7 +36,7 @@ factory WebhookGollumPages.fromJson(Map<String, dynamic> json) { return WebhookG
   htmlUrl: Uri.parse(json['html_url'] as String),
   pageName: json['page_name'] as String,
   sha: json['sha'] as String,
-  summary: json['summary'] as String,
+  summary: json['summary'] as String?,
   title: json['title'] as String,
 ); }
 

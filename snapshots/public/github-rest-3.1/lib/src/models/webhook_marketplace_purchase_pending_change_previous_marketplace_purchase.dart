@@ -9,7 +9,7 @@ import 'webhook_marketplace_purchase_pending_change_previous_marketplace_purchas
 factory WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase(
   account: WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
-  freeTrialEndsOn: json['free_trial_ends_on'] as String,
+  freeTrialEndsOn: json['free_trial_ends_on'] as String?,
   nextBillingDate: json['next_billing_date'] as String?,
   onFreeTrial: json['on_free_trial'] as bool,
   plan: WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),

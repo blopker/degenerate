@@ -31,8 +31,8 @@ final class ComputerScreenshotContent {const ComputerScreenshotContent({this.typ
 
 factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return ComputerScreenshotContent(
   type: ComputerScreenshotContentType.fromJson(json['type'] as String),
-  imageUrl: json['image_url'] as String,
-  fileId: json['file_id'] as String,
+  imageUrl: json['image_url'] as String?,
+  fileId: json['file_id'] as String?,
   detail: ImageDetail.fromJson(json['detail'] as String),
 ); }
 

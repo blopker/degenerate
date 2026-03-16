@@ -39,7 +39,7 @@ final class ZonesZone {const ZonesZone({required this.account, required this.act
 
 factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
   account: ZonesZoneAccount.fromJson(json['account'] as Map<String, dynamic>),
-  activatedOn: DateTime.parse(json['activated_on'] as String),
+  activatedOn: json['activated_on'] != null ? DateTime.parse(json['activated_on'] as String) : null,
   cnameSuffix: json['cname_suffix'] as String?,
   createdOn: DateTime.parse(json['created_on'] as String),
   developmentMode: (json['development_mode'] as num).toDouble(),
@@ -48,9 +48,9 @@ factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   name: json['name'] as String,
   nameServers: (json['name_servers'] as List<dynamic>).map((e) => e as String).toList(),
-  originalDnshost: json['original_dnshost'] as String,
-  originalNameServers: (json['original_name_servers'] as List<dynamic>).map((e) => e as String).toList(),
-  originalRegistrar: json['original_registrar'] as String,
+  originalDnshost: json['original_dnshost'] as String?,
+  originalNameServers: (json['original_name_servers'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  originalRegistrar: json['original_registrar'] as String?,
   owner: ZonesZoneOwner.fromJson(json['owner'] as Map<String, dynamic>),
   paused: json['paused'] != null ? ZonesPaused.fromJson(json['paused'] as bool) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => e as String).toList(),

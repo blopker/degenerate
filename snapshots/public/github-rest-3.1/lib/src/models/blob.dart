@@ -12,7 +12,7 @@ factory Blob.fromJson(Map<String, dynamic> json) { return Blob(
   encoding: json['encoding'] as String,
   url: Uri.parse(json['url'] as String),
   sha: json['sha'] as String,
-  size: (json['size'] as num).toInt(),
+  size: json['size'] != null ? (json['size'] as num).toInt() : null,
   nodeId: json['node_id'] as String,
   highlightedContent: json['highlighted_content'] as String?,
 ); }

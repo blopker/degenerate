@@ -15,7 +15,7 @@ factory WorCreateOrModifyWorkflowResponseResult.fromJson(Map<String, dynamic> js
   name: json['name'] as String,
   scriptName: json['script_name'] as String,
   terminatorRunning: (json['terminator_running'] as num).toDouble(),
-  triggeredOn: DateTime.parse(json['triggered_on'] as String),
+  triggeredOn: json['triggered_on'] != null ? DateTime.parse(json['triggered_on'] as String) : null,
   versionId: json['version_id'] as String,
 ); }
 

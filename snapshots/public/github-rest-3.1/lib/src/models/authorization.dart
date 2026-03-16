@@ -10,19 +10,19 @@ final class Authorization {const Authorization({required this.id, required this.
 factory Authorization.fromJson(Map<String, dynamic> json) { return Authorization(
   id: (json['id'] as num).toInt(),
   url: Uri.parse(json['url'] as String),
-  scopes: (json['scopes'] as List<dynamic>).map((e) => e as String).toList(),
+  scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   token: json['token'] as String,
-  tokenLastEight: json['token_last_eight'] as String,
-  hashedToken: json['hashed_token'] as String,
+  tokenLastEight: json['token_last_eight'] as String?,
+  hashedToken: json['hashed_token'] as String?,
   app: AuthorizationApp.fromJson(json['app'] as Map<String, dynamic>),
-  note: json['note'] as String,
-  noteUrl: Uri.parse(json['note_url'] as String),
+  note: json['note'] as String?,
+  noteUrl: json['note_url'] != null ? Uri.parse(json['note_url'] as String) : null,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
-  fingerprint: json['fingerprint'] as String,
+  fingerprint: json['fingerprint'] as String?,
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? ScopedInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
-  expiresAt: DateTime.parse(json['expires_at'] as String),
+  expiresAt: json['expires_at'] != null ? DateTime.parse(json['expires_at'] as String) : null,
 ); }
 
 final int id;

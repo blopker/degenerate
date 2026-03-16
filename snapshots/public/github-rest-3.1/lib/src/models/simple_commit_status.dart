@@ -7,14 +7,14 @@
 final class SimpleCommitStatus {const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, this.$required, required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt, });
 
 factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) { return SimpleCommitStatus(
-  description: json['description'] as String,
+  description: json['description'] as String?,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   state: json['state'] as String,
   context: json['context'] as String,
-  targetUrl: Uri.parse(json['target_url'] as String),
+  targetUrl: json['target_url'] != null ? Uri.parse(json['target_url'] as String) : null,
   $required: json['required'] as bool?,
-  avatarUrl: Uri.parse(json['avatar_url'] as String),
+  avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   url: Uri.parse(json['url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),

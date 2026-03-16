@@ -9,7 +9,7 @@ final class ChatSessionHistory {const ChatSessionHistory({required this.enabled,
 
 factory ChatSessionHistory.fromJson(Map<String, dynamic> json) { return ChatSessionHistory(
   enabled: json['enabled'] as bool,
-  recentThreads: (json['recent_threads'] as num).toInt(),
+  recentThreads: json['recent_threads'] != null ? (json['recent_threads'] as num).toInt() : null,
 ); }
 
 /// Indicates if chat history is persisted for the session.

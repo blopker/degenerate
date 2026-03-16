@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookCreate {const WebhookCreate({required this.description, this.enterprise, this.installation, required this.masterBranch, this.organization, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, });
 
 factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate(
-  description: json['description'] as String,
+  description: json['description'] as String?,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   masterBranch: json['master_branch'] as String,

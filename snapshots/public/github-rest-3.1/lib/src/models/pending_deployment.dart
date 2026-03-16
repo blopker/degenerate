@@ -10,7 +10,7 @@ final class PendingDeployment {const PendingDeployment({required this.environmen
 factory PendingDeployment.fromJson(Map<String, dynamic> json) { return PendingDeployment(
   environment: PendingDeploymentEnvironment.fromJson(json['environment'] as Map<String, dynamic>),
   waitTimer: (json['wait_timer'] as num).toInt(),
-  waitTimerStartedAt: DateTime.parse(json['wait_timer_started_at'] as String),
+  waitTimerStartedAt: json['wait_timer_started_at'] != null ? DateTime.parse(json['wait_timer_started_at'] as String) : null,
   currentUserCanApprove: json['current_user_can_approve'] as bool,
   reviewers: (json['reviewers'] as List<dynamic>).map((e) => PendingDeploymentReviewers.fromJson(e as Map<String, dynamic>)).toList(),
 ); }

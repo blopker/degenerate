@@ -41,14 +41,14 @@ factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
   number: (json['number'] as num).toInt(),
   state: MilestoneState.fromJson(json['state'] as String),
   title: json['title'] as String,
-  description: json['description'] as String,
-  creator: SimpleUser.fromJson(json['creator'] as Map<String, dynamic>),
+  description: json['description'] as String?,
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   openIssues: (json['open_issues'] as num).toInt(),
   closedIssues: (json['closed_issues'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  closedAt: DateTime.parse(json['closed_at'] as String),
-  dueOn: DateTime.parse(json['due_on'] as String),
+  closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
+  dueOn: json['due_on'] != null ? DateTime.parse(json['due_on'] as String) : null,
 ); }
 
 final Uri url;

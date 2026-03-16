@@ -8,11 +8,11 @@ import 'webhook_page_build_build_error.dart';import 'webhook_page_build_build_pu
 final class WebhookPageBuildBuild {const WebhookPageBuildBuild({required this.commit, required this.createdAt, required this.duration, required this.error, required this.pusher, required this.status, required this.updatedAt, required this.url, });
 
 factory WebhookPageBuildBuild.fromJson(Map<String, dynamic> json) { return WebhookPageBuildBuild(
-  commit: json['commit'] as String,
+  commit: json['commit'] as String?,
   createdAt: json['created_at'] as String,
   duration: (json['duration'] as num).toInt(),
   error: WebhookPageBuildBuildError.fromJson(json['error'] as Map<String, dynamic>),
-  pusher: WebhookPageBuildBuildPusher.fromJson(json['pusher'] as Map<String, dynamic>),
+  pusher: json['pusher'] != null ? WebhookPageBuildBuildPusher.fromJson(json['pusher'] as Map<String, dynamic>) : null,
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),

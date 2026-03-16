@@ -36,7 +36,7 @@ final class Team3 {const Team3({this.deleted, required this.description, require
 
 factory Team3.fromJson(Map<String, dynamic> json) { return Team3(
   deleted: json['deleted'] as bool?,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String,

@@ -24,7 +24,7 @@ factory ListsList.fromJson(Map<String, dynamic> json) { return ListsList(
   createdOn: ListsCreatedOn.fromJson(json['created_on'] as String),
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
   id: ListsListId.fromJson(json['id'] as String),
-  kind: ListsKind.fromJson(json['kind'] as dynamic),
+  kind: json['kind'] != null ? ListsKind.fromJson(json['kind'] as dynamic) : null,
   modifiedOn: ListsModifiedOn.fromJson(json['modified_on'] as String),
   name: ListsName.fromJson(json['name'] as String),
   numItems: ListsNumItems.fromJson(json['num_items'] as num),

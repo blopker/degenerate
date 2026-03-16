@@ -36,7 +36,7 @@ final class ToolSearchCall {const ToolSearchCall({this.type = 'tool_search_call'
 factory ToolSearchCall.fromJson(Map<String, dynamic> json) { return ToolSearchCall(
   type: json['type'] as String,
   id: json['id'] as String,
-  callId: json['call_id'] as String,
+  callId: json['call_id'] as String?,
   execution: ToolSearchExecutionType.fromJson(json['execution'] as String),
   arguments: json['arguments'],
   status: FunctionCallStatus.fromJson(json['status'] as String),

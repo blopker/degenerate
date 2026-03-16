@@ -9,8 +9,8 @@ final class WebhookDeploymentCreatedDeployment {const WebhookDeploymentCreatedDe
 
 factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedDeployment(
   createdAt: json['created_at'] as String,
-  creator: WebhookDeploymentCreatedDeploymentCreator.fromJson(json['creator'] as Map<String, dynamic>),
-  description: json['description'] as String,
+  creator: json['creator'] != null ? WebhookDeploymentCreatedDeploymentCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
+  description: json['description'] as String?,
   environment: json['environment'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,

@@ -8,7 +8,7 @@ import 'commit_search_result_item_commit_author.dart';import 'commit_search_resu
 
 factory CommitSearchResultItemCommit.fromJson(Map<String, dynamic> json) { return CommitSearchResultItemCommit(
   author: CommitSearchResultItemCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),
-  committer: GitUser.fromJson(json['committer'] as Map<String, dynamic>),
+  committer: json['committer'] != null ? GitUser.fromJson(json['committer'] as Map<String, dynamic>) : null,
   commentCount: (json['comment_count'] as num).toInt(),
   message: json['message'] as String,
   tree: CommitSearchResultItemCommitTree.fromJson(json['tree'] as Map<String, dynamic>),

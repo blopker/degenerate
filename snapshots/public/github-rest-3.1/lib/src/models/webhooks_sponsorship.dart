@@ -11,8 +11,8 @@ factory WebhooksSponsorship.fromJson(Map<String, dynamic> json) { return Webhook
   maintainer: json['maintainer'] != null ? WebhooksSponsorshipMaintainer.fromJson(json['maintainer'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String,
   privacyLevel: json['privacy_level'] as String,
-  sponsor: WebhooksSponsorshipSponsor.fromJson(json['sponsor'] as Map<String, dynamic>),
-  sponsorable: WebhooksSponsorshipSponsorable.fromJson(json['sponsorable'] as Map<String, dynamic>),
+  sponsor: json['sponsor'] != null ? WebhooksSponsorshipSponsor.fromJson(json['sponsor'] as Map<String, dynamic>) : null,
+  sponsorable: json['sponsorable'] != null ? WebhooksSponsorshipSponsorable.fromJson(json['sponsorable'] as Map<String, dynamic>) : null,
   tier: WebhooksSponsorshipTier.fromJson(json['tier'] as Map<String, dynamic>),
 ); }
 

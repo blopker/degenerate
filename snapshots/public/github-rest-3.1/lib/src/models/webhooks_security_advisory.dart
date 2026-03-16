@@ -20,7 +20,7 @@ factory WebhooksSecurityAdvisory.fromJson(Map<String, dynamic> json) { return We
   summary: json['summary'] as String,
   updatedAt: json['updated_at'] as String,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => WebhooksSecurityAdvisoryVulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
-  withdrawnAt: json['withdrawn_at'] as String,
+  withdrawnAt: json['withdrawn_at'] as String?,
 ); }
 
 final WebhooksSecurityAdvisoryCvss cvss;

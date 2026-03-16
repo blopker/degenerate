@@ -40,7 +40,7 @@ factory FunctionShellCallOutput.fromJson(Map<String, dynamic> json) { return Fun
   callId: json['call_id'] as String,
   status: LocalShellCallOutputStatusEnum.fromJson(json['status'] as String),
   output: (json['output'] as List<dynamic>).map((e) => FunctionShellCallOutputContent.fromJson(e as Map<String, dynamic>)).toList(),
-  maxOutputLength: (json['max_output_length'] as num).toInt(),
+  maxOutputLength: json['max_output_length'] != null ? (json['max_output_length'] as num).toInt() : null,
   createdBy: json['created_by'] as String?,
 ); }
 

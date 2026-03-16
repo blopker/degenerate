@@ -11,7 +11,7 @@ factory PullRequestSimpleBase.fromJson(Map<String, dynamic> json) { return PullR
   ref: json['ref'] as String,
   repo: Repository.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

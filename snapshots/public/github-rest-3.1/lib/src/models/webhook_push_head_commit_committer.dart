@@ -9,7 +9,7 @@ final class WebhookPushHeadCommitCommitter {const WebhookPushHeadCommitCommitter
 
 factory WebhookPushHeadCommitCommitter.fromJson(Map<String, dynamic> json) { return WebhookPushHeadCommitCommitter(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-  email: json['email'] as String,
+  email: json['email'] as String?,
   name: json['name'] as String,
   username: json['username'] as String?,
 ); }

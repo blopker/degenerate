@@ -76,9 +76,9 @@ bool get isUnknown { return !values.contains(this); }
 final class PagesStage {const PagesStage({required this.endedOn, required this.name, required this.startedOn, required this.status, });
 
 factory PagesStage.fromJson(Map<String, dynamic> json) { return PagesStage(
-  endedOn: DateTime.parse(json['ended_on'] as String),
+  endedOn: json['ended_on'] != null ? DateTime.parse(json['ended_on'] as String) : null,
   name: PagesStageName.fromJson(json['name'] as String),
-  startedOn: DateTime.parse(json['started_on'] as String),
+  startedOn: json['started_on'] != null ? DateTime.parse(json['started_on'] as String) : null,
   status: PagesStageStatus.fromJson(json['status'] as String),
 ); }
 

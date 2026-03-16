@@ -8,7 +8,7 @@ final class ChatCompletionRequestFunctionMessage {const ChatCompletionRequestFun
 
 factory ChatCompletionRequestFunctionMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestFunctionMessage(
   role: json['role'] as String,
-  content: json['content'] as String,
+  content: json['content'] as String?,
   name: json['name'] as String,
 ); }
 

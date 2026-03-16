@@ -49,7 +49,7 @@ factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) { return S
   submitted: (json['submitted'] as num).toInt(),
   passing: (json['passing'] as num).toInt(),
   language: json['language'] as String,
-  deadline: DateTime.parse(json['deadline'] as String),
+  deadline: json['deadline'] != null ? DateTime.parse(json['deadline'] as String) : null,
   classroom: SimpleClassroom.fromJson(json['classroom'] as Map<String, dynamic>),
 ); }
 

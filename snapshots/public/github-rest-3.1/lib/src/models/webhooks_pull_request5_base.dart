@@ -11,7 +11,7 @@ factory WebhooksPullRequest5Base.fromJson(Map<String, dynamic> json) { return We
   ref: json['ref'] as String,
   repo: WebhooksPullRequest5BaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: WebhooksPullRequest5BaseUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhooksPullRequest5BaseUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String label;

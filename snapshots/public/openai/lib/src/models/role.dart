@@ -33,7 +33,7 @@ factory Role.fromJson(Map<String, dynamic> json) { return Role(
   object: RoleObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
   resourceType: json['resource_type'] as String,
   predefinedRole: json['predefined_role'] as bool,

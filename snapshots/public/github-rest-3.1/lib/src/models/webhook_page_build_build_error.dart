@@ -7,7 +7,7 @@
 final class WebhookPageBuildBuildError {const WebhookPageBuildBuildError({required this.message});
 
 factory WebhookPageBuildBuildError.fromJson(Map<String, dynamic> json) { return WebhookPageBuildBuildError(
-  message: json['message'] as String,
+  message: json['message'] as String?,
 ); }
 
 final String? message;

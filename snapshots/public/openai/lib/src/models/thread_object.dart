@@ -33,8 +33,8 @@ factory ThreadObject.fromJson(Map<String, dynamic> json) { return ThreadObject(
   id: json['id'] as String,
   object: ThreadObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
-  toolResources: ThreadObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  toolResources: json['tool_resources'] != null ? ThreadObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
 /// The identifier, which can be referenced in API endpoints.

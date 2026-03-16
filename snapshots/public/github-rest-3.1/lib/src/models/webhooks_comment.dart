@@ -58,11 +58,11 @@ factory WebhooksComment.fromJson(Map<String, dynamic> json) { return WebhooksCom
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
-  parentId: (json['parent_id'] as num).toInt(),
+  parentId: json['parent_id'] != null ? (json['parent_id'] as num).toInt() : null,
   reactions: WebhooksCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   repositoryUrl: json['repository_url'] as String,
   updatedAt: json['updated_at'] as String,
-  user: WebhooksCommentUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhooksCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 /// How the author is associated with the repository.

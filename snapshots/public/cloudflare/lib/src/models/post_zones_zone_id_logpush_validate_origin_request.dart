@@ -7,7 +7,7 @@
 import 'logpush_logpull_options.dart';final class PostZonesZoneIdLogpushValidateOriginRequest {const PostZonesZoneIdLogpushValidateOriginRequest({required this.logpullOptions});
 
 factory PostZonesZoneIdLogpushValidateOriginRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushValidateOriginRequest(
-  logpullOptions: LogpushLogpullOptions.fromJson(json['logpull_options'] as String),
+  logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,
 ); }
 
 /// This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.

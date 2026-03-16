@@ -43,7 +43,7 @@ factory EvalRun.fromJson(Map<String, dynamic> json) { return EvalRun(
   perModelUsage: (json['per_model_usage'] as List<dynamic>).map((e) => EvalRunPerModelUsage.fromJson(e as Map<String, dynamic>)).toList(),
   perTestingCriteriaResults: (json['per_testing_criteria_results'] as List<dynamic>).map((e) => EvalRunPerTestingCriteriaResults.fromJson(e as Map<String, dynamic>)).toList(),
   dataSource: OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   error: ErrorModel2.fromJson(json['error'] as Map<String, dynamic>),
 ); }
 

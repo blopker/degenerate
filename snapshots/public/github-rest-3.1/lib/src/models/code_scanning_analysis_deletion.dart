@@ -8,8 +8,8 @@
 final class CodeScanningAnalysisDeletion {const CodeScanningAnalysisDeletion({required this.nextAnalysisUrl, required this.confirmDeleteUrl, });
 
 factory CodeScanningAnalysisDeletion.fromJson(Map<String, dynamic> json) { return CodeScanningAnalysisDeletion(
-  nextAnalysisUrl: Uri.parse(json['next_analysis_url'] as String),
-  confirmDeleteUrl: Uri.parse(json['confirm_delete_url'] as String),
+  nextAnalysisUrl: json['next_analysis_url'] != null ? Uri.parse(json['next_analysis_url'] as String) : null,
+  confirmDeleteUrl: json['confirm_delete_url'] != null ? Uri.parse(json['confirm_delete_url'] as String) : null,
 ); }
 
 /// Next deletable analysis in chain, without last analysis deletion confirmation

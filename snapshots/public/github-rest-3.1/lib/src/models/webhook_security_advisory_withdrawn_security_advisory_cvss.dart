@@ -8,7 +8,7 @@ final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss {const WebhookS
 
 factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss(
   score: (json['score'] as num).toDouble(),
-  vectorString: json['vector_string'] as String,
+  vectorString: json['vector_string'] as String?,
 ); }
 
 final double score;

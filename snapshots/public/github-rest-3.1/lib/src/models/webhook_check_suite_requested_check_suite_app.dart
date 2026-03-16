@@ -185,19 +185,19 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookCheckSuiteRequestedCheckSuiteApp {const WebhookCheckSuiteRequestedCheckSuiteApp({required this.createdAt, required this.description, this.events, required this.externalUrl, required this.htmlUrl, required this.id, this.clientId, required this.name, required this.nodeId, required this.owner, this.permissions, this.slug, required this.updatedAt, });
 
 factory WebhookCheckSuiteRequestedCheckSuiteApp.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequestedCheckSuiteApp(
-  createdAt: DateTime.parse(json['created_at'] as String),
-  description: json['description'] as String,
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  description: json['description'] as String?,
   events: (json['events'] as List<dynamic>?)?.map((e) => WebhookCheckSuiteRequestedCheckSuiteAppEvents.fromJson(e as String)).toList(),
-  externalUrl: Uri.parse(json['external_url'] as String),
+  externalUrl: json['external_url'] != null ? Uri.parse(json['external_url'] as String) : null,
   htmlUrl: Uri.parse(json['html_url'] as String),
-  id: (json['id'] as num).toInt(),
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
   clientId: json['client_id'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
-  owner: WebhookCheckSuiteRequestedCheckSuiteAppOwner.fromJson(json['owner'] as Map<String, dynamic>),
+  owner: json['owner'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   permissions: json['permissions'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   slug: json['slug'] as String?,
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
 ); }
 
 final DateTime? createdAt;

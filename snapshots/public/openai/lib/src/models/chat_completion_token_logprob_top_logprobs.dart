@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';final class ChatCompletionTokenLogpr
 factory ChatCompletionTokenLogprobTopLogprobs.fromJson(Map<String, dynamic> json) { return ChatCompletionTokenLogprobTopLogprobs(
   token: json['token'] as String,
   logprob: (json['logprob'] as num).toDouble(),
-  bytes: (json['bytes'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+  bytes: (json['bytes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
 ); }
 
 /// The token.

@@ -70,11 +70,11 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookStatusCommitCommitVerification {const WebhookStatusCommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt, });
 
 factory WebhookStatusCommitCommitVerification.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitCommitVerification(
-  payload: json['payload'] as String,
+  payload: json['payload'] as String?,
   reason: WebhookStatusCommitCommitVerificationReason.fromJson(json['reason'] as String),
-  signature: json['signature'] as String,
+  signature: json['signature'] as String?,
   verified: json['verified'] as bool,
-  verifiedAt: json['verified_at'] as String,
+  verifiedAt: json['verified_at'] as String?,
 ); }
 
 final String? payload;

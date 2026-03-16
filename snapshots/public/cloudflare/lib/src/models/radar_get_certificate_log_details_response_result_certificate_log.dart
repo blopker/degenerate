@@ -75,14 +75,14 @@ factory RadarGetCertificateLogDetailsResponseResultCertificateLog.fromJson(Map<S
   endExclusive: DateTime.parse(json['endExclusive'] as String),
   lastUpdate: DateTime.parse(json['lastUpdate'] as String),
   $operator: json['operator'] as String,
-  performance: RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance.fromJson(json['performance'] as Map<String, dynamic>),
+  performance: json['performance'] != null ? RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance.fromJson(json['performance'] as Map<String, dynamic>) : null,
   related: (json['related'] as List<dynamic>).map((e) => RadarGetCertificateLogDetailsResponseResultCertificateLogRelated.fromJson(e as Map<String, dynamic>)).toList(),
   slug: json['slug'] as String,
   startInclusive: DateTime.parse(json['startInclusive'] as String),
   state: RadarGetCertificateLogDetailsResponseResultCertificateLogState.fromJson(json['state'] as String),
   stateTimestamp: DateTime.parse(json['stateTimestamp'] as String),
-  submittableCertCount: json['submittableCertCount'] as String,
-  submittedCertCount: json['submittedCertCount'] as String,
+  submittableCertCount: json['submittableCertCount'] as String?,
+  submittedCertCount: json['submittedCertCount'] as String?,
   url: json['url'] as String,
 ); }
 

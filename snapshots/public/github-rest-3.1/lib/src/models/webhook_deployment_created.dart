@@ -36,7 +36,7 @@ factory WebhookDeploymentCreated.fromJson(Map<String, dynamic> json) { return We
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   workflow: WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>),
-  workflowRun: WebhookDeploymentCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
+  workflowRun: json['workflow_run'] != null ? WebhookDeploymentCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhookDeploymentCreatedAction action;

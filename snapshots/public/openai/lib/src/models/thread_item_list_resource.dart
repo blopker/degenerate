@@ -32,8 +32,8 @@ final class ThreadItemListResource {const ThreadItemListResource({this.object = 
 factory ThreadItemListResource.fromJson(Map<String, dynamic> json) { return ThreadItemListResource(
   object: ThreadItemListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ThreadItem.fromJson(e as Map<String, dynamic>)).toList(),
-  firstId: json['first_id'] as String,
-  lastId: json['last_id'] as String,
+  firstId: json['first_id'] as String?,
+  lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
 ); }
 

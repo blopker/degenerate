@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';import 'package:degenerate_runtime/d
 factory DlpPredefinedProfileConfig.fromJson(Map<String, dynamic> json) { return DlpPredefinedProfileConfig(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
-  confidenceThreshold: json['confidence_threshold'] as String,
+  confidenceThreshold: json['confidence_threshold'] as String?,
   enabledEntries: (json['enabled_entries'] as List<dynamic>).map((e) => e as String).toList(),
   entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => DlpCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpPredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => DlpIntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DlpExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DlpDocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => DlpWordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   id: json['id'] as String,

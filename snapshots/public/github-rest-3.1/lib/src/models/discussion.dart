@@ -121,10 +121,10 @@ bool get isUnknown { return !values.contains(this); }
 final class Discussion {const Discussion({required this.activeLockReason, required this.answerChosenAt, required this.answerChosenBy, required this.answerHtmlUrl, this.authorAssociation, required this.body, required this.category, required this.comments, required this.createdAt, required this.htmlUrl, required this.id, required this.locked, required this.nodeId, required this.number, this.reactions, required this.repositoryUrl, required this.state, required this.stateReason, this.timelineUrl, required this.title, required this.updatedAt, required this.user, this.labels, });
 
 factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
-  activeLockReason: json['active_lock_reason'] as String,
-  answerChosenAt: json['answer_chosen_at'] as String,
-  answerChosenBy: DiscussionAnswerChosenBy.fromJson(json['answer_chosen_by'] as Map<String, dynamic>),
-  answerHtmlUrl: json['answer_html_url'] as String,
+  activeLockReason: json['active_lock_reason'] as String?,
+  answerChosenAt: json['answer_chosen_at'] as String?,
+  answerChosenBy: json['answer_chosen_by'] != null ? DiscussionAnswerChosenBy.fromJson(json['answer_chosen_by'] as Map<String, dynamic>) : null,
+  answerHtmlUrl: json['answer_html_url'] as String?,
   authorAssociation: json['author_association'] != null ? DiscussionAuthorAssociation.fromJson(json['author_association'] as String) : null,
   body: json['body'] as String,
   category: DiscussionCategory.fromJson(json['category'] as Map<String, dynamic>),
@@ -138,11 +138,11 @@ factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
   reactions: json['reactions'] != null ? DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   repositoryUrl: json['repository_url'] as String,
   state: DiscussionState.fromJson(json['state'] as String),
-  stateReason: DiscussionStateReason.fromJson(json['state_reason'] as String),
+  stateReason: json['state_reason'] != null ? DiscussionStateReason.fromJson(json['state_reason'] as String) : null,
   timelineUrl: json['timeline_url'] as String?,
   title: json['title'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  user: DiscussionUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

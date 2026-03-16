@@ -9,7 +9,7 @@ final class ZeroTrustGatewayCustomCertificateSettings {const ZeroTrustGatewayCus
 
 factory ZeroTrustGatewayCustomCertificateSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayCustomCertificateSettings(
   bindingStatus: json['binding_status'] as String?,
-  enabled: json['enabled'] as bool,
+  enabled: json['enabled'] as bool?,
   id: json['id'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
 ); }

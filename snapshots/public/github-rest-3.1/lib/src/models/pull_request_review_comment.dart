@@ -87,7 +87,7 @@ final class PullRequestReviewComment {const PullRequestReviewComment({required t
 
 factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return PullRequestReviewComment(
   url: json['url'] as String,
-  pullRequestReviewId: (json['pull_request_review_id'] as num).toInt(),
+  pullRequestReviewId: json['pull_request_review_id'] != null ? (json['pull_request_review_id'] as num).toInt() : null,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   diffHunk: json['diff_hunk'] as String,
@@ -97,7 +97,7 @@ factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return Pu
   commitId: json['commit_id'] as String,
   originalCommitId: json['original_commit_id'] as String,
   inReplyToId: json['in_reply_to_id'] != null ? (json['in_reply_to_id'] as num).toInt() : null,
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   body: json['body'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
@@ -107,7 +107,7 @@ factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return Pu
   links: PullRequestReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>),
   startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
   originalStartLine: json['original_start_line'] != null ? (json['original_start_line'] as num).toInt() : null,
-  startSide: json.containsKey('start_side') ? PullRequestReviewCommentStartSide.fromJson(json['start_side'] as String) : PullRequestReviewCommentStartSide.right,
+  startSide: json.containsKey('start_side') ? json['start_side'] != null ? PullRequestReviewCommentStartSide.fromJson(json['start_side'] as String) : null : PullRequestReviewCommentStartSide.right,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,
   originalLine: json['original_line'] != null ? (json['original_line'] as num).toInt() : null,
   side: json.containsKey('side') ? PullRequestReviewCommentSide.fromJson(json['side'] as String) : PullRequestReviewCommentSide.right,

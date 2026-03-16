@@ -9,7 +9,7 @@ final class WebhookCheckSuiteRequestedCheckSuiteHeadCommitCommitter {const Webho
 
 factory WebhookCheckSuiteRequestedCheckSuiteHeadCommitCommitter.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequestedCheckSuiteHeadCommitCommitter(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-  email: json['email'] as String,
+  email: json['email'] as String?,
   name: json['name'] as String,
   username: json['username'] as String?,
 ); }

@@ -42,14 +42,14 @@ factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) { return 
   permissionsUpgraded: PersonalAccessTokenRequestPermissionsUpgraded.fromJson(json['permissions_upgraded'] as Map<String, dynamic>),
   permissionsResult: PersonalAccessTokenRequestPermissionsResult.fromJson(json['permissions_result'] as Map<String, dynamic>),
   repositorySelection: PersonalAccessTokenRequestRepositorySelection.fromJson(json['repository_selection'] as String),
-  repositoryCount: (json['repository_count'] as num).toInt(),
-  repositories: (json['repositories'] as List<dynamic>).map((e) => PersonalAccessTokenRequestRepositories.fromJson(e as Map<String, dynamic>)).toList(),
+  repositoryCount: json['repository_count'] != null ? (json['repository_count'] as num).toInt() : null,
+  repositories: (json['repositories'] as List<dynamic>?)?.map((e) => PersonalAccessTokenRequestRepositories.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: json['created_at'] as String,
   tokenId: (json['token_id'] as num).toInt(),
   tokenName: json['token_name'] as String,
   tokenExpired: json['token_expired'] as bool,
-  tokenExpiresAt: json['token_expires_at'] as String,
-  tokenLastUsedAt: json['token_last_used_at'] as String,
+  tokenExpiresAt: json['token_expires_at'] as String?,
+  tokenLastUsedAt: json['token_last_used_at'] as String?,
 ); }
 
 /// Unique identifier of the request for access via fine-grained personal access token. Used as the `pat_request_id` parameter in the list and review API calls.

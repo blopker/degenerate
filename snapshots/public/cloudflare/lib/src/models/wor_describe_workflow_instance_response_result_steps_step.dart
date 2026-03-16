@@ -30,11 +30,11 @@ final class WorDescribeWorkflowInstanceResponseResultStepsStep {const WorDescrib
 factory WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStep(
   attempts: (json['attempts'] as List<dynamic>).map((e) => WorDescribeWorkflowInstanceResponseResultStepsStepAttempts.fromJson(e as Map<String, dynamic>)).toList(),
   config: WorDescribeWorkflowInstanceResponseResultStepsStepConfig.fromJson(json['config'] as Map<String, dynamic>),
-  end: DateTime.parse(json['end'] as String),
+  end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
   name: json['name'] as String,
   output: (json['output'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
   start: DateTime.parse(json['start'] as String),
-  success: json['success'] as bool,
+  success: json['success'] as bool?,
   type: WorDescribeWorkflowInstanceResponseResultStepsStepType.fromJson(json['type'] as String),
 ); }
 

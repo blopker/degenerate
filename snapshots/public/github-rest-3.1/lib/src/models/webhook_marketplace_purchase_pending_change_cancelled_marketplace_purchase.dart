@@ -10,7 +10,7 @@ factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase.from
   account: WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
   freeTrialEndsOn: json['free_trial_ends_on'],
-  nextBillingDate: json['next_billing_date'] as String,
+  nextBillingDate: json['next_billing_date'] as String?,
   onFreeTrial: json['on_free_trial'] as bool,
   plan: WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),
   unitCount: (json['unit_count'] as num).toInt(),

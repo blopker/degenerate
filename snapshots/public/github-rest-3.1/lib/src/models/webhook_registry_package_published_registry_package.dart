@@ -7,8 +7,8 @@
 import 'webhook_registry_package_published_registry_package_owner.dart';import 'webhook_registry_package_published_registry_package_package_version.dart';import 'webhook_registry_package_published_registry_package_registry.dart';final class WebhookRegistryPackagePublishedRegistryPackage {const WebhookRegistryPackagePublishedRegistryPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
 
 factory WebhookRegistryPackagePublishedRegistryPackage.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackage(
-  createdAt: json['created_at'] as String,
-  description: json['description'] as String,
+  createdAt: json['created_at'] as String?,
+  description: json['description'] as String?,
   ecosystem: json['ecosystem'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
@@ -16,9 +16,9 @@ factory WebhookRegistryPackagePublishedRegistryPackage.fromJson(Map<String, dyna
   namespace: json['namespace'] as String,
   owner: WebhookRegistryPackagePublishedRegistryPackageOwner.fromJson(json['owner'] as Map<String, dynamic>),
   packageType: json['package_type'] as String,
-  packageVersion: WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
-  registry: WebhookRegistryPackagePublishedRegistryPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>),
-  updatedAt: json['updated_at'] as String,
+  packageVersion: json['package_version'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>) : null,
+  registry: json['registry'] != null ? WebhookRegistryPackagePublishedRegistryPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>) : null,
+  updatedAt: json['updated_at'] as String?,
 ); }
 
 final String? createdAt;

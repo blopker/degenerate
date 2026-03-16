@@ -64,9 +64,9 @@ factory DependencyGraphDiff2.fromJson(Map<String, dynamic> json) { return Depend
   ecosystem: json['ecosystem'] as String,
   name: json['name'] as String,
   version: json['version'] as String,
-  packageUrl: json['package_url'] as String,
-  license: json['license'] as String,
-  sourceRepositoryUrl: json['source_repository_url'] as String,
+  packageUrl: json['package_url'] as String?,
+  license: json['license'] as String?,
+  sourceRepositoryUrl: json['source_repository_url'] as String?,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => DependencyGraphDiff2Vulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
   scope: DependencyGraphDiff2Scope.fromJson(json['scope'] as String),
 ); }

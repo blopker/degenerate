@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookCodeScanningAlertCreatedAlert {const WebhookCodeScanningAlertCreatedAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, this.dismissedComment, required this.dismissedReason, this.fixedAt, required this.htmlUrl, this.instancesUrl, this.mostRecentInstance, required this.number, required this.rule, required this.state, required this.tool, this.updatedAt, required this.url, this.dismissalApprovedBy, this.assignees, });
 
 factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlert(
-  createdAt: DateTime.parse(json['created_at'] as String),
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   dismissedAt: json['dismissed_at'],
   dismissedBy: json['dismissed_by'],
   dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
@@ -47,8 +47,8 @@ factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json)
   mostRecentInstance: json['most_recent_instance'] != null ? WebhookCodeScanningAlertCreatedAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertCreatedAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
-  state: WebhookCodeScanningAlertCreatedAlertState.fromJson(json['state'] as String),
-  tool: WebhookCodeScanningAlertCreatedAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
+  state: json['state'] != null ? WebhookCodeScanningAlertCreatedAlertState.fromJson(json['state'] as String) : null,
+  tool: json['tool'] != null ? WebhookCodeScanningAlertCreatedAlertTool.fromJson(json['tool'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String?,
   url: Uri.parse(json['url'] as String),
   dismissalApprovedBy: json['dismissal_approved_by'],

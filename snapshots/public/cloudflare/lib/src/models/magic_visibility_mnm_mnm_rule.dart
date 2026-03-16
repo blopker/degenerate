@@ -116,7 +116,7 @@ bool get isUnknown { return !values.contains(this); }
 final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, this.bandwidthThreshold, this.duration, this.id, required this.name, this.packetThreshold, this.prefixMatch, required this.prefixes, required this.type, this.zscoreSensitivity, this.zscoreTarget, });
 
 factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRule(
-  automaticAdvertisement: MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool),
+  automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
   bandwidthThreshold: json['bandwidth_threshold'] != null ? MagicVisibilityMnmMnmRuleBandwidthThreshold.fromJson(json['bandwidth_threshold'] as num) : null,
   duration: json['duration'] != null ? MagicVisibilityMnmMnmRuleDuration.fromJson(json['duration'] as String) : null,
   id: json['id'] != null ? MagicVisibilityMnmRuleIdentifier.fromJson(json['id'] as String) : null,

@@ -40,7 +40,7 @@ final class CreateCompletionResponseChoices {const CreateCompletionResponseChoic
 factory CreateCompletionResponseChoices.fromJson(Map<String, dynamic> json) { return CreateCompletionResponseChoices(
   finishReason: CreateCompletionResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),
   index: (json['index'] as num).toInt(),
-  logprobs: CreateCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>),
+  logprobs: json['logprobs'] != null ? CreateCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
   text: json['text'] as String,
 ); }
 

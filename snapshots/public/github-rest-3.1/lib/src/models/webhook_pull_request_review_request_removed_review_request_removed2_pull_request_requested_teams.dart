@@ -36,7 +36,7 @@ final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullReque
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeams.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeams(
   deleted: json['deleted'] as bool?,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String,

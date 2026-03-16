@@ -17,8 +17,8 @@ factory EnterpriseWebhooks.fromJson(Map<String, dynamic> json) { return Enterpri
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
   slug: json['slug'] as String,
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   avatarUrl: Uri.parse(json['avatar_url'] as String),
 ); }
 

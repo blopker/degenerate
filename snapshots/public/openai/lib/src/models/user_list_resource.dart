@@ -33,7 +33,7 @@ factory UserListResource.fromJson(Map<String, dynamic> json) { return UserListRe
   object: UserListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => User.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  next: json['next'] as String,
+  next: json['next'] as String?,
 ); }
 
 /// Always `list`.

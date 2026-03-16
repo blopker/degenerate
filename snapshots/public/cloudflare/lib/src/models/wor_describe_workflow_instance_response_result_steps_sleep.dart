@@ -29,7 +29,7 @@ final class WorDescribeWorkflowInstanceResponseResultStepsSleep {const WorDescri
 
 factory WorDescribeWorkflowInstanceResponseResultStepsSleep.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsSleep(
   end: DateTime.parse(json['end'] as String),
-  error: WorDescribeWorkflowInstanceResponseResultStepsSleepError.fromJson(json['error'] as Map<String, dynamic>),
+  error: json['error'] != null ? WorDescribeWorkflowInstanceResponseResultStepsSleepError.fromJson(json['error'] as Map<String, dynamic>) : null,
   finished: json['finished'] as bool,
   name: json['name'] as String,
   start: DateTime.parse(json['start'] as String),

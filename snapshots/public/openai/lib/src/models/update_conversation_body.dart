@@ -7,7 +7,7 @@
 final class UpdateConversationBody {const UpdateConversationBody({required this.metadata});
 
 factory UpdateConversationBody.fromJson(Map<String, dynamic> json) { return UpdateConversationBody(
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be         useful for storing additional information about the object in a structured         format, and querying for objects via API or the dashboard.

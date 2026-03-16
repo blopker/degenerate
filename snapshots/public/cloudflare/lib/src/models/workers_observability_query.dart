@@ -8,11 +8,11 @@ import 'workers_observability_query_parameters.dart';final class WorkersObservab
 
 factory WorkersObservabilityQuery.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQuery(
   created: json['created'] as String,
-  description: json['description'] as String,
+  description: json['description'] as String?,
   environmentId: json['environmentId'] as String,
-  generated: json['generated'] as bool,
+  generated: json['generated'] as bool?,
   id: json['id'] as String,
-  name: json['name'] as String,
+  name: json['name'] as String?,
   parameters: WorkersObservabilityQueryParameters.fromJson(json['parameters'] as Map<String, dynamic>),
   updated: json['updated'] as String,
   userId: json['userId'] as String,

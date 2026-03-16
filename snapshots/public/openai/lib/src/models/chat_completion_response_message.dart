@@ -30,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 final class ChatCompletionResponseMessage {const ChatCompletionResponseMessage({required this.content, required this.refusal, this.toolCalls, this.annotations, required this.role, this.functionCall, this.audio, });
 
 factory ChatCompletionResponseMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionResponseMessage(
-  content: json['content'] as String,
-  refusal: json['refusal'] as String,
+  content: json['content'] as String?,
+  refusal: json['refusal'] as String?,
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => ChatCompletionMessageToolCalls2.fromJson(e as Map<String, dynamic>)).toList(),
   annotations: (json['annotations'] as List<dynamic>?)?.map((e) => ChatCompletionResponseMessageAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
   role: ChatCompletionResponseMessageRole.fromJson(json['role'] as String),

@@ -40,7 +40,7 @@ final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdviso
 
 factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisory(
   ghsaId: json['ghsa_id'] as String,
-  cveId: json['cve_id'] as String,
+  cveId: json['cve_id'] as String?,
   summary: json['summary'] as String,
   description: json['description'] as String,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => DependabotAlertSecurityVulnerability.fromJson(e as Map<String, dynamic>)).toList(),
@@ -53,7 +53,7 @@ factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { re
   references: (json['references'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryReferences.fromJson(e as Map<String, dynamic>)).toList(),
   publishedAt: DateTime.parse(json['published_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  withdrawnAt: DateTime.parse(json['withdrawn_at'] as String),
+  withdrawnAt: json['withdrawn_at'] != null ? DateTime.parse(json['withdrawn_at'] as String) : null,
 ); }
 
 /// The unique GitHub Security Advisory ID assigned to the advisory.

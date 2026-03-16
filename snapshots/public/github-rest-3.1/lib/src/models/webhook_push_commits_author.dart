@@ -9,7 +9,7 @@ final class WebhookPushCommitsAuthor {const WebhookPushCommitsAuthor({this.date,
 
 factory WebhookPushCommitsAuthor.fromJson(Map<String, dynamic> json) { return WebhookPushCommitsAuthor(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-  email: json['email'] as String,
+  email: json['email'] as String?,
   name: json['name'] as String,
   username: json['username'] as String?,
 ); }

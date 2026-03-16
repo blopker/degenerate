@@ -7,11 +7,11 @@
 import 'webhook_pull_request_unassigned_pull_request_base_repo.dart';import 'webhook_pull_request_unassigned_pull_request_base_user.dart';final class WebhookPullRequestUnassignedPullRequestBase {const WebhookPullRequestUnassignedPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhookPullRequestUnassignedPullRequestBase.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnassignedPullRequestBase(
-  label: json['label'] as String,
+  label: json['label'] as String?,
   ref: json['ref'] as String,
   repo: WebhookPullRequestUnassignedPullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  user: WebhookPullRequestUnassignedPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? WebhookPullRequestUnassignedPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final String? label;

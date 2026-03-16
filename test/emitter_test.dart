@@ -165,6 +165,42 @@ void main() {
       });
     });
 
+    group('required nullable field', () {
+      test('fromJson uses nullable cast for required + nullable string', () {
+        // A field can be required (key must be present in JSON) but nullable
+        // (value can be null). The generated fromJson should use `as String?`
+        // not `as String` to avoid "type 'Null' is not a subtype of type 'String'"
+        final model = IrObject(
+          'SpaceDetail',
+          [
+            IrField(
+              'name',
+              'name',
+              const IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+            IrField(
+              'description',
+              'description',
+              const IrPrimitive(PrimitiveKind.string, isNullable: true),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['name', 'description'],
+        );
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        // The description field is required but nullable — Dart type should be String?
+        expect(source, contains('final String? description;'));
+        // fromJson should use nullable cast
+        expect(source, contains("json['description'] as String?"));
+        // name is required and non-nullable — should use non-nullable cast
+        expect(source, contains("json['name'] as String"));
+      });
+    });
+
     group('ErrorModel model', () {
       late String source;
 

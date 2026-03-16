@@ -8,7 +8,7 @@ final class CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults {con
 
 factory CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults.fromJson(Map<String, dynamic> json) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults(
   location: json['location'] as String,
-  devcontainerPath: json['devcontainer_path'] as String,
+  devcontainerPath: json['devcontainer_path'] as String?,
 ); }
 
 final String location;

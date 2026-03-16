@@ -14,7 +14,7 @@ final class WebhookPush {const WebhookPush({required this.after, required this.b
 
 factory WebhookPush.fromJson(Map<String, dynamic> json) { return WebhookPush(
   after: json['after'] as String,
-  baseRef: WebhooksNullableString.fromJson(json['base_ref'] as String),
+  baseRef: json['base_ref'] != null ? WebhooksNullableString.fromJson(json['base_ref'] as String) : null,
   before: json['before'] as String,
   commits: (json['commits'] as List<dynamic>).map((e) => WebhookPushCommits.fromJson(e as Map<String, dynamic>)).toList(),
   compare: json['compare'] as String,
@@ -22,7 +22,7 @@ factory WebhookPush.fromJson(Map<String, dynamic> json) { return WebhookPush(
   deleted: json['deleted'] as bool,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   forced: json['forced'] as bool,
-  headCommit: WebhookPushHeadCommit.fromJson(json['head_commit'] as Map<String, dynamic>),
+  headCommit: json['head_commit'] != null ? WebhookPushHeadCommit.fromJson(json['head_commit'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pusher: WebhookPushPusher.fromJson(json['pusher'] as Map<String, dynamic>),

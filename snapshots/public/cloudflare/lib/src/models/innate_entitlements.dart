@@ -10,7 +10,7 @@ factory InnateEntitlements.fromJson(Map<String, dynamic> json) { return InnateEn
   allowAddSubdomain: BoolAllocation.fromJson(json['allow_add_subdomain'] as Map<String, dynamic>),
   allowAutoAcceptInvites: BoolAllocation.fromJson(json['allow_auto_accept_invites'] as Map<String, dynamic>),
   cnameSetupAllowed: BoolAllocation.fromJson(json['cname_setup_allowed'] as Map<String, dynamic>),
-  customEntitlements: (json['custom_entitlements'] as List<dynamic>).map((e) => Entitlement.fromJson(e as Map<String, dynamic>)).toList(),
+  customEntitlements: (json['custom_entitlements'] as List<dynamic>?)?.map((e) => Entitlement.fromJson(e as Map<String, dynamic>)).toList(),
   mhsCertificateCount: MaxCountAllocation.fromJson(json['mhs_certificate_count'] as Map<String, dynamic>),
   partialSetupAllowed: BoolAllocation.fromJson(json['partial_setup_allowed'] as Map<String, dynamic>),
 ); }

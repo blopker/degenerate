@@ -36,7 +36,7 @@ final class ToolSearchOutput {const ToolSearchOutput({this.type = 'tool_search_o
 factory ToolSearchOutput.fromJson(Map<String, dynamic> json) { return ToolSearchOutput(
   type: json['type'] as String,
   id: json['id'] as String,
-  callId: json['call_id'] as String,
+  callId: json['call_id'] as String?,
   execution: ToolSearchExecutionType.fromJson(json['execution'] as String),
   tools: (json['tools'] as List<dynamic>).map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   status: FunctionCallOutputStatusEnum.fromJson(json['status'] as String),

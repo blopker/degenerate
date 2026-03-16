@@ -30,8 +30,8 @@ factory AigConfigGetGatewayLogDetailResponseResult.fromJson(Map<String, dynamic>
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,
   step: json['step'] != null ? (json['step'] as num).toInt() : null,
   success: json['success'] as bool,
-  tokensIn: (json['tokens_in'] as num).toInt(),
-  tokensOut: (json['tokens_out'] as num).toInt(),
+  tokensIn: json['tokens_in'] != null ? (json['tokens_in'] as num).toInt() : null,
+  tokensOut: json['tokens_out'] != null ? (json['tokens_out'] as num).toInt() : null,
 ); }
 
 final bool cached;

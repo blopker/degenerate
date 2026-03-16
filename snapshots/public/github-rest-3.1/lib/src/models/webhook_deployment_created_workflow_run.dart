@@ -85,13 +85,13 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookDeploymentCreatedWorkflowRun {const WebhookDeploymentCreatedWorkflowRun({required this.actor, this.artifactsUrl, this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.displayTitle, required this.event, required this.headBranch, this.headCommit, this.headRepository, required this.headSha, required this.htmlUrl, required this.id, this.jobsUrl, this.logsUrl, required this.name, required this.nodeId, required this.path, this.previousAttemptUrl, required this.pullRequests, this.referencedWorkflows, this.repository, this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, this.triggeringActor, required this.updatedAt, required this.url, required this.workflowId, this.workflowUrl, });
 
 factory WebhookDeploymentCreatedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedWorkflowRun(
-  actor: WebhookDeploymentCreatedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>),
+  actor: json['actor'] != null ? WebhookDeploymentCreatedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   artifactsUrl: json['artifacts_url'] as String?,
   cancelUrl: json['cancel_url'] as String?,
   checkSuiteId: (json['check_suite_id'] as num).toInt(),
   checkSuiteNodeId: json['check_suite_node_id'] as String,
   checkSuiteUrl: json['check_suite_url'] as String?,
-  conclusion: WebhookDeploymentCreatedWorkflowRunConclusion.fromJson(json['conclusion'] as String),
+  conclusion: json['conclusion'] != null ? WebhookDeploymentCreatedWorkflowRunConclusion.fromJson(json['conclusion'] as String) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   displayTitle: json['display_title'] as String,
   event: json['event'] as String,

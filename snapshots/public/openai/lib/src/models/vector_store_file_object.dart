@@ -67,7 +67,7 @@ factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return Vecto
   createdAt: (json['created_at'] as num).toInt(),
   vectorStoreId: json['vector_store_id'] as String,
   status: VectorStoreFileObjectStatus.fromJson(json['status'] as String),
-  lastError: VectorStoreFileObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>),
+  lastError: json['last_error'] != null ? VectorStoreFileObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
   chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),) : null,
   attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
 ); }

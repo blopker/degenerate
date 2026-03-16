@@ -10,7 +10,7 @@ final class GpgKey {const GpgKey({required this.id, this.name, required this.pri
 factory GpgKey.fromJson(Map<String, dynamic> json) { return GpgKey(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String?,
-  primaryKeyId: (json['primary_key_id'] as num).toInt(),
+  primaryKeyId: json['primary_key_id'] != null ? (json['primary_key_id'] as num).toInt() : null,
   keyId: json['key_id'] as String,
   publicKey: json['public_key'] as String,
   emails: (json['emails'] as List<dynamic>).map((e) => GpgKeyEmails.fromJson(e as Map<String, dynamic>)).toList(),
@@ -20,9 +20,9 @@ factory GpgKey.fromJson(Map<String, dynamic> json) { return GpgKey(
   canEncryptStorage: json['can_encrypt_storage'] as bool,
   canCertify: json['can_certify'] as bool,
   createdAt: DateTime.parse(json['created_at'] as String),
-  expiresAt: DateTime.parse(json['expires_at'] as String),
+  expiresAt: json['expires_at'] != null ? DateTime.parse(json['expires_at'] as String) : null,
   revoked: json['revoked'] as bool,
-  rawKey: json['raw_key'] as String,
+  rawKey: json['raw_key'] as String?,
 ); }
 
 final int id;

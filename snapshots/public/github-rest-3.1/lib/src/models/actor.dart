@@ -11,7 +11,7 @@ factory Actor.fromJson(Map<String, dynamic> json) { return Actor(
   id: (json['id'] as num).toInt(),
   login: json['login'] as String,
   displayLogin: json['display_login'] as String?,
-  gravatarId: json['gravatar_id'] as String,
+  gravatarId: json['gravatar_id'] as String?,
   url: Uri.parse(json['url'] as String),
   avatarUrl: Uri.parse(json['avatar_url'] as String),
 ); }

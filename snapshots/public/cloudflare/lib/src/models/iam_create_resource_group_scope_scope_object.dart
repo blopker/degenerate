@@ -15,7 +15,7 @@ dynamic toJson() => value;
 final class IamCreateResourceGroupScopeScopeObject {const IamCreateResourceGroupScopeScopeObject({required this.key});
 
 factory IamCreateResourceGroupScopeScopeObject.fromJson(Map<String, dynamic> json) { return IamCreateResourceGroupScopeScopeObject(
-  key: IamCreateResourceGroupScopeScopeObjectKey.fromJson(json['key'] as dynamic),
+  key: json['key'] != null ? IamCreateResourceGroupScopeScopeObjectKey.fromJson(json['key'] as dynamic) : null,
 ); }
 
 final IamCreateResourceGroupScopeScopeObjectKey? key;

@@ -9,13 +9,13 @@ final class Event {const Event({required this.id, required this.type, required t
 
 factory Event.fromJson(Map<String, dynamic> json) { return Event(
   id: json['id'] as String,
-  type: json['type'] as String,
+  type: json['type'] as String?,
   actor: Actor.fromJson(json['actor'] as Map<String, dynamic>),
   repo: EventRepo.fromJson(json['repo'] as Map<String, dynamic>),
   org: json['org'] != null ? Actor.fromJson(json['org'] as Map<String, dynamic>) : null,
   payload: EventPayload.fromJson(json['payload']),
   public: json['public'] as bool,
-  createdAt: DateTime.parse(json['created_at'] as String),
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
 ); }
 
 final String id;

@@ -43,7 +43,7 @@ final class WebhookCodeScanningAlertReopenedByUserAlertRule {const WebhookCodeSc
 factory WebhookCodeScanningAlertReopenedByUserAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedByUserAlertRule(
   description: json['description'] as String,
   id: json['id'] as String,
-  severity: WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.fromJson(json['severity'] as String),
+  severity: json['severity'] != null ? WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.fromJson(json['severity'] as String) : null,
 ); }
 
 /// A short description of the rule used to detect the alert.

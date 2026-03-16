@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 final class RadarGetNetflowsTopAsesResponseResultMeta {const RadarGetNetflowsTopAsesResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetNetflowsTopAsesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsTopAsesResponseResultMeta(
-  confidenceInfo: RadarGetNetflowsTopAsesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  confidenceInfo: json['confidenceInfo'] != null ? RadarGetNetflowsTopAsesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetNetflowsTopAsesResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetNetflowsTopAsesResponseResultMetaNormalization.fromJson(json['normalization'] as String),

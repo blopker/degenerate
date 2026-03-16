@@ -11,7 +11,7 @@ factory PageBuild.fromJson(Map<String, dynamic> json) { return PageBuild(
   url: Uri.parse(json['url'] as String),
   status: json['status'] as String,
   error: PageBuildError.fromJson(json['error'] as Map<String, dynamic>),
-  pusher: SimpleUser.fromJson(json['pusher'] as Map<String, dynamic>),
+  pusher: json['pusher'] != null ? SimpleUser.fromJson(json['pusher'] as Map<String, dynamic>) : null,
   commit: json['commit'] as String,
   duration: (json['duration'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),

@@ -15,7 +15,7 @@ dynamic toJson() => value;
 final class IamCreateScope {const IamCreateScope({required this.key, required this.objects, });
 
 factory IamCreateScope.fromJson(Map<String, dynamic> json) { return IamCreateScope(
-  key: IamCreateResourceGroupScopeScopeKey.fromJson(json['key'] as dynamic),
+  key: json['key'] != null ? IamCreateResourceGroupScopeScopeKey.fromJson(json['key'] as dynamic) : null,
   objects: (json['objects'] as List<dynamic>).map((e) => IamCreateResourceGroupScopeScopeObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

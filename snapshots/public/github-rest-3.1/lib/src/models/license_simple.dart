@@ -10,8 +10,8 @@ final class LicenseSimple {const LicenseSimple({required this.key, required this
 factory LicenseSimple.fromJson(Map<String, dynamic> json) { return LicenseSimple(
   key: json['key'] as String,
   name: json['name'] as String,
-  url: Uri.parse(json['url'] as String),
-  spdxId: json['spdx_id'] as String,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
+  spdxId: json['spdx_id'] as String?,
   nodeId: json['node_id'] as String,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
 ); }

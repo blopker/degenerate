@@ -70,11 +70,11 @@ bool get isUnknown { return !values.contains(this); }
 final class WebhookWorkflowJobQueuedWorkflowJobSteps {const WebhookWorkflowJobQueuedWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
 
 factory WebhookWorkflowJobQueuedWorkflowJobSteps.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobQueuedWorkflowJobSteps(
-  completedAt: json['completed_at'] as String,
-  conclusion: WebhookWorkflowJobQueuedWorkflowJobStepsConclusion.fromJson(json['conclusion'] as String),
+  completedAt: json['completed_at'] as String?,
+  conclusion: json['conclusion'] != null ? WebhookWorkflowJobQueuedWorkflowJobStepsConclusion.fromJson(json['conclusion'] as String) : null,
   name: json['name'] as String,
   number: (json['number'] as num).toInt(),
-  startedAt: json['started_at'] as String,
+  startedAt: json['started_at'] as String?,
   status: WebhookWorkflowJobQueuedWorkflowJobStepsStatus.fromJson(json['status'] as String),
 ); }
 

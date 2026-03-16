@@ -7,16 +7,16 @@
 import 'webhook_project_card_moved_project_card_creator.dart';final class WebhookProjectCardMovedProjectCard {const WebhookProjectCardMovedProjectCard({required this.afterId, required this.archived, required this.columnId, required this.columnUrl, this.contentUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, });
 
 factory WebhookProjectCardMovedProjectCard.fromJson(Map<String, dynamic> json) { return WebhookProjectCardMovedProjectCard(
-  afterId: (json['after_id'] as num).toDouble(),
+  afterId: json['after_id'] != null ? (json['after_id'] as num).toDouble() : null,
   archived: json['archived'] as bool,
   columnId: (json['column_id'] as num).toInt(),
   columnUrl: json['column_url'] as String,
   contentUrl: json['content_url'] != null ? Uri.parse(json['content_url'] as String) : null,
   createdAt: json['created_at'] as String,
-  creator: WebhookProjectCardMovedProjectCardCreator.fromJson(json['creator'] as Map<String, dynamic>),
+  creator: json['creator'] != null ? WebhookProjectCardMovedProjectCardCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
-  note: json['note'] as String,
+  note: json['note'] as String?,
   projectUrl: json['project_url'] as String,
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,

@@ -10,7 +10,7 @@ final class GistCommit {const GistCommit({required this.url, required this.versi
 factory GistCommit.fromJson(Map<String, dynamic> json) { return GistCommit(
   url: Uri.parse(json['url'] as String),
   version: json['version'] as String,
-  user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   changeStatus: GistCommitChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>),
   committedAt: DateTime.parse(json['committed_at'] as String),
 ); }

@@ -7,7 +7,7 @@
 final class UpdateChatCompletionRequest {const UpdateChatCompletionRequest({required this.metadata});
 
 factory UpdateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return UpdateChatCompletionRequest(
-  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
