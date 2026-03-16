@@ -20,10 +20,10 @@ release:
 	dart run scripts/release.dart $(ARGS)
 
 publish:
-	dart pub publish -C packages/degenerate_runtime
-	dart pub publish -C packages/degenerate_http
-	dart pub publish -C packages/degenerate_dio
-	dart pub publish
+	dart pub publish -C packages/degenerate_runtime --force
+	dart pub publish -C packages/degenerate_http --force
+	dart pub publish -C packages/degenerate_dio --force
+	dart pub publish --force
 
 update_example:
 	dart run bin/degenerate.dart -i example/petstore3.json -o example/petstore_client --clean -n petstore_client
