@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:degenerate/src/generator.dart';
 
-const String version = '0.1.1';
+const String version = '0.1.2';
 
 ArgParser buildParser() {
   return ArgParser()

@@ -1,6 +1,6 @@
 name: degenerate
 description: OpenAPI to Dart client code generator.
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/blopker/degenerate
 
 executables:
