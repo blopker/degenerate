@@ -14,10 +14,19 @@ library;
 
 import 'dart:io';
 
-// All files that contain version strings to update.
+import 'package:yaml/yaml.dart';
+import 'package:yaml_edit/yaml_edit.dart';
+
+// All pubspec.yaml files whose `version` field should be updated.
 final _pubspecs = [
   'pubspec.yaml',
   'packages/degenerate_runtime/pubspec.yaml',
+  'packages/degenerate_http/pubspec.yaml',
+  'packages/degenerate_dio/pubspec.yaml',
+];
+
+// Pubspecs that have a `degenerate_runtime` dependency constraint to update.
+final _runtimeDepPubspecs = [
   'packages/degenerate_http/pubspec.yaml',
   'packages/degenerate_dio/pubspec.yaml',
 ];
@@ -128,20 +137,21 @@ class Version {
   Version bumpMinor() => Version(major, minor + 1, 0);
   Version bumpPatch() => Version(major, minor, patch + 1);
 
+  /// The caret constraint for this version's minor range (e.g. "^0.1.0").
+  String get caretConstraint => '^$major.$minor.0';
+
   @override
   String toString() => '$major.$minor.$patch';
 }
 
 Version _readCurrentVersion() {
   final content = File('pubspec.yaml').readAsStringSync();
-  final match = RegExp(
-    r'^version:\s*(\S+)',
-    multiLine: true,
-  ).firstMatch(content);
-  if (match == null) {
+  final doc = loadYaml(content) as Map;
+  final versionStr = doc['version'] as String?;
+  if (versionStr == null) {
     _fail('Could not find version in pubspec.yaml');
   }
-  return Version.parse(match.group(1)!);
+  return Version.parse(versionStr);
 }
 
 Version _resolveNewVersion(Version current, List<String> args) {
@@ -162,31 +172,22 @@ Version _resolveNewVersion(Version current, List<String> args) {
 // ---------------------------------------------------------------------------
 
 void _updatePubspecs(Version version) {
-  final versionPattern = RegExp(r'^version:\s*\S+', multiLine: true);
-
+  // Update the `version` field in all pubspecs.
   for (final path in _pubspecs) {
     final file = File(path);
-    final content = file.readAsStringSync();
-    final updated = content.replaceFirst(versionPattern, 'version: $version');
-    if (updated == content) {
-      _fail('Failed to update version in $path');
-    }
-    file.writeAsStringSync(updated);
-    print('  Updated $path');
+    final editor = YamlEditor(file.readAsStringSync());
+    editor.update(['version'], '$version');
+    file.writeAsStringSync(editor.toString());
+    print('  Updated $path → version: $version');
   }
 
-  // Also update degenerate_runtime constraint in _http and _dio pubspecs.
-  final constraintPattern = RegExp(r'degenerate_runtime:\s*\^[\d.]+');
-  final newConstraint = 'degenerate_runtime: ^${version.major}.${version.minor}.0';
-
-  for (final path in [
-    'packages/degenerate_http/pubspec.yaml',
-    'packages/degenerate_dio/pubspec.yaml',
-  ]) {
+  // Update the `degenerate_runtime` dependency constraint.
+  for (final path in _runtimeDepPubspecs) {
     final file = File(path);
-    final content = file.readAsStringSync();
-    final updated = content.replaceFirst(constraintPattern, newConstraint);
-    file.writeAsStringSync(updated);
+    final editor = YamlEditor(file.readAsStringSync());
+    editor.update(['dependencies', 'degenerate_runtime'], version.caretConstraint);
+    file.writeAsStringSync(editor.toString());
+    print('  Updated $path → degenerate_runtime: ${version.caretConstraint}');
   }
 }
 
@@ -207,15 +208,17 @@ void _updateBinVersion(Version version) {
 void _updateEmitterConstraint(Version version) {
   final file = File(_emitterFile);
   final content = file.readAsStringSync();
+  // Matches: degenerate_runtime: ^x.y.z  (inside a Dart string literal)
   final updated = content.replaceFirst(
-    RegExp(r"degenerate_runtime: \^[\d.]+'\)"),
-    "degenerate_runtime: ^${version.major}.${version.minor}.0')",
+    RegExp(r'degenerate_runtime: \^[\d.]+'),
+    'degenerate_runtime: ${version.caretConstraint}',
   );
-  if (updated == content) {
-    _fail('Failed to update runtime constraint in $_emitterFile');
-  }
   file.writeAsStringSync(updated);
-  print('  Updated $_emitterFile');
+  if (updated == content) {
+    print('  Unchanged $_emitterFile (constraint already ${version.caretConstraint})');
+  } else {
+    print('  Updated $_emitterFile → degenerate_runtime: ${version.caretConstraint}');
+  }
 }
 
 // ---------------------------------------------------------------------------
