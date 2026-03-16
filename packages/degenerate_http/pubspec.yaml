@@ -1,6 +1,6 @@
 name: degenerate_http
 description: package:http adapter for degenerate-generated API clients.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/blopker/degenerate
 resolution: workspace
 

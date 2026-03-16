@@ -162,12 +162,12 @@ Version _resolveNewVersion(Version current, List<String> args) {
 // ---------------------------------------------------------------------------
 
 void _updatePubspecs(Version version) {
-  final versionPattern = RegExp(r'^(version:\s*)(\S+)', multiLine: true);
+  final versionPattern = RegExp(r'^version:\s*\S+', multiLine: true);
 
   for (final path in _pubspecs) {
     final file = File(path);
     final content = file.readAsStringSync();
-    final updated = content.replaceFirst(versionPattern, '${r'$1'}$version');
+    final updated = content.replaceFirst(versionPattern, 'version: $version');
     if (updated == content) {
       _fail('Failed to update version in $path');
     }
@@ -176,8 +176,8 @@ void _updatePubspecs(Version version) {
   }
 
   // Also update degenerate_runtime constraint in _http and _dio pubspecs.
-  final constraintPattern = RegExp(r'(degenerate_runtime:\s*)\^[\d.]+');
-  final newConstraint = '${r'$1'}^${version.major}.${version.minor}.0';
+  final constraintPattern = RegExp(r'degenerate_runtime:\s*\^[\d.]+');
+  final newConstraint = 'degenerate_runtime: ^${version.major}.${version.minor}.0';
 
   for (final path in [
     'packages/degenerate_http/pubspec.yaml',
@@ -208,8 +208,8 @@ void _updateEmitterConstraint(Version version) {
   final file = File(_emitterFile);
   final content = file.readAsStringSync();
   final updated = content.replaceFirst(
-    RegExp(r'degenerate_runtime: \^[\d.]+'),
-    'degenerate_runtime: ^${version.major}.${version.minor}.0',
+    RegExp(r"degenerate_runtime: \^[\d.]+'\)"),
+    "degenerate_runtime: ^${version.major}.${version.minor}.0')",
   );
   if (updated == content) {
     _fail('Failed to update runtime constraint in $_emitterFile');
