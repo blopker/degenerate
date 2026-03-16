@@ -20,9 +20,9 @@ release:
 	dart run scripts/release.dart $(ARGS)
 
 publish:
-	cd packages/degenerate_runtime && dart pub publish
-	cd packages/degenerate_http && dart pub publish
-	cd packages/degenerate_dio && dart pub publish
+	dart pub publish -C packages/degenerate_runtime
+	dart pub publish -C packages/degenerate_http
+	dart pub publish -C packages/degenerate_dio
 	dart pub publish
 
 update_example:
