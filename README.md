@@ -140,6 +140,8 @@ Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. W
 
 ## Packages
 
+The generator itself is a command-line tool (desktop only), but the generated code and runtime packages work on all Dart and Flutter platforms including iOS, Android, web, and desktop.
+
 The runtime is split into separate packages so generated code has no opinion on which HTTP client you use:
 
 | Package | Purpose | Dependencies |
