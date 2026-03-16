@@ -1,4 +1,4 @@
-.PHONY: test update_snapshots update_example
+.PHONY: test update_snapshots update_example release
 
 test:
 	dart test
@@ -15,6 +15,9 @@ test:
 
 update_snapshots:
 	UPDATE_SNAPSHOTS=1 dart test test/snapshot_test.dart
+
+release:
+	dart run scripts/release.dart $(ARGS)
 
 update_example:
 	dart run bin/degenerate.dart -i example/petstore3.json -o example/petstore_client --clean -n petstore_client

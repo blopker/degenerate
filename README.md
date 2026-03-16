@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/degenerate.webp" alt="degenerate" width="400">
+  <img src="https://raw.githubusercontent.com/blopker/degenerate/main/assets/degenerate.webp" alt="degenerate" width="400">
   <h1>degenerate</h1>
   <p><strong>A fast, opinionated OpenAPI 3.x to Dart code generator.</strong></p>
   <p>
