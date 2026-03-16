@@ -6,6 +6,11 @@ repository: https://github.com/blopker/degenerate
 executables:
   degenerate: degenerate
 
+platforms:
+  linux:
+  macos:
+  windows:
+
 environment:
   sdk: ^3.11.1
 
