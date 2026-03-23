@@ -1,6 +1,6 @@
 name: degenerate
 description: Generate typesafe Dart API clients from OpenAPI 3.x specs. Produces idiomatic models, serialization, and HTTP clients with pluggable adapters.
-version: 0.1.3
+version: 0.1.4
 repository: https://github.com/blopker/degenerate
 
 executables:
