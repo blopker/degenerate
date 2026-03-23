@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Add stdin pipe support (`-i -`): generate from `curl`, `cat`, or any command (e.g. `curl https://example.com/spec.json | degenerate -i - -o lib/src/api -n my_api`)
+
 ## 0.1.3
 
 - Fix runtime crash for required+nullable fields in fromJson (`type 'Null' is not a subtype of type 'String' in type cast`)
