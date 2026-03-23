@@ -14,7 +14,8 @@
       "WebFetch(domain:dart.dev)",
       "Bash(command make:*)",
       "Bash(git status:*)",
-      "WebFetch(domain:pub.dev)"
+      "WebFetch(domain:pub.dev)",
+      "Bash(grep -r 'dart run bin/degenerate' /Users/blopker/code/degenerate --include=*.md --include=Makefile)"
     ]
   }
 }

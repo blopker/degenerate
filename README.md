@@ -96,7 +96,7 @@ See [`example/`](example/) for a full working example against the live Petstore 
 dart run degenerate [options]
 
 Options:
-  -i, --input              Path to OpenAPI spec (required)
+  -i, --input              Path to OpenAPI spec, or "-" for stdin (required)
   -o, --output             Output directory (default: lib/src/generated)
   -n, --name               Package name (default: inferred from spec title)
   -t, --tag                Only include APIs matching these tags (repeatable)
@@ -134,6 +134,11 @@ dart run degenerate -i spec.yaml -o lib/src/api --clean
 # Dry run to check for issues without writing files
 dart run degenerate -i spec.yaml --dry-run
 
+# Pipe a spec from a URL
+curl -s https://petstore3.swagger.io/api/v3/openapi.json | dart run degenerate -i - -o lib/src/api -n petstore
+
+# Pipe from another command
+cat spec.yaml | dart run degenerate -i - -o lib/src/api -n my_api
 ```
 
 Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. When tags or paths are specified, unused types are automatically tree-shaken from the output.

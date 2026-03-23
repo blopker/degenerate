@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/args.dart';
@@ -10,7 +11,7 @@ ArgParser buildParser() {
     ..addOption(
       'input',
       abbr: 'i',
-      help: 'Path to OpenAPI spec (required).',
+      help: 'Path to OpenAPI spec, or "-" to read from stdin (required).',
       valueHelp: 'path',
     )
     ..addOption(
@@ -120,6 +121,16 @@ Future<void> main(List<String> arguments) async {
       exit(1);
     }
 
+    // Read from stdin when "-" is passed as input.
+    String? stdinContent;
+    if (input == '-') {
+      stdinContent = await utf8.decoder.bind(stdin).join();
+      if (stdinContent.trim().isEmpty) {
+        stderr.writeln('Error: no data received on stdin.');
+        exit(1);
+      }
+    }
+
     final outputDir = results.option('output') ?? 'lib/src/generated';
 
     final config = GeneratorConfig(
@@ -133,6 +144,7 @@ Future<void> main(List<String> arguments) async {
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
       workspace: results.flag('workspace'),
+      stdinContent: stdinContent,
     );
 
     final generator = Generator(config);

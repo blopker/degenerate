@@ -4,7 +4,7 @@
 
 ### What Works
 - **Full pipeline**: Parse YAML/JSON → Lower to IR (with inline allOf flattening and $ref resolution) → Emit Dart via code_builder → Format via dart_style (parallel isolates) → Write
-- **CLI**: `--input`, `--output`, `--name`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
+- **CLI**: `--input` (file path or `-` for stdin), `--output`, `--name`, `--workspace`, `--include-deprecated`, `--clean`, `--verbose`, `--dry-run`
 - **Runtime package split**: `degenerate_runtime` (core interfaces, middleware, interceptors, web-compatible, no `dart:io`), `degenerate_http` (package:http adapter), `degenerate_dio` (package:dio adapter)
 - **OkHttp-style middleware**: single `intercept(request, next)` pattern with built-in `RetryInterceptor`, `AuthInterceptor`, and `LoggingInterceptor`
 - **Forward-compatible**: enums use `final class` pattern preserving unknown raw values; discriminated unions and untagged unions have `$Unknown` fallback variants
@@ -130,6 +130,16 @@ Formatting is the dominant cost. Parallelized across CPU cores via `Isolate.run`
 ---
 
 ## Session History
+
+### Session 15 (2026-03-23): Stdin pipe support
+
+- Added `-i -` stdin support: specs can be piped from `curl`, `cat`, or any command
+- `GeneratorConfig.stdinContent` allows passing pre-read content directly (bypasses file I/O)
+- YAML parser used for all stdin input (YAML is a superset of JSON, no format detection needed)
+- External `$ref` resolution uses current working directory as base when reading from stdin
+- CLI reads stdin via `utf8.decoder.bind(stdin).join()`, validates non-empty input
+- 2 new generator tests (stdin YAML, stdin JSON)
+- Updated README with stdin examples and updated CLI help text
 
 ### Session 14 (2026-03-14): Code dedup, OneOf errors, doc comment escaping
 

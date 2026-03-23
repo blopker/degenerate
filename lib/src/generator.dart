@@ -39,6 +39,10 @@ class GeneratorConfig {
   /// Whether to add `resolution: workspace` to the generated pubspec.yaml.
   final bool workspace;
 
+  /// Pre-read spec content (e.g. from stdin). When provided, the generator
+  /// reads from this string instead of from [inputPath].
+  final String? stdinContent;
+
   const GeneratorConfig({
     required this.inputPath,
     this.outputDir = 'lib/src/generated',
@@ -51,6 +55,7 @@ class GeneratorConfig {
     this.tags = const [],
     this.paths = const [],
     this.workspace = false,
+    this.stdinContent,
   });
 }
 
@@ -64,23 +69,32 @@ class Generator {
   /// Returns the map of relative file paths to their generated contents.
   Future<Map<String, String>> generate() async {
     // 1. Read and parse spec
-    final inputFile = File(config.inputPath);
-    if (!inputFile.existsSync()) {
-      throw GeneratorException('Input file not found: ${config.inputPath}');
+    final bool isStdin = config.stdinContent != null;
+    final String content;
+    if (isStdin) {
+      content = config.stdinContent!;
+      _log('Parsing from stdin...');
+    } else {
+      final inputFile = File(config.inputPath);
+      if (!inputFile.existsSync()) {
+        throw GeneratorException('Input file not found: ${config.inputPath}');
+      }
+      content = await inputFile.readAsString();
+      _log('Parsing ${p.basename(config.inputPath)}...');
     }
-
-    final content = await inputFile.readAsString();
-    final ext = p.extension(config.inputPath).toLowerCase();
-
-    _log('Parsing ${p.basename(config.inputPath)}...');
 
     final OpenApiDocument doc;
     try {
-      if (ext == '.json') {
-        doc = OpenApiDocument.parseJson(content);
-      } else {
-        // Default to YAML for .yaml, .yml, or anything else
+      if (isStdin) {
+        // YAML is a superset of JSON, so always use the YAML parser for stdin.
         doc = OpenApiDocument.parseYaml(content);
+      } else {
+        final ext = p.extension(config.inputPath).toLowerCase();
+        if (ext == '.json') {
+          doc = OpenApiDocument.parseJson(content);
+        } else {
+          doc = OpenApiDocument.parseYaml(content);
+        }
       }
     } catch (e) {
       throw GeneratorException('Failed to parse ${config.inputPath}: $e');
@@ -95,7 +109,11 @@ class Generator {
     _log('Spec: ${doc.title} (OpenAPI ${doc.version})');
 
     // 2. Inline external $ref values by loading referenced files.
-    final inliner = RefInliner(p.dirname(p.absolute(config.inputPath)));
+    // When reading from stdin, use current directory as base for external refs.
+    final baseDir = isStdin
+        ? Directory.current.path
+        : p.dirname(p.absolute(config.inputPath));
+    final inliner = RefInliner(baseDir);
     final inlinedRoot = inliner.inline(doc.root);
     final inlinedDoc = OpenApiDocument(inlinedRoot);
 
@@ -233,7 +251,7 @@ class Generator {
         config.packageName ??
         _existingPackageName(config.outputDir) ??
         _inferPackageName(inlinedDoc.title);
-    final specFileName = p.basename(config.inputPath);
+    final specFileName = isStdin ? 'stdin' : p.basename(config.inputPath);
     final specVersion = inlinedDoc.version;
 
     final fileEmitter = FileEmitter();

@@ -235,6 +235,55 @@ void main() {
           reason: 'Stale file should be preserved when clean is false');
     });
 
+    test('generates from stdin content (YAML)', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+      final content = File(specPath).readAsStringSync();
+
+      final config = GeneratorConfig(
+        inputPath: '-',
+        outputDir: tempDir.path,
+        packageName: 'petstore_api',
+        stdinContent: content,
+        quiet: true,
+      );
+
+      final generator = Generator(config);
+      final files = await generator.generate();
+
+      expect(files, isNotEmpty);
+      expect(files.keys, contains('lib/src/models/pet.dart'));
+      expect(files.keys, contains('lib/src/apis/pets_api.dart'));
+    });
+
+    test('generates from stdin content (JSON)', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'example',
+        'petstore3.json',
+      );
+      final content = File(specPath).readAsStringSync();
+
+      final config = GeneratorConfig(
+        inputPath: '-',
+        outputDir: tempDir.path,
+        packageName: 'petstore_api',
+        stdinContent: content,
+        quiet: true,
+      );
+
+      final generator = Generator(config);
+      final files = await generator.generate();
+
+      expect(files, isNotEmpty);
+      expect(files.keys, contains('lib/src/apis/pet_api.dart'));
+    });
+
     test('infers package name from spec title', () async {
       final specPath = p.join(
         Directory.current.path,
