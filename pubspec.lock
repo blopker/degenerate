@@ -18,7 +18,7 @@ packages:
     source: hosted
     version: "12.0.0"
   args:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: args
       sha256: d0481093c50b1da8910eb0bb301626d4d8eb7284aa739614d2b394ee09e3ea04
@@ -66,7 +66,7 @@ packages:
     source: hosted
     version: "0.2.0"
   code_builder:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: code_builder
       sha256: "6a6cab2ba4680d6423f34a9b972a4c9a94ebe1b62ecec4e1a1f2cba91fd1319d"
@@ -74,7 +74,7 @@ packages:
     source: hosted
     version: "4.11.1"
   collection:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: collection
       sha256: "2f5709ae4d3d59dd8f7cd309b4e023046b57d8a6c82130785d2b0e5868084e76"
@@ -250,7 +250,7 @@ packages:
     source: hosted
     version: "2.2.0"
   path:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: path
       sha256: "75cca69d1490965be98c73ceaea117e8a04dd21217b37b292c9ddbec0d955bc5"
@@ -442,7 +442,7 @@ packages:
     source: hosted
     version: "1.2.1"
   yaml:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: yaml
       sha256: b9da305ac7c39faa3f030eccd175340f968459dae4af175130b3fc47e40d76ce

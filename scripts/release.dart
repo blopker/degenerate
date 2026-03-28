@@ -19,7 +19,7 @@ import 'package:yaml_edit/yaml_edit.dart';
 
 // All pubspec.yaml files whose `version` field should be updated.
 final _pubspecs = [
-  'pubspec.yaml',
+  'packages/degenerate/pubspec.yaml',
   'packages/degenerate_runtime/pubspec.yaml',
   'packages/degenerate_http/pubspec.yaml',
   'packages/degenerate_dio/pubspec.yaml',
@@ -31,8 +31,8 @@ final _runtimeDepPubspecs = [
   'packages/degenerate_dio/pubspec.yaml',
 ];
 
-final _binFile = 'bin/degenerate.dart';
-final _emitterFile = 'lib/src/emitter/file_emitter.dart';
+final _binFile = 'packages/degenerate/bin/degenerate.dart';
+final _emitterFile = 'packages/degenerate/lib/src/emitter/file_emitter.dart';
 final _changelog = 'CHANGELOG.md';
 
 void main(List<String> args) {
@@ -145,7 +145,7 @@ class Version {
 }
 
 Version _readCurrentVersion() {
-  final content = File('pubspec.yaml').readAsStringSync();
+  final content = File('packages/degenerate/pubspec.yaml').readAsStringSync();
   final doc = loadYaml(content) as Map;
   final versionStr = doc['version'] as String?;
   if (versionStr == null) {
