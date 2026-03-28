@@ -1,3 +1,7 @@
+## 0.1.5
+
+- Fix published package containing `workspace` field in pubspec.yaml, which caused `dart run build_runner` failures for users
+
 ## 0.1.4
 
 - Add stdin pipe support (`-i -`): generate from `curl`, `cat`, or any command (e.g. `curl https://example.com/spec.json | degenerate -i - -o lib/src/api -n my_api`)
