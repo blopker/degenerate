@@ -502,7 +502,7 @@ void main() {
       final pubspec = wsFiles['pubspec.yaml']!;
       expect(pubspec, contains('name: petstore_client'));
       expect(pubspec, contains('sdk: ^3.8.0'));
-      expect(pubspec, contains('collection:'));
+      expect(pubspec, isNot(contains('collection:')));
       expect(pubspec, contains('degenerate_runtime:'));
       expect(pubspec, contains('resolution: workspace'));
     });

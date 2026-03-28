@@ -8,5 +8,4 @@ environment:
   sdk: ^3.8.0
 
 dependencies:
-  collection:
   degenerate_runtime:

@@ -9,4 +9,3 @@ environment:
 dependencies:
   degenerate_http: ^0.1.0
   degenerate_runtime: ^0.1.0
-  collection:

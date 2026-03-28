@@ -100,7 +100,6 @@ void main() {
         'environment:\n'
         '  sdk: ^3.8.0\n'
         'dependencies:\n'
-        '  collection: ^1.18.0\n'
         '  degenerate_runtime: ^0.1.0\n'
         'dependency_overrides:\n'
         '  degenerate_runtime:\n'

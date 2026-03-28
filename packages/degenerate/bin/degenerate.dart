@@ -167,7 +167,6 @@ Future<void> main(List<String> arguments) async {
           '  degenerate_http: ^$packageVersion  # or degenerate_dio',
         );
         stderr.writeln('  degenerate_runtime: ^$packageVersion');
-        stderr.writeln('  collection: ^1.18.0');
       }
     }
   } on FormatException catch (e) {

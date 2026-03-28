@@ -286,7 +286,7 @@ class ModelEmitter {
           // Use 'this.' prefix when field name shadows the 'other' parameter.
           final self = f.name == 'other' ? 'this.${f.name}' : f.name;
           if (isListType(f.type)) {
-            return 'const ListEquality<dynamic>().equals($self, other.${f.name})';
+            return 'listEquals($self, other.${f.name})';
           }
           return '$self == other.${f.name}';
         })
