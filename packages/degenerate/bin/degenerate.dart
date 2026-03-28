@@ -4,8 +4,6 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:degenerate/src/generator.dart';
 
-const String version = '0.1.5';
-
 ArgParser buildParser() {
   return ArgParser()
     ..addOption(
@@ -106,7 +104,7 @@ Future<void> main(List<String> arguments) async {
     }
 
     if (results.flag('version')) {
-      print('degenerate version: $version');
+      print('degenerate version: $packageVersion');
       return;
     }
 
@@ -147,13 +145,30 @@ Future<void> main(List<String> arguments) async {
     final generator = Generator(config);
     await generator.generate();
 
-    if (!workspace && !results.flag('dry-run')) {
+    if (!results.flag('dry-run')) {
+      final name = config.resolvedPackageName!;
       stderr.writeln();
-      stderr.writeln('Add these dependencies to your pubspec.yaml:');
-      stderr.writeln();
-      stderr.writeln('dependencies:');
-      stderr.writeln('  collection: ^1.18.0');
-      stderr.writeln('  degenerate_runtime: ^0.1.0');
+      if (workspace) {
+        stderr.writeln('Add to your pubspec.yaml:');
+        stderr.writeln();
+        stderr.writeln('workspace:');
+        stderr.writeln('  - ${config.resolvedOutputDir}');
+        stderr.writeln();
+        stderr.writeln('dependencies:');
+        stderr.writeln('  $name:');
+        stderr.writeln(
+          '  degenerate_http: ^$packageVersion  # or degenerate_dio',
+        );
+      } else {
+        stderr.writeln('Add to your pubspec.yaml:');
+        stderr.writeln();
+        stderr.writeln('dependencies:');
+        stderr.writeln(
+          '  degenerate_http: ^$packageVersion  # or degenerate_dio',
+        );
+        stderr.writeln('  degenerate_runtime: ^$packageVersion');
+        stderr.writeln('  collection: ^1.18.0');
+      }
     }
   } on FormatException catch (e) {
     stderr.writeln('Error: ${e.message}');

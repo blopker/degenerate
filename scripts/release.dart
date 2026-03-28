@@ -31,8 +31,7 @@ final _runtimeDepPubspecs = [
   'packages/degenerate_dio/pubspec.yaml',
 ];
 
-final _binFile = 'packages/degenerate/bin/degenerate.dart';
-final _emitterFile = 'packages/degenerate/lib/src/emitter/file_emitter.dart';
+final _generatorFile = 'packages/degenerate/lib/src/generator.dart';
 final _changelog = 'CHANGELOG.md';
 
 void main(List<String> args) {
@@ -93,8 +92,7 @@ void main(List<String> args) {
 
   // 8. Update all version strings.
   _updatePubspecs(newVersion);
-  _updateBinVersion(newVersion);
-  _updateEmitterConstraint(newVersion);
+  _updateGeneratorVersion(newVersion);
 
   // 9. Commit, tag, and push.
   print('\nCommitting...');
@@ -191,34 +189,18 @@ void _updatePubspecs(Version version) {
   }
 }
 
-void _updateBinVersion(Version version) {
-  final file = File(_binFile);
+void _updateGeneratorVersion(Version version) {
+  final file = File(_generatorFile);
   final content = file.readAsStringSync();
   final updated = content.replaceFirst(
-    RegExp(r"const String version = '[^']+';"),
-    "const String version = '$version';",
+    RegExp(r"const packageVersion = '[^']+';"),
+    "const packageVersion = '$version';",
   );
   if (updated == content) {
-    _fail('Failed to update version in $_binFile');
+    _fail('Failed to update version in $_generatorFile');
   }
   file.writeAsStringSync(updated);
-  print('  Updated $_binFile');
-}
-
-void _updateEmitterConstraint(Version version) {
-  final file = File(_emitterFile);
-  final content = file.readAsStringSync();
-  // Matches: degenerate_runtime: ^x.y.z  (inside a Dart string literal)
-  final updated = content.replaceFirst(
-    RegExp(r'degenerate_runtime: \^[\d.]+'),
-    'degenerate_runtime: ${version.caretConstraint}',
-  );
-  file.writeAsStringSync(updated);
-  if (updated == content) {
-    print('  Unchanged $_emitterFile (constraint already ${version.caretConstraint})');
-  } else {
-    print('  Updated $_emitterFile → degenerate_runtime: ${version.caretConstraint}');
-  }
+  print('  Updated $_generatorFile → packageVersion: $version');
 }
 
 // ---------------------------------------------------------------------------

@@ -981,8 +981,8 @@ class FileEmitter {
     buf.writeln('  sdk: ^3.8.0');
     buf.writeln();
     buf.writeln('dependencies:');
-    buf.writeln('  collection: ^1.18.0');
-    buf.writeln('  degenerate_runtime: ^0.1.0');
+    buf.writeln('  collection:');
+    buf.writeln('  degenerate_runtime:');
     return buf.toString();
   }
 }

@@ -14,9 +14,6 @@ test:
 	dart analyze test/wire/*
 	dart analyze snapshots/public/*
 
-update_snapshots:
-	UPDATE_SNAPSHOTS=1 dart test test/snapshot_test.dart
-
 release:
 	dart run scripts/release.dart $(ARGS)
 
@@ -25,6 +22,9 @@ publish:
 	dart pub publish -C packages/degenerate_http --force
 	dart pub publish -C packages/degenerate_dio --force
 	dart pub publish -C packages/degenerate --force
+
+update_snapshots:
+	UPDATE_SNAPSHOTS=1 dart test test/snapshot_test.dart
 
 update_examples:
 	dart run degenerate:degenerate -i example/petstore3.json -o example_workspace/packages --workspace --clean -n petstore_client

@@ -18,6 +18,8 @@ import 'normalizer/schema_normalizer.dart';
 import 'emitter/file_emitter.dart';
 import 'ir/ir_types.dart';
 
+// packageVersion updated by scripts/release.dart
+const packageVersion = '0.1.5';
 const defaultPackageName = 'api_client';
 const defaultOutputDir = 'lib';
 const defaultWorkspaceOutputDir = 'packages';
@@ -31,6 +33,9 @@ class GeneratorConfig {
 
   /// Resolved full output path (set during generation).
   String? resolvedOutputDir;
+
+  /// Resolved package name (set during generation).
+  String? resolvedPackageName;
   final String? packageName;
   final bool includeDeprecated;
   final bool verbose;
@@ -257,12 +262,14 @@ class Generator {
     }
 
     // 6. Resolve package name and output directory
-    final outputBase = config.outputDir ??
+    final outputBase =
+        config.outputDir ??
         (config.workspace ? defaultWorkspaceOutputDir : defaultOutputDir);
     final packageName = config.packageName ?? defaultPackageName;
 
     final outputDir = p.join(outputBase, packageName);
     config.resolvedOutputDir = outputDir;
+    config.resolvedPackageName = packageName;
 
     _log('Emitting Dart source files...');
     final specFileName = isStdin ? 'stdin' : p.basename(config.inputPath);
@@ -292,9 +299,8 @@ class Generator {
     if (config.workspace) {
       files = {
         for (final entry in files.entries)
-          entry.key.endsWith('.dart')
-              ? 'lib/${entry.key}'
-              : entry.key: entry.value,
+          entry.key.endsWith('.dart') ? 'lib/${entry.key}' : entry.key:
+              entry.value,
       };
     }
 
@@ -649,8 +655,6 @@ class Generator {
       IrTypeRef(:final name) => 'Ref($name)',
     };
   }
-
-
 }
 
 class GeneratorException implements Exception {
