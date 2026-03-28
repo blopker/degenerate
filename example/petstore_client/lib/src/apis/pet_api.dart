@@ -8,14 +8,14 @@ import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'packa
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class PetApi {const PetApi(this._config);
+final class PetApi with ApiExecutor {const PetApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Add a new pet to the store.
 ///
 /// `POST /pet`
-Future<ApiResult<Pet, Never>> addPet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Pet, Never>> addPet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -38,7 +38,7 @@ return _execute(
 /// Update an existing pet by Id.
 ///
 /// `PUT /pet`
-Future<ApiResult<Pet, Never>> updatePet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Pet, Never>> updatePet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,7 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -61,11 +61,11 @@ return _execute(
 /// Multiple status values can be provided with comma separated strings.
 ///
 /// `GET /pet/findByStatus`
-Future<ApiResult<List<Pet>, Never>> findPetsByStatus({required FindPetsByStatusStatus status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Pet>, Never>> findPetsByStatus({required FindPetsByStatusStatus status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['status'] = status.toJson();
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,7 +76,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -89,13 +89,13 @@ return _execute(
 /// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
 ///
 /// `GET /pet/findByTags`
-Future<ApiResult<List<Pet>, Never>> findPetsByTags({required List<String> tags, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<List<Pet>, Never>> findPetsByTags({required List<String> tags, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in tags) {
   queryParametersList.add(ApiQueryParameter(name: 'tags', value: item, allowReserved: false));
 }
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -119,7 +119,7 @@ return _execute(
 /// Returns a single pet.
 ///
 /// `GET /pet/{petId}`
-Future<ApiResult<Pet, Never>> getPetById({required int petId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Pet, Never>> getPetById({required int petId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -128,7 +128,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -140,12 +140,12 @@ return _execute(
 /// Updates a pet resource based on the form data.
 ///
 /// `POST /pet/{petId}`
-Future<ApiResult<Pet, Never>> updatePetWithForm({required int petId, String? name, String? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Pet, Never>> updatePetWithForm({required int petId, String? name, String? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) queryParameters['name'] = name;
 if (status != null) queryParameters['status'] = status;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -156,7 +156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -168,7 +168,7 @@ return _execute(
 /// Delete a pet.
 ///
 /// `DELETE /pet/{petId}`
-Future<ApiResult<void, Never>> deletePet({required int petId, String? apiKey, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deletePet({required int petId, String? apiKey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (apiKey != null) headers['api_key'] = apiKey;
 
 final request = ApiRequest(
@@ -178,7 +178,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
@@ -188,11 +188,11 @@ return _execute(
 /// Upload image of the pet.
 ///
 /// `POST /pet/{petId}/uploadImage`
-Future<ApiResult<Response, Never>> uploadFile({required int petId, String? additionalMetadata, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{..._config.defaultQueryParameters};
+Future<ApiResult<Response, Never>> uploadFile({required int petId, String? additionalMetadata, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (additionalMetadata != null) queryParameters['additionalMetadata'] = additionalMetadata;
 
-final headers = <String, String>{..._config.defaultHeaders};
+final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
 
 final request = ApiRequest(
@@ -205,86 +205,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

@@ -26,4 +26,4 @@ publish:
 	dart pub publish -C packages/degenerate --force
 
 update_example:
-	dart run degenerate:degenerate -i example/petstore3.json -o example/petstore_client --clean -n petstore_client
+	dart run degenerate:degenerate -i example/petstore3.json -o example --workspace --clean -n petstore_client

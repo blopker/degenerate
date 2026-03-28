@@ -9,8 +9,6 @@ workspace:
   - snapshots/specs/*
   - snapshots/public/*
   - test/wire/*
-  - example
-  - example/petstore_client
 
 dependencies:
   degenerate:

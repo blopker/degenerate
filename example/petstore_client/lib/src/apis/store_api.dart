@@ -8,16 +8,16 @@ import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/deg
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class StoreApi {const StoreApi(this._config);
+final class StoreApi with ApiExecutor {const StoreApi(this.apiConfig);
 
-final ApiConfig _config;
+@override final ApiConfig apiConfig;
 
 /// Returns pet inventories by status.
 ///
 /// Returns a map of status codes to quantities.
 ///
 /// `GET /store/inventory`
-Future<ApiResult<Map<String, int>, Never>> getInventory({RequestOptions? options}) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Map<String, int>, Never>> getInventory({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));
@@ -38,7 +38,7 @@ return _execute(
 /// Place a new order in the store.
 ///
 /// `POST /store/order`
-Future<ApiResult<Order, Never>> placeOrder({Order? body, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Order, Never>> placeOrder({Order? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,7 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -58,10 +58,10 @@ return _execute(
  } 
 /// Find purchase order by ID.
 ///
-/// For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
+/// For valid response try integer IDs with value `<= 5 or >` 10. Other values will generate exceptions.
 ///
 /// `GET /store/order/{orderId}`
-Future<ApiResult<Order, Never>> getOrderById({required int orderId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<Order, Never>> getOrderById({required int orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -70,7 +70,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (response) {
     return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -82,7 +82,7 @@ return _execute(
 /// For valid response try integer IDs with value < 1000. Anything above 1000 or non-integers will generate API errors.
 ///
 /// `DELETE /store/order/{orderId}`
-Future<ApiResult<void, Never>> deleteOrder({required int orderId, RequestOptions? options, }) async  { final headers = <String, String>{..._config.defaultHeaders};
+Future<ApiResult<void, Never>> deleteOrder({required int orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -91,84 +91,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return _execute(
+return execute(
   request,
   onSuccess: (_) {},
 );
- } 
-/// Shared execution pipeline: interceptors -> send -> deserialize.
-Future<ApiResult<T, E>> _execute<T,E>(ApiRequest request, {required T Function(ApiResponse) onSuccess, E? Function(ApiResponse)? onError, }) async  { try {
-  final userCancelToken = request.options?.cancelToken;
-  if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-  final effectiveTimeout = request.options?.timeout ?? _config.timeout;
-  final extraHeaders = request.options?.extraHeaders;
-
-  // Merge timeout and user cancel into a single adapter-level cancel token.
-  final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-      ? CancelToken()
-      : null;
-  Timer? timeoutTimer;
-  bool timedOut = false;
-
-  if (adapterToken != null) {
-    if (userCancelToken != null) {
-      final token = adapterToken;
-      userCancelToken.whenCancelled.then((_) {
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-    if (effectiveTimeout != null) {
-      final token = adapterToken;
-      timeoutTimer = Timer(effectiveTimeout, () {
-        timedOut = true;
-        if (!token.isCancelled) token.cancel();
-      });
-    }
-  }
-
-  final effectiveRequest = request.copyWith(
-    headers: extraHeaders != null
-        ? {...request.headers, ...extraHeaders}
-        : null,
-    options: RequestOptions(cancelToken: adapterToken),
-  );
-
-  try {
-    final chain = buildInterceptorChain(
-      interceptors: _config.interceptors,
-      terminal: (req) => _config.client.send(req),
-    );
-
-    final response = await chain(effectiveRequest);
-    timeoutTimer?.cancel();
-
-    try {
-      if (response.isSuccessful) {
-        return ApiSuccess(
-          onSuccess(response),
-          statusCode: response.statusCode,
-          headers: response.headers,
-        );
-      }
-      return ApiError(
-        statusCode: response.statusCode,
-        error: onError != null ? onError(response) : null,
-        rawError: response.body,
-        headers: response.headers,
-      );
-    } catch (e, st) {
-      return ApiParseException(e, st, response: response);
-    }
-  } on CancelledException {
-    timeoutTimer?.cancel();
-    if (timedOut) {
-      throw TimeoutException('Request timed out', effectiveTimeout);
-    }
-    rethrow;
-  }
-} catch (e, st) {
-  return ApiException(e, st);
-}
  } 
  }

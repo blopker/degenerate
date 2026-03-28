@@ -17,27 +17,30 @@ ArgParser buildParser() {
     ..addOption(
       'output',
       abbr: 'o',
-      help: 'Output directory.\n'
-          '(default: lib/api_client, or packages/api_client with --workspace)',
+      help:
+          'Output directory.\n'
+          '(default: lib/<name>, or packages/<name> with --workspace)',
       valueHelp: 'dir',
     )
     ..addOption(
       'name',
       abbr: 'n',
-      help: 'Package name (default: inferred from spec title).',
+      help: 'Package name (default: api_client).',
       valueHelp: 'name',
     )
     ..addMultiOption(
       'tag',
       abbr: 't',
-      help: 'Only include API groups matching these tags (substring match).\n'
+      help:
+          'Only include API groups matching these tags (substring match).\n'
           'Can be specified multiple times.',
       valueHelp: 'pattern',
     )
     ..addMultiOption(
       'path',
       abbr: 'p',
-      help: 'Only include operations whose path starts with this prefix.\n'
+      help:
+          'Only include operations whose path starts with this prefix.\n'
           'Can be specified multiple times.',
       valueHelp: 'prefix',
     )
@@ -68,28 +71,21 @@ ArgParser buildParser() {
     )
     ..addFlag(
       'workspace',
-      help: 'Generate a standalone package with pubspec.yaml\n'
+      help:
+          'Generate a standalone package with pubspec.yaml\n'
           '(includes resolution: workspace for Dart workspaces).\n'
-          'Default output: packages/api_client.',
+          'Default output: packages/<name>.',
       defaultsTo: false,
       negatable: false,
     )
-    ..addFlag(
-      'help',
-      abbr: 'h',
-      help: 'Show this help.',
-      negatable: false,
-    )
-    ..addFlag(
-      'version',
-      help: 'Print the tool version.',
-      negatable: false,
-    );
+    ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
+    ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
 
 void printUsage(ArgParser argParser) {
   stderr.writeln(
-      'degenerate -Generate a Dart client from an OpenAPI specification.');
+    'degenerate - Generate a Dart client from an OpenAPI specification.',
+  );
   stderr.writeln();
   stderr.writeln('Usage:');
   stderr.writeln('  degenerate [options]');
@@ -133,12 +129,10 @@ Future<void> main(List<String> arguments) async {
     }
 
     final workspace = results.flag('workspace');
-    final outputDir = results.option('output') ??
-        (workspace ? 'packages/api_client' : 'lib/api_client');
 
     final config = GeneratorConfig(
       inputPath: input,
-      outputDir: outputDir,
+      outputDir: results.option('output'),
       packageName: results.option('name'),
       includeDeprecated: results.flag('include-deprecated'),
       tags: results.multiOption('tag'),

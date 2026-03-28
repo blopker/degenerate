@@ -97,7 +97,7 @@ dart run degenerate [options]
 
 Options:
   -i, --input              Path to OpenAPI spec, or "-" for stdin (required)
-  -o, --output             Output directory (default: lib/api_client, or packages/api_client with --workspace)
+  -o, --output             Output directory (default: lib/<name>, or packages/<name> with --workspace)
   -n, --name               Package name (default: inferred from spec title)
   -t, --tag                Only include APIs matching these tags (repeatable)
   -p, --path               Only include operations under these path prefixes (repeatable)

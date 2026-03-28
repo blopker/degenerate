@@ -41,6 +41,8 @@ void main() {
       final generator = Generator(config);
       await generator.generate();
 
+      final outDir = config.resolvedOutputDir!;
+
       // Assert expected files exist
       final expectedFiles = [
         'lib/src/models/pet.dart',
@@ -50,28 +52,28 @@ void main() {
       ];
 
       for (final relativePath in expectedFiles) {
-        final file = File(p.join(tempDir.path, relativePath));
+        final file = File(p.join(outDir, relativePath));
         expect(file.existsSync(), isTrue,
             reason: 'Expected file to exist: $relativePath');
       }
 
       // Assert generated code contains expected patterns
       final petModel =
-          File(p.join(tempDir.path, 'lib/src/models/pet.dart'))
+          File(p.join(outDir, 'lib/src/models/pet.dart'))
               .readAsStringSync();
       expect(petModel, contains('class Pet'));
       expect(petModel, contains('fromJson'));
       expect(petModel, contains('toJson'));
 
       final errorModel =
-          File(p.join(tempDir.path, 'lib/src/models/error_model.dart'))
+          File(p.join(outDir, 'lib/src/models/error_model.dart'))
               .readAsStringSync();
       expect(errorModel, contains('class ErrorModel'));
       expect(errorModel, contains('fromJson'));
       expect(errorModel, contains('toJson'));
 
       final petsApi =
-          File(p.join(tempDir.path, 'lib/src/apis/pets_api.dart'))
+          File(p.join(outDir, 'lib/src/apis/pets_api.dart'))
               .readAsStringSync();
       expect(petsApi, contains('class PetsApi'));
       expect(petsApi, contains('listPets'));
@@ -79,14 +81,14 @@ void main() {
       expect(petsApi, contains('showPetById'));
 
       final barrel =
-          File(p.join(tempDir.path, 'lib/petstore_api.dart'))
+          File(p.join(outDir, 'lib/petstore_api.dart'))
               .readAsStringSync();
       expect(barrel, contains("export 'src/models/pet.dart'"));
       expect(barrel, contains("export 'src/apis/pets_api.dart'"));
 
       // Write a pubspec for dart analyze (default mode doesn't emit one)
       final runtimeDir = p.join(Directory.current.path, 'packages', 'degenerate_runtime');
-      final pubspecFile = File(p.join(tempDir.path, 'pubspec.yaml'));
+      final pubspecFile = File(p.join(outDir, 'pubspec.yaml'));
       pubspecFile.writeAsStringSync(
         'name: petstore_api\n'
         'environment:\n'
@@ -104,7 +106,7 @@ void main() {
       final pubGetResult = Process.runSync(
         'dart',
         ['pub', 'get'],
-        workingDirectory: tempDir.path,
+        workingDirectory: outDir,
       );
       expect(pubGetResult.exitCode, equals(0),
           reason:
@@ -114,7 +116,7 @@ void main() {
       final analyzeResult = Process.runSync(
         'dart',
         ['analyze', '--fatal-infos'],
-        workingDirectory: tempDir.path,
+        workingDirectory: outDir,
       );
 
       // Print output for debugging
@@ -142,11 +144,9 @@ void main() {
         'petstore-v3.0-oai.yaml',
       );
 
-      final outputDir = p.join(tempDir.path, 'dry_run_output');
-
       final config = GeneratorConfig(
         inputPath: specPath,
-        outputDir: outputDir,
+        outputDir: p.join(tempDir.path, 'dry_run_output'),
         packageName: 'petstore_api',
         dryRun: true,
       );
@@ -155,7 +155,7 @@ void main() {
       await generator.generate();
 
       // The output directory should not exist or be empty
-      final dir = Directory(outputDir);
+      final dir = Directory(config.resolvedOutputDir!);
       expect(dir.existsSync(), isFalse,
           reason: 'Dry run should not create output directory');
     });
@@ -181,8 +181,9 @@ void main() {
         'petstore-v3.0-oai.yaml',
       );
 
-      // Create a stale file in the output directory
-      final staleFile = File(p.join(tempDir.path, 'lib/src/models/stale.dart'));
+      // Pre-create the resolved output dir with a stale file
+      final resolvedDir = p.join(tempDir.path, 'petstore_api');
+      final staleFile = File(p.join(resolvedDir, 'lib/src/models/stale.dart'));
       staleFile.parent.createSync(recursive: true);
       staleFile.writeAsStringSync('// stale file');
 
@@ -191,7 +192,6 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         clean: true,
-
       );
 
       final generator = Generator(config);
@@ -202,7 +202,7 @@ void main() {
           reason: 'Stale file should be removed when clean is true');
 
       // But generated files should exist
-      final petModel = File(p.join(tempDir.path, 'lib/src/models/pet.dart'));
+      final petModel = File(p.join(resolvedDir, 'lib/src/models/pet.dart'));
       expect(petModel.existsSync(), isTrue,
           reason: 'Generated files should still be created');
     });
@@ -216,8 +216,9 @@ void main() {
         'petstore-v3.0-oai.yaml',
       );
 
-      // Create a stale file in the output directory
-      final staleFile = File(p.join(tempDir.path, 'lib/src/models/stale.dart'));
+      // Pre-create the resolved output dir with a stale file
+      final resolvedDir = p.join(tempDir.path, 'petstore_api');
+      final staleFile = File(p.join(resolvedDir, 'lib/src/models/stale.dart'));
       staleFile.parent.createSync(recursive: true);
       staleFile.writeAsStringSync('// stale file');
 
@@ -226,7 +227,6 @@ void main() {
         outputDir: tempDir.path,
         packageName: 'petstore_api',
         // clean defaults to false
-
       );
 
       final generator = Generator(config);
@@ -308,7 +308,7 @@ void main() {
       expect(files.keys, isNot(contains('pubspec.yaml')),
           reason: 'Default mode should not emit pubspec.yaml');
 
-      final pubspecFile = File(p.join(tempDir.path, 'pubspec.yaml'));
+      final pubspecFile = File(p.join(config.resolvedOutputDir!, 'pubspec.yaml'));
       expect(pubspecFile.existsSync(), isFalse,
           reason: 'Default mode should not write pubspec.yaml to disk');
     });
@@ -339,7 +339,7 @@ void main() {
       expect(files['pubspec.yaml'], contains('resolution: workspace'));
     });
 
-    test('infers package name from spec title', () async {
+    test('output dir defaults to lib/<name>', () async {
       final specPath = p.join(
         Directory.current.path,
         'test',
@@ -348,21 +348,88 @@ void main() {
         'petstore-v3.0-oai.yaml',
       );
 
-      // Generate without explicit package name
       final config = GeneratorConfig(
         inputPath: specPath,
-        outputDir: tempDir.path,
+        dryRun: true,
+        quiet: true,
+      );
 
+      final generator = Generator(config);
+      final files = await generator.generate();
+
+      expect(config.resolvedOutputDir, equals('lib/api_client'));
+      expect(files.keys, contains('lib/api_client.dart'));
+    });
+
+    test('output dir defaults to packages/<name> in workspace mode', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+
+      final config = GeneratorConfig(
+        inputPath: specPath,
+        workspace: true,
+        dryRun: true,
+        quiet: true,
+      );
+
+      final generator = Generator(config);
+      final files = await generator.generate();
+
+      expect(config.resolvedOutputDir, equals('packages/api_client'));
+      expect(files.keys, contains('lib/api_client.dart'));
+      expect(files.keys, contains('pubspec.yaml'));
+    });
+
+    test('-o sets base dir and -n is appended', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+
+      final config = GeneratorConfig(
+        inputPath: specPath,
+        outputDir: 'example',
+        packageName: 'petstore_client',
+        dryRun: true,
+        quiet: true,
       );
 
       final generator = Generator(config);
       await generator.generate();
 
-      // The inferred name from "Swagger Petstore" should be "swagger_petstore"
+      expect(config.resolvedOutputDir, equals('example/petstore_client'));
+    });
+
+    test('defaults to api_client package name when none specified', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+
+      final config = GeneratorConfig(
+        inputPath: specPath,
+        outputDir: tempDir.path,
+        quiet: true,
+      );
+
+      final generator = Generator(config);
+      await generator.generate();
+
       final barrelFile =
-          File(p.join(tempDir.path, 'lib/swagger_petstore.dart'));
+          File(p.join(config.resolvedOutputDir!, 'lib/api_client.dart'));
       expect(barrelFile.existsSync(), isTrue,
-          reason: 'Barrel file should use inferred package name');
+          reason: 'Barrel file should use api_client as default name');
     });
   });
 }
