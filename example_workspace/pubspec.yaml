@@ -1,4 +1,4 @@
-name: petstore_example
+name: petstore_example_workspace
 description: Example CLI app using generated petstore workspace client.
 publish_to: none
 resolution: workspace
@@ -6,7 +6,9 @@ resolution: workspace
 environment:
   sdk: ^3.11.0
 
+workspace:
+  - packages/petstore_client
+
 dependencies:
+  petstore_client:
   degenerate_http: ^0.1.0
-  degenerate_runtime: ^0.1.0
-  collection:

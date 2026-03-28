@@ -9,6 +9,7 @@ test:
 	done
 	dart analyze snapshots/specs/*
 	dart analyze example
+	dart analyze example_workspace
 	dart analyze test
 	dart analyze test/wire/*
 	dart analyze snapshots/public/*
@@ -25,5 +26,6 @@ publish:
 	dart pub publish -C packages/degenerate_dio --force
 	dart pub publish -C packages/degenerate --force
 
-update_example:
-	dart run degenerate:degenerate -i example/petstore3.json -o example --workspace --clean -n petstore_client
+update_examples:
+	dart run degenerate:degenerate -i example/petstore3.json -o example_workspace/packages --workspace --clean -n petstore_client
+	dart run degenerate:degenerate -i example/petstore3.json -o example/lib --clean -n petstore_client
