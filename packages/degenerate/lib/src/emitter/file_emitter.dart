@@ -236,11 +236,13 @@ class FileEmitter {
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
     );
 
-    // Emit pubspec.yaml
-    files['pubspec.yaml'] = _emitPubspec(
-      packageName: packageName,
-      workspace: workspace,
-    );
+    // Emit pubspec.yaml only in workspace mode
+    if (workspace) {
+      files['pubspec.yaml'] = _emitPubspec(
+        packageName: packageName,
+        workspace: true,
+      );
+    }
 
     return files;
   }

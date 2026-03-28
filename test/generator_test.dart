@@ -47,7 +47,6 @@ void main() {
         'lib/src/models/error_model.dart',
         'lib/src/apis/pets_api.dart',
         'lib/petstore_api.dart',
-        'pubspec.yaml',
       ];
 
       for (final relativePath in expectedFiles) {
@@ -85,13 +84,16 @@ void main() {
       expect(barrel, contains("export 'src/models/pet.dart'"));
       expect(barrel, contains("export 'src/apis/pets_api.dart'"));
 
-      // Add dependency_overrides so pub get resolves degenerate_runtime
-      // from the local workspace (it's not yet published on pub.dev).
-      final pubspecFile = File(p.join(tempDir.path, 'pubspec.yaml'));
-      final pubspecContent = pubspecFile.readAsStringSync();
+      // Write a pubspec for dart analyze (default mode doesn't emit one)
       final runtimeDir = p.join(Directory.current.path, 'packages', 'degenerate_runtime');
+      final pubspecFile = File(p.join(tempDir.path, 'pubspec.yaml'));
       pubspecFile.writeAsStringSync(
-        '$pubspecContent\n'
+        'name: petstore_api\n'
+        'environment:\n'
+        '  sdk: ^3.8.0\n'
+        'dependencies:\n'
+        '  collection: ^1.18.0\n'
+        '  degenerate_runtime: ^0.1.0\n'
         'dependency_overrides:\n'
         '  degenerate_runtime:\n'
         '    path: $runtimeDir\n',
@@ -282,6 +284,59 @@ void main() {
 
       expect(files, isNotEmpty);
       expect(files.keys, contains('lib/src/apis/pet_api.dart'));
+    });
+
+    test('default mode does not emit pubspec.yaml', () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+
+      final config = GeneratorConfig(
+        inputPath: specPath,
+        outputDir: tempDir.path,
+        packageName: 'petstore_api',
+        quiet: true,
+      );
+
+      final generator = Generator(config);
+      final files = await generator.generate();
+
+      expect(files.keys, isNot(contains('pubspec.yaml')),
+          reason: 'Default mode should not emit pubspec.yaml');
+
+      final pubspecFile = File(p.join(tempDir.path, 'pubspec.yaml'));
+      expect(pubspecFile.existsSync(), isFalse,
+          reason: 'Default mode should not write pubspec.yaml to disk');
+    });
+
+    test('workspace mode emits pubspec.yaml with resolution: workspace',
+        () async {
+      final specPath = p.join(
+        Directory.current.path,
+        'test',
+        'fixtures',
+        'public',
+        'petstore-v3.0-oai.yaml',
+      );
+
+      final config = GeneratorConfig(
+        inputPath: specPath,
+        outputDir: tempDir.path,
+        packageName: 'petstore_api',
+        workspace: true,
+        quiet: true,
+      );
+
+      final generator = Generator(config);
+      final files = await generator.generate();
+
+      expect(files.keys, contains('pubspec.yaml'),
+          reason: 'Workspace mode should emit pubspec.yaml');
+      expect(files['pubspec.yaml'], contains('resolution: workspace'));
     });
 
     test('infers package name from spec title', () async {

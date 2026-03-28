@@ -45,7 +45,7 @@ class GeneratorConfig {
 
   const GeneratorConfig({
     required this.inputPath,
-    this.outputDir = 'lib/src/generated',
+    this.outputDir = 'lib/api_client',
     this.packageName,
     this.includeDeprecated = false,
     this.verbose = false,

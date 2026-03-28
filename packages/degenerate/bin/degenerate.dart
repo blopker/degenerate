@@ -17,9 +17,9 @@ ArgParser buildParser() {
     ..addOption(
       'output',
       abbr: 'o',
-      help: 'Output directory.',
+      help: 'Output directory.\n'
+          '(default: lib/api_client, or packages/api_client with --workspace)',
       valueHelp: 'dir',
-      defaultsTo: 'lib/src/generated',
     )
     ..addOption(
       'name',
@@ -68,8 +68,9 @@ ArgParser buildParser() {
     )
     ..addFlag(
       'workspace',
-      help: 'Add resolution: workspace to the generated pubspec.yaml\n'
-          'for use in a Dart workspace (monorepo).',
+      help: 'Generate a standalone package with pubspec.yaml\n'
+          '(includes resolution: workspace for Dart workspaces).\n'
+          'Default output: packages/api_client.',
       defaultsTo: false,
       negatable: false,
     )
@@ -131,7 +132,9 @@ Future<void> main(List<String> arguments) async {
       }
     }
 
-    final outputDir = results.option('output') ?? 'lib/src/generated';
+    final workspace = results.flag('workspace');
+    final outputDir = results.option('output') ??
+        (workspace ? 'packages/api_client' : 'lib/api_client');
 
     final config = GeneratorConfig(
       inputPath: input,
@@ -143,12 +146,21 @@ Future<void> main(List<String> arguments) async {
       clean: results.flag('clean'),
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
-      workspace: results.flag('workspace'),
+      workspace: workspace,
       stdinContent: stdinContent,
     );
 
     final generator = Generator(config);
     await generator.generate();
+
+    if (!workspace && !results.flag('dry-run')) {
+      stderr.writeln();
+      stderr.writeln('Add these dependencies to your pubspec.yaml:');
+      stderr.writeln();
+      stderr.writeln('dependencies:');
+      stderr.writeln('  collection: ^1.18.0');
+      stderr.writeln('  degenerate_runtime: ^0.1.0');
+    }
   } on FormatException catch (e) {
     stderr.writeln('Error: ${e.message}');
     stderr.writeln();

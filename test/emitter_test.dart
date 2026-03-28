@@ -485,13 +485,26 @@ void main() {
       expect(barrel, contains("export 'src/apis/pets_api.dart'"));
     });
 
-    test('produces pubspec.yaml', () {
-      expect(files.keys, contains('pubspec.yaml'));
-      final pubspec = files['pubspec.yaml']!;
+    test('does not produce pubspec.yaml by default', () {
+      expect(files.keys, isNot(contains('pubspec.yaml')));
+    });
+
+    test('produces pubspec.yaml in workspace mode', () {
+      final wsFiles = FileEmitter().emitAll(
+        types: types,
+        apis: apis,
+        packageName: 'petstore_client',
+        specFileName: 'petstore-v3.0-oai.yaml',
+        specVersion: '1.0.0',
+        workspace: true,
+      );
+      expect(wsFiles.keys, contains('pubspec.yaml'));
+      final pubspec = wsFiles['pubspec.yaml']!;
       expect(pubspec, contains('name: petstore_client'));
       expect(pubspec, contains('sdk: ^3.8.0'));
       expect(pubspec, contains('collection:'));
       expect(pubspec, contains('degenerate_runtime:'));
+      expect(pubspec, contains('resolution: workspace'));
     });
 
     test('all model files contain header comment', () {
