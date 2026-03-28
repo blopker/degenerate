@@ -5,8 +5,8 @@
 // OpenAPI spec version: 3.1.1
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
-export 'src/client/spec_10_spec_extensions_and_external_docs_api.dart';
+export 'client/spec_10_spec_extensions_and_external_docs_api.dart';
 
-export 'src/models/doc.dart';
+export 'models/doc.dart';
 
-export 'src/apis/default_api.dart';
+export 'apis/default_api.dart';

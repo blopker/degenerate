@@ -5,12 +5,12 @@
 // OpenAPI spec version: 3.1.1
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
-export 'src/client/spec_08_schema_json_schema_2020_12_api.dart';
+export 'client/spec_08_schema_json_schema_2020_12_api.dart';
 
-export 'src/models/base_entity.dart';
-export 'src/models/circle.dart';
-export 'src/models/container.dart';
-export 'src/models/rectangle.dart';
-export 'src/models/shape.dart';
+export 'models/base_entity.dart';
+export 'models/circle.dart';
+export 'models/container.dart';
+export 'models/rectangle.dart';
+export 'models/shape.dart';
 
-export 'src/apis/default_api.dart';
+export 'apis/default_api.dart';

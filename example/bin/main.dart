@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:degenerate_http/degenerate_http.dart';
-import 'package:petstore_example/petstore_client/lib/petstore_client.dart';
+import 'package:petstore_example/petstore_client/petstore_client.dart';
 
 void main() async {
   final client = HttpApiClient(

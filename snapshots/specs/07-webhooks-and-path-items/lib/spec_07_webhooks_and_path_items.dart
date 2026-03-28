@@ -5,9 +5,9 @@
 // OpenAPI spec version: 3.1.1
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
-export 'src/client/spec_07_webhooks_and_path_items_api.dart';
+export 'client/spec_07_webhooks_and_path_items_api.dart';
 
-export 'src/models/invoice_paid.dart';
-export 'src/models/order_created.dart';
+export 'models/invoice_paid.dart';
+export 'models/order_created.dart';
 
-export 'src/apis/default_api.dart';
+export 'apis/default_api.dart';

@@ -150,7 +150,7 @@ class FileEmitter {
         b.body.addAll(specs);
       });
 
-      files['lib/src/models/$fileName.dart'] = emitRaw(library);
+      files['models/$fileName.dart'] = emitRaw(library);
     }
 
     // Emit API files
@@ -197,13 +197,13 @@ class FileEmitter {
           ..body.addAll(specs),
       );
 
-      files['lib/src/apis/$fileName.dart'] = emitRaw(library);
+      files['apis/$fileName.dart'] = emitRaw(library);
     }
 
     // Emit root SDK facade
     if (apis.isNotEmpty) {
       final sdkFileName = '${packageName}_api';
-      files['lib/src/client/$sdkFileName.dart'] = _emitSdkFacade(
+      files['client/$sdkFileName.dart'] = _emitSdkFacade(
         apis: apis,
         securitySchemes: securitySchemes,
         packageName: packageName,
@@ -215,7 +215,7 @@ class FileEmitter {
 
     if (securitySchemes.isNotEmpty || globalSecurity != null) {
       final securityFileName = '${packageName}_security';
-      files['lib/src/client/$securityFileName.dart'] = _emitSecurityFile(
+      files['client/$securityFileName.dart'] = _emitSecurityFile(
         apis: apis,
         securitySchemes: securitySchemes,
         globalSecurity: globalSecurity,
@@ -226,7 +226,7 @@ class FileEmitter {
     }
 
     // Emit barrel file
-    files['lib/$packageName.dart'] = _emitBarrelFile(
+    files['$packageName.dart'] = _emitBarrelFile(
       types: types,
       apis: apis,
       packageName: packageName,
@@ -663,11 +663,11 @@ class FileEmitter {
     buf.writeln("export 'package:degenerate_runtime/degenerate_runtime.dart';");
     if (apis.isNotEmpty) {
       final sdkFileName = '${packageName}_api';
-      buf.writeln("export 'src/client/$sdkFileName.dart';");
+      buf.writeln("export 'client/$sdkFileName.dart';");
     }
     if (hasSecurityFile) {
       final securityFileName = '${packageName}_security';
-      buf.writeln("export 'src/client/$securityFileName.dart';");
+      buf.writeln("export 'client/$securityFileName.dart';");
     }
     buf.writeln();
 
@@ -682,7 +682,7 @@ class FileEmitter {
           ..sort();
     for (final name in modelNames) {
       final fileName = toSnakeCase(name);
-      buf.writeln("export 'src/models/$fileName.dart';");
+      buf.writeln("export 'models/$fileName.dart';");
     }
     buf.writeln();
 
@@ -690,7 +690,7 @@ class FileEmitter {
     final apiNames = apis.map((a) => a.name).toSet().toList()..sort();
     for (final name in apiNames) {
       final fileName = toSnakeCase(name);
-      buf.writeln("export 'src/apis/$fileName.dart';");
+      buf.writeln("export 'apis/$fileName.dart';");
     }
 
     return buf.toString();

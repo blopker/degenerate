@@ -275,7 +275,7 @@ class Generator {
     final defaultServerUrl = inlinedDoc.servers.isNotEmpty
         ? inlinedDoc.servers.first['url'] as String?
         : null;
-    final files = fileEmitter.emitAll(
+    var files = fileEmitter.emitAll(
       types: irTypes,
       apis: irApis,
       securitySchemes: securitySchemes,
@@ -287,6 +287,16 @@ class Generator {
       defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,
     );
+
+    // In workspace mode, Dart source files live under lib/.
+    if (config.workspace) {
+      files = {
+        for (final entry in files.entries)
+          entry.key.endsWith('.dart')
+              ? 'lib/${entry.key}'
+              : entry.key: entry.value,
+      };
+    }
 
     if (emitterWarnings.isNotEmpty) {
       for (final warning in emitterWarnings) {

@@ -31,10 +31,13 @@ void main() {
       expect(File(specPath).existsSync(), isTrue,
           reason: 'petstore-v3.0-oai.yaml fixture must exist');
 
+      // Use workspace mode so the output is a standalone package with lib/
+      // that can be analyzed independently.
       final config = GeneratorConfig(
         inputPath: specPath,
         outputDir: tempDir.path,
         packageName: 'petstore_api',
+        workspace: true,
         verbose: true,
       );
 
@@ -45,10 +48,11 @@ void main() {
 
       // Assert expected files exist
       final expectedFiles = [
-        'lib/src/models/pet.dart',
-        'lib/src/models/error_model.dart',
-        'lib/src/apis/pets_api.dart',
+        'lib/models/pet.dart',
+        'lib/models/error_model.dart',
+        'lib/apis/pets_api.dart',
         'lib/petstore_api.dart',
+        'pubspec.yaml',
       ];
 
       for (final relativePath in expectedFiles) {
@@ -59,21 +63,21 @@ void main() {
 
       // Assert generated code contains expected patterns
       final petModel =
-          File(p.join(outDir, 'lib/src/models/pet.dart'))
+          File(p.join(outDir, 'lib/models/pet.dart'))
               .readAsStringSync();
       expect(petModel, contains('class Pet'));
       expect(petModel, contains('fromJson'));
       expect(petModel, contains('toJson'));
 
       final errorModel =
-          File(p.join(outDir, 'lib/src/models/error_model.dart'))
+          File(p.join(outDir, 'lib/models/error_model.dart'))
               .readAsStringSync();
       expect(errorModel, contains('class ErrorModel'));
       expect(errorModel, contains('fromJson'));
       expect(errorModel, contains('toJson'));
 
       final petsApi =
-          File(p.join(outDir, 'lib/src/apis/pets_api.dart'))
+          File(p.join(outDir, 'lib/apis/pets_api.dart'))
               .readAsStringSync();
       expect(petsApi, contains('class PetsApi'));
       expect(petsApi, contains('listPets'));
@@ -83,14 +87,16 @@ void main() {
       final barrel =
           File(p.join(outDir, 'lib/petstore_api.dart'))
               .readAsStringSync();
-      expect(barrel, contains("export 'src/models/pet.dart'"));
-      expect(barrel, contains("export 'src/apis/pets_api.dart'"));
+      expect(barrel, contains("export 'models/pet.dart'"));
+      expect(barrel, contains("export 'apis/pets_api.dart'"));
 
-      // Write a pubspec for dart analyze (default mode doesn't emit one)
+      // Overwrite pubspec without resolution:workspace so it runs standalone,
+      // and add dependency_overrides for the local runtime package.
       final runtimeDir = p.join(Directory.current.path, 'packages', 'degenerate_runtime');
       final pubspecFile = File(p.join(outDir, 'pubspec.yaml'));
       pubspecFile.writeAsStringSync(
         'name: petstore_api\n'
+        'publish_to: none\n'
         'environment:\n'
         '  sdk: ^3.8.0\n'
         'dependencies:\n'
@@ -102,7 +108,6 @@ void main() {
       );
 
       // Run dart analyze on generated output
-      // First, run dart pub get
       final pubGetResult = Process.runSync(
         'dart',
         ['pub', 'get'],
@@ -112,21 +117,17 @@ void main() {
           reason:
               'dart pub get failed:\nstdout: ${pubGetResult.stdout}\nstderr: ${pubGetResult.stderr}');
 
-      // Then run dart analyze
       final analyzeResult = Process.runSync(
         'dart',
         ['analyze', '--fatal-infos'],
         workingDirectory: outDir,
       );
 
-      // Print output for debugging
       if (analyzeResult.exitCode != 0) {
         // ignore: avoid_print
         print('dart analyze stdout:\n${analyzeResult.stdout}');
         // ignore: avoid_print
         print('dart analyze stderr:\n${analyzeResult.stderr}');
-
-        // Print all generated files for debugging
         _printGeneratedFiles(tempDir);
       }
 
@@ -183,7 +184,7 @@ void main() {
 
       // Pre-create the resolved output dir with a stale file
       final resolvedDir = p.join(tempDir.path, 'petstore_api');
-      final staleFile = File(p.join(resolvedDir, 'lib/src/models/stale.dart'));
+      final staleFile = File(p.join(resolvedDir, 'models/stale.dart'));
       staleFile.parent.createSync(recursive: true);
       staleFile.writeAsStringSync('// stale file');
 
@@ -202,7 +203,7 @@ void main() {
           reason: 'Stale file should be removed when clean is true');
 
       // But generated files should exist
-      final petModel = File(p.join(resolvedDir, 'lib/src/models/pet.dart'));
+      final petModel = File(p.join(resolvedDir, 'models/pet.dart'));
       expect(petModel.existsSync(), isTrue,
           reason: 'Generated files should still be created');
     });
@@ -218,7 +219,7 @@ void main() {
 
       // Pre-create the resolved output dir with a stale file
       final resolvedDir = p.join(tempDir.path, 'petstore_api');
-      final staleFile = File(p.join(resolvedDir, 'lib/src/models/stale.dart'));
+      final staleFile = File(p.join(resolvedDir, 'models/stale.dart'));
       staleFile.parent.createSync(recursive: true);
       staleFile.writeAsStringSync('// stale file');
 
@@ -259,8 +260,8 @@ void main() {
       final files = await generator.generate();
 
       expect(files, isNotEmpty);
-      expect(files.keys, contains('lib/src/models/pet.dart'));
-      expect(files.keys, contains('lib/src/apis/pets_api.dart'));
+      expect(files.keys, contains('models/pet.dart'));
+      expect(files.keys, contains('apis/pets_api.dart'));
     });
 
     test('generates from stdin content (JSON)', () async {
@@ -283,7 +284,7 @@ void main() {
       final files = await generator.generate();
 
       expect(files, isNotEmpty);
-      expect(files.keys, contains('lib/src/apis/pet_api.dart'));
+      expect(files.keys, contains('apis/pet_api.dart'));
     });
 
     test('default mode does not emit pubspec.yaml', () async {
@@ -358,7 +359,7 @@ void main() {
       final files = await generator.generate();
 
       expect(config.resolvedOutputDir, equals('lib/api_client'));
-      expect(files.keys, contains('lib/api_client.dart'));
+      expect(files.keys, contains('api_client.dart'));
     });
 
     test('output dir defaults to packages/<name> in workspace mode', () async {
@@ -427,7 +428,7 @@ void main() {
       await generator.generate();
 
       final barrelFile =
-          File(p.join(config.resolvedOutputDir!, 'lib/api_client.dart'));
+          File(p.join(config.resolvedOutputDir!, 'api_client.dart'));
       expect(barrelFile.existsSync(), isTrue,
           reason: 'Barrel file should use api_client as default name');
     });

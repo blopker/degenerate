@@ -5,11 +5,11 @@
 // OpenAPI spec version: 3.1.1
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
-export 'src/client/spec_04_responses_links_callbacks_api.dart';
+export 'client/spec_04_responses_links_callbacks_api.dart';
 
-export 'src/models/error_model.dart';
-export 'src/models/job.dart';
-export 'src/models/job_event.dart';
-export 'src/models/new_job.dart';
+export 'models/error_model.dart';
+export 'models/job.dart';
+export 'models/job_event.dart';
+export 'models/new_job.dart';
 
-export 'src/apis/default_api.dart';
+export 'apis/default_api.dart';

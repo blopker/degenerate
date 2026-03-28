@@ -460,29 +460,29 @@ void main() {
     });
 
     test('produces model files', () {
-      expect(files.keys, contains('lib/src/models/pet.dart'));
-      expect(files.keys, contains('lib/src/models/error_model.dart'));
+      expect(files.keys, contains('models/pet.dart'));
+      expect(files.keys, contains('models/error_model.dart'));
     });
 
     test('produces API files', () {
-      expect(files.keys, contains('lib/src/apis/pets_api.dart'));
+      expect(files.keys, contains('apis/pets_api.dart'));
     });
 
     test('does not emit runtime files (uses degenerate_runtime)', () {
-      expect(files.keys, isNot(contains('lib/src/client/api_client.dart')));
-      expect(files.keys, isNot(contains('lib/src/client/api_config.dart')));
-      expect(files.keys, isNot(contains('lib/src/client/api_result.dart')));
+      expect(files.keys, isNot(contains('client/api_client.dart')));
+      expect(files.keys, isNot(contains('client/api_config.dart')));
+      expect(files.keys, isNot(contains('client/api_result.dart')));
     });
 
     test('produces barrel file', () {
-      expect(files.keys, contains('lib/petstore_client.dart'));
-      final barrel = files['lib/petstore_client.dart']!;
-      expect(barrel, contains("export 'src/models/pet.dart'"));
+      expect(files.keys, contains('petstore_client.dart'));
+      final barrel = files['petstore_client.dart']!;
+      expect(barrel, contains("export 'models/pet.dart'"));
       expect(
         barrel,
         contains("export 'package:degenerate_runtime/degenerate_runtime.dart'"),
       );
-      expect(barrel, contains("export 'src/apis/pets_api.dart'"));
+      expect(barrel, contains("export 'apis/pets_api.dart'"));
     });
 
     test('does not produce pubspec.yaml by default', () {
@@ -509,7 +509,7 @@ void main() {
 
     test('all model files contain header comment', () {
       for (final entry in files.entries) {
-        if (entry.key.startsWith('lib/src/models/')) {
+        if (entry.key.startsWith('models/')) {
           expect(entry.value, contains('GENERATED CODE'));
           expect(entry.value, contains('petstore-v3.0-oai.yaml'));
         }
@@ -529,9 +529,9 @@ void main() {
     });
 
     test('produces root SDK facade', () {
-      final barrel = files['lib/petstore_client.dart']!;
-      expect(barrel, contains("export 'src/client/petstore_client_api.dart'"));
-      final sdkFile = files['lib/src/client/petstore_client_api.dart'];
+      final barrel = files['petstore_client.dart']!;
+      expect(barrel, contains("export 'client/petstore_client_api.dart'"));
+      final sdkFile = files['client/petstore_client_api.dart'];
       expect(
         sdkFile,
         isNotNull,
@@ -542,24 +542,24 @@ void main() {
     });
 
     test('root SDK facade doc example uses real method name', () {
-      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      final sdkFile = files['client/petstore_client_api.dart']!;
       // Example should reference an actual generated method, not "listAll"
       expect(sdkFile, isNot(contains('listAll')));
     });
 
     test('root SDK facade field names drop redundant Api suffix', () {
-      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      final sdkFile = files['client/petstore_client_api.dart']!;
       // "petsApi" is redundant - should just be "pets"
       expect(sdkFile, contains('late final PetsApi pets = '));
     });
 
     test('operations return ApiResult with typed error', () {
-      final apiSource = files['lib/src/apis/pets_api.dart']!;
+      final apiSource = files['apis/pets_api.dart']!;
       expect(apiSource, contains('ApiResult<List<Pet>, ErrorModel>'));
     });
 
     test('API files import degenerate_runtime', () {
-      final apiSource = files['lib/src/apis/pets_api.dart']!;
+      final apiSource = files['apis/pets_api.dart']!;
       expect(
         apiSource,
         contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"),
@@ -567,7 +567,7 @@ void main() {
     });
 
     test('SDK facade imports degenerate_runtime', () {
-      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      final sdkFile = files['client/petstore_client_api.dart']!;
       expect(
         sdkFile,
         contains("import 'package:degenerate_runtime/degenerate_runtime.dart'"),
@@ -584,7 +584,7 @@ void main() {
         defaultServerUrl: 'https://petstore.swagger.io/v1',
       );
       final sdkFile =
-          filesWithServer['lib/src/client/petstore_client_api.dart']!;
+          filesWithServer['client/petstore_client_api.dart']!;
       expect(
         sdkFile,
         contains(
@@ -594,7 +594,7 @@ void main() {
     });
 
     test('SDK facade omits defaultBaseUrl when no servers', () {
-      final sdkFile = files['lib/src/client/petstore_client_api.dart']!;
+      final sdkFile = files['client/petstore_client_api.dart']!;
       expect(sdkFile, isNot(contains('defaultBaseUrl')));
     });
   });
@@ -1795,9 +1795,9 @@ void main() {
         specVersion: '3.0.0',
       );
 
-      final securityFile = files['lib/src/client/test_client_security.dart']!;
-      final sdkFile = files['lib/src/client/test_client_api.dart']!;
-      final barrelFile = files['lib/test_client.dart']!;
+      final securityFile = files['client/test_client_security.dart']!;
+      final sdkFile = files['client/test_client_api.dart']!;
+      final barrelFile = files['test_client.dart']!;
 
       expect(
         securityFile,
@@ -1844,7 +1844,7 @@ void main() {
       );
       expect(
         barrelFile,
-        contains("export 'src/client/test_client_security.dart';"),
+        contains("export 'client/test_client_security.dart';"),
       );
     });
   });
@@ -1969,18 +1969,18 @@ void main() {
 
     test('emits extension type files', () {
       // UserId is referenced by both API and User - stays separate
-      expect(files.keys, contains('lib/src/models/user_id.dart'));
+      expect(files.keys, contains('models/user_id.dart'));
       // Timestamp, Score are only referenced by User - inlined into user.dart
-      expect(files.keys, isNot(contains('lib/src/models/timestamp.dart')));
-      expect(files.keys, isNot(contains('lib/src/models/score.dart')));
+      expect(files.keys, isNot(contains('models/timestamp.dart')));
+      expect(files.keys, isNot(contains('models/score.dart')));
       // They should appear inside user.dart instead
-      final user = files['lib/src/models/user.dart']!;
+      final user = files['models/user.dart']!;
       expect(user, contains('extension type Timestamp'));
       expect(user, contains('extension type const Score'));
     });
 
     test('User model references extension types with correct fromJson', () {
-      final user = files['lib/src/models/user.dart']!;
+      final user = files['models/user.dart']!;
       expect(user, contains('final UserId id'));
       expect(user, contains('final Timestamp createdAt'));
       expect(user, contains('UserId.fromJson'));
@@ -1990,7 +1990,7 @@ void main() {
     });
 
     test('API deserializes extension type parameters correctly', () {
-      final api = files['lib/src/apis/default_api.dart']!;
+      final api = files['apis/default_api.dart']!;
       // userId path param should be present
       expect(api, contains('userId'));
     });
@@ -2137,7 +2137,7 @@ void main() {
           reason: 'Enum variant should be inlined, not a separate file');
 
       // The typedef file should contain both the enum class and the typedef
-      final typedefFile = files['lib/src/models/container_value.dart'];
+      final typedefFile = files['models/container_value.dart'];
       expect(typedefFile, isNotNull);
       expect(typedefFile, contains('typedef ContainerValue'));
       expect(typedefFile, contains('OneOf2'));
@@ -2145,7 +2145,7 @@ void main() {
     });
 
     test('parent model imports typedef file, not variant file', () {
-      final containerFile = files['lib/src/models/container.dart']!;
+      final containerFile = files['models/container.dart']!;
       // Should import the typedef file (which contains the inlined variant)
       expect(containerFile, contains("'container_value.dart'"));
       // Should NOT import a separate variant file
@@ -2192,7 +2192,7 @@ void main() {
     });
 
     test('parent model does not import inlined OneOf typedef', () {
-      final parentFile = files['lib/src/models/parent.dart']!;
+      final parentFile = files['models/parent.dart']!;
       // OuterOneOf is used as the field type, so it should be imported
       expect(parentFile, contains("'outer_one_of.dart'"));
       // InnerOneOf is an inlined OneOf typedef - its parse code is inlined
@@ -2229,13 +2229,13 @@ void main() {
     });
 
     test('IrUntaggedUnion typedef file does not import dart:convert', () {
-      final file = files['lib/src/models/bytes_or_string_one_of.dart']!;
+      final file = files['models/bytes_or_string_one_of.dart']!;
       expect(file, isNot(contains("import 'dart:convert'")));
       expect(file, contains("import 'dart:typed_data'"));
     });
 
     test('IrAnyOf typedef file does not import dart:convert', () {
-      final file = files['lib/src/models/bytes_or_string_any_of.dart']!;
+      final file = files['models/bytes_or_string_any_of.dart']!;
       expect(file, isNot(contains("import 'dart:convert'")));
       expect(file, contains("import 'dart:typed_data'"));
     });
@@ -2276,7 +2276,7 @@ void main() {
     });
 
     test('parent model does not import dart:convert', () {
-      final file = files['lib/src/models/parent_model.dart']!;
+      final file = files['models/parent_model.dart']!;
       // The parent just calls BigResult.fromJson() - no direct base64 usage
       expect(file, isNot(contains("import 'dart:convert'")));
     });
@@ -2341,7 +2341,7 @@ void main() {
     });
 
     test('method with early throw does not declare unused variables', () {
-      final apiFile = files['lib/src/apis/test_api.dart']!;
+      final apiFile = files['apis/test_api.dart']!;
       // The method should throw before declaring queryParametersList/headers
       expect(apiFile, contains('throw UnsupportedError'));
       // These variables should NOT be present since they'd be unused
@@ -2399,7 +2399,7 @@ void main() {
     });
 
     test('optional body is null-checked in form-urlencoded serialization', () {
-      final apiFile = files['lib/src/apis/test_api.dart']!;
+      final apiFile = files['apis/test_api.dart']!;
       // When body is optional, field access should be guarded
       expect(apiFile, contains('body == null ? null :'));
     });
@@ -2453,7 +2453,7 @@ void main() {
     });
 
     test('Object fields are converted to String with toString()', () {
-      final apiFile = files['lib/src/apis/test_api.dart']!;
+      final apiFile = files['apis/test_api.dart']!;
       expect(apiFile, contains('.toString()'));
     });
   });
@@ -2480,7 +2480,7 @@ void main() {
         specVersion: '1.0.0',
       );
       final sdkFile =
-          files['lib/src/client/pub_petstore_v3_0_oai_api.dart']!;
+          files['client/pub_petstore_v3_0_oai_api.dart']!;
       // Class name must be a valid Dart identifier (not start with digit without $)
       expect(sdkFile, isNot(contains('class 0')));
       // $0OaiApi is valid: $ prefix makes leading digit ok

@@ -5,10 +5,10 @@
 // OpenAPI spec version: 3.1.0
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
-export 'src/client/spec_13_external_refs_api.dart';
+export 'client/spec_13_external_refs_api.dart';
 
-export 'src/models/error_model.dart';
-export 'src/models/owner.dart';
-export 'src/models/pet.dart';
+export 'models/error_model.dart';
+export 'models/owner.dart';
+export 'models/pet.dart';
 
-export 'src/apis/pets_api.dart';
+export 'apis/pets_api.dart';

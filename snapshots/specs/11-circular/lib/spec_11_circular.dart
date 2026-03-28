@@ -5,11 +5,11 @@
 // OpenAPI spec version: 3.0.3
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
-export 'src/client/spec_11_circular_api.dart';
+export 'client/spec_11_circular_api.dart';
 
-export 'src/models/category.dart';
-export 'src/models/department.dart';
-export 'src/models/employee.dart';
-export 'src/models/file_system_node.dart';
+export 'models/category.dart';
+export 'models/department.dart';
+export 'models/employee.dart';
+export 'models/file_system_node.dart';
 
-export 'src/apis/default_api.dart';
+export 'apis/default_api.dart';
