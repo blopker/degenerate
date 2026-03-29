@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (linkedTunnelId != null) 'linked_tunnel_id': linkedTunnelId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'linked_tunnel_id'}.contains(key)); } 
 TunnelTunnelLink copyWith({TunnelCreatedAt Function()? createdAt, TunnelTunnelId Function()? linkedTunnelId, }) { return TunnelTunnelLink(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   linkedTunnelId: linkedTunnelId != null ? linkedTunnelId() : this.linkedTunnelId,

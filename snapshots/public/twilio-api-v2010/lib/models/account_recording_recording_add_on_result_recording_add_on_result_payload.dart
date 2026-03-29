@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'reference_sid': ?referenceSid,
   'subresource_uris': ?subresourceUris,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'add_on_result_sid', 'account_sid', 'label', 'add_on_sid', 'add_on_configuration_sid', 'content_type', 'date_created', 'date_updated', 'reference_sid', 'subresource_uris'}.contains(key)); } 
 AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({String? Function()? sid, String? Function()? addOnResultSid, String? Function()? accountSid, String? Function()? label, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? contentType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? referenceSid, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
   sid: sid != null ? sid() : this.sid,
   addOnResultSid: addOnResultSid != null ? addOnResultSid() : this.addOnResultSid,

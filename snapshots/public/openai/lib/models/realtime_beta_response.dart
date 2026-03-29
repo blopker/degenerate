@@ -213,7 +213,7 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'usage', 'conversation_id', 'voice', 'modalities', 'output_audio_format', 'temperature', 'max_output_tokens'}.contains(key)); } 
 RealtimeBetaResponse copyWith({String Function()? id, RealtimeBetaResponseObject Function()? object, RealtimeBetaResponseStatus Function()? status, RealtimeBetaResponseStatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage Function()? usage, String Function()? conversationId, VoiceIdsShared Function()? voice, List<RealtimeBetaResponseModalities> Function()? modalities, RealtimeBetaResponseOutputAudioFormat Function()? outputAudioFormat, double Function()? temperature, RealtimeBetaResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,

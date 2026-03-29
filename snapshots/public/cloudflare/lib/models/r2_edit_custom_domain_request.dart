@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   if (minTls != null) 'minTLS': minTls?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ciphers', 'enabled', 'minTLS'}.contains(key)); } 
 R2EditCustomDomainRequest copyWith({List<String> Function()? ciphers, bool Function()? enabled, R2EditCustomDomainRequestMinTls Function()? minTls, }) { return R2EditCustomDomainRequest(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   enabled: enabled != null ? enabled() : this.enabled,

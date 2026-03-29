@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'label': ?label,
   'score': ?score,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'box', 'label', 'score'}.contains(key)); } 
 ObjectDetection2 copyWith({ObjectDetection2Box Function()? box, String Function()? label, double Function()? score, }) { return ObjectDetection2(
   box: box != null ? box() : this.box,
   label: label != null ? label() : this.label,

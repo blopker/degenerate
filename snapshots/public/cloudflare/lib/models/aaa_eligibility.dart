@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (ready != null) 'ready': ready?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eligible', 'ready', 'type'}.contains(key)); } 
 AaaEligibility copyWith({AaaEligible Function()? eligible, AaaReady Function()? ready, AaaSchemasType Function()? type, }) { return AaaEligibility(
   eligible: eligible != null ? eligible() : this.eligible,
   ready: ready != null ? ready() : this.ready,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'score': ?score,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'feedback', 'metadata', 'score'}.contains(key)); } 
 AigConfigPatchGatewayLogRequest copyWith({double? Function()? feedback, Map<String, dynamic>? Function()? metadata, double? Function()? score, }) { return AigConfigPatchGatewayLogRequest(
   feedback: feedback != null ? feedback() : this.feedback,
   metadata: metadata != null ? metadata() : this.metadata,

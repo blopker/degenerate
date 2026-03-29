@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'score_threshold': ?scoreThreshold,
   if (hybridSearch != null) 'hybrid_search': hybridSearch?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold', 'hybrid_search'}.contains(key)); } 
 RankingOptions copyWith({RankerVersionType Function()? ranker, double Function()? scoreThreshold, HybridSearchOptions Function()? hybridSearch, }) { return RankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,

@@ -35,7 +35,7 @@ final PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding? fund
 Map<String, dynamic> toJson() { return {
   if (funding != null) 'funding': funding?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding'}.contains(key)); } 
 PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding Function()? funding}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
   funding: funding != null ? funding() : this.funding,
 ); } 

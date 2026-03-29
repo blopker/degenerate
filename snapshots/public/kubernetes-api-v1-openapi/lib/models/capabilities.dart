@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'add': ?add,
   'drop': ?drop,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'add', 'drop'}.contains(key)); } 
 Capabilities copyWith({List<String> Function()? add, List<String> Function()? drop, }) { return Capabilities(
   add: add != null ? add() : this.add,
   drop: drop != null ? drop() : this.drop,

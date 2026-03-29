@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (explanation != null) 'explanation': explanation?.toJson(),
   'original_transaction': ?originalTransaction,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'card_statement', 'cash_receipt', 'check_image', 'explanation', 'original_transaction'}.contains(key)); } 
 Duplicate copyWith({DuplicateAdditionalDocumentation Function()? additionalDocumentation, DuplicateCardStatement Function()? cardStatement, DuplicateCashReceipt Function()? cashReceipt, DuplicateCheckImage Function()? checkImage, DuplicateExplanation Function()? explanation, String Function()? originalTransaction, }) { return Duplicate(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   cardStatement: cardStatement != null ? cardStatement() : this.cardStatement,

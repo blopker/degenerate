@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (screenshare != null) 'screenshare': screenshare?.toJson(),
   if (video != null) 'video': video?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio', 'screenshare', 'video'}.contains(key)); } 
 RealtimekitUpdatePresetPermissionsMedia copyWith({RealtimekitUpdatePresetPermissionsMediaAudio Function()? audio, RealtimekitUpdatePresetPermissionsMediaScreenshare Function()? screenshare, RealtimekitUpdatePresetPermissionsMediaVideo Function()? video, }) { return RealtimekitUpdatePresetPermissionsMedia(
   audio: audio != null ? audio() : this.audio,
   screenshare: screenshare != null ? screenshare() : this.screenshare,

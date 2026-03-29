@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (taxAmounts != null) 'tax_amounts': taxAmounts?.toJson(),
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'expand', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_amounts', 'tax_rates'}.contains(key)); } 
 PostInvoicesInvoiceLinesLineItemIdRequest copyWith({int Function()? amount, String Function()? description, bool Function()? discountable, PostInvoicesInvoiceLinesLineItemIdRequestDiscounts Function()? discounts, List<String> Function()? expand, PostInvoicesInvoiceLinesLineItemIdRequestMetadata Function()? metadata, PostInvoicesInvoiceLinesLineItemIdRequestPeriod Function()? period, PostInvoicesInvoiceLinesLineItemIdRequestPriceData Function()? priceData, PostInvoicesInvoiceLinesLineItemIdRequestPricing Function()? pricing, int Function()? quantity, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts Function()? taxAmounts, PostInvoicesInvoiceLinesLineItemIdRequestTaxRates Function()? taxRates, }) { return PostInvoicesInvoiceLinesLineItemIdRequest(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,

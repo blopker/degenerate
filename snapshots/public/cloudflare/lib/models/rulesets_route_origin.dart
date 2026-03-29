@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'host': ?host,
   'port': ?port,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'port'}.contains(key)); } 
 RulesetsRouteOrigin copyWith({String Function()? host, int Function()? port, }) { return RulesetsRouteOrigin(
   host: host != null ? host() : this.host,
   port: port != null ? port() : this.port,

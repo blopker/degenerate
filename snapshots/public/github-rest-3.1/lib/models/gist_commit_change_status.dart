@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'additions': ?additions,
   'deletions': ?deletions,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total', 'additions', 'deletions'}.contains(key)); } 
 GistCommitChangeStatus copyWith({int Function()? total, int Function()? additions, int Function()? deletions, }) { return GistCommitChangeStatus(
   total: total != null ? total() : this.total,
   additions: additions != null ? additions() : this.additions,

@@ -38,7 +38,7 @@ final PostPaymentMethodConfigurationsRequestPaycoDisplayPreferencePreference? pr
 Map<String, dynamic> toJson() { return {
   if (preference != null) 'preference': preference?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
 PostPaymentMethodConfigurationsRequestPaycoDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestPaycoDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsRequestPaycoDisplayPreference(
   preference: preference != null ? preference() : this.preference,
 ); } 

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   'price_usd_microcents': ?priceUsdMicrocents,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bot_overrides', 'enabled', 'price_usd_microcents'}.contains(key)); } 
 PayPerCrawlDaricConfig copyWith({Map<String, PayPerCrawlBotAccessMode> Function()? botOverrides, bool Function()? enabled, int Function()? priceUsdMicrocents, }) { return PayPerCrawlDaricConfig(
   botOverrides: botOverrides != null ? botOverrides() : this.botOverrides,
   enabled: enabled != null ? enabled() : this.enabled,

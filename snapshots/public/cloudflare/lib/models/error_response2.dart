@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
   'success': ?success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'result', 'success'}.contains(key)); } 
 ErrorResponse2 copyWith({List<PayPerCrawlRestError> Function()? errors, dynamic Function()? result, bool Function()? success, }) { return ErrorResponse2(
   errors: errors != null ? errors() : this.errors,
   result: result != null ? result() : this.result,

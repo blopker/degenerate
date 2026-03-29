@@ -13,7 +13,7 @@ final String? before;
 Map<String, dynamic> toJson() { return {
   'before': ?before,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'before'}.contains(key)); } 
 ShieldBefore copyWith({String Function()? before}) { return ShieldBefore(
   before: before != null ? before() : this.before,
 ); } 

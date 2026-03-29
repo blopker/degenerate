@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'name'}.contains(key)); } 
 PostEntitlementsFeaturesIdRequest copyWith({bool Function()? active, List<String> Function()? expand, PostEntitlementsFeaturesIdRequestMetadata Function()? metadata, String Function()? name, }) { return PostEntitlementsFeaturesIdRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,

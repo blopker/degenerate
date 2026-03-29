@@ -13,7 +13,7 @@ final PaymentMethodDetailsMobilepayCard? card;
 Map<String, dynamic> toJson() { return {
   if (card != null) 'card': card?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card'}.contains(key)); } 
 PaymentMethodDetailsMobilepay copyWith({PaymentMethodDetailsMobilepayCard? Function()? card}) { return PaymentMethodDetailsMobilepay(
   card: card != null ? card() : this.card,
 ); } 

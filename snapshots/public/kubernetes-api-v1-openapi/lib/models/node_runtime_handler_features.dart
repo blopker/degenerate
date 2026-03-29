@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'recursiveReadOnlyMounts': ?recursiveReadOnlyMounts,
   'userNamespaces': ?userNamespaces,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recursiveReadOnlyMounts', 'userNamespaces'}.contains(key)); } 
 NodeRuntimeHandlerFeatures copyWith({bool Function()? recursiveReadOnlyMounts, bool Function()? userNamespaces, }) { return NodeRuntimeHandlerFeatures(
   recursiveReadOnlyMounts: recursiveReadOnlyMounts != null ? recursiveReadOnlyMounts() : this.recursiveReadOnlyMounts,
   userNamespaces: userNamespaces != null ? userNamespaces() : this.userNamespaces,

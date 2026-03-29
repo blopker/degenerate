@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   if (reactions != null) 'reactions': reactions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'html_url', 'url', 'id', 'node_id', 'body', 'path', 'position', 'line', 'commit_id', 'user', 'created_at', 'updated_at', 'reactions'}.contains(key)); } 
 CommitCommentEventComment copyWith({Uri Function()? htmlUrl, Uri Function()? url, int Function()? id, String Function()? nodeId, String Function()? body, String? Function()? path, int? Function()? position, int? Function()? line, String Function()? commitId, SimpleUser? Function()? user, DateTime Function()? createdAt, DateTime Function()? updatedAt, ReactionRollup Function()? reactions, }) { return CommitCommentEventComment(
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   url: url != null ? url() : this.url,

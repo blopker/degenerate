@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
   'webgl_support': ?webglSupport,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'browser', 'browser_version', 'cpus', 'engine', 'is_mobile', 'os', 'os_version', 'sdk_name', 'sdk_version', 'user_agent', 'webgl_support'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo copyWith({String Function()? browser, String Function()? browserVersion, int Function()? cpus, String Function()? engine, bool Function()? isMobile, String Function()? os, String Function()? osVersion, String Function()? sdkName, String Function()? sdkVersion, String Function()? userAgent, String Function()? webglSupport, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(
   browser: browser != null ? browser() : this.browser,
   browserVersion: browserVersion != null ? browserVersion() : this.browserVersion,

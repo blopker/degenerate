@@ -70,7 +70,7 @@ final List<ZeroTrustGatewayRuleSettingsQuarantineFileTypes>? fileTypes;
 Map<String, dynamic> toJson() { return {
   if (fileTypes != null) 'file_types': fileTypes?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_types'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsQuarantine copyWith({List<ZeroTrustGatewayRuleSettingsQuarantineFileTypes> Function()? fileTypes}) { return ZeroTrustGatewayRuleSettingsQuarantine(
   fileTypes: fileTypes != null ? fileTypes() : this.fileTypes,
 ); } 

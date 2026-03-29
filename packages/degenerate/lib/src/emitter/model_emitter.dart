@@ -195,7 +195,18 @@ class ModelEmitter {
           return keyCheck;
         })
         .join(' &&\n      ');
-    final body = checks.isEmpty ? 'return true;' : 'return $checks;';
+    final String body;
+    if (checks.isNotEmpty) {
+      body = 'return $checks;';
+    } else if (model.fields.isNotEmpty) {
+      // No required fields — check that at least one known property key exists.
+      final knownKeys = model.fields
+          .map((f) => "'${escapeDartString(f.originalName)}'")
+          .join(', ');
+      body = 'return json.keys.any((key) => const {$knownKeys}.contains(key));';
+    } else {
+      body = 'return true;';
+    }
 
     return Method(
       (m) => m

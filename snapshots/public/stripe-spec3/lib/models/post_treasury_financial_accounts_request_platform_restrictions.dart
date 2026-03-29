@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (inboundFlows != null) 'inbound_flows': inboundFlows?.toJson(),
   if (outboundFlows != null) 'outbound_flows': outboundFlows?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inbound_flows', 'outbound_flows'}.contains(key)); } 
 PostTreasuryFinancialAccountsRequestPlatformRestrictions copyWith({PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows Function()? inboundFlows, PostTreasuryFinancialAccountsRequestPlatformRestrictionsOutboundFlows Function()? outboundFlows, }) { return PostTreasuryFinancialAccountsRequestPlatformRestrictions(
   inboundFlows: inboundFlows != null ? inboundFlows() : this.inboundFlows,
   outboundFlows: outboundFlows != null ? outboundFlows() : this.outboundFlows,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'time_delta': ?timeDelta,
   if (until != null) 'until': until?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'since', 'time_delta', 'until'}.contains(key)); } 
 QueryResponse copyWith({Since Function()? since, int Function()? timeDelta, Until Function()? until, }) { return QueryResponse(
   since: since != null ? since() : this.since,
   timeDelta: timeDelta != null ? timeDelta() : this.timeDelta,

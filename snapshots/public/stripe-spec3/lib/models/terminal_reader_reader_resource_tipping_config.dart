@@ -13,7 +13,7 @@ final int? amountEligible;
 Map<String, dynamic> toJson() { return {
   'amount_eligible': ?amountEligible,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_eligible'}.contains(key)); } 
 TerminalReaderReaderResourceTippingConfig copyWith({int Function()? amountEligible}) { return TerminalReaderReaderResourceTippingConfig(
   amountEligible: amountEligible != null ? amountEligible() : this.amountEligible,
 ); } 

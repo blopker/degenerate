@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   if (phases != null) 'phases': phases?.map((e) => e.toJson()).toList(),
   if (startDate != null) 'start_date': startDate?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'customer', 'customer_account', 'default_settings', 'end_behavior', 'expand', 'from_subscription', 'metadata', 'phases', 'start_date'}.contains(key)); } 
 PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode Function()? billingMode, String Function()? customer, String Function()? customerAccount, PostSubscriptionSchedulesRequestDefaultSettings Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior Function()? endBehavior, List<String> Function()? expand, String Function()? fromSubscription, PostSubscriptionSchedulesRequestMetadata Function()? metadata, List<PostSubscriptionSchedulesRequestPhases> Function()? phases, PostSubscriptionSchedulesRequestStartDate Function()? startDate, }) { return PostSubscriptionSchedulesRequest(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   customer: customer != null ? customer() : this.customer,

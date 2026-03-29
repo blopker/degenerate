@@ -11,7 +11,7 @@ final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpd
 Map<String, dynamic> toJson() { return {
   if (conditions != null) 'conditions': conditions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conditions'}.contains(key)); } 
 PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions Function()? conditions}) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (shipping != null) 'shipping': shipping?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discount_amount', 'enforce_arithmetic_validation', 'line_items', 'shipping', 'tax'}.contains(key)); } 
 AmountDetailsParam2 copyWith({AmountDetailsParam2DiscountAmount Function()? discountAmount, bool Function()? enforceArithmeticValidation, AmountDetailsParam2LineItems Function()? lineItems, AmountDetailsParam2Shipping Function()? shipping, AmountDetailsParam2Tax Function()? tax, }) { return AmountDetailsParam2(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   enforceArithmeticValidation: enforceArithmeticValidation != null ? enforceArithmeticValidation() : this.enforceArithmeticValidation,

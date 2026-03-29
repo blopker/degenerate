@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (funding != null) 'funding': funding?.toJson(),
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding', 'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsRevolutPay copyWith({RevolutPayUnderlyingPaymentMethodFundingDetails Function()? funding, String? Function()? transactionId, }) { return PaymentMethodDetailsRevolutPay(
   funding: funding != null ? funding() : this.funding,
   transactionId: transactionId != null ? transactionId() : this.transactionId,

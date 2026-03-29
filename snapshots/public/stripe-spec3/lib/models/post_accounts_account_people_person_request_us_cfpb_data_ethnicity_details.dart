@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (ethnicity != null) 'ethnicity': ethnicity?.map((e) => e.toJson()).toList(),
   'ethnicity_other': ?ethnicityOther,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ethnicity', 'ethnicity_other'}.contains(key)); } 
 PostAccountsAccountPeoplePersonRequestUsCfpbDataEthnicityDetails copyWith({List<PostAccountsAccountPeoplePersonRequestUsCfpbDataEthnicityDetailsEthnicity> Function()? ethnicity, String Function()? ethnicityOther, }) { return PostAccountsAccountPeoplePersonRequestUsCfpbDataEthnicityDetails(
   ethnicity: ethnicity != null ? ethnicity() : this.ethnicity,
   ethnicityOther: ethnicityOther != null ? ethnicityOther() : this.ethnicityOther,

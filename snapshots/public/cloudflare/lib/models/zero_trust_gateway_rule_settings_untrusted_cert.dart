@@ -41,7 +41,7 @@ final ZeroTrustGatewayRuleSettingsUntrustedCertAction? action;
 Map<String, dynamic> toJson() { return {
   if (action != null) 'action': action?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsUntrustedCert copyWith({ZeroTrustGatewayRuleSettingsUntrustedCertAction Function()? action}) { return ZeroTrustGatewayRuleSettingsUntrustedCert(
   action: action != null ? action() : this.action,
 ); } 

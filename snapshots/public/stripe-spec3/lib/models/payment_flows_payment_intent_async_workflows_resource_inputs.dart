@@ -12,7 +12,7 @@ final PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax? tax;
 Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax'}.contains(key)); } 
 PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs copyWith({PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax Function()? tax}) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(
   tax: tax != null ? tax() : this.tax,
 ); } 

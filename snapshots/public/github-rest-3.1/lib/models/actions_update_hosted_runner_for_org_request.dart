@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'image_id': ?imageId,
   'image_version': ?imageVersion,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'runner_group_id', 'maximum_runners', 'enable_static_ip', 'size', 'image_id', 'image_version'}.contains(key)); } 
 ActionsUpdateHostedRunnerForOrgRequest copyWith({String Function()? name, int Function()? runnerGroupId, int Function()? maximumRunners, bool Function()? enableStaticIp, String Function()? size, String Function()? imageId, String? Function()? imageVersion, }) { return ActionsUpdateHostedRunnerForOrgRequest(
   name: name != null ? name() : this.name,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,

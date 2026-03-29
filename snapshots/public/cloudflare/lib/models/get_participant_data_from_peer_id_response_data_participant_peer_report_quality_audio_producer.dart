@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'ssrc': ?ssrc,
   'timestamp': ?timestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bytes_sent', 'jitter', 'mid', 'mos_quality', 'packets_lost', 'packets_sent', 'producer_id', 'rtt', 'ssrc', 'timestamp'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer copyWith({int Function()? bytesSent, int Function()? jitter, String Function()? mid, int Function()? mosQuality, int Function()? packetsLost, int Function()? packetsSent, String Function()? producerId, double Function()? rtt, int Function()? ssrc, String Function()? timestamp, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(
   bytesSent: bytesSent != null ? bytesSent() : this.bytesSent,
   jitter: jitter != null ? jitter() : this.jitter,

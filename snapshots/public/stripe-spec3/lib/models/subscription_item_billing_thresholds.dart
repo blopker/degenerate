@@ -13,7 +13,7 @@ final int? usageGte;
 Map<String, dynamic> toJson() { return {
   'usage_gte': ?usageGte,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'usage_gte'}.contains(key)); } 
 SubscriptionItemBillingThresholds copyWith({int? Function()? usageGte}) { return SubscriptionItemBillingThresholds(
   usageGte: usageGte != null ? usageGte() : this.usageGte,
 ); } 

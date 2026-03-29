@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'in': ?$in,
   'not_in': ?notIn,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'in', 'not_in'}.contains(key)); } 
 IamRequestIp copyWith({List<String> Function()? $in, List<String> Function()? notIn, }) { return IamRequestIp(
   $in: $in != null ? $in() : this.$in,
   notIn: notIn != null ? notIn() : this.notIn,

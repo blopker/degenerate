@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'case_sensitive', 'description', 'name'}.contains(key)); } 
 DlpDatasetUpdate copyWith({bool Function()? caseSensitive, String? Function()? description, String? Function()? name, }) { return DlpDatasetUpdate(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   description: description != null ? description() : this.description,

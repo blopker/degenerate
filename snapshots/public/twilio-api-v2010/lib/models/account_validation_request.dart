@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'phone_number': ?phoneNumber,
   'validation_code': ?validationCode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'call_sid', 'friendly_name', 'phone_number', 'validation_code'}.contains(key)); } 
 AccountValidationRequest copyWith({String? Function()? accountSid, String? Function()? callSid, String? Function()? friendlyName, String? Function()? phoneNumber, String? Function()? validationCode, }) { return AccountValidationRequest(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   callSid: callSid != null ? callSid() : this.callSid,

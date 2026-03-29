@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (tag != null) 'tag': tag?.toJson(),
   if (verified != null) 'verified': verified?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'email', 'id', 'modified', 'tag', 'verified'}.contains(key)); } 
 EmailDestinationAddressProperties copyWith({EmailCreated Function()? created, EmailEmail Function()? email, EmailDestinationAddressIdentifier Function()? id, EmailModified Function()? modified, EmailDestinationAddressTag Function()? tag, EmailVerified Function()? verified, }) { return EmailDestinationAddressProperties(
   created: created != null ? created() : this.created,
   email: email != null ? email() : this.email,

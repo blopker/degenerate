@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   if (cardLogo != null) 'card_logo': cardLogo?.map((e) => e.toJson()).toList(),
   if (carrierText != null) 'carrier_text': carrierText?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_logo', 'carrier_text'}.contains(key)); } 
 IssuingPersonalizationDesignRejectionReasons copyWith({List<IssuingPersonalizationDesignRejectionReasonsCardLogo>? Function()? cardLogo, List<IssuingPersonalizationDesignRejectionReasonsCarrierText>? Function()? carrierText, }) { return IssuingPersonalizationDesignRejectionReasons(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,

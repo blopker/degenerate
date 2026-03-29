@@ -13,7 +13,7 @@ final String? referencePrefix;
 Map<String, dynamic> toJson() { return {
   'reference_prefix': ?referencePrefix,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
 PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit copyWith({String Function()? referencePrefix}) { return PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
 ); } 

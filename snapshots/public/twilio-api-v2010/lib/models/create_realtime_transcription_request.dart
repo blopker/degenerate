@@ -135,7 +135,7 @@ Map<String, dynamic> toJson() { return {
   'IntelligenceService': ?intelligenceService,
   'EnableProviderData': ?enableProviderData,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Name', 'Track', 'StatusCallbackUrl', 'StatusCallbackMethod', 'InboundTrackLabel', 'OutboundTrackLabel', 'PartialResults', 'LanguageCode', 'TranscriptionEngine', 'ProfanityFilter', 'SpeechModel', 'Hints', 'EnableAutomaticPunctuation', 'IntelligenceService', 'EnableProviderData'}.contains(key)); } 
 CreateRealtimeTranscriptionRequest copyWith({String Function()? name, RealtimeTranscriptionEnumTrack Function()? track, Uri Function()? statusCallbackUrl, CreateRealtimeTranscriptionRequestStatusCallbackMethod Function()? statusCallbackMethod, String Function()? inboundTrackLabel, String Function()? outboundTrackLabel, bool Function()? partialResults, String Function()? languageCode, String Function()? transcriptionEngine, bool Function()? profanityFilter, String Function()? speechModel, String Function()? hints, bool Function()? enableAutomaticPunctuation, String Function()? intelligenceService, bool Function()? enableProviderData, }) { return CreateRealtimeTranscriptionRequest(
   name: name != null ? name() : this.name,
   track: track != null ? track() : this.track,

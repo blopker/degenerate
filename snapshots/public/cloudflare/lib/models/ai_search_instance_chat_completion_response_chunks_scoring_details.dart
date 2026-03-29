@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'vector_rank': ?vectorRank,
   'vector_score': ?vectorScore,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'keyword_rank', 'keyword_score', 'reranking_score', 'vector_rank', 'vector_score'}.contains(key)); } 
 AiSearchInstanceChatCompletionResponseChunksScoringDetails copyWith({double Function()? keywordRank, double Function()? keywordScore, double Function()? rerankingScore, double Function()? vectorRank, double Function()? vectorScore, }) { return AiSearchInstanceChatCompletionResponseChunksScoringDetails(
   keywordRank: keywordRank != null ? keywordRank() : this.keywordRank,
   keywordScore: keywordScore != null ? keywordScore() : this.keywordScore,

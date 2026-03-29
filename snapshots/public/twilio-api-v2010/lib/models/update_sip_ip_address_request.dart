@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
   'CidrPrefixLength': ?cidrPrefixLength,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'IpAddress', 'FriendlyName', 'CidrPrefixLength'}.contains(key)); } 
 UpdateSipIpAddressRequest copyWith({String Function()? ipAddress, String Function()? friendlyName, int Function()? cidrPrefixLength, }) { return UpdateSipIpAddressRequest(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

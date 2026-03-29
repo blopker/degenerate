@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
   if (soa != null) 'soa': soa?.toJson(),
   if (zoneMode != null) 'zone_mode': zoneMode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flatten_all_cnames', 'foundation_dns', 'internal_dns', 'multi_provider', 'ns_ttl', 'secondary_overrides', 'soa', 'zone_mode'}.contains(key)); } 
 DnsSettingsDnsSettingsBase copyWith({DnsSettingsFlattenAllCnames Function()? flattenAllCnames, DnsSettingsFoundationDns Function()? foundationDns, DnsSettingsInternalDnsBase Function()? internalDns, DnsSettingsMultiProvider Function()? multiProvider, DnsSettingsNsTtl Function()? nsTtl, DnsSettingsSecondaryOverrides Function()? secondaryOverrides, DnsSettingsSoaBase Function()? soa, DnsSettingsZoneMode Function()? zoneMode, }) { return DnsSettingsDnsSettingsBase(
   flattenAllCnames: flattenAllCnames != null ? flattenAllCnames() : this.flattenAllCnames,
   foundationDns: foundationDns != null ? foundationDns() : this.foundationDns,

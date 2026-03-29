@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (dnsServers != null) 'dns_servers': dnsServers?.map((e) => e.toJson()).toList(),
   'reservations': ?reservations,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dhcp_pool_end', 'dhcp_pool_start', 'dns_server', 'dns_servers', 'reservations'}.contains(key)); } 
 MagicLanDhcpServer copyWith({MagicIpAddress Function()? dhcpPoolEnd, MagicIpAddress Function()? dhcpPoolStart, MagicIpAddress Function()? dnsServer, List<MagicIpAddress> Function()? dnsServers, Map<String, String> Function()? reservations, }) { return MagicLanDhcpServer(
   dhcpPoolEnd: dhcpPoolEnd != null ? dhcpPoolEnd() : this.dhcpPoolEnd,
   dhcpPoolStart: dhcpPoolStart != null ? dhcpPoolStart() : this.dhcpPoolStart,

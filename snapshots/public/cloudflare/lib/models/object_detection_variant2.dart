@@ -12,7 +12,7 @@ final List<double>? image;
 Map<String, dynamic> toJson() { return {
   'image': ?image,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image'}.contains(key)); } 
 ObjectDetectionVariant2 copyWith({List<double> Function()? image}) { return ObjectDetectionVariant2(
   image: image != null ? image() : this.image,
 ); } 

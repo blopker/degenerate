@@ -116,7 +116,7 @@ Map<String, dynamic> toJson() { return {
   'refund_application_fee': ?refundApplicationFee,
   'reverse_transfer': ?reverseTransfer,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'currency', 'customer', 'expand', 'instructions_email', 'metadata', 'origin', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
 PostRefundsRequest copyWith({int Function()? amount, String Function()? charge, String Function()? currency, String Function()? customer, List<String> Function()? expand, String Function()? instructionsEmail, PostRefundsRequestMetadata Function()? metadata, PostRefundsRequestOrigin Function()? origin, String Function()? paymentIntent, PostRefundsRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,

@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'detail': ?detail,
   'finalDisplayedUrl': ?finalDisplayedUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'detail', 'finalDisplayedUrl'}.contains(key)); } 
 ObservatoryLighthouseReportError copyWith({ObservatoryLighthouseErrorCode Function()? code, String Function()? detail, String Function()? finalDisplayedUrl, }) { return ObservatoryLighthouseReportError(
   code: code != null ? code() : this.code,
   detail: detail != null ? detail() : this.detail,

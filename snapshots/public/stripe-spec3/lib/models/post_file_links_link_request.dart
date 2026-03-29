@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (expiresAt != null) 'expires_at': expiresAt?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'expires_at', 'metadata'}.contains(key)); } 
 PostFileLinksLinkRequest copyWith({List<String> Function()? expand, PostFileLinksLinkRequestExpiresAt Function()? expiresAt, PostFileLinksLinkRequestMetadata Function()? metadata, }) { return PostFileLinksLinkRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

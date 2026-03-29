@@ -12,7 +12,7 @@ final int? ttl;
 Map<String, dynamic> toJson() { return {
   'Ttl': ?ttl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Ttl'}.contains(key)); } 
 CreateTokenRequest copyWith({int Function()? ttl}) { return CreateTokenRequest(
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 

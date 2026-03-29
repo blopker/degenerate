@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (ip != null) 'ip': ip?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'changed', 'enabled', 'failure_reason', 'healthy', 'ip', 'name'}.contains(key)); } 
 LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress Function()? address, LoadBalancingOriginChanged Function()? changed, LoadBalancingSchemasEnabled Function()? enabled, LoadBalancingOriginFailureReason Function()? failureReason, LoadBalancingOriginHealthy Function()? healthy, LoadBalancingOriginIp Function()? ip, LoadBalancingSchemasName Function()? name, }) { return LoadBalancingOriginAnalytics(
   address: address != null ? address() : this.address,
   changed: changed != null ? changed() : this.changed,

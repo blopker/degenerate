@@ -11,7 +11,7 @@ final ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification
 Map<String, dynamic> toJson() { return {
   if (bankAccountOwnershipVerification != null) 'bank_account_ownership_verification': bankAccountOwnershipVerification?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account_ownership_verification'}.contains(key)); } 
 ExternalAccountPayoutBankAccount3Documents copyWith({ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification Function()? bankAccountOwnershipVerification}) { return ExternalAccountPayoutBankAccount3Documents(
   bankAccountOwnershipVerification: bankAccountOwnershipVerification != null ? bankAccountOwnershipVerification() : this.bankAccountOwnershipVerification,
 ); } 

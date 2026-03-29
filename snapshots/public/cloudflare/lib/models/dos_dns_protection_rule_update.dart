@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'profile_sensitivity': ?profileSensitivity,
   'rate_sensitivity': ?rateSensitivity,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'burst_sensitivity', 'mode', 'profile_sensitivity', 'rate_sensitivity'}.contains(key)); } 
 DosDnsProtectionRuleUpdate copyWith({String Function()? burstSensitivity, String Function()? mode, String Function()? profileSensitivity, String Function()? rateSensitivity, }) { return DosDnsProtectionRuleUpdate(
   burstSensitivity: burstSensitivity != null ? burstSensitivity() : this.burstSensitivity,
   mode: mode != null ? mode() : this.mode,

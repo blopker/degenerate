@@ -12,7 +12,7 @@ final DateTime? lastReadAt;
 Map<String, dynamic> toJson() { return {
   if (lastReadAt != null) 'last_read_at': lastReadAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_read_at'}.contains(key)); } 
 ActivityMarkRepoNotificationsAsReadRequest copyWith({DateTime Function()? lastReadAt}) { return ActivityMarkRepoNotificationsAsReadRequest(
   lastReadAt: lastReadAt != null ? lastReadAt() : this.lastReadAt,
 ); } 

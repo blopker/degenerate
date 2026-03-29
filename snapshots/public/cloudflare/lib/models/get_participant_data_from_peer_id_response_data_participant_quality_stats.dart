@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'video_bandwidth': ?videoBandwidth,
   if (videoStats != null) 'video_stats': videoStats?.map((e) => e).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_bandwidth', 'audio_stats', 'average_quality', 'end', 'first_audio_packet_received', 'first_video_packet_received', 'last_audio_packet_received', 'last_video_packet_received', 'peer_ids', 'start', 'total_audio_packets', 'total_audio_packets_lost', 'total_video_packets', 'total_video_packets_lost', 'video_bandwidth', 'video_stats'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantQualityStats copyWith({int Function()? audioBandwidth, List<Map<String, dynamic>> Function()? audioStats, int Function()? averageQuality, String? Function()? end, String Function()? firstAudioPacketReceived, String Function()? firstVideoPacketReceived, String Function()? lastAudioPacketReceived, String Function()? lastVideoPacketReceived, List<String> Function()? peerIds, String? Function()? start, int Function()? totalAudioPackets, int Function()? totalAudioPacketsLost, int Function()? totalVideoPackets, int Function()? totalVideoPacketsLost, int Function()? videoBandwidth, List<Map<String, dynamic>> Function()? videoStats, }) { return GetParticipantDataFromPeerIdResponseDataParticipantQualityStats(
   audioBandwidth: audioBandwidth != null ? audioBandwidth() : this.audioBandwidth,
   audioStats: audioStats != null ? audioStats() : this.audioStats,

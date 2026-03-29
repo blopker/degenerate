@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'tokens': ?tokens,
   if (topLogprobs != null) 'top_logprobs': topLogprobs?.map((e) => e).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text_offset', 'token_logprobs', 'tokens', 'top_logprobs'}.contains(key)); } 
 CreateCompletionResponseChoicesLogprobs copyWith({List<int> Function()? textOffset, List<double> Function()? tokenLogprobs, List<String> Function()? tokens, List<Map<String, double>> Function()? topLogprobs, }) { return CreateCompletionResponseChoicesLogprobs(
   textOffset: textOffset != null ? textOffset() : this.textOffset,
   tokenLogprobs: tokenLogprobs != null ? tokenLogprobs() : this.tokenLogprobs,

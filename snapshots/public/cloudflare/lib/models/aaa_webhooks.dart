@@ -111,7 +111,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'id', 'last_failure', 'last_success', 'name', 'secret', 'type', 'url'}.contains(key)); } 
 AaaWebhooks copyWith({AaaCreatedAt Function()? createdAt, AaaWebhookId Function()? id, AaaLastFailure Function()? lastFailure, AaaLastSuccess Function()? lastSuccess, AaaComponentsSchemasName Function()? name, AaaSecret Function()? secret, AaaComponentsSchemasType Function()? type, AaaUrl Function()? url, }) { return AaaWebhooks(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,

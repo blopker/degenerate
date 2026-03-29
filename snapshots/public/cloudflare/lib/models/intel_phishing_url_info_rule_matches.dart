@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'banning', 'blocking', 'description', 'name'}.contains(key)); } 
 IntelPhishingUrlInfoRuleMatches copyWith({bool Function()? banning, bool Function()? blocking, String Function()? description, String Function()? name, }) { return IntelPhishingUrlInfoRuleMatches(
   banning: banning != null ? banning() : this.banning,
   blocking: blocking != null ? blocking() : this.blocking,

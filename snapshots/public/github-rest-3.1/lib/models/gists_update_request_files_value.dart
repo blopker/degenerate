@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
   'filename': ?filename,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'filename'}.contains(key)); } 
 GistsUpdateRequestFilesValue copyWith({String Function()? content, String? Function()? filename, }) { return GistsUpdateRequestFilesValue(
   content: content != null ? content() : this.content,
   filename: filename != null ? filename() : this.filename,

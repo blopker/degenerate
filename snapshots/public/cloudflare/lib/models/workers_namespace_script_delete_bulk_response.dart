@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'deleted_count': ?deletedCount,
   'has_more': ?hasMore,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deleted', 'deleted_count', 'has_more'}.contains(key)); } 
 WorkersNamespaceScriptDeleteBulkResponse copyWith({List<WorkersNamespaceScriptDeleteBulkResponseDeleted> Function()? deleted, int Function()? deletedCount, bool Function()? hasMore, }) { return WorkersNamespaceScriptDeleteBulkResponse(
   deleted: deleted != null ? deleted() : this.deleted,
   deletedCount: deletedCount != null ? deletedCount() : this.deletedCount,

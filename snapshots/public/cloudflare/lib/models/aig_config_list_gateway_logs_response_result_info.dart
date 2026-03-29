@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'per_page': ?perPage,
   'total_count': ?totalCount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'max_cost', 'max_duration', 'max_tokens_in', 'max_tokens_out', 'max_total_tokens', 'min_cost', 'min_duration', 'min_tokens_in', 'min_tokens_out', 'min_total_tokens', 'page', 'per_page', 'total_count'}.contains(key)); } 
 AigConfigListGatewayLogsResponseResultInfo copyWith({double Function()? count, double Function()? maxCost, double Function()? maxDuration, double Function()? maxTokensIn, double Function()? maxTokensOut, double Function()? maxTotalTokens, double Function()? minCost, double Function()? minDuration, double Function()? minTokensIn, double Function()? minTokensOut, double Function()? minTotalTokens, double Function()? page, double Function()? perPage, double Function()? totalCount, }) { return AigConfigListGatewayLogsResponseResultInfo(
   count: count != null ? count() : this.count,
   maxCost: maxCost != null ? maxCost() : this.maxCost,

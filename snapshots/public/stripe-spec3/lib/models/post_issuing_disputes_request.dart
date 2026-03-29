@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'transaction': ?transaction,
   if (treasury != null) 'treasury': treasury?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'evidence', 'expand', 'metadata', 'transaction', 'treasury'}.contains(key)); } 
 PostIssuingDisputesRequest copyWith({int Function()? amount, PostIssuingDisputesRequestEvidence Function()? evidence, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? transaction, PostIssuingDisputesRequestTreasury Function()? treasury, }) { return PostIssuingDisputesRequest(
   amount: amount != null ? amount() : this.amount,
   evidence: evidence != null ? evidence() : this.evidence,

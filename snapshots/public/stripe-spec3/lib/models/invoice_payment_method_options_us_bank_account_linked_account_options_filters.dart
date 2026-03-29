@@ -37,7 +37,7 @@ final List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAc
 Map<String, dynamic> toJson() { return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories'}.contains(key)); } 
 InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters copyWith({List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories> Function()? accountSubcategories}) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
 ); } 

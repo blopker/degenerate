@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'dimensions': ?dimensions,
   if (metrics != null) 'metrics': metrics?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dimensions', 'metrics'}.contains(key)); } 
 SpectrumAnalyticsColumn copyWith({List<String> Function()? dimensions, SpectrumAnalyticsColumnMetrics Function()? metrics, }) { return SpectrumAnalyticsColumn(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   metrics: metrics != null ? metrics() : this.metrics,

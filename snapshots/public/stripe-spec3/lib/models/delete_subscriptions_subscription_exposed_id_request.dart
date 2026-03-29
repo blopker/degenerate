@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'invoice_now': ?invoiceNow,
   'prorate': ?prorate,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_details', 'expand', 'invoice_now', 'prorate'}.contains(key)); } 
 DeleteSubscriptionsSubscriptionExposedIdRequest copyWith({DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails Function()? cancellationDetails, List<String> Function()? expand, bool Function()? invoiceNow, bool Function()? prorate, }) { return DeleteSubscriptionsSubscriptionExposedIdRequest(
   cancellationDetails: cancellationDetails != null ? cancellationDetails() : this.cancellationDetails,
   expand: expand != null ? expand() : this.expand,

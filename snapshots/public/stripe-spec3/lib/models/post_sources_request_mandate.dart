@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   if (interval != null) 'interval': interval?.toJson(),
   if (notificationMethod != null) 'notification_method': notificationMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acceptance', 'amount', 'currency', 'interval', 'notification_method'}.contains(key)); } 
 PostSourcesRequestMandate copyWith({PostSourcesRequestMandateAcceptance Function()? acceptance, PostSourcesRequestMandateAmount Function()? amount, String Function()? currency, PostSourcesRequestMandateInterval Function()? interval, PostSourcesRequestMandateNotificationMethod Function()? notificationMethod, }) { return PostSourcesRequestMandate(
   acceptance: acceptance != null ? acceptance() : this.acceptance,
   amount: amount != null ? amount() : this.amount,

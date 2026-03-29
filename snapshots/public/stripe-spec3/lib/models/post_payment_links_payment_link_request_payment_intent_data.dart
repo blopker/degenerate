@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (statementDescriptorSuffix != null) 'statement_descriptor_suffix': statementDescriptorSuffix?.toJson(),
   if (transferGroup != null) 'transfer_group': transferGroup?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'metadata', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_group'}.contains(key)); } 
 PostPaymentLinksPaymentLinkRequestPaymentIntentData copyWith({PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription Function()? description, PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadata Function()? metadata, PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor Function()? statementDescriptor, PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffix Function()? statementDescriptorSuffix, PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroup Function()? transferGroup, }) { return PostPaymentLinksPaymentLinkRequestPaymentIntentData(
   description: description != null ? description() : this.description,
   metadata: metadata != null ? metadata() : this.metadata,

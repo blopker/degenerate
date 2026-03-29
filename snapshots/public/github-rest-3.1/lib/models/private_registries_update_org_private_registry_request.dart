@@ -139,7 +139,7 @@ Map<String, dynamic> toJson() { return {
   if (visibility != null) 'visibility': visibility?.toJson(),
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'registry_type', 'url', 'username', 'replaces_base', 'encrypted_value', 'key_id', 'visibility', 'selected_repository_ids'}.contains(key)); } 
 PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType Function()? registryType, Uri Function()? url, String? Function()? username, bool Function()? replacesBase, String Function()? encryptedValue, String Function()? keyId, PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility Function()? visibility, List<int> Function()? selectedRepositoryIds, }) { return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
   registryType: registryType != null ? registryType() : this.registryType,
   url: url != null ? url() : this.url,

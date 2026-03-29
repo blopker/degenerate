@@ -167,7 +167,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
   if (paymentMethodTypes != null) 'payment_method_types': paymentMethodTypes?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_mandate', 'payment_method_options', 'payment_method_types'}.contains(key)); } 
 InvoicesPaymentSettings copyWith({String? Function()? defaultMandate, InvoicesPaymentSettingsPaymentMethodOptions? Function()? paymentMethodOptions, List<InvoicesPaymentSettingsPaymentMethodTypes>? Function()? paymentMethodTypes, }) { return InvoicesPaymentSettings(
   defaultMandate: defaultMandate != null ? defaultMandate() : this.defaultMandate,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,

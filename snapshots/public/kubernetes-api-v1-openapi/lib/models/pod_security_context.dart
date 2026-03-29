@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   if (sysctls != null) 'sysctls': sysctls?.map((e) => e.toJson()).toList(),
   if (windowsOptions != null) 'windowsOptions': windowsOptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'appArmorProfile', 'fsGroup', 'fsGroupChangePolicy', 'runAsGroup', 'runAsNonRoot', 'runAsUser', 'seLinuxChangePolicy', 'seLinuxOptions', 'seccompProfile', 'supplementalGroups', 'supplementalGroupsPolicy', 'sysctls', 'windowsOptions'}.contains(key)); } 
 PodSecurityContext copyWith({AppArmorProfile Function()? appArmorProfile, int Function()? fsGroup, String Function()? fsGroupChangePolicy, int Function()? runAsGroup, bool Function()? runAsNonRoot, int Function()? runAsUser, String Function()? seLinuxChangePolicy, SeLinuxOptions Function()? seLinuxOptions, SeccompProfile Function()? seccompProfile, List<int> Function()? supplementalGroups, String Function()? supplementalGroupsPolicy, List<Sysctl> Function()? sysctls, WindowsSecurityContextOptions Function()? windowsOptions, }) { return PodSecurityContext(
   appArmorProfile: appArmorProfile != null ? appArmorProfile() : this.appArmorProfile,
   fsGroup: fsGroup != null ? fsGroup() : this.fsGroup,

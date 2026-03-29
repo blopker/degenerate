@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'video_packet_loss': ?videoPacketLoss,
   if (videoStats != null) 'video_stats': videoStats?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_bandwidth', 'audio_packet_loss', 'audio_stats', 'average_quality', 'end', 'peer_id', 'start', 'video_bandwidth', 'video_packet_loss', 'video_stats'}.contains(key)); } 
 RealtimekitParticipantQualityStatsQualityStats copyWith({double Function()? audioBandwidth, double Function()? audioPacketLoss, List<RealtimekitParticipantQualityStatsQualityStatsAudioStats> Function()? audioStats, double Function()? averageQuality, String Function()? end, String Function()? peerId, String Function()? start, double Function()? videoBandwidth, double Function()? videoPacketLoss, List<RealtimekitParticipantQualityStatsQualityStatsVideoStats> Function()? videoStats, }) { return RealtimekitParticipantQualityStatsQualityStats(
   audioBandwidth: audioBandwidth != null ? audioBandwidth() : this.audioBandwidth,
   audioPacketLoss: audioPacketLoss != null ? audioPacketLoss() : this.audioPacketLoss,

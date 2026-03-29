@@ -111,7 +111,7 @@ Map<String, dynamic> toJson() { return {
   if (targetUri != null) 'target_uri': targetUri?.toString(),
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'enabled', 'footer_text', 'header_text', 'include_context', 'logo_path', 'mailto_address', 'mailto_subject', 'mode', 'name', 'read_only', 'source_account', 'suppress_footer', 'target_uri', 'version'}.contains(key)); } 
 ZeroTrustGatewayBlockPageSettings copyWith({String Function()? backgroundColor, bool? Function()? enabled, String Function()? footerText, String Function()? headerText, bool Function()? includeContext, String Function()? logoPath, String Function()? mailtoAddress, String Function()? mailtoSubject, ZeroTrustGatewayBlockPageSettingsMode Function()? mode, String Function()? name, bool? Function()? readOnly, String? Function()? sourceAccount, bool Function()? suppressFooter, Uri Function()? targetUri, int? Function()? version, }) { return ZeroTrustGatewayBlockPageSettings(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   enabled: enabled != null ? enabled() : this.enabled,

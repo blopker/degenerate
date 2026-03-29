@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_percent', 'automatic_tax', 'billing_cycle_anchor', 'billing_thresholds', 'collection_method', 'default_payment_method', 'description', 'invoice_settings', 'on_behalf_of', 'transfer_data'}.contains(key)); } 
 PostSubscriptionSchedulesRequestDefaultSettings copyWith({double Function()? applicationFeePercent, PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTax Function()? automaticTax, PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor Function()? billingCycleAnchor, PostSubscriptionSchedulesRequestDefaultSettingsBillingThresholds Function()? billingThresholds, PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod Function()? collectionMethod, String Function()? defaultPaymentMethod, PostSubscriptionSchedulesRequestDefaultSettingsDescription Function()? description, PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings Function()? invoiceSettings, PostSubscriptionSchedulesRequestDefaultSettingsOnBehalfOf Function()? onBehalfOf, PostSubscriptionSchedulesRequestDefaultSettingsTransferData Function()? transferData, }) { return PostSubscriptionSchedulesRequestDefaultSettings(
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,

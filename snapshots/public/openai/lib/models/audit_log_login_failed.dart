@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'error_code': ?errorCode,
   'error_message': ?errorMessage,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'error_code', 'error_message'}.contains(key)); } 
 AuditLogLoginFailed copyWith({String Function()? errorCode, String Function()? errorMessage, }) { return AuditLogLoginFailed(
   errorCode: errorCode != null ? errorCode() : this.errorCode,
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,

@@ -179,7 +179,7 @@ Map<String, dynamic> toJson() { return {
   if (preferredLocale != null) 'preferred_locale': preferredLocale?.toJson(),
   if (subscriptions != null) 'subscriptions': subscriptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'on_demand', 'preferred_locale', 'subscriptions'}.contains(key)); } 
 PostSetupIntentsRequestPaymentMethodOptionsKlarna copyWith({String Function()? currency, PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand Function()? onDemand, PostSetupIntentsRequestPaymentMethodOptionsKlarnaPreferredLocale Function()? preferredLocale, PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptions Function()? subscriptions, }) { return PostSetupIntentsRequestPaymentMethodOptionsKlarna(
   currency: currency != null ? currency() : this.currency,
   onDemand: onDemand != null ? onDemand() : this.onDemand,

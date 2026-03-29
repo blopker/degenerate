@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'encrypted_value': ?encryptedValue,
   'key_id': ?keyId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'encrypted_value', 'key_id'}.contains(key)); } 
 DependabotCreateOrUpdateRepoSecretRequest copyWith({String Function()? encryptedValue, String Function()? keyId, }) { return DependabotCreateOrUpdateRepoSecretRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId != null ? keyId() : this.keyId,

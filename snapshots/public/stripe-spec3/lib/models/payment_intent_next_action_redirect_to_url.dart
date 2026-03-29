@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_url', 'url'}.contains(key)); } 
 PaymentIntentNextActionRedirectToUrl copyWith({String? Function()? returnUrl, String? Function()? url, }) { return PaymentIntentNextActionRedirectToUrl(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   url: url != null ? url() : this.url,

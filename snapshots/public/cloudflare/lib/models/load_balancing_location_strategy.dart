@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
   'prefer_ecs': preferEcs.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode', 'prefer_ecs'}.contains(key)); } 
 LoadBalancingLocationStrategy copyWith({LoadBalancingLocationStrategyMode Function()? mode, LoadBalancingLocationStrategyPreferEcs Function()? preferEcs, }) { return LoadBalancingLocationStrategy(
   mode: mode != null ? mode() : this.mode,
   preferEcs: preferEcs != null ? preferEcs() : this.preferEcs,

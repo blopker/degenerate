@@ -12,7 +12,7 @@ final List<AccessBasePolicyReq>? policies;
 Map<String, dynamic> toJson() { return {
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'policies'}.contains(key)); } 
 AccessInfraAppReqEmbeddedPolicies copyWith({List<AccessBasePolicyReq> Function()? policies}) { return AccessInfraAppReqEmbeddedPolicies(
   policies: policies != null ? policies() : this.policies,
 ); } 

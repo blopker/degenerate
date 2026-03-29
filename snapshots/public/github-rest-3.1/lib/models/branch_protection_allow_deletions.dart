@@ -11,7 +11,7 @@ final bool? enabled;
 Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
 BranchProtectionAllowDeletions copyWith({bool Function()? enabled}) { return BranchProtectionAllowDeletions(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 

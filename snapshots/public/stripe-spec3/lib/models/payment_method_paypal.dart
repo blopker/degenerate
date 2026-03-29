@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'payer_email': ?payerEmail,
   'payer_id': ?payerId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'payer_email', 'payer_id'}.contains(key)); } 
 PaymentMethodPaypal copyWith({String? Function()? country, String? Function()? payerEmail, String? Function()? payerId, }) { return PaymentMethodPaypal(
   country: country != null ? country() : this.country,
   payerEmail: payerEmail != null ? payerEmail() : this.payerEmail,

@@ -13,7 +13,7 @@ final String? taxId;
 Map<String, dynamic> toJson() { return {
   'tax_id': ?taxId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax_id'}.contains(key)); } 
 PaymentMethodDetailsPaymentRecordBoleto copyWith({String? Function()? taxId}) { return PaymentMethodDetailsPaymentRecordBoleto(
   taxId: taxId != null ? taxId() : this.taxId,
 ); } 

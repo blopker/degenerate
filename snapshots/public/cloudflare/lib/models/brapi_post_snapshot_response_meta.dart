@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
   'title': ?title,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status', 'title'}.contains(key)); } 
 BrapiPostSnapshotResponseMeta copyWith({double Function()? status, String Function()? title, }) { return BrapiPostSnapshotResponseMeta(
   status: status != null ? status() : this.status,
   title: title != null ? title() : this.title,

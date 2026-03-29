@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'avs_failure': ?avsFailure,
   'cvc_failure': ?cvcFailure,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avs_failure', 'cvc_failure'}.contains(key)); } 
 PostAccountsAccountRequestSettingsCardPaymentsDeclineOn copyWith({bool Function()? avsFailure, bool Function()? cvcFailure, }) { return PostAccountsAccountRequestSettingsCardPaymentsDeclineOn(
   avsFailure: avsFailure != null ? avsFailure() : this.avsFailure,
   cvcFailure: cvcFailure != null ? cvcFailure() : this.cvcFailure,

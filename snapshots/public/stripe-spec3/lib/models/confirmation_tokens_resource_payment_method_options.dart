@@ -13,7 +13,7 @@ final ConfirmationTokensResourcePaymentMethodOptionsCard? card;
 Map<String, dynamic> toJson() { return {
   if (card != null) 'card': card?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card'}.contains(key)); } 
 ConfirmationTokensResourcePaymentMethodOptions copyWith({ConfirmationTokensResourcePaymentMethodOptionsCard? Function()? card}) { return ConfirmationTokensResourcePaymentMethodOptions(
   card: card != null ? card() : this.card,
 ); } 

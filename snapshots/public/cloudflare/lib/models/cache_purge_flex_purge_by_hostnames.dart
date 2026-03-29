@@ -12,7 +12,7 @@ final List<String>? hosts;
 Map<String, dynamic> toJson() { return {
   'hosts': ?hosts,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hosts'}.contains(key)); } 
 CachePurgeFlexPurgeByHostnames copyWith({List<String> Function()? hosts}) { return CachePurgeFlexPurgeByHostnames(
   hosts: hosts != null ? hosts() : this.hosts,
 ); } 

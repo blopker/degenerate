@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_launcher_visible', 'created_at', 'domain', 'id', 'logo_url', 'name', 'updated_at'}.contains(key)); } 
 AccessBookmarks copyWith({AccessSchemasAppLauncherVisible Function()? appLauncherVisible, AccessTimestamp Function()? createdAt, AccessSchemasDomain Function()? domain, String Function()? id, AccessSchemasLogoUrl Function()? logoUrl, AccessBookmarksComponentsSchemasName Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessBookmarks(
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

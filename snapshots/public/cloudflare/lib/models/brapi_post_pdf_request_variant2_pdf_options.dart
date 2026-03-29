@@ -148,7 +148,7 @@ Map<String, dynamic> toJson() { return {
   'timeout': timeout,
   'width': ?width,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'displayHeaderFooter', 'footerTemplate', 'format', 'headerTemplate', 'height', 'landscape', 'margin', 'omitBackground', 'outline', 'pageRanges', 'preferCSSPageSize', 'printBackground', 'scale', 'tagged', 'timeout', 'width'}.contains(key)); } 
 BrapiPostPdfRequestVariant2PdfOptions copyWith({bool Function()? displayHeaderFooter, String Function()? footerTemplate, BrapiPostPdfRequestVariant2PdfOptionsFormat Function()? format, String Function()? headerTemplate, dynamic Function()? height, bool Function()? landscape, BrapiPostPdfRequestVariant2PdfOptionsMargin Function()? margin, bool Function()? omitBackground, bool Function()? outline, String Function()? pageRanges, bool Function()? preferCssPageSize, bool Function()? printBackground, double Function()? scale, bool Function()? tagged, double Function()? timeout, dynamic Function()? width, }) { return BrapiPostPdfRequestVariant2PdfOptions(
   displayHeaderFooter: displayHeaderFooter != null ? displayHeaderFooter() : this.displayHeaderFooter,
   footerTemplate: footerTemplate != null ? footerTemplate() : this.footerTemplate,

@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'date_updated': ?dateUpdated,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'call_sid', 'sid', 'date_created', 'date_updated', 'uri'}.contains(key)); } 
 AccountCallPayments copyWith({String? Function()? accountSid, String? Function()? callSid, String? Function()? sid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountCallPayments(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   callSid: callSid != null ? callSid() : this.callSid,

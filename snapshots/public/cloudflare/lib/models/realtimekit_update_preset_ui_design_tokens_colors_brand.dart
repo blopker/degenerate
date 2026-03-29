@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   '600': $600,
   '700': $700,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'300', '400', '500', '600', '700'}.contains(key)); } 
 RealtimekitUpdatePresetUiDesignTokensColorsBrand copyWith({String Function()? $300, String Function()? $400, String Function()? $500, String Function()? $600, String Function()? $700, }) { return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
   $300: $300 != null ? $300() : this.$300,
   $400: $400 != null ? $400() : this.$400,

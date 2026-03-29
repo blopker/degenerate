@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'value'}.contains(key)); } 
 WebhookPackagePublishedPackagePackageVersionNugetMetadata copyWith({dynamic Function()? id, String Function()? name, WebhookPackagePublishedPackagePackageVersionNugetMetadataValue Function()? value, }) { return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

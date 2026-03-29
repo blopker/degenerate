@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'error': ?error,
   if (lastKnownGood != null) 'lastKnownGood': lastKnownGood?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'assigned', 'error', 'lastKnownGood'}.contains(key)); } 
 NodeConfigStatus copyWith({NodeConfigSource Function()? active, NodeConfigSource Function()? assigned, String Function()? error, NodeConfigSource Function()? lastKnownGood, }) { return NodeConfigStatus(
   active: active != null ? active() : this.active,
   assigned: assigned != null ? assigned() : this.assigned,

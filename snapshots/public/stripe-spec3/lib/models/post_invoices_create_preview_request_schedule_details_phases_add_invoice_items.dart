@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discounts', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
 PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems copyWith({List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsDiscounts> Function()? discounts, Map<String, String> Function()? metadata, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod Function()? period, String Function()? price, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPriceData Function()? priceData, int Function()? quantity, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsTaxRates Function()? taxRates, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems(
   discounts: discounts != null ? discounts() : this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,

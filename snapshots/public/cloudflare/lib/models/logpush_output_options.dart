@@ -124,7 +124,7 @@ Map<String, dynamic> toJson() { return {
   'sample_rate': ?sampleRate,
   if (timestampFormat != null) 'timestamp_format': timestampFormat?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key)); } 
 LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function()? batchPrefix, String? Function()? batchSuffix, String? Function()? fieldDelimiter, List<String> Function()? fieldNames, LogpushOutputOptionsOutputType Function()? outputType, String? Function()? recordDelimiter, String? Function()? recordPrefix, String? Function()? recordSuffix, String? Function()? recordTemplate, double? Function()? sampleRate, LogpushOutputOptionsTimestampFormat Function()? timestampFormat, }) { return LogpushOutputOptions(
   cve202144228: cve202144228 != null ? cve202144228() : this.cve202144228,
   batchPrefix: batchPrefix != null ? batchPrefix() : this.batchPrefix,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if ($default != null) 'default': $default?.toJson(),
   if (label != null) 'label': label?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'label'}.contains(key)); } 
 StreamEditAudioTrack copyWith({StreamAudioDefault Function()? $default, StreamAudioLabel Function()? label, }) { return StreamEditAudioTrack(
   $default: $default != null ? $default() : this.$default,
   label: label != null ? label() : this.label,

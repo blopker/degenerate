@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (packetThreshold != null) 'packet_threshold': packetThreshold?.toJson(),
   if (prefixes != null) 'prefixes': prefixes?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_advertisement', 'bandwidth', 'duration', 'name', 'packet_threshold', 'prefixes'}.contains(key)); } 
 MagicNetworkMonitoringRulesUpdateRuleRequest copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold Function()? bandwidth, MagicVisibilityMnmMnmRuleDuration Function()? duration, MagicVisibilityMnmMnmRuleName Function()? name, MagicVisibilityMnmMnmRulePacketThreshold Function()? packetThreshold, List<MagicVisibilityMnmMnmRuleIpPrefix> Function()? prefixes, }) { return MagicNetworkMonitoringRulesUpdateRuleRequest(
   automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,

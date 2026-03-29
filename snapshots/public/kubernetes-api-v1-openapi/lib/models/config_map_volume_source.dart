@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'optional': ?optional,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultMode', 'items', 'name', 'optional'}.contains(key)); } 
 ConfigMapVolumeSource copyWith({int Function()? defaultMode, List<KeyToPath> Function()? items, String Function()? name, bool Function()? optional, }) { return ConfigMapVolumeSource(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   items: items != null ? items() : this.items,

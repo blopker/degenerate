@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (recordName != null) 'record_name': recordName?.toJson(),
   if (recordTarget != null) 'record_target': recordTarget?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'record_name', 'record_target'}.contains(key)); } 
 TlsCertificatesAndHostnamesVerificationInfo copyWith({TlsCertificatesAndHostnamesVerificationInfoRecordName Function()? recordName, TlsCertificatesAndHostnamesVerificationInfoRecordTarget Function()? recordTarget, }) { return TlsCertificatesAndHostnamesVerificationInfo(
   recordName: recordName != null ? recordName() : this.recordName,
   recordTarget: recordTarget != null ? recordTarget() : this.recordTarget,

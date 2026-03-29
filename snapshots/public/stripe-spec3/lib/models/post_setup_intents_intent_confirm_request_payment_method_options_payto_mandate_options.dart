@@ -161,7 +161,7 @@ Map<String, dynamic> toJson() { return {
   if (purpose != null) 'purpose': purpose?.toJson(),
   if (startDate != null) 'start_date': startDate?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key)); } 
 PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmount Function()? amount, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType Function()? amountType, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsEndDate Function()? endDate, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule Function()? paymentSchedule, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod Function()? paymentsPerPeriod, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose Function()? purpose, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDate Function()? startDate, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,

@@ -205,7 +205,7 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
   'verified_name': ?verifiedName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'transaction_id', 'verified_name'}.contains(key)); } 
 PaymentMethodDetailsIdeal copyWith({PaymentMethodDetailsIdealBank? Function()? bank, PaymentMethodDetailsIdealBic? Function()? bic, PaymentMethodDetailsIdealGeneratedSepaDebit? Function()? generatedSepaDebit, PaymentMethodDetailsIdealGeneratedSepaDebitMandate? Function()? generatedSepaDebitMandate, String? Function()? ibanLast4, String? Function()? transactionId, String? Function()? verifiedName, }) { return PaymentMethodDetailsIdeal(
   bank: bank != null ? bank() : this.bank,
   bic: bic != null ? bic() : this.bic,

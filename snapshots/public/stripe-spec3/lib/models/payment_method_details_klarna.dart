@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'payment_method_category': ?paymentMethodCategory,
   'preferred_locale': ?preferredLocale,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payer_details', 'payment_method_category', 'preferred_locale'}.contains(key)); } 
 PaymentMethodDetailsKlarna copyWith({PaymentMethodDetailsKlarnaPayerDetails? Function()? payerDetails, String? Function()? paymentMethodCategory, String? Function()? preferredLocale, }) { return PaymentMethodDetailsKlarna(
   payerDetails: payerDetails != null ? payerDetails() : this.payerDetails,
   paymentMethodCategory: paymentMethodCategory != null ? paymentMethodCategory() : this.paymentMethodCategory,

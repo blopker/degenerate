@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'duration': ?duration,
   if (iterations != null) 'iterations': iterations?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'start_day', 'duration', 'iterations'}.contains(key)); } 
 FieldConfiguration copyWith({int Function()? startDay, int Function()? duration, List<IterationSettings> Function()? iterations, }) { return FieldConfiguration(
   startDay: startDay != null ? startDay() : this.startDay,
   duration: duration != null ? duration() : this.duration,

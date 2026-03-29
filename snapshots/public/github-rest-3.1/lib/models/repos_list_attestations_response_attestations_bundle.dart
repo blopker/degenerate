@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMaterial != null) 'verificationMaterial': verificationMaterial?.toJson(),
   if (dsseEnvelope != null) 'dsseEnvelope': dsseEnvelope?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mediaType', 'verificationMaterial', 'dsseEnvelope'}.contains(key)); } 
 ReposListAttestationsResponseAttestationsBundle copyWith({String Function()? mediaType, ReposListAttestationsResponseAttestationsBundleVerificationMaterial Function()? verificationMaterial, ReposListAttestationsResponseAttestationsBundleDsseEnvelope Function()? dsseEnvelope, }) { return ReposListAttestationsResponseAttestationsBundle(
   mediaType: mediaType != null ? mediaType() : this.mediaType,
   verificationMaterial: verificationMaterial != null ? verificationMaterial() : this.verificationMaterial,

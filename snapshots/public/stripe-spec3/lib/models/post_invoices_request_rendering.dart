@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'template': ?template,
   if (templateVersion != null) 'template_version': templateVersion?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key)); } 
 PostInvoicesRequestRendering copyWith({PostInvoicesRequestRenderingAmountTaxDisplay Function()? amountTaxDisplay, PostInvoicesRequestRenderingPdf Function()? pdf, String Function()? template, PostInvoicesRequestRenderingTemplateVersion Function()? templateVersion, }) { return PostInvoicesRequestRendering(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   pdf: pdf != null ? pdf() : this.pdf,

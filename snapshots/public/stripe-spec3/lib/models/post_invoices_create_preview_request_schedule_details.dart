@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (phases != null) 'phases': phases?.map((e) => e.toJson()).toList(),
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'end_behavior', 'phases', 'proration_behavior'}.contains(key)); } 
 PostInvoicesCreatePreviewRequestScheduleDetails copyWith({PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode Function()? billingMode, PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior Function()? endBehavior, List<PostInvoicesCreatePreviewRequestScheduleDetailsPhases> Function()? phases, PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior Function()? prorationBehavior, }) { return PostInvoicesCreatePreviewRequestScheduleDetails(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   endBehavior: endBehavior != null ? endBehavior() : this.endBehavior,

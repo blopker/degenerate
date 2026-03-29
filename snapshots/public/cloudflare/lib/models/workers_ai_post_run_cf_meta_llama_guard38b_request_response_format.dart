@@ -13,7 +13,7 @@ final String? type;
 Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
 WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat copyWith({String Function()? type}) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat(
   type: type != null ? type() : this.type,
 ); } 

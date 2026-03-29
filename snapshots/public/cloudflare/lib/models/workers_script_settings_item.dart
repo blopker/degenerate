@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
   if (tailConsumers != null) 'tail_consumers': tailConsumers?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'logpush', 'observability', 'tags', 'tail_consumers'}.contains(key)); } 
 WorkersScriptSettingsItem copyWith({WorkersLogpush Function()? logpush, WorkersObservability? Function()? observability, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, }) { return WorkersScriptSettingsItem(
   logpush: logpush != null ? logpush() : this.logpush,
   observability: observability != null ? observability() : this.observability,

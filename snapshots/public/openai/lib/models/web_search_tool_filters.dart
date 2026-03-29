@@ -18,7 +18,7 @@ final List<String>? allowedDomains;
 Map<String, dynamic> toJson() { return {
   'allowed_domains': ?allowedDomains,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_domains'}.contains(key)); } 
 WebSearchToolFilters copyWith({List<String>? Function()? allowedDomains}) { return WebSearchToolFilters(
   allowedDomains: allowedDomains != null ? allowedDomains() : this.allowedDomains,
 ); } 

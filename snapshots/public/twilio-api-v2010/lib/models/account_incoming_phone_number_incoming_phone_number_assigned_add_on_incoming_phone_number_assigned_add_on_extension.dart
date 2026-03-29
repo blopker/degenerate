@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
   'enabled': ?enabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'resource_sid', 'assigned_add_on_sid', 'friendly_name', 'product_name', 'unique_name', 'uri', 'enabled'}.contains(key)); } 
 AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? resourceSid, String? Function()? assignedAddOnSid, String? Function()? friendlyName, String? Function()? productName, String? Function()? uniqueName, String? Function()? uri, bool? Function()? enabled, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

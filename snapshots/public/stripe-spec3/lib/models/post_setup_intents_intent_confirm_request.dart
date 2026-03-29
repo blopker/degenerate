@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
   'use_stripe_sdk': ?useStripeSdk,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_secret', 'confirmation_token', 'expand', 'mandate_data', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'use_stripe_sdk'}.contains(key)); } 
 PostSetupIntentsIntentConfirmRequest copyWith({String Function()? clientSecret, String Function()? confirmationToken, List<String> Function()? expand, PostSetupIntentsIntentConfirmRequestMandateData Function()? mandateData, String Function()? paymentMethod, PostSetupIntentsIntentConfirmRequestPaymentMethodData Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions Function()? paymentMethodOptions, String Function()? returnUrl, bool Function()? useStripeSdk, }) { return PostSetupIntentsIntentConfirmRequest(
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   confirmationToken: confirmationToken != null ? confirmationToken() : this.confirmationToken,

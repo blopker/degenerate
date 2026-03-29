@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((k, v) => MapEntry(k, v?.toJson())),
   'urls': ?urls,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'groups', 'id', 'paused', 'priority', 'rewrite_action', 'rules', 'urls'}.contains(key)); } 
 FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, dynamic> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
   description: description != null ? description() : this.description,
   groups: groups != null ? groups() : this.groups,

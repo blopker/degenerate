@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (passport != null) 'passport': passport?.toJson(),
   if (visa != null) 'visa': visa?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'company_authorization', 'passport', 'visa'}.contains(key)); } 
 PostAccountsAccountPeoplePersonRequestDocuments copyWith({PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization Function()? companyAuthorization, PostAccountsAccountPeoplePersonRequestDocumentsPassport Function()? passport, PostAccountsAccountPeoplePersonRequestDocumentsVisa Function()? visa, }) { return PostAccountsAccountPeoplePersonRequestDocuments(
   companyAuthorization: companyAuthorization != null ? companyAuthorization() : this.companyAuthorization,
   passport: passport != null ? passport() : this.passport,

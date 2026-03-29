@@ -12,7 +12,7 @@ final String? lifetime;
 Map<String, dynamic> toJson() { return {
   'lifetime': ?lifetime,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lifetime'}.contains(key)); } 
 AccessSchemasOidcSaasAppRefreshTokenOptions copyWith({String Function()? lifetime}) { return AccessSchemasOidcSaasAppRefreshTokenOptions(
   lifetime: lifetime != null ? lifetime() : this.lifetime,
 ); } 

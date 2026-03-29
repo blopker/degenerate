@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'processing_date': ?processingDate,
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorization_code', 'processing_date', 'transaction_id'}.contains(key)); } 
 IssuingTransactionNetworkData copyWith({String? Function()? authorizationCode, String? Function()? processingDate, String? Function()? transactionId, }) { return IssuingTransactionNetworkData(
   authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
   processingDate: processingDate != null ? processingDate() : this.processingDate,

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   if (app != null) 'app': app?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'context', 'state', 'type', 'app'}.contains(key)); } 
 RuleSuiteRequiredStatusChecksChecks copyWith({int Function()? id, String Function()? context, String Function()? state, String Function()? type, RuleSuiteRequiredStatusChecksChecksApp? Function()? app, }) { return RuleSuiteRequiredStatusChecksChecks(
   id: id != null ? id() : this.id,
   context: context != null ? context() : this.context,

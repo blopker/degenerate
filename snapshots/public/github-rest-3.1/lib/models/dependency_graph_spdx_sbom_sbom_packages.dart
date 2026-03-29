@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   'copyrightText': ?copyrightText,
   if (externalRefs != null) 'externalRefs': externalRefs?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'SPDXID', 'name', 'versionInfo', 'downloadLocation', 'filesAnalyzed', 'licenseConcluded', 'licenseDeclared', 'supplier', 'copyrightText', 'externalRefs'}.contains(key)); } 
 DependencyGraphSpdxSbomSbomPackages copyWith({String Function()? spdxid, String Function()? name, String Function()? versionInfo, String Function()? downloadLocation, bool Function()? filesAnalyzed, String Function()? licenseConcluded, String Function()? licenseDeclared, String Function()? supplier, String Function()? copyrightText, List<DependencyGraphSpdxSbomSbomPackagesExternalRefs> Function()? externalRefs, }) { return DependencyGraphSpdxSbomSbomPackages(
   spdxid: spdxid != null ? spdxid() : this.spdxid,
   name: name != null ? name() : this.name,

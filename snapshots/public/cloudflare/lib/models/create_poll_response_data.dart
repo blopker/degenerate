@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'action': ?action,
   if (poll != null) 'poll': poll?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'poll'}.contains(key)); } 
 CreatePollResponseData copyWith({String Function()? action, RealtimekitPoll Function()? poll, }) { return CreatePollResponseData(
   action: action != null ? action() : this.action,
   poll: poll != null ? poll() : this.poll,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'response_code': ?responseCode,
   'rtt': ?rtt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'failure_reason', 'healthy', 'response_code', 'rtt'}.contains(key)); } 
 LoadBalancingOriginHealthData copyWith({String Function()? failureReason, bool Function()? healthy, double Function()? responseCode, String Function()? rtt, }) { return LoadBalancingOriginHealthData(
   failureReason: failureReason != null ? failureReason() : this.failureReason,
   healthy: healthy != null ? healthy() : this.healthy,

@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (timestampFormat != null) 'timestamp_format': timestampFormat?.toJson(),
   'unstructured': ?unstructured,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'decimal_encoding', 'timestamp_format', 'unstructured'}.contains(key)); } 
 CloudflarePipelinesJsonFormat copyWith({CloudflarePipelinesDecimalEncoding Function()? decimalEncoding, CloudflarePipelinesTimestampFormat Function()? timestampFormat, bool Function()? unstructured, }) { return CloudflarePipelinesJsonFormat(
   decimalEncoding: decimalEncoding != null ? decimalEncoding() : this.decimalEncoding,
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,

@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'cpu_pct': ?cpuPct,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cpu_pct', 'name'}.contains(key)); } 
 DigitalExperienceMonitoringCpuPctByApp2 copyWith({double Function()? cpuPct, String Function()? name, }) { return DigitalExperienceMonitoringCpuPctByApp2(
   cpuPct: cpuPct != null ? cpuPct() : this.cpuPct,
   name: name != null ? name() : this.name,

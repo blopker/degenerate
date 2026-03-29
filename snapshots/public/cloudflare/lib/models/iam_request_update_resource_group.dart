@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (scope != null) 'scope': scope?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'scope'}.contains(key)); } 
 IamRequestUpdateResourceGroup copyWith({String Function()? name, IamCreateScope Function()? scope, }) { return IamRequestUpdateResourceGroup(
   name: name != null ? name() : this.name,
   scope: scope != null ? scope() : this.scope,

@@ -13,7 +13,7 @@ final BillingBillResourceInvoicingLinesCommonProrationDetailsCreditedItems? cred
 Map<String, dynamic> toJson() { return {
   if (creditedItems != null) 'credited_items': creditedItems?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'credited_items'}.contains(key)); } 
 BillingBillResourceInvoicingLinesCommonProrationDetails copyWith({BillingBillResourceInvoicingLinesCommonProrationDetailsCreditedItems? Function()? creditedItems}) { return BillingBillResourceInvoicingLinesCommonProrationDetails(
   creditedItems: creditedItems != null ? creditedItems() : this.creditedItems,
 ); } 

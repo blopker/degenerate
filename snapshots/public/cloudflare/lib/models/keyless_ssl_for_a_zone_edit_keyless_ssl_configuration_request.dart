@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (port != null) 'port': port?.toJson(),
   if (tunnel != null) 'tunnel': tunnel?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'host', 'name', 'port', 'tunnel'}.contains(key)); } 
 KeylessSslForAZoneEditKeylessSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesEnabledWrite Function()? enabled, TlsCertificatesAndHostnamesHost Function()? host, TlsCertificatesAndHostnamesNameWrite Function()? name, TlsCertificatesAndHostnamesPort Function()? port, TlsCertificatesAndHostnamesKeylessTunnel Function()? tunnel, }) { return KeylessSslForAZoneEditKeylessSslConfigurationRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   host: host != null ? host() : this.host,

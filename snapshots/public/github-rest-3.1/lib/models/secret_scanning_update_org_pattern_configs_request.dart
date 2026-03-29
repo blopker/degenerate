@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (providerPatternSettings != null) 'provider_pattern_settings': providerPatternSettings?.map((e) => e.toJson()).toList(),
   if (customPatternSettings != null) 'custom_pattern_settings': customPatternSettings?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pattern_config_version', 'provider_pattern_settings', 'custom_pattern_settings'}.contains(key)); } 
 SecretScanningUpdateOrgPatternConfigsRequest copyWith({SecretScanningRowVersion? Function()? patternConfigVersion, List<SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettings> Function()? providerPatternSettings, List<SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings> Function()? customPatternSettings, }) { return SecretScanningUpdateOrgPatternConfigsRequest(
   patternConfigVersion: patternConfigVersion != null ? patternConfigVersion() : this.patternConfigVersion,
   providerPatternSettings: providerPatternSettings != null ? providerPatternSettings() : this.providerPatternSettings,

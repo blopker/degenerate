@@ -151,7 +151,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (zone != null) 'zone': zone?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app', 'component_values', 'currency', 'current_period_end', 'current_period_start', 'frequency', 'id', 'price', 'rate_plan', 'state', 'zone'}.contains(key)); } 
 Subscription2 copyWith({Subscription2App Function()? app, List<ComponentValue2> Function()? componentValues, Currency Function()? currency, CurrentPeriodEnd Function()? currentPeriodEnd, CurrentPeriodStart Function()? currentPeriodStart, Frequency Function()? frequency, SchemasIdentifier Function()? id, Price Function()? price, RatePlan2 Function()? ratePlan, State Function()? state, Zone Function()? zone, }) { return Subscription2(
   app: app != null ? app() : this.app,
   componentValues: componentValues != null ? componentValues() : this.componentValues,

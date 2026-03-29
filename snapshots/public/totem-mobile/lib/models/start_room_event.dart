@@ -16,7 +16,7 @@ final class StartRoomEvent {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any((key) => const {'type'}.contains(key));
   }
 
   StartRoomEvent copyWith({String Function()? type}) {

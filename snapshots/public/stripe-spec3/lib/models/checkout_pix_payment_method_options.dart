@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'expires_after_seconds': ?expiresAfterSeconds,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'setup_future_usage'}.contains(key)); } 
 CheckoutPixPaymentMethodOptions copyWith({CheckoutPixPaymentMethodOptionsAmountIncludesIof Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, CheckoutPixPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return CheckoutPixPaymentMethodOptions(
   amountIncludesIof: amountIncludesIof != null ? amountIncludesIof() : this.amountIncludesIof,
   expiresAfterSeconds: expiresAfterSeconds != null ? expiresAfterSeconds() : this.expiresAfterSeconds,

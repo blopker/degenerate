@@ -11,7 +11,7 @@ final GetTreasuryTransactionsStatusTransitionsPostedAt? postedAt;
 Map<String, dynamic> toJson() { return {
   if (postedAt != null) 'posted_at': postedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'posted_at'}.contains(key)); } 
 GetTreasuryTransactionsStatusTransitions copyWith({GetTreasuryTransactionsStatusTransitionsPostedAt Function()? postedAt}) { return GetTreasuryTransactionsStatusTransitions(
   postedAt: postedAt != null ? postedAt() : this.postedAt,
 ); } 

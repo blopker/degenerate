@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
   'file': ?file,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'file'}.contains(key)); } 
 CreateContainerFileBody copyWith({String Function()? fileId, Uint8List Function()? file, }) { return CreateContainerFileBody(
   fileId: fileId != null ? fileId() : this.fileId,
   file: file != null ? file() : this.file,

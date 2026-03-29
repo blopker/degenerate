@@ -216,7 +216,7 @@ Map<String, dynamic> toJson() { return {
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_insecure', 'consecutive_down', 'consecutive_up', 'description', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'interval', 'method', 'path', 'port', 'probe_zone', 'retries', 'timeout', 'type'}.contains(key)); } 
 LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure Function()? allowInsecure, LoadBalancingConsecutiveDown Function()? consecutiveDown, LoadBalancingConsecutiveUp Function()? consecutiveUp, LoadBalancingDescription Function()? description, LoadBalancingExpectedBody Function()? expectedBody, LoadBalancingExpectedCodes Function()? expectedCodes, LoadBalancingFollowRedirects Function()? followRedirects, Map<String, List<String>> Function()? header, LoadBalancingInterval Function()? interval, LoadBalancingMethod Function()? method, LoadBalancingPath Function()? path, LoadBalancingPort? Function()? port, LoadBalancingProbeZone Function()? probeZone, LoadBalancingRetries Function()? retries, LoadBalancingTimeout Function()? timeout, LoadBalancingType Function()? type, }) { return LoadBalancingMonitorEditable(
   allowInsecure: allowInsecure != null ? allowInsecure() : this.allowInsecure,
   consecutiveDown: consecutiveDown != null ? consecutiveDown() : this.consecutiveDown,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
   'routing_number': ?routingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'last4', 'routing_number'}.contains(key)); } 
 TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount copyWith({String? Function()? bankName, String? Function()? last4, String? Function()? routingNumber, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount(
   bankName: bankName != null ? bankName() : this.bankName,
   last4: last4 != null ? last4() : this.last4,

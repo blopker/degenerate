@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'access_token_lifetime': ?accessTokenLifetime,
   'session_duration': ?sessionDuration,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_token_lifetime', 'session_duration'}.contains(key)); } 
 AccessOauthConfigurationGrant copyWith({String Function()? accessTokenLifetime, String Function()? sessionDuration, }) { return AccessOauthConfigurationGrant(
   accessTokenLifetime: accessTokenLifetime != null ? accessTokenLifetime() : this.accessTokenLifetime,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,

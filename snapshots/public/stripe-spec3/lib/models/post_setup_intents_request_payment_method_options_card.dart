@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure', 'three_d_secure'}.contains(key)); } 
 PostSetupIntentsRequestPaymentMethodOptionsCard copyWith({PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions Function()? mandateOptions, PostSetupIntentsRequestPaymentMethodOptionsCardNetwork Function()? network, PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure Function()? requestThreeDSecure, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure Function()? threeDSecure, }) { return PostSetupIntentsRequestPaymentMethodOptionsCard(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,

@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (verifoneP400 != null) 'verifone_p400': verifoneP400?.toJson(),
   if (wifi != null) 'wifi': wifi?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bbpos_wisepad3', 'bbpos_wisepos_e', 'cellular', 'expand', 'name', 'offline', 'reboot_window', 'stripe_s700', 'stripe_s710', 'tipping', 'verifone_p400', 'wifi'}.contains(key)); } 
 PostTerminalConfigurationsRequest copyWith({PostTerminalConfigurationsRequestBbposWisepad3 Function()? bbposWisepad3, PostTerminalConfigurationsRequestBbposWiseposE Function()? bbposWiseposE, PostTerminalConfigurationsRequestCellular Function()? cellular, List<String> Function()? expand, String Function()? name, PostTerminalConfigurationsRequestOffline Function()? offline, PostTerminalConfigurationsRequestRebootWindow Function()? rebootWindow, PostTerminalConfigurationsRequestStripeS700 Function()? stripeS700, PostTerminalConfigurationsRequestStripeS710 Function()? stripeS710, PostTerminalConfigurationsRequestTipping Function()? tipping, PostTerminalConfigurationsRequestVerifoneP400 Function()? verifoneP400, PostTerminalConfigurationsRequestWifi Function()? wifi, }) { return PostTerminalConfigurationsRequest(
   bbposWisepad3: bbposWisepad3 != null ? bbposWisepad3() : this.bbposWisepad3,
   bbposWiseposE: bbposWiseposE != null ? bbposWiseposE() : this.bbposWiseposE,

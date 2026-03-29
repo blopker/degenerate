@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role_name', 'resource_id', 'resource_type', 'permissions_added', 'permissions_removed', 'description', 'metadata'}.contains(key)); } 
 AuditLogRoleUpdatedChangesRequested copyWith({String Function()? roleName, String Function()? resourceId, String Function()? resourceType, List<String> Function()? permissionsAdded, List<String> Function()? permissionsRemoved, String Function()? description, Map<String, dynamic> Function()? metadata, }) { return AuditLogRoleUpdatedChangesRequested(
   roleName: roleName != null ? roleName() : this.roleName,
   resourceId: resourceId != null ? resourceId() : this.resourceId,

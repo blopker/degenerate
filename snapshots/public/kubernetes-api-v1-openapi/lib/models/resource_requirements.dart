@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (limits != null) 'limits': limits?.map((k, v) => MapEntry(k, v.toJson())),
   if (requests != null) 'requests': requests?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'claims', 'limits', 'requests'}.contains(key)); } 
 ResourceRequirements copyWith({List<ResourceClaim> Function()? claims, Map<String, ResourceQuantity> Function()? limits, Map<String, ResourceQuantity> Function()? requests, }) { return ResourceRequirements(
   claims: claims != null ? claims() : this.claims,
   limits: limits != null ? limits() : this.limits,

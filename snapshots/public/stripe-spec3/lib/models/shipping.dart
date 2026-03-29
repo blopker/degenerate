@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'phone': ?phone,
   'tracking_number': ?trackingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'carrier', 'name', 'phone', 'tracking_number'}.contains(key)); } 
 Shipping copyWith({Address Function()? address, String? Function()? carrier, String Function()? name, String? Function()? phone, String? Function()? trackingNumber, }) { return Shipping(
   address: address != null ? address() : this.address,
   carrier: carrier != null ? carrier() : this.carrier,

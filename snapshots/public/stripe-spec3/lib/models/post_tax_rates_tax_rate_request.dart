@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
   if (taxType != null) 'tax_type': taxType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'country', 'description', 'display_name', 'expand', 'jurisdiction', 'metadata', 'state', 'tax_type'}.contains(key)); } 
 PostTaxRatesTaxRateRequest copyWith({bool Function()? active, String Function()? country, String Function()? description, String Function()? displayName, List<String> Function()? expand, String Function()? jurisdiction, PostTaxRatesTaxRateRequestMetadata Function()? metadata, String Function()? state, PostTaxRatesTaxRateRequestTaxType Function()? taxType, }) { return PostTaxRatesTaxRateRequest(
   active: active != null ? active() : this.active,
   country: country != null ? country() : this.country,

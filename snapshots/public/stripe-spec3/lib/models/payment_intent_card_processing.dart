@@ -12,7 +12,7 @@ final PaymentIntentProcessingCustomerNotification? customerNotification;
 Map<String, dynamic> toJson() { return {
   if (customerNotification != null) 'customer_notification': customerNotification?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_notification'}.contains(key)); } 
 PaymentIntentCardProcessing copyWith({PaymentIntentProcessingCustomerNotification Function()? customerNotification}) { return PaymentIntentCardProcessing(
   customerNotification: customerNotification != null ? customerNotification() : this.customerNotification,
 ); } 

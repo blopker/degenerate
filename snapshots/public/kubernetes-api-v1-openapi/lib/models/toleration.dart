@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'tolerationSeconds': ?tolerationSeconds,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effect', 'key', 'operator', 'tolerationSeconds', 'value'}.contains(key)); } 
 Toleration copyWith({String Function()? effect, String Function()? key, String Function()? $operator, int Function()? tolerationSeconds, String Function()? value, }) { return Toleration(
   effect: effect != null ? effect() : this.effect,
   key: key != null ? key() : this.key,

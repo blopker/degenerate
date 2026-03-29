@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'paid_at': ?paidAt,
   'voided_at': ?voidedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'finalized_at', 'marked_uncollectible_at', 'paid_at', 'voided_at'}.contains(key)); } 
 InvoicesResourceStatusTransitions copyWith({int? Function()? finalizedAt, int? Function()? markedUncollectibleAt, int? Function()? paidAt, int? Function()? voidedAt, }) { return InvoicesResourceStatusTransitions(
   finalizedAt: finalizedAt != null ? finalizedAt() : this.finalizedAt,
   markedUncollectibleAt: markedUncollectibleAt != null ? markedUncollectibleAt() : this.markedUncollectibleAt,

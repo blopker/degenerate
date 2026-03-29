@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'throughtput': ?throughtput,
   'turn_connectivity': ?turnConnectivity,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'backend_rtt', 'effective_networktype', 'fractional_loss', 'jitter', 'reflexive_connectivity', 'relay_connectivity', 'rtt', 'throughtput', 'turn_connectivity'}.contains(key)); } 
 RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({double Function()? backendRtt, String Function()? effectiveNetworktype, double Function()? fractionalLoss, double Function()? jitter, bool Function()? reflexiveConnectivity, bool Function()? relayConnectivity, double Function()? rtt, double Function()? throughtput, bool Function()? turnConnectivity, }) { return RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(
   backendRtt: backendRtt != null ? backendRtt() : this.backendRtt,
   effectiveNetworktype: effectiveNetworktype != null ? effectiveNetworktype() : this.effectiveNetworktype,

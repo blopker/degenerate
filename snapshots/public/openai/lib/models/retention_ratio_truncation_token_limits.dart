@@ -13,7 +13,7 @@ final int? postInstructions;
 Map<String, dynamic> toJson() { return {
   'post_instructions': ?postInstructions,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'post_instructions'}.contains(key)); } 
 RetentionRatioTruncationTokenLimits copyWith({int Function()? postInstructions}) { return RetentionRatioTruncationTokenLimits(
   postInstructions: postInstructions != null ? postInstructions() : this.postInstructions,
 ); } 

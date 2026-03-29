@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (unitLabel != null) 'unit_label': unitLabel?.toJson(),
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key)); } 
 PostProductsIdRequest copyWith({bool Function()? active, String Function()? defaultPrice, PostProductsIdRequestDescription Function()? description, List<String> Function()? expand, PostProductsIdRequestImages Function()? images, PostProductsIdRequestMarketingFeatures Function()? marketingFeatures, PostProductsIdRequestMetadata Function()? metadata, String Function()? name, PostProductsIdRequestPackageDimensions Function()? packageDimensions, bool Function()? shippable, String Function()? statementDescriptor, PostProductsIdRequestTaxCode Function()? taxCode, PostProductsIdRequestUnitLabel Function()? unitLabel, PostProductsIdRequestUrl Function()? url, }) { return PostProductsIdRequest(
   active: active != null ? active() : this.active,
   defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,

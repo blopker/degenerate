@@ -19,7 +19,7 @@ final FirewallDeleteFilterIfUnused? deleteFilterIfUnused;
 Map<String, dynamic> toJson() { return {
   if (deleteFilterIfUnused != null) 'delete_filter_if_unused': deleteFilterIfUnused?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delete_filter_if_unused'}.contains(key)); } 
 FirewallRulesDeleteAFirewallRuleRequest copyWith({FirewallDeleteFilterIfUnused Function()? deleteFilterIfUnused}) { return FirewallRulesDeleteAFirewallRuleRequest(
   deleteFilterIfUnused: deleteFilterIfUnused != null ? deleteFilterIfUnused() : this.deleteFilterIfUnused,
 ); } 

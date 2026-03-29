@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'prompt_tokens': promptTokens,
   'total_tokens': totalTokens,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completion_tokens', 'prompt_tokens', 'total_tokens'}.contains(key)); } 
 TextGeneration2Variant1Usage copyWith({double Function()? completionTokens, double Function()? promptTokens, double Function()? totalTokens, }) { return TextGeneration2Variant1Usage(
   completionTokens: completionTokens != null ? completionTokens() : this.completionTokens,
   promptTokens: promptTokens != null ? promptTokens() : this.promptTokens,

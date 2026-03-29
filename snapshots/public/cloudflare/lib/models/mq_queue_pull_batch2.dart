@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'timestamp_ms': ?timestampMs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attempts', 'body', 'id', 'lease_id', 'metadata', 'timestamp_ms'}.contains(key)); } 
 MqQueuePullBatch2 copyWith({double Function()? attempts, String Function()? body, String Function()? id, MqLeaseId Function()? leaseId, Map<String, dynamic> Function()? metadata, double Function()? timestampMs, }) { return MqQueuePullBatch2(
   attempts: attempts != null ? attempts() : this.attempts,
   body: body != null ? body() : this.body,

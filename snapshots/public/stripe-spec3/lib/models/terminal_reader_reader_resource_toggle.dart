@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'description', 'title', 'value'}.contains(key)); } 
 TerminalReaderReaderResourceToggle copyWith({TerminalReaderReaderResourceToggleDefaultValue? Function()? defaultValue, String? Function()? description, String? Function()? title, TerminalReaderReaderResourceToggleValue? Function()? value, }) { return TerminalReaderReaderResourceToggle(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   description: description != null ? description() : this.description,

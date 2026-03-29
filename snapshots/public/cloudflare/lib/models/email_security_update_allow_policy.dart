@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (patternType != null) 'pattern_type': patternType?.toJson(),
   'verify_sender': ?verifySender,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comments', 'is_acceptable_sender', 'is_exempt_recipient', 'is_regex', 'is_trusted_sender', 'pattern', 'pattern_type', 'verify_sender'}.contains(key)); } 
 EmailSecurityUpdateAllowPolicy copyWith({String? Function()? comments, bool? Function()? isAcceptableSender, bool? Function()? isExemptRecipient, bool? Function()? isRegex, bool? Function()? isTrustedSender, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, bool? Function()? verifySender, }) { return EmailSecurityUpdateAllowPolicy(
   comments: comments != null ? comments() : this.comments,
   isAcceptableSender: isAcceptableSender != null ? isAcceptableSender() : this.isAcceptableSender,

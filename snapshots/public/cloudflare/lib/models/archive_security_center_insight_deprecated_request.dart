@@ -11,7 +11,7 @@ final bool dismiss;
 Map<String, dynamic> toJson() { return {
   'dismiss': dismiss,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dismiss'}.contains(key)); } 
 ArchiveSecurityCenterInsightDeprecatedRequest copyWith({bool Function()? dismiss}) { return ArchiveSecurityCenterInsightDeprecatedRequest(
   dismiss: dismiss != null ? dismiss() : this.dismiss,
 ); } 

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'label': ?label,
   'state': ?state,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'label', 'state'}.contains(key)); } 
 ReposUpdateReleaseAssetRequest copyWith({String Function()? name, String Function()? label, String Function()? state, }) { return ReposUpdateReleaseAssetRequest(
   name: name != null ? name() : this.name,
   label: label != null ? label() : this.label,

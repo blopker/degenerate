@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'cursor': ?cursor,
   'per_page': ?perPage,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cursor', 'per_page'}.contains(key)); } 
 R2ResultInfo copyWith({String Function()? cursor, double Function()? perPage, }) { return R2ResultInfo(
   cursor: cursor != null ? cursor() : this.cursor,
   perPage: perPage != null ? perPage() : this.perPage,

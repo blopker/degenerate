@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (ach != null) 'ach': ach?.toJson(),
   if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ach', 'us_domestic_wire'}.contains(key)); } 
 TreasuryFinancialAccountsResourceOutboundPayments copyWith({TreasuryFinancialAccountsResourceOutboundAchToggleSettings Function()? ach, TreasuryFinancialAccountsResourceToggleSettings Function()? usDomesticWire, }) { return TreasuryFinancialAccountsResourceOutboundPayments(
   ach: ach != null ? ach() : this.ach,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,

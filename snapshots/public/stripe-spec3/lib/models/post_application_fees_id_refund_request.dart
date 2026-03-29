@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'directive': ?directive,
   'expand': ?expand,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'directive', 'expand'}.contains(key)); } 
 PostApplicationFeesIdRefundRequest copyWith({int Function()? amount, String Function()? directive, List<String> Function()? expand, }) { return PostApplicationFeesIdRefundRequest(
   amount: amount != null ? amount() : this.amount,
   directive: directive != null ? directive() : this.directive,

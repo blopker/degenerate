@@ -12,7 +12,7 @@ final Uri? rtmpUrl;
 Map<String, dynamic> toJson() { return {
   if (rtmpUrl != null) 'rtmp_url': rtmpUrl?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rtmp_url'}.contains(key)); } 
 RealtimekitLivestreamingConfig copyWith({Uri Function()? rtmpUrl}) { return RealtimekitLivestreamingConfig(
   rtmpUrl: rtmpUrl != null ? rtmpUrl() : this.rtmpUrl,
 ); } 

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'requireSignedURLs': requireSignedUrLs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'expiry', 'id', 'metadata', 'requireSignedURLs'}.contains(key)); } 
 ImagesImageDirectUploadRequest copyWith({String Function()? creator, DateTime Function()? expiry, String Function()? id, Map<String, dynamic> Function()? metadata, bool Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,

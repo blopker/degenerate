@@ -11,7 +11,7 @@ final WorkersScriptAndVersionSettingsItem? settings;
 Map<String, dynamic> toJson() { return {
   if (settings != null) 'settings': settings?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'settings'}.contains(key)); } 
 WorkerScriptPatchSettingsRequest copyWith({WorkersScriptAndVersionSettingsItem Function()? settings}) { return WorkerScriptPatchSettingsRequest(
   settings: settings != null ? settings() : this.settings,
 ); } 

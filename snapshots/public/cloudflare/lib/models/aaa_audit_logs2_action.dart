@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (time != null) 'time': time?.toIso8601String(),
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'result', 'time', 'type'}.contains(key)); } 
 AaaAuditLogs2Action copyWith({String Function()? description, String Function()? result, DateTime Function()? time, String Function()? type, }) { return AaaAuditLogs2Action(
   description: description != null ? description() : this.description,
   result: result != null ? result() : this.result,

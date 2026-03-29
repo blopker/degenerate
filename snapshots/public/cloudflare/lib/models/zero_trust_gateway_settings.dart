@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (seedId != null) 'seed_id': seedId?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'public_key', 'seed_id', 'updated_at'}.contains(key)); } 
 ZeroTrustGatewaySettings copyWith({ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayPublicKey Function()? publicKey, ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid Function()? seedId, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewaySettings(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   publicKey: publicKey != null ? publicKey() : this.publicKey,

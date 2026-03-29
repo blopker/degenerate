@@ -54,6 +54,67 @@ final class ObjectModelNaN {
   }
 }
 
+final class ObjectModelInfinity {
+  const ObjectModelInfinity._(this.value);
+
+  factory ObjectModelInfinity.fromJson(double json) {
+    return switch (json) {
+      0 => $0,
+      1 => $1,
+      -1 => minus1,
+      1.7976931348623157e+308 => $17976931348623157e308,
+      5e-324 => $5e324,
+      _ => ObjectModelInfinity._(json),
+    };
+  }
+
+  static const ObjectModelInfinity $0 = ObjectModelInfinity._(0);
+
+  static const ObjectModelInfinity $1 = ObjectModelInfinity._(1);
+
+  static const ObjectModelInfinity minus1 = ObjectModelInfinity._(-1);
+
+  static const ObjectModelInfinity $17976931348623157e308 =
+      ObjectModelInfinity._(1.7976931348623157e+308);
+
+  static const ObjectModelInfinity $5e324 = ObjectModelInfinity._(5e-324);
+
+  static const List<ObjectModelInfinity> values = [
+    $0,
+    $1,
+    minus1,
+    $17976931348623157e308,
+    $5e324,
+  ];
+
+  final double value;
+
+  double toJson() {
+    return value;
+  }
+
+  /// Whether this value is unknown (not defined in the OpenAPI spec).
+  bool get isUnknown {
+    return !values.contains(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is ObjectModelInfinity && other.value == value;
+  }
+
+  @override
+  int get hashCode {
+    return value.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'ObjectModelInfinity($value)';
+  }
+}
+
 final class ObjectModel {
   const ObjectModel({required this.$return, this.naN, this.infinity});
 
@@ -64,7 +125,7 @@ final class ObjectModel {
           ? ObjectModelNaN.fromJson(json['NaN'] as String)
           : null,
       infinity: json['Infinity'] != null
-          ? (json['Infinity'] as num).toDouble()
+          ? ObjectModelInfinity.fromJson((json['Infinity'] as num).toDouble())
           : null,
     );
   }
@@ -73,13 +134,13 @@ final class ObjectModel {
 
   final ObjectModelNaN? naN;
 
-  final double? infinity;
+  final ObjectModelInfinity? infinity;
 
   Map<String, dynamic> toJson() {
     return {
       'return': $return,
       if (naN != null) 'NaN': naN?.toJson(),
-      'Infinity': ?infinity,
+      if (infinity != null) 'Infinity': infinity?.toJson(),
     };
   }
 
@@ -90,7 +151,7 @@ final class ObjectModel {
   ObjectModel copyWith({
     bool? $return,
     ObjectModelNaN Function()? naN,
-    double Function()? infinity,
+    ObjectModelInfinity Function()? infinity,
   }) {
     return ObjectModel(
       $return: $return ?? this.$return,

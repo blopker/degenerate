@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'total_engaged_users': ?totalEngagedUsers,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'total_engaged_users'}.contains(key)); } 
 CopilotIdeCodeCompletionsLanguages copyWith({String Function()? name, int Function()? totalEngagedUsers, }) { return CopilotIdeCodeCompletionsLanguages(
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,

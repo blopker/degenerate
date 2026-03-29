@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (message != null) 'message': message?.toJson(),
   if (title != null) 'title': title?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'button_color', 'button_text_color', 'image_url', 'message', 'title'}.contains(key)); } 
 AccessLandingPageDesign copyWith({AccessButtonColor Function()? buttonColor, AccessButtonTextColor Function()? buttonTextColor, AccessImageUrl Function()? imageUrl, AccessMessage Function()? message, AccessTitle Function()? title, }) { return AccessLandingPageDesign(
   buttonColor: buttonColor != null ? buttonColor() : this.buttonColor,
   buttonTextColor: buttonTextColor != null ? buttonTextColor() : this.buttonTextColor,

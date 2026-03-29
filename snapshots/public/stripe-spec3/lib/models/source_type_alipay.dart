@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'native_url': ?nativeUrl,
   'statement_descriptor': ?statementDescriptor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data_string', 'native_url', 'statement_descriptor'}.contains(key)); } 
 SourceTypeAlipay copyWith({String? Function()? dataString, String? Function()? nativeUrl, String? Function()? statementDescriptor, }) { return SourceTypeAlipay(
   dataString: dataString != null ? dataString() : this.dataString,
   nativeUrl: nativeUrl != null ? nativeUrl() : this.nativeUrl,

@@ -11,7 +11,7 @@ final List<BillingUsageReportUserUsageItems>? usageItems;
 Map<String, dynamic> toJson() { return {
   if (usageItems != null) 'usageItems': usageItems?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'usageItems'}.contains(key)); } 
 BillingUsageReportUser copyWith({List<BillingUsageReportUserUsageItems> Function()? usageItems}) { return BillingUsageReportUser(
   usageItems: usageItems != null ? usageItems() : this.usageItems,
 ); } 

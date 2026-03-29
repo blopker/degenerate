@@ -12,7 +12,7 @@ final PostAccountsAccountPeopleRequestAdditionalTosAcceptancesAccount? account;
 Map<String, dynamic> toJson() { return {
   if (account != null) 'account': account?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account'}.contains(key)); } 
 PostAccountsAccountPeopleRequestAdditionalTosAcceptances copyWith({PostAccountsAccountPeopleRequestAdditionalTosAcceptancesAccount Function()? account}) { return PostAccountsAccountPeopleRequestAdditionalTosAcceptances(
   account: account != null ? account() : this.account,
 ); } 

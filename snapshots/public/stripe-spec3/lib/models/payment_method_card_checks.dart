@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'address_postal_code_check': ?addressPostalCodeCheck,
   'cvc_check': ?cvcCheck,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'cvc_check'}.contains(key)); } 
 PaymentMethodCardChecks copyWith({String? Function()? addressLine1Check, String? Function()? addressPostalCodeCheck, String? Function()? cvcCheck, }) { return PaymentMethodCardChecks(
   addressLine1Check: addressLine1Check != null ? addressLine1Check() : this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck != null ? addressPostalCodeCheck() : this.addressPostalCodeCheck,

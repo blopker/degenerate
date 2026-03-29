@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'hostProcess': ?hostProcess,
   'runAsUserName': ?runAsUserName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gmsaCredentialSpec', 'gmsaCredentialSpecName', 'hostProcess', 'runAsUserName'}.contains(key)); } 
 WindowsSecurityContextOptions copyWith({String Function()? gmsaCredentialSpec, String Function()? gmsaCredentialSpecName, bool Function()? hostProcess, String Function()? runAsUserName, }) { return WindowsSecurityContextOptions(
   gmsaCredentialSpec: gmsaCredentialSpec != null ? gmsaCredentialSpec() : this.gmsaCredentialSpec,
   gmsaCredentialSpecName: gmsaCredentialSpecName != null ? gmsaCredentialSpecName() : this.gmsaCredentialSpecName,

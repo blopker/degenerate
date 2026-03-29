@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
 ZonesBrowserCheck copyWith({ZonesBrowserCheckId Function()? id, ZonesBrowserCheckValue Function()? value, }) { return ZonesBrowserCheck(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,

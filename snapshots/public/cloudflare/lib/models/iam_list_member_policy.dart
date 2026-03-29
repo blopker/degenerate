@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (permissionGroups != null) 'permission_groups': permissionGroups?.map((e) => e.toJson()).toList(),
   if (resourceGroups != null) 'resource_groups': resourceGroups?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access', 'id', 'permission_groups', 'resource_groups'}.contains(key)); } 
 IamListMemberPolicy copyWith({IamAccess Function()? access, IamPolicyIdentifier Function()? id, List<IamPermissionGroup> Function()? permissionGroups, List<IamResourceGroup> Function()? resourceGroups, }) { return IamListMemberPolicy(
   access: access != null ? access() : this.access,
   id: id != null ? id() : this.id,

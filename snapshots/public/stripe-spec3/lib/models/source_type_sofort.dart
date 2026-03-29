@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'preferred_language': ?preferredLanguage,
   'statement_descriptor': ?statementDescriptor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'country', 'iban_last4', 'preferred_language', 'statement_descriptor'}.contains(key)); } 
 SourceTypeSofort copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, String? Function()? country, String? Function()? ibanLast4, String? Function()? preferredLanguage, String? Function()? statementDescriptor, }) { return SourceTypeSofort(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   bankName: bankName != null ? bankName() : this.bankName,

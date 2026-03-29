@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'id', 'name', 'updated_at'}.contains(key)); } 
 RealtimekitPresetListItem copyWith({DateTime Function()? createdAt, String Function()? id, String Function()? name, DateTime Function()? updatedAt, }) { return RealtimekitPresetListItem(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,

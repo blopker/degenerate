@@ -11,7 +11,7 @@ final int? minimumAmount;
 Map<String, dynamic> toJson() { return {
   'minimum_amount': ?minimumAmount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'minimum_amount'}.contains(key)); } 
 PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue copyWith({int Function()? minimumAmount}) { return PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(
   minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,
 ); } 

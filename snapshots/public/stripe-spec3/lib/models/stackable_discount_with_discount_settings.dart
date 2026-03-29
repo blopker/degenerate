@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (discount != null) 'discount': discount?.toJson(),
   if (promotionCode != null) 'promotion_code': promotionCode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'discount', 'promotion_code'}.contains(key)); } 
 StackableDiscountWithDiscountSettings copyWith({StackableDiscountWithDiscountSettingsCoupon? Function()? coupon, StackableDiscountWithDiscountSettingsDiscount? Function()? discount, StackableDiscountWithDiscountSettingsPromotionCode? Function()? promotionCode, }) { return StackableDiscountWithDiscountSettings(
   coupon: coupon != null ? coupon() : this.coupon,
   discount: discount != null ? discount() : this.discount,

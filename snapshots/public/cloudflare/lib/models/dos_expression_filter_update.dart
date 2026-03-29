@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'expression': ?expression,
   'mode': ?mode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expression', 'mode'}.contains(key)); } 
 DosExpressionFilterUpdate copyWith({String Function()? expression, String Function()? mode, }) { return DosExpressionFilterUpdate(
   expression: expression != null ? expression() : this.expression,
   mode: mode != null ? mode() : this.mode,

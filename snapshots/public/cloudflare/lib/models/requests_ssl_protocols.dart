@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'TLSv1.3': ?tlSv13,
   'none': ?none,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'TLSv1', 'TLSv1.1', 'TLSv1.2', 'TLSv1.3', 'none'}.contains(key)); } 
 RequestsSslProtocols copyWith({int Function()? tlSv1, int Function()? tlSv11, int Function()? tlSv12, int Function()? tlSv13, int Function()? none, }) { return RequestsSslProtocols(
   tlSv1: tlSv1 != null ? tlSv1() : this.tlSv1,
   tlSv11: tlSv11 != null ? tlSv11() : this.tlSv11,

@@ -132,7 +132,7 @@ Map<String, dynamic> toJson() { return {
   if (isRobotsTxtManaged != null) 'is_robots_txt_managed': isRobotsTxtManaged?.toJson(),
   if (usingLatestModel != null) 'using_latest_model': usingLatestModel?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_bots_protection', 'cf_robots_variant', 'crawler_protection', 'enable_js', 'is_robots_txt_managed', 'using_latest_model'}.contains(key)); } 
 BotManagementBaseConfig copyWith({BotManagementAiBotsProtection Function()? aiBotsProtection, BotManagementCfRobotsVariant Function()? cfRobotsVariant, BotManagementCrawlerProtection Function()? crawlerProtection, BotManagementEnableJs Function()? enableJs, BotManagementIsRobotsTxtManaged Function()? isRobotsTxtManaged, BotManagementUsingLatestModel Function()? usingLatestModel, }) { return BotManagementBaseConfig(
   aiBotsProtection: aiBotsProtection != null ? aiBotsProtection() : this.aiBotsProtection,
   cfRobotsVariant: cfRobotsVariant != null ? cfRobotsVariant() : this.cfRobotsVariant,

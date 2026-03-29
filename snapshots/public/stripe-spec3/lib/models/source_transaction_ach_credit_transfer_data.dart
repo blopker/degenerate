@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
   'routing_number': ?routingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_data', 'fingerprint', 'last4', 'routing_number'}.contains(key)); } 
 SourceTransactionAchCreditTransferData copyWith({String Function()? customerData, String Function()? fingerprint, String Function()? last4, String Function()? routingNumber, }) { return SourceTransactionAchCreditTransferData(
   customerData: customerData != null ? customerData() : this.customerData,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,

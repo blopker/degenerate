@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (always != null) 'always': always?.toJson(),
   if (never != null) 'never': never?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'always', 'never'}.contains(key)); } 
 McpToolApprovalFilter copyWith({McpToolFilter Function()? always, McpToolFilter Function()? never, }) { return McpToolApprovalFilter(
   always: always != null ? always() : this.always,
   never: never != null ? never() : this.never,

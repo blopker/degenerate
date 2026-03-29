@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (provider != null) 'provider': provider?.toJson(),
   'secretAccessKey': ?secretAccessKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'bucketUrl', 'provider', 'secretAccessKey'}.contains(key)); } 
 R2EnableSippyS3Source copyWith({String Function()? accessKeyId, String Function()? bucketUrl, R2EnableSippyS3SourceProvider Function()? provider, String Function()? secretAccessKey, }) { return R2EnableSippyS3Source(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   bucketUrl: bucketUrl != null ? bucketUrl() : this.bucketUrl,

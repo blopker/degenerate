@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (secondaryConnectorId != null) 'secondary_connector_id': secondaryConnectorId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connector_id', 'description', 'ha_mode', 'id', 'location', 'name', 'secondary_connector_id'}.contains(key)); } 
 MagicSite copyWith({MagicConnectorId Function()? connectorId, String Function()? description, bool Function()? haMode, MagicIdentifier Function()? id, MagicSiteLocation Function()? location, MagicSiteName Function()? name, MagicSecondaryConnectorId Function()? secondaryConnectorId, }) { return MagicSite(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   description: description != null ? description() : this.description,

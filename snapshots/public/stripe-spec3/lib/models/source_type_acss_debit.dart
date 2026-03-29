@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
   'routing_number': ?routingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_address_city', 'bank_address_line_1', 'bank_address_line_2', 'bank_address_postal_code', 'bank_name', 'category', 'country', 'fingerprint', 'last4', 'routing_number'}.contains(key)); } 
 SourceTypeAcssDebit copyWith({String? Function()? bankAddressCity, String? Function()? bankAddressLine1, String? Function()? bankAddressLine2, String? Function()? bankAddressPostalCode, String? Function()? bankName, String? Function()? category, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? routingNumber, }) { return SourceTypeAcssDebit(
   bankAddressCity: bankAddressCity != null ? bankAddressCity() : this.bankAddressCity,
   bankAddressLine1: bankAddressLine1 != null ? bankAddressLine1() : this.bankAddressLine1,

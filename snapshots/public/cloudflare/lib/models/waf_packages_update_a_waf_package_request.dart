@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   if (actionMode != null) 'action_mode': actionMode?.toJson(),
   if (sensitivity != null) 'sensitivity': sensitivity?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action_mode', 'sensitivity'}.contains(key)); } 
 WafPackagesUpdateAWafPackageRequest copyWith({FirewallActionMode Function()? actionMode, FirewallSensitivity Function()? sensitivity, }) { return WafPackagesUpdateAWafPackageRequest(
   actionMode: actionMode != null ? actionMode() : this.actionMode,
   sensitivity: sensitivity != null ? sensitivity() : this.sensitivity,

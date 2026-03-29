@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   'rule_type': ?ruleType,
   'details': ?details,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rule_source', 'enforcement', 'result', 'rule_type', 'details'}.contains(key)); } 
 RuleSuiteRuleEvaluations copyWith({RuleSuiteRuleEvaluationsRuleSource Function()? ruleSource, RuleSuiteRuleEvaluationsEnforcement Function()? enforcement, RuleSuiteRuleEvaluationsResult Function()? result, String Function()? ruleType, String? Function()? details, }) { return RuleSuiteRuleEvaluations(
   ruleSource: ruleSource != null ? ruleSource() : this.ruleSource,
   enforcement: enforcement != null ? enforcement() : this.enforcement,

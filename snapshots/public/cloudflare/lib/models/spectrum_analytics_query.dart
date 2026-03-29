@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   'sort': ?sort,
   if (until != null) 'until': until?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dimensions', 'filters', 'limit', 'metrics', 'since', 'sort', 'until'}.contains(key)); } 
 SpectrumAnalyticsQuery copyWith({List<SpectrumAnalyticsDimensions2> Function()? dimensions, SpectrumAnalyticsFilters Function()? filters, double Function()? limit, List<SpectrumAnalyticsMetrics2> Function()? metrics, SpectrumAnalyticsTimestamp Function()? since, List<String> Function()? sort, SpectrumAnalyticsTimestamp Function()? until, }) { return SpectrumAnalyticsQuery(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   filters: filters != null ? filters() : this.filters,

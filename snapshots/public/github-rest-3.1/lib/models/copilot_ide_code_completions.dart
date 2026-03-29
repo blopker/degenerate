@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
   if (editors != null) 'editors': editors?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_engaged_users', 'languages', 'editors'}.contains(key)); } 
 CopilotIdeCodeCompletions copyWith({int Function()? totalEngagedUsers, List<CopilotIdeCodeCompletionsLanguages> Function()? languages, List<CopilotIdeCodeCompletionsEditors> Function()? editors, }) { return CopilotIdeCodeCompletions(
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   languages: languages != null ? languages() : this.languages,

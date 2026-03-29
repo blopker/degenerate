@@ -11,7 +11,7 @@ final Map<String,BuildsBuildResponse>? builds;
 Map<String, dynamic> toJson() { return {
   if (builds != null) 'builds': builds?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'builds'}.contains(key)); } 
 BuildsLatestBuildsResponse copyWith({Map<String, BuildsBuildResponse> Function()? builds}) { return BuildsLatestBuildsResponse(
   builds: builds != null ? builds() : this.builds,
 ); } 

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (backfillScans != null) 'backfill_scans': backfillScans?.map((e) => e.toJson()).toList(),
   if (customPatternBackfillScans != null) 'custom_pattern_backfill_scans': customPatternBackfillScans?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'incremental_scans', 'pattern_update_scans', 'backfill_scans', 'custom_pattern_backfill_scans'}.contains(key)); } 
 SecretScanningScanHistory copyWith({List<SecretScanningScan> Function()? incrementalScans, List<SecretScanningScan> Function()? patternUpdateScans, List<SecretScanningScan> Function()? backfillScans, List<SecretScanningScan> Function()? customPatternBackfillScans, }) { return SecretScanningScanHistory(
   incrementalScans: incrementalScans != null ? incrementalScans() : this.incrementalScans,
   patternUpdateScans: patternUpdateScans != null ? patternUpdateScans() : this.patternUpdateScans,

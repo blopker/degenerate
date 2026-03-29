@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'audio_tokens': ?audioTokens,
   if (cachedTokensDetails != null) 'cached_tokens_details': cachedTokensDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cached_tokens', 'text_tokens', 'image_tokens', 'audio_tokens', 'cached_tokens_details'}.contains(key)); } 
 RealtimeResponseUsageInputTokenDetails copyWith({int Function()? cachedTokens, int Function()? textTokens, int Function()? imageTokens, int Function()? audioTokens, RealtimeResponseUsageInputTokenDetailsCachedTokensDetails Function()? cachedTokensDetails, }) { return RealtimeResponseUsageInputTokenDetails(
   cachedTokens: cachedTokens != null ? cachedTokens() : this.cachedTokens,
   textTokens: textTokens != null ? textTokens() : this.textTokens,

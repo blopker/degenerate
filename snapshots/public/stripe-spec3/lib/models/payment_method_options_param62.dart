@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'tos_shown_and_accepted': ?tosShownAndAccepted,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'tos_shown_and_accepted'}.contains(key)); } 
 PaymentMethodOptionsParam62 copyWith({PaymentMethodOptionsParam62SetupFutureUsage Function()? setupFutureUsage, bool Function()? tosShownAndAccepted, }) { return PaymentMethodOptionsParam62(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   tosShownAndAccepted: tosShownAndAccepted != null ? tosShownAndAccepted() : this.tosShownAndAccepted,

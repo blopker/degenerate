@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (nickname != null) 'nickname': nickname?.toJson(),
   if (platformRestrictions != null) 'platform_restrictions': platformRestrictions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'features', 'forwarding_settings', 'metadata', 'nickname', 'platform_restrictions'}.contains(key)); } 
 PostTreasuryFinancialAccountsFinancialAccountRequest copyWith({List<String> Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures Function()? features, PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings Function()? forwardingSettings, Map<String, String> Function()? metadata, PostTreasuryFinancialAccountsFinancialAccountRequestNickname Function()? nickname, PostTreasuryFinancialAccountsFinancialAccountRequestPlatformRestrictions Function()? platformRestrictions, }) { return PostTreasuryFinancialAccountsFinancialAccountRequest(
   expand: expand != null ? expand() : this.expand,
   features: features != null ? features() : this.features,

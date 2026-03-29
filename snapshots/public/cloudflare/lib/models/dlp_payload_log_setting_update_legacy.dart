@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (maskingLevel != null) 'masking_level': maskingLevel?.toJson(),
   'public_key': ?publicKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'masking_level', 'public_key'}.contains(key)); } 
 DlpPayloadLogSettingUpdateLegacy copyWith({DlpPayloadLogMaskingLevel Function()? maskingLevel, String? Function()? publicKey, }) { return DlpPayloadLogSettingUpdateLegacy(
   maskingLevel: maskingLevel != null ? maskingLevel() : this.maskingLevel,
   publicKey: publicKey != null ? publicKey() : this.publicKey,

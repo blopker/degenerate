@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (originIp != null) 'origin_ip': originIp?.toJson(),
   if (uuid != null) 'uuid': uuid?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_version', 'colo_name', 'id', 'is_pending_reconnect', 'opened_at', 'origin_ip', 'uuid'}.contains(key)); } 
 TunnelSchemasConnection copyWith({TunnelClientId Function()? clientId, TunnelVersion Function()? clientVersion, TunnelColoName Function()? coloName, TunnelConnectionId Function()? id, TunnelIsPendingReconnect Function()? isPendingReconnect, DateTime Function()? openedAt, TunnelIp Function()? originIp, TunnelConnectionId Function()? uuid, }) { return TunnelSchemasConnection(
   clientId: clientId != null ? clientId() : this.clientId,
   clientVersion: clientVersion != null ? clientVersion() : this.clientVersion,

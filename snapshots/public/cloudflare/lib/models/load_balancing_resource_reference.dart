@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'resource_name': ?resourceName,
   if (resourceType != null) 'resource_type': resourceType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_type', 'references', 'resource_id', 'resource_name', 'resource_type'}.contains(key)); } 
 LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReferenceType Function()? referenceType, List<Map<String, dynamic>> Function()? references, String Function()? resourceId, String Function()? resourceName, LoadBalancingResourceReferenceResourceType Function()? resourceType, }) { return LoadBalancingResourceReference(
   referenceType: referenceType != null ? referenceType() : this.referenceType,
   references: references != null ? references() : this.references,

@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (visaCompellingEvidence3 != null) 'visa_compelling_evidence_3': visaCompellingEvidence3?.toJson(),
   if (visaCompliance != null) 'visa_compliance': visaCompliance?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'visa_compelling_evidence_3', 'visa_compliance'}.contains(key)); } 
 EnhancedEvidence copyWith({EnhancedEvidenceVisaCompellingEvidence3 Function()? visaCompellingEvidence3, EnhancedEvidenceVisaCompliance Function()? visaCompliance, }) { return EnhancedEvidence(
   visaCompellingEvidence3: visaCompellingEvidence3 != null ? visaCompellingEvidence3() : this.visaCompellingEvidence3,
   visaCompliance: visaCompliance != null ? visaCompliance() : this.visaCompliance,

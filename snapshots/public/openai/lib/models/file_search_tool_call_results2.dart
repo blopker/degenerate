@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'attributes': ?attributes,
   'score': ?score,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'text', 'filename', 'attributes', 'score'}.contains(key)); } 
 FileSearchToolCallResults2 copyWith({String Function()? fileId, String Function()? text, String Function()? filename, Map<String, dynamic>? Function()? attributes, double Function()? score, }) { return FileSearchToolCallResults2(
   fileId: fileId != null ? fileId() : this.fileId,
   text: text != null ? text() : this.text,

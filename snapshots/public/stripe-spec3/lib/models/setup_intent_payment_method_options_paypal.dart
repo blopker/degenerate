@@ -13,7 +13,7 @@ final String? billingAgreementId;
 Map<String, dynamic> toJson() { return {
   'billing_agreement_id': ?billingAgreementId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_agreement_id'}.contains(key)); } 
 SetupIntentPaymentMethodOptionsPaypal copyWith({String? Function()? billingAgreementId}) { return SetupIntentPaymentMethodOptionsPaypal(
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
 ); } 

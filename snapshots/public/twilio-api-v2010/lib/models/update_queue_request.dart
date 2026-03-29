@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
   'MaxSize': ?maxSize,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'MaxSize'}.contains(key)); } 
 UpdateQueueRequest copyWith({String Function()? friendlyName, int Function()? maxSize, }) { return UpdateQueueRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   maxSize: maxSize != null ? maxSize() : this.maxSize,

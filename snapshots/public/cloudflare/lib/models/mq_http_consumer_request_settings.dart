@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (retryDelay != null) 'retry_delay': retryDelay?.toJson(),
   if (visibilityTimeoutMs != null) 'visibility_timeout_ms': visibilityTimeoutMs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'max_retries', 'retry_delay', 'visibility_timeout_ms'}.contains(key)); } 
 MqHttpConsumerRequestSettings copyWith({MqBatchSize Function()? batchSize, MqMaxRetries Function()? maxRetries, MqRetryDelay Function()? retryDelay, MqVisibilityTimeout Function()? visibilityTimeoutMs, }) { return MqHttpConsumerRequestSettings(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   maxRetries: maxRetries != null ? maxRetries() : this.maxRetries,

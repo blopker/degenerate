@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'fixed_amount', 'metadata', 'tax_behavior'}.contains(key)); } 
 PostShippingRatesShippingRateTokenRequest copyWith({bool Function()? active, List<String> Function()? expand, PostShippingRatesShippingRateTokenRequestFixedAmount Function()? fixedAmount, PostShippingRatesShippingRateTokenRequestMetadata Function()? metadata, PostShippingRatesShippingRateTokenRequestTaxBehavior Function()? taxBehavior, }) { return PostShippingRatesShippingRateTokenRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,

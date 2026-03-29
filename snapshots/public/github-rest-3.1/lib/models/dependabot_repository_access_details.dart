@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (defaultLevel != null) 'default_level': defaultLevel?.toJson(),
   if (accessibleRepositories != null) 'accessible_repositories': accessibleRepositories?.map((e) => e?.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_level', 'accessible_repositories'}.contains(key)); } 
 DependabotRepositoryAccessDetails copyWith({DependabotRepositoryAccessDetailsDefaultLevel? Function()? defaultLevel, List<SimpleRepository> Function()? accessibleRepositories, }) { return DependabotRepositoryAccessDetails(
   defaultLevel: defaultLevel != null ? defaultLevel() : this.defaultLevel,
   accessibleRepositories: accessibleRepositories != null ? accessibleRepositories() : this.accessibleRepositories,

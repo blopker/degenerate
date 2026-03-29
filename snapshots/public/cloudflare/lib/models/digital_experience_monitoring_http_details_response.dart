@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (targetPolicies != null) 'target_policies': targetPolicies?.map((e) => e.toJson()).toList(),
   'targeted': ?targeted,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'httpStats', 'httpStatsByColo', 'interval', 'kind', 'method', 'name', 'target_policies', 'targeted'}.contains(key)); } 
 DigitalExperienceMonitoringHttpDetailsResponse copyWith({String Function()? host, DigitalExperienceMonitoringHttpDetailsResponseHttpStats? Function()? httpStats, List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo> Function()? httpStatsByColo, String Function()? interval, dynamic Function()? kind, String Function()? method, String Function()? name, List<DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: host != null ? host() : this.host,
   httpStats: httpStats != null ? httpStats() : this.httpStats,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'run_id': ?runId,
   'run_url': ?runUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'run_id', 'run_url'}.contains(key)); } 
 CodeScanningDefaultSetupUpdateResponse copyWith({int Function()? runId, String Function()? runUrl, }) { return CodeScanningDefaultSetupUpdateResponse(
   runId: runId != null ? runId() : this.runId,
   runUrl: runUrl != null ? runUrl() : this.runUrl,

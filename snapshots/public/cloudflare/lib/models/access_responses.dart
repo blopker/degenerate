@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'resource_user_email': ?resourceUserEmail,
   'status': ?status,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cf_resource_id', 'error_description', 'idp_id', 'idp_resource_id', 'logged_at', 'request_body', 'request_method', 'resource_group_name', 'resource_type', 'resource_user_email', 'status'}.contains(key)); } 
 AccessResponses copyWith({String Function()? cfResourceId, String Function()? errorDescription, String Function()? idpId, String Function()? idpResourceId, AccessTimestamp Function()? loggedAt, String Function()? requestBody, String Function()? requestMethod, String Function()? resourceGroupName, String Function()? resourceType, String Function()? resourceUserEmail, String Function()? status, }) { return AccessResponses(
   cfResourceId: cfResourceId != null ? cfResourceId() : this.cfResourceId,
   errorDescription: errorDescription != null ? errorDescription() : this.errorDescription,

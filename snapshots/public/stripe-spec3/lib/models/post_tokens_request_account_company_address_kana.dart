@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
   'town': ?town,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state', 'town'}.contains(key)); } 
 PostTokensRequestAccountCompanyAddressKana copyWith({String Function()? city, String Function()? country, String Function()? line1, String Function()? line2, String Function()? postalCode, String Function()? state, String Function()? town, }) { return PostTokensRequestAccountCompanyAddressKana(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,

@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (compression != null) 'compression': compression?.toJson(),
   'row_group_bytes': ?rowGroupBytes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compression', 'row_group_bytes'}.contains(key)); } 
 CloudflarePipelinesParquetFormat copyWith({CloudflarePipelinesParquetCompression Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesParquetFormat(
   compression: compression != null ? compression() : this.compression,
   rowGroupBytes: rowGroupBytes != null ? rowGroupBytes() : this.rowGroupBytes,

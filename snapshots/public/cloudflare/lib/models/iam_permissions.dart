@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (zoneSettings != null) 'zone_settings': zoneSettings?.toJson(),
   if (zones != null) 'zones': zones?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'analytics', 'billing', 'cache_purge', 'dns', 'dns_records', 'lb', 'logs', 'organization', 'ssl', 'waf', 'zone_settings', 'zones'}.contains(key)); } 
 IamPermissions copyWith({IamGrants Function()? analytics, IamGrants Function()? billing, IamGrants Function()? cachePurge, IamGrants Function()? dns, IamGrants Function()? dnsRecords, IamGrants Function()? lb, IamGrants Function()? logs, IamGrants Function()? organization, IamGrants Function()? ssl, IamGrants Function()? waf, IamGrants Function()? zoneSettings, IamGrants Function()? zones, }) { return IamPermissions(
   analytics: analytics != null ? analytics() : this.analytics,
   billing: billing != null ? billing() : this.billing,

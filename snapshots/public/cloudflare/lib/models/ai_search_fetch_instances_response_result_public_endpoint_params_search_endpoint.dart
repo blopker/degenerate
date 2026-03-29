@@ -12,7 +12,7 @@ final bool disabled;
 Map<String, dynamic> toJson() { return {
   'disabled': disabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled'}.contains(key)); } 
 AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint copyWith({bool Function()? disabled}) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint(
   disabled: disabled != null ? disabled() : this.disabled,
 ); } 

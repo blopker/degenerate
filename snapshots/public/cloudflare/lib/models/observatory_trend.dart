@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'ttfb': ?ttfb,
   'tti': ?tti,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cls', 'fcp', 'lcp', 'performanceScore', 'si', 'tbt', 'ttfb', 'tti'}.contains(key)); } 
 ObservatoryTrend copyWith({List<double> Function()? cls, List<double> Function()? fcp, List<double> Function()? lcp, List<double> Function()? performanceScore, List<double> Function()? si, List<double> Function()? tbt, List<double> Function()? ttfb, List<double> Function()? tti, }) { return ObservatoryTrend(
   cls: cls != null ? cls() : this.cls,
   fcp: fcp != null ? fcp() : this.fcp,

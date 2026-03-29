@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (isPublic != null) 'is_public': isPublic?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'name'}.contains(key)); } 
 CustomIndicatorFeedsPermissionListItem copyWith({CustomIndicatorFeedsDescription Function()? description, CustomIndicatorFeedsId Function()? id, CustomIndicatorFeedsIsAttributable Function()? isAttributable, CustomIndicatorFeedsIsDownloadable Function()? isDownloadable, CustomIndicatorFeedsIsPublic Function()? isPublic, CustomIndicatorFeedsName Function()? name, }) { return CustomIndicatorFeedsPermissionListItem(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

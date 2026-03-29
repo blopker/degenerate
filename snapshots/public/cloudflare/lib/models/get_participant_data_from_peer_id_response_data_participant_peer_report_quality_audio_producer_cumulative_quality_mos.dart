@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'p75': ?p75,
   'p90': ?p90,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avg', 'p50', 'p75', 'p90'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos copyWith({int Function()? avg, int Function()? p50, int Function()? p75, int Function()? p90, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos(
   avg: avg != null ? avg() : this.avg,
   p50: p50 != null ? p50() : this.p50,

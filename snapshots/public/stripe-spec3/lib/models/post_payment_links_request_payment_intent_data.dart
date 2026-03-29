@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   'transfer_group': ?transferGroup,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'description', 'metadata', 'setup_future_usage', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_group'}.contains(key)); } 
 PostPaymentLinksRequestPaymentIntentData copyWith({PostPaymentLinksRequestPaymentIntentDataCaptureMethod Function()? captureMethod, String Function()? description, Map<String, String> Function()? metadata, PostPaymentLinksRequestPaymentIntentDataSetupFutureUsage Function()? setupFutureUsage, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, String Function()? transferGroup, }) { return PostPaymentLinksRequestPaymentIntentData(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   description: description != null ? description() : this.description,

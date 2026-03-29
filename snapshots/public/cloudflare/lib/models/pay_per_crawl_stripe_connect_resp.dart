@@ -11,7 +11,7 @@ final String? url;
 Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
 PayPerCrawlStripeConnectResp copyWith({String Function()? url}) { return PayPerCrawlStripeConnectResp(
   url: url != null ? url() : this.url,
 ); } 

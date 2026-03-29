@@ -137,7 +137,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'verification_errors': ?verificationErrors,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'custom_metadata', 'custom_origin_server', 'custom_origin_sni', 'hostname', 'id', 'ownership_verification', 'ownership_verification_http', 'ssl', 'status', 'verification_errors'}.contains(key)); } 
 TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesCreatedAt Function()? createdAt, Map<String, String> Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni Function()? customOriginSni, TlsCertificatesAndHostnamesHostname Function()? hostname, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesOwnershipVerification Function()? ownershipVerification, TlsCertificatesAndHostnamesOwnershipVerificationHttp Function()? ownershipVerificationHttp, TlsCertificatesAndHostnamesSsl Function()? ssl, TlsCertificatesAndHostnamesComponentsSchemasStatus Function()? status, List<String> Function()? verificationErrors, }) { return TlsCertificatesAndHostnamesCustomhostname(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,

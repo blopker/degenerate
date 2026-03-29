@@ -218,7 +218,7 @@ Map<String, dynamic> toJson() { return {
   if (suggestedDecision != null) 'suggested_decision': suggestedDecision?.toJson(),
   'suggested_decision_version': ?suggestedDecisionVersion,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'account_trust_score', 'card_number_source', 'cardholder_address', 'cardholder_name', 'device_trust_score', 'hashed_account_email_address', 'reason_codes', 'suggested_decision', 'suggested_decision_version'}.contains(key)); } 
 IssuingNetworkTokenWalletProvider copyWith({String Function()? accountId, int Function()? accountTrustScore, IssuingNetworkTokenWalletProviderCardNumberSource Function()? cardNumberSource, IssuingNetworkTokenAddress Function()? cardholderAddress, String Function()? cardholderName, int Function()? deviceTrustScore, String Function()? hashedAccountEmailAddress, List<IssuingNetworkTokenWalletProviderReasonCodes> Function()? reasonCodes, IssuingNetworkTokenWalletProviderSuggestedDecision Function()? suggestedDecision, String Function()? suggestedDecisionVersion, }) { return IssuingNetworkTokenWalletProvider(
   accountId: accountId != null ? accountId() : this.accountId,
   accountTrustScore: accountTrustScore != null ? accountTrustScore() : this.accountTrustScore,

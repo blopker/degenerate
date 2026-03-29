@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'Body': ?body,
   if (status != null) 'Status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Body', 'Status'}.contains(key)); } 
 UpdateMessageRequest copyWith({String Function()? body, MessageEnumUpdateStatus Function()? status, }) { return UpdateMessageRequest(
   body: body != null ? body() : this.body,
   status: status != null ? status() : this.status,

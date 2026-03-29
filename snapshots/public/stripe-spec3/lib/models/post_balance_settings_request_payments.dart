@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (payouts != null) 'payouts': payouts?.toJson(),
   if (settlementTiming != null) 'settlement_timing': settlementTiming?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'debit_negative_balances', 'payouts', 'settlement_timing'}.contains(key)); } 
 PostBalanceSettingsRequestPayments copyWith({bool Function()? debitNegativeBalances, PostBalanceSettingsRequestPaymentsPayouts Function()? payouts, PostBalanceSettingsRequestPaymentsSettlementTiming Function()? settlementTiming, }) { return PostBalanceSettingsRequestPayments(
   debitNegativeBalances: debitNegativeBalances != null ? debitNegativeBalances() : this.debitNegativeBalances,
   payouts: payouts != null ? payouts() : this.payouts,

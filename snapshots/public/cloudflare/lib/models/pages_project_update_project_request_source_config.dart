@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
   'repo_id': ?repoId,
   'repo_name': ?repoName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deployments_enabled', 'owner', 'owner_id', 'path_excludes', 'path_includes', 'pr_comments_enabled', 'preview_branch_excludes', 'preview_branch_includes', 'preview_deployment_setting', 'production_branch', 'production_deployments_enabled', 'repo_id', 'repo_name'}.contains(key)); } 
 PagesProjectUpdateProjectRequestSourceConfig copyWith({bool Function()? deploymentsEnabled, String Function()? owner, String Function()? ownerId, List<String> Function()? pathExcludes, List<String> Function()? pathIncludes, bool Function()? prCommentsEnabled, List<String> Function()? previewBranchExcludes, List<String> Function()? previewBranchIncludes, PagesProjectUpdateProjectRequestSourceConfigPreviewDeploymentSetting Function()? previewDeploymentSetting, String Function()? productionBranch, bool Function()? productionDeploymentsEnabled, String Function()? repoId, String Function()? repoName, }) { return PagesProjectUpdateProjectRequestSourceConfig(
   deploymentsEnabled: deploymentsEnabled != null ? deploymentsEnabled() : this.deploymentsEnabled,
   owner: owner != null ? owner() : this.owner,

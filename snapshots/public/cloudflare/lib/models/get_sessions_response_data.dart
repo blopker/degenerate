@@ -11,7 +11,7 @@ final List<RealtimekitActiveSession>? sessions;
 Map<String, dynamic> toJson() { return {
   if (sessions != null) 'sessions': sessions?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sessions'}.contains(key)); } 
 GetSessionsResponseData copyWith({List<RealtimekitActiveSession> Function()? sessions}) { return GetSessionsResponseData(
   sessions: sessions != null ? sessions() : this.sessions,
 ); } 

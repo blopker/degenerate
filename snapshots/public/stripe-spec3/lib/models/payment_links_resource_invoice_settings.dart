@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
 PaymentLinksResourceInvoiceSettings copyWith({List<PaymentLinksResourceInvoiceSettingsAccountTaxIds>? Function()? accountTaxIds, List<InvoiceSettingCustomField>? Function()? customFields, String? Function()? description, String? Function()? footer, PaymentLinksResourceInvoiceSettingsIssuer? Function()? issuer, Map<String, String>? Function()? metadata, PaymentLinksResourceInvoiceSettingsRenderingOptions? Function()? renderingOptions, }) { return PaymentLinksResourceInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   customFields: customFields != null ? customFields() : this.customFields,

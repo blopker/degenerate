@@ -38,7 +38,7 @@ final PostPaymentMethodConfigurationsConfigurationRequestNaverPayDisplayPreferen
 Map<String, dynamic> toJson() { return {
   if (preference != null) 'preference': preference?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
 PostPaymentMethodConfigurationsConfigurationRequestNaverPayDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestNaverPayDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsConfigurationRequestNaverPayDisplayPreference(
   preference: preference != null ? preference() : this.preference,
 ); } 

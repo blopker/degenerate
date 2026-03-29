@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   if (scope != null) 'scope': scope?.toJson(),
   if (source != null) 'source': source?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'required', 'scope', 'source'}.contains(key)); } 
 AccessOidcSaasAppCustomClaims copyWith({String Function()? name, bool Function()? $required, AccessOidcSaasAppCustomClaimsScope Function()? scope, AccessOidcSaasAppCustomClaimsSource Function()? source, }) { return AccessOidcSaasAppCustomClaims(
   name: name != null ? name() : this.name,
   $required: $required != null ? $required() : this.$required,

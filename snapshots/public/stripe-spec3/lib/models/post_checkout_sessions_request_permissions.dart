@@ -38,7 +38,7 @@ final PostCheckoutSessionsRequestPermissionsUpdateShippingDetails? updateShippin
 Map<String, dynamic> toJson() { return {
   if (updateShippingDetails != null) 'update_shipping_details': updateShippingDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'update_shipping_details'}.contains(key)); } 
 PostCheckoutSessionsRequestPermissions copyWith({PostCheckoutSessionsRequestPermissionsUpdateShippingDetails Function()? updateShippingDetails}) { return PostCheckoutSessionsRequestPermissions(
   updateShippingDetails: updateShippingDetails != null ? updateShippingDetails() : this.updateShippingDetails,
 ); } 

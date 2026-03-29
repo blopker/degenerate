@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': ?createdAt,
   'html_url': ?htmlUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reason', 'created_at', 'html_url'}.contains(key)); } 
 GistsGetResponse403Block copyWith({String Function()? reason, String Function()? createdAt, String? Function()? htmlUrl, }) { return GistsGetResponse403Block(
   reason: reason != null ? reason() : this.reason,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

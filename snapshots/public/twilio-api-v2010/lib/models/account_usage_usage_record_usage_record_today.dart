@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'usage': ?usage,
   'usage_unit': ?usageUnit,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'as_of', 'category', 'count', 'count_unit', 'description', 'end_date', 'price', 'price_unit', 'start_date', 'subresource_uris', 'uri', 'usage', 'usage_unit'}.contains(key)); } 
 AccountUsageUsageRecordUsageRecordToday copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? asOf, String? Function()? category, String? Function()? count, String? Function()? countUnit, String? Function()? description, String? Function()? endDate, double? Function()? price, String? Function()? priceUnit, String? Function()? startDate, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, String? Function()? usage, String? Function()? usageUnit, }) { return AccountUsageUsageRecordUsageRecordToday(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

@@ -192,7 +192,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodTypes != null) 'payment_method_types': paymentMethodTypes?.map((e) => e.toJson()).toList(),
   if (saveDefaultPaymentMethod != null) 'save_default_payment_method': saveDefaultPaymentMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_options', 'payment_method_types', 'save_default_payment_method'}.contains(key)); } 
 SubscriptionsResourcePaymentSettings copyWith({SubscriptionsResourcePaymentSettingsPaymentMethodOptions? Function()? paymentMethodOptions, List<SubscriptionsResourcePaymentSettingsPaymentMethodTypes>? Function()? paymentMethodTypes, SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod? Function()? saveDefaultPaymentMethod, }) { return SubscriptionsResourcePaymentSettings(
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,

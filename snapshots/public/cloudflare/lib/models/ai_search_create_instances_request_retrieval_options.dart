@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (boostBy != null) 'boost_by': boostBy?.map((e) => e.toJson()).toList(),
   'keyword_match_mode': keywordMatchMode.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'keyword_match_mode'}.contains(key)); } 
 AiSearchCreateInstancesRequestRetrievalOptions copyWith({List<AiSearchCreateInstancesRequestRetrievalOptionsBoostBy> Function()? boostBy, AiSearchCreateInstancesRequestRetrievalOptionsKeywordMatchMode Function()? keywordMatchMode, }) { return AiSearchCreateInstancesRequestRetrievalOptions(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   keywordMatchMode: keywordMatchMode != null ? keywordMatchMode() : this.keywordMatchMode,

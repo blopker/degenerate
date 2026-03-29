@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'user': ?user,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'level', 'role', 'type', 'user'}.contains(key)); } 
 SeLinuxOptions copyWith({String Function()? level, String Function()? role, String Function()? type, String Function()? user, }) { return SeLinuxOptions(
   level: level != null ? level() : this.level,
   role: role != null ? role() : this.role,

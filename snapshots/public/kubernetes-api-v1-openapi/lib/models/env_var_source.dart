@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (resourceFieldRef != null) 'resourceFieldRef': resourceFieldRef?.toJson(),
   if (secretKeyRef != null) 'secretKeyRef': secretKeyRef?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configMapKeyRef', 'fieldRef', 'fileKeyRef', 'resourceFieldRef', 'secretKeyRef'}.contains(key)); } 
 EnvVarSource copyWith({ConfigMapKeySelector Function()? configMapKeyRef, ObjectFieldSelector Function()? fieldRef, FileKeySelector Function()? fileKeyRef, ResourceFieldSelector Function()? resourceFieldRef, SecretKeySelector Function()? secretKeyRef, }) { return EnvVarSource(
   configMapKeyRef: configMapKeyRef != null ? configMapKeyRef() : this.configMapKeyRef,
   fieldRef: fieldRef != null ? fieldRef() : this.fieldRef,

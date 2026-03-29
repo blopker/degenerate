@@ -19,7 +19,7 @@ final class Input {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any((key) => const {'limit', 'offset'}.contains(key));
   }
 
   Input copyWith({int Function()? limit, int Function()? offset}) {

@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'key', 'modified', 'name', 'uid'}.contains(key)); } 
 CallsTurnKeyWithKey copyWith({CallsCreated Function()? created, CallsTurnKey Function()? key, CallsModified Function()? modified, CallsTurnKeyName Function()? name, CallsIdentifier Function()? uid, }) { return CallsTurnKeyWithKey(
   created: created != null ? created() : this.created,
   key: key != null ? key() : this.key,

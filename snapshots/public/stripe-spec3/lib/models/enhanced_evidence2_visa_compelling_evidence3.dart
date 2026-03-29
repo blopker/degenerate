@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (disputedTransaction != null) 'disputed_transaction': disputedTransaction?.toJson(),
   if (priorUndisputedTransactions != null) 'prior_undisputed_transactions': priorUndisputedTransactions?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disputed_transaction', 'prior_undisputed_transactions'}.contains(key)); } 
 EnhancedEvidence2VisaCompellingEvidence3 copyWith({EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction Function()? disputedTransaction, List<EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions> Function()? priorUndisputedTransactions, }) { return EnhancedEvidence2VisaCompellingEvidence3(
   disputedTransaction: disputedTransaction != null ? disputedTransaction() : this.disputedTransaction,
   priorUndisputedTransactions: priorUndisputedTransactions != null ? priorUndisputedTransactions() : this.priorUndisputedTransactions,

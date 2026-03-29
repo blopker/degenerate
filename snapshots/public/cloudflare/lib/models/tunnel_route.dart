@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (tunnelId != null) 'tunnel_id': tunnelId?.toJson(),
   if (virtualNetworkId != null) 'virtual_network_id': virtualNetworkId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'network', 'tunnel_id', 'virtual_network_id'}.contains(key)); } 
 TunnelRoute copyWith({TunnelRouteComment Function()? comment, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelRouteId Function()? id, TunnelIpNetwork Function()? network, TunnelTunnelId Function()? tunnelId, TunnelVirtualNetworkId Function()? virtualNetworkId, }) { return TunnelRoute(
   comment: comment != null ? comment() : this.comment,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (threats != null) 'threats': threats?.toJson(),
   if (until != null) 'until': until?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bandwidth', 'requests', 'since', 'threats', 'until'}.contains(key)); } 
 TimeseriesByColo2 copyWith({BandwidthByColo Function()? bandwidth, RequestsByColo Function()? requests, Since Function()? since, Threats Function()? threats, Until Function()? until, }) { return TimeseriesByColo2(
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,
   requests: requests != null ? requests() : this.requests,

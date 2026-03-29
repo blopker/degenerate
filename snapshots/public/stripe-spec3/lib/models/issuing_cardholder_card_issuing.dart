@@ -13,7 +13,7 @@ final IssuingCardholderCardIssuingUserTermsAcceptance? userTermsAcceptance;
 Map<String, dynamic> toJson() { return {
   if (userTermsAcceptance != null) 'user_terms_acceptance': userTermsAcceptance?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_terms_acceptance'}.contains(key)); } 
 IssuingCardholderCardIssuing copyWith({IssuingCardholderCardIssuingUserTermsAcceptance? Function()? userTermsAcceptance}) { return IssuingCardholderCardIssuing(
   userTermsAcceptance: userTermsAcceptance != null ? userTermsAcceptance() : this.userTermsAcceptance,
 ); } 

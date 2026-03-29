@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (sender != null) 'sender': sender?.toJson(),
   'zen': ?zen,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hook', 'hook_id', 'organization', 'repository', 'sender', 'zen'}.contains(key)); } 
 WebhookPing copyWith({WebhookPingHook Function()? hook, int Function()? hookId, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser Function()? sender, String Function()? zen, }) { return WebhookPing(
   hook: hook != null ? hook() : this.hook,
   hookId: hookId != null ? hookId() : this.hookId,

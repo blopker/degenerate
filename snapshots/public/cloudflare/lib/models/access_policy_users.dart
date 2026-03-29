@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'id', 'name', 'status'}.contains(key)); } 
 AccessPolicyUsers copyWith({AccessSchemasEmail Function()? email, AccessUuid Function()? id, AccessUsersComponentsSchemasName Function()? name, AccessUserResult Function()? status, }) { return AccessPolicyUsers(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,

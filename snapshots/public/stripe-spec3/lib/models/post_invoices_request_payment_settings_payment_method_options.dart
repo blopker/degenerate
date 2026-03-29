@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit', 'bancontact', 'card', 'customer_balance', 'konbini', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key)); } 
 PostInvoicesRequestPaymentSettingsPaymentMethodOptions copyWith({PostInvoicesRequestPaymentSettingsPaymentMethodOptionsAcssDebit Function()? acssDebit, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontact Function()? bancontact, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard Function()? card, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCustomerBalance Function()? customerBalance, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsKonbini Function()? konbini, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsPayto Function()? payto, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebit Function()? sepaDebit, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsUsBankAccount Function()? usBankAccount, }) { return PostInvoicesRequestPaymentSettingsPaymentMethodOptions(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   bancontact: bancontact != null ? bancontact() : this.bancontact,

@@ -13,7 +13,7 @@ final Time? startedAt;
 Map<String, dynamic> toJson() { return {
   if (startedAt != null) 'startedAt': startedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'startedAt'}.contains(key)); } 
 ContainerStateRunning copyWith({Time Function()? startedAt}) { return ContainerStateRunning(
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 

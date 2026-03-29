@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (installments != null) 'installments': installments?.toJson(),
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'installments', 'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsAlma copyWith({AlmaInstallments Function()? installments, String? Function()? transactionId, }) { return PaymentMethodDetailsAlma(
   installments: installments != null ? installments() : this.installments,
   transactionId: transactionId != null ? transactionId() : this.transactionId,

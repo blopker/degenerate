@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   'sid': ?sid,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'date_created', 'date_updated', 'error_code', 'log', 'message_date', 'message_text', 'more_info', 'request_method', 'request_url', 'request_variables', 'response_body', 'response_headers', 'sid', 'uri'}.contains(key)); } 
 AccountCallCallNotificationInstance copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? errorCode, String? Function()? log, String? Function()? messageDate, String? Function()? messageText, Uri? Function()? moreInfo, AccountCallCallNotificationInstanceRequestMethod? Function()? requestMethod, Uri? Function()? requestUrl, String? Function()? requestVariables, String? Function()? responseBody, String? Function()? responseHeaders, String? Function()? sid, String? Function()? uri, }) { return AccountCallCallNotificationInstance(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

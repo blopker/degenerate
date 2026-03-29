@@ -46,7 +46,7 @@ final ReposUpdateInvitationRequestPermissions? permissions;
 Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'permissions'}.contains(key)); } 
 ReposUpdateInvitationRequest copyWith({ReposUpdateInvitationRequestPermissions Function()? permissions}) { return ReposUpdateInvitationRequest(
   permissions: permissions != null ? permissions() : this.permissions,
 ); } 

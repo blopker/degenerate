@@ -110,7 +110,7 @@ final PaymentMethodP24Bank? bank;
 Map<String, dynamic> toJson() { return {
   if (bank != null) 'bank': bank?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
 PaymentMethodP24 copyWith({PaymentMethodP24Bank? Function()? bank}) { return PaymentMethodP24(
   bank: bank != null ? bank() : this.bank,
 ); } 

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'ocr': ?ocr,
   if (payloadLogging != null) 'payload_logging': payloadLogging?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_context_analysis', 'ocr', 'payload_logging'}.contains(key)); } 
 DlpDlpSettingsUpdate copyWith({bool? Function()? aiContextAnalysis, bool? Function()? ocr, DlpPayloadLogSettingUpdate Function()? payloadLogging, }) { return DlpDlpSettingsUpdate(
   aiContextAnalysis: aiContextAnalysis != null ? aiContextAnalysis() : this.aiContextAnalysis,
   ocr: ocr != null ? ocr() : this.ocr,

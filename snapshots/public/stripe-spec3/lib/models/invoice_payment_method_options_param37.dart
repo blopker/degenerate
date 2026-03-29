@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'verification_method'}.contains(key)); } 
 InvoicePaymentMethodOptionsParam37 copyWith({InvoicePaymentMethodOptionsParam37FinancialConnections Function()? financialConnections, InvoicePaymentMethodOptionsParam37VerificationMethod Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsParam37(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,

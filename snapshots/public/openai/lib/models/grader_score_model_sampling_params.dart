@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'max_completions_tokens': ?maxCompletionsTokens,
   if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'seed', 'top_p', 'temperature', 'max_completions_tokens', 'reasoning_effort'}.contains(key)); } 
 GraderScoreModelSamplingParams copyWith({int? Function()? seed, double? Function()? topP, double? Function()? temperature, int? Function()? maxCompletionsTokens, ReasoningEffort? Function()? reasoningEffort, }) { return GraderScoreModelSamplingParams(
   seed: seed != null ? seed() : this.seed,
   topP: topP != null ? topP() : this.topP,

@@ -13,7 +13,7 @@ final LinuxContainerUser? linux;
 Map<String, dynamic> toJson() { return {
   if (linux != null) 'linux': linux?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'linux'}.contains(key)); } 
 ContainerUser copyWith({LinuxContainerUser Function()? linux}) { return ContainerUser(
   linux: linux != null ? linux() : this.linux,
 ); } 

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'login': ?login,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'login', 'type'}.contains(key)); } 
 RuleSuitePullRequestPullRequestUser copyWith({int Function()? id, String Function()? login, String Function()? type, }) { return RuleSuitePullRequestPullRequestUser(
   id: id != null ? id() : this.id,
   login: login != null ? login() : this.login,

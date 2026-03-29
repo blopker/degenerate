@@ -11,7 +11,7 @@ final Uint8List? image;
 Map<String, dynamic> toJson() { return {
   'image': ?image,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image'}.contains(key)); } 
 ImageFile copyWith({Uint8List Function()? image}) { return ImageFile(
   image: image != null ? image() : this.image,
 ); } 

@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (self != null) 'self': self?.toJson(),
   if (html != null) 'html': html?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'self', 'html'}.contains(key)); } 
 RepositoryRulesetLinks copyWith({RepositoryRulesetLinksSelf Function()? self, RepositoryRulesetLinksHtml? Function()? html, }) { return RepositoryRulesetLinks(
   self: self != null ? self() : this.self,
   html: html != null ? html() : this.html,

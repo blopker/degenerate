@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (coupon != null) 'coupon': coupon?.toJson(),
   if (promotionCode != null) 'promotion_code': promotionCode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key)); } 
 PaymentPagesCheckoutSessionDiscount copyWith({PaymentPagesCheckoutSessionDiscountCoupon? Function()? coupon, PaymentPagesCheckoutSessionDiscountPromotionCode? Function()? promotionCode, }) { return PaymentPagesCheckoutSessionDiscount(
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,

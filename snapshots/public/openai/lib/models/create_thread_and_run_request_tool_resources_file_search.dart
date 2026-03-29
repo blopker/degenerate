@@ -13,7 +13,7 @@ final List<String>? vectorStoreIds;
 Map<String, dynamic> toJson() { return {
   'vector_store_ids': ?vectorStoreIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'vector_store_ids'}.contains(key)); } 
 CreateThreadAndRunRequestToolResourcesFileSearch copyWith({List<String> Function()? vectorStoreIds}) { return CreateThreadAndRunRequestToolResourcesFileSearch(
   vectorStoreIds: vectorStoreIds != null ? vectorStoreIds() : this.vectorStoreIds,
 ); } 

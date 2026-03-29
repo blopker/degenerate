@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'tfvc_project': ?tfvcProject,
   'human_name': ?humanName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'vcs', 'tfvc_project', 'human_name'}.contains(key)); } 
 ImportProjectChoices copyWith({String Function()? vcs, String Function()? tfvcProject, String Function()? humanName, }) { return ImportProjectChoices(
   vcs: vcs != null ? vcs() : this.vcs,
   tfvcProject: tfvcProject != null ? tfvcProject() : this.tfvcProject,

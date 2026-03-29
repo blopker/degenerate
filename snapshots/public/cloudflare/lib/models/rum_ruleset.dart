@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'zone_name': ?zoneName,
   if (zoneTag != null) 'zone_tag': zoneTag?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'id', 'zone_name', 'zone_tag'}.contains(key)); } 
 RumRuleset copyWith({bool Function()? enabled, RumRulesetIdentifier Function()? id, String Function()? zoneName, RumZoneTag Function()? zoneTag, }) { return RumRuleset(
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,

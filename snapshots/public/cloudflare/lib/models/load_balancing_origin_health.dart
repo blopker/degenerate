@@ -11,7 +11,7 @@ final LoadBalancingOriginHealthIp? ip;
 Map<String, dynamic> toJson() { return {
   if (ip != null) 'ip': ip?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip'}.contains(key)); } 
 LoadBalancingOriginHealth copyWith({LoadBalancingOriginHealthIp Function()? ip}) { return LoadBalancingOriginHealth(
   ip: ip != null ? ip() : this.ip,
 ); } 

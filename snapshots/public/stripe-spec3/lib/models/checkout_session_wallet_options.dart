@@ -12,7 +12,7 @@ final CheckoutLinkWalletOptions? link;
 Map<String, dynamic> toJson() { return {
   if (link != null) 'link': link?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'link'}.contains(key)); } 
 CheckoutSessionWalletOptions copyWith({CheckoutLinkWalletOptions Function()? link}) { return CheckoutSessionWalletOptions(
   link: link != null ? link() : this.link,
 ); } 

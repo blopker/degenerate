@@ -11,7 +11,7 @@ final double? lastAuthenticated;
 Map<String, dynamic> toJson() { return {
   'last_authenticated': ?lastAuthenticated,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_authenticated'}.contains(key)); } 
 AccessDeviceSession copyWith({double Function()? lastAuthenticated}) { return AccessDeviceSession(
   lastAuthenticated: lastAuthenticated != null ? lastAuthenticated() : this.lastAuthenticated,
 ); } 

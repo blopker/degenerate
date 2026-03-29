@@ -12,7 +12,7 @@ final String? number;
 Map<String, dynamic> toJson() { return {
   'number': ?number,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number'}.contains(key)); } 
 PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent copyWith({String Function()? number}) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent(
   number: number != null ? number() : this.number,
 ); } 

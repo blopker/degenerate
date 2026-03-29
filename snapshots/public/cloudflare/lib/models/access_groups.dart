@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (meta != null) 'meta': meta?.toJson(),
   'schemas': ?schemas,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'displayName', 'externalId', 'id', 'meta', 'schemas'}.contains(key)); } 
 AccessGroups copyWith({String Function()? displayName, AccessExternalId Function()? externalId, AccessId Function()? id, AccessMeta Function()? meta, List<String> Function()? schemas, }) { return AccessGroups(
   displayName: displayName != null ? displayName() : this.displayName,
   externalId: externalId != null ? externalId() : this.externalId,

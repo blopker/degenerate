@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'capture', 'card', 'currency', 'customer', 'description', 'destination', 'expand', 'metadata', 'on_behalf_of', 'radar_options', 'receipt_email', 'shipping', 'source', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
 PostChargesRequest copyWith({int Function()? amount, int Function()? applicationFee, int Function()? applicationFeeAmount, bool Function()? capture, PostChargesRequestCard Function()? card, String Function()? currency, String Function()? customer, String Function()? description, PostChargesRequestDestination Function()? destination, List<String> Function()? expand, PostChargesRequestMetadata Function()? metadata, String Function()? onBehalfOf, PostChargesRequestRadarOptions Function()? radarOptions, String Function()? receiptEmail, PostChargesRequestShipping Function()? shipping, String Function()? source, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostChargesRequestTransferData Function()? transferData, String Function()? transferGroup, }) { return PostChargesRequest(
   amount: amount != null ? amount() : this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,

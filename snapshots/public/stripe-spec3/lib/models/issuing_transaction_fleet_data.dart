@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (reportedBreakdown != null) 'reported_breakdown': reportedBreakdown?.toJson(),
   'service_type': ?serviceType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key)); } 
 IssuingTransactionFleetData copyWith({IssuingTransactionFleetDataCardholderPromptData? Function()? cardholderPromptData, String? Function()? purchaseType, IssuingTransactionFleetDataReportedBreakdown? Function()? reportedBreakdown, String? Function()? serviceType, }) { return IssuingTransactionFleetData(
   cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
   purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,

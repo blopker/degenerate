@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'content_type': ?contentType,
   'secret': ?secret,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'insecure_ssl', 'content_type', 'secret'}.contains(key)); } 
 OrgHookConfig copyWith({String Function()? url, String Function()? insecureSsl, String Function()? contentType, String Function()? secret, }) { return OrgHookConfig(
   url: url != null ? url() : this.url,
   insecureSsl: insecureSsl != null ? insecureSsl() : this.insecureSsl,

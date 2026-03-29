@@ -12,7 +12,7 @@ final List<String>? labels;
 Map<String, dynamic> toJson() { return {
   'labels': ?labels,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labels'}.contains(key)); } 
 IssuesAddLabelsRequestVariant1 copyWith({List<String> Function()? labels}) { return IssuesAddLabelsRequestVariant1(
   labels: labels != null ? labels() : this.labels,
 ); } 

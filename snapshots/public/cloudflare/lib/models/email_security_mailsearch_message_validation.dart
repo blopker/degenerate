@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (dmarc != null) 'dmarc': dmarc?.toJson(),
   if (spf != null) 'spf': spf?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'dkim', 'dmarc', 'spf'}.contains(key)); } 
 EmailSecurityMailsearchMessageValidation copyWith({String? Function()? comment, EmailSecurityValidationStatus? Function()? dkim, EmailSecurityValidationStatus? Function()? dmarc, EmailSecurityValidationStatus? Function()? spf, }) { return EmailSecurityMailsearchMessageValidation(
   comment: comment != null ? comment() : this.comment,
   dkim: dkim != null ? dkim() : this.dkim,

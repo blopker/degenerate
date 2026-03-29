@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (origin != null) 'origin': origin?.toJson(),
   if (pool != null) 'pool': pool?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origin', 'pool'}.contains(key)); } 
 LoadBalancingNotificationFilter copyWith({LoadBalancingFilterOptions Function()? origin, LoadBalancingFilterOptions Function()? pool, }) { return LoadBalancingNotificationFilter(
   origin: origin != null ? origin() : this.origin,
   pool: pool != null ? pool() : this.pool,

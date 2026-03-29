@@ -12,7 +12,7 @@ final PostPaymentMethodConfigurationsConfigurationRequestSamsungPayDisplayPrefer
 Map<String, dynamic> toJson() { return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
 PostPaymentMethodConfigurationsConfigurationRequestSamsungPay copyWith({PostPaymentMethodConfigurationsConfigurationRequestSamsungPayDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestSamsungPay(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
 ); } 

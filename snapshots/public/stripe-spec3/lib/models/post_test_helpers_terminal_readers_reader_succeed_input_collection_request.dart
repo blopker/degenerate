@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (skipNonRequiredInputs != null) 'skip_non_required_inputs': skipNonRequiredInputs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'skip_non_required_inputs'}.contains(key)); } 
 PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest copyWith({List<String> Function()? expand, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs Function()? skipNonRequiredInputs, }) { return PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest(
   expand: expand != null ? expand() : this.expand,
   skipNonRequiredInputs: skipNonRequiredInputs != null ? skipNonRequiredInputs() : this.skipNonRequiredInputs,

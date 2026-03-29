@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   'documentation_url': ?documentationUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'documentation_url'}.contains(key)); } 
 OrgsRemoveOutsideCollaboratorResponse422 copyWith({String Function()? message, String Function()? documentationUrl, }) { return OrgsRemoveOutsideCollaboratorResponse422(
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,

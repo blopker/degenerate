@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'allowed_origins': ?allowedOrigins,
   if (maxAge != null) 'max_age': maxAge?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_all_headers', 'allow_all_methods', 'allow_all_origins', 'allow_credentials', 'allowed_headers', 'allowed_methods', 'allowed_origins', 'max_age'}.contains(key)); } 
 AccessCorsHeaders copyWith({AccessAllowAllHeaders Function()? allowAllHeaders, AccessAllowAllMethods Function()? allowAllMethods, AccessAllowAllOrigins Function()? allowAllOrigins, AccessAllowCredentials Function()? allowCredentials, List<String> Function()? allowedHeaders, List<AccessAllowedMethods2> Function()? allowedMethods, List<String> Function()? allowedOrigins, AccessMaxAge Function()? maxAge, }) { return AccessCorsHeaders(
   allowAllHeaders: allowAllHeaders != null ? allowAllHeaders() : this.allowAllHeaders,
   allowAllMethods: allowAllMethods != null ? allowAllMethods() : this.allowAllMethods,

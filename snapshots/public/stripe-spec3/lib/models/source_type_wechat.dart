@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'qr_code_url': ?qrCodeUrl,
   'statement_descriptor': ?statementDescriptor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'prepay_id', 'qr_code_url', 'statement_descriptor'}.contains(key)); } 
 SourceTypeWechat copyWith({String Function()? prepayId, String? Function()? qrCodeUrl, String Function()? statementDescriptor, }) { return SourceTypeWechat(
   prepayId: prepayId != null ? prepayId() : this.prepayId,
   qrCodeUrl: qrCodeUrl != null ? qrCodeUrl() : this.qrCodeUrl,

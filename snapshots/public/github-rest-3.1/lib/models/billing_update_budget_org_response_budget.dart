@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
   if (budgetType != null) 'budget_type': budgetType?.toJson(),
   'budget_product_sku': ?budgetProductSku,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key)); } 
 BillingUpdateBudgetOrgResponseBudget copyWith({String Function()? id, double Function()? budgetAmount, bool Function()? preventFurtherUsage, BillingUpdateBudgetOrgResponseBudgetBudgetAlerting Function()? budgetAlerting, BillingUpdateBudgetOrgResponseBudgetBudgetScope Function()? budgetScope, String Function()? budgetEntityName, BillingUpdateBudgetOrgResponseBudgetBudgetType Function()? budgetType, String Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgResponseBudget(
   id: id != null ? id() : this.id,
   budgetAmount: budgetAmount != null ? budgetAmount() : this.budgetAmount,

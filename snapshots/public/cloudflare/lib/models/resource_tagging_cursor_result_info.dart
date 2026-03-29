@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'count': ?count,
   'cursor': ?cursor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'cursor'}.contains(key)); } 
 ResourceTaggingCursorResultInfo copyWith({int Function()? count, String? Function()? cursor, }) { return ResourceTaggingCursorResultInfo(
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,

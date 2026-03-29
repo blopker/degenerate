@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (secret != null) 'secret': secret?.toJson(),
   if (serviceAccountToken != null) 'serviceAccountToken': serviceAccountToken?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'clusterTrustBundle', 'configMap', 'downwardAPI', 'podCertificate', 'secret', 'serviceAccountToken'}.contains(key)); } 
 VolumeProjection copyWith({ClusterTrustBundleProjection Function()? clusterTrustBundle, ConfigMapProjection Function()? configMap, Projection Function()? downwardApi, PodCertificateProjection Function()? podCertificate, SecretProjection Function()? secret, ServiceAccountTokenProjection Function()? serviceAccountToken, }) { return VolumeProjection(
   clusterTrustBundle: clusterTrustBundle != null ? clusterTrustBundle() : this.clusterTrustBundle,
   configMap: configMap != null ? configMap() : this.configMap,

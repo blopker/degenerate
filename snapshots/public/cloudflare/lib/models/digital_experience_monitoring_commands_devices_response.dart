@@ -12,7 +12,7 @@ final List<DigitalExperienceMonitoringCommandsDevicesResponseDevices>? devices;
 Map<String, dynamic> toJson() { return {
   if (devices != null) 'devices': devices?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'devices'}.contains(key)); } 
 DigitalExperienceMonitoringCommandsDevicesResponse copyWith({List<DigitalExperienceMonitoringCommandsDevicesResponseDevices> Function()? devices}) { return DigitalExperienceMonitoringCommandsDevicesResponse(
   devices: devices != null ? devices() : this.devices,
 ); } 

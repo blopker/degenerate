@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'r2_jurisdiction': r2Jurisdiction,
   if (webCrawler != null) 'web_crawler': webCrawler?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude_items', 'include_items', 'prefix', 'r2_jurisdiction', 'web_crawler'}.contains(key)); } 
 AiSearchDeleteInstancesResponseResultSourceParams copyWith({List<String> Function()? excludeItems, List<String> Function()? includeItems, String Function()? prefix, String Function()? r2Jurisdiction, AiSearchDeleteInstancesResponseResultSourceParamsWebCrawler Function()? webCrawler, }) { return AiSearchDeleteInstancesResponseResultSourceParams(
   excludeItems: excludeItems != null ? excludeItems() : this.excludeItems,
   includeItems: includeItems != null ? includeItems() : this.includeItems,

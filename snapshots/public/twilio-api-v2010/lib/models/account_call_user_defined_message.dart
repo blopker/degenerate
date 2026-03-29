@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'sid': ?sid,
   'date_created': ?dateCreated,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'call_sid', 'sid', 'date_created'}.contains(key)); } 
 AccountCallUserDefinedMessage copyWith({String? Function()? accountSid, String? Function()? callSid, String? Function()? sid, String? Function()? dateCreated, }) { return AccountCallUserDefinedMessage(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   callSid: callSid != null ? callSid() : this.callSid,

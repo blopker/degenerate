@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
   if (summary != null) 'summary': summary?.toJson(),
   if (generateSummary != null) 'generate_summary': generateSummary?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effort', 'summary', 'generate_summary'}.contains(key)); } 
 Reasoning copyWith({ReasoningEffort? Function()? effort, ReasoningSummary? Function()? summary, ReasoningGenerateSummary? Function()? generateSummary, }) { return Reasoning(
   effort: effort != null ? effort() : this.effort,
   summary: summary != null ? summary() : this.summary,

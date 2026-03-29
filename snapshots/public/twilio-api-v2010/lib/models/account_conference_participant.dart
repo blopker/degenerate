@@ -118,7 +118,7 @@ Map<String, dynamic> toJson() { return {
   'queue_time': ?queueTime,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'call_sid', 'label', 'call_sid_to_coach', 'coaching', 'conference_sid', 'date_created', 'date_updated', 'end_conference_on_exit', 'muted', 'hold', 'start_conference_on_enter', 'status', 'queue_time', 'uri'}.contains(key)); } 
 AccountConferenceParticipant copyWith({String? Function()? accountSid, String? Function()? callSid, String? Function()? label, String? Function()? callSidToCoach, bool? Function()? coaching, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, bool? Function()? endConferenceOnExit, bool? Function()? muted, bool? Function()? hold, bool? Function()? startConferenceOnEnter, ParticipantEnumStatus Function()? status, String? Function()? queueTime, String? Function()? uri, }) { return AccountConferenceParticipant(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   callSid: callSid != null ? callSid() : this.callSid,

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'beta': ?beta,
   'subresource_uris': ?subresourceUris,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country_code', 'country', 'uri', 'beta', 'subresource_uris'}.contains(key)); } 
 AccountAvailablePhoneNumberCountry copyWith({String? Function()? countryCode, String? Function()? country, Uri? Function()? uri, bool? Function()? beta, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountAvailablePhoneNumberCountry(
   countryCode: countryCode != null ? countryCode() : this.countryCode,
   country: country != null ? country() : this.country,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'conditions', 'kind', 'metadata'}.contains(key)); } 
 ComponentStatus copyWith({String Function()? apiVersion, List<ComponentCondition> Function()? conditions, String Function()? kind, ObjectMeta Function()? metadata, }) { return ComponentStatus(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   conditions: conditions != null ? conditions() : this.conditions,

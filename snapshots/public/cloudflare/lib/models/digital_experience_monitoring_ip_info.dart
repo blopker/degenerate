@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'netmask': ?netmask,
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'asn', 'aso', 'location', 'netmask', 'version'}.contains(key)); } 
 DigitalExperienceMonitoringIpInfo copyWith({String? Function()? address, int? Function()? asn, String? Function()? aso, DigitalExperienceMonitoringIpInfoLocation Function()? location, String? Function()? netmask, String? Function()? version, }) { return DigitalExperienceMonitoringIpInfo(
   address: address != null ? address() : this.address,
   asn: asn != null ? asn() : this.asn,

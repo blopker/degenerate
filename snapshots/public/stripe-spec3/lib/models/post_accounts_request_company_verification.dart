@@ -11,7 +11,7 @@ final PostAccountsRequestCompanyVerificationDocument? document;
 Map<String, dynamic> toJson() { return {
   if (document != null) 'document': document?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document'}.contains(key)); } 
 PostAccountsRequestCompanyVerification copyWith({PostAccountsRequestCompanyVerificationDocument Function()? document}) { return PostAccountsRequestCompanyVerification(
   document: document != null ? document() : this.document,
 ); } 

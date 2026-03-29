@@ -12,7 +12,7 @@ final List<VectorizeListMetadataIndexResponseMetadataIndexes>? metadataIndexes;
 Map<String, dynamic> toJson() { return {
   if (metadataIndexes != null) 'metadataIndexes': metadataIndexes?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadataIndexes'}.contains(key)); } 
 VectorizeListMetadataIndexResponse copyWith({List<VectorizeListMetadataIndexResponseMetadataIndexes> Function()? metadataIndexes}) { return VectorizeListMetadataIndexResponse(
   metadataIndexes: metadataIndexes != null ? metadataIndexes() : this.metadataIndexes,
 ); } 

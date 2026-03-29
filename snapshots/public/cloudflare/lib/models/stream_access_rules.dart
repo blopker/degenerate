@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'ip': ?ip,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'country', 'ip', 'type'}.contains(key)); } 
 StreamAccessRules copyWith({StreamAccessRulesAction Function()? action, List<String> Function()? country, List<String> Function()? ip, StreamAccessRulesType Function()? type, }) { return StreamAccessRules(
   action: action != null ? action() : this.action,
   country: country != null ? country() : this.country,

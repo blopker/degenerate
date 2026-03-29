@@ -13,7 +13,7 @@ final int? postedAt;
 Map<String, dynamic> toJson() { return {
   'posted_at': ?postedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'posted_at'}.contains(key)); } 
 TreasuryReceivedCreditsResourceStatusTransitions copyWith({int? Function()? postedAt}) { return TreasuryReceivedCreditsResourceStatusTransitions(
   postedAt: postedAt != null ? postedAt() : this.postedAt,
 ); } 

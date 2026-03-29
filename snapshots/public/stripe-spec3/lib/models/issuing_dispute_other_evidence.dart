@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'product_description': ?productDescription,
   if (productType != null) 'product_type': productType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
 IssuingDisputeOtherEvidence copyWith({IssuingDisputeOtherEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, String? Function()? productDescription, IssuingDisputeOtherEvidenceProductType? Function()? productType, }) { return IssuingDisputeOtherEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,

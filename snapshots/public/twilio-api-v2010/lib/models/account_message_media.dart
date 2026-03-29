@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'sid': ?sid,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'content_type', 'date_created', 'date_updated', 'parent_sid', 'sid', 'uri'}.contains(key)); } 
 AccountMessageMedia copyWith({String? Function()? accountSid, String? Function()? contentType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? parentSid, String? Function()? sid, String? Function()? uri, }) { return AccountMessageMedia(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   contentType: contentType != null ? contentType() : this.contentType,

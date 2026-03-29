@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
   if (serviceNotAsDescribed != null) 'service_not_as_described': serviceNotAsDescribed?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'canceled', 'duplicate', 'fraudulent', 'merchandise_not_as_described', 'no_valid_authorization', 'not_received', 'other', 'reason', 'service_not_as_described'}.contains(key)); } 
 PostIssuingDisputesDisputeRequestEvidence copyWith({PostIssuingDisputesDisputeRequestEvidenceCanceled Function()? canceled, PostIssuingDisputesDisputeRequestEvidenceDuplicate Function()? duplicate, PostIssuingDisputesDisputeRequestEvidenceFraudulent Function()? fraudulent, PostIssuingDisputesDisputeRequestEvidenceMerchandiseNotAsDescribed Function()? merchandiseNotAsDescribed, PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization Function()? noValidAuthorization, PostIssuingDisputesDisputeRequestEvidenceNotReceived Function()? notReceived, PostIssuingDisputesDisputeRequestEvidenceOther Function()? other, PostIssuingDisputesDisputeRequestEvidenceReason Function()? reason, PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed Function()? serviceNotAsDescribed, }) { return PostIssuingDisputesDisputeRequestEvidence(
   canceled: canceled != null ? canceled() : this.canceled,
   duplicate: duplicate != null ? duplicate() : this.duplicate,

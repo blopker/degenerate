@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (period != null) 'period': period?.toJson(),
   if (threshold != null) 'threshold': threshold?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'bypass', 'description', 'disabled', 'id', 'match', 'period', 'threshold'}.contains(key)); } 
 FirewallRatelimit copyWith({FirewallAction Function()? action, List<FirewallBypass2> Function()? bypass, FirewallDescription Function()? description, FirewallDisabled Function()? disabled, FirewallId Function()? id, FirewallMatch Function()? match, FirewallPeriod Function()? period, FirewallThreshold Function()? threshold, }) { return FirewallRatelimit(
   action: action != null ? action() : this.action,
   bypass: bypass != null ? bypass() : this.bypass,

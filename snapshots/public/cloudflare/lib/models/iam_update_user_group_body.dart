@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'policies'}.contains(key)); } 
 IamUpdateUserGroupBody copyWith({String Function()? name, List<IamUserGroupPolicyWriteBody> Function()? policies, }) { return IamUpdateUserGroupBody(
   name: name != null ? name() : this.name,
   policies: policies != null ? policies() : this.policies,

@@ -13,7 +13,7 @@ final String? returnUrl;
 Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_url'}.contains(key)); } 
 TerminalReaderReaderResourceConfirmConfig copyWith({String Function()? returnUrl}) { return TerminalReaderReaderResourceConfirmConfig(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 

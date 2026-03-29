@@ -11,7 +11,7 @@ final dynamic status;
 Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
 ChecksCreateRequestVariant2 copyWith({dynamic Function()? status}) { return ChecksCreateRequestVariant2(
   status: status != null ? status() : this.status,
 ); } 

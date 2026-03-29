@@ -38,7 +38,7 @@ final RunObjectIncompleteDetailsReason? reason;
 Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reason'}.contains(key)); } 
 RunObjectIncompleteDetails copyWith({RunObjectIncompleteDetailsReason Function()? reason}) { return RunObjectIncompleteDetails(
   reason: reason != null ? reason() : this.reason,
 ); } 

@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'mandate_options', 'verification_method'}.contains(key)); } 
 PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency Function()? currency, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions Function()? mandateOptions, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod Function()? verificationMethod, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(
   currency: currency != null ? currency() : this.currency,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,

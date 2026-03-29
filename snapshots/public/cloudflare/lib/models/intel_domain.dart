@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (riskScore != null) 'risk_score': riskScore?.toJson(),
   if (riskTypes != null) 'risk_types': riskTypes?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_information', 'application', 'content_categories', 'domain', 'inherited_content_categories', 'inherited_from', 'inherited_risk_types', 'popularity_rank', 'resolves_to_refs', 'risk_score', 'risk_types'}.contains(key)); } 
 IntelDomain copyWith({IntelAdditionalInformation Function()? additionalInformation, IntelApplication Function()? application, List<IntelContentCategories2> Function()? contentCategories, IntelDomainName Function()? domain, List<IntelCategoryWithSuperCategoryId> Function()? inheritedContentCategories, IntelInheritedFrom Function()? inheritedFrom, List<IntelCategoryWithSuperCategoryId> Function()? inheritedRiskTypes, IntelPopularityRank Function()? popularityRank, List<IntelResolvesToRef> Function()? resolvesToRefs, IntelRiskScore Function()? riskScore, List<IntelCategoryWithSuperCategoryId> Function()? riskTypes, }) { return IntelDomain(
   additionalInformation: additionalInformation != null ? additionalInformation() : this.additionalInformation,
   application: application != null ? application() : this.application,

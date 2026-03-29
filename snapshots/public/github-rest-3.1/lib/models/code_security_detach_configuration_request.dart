@@ -12,7 +12,7 @@ final List<int>? selectedRepositoryIds;
 Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'selected_repository_ids'}.contains(key)); } 
 CodeSecurityDetachConfigurationRequest copyWith({List<int> Function()? selectedRepositoryIds}) { return CodeSecurityDetachConfigurationRequest(
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 

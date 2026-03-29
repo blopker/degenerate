@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'can_be_enabled': ?canBeEnabled,
   'id': ?id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_be_enabled', 'id'}.contains(key)); } 
 PayPerCrawlDaricZoneCanBeEnabled copyWith({bool Function()? canBeEnabled, String Function()? id, }) { return PayPerCrawlDaricZoneCanBeEnabled(
   canBeEnabled: canBeEnabled != null ? canBeEnabled() : this.canBeEnabled,
   id: id != null ? id() : this.id,

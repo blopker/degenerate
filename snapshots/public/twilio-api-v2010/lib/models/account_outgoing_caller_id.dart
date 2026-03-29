@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'phone_number': ?phoneNumber,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'date_created', 'date_updated', 'friendly_name', 'account_sid', 'phone_number', 'uri'}.contains(key)); } 
 AccountOutgoingCallerId copyWith({String? Function()? sid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? accountSid, String? Function()? phoneNumber, String? Function()? uri, }) { return AccountOutgoingCallerId(
   sid: sid != null ? sid() : this.sid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

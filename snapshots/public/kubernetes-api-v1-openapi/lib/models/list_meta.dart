@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'resourceVersion': ?resourceVersion,
   'selfLink': ?selfLink,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'continue', 'remainingItemCount', 'resourceVersion', 'selfLink'}.contains(key)); } 
 ListMeta copyWith({String Function()? $continue, int Function()? remainingItemCount, String Function()? resourceVersion, String Function()? selfLink, }) { return ListMeta(
   $continue: $continue != null ? $continue() : this.$continue,
   remainingItemCount: remainingItemCount != null ? remainingItemCount() : this.remainingItemCount,

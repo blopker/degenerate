@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
   'funding_type': ?fundingType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type'}.contains(key)); } 
 InvoicePaymentMethodOptionsParam26 copyWith({InvoicePaymentMethodOptionsParam26BankTransfer Function()? bankTransfer, String Function()? fundingType, }) { return InvoicePaymentMethodOptionsParam26(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,

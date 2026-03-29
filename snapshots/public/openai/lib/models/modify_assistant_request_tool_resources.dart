@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (codeInterpreter != null) 'code_interpreter': codeInterpreter?.toJson(),
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key)); } 
 ModifyAssistantRequestToolResources copyWith({ModifyAssistantRequestToolResourcesCodeInterpreter Function()? codeInterpreter, ModifyAssistantRequestToolResourcesFileSearch Function()? fileSearch, }) { return ModifyAssistantRequestToolResources(
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,

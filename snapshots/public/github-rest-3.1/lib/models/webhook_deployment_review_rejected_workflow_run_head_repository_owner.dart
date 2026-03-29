@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
   'user_view_type': ?userViewType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avatar_url', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url', 'user_view_type'}.contains(key)); } 
 WebhookDeploymentReviewRejectedWorkflowRunHeadRepositoryOwner copyWith({String Function()? avatarUrl, String Function()? eventsUrl, String Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, String Function()? htmlUrl, int Function()? id, String Function()? login, String Function()? nodeId, String Function()? organizationsUrl, String Function()? receivedEventsUrl, String Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, String Function()? subscriptionsUrl, String Function()? type, String Function()? url, String Function()? userViewType, }) { return WebhookDeploymentReviewRejectedWorkflowRunHeadRepositoryOwner(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,

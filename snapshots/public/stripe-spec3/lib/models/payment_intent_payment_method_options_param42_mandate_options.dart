@@ -35,7 +35,7 @@ final PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod? co
 Map<String, dynamic> toJson() { return {
   if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collection_method'}.contains(key)); } 
 PaymentIntentPaymentMethodOptionsParam42MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod Function()? collectionMethod}) { return PaymentIntentPaymentMethodOptionsParam42MandateOptions(
   collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
 ); } 

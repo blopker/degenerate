@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
   if (wallet != null) 'wallet': wallet?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'checks', 'country', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'network', 'three_d_secure', 'wallet'}.contains(key)); } 
 SetupAttemptPaymentMethodDetailsCard copyWith({String? Function()? brand, SetupAttemptPaymentMethodDetailsCardChecks2? Function()? checks, String? Function()? country, int? Function()? expMonth, int? Function()? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? last4, String? Function()? network, SetupAttemptPaymentMethodDetailsCardThreeDSecure? Function()? threeDSecure, SetupAttemptPaymentMethodDetailsCardWallet2? Function()? wallet, }) { return SetupAttemptPaymentMethodDetailsCard(
   brand: brand != null ? brand() : this.brand,
   checks: checks != null ? checks() : this.checks,

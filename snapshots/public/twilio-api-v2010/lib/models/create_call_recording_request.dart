@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'RecordingChannels': ?recordingChannels,
   'RecordingTrack': ?recordingTrack,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'RecordingStatusCallbackEvent', 'RecordingStatusCallback', 'RecordingStatusCallbackMethod', 'Trim', 'RecordingChannels', 'RecordingTrack'}.contains(key)); } 
 CreateCallRecordingRequest copyWith({List<String> Function()? recordingStatusCallbackEvent, Uri Function()? recordingStatusCallback, CreateCallRecordingRequestRecordingStatusCallbackMethod Function()? recordingStatusCallbackMethod, String Function()? trim, String Function()? recordingChannels, String Function()? recordingTrack, }) { return CreateCallRecordingRequest(
   recordingStatusCallbackEvent: recordingStatusCallbackEvent != null ? recordingStatusCallbackEvent() : this.recordingStatusCallbackEvent,
   recordingStatusCallback: recordingStatusCallback != null ? recordingStatusCallback() : this.recordingStatusCallback,

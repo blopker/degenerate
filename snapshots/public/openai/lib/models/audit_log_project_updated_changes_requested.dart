@@ -13,7 +13,7 @@ final String? title;
 Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title'}.contains(key)); } 
 AuditLogProjectUpdatedChangesRequested copyWith({String Function()? title}) { return AuditLogProjectUpdatedChangesRequested(
   title: title != null ? title() : this.title,
 ); } 

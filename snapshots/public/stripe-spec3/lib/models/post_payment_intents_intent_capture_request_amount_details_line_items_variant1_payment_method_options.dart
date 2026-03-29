@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (klarna != null) 'klarna': klarna?.toJson(),
   if (paypal != null) 'paypal': paypal?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card', 'card_present', 'klarna', 'paypal'}.contains(key)); } 
 PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptions copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCard Function()? card, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent Function()? cardPresent, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsKlarna Function()? klarna, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal Function()? paypal, }) { return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptions(
   card: card != null ? card() : this.card,
   cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,

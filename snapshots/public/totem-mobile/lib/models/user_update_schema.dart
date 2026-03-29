@@ -53,7 +53,16 @@ final class UserUpdateSchema {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any(
+      (key) => const {
+        'name',
+        'email',
+        'timezone',
+        'newsletter_consent',
+        'profile_avatar_type',
+        'profile_avatar_seed',
+      }.contains(key),
+    );
   }
 
   UserUpdateSchema copyWith({

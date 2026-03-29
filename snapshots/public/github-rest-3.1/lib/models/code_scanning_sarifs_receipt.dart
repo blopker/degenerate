@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'url'}.contains(key)); } 
 CodeScanningSarifsReceipt copyWith({CodeScanningAnalysisSarifId Function()? id, Uri Function()? url, }) { return CodeScanningSarifsReceipt(
   id: id != null ? id() : this.id,
   url: url != null ? url() : this.url,

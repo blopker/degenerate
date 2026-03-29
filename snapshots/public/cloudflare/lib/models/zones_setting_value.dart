@@ -172,12 +172,66 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesCacheRulesOriginMaxHttpVersionValue($value)'; } 
  }
 /// Value of the zone setting.
-extension type const ZonesChallengeTtlValue(double value) {
-factory ZonesChallengeTtlValue.fromJson(num json) => ZonesChallengeTtlValue(json.toDouble());
+final class ZonesChallengeTtlValue {const ZonesChallengeTtlValue._(this.value);
 
-num toJson() => value;
+factory ZonesChallengeTtlValue.fromJson(double json) { return switch (json) {
+  300 => $300,
+  900 => $900,
+  1800 => $1800,
+  2700 => $2700,
+  3600 => $3600,
+  7200 => $7200,
+  10800 => $10800,
+  14400 => $14400,
+  28800 => $28800,
+  57600 => $57600,
+  86400 => $86400,
+  604800 => $604800,
+  2592000.0 => $25920000,
+  31536000.0 => $315360000,
+  _ => ZonesChallengeTtlValue._(json),
+}; }
 
-}
+static const ZonesChallengeTtlValue $300 = ZonesChallengeTtlValue._(300);
+
+static const ZonesChallengeTtlValue $900 = ZonesChallengeTtlValue._(900);
+
+static const ZonesChallengeTtlValue $1800 = ZonesChallengeTtlValue._(1800);
+
+static const ZonesChallengeTtlValue $2700 = ZonesChallengeTtlValue._(2700);
+
+static const ZonesChallengeTtlValue $3600 = ZonesChallengeTtlValue._(3600);
+
+static const ZonesChallengeTtlValue $7200 = ZonesChallengeTtlValue._(7200);
+
+static const ZonesChallengeTtlValue $10800 = ZonesChallengeTtlValue._(10800);
+
+static const ZonesChallengeTtlValue $14400 = ZonesChallengeTtlValue._(14400);
+
+static const ZonesChallengeTtlValue $28800 = ZonesChallengeTtlValue._(28800);
+
+static const ZonesChallengeTtlValue $57600 = ZonesChallengeTtlValue._(57600);
+
+static const ZonesChallengeTtlValue $86400 = ZonesChallengeTtlValue._(86400);
+
+static const ZonesChallengeTtlValue $604800 = ZonesChallengeTtlValue._(604800);
+
+static const ZonesChallengeTtlValue $25920000 = ZonesChallengeTtlValue._(2592000.0);
+
+static const ZonesChallengeTtlValue $315360000 = ZonesChallengeTtlValue._(31536000.0);
+
+static const List<ZonesChallengeTtlValue> values = [$300, $900, $1800, $2700, $3600, $7200, $10800, $14400, $28800, $57600, $86400, $604800, $25920000, $315360000];
+
+final double value;
+
+double toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesChallengeTtlValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesChallengeTtlValue($value)'; } 
+ }
 /// Value of the zone setting.
 final class ZonesChinaNetworkEnabledValue {const ZonesChinaNetworkEnabledValue._(this.value);
 
@@ -305,12 +359,87 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Value of the zone setting.
 /// Notes: The minimum TTL available depends on the plan level of the zone. (Enterprise = 30, Business = 1800, Pro = 3600, Free = 7200)
-extension type const ZonesEdgeCacheTtlValue(double value) {
-factory ZonesEdgeCacheTtlValue.fromJson(num json) => ZonesEdgeCacheTtlValue(json.toDouble());
+final class ZonesEdgeCacheTtlValue {const ZonesEdgeCacheTtlValue._(this.value);
 
-num toJson() => value;
+factory ZonesEdgeCacheTtlValue.fromJson(double json) { return switch (json) {
+  30 => $30,
+  60 => $60,
+  300 => $300,
+  1200 => $1200,
+  1800 => $1800,
+  3600 => $3600,
+  7200 => $7200,
+  10800 => $10800,
+  14400 => $14400,
+  18000 => $18000,
+  28800 => $28800,
+  43200 => $43200,
+  57600 => $57600,
+  72000 => $72000,
+  86400 => $86400,
+  172800 => $172800,
+  259200 => $259200,
+  345600 => $345600,
+  432000 => $432000,
+  518400 => $518400,
+  604800 => $604800,
+  _ => ZonesEdgeCacheTtlValue._(json),
+}; }
 
-}
+static const ZonesEdgeCacheTtlValue $30 = ZonesEdgeCacheTtlValue._(30);
+
+static const ZonesEdgeCacheTtlValue $60 = ZonesEdgeCacheTtlValue._(60);
+
+static const ZonesEdgeCacheTtlValue $300 = ZonesEdgeCacheTtlValue._(300);
+
+static const ZonesEdgeCacheTtlValue $1200 = ZonesEdgeCacheTtlValue._(1200);
+
+static const ZonesEdgeCacheTtlValue $1800 = ZonesEdgeCacheTtlValue._(1800);
+
+static const ZonesEdgeCacheTtlValue $3600 = ZonesEdgeCacheTtlValue._(3600);
+
+static const ZonesEdgeCacheTtlValue $7200 = ZonesEdgeCacheTtlValue._(7200);
+
+static const ZonesEdgeCacheTtlValue $10800 = ZonesEdgeCacheTtlValue._(10800);
+
+static const ZonesEdgeCacheTtlValue $14400 = ZonesEdgeCacheTtlValue._(14400);
+
+static const ZonesEdgeCacheTtlValue $18000 = ZonesEdgeCacheTtlValue._(18000);
+
+static const ZonesEdgeCacheTtlValue $28800 = ZonesEdgeCacheTtlValue._(28800);
+
+static const ZonesEdgeCacheTtlValue $43200 = ZonesEdgeCacheTtlValue._(43200);
+
+static const ZonesEdgeCacheTtlValue $57600 = ZonesEdgeCacheTtlValue._(57600);
+
+static const ZonesEdgeCacheTtlValue $72000 = ZonesEdgeCacheTtlValue._(72000);
+
+static const ZonesEdgeCacheTtlValue $86400 = ZonesEdgeCacheTtlValue._(86400);
+
+static const ZonesEdgeCacheTtlValue $172800 = ZonesEdgeCacheTtlValue._(172800);
+
+static const ZonesEdgeCacheTtlValue $259200 = ZonesEdgeCacheTtlValue._(259200);
+
+static const ZonesEdgeCacheTtlValue $345600 = ZonesEdgeCacheTtlValue._(345600);
+
+static const ZonesEdgeCacheTtlValue $432000 = ZonesEdgeCacheTtlValue._(432000);
+
+static const ZonesEdgeCacheTtlValue $518400 = ZonesEdgeCacheTtlValue._(518400);
+
+static const ZonesEdgeCacheTtlValue $604800 = ZonesEdgeCacheTtlValue._(604800);
+
+static const List<ZonesEdgeCacheTtlValue> values = [$30, $60, $300, $1200, $1800, $3600, $7200, $10800, $14400, $18000, $28800, $43200, $57600, $72000, $86400, $172800, $259200, $345600, $432000, $518400, $604800];
+
+final double value;
+
+double toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesEdgeCacheTtlValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesEdgeCacheTtlValue($value)'; } 
+ }
 /// Value of the zone setting.
 final class ZonesH2PrioritizationValue {const ZonesH2PrioritizationValue._(this.value);
 
@@ -469,12 +598,78 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Value of the zone setting.
 /// Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)
-extension type const ZonesMaxUploadValue(int value) {
-factory ZonesMaxUploadValue.fromJson(num json) => ZonesMaxUploadValue(json.toInt());
+final class ZonesMaxUploadValue {const ZonesMaxUploadValue._(this.value);
 
-num toJson() => value;
+factory ZonesMaxUploadValue.fromJson(int json) { return switch (json) {
+  100 => $100,
+  125 => $125,
+  150 => $150,
+  175 => $175,
+  200 => $200,
+  225 => $225,
+  250 => $250,
+  275 => $275,
+  300 => $300,
+  325 => $325,
+  350 => $350,
+  375 => $375,
+  400 => $400,
+  425 => $425,
+  450 => $450,
+  475 => $475,
+  500 => $500,
+  1000 => $1000,
+  _ => ZonesMaxUploadValue._(json),
+}; }
 
-}
+static const ZonesMaxUploadValue $100 = ZonesMaxUploadValue._(100);
+
+static const ZonesMaxUploadValue $125 = ZonesMaxUploadValue._(125);
+
+static const ZonesMaxUploadValue $150 = ZonesMaxUploadValue._(150);
+
+static const ZonesMaxUploadValue $175 = ZonesMaxUploadValue._(175);
+
+static const ZonesMaxUploadValue $200 = ZonesMaxUploadValue._(200);
+
+static const ZonesMaxUploadValue $225 = ZonesMaxUploadValue._(225);
+
+static const ZonesMaxUploadValue $250 = ZonesMaxUploadValue._(250);
+
+static const ZonesMaxUploadValue $275 = ZonesMaxUploadValue._(275);
+
+static const ZonesMaxUploadValue $300 = ZonesMaxUploadValue._(300);
+
+static const ZonesMaxUploadValue $325 = ZonesMaxUploadValue._(325);
+
+static const ZonesMaxUploadValue $350 = ZonesMaxUploadValue._(350);
+
+static const ZonesMaxUploadValue $375 = ZonesMaxUploadValue._(375);
+
+static const ZonesMaxUploadValue $400 = ZonesMaxUploadValue._(400);
+
+static const ZonesMaxUploadValue $425 = ZonesMaxUploadValue._(425);
+
+static const ZonesMaxUploadValue $450 = ZonesMaxUploadValue._(450);
+
+static const ZonesMaxUploadValue $475 = ZonesMaxUploadValue._(475);
+
+static const ZonesMaxUploadValue $500 = ZonesMaxUploadValue._(500);
+
+static const ZonesMaxUploadValue $1000 = ZonesMaxUploadValue._(1000);
+
+static const List<ZonesMaxUploadValue> values = [$100, $125, $150, $175, $200, $225, $250, $275, $300, $325, $350, $375, $400, $425, $450, $475, $500, $1000];
+
+final int value;
+
+int toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesMaxUploadValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesMaxUploadValue($value)'; } 
+ }
 /// Value of the zone setting.
 final class ZonesMinTlsVersionValue {const ZonesMinTlsVersionValue._(this.value);
 

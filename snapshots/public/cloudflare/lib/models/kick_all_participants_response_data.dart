@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'action': ?action,
   'kicked_participants_count': ?kickedParticipantsCount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'kicked_participants_count'}.contains(key)); } 
 KickAllParticipantsResponseData copyWith({String Function()? action, double Function()? kickedParticipantsCount, }) { return KickAllParticipantsResponseData(
   action: action != null ? action() : this.action,
   kickedParticipantsCount: kickedParticipantsCount != null ? kickedParticipantsCount() : this.kickedParticipantsCount,

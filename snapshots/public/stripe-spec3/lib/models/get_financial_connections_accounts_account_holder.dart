@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'customer': ?customer,
   'customer_account': ?customerAccount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'customer', 'customer_account'}.contains(key)); } 
 GetFinancialConnectionsAccountsAccountHolder copyWith({String Function()? account, String Function()? customer, String Function()? customerAccount, }) { return GetFinancialConnectionsAccountsAccountHolder(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,

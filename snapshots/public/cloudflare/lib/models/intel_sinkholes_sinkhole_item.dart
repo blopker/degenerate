@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'r2_bucket': ?r2Bucket,
   'r2_id': ?r2Id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'created_on', 'id', 'modified_on', 'name', 'r2_bucket', 'r2_id'}.contains(key)); } 
 IntelSinkholesSinkholeItem copyWith({String Function()? accountTag, DateTime Function()? createdOn, IntelSinkholesId Function()? id, DateTime Function()? modifiedOn, IntelSinkholesName Function()? name, String Function()? r2Bucket, String Function()? r2Id, }) { return IntelSinkholesSinkholeItem(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   createdOn: createdOn != null ? createdOn() : this.createdOn,

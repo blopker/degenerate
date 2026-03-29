@@ -43,7 +43,7 @@ final TlsCertificatesAndHostnamesSchemasEnabled? enabled;
 Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
 TlsCertificatesAndHostnamesUniversal copyWith({TlsCertificatesAndHostnamesSchemasEnabled Function()? enabled}) { return TlsCertificatesAndHostnamesUniversal(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 

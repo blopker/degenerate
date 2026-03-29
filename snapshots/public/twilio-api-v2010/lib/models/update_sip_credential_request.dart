@@ -12,7 +12,7 @@ final String? password;
 Map<String, dynamic> toJson() { return {
   'Password': ?password,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Password'}.contains(key)); } 
 UpdateSipCredentialRequest copyWith({String Function()? password}) { return UpdateSipCredentialRequest(
   password: password != null ? password() : this.password,
 ); } 

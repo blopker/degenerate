@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   if (networks != null) 'networks': networks?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'networks'}.contains(key)); } 
 ZeroTrustGatewayDotEndpoint copyWith({bool Function()? enabled, List<ZeroTrustGatewayIpNetwork>? Function()? networks, }) { return ZeroTrustGatewayDotEndpoint(
   enabled: enabled != null ? enabled() : this.enabled,
   networks: networks != null ? networks() : this.networks,

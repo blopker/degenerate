@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (pagerduty != null) 'pagerduty': pagerduty?.map((e) => e.toJson()).toList(),
   if (webhooks != null) 'webhooks': webhooks?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'pagerduty', 'webhooks'}.contains(key)); } 
 AaaMechanisms copyWith({List<AaaMechanismsEmail> Function()? email, List<AaaMechanismsPagerduty> Function()? pagerduty, List<AaaMechanismsWebhooks> Function()? webhooks, }) { return AaaMechanisms(
   email: email != null ? email() : this.email,
   pagerduty: pagerduty != null ? pagerduty() : this.pagerduty,

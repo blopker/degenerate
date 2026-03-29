@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'sid': ?sid,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'domain_sid', 'friendly_name', 'sid', 'uri'}.contains(key)); } 
 AccountSipSipDomainSipIpAccessControlListMapping copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainSid, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, }) { return AccountSipSipDomainSipIpAccessControlListMapping(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

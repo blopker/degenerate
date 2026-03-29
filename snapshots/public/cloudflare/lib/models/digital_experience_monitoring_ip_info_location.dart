@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'state_iso': ?stateIso,
   'zip': ?zip,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country_iso', 'state_iso', 'zip'}.contains(key)); } 
 DigitalExperienceMonitoringIpInfoLocation copyWith({String? Function()? city, String? Function()? countryIso, String? Function()? stateIso, String? Function()? zip, }) { return DigitalExperienceMonitoringIpInfoLocation(
   city: city != null ? city() : this.city,
   countryIso: countryIso != null ? countryIso() : this.countryIso,

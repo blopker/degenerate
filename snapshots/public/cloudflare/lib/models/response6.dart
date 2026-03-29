@@ -11,7 +11,7 @@ final VectorizeMutationUuid? mutationId;
 Map<String, dynamic> toJson() { return {
   if (mutationId != null) 'mutationId': mutationId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mutationId'}.contains(key)); } 
 Response6 copyWith({VectorizeMutationUuid? Function()? mutationId}) { return Response6(
   mutationId: mutationId != null ? mutationId() : this.mutationId,
 ); } 

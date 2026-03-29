@@ -121,7 +121,7 @@ Map<String, dynamic> toJson() { return {
   'sso_endpoint': ?ssoEndpoint,
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_type', 'consumer_service_url', 'created_at', 'custom_attributes', 'default_relay_state', 'idp_entity_id', 'name_id_format', 'name_id_transform_jsonata', 'public_key', 'saml_attribute_transform_jsonata', 'sp_entity_id', 'sso_endpoint', 'updated_at'}.contains(key)); } 
 AccessSamlSaasApp copyWith({AccessSamlSaasAppAuthType Function()? authType, String Function()? consumerServiceUrl, AccessTimestamp Function()? createdAt, List<AccessSamlSaasAppCustomAttributes> Function()? customAttributes, String Function()? defaultRelayState, String Function()? idpEntityId, AccessSamlSaasAppNameIdFormat Function()? nameIdFormat, String Function()? nameIdTransformJsonata, String Function()? publicKey, String Function()? samlAttributeTransformJsonata, String Function()? spEntityId, String Function()? ssoEndpoint, AccessTimestamp Function()? updatedAt, }) { return AccessSamlSaasApp(
   authType: authType != null ? authType() : this.authType,
   consumerServiceUrl: consumerServiceUrl != null ? consumerServiceUrl() : this.consumerServiceUrl,

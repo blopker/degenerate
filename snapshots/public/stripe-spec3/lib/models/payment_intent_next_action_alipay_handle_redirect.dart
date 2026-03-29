@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'native_data', 'native_url', 'return_url', 'url'}.contains(key)); } 
 PaymentIntentNextActionAlipayHandleRedirect copyWith({String? Function()? nativeData, String? Function()? nativeUrl, String? Function()? returnUrl, String? Function()? url, }) { return PaymentIntentNextActionAlipayHandleRedirect(
   nativeData: nativeData != null ? nativeData() : this.nativeData,
   nativeUrl: nativeUrl != null ? nativeUrl() : this.nativeUrl,

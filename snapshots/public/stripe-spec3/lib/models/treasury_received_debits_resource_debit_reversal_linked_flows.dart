@@ -13,7 +13,7 @@ final String? issuingDispute;
 Map<String, dynamic> toJson() { return {
   'issuing_dispute': ?issuingDispute,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'issuing_dispute'}.contains(key)); } 
 TreasuryReceivedDebitsResourceDebitReversalLinkedFlows copyWith({String? Function()? issuingDispute}) { return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(
   issuingDispute: issuingDispute != null ? issuingDispute() : this.issuingDispute,
 ); } 

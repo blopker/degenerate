@@ -13,7 +13,7 @@ final TeamsDevicesPolicySummary? policy;
 Map<String, dynamic> toJson() { return {
   if (policy != null) 'policy': policy?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'policy'}.contains(key)); } 
 TeamsDevicesRegistrationDetails copyWith({TeamsDevicesPolicySummary? Function()? policy}) { return TeamsDevicesRegistrationDetails(
   policy: policy != null ? policy() : this.policy,
 ); } 

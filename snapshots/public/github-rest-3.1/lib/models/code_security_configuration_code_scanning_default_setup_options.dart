@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (runnerType != null) 'runner_type': runnerType?.toJson(),
   'runner_label': ?runnerLabel,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'runner_type', 'runner_label'}.contains(key)); } 
 CodeSecurityConfigurationCodeScanningDefaultSetupOptions copyWith({CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType? Function()? runnerType, String? Function()? runnerLabel, }) { return CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
   runnerType: runnerType != null ? runnerType() : this.runnerType,
   runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,

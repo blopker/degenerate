@@ -12,7 +12,7 @@ final Uri? redirectTo;
 Map<String, dynamic> toJson() { return {
   if (redirectTo != null) 'redirect_to': redirectTo?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'redirect_to'}.contains(key)); } 
 AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData copyWith({Uri? Function()? redirectTo}) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(
   redirectTo: redirectTo != null ? redirectTo() : this.redirectTo,
 ); } 

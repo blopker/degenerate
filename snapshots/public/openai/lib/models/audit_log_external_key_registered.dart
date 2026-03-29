@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'data': ?data,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
 AuditLogExternalKeyRegistered copyWith({String Function()? id, Map<String, dynamic> Function()? data, }) { return AuditLogExternalKeyRegistered(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,

@@ -13,7 +13,7 @@ final List<CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOp
 Map<String, dynamic> toJson() { return {
   if (reviewers != null) 'reviewers': reviewers?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewers'}.contains(key)); } 
 CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions copyWith({List<CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptionsReviewers> Function()? reviewers}) { return CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions(
   reviewers: reviewers != null ? reviewers() : this.reviewers,
 ); } 

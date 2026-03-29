@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   if (files != null) 'files': files?.map((k, v) => MapEntry(k, v?.toJson())),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'files'}.contains(key)); } 
 GistsUpdateRequest copyWith({String Function()? description, Map<String, GistsUpdateRequestFilesValue> Function()? files, }) { return GistsUpdateRequest(
   description: description != null ? description() : this.description,
   files: files != null ? files() : this.files,

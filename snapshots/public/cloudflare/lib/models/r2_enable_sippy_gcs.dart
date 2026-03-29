@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (destination != null) 'destination': destination?.toJson(),
   if (source != null) 'source': source?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination', 'source'}.contains(key)); } 
 R2EnableSippyGcs copyWith({R2EnableSippyGcsDestination Function()? destination, R2EnableSippyGcsSource Function()? source, }) { return R2EnableSippyGcs(
   destination: destination != null ? destination() : this.destination,
   source: source != null ? source() : this.source,

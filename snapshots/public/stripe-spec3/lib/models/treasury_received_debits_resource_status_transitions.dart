@@ -13,7 +13,7 @@ final int? completedAt;
 Map<String, dynamic> toJson() { return {
   'completed_at': ?completedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completed_at'}.contains(key)); } 
 TreasuryReceivedDebitsResourceStatusTransitions copyWith({int? Function()? completedAt}) { return TreasuryReceivedDebitsResourceStatusTransitions(
   completedAt: completedAt != null ? completedAt() : this.completedAt,
 ); } 

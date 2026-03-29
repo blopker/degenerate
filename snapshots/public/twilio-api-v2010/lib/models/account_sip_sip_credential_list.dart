@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'friendly_name', 'sid', 'subresource_uris', 'uri'}.contains(key)); } 
 AccountSipSipCredentialList copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? sid, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, }) { return AccountSipSipCredentialList(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

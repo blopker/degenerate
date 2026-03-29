@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (response != null) 'response': response?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode', 'response', 'timeout'}.contains(key)); } 
 FirewallActionVariant1 copyWith({FirewallMode Function()? mode, FirewallCustomResponse Function()? response, FirewallTimeout Function()? timeout, }) { return FirewallActionVariant1(
   mode: mode != null ? mode() : this.mode,
   response: response != null ? response() : this.response,

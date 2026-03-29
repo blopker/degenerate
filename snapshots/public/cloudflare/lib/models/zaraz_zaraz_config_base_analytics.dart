@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   'sessionExpTime': ?sessionExpTime,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultPurpose', 'enabled', 'sessionExpTime'}.contains(key)); } 
 ZarazZarazConfigBaseAnalytics copyWith({String Function()? defaultPurpose, bool Function()? enabled, int Function()? sessionExpTime, }) { return ZarazZarazConfigBaseAnalytics(
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,
   enabled: enabled != null ? enabled() : this.enabled,

@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   'zones': ?zones,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_time', 'modified_time', 'name', 'zones'}.contains(key)); } 
 DnsSettingsDnsView copyWith({DnsSettingsCreatedTime Function()? createdTime, DnsSettingsModifiedTime Function()? modifiedTime, DnsSettingsName Function()? name, List<String> Function()? zones, }) { return DnsSettingsDnsView(
   createdTime: createdTime != null ? createdTime() : this.createdTime,
   modifiedTime: modifiedTime != null ? modifiedTime() : this.modifiedTime,

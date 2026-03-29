@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   if (policyId != null) 'policy_id': policyId?.toJson(),
   if (sent != null) 'sent': sent?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_body', 'alert_type', 'description', 'id', 'mechanism', 'mechanism_type', 'name', 'policy_id', 'sent'}.contains(key)); } 
 AaaHistory copyWith({AaaAlertBody Function()? alertBody, AaaSchemasAlertType Function()? alertType, AaaComponentsSchemasDescription Function()? description, AaaUuid Function()? id, AaaMechanism Function()? mechanism, AaaMechanismType Function()? mechanismType, AaaSchemasName Function()? name, AaaPolicyId Function()? policyId, AaaSent Function()? sent, }) { return AaaHistory(
   alertBody: alertBody != null ? alertBody() : this.alertBody,
   alertType: alertType != null ? alertType() : this.alertType,

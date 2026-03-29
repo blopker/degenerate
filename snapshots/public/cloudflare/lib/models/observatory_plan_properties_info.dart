@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'free': ?free,
   'pro': ?pro,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'enterprise', 'free', 'pro'}.contains(key)); } 
 ObservatoryPlanPropertiesInfo copyWith({int Function()? business, int Function()? enterprise, int Function()? free, int Function()? pro, }) { return ObservatoryPlanPropertiesInfo(
   business: business != null ? business() : this.business,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

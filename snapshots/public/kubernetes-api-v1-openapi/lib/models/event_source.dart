@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'component': ?component,
   'host': ?host,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'component', 'host'}.contains(key)); } 
 EventSource copyWith({String Function()? component, String Function()? host, }) { return EventSource(
   component: component != null ? component() : this.component,
   host: host != null ? host() : this.host,

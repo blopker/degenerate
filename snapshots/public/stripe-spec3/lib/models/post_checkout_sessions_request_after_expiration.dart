@@ -12,7 +12,7 @@ final PostCheckoutSessionsRequestAfterExpirationRecovery? recovery;
 Map<String, dynamic> toJson() { return {
   if (recovery != null) 'recovery': recovery?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recovery'}.contains(key)); } 
 PostCheckoutSessionsRequestAfterExpiration copyWith({PostCheckoutSessionsRequestAfterExpirationRecovery Function()? recovery}) { return PostCheckoutSessionsRequestAfterExpiration(
   recovery: recovery != null ? recovery() : this.recovery,
 ); } 

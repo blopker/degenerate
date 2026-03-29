@@ -13,7 +13,7 @@ final String? reference;
 Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference'}.contains(key)); } 
 PaymentMethodDetailsPaymentRecordPromptpay copyWith({String? Function()? reference}) { return PaymentMethodDetailsPaymentRecordPromptpay(
   reference: reference != null ? reference() : this.reference,
 ); } 

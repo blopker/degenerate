@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'site_admin': ?siteAdmin,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'id', 'node_id', 'avatar_url', 'gravatar_id', 'url', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'repos_url', 'events_url', 'received_events_url', 'type', 'site_admin'}.contains(key)); } 
 RepositoryWebhooksTemplateRepositoryOwner copyWith({String Function()? login, int Function()? id, String Function()? nodeId, String Function()? avatarUrl, String Function()? gravatarId, String Function()? url, String Function()? htmlUrl, String Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? starredUrl, String Function()? subscriptionsUrl, String Function()? organizationsUrl, String Function()? reposUrl, String Function()? eventsUrl, String Function()? receivedEventsUrl, String Function()? type, bool Function()? siteAdmin, }) { return RepositoryWebhooksTemplateRepositoryOwner(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,

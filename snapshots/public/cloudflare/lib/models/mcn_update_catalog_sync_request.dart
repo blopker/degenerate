@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'policy': ?policy,
   if (updateMode != null) 'update_mode': updateMode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'policy', 'update_mode'}.contains(key)); } 
 McnUpdateCatalogSyncRequest copyWith({String Function()? description, String Function()? name, String Function()? policy, McnCatalogSyncUpdateMode Function()? updateMode, }) { return McnUpdateCatalogSyncRequest(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,

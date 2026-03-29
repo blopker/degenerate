@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'customHeaders': ?customHeaders,
   'screenshotsResolutions': ?screenshotsResolutions,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customHeaders', 'screenshotsResolutions'}.contains(key)); } 
 UrlscannerGetScanResponse2TaskOptions copyWith({Map<String, dynamic> Function()? customHeaders, List<String> Function()? screenshotsResolutions, }) { return UrlscannerGetScanResponse2TaskOptions(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,

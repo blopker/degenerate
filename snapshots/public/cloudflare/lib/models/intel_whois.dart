@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'registrar': ?registrar,
   'updated_date': ?updatedDate,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_date', 'domain', 'nameservers', 'registrant', 'registrant_country', 'registrant_email', 'registrant_org', 'registrar', 'updated_date'}.contains(key)); } 
 IntelWhois copyWith({String Function()? createdDate, IntelDomainName Function()? domain, List<String> Function()? nameservers, String Function()? registrant, String Function()? registrantCountry, String Function()? registrantEmail, String Function()? registrantOrg, String Function()? registrar, String Function()? updatedDate, }) { return IntelWhois(
   createdDate: createdDate != null ? createdDate() : this.createdDate,
   domain: domain != null ? domain() : this.domain,

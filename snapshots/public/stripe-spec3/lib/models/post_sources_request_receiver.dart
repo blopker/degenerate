@@ -39,7 +39,7 @@ final PostSourcesRequestReceiverRefundAttributesMethod? refundAttributesMethod;
 Map<String, dynamic> toJson() { return {
   if (refundAttributesMethod != null) 'refund_attributes_method': refundAttributesMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'refund_attributes_method'}.contains(key)); } 
 PostSourcesRequestReceiver copyWith({PostSourcesRequestReceiverRefundAttributesMethod Function()? refundAttributesMethod}) { return PostSourcesRequestReceiver(
   refundAttributesMethod: refundAttributesMethod != null ? refundAttributesMethod() : this.refundAttributesMethod,
 ); } 

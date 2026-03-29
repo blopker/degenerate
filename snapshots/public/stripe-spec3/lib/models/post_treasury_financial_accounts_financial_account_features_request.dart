@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (outboundPayments != null) 'outbound_payments': outboundPayments?.toJson(),
   if (outboundTransfers != null) 'outbound_transfers': outboundTransfers?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'deposit_insurance', 'expand', 'financial_addresses', 'inbound_transfers', 'intra_stripe_flows', 'outbound_payments', 'outbound_transfers'}.contains(key)); } 
 PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing Function()? cardIssuing, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance Function()? depositInsurance, List<String> Function()? expand, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses Function()? financialAddresses, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers Function()? inboundTransfers, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows Function()? intraStripeFlows, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments Function()? outboundPayments, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers Function()? outboundTransfers, }) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   depositInsurance: depositInsurance != null ? depositInsurance() : this.depositInsurance,

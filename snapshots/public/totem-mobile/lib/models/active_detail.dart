@@ -16,7 +16,7 @@ final class ActiveDetail {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any((key) => const {'type'}.contains(key));
   }
 
   ActiveDetail copyWith({String Function()? type}) {

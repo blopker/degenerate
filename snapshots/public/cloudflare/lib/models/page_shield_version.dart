@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (malwareScore != null) 'malware_score': malwareScore?.toJson(),
   if (obfuscationScore != null) 'obfuscation_score': obfuscationScore?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cryptomining_score', 'dataflow_score', 'fetched_at', 'hash', 'js_integrity_score', 'magecart_score', 'malware_score', 'obfuscation_score'}.contains(key)); } 
 PageShieldVersion copyWith({PageShieldCryptominingScore? Function()? cryptominingScore, PageShieldDataflowScore? Function()? dataflowScore, PageShieldFetchedAt? Function()? fetchedAt, PageShieldHash? Function()? hash, PageShieldJsIntegrityScore? Function()? jsIntegrityScore, PageShieldMagecartScore? Function()? magecartScore, PageShieldMalwareScore? Function()? malwareScore, PageShieldObfuscationScore? Function()? obfuscationScore, }) { return PageShieldVersion(
   cryptominingScore: cryptominingScore != null ? cryptominingScore() : this.cryptominingScore,
   dataflowScore: dataflowScore != null ? dataflowScore() : this.dataflowScore,

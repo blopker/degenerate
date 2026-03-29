@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'hostnames': ?hostnames,
   'mtls_certificate_id': ?mtlsCertificateId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hostnames', 'mtls_certificate_id'}.contains(key)); } 
 TlsCertificatesAndHostnamesHostnameAssociation copyWith({List<String> Function()? hostnames, String Function()? mtlsCertificateId, }) { return TlsCertificatesAndHostnamesHostnameAssociation(
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   mtlsCertificateId: mtlsCertificateId != null ? mtlsCertificateId() : this.mtlsCertificateId,

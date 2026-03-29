@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (skippedUrls != null) 'skipped_urls': skippedUrls?.map((e) => e.toJson()).toList(),
   if (submittedUrls != null) 'submitted_urls': submittedUrls?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'excluded_urls', 'skipped_urls', 'submitted_urls'}.contains(key)); } 
 IntelPhishingUrlSubmit copyWith({List<IntelPhishingUrlSubmitExcludedUrls> Function()? excludedUrls, List<IntelPhishingUrlSubmitSkippedUrls> Function()? skippedUrls, List<IntelPhishingUrlSubmitSubmittedUrls> Function()? submittedUrls, }) { return IntelPhishingUrlSubmit(
   excludedUrls: excludedUrls != null ? excludedUrls() : this.excludedUrls,
   skippedUrls: skippedUrls != null ? skippedUrls() : this.skippedUrls,

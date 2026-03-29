@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'quality': ?quality,
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'captureBeyondViewport', 'clip', 'fromSurface', 'fullPage', 'omitBackground', 'optimizeForSpeed', 'quality', 'type'}.contains(key)); } 
 BrapiPostSnapshotRequestVariant2ScreenshotOptions copyWith({bool Function()? captureBeyondViewport, BrapiPostSnapshotRequestVariant2ScreenshotOptionsClip Function()? clip, bool Function()? fromSurface, bool Function()? fullPage, bool Function()? omitBackground, bool Function()? optimizeForSpeed, double Function()? quality, BrapiPostSnapshotRequestVariant2ScreenshotOptionsType Function()? type, }) { return BrapiPostSnapshotRequestVariant2ScreenshotOptions(
   captureBeyondViewport: captureBeyondViewport != null ? captureBeyondViewport() : this.captureBeyondViewport,
   clip: clip != null ? clip() : this.clip,

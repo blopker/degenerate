@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (serviceId != null) 'service_id': serviceId?.toJson(),
   if (serviceName != null) 'service_name': serviceName?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cidr', 'id', 'provisioning', 'service_id', 'service_name'}.contains(key)); } 
 AddressingServiceBinding copyWith({AddressingCidr Function()? cidr, AddressingServiceBindingIdentifier Function()? id, AddressingProvisioning Function()? provisioning, AddressingServiceIdentifier Function()? serviceId, AddressingServiceName Function()? serviceName, }) { return AddressingServiceBinding(
   cidr: cidr != null ? cidr() : this.cidr,
   id: id != null ? id() : this.id,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'ipMode': ?ipMode,
   if (ports != null) 'ports': ports?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hostname', 'ip', 'ipMode', 'ports'}.contains(key)); } 
 LoadBalancerIngress copyWith({String Function()? hostname, String Function()? ip, String Function()? ipMode, List<PortStatus> Function()? ports, }) { return LoadBalancerIngress(
   hostname: hostname != null ? hostname() : this.hostname,
   ip: ip != null ? ip() : this.ip,

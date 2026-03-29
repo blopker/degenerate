@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'verification_method'}.contains(key)); } 
 SetupIntentPaymentMethodOptionsUsBankAccount copyWith({LinkedAccountOptionsCommon Function()? financialConnections, PaymentMethodOptionsUsBankAccountMandateOptions Function()? mandateOptions, SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod Function()? verificationMethod, }) { return SetupIntentPaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,

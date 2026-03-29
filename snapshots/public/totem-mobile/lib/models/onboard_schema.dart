@@ -118,7 +118,14 @@ final class OnboardSchema {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any(
+      (key) => const {
+        'referral_source',
+        'year_born',
+        'hopes',
+        'referral_other',
+      }.contains(key),
+    );
   }
 
   OnboardSchema copyWith({

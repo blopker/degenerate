@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (payload != null) 'payload': payload?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'payload'}.contains(key)); } 
 BundleCustomScan copyWith({BundleIdentifier Function()? id, BundleCustomScanPayload Function()? payload, }) { return BundleCustomScan(
   id: id != null ? id() : this.id,
   payload: payload != null ? payload() : this.payload,

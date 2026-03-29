@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'message_body': ?messageBody,
   'status_code': ?statusCode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type', 'location', 'message_body', 'status_code'}.contains(key)); } 
 LoadBalancingRules2FixedResponse copyWith({String Function()? contentType, String Function()? location, String Function()? messageBody, int Function()? statusCode, }) { return LoadBalancingRules2FixedResponse(
   contentType: contentType != null ? contentType() : this.contentType,
   location: location != null ? location() : this.location,

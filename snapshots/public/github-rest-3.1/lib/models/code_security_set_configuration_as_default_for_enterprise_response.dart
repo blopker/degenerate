@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (defaultForNewRepos != null) 'default_for_new_repos': defaultForNewRepos?.toJson(),
   if (configuration != null) 'configuration': configuration?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_for_new_repos', 'configuration'}.contains(key)); } 
 CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse copyWith({CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
   configuration: configuration != null ? configuration() : this.configuration,

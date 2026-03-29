@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (nonFuel != null) 'non_fuel': nonFuel?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key)); } 
 PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetReportedBreakdown copyWith({PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetReportedBreakdownFuel Function()? fuel, PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetReportedBreakdownNonFuel Function()? nonFuel, PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetReportedBreakdownTax Function()? tax, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetReportedBreakdown(
   fuel: fuel != null ? fuel() : this.fuel,
   nonFuel: nonFuel != null ? nonFuel() : this.nonFuel,

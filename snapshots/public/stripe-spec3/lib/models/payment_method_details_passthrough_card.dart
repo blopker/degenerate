@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'funding': ?funding,
   'last4': ?last4,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'country', 'exp_month', 'exp_year', 'funding', 'last4'}.contains(key)); } 
 PaymentMethodDetailsPassthroughCard copyWith({String? Function()? brand, String? Function()? country, int? Function()? expMonth, int? Function()? expYear, String? Function()? funding, String? Function()? last4, }) { return PaymentMethodDetailsPassthroughCard(
   brand: brand != null ? brand() : this.brand,
   country: country != null ? country() : this.country,

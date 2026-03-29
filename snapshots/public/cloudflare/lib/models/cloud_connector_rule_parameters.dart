@@ -13,7 +13,7 @@ final String? host;
 Map<String, dynamic> toJson() { return {
   'host': ?host,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host'}.contains(key)); } 
 CloudConnectorRuleParameters copyWith({String Function()? host}) { return CloudConnectorRuleParameters(
   host: host != null ? host() : this.host,
 ); } 

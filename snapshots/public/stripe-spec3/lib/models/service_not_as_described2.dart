@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (explanation != null) 'explanation': explanation?.toJson(),
   if (receivedAt != null) 'received_at': receivedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_reason', 'explanation', 'received_at'}.contains(key)); } 
 ServiceNotAsDescribed2 copyWith({ServiceNotAsDescribed2AdditionalDocumentation Function()? additionalDocumentation, ServiceNotAsDescribed2CanceledAt Function()? canceledAt, ServiceNotAsDescribed2CancellationReason Function()? cancellationReason, ServiceNotAsDescribed2Explanation Function()? explanation, ServiceNotAsDescribed2ReceivedAt Function()? receivedAt, }) { return ServiceNotAsDescribed2(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,

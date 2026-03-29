@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (seccompProfile != null) 'seccompProfile': seccompProfile?.toJson(),
   if (windowsOptions != null) 'windowsOptions': windowsOptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowPrivilegeEscalation', 'appArmorProfile', 'capabilities', 'privileged', 'procMount', 'readOnlyRootFilesystem', 'runAsGroup', 'runAsNonRoot', 'runAsUser', 'seLinuxOptions', 'seccompProfile', 'windowsOptions'}.contains(key)); } 
 SecurityContext copyWith({bool Function()? allowPrivilegeEscalation, AppArmorProfile Function()? appArmorProfile, Capabilities Function()? capabilities, bool Function()? privileged, String Function()? procMount, bool Function()? readOnlyRootFilesystem, int Function()? runAsGroup, bool Function()? runAsNonRoot, int Function()? runAsUser, SeLinuxOptions Function()? seLinuxOptions, SeccompProfile Function()? seccompProfile, WindowsSecurityContextOptions Function()? windowsOptions, }) { return SecurityContext(
   allowPrivilegeEscalation: allowPrivilegeEscalation != null ? allowPrivilegeEscalation() : this.allowPrivilegeEscalation,
   appArmorProfile: appArmorProfile != null ? appArmorProfile() : this.appArmorProfile,

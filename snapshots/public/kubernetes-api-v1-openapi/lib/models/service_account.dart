@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (secrets != null) 'secrets': secrets?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'automountServiceAccountToken', 'imagePullSecrets', 'kind', 'metadata', 'secrets'}.contains(key)); } 
 ServiceAccount copyWith({String Function()? apiVersion, bool Function()? automountServiceAccountToken, List<LocalObjectReference> Function()? imagePullSecrets, String Function()? kind, ObjectMeta Function()? metadata, List<ObjectReference> Function()? secrets, }) { return ServiceAccount(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   automountServiceAccountToken: automountServiceAccountToken != null ? automountServiceAccountToken() : this.automountServiceAccountToken,

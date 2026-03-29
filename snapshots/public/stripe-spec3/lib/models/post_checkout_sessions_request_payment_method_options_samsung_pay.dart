@@ -32,7 +32,7 @@ final PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod? ca
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
 PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod Function()? captureMethod}) { return PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 

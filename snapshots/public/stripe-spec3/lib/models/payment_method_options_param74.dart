@@ -32,7 +32,7 @@ final PaymentMethodOptionsParam74SetupFutureUsage? setupFutureUsage;
 Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
 PaymentMethodOptionsParam74 copyWith({PaymentMethodOptionsParam74SetupFutureUsage Function()? setupFutureUsage}) { return PaymentMethodOptionsParam74(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

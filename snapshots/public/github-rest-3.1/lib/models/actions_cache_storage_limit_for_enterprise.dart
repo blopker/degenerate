@@ -13,7 +13,7 @@ final int? maxCacheSizeGb;
 Map<String, dynamic> toJson() { return {
   'max_cache_size_gb': ?maxCacheSizeGb,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_cache_size_gb'}.contains(key)); } 
 ActionsCacheStorageLimitForEnterprise copyWith({int Function()? maxCacheSizeGb}) { return ActionsCacheStorageLimitForEnterprise(
   maxCacheSizeGb: maxCacheSizeGb != null ? maxCacheSizeGb() : this.maxCacheSizeGb,
 ); } 

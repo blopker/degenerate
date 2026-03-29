@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   'sold_by': ?soldBy,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'description', 'sold_by'}.contains(key)); } 
 AmountDetailsParam2LineItemsVariant1PaymentMethodOptionsPaypal copyWith({AmountDetailsParam2LineItemsVariant1PaymentMethodOptionsPaypalCategory Function()? category, String Function()? description, String Function()? soldBy, }) { return AmountDetailsParam2LineItemsVariant1PaymentMethodOptionsPaypal(
   category: category != null ? category() : this.category,
   description: description != null ? description() : this.description,

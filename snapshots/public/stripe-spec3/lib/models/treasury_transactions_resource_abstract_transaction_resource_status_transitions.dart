@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'posted_at': ?postedAt,
   'void_at': ?voidAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'posted_at', 'void_at'}.contains(key)); } 
 TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions copyWith({int? Function()? postedAt, int? Function()? voidAt, }) { return TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions(
   postedAt: postedAt != null ? postedAt() : this.postedAt,
   voidAt: voidAt != null ? voidAt() : this.voidAt,

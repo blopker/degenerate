@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (preferredWans != null) 'preferred_wans': preferredWans?.map((e) => e.toJson()).toList(),
   if (priority != null) 'priority': priority?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_app_id', 'breakout', 'managed_app_id', 'preferred_wans', 'priority'}.contains(key)); } 
 MagicAppConfigUpdateRequest copyWith({MagicAccountAppId Function()? accountAppId, MagicAppBreakout Function()? breakout, MagicManagedAppId Function()? managedAppId, List<MagicIdentifier> Function()? preferredWans, MagicAppPriority Function()? priority, }) { return MagicAppConfigUpdateRequest(
   accountAppId: accountAppId != null ? accountAppId() : this.accountAppId,
   breakout: breakout != null ? breakout() : this.breakout,

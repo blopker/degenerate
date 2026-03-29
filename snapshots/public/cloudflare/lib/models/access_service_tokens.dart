@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'created_at', 'duration', 'expires_at', 'id', 'last_seen_at', 'name', 'updated_at'}.contains(key)); } 
 AccessServiceTokens copyWith({AccessClientId Function()? clientId, AccessTimestamp Function()? createdAt, AccessDuration Function()? duration, AccessTimestamp Function()? expiresAt, AccessUuid Function()? id, AccessTimestamp Function()? lastSeenAt, AccessSchemasName Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessServiceTokens(
   clientId: clientId != null ? clientId() : this.clientId,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

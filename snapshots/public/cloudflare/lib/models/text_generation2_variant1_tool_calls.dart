@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'arguments': ?arguments,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arguments', 'name'}.contains(key)); } 
 TextGeneration2Variant1ToolCalls copyWith({Map<String, dynamic> Function()? arguments, String Function()? name, }) { return TextGeneration2Variant1ToolCalls(
   arguments: arguments != null ? arguments() : this.arguments,
   name: name != null ? name() : this.name,

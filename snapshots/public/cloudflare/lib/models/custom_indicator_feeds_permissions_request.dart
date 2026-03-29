@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'account_tag': ?accountTag,
   'feed_id': ?feedId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'feed_id'}.contains(key)); } 
 CustomIndicatorFeedsPermissionsRequest copyWith({String Function()? accountTag, int Function()? feedId, }) { return CustomIndicatorFeedsPermissionsRequest(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   feedId: feedId != null ? feedId() : this.feedId,

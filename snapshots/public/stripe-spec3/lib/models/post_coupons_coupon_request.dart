@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency_options', 'expand', 'metadata', 'name'}.contains(key)); } 
 PostCouponsCouponRequest copyWith({Map<String, PostCouponsCouponRequestCurrencyOptionsValue> Function()? currencyOptions, List<String> Function()? expand, PostCouponsCouponRequestMetadata Function()? metadata, String Function()? name, }) { return PostCouponsCouponRequest(
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   expand: expand != null ? expand() : this.expand,

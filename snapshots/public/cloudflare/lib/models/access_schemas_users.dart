@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   if (uid != null) 'uid': uid?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_seat', 'active_device_count', 'created_at', 'email', 'gateway_seat', 'id', 'last_successful_login', 'name', 'seat_uid', 'uid', 'updated_at'}.contains(key)); } 
 AccessSchemasUsers copyWith({AccessSchemasAccessSeat Function()? accessSeat, AccessActiveDeviceCount Function()? activeDeviceCount, AccessTimestamp Function()? createdAt, AccessSchemasEmail Function()? email, AccessSchemasGatewaySeat Function()? gatewaySeat, AccessUuid Function()? id, AccessLastSuccessfulLogin Function()? lastSuccessfulLogin, AccessUsersComponentsSchemasName Function()? name, AccessSchemasSeatUid Function()? seatUid, AccessUid Function()? uid, AccessTimestamp Function()? updatedAt, }) { return AccessSchemasUsers(
   accessSeat: accessSeat != null ? accessSeat() : this.accessSeat,
   activeDeviceCount: activeDeviceCount != null ? activeDeviceCount() : this.activeDeviceCount,

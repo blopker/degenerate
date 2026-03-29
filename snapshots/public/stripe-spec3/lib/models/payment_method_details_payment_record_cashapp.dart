@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'cashtag': ?cashtag,
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id', 'cashtag', 'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsPaymentRecordCashapp copyWith({String? Function()? buyerId, String? Function()? cashtag, String? Function()? transactionId, }) { return PaymentMethodDetailsPaymentRecordCashapp(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
   cashtag: cashtag != null ? cashtag() : this.cashtag,

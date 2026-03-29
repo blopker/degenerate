@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': ?nodeId,
   'private': ?private,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'full_name', 'id', 'name', 'node_id', 'private'}.contains(key)); } 
 WebhookInstallationRepositoriesAddedRepositoriesRemoved copyWith({String Function()? fullName, int Function()? id, String Function()? name, String Function()? nodeId, bool Function()? private, }) { return WebhookInstallationRepositoriesAddedRepositoriesRemoved(
   fullName: fullName != null ? fullName() : this.fullName,
   id: id != null ? id() : this.id,

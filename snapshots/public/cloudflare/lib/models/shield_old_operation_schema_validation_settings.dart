@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
   if (operationId != null) 'operation_id': operationId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action', 'operation_id'}.contains(key)); } 
 ShieldOldOperationSchemaValidationSettings copyWith({ShieldOldOperationMitigationAction? Function()? mitigationAction, ShieldUuid Function()? operationId, }) { return ShieldOldOperationSchemaValidationSettings(
   mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
   operationId: operationId != null ? operationId() : this.operationId,

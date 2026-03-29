@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (accountId != null) 'account_id': accountId?.toJson(),
   if (organizationId != null) 'organization_id': organizationId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'organization_id'}.contains(key)); } 
 ResourceSharingCreateShareRecipientRequest copyWith({ResourceSharingAccountId Function()? accountId, ResourceSharingOrganizationId Function()? organizationId, }) { return ResourceSharingCreateShareRecipientRequest(
   accountId: accountId != null ? accountId() : this.accountId,
   organizationId: organizationId != null ? organizationId() : this.organizationId,

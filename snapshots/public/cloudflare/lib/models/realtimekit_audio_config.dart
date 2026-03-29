@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'codec': codec.toJson(),
   'export_file': exportFile,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'channel', 'codec', 'export_file'}.contains(key)); } 
 RealtimekitAudioConfig copyWith({RealtimekitAudioConfigChannel Function()? channel, RealtimekitAudioConfigCodec Function()? codec, bool Function()? exportFile, }) { return RealtimekitAudioConfig(
   channel: channel != null ? channel() : this.channel,
   codec: codec != null ? codec() : this.codec,

@@ -13,7 +13,7 @@ final List<String>? command;
 Map<String, dynamic> toJson() { return {
   'command': ?command,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'command'}.contains(key)); } 
 ExecAction copyWith({List<String> Function()? command}) { return ExecAction(
   command: command != null ? command() : this.command,
 ); } 

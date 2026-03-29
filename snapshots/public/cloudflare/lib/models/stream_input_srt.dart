@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (streamId != null) 'streamId': streamId?.toJson(),
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'passphrase', 'streamId', 'url'}.contains(key)); } 
 StreamInputSrt copyWith({StreamInputSrtStreamPassphrase Function()? passphrase, StreamInputSrtStreamId Function()? streamId, StreamInputSrtUrl Function()? url, }) { return StreamInputSrt(
   passphrase: passphrase != null ? passphrase() : this.passphrase,
   streamId: streamId != null ? streamId() : this.streamId,

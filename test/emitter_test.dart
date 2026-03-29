@@ -130,6 +130,42 @@ void main() {
       });
     });
 
+    group('canParse checks known keys when no required fields', () {
+      late String source;
+
+      setUp(() {
+        final model = IrObject('Config', [
+          IrField(
+            'name',
+            'name',
+            const IrPrimitive(PrimitiveKind.string),
+          ),
+          IrField(
+            'value',
+            'value',
+            const IrPrimitive(PrimitiveKind.int),
+          ),
+        ]);
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('does not return unconditional true', () {
+        expect(source, isNot(contains('canParse(Map<String, dynamic> json) { return true;')));
+      });
+
+      test('checks for known property keys', () {
+        expect(source, contains("'name'"));
+        expect(source, contains("'value'"));
+        expect(source, contains('json.keys.any'));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
     group('field named toString does not conflict with Object.toString', () {
       late String source;
 
@@ -282,6 +318,30 @@ void main() {
 
     test('enum code is valid Dart', () {
       final irEnum = IrEnum('Color', ['red', 'green', 'blue']);
+      final specs = EnumEmitter(irEnum).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits integer enum with int value field', () {
+      final irEnum = IrEnum('Priority', ['0', '1', '2'],
+          valueKind: PrimitiveKind.int);
+      final specs = EnumEmitter(irEnum).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      expect(source, contains('final int value;'));
+      expect(source, contains('factory Priority.fromJson(int json)'));
+      expect(source, contains('int toJson()'));
+      expect(source, contains('Priority._(0)'));
+      expect(source, contains('Priority._(1)'));
+    });
+
+    test('integer enum is valid Dart', () {
+      final irEnum = IrEnum('Priority', ['0', '-1', '42'],
+          valueKind: PrimitiveKind.int);
       final specs = EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);

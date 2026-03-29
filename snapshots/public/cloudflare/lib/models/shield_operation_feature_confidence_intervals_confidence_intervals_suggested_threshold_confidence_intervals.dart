@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (p95 != null) 'p95': p95?.toJson(),
   if (p99 != null) 'p99': p99?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'p90', 'p95', 'p99'}.contains(key)); } 
 ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals copyWith({ShieldConfidenceIntervalsBounds Function()? p90, ShieldConfidenceIntervalsBounds Function()? p95, ShieldConfidenceIntervalsBounds Function()? p99, }) { return ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals(
   p90: p90 != null ? p90() : this.p90,
   p95: p95 != null ? p95() : this.p95,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (results != null) 'results': results?.toJson(),
   'success': ?success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'meta', 'results', 'success'}.contains(key)); } 
 D1RawResultResponse copyWith({D1QueryMeta Function()? meta, D1RawResultResponseResults Function()? results, bool Function()? success, }) { return D1RawResultResponse(
   meta: meta != null ? meta() : this.meta,
   results: results != null ? results() : this.results,

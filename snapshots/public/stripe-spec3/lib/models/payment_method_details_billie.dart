@@ -13,7 +13,7 @@ final String? transactionId;
 Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsBillie copyWith({String? Function()? transactionId}) { return PaymentMethodDetailsBillie(
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 

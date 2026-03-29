@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'expires_on', 'id', 'issued_on', 'last_used_on', 'modified_on', 'name', 'not_before', 'policies', 'status'}.contains(key)); } 
 IamTokenBase copyWith({IamCondition Function()? condition, IamExpiresOn Function()? expiresOn, IamTokenIdentifier Function()? id, IamIssuedOn Function()? issuedOn, IamLastUsedOn Function()? lastUsedOn, IamModifiedOn Function()? modifiedOn, IamName Function()? name, IamNotBefore Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources> Function()? policies, IamTokenStatus Function()? status, }) { return IamTokenBase(
   condition: condition != null ? condition() : this.condition,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

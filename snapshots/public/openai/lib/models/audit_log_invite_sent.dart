@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (data != null) 'data': data?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
 AuditLogInviteSent copyWith({String Function()? id, AuditLogInviteSentData Function()? data, }) { return AuditLogInviteSent(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,

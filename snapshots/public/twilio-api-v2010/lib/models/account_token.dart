@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'ttl': ?ttl,
   'username': ?username,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'ice_servers', 'password', 'ttl', 'username'}.contains(key)); } 
 AccountToken copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, List<AccountTokenIceServers>? Function()? iceServers, String? Function()? password, String? Function()? ttl, String? Function()? username, }) { return AccountToken(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

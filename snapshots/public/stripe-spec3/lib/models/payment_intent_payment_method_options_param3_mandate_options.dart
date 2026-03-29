@@ -11,7 +11,7 @@ final PaymentIntentPaymentMethodOptionsParam3MandateOptionsReferencePrefix? refe
 Map<String, dynamic> toJson() { return {
   if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
 PaymentIntentPaymentMethodOptionsParam3MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam3MandateOptionsReferencePrefix Function()? referencePrefix}) { return PaymentIntentPaymentMethodOptionsParam3MandateOptions(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
 ); } 

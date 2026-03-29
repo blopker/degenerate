@@ -12,7 +12,7 @@ final String? translatedText;
 Map<String, dynamic> toJson() { return {
   'translated_text': ?translatedText,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'translated_text'}.contains(key)); } 
 Translation2 copyWith({String Function()? translatedText}) { return Translation2(
   translatedText: translatedText != null ? translatedText() : this.translatedText,
 ); } 

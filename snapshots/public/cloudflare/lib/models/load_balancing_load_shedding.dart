@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   'session_percent': sessionPercent,
   'session_policy': sessionPolicy.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_percent', 'default_policy', 'session_percent', 'session_policy'}.contains(key)); } 
 LoadBalancingLoadShedding copyWith({double Function()? defaultPercent, LoadBalancingLoadSheddingDefaultPolicy Function()? defaultPolicy, double Function()? sessionPercent, LoadBalancingLoadSheddingSessionPolicy Function()? sessionPolicy, }) { return LoadBalancingLoadShedding(
   defaultPercent: defaultPercent != null ? defaultPercent() : this.defaultPercent,
   defaultPolicy: defaultPolicy != null ? defaultPolicy() : this.defaultPolicy,

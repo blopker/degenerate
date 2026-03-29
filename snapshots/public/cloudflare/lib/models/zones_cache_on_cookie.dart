@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
 ZonesCacheOnCookie copyWith({ZonesCacheOnCookieId Function()? id, String Function()? value, }) { return ZonesCacheOnCookie(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,

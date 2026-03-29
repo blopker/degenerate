@@ -11,7 +11,7 @@ final PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer? issuer;
 Map<String, dynamic> toJson() { return {
   if (issuer != null) 'issuer': issuer?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'issuer'}.contains(key)); } 
 PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings copyWith({PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer Function()? issuer}) { return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(
   issuer: issuer != null ? issuer() : this.issuer,
 ); } 

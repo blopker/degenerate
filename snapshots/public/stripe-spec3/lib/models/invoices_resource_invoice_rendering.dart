@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'template': ?template,
   'template_version': ?templateVersion,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key)); } 
 InvoicesResourceInvoiceRendering copyWith({String? Function()? amountTaxDisplay, InvoicesResourceInvoiceRenderingPdf? Function()? pdf, String? Function()? template, int? Function()? templateVersion, }) { return InvoicesResourceInvoiceRendering(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   pdf: pdf != null ? pdf() : this.pdf,

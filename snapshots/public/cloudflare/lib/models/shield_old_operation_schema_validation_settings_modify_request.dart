@@ -18,7 +18,7 @@ final ShieldOldOperationMitigationAction? mitigationAction;
 Map<String, dynamic> toJson() { return {
   if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
 ShieldOldOperationSchemaValidationSettingsModifyRequest copyWith({ShieldOldOperationMitigationAction? Function()? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsModifyRequest(
   mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
 ); } 

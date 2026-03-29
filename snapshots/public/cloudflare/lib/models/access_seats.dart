@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (seatUid != null) 'seat_uid': seatUid?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_seat', 'created_at', 'gateway_seat', 'seat_uid', 'updated_at'}.contains(key)); } 
 AccessSeats copyWith({AccessAccessSeat Function()? accessSeat, AccessTimestamp Function()? createdAt, AccessGatewaySeat Function()? gatewaySeat, AccessSeatUid Function()? seatUid, AccessTimestamp Function()? updatedAt, }) { return AccessSeats(
   accessSeat: accessSeat != null ? accessSeat() : this.accessSeat,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

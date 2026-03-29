@@ -13,7 +13,7 @@ final List<TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection>
 Map<String, dynamic> toJson() { return {
   if (elections != null) 'elections': elections?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'elections'}.contains(key)); } 
 TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax copyWith({List<TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection> Function()? elections}) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(
   elections: elections != null ? elections() : this.elections,
 ); } 

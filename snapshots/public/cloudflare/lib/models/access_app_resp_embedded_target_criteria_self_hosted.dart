@@ -12,7 +12,7 @@ final List<AccessTargetCriteriaBase>? targetCriteria;
 Map<String, dynamic> toJson() { return {
   if (targetCriteria != null) 'target_criteria': targetCriteria?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target_criteria'}.contains(key)); } 
 AccessAppRespEmbeddedTargetCriteriaSelfHosted copyWith({List<AccessTargetCriteriaBase> Function()? targetCriteria}) { return AccessAppRespEmbeddedTargetCriteriaSelfHosted(
   targetCriteria: targetCriteria != null ? targetCriteria() : this.targetCriteria,
 ); } 

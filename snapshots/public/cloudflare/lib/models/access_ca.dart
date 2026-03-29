@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (publicKey != null) 'public_key': publicKey?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aud', 'id', 'public_key'}.contains(key)); } 
 AccessCa copyWith({AccessAud Function()? aud, AccessSchemasId Function()? id, AccessPublicKey Function()? publicKey, }) { return AccessCa(
   aud: aud != null ? aud() : this.aud,
   id: id != null ? id() : this.id,

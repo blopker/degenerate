@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'duration': ?duration,
   'enforce': ?enforce,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'duration', 'enforce'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsCheckSession copyWith({String Function()? duration, bool Function()? enforce, }) { return ZeroTrustGatewayRuleSettingsCheckSession(
   duration: duration != null ? duration() : this.duration,
   enforce: enforce != null ? enforce() : this.enforce,

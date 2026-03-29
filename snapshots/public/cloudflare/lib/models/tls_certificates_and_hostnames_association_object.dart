@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (service != null) 'service': service?.toJson(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'service', 'status'}.contains(key)); } 
 TlsCertificatesAndHostnamesAssociationObject copyWith({TlsCertificatesAndHostnamesService Function()? service, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus Function()? status, }) { return TlsCertificatesAndHostnamesAssociationObject(
   service: service != null ? service() : this.service,
   status: status != null ? status() : this.status,

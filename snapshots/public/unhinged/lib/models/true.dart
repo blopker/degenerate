@@ -71,12 +71,78 @@ final class TrueNull {
   }
 }
 
+final class True0 {
+  const True0._(this.value);
+
+  factory True0.fromJson(int json) {
+    return switch (json) {
+      0 => $0,
+      1 => $1,
+      -1 => minus1,
+      2147483647 => $2147483647,
+      -2147483648 => minus2147483648,
+      9999999999999999 => $9999999999999999,
+      _ => True0._(json),
+    };
+  }
+
+  static const True0 $0 = True0._(0);
+
+  static const True0 $02 = True0._(0);
+
+  static const True0 $1 = True0._(1);
+
+  static const True0 minus1 = True0._(-1);
+
+  static const True0 $2147483647 = True0._(2147483647);
+
+  static const True0 minus2147483648 = True0._(-2147483648);
+
+  static const True0 $9999999999999999 = True0._(9999999999999999);
+
+  static const List<True0> values = [
+    $0,
+    $02,
+    $1,
+    minus1,
+    $2147483647,
+    minus2147483648,
+    $9999999999999999,
+  ];
+
+  final int value;
+
+  int toJson() {
+    return value;
+  }
+
+  /// Whether this value is unknown (not defined in the OpenAPI spec).
+  bool get isUnknown {
+    return !values.contains(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) || other is True0 && other.value == value;
+  }
+
+  @override
+  int get hashCode {
+    return value.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'True0($value)';
+  }
+}
+
 final class True {
   const True({
     this.$false = true,
     required this.none,
     this.$null = TrueNull.$null,
-    this.$0 = 0,
+    required this.$0,
     required this.$empty,
     this.constructor,
     this.proto,
@@ -92,7 +158,7 @@ final class True {
       $false: json['false'] as bool,
       none: json['none'] as String,
       $null: TrueNull.fromJson(json['null'] as String),
-      $0: (json['0'] as num).toInt(),
+      $0: True0.fromJson((json['0'] as num).toInt()),
       $empty: json[''] as String,
       constructor: json['constructor'] as String?,
       proto: json['__proto__'] as String?,
@@ -110,7 +176,7 @@ final class True {
 
   final TrueNull $null;
 
-  final int $0;
+  final True0 $0;
 
   final String $empty;
 
@@ -135,7 +201,7 @@ final class True {
       'false': $false,
       'none': none,
       'null': $null.toJson(),
-      '0': $0,
+      '0': $0.toJson(),
       '': $empty,
       'constructor': ?constructor,
       '__proto__': ?proto,
@@ -154,7 +220,6 @@ final class True {
         json['none'] is String &&
         json.containsKey('null') &&
         json.containsKey('0') &&
-        json['0'] is num &&
         json.containsKey('') &&
         json[''] is String;
   }
@@ -163,7 +228,7 @@ final class True {
     bool? $false,
     String? none,
     TrueNull? $null,
-    int? $0,
+    True0? $0,
     String? $empty,
     String Function()? constructor,
     String Function()? proto,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'manifest': ?manifest,
   if (tag != null) 'tag': tag?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labels', 'manifest', 'tag'}.contains(key)); } 
 WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata copyWith({Map<String, dynamic>? Function()? labels, Map<String, dynamic>? Function()? manifest, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag Function()? tag, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata(
   labels: labels != null ? labels() : this.labels,
   manifest: manifest != null ? manifest() : this.manifest,

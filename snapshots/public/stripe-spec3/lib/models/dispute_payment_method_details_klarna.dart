@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'chargeback_loss_reason_code': ?chargebackLossReasonCode,
   'reason_code': ?reasonCode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chargeback_loss_reason_code', 'reason_code'}.contains(key)); } 
 DisputePaymentMethodDetailsKlarna copyWith({String Function()? chargebackLossReasonCode, String? Function()? reasonCode, }) { return DisputePaymentMethodDetailsKlarna(
   chargebackLossReasonCode: chargebackLossReasonCode != null ? chargebackLossReasonCode() : this.chargebackLossReasonCode,
   reasonCode: reasonCode != null ? reasonCode() : this.reasonCode,

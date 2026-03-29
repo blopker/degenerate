@@ -16,7 +16,7 @@ final class WaitingRoomDetail {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any((key) => const {'type'}.contains(key));
   }
 
   WaitingRoomDetail copyWith({String Function()? type}) {

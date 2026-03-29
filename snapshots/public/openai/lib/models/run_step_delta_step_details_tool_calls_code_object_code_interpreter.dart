@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'input': ?input,
   if (outputs != null) 'outputs': outputs?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input', 'outputs'}.contains(key)); } 
 RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String Function()? input, List<RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputs> Function()? outputs, }) { return RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: input != null ? input() : this.input,
   outputs: outputs != null ? outputs() : this.outputs,

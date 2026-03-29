@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionCancel != null) 'subscription_cancel': subscriptionCancel?.toJson(),
   if (subscriptionUpdate != null) 'subscription_update': subscriptionUpdate?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_update', 'invoice_history', 'payment_method_update', 'subscription_cancel', 'subscription_update'}.contains(key)); } 
 PostBillingPortalConfigurationsConfigurationRequestFeatures copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate Function()? customerUpdate, PostBillingPortalConfigurationsConfigurationRequestFeaturesInvoiceHistory Function()? invoiceHistory, PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate Function()? paymentMethodUpdate, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel Function()? subscriptionCancel, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate Function()? subscriptionUpdate, }) { return PostBillingPortalConfigurationsConfigurationRequestFeatures(
   customerUpdate: customerUpdate != null ? customerUpdate() : this.customerUpdate,
   invoiceHistory: invoiceHistory != null ? invoiceHistory() : this.invoiceHistory,

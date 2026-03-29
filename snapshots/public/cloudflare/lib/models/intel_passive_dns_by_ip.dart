@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'per_page': ?perPage,
   if (reverseRecords != null) 'reverse_records': reverseRecords?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'reverse_records'}.contains(key)); } 
 IntelPassiveDnsByIp copyWith({double Function()? count, double Function()? page, double Function()? perPage, List<IntelPassiveDnsByIpReverseRecords> Function()? reverseRecords, }) { return IntelPassiveDnsByIp(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,

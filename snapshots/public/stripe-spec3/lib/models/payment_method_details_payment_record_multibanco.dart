@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'entity': ?entity,
   'reference': ?reference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entity', 'reference'}.contains(key)); } 
 PaymentMethodDetailsPaymentRecordMultibanco copyWith({String? Function()? entity, String? Function()? reference, }) { return PaymentMethodDetailsPaymentRecordMultibanco(
   entity: entity != null ? entity() : this.entity,
   reference: reference != null ? reference() : this.reference,

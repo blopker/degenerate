@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   if (source != null) 'source': source?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination', 'enabled', 'source'}.contains(key)); } 
 R2Sippy copyWith({R2SippyDestination Function()? destination, bool Function()? enabled, R2SippySource Function()? source, }) { return R2Sippy(
   destination: destination != null ? destination() : this.destination,
   enabled: enabled != null ? enabled() : this.enabled,

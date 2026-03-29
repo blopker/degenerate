@@ -12,7 +12,7 @@ final String permission;
 Map<String, dynamic> toJson() { return {
   'permission': permission,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'permission'}.contains(key)); } 
 ReposAddCollaboratorRequest copyWith({String Function()? permission}) { return ReposAddCollaboratorRequest(
   permission: permission != null ? permission() : this.permission,
 ); } 

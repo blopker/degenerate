@@ -47,7 +47,7 @@ final PaymentIntentPaymentMethodOptionsBlikSetupFutureUsage? setupFutureUsage;
 Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
 PaymentIntentPaymentMethodOptionsBlik copyWith({PaymentIntentPaymentMethodOptionsBlikSetupFutureUsage Function()? setupFutureUsage}) { return PaymentIntentPaymentMethodOptionsBlik(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

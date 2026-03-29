@@ -11,7 +11,7 @@ final ItemReorderedChangesItemNodeId? previousProjectsV2ItemNodeId;
 Map<String, dynamic> toJson() { return {
   if (previousProjectsV2ItemNodeId != null) 'previous_projects_v2_item_node_id': previousProjectsV2ItemNodeId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_projects_v2_item_node_id'}.contains(key)); } 
 ItemReorderedChanges copyWith({ItemReorderedChangesItemNodeId Function()? previousProjectsV2ItemNodeId}) { return ItemReorderedChanges(
   previousProjectsV2ItemNodeId: previousProjectsV2ItemNodeId != null ? previousProjectsV2ItemNodeId() : this.previousProjectsV2ItemNodeId,
 ); } 

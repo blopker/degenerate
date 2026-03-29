@@ -12,7 +12,7 @@ final String? patternConfigVersion;
 Map<String, dynamic> toJson() { return {
   'pattern_config_version': ?patternConfigVersion,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pattern_config_version'}.contains(key)); } 
 SecretScanningUpdateOrgPatternConfigsResponse copyWith({String Function()? patternConfigVersion}) { return SecretScanningUpdateOrgPatternConfigsResponse(
   patternConfigVersion: patternConfigVersion != null ? patternConfigVersion() : this.patternConfigVersion,
 ); } 

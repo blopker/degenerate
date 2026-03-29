@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'case_id': ?caseId,
   'reason_code': ?reasonCode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'case_id', 'reason_code'}.contains(key)); } 
 DisputePaymentMethodDetailsPaypal copyWith({String? Function()? caseId, String? Function()? reasonCode, }) { return DisputePaymentMethodDetailsPaypal(
   caseId: caseId != null ? caseId() : this.caseId,
   reasonCode: reasonCode != null ? reasonCode() : this.reasonCode,

@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (packageId != null) 'package_id': packageId?.toJson(),
   if (rulesCount != null) 'rules_count': rulesCount?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'modified_rules_count', 'name', 'package_id', 'rules_count'}.contains(key)); } 
 WafManagedRulesGroup copyWith({WafManagedRulesDescription? Function()? description, WafManagedRulesComponentsSchemasIdentifier Function()? id, WafManagedRulesModifiedRulesCount Function()? modifiedRulesCount, WafManagedRulesName Function()? name, WafManagedRulesIdentifier Function()? packageId, WafManagedRulesRulesCount Function()? rulesCount, }) { return WafManagedRulesGroup(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

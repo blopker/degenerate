@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'reflexive': ?reflexive,
   'relay': ?relay,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'reflexive', 'relay'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoConnectivity copyWith({bool Function()? host, bool Function()? reflexive, bool Function()? relay, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoConnectivity(
   host: host != null ? host() : this.host,
   reflexive: reflexive != null ? reflexive() : this.reflexive,

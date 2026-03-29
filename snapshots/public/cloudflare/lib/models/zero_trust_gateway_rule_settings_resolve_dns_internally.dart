@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (fallback != null) 'fallback': fallback?.toJson(),
   'view_id': ?viewId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fallback', 'view_id'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsResolveDnsInternally copyWith({ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback Function()? fallback, String Function()? viewId, }) { return ZeroTrustGatewayRuleSettingsResolveDnsInternally(
   fallback: fallback != null ? fallback() : this.fallback,
   viewId: viewId != null ? viewId() : this.viewId,

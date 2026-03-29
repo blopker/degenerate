@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'metadata'}.contains(key)); } 
 PostPayoutsPayoutReverseRequest copyWith({List<String> Function()? expand, Map<String, String> Function()? metadata, }) { return PostPayoutsPayoutReverseRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (tunnelId != null) 'tunnel_id': tunnelId?.toJson(),
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'config', 'created_at', 'source', 'tunnel_id', 'version'}.contains(key)); } 
 TunnelConfiguration copyWith({TunnelIdentifier Function()? accountId, TunnelConfig Function()? config, TunnelTimestamp Function()? createdAt, TunnelSchemasConfigSrc Function()? source, TunnelSchemasTunnelId Function()? tunnelId, TunnelSchemasConfigVersion Function()? version, }) { return TunnelConfiguration(
   accountId: accountId != null ? accountId() : this.accountId,
   config: config != null ? config() : this.config,

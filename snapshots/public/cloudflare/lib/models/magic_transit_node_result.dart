@@ -106,7 +106,7 @@ Map<String, dynamic> toJson() { return {
   if (packetCount != null) 'packet_count': packetCount?.toJson(),
   if (stdDevRttMs != null) 'std_dev_rtt_ms': stdDevRttMs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'ip', 'labels', 'max_rtt_ms', 'mean_rtt_ms', 'min_rtt_ms', 'name', 'packet_count', 'std_dev_rtt_ms'}.contains(key)); } 
 MagicTransitNodeResult copyWith({MagicTransitAsn Function()? asn, MagicTransitIp Function()? ip, List<String> Function()? labels, MagicTransitMaxRttMs Function()? maxRttMs, MagicTransitMeanRttMs Function()? meanRttMs, MagicTransitMinRttMs Function()? minRttMs, MagicTransitName Function()? name, MagicTransitPacketCount Function()? packetCount, MagicTransitStdDevRttMs Function()? stdDevRttMs, }) { return MagicTransitNodeResult(
   asn: asn != null ? asn() : this.asn,
   ip: ip != null ? ip() : this.ip,

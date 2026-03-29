@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'port_protocols': ?portProtocols,
   'support_domains': ?supportDomains,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hostnames', 'ip_subnets', 'port_protocols', 'support_domains'}.contains(key)); } 
 AlexandriaUpdateApplicationVersionRequest copyWith({List<String> Function()? hostnames, List<String> Function()? ipSubnets, List<String> Function()? portProtocols, List<String> Function()? supportDomains, }) { return AlexandriaUpdateApplicationVersionRequest(
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   ipSubnets: ipSubnets != null ? ipSubnets() : this.ipSubnets,

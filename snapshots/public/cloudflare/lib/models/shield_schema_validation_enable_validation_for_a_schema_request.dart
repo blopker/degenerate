@@ -12,7 +12,7 @@ final ShieldOldValidationEnabled? validationEnabled;
 Map<String, dynamic> toJson() { return {
   if (validationEnabled != null) 'validation_enabled': validationEnabled?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'validation_enabled'}.contains(key)); } 
 ShieldSchemaValidationEnableValidationForASchemaRequest copyWith({ShieldOldValidationEnabled Function()? validationEnabled}) { return ShieldSchemaValidationEnableValidationForASchemaRequest(
   validationEnabled: validationEnabled != null ? validationEnabled() : this.validationEnabled,
 ); } 

@@ -19,7 +19,7 @@ final class YieldTopic {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any((key) => const {'await', 'async'}.contains(key));
   }
 
   YieldTopic copyWith({String Function()? $await, bool Function()? $async}) {

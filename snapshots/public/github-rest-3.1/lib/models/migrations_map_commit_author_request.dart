@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'name'}.contains(key)); } 
 MigrationsMapCommitAuthorRequest copyWith({String Function()? email, String Function()? name, }) { return MigrationsMapCommitAuthorRequest(
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

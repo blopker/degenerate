@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (packageId != null) 'package_id': packageId?.toJson(),
   if (priority != null) 'priority': priority?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'group', 'id', 'package_id', 'priority'}.contains(key)); } 
 WafManagedRulesBase copyWith({WafManagedRulesSchemasDescription Function()? description, WafManagedRulesBaseGroup Function()? group, WafManagedRulesRuleComponentsSchemasIdentifier Function()? id, WafManagedRulesIdentifier Function()? packageId, WafManagedRulesPriority Function()? priority, }) { return WafManagedRulesBase(
   description: description != null ? description() : this.description,
   group: group != null ? group() : this.group,

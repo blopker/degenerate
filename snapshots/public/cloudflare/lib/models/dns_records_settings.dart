@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'ipv4_only': ipv4Only,
   'ipv6_only': ipv6Only,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipv4_only', 'ipv6_only'}.contains(key)); } 
 DnsRecordsSettings copyWith({bool Function()? ipv4Only, bool Function()? ipv6Only, }) { return DnsRecordsSettings(
   ipv4Only: ipv4Only != null ? ipv4Only() : this.ipv4Only,
   ipv6Only: ipv6Only != null ? ipv6Only() : this.ipv6Only,

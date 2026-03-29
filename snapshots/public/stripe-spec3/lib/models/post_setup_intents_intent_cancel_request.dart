@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
   'expand': ?expand,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_reason', 'expand'}.contains(key)); } 
 PostSetupIntentsIntentCancelRequest copyWith({PostSetupIntentsIntentCancelRequestCancellationReason Function()? cancellationReason, List<String> Function()? expand, }) { return PostSetupIntentsIntentCancelRequest(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,

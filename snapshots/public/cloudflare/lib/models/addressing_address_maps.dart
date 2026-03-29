@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_delete', 'can_modify_ips', 'created_at', 'default_sni', 'description', 'enabled', 'id', 'modified_at'}.contains(key)); } 
 AddressingAddressMaps copyWith({AddressingCanDelete Function()? canDelete, AddressingCanModifyIps Function()? canModifyIps, AddressingTimestamp Function()? createdAt, AddressingDefaultSni? Function()? defaultSni, AddressingSchemasDescription? Function()? description, AddressingEnabled? Function()? enabled, AddressingAddressMapIdentifier Function()? id, AddressingTimestamp Function()? modifiedAt, }) { return AddressingAddressMaps(
   canDelete: canDelete != null ? canDelete() : this.canDelete,
   canModifyIps: canModifyIps != null ? canModifyIps() : this.canModifyIps,

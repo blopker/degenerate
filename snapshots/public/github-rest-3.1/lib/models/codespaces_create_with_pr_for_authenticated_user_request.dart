@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'display_name': ?displayName,
   'retention_period_minutes': ?retentionPeriodMinutes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'geo', 'client_ip', 'machine', 'devcontainer_path', 'multi_repo_permissions_opt_out', 'working_directory', 'idle_timeout_minutes', 'display_name', 'retention_period_minutes'}.contains(key)); } 
 CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String Function()? location, CodespacesCreateWithPrForAuthenticatedUserRequestGeo Function()? geo, String Function()? clientIp, String Function()? machine, String Function()? devcontainerPath, bool Function()? multiRepoPermissionsOptOut, String Function()? workingDirectory, int Function()? idleTimeoutMinutes, String Function()? displayName, int Function()? retentionPeriodMinutes, }) { return CodespacesCreateWithPrForAuthenticatedUserRequest(
   location: location != null ? location() : this.location,
   geo: geo != null ? geo() : this.geo,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'commit': ?commit,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'branch', 'commit', 'type'}.contains(key)); } 
 WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4 copyWith({String Function()? url, String Function()? branch, String Function()? commit, String Function()? type, }) { return WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(
   url: url != null ? url() : this.url,
   branch: branch != null ? branch() : this.branch,

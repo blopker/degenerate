@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'match_threshold': matchThreshold,
   if (model != null) 'model': model?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'match_threshold', 'model'}.contains(key)); } 
 AiSearchInstanceSearchRequestAiSearchOptionsReranking copyWith({bool Function()? enabled, double Function()? matchThreshold, AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel Function()? model, }) { return AiSearchInstanceSearchRequestAiSearchOptionsReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,

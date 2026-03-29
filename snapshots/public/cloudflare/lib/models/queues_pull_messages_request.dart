@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
   if (visibilityTimeoutMs != null) 'visibility_timeout_ms': visibilityTimeoutMs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'visibility_timeout_ms'}.contains(key)); } 
 QueuesPullMessagesRequest copyWith({MqBatchSize Function()? batchSize, MqVisibilityTimeout Function()? visibilityTimeoutMs, }) { return QueuesPullMessagesRequest(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   visibilityTimeoutMs: visibilityTimeoutMs != null ? visibilityTimeoutMs() : this.visibilityTimeoutMs,

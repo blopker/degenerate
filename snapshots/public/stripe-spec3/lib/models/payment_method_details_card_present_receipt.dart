@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   'terminal_verification_results': ?terminalVerificationResults,
   'transaction_status_information': ?transactionStatusInformation,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_type', 'application_cryptogram', 'application_preferred_name', 'authorization_code', 'authorization_response_code', 'cardholder_verification_method', 'dedicated_file_name', 'terminal_verification_results', 'transaction_status_information'}.contains(key)); } 
 PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresentReceiptAccountType Function()? accountType, String? Function()? applicationCryptogram, String? Function()? applicationPreferredName, String? Function()? authorizationCode, String? Function()? authorizationResponseCode, String? Function()? cardholderVerificationMethod, String? Function()? dedicatedFileName, String? Function()? terminalVerificationResults, String? Function()? transactionStatusInformation, }) { return PaymentMethodDetailsCardPresentReceipt(
   accountType: accountType != null ? accountType() : this.accountType,
   applicationCryptogram: applicationCryptogram != null ? applicationCryptogram() : this.applicationCryptogram,

@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (amountTaxDisplay != null) 'amount_tax_display': amountTaxDisplay?.toJson(),
   'template': ?template,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'template'}.contains(key)); } 
 CheckoutRenderingOptionsParam copyWith({CheckoutRenderingOptionsParamAmountTaxDisplay Function()? amountTaxDisplay, String Function()? template, }) { return CheckoutRenderingOptionsParam(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   template: template != null ? template() : this.template,

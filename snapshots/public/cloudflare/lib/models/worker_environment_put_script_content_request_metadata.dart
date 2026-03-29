@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'body_part': ?bodyPart,
   'main_module': ?mainModule,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body_part', 'main_module'}.contains(key)); } 
 WorkerEnvironmentPutScriptContentRequestMetadata copyWith({String Function()? bodyPart, String Function()? mainModule, }) { return WorkerEnvironmentPutScriptContentRequestMetadata(
   bodyPart: bodyPart != null ? bodyPart() : this.bodyPart,
   mainModule: mainModule != null ? mainModule() : this.mainModule,

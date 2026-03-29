@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   if (disabledReason != null) 'disabled_reason': disabledReason?.toJson(),
   if (pastDue != null) 'past_due': pastDue?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled_reason', 'past_due'}.contains(key)); } 
 IssuingCardholderRequirements copyWith({IssuingCardholderRequirementsDisabledReason? Function()? disabledReason, List<IssuingCardholderRequirementsPastDue>? Function()? pastDue, }) { return IssuingCardholderRequirements(
   disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
   pastDue: pastDue != null ? pastDue() : this.pastDue,

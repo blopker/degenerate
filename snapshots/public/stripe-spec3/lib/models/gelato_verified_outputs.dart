@@ -122,7 +122,7 @@ Map<String, dynamic> toJson() { return {
   'unparsed_place_of_birth': ?unparsedPlaceOfBirth,
   'unparsed_sex': ?unparsedSex,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'dob', 'email', 'first_name', 'id_number', 'id_number_type', 'last_name', 'phone', 'sex', 'unparsed_place_of_birth', 'unparsed_sex'}.contains(key)); } 
 GelatoVerifiedOutputs copyWith({GelatoVerifiedOutputsAddress? Function()? address, GelatoVerifiedOutputsDob? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, GelatoVerifiedOutputsIdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, GelatoVerifiedOutputsSex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(
   address: address != null ? address() : this.address,
   dob: dob != null ? dob() : this.dob,

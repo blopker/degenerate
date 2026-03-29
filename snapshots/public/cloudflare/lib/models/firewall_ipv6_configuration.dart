@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (target != null) 'target': target?.toJson(),
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
 FirewallIpv6Configuration copyWith({FirewallIpv6ConfigurationTarget Function()? target, String Function()? value, }) { return FirewallIpv6Configuration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,

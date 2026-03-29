@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'image_url': ?imageUrl,
   'file_id': ?fileId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'file_id'}.contains(key)); } 
 ImageRefParam2 copyWith({String Function()? imageUrl, String Function()? fileId, }) { return ImageRefParam2(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,

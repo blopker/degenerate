@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   'subscription': ?subscription,
   if (subscriptionDetails != null) 'subscription_details': subscriptionDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_tax', 'currency', 'customer', 'customer_account', 'customer_details', 'discounts', 'expand', 'invoice_items', 'issuer', 'on_behalf_of', 'preview_mode', 'schedule', 'schedule_details', 'subscription', 'subscription_details'}.contains(key)); } 
 PostInvoicesCreatePreviewRequest copyWith({PostInvoicesCreatePreviewRequestAutomaticTax Function()? automaticTax, String Function()? currency, String Function()? customer, String Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails Function()? customerDetails, PostInvoicesCreatePreviewRequestDiscounts Function()? discounts, List<String> Function()? expand, List<PostInvoicesCreatePreviewRequestInvoiceItems> Function()? invoiceItems, PostInvoicesCreatePreviewRequestIssuer Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf Function()? onBehalfOf, PostInvoicesCreatePreviewRequestPreviewMode Function()? previewMode, String Function()? schedule, PostInvoicesCreatePreviewRequestScheduleDetails Function()? scheduleDetails, String Function()? subscription, PostInvoicesCreatePreviewRequestSubscriptionDetails Function()? subscriptionDetails, }) { return PostInvoicesCreatePreviewRequest(
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   currency: currency != null ? currency() : this.currency,

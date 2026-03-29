@@ -13,7 +13,7 @@ final DaemonEndpoint? kubeletEndpoint;
 Map<String, dynamic> toJson() { return {
   if (kubeletEndpoint != null) 'kubeletEndpoint': kubeletEndpoint?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'kubeletEndpoint'}.contains(key)); } 
 NodeDaemonEndpoints copyWith({DaemonEndpoint Function()? kubeletEndpoint}) { return NodeDaemonEndpoints(
   kubeletEndpoint: kubeletEndpoint != null ? kubeletEndpoint() : this.kubeletEndpoint,
 ); } 

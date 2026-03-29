@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'certificate': ?certificate,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'certificate'}.contains(key)); } 
 AuditLogCertificateDeleted copyWith({String Function()? id, String Function()? name, String Function()? certificate, }) { return AuditLogCertificateDeleted(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

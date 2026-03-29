@@ -11,7 +11,7 @@ final ImagesImageVariantDefinition? variant;
 Map<String, dynamic> toJson() { return {
   if (variant != null) 'variant': variant?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'variant'}.contains(key)); } 
 ImagesImageVariantResponse copyWith({ImagesImageVariantDefinition Function()? variant}) { return ImagesImageVariantResponse(
   variant: variant != null ? variant() : this.variant,
 ); } 

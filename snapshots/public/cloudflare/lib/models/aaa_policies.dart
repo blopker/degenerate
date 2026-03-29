@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (modified != null) 'modified': modified?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_interval', 'alert_type', 'created', 'description', 'enabled', 'filters', 'id', 'mechanisms', 'modified', 'name'}.contains(key)); } 
 AaaPolicies copyWith({AaaAlertInterval Function()? alertInterval, AaaAlertType Function()? alertType, AaaTimestamp Function()? created, AaaSchemasDescription Function()? description, AaaEnabled Function()? enabled, AaaFilters Function()? filters, AaaPolicyId Function()? id, AaaMechanisms Function()? mechanisms, AaaTimestamp Function()? modified, AaaSchemasName Function()? name, }) { return AaaPolicies(
   alertInterval: alertInterval != null ? alertInterval() : this.alertInterval,
   alertType: alertType != null ? alertType() : this.alertType,

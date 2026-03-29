@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'balance': ?balance,
   'currency': ?currency,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'balance', 'currency'}.contains(key)); } 
 AccountBalance copyWith({String? Function()? accountSid, String? Function()? balance, String? Function()? currency, }) { return AccountBalance(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   balance: balance != null ? balance() : this.balance,

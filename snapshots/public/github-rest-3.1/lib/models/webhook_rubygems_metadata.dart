@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (dependencies != null) 'dependencies': dependencies?.map((e) => e).toList(),
   'commit_oid': ?commitOid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'readme', 'homepage', 'version_info', 'platform', 'metadata', 'repo', 'dependencies', 'commit_oid'}.contains(key)); } 
 WebhookRubygemsMetadata copyWith({String Function()? name, String Function()? description, String Function()? readme, String Function()? homepage, WebhookRubygemsMetadataVersionInfo Function()? versionInfo, String Function()? platform, Map<String, String> Function()? metadata, String Function()? repo, List<Map<String, String>> Function()? dependencies, String Function()? commitOid, }) { return WebhookRubygemsMetadata(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,

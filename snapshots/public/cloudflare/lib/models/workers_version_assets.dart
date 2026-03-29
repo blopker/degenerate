@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (config != null) 'config': config?.toJson(),
   'jwt': ?jwt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'jwt'}.contains(key)); } 
 WorkersVersionAssets copyWith({WorkersVersionAssetsConfig Function()? config, String Function()? jwt, }) { return WorkersVersionAssets(
   config: config != null ? config() : this.config,
   jwt: jwt != null ? jwt() : this.jwt,

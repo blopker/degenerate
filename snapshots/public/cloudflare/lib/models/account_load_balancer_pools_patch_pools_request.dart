@@ -12,7 +12,7 @@ final LoadBalancingPatchPoolsNotificationEmail? notificationEmail;
 Map<String, dynamic> toJson() { return {
   if (notificationEmail != null) 'notification_email': notificationEmail?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'notification_email'}.contains(key)); } 
 AccountLoadBalancerPoolsPatchPoolsRequest copyWith({LoadBalancingPatchPoolsNotificationEmail Function()? notificationEmail}) { return AccountLoadBalancerPoolsPatchPoolsRequest(
   notificationEmail: notificationEmail != null ? notificationEmail() : this.notificationEmail,
 ); } 

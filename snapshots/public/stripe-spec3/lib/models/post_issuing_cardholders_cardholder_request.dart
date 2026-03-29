@@ -116,7 +116,7 @@ Map<String, dynamic> toJson() { return {
   if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing', 'company', 'email', 'expand', 'individual', 'metadata', 'phone_number', 'preferred_locales', 'spending_controls', 'status'}.contains(key)); } 
 PostIssuingCardholdersCardholderRequest copyWith({PostIssuingCardholdersCardholderRequestBilling Function()? billing, PostIssuingCardholdersCardholderRequestCompany Function()? company, String Function()? email, List<String> Function()? expand, PostIssuingCardholdersCardholderRequestIndividual Function()? individual, Map<String, String> Function()? metadata, String Function()? phoneNumber, List<PostIssuingCardholdersCardholderRequestPreferredLocales> Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls Function()? spendingControls, PostIssuingCardholdersCardholderRequestStatus Function()? status, }) { return PostIssuingCardholdersCardholderRequest(
   billing: billing != null ? billing() : this.billing,
   company: company != null ? company() : this.company,

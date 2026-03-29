@@ -37,7 +37,7 @@ final WafManagedRulesMode? mode;
 Map<String, dynamic> toJson() { return {
   if (mode != null) 'mode': mode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode'}.contains(key)); } 
 WafRuleGroupsUpdateAWafRuleGroupRequest copyWith({WafManagedRulesMode Function()? mode}) { return WafRuleGroupsUpdateAWafRuleGroupRequest(
   mode: mode != null ? mode() : this.mode,
 ); } 

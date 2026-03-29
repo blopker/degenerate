@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
 PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse copyWith({PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData Function()? data, bool Function()? success, }) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,

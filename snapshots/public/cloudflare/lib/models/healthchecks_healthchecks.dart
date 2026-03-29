@@ -129,7 +129,7 @@ Map<String, dynamic> toJson() { return {
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key)); } 
 HealthchecksHealthchecks copyWith({HealthchecksAddress Function()? address, List<HealthchecksCheckRegions2>? Function()? checkRegions, HealthchecksConsecutiveFails Function()? consecutiveFails, HealthchecksConsecutiveSuccesses Function()? consecutiveSuccesses, HealthchecksTimestamp Function()? createdOn, HealthchecksDescription Function()? description, HealthchecksFailureReason Function()? failureReason, HealthchecksHttpConfig Function()? httpConfig, HealthchecksIdentifier Function()? id, HealthchecksInterval Function()? interval, HealthchecksTimestamp Function()? modifiedOn, HealthchecksName Function()? name, HealthchecksRetries Function()? retries, HealthchecksStatus Function()? status, HealthchecksSuspended Function()? suspended, HealthchecksTcpConfig Function()? tcpConfig, HealthchecksTimeout Function()? timeout, HealthchecksType Function()? type, }) { return HealthchecksHealthchecks(
   address: address != null ? address() : this.address,
   checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,

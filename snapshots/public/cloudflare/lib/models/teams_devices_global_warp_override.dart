@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (disconnect != null) 'disconnect': disconnect?.toJson(),
   if (timestamp != null) 'timestamp': timestamp?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disconnect', 'timestamp'}.contains(key)); } 
 TeamsDevicesGlobalWarpOverride copyWith({TeamsDevicesDisconnect Function()? disconnect, TeamsDevicesTimestamp Function()? timestamp, }) { return TeamsDevicesGlobalWarpOverride(
   disconnect: disconnect != null ? disconnect() : this.disconnect,
   timestamp: timestamp != null ? timestamp() : this.timestamp,

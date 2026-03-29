@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'body': ?body,
   'contentType': ?contentType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'contentType'}.contains(key)); } 
 TurboRequestAudioVariant2 copyWith({Map<String, dynamic> Function()? body, String Function()? contentType, }) { return TurboRequestAudioVariant2(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,

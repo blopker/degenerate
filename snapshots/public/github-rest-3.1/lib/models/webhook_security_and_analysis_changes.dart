@@ -11,7 +11,7 @@ final WebhookSecurityAndAnalysisChangesFrom? from;
 Map<String, dynamic> toJson() { return {
   if (from != null) 'from': from?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from'}.contains(key)); } 
 WebhookSecurityAndAnalysisChanges copyWith({WebhookSecurityAndAnalysisChangesFrom Function()? from}) { return WebhookSecurityAndAnalysisChanges(
   from: from != null ? from() : this.from,
 ); } 

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (customerReference != null) 'customer_reference': customerReference?.toJson(),
   if (orderReference != null) 'order_reference': orderReference?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_reference', 'order_reference'}.contains(key)); } 
 PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails copyWith({PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReference Function()? customerReference, PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsOrderReference Function()? orderReference, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails(
   customerReference: customerReference != null ? customerReference() : this.customerReference,
   orderReference: orderReference != null ? orderReference() : this.orderReference,

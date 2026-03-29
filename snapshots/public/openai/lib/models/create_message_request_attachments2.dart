@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'tools'}.contains(key)); } 
 CreateMessageRequestAttachments2 copyWith({String Function()? fileId, List<CreateMessageRequestAttachments2Tools> Function()? tools, }) { return CreateMessageRequestAttachments2(
   fileId: fileId != null ? fileId() : this.fileId,
   tools: tools != null ? tools() : this.tools,

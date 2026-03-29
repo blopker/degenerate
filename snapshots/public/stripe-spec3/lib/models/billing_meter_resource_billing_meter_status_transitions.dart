@@ -13,7 +13,7 @@ final int? deactivatedAt;
 Map<String, dynamic> toJson() { return {
   'deactivated_at': ?deactivatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deactivated_at'}.contains(key)); } 
 BillingMeterResourceBillingMeterStatusTransitions copyWith({int? Function()? deactivatedAt}) { return BillingMeterResourceBillingMeterStatusTransitions(
   deactivatedAt: deactivatedAt != null ? deactivatedAt() : this.deactivatedAt,
 ); } 

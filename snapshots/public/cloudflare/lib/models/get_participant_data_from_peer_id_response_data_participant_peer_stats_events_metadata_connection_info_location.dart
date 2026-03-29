@@ -11,7 +11,7 @@ final GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata
 Map<String, dynamic> toJson() { return {
   if (coords != null) 'coords': coords?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coords'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocation copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocationCoords Function()? coords}) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocation(
   coords: coords != null ? coords() : this.coords,
 ); } 

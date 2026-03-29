@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
   'team_ids': ?teamIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invitee_id', 'email', 'role', 'team_ids'}.contains(key)); } 
 OrgsCreateInvitationRequest copyWith({int Function()? inviteeId, String Function()? email, OrgsCreateInvitationRequestRole Function()? role, List<int> Function()? teamIds, }) { return OrgsCreateInvitationRequest(
   inviteeId: inviteeId != null ? inviteeId() : this.inviteeId,
   email: email != null ? email() : this.email,

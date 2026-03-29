@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'lower': ?lower,
   'upper': ?upper,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lower', 'upper'}.contains(key)); } 
 ShieldConfidenceIntervalsBounds copyWith({double Function()? lower, double Function()? upper, }) { return ShieldConfidenceIntervalsBounds(
   lower: lower != null ? lower() : this.lower,
   upper: upper != null ? upper() : this.upper,

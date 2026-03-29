@@ -152,7 +152,9 @@ final class TypeModel {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any(
+      (key) => const {'event_type', 'timestamp', 'details'}.contains(key),
+    );
   }
 
   TypeModel copyWith({

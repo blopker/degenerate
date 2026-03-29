@@ -129,7 +129,7 @@ Map<String, dynamic> toJson() { return {
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key)); } 
 SmartshieldHealthchecks copyWith({SmartshieldAddress Function()? address, List<SmartshieldCheckRegions2>? Function()? checkRegions, SmartshieldConsecutiveFails Function()? consecutiveFails, SmartshieldConsecutiveSuccesses Function()? consecutiveSuccesses, SmartshieldTimestamp Function()? createdOn, SmartshieldDescription Function()? description, SmartshieldFailureReason Function()? failureReason, SmartshieldHttpConfig Function()? httpConfig, SmartshieldIdentifier Function()? id, SmartshieldInterval Function()? interval, SmartshieldTimestamp Function()? modifiedOn, SmartshieldName Function()? name, SmartshieldRetries Function()? retries, SmartshieldStatus Function()? status, SmartshieldSuspended Function()? suspended, SmartshieldTcpConfig Function()? tcpConfig, SmartshieldTimeout Function()? timeout, SmartshieldType Function()? type, }) { return SmartshieldHealthchecks(
   address: address != null ? address() : this.address,
   checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,

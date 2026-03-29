@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   if (supportUrl != null) 'support_url': supportUrl?.toJson(),
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
 PostAccountsAccountRequestBusinessProfile copyWith({PostAccountsAccountRequestBusinessProfileAnnualRevenue Function()? annualRevenue, int Function()? estimatedWorkerCount, String Function()? mcc, List<PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation> Function()? minorityOwnedBusinessDesignation, PostAccountsAccountRequestBusinessProfileMonthlyEstimatedRevenue Function()? monthlyEstimatedRevenue, String Function()? name, String Function()? productDescription, PostAccountsAccountRequestBusinessProfileSupportAddress Function()? supportAddress, String Function()? supportEmail, String Function()? supportPhone, PostAccountsAccountRequestBusinessProfileSupportUrl Function()? supportUrl, String Function()? url, }) { return PostAccountsAccountRequestBusinessProfile(
   annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
   estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,

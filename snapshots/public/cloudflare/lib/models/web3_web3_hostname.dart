@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (target != null) 'target': target?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'dnslink', 'id', 'modified_on', 'name', 'status', 'target'}.contains(key)); } 
 Web3Web3Hostname copyWith({Web3Timestamp Function()? createdOn, Web3Description Function()? description, Web3Dnslink Function()? dnslink, Web3Identifier Function()? id, Web3Timestamp Function()? modifiedOn, Web3Name Function()? name, Web3Status Function()? status, Web3Target Function()? target, }) { return Web3Web3Hostname(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,

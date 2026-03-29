@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   'tax_rates': ?taxRates,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adjustable_quantity', 'dynamic_tax_rates', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
 PostCheckoutSessionsRequestLineItems copyWith({PostCheckoutSessionsRequestLineItemsAdjustableQuantity Function()? adjustableQuantity, List<String> Function()? dynamicTaxRates, Map<String, String> Function()? metadata, String Function()? price, PostCheckoutSessionsRequestLineItemsPriceData Function()? priceData, int Function()? quantity, List<String> Function()? taxRates, }) { return PostCheckoutSessionsRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   dynamicTaxRates: dynamicTaxRates != null ? dynamicTaxRates() : this.dynamicTaxRates,

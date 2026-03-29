@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (providerPatternOverrides != null) 'provider_pattern_overrides': providerPatternOverrides?.map((e) => e.toJson()).toList(),
   if (customPatternOverrides != null) 'custom_pattern_overrides': customPatternOverrides?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pattern_config_version', 'provider_pattern_overrides', 'custom_pattern_overrides'}.contains(key)); } 
 SecretScanningPatternConfiguration copyWith({SecretScanningRowVersion? Function()? patternConfigVersion, List<SecretScanningPatternOverride> Function()? providerPatternOverrides, List<SecretScanningPatternOverride> Function()? customPatternOverrides, }) { return SecretScanningPatternConfiguration(
   patternConfigVersion: patternConfigVersion != null ? patternConfigVersion() : this.patternConfigVersion,
   providerPatternOverrides: providerPatternOverrides != null ? providerPatternOverrides() : this.providerPatternOverrides,

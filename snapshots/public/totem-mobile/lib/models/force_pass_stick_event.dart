@@ -20,7 +20,7 @@ final class ForcePassStickEvent {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any((key) => const {'type'}.contains(key));
   }
 
   ForcePassStickEvent copyWith({String Function()? type}) {

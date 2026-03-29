@@ -11,7 +11,7 @@ final String? version;
 Map<String, dynamic> toJson() { return {
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'version'}.contains(key)); } 
 WebhookRubygemsMetadataVersionInfo copyWith({String Function()? version}) { return WebhookRubygemsMetadataVersionInfo(
   version: version != null ? version() : this.version,
 ); } 

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'privacy', 'notification_setting', 'repository'}.contains(key)); } 
 WebhookTeamEditedChanges copyWith({WebhookTeamEditedChangesDescription Function()? description, WebhookTeamEditedChangesName Function()? name, WebhookTeamEditedChangesPrivacy Function()? privacy, WebhookTeamEditedChangesNotificationSetting Function()? notificationSetting, WebhookTeamEditedChangesRepository Function()? repository, }) { return WebhookTeamEditedChanges(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,

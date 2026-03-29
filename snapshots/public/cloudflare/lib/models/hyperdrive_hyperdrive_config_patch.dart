@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (origin != null) 'origin': origin?.toJson(),
   if (originConnectionLimit != null) 'origin_connection_limit': originConnectionLimit?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'caching', 'mtls', 'name', 'origin', 'origin_connection_limit'}.contains(key)); } 
 HyperdriveHyperdriveConfigPatch copyWith({HyperdriveHyperdriveCaching Function()? caching, HyperdriveHyperdriveMtls Function()? mtls, HyperdriveHyperdriveName Function()? name, HyperdriveHyperdriveConfigPatchOrigin Function()? origin, HyperdriveHyperdriveOriginConnectionLimit Function()? originConnectionLimit, }) { return HyperdriveHyperdriveConfigPatch(
   caching: caching != null ? caching() : this.caching,
   mtls: mtls != null ? mtls() : this.mtls,

@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
   if (onDemand != null) 'on_demand': onDemand?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'asn_prepend_count', 'auto_advertise_withdraw', 'bgp_signal_opts', 'cidr', 'created_at', 'id', 'modified_at', 'on_demand'}.contains(key)); } 
 AddressingIpamBgpPrefixes copyWith({AddressingSchemasAsn? Function()? asn, AddressingAsnPrependCount Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw Function()? autoAdvertiseWithdraw, AddressingBgpSignalOpts Function()? bgpSignalOpts, AddressingCidr Function()? cidr, AddressingTimestamp Function()? createdAt, AddressingBgpPrefixIdentifier Function()? id, AddressingTimestamp Function()? modifiedAt, AddressingBgpOnDemand Function()? onDemand, }) { return AddressingIpamBgpPrefixes(
   asn: asn != null ? asn() : this.asn,
   asnPrependCount: asnPrependCount != null ? asnPrependCount() : this.asnPrependCount,

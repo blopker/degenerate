@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (disable != null) 'disable': disable?.toJson(),
   if (simulate != null) 'simulate': simulate?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'block', 'challenge', 'default', 'disable', 'simulate'}.contains(key)); } 
 FirewallRewriteAction copyWith({FirewallWafRewriteAction? Function()? block, FirewallWafRewriteAction? Function()? challenge, FirewallWafRewriteAction? Function()? $default, FirewallWafRewriteAction? Function()? disable, FirewallWafRewriteAction? Function()? simulate, }) { return FirewallRewriteAction(
   block: block != null ? block() : this.block,
   challenge: challenge != null ? challenge() : this.challenge,

@@ -4,6 +4,20 @@ import '../ir/ir_types.dart';
 import '../naming.dart';
 import 'emit_utils.dart';
 
+/// Dart type name for an enum's value kind.
+String _dartValueType(PrimitiveKind kind) => switch (kind) {
+      PrimitiveKind.int => 'int',
+      PrimitiveKind.double => 'double',
+      _ => 'String',
+    };
+
+/// Dart type name for the JSON parameter in fromJson.
+String _jsonParamType(PrimitiveKind kind) => switch (kind) {
+      PrimitiveKind.int => 'int',
+      PrimitiveKind.double => 'double',
+      _ => 'String',
+    };
+
 /// Emits a `final class` from an [IrEnum] that behaves like an enhanced enum.
 ///
 /// Generates: static const values, const constructor, fromJson factory,
@@ -29,6 +43,8 @@ class EnumEmitter {
   List<Spec> emit() {
     final deduped = _deduplicatedValues();
     final className = irEnum.name;
+    final isString = irEnum.valueKind == PrimitiveKind.string;
+    final dartType = _dartValueType(irEnum.valueKind);
 
     return [
       Class(
@@ -46,7 +62,9 @@ class EnumEmitter {
                   ..modifier = FieldModifier.constant
                   ..type = refer(className)
                   ..assignment = Code(
-                    "$className._('${escapeDartString(pair.$1)}')",
+                    isString
+                        ? "$className._('${escapeDartString(pair.$1)}')"
+                        : "$className._(${pair.$1})",
                   ),
               ),
             ),
@@ -67,7 +85,7 @@ class EnumEmitter {
             Field(
               (f) => f
                 ..name = 'value'
-                ..type = refer('String')
+                ..type = refer(dartType)
                 ..modifier = FieldModifier.final$,
             ),
           )
@@ -103,8 +121,18 @@ class EnumEmitter {
   }
 
   Constructor _buildFromJson(String className, List<(String, String)> deduped) {
+    final isString = irEnum.valueKind == PrimitiveKind.string;
+    final jsonType = _jsonParamType(irEnum.valueKind);
+    // For non-string enums, deduplicate switch cases (e.g. 0 and -0 both → 0).
+    final seenCaseKeys = <String>{};
     final cases = deduped
-        .map((pair) => "  '${_escape(pair.$1)}' => ${pair.$2},")
+        .where((pair) {
+          final key = isString ? "'${_escape(pair.$1)}'" : pair.$1;
+          return seenCaseKeys.add(key);
+        })
+        .map((pair) => isString
+            ? "  '${_escape(pair.$1)}' => ${pair.$2},"
+            : "  ${pair.$1} => ${pair.$2},")
         .join('\n');
 
     return Constructor(
@@ -115,7 +143,7 @@ class EnumEmitter {
           Parameter(
             (p) => p
               ..name = 'json'
-              ..type = refer('String'),
+              ..type = refer(jsonType),
           ),
         )
         ..body = Code(
@@ -128,10 +156,11 @@ class EnumEmitter {
   }
 
   Method _buildToJson() {
+    final dartType = _dartValueType(irEnum.valueKind);
     return Method(
       (m) => m
         ..name = 'toJson'
-        ..returns = refer('String')
+        ..returns = refer(dartType)
         ..body = const Code('return value;'),
     );
   }

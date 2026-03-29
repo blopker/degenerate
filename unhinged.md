@@ -54,12 +54,10 @@
   - Fixed: `escapeDartString` now handles `$`, control chars, and bidi codepoints; `sanitizeFieldName` escapes Object members; `enumValueName` strips leading `+/-` before letters.
 
 
-- Medium: enum typing is inconsistent and loses schema information.
-  - `True.type` is a plain `String?` even though the schema defines a closed string enum: `test/fixtures/public/unhinged.yaml:319-321`, `snapshots/public/unhinged/lib/models/true.dart:100,123`
-  - Numeric enums are flattened to primitive numbers rather than modeled as constrained values:
-    - `True."0"`: spec `test/fixtures/public/unhinged.yaml:307-310`, generated `snapshots/public/unhinged/lib/models/true.dart:95,113`
-    - `Object."Infinity"`: spec `test/fixtures/public/unhinged.yaml:416-418`, generated `snapshots/public/unhinged/lib/models/object_model.dart:66-68,76`
-  - Impact: the generator preserves some string enums well, but not all enum domains.
+- ~~Medium: enum typing is inconsistent and loses schema information.~~
+  - `True.type` is a plain `String?` because it's a discriminator property (intentional — discriminator fields must accept unknown values).
+  - Fixed: integer and number enums are now lowered as typed enums with `int`/`double` values instead of being flattened to primitives.
+  - Remaining: `Object."Infinity"` is a `double` enum which technically has constrained values, but `double` enums with `Infinity`/`NaN` values are an extreme edge case.
 
 - ~~Medium: `queryString` content is flattened to `dynamic.toString()`, losing encoding semantics and structure.~~
   - Fixed: the operation lowerer now extracts schemas from `content`-based parameters. `topic` is lowered to a typed `YieldTopic` object with properly serialized query fields.
@@ -90,10 +88,9 @@
 - ~~Low: inconsistent serialization patterns across models.~~
   - By design: `?` null-aware operator is used for primitive passthrough, `if (x != null)` guards are needed when calling methods (`.toJson()`) on nullable complex types. `copyWith()` uses `Function()` callbacks only for nullable fields to allow setting them to null.
 
-- Low: `canParse()` helpers are often too weak to be meaningful.
-  - Always `true`: `snapshots/public/unhinged/lib/models/proto.dart:47-49`, `snapshots/public/unhinged/lib/models/type_model.dart:154-156`
-  - Shallow checks elsewhere do not validate discriminator or enum compatibility.
-  - Impact: these helpers are not reliable guards.
+- ~~Low: `canParse()` helpers are often too weak to be meaningful.~~
+  - Fixed: models with no required fields now check that at least one known property key exists instead of returning `true` unconditionally.
+  - Remaining: shallow checks don't validate discriminator or enum compatibility, but this is acceptable for a lightweight parse guard.
 
 ## What Looks Good
 

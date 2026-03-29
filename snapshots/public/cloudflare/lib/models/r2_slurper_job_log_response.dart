@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   'objectKey': ?objectKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'createdAt', 'job', 'logType', 'message', 'objectKey'}.contains(key)); } 
 R2SlurperJobLogResponse copyWith({String Function()? createdAt, String Function()? job, R2SlurperJobLogResponseLogType Function()? logType, String? Function()? message, String? Function()? objectKey, }) { return R2SlurperJobLogResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   job: job != null ? job() : this.job,

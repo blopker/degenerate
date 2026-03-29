@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (rateLimit != null) 'rate_limit': rateLimit?.toJson(),
   if (searchEndpoint != null) 'search_endpoint': searchEndpoint?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorized_hosts', 'chat_completions_endpoint', 'enabled', 'mcp', 'rate_limit', 'search_endpoint'}.contains(key)); } 
 AiSearchUpdateInstancesResponseResultPublicEndpointParams copyWith({List<String> Function()? authorizedHosts, AiSearchUpdateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint Function()? chatCompletionsEndpoint, bool Function()? enabled, AiSearchUpdateInstancesResponseResultPublicEndpointParamsMcp Function()? mcp, AiSearchUpdateInstancesResponseResultPublicEndpointParamsRateLimit Function()? rateLimit, AiSearchUpdateInstancesResponseResultPublicEndpointParamsSearchEndpoint Function()? searchEndpoint, }) { return AiSearchUpdateInstancesResponseResultPublicEndpointParams(
   authorizedHosts: authorizedHosts != null ? authorizedHosts() : this.authorizedHosts,
   chatCompletionsEndpoint: chatCompletionsEndpoint != null ? chatCompletionsEndpoint() : this.chatCompletionsEndpoint,

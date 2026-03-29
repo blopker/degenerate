@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'workflow_name': ?workflowName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'workflow_name'}.contains(key)); } 
 MqEventSourceWorkflowsWorkflow copyWith({MqEventSourceWorkflowsWorkflowType Function()? type, String Function()? workflowName, }) { return MqEventSourceWorkflowsWorkflow(
   type: type != null ? type() : this.type,
   workflowName: workflowName != null ? workflowName() : this.workflowName,

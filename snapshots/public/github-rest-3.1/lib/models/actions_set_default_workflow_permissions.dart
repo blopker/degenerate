@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (defaultWorkflowPermissions != null) 'default_workflow_permissions': defaultWorkflowPermissions?.toJson(),
   if (canApprovePullRequestReviews != null) 'can_approve_pull_request_reviews': canApprovePullRequestReviews?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_workflow_permissions', 'can_approve_pull_request_reviews'}.contains(key)); } 
 ActionsSetDefaultWorkflowPermissions copyWith({ActionsDefaultWorkflowPermissions Function()? defaultWorkflowPermissions, ActionsCanApprovePullRequestReviews Function()? canApprovePullRequestReviews, }) { return ActionsSetDefaultWorkflowPermissions(
   defaultWorkflowPermissions: defaultWorkflowPermissions != null ? defaultWorkflowPermissions() : this.defaultWorkflowPermissions,
   canApprovePullRequestReviews: canApprovePullRequestReviews != null ? canApprovePullRequestReviews() : this.canApprovePullRequestReviews,

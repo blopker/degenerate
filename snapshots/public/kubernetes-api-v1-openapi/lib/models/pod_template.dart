@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (template != null) 'template': template?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'template'}.contains(key)); } 
 PodTemplate copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, PodTemplateSpec Function()? template, }) { return PodTemplate(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,

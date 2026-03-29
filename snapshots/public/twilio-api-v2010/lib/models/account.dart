@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_token', 'date_created', 'date_updated', 'friendly_name', 'owner_account_sid', 'sid', 'status', 'subresource_uris', 'type', 'uri'}.contains(key)); } 
 Account copyWith({String? Function()? authToken, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? ownerAccountSid, String? Function()? sid, AccountEnumStatus Function()? status, Map<String, dynamic>? Function()? subresourceUris, AccountEnumType Function()? type, String? Function()? uri, }) { return Account(
   authToken: authToken != null ? authToken() : this.authToken,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

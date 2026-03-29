@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'helpText', 'name', 'value'}.contains(key)); } 
 McnResourceDetailsSectionItem copyWith({String Function()? helpText, String Function()? name, McnResourceDetailsSectionItemValue Function()? value, }) { return McnResourceDetailsSectionItem(
   helpText: helpText != null ? helpText() : this.helpText,
   name: name != null ? name() : this.name,

@@ -13,7 +13,7 @@ final String? buyerId;
 Map<String, dynamic> toJson() { return {
   'buyer_id': ?buyerId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id'}.contains(key)); } 
 PaymentMethodDetailsBlik copyWith({String? Function()? buyerId}) { return PaymentMethodDetailsBlik(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
 ); } 

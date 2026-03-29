@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (userSeatExpirationInactiveTime != null) 'user_seat_expiration_inactive_time': userSeatExpirationInactiveTime?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_domain', 'created_at', 'deny_unmatched_requests', 'deny_unmatched_requests_exempted_zone_names', 'is_ui_read_only', 'login_design', 'name', 'ui_read_only_toggle_reason', 'updated_at', 'user_seat_expiration_inactive_time'}.contains(key)); } 
 AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain Function()? authDomain, AccessTimestamp Function()? createdAt, AccessDenyUnmatchedRequests Function()? denyUnmatchedRequests, List<String> Function()? denyUnmatchedRequestsExemptedZoneNames, AccessSchemasIsUiReadOnly Function()? isUiReadOnly, AccessSchemasLoginDesign Function()? loginDesign, AccessOrganizationsComponentsSchemasName Function()? name, AccessUiReadOnlyToggleReason Function()? uiReadOnlyToggleReason, AccessTimestamp Function()? updatedAt, AccessSchemasUserSeatExpirationInactiveTime Function()? userSeatExpirationInactiveTime, }) { return AccessSchemasOrganizations(
   authDomain: authDomain != null ? authDomain() : this.authDomain,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

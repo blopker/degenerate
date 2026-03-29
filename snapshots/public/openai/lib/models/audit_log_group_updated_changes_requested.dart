@@ -13,7 +13,7 @@ final String? groupName;
 Map<String, dynamic> toJson() { return {
   'group_name': ?groupName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'group_name'}.contains(key)); } 
 AuditLogGroupUpdatedChangesRequested copyWith({String Function()? groupName}) { return AuditLogGroupUpdatedChangesRequested(
   groupName: groupName != null ? groupName() : this.groupName,
 ); } 

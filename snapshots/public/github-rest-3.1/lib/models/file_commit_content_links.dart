@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'git': ?git,
   'html': ?html,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'self', 'git', 'html'}.contains(key)); } 
 FileCommitContentLinks copyWith({String Function()? self, String Function()? git, String Function()? html, }) { return FileCommitContentLinks(
   self: self != null ? self() : this.self,
   git: git != null ? git() : this.git,

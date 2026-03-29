@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (taints != null) 'taints': taints?.map((e) => e.toJson()).toList(),
   'unschedulable': ?unschedulable,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configSource', 'externalID', 'podCIDR', 'podCIDRs', 'providerID', 'taints', 'unschedulable'}.contains(key)); } 
 NodeSpec copyWith({NodeConfigSource Function()? configSource, String Function()? externalId, String Function()? podCidr, List<String> Function()? podCidRs, String Function()? providerId, List<Taint> Function()? taints, bool Function()? unschedulable, }) { return NodeSpec(
   configSource: configSource != null ? configSource() : this.configSource,
   externalId: externalId != null ? externalId() : this.externalId,

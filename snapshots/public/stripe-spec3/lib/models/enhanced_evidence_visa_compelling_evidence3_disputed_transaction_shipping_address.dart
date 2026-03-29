@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (postalCode != null) 'postal_code': postalCode?.toJson(),
   if (state != null) 'state': state?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key)); } 
 EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress copyWith({EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCity Function()? city, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCountry Function()? country, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine1 Function()? line1, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine2 Function()? line2, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressPostalCode Function()? postalCode, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressState Function()? state, }) { return EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,

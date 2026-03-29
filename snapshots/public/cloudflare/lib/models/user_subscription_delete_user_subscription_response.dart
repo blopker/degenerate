@@ -12,7 +12,7 @@ final SchemasIdentifier? subscriptionId;
 Map<String, dynamic> toJson() { return {
   if (subscriptionId != null) 'subscription_id': subscriptionId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'subscription_id'}.contains(key)); } 
 UserSubscriptionDeleteUserSubscriptionResponse copyWith({SchemasIdentifier Function()? subscriptionId}) { return UserSubscriptionDeleteUserSubscriptionResponse(
   subscriptionId: subscriptionId != null ? subscriptionId() : this.subscriptionId,
 ); } 

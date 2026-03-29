@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (targetSizeMb != null) 'target_size_mb': targetSizeMb?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'target_size_mb'}.contains(key)); } 
 R2DataCatalogCompactionUpdateParams copyWith({R2DataCatalogCatalogMaintenanceState Function()? state, R2DataCatalogCatalogTargetFileSize Function()? targetSizeMb, }) { return R2DataCatalogCompactionUpdateParams(
   state: state != null ? state() : this.state,
   targetSizeMb: targetSizeMb != null ? targetSizeMb() : this.targetSizeMb,

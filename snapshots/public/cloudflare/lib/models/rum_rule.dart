@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'paths': ?paths,
   'priority': ?priority,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'host', 'id', 'inclusive', 'is_paused', 'paths', 'priority'}.contains(key)); } 
 RumRule copyWith({RumTimestamp Function()? created, String Function()? host, RumRuleIdentifier Function()? id, bool Function()? inclusive, bool Function()? isPaused, List<String> Function()? paths, double Function()? priority, }) { return RumRule(
   created: created != null ? created() : this.created,
   host: host != null ? host() : this.host,

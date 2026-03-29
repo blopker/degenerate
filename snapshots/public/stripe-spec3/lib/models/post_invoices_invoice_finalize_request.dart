@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'auto_advance': ?autoAdvance,
   'expand': ?expand,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_advance', 'expand'}.contains(key)); } 
 PostInvoicesInvoiceFinalizeRequest copyWith({bool Function()? autoAdvance, List<String> Function()? expand, }) { return PostInvoicesInvoiceFinalizeRequest(
   autoAdvance: autoAdvance != null ? autoAdvance() : this.autoAdvance,
   expand: expand != null ? expand() : this.expand,

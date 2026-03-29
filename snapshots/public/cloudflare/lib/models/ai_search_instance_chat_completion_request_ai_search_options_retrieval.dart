@@ -121,7 +121,7 @@ Map<String, dynamic> toJson() { return {
   if (retrievalType != null) 'retrieval_type': retrievalType?.toJson(),
   'return_on_failure': returnOnFailure,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'context_expansion', 'filters', 'fusion_method', 'keyword_match_mode', 'match_threshold', 'max_num_results', 'retrieval_type', 'return_on_failure'}.contains(key)); } 
 AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy> Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic> Function()? filters, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod Function()? fusionMethod, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType Function()? retrievalType, bool Function()? returnOnFailure, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,

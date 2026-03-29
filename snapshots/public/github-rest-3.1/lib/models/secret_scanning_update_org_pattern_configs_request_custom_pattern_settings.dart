@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (customPatternVersion != null) 'custom_pattern_version': customPatternVersion?.toJson(),
   if (pushProtectionSetting != null) 'push_protection_setting': pushProtectionSetting?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'push_protection_setting'}.contains(key)); } 
 SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings copyWith({String Function()? tokenType, SecretScanningRowVersion? Function()? customPatternVersion, SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting Function()? pushProtectionSetting, }) { return SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   customPatternVersion: customPatternVersion != null ? customPatternVersion() : this.customPatternVersion,

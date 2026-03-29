@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'raw_key': ?rawKey,
   'revoked': ?revoked,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'primary_key_id', 'key_id', 'public_key', 'emails', 'subkeys', 'can_sign', 'can_encrypt_comms', 'can_encrypt_storage', 'can_certify', 'created_at', 'expires_at', 'raw_key', 'revoked'}.contains(key)); } 
 GpgKeySubkeys copyWith({int Function()? id, int Function()? primaryKeyId, String Function()? keyId, String Function()? publicKey, List<GpgKeySubkeysEmails> Function()? emails, List<dynamic> Function()? subkeys, bool Function()? canSign, bool Function()? canEncryptComms, bool Function()? canEncryptStorage, bool Function()? canCertify, String Function()? createdAt, String? Function()? expiresAt, String? Function()? rawKey, bool Function()? revoked, }) { return GpgKeySubkeys(
   id: id != null ? id() : this.id,
   primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,

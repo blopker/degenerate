@@ -11,7 +11,7 @@ final ShieldTrafficStatsTrafficStats? trafficStats;
 Map<String, dynamic> toJson() { return {
   if (trafficStats != null) 'traffic_stats': trafficStats?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'traffic_stats'}.contains(key)); } 
 ShieldTrafficStats copyWith({ShieldTrafficStatsTrafficStats Function()? trafficStats}) { return ShieldTrafficStats(
   trafficStats: trafficStats != null ? trafficStats() : this.trafficStats,
 ); } 

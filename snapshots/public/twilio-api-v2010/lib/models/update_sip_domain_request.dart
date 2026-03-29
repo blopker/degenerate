@@ -147,7 +147,7 @@ Map<String, dynamic> toJson() { return {
   'ByocTrunkSid': ?byocTrunkSid,
   'EmergencyCallerSid': ?emergencyCallerSid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'VoiceFallbackMethod', 'VoiceFallbackUrl', 'VoiceMethod', 'VoiceStatusCallbackMethod', 'VoiceStatusCallbackUrl', 'VoiceUrl', 'SipRegistration', 'DomainName', 'EmergencyCallingEnabled', 'Secure', 'ByocTrunkSid', 'EmergencyCallerSid'}.contains(key)); } 
 UpdateSipDomainRequest copyWith({String Function()? friendlyName, UpdateSipDomainRequestVoiceFallbackMethod Function()? voiceFallbackMethod, Uri Function()? voiceFallbackUrl, UpdateSipDomainRequestVoiceMethod Function()? voiceMethod, UpdateSipDomainRequestVoiceStatusCallbackMethod Function()? voiceStatusCallbackMethod, Uri Function()? voiceStatusCallbackUrl, Uri Function()? voiceUrl, bool Function()? sipRegistration, String Function()? domainName, bool Function()? emergencyCallingEnabled, bool Function()? secure, String Function()? byocTrunkSid, String Function()? emergencyCallerSid, }) { return UpdateSipDomainRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   voiceFallbackMethod: voiceFallbackMethod != null ? voiceFallbackMethod() : this.voiceFallbackMethod,

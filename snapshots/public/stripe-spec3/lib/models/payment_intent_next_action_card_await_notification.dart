@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'charge_attempt_at': ?chargeAttemptAt,
   'customer_approval_required': ?customerApprovalRequired,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'charge_attempt_at', 'customer_approval_required'}.contains(key)); } 
 PaymentIntentNextActionCardAwaitNotification copyWith({int? Function()? chargeAttemptAt, bool? Function()? customerApprovalRequired, }) { return PaymentIntentNextActionCardAwaitNotification(
   chargeAttemptAt: chargeAttemptAt != null ? chargeAttemptAt() : this.chargeAttemptAt,
   customerApprovalRequired: customerApprovalRequired != null ? customerApprovalRequired() : this.customerApprovalRequired,

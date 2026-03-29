@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'timezone': ?timezone,
   'upgrade_asap': ?upgradeAsap,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'activated', 'cloudflared_tunnel_id', 'cloudflared_tunnel_token', 'cohort_id', 'desired_version', 'device_id', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'last_heartbeat', 'last_seen_version', 'last_updated', 'notes', 'timezone', 'upgrade_asap'}.contains(key)); } 
 MconnAdminConnectorFields copyWith({double Function()? accountId, bool Function()? activated, String Function()? cloudflaredTunnelId, String Function()? cloudflaredTunnelToken, String Function()? cohortId, String Function()? desiredVersion, String Function()? deviceId, List<MconnDayOfWeek> Function()? interruptWindowDaysOfWeek, double Function()? interruptWindowDurationHours, List<MconnEmbargoDate> Function()? interruptWindowEmbargoDates, double Function()? interruptWindowHourOfDay, String Function()? lastHeartbeat, String Function()? lastSeenVersion, String Function()? lastUpdated, String Function()? notes, String Function()? timezone, bool Function()? upgradeAsap, }) { return MconnAdminConnectorFields(
   accountId: accountId != null ? accountId() : this.accountId,
   activated: activated != null ? activated() : this.activated,

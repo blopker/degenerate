@@ -13,7 +13,7 @@ final TerminalOnboardingLinkLinkOptionsAppleTermsAndConditions? appleTermsAndCon
 Map<String, dynamic> toJson() { return {
   if (appleTermsAndConditions != null) 'apple_terms_and_conditions': appleTermsAndConditions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apple_terms_and_conditions'}.contains(key)); } 
 TerminalOnboardingLinkLinkOptions copyWith({TerminalOnboardingLinkLinkOptionsAppleTermsAndConditions? Function()? appleTermsAndConditions}) { return TerminalOnboardingLinkLinkOptions(
   appleTermsAndConditions: appleTermsAndConditions != null ? appleTermsAndConditions() : this.appleTermsAndConditions,
 ); } 

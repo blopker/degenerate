@@ -13,7 +13,7 @@ final bool? allowAdvanced;
 Map<String, dynamic> toJson() { return {
   'allow_advanced': ?allowAdvanced,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_advanced'}.contains(key)); } 
 CodeSecurityConfigurationCodeScanningOptions copyWith({bool? Function()? allowAdvanced}) { return CodeSecurityConfigurationCodeScanningOptions(
   allowAdvanced: allowAdvanced != null ? allowAdvanced() : this.allowAdvanced,
 ); } 

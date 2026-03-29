@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': ?updatedAt,
   'attestation_id': ?attestationId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'digest', 'logical_environment', 'physical_environment', 'cluster', 'deployment_name', 'tags', 'runtime_risks', 'created_at', 'updated_at', 'attestation_id'}.contains(key)); } 
 ArtifactDeploymentRecord copyWith({int Function()? id, String Function()? digest, String Function()? logicalEnvironment, String Function()? physicalEnvironment, String Function()? cluster, String Function()? deploymentName, Map<String, String> Function()? tags, List<ArtifactDeploymentRecordRuntimeRisks> Function()? runtimeRisks, String Function()? createdAt, String Function()? updatedAt, int? Function()? attestationId, }) { return ArtifactDeploymentRecord(
   id: id != null ? id() : this.id,
   digest: digest != null ? digest() : this.digest,

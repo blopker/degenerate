@@ -11,7 +11,7 @@ final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOp
 Map<String, dynamic> toJson() { return {
   if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
 PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptions copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix Function()? referencePrefix}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptions(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
 ); } 

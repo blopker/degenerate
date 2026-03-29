@@ -44,7 +44,7 @@ final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourc
 Map<String, dynamic> toJson() { return {
   if (chain != null) 'chain': chain?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chain'}.contains(key)); } 
 PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain? Function()? chain}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
   chain: chain != null ? chain() : this.chain,
 ); } 

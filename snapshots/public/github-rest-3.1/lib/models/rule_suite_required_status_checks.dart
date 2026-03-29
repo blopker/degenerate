@@ -13,7 +13,7 @@ final List<RuleSuiteRequiredStatusChecksChecks>? checks;
 Map<String, dynamic> toJson() { return {
   if (checks != null) 'checks': checks?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'checks'}.contains(key)); } 
 RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks> Function()? checks}) { return RuleSuiteRequiredStatusChecks(
   checks: checks != null ? checks() : this.checks,
 ); } 

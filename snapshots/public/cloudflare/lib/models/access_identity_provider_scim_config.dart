@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'secret': ?secret,
   'user_deprovision': userDeprovision,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'identity_update_behavior', 'scim_base_url', 'seat_deprovision', 'secret', 'user_deprovision'}.contains(key)); } 
 AccessIdentityProviderScimConfig copyWith({bool Function()? enabled, AccessIdentityProviderScimConfigIdentityUpdateBehavior Function()? identityUpdateBehavior, String Function()? scimBaseUrl, bool Function()? seatDeprovision, String Function()? secret, bool Function()? userDeprovision, }) { return AccessIdentityProviderScimConfig(
   enabled: enabled != null ? enabled() : this.enabled,
   identityUpdateBehavior: identityUpdateBehavior != null ? identityUpdateBehavior() : this.identityUpdateBehavior,

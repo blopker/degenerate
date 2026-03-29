@@ -11,7 +11,7 @@ final List<IssuesSetLabelsRequestVariant3Labels>? labels;
 Map<String, dynamic> toJson() { return {
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labels'}.contains(key)); } 
 IssuesSetLabelsRequestVariant3 copyWith({List<IssuesSetLabelsRequestVariant3Labels> Function()? labels}) { return IssuesSetLabelsRequestVariant3(
   labels: labels != null ? labels() : this.labels,
 ); } 

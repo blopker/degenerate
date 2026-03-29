@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (person != null) 'person': person?.toJson(),
   if (pii != null) 'pii': pii?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'bank_account', 'card', 'customer', 'cvc_update', 'expand', 'person', 'pii'}.contains(key)); } 
 PostTokensRequest copyWith({PostTokensRequestAccount Function()? account, PostTokensRequestBankAccount Function()? bankAccount, PostTokensRequestCard Function()? card, String Function()? customer, PostTokensRequestCvcUpdate Function()? cvcUpdate, List<String> Function()? expand, PostTokensRequestPerson Function()? person, PostTokensRequestPii Function()? pii, }) { return PostTokensRequest(
   account: account != null ? account() : this.account,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,

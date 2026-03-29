@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (preStop != null) 'preStop': preStop?.toJson(),
   'stopSignal': ?stopSignal,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'postStart', 'preStop', 'stopSignal'}.contains(key)); } 
 Lifecycle copyWith({LifecycleHandler Function()? postStart, LifecycleHandler Function()? preStop, String Function()? stopSignal, }) { return Lifecycle(
   postStart: postStart != null ? postStart() : this.postStart,
   preStop: preStop != null ? preStop() : this.preStop,

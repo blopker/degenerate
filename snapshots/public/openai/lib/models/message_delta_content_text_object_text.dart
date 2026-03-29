@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
   if (annotations != null) 'annotations': annotations?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value', 'annotations'}.contains(key)); } 
 MessageDeltaContentTextObjectText copyWith({String Function()? value, List<MessageDeltaContentTextObjectTextAnnotations> Function()? annotations, }) { return MessageDeltaContentTextObjectText(
   value: value != null ? value() : this.value,
   annotations: annotations != null ? annotations() : this.annotations,

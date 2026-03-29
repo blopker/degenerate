@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (accountTag != null) 'account_tag': accountTag?.toJson(),
   'config_name': ?configName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_name', 'account_tag', 'config_name'}.contains(key)); } 
 DigitalExperienceMonitoringWarpConfigDetails copyWith({String Function()? accountName, DigitalExperienceMonitoringUuid Function()? accountTag, String Function()? configName, }) { return DigitalExperienceMonitoringWarpConfigDetails(
   accountName: accountName != null ? accountName() : this.accountName,
   accountTag: accountTag != null ? accountTag() : this.accountTag,

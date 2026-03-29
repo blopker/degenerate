@@ -35,7 +35,7 @@ final PostAccountsRequestControllerLossesPayments? payments;
 Map<String, dynamic> toJson() { return {
   if (payments != null) 'payments': payments?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payments'}.contains(key)); } 
 PostAccountsRequestControllerLosses copyWith({PostAccountsRequestControllerLossesPayments Function()? payments}) { return PostAccountsRequestControllerLosses(
   payments: payments != null ? payments() : this.payments,
 ); } 

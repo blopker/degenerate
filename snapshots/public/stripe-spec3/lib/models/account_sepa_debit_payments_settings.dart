@@ -13,7 +13,7 @@ final String? creditorId;
 Map<String, dynamic> toJson() { return {
   'creditor_id': ?creditorId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creditor_id'}.contains(key)); } 
 AccountSepaDebitPaymentsSettings copyWith({String Function()? creditorId}) { return AccountSepaDebitPaymentsSettings(
   creditorId: creditorId != null ? creditorId() : this.creditorId,
 ); } 

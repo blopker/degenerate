@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'subdivision_2_iso_code': ?subdivision2IsoCode,
   'timezone': ?timezone,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'continent', 'is_eu_country', 'iso_code', 'latitude', 'longitude', 'postal_code', 'region_code', 'subdivision_2_iso_code', 'timezone'}.contains(key)); } 
 AccountRequestTracerRequestTraceRequestContextGeoloc copyWith({String Function()? city, String Function()? continent, bool Function()? isEuCountry, String Function()? isoCode, double Function()? latitude, double Function()? longitude, String Function()? postalCode, String Function()? regionCode, String Function()? subdivision2IsoCode, String Function()? timezone, }) { return AccountRequestTracerRequestTraceRequestContextGeoloc(
   city: city != null ? city() : this.city,
   continent: continent != null ? continent() : this.continent,

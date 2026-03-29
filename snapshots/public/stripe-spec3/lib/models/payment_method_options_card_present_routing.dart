@@ -38,7 +38,7 @@ final PaymentMethodOptionsCardPresentRoutingRequestedPriority? requestedPriority
 Map<String, dynamic> toJson() { return {
   if (requestedPriority != null) 'requested_priority': requestedPriority?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested_priority'}.contains(key)); } 
 PaymentMethodOptionsCardPresentRouting copyWith({PaymentMethodOptionsCardPresentRoutingRequestedPriority? Function()? requestedPriority}) { return PaymentMethodOptionsCardPresentRouting(
   requestedPriority: requestedPriority != null ? requestedPriority() : this.requestedPriority,
 ); } 

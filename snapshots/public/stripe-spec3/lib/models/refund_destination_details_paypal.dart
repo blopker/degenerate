@@ -13,7 +13,7 @@ final String? networkDeclineCode;
 Map<String, dynamic> toJson() { return {
   'network_decline_code': ?networkDeclineCode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network_decline_code'}.contains(key)); } 
 RefundDestinationDetailsPaypal copyWith({String? Function()? networkDeclineCode}) { return RefundDestinationDetailsPaypal(
   networkDeclineCode: networkDeclineCode != null ? networkDeclineCode() : this.networkDeclineCode,
 ); } 

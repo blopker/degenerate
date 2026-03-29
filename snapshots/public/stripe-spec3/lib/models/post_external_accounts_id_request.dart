@@ -146,7 +146,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'account_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'default_for_currency', 'documents', 'exp_month', 'exp_year', 'expand', 'metadata', 'name'}.contains(key)); } 
 PostExternalAccountsIdRequest copyWith({String Function()? accountHolderName, PostExternalAccountsIdRequestAccountHolderType Function()? accountHolderType, PostExternalAccountsIdRequestAccountType Function()? accountType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, bool Function()? defaultForCurrency, PostExternalAccountsIdRequestDocuments Function()? documents, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, PostExternalAccountsIdRequestMetadata Function()? metadata, String Function()? name, }) { return PostExternalAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,

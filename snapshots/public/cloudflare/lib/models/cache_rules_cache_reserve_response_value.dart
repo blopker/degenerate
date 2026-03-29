@@ -12,7 +12,7 @@ final CacheRulesBase? result;
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
 CacheRulesCacheReserveResponseValue copyWith({CacheRulesBase Function()? result}) { return CacheRulesCacheReserveResponseValue(
   result: result != null ? result() : this.result,
 ); } 

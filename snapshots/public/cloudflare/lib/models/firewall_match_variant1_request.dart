@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'schemes': ?schemes,
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'methods', 'schemes', 'url'}.contains(key)); } 
 FirewallMatchVariant1Request copyWith({List<FirewallMethods2> Function()? methods, List<String> Function()? schemes, FirewallUrl Function()? url, }) { return FirewallMatchVariant1Request(
   methods: methods != null ? methods() : this.methods,
   schemes: schemes != null ? schemes() : this.schemes,

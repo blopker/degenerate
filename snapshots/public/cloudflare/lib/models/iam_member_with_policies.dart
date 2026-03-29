@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
   if (user != null) 'user': user?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'id', 'policies', 'roles', 'status', 'user'}.contains(key)); } 
 IamMemberWithPolicies copyWith({IamEmail Function()? email, IamMembershipComponentsSchemasIdentifier Function()? id, List<IamListMemberPolicy> Function()? policies, List<IamRole> Function()? roles, dynamic Function()? status, IamMemberWithPoliciesUser Function()? user, }) { return IamMemberWithPolicies(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,

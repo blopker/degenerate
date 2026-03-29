@@ -11,7 +11,7 @@ final PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarnaDob? dob;
 Map<String, dynamic> toJson() { return {
   if (dob != null) 'dob': dob?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dob'}.contains(key)); } 
 PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarna copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarnaDob Function()? dob}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataKlarna(
   dob: dob != null ? dob() : this.dob,
 ); } 

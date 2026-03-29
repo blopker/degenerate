@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'repository_id': ?repositoryId,
   'bundle_url': ?bundleUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle', 'repository_id', 'bundle_url'}.contains(key)); } 
 OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue copyWith({OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle Function()? bundle, int Function()? repositoryId, String Function()? bundleUrl, }) { return OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue(
   bundle: bundle != null ? bundle() : this.bundle,
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,

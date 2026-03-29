@@ -55,7 +55,7 @@ final ShieldPerOperationSettingChangeBaseMitigationAction? mitigationAction;
 Map<String, dynamic> toJson() { return {
   if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
 ShieldPerOperationSettingChangeBase copyWith({ShieldPerOperationSettingChangeBaseMitigationAction? Function()? mitigationAction}) { return ShieldPerOperationSettingChangeBase(
   mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
 ); } 

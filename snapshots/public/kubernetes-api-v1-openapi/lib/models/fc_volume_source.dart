@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'targetWWNs': ?targetWwNs,
   'wwids': ?wwids,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fsType', 'lun', 'readOnly', 'targetWWNs', 'wwids'}.contains(key)); } 
 FcVolumeSource copyWith({String Function()? fsType, int Function()? lun, bool Function()? readOnly, List<String> Function()? targetWwNs, List<String> Function()? wwids, }) { return FcVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   lun: lun != null ? lun() : this.lun,

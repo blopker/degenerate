@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'ip_address': ?ipAddress,
   'user_agent': ?userAgent,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_address', 'user_agent'}.contains(key)); } 
 ClientKeyParamCustomerAcceptanceOnline copyWith({String Function()? ipAddress, String Function()? userAgent, }) { return ClientKeyParamCustomerAcceptanceOnline(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   userAgent: userAgent != null ? userAgent() : this.userAgent,

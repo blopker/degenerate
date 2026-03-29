@@ -252,7 +252,7 @@ Map<String, dynamic> toJson() { return {
   if (upload != null) 'upload': upload?.toJson(),
   'version': version.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsBisoAdminControls copyWith({ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy Function()? copy, bool Function()? dcp, bool Function()? dd, bool Function()? dk, ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload Function()? download, bool Function()? dp, bool Function()? du, ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard Function()? keyboard, ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste Function()? paste, ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting Function()? printing, ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload Function()? upload, ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion Function()? version, }) { return ZeroTrustGatewayRuleSettingsBisoAdminControls(
   copy: copy != null ? copy() : this.copy,
   dcp: dcp != null ? dcp() : this.dcp,

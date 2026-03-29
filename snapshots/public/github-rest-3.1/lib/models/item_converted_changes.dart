@@ -11,7 +11,7 @@ final ItemConvertedChangesContentType? contentType;
 Map<String, dynamic> toJson() { return {
   if (contentType != null) 'content_type': contentType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type'}.contains(key)); } 
 ItemConvertedChanges copyWith({ItemConvertedChangesContentType Function()? contentType}) { return ItemConvertedChanges(
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

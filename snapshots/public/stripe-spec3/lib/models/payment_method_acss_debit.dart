@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
   'transit_number': ?transitNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'fingerprint', 'institution_number', 'last4', 'transit_number'}.contains(key)); } 
 PaymentMethodAcssDebit copyWith({String? Function()? bankName, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String? Function()? transitNumber, }) { return PaymentMethodAcssDebit(
   bankName: bankName != null ? bankName() : this.bankName,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,

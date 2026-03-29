@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'canceled_at': ?canceledAt,
   'paid_at': ?paidAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'canceled_at', 'paid_at'}.contains(key)); } 
 InvoicesPaymentsInvoicePaymentStatusTransitions copyWith({int? Function()? canceledAt, int? Function()? paidAt, }) { return InvoicesPaymentsInvoicePaymentStatusTransitions(
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   paidAt: paidAt != null ? paidAt() : this.paidAt,

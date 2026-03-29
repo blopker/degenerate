@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   'id': ?id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'id'}.contains(key)); } 
 ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled Function()? enabled, dynamic Function()? id, }) { return ZonesSslRecommender(
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,

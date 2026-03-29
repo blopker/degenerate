@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (deleted != null) 'deleted': deleted?.map((e) => e.toJson()).toList(),
   if (updated != null) 'updated': updated?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'added', 'deleted', 'updated'}.contains(key)); } 
 WebhookRepositoryRulesetEditedChangesConditions copyWith({List<RepositoryRulesetConditions> Function()? added, List<RepositoryRulesetConditions> Function()? deleted, List<WebhookRepositoryRulesetEditedChangesConditionsUpdated> Function()? updated, }) { return WebhookRepositoryRulesetEditedChangesConditions(
   added: added != null ? added() : this.added,
   deleted: deleted != null ? deleted() : this.deleted,

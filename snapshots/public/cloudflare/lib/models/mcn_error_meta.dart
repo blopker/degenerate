@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'template_data': ?templateData,
   'trace_id': ?traceId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'l10n_key', 'loggable_error', 'template_data', 'trace_id'}.contains(key)); } 
 McnErrorMeta copyWith({String Function()? l10nKey, String Function()? loggableError, Map<String, dynamic> Function()? templateData, String Function()? traceId, }) { return McnErrorMeta(
   l10nKey: l10nKey != null ? l10nKey() : this.l10nKey,
   loggableError: loggableError != null ? loggableError() : this.loggableError,

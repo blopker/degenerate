@@ -168,7 +168,7 @@ Map<String, dynamic> toJson() { return {
   if (outputModalities != null) 'output_modalities': outputModalities?.map((e) => e.toJson()).toList(),
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'audio', 'usage', 'conversation_id', 'output_modalities', 'max_output_tokens'}.contains(key)); } 
 RealtimeResponse copyWith({String Function()? id, RealtimeResponseObject Function()? object, RealtimeResponseStatus Function()? status, RealtimeResponseStatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeResponseAudio Function()? audio, RealtimeResponseUsage Function()? usage, String Function()? conversationId, List<RealtimeResponseOutputModalities> Function()? outputModalities, RealtimeResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,

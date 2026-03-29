@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'method': method.toJson(),
   'port': port,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'method', 'port'}.contains(key)); } 
 SmartshieldTcpConfig copyWith({SmartshieldTcpConfigMethod Function()? method, int Function()? port, }) { return SmartshieldTcpConfig(
   method: method != null ? method() : this.method,
   port: port != null ? port() : this.port,

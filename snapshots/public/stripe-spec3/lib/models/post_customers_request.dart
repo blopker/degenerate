@@ -146,7 +146,7 @@ Map<String, dynamic> toJson() { return {
   if (taxIdData != null) 'tax_id_data': taxIdData?.map((e) => e.toJson()).toList(),
   'test_clock': ?testClock,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'balance', 'business_name', 'cash_balance', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'payment_method', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt', 'tax_id_data', 'test_clock'}.contains(key)); } 
 PostCustomersRequest copyWith({PostCustomersRequestAddress Function()? address, int Function()? balance, PostCustomersRequestBusinessName Function()? businessName, PostCustomersRequestCashBalance Function()? cashBalance, String Function()? description, String Function()? email, List<String> Function()? expand, PostCustomersRequestIndividualName Function()? individualName, String Function()? invoicePrefix, PostCustomersRequestInvoiceSettings Function()? invoiceSettings, PostCustomersRequestMetadata Function()? metadata, String Function()? name, int Function()? nextInvoiceSequence, String Function()? paymentMethod, String Function()? phone, List<String> Function()? preferredLocales, PostCustomersRequestShipping Function()? shipping, String Function()? source, PostCustomersRequestTax Function()? tax, PostCustomersRequestTaxExempt Function()? taxExempt, List<PostCustomersRequestTaxIdData> Function()? taxIdData, String Function()? testClock, }) { return PostCustomersRequest(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,

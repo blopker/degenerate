@@ -11,7 +11,7 @@ final int? totalMs;
 Map<String, dynamic> toJson() { return {
   'total_ms': ?totalMs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_ms'}.contains(key)); } 
 WorkflowUsageBillableUbuntu copyWith({int Function()? totalMs}) { return WorkflowUsageBillableUbuntu(
   totalMs: totalMs != null ? totalMs() : this.totalMs,
 ); } 

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'issues': ?issues,
   'single_file': ?singleFile,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'contents', 'issues', 'single_file'}.contains(key)); } 
 BranchRestrictionPolicyAppsPermissions copyWith({String Function()? metadata, String Function()? contents, String Function()? issues, String Function()? singleFile, }) { return BranchRestrictionPolicyAppsPermissions(
   metadata: metadata != null ? metadata() : this.metadata,
   contents: contents != null ? contents() : this.contents,

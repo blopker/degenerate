@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (anchor != null) 'anchor': anchor?.toJson(),
   'minutes': ?minutes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'minutes'}.contains(key)); } 
 ContainerResourceExpiresAfter copyWith({ContainerResourceExpiresAfterAnchor Function()? anchor, int Function()? minutes, }) { return ContainerResourceExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   minutes: minutes != null ? minutes() : this.minutes,

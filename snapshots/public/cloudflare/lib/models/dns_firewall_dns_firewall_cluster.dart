@@ -131,7 +131,7 @@ Map<String, dynamic> toJson() { return {
   if (retries != null) 'retries': retries?.toJson(),
   'upstream_ips': ?upstreamIps,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attack_mitigation', 'deprecate_any_requests', 'ecs_fallback', 'maximum_cache_ttl', 'minimum_cache_ttl', 'name', 'negative_cache_ttl', 'ratelimit', 'retries', 'upstream_ips'}.contains(key)); } 
 DnsFirewallDnsFirewallCluster copyWith({DnsFirewallAttackMitigation Function()? attackMitigation, DnsFirewallDeprecateAnyRequests Function()? deprecateAnyRequests, DnsFirewallEcsFallback Function()? ecsFallback, DnsFirewallMaximumCacheTtl Function()? maximumCacheTtl, DnsFirewallMinimumCacheTtl Function()? minimumCacheTtl, DnsFirewallName Function()? name, DnsFirewallNegativeCacheTtl? Function()? negativeCacheTtl, DnsFirewallRatelimit? Function()? ratelimit, DnsFirewallRetries Function()? retries, List<dynamic> Function()? upstreamIps, }) { return DnsFirewallDnsFirewallCluster(
   attackMitigation: attackMitigation != null ? attackMitigation() : this.attackMitigation,
   deprecateAnyRequests: deprecateAnyRequests != null ? deprecateAnyRequests() : this.deprecateAnyRequests,

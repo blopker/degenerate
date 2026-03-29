@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'date_updated': ?dateUpdated,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'call_sid', 'name', 'status', 'date_updated', 'uri'}.contains(key)); } 
 AccountCallSiprec copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? callSid, String? Function()? name, SiprecEnumStatus Function()? status, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountCallSiprec(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

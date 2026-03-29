@@ -179,7 +179,7 @@ Map<String, dynamic> toJson() { return {
   if (bank != null) 'bank': bank?.toJson(),
   if (bic != null) 'bic': bic?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'bic'}.contains(key)); } 
 PaymentMethodIdeal copyWith({PaymentMethodIdealBank? Function()? bank, PaymentMethodIdealBic? Function()? bic, }) { return PaymentMethodIdeal(
   bank: bank != null ? bank() : this.bank,
   bic: bic != null ? bic() : this.bic,

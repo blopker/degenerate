@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'more_info': ?moreInfo,
   'status': ?status,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'more_info', 'status'}.contains(key)); } 
 UpdateCallRecordingResponse408 copyWith({int Function()? code, String Function()? message, String Function()? moreInfo, int Function()? status, }) { return UpdateCallRecordingResponse408(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,

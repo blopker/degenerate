@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (analysesUrl != null) 'analyses_url': analysesUrl?.toString(),
   'errors': ?errors,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'processing_status', 'analyses_url', 'errors'}.contains(key)); } 
 CodeScanningSarifsStatus copyWith({CodeScanningSarifsStatusProcessingStatus Function()? processingStatus, Uri? Function()? analysesUrl, List<String>? Function()? errors, }) { return CodeScanningSarifsStatus(
   processingStatus: processingStatus != null ? processingStatus() : this.processingStatus,
   analysesUrl: analysesUrl != null ? analysesUrl() : this.analysesUrl,

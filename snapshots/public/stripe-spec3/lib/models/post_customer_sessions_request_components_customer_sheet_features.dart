@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodAllowRedisplayFilters != null) 'payment_method_allow_redisplay_filters': paymentMethodAllowRedisplayFilters?.map((e) => e.toJson()).toList(),
   if (paymentMethodRemove != null) 'payment_method_remove': paymentMethodRemove?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_allow_redisplay_filters', 'payment_method_remove'}.contains(key)); } 
 PostCustomerSessionsRequestComponentsCustomerSheetFeatures copyWith({List<PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters> Function()? paymentMethodAllowRedisplayFilters, PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodRemove Function()? paymentMethodRemove, }) { return PostCustomerSessionsRequestComponentsCustomerSheetFeatures(
   paymentMethodAllowRedisplayFilters: paymentMethodAllowRedisplayFilters != null ? paymentMethodAllowRedisplayFilters() : this.paymentMethodAllowRedisplayFilters,
   paymentMethodRemove: paymentMethodRemove != null ? paymentMethodRemove() : this.paymentMethodRemove,

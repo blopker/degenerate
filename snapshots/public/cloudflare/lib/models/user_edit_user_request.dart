@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (telephone != null) 'telephone': telephone?.toJson(),
   if (zipcode != null) 'zipcode': zipcode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'first_name', 'last_name', 'telephone', 'zipcode'}.contains(key)); } 
 UserEditUserRequest copyWith({IamCountry? Function()? country, IamFirstName? Function()? firstName, IamLastName? Function()? lastName, IamTelephone? Function()? telephone, IamZipcode? Function()? zipcode, }) { return UserEditUserRequest(
   country: country != null ? country() : this.country,
   firstName: firstName != null ? firstName() : this.firstName,

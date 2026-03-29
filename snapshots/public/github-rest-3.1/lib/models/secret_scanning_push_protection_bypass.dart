@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (expireAt != null) 'expire_at': expireAt?.toIso8601String(),
   'token_type': ?tokenType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reason', 'expire_at', 'token_type'}.contains(key)); } 
 SecretScanningPushProtectionBypass copyWith({SecretScanningPushProtectionBypassReason Function()? reason, DateTime? Function()? expireAt, String Function()? tokenType, }) { return SecretScanningPushProtectionBypass(
   reason: reason != null ? reason() : this.reason,
   expireAt: expireAt != null ? expireAt() : this.expireAt,

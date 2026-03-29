@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'reasoning_tokens': reasoningTokens,
   'rejected_prediction_tokens': rejectedPredictionTokens,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accepted_prediction_tokens', 'audio_tokens', 'reasoning_tokens', 'rejected_prediction_tokens'}.contains(key)); } 
 CompletionUsageCompletionTokensDetails copyWith({int Function()? acceptedPredictionTokens, int Function()? audioTokens, int Function()? reasoningTokens, int Function()? rejectedPredictionTokens, }) { return CompletionUsageCompletionTokensDetails(
   acceptedPredictionTokens: acceptedPredictionTokens != null ? acceptedPredictionTokens() : this.acceptedPredictionTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,

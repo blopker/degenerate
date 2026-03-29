@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'can_view': ?canView,
   'can_vote': ?canVote,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_create', 'can_view', 'can_vote'}.contains(key)); } 
 RealtimekitUpdatePresetPermissionsPolls copyWith({bool Function()? canCreate, bool Function()? canView, bool Function()? canVote, }) { return RealtimekitUpdatePresetPermissionsPolls(
   canCreate: canCreate != null ? canCreate() : this.canCreate,
   canView: canView != null ? canView() : this.canView,

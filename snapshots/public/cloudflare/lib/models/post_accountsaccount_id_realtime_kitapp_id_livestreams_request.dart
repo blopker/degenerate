@@ -12,7 +12,7 @@ final String? name;
 Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
 PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest copyWith({String? Function()? name}) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest(
   name: name != null ? name() : this.name,
 ); } 

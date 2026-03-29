@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'id', 'name'}.contains(key)); } 
 TeamsDevicesUser copyWith({TeamsDevicesEmail Function()? email, TeamsDevicesComponentsSchemasUuid Function()? id, String Function()? name, }) { return TeamsDevicesUser(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,

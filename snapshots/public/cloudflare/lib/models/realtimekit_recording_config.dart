@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (storageConfig != null) 'storage_config': storageConfig?.toJson(),
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_config', 'file_name_prefix', 'live_streaming_config', 'max_seconds', 'realtimekit_bucket_config', 'storage_config', 'video_config'}.contains(key)); } 
 RealtimekitRecordingConfig copyWith({RealtimekitAudioConfig Function()? audioConfig, String Function()? fileNamePrefix, RealtimekitLivestreamingConfig Function()? liveStreamingConfig, double Function()? maxSeconds, RealtimekitRealtimekitBucketConfig Function()? realtimekitBucketConfig, RealtimekitStorageConfig Function()? storageConfig, RealtimekitVideoConfig Function()? videoConfig, }) { return RealtimekitRecordingConfig(
   audioConfig: audioConfig != null ? audioConfig() : this.audioConfig,
   fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,

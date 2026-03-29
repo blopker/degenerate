@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'end': ?end,
   'start': ?start,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categories', 'end', 'start'}.contains(key)); } 
 IntelDomainHistoryCategorizations copyWith({List<IntelDomainHistoryCategorizationsCategories> Function()? categories, String Function()? end, String Function()? start, }) { return IntelDomainHistoryCategorizations(
   categories: categories != null ? categories() : this.categories,
   end: end != null ? end() : this.end,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (queryString != null) 'query_string': queryString?.toJson(),
   if (user != null) 'user': user?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cookie', 'header', 'host', 'query_string', 'user'}.contains(key)); } 
 RulesetsSetCacheSettingsCustomCacheKey copyWith({RulesetsSetCacheSettingsCustomCacheKeyCookie Function()? cookie, RulesetsSetCacheSettingsCustomCacheKeyHeader Function()? header, RulesetsSetCacheSettingsCustomCacheKeyHost Function()? host, RulesetsSetCacheSettingsCustomCacheKeyQueryString Function()? queryString, RulesetsSetCacheSettingsCustomCacheKeyUser Function()? user, }) { return RulesetsSetCacheSettingsCustomCacheKey(
   cookie: cookie != null ? cookie() : this.cookie,
   header: header != null ? header() : this.header,

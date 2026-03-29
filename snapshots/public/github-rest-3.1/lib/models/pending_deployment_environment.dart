@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
   'html_url': ?htmlUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'name', 'url', 'html_url'}.contains(key)); } 
 PendingDeploymentEnvironment copyWith({int Function()? id, String Function()? nodeId, String Function()? name, String Function()? url, String Function()? htmlUrl, }) { return PendingDeploymentEnvironment(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,

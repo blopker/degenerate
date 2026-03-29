@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (staticAddressing != null) 'static_addressing': staticAddressing?.toJson(),
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bond_id', 'ha_link', 'id', 'is_breakout', 'is_prioritized', 'name', 'nat', 'physport', 'routed_subnets', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key)); } 
 MagicLan copyWith({MagicBondId Function()? bondId, bool Function()? haLink, MagicIdentifier Function()? id, bool Function()? isBreakout, bool Function()? isPrioritized, String Function()? name, MagicNat Function()? nat, MagicPort Function()? physport, List<MagicRoutedSubnet> Function()? routedSubnets, MagicIdentifier Function()? siteId, MagicLanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicLan(
   bondId: bondId != null ? bondId() : this.bondId,
   haLink: haLink != null ? haLink() : this.haLink,

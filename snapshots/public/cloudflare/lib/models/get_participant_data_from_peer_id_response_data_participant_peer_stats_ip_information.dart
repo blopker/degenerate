@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'region': ?region,
   'timezone': ?timezone,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'city', 'country', 'ip_location', 'ipv4', 'org', 'region', 'timezone'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformationAsn Function()? asn, String Function()? city, String Function()? country, String Function()? ipLocation, String Function()? ipv4, String Function()? org, String Function()? region, String Function()? timezone, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation(
   asn: asn != null ? asn() : this.asn,
   city: city != null ? city() : this.city,

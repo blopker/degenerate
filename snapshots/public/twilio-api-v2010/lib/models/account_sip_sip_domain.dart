@@ -187,7 +187,7 @@ Map<String, dynamic> toJson() { return {
   'byoc_trunk_sid': ?byocTrunkSid,
   'emergency_caller_sid': ?emergencyCallerSid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'auth_type', 'date_created', 'date_updated', 'domain_name', 'friendly_name', 'sid', 'uri', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_status_callback_method', 'voice_status_callback_url', 'voice_url', 'subresource_uris', 'sip_registration', 'emergency_calling_enabled', 'secure', 'byoc_trunk_sid', 'emergency_caller_sid'}.contains(key)); } 
 AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? authType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainName, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, AccountSipSipDomainVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountSipSipDomainVoiceMethod? Function()? voiceMethod, AccountSipSipDomainVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, Map<String, dynamic>? Function()? subresourceUris, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return AccountSipSipDomain(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

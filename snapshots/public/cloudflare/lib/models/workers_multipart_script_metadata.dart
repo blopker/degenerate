@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   if (tailConsumers != null) 'tail_consumers': tailConsumers?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'assets', 'bindings', 'body_part', 'compatibility_date', 'compatibility_flags', 'keep_assets', 'keep_bindings', 'limits', 'logpush', 'main_module', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
 WorkersMultipartScriptMetadata copyWith({WorkersAssets Function()? assets, List<WorkersBindingItem> Function()? bindings, String Function()? bodyPart, WorkersCompatibilityDate Function()? compatibilityDate, List<WorkersCompatibilityFlag> Function()? compatibilityFlags, bool Function()? keepAssets, List<String> Function()? keepBindings, WorkersLimits Function()? limits, WorkersLogpush Function()? logpush, String Function()? mainModule, WorkersMultipartScriptMetadataMigrations Function()? migrations, WorkersObservability Function()? observability, WorkersPlacementInfo Function()? placement, List<String> Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel Function()? usageModel, }) { return WorkersMultipartScriptMetadata(
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,

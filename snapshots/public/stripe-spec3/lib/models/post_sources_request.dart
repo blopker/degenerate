@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'customer', 'expand', 'flow', 'mandate', 'metadata', 'original_source', 'owner', 'receiver', 'redirect', 'source_order', 'statement_descriptor', 'token', 'type', 'usage'}.contains(key)); } 
 PostSourcesRequest copyWith({int Function()? amount, String Function()? currency, String Function()? customer, List<String> Function()? expand, PostSourcesRequestFlow Function()? flow, PostSourcesRequestMandate Function()? mandate, Map<String, String> Function()? metadata, String Function()? originalSource, PostSourcesRequestOwner Function()? owner, PostSourcesRequestReceiver Function()? receiver, PostSourcesRequestRedirect Function()? redirect, PostSourcesRequestSourceOrder Function()? sourceOrder, String Function()? statementDescriptor, String Function()? token, String Function()? type, PostSourcesRequestUsage Function()? usage, }) { return PostSourcesRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

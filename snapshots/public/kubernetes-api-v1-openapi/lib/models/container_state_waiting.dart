@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   'reason': ?reason,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'reason'}.contains(key)); } 
 ContainerStateWaiting copyWith({String Function()? message, String Function()? reason, }) { return ContainerStateWaiting(
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,

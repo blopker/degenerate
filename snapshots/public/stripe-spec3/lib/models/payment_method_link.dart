@@ -13,7 +13,7 @@ final String? email;
 Map<String, dynamic> toJson() { return {
   'email': ?email,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email'}.contains(key)); } 
 PaymentMethodLink copyWith({String? Function()? email}) { return PaymentMethodLink(
   email: email != null ? email() : this.email,
 ); } 

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'height': ?height,
   'width': ?width,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'height', 'width'}.contains(key)); } 
 StreamInput copyWith({int Function()? height, int Function()? width, }) { return StreamInput(
   height: height != null ? height() : this.height,
   width: width != null ? width() : this.width,

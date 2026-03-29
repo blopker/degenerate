@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'account_number': ?accountNumber,
   'routing_number': ?routingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_number', 'routing_number'}.contains(key)); } 
 PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsUsBankAccount copyWith({String Function()? accountHolderName, String Function()? accountNumber, String Function()? routingNumber, }) { return PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsUsBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,

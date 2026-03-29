@@ -53,10 +53,14 @@ final class IrEnum extends IrType {
   final String name;
   final List<String> values;
   final String? defaultValue;
+  /// The underlying JSON type for this enum's values.
+  /// Defaults to [PrimitiveKind.string].
+  final PrimitiveKind valueKind;
   const IrEnum(
     this.name,
     this.values, {
     this.defaultValue,
+    this.valueKind = PrimitiveKind.string,
     super.description,
     super.isNullable,
   });
@@ -68,6 +72,7 @@ final class IrEnum extends IrType {
           name,
           values,
           defaultValue: defaultValue,
+          valueKind: valueKind,
           description: description,
           isNullable: true,
         );

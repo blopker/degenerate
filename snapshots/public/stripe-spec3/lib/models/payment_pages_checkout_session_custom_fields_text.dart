@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'minimum_length': ?minimumLength,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'maximum_length', 'minimum_length', 'value'}.contains(key)); } 
 PaymentPagesCheckoutSessionCustomFieldsText copyWith({String? Function()? defaultValue, int? Function()? maximumLength, int? Function()? minimumLength, String? Function()? value, }) { return PaymentPagesCheckoutSessionCustomFieldsText(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   maximumLength: maximumLength != null ? maximumLength() : this.maximumLength,

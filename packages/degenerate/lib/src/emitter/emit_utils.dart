@@ -232,7 +232,11 @@ String _buildFromJsonNonNull(
         'Duration(milliseconds: ($accessor as num).toInt())',
       PrimitiveKind.bytes => 'base64Decode($accessor as String)',
     },
-    IrEnum(:final name) => '$name.fromJson($accessor as String)',
+    IrEnum(:final name, :final valueKind) => switch (valueKind) {
+        PrimitiveKind.int => '$name.fromJson(($accessor as num).toInt())',
+        PrimitiveKind.double => '$name.fromJson(($accessor as num).toDouble())',
+        _ => '$name.fromJson($accessor as String)',
+      },
     IrList(:final items) =>
       '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
     IrMap(:final values) =>

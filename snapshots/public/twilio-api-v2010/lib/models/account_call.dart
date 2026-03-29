@@ -136,7 +136,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
   'subresource_uris': ?subresourceUris,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'date_created', 'date_updated', 'parent_call_sid', 'account_sid', 'to', 'to_formatted', 'from', 'from_formatted', 'phone_number_sid', 'status', 'start_time', 'end_time', 'duration', 'price', 'price_unit', 'direction', 'answered_by', 'api_version', 'forwarded_from', 'group_sid', 'caller_name', 'queue_time', 'trunk_sid', 'uri', 'subresource_uris'}.contains(key)); } 
 AccountCall copyWith({String? Function()? sid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? parentCallSid, String? Function()? accountSid, String? Function()? to, String? Function()? toFormatted, String? Function()? from, String? Function()? fromFormatted, String? Function()? phoneNumberSid, CallEnumStatus Function()? status, String? Function()? startTime, String? Function()? endTime, String? Function()? duration, String? Function()? price, String? Function()? priceUnit, String? Function()? direction, String? Function()? answeredBy, String? Function()? apiVersion, String? Function()? forwardedFrom, String? Function()? groupSid, String? Function()? callerName, String? Function()? queueTime, String? Function()? trunkSid, String? Function()? uri, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountCall(
   sid: sid != null ? sid() : this.sid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

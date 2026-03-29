@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
   'phone': ?phone,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'phone'}.contains(key)); } 
 PostIdentityVerificationSessionsRequestProvidedDetails copyWith({String Function()? email, String Function()? phone, }) { return PostIdentityVerificationSessionsRequestProvidedDetails(
   email: email != null ? email() : this.email,
   phone: phone != null ? phone() : this.phone,

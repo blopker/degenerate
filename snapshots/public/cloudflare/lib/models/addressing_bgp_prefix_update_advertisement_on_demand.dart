@@ -11,7 +11,7 @@ final bool? advertised;
 Map<String, dynamic> toJson() { return {
   'advertised': ?advertised,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised'}.contains(key)); } 
 AddressingBgpPrefixUpdateAdvertisementOnDemand copyWith({bool Function()? advertised}) { return AddressingBgpPrefixUpdateAdvertisementOnDemand(
   advertised: advertised != null ? advertised() : this.advertised,
 ); } 

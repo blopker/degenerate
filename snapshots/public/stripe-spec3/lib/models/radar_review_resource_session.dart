@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'platform': ?platform,
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'browser', 'device', 'platform', 'version'}.contains(key)); } 
 RadarReviewResourceSession copyWith({String? Function()? browser, String? Function()? device, String? Function()? platform, String? Function()? version, }) { return RadarReviewResourceSession(
   browser: browser != null ? browser() : this.browser,
   device: device != null ? device() : this.device,

@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'sha': ?sha,
   if (mergeMethod != null) 'merge_method': mergeMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commit_title', 'commit_message', 'sha', 'merge_method'}.contains(key)); } 
 PullsMergeRequest copyWith({String Function()? commitTitle, String Function()? commitMessage, String Function()? sha, PullsMergeRequestMergeMethod Function()? mergeMethod, }) { return PullsMergeRequest(
   commitTitle: commitTitle != null ? commitTitle() : this.commitTitle,
   commitMessage: commitMessage != null ? commitMessage() : this.commitMessage,

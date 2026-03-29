@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'product_description': ?productDescription,
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_account_id', 'customer_device_fingerprint', 'customer_device_id', 'customer_email_address', 'customer_purchase_ip', 'merchandise_or_services', 'product_description', 'shipping_address'}.contains(key)); } 
 DisputeVisaCompellingEvidence3DisputedTransaction copyWith({String? Function()? customerAccountId, String? Function()? customerDeviceFingerprint, String? Function()? customerDeviceId, String? Function()? customerEmailAddress, String? Function()? customerPurchaseIp, DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices? Function()? merchandiseOrServices, String? Function()? productDescription, DisputeVisaCompellingEvidence3DisputedTransactionShippingAddress? Function()? shippingAddress, }) { return DisputeVisaCompellingEvidence3DisputedTransaction(
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint != null ? customerDeviceFingerprint() : this.customerDeviceFingerprint,

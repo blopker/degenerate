@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'avatar': ?avatar,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'avatar'}.contains(key)); } 
 PatchItemRequest2 copyWith({String Function()? name, dynamic Function()? avatar, }) { return PatchItemRequest2(
   name: name != null ? name() : this.name,
   avatar: avatar != null ? avatar() : this.avatar,

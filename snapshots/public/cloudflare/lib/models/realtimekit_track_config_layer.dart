@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'file_name_prefix': ?fileNamePrefix,
   if (outputs != null) 'outputs': outputs?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_name_prefix', 'outputs'}.contains(key)); } 
 RealtimekitTrackConfigLayer copyWith({String Function()? fileNamePrefix, List<RealtimekitTrackLayerOutput> Function()? outputs, }) { return RealtimekitTrackConfigLayer(
   fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,
   outputs: outputs != null ? outputs() : this.outputs,

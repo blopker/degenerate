@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'code': ?code,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'code'}.contains(key)); } 
 RealtimeBetaResponseStatusDetailsError copyWith({String Function()? type, String Function()? code, }) { return RealtimeBetaResponseStatusDetailsError(
   type: type != null ? type() : this.type,
   code: code != null ? code() : this.code,

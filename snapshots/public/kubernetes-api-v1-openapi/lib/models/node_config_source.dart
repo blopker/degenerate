@@ -13,7 +13,7 @@ final ConfigMapNodeConfigSource? configMap;
 Map<String, dynamic> toJson() { return {
   if (configMap != null) 'configMap': configMap?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configMap'}.contains(key)); } 
 NodeConfigSource copyWith({ConfigMapNodeConfigSource Function()? configMap}) { return NodeConfigSource(
   configMap: configMap != null ? configMap() : this.configMap,
 ); } 

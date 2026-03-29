@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (user != null) 'user': user?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'user'}.contains(key)); } 
 WebhookRepositoryTransferredChangesOwnerFrom copyWith({WebhookRepositoryTransferredChangesOwnerFromOrganization Function()? organization, WebhookRepositoryTransferredChangesOwnerFromUser? Function()? user, }) { return WebhookRepositoryTransferredChangesOwnerFrom(
   organization: organization != null ? organization() : this.organization,
   user: user != null ? user() : this.user,

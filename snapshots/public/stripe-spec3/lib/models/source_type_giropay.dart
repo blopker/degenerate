@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'bic': ?bic,
   'statement_descriptor': ?statementDescriptor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'statement_descriptor'}.contains(key)); } 
 SourceTypeGiropay copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, String? Function()? statementDescriptor, }) { return SourceTypeGiropay(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   bankName: bankName != null ? bankName() : this.bankName,

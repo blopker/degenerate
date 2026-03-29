@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'ram_used_pct': ?ramUsedPct,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'ram_used_pct'}.contains(key)); } 
 DigitalExperienceMonitoringRamUsedPctByApp2 copyWith({String Function()? name, double Function()? ramUsedPct, }) { return DigitalExperienceMonitoringRamUsedPctByApp2(
   name: name != null ? name() : this.name,
   ramUsedPct: ramUsedPct != null ? ramUsedPct() : this.ramUsedPct,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'total_seats': ?totalSeats,
   if (seats != null) 'seats': seats?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_seats', 'seats'}.contains(key)); } 
 CopilotListCopilotSeatsResponse copyWith({int Function()? totalSeats, List<CopilotSeatDetails> Function()? seats, }) { return CopilotListCopilotSeatsResponse(
   totalSeats: totalSeats != null ? totalSeats() : this.totalSeats,
   seats: seats != null ? seats() : this.seats,

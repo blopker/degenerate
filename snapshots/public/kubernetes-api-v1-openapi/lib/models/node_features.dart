@@ -13,7 +13,7 @@ final bool? supplementalGroupsPolicy;
 Map<String, dynamic> toJson() { return {
   'supplementalGroupsPolicy': ?supplementalGroupsPolicy,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'supplementalGroupsPolicy'}.contains(key)); } 
 NodeFeatures copyWith({bool Function()? supplementalGroupsPolicy}) { return NodeFeatures(
   supplementalGroupsPolicy: supplementalGroupsPolicy != null ? supplementalGroupsPolicy() : this.supplementalGroupsPolicy,
 ); } 

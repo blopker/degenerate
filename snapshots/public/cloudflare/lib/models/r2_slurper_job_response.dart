@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (target != null) 'target': target?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'createdAt', 'finishedAt', 'id', 'overwrite', 'source', 'status', 'target'}.contains(key)); } 
 R2SlurperJobResponse copyWith({String Function()? createdAt, String? Function()? finishedAt, String Function()? id, bool Function()? overwrite, R2SlurperJobResponseSource Function()? source, R2SlurperJobStatus Function()? status, R2SlurperJobResponseTarget Function()? target, }) { return R2SlurperJobResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   finishedAt: finishedAt != null ? finishedAt() : this.finishedAt,

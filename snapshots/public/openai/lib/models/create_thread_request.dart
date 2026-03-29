@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (toolResources != null) 'tool_resources': toolResources?.toJson(),
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'messages', 'tool_resources', 'metadata'}.contains(key)); } 
 CreateThreadRequest copyWith({List<CreateMessageRequest> Function()? messages, CreateThreadRequestToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, }) { return CreateThreadRequest(
   messages: messages != null ? messages() : this.messages,
   toolResources: toolResources != null ? toolResources() : this.toolResources,

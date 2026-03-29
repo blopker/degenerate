@@ -13,7 +13,7 @@ final RulesetsResultInfoCursors? cursors;
 Map<String, dynamic> toJson() { return {
   if (cursors != null) 'cursors': cursors?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cursors'}.contains(key)); } 
 RulesetsResultInfo copyWith({RulesetsResultInfoCursors Function()? cursors}) { return RulesetsResultInfo(
   cursors: cursors != null ? cursors() : this.cursors,
 ); } 

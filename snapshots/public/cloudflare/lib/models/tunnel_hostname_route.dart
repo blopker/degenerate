@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (tunnelId != null) 'tunnel_id': tunnelId?.toJson(),
   if (tunnelName != null) 'tunnel_name': tunnelName?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'hostname', 'id', 'tunnel_id', 'tunnel_name'}.contains(key)); } 
 TunnelHostnameRoute copyWith({TunnelHostnameComment Function()? comment, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelHostname Function()? hostname, TunnelHostnameRouteId Function()? id, TunnelComponentsSchemasTunnelId Function()? tunnelId, TunnelSchemasTunnelName Function()? tunnelName, }) { return TunnelHostnameRoute(
   comment: comment != null ? comment() : this.comment,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

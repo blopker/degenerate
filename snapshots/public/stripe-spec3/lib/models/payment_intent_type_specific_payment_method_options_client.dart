@@ -138,7 +138,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'request_incremental_authorization_support', 'require_cvc_recollection', 'routing', 'setup_future_usage', 'verification_method'}.contains(key)); } 
 PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod Function()? captureMethod, PaymentFlowsInstallmentOptions Function()? installments, PaymentIntentPaymentMethodOptionsMandateOptionsPayto Function()? mandateOptions, bool Function()? requestIncrementalAuthorizationSupport, bool Function()? requireCvcRecollection, PaymentMethodOptionsCardPresentRouting Function()? routing, PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage Function()? setupFutureUsage, PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod Function()? verificationMethod, }) { return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,

@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (providerId != null) 'provider_id': providerId?.toJson(),
   if (providerName != null) 'provider_name': providerName?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'latest_upload_status', 'modified_on', 'name', 'provider_id', 'provider_name'}.contains(key)); } 
 CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime Function()? createdOn, CustomIndicatorFeedsDescription Function()? description, CustomIndicatorFeedsId Function()? id, CustomIndicatorFeedsIsAttributable Function()? isAttributable, CustomIndicatorFeedsIsDownloadable Function()? isDownloadable, CustomIndicatorFeedsIsPublic Function()? isPublic, CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus Function()? latestUploadStatus, DateTime Function()? modifiedOn, CustomIndicatorFeedsName Function()? name, CustomIndicatorFeedsProviderId Function()? providerId, CustomIndicatorFeedsProviderName Function()? providerName, }) { return CustomIndicatorFeedsIndicatorFeedMetadata(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,

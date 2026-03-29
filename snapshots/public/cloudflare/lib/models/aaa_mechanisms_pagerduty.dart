@@ -11,7 +11,7 @@ final AaaUuid? id;
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
 AaaMechanismsPagerduty copyWith({AaaUuid Function()? id}) { return AaaMechanismsPagerduty(
   id: id != null ? id() : this.id,
 ); } 

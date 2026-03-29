@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'allowed_uris': ?allowedUris,
   'enabled': ?enabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_any_on_localhost', 'allow_any_on_loopback', 'allowed_uris', 'enabled'}.contains(key)); } 
 AccessOauthConfigurationDynamicClientRegistration copyWith({bool Function()? allowAnyOnLocalhost, bool Function()? allowAnyOnLoopback, List<String> Function()? allowedUris, bool Function()? enabled, }) { return AccessOauthConfigurationDynamicClientRegistration(
   allowAnyOnLocalhost: allowAnyOnLocalhost != null ? allowAnyOnLocalhost() : this.allowAnyOnLocalhost,
   allowAnyOnLoopback: allowAnyOnLoopback != null ? allowAnyOnLoopback() : this.allowAnyOnLoopback,

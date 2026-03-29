@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'preferred_locale': ?preferredLocale,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'setup_future_usage'}.contains(key)); } 
 PaymentMethodOptionsKlarna copyWith({PaymentMethodOptionsKlarnaCaptureMethod Function()? captureMethod, String? Function()? preferredLocale, PaymentMethodOptionsKlarnaSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsKlarna(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

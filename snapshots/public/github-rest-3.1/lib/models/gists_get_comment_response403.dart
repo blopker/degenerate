@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   'documentation_url': ?documentationUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'block', 'message', 'documentation_url'}.contains(key)); } 
 GistsGetCommentResponse403 copyWith({GistsGetCommentResponse403Block Function()? block, String Function()? message, String Function()? documentationUrl, }) { return GistsGetCommentResponse403(
   block: block != null ? block() : this.block,
   message: message != null ? message() : this.message,

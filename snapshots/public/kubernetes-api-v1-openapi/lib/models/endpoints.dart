@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (subsets != null) 'subsets': subsets?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'subsets'}.contains(key)); } 
 Endpoints copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, List<EndpointSubset> Function()? subsets, }) { return Endpoints(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,

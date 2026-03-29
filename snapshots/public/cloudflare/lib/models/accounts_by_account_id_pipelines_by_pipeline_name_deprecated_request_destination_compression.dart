@@ -40,7 +40,7 @@ final AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationComp
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression copyWith({AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType Function()? type}) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression(
   type: type != null ? type() : this.type,
 ); } 

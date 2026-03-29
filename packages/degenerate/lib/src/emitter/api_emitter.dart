@@ -1309,7 +1309,10 @@ class ApiEmitter {
         PrimitiveKind.string => v is String,
         _ => false,
       },
-      IrEnum() => v is String,
+      IrEnum(:final valueKind) => switch (valueKind) {
+        PrimitiveKind.int || PrimitiveKind.double => v is num,
+        _ => v is String,
+      },
       _ => false,
     };
   }

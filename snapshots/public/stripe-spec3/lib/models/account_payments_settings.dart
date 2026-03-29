@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_kana': ?statementDescriptorKana,
   'statement_descriptor_kanji': ?statementDescriptorKanji,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'statement_descriptor', 'statement_descriptor_kana', 'statement_descriptor_kanji'}.contains(key)); } 
 AccountPaymentsSettings copyWith({String? Function()? statementDescriptor, String? Function()? statementDescriptorKana, String? Function()? statementDescriptorKanji, }) { return AccountPaymentsSettings(
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   statementDescriptorKana: statementDescriptorKana != null ? statementDescriptorKana() : this.statementDescriptorKana,

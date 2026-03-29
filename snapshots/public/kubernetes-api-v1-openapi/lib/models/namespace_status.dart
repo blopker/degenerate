@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (conditions != null) 'conditions': conditions?.map((e) => e.toJson()).toList(),
   'phase': ?phase,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conditions', 'phase'}.contains(key)); } 
 NamespaceStatus copyWith({List<NamespaceCondition> Function()? conditions, String Function()? phase, }) { return NamespaceStatus(
   conditions: conditions != null ? conditions() : this.conditions,
   phase: phase != null ? phase() : this.phase,

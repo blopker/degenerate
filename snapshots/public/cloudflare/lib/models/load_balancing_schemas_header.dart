@@ -13,7 +13,7 @@ final List<String>? host;
 Map<String, dynamic> toJson() { return {
   'Host': ?host,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Host'}.contains(key)); } 
 LoadBalancingSchemasHeader copyWith({List<String> Function()? host}) { return LoadBalancingSchemasHeader(
   host: host != null ? host() : this.host,
 ); } 

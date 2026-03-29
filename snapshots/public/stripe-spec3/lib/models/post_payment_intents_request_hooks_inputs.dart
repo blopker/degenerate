@@ -11,7 +11,7 @@ final PostPaymentIntentsRequestHooksInputsTax? tax;
 Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax'}.contains(key)); } 
 PostPaymentIntentsRequestHooksInputs copyWith({PostPaymentIntentsRequestHooksInputsTax Function()? tax}) { return PostPaymentIntentsRequestHooksInputs(
   tax: tax != null ? tax() : this.tax,
 ); } 

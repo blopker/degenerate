@@ -12,7 +12,7 @@ final ZonesSecurityHeaderValueStrictTransportSecurity? strictTransportSecurity;
 Map<String, dynamic> toJson() { return {
   if (strictTransportSecurity != null) 'strict_transport_security': strictTransportSecurity?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'strict_transport_security'}.contains(key)); } 
 ZonesSecurityHeaderValue copyWith({ZonesSecurityHeaderValueStrictTransportSecurity Function()? strictTransportSecurity}) { return ZonesSecurityHeaderValue(
   strictTransportSecurity: strictTransportSecurity != null ? strictTransportSecurity() : this.strictTransportSecurity,
 ); } 

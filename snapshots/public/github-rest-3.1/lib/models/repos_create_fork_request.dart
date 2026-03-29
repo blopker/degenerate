@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'default_branch_only': ?defaultBranchOnly,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'name', 'default_branch_only'}.contains(key)); } 
 ReposCreateForkRequest copyWith({String Function()? organization, String Function()? name, bool Function()? defaultBranchOnly, }) { return ReposCreateForkRequest(
   organization: organization != null ? organization() : this.organization,
   name: name != null ? name() : this.name,

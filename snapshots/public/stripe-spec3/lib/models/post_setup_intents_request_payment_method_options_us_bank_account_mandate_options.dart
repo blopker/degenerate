@@ -35,7 +35,7 @@ final PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountMandateOptionsColl
 Map<String, dynamic> toJson() { return {
   if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collection_method'}.contains(key)); } 
 PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountMandateOptions copyWith({PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod Function()? collectionMethod}) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountMandateOptions(
   collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
 ); } 

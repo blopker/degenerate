@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'expression': ?expression,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expression', 'value'}.contains(key)); } 
 RulesetsRewriteUriQuery copyWith({String Function()? expression, String Function()? value, }) { return RulesetsRewriteUriQuery(
   expression: expression != null ? expression() : this.expression,
   value: value != null ? value() : this.value,

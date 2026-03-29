@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'month': month,
   'year': year,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'space_slug', 'month', 'year'}.contains(key)); } 
 EventCalendarFilterSchema copyWith({String Function()? spaceSlug, int Function()? month, int Function()? year, }) { return EventCalendarFilterSchema(
   spaceSlug: spaceSlug != null ? spaceSlug() : this.spaceSlug,
   month: month != null ? month() : this.month,

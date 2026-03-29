@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
   if (bank != null) 'bank': bank?.toJson(),
   'verified_name': ?verifiedName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'verified_name'}.contains(key)); } 
 PaymentMethodDetailsEps copyWith({PaymentMethodDetailsEpsBank? Function()? bank, String? Function()? verifiedName, }) { return PaymentMethodDetailsEps(
   bank: bank != null ? bank() : this.bank,
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,

@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   if (smsFallbackUrl != null) 'SmsFallbackUrl': smsFallbackUrl?.toString(),
   if (smsFallbackMethod != null) 'SmsFallbackMethod': smsFallbackMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'ApiVersion', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod'}.contains(key)); } 
 UpdateShortCodeRequest copyWith({String Function()? friendlyName, String Function()? apiVersion, Uri Function()? smsUrl, UpdateShortCodeRequestSmsMethod Function()? smsMethod, Uri Function()? smsFallbackUrl, UpdateShortCodeRequestSmsFallbackMethod Function()? smsFallbackMethod, }) { return UpdateShortCodeRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

@@ -13,7 +13,7 @@ final String? paymentsPricing;
 Map<String, dynamic> toJson() { return {
   'payments_pricing': ?paymentsPricing,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payments_pricing'}.contains(key)); } 
 AccountGroupMembership copyWith({String? Function()? paymentsPricing}) { return AccountGroupMembership(
   paymentsPricing: paymentsPricing != null ? paymentsPricing() : this.paymentsPricing,
 ); } 

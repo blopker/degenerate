@@ -23,7 +23,7 @@ factory TlsCertificatesAndHostnamesCertificates.fromJson(Map<String, dynamic> js
   hostnames: (json['hostnames'] as List<dynamic>).map((e) => e as String).toList(),
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
   requestType: TlsCertificatesAndHostnamesRequestType.fromJson(json['request_type'] as String),
-  requestedValidity: TlsCertificatesAndHostnamesRequestedValidity.fromJson(json['requested_validity'] as num),
+  requestedValidity: TlsCertificatesAndHostnamesRequestedValidity.fromJson((json['requested_validity'] as num).toDouble()),
 ); }
 
 final TlsCertificatesAndHostnamesCertificatesComponentsSchemasCertificate? certificate;

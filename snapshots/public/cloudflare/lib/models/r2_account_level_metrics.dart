@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (infrequentAccess != null) 'infrequentAccess': infrequentAccess?.toJson(),
   if (standard != null) 'standard': standard?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'infrequentAccess', 'standard'}.contains(key)); } 
 R2AccountLevelMetrics copyWith({R2ClassBasedMetrics Function()? infrequentAccess, R2ClassBasedMetrics Function()? standard, }) { return R2AccountLevelMetrics(
   infrequentAccess: infrequentAccess != null ? infrequentAccess() : this.infrequentAccess,
   standard: standard != null ? standard() : this.standard,

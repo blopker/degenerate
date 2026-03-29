@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (active != null) 'active': active?.toJson(),
   if (pending != null) 'pending': pending?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'pending'}.contains(key)); } 
 TaxProductResourceTaxSettingsStatusDetails copyWith({TaxProductResourceTaxSettingsStatusDetailsResourceActive Function()? active, TaxProductResourceTaxSettingsStatusDetailsResourcePending Function()? pending, }) { return TaxProductResourceTaxSettingsStatusDetails(
   active: active != null ? active() : this.active,
   pending: pending != null ? pending() : this.pending,

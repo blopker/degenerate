@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'modified': ?modified,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'value'}.contains(key)); } 
 BundleSchemasStatus copyWith({String Function()? modified, String Function()? value, }) { return BundleSchemasStatus(
   modified: modified != null ? modified() : this.modified,
   value: value != null ? value() : this.value,

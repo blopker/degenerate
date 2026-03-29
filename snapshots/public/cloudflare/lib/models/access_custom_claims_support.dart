@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'claims': ?claims,
   'email_claim_name': ?emailClaimName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'claims', 'email_claim_name'}.contains(key)); } 
 AccessCustomClaimsSupport copyWith({List<String> Function()? claims, String Function()? emailClaimName, }) { return AccessCustomClaimsSupport(
   claims: claims != null ? claims() : this.claims,
   emailClaimName: emailClaimName != null ? emailClaimName() : this.emailClaimName,

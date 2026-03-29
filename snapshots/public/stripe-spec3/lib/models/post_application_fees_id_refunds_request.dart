@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'expand', 'metadata'}.contains(key)); } 
 PostApplicationFeesIdRefundsRequest copyWith({int Function()? amount, List<String> Function()? expand, Map<String, String> Function()? metadata, }) { return PostApplicationFeesIdRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,

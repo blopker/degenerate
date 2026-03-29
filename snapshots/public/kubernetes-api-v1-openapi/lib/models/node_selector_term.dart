@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (matchExpressions != null) 'matchExpressions': matchExpressions?.map((e) => e.toJson()).toList(),
   if (matchFields != null) 'matchFields': matchFields?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'matchExpressions', 'matchFields'}.contains(key)); } 
 NodeSelectorTerm copyWith({List<NodeSelectorRequirement> Function()? matchExpressions, List<NodeSelectorRequirement> Function()? matchFields, }) { return NodeSelectorTerm(
   matchExpressions: matchExpressions != null ? matchExpressions() : this.matchExpressions,
   matchFields: matchFields != null ? matchFields() : this.matchFields,

@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_amount', 'capture_method', 'description', 'metadata', 'on_behalf_of', 'receipt_email', 'setup_future_usage', 'shipping', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
 PostCheckoutSessionsRequestPaymentIntentData copyWith({int Function()? applicationFeeAmount, PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod Function()? captureMethod, String Function()? description, Map<String, String> Function()? metadata, String Function()? onBehalfOf, String Function()? receiptEmail, PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage Function()? setupFutureUsage, PostCheckoutSessionsRequestPaymentIntentDataShipping Function()? shipping, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostCheckoutSessionsRequestPaymentIntentDataTransferData Function()? transferData, String Function()? transferGroup, }) { return PostCheckoutSessionsRequestPaymentIntentData(
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,

@@ -40,7 +40,7 @@ final AddressingProvisioningState? state;
 Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state'}.contains(key)); } 
 AddressingProvisioning copyWith({AddressingProvisioningState Function()? state}) { return AddressingProvisioning(
   state: state != null ? state() : this.state,
 ); } 

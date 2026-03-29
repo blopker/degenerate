@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'top_domains': ?topDomains,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'country', 'description', 'domain_count', 'top_domains', 'type'}.contains(key)); } 
 IntelSchemasAsn copyWith({IntelAsn Function()? asn, IntelAsnCountry Function()? country, IntelAsnDescription Function()? description, int Function()? domainCount, List<String> Function()? topDomains, IntelAsnType Function()? type, }) { return IntelSchemasAsn(
   asn: asn != null ? asn() : this.asn,
   country: country != null ? country() : this.country,

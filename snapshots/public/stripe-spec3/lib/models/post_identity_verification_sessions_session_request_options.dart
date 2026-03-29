@@ -12,7 +12,7 @@ final PostIdentityVerificationSessionsSessionRequestOptionsDocument? document;
 Map<String, dynamic> toJson() { return {
   if (document != null) 'document': document?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document'}.contains(key)); } 
 PostIdentityVerificationSessionsSessionRequestOptions copyWith({PostIdentityVerificationSessionsSessionRequestOptionsDocument Function()? document}) { return PostIdentityVerificationSessionsSessionRequestOptions(
   document: document != null ? document() : this.document,
 ); } 

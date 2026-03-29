@@ -12,7 +12,7 @@ final List<String>? assignees;
 Map<String, dynamic> toJson() { return {
   'assignees': ?assignees,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'assignees'}.contains(key)); } 
 IssuesRemoveAssigneesRequest copyWith({List<String> Function()? assignees}) { return IssuesRemoveAssigneesRequest(
   assignees: assignees != null ? assignees() : this.assignees,
 ); } 

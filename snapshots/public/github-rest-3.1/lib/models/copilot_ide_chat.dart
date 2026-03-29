@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'total_engaged_users': ?totalEngagedUsers,
   if (editors != null) 'editors': editors?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_engaged_users', 'editors'}.contains(key)); } 
 CopilotIdeChat copyWith({int Function()? totalEngagedUsers, List<CopilotIdeChatEditors> Function()? editors, }) { return CopilotIdeChat(
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   editors: editors != null ? editors() : this.editors,

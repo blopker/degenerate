@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'payout': ?payout,
   'topup': ?topup,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'debit_reversal', 'inbound_transfer', 'issuing_authorization', 'issuing_transaction', 'payout', 'topup'}.contains(key)); } 
 TreasuryReceivedDebitsResourceLinkedFlows copyWith({String? Function()? debitReversal, String? Function()? inboundTransfer, String? Function()? issuingAuthorization, String? Function()? issuingTransaction, String? Function()? payout, String? Function()? topup, }) { return TreasuryReceivedDebitsResourceLinkedFlows(
   debitReversal: debitReversal != null ? debitReversal() : this.debitReversal,
   inboundTransfer: inboundTransfer != null ? inboundTransfer() : this.inboundTransfer,

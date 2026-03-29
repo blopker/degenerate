@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'source', 'version'}.contains(key)); } 
 ActionsCreateHostedRunnerForOrgRequestImage copyWith({String Function()? id, ActionsCreateHostedRunnerForOrgRequestImageSource Function()? source, String? Function()? version, }) { return ActionsCreateHostedRunnerForOrgRequestImage(
   id: id != null ? id() : this.id,
   source: source != null ? source() : this.source,

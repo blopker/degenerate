@@ -13,7 +13,7 @@ final String? preferred;
 Map<String, dynamic> toJson() { return {
   'preferred': ?preferred,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred'}.contains(key)); } 
 TokenCardNetworks copyWith({String? Function()? preferred}) { return TokenCardNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 

@@ -12,7 +12,7 @@ final List<String>? allowedPortPrivacySettings;
 Map<String, dynamic> toJson() { return {
   'allowed_port_privacy_settings': ?allowedPortPrivacySettings,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_port_privacy_settings'}.contains(key)); } 
 CodespaceRuntimeConstraints copyWith({List<String>? Function()? allowedPortPrivacySettings}) { return CodespaceRuntimeConstraints(
   allowedPortPrivacySettings: allowedPortPrivacySettings != null ? allowedPortPrivacySettings() : this.allowedPortPrivacySettings,
 ); } 

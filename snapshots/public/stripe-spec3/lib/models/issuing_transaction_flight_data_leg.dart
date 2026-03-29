@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'service_class': ?serviceClass,
   'stopover_allowed': ?stopoverAllowed,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arrival_airport_code', 'carrier', 'departure_airport_code', 'flight_number', 'service_class', 'stopover_allowed'}.contains(key)); } 
 IssuingTransactionFlightDataLeg copyWith({String? Function()? arrivalAirportCode, String? Function()? carrier, String? Function()? departureAirportCode, String? Function()? flightNumber, String? Function()? serviceClass, bool? Function()? stopoverAllowed, }) { return IssuingTransactionFlightDataLeg(
   arrivalAirportCode: arrivalAirportCode != null ? arrivalAirportCode() : this.arrivalAirportCode,
   carrier: carrier != null ? carrier() : this.carrier,

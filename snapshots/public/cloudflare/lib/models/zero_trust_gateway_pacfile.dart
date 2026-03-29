@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'contents', 'created_at', 'description', 'id', 'name', 'slug', 'updated_at', 'url'}.contains(key)); } 
 ZeroTrustGatewayPacfile copyWith({ZeroTrustGatewayContents Function()? contents, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayPacfilesComponentsSchemasDescription Function()? description, ZeroTrustGatewayComponentsSchemasUuid Function()? id, ZeroTrustGatewayPacfilesComponentsSchemasName Function()? name, ZeroTrustGatewaySlug Function()? slug, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, ZeroTrustGatewayUrl Function()? url, }) { return ZeroTrustGatewayPacfile(
   contents: contents != null ? contents() : this.contents,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

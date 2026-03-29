@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'running': ?running,
   'skipped': ?skipped,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completed', 'error', 'file_embed_errors', 'index_source_errors', 'last_activity', 'queued', 'running', 'skipped'}.contains(key)); } 
 AiSearchStatsResponseResult copyWith({int Function()? completed, int Function()? error, Map<String, dynamic> Function()? fileEmbedErrors, Map<String, dynamic> Function()? indexSourceErrors, DateTime Function()? lastActivity, int Function()? queued, int Function()? running, int Function()? skipped, }) { return AiSearchStatsResponseResult(
   completed: completed != null ? completed() : this.completed,
   error: error != null ? error() : this.error,

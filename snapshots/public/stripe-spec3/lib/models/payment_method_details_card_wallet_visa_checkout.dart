@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_address', 'email', 'name', 'shipping_address'}.contains(key)); } 
 PaymentMethodDetailsCardWalletVisaCheckout copyWith({PaymentMethodDetailsCardWalletVisaCheckoutBillingAddress? Function()? billingAddress, String? Function()? email, String? Function()? name, PaymentMethodDetailsCardWalletVisaCheckoutShippingAddress? Function()? shippingAddress, }) { return PaymentMethodDetailsCardWalletVisaCheckout(
   billingAddress: billingAddress != null ? billingAddress() : this.billingAddress,
   email: email != null ? email() : this.email,

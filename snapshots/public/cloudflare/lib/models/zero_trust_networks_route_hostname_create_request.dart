@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (hostname != null) 'hostname': hostname?.toJson(),
   if (tunnelId != null) 'tunnel_id': tunnelId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'hostname', 'tunnel_id'}.contains(key)); } 
 ZeroTrustNetworksRouteHostnameCreateRequest copyWith({TunnelHostnameComment Function()? comment, TunnelHostname Function()? hostname, TunnelComponentsSchemasTunnelId Function()? tunnelId, }) { return ZeroTrustNetworksRouteHostnameCreateRequest(
   comment: comment != null ? comment() : this.comment,
   hostname: hostname != null ? hostname() : this.hostname,

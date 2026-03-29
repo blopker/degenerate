@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'target_commitish': ?targetCommitish,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author', 'created_at', 'draft', 'html_url', 'id', 'name', 'prerelease', 'published_at', 'tag_name', 'target_commitish', 'url'}.contains(key)); } 
 WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor Function()? author, String Function()? createdAt, bool Function()? draft, String Function()? htmlUrl, int Function()? id, String? Function()? name, bool Function()? prerelease, String Function()? publishedAt, String Function()? tagName, String Function()? targetCommitish, String Function()? url, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
   author: author != null ? author() : this.author,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

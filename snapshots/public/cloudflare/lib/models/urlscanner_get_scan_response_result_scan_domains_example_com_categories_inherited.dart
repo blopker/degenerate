@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'from': ?from,
   if (risks != null) 'risks': risks?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'from', 'risks'}.contains(key)); } 
 UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited copyWith({List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInheritedContent> Function()? content, String Function()? from, List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInheritedRisks> Function()? risks, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited(
   content: content != null ? content() : this.content,
   from: from != null ? from() : this.from,

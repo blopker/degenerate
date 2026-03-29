@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   'expand': ?expand,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'expand'}.contains(key)); } 
 PostPaymentMethodDomainsPaymentMethodDomainRequest copyWith({bool Function()? enabled, List<String> Function()? expand, }) { return PostPaymentMethodDomainsPaymentMethodDomainRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   expand: expand != null ? expand() : this.expand,

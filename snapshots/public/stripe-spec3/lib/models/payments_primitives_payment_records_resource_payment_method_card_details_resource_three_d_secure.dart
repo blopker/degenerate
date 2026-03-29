@@ -158,7 +158,7 @@ Map<String, dynamic> toJson() { return {
   if (resultReason != null) 'result_reason': resultReason?.toJson(),
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authentication_flow', 'result', 'result_reason', 'version'}.contains(key)); } 
 PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureAuthenticationFlow? Function()? authenticationFlow, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult? Function()? result, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResultReason? Function()? resultReason, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion? Function()? version, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure(
   authenticationFlow: authenticationFlow != null ? authenticationFlow() : this.authenticationFlow,
   result: result != null ? result() : this.result,

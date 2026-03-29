@@ -45,7 +45,14 @@ final class Proto {
   }
 
   static bool canParse(Map<String, dynamic> json) {
-    return true;
+    return json.keys.any(
+      (key) => const {
+        'constructor',
+        'toString',
+        'valueOf',
+        'prototype',
+      }.contains(key),
+    );
   }
 
   Proto copyWith({

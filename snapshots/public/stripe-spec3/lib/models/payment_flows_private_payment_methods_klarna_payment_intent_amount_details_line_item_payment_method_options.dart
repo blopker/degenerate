@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
   'subscription_reference': ?subscriptionReference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'product_url', 'reference', 'subscription_reference'}.contains(key)); } 
 PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions copyWith({String? Function()? imageUrl, String? Function()? productUrl, String? Function()? reference, String? Function()? subscriptionReference, }) { return PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   productUrl: productUrl != null ? productUrl() : this.productUrl,

@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
   if (transferIn != null) 'transfer_in': transferIn?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available', 'can_register', 'created_at', 'current_registrar', 'expires_at', 'id', 'locked', 'registrant_contact', 'registry_statuses', 'supported_tld', 'transfer_in', 'updated_at'}.contains(key)); } 
 DomainProperties copyWith({Available Function()? available, CanRegister Function()? canRegister, CreatedAt Function()? createdAt, CurrentRegistrar Function()? currentRegistrar, ExpiresAt Function()? expiresAt, DomainIdentifier Function()? id, Locked Function()? locked, ContactProperties Function()? registrantContact, RegistryStatuses Function()? registryStatuses, SupportedTld Function()? supportedTld, TransferIn Function()? transferIn, UpdatedAt Function()? updatedAt, }) { return DomainProperties(
   available: available != null ? available() : this.available,
   canRegister: canRegister != null ? canRegister() : this.canRegister,

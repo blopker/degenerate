@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'currency': ?currency,
   'fiscal_year_end': ?fiscalYearEnd,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'fiscal_year_end'}.contains(key)); } 
 AccountAnnualRevenue copyWith({int? Function()? amount, String? Function()? currency, String? Function()? fiscalYearEnd, }) { return AccountAnnualRevenue(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

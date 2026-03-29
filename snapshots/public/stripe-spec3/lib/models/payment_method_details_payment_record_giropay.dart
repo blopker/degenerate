@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'bic': ?bic,
   'verified_name': ?verifiedName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'verified_name'}.contains(key)); } 
 PaymentMethodDetailsPaymentRecordGiropay copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, String? Function()? verifiedName, }) { return PaymentMethodDetailsPaymentRecordGiropay(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   bankName: bankName != null ? bankName() : this.bankName,

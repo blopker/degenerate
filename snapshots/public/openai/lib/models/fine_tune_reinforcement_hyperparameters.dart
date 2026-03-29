@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   if (evalInterval != null) 'eval_interval': evalInterval?.toJson(),
   if (evalSamples != null) 'eval_samples': evalSamples?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs', 'reasoning_effort', 'compute_multiplier', 'eval_interval', 'eval_samples'}.contains(key)); } 
 FineTuneReinforcementHyperparameters copyWith({FineTuneReinforcementHyperparametersBatchSize Function()? batchSize, FineTuneReinforcementHyperparametersLearningRateMultiplier Function()? learningRateMultiplier, FineTuneReinforcementHyperparametersNEpochs Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort Function()? reasoningEffort, FineTuneReinforcementHyperparametersComputeMultiplier Function()? computeMultiplier, FineTuneReinforcementHyperparametersEvalInterval Function()? evalInterval, FineTuneReinforcementHyperparametersEvalSamples Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,

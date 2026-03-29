@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (podAffinity != null) 'podAffinity': podAffinity?.toJson(),
   if (podAntiAffinity != null) 'podAntiAffinity': podAntiAffinity?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'nodeAffinity', 'podAffinity', 'podAntiAffinity'}.contains(key)); } 
 Affinity copyWith({NodeAffinity Function()? nodeAffinity, PodAffinity Function()? podAffinity, PodAntiAffinity Function()? podAntiAffinity, }) { return Affinity(
   nodeAffinity: nodeAffinity != null ? nodeAffinity() : this.nodeAffinity,
   podAffinity: podAffinity != null ? podAffinity() : this.podAffinity,

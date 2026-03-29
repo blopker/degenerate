@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'log_all': logAll,
   'log_blocks': logBlocks,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'log_all', 'log_blocks'}.contains(key)); } 
 ZeroTrustGatewayAccountLogOptions copyWith({bool Function()? logAll, bool Function()? logBlocks, }) { return ZeroTrustGatewayAccountLogOptions(
   logAll: logAll != null ? logAll() : this.logAll,
   logBlocks: logBlocks != null ? logBlocks() : this.logBlocks,

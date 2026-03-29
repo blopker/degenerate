@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (networks != null) 'networks': networks?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'verification_method'}.contains(key)); } 
 PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections Function()? financialConnections, PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions Function()? mandateOptions, PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks Function()? networks, PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountVerificationMethod Function()? verificationMethod, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,

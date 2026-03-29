@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'display_name': ?displayName,
   'service_user_number': ?serviceUserNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'service_user_number'}.contains(key)); } 
 AccountBacsDebitPaymentsSettings copyWith({String? Function()? displayName, String? Function()? serviceUserNumber, }) { return AccountBacsDebitPaymentsSettings(
   displayName: displayName != null ? displayName() : this.displayName,
   serviceUserNumber: serviceUserNumber != null ? serviceUserNumber() : this.serviceUserNumber,

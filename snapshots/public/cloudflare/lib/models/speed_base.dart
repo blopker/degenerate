@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
 SpeedBase copyWith({bool Function()? editable, String Function()? id, DateTime? Function()? modifiedOn, SpeedBaseValue Function()? value, }) { return SpeedBase(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,

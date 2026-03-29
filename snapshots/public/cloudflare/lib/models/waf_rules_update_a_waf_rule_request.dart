@@ -52,7 +52,7 @@ final WafRulesUpdateAWafRuleRequestMode? mode;
 Map<String, dynamic> toJson() { return {
   if (mode != null) 'mode': mode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode'}.contains(key)); } 
 WafRulesUpdateAWafRuleRequest copyWith({WafRulesUpdateAWafRuleRequestMode Function()? mode}) { return WafRulesUpdateAWafRuleRequest(
   mode: mode != null ? mode() : this.mode,
 ); } 

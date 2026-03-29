@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'jobId': ?jobId,
   'status': ?status,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'jobId', 'status'}.contains(key)); } 
 JobEvent copyWith({String Function()? jobId, String Function()? status, }) { return JobEvent(
   jobId: jobId != null ? jobId() : this.jobId,
   status: status != null ? status() : this.status,

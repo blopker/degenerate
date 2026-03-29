@@ -170,7 +170,7 @@ Map<String, dynamic> toJson() { return {
   if (scopes != null) 'scopes': scopes?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_token_lifetime', 'allow_pkce_without_client_secret', 'app_launcher_url', 'auth_type', 'client_id', 'client_secret', 'created_at', 'custom_claims', 'grant_types', 'group_filter_regex', 'hybrid_and_implicit_options', 'public_key', 'redirect_uris', 'refresh_token_options', 'scopes', 'updated_at'}.contains(key)); } 
 AccessOidcSaasApp copyWith({String Function()? accessTokenLifetime, bool Function()? allowPkceWithoutClientSecret, String Function()? appLauncherUrl, AccessOidcSaasAppAuthType Function()? authType, String Function()? clientId, String Function()? clientSecret, AccessTimestamp Function()? createdAt, List<AccessOidcSaasAppCustomClaims> Function()? customClaims, List<AccessOidcSaasAppGrantTypes> Function()? grantTypes, String Function()? groupFilterRegex, AccessOidcSaasAppHybridAndImplicitOptions Function()? hybridAndImplicitOptions, String Function()? publicKey, List<String> Function()? redirectUris, AccessOidcSaasAppRefreshTokenOptions Function()? refreshTokenOptions, List<AccessOidcSaasAppScopes> Function()? scopes, AccessTimestamp Function()? updatedAt, }) { return AccessOidcSaasApp(
   accessTokenLifetime: accessTokenLifetime != null ? accessTokenLifetime() : this.accessTokenLifetime,
   allowPkceWithoutClientSecret: allowPkceWithoutClientSecret != null ? allowPkceWithoutClientSecret() : this.allowPkceWithoutClientSecret,

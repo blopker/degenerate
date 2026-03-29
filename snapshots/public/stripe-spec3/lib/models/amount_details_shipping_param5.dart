@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (fromPostalCode != null) 'from_postal_code': fromPostalCode?.toJson(),
   if (toPostalCode != null) 'to_postal_code': toPostalCode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'from_postal_code', 'to_postal_code'}.contains(key)); } 
 AmountDetailsShippingParam5 copyWith({AmountDetailsShippingParam5Amount Function()? amount, AmountDetailsShippingParam5FromPostalCode Function()? fromPostalCode, AmountDetailsShippingParam5ToPostalCode Function()? toPostalCode, }) { return AmountDetailsShippingParam5(
   amount: amount != null ? amount() : this.amount,
   fromPostalCode: fromPostalCode != null ? fromPostalCode() : this.fromPostalCode,

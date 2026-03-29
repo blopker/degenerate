@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (code != null) 'code': code?.toJson(),
   'reason': ?reason,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
 GelatoIdNumberReportError copyWith({GelatoIdNumberReportErrorCode? Function()? code, String? Function()? reason, }) { return GelatoIdNumberReportError(
   code: code != null ? code() : this.code,
   reason: reason != null ? reason() : this.reason,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'disable': ?disable,
   'healthy': ?healthy,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disable', 'healthy'}.contains(key)); } 
 LoadBalancingFilterOptions copyWith({bool? Function()? disable, bool? Function()? healthy, }) { return LoadBalancingFilterOptions(
   disable: disable != null ? disable() : this.disable,
   healthy: healthy != null ? healthy() : this.healthy,

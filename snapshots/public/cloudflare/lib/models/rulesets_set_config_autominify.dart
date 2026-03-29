@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'html': html,
   'js': js,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'css', 'html', 'js'}.contains(key)); } 
 RulesetsSetConfigAutominify copyWith({bool Function()? css, bool Function()? html, bool Function()? js, }) { return RulesetsSetConfigAutominify(
   css: css != null ? css() : this.css,
   html: html != null ? html() : this.html,

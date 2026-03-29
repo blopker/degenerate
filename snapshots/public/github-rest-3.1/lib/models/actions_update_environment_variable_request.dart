@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value'}.contains(key)); } 
 ActionsUpdateEnvironmentVariableRequest copyWith({String Function()? name, String Function()? value, }) { return ActionsUpdateEnvironmentVariableRequest(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,

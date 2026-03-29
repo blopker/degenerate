@@ -168,7 +168,7 @@ Map<String, dynamic> toJson() { return {
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_token', 'bank_account', 'business_profile', 'business_type', 'capabilities', 'company', 'controller', 'country', 'default_currency', 'documents', 'email', 'expand', 'external_account', 'groups', 'individual', 'metadata', 'settings', 'tos_acceptance', 'type'}.contains(key)); } 
 PostAccountsRequest copyWith({String Function()? accountToken, PostAccountsRequestBankAccount Function()? bankAccount, PostAccountsRequestBusinessProfile Function()? businessProfile, PostAccountsRequestBusinessType Function()? businessType, PostAccountsRequestCapabilities Function()? capabilities, PostAccountsRequestCompany Function()? company, PostAccountsRequestController Function()? controller, String Function()? country, String Function()? defaultCurrency, PostAccountsRequestDocuments Function()? documents, String Function()? email, List<String> Function()? expand, String Function()? externalAccount, PostAccountsRequestGroups Function()? groups, PostAccountsRequestIndividual Function()? individual, PostAccountsRequestMetadata Function()? metadata, PostAccountsRequestSettings Function()? settings, PostAccountsRequestTosAcceptance Function()? tosAcceptance, PostAccountsRequestType Function()? type, }) { return PostAccountsRequest(
   accountToken: accountToken != null ? accountToken() : this.accountToken,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,

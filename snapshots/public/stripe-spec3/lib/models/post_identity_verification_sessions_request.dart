@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'verification_flow': ?verificationFlow,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_reference_id', 'expand', 'metadata', 'options', 'provided_details', 'related_customer', 'related_customer_account', 'related_person', 'return_url', 'type', 'verification_flow'}.contains(key)); } 
 PostIdentityVerificationSessionsRequest copyWith({String Function()? clientReferenceId, List<String> Function()? expand, Map<String, String> Function()? metadata, PostIdentityVerificationSessionsRequestOptions Function()? options, PostIdentityVerificationSessionsRequestProvidedDetails Function()? providedDetails, String Function()? relatedCustomer, String Function()? relatedCustomerAccount, PostIdentityVerificationSessionsRequestRelatedPerson Function()? relatedPerson, String Function()? returnUrl, PostIdentityVerificationSessionsRequestType Function()? type, String Function()? verificationFlow, }) { return PostIdentityVerificationSessionsRequest(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   expand: expand != null ? expand() : this.expand,

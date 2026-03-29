@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   if (runAt != null) 'run_at': runAt?.toJson(),
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arch', 'config_version', 'conns', 'features', 'id', 'run_at', 'version'}.contains(key)); } 
 TunnelTunnelClient copyWith({TunnelArch Function()? arch, TunnelConfigVersion Function()? configVersion, List<TunnelSchemasConnection> Function()? conns, List<String> Function()? features, TunnelConnectionId Function()? id, TunnelRunAt Function()? runAt, TunnelVersion Function()? version, }) { return TunnelTunnelClient(
   arch: arch != null ? arch() : this.arch,
   configVersion: configVersion != null ? configVersion() : this.configVersion,

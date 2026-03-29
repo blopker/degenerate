@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'last_rate_limited_timestamp': ?lastRateLimitedTimestamp,
   'last_request_timestamp': ?lastRequestTimestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'http_method', 'api_route', 'total_request_count', 'rate_limited_request_count', 'last_rate_limited_timestamp', 'last_request_timestamp'}.contains(key)); } 
 InsightsRouteStats2 copyWith({String Function()? httpMethod, String Function()? apiRoute, int Function()? totalRequestCount, int Function()? rateLimitedRequestCount, String? Function()? lastRateLimitedTimestamp, String Function()? lastRequestTimestamp, }) { return InsightsRouteStats2(
   httpMethod: httpMethod != null ? httpMethod() : this.httpMethod,
   apiRoute: apiRoute != null ? apiRoute() : this.apiRoute,

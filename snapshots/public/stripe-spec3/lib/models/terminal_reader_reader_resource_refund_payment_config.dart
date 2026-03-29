@@ -13,7 +13,7 @@ final bool? enableCustomerCancellation;
 Map<String, dynamic> toJson() { return {
   'enable_customer_cancellation': ?enableCustomerCancellation,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key)); } 
 TerminalReaderReaderResourceRefundPaymentConfig copyWith({bool Function()? enableCustomerCancellation}) { return TerminalReaderReaderResourceRefundPaymentConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
 ); } 

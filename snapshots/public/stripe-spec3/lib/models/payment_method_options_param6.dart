@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key)); } 
 PaymentMethodOptionsParam6 copyWith({PaymentMethodOptionsParam6PreferredLanguage Function()? preferredLanguage, PaymentMethodOptionsParam6SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam6(
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

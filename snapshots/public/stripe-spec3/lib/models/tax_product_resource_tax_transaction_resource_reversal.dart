@@ -13,7 +13,7 @@ final String? originalTransaction;
 Map<String, dynamic> toJson() { return {
   'original_transaction': ?originalTransaction,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'original_transaction'}.contains(key)); } 
 TaxProductResourceTaxTransactionResourceReversal copyWith({String? Function()? originalTransaction}) { return TaxProductResourceTaxTransactionResourceReversal(
   originalTransaction: originalTransaction != null ? originalTransaction() : this.originalTransaction,
 ); } 

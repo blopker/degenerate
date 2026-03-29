@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'key': ?key,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key', 'value'}.contains(key)); } 
 IamResourceGroupMeta copyWith({String Function()? key, String Function()? value, }) { return IamResourceGroupMeta(
   key: key != null ? key() : this.key,
   value: value != null ? value() : this.value,

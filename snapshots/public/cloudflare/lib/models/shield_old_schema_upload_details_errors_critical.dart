@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (critical != null) 'critical': critical?.map((e) => e.toJson()).toList(),
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'critical', 'errors'}.contains(key)); } 
 ShieldOldSchemaUploadDetailsErrorsCritical copyWith({List<ShieldOldSchemaUploadLogEvent> Function()? critical, List<ShieldOldSchemaUploadLogEvent> Function()? errors, }) { return ShieldOldSchemaUploadDetailsErrorsCritical(
   critical: critical != null ? critical() : this.critical,
   errors: errors != null ? errors() : this.errors,

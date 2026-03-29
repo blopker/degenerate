@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'plan'}.contains(key)); } 
 InvoicePaymentMethodOptionsParam17Installments copyWith({bool Function()? enabled, InvoicePaymentMethodOptionsParam17InstallmentsPlan Function()? plan, }) { return InvoicePaymentMethodOptionsParam17Installments(
   enabled: enabled != null ? enabled() : this.enabled,
   plan: plan != null ? plan() : this.plan,

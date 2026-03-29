@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'count': ?count,
   if (ids != null) 'ids': ids?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'ids'}.contains(key)); } 
 VectorizeIndexUpsertResponse copyWith({int Function()? count, List<VectorizeVectorIdentifier> Function()? ids, }) { return VectorizeIndexUpsertResponse(
   count: count != null ? count() : this.count,
   ids: ids != null ? ids() : this.ids,

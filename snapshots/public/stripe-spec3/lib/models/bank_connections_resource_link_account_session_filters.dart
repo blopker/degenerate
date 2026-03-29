@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
   'countries': ?countries,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories', 'countries'}.contains(key)); } 
 BankConnectionsResourceLinkAccountSessionFilters copyWith({List<BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories>? Function()? accountSubcategories, List<String>? Function()? countries, }) { return BankConnectionsResourceLinkAccountSessionFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
   countries: countries != null ? countries() : this.countries,

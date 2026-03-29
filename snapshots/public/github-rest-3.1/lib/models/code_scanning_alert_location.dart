@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'start_column': ?startColumn,
   'end_column': ?endColumn,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'path', 'start_line', 'end_line', 'start_column', 'end_column'}.contains(key)); } 
 CodeScanningAlertLocation copyWith({String Function()? path, int Function()? startLine, int Function()? endLine, int Function()? startColumn, int Function()? endColumn, }) { return CodeScanningAlertLocation(
   path: path != null ? path() : this.path,
   startLine: startLine != null ? startLine() : this.startLine,

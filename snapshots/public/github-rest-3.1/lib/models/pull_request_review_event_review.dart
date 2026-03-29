@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (links != null) '_links': links?.toJson(),
   'updated_at': ?updatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'user', 'body', 'commit_id', 'submitted_at', 'state', 'html_url', 'pull_request_url', '_links', 'updated_at'}.contains(key)); } 
 PullRequestReviewEventReview copyWith({int Function()? id, String Function()? nodeId, SimpleUser? Function()? user, String Function()? body, String Function()? commitId, String? Function()? submittedAt, String Function()? state, Uri Function()? htmlUrl, Uri Function()? pullRequestUrl, PullRequestReviewEventReviewLinks Function()? links, String Function()? updatedAt, }) { return PullRequestReviewEventReview(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'month': ?month,
   'year': ?year,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'day', 'month', 'year'}.contains(key)); } 
 IssuingCardholderIndividualDob copyWith({int? Function()? day, int? Function()? month, int? Function()? year, }) { return IssuingCardholderIndividualDob(
   day: day != null ? day() : this.day,
   month: month != null ? month() : this.month,

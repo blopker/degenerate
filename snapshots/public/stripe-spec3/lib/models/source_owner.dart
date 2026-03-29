@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'verified_name': ?verifiedName,
   'verified_phone': ?verifiedPhone,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone', 'verified_address', 'verified_email', 'verified_name', 'verified_phone'}.contains(key)); } 
 SourceOwner copyWith({SourceOwnerAddress? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, SourceOwnerVerifiedAddress? Function()? verifiedAddress, String? Function()? verifiedEmail, String? Function()? verifiedName, String? Function()? verifiedPhone, }) { return SourceOwner(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,

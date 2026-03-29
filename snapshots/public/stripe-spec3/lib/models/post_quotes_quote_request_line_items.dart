@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discounts', 'id', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
 PostQuotesQuoteRequestLineItems copyWith({PostQuotesQuoteRequestLineItemsDiscounts Function()? discounts, String Function()? id, String Function()? price, PostQuotesQuoteRequestLineItemsPriceData Function()? priceData, int Function()? quantity, PostQuotesQuoteRequestLineItemsTaxRates Function()? taxRates, }) { return PostQuotesQuoteRequestLineItems(
   discounts: discounts != null ? discounts() : this.discounts,
   id: id != null ? id() : this.id,

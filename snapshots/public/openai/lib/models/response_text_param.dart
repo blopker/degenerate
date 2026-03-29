@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
   if (verbosity != null) 'verbosity': verbosity?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'verbosity'}.contains(key)); } 
 ResponseTextParam copyWith({TextResponseFormatConfiguration Function()? format, Verbosity? Function()? verbosity, }) { return ResponseTextParam(
   format: format != null ? format() : this.format,
   verbosity: verbosity != null ? verbosity() : this.verbosity,

@@ -44,7 +44,7 @@ final PaymentMethodDetailsKonbiniStoreChain? chain;
 Map<String, dynamic> toJson() { return {
   if (chain != null) 'chain': chain?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chain'}.contains(key)); } 
 PaymentMethodDetailsKonbiniStore copyWith({PaymentMethodDetailsKonbiniStoreChain? Function()? chain}) { return PaymentMethodDetailsKonbiniStore(
   chain: chain != null ? chain() : this.chain,
 ); } 

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   'preserve_cancel_date': ?preserveCancelDate,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'preserve_cancel_date'}.contains(key)); } 
 PostSubscriptionSchedulesScheduleReleaseRequest copyWith({List<String> Function()? expand, bool Function()? preserveCancelDate, }) { return PostSubscriptionSchedulesScheduleReleaseRequest(
   expand: expand != null ? expand() : this.expand,
   preserveCancelDate: preserveCancelDate != null ? preserveCancelDate() : this.preserveCancelDate,

@@ -13,7 +13,7 @@ final double? sqlDurationMs;
 Map<String, dynamic> toJson() { return {
   'sql_duration_ms': ?sqlDurationMs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sql_duration_ms'}.contains(key)); } 
 D1QueryMetaTimings copyWith({double Function()? sqlDurationMs}) { return D1QueryMetaTimings(
   sqlDurationMs: sqlDurationMs != null ? sqlDurationMs() : this.sqlDurationMs,
 ); } 

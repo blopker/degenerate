@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'shortname': ?shortname,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'killChain', 'mitreAttack', 'name', 'shortname'}.contains(key)); } 
 PatchCategoryUpdateRequest copyWith({double Function()? killChain, List<String> Function()? mitreAttack, String Function()? name, String Function()? shortname, }) { return PatchCategoryUpdateRequest(
   killChain: killChain != null ? killChain() : this.killChain,
   mitreAttack: mitreAttack != null ? mitreAttack() : this.mitreAttack,

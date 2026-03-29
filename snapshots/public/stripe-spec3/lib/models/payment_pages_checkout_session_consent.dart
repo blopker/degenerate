@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (promotions != null) 'promotions': promotions?.toJson(),
   if (termsOfService != null) 'terms_of_service': termsOfService?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'promotions', 'terms_of_service'}.contains(key)); } 
 PaymentPagesCheckoutSessionConsent copyWith({PaymentPagesCheckoutSessionConsentPromotions? Function()? promotions, PaymentPagesCheckoutSessionConsentTermsOfService? Function()? termsOfService, }) { return PaymentPagesCheckoutSessionConsent(
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,

@@ -11,7 +11,7 @@ final String? country;
 Map<String, dynamic> toJson() { return {
   'country': ?country,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country'}.contains(key)); } 
 AccessGeo copyWith({String Function()? country}) { return AccessGeo(
   country: country != null ? country() : this.country,
 ); } 

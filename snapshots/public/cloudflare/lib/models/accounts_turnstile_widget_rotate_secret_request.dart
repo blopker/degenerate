@@ -25,7 +25,7 @@ final TurnstileInvalidateImmediately? invalidateImmediately;
 Map<String, dynamic> toJson() { return {
   if (invalidateImmediately != null) 'invalidate_immediately': invalidateImmediately?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invalidate_immediately'}.contains(key)); } 
 AccountsTurnstileWidgetRotateSecretRequest copyWith({TurnstileInvalidateImmediately Function()? invalidateImmediately}) { return AccountsTurnstileWidgetRotateSecretRequest(
   invalidateImmediately: invalidateImmediately != null ? invalidateImmediately() : this.invalidateImmediately,
 ); } 

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   'reverse_amount': ?reverseAmount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'reverse_amount'}.contains(key)); } 
 PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest copyWith({List<String> Function()? expand, int Function()? reverseAmount, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(
   expand: expand != null ? expand() : this.expand,
   reverseAmount: reverseAmount != null ? reverseAmount() : this.reverseAmount,

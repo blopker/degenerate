@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   if (returnStatus != null) 'return_status': returnStatus?.toJson(),
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_policy_provided', 'cancellation_reason', 'expected_at', 'explanation', 'product_description', 'product_type', 'return_status', 'returned_at'}.contains(key)); } 
 Canceled2 copyWith({Canceled2AdditionalDocumentation Function()? additionalDocumentation, Canceled2CanceledAt Function()? canceledAt, Canceled2CancellationPolicyProvided Function()? cancellationPolicyProvided, Canceled2CancellationReason Function()? cancellationReason, Canceled2ExpectedAt Function()? expectedAt, Canceled2Explanation Function()? explanation, Canceled2ProductDescription Function()? productDescription, Canceled2ProductType Function()? productType, Canceled2ReturnStatus Function()? returnStatus, Canceled2ReturnedAt Function()? returnedAt, }) { return Canceled2(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,

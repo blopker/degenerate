@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'check_in_at': ?checkInAt,
   'nights': ?nights,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_in_at', 'nights'}.contains(key)); } 
 PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsLodging copyWith({int Function()? checkInAt, int Function()? nights, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsLodging(
   checkInAt: checkInAt != null ? checkInAt() : this.checkInAt,
   nights: nights != null ? nights() : this.nights,

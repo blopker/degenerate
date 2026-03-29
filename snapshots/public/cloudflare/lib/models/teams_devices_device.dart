@@ -111,7 +111,7 @@ Map<String, dynamic> toJson() { return {
   if (user != null) 'user': user?.toJson(),
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'created', 'deleted', 'device_type', 'gateway_device_id', 'id', 'ip', 'key', 'key_type', 'last_seen', 'mac_address', 'model', 'name', 'os_version', 'serial_number', 'tunnel_type', 'updated', 'user', 'version'}.contains(key)); } 
 TeamsDevicesDevice copyWith({TeamsDevicesAccount Function()? account, TeamsDevicesCreated Function()? created, TeamsDevicesDeleted Function()? deleted, TeamsDevicesDeviceType Function()? deviceType, TeamsDevicesGatewayDeviceId Function()? gatewayDeviceId, TeamsDevicesRegistrationId Function()? id, TeamsDevicesIp Function()? ip, TeamsDevicesKey Function()? key, TeamsDevicesKeyType Function()? keyType, TeamsDevicesLastSeen Function()? lastSeen, TeamsDevicesMacAddress Function()? macAddress, TeamsDevicesModel Function()? model, TeamsDevicesSchemasName Function()? name, TeamsDevicesOsVersion Function()? osVersion, TeamsDevicesSerialNumber Function()? serialNumber, TeamsDevicesTunnelType Function()? tunnelType, TeamsDevicesUpdated Function()? updated, TeamsDevicesUser Function()? user, TeamsDevicesVersion Function()? version, }) { return TeamsDevicesDevice(
   account: account != null ? account() : this.account,
   created: created != null ? created() : this.created,

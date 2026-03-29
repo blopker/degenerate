@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'timestamp': ?timestamp,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timestamp', 'type'}.contains(key)); } 
 RealtimekitParticipantPeerStatsPeerStatsEvents copyWith({String Function()? timestamp, String Function()? type, }) { return RealtimekitParticipantPeerStatsPeerStatsEvents(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type != null ? type() : this.type,

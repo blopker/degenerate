@@ -12,7 +12,7 @@ final String? encryptedNumber;
 Map<String, dynamic> toJson() { return {
   'encrypted_number': ?encryptedNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'encrypted_number'}.contains(key)); } 
 PostIssuingCardsCardRequestPin copyWith({String Function()? encryptedNumber}) { return PostIssuingCardsCardRequestPin(
   encryptedNumber: encryptedNumber != null ? encryptedNumber() : this.encryptedNumber,
 ); } 

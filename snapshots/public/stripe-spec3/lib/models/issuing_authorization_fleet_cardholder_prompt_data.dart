@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'user_id': ?userId,
   'vehicle_number': ?vehicleNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alphanumeric_id', 'driver_id', 'odometer', 'unspecified_id', 'user_id', 'vehicle_number'}.contains(key)); } 
 IssuingAuthorizationFleetCardholderPromptData copyWith({String? Function()? alphanumericId, String? Function()? driverId, int? Function()? odometer, String? Function()? unspecifiedId, String? Function()? userId, String? Function()? vehicleNumber, }) { return IssuingAuthorizationFleetCardholderPromptData(
   alphanumericId: alphanumericId != null ? alphanumericId() : this.alphanumericId,
   driverId: driverId != null ? driverId() : this.driverId,

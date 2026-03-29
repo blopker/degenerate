@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (posts != null) 'posts': posts?.map((e) => e.toJson()).toList(),
   if (puts != null) 'puts': puts?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deletes', 'patches', 'posts', 'puts'}.contains(key)); } 
 DnsRecordsDnsRequestBatchObject copyWith({List<DnsRecordsDnsRecordBatchDelete> Function()? deletes, List<DnsRecordsDnsRecordPatch> Function()? patches, List<DnsRecordsDnsRecordPost> Function()? posts, List<DnsRecordsDnsRecordPost> Function()? puts, }) { return DnsRecordsDnsRequestBatchObject(
   deletes: deletes != null ? deletes() : this.deletes,
   patches: patches != null ? patches() : this.patches,

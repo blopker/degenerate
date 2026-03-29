@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'percentage': ?percentage,
   'percentile': ?percentile,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'percentage', 'percentile'}.contains(key)); } 
 SecurityAdvisoryEpss copyWith({double Function()? percentage, double Function()? percentile, }) { return SecurityAdvisoryEpss(
   percentage: percentage != null ? percentage() : this.percentage,
   percentile: percentile != null ? percentile() : this.percentile,

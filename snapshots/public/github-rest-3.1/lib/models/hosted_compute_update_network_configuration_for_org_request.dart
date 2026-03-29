@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (computeService != null) 'compute_service': computeService?.toJson(),
   'network_settings_ids': ?networkSettingsIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'compute_service', 'network_settings_ids'}.contains(key)); } 
 HostedComputeUpdateNetworkConfigurationForOrgRequest copyWith({String Function()? name, HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService Function()? computeService, List<String> Function()? networkSettingsIds, }) { return HostedComputeUpdateNetworkConfigurationForOrgRequest(
   name: name != null ? name() : this.name,
   computeService: computeService != null ? computeService() : this.computeService,

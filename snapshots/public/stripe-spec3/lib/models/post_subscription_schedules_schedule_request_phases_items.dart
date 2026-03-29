@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
 PostSubscriptionSchedulesScheduleRequestPhasesItems copyWith({PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds Function()? billingThresholds, PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscounts Function()? discounts, Map<String, String> Function()? metadata, String Function()? price, PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceData Function()? priceData, int Function()? quantity, PostSubscriptionSchedulesScheduleRequestPhasesItemsTaxRates Function()? taxRates, }) { return PostSubscriptionSchedulesScheduleRequestPhasesItems(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,

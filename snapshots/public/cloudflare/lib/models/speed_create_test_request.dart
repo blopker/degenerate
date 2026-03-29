@@ -12,7 +12,7 @@ final ObservatoryRegion? region;
 Map<String, dynamic> toJson() { return {
   if (region != null) 'region': region?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'region'}.contains(key)); } 
 SpeedCreateTestRequest copyWith({ObservatoryRegion Function()? region}) { return SpeedCreateTestRequest(
   region: region != null ? region() : this.region,
 ); } 

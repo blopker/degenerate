@@ -124,7 +124,7 @@ Map<String, dynamic> toJson() { return {
   if (user != null) 'user': user?.toJson(),
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleted', 'device_type', 'id', 'ip', 'key', 'last_seen', 'mac_address', 'manufacturer', 'model', 'name', 'os_distro_name', 'os_distro_revision', 'os_version', 'os_version_extra', 'revoked_at', 'serial_number', 'updated', 'user', 'version'}.contains(key)); } 
 TeamsDevicesDevices copyWith({TeamsDevicesCreated Function()? created, TeamsDevicesDeleted Function()? deleted, TeamsDevicesPlatform Function()? deviceType, TeamsDevicesRegistrationId Function()? id, TeamsDevicesIp Function()? ip, TeamsDevicesKey Function()? key, TeamsDevicesLastSeen Function()? lastSeen, TeamsDevicesMacAddress Function()? macAddress, TeamsDevicesManufacturer Function()? manufacturer, TeamsDevicesModel Function()? model, TeamsDevicesSchemasName Function()? name, TeamsDevicesOsDistroName Function()? osDistroName, TeamsDevicesOsDistroRevision Function()? osDistroRevision, TeamsDevicesOsVersion Function()? osVersion, TeamsDevicesOsVersionExtra Function()? osVersionExtra, TeamsDevicesRevokedAt Function()? revokedAt, TeamsDevicesSerialNumber Function()? serialNumber, TeamsDevicesUpdated Function()? updated, TeamsDevicesUser Function()? user, TeamsDevicesVersion Function()? version, }) { return TeamsDevicesDevices(
   created: created != null ? created() : this.created,
   deleted: deleted != null ? deleted() : this.deleted,

@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'prefix_padding_ms': ?prefixPaddingMs,
   'silence_duration_ms': ?silenceDurationMs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'threshold', 'prefix_padding_ms', 'silence_duration_ms'}.contains(key)); } 
 RealtimeTranscriptionSessionCreateRequestTurnDetection copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetectionType Function()? type, double Function()? threshold, int Function()? prefixPaddingMs, int Function()? silenceDurationMs, }) { return RealtimeTranscriptionSessionCreateRequestTurnDetection(
   type: type != null ? type() : this.type,
   threshold: threshold != null ? threshold() : this.threshold,

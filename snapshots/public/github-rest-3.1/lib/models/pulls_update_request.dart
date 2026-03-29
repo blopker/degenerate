@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'base': ?base,
   'maintainer_can_modify': ?maintainerCanModify,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'state', 'base', 'maintainer_can_modify'}.contains(key)); } 
 PullsUpdateRequest copyWith({String Function()? title, String Function()? body, PullsUpdateRequestState Function()? state, String Function()? base, bool Function()? maintainerCanModify, }) { return PullsUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,

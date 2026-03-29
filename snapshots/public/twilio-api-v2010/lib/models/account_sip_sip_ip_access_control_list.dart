@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'date_created', 'date_updated', 'subresource_uris', 'uri'}.contains(key)); } 
 AccountSipSipIpAccessControlList copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, }) { return AccountSipSipIpAccessControlList(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

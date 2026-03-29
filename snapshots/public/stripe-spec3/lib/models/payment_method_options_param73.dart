@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (client != null) 'client': client?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key)); } 
 PaymentMethodOptionsParam73 copyWith({String Function()? appId, PaymentMethodOptionsParam73Client Function()? client, PaymentMethodOptionsParam73SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam73(
   appId: appId != null ? appId() : this.appId,
   client: client != null ? client() : this.client,

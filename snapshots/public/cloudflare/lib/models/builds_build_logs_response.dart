@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (lines != null) 'lines': lines?.map((e) => e).toList(),
   'truncated': ?truncated,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cursor', 'lines', 'truncated'}.contains(key)); } 
 BuildsBuildLogsResponse copyWith({BuildsCursor Function()? cursor, List<List<dynamic>> Function()? lines, bool Function()? truncated, }) { return BuildsBuildLogsResponse(
   cursor: cursor != null ? cursor() : this.cursor,
   lines: lines != null ? lines() : this.lines,

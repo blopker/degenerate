@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'date_updated': ?dateUpdated,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'ip_address', 'cidr_prefix_length', 'ip_access_control_list_sid', 'date_created', 'date_updated', 'uri'}.contains(key)); } 
 AccountSipSipIpAccessControlListSipIpAddress copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? ipAddress, int Function()? cidrPrefixLength, String? Function()? ipAccessControlListSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountSipSipIpAccessControlListSipIpAddress(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

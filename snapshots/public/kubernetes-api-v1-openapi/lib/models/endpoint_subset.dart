@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (notReadyAddresses != null) 'notReadyAddresses': notReadyAddresses?.map((e) => e.toJson()).toList(),
   if (ports != null) 'ports': ports?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'addresses', 'notReadyAddresses', 'ports'}.contains(key)); } 
 EndpointSubset copyWith({List<EndpointAddress> Function()? addresses, List<EndpointAddress> Function()? notReadyAddresses, List<EndpointPort> Function()? ports, }) { return EndpointSubset(
   addresses: addresses != null ? addresses() : this.addresses,
   notReadyAddresses: notReadyAddresses != null ? notReadyAddresses() : this.notReadyAddresses,

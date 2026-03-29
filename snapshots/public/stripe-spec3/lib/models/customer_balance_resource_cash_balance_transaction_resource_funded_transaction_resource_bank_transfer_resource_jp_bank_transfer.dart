@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'sender_branch': ?senderBranch,
   'sender_name': ?senderName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sender_bank', 'sender_branch', 'sender_name'}.contains(key)); } 
 CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer copyWith({String? Function()? senderBank, String? Function()? senderBranch, String? Function()? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer(
   senderBank: senderBank != null ? senderBank() : this.senderBank,
   senderBranch: senderBranch != null ? senderBranch() : this.senderBranch,

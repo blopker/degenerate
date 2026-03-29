@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (fileUpload != null) 'file_upload': fileUpload?.toJson(),
   if (history != null) 'history': history?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_thread_titling', 'file_upload', 'history'}.contains(key)); } 
 ChatkitConfigurationParam copyWith({AutomaticThreadTitlingParam Function()? automaticThreadTitling, FileUploadParam Function()? fileUpload, HistoryParam Function()? history, }) { return ChatkitConfigurationParam(
   automaticThreadTitling: automaticThreadTitling != null ? automaticThreadTitling() : this.automaticThreadTitling,
   fileUpload: fileUpload != null ? fileUpload() : this.fileUpload,

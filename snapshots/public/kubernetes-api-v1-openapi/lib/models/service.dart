@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (spec != null) 'spec': spec?.toJson(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key)); } 
 Service copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, ServiceSpec Function()? spec, ServiceStatus Function()? status, }) { return Service(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,

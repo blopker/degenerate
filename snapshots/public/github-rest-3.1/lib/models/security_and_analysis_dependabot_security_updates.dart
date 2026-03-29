@@ -38,7 +38,7 @@ final SecurityAndAnalysisDependabotSecurityUpdatesStatus? status;
 Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
 SecurityAndAnalysisDependabotSecurityUpdates copyWith({SecurityAndAnalysisDependabotSecurityUpdatesStatus Function()? status}) { return SecurityAndAnalysisDependabotSecurityUpdates(
   status: status != null ? status() : this.status,
 ); } 

@@ -13,7 +13,7 @@ final bool failoverAcrossPools;
 Map<String, dynamic> toJson() { return {
   'failover_across_pools': failoverAcrossPools,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'failover_across_pools'}.contains(key)); } 
 LoadBalancingAdaptiveRouting copyWith({bool Function()? failoverAcrossPools}) { return LoadBalancingAdaptiveRouting(
   failoverAcrossPools: failoverAcrossPools != null ? failoverAcrossPools() : this.failoverAcrossPools,
 ); } 

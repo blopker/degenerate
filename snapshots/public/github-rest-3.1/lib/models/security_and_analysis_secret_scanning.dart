@@ -35,7 +35,7 @@ final SecurityAndAnalysisSecretScanningStatus? status;
 Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
 SecurityAndAnalysisSecretScanning copyWith({SecurityAndAnalysisSecretScanningStatus Function()? status}) { return SecurityAndAnalysisSecretScanning(
   status: status != null ? status() : this.status,
 ); } 

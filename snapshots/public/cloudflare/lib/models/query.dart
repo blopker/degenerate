@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'string_matches': ?stringMatches,
   'tag': ?tag,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_time', 'min_time', 'scan', 'string_matches', 'tag'}.contains(key)); } 
 Query copyWith({DateTime? Function()? maxTime, DateTime? Function()? minTime, bool Function()? scan, dynamic Function()? stringMatches, String Function()? tag, }) { return Query(
   maxTime: maxTime != null ? maxTime() : this.maxTime,
   minTime: minTime != null ? minTime() : this.minTime,

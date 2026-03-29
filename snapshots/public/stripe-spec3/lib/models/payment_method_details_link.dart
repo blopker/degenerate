@@ -14,7 +14,7 @@ final String? country;
 Map<String, dynamic> toJson() { return {
   'country': ?country,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country'}.contains(key)); } 
 PaymentMethodDetailsLink copyWith({String? Function()? country}) { return PaymentMethodDetailsLink(
   country: country != null ? country() : this.country,
 ); } 

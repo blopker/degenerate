@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'connect_app_company_name', 'connect_app_description', 'connect_app_friendly_name', 'connect_app_homepage_url', 'connect_app_sid', 'permissions', 'uri'}.contains(key)); } 
 AccountAuthorizedConnectApp copyWith({String? Function()? accountSid, String? Function()? connectAppCompanyName, String? Function()? connectAppDescription, String? Function()? connectAppFriendlyName, Uri? Function()? connectAppHomepageUrl, String? Function()? connectAppSid, List<AuthorizedConnectAppEnumPermission>? Function()? permissions, String? Function()? uri, }) { return AccountAuthorizedConnectApp(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   connectAppCompanyName: connectAppCompanyName != null ? connectAppCompanyName() : this.connectAppCompanyName,

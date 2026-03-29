@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'started_at': ?startedAt,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'started_at', 'type'}.contains(key)); } 
 IssuingCardFraudWarning copyWith({int? Function()? startedAt, IssuingCardFraudWarningType? Function()? type, }) { return IssuingCardFraudWarning(
   startedAt: startedAt != null ? startedAt() : this.startedAt,
   type: type != null ? type() : this.type,

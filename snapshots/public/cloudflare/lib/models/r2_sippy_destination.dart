@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'bucket': ?bucket,
   if (provider != null) 'provider': provider?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'account', 'bucket', 'provider'}.contains(key)); } 
 R2SippyDestination copyWith({String Function()? accessKeyId, String Function()? account, String Function()? bucket, R2SippyDestinationProvider Function()? provider, }) { return R2SippyDestination(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   account: account != null ? account() : this.account,

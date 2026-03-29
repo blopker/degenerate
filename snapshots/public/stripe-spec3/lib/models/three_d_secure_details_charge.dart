@@ -251,7 +251,7 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authentication_flow', 'electronic_commerce_indicator', 'exemption_indicator', 'exemption_indicator_applied', 'result', 'result_reason', 'transaction_id', 'version'}.contains(key)); } 
 ThreeDSecureDetailsCharge copyWith({ThreeDSecureDetailsChargeAuthenticationFlow? Function()? authenticationFlow, ThreeDSecureDetailsChargeElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureDetailsChargeExemptionIndicator? Function()? exemptionIndicator, bool Function()? exemptionIndicatorApplied, ThreeDSecureDetailsChargeResult? Function()? result, ThreeDSecureDetailsChargeResultReason? Function()? resultReason, String? Function()? transactionId, ThreeDSecureDetailsChargeVersion? Function()? version, }) { return ThreeDSecureDetailsCharge(
   authenticationFlow: authenticationFlow != null ? authenticationFlow() : this.authenticationFlow,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,

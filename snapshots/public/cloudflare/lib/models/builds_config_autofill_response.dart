@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (packageManager != null) 'package_manager': packageManager?.toJson(),
   'scripts': ?scripts,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config_file', 'default_worker_name', 'env_worker_names', 'package_manager', 'scripts'}.contains(key)); } 
 BuildsConfigAutofillResponse copyWith({String? Function()? configFile, String? Function()? defaultWorkerName, Map<String, String>? Function()? envWorkerNames, BuildsPackageManager? Function()? packageManager, Map<String, String>? Function()? scripts, }) { return BuildsConfigAutofillResponse(
   configFile: configFile != null ? configFile() : this.configFile,
   defaultWorkerName: defaultWorkerName != null ? defaultWorkerName() : this.defaultWorkerName,

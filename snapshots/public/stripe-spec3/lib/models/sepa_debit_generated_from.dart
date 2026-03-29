@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (charge != null) 'charge': charge?.toJson(),
   if (setupAttempt != null) 'setup_attempt': setupAttempt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'charge', 'setup_attempt'}.contains(key)); } 
 SepaDebitGeneratedFrom copyWith({SepaDebitGeneratedFromCharge? Function()? charge, SepaDebitGeneratedFromSetupAttempt? Function()? setupAttempt, }) { return SepaDebitGeneratedFrom(
   charge: charge != null ? charge() : this.charge,
   setupAttempt: setupAttempt != null ? setupAttempt() : this.setupAttempt,

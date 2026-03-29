@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
   'inferred': ?inferred,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fields', 'format', 'inferred'}.contains(key)); } 
 CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesFieldType> Function()? fields, CloudflarePipelinesFormat Function()? format, bool? Function()? inferred, }) { return CloudflarePipelinesConnectionSchema(
   fields: fields != null ? fields() : this.fields,
   format: format != null ? format() : this.format,

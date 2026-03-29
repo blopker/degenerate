@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'pullPolicy': ?pullPolicy,
   'reference': ?reference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pullPolicy', 'reference'}.contains(key)); } 
 ImageVolumeSource copyWith({String Function()? pullPolicy, String Function()? reference, }) { return ImageVolumeSource(
   pullPolicy: pullPolicy != null ? pullPolicy() : this.pullPolicy,
   reference: reference != null ? reference() : this.reference,

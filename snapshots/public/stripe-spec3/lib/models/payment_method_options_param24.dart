@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'expires_after_days': ?expiresAfterDays,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after_days', 'setup_future_usage'}.contains(key)); } 
 PaymentMethodOptionsParam24 copyWith({int Function()? expiresAfterDays, PaymentMethodOptionsParam24SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam24(
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

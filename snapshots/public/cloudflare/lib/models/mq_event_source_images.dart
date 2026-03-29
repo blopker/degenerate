@@ -34,7 +34,7 @@ final MqEventSourceImagesType? type;
 Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
 MqEventSourceImages copyWith({MqEventSourceImagesType Function()? type}) { return MqEventSourceImages(
   type: type != null ? type() : this.type,
 ); } 

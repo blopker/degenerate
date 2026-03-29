@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (pctComplete != null) 'pctComplete': pctComplete?.toJson(),
   if (state != null) 'state': state?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errorReasonCode', 'errorReasonText', 'pctComplete', 'state'}.contains(key)); } 
 StreamMediaStatus copyWith({StreamErrorReasonCode Function()? errorReasonCode, StreamErrorReasonText Function()? errorReasonText, StreamPctComplete Function()? pctComplete, StreamMediaState Function()? state, }) { return StreamMediaStatus(
   errorReasonCode: errorReasonCode != null ? errorReasonCode() : this.errorReasonCode,
   errorReasonText: errorReasonText != null ? errorReasonText() : this.errorReasonText,

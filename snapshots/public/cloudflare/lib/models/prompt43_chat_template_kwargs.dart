@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'clear_thinking': clearThinking,
   'enable_thinking': enableThinking,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'clear_thinking', 'enable_thinking'}.contains(key)); } 
 Prompt43ChatTemplateKwargs copyWith({bool Function()? clearThinking, bool Function()? enableThinking, }) { return Prompt43ChatTemplateKwargs(
   clearThinking: clearThinking != null ? clearThinking() : this.clearThinking,
   enableThinking: enableThinking != null ? enableThinking() : this.enableThinking,

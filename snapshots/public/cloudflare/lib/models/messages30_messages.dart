@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'role': ?role,
   'tool_call_id': ?toolCallId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'role', 'tool_call_id'}.contains(key)); } 
 Messages30Messages copyWith({Messages30MessagesContent Function()? content, String Function()? role, String Function()? toolCallId, }) { return Messages30Messages(
   content: content != null ? content() : this.content,
   role: role != null ? role() : this.role,

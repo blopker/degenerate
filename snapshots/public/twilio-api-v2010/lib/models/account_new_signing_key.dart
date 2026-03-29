@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'date_updated': ?dateUpdated,
   'secret': ?secret,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'friendly_name', 'date_created', 'date_updated', 'secret'}.contains(key)); } 
 AccountNewSigningKey copyWith({String? Function()? sid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? secret, }) { return AccountNewSigningKey(
   sid: sid != null ? sid() : this.sid,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

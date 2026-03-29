@@ -13,7 +13,7 @@ final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceIn
 Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'plan'}.contains(key)); } 
 PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentsPlan? Function()? plan}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments(
   plan: plan != null ? plan() : this.plan,
 ); } 

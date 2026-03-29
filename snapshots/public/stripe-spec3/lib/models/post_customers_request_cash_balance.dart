@@ -12,7 +12,7 @@ final PostCustomersRequestCashBalanceSettings? settings;
 Map<String, dynamic> toJson() { return {
   if (settings != null) 'settings': settings?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'settings'}.contains(key)); } 
 PostCustomersRequestCashBalance copyWith({PostCustomersRequestCashBalanceSettings Function()? settings}) { return PostCustomersRequestCashBalance(
   settings: settings != null ? settings() : this.settings,
 ); } 

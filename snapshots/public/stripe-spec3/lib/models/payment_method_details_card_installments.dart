@@ -13,7 +13,7 @@ final PaymentMethodDetailsCardInstallmentsPlan2? plan;
 Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'plan'}.contains(key)); } 
 PaymentMethodDetailsCardInstallments copyWith({PaymentMethodDetailsCardInstallmentsPlan2? Function()? plan}) { return PaymentMethodDetailsCardInstallments(
   plan: plan != null ? plan() : this.plan,
 ); } 

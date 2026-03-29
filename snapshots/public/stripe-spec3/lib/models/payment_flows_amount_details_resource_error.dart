@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (code != null) 'code': code?.toJson(),
   'message': ?message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message'}.contains(key)); } 
 PaymentFlowsAmountDetailsResourceError copyWith({PaymentFlowsAmountDetailsResourceErrorCode? Function()? code, String? Function()? message, }) { return PaymentFlowsAmountDetailsResourceError(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,

@@ -12,7 +12,7 @@ final ListsDescription? description;
 Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description'}.contains(key)); } 
 ListsUpdateAListRequest copyWith({ListsDescription Function()? description}) { return ListsUpdateAListRequest(
   description: description != null ? description() : this.description,
 ); } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (preview != null) 'preview': preview?.toJson(),
   if (production != null) 'production': production?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preview', 'production'}.contains(key)); } 
 PagesProjectCreateProjectRequestDeploymentConfigs copyWith({PagesDeploymentConfigValuesRequest Function()? preview, PagesDeploymentConfigValuesRequest Function()? production, }) { return PagesProjectCreateProjectRequestDeploymentConfigs(
   preview: preview != null ? preview() : this.preview,
   production: production != null ? production() : this.production,

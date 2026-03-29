@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'individual_name': ?individualName,
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business_name', 'individual_name', 'shipping_details'}.contains(key)); } 
 PaymentPagesCheckoutSessionCollectedInformation copyWith({String? Function()? businessName, String? Function()? individualName, PaymentPagesCheckoutSessionCollectedInformationShippingDetails? Function()? shippingDetails, }) { return PaymentPagesCheckoutSessionCollectedInformation(
   businessName: businessName != null ? businessName() : this.businessName,
   individualName: individualName != null ? individualName() : this.individualName,

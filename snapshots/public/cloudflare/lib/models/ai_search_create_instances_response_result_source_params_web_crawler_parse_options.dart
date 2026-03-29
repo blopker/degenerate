@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (specificSitemaps != null) 'specific_sitemaps': specificSitemaps?.map((e) => e.toString()).toList(),
   'use_browser_rendering': useBrowserRendering,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_selector', 'include_headers', 'include_images', 'specific_sitemaps', 'use_browser_rendering'}.contains(key)); } 
 AiSearchCreateInstancesResponseResultSourceParamsWebCrawlerParseOptions copyWith({List<AiSearchCreateInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector> Function()? contentSelector, Map<String, String> Function()? includeHeaders, bool Function()? includeImages, List<Uri> Function()? specificSitemaps, bool Function()? useBrowserRendering, }) { return AiSearchCreateInstancesResponseResultSourceParamsWebCrawlerParseOptions(
   contentSelector: contentSelector != null ? contentSelector() : this.contentSelector,
   includeHeaders: includeHeaders != null ? includeHeaders() : this.includeHeaders,

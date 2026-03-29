@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
   'success': ?success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result', 'success'}.contains(key)); } 
 AccessEmptyResponse copyWith({bool Function()? result, bool Function()? success, }) { return AccessEmptyResponse(
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,

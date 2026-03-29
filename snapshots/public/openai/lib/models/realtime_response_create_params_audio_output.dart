@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice'}.contains(key)); } 
 RealtimeResponseCreateParamsAudioOutput copyWith({RealtimeAudioFormats Function()? format, VoiceIdsOrCustomVoice Function()? voice, }) { return RealtimeResponseCreateParamsAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,

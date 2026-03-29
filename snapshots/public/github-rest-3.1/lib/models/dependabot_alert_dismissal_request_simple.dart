@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (url != null) 'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'status', 'requester', 'created_at', 'url'}.contains(key)); } 
 DependabotAlertDismissalRequestSimple copyWith({int Function()? id, DependabotAlertDismissalRequestSimpleStatus Function()? status, DependabotAlertDismissalRequestSimpleRequester Function()? requester, DateTime Function()? createdAt, Uri Function()? url, }) { return DependabotAlertDismissalRequestSimple(
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,

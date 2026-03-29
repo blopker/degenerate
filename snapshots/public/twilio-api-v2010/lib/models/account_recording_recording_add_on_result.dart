@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   'reference_sid': ?referenceSid,
   'subresource_uris': ?subresourceUris,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'status', 'add_on_sid', 'add_on_configuration_sid', 'date_created', 'date_updated', 'date_completed', 'reference_sid', 'subresource_uris'}.contains(key)); } 
 AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? Function()? accountSid, RecordingAddOnResultEnumStatus Function()? status, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? dateCompleted, String? Function()? referenceSid, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResult(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

@@ -13,7 +13,7 @@ final String? receivedDebit;
 Map<String, dynamic> toJson() { return {
   'received_debit': ?receivedDebit,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'received_debit'}.contains(key)); } 
 TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows copyWith({String? Function()? receivedDebit}) { return TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows(
   receivedDebit: receivedDebit != null ? receivedDebit() : this.receivedDebit,
 ); } 

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (scopeSelector != null) 'scopeSelector': scopeSelector?.toJson(),
   'scopes': ?scopes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hard', 'scopeSelector', 'scopes'}.contains(key)); } 
 ResourceQuotaSpec copyWith({Map<String, ResourceQuantity> Function()? hard, ScopeSelector Function()? scopeSelector, List<String> Function()? scopes, }) { return ResourceQuotaSpec(
   hard: hard != null ? hard() : this.hard,
   scopeSelector: scopeSelector != null ? scopeSelector() : this.scopeSelector,

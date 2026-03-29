@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'expires_at': ?expiresAt,
   'content': ?content,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'valid_at', 'expires_at', 'content'}.contains(key)); } 
 CertificateCertificateDetails copyWith({int Function()? validAt, int Function()? expiresAt, String Function()? content, }) { return CertificateCertificateDetails(
   validAt: validAt != null ? validAt() : this.validAt,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

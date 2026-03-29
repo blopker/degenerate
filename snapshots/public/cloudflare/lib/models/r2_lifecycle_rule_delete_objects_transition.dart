@@ -12,7 +12,7 @@ final R2LifecycleRuleDeleteObjectsTransitionCondition? condition;
 Map<String, dynamic> toJson() { return {
   if (condition != null) 'condition': condition?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition'}.contains(key)); } 
 R2LifecycleRuleDeleteObjectsTransition copyWith({R2LifecycleRuleDeleteObjectsTransitionCondition Function()? condition}) { return R2LifecycleRuleDeleteObjectsTransition(
   condition: condition != null ? condition() : this.condition,
 ); } 

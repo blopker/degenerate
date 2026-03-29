@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'friendly_name': ?friendlyName,
   'sid': ?sid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'friendly_name', 'sid'}.contains(key)); } 
 AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? sid, }) { return AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

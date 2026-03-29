@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'date_updated': ?dateUpdated,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'credential_list_sid', 'username', 'date_created', 'date_updated', 'uri'}.contains(key)); } 
 AccountSipSipCredentialListSipCredential copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? credentialListSid, String? Function()? username, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountSipSipCredentialListSipCredential(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

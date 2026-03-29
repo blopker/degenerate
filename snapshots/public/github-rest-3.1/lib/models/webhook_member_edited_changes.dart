@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (oldPermission != null) 'old_permission': oldPermission?.toJson(),
   if (permission != null) 'permission': permission?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'old_permission', 'permission'}.contains(key)); } 
 WebhookMemberEditedChanges copyWith({WebhookMemberEditedChangesOldPermission Function()? oldPermission, WebhookMemberEditedChangesPermission Function()? permission, }) { return WebhookMemberEditedChanges(
   oldPermission: oldPermission != null ? oldPermission() : this.oldPermission,
   permission: permission != null ? permission() : this.permission,

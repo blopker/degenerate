@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'lat': ?lat,
   'lon': ?lon,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lat', 'lon'}.contains(key)); } 
 MagicSiteLocation copyWith({String Function()? lat, String Function()? lon, }) { return MagicSiteLocation(
   lat: lat != null ? lat() : this.lat,
   lon: lon != null ? lon() : this.lon,

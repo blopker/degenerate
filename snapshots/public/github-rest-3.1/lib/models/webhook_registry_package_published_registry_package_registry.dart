@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
   'vendor': ?vendor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'about_url', 'name', 'type', 'url', 'vendor'}.contains(key)); } 
 WebhookRegistryPackagePublishedRegistryPackageRegistry copyWith({String Function()? aboutUrl, String Function()? name, String Function()? type, String Function()? url, String Function()? vendor, }) { return WebhookRegistryPackagePublishedRegistryPackageRegistry(
   aboutUrl: aboutUrl != null ? aboutUrl() : this.aboutUrl,
   name: name != null ? name() : this.name,

@@ -12,7 +12,7 @@ final ValidateGraderResponseGrader? grader;
 Map<String, dynamic> toJson() { return {
   if (grader != null) 'grader': grader?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'grader'}.contains(key)); } 
 ValidateGraderResponse copyWith({ValidateGraderResponseGrader Function()? grader}) { return ValidateGraderResponse(
   grader: grader != null ? grader() : this.grader,
 ); } 

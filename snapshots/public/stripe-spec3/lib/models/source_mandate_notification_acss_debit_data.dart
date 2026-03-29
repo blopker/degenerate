@@ -13,7 +13,7 @@ final String? statementDescriptor;
 Map<String, dynamic> toJson() { return {
   'statement_descriptor': ?statementDescriptor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'statement_descriptor'}.contains(key)); } 
 SourceMandateNotificationAcssDebitData copyWith({String Function()? statementDescriptor}) { return SourceMandateNotificationAcssDebitData(
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 

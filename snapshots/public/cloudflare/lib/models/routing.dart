@@ -12,7 +12,7 @@ final RoutingRouting? apiRouting;
 Map<String, dynamic> toJson() { return {
   if (apiRouting != null) 'api_routing': apiRouting?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'api_routing'}.contains(key)); } 
 Routing copyWith({RoutingRouting Function()? apiRouting}) { return Routing(
   apiRouting: apiRouting != null ? apiRouting() : this.apiRouting,
 ); } 

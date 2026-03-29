@@ -12,7 +12,7 @@ final PostAccountsAccountRequestGroupsPaymentsPricing? paymentsPricing;
 Map<String, dynamic> toJson() { return {
   if (paymentsPricing != null) 'payments_pricing': paymentsPricing?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payments_pricing'}.contains(key)); } 
 PostAccountsAccountRequestGroups copyWith({PostAccountsAccountRequestGroupsPaymentsPricing Function()? paymentsPricing}) { return PostAccountsAccountRequestGroups(
   paymentsPricing: paymentsPricing != null ? paymentsPricing() : this.paymentsPricing,
 ); } 

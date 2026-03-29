@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'size_in_bytes': ?sizeInBytes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'ref', 'key', 'version', 'last_accessed_at', 'created_at', 'size_in_bytes'}.contains(key)); } 
 ActionsCacheListActionsCaches copyWith({int Function()? id, String Function()? ref, String Function()? key, String Function()? version, DateTime Function()? lastAccessedAt, DateTime Function()? createdAt, int Function()? sizeInBytes, }) { return ActionsCacheListActionsCaches(
   id: id != null ? id() : this.id,
   ref: ref != null ? ref() : this.ref,

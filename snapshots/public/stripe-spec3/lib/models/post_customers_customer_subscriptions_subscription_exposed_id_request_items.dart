@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'clear_usage', 'deleted', 'discounts', 'id', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
 PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems copyWith({PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsBillingThresholds Function()? billingThresholds, bool Function()? clearUsage, bool Function()? deleted, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscounts Function()? discounts, String Function()? id, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadata Function()? metadata, String Function()? price, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceData Function()? priceData, int Function()? quantity, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsTaxRates Function()? taxRates, }) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   clearUsage: clearUsage != null ? clearUsage() : this.clearUsage,

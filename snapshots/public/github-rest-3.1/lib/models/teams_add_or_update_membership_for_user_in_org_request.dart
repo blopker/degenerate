@@ -37,7 +37,7 @@ final TeamsAddOrUpdateMembershipForUserInOrgRequestRole role;
 Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
 TeamsAddOrUpdateMembershipForUserInOrgRequest copyWith({TeamsAddOrUpdateMembershipForUserInOrgRequestRole Function()? role}) { return TeamsAddOrUpdateMembershipForUserInOrgRequest(
   role: role != null ? role() : this.role,
 ); } 

@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   if (virtualNetworkId != null) 'virtual_network_id': virtualNetworkId?.toJson(),
   if (weight != null) 'weight': weight?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'disabled_at', 'enabled', 'header', 'name', 'port', 'virtual_network_id', 'weight'}.contains(key)); } 
 LoadBalancingOrigin copyWith({LoadBalancingAddress Function()? address, LoadBalancingDisabledAt Function()? disabledAt, LoadBalancingSchemasEnabled Function()? enabled, LoadBalancingSchemasHeader Function()? header, LoadBalancingSchemasName Function()? name, LoadBalancingOriginPort Function()? port, LoadBalancingVirtualNetworkId Function()? virtualNetworkId, LoadBalancingWeight Function()? weight, }) { return LoadBalancingOrigin(
   address: address != null ? address() : this.address,
   disabledAt: disabledAt != null ? disabledAt() : this.disabledAt,

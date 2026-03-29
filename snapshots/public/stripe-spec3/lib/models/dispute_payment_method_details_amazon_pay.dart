@@ -38,7 +38,7 @@ final DisputePaymentMethodDetailsAmazonPayDisputeType? disputeType;
 Map<String, dynamic> toJson() { return {
   if (disputeType != null) 'dispute_type': disputeType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dispute_type'}.contains(key)); } 
 DisputePaymentMethodDetailsAmazonPay copyWith({DisputePaymentMethodDetailsAmazonPayDisputeType? Function()? disputeType}) { return DisputePaymentMethodDetailsAmazonPay(
   disputeType: disputeType != null ? disputeType() : this.disputeType,
 ); } 

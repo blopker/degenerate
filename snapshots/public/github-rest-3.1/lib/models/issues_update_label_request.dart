@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'color': ?color,
   'description': ?description,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'new_name', 'color', 'description'}.contains(key)); } 
 IssuesUpdateLabelRequest copyWith({String Function()? newName, String Function()? color, String Function()? description, }) { return IssuesUpdateLabelRequest(
   newName: newName != null ? newName() : this.newName,
   color: color != null ? color() : this.color,

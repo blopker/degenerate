@@ -11,7 +11,7 @@ final PostTreasuryFinancialAccountsRequestFeaturesInboundTransfersAch? ach;
 Map<String, dynamic> toJson() { return {
   if (ach != null) 'ach': ach?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ach'}.contains(key)); } 
 PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers copyWith({PostTreasuryFinancialAccountsRequestFeaturesInboundTransfersAch Function()? ach}) { return PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers(
   ach: ach != null ? ach() : this.ach,
 ); } 

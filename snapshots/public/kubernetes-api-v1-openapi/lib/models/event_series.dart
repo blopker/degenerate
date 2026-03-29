@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'count': ?count,
   if (lastObservedTime != null) 'lastObservedTime': lastObservedTime?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'lastObservedTime'}.contains(key)); } 
 EventSeries copyWith({int Function()? count, MicroTime Function()? lastObservedTime, }) { return EventSeries(
   count: count != null ? count() : this.count,
   lastObservedTime: lastObservedTime != null ? lastObservedTime() : this.lastObservedTime,

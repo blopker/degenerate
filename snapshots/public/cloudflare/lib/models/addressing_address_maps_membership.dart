@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (identifier != null) 'identifier': identifier?.toJson(),
   if (kind != null) 'kind': kind?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_delete', 'created_at', 'identifier', 'kind'}.contains(key)); } 
 AddressingAddressMapsMembership copyWith({AddressingSchemasCanDelete Function()? canDelete, AddressingTimestamp Function()? createdAt, AddressingIdentifier Function()? identifier, AddressingKind Function()? kind, }) { return AddressingAddressMapsMembership(
   canDelete: canDelete != null ? canDelete() : this.canDelete,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

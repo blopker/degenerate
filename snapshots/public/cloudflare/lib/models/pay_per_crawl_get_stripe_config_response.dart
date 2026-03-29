@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': ?success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'result', 'result_info', 'success'}.contains(key)); } 
 PayPerCrawlGetStripeConfigResponse copyWith({List<PayPerCrawlMsg> Function()? errors, List<PayPerCrawlMsg> Function()? messages, PayPerCrawlStripeConnection Function()? result, PayPerCrawlResultInfo Function()? resultInfo, bool Function()? success, }) { return PayPerCrawlGetStripeConfigResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'start': ?start,
   if (uri != null) 'uri': uri?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conferences', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
 ListConferenceResponse copyWith({List<AccountConference> Function()? conferences, int Function()? end, Uri Function()? firstPageUri, Uri? Function()? nextPageUri, int Function()? page, int Function()? pageSize, Uri? Function()? previousPageUri, int Function()? start, Uri Function()? uri, }) { return ListConferenceResponse(
   conferences: conferences != null ? conferences() : this.conferences,
   end: end != null ? end() : this.end,

@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   if (networks != null) 'networks': networks?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_default', 'created_at', 'dns_destination_ips_id', 'dns_destination_ipv6_block_id', 'doh_subdomain', 'ecs_support', 'endpoints', 'id', 'ip', 'ipv4_destination', 'ipv4_destination_backup', 'name', 'networks', 'updated_at'}.contains(key)); } 
 ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault Function()? clientDefault, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayDnsDestinationIpsIdRead Function()? dnsDestinationIpsId, ZeroTrustGatewayDnsDestinationIpv6BlockId? Function()? dnsDestinationIpv6BlockId, ZeroTrustGatewaySubdomain Function()? dohSubdomain, ZeroTrustGatewayEcsSupport Function()? ecsSupport, ZeroTrustGatewayEndpoints Function()? endpoints, ZeroTrustGatewayComponentsSchemasUuid Function()? id, ZeroTrustGatewayIp Function()? ip, String Function()? ipv4Destination, String Function()? ipv4DestinationBackup, ZeroTrustGatewaySchemasName Function()? name, List<ZeroTrustGatewayIpv4Network>? Function()? networks, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewayLocations(
   clientDefault: clientDefault != null ? clientDefault() : this.clientDefault,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

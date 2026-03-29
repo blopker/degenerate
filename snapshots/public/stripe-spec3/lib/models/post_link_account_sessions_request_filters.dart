@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
   'countries': ?countries,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories', 'countries'}.contains(key)); } 
 PostLinkAccountSessionsRequestFilters copyWith({List<PostLinkAccountSessionsRequestFiltersAccountSubcategories> Function()? accountSubcategories, List<String> Function()? countries, }) { return PostLinkAccountSessionsRequestFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
   countries: countries != null ? countries() : this.countries,

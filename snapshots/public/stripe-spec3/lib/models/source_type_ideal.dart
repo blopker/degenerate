@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'iban_last4': ?ibanLast4,
   'statement_descriptor': ?statementDescriptor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'bic', 'iban_last4', 'statement_descriptor'}.contains(key)); } 
 SourceTypeIdeal copyWith({String? Function()? bank, String? Function()? bic, String? Function()? ibanLast4, String? Function()? statementDescriptor, }) { return SourceTypeIdeal(
   bank: bank != null ? bank() : this.bank,
   bic: bic != null ? bic() : this.bic,

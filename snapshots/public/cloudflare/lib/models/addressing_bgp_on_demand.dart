@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (onDemandEnabled != null) 'on_demand_enabled': onDemandEnabled?.toJson(),
   if (onDemandLocked != null) 'on_demand_locked': onDemandLocked?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised', 'advertised_modified_at', 'on_demand_enabled', 'on_demand_locked'}.contains(key)); } 
 AddressingBgpOnDemand copyWith({AddressingSchemasAdvertised? Function()? advertised, AddressingModifiedAtNullable? Function()? advertisedModifiedAt, AddressingSchemasOnDemandEnabled Function()? onDemandEnabled, AddressingSchemasOnDemandLocked Function()? onDemandLocked, }) { return AddressingBgpOnDemand(
   advertised: advertised != null ? advertised() : this.advertised,
   advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,

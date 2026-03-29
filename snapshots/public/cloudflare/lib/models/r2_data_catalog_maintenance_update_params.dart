@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (compaction != null) 'compaction': compaction?.toJson(),
   if (snapshotExpiration != null) 'snapshot_expiration': snapshotExpiration?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compaction', 'snapshot_expiration'}.contains(key)); } 
 R2DataCatalogMaintenanceUpdateParams copyWith({R2DataCatalogCompactionUpdateParams Function()? compaction, R2DataCatalogSnapshotExpirationUpdateParams Function()? snapshotExpiration, }) { return R2DataCatalogMaintenanceUpdateParams(
   compaction: compaction != null ? compaction() : this.compaction,
   snapshotExpiration: snapshotExpiration != null ? snapshotExpiration() : this.snapshotExpiration,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
   'filename': ?filename,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_data', 'file_id', 'filename'}.contains(key)); } 
 Messages51MessagesUserContentVariant2File copyWith({String Function()? fileData, String Function()? fileId, String Function()? filename, }) { return Messages51MessagesUserContentVariant2File(
   fileData: fileData != null ? fileData() : this.fileData,
   fileId: fileId != null ? fileId() : this.fileId,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'name_by_idp': ?nameByIdp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'name_by_idp'}.contains(key)); } 
 AccessSchemasSamlSaasAppCustomAttributesSource copyWith({String Function()? name, Map<String, String> Function()? nameByIdp, }) { return AccessSchemasSamlSaasAppCustomAttributesSource(
   name: name != null ? name() : this.name,
   nameByIdp: nameByIdp != null ? nameByIdp() : this.nameByIdp,

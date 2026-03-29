@@ -180,7 +180,7 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
   if (mediaUrl != null) 'media_url': mediaUrl?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'price_unit', 'status', 'channels', 'source', 'error_code', 'uri', 'encryption_details', 'subresource_uris', 'media_url'}.contains(key)); } 
 AccountRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, RecordingEnumStatus Function()? status, int? Function()? channels, RecordingEnumSource Function()? source, int? Function()? errorCode, String? Function()? uri, dynamic Function()? encryptionDetails, Map<String, dynamic>? Function()? subresourceUris, Uri? Function()? mediaUrl, }) { return AccountRecording(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

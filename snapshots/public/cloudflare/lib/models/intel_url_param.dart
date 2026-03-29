@@ -19,7 +19,7 @@ final IntelUrl? url;
 Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
 IntelUrlParam copyWith({IntelUrl Function()? url}) { return IntelUrlParam(
   url: url != null ? url() : this.url,
 ); } 

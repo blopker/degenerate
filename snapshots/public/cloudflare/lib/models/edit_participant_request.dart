@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (picture != null) 'picture': picture?.toString(),
   'preset_name': ?presetName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'picture', 'preset_name'}.contains(key)); } 
 EditParticipantRequest copyWith({String? Function()? name, Uri? Function()? picture, String? Function()? presetName, }) { return EditParticipantRequest(
   name: name != null ? name() : this.name,
   picture: picture != null ? picture() : this.picture,

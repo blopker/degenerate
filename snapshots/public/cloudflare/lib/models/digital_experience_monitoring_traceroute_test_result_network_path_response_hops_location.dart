@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
   'zip': ?zip,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'state', 'zip'}.contains(key)); } 
 DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation copyWith({String? Function()? city, String? Function()? state, String? Function()? zip, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation(
   city: city != null ? city() : this.city,
   state: state != null ? state() : this.state,

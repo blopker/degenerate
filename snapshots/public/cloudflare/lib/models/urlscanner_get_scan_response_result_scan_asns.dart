@@ -13,7 +13,7 @@ final UrlscannerGetScanResponseResultScanAsnsAsn? asn;
 Map<String, dynamic> toJson() { return {
   if (asn != null) 'asn': asn?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn'}.contains(key)); } 
 UrlscannerGetScanResponseResultScanAsns copyWith({UrlscannerGetScanResponseResultScanAsnsAsn Function()? asn}) { return UrlscannerGetScanResponseResultScanAsns(
   asn: asn != null ? asn() : this.asn,
 ); } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'display_name': ?displayName,
   'timezone': ?timezone,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'timezone'}.contains(key)); } 
 AccountDashboardSettings copyWith({String? Function()? displayName, String? Function()? timezone, }) { return AccountDashboardSettings(
   displayName: displayName != null ? displayName() : this.displayName,
   timezone: timezone != null ? timezone() : this.timezone,

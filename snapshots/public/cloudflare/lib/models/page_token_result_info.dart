@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'next_page_token': ?nextPageToken,
   'total_size': ?totalSize,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'next_page_token', 'total_size'}.contains(key)); } 
 PageTokenResultInfo copyWith({String Function()? nextPageToken, int Function()? totalSize, }) { return PageTokenResultInfo(
   nextPageToken: nextPageToken != null ? nextPageToken() : this.nextPageToken,
   totalSize: totalSize != null ? totalSize() : this.totalSize,

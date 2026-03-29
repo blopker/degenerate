@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   if (trialPeriodDays != null) 'trial_period_days': trialPeriodDays?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'description', 'effective_date', 'metadata', 'trial_period_days'}.contains(key)); } 
 PostQuotesRequestSubscriptionData copyWith({PostQuotesRequestSubscriptionDataBillingMode Function()? billingMode, String Function()? description, PostQuotesRequestSubscriptionDataEffectiveDate Function()? effectiveDate, Map<String, String> Function()? metadata, PostQuotesRequestSubscriptionDataTrialPeriodDays Function()? trialPeriodDays, }) { return PostQuotesRequestSubscriptionData(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   description: description != null ? description() : this.description,

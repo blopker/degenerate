@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'enable_high_bitrate': enableHighBitrate,
   'enable_stereo': enableStereo,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_high_bitrate', 'enable_stereo'}.contains(key)); } 
 RealtimekitPresetConfigMediaAudio copyWith({bool Function()? enableHighBitrate, bool Function()? enableStereo, }) { return RealtimekitPresetConfigMediaAudio(
   enableHighBitrate: enableHighBitrate != null ? enableHighBitrate() : this.enableHighBitrate,
   enableStereo: enableStereo != null ? enableStereo() : this.enableStereo,

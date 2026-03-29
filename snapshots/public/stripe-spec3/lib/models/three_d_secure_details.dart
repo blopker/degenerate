@@ -215,7 +215,7 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authentication_flow', 'electronic_commerce_indicator', 'result', 'result_reason', 'transaction_id', 'version'}.contains(key)); } 
 ThreeDSecureDetails copyWith({ThreeDSecureDetailsAuthenticationFlow? Function()? authenticationFlow, ThreeDSecureDetailsElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureDetailsResult? Function()? result, ThreeDSecureDetailsResultReason? Function()? resultReason, String? Function()? transactionId, ThreeDSecureDetailsVersion? Function()? version, }) { return ThreeDSecureDetails(
   authenticationFlow: authenticationFlow != null ? authenticationFlow() : this.authenticationFlow,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,

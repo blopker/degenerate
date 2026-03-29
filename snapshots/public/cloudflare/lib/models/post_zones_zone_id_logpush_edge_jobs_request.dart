@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (filter != null) 'filter': filter?.toJson(),
   if (sample != null) 'sample': sample?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fields', 'filter', 'sample'}.contains(key)); } 
 PostZonesZoneIdLogpushEdgeJobsRequest copyWith({LogpushFields Function()? fields, LogpushSchemasFilter Function()? filter, LogpushSample Function()? sample, }) { return PostZonesZoneIdLogpushEdgeJobsRequest(
   fields: fields != null ? fields() : this.fields,
   filter: filter != null ? filter() : this.filter,

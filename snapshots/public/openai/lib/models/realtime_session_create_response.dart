@@ -127,7 +127,7 @@ Map<String, dynamic> toJson() { return {
   'tool_choice': ?toolChoice,
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'expires_at', 'include', 'model', 'output_modalities', 'instructions', 'audio', 'tracing', 'turn_detection', 'tools', 'tool_choice', 'max_output_tokens'}.contains(key)); } 
 RealtimeSessionCreateResponse copyWith({String Function()? id, String Function()? object, int Function()? expiresAt, List<RealtimeSessionCreateResponseInclude> Function()? include, String Function()? model, dynamic Function()? outputModalities, String Function()? instructions, RealtimeSessionCreateResponseAudio Function()? audio, RealtimeSessionCreateResponseTracing Function()? tracing, RealtimeSessionCreateResponseTurnDetection Function()? turnDetection, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, RealtimeSessionCreateResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeSessionCreateResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,

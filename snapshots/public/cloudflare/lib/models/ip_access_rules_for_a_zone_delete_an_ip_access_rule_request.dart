@@ -40,7 +40,7 @@ final IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade cascade;
 Map<String, dynamic> toJson() { return {
   'cascade': cascade.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cascade'}.contains(key)); } 
 IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest copyWith({IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade Function()? cascade}) { return IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(
   cascade: cascade != null ? cascade() : this.cascade,
 ); } 

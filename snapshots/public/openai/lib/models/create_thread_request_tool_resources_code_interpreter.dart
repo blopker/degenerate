@@ -13,7 +13,7 @@ final List<String> fileIds;
 Map<String, dynamic> toJson() { return {
   'file_ids': fileIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_ids'}.contains(key)); } 
 CreateThreadRequestToolResourcesCodeInterpreter copyWith({List<String> Function()? fileIds}) { return CreateThreadRequestToolResourcesCodeInterpreter(
   fileIds: fileIds != null ? fileIds() : this.fileIds,
 ); } 

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   'title': ?title,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'description', 'title'}.contains(key)); } 
 PostTerminalReadersReaderCollectInputsRequestInputsToggles copyWith({PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue Function()? defaultValue, String Function()? description, String Function()? title, }) { return PostTerminalReadersReaderCollectInputsRequestInputsToggles(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   description: description != null ? description() : this.description,

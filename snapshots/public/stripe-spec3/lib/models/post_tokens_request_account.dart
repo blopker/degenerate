@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (individual != null) 'individual': individual?.toJson(),
   'tos_shown_and_accepted': ?tosShownAndAccepted,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business_type', 'company', 'individual', 'tos_shown_and_accepted'}.contains(key)); } 
 PostTokensRequestAccount copyWith({PostTokensRequestAccountBusinessType Function()? businessType, PostTokensRequestAccountCompany Function()? company, PostTokensRequestAccountIndividual Function()? individual, bool Function()? tosShownAndAccepted, }) { return PostTokensRequestAccount(
   businessType: businessType != null ? businessType() : this.businessType,
   company: company != null ? company() : this.company,

@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (mtu != null) 'mtu': mtu?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_return_routing', 'colo_name', 'created_on', 'description', 'gre', 'health_check', 'id', 'interface_address', 'interface_address6', 'modified_on', 'mtu', 'name'}.contains(key)); } 
 MagicInterconnect copyWith({MagicAutomaticReturnRouting Function()? automaticReturnRouting, MagicComponentsSchemasName Function()? coloName, MagicSchemasCreatedOn Function()? createdOn, MagicInterconnectComponentsSchemasDescription Function()? description, MagicGre Function()? gre, MagicHealthCheckBase Function()? healthCheck, MagicSchemasIdentifier Function()? id, MagicInterfaceAddress Function()? interfaceAddress, MagicInterfaceAddress6 Function()? interfaceAddress6, MagicSchemasModifiedOn Function()? modifiedOn, MagicSchemasMtu Function()? mtu, MagicComponentsSchemasName Function()? name, }) { return MagicInterconnect(
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   coloName: coloName != null ? coloName() : this.coloName,

@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   if (validationDefaultMitigationAction != null) 'validation_default_mitigation_action': validationDefaultMitigationAction?.toJson(),
   if (validationOverrideMitigationAction != null) 'validation_override_mitigation_action': validationOverrideMitigationAction?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'validation_default_mitigation_action', 'validation_override_mitigation_action'}.contains(key)); } 
 ShieldOldZoneSchemaValidationSettingsPatch copyWith({ShieldOldValidationDefaultMitigationActionPatch? Function()? validationDefaultMitigationAction, ShieldOldValidationOverrideMitigationActionPatch? Function()? validationOverrideMitigationAction, }) { return ShieldOldZoneSchemaValidationSettingsPatch(
   validationDefaultMitigationAction: validationDefaultMitigationAction != null ? validationDefaultMitigationAction() : this.validationDefaultMitigationAction,
   validationOverrideMitigationAction: validationOverrideMitigationAction != null ? validationOverrideMitigationAction() : this.validationOverrideMitigationAction,
