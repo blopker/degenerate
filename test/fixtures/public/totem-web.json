@@ -1,0 +1,800 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "Totem API", "version": "1", "description": "" },
+  "paths": {
+    "/api/v1/auth/currentuser": {
+      "get": {
+        "operationId": "totem_api_api_current_user",
+        "summary": "Current User",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PublicUserSchema" }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Message" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/avatarupdate": {
+      "post": {
+        "operationId": "totem_api_api_user_avatar_update",
+        "summary": "User Avatar Update",
+        "parameters": [],
+        "responses": {
+          "200": { "description": "OK" },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Message" }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AvatarUpdate" }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/api/v1/user/avatarimage": {
+      "post": {
+        "operationId": "totem_api_api_user_upload_profile_image",
+        "summary": "User Upload Profile Image",
+        "parameters": [],
+        "responses": {
+          "200": { "description": "OK" },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Message" }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "format": "binary",
+                    "title": "File",
+                    "type": "string"
+                  }
+                },
+                "required": ["file"],
+                "title": "FileParams",
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/api/v1/dev/version": {
+      "get": {
+        "operationId": "totem_api_api_dev_version",
+        "summary": "Dev Version",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "title": "Response", "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/spaces/": {
+      "get": {
+        "operationId": "totem_spaces_api_list_events",
+        "summary": "List Events",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "category",
+            "schema": {
+              "anyOf": [{ "type": "string" }, { "type": "null" }],
+              "title": "Category"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "author",
+            "schema": {
+              "anyOf": [{ "type": "string" }, { "type": "null" }],
+              "title": "Author"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "default": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedSessionListSchema"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["events"]
+      }
+    },
+    "/api/v1/spaces/filter-options": {
+      "get": {
+        "operationId": "totem_spaces_api_filter_options",
+        "summary": "Filter Options",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/FilterOptionsSchema" }
+              }
+            }
+          }
+        },
+        "tags": ["events"]
+      }
+    },
+    "/api/v1/spaces/event/{event_slug}": {
+      "get": {
+        "operationId": "totem_spaces_api_event_detail",
+        "summary": "Event Detail",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_slug",
+            "schema": { "title": "Event Slug", "type": "string" },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SessionDetailSchema" }
+              }
+            }
+          }
+        },
+        "tags": ["events"]
+      }
+    },
+    "/api/v1/spaces/calendar": {
+      "get": {
+        "operationId": "totem_spaces_api_upcoming_events",
+        "summary": "Upcoming Events",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "space_slug",
+            "schema": {
+              "default": "",
+              "description": "Space slug",
+              "title": "Space Slug",
+              "type": "string"
+            },
+            "required": false,
+            "description": "Space slug"
+          },
+          {
+            "in": "query",
+            "name": "month",
+            "schema": {
+              "default": 3,
+              "description": "Month of the year, 1-12",
+              "exclusiveMaximum": 13,
+              "exclusiveMinimum": 0,
+              "title": "Month",
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Month of the year, 1-12"
+          },
+          {
+            "in": "query",
+            "name": "year",
+            "schema": {
+              "default": 2026,
+              "description": "Year of the month, e.g. 2024",
+              "exclusiveMaximum": 3000,
+              "exclusiveMinimum": 1000,
+              "title": "Year",
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Year of the month, e.g. 2024"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/EventCalendarSchema"
+                  },
+                  "title": "Response",
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["events"]
+      }
+    },
+    "/api/v1/spaces/list": {
+      "get": {
+        "operationId": "totem_spaces_api_list_spaces",
+        "summary": "List Spaces",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": { "$ref": "#/components/schemas/SpaceDetailSchema" },
+                  "title": "Response",
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["spaces"]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProfileAvatarTypeEnum": {
+        "enum": ["TD", "IM"],
+        "title": "ProfileAvatarTypeEnum",
+        "type": "string"
+      },
+      "PublicUserSchema": {
+        "properties": {
+          "profile_avatar_type": {
+            "$ref": "#/components/schemas/ProfileAvatarTypeEnum"
+          },
+          "circle_count": {
+            "anyOf": [{ "type": "integer" }, { "type": "null" }],
+            "title": "Circle Count"
+          },
+          "name": {
+            "anyOf": [
+              { "maxLength": 255, "type": "string" },
+              { "type": "null" }
+            ],
+            "title": "Name"
+          },
+          "slug": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Slug"
+          },
+          "is_staff": {
+            "default": false,
+            "description": "Designates whether the user can log into this admin site.",
+            "title": "Staff Status",
+            "type": "boolean"
+          },
+          "profile_avatar_seed": {
+            "format": "uuid",
+            "title": "Profile Avatar Seed",
+            "type": "string"
+          },
+          "profile_image": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "description": "Profile image, must be under 5mb. Will be cropped to a square.",
+            "title": "Profile Image"
+          },
+          "date_created": {
+            "format": "date-time",
+            "title": "Date Created",
+            "type": "string"
+          }
+        },
+        "required": ["profile_avatar_type", "date_created"],
+        "title": "PublicUserSchema",
+        "type": "object"
+      },
+      "Message": {
+        "properties": { "message": { "title": "Message", "type": "string" } },
+        "required": ["message"],
+        "title": "Message",
+        "type": "object"
+      },
+      "AvatarUpdate": {
+        "properties": {
+          "avatar_type": {
+            "anyOf": [
+              { "$ref": "#/components/schemas/ProfileAvatarTypeEnum" },
+              { "type": "null" }
+            ]
+          },
+          "update_avatar_seed": {
+            "anyOf": [{ "type": "boolean" }, { "type": "null" }],
+            "title": "Update Avatar Seed"
+          }
+        },
+        "required": ["avatar_type", "update_avatar_seed"],
+        "title": "AvatarUpdate",
+        "type": "object"
+      },
+      "Input": {
+        "properties": {
+          "limit": {
+            "default": 100,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "default": 0,
+            "minimum": 0,
+            "title": "Offset",
+            "type": "integer"
+          }
+        },
+        "title": "Input",
+        "type": "object"
+      },
+      "SessionsFilterSchema": {
+        "properties": {
+          "category": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Category"
+          },
+          "author": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Author"
+          }
+        },
+        "required": ["category", "author"],
+        "title": "SessionsFilterSchema",
+        "type": "object"
+      },
+      "PagedSessionListSchema": {
+        "properties": {
+          "items": {
+            "items": { "$ref": "#/components/schemas/SessionListSchema" },
+            "title": "Items",
+            "type": "array"
+          },
+          "count": { "title": "Count", "type": "integer" }
+        },
+        "required": ["items", "count"],
+        "title": "PagedSessionListSchema",
+        "type": "object"
+      },
+      "SessionListSchema": {
+        "properties": {
+          "space": { "$ref": "#/components/schemas/SpaceSchema" },
+          "url": { "title": "Url", "type": "string" },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "slug": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Slug"
+          },
+          "date_created": {
+            "format": "date-time",
+            "title": "Date Created",
+            "type": "string"
+          },
+          "date_modified": {
+            "format": "date-time",
+            "title": "Date Modified",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              { "maxLength": 255, "type": "string" },
+              { "type": "null" }
+            ],
+            "title": "Title"
+          }
+        },
+        "required": ["space", "url", "date_created", "date_modified"],
+        "title": "SessionListSchema",
+        "type": "object"
+      },
+      "SpaceSchema": {
+        "properties": {
+          "author": { "$ref": "#/components/schemas/PublicUserSchema" },
+          "title": { "maxLength": 255, "title": "Title", "type": "string" },
+          "slug": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Slug"
+          },
+          "date_created": {
+            "format": "date-time",
+            "title": "Date Created",
+            "type": "string"
+          },
+          "date_modified": {
+            "format": "date-time",
+            "title": "Date Modified",
+            "type": "string"
+          },
+          "subtitle": {
+            "maxLength": 2000,
+            "title": "Subtitle",
+            "type": "string"
+          }
+        },
+        "required": [
+          "author",
+          "title",
+          "date_created",
+          "date_modified",
+          "subtitle"
+        ],
+        "title": "SpaceSchema",
+        "type": "object"
+      },
+      "AuthorFilterSchema": {
+        "properties": {
+          "name": { "title": "Name", "type": "string" },
+          "slug": { "title": "Slug", "type": "string" }
+        },
+        "required": ["name", "slug"],
+        "title": "AuthorFilterSchema",
+        "type": "object"
+      },
+      "CategoryFilterSchema": {
+        "properties": {
+          "name": { "title": "Name", "type": "string" },
+          "slug": { "title": "Slug", "type": "string" }
+        },
+        "required": ["name", "slug"],
+        "title": "CategoryFilterSchema",
+        "type": "object"
+      },
+      "FilterOptionsSchema": {
+        "properties": {
+          "categories": {
+            "items": { "$ref": "#/components/schemas/CategoryFilterSchema" },
+            "title": "Categories",
+            "type": "array"
+          },
+          "authors": {
+            "items": { "$ref": "#/components/schemas/AuthorFilterSchema" },
+            "title": "Authors",
+            "type": "array"
+          }
+        },
+        "required": ["categories", "authors"],
+        "title": "FilterOptionsSchema",
+        "type": "object"
+      },
+      "MeetingProviderEnum": {
+        "enum": ["google_meet", "livekit"],
+        "title": "MeetingProviderEnum",
+        "type": "string"
+      },
+      "SessionDetailSchema": {
+        "properties": {
+          "slug": { "title": "Slug", "type": "string" },
+          "title": { "title": "Title", "type": "string" },
+          "space": { "$ref": "#/components/schemas/SessionSpaceSchema" },
+          "space_title": { "title": "Space Title", "type": "string" },
+          "description": { "title": "Description", "type": "string" },
+          "price": { "title": "Price", "type": "integer" },
+          "seats_left": { "title": "Seats Left", "type": "integer" },
+          "duration": { "title": "Duration", "type": "integer" },
+          "recurring": { "title": "Recurring", "type": "string" },
+          "subscribers": { "title": "Subscribers", "type": "integer" },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "attending": { "title": "Attending", "type": "boolean" },
+          "open": { "title": "Open", "type": "boolean" },
+          "started": { "title": "Started", "type": "boolean" },
+          "cancelled": { "title": "Cancelled", "type": "boolean" },
+          "joinable": { "title": "Joinable", "type": "boolean" },
+          "ended": { "title": "Ended", "type": "boolean" },
+          "rsvp_url": { "title": "Rsvp Url", "type": "string" },
+          "join_url": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Join Url"
+          },
+          "subscribe_url": { "title": "Subscribe Url", "type": "string" },
+          "cal_link": { "title": "Cal Link", "type": "string" },
+          "subscribed": {
+            "anyOf": [{ "type": "boolean" }, { "type": "null" }],
+            "title": "Subscribed"
+          },
+          "user_timezone": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "User Timezone"
+          },
+          "meeting_provider": {
+            "$ref": "#/components/schemas/MeetingProviderEnum"
+          }
+        },
+        "required": [
+          "slug",
+          "title",
+          "space",
+          "space_title",
+          "description",
+          "price",
+          "seats_left",
+          "duration",
+          "recurring",
+          "subscribers",
+          "start",
+          "attending",
+          "open",
+          "started",
+          "cancelled",
+          "joinable",
+          "ended",
+          "rsvp_url",
+          "join_url",
+          "subscribe_url",
+          "cal_link",
+          "subscribed",
+          "user_timezone",
+          "meeting_provider"
+        ],
+        "title": "SessionDetailSchema",
+        "type": "object"
+      },
+      "SessionSpaceSchema": {
+        "properties": {
+          "author": { "$ref": "#/components/schemas/PublicUserSchema" },
+          "title": { "maxLength": 255, "title": "Title", "type": "string" },
+          "slug": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Slug"
+          },
+          "date_created": {
+            "format": "date-time",
+            "title": "Date Created",
+            "type": "string"
+          },
+          "date_modified": {
+            "format": "date-time",
+            "title": "Date Modified",
+            "type": "string"
+          },
+          "subtitle": {
+            "maxLength": 2000,
+            "title": "Subtitle",
+            "type": "string"
+          },
+          "categories": {
+            "items": { "type": "integer" },
+            "title": "Categories",
+            "type": "array"
+          },
+          "short_description": {
+            "anyOf": [
+              { "maxLength": 255, "type": "string" },
+              { "type": "null" }
+            ],
+            "description": "Short description, max 255 characters",
+            "title": "Short Description"
+          },
+          "recurring": {
+            "description": "Example: Once a month (or week, day, etc). Do not put specific times or days of the week.",
+            "maxLength": 255,
+            "title": "Recurring",
+            "type": "string"
+          },
+          "image": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "description": "Image for the Space header, must be under 5mb",
+            "title": "Image"
+          },
+          "content": {
+            "default": "",
+            "maxLength": 10000,
+            "title": "Content",
+            "type": "string"
+          }
+        },
+        "required": [
+          "author",
+          "title",
+          "date_created",
+          "date_modified",
+          "subtitle",
+          "categories",
+          "recurring"
+        ],
+        "title": "SessionSpaceSchema",
+        "type": "object"
+      },
+      "EventCalendarFilterSchema": {
+        "properties": {
+          "space_slug": {
+            "default": "",
+            "description": "Space slug",
+            "title": "Space Slug",
+            "type": "string"
+          },
+          "month": {
+            "default": 3,
+            "description": "Month of the year, 1-12",
+            "exclusiveMaximum": 13,
+            "exclusiveMinimum": 0,
+            "title": "Month",
+            "type": "integer"
+          },
+          "year": {
+            "default": 2026,
+            "description": "Year of the month, e.g. 2024",
+            "exclusiveMaximum": 3000,
+            "exclusiveMinimum": 1000,
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "title": "EventCalendarFilterSchema",
+        "type": "object"
+      },
+      "EventCalendarSchema": {
+        "properties": {
+          "title": { "title": "Title", "type": "string" },
+          "start": { "title": "Start", "type": "string" },
+          "slug": { "title": "Slug", "type": "string" },
+          "url": { "title": "Url", "type": "string" }
+        },
+        "required": ["title", "start", "slug", "url"],
+        "title": "EventCalendarSchema",
+        "type": "object"
+      },
+      "NextSessionSchema": {
+        "properties": {
+          "slug": { "title": "Slug", "type": "string" },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "link": { "title": "Link", "type": "string" },
+          "title": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Title"
+          },
+          "seats_left": { "title": "Seats Left", "type": "integer" },
+          "duration": { "title": "Duration", "type": "integer" },
+          "meeting_provider": {
+            "$ref": "#/components/schemas/MeetingProviderEnum"
+          },
+          "cal_link": { "title": "Cal Link", "type": "string" },
+          "attending": { "title": "Attending", "type": "boolean" },
+          "cancelled": { "title": "Cancelled", "type": "boolean" },
+          "open": { "title": "Open", "type": "boolean" },
+          "joinable": { "title": "Joinable", "type": "boolean" }
+        },
+        "required": [
+          "slug",
+          "start",
+          "link",
+          "title",
+          "seats_left",
+          "duration",
+          "meeting_provider",
+          "cal_link",
+          "attending",
+          "cancelled",
+          "open",
+          "joinable"
+        ],
+        "title": "NextSessionSchema",
+        "type": "object"
+      },
+      "SpaceDetailSchema": {
+        "properties": {
+          "slug": { "title": "Slug", "type": "string" },
+          "title": { "title": "Title", "type": "string" },
+          "image_link": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Image Link"
+          },
+          "short_description": {
+            "title": "Short Description",
+            "type": "string"
+          },
+          "content": { "title": "Content", "type": "string" },
+          "author": { "$ref": "#/components/schemas/PublicUserSchema" },
+          "next_event": {
+            "anyOf": [
+              { "$ref": "#/components/schemas/NextSessionSchema" },
+              { "type": "null" }
+            ]
+          },
+          "category": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Category"
+          },
+          "subscribers": { "title": "Subscribers", "type": "integer" },
+          "recurring": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Recurring"
+          },
+          "price": { "title": "Price", "type": "integer" }
+        },
+        "required": [
+          "slug",
+          "title",
+          "image_link",
+          "short_description",
+          "content",
+          "author",
+          "next_event",
+          "category",
+          "subscribers",
+          "recurring",
+          "price"
+        ],
+        "title": "SpaceDetailSchema",
+        "type": "object"
+      }
+    }
+  },
+  "servers": []
+}

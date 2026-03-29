@@ -2,6 +2,11 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## 0.2.1
+
+- Fix required-but-nullable query parameters generating invalid assignments (`String?` assigned to `Map<String, String>`)
+- Add totem-web.json to snapshot testing
+
 ## 0.2.0
 
 **Breaking changes to CLI defaults and output structure.**

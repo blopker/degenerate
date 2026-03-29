@@ -545,7 +545,7 @@ class ApiEmitter {
   void _writeSimpleQueryMapEntry(StringBuffer buf, IrParameter p) {
     final sanitizedName = _sanitizeParameterName(p.name);
     final queryValue = _toStringExpr(p);
-    if (p.isRequired) {
+    if (p.isRequired && !p.type.isNullable) {
       buf.writeln("queryParameters['$sanitizedName'] = $queryValue;");
     } else {
       buf.writeln(
