@@ -890,12 +890,12 @@ if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (relationship != null) {
-if (relationship.authorizer case final authorizer$?) queryParameters['relationship[authorizer]'] = authorizer$.toString();
-if (relationship.director case final director$?) queryParameters['relationship[director]'] = director$.toString();
-if (relationship.executive case final executive$?) queryParameters['relationship[executive]'] = executive$.toString();
-if (relationship.legalGuardian case final legalGuardian$?) queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString();
-if (relationship.owner case final owner$?) queryParameters['relationship[owner]'] = owner$.toString();
-if (relationship.representative case final representative$?) queryParameters['relationship[representative]'] = representative$.toString();
+if (relationship.authorizer case final authorizer$?) { queryParameters['relationship[authorizer]'] = authorizer$.toString(); }
+if (relationship.director case final director$?) { queryParameters['relationship[director]'] = director$.toString(); }
+if (relationship.executive case final executive$?) { queryParameters['relationship[executive]'] = executive$.toString(); }
+if (relationship.legalGuardian case final legalGuardian$?) { queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString(); }
+if (relationship.owner case final owner$?) { queryParameters['relationship[owner]'] = owner$.toString(); }
+if (relationship.representative case final representative$?) { queryParameters['relationship[representative]'] = representative$.toString(); }
 }
 if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
@@ -1174,12 +1174,12 @@ if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (relationship != null) {
-if (relationship.authorizer case final authorizer$?) queryParameters['relationship[authorizer]'] = authorizer$.toString();
-if (relationship.director case final director$?) queryParameters['relationship[director]'] = director$.toString();
-if (relationship.executive case final executive$?) queryParameters['relationship[executive]'] = executive$.toString();
-if (relationship.legalGuardian case final legalGuardian$?) queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString();
-if (relationship.owner case final owner$?) queryParameters['relationship[owner]'] = owner$.toString();
-if (relationship.representative case final representative$?) queryParameters['relationship[representative]'] = representative$.toString();
+if (relationship.authorizer case final authorizer$?) { queryParameters['relationship[authorizer]'] = authorizer$.toString(); }
+if (relationship.director case final director$?) { queryParameters['relationship[director]'] = director$.toString(); }
+if (relationship.executive case final executive$?) { queryParameters['relationship[executive]'] = executive$.toString(); }
+if (relationship.legalGuardian case final legalGuardian$?) { queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString(); }
+if (relationship.owner case final owner$?) { queryParameters['relationship[owner]'] = owner$.toString(); }
+if (relationship.representative case final representative$?) { queryParameters['relationship[representative]'] = representative$.toString(); }
 }
 if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
@@ -1895,7 +1895,7 @@ if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 queryParameters['scope[type]'] = scope.type.toJson();
-if (scope.user case final user$?) queryParameters['scope[user]'] = user$;
+if (scope.user case final user$?) { queryParameters['scope[user]'] = user$; }
 if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
 }
@@ -2001,7 +2001,7 @@ queryParameters['expand'] = expand.join(',');
 }
 queryParameters['name'] = name;
 queryParameters['scope[type]'] = scope.type.toJson();
-if (scope.user case final user$?) queryParameters['scope[user]'] = user$;
+if (scope.user case final user$?) { queryParameters['scope[user]'] = user$; }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -2548,8 +2548,8 @@ if (customerAccount != null) {
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (filter.applicabilityScope case final applicabilityScope$?) queryParameters['filter[applicability_scope]'] = applicabilityScope$.toString();
-if (filter.creditGrant case final creditGrant$?) queryParameters['filter[credit_grant]'] = creditGrant$;
+if (filter.applicabilityScope case final applicabilityScope$?) { queryParameters['filter[applicability_scope]'] = applicabilityScope$.toString(); }
+if (filter.creditGrant case final creditGrant$?) { queryParameters['filter[credit_grant]'] = creditGrant$; }
 queryParameters['filter[type]'] = filter.type.toJson();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -5205,7 +5205,7 @@ if (refunds != null) {
 queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
 }
 if (shippingCost != null) {
-if (shippingCost.shippingRate case final shippingRate$?) queryParameters['shipping_cost[shipping_rate]'] = shippingRate$;
+if (shippingCost.shippingRate case final shippingRate$?) { queryParameters['shipping_cost[shipping_rate]'] = shippingRate$; }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -5285,7 +5285,7 @@ if (refunds != null) {
 queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
 }
 if (shippingCost != null) {
-if (shippingCost.shippingRate case final shippingRate$?) queryParameters['shipping_cost[shipping_rate]'] = shippingRate$;
+if (shippingCost.shippingRate case final shippingRate$?) { queryParameters['shipping_cost[shipping_rate]'] = shippingRate$; }
 }
 if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
@@ -8259,9 +8259,9 @@ return execute(
 Future<ApiResult<GetFinancialConnectionsAccountsResponse, ErrorModel>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetFinancialConnectionsAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
-if (accountHolder.account case final account$?) queryParameters['account_holder[account]'] = account$;
-if (accountHolder.customer case final customer$?) queryParameters['account_holder[customer]'] = customer$;
-if (accountHolder.customerAccount case final customerAccount$?) queryParameters['account_holder[customer_account]'] = customerAccount$;
+if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
+if (accountHolder.customer case final customer$?) { queryParameters['account_holder[customer]'] = customer$; }
+if (accountHolder.customerAccount case final customerAccount$?) { queryParameters['account_holder[customer_account]'] = customerAccount$; }
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8668,10 +8668,10 @@ return execute(
 Future<ApiResult<GetForwardingRequestsResponse, ErrorModel>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetForwardingRequestsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-if (created.gt case final gt$?) queryParameters['created[gt]'] = gt$.toString();
-if (created.gte case final gte$?) queryParameters['created[gte]'] = gte$.toString();
-if (created.lt case final lt$?) queryParameters['created[lt]'] = lt$.toString();
-if (created.lte case final lte$?) queryParameters['created[lte]'] = lte$.toString();
+if (created.gt case final gt$?) { queryParameters['created[gt]'] = gt$.toString(); }
+if (created.gte case final gte$?) { queryParameters['created[gte]'] = gte$.toString(); }
+if (created.lt case final lt$?) { queryParameters['created[lt]'] = lt$.toString(); }
+if (created.lte case final lte$?) { queryParameters['created[lte]'] = lte$.toString(); }
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9165,8 +9165,8 @@ if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (payment != null) {
-if (payment.paymentIntent case final paymentIntent$?) queryParameters['payment[payment_intent]'] = paymentIntent$;
-if (payment.paymentRecord case final paymentRecord$?) queryParameters['payment[payment_record]'] = paymentRecord$;
+if (payment.paymentIntent case final paymentIntent$?) { queryParameters['payment[payment_intent]'] = paymentIntent$; }
+if (payment.paymentRecord case final paymentRecord$?) { queryParameters['payment[payment_record]'] = paymentRecord$; }
 queryParameters['payment[type]'] = payment.type.toJson();
 }
 if (startingAfter != null) {
@@ -11162,8 +11162,8 @@ if (lookupKeys != null) {
 queryParameters['lookup_keys'] = lookupKeys.join(',');
 }
 if (preferences != null) {
-if (preferences.isDefault case final isDefault$?) queryParameters['preferences[is_default]'] = isDefault$.toString();
-if (preferences.isPlatformDefault case final isPlatformDefault$?) queryParameters['preferences[is_platform_default]'] = isPlatformDefault$.toString();
+if (preferences.isDefault case final isDefault$?) { queryParameters['preferences[is_default]'] = isDefault$.toString(); }
+if (preferences.isPlatformDefault case final isPlatformDefault$?) { queryParameters['preferences[is_platform_default]'] = isPlatformDefault$.toString(); }
 }
 if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
@@ -11789,9 +11789,9 @@ return execute(
 Future<ApiResult<GetLinkedAccountsResponse, ErrorModel>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetLinkedAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
-if (accountHolder.account case final account$?) queryParameters['account_holder[account]'] = account$;
-if (accountHolder.customer case final customer$?) queryParameters['account_holder[customer]'] = customer$;
-if (accountHolder.customerAccount case final customerAccount$?) queryParameters['account_holder[customer_account]'] = customerAccount$;
+if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
+if (accountHolder.customer case final customer$?) { queryParameters['account_holder[customer]'] = customer$; }
+if (accountHolder.customerAccount case final customerAccount$?) { queryParameters['account_holder[customer_account]'] = customerAccount$; }
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -14767,9 +14767,9 @@ if (product != null) {
   queryParameters['product'] = product;
 }
 if (recurring != null) {
-if (recurring.interval case final interval$?) queryParameters['recurring[interval]'] = interval$.toJson();
-if (recurring.meter case final meter$?) queryParameters['recurring[meter]'] = meter$;
-if (recurring.usageType case final usageType$?) queryParameters['recurring[usage_type]'] = usageType$.toJson();
+if (recurring.interval case final interval$?) { queryParameters['recurring[interval]'] = interval$.toJson(); }
+if (recurring.meter case final meter$?) { queryParameters['recurring[meter]'] = meter$; }
+if (recurring.usageType case final usageType$?) { queryParameters['recurring[usage_type]'] = usageType$.toJson(); }
 }
 if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
@@ -19528,9 +19528,9 @@ if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (owner != null) {
-if (owner.account case final account$?) queryParameters['owner[account]'] = account$;
-if (owner.customer case final customer$?) queryParameters['owner[customer]'] = customer$;
-if (owner.customerAccount case final customerAccount$?) queryParameters['owner[customer_account]'] = customerAccount$;
+if (owner.account case final account$?) { queryParameters['owner[account]'] = account$; }
+if (owner.customer case final customer$?) { queryParameters['owner[customer]'] = customer$; }
+if (owner.customerAccount case final customerAccount$?) { queryParameters['owner[customer_account]'] = customerAccount$; }
 queryParameters['owner[type]'] = owner.type.toJson();
 }
 if (startingAfter != null) {
@@ -24104,7 +24104,7 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (statusTransitions != null) {
-if (statusTransitions.postedAt case final postedAt$?) queryParameters['status_transitions[posted_at]'] = postedAt$.toString();
+if (statusTransitions.postedAt case final postedAt$?) { queryParameters['status_transitions[posted_at]'] = postedAt$.toString(); }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

@@ -14,10 +14,10 @@ final class AuditLogsApi with ApiExecutor {const AuditLogsApi(this.apiConfig);
 Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (effectiveAt != null) {
-if (effectiveAt.gt case final gt$?) queryParametersList.add(ApiQueryParameter(name: 'gt', value: gt$.toString(), allowReserved: false));
-if (effectiveAt.gte case final gte$?) queryParametersList.add(ApiQueryParameter(name: 'gte', value: gte$.toString(), allowReserved: false));
-if (effectiveAt.lt case final lt$?) queryParametersList.add(ApiQueryParameter(name: 'lt', value: lt$.toString(), allowReserved: false));
-if (effectiveAt.lte case final lte$?) queryParametersList.add(ApiQueryParameter(name: 'lte', value: lte$.toString(), allowReserved: false));
+if (effectiveAt.gt case final gt$?) { queryParametersList.add(ApiQueryParameter(name: 'gt', value: gt$.toString(), allowReserved: false)); }
+if (effectiveAt.gte case final gte$?) { queryParametersList.add(ApiQueryParameter(name: 'gte', value: gte$.toString(), allowReserved: false)); }
+if (effectiveAt.lt case final lt$?) { queryParametersList.add(ApiQueryParameter(name: 'lt', value: lt$.toString(), allowReserved: false)); }
+if (effectiveAt.lte case final lte$?) { queryParametersList.add(ApiQueryParameter(name: 'lte', value: lte$.toString(), allowReserved: false)); }
 }
 if (projectIds != null) {
 for (final item in projectIds) {

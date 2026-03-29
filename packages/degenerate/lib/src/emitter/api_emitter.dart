@@ -616,7 +616,7 @@ class ApiEmitter {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) queryParameters['$key'] = $valueExpr;",
+            "if ($accessor.${field.name} case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
           );
         } else {
           final valueExpr = _queryScalarExpr(
@@ -635,7 +635,7 @@ class ApiEmitter {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved})); }",
           );
         } else {
           final valueExpr = _queryScalarExpr(

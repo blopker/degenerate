@@ -78,11 +78,12 @@ final class DefaultApi with ApiExecutor {
       ...apiConfig.defaultQueryParameters,
     };
     final queryParametersList = <ApiQueryParameter>[];
-    if (topic.$await case final $await$?)
+    if (topic.$await case final $await$?) {
       queryParametersList.add(
         ApiQueryParameter(name: 'await', value: $await$, allowReserved: false),
       );
-    if (topic.$async case final $async$?)
+    }
+    if (topic.$async case final $async$?) {
       queryParametersList.add(
         ApiQueryParameter(
           name: 'async',
@@ -90,6 +91,7 @@ final class DefaultApi with ApiExecutor {
           allowReserved: false,
         ),
       );
+    }
 
     final headers = <String, String>{...apiConfig.defaultHeaders};
 
