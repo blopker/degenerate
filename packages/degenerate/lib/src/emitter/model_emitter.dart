@@ -308,26 +308,12 @@ class ModelEmitter {
         ? 'return identical(this, other) || other is ${model.name};'
         : 'return identical(this, other) ||\n      other is ${model.name} &&\n          $comparisons;';
 
-    return Method(
-      (m) => m
-        ..name = 'operator =='
-        ..annotations.add(refer('override'))
-        ..returns = refer('bool')
-        ..requiredParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'other'
-              ..type = refer('Object'),
-          ),
-        )
-        ..body = Code(body),
-    );
+    return buildEqualsOverride(body);
   }
 
   Method _buildHashCode() {
     final fieldExprs = model.fields.map((f) {
       if (isListType(f.type)) {
-        // Field is nullable only if it's optional without a default value, or has a nullable type.
         final isNullable =
             (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
         if (isNullable) {
@@ -342,32 +328,20 @@ class ModelEmitter {
     if (fieldExprs.isEmpty) {
       body = 'return runtimeType.hashCode;';
     } else if (fieldExprs.length == 1) {
-      // Object.hash requires at least 2 arguments; use hashCode directly.
       body = 'return ${fieldExprs.first}.hashCode;';
     } else if (fieldExprs.length <= 20) {
       body = 'return Object.hash(${fieldExprs.join(', ')});';
     } else {
-      // Object.hash only supports up to 20 positional arguments.
-      // Use Object.hashAll for models with more than 20 fields.
       body = 'return Object.hashAll([${fieldExprs.join(', ')}]);';
     }
 
-    return Method(
-      (m) => m
-        ..name = 'hashCode'
-        ..type = MethodType.getter
-        ..annotations.add(refer('override'))
-        ..returns = refer('int')
-        ..body = Code(body),
-    );
+    return buildHashCodeOverride(body);
   }
 
   Method _buildToString() {
     final fieldStr = model.fields
         .map((f) {
-          // Use ${name} syntax for names with $ to avoid string interpolation issues.
           if (f.name.startsWith(r'$')) {
-            // Escape $ in both key and value to prevent interpolation
             final escaped = f.name.replaceAll(r'$', r'\$');
             return '$escaped: \${${f.name}}';
           }
@@ -375,14 +349,8 @@ class ModelEmitter {
         })
         .join(', ');
 
-    return Method(
-      (m) => m
-        ..name = 'toString'
-        ..annotations.add(refer('override'))
-        ..returns = refer('String')
-        ..body = Code(
-          "return '${escapeNameForString(model.name)}($fieldStr)';",
-        ),
+    return buildToStringOverride(
+      "return '${escapeNameForString(model.name)}($fieldStr)';",
     );
   }
 

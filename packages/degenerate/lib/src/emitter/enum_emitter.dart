@@ -178,46 +178,16 @@ class EnumEmitter {
     );
   }
 
-  Method _buildEquals(String className) {
-    return Method(
-      (m) => m
-        ..name = 'operator =='
-        ..annotations.add(refer('override'))
-        ..returns = refer('bool')
-        ..requiredParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'other'
-              ..type = refer('Object'),
-          ),
-        )
-        ..body = Code(
-          'return identical(this, other) ||\n'
-          '    other is $className && other.value == value;',
-        ),
-    );
-  }
+  Method _buildEquals(String className) => buildEqualsOverride(
+        'return identical(this, other) ||\n'
+        '    other is $className && other.value == value;',
+      );
 
-  Method _buildHashCode() {
-    return Method(
-      (m) => m
-        ..name = 'hashCode'
-        ..type = MethodType.getter
-        ..annotations.add(refer('override'))
-        ..returns = refer('int')
-        ..body = const Code('return value.hashCode;'),
-    );
-  }
+  Method _buildHashCode() => buildHashCodeOverride('return value.hashCode;');
 
-  Method _buildToString(String className) {
-    return Method(
-      (m) => m
-        ..name = 'toString'
-        ..annotations.add(refer('override'))
-        ..returns = refer('String')
-        ..body = Code("return '${escapeNameForString(className)}(\$value)';"),
-    );
-  }
+  Method _buildToString(String className) => buildToStringOverride(
+        "return '${escapeNameForString(className)}(\$value)';",
+      );
 
   String _valueName(String value) => enumValueName(value);
 

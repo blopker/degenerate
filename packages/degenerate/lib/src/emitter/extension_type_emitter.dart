@@ -107,6 +107,9 @@ class ExtensionTypeEmitter {
   /// Build the fromJson body. For simple types just wraps;
   /// for parsed types (DateTime, Uri, etc.) parses from the JSON wire type.
   String _fromJsonBody(IrPrimitive inner, String typeName) {
+    // Extension type fromJson params are already typed (String, num, etc.),
+    // so use 'json' directly instead of going through primitiveFromJsonExpr
+    // which adds casts for untyped accessors.
     return switch (inner.kind) {
       PrimitiveKind.dateTime => '$typeName(DateTime.parse(json))',
       PrimitiveKind.uri => '$typeName(Uri.parse(json))',
@@ -116,20 +119,11 @@ class ExtensionTypeEmitter {
       PrimitiveKind.bytes => '$typeName(base64Decode(json))',
       PrimitiveKind.int => '$typeName(json.toInt())',
       PrimitiveKind.double => '$typeName(json.toDouble())',
-      PrimitiveKind.dynamic_ => '$typeName(json)',
       _ => '$typeName(json)',
     };
   }
 
   /// Build the toJson body. Serializes back to the JSON wire type.
-  String _toJsonBody(IrPrimitive inner) {
-    return switch (inner.kind) {
-      PrimitiveKind.dateTime => 'value.toIso8601String()',
-      PrimitiveKind.uri => 'value.toString()',
-      PrimitiveKind.bigInt => 'value.toString()',
-      PrimitiveKind.duration => 'value.inMilliseconds',
-      PrimitiveKind.bytes => 'base64Encode(value)',
-      _ => 'value',
-    };
-  }
+  String _toJsonBody(IrPrimitive inner) =>
+      primitiveToJsonExpr(inner.kind, 'value');
 }

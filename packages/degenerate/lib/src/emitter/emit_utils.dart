@@ -218,20 +218,7 @@ String _buildFromJsonNonNull(
   // Resolve IrTypeRef to OneOf-eligible union before switching.
   final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
   return switch (resolved) {
-    IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.dynamic_ => accessor,
-      PrimitiveKind.string => '$accessor as String',
-      PrimitiveKind.int => '($accessor as num).toInt()',
-      PrimitiveKind.double => '($accessor as num).toDouble()',
-      PrimitiveKind.num => '$accessor as num',
-      PrimitiveKind.bool => '$accessor as bool',
-      PrimitiveKind.dateTime => 'DateTime.parse($accessor as String)',
-      PrimitiveKind.uri => 'Uri.parse($accessor as String)',
-      PrimitiveKind.bigInt => 'BigInt.parse($accessor as String)',
-      PrimitiveKind.duration =>
-        'Duration(milliseconds: ($accessor as num).toInt())',
-      PrimitiveKind.bytes => 'base64Decode($accessor as String)',
-    },
+    IrPrimitive(:final kind) => primitiveFromJsonExpr(kind, accessor),
     IrEnum(:final name, :final valueKind) => switch (valueKind) {
         PrimitiveKind.int => '$name.fromJson(($accessor as num).toInt())',
         PrimitiveKind.double => '$name.fromJson(($accessor as num).toDouble())',
@@ -276,14 +263,7 @@ String _buildFromJsonNonNull(
 String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
   final q = nullable ? '?' : '';
   return switch (type) {
-    IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.dynamic_ => accessor,
-      PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
-      PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
-      PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-      PrimitiveKind.bytes => 'base64Encode($accessor)',
-      _ => accessor,
-    },
+    IrPrimitive(:final kind) => primitiveToJsonExpr(kind, accessor, q: q),
     IrList(:final items) =>
       listItemNeedsToJson(items)
           ? '$accessor$q.map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
@@ -528,3 +508,73 @@ String toSnakeCase(String input) {
   }
   return result;
 }
+
+// ─── Shared code_builder Method helpers ──────────────────────────
+
+/// Build an `operator ==` override with the given [body].
+Method buildEqualsOverride(String body) => Method(
+      (m) => m
+        ..name = 'operator =='
+        ..annotations.add(refer('override'))
+        ..returns = refer('bool')
+        ..requiredParameters.add(
+          Parameter(
+            (p) => p
+              ..name = 'other'
+              ..type = refer('Object'),
+          ),
+        )
+        ..body = Code(body),
+    );
+
+/// Build a `hashCode` getter override with the given [body].
+Method buildHashCodeOverride(String body) => Method(
+      (m) => m
+        ..name = 'hashCode'
+        ..type = MethodType.getter
+        ..annotations.add(refer('override'))
+        ..returns = refer('int')
+        ..body = Code(body),
+    );
+
+/// Build a `toString` override with the given [body].
+Method buildToStringOverride(String body) => Method(
+      (m) => m
+        ..name = 'toString'
+        ..annotations.add(refer('override'))
+        ..returns = refer('String')
+        ..body = Code(body),
+    );
+
+// ─── PrimitiveKind codec helpers ─────────────────────────────────
+
+/// Core fromJson expression for a [PrimitiveKind] value.
+/// Returns the Dart expression that converts a JSON value to the Dart type.
+String primitiveFromJsonExpr(PrimitiveKind kind, String accessor) =>
+    switch (kind) {
+      PrimitiveKind.dynamic_ => accessor,
+      PrimitiveKind.string => '$accessor as String',
+      PrimitiveKind.int => '($accessor as num).toInt()',
+      PrimitiveKind.double => '($accessor as num).toDouble()',
+      PrimitiveKind.num => '$accessor as num',
+      PrimitiveKind.bool => '$accessor as bool',
+      PrimitiveKind.dateTime => 'DateTime.parse($accessor as String)',
+      PrimitiveKind.uri => 'Uri.parse($accessor as String)',
+      PrimitiveKind.bigInt => 'BigInt.parse($accessor as String)',
+      PrimitiveKind.duration =>
+        'Duration(milliseconds: ($accessor as num).toInt())',
+      PrimitiveKind.bytes => 'base64Decode($accessor as String)',
+    };
+
+/// Core toJson expression for a [PrimitiveKind] value.
+/// [q] is the null-aware operator (`?` or empty string).
+String primitiveToJsonExpr(PrimitiveKind kind, String accessor,
+        {String q = ''}) =>
+    switch (kind) {
+      PrimitiveKind.dynamic_ => accessor,
+      PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
+      PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
+      PrimitiveKind.duration => '$accessor$q.inMilliseconds',
+      PrimitiveKind.bytes => 'base64Encode($accessor)',
+      _ => accessor,
+    };
