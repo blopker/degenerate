@@ -14,7 +14,9 @@ final class MagicIPsecTunnelsApi with ApiExecutor {const MagicIPsecTunnelsApi(th
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels`
 Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsListIpsecTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,7 +39,9 @@ return execute(
 /// `POST /accounts/{account_id}/magic/ipsec_tunnels`
 Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsCreateIpsecTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicIpsecTunnelAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'POST',
@@ -61,7 +65,9 @@ return execute(
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels`
 Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsUpdateMultipleIpsecTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -84,7 +90,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsListIpsecTunnelDetails({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -107,7 +115,9 @@ return execute(
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsUpdateIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicIpsecTunnelAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -130,7 +140,9 @@ return execute(
 ///
 /// `DELETE /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicIpsecTunnelsDeleteIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'DELETE',

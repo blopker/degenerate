@@ -59,8 +59,12 @@ return execute(
 /// `GET /zones/{zone_id}/logs/rayids/{ray_id}`
 Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsRayidsRayId({required LogshareIdentifier zoneId, required LogshareRayIdentifier rayId, LogshareFields? fields, LogshareTimestamps? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (timestamps != null) queryParameters['timestamps'] = timestamps.toJson();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (timestamps != null) {
+  queryParameters['timestamps'] = timestamps.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -91,10 +95,18 @@ if (start != null) {
 queryParametersList.add(ApiQueryParameter(name: 'start', value: start.toString(), allowReserved: false));
 }
 queryParametersList.add(ApiQueryParameter(name: 'end', value: end.toString(), allowReserved: false));
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (sample != null) queryParameters['sample'] = sample.toString();
-if (count != null) queryParameters['count'] = count.toString();
-if (timestamps != null) queryParameters['timestamps'] = timestamps.toJson();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (sample != null) {
+  queryParameters['sample'] = sample.toString();
+}
+if (count != null) {
+  queryParameters['count'] = count.toString();
+}
+if (timestamps != null) {
+  queryParameters['timestamps'] = timestamps.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

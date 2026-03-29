@@ -15,7 +15,9 @@ final class DomainIntelligenceApi with ApiExecutor {const DomainIntelligenceApi(
 /// `GET /accounts/{account_id}/intel/domain`
 Future<ApiResult<ResponseCommon40, Never>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (domain != null) queryParameters['domain'] = domain;
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

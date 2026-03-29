@@ -13,8 +13,12 @@ final class AccessTagsApi with ApiExecutor {const AccessTagsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/access/tags`
 Future<ApiResult<ResponseCommon3, Never>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

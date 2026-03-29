@@ -101,10 +101,18 @@ return execute(
 /// `GET /zones/{zone_id}/settings/zaraz/history`
 Future<ApiResult<ResponseCommon81, Never>> getZonesZoneIdentifierZarazHistory({required ZarazIdentifier zoneId, int? offset, int? limit, GetZonesZoneIdentifierZarazHistorySortField? sortField, GetZonesZoneIdentifierZarazHistorySortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sortField != null) queryParameters['sortField'] = sortField.toJson();
-if (sortOrder != null) queryParameters['sortOrder'] = sortOrder.toJson();
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sortField != null) {
+  queryParameters['sortField'] = sortField.toJson();
+}
+if (sortOrder != null) {
+  queryParameters['sortOrder'] = sortOrder.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

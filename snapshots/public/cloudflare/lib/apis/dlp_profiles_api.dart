@@ -15,7 +15,9 @@ final class DlpProfilesApi with ApiExecutor {const DlpProfilesApi(this.apiConfig
 /// `GET /accounts/{account_id}/dlp/profiles`
 Future<ApiResult<ResponseCommon20, Never>> dlpProfilesListAllProfiles({required String accountId, bool? all, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (all != null) queryParameters['all'] = all.toString();
+if (all != null) {
+  queryParameters['all'] = all.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

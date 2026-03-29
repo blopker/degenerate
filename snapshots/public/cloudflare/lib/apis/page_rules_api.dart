@@ -15,10 +15,18 @@ final class PageRulesApi with ApiExecutor {const PageRulesApi(this.apiConfig);
 /// `GET /zones/{zone_id}/pagerules`
 Future<ApiResult<ResponseCommon87, Never>> pageRulesListPageRules({required ZonesSchemasIdentifier zoneId, PageRulesListPageRulesOrder? order, PageRulesListPageRulesDirection? direction, PageRulesListPageRulesMatch? match, PageRulesListPageRulesStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (match != null) queryParameters['match'] = match.toJson();
-if (status != null) queryParameters['status'] = status.toJson();
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (match != null) {
+  queryParameters['match'] = match.toJson();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

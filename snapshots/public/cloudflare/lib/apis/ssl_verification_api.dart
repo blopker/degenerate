@@ -15,7 +15,9 @@ final class SslVerificationApi with ApiExecutor {const SslVerificationApi(this.a
 /// `GET /zones/{zone_id}/ssl/verification`
 Future<ApiResult<TlsCertificatesAndHostnamesSslVerificationResponseCollection, Never>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic retry, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (retry != null) queryParameters['retry'] = retry.toString();
+if (retry != null) {
+  queryParameters['retry'] = retry.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

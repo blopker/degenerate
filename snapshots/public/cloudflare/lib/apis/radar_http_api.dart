@@ -90,8 +90,12 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -121,7 +125,9 @@ return execute(
 /// `GET /radar/http/timeseries`
 Future<ApiResult<RadarGetHttpTimeseriesResponse, RadarGetHttpTimeseriesResponse400>> radarGetHttpTimeseries({RadarGetHttpTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetHttpTimeseriesNormalization? normalization, List<RadarGetHttpTimeseriesBotClass>? botClass, List<RadarGetHttpTimeseriesDeviceType>? deviceType, List<RadarGetHttpTimeseriesHttpProtocol>? httpProtocol, List<RadarGetHttpTimeseriesHttpVersion>? httpVersion, List<RadarGetHttpTimeseriesIpVersion>? ipVersion, List<RadarGetHttpTimeseriesOs>? os, List<RadarGetHttpTimeseriesTlsVersion>? tlsVersion, List<RadarGetHttpTimeseriesBrowserFamily>? browserFamily, RadarGetHttpTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -162,7 +168,9 @@ for (final item in geoId) {
   queryParametersList.add(ApiQueryParameter(name: 'geoId', value: item, allowReserved: false));
 }
 }
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
 if (botClass != null) {
 for (final item in botClass) {
   queryParametersList.add(ApiQueryParameter(name: 'botClass', value: item.toJson(), allowReserved: false));
@@ -203,7 +211,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -233,7 +243,9 @@ return execute(
 /// `GET /radar/http/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetHttpTimeseriesGroupResponse, RadarGetHttpTimeseriesGroupResponse400>> radarGetHttpTimeseriesGroup({required RadarGetHttpTimeseriesGroupDimension dimension, RadarGetHttpTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, int? limitPerGroup, List<RadarGetHttpTimeseriesGroupBotClass>? botClass, List<RadarGetHttpTimeseriesGroupDeviceType>? deviceType, List<RadarGetHttpTimeseriesGroupHttpProtocol>? httpProtocol, List<RadarGetHttpTimeseriesGroupHttpVersion>? httpVersion, RadarGetHttpTimeseriesGroupNormalization? normalization, List<RadarGetHttpTimeseriesGroupIpVersion>? ipVersion, List<RadarGetHttpTimeseriesGroupOs>? os, List<RadarGetHttpTimeseriesGroupTlsVersion>? tlsVersion, RadarGetHttpTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -274,7 +286,9 @@ for (final item in geoId) {
   queryParametersList.add(ApiQueryParameter(name: 'geoId', value: item, allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 if (botClass != null) {
 for (final item in botClass) {
   queryParametersList.add(ApiQueryParameter(name: 'botClass', value: item.toJson(), allowReserved: false));
@@ -295,7 +309,9 @@ for (final item in httpVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'httpVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
 if (ipVersion != null) {
 for (final item in ipVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
@@ -311,7 +327,9 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -341,7 +359,9 @@ return execute(
 /// `GET /radar/http/top/ases`
 Future<ApiResult<RadarGetHttpTopAsesByHttpRequestsResponse, RadarGetHttpTopAsesByHttpRequestsResponse404>> radarGetHttpTopAsesByHttpRequests({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByHttpRequestsBotClass>? botClass, List<RadarGetHttpTopAsesByHttpRequestsDeviceType>? deviceType, List<RadarGetHttpTopAsesByHttpRequestsHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByHttpRequestsHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByHttpRequestsIpVersion>? ipVersion, List<RadarGetHttpTopAsesByHttpRequestsOs>? os, List<RadarGetHttpTopAsesByHttpRequestsTlsVersion>? tlsVersion, List<RadarGetHttpTopAsesByHttpRequestsBrowserFamily>? browserFamily, RadarGetHttpTopAsesByHttpRequestsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -422,7 +442,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -452,7 +474,9 @@ return execute(
 /// `GET /radar/http/top/ases/bot_class/{bot_class}`
 Future<ApiResult<RadarGetHttpTopAsesByBotClassResponse, RadarGetHttpTopAsesByBotClassResponse404>> radarGetHttpTopAsesByBotClass({required RadarGetHttpTopAsesByBotClassBotClass botClass, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByBotClassDeviceType>? deviceType, List<RadarGetHttpTopAsesByBotClassHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByBotClassHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByBotClassIpVersion>? ipVersion, List<RadarGetHttpTopAsesByBotClassOs>? os, List<RadarGetHttpTopAsesByBotClassTlsVersion>? tlsVersion, List<RadarGetHttpTopAsesByBotClassBrowserFamily>? browserFamily, RadarGetHttpTopAsesByBotClassFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -528,7 +552,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -558,7 +584,9 @@ return execute(
 /// `GET /radar/http/top/ases/browser_family/{browser_family}`
 Future<ApiResult<RadarGetHttpTopAsesByBrowserFamilyResponse, RadarGetHttpTopAsesByBrowserFamilyResponse404>> radarGetHttpTopAsesByBrowserFamily({required RadarGetHttpTopAsesByBrowserFamilyBrowserFamily browserFamily, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByBrowserFamilyBotClass>? botClass, List<RadarGetHttpTopAsesByBrowserFamilyDeviceType>? deviceType, List<RadarGetHttpTopAsesByBrowserFamilyHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByBrowserFamilyHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByBrowserFamilyIpVersion>? ipVersion, List<RadarGetHttpTopAsesByBrowserFamilyOs>? os, List<RadarGetHttpTopAsesByBrowserFamilyTlsVersion>? tlsVersion, RadarGetHttpTopAsesByBrowserFamilyFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -634,7 +662,9 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -664,7 +694,9 @@ return execute(
 /// `GET /radar/http/top/ases/device_type/{device_type}`
 Future<ApiResult<RadarGetHttpTopAsesByDeviceTypeResponse, RadarGetHttpTopAsesByDeviceTypeResponse404>> radarGetHttpTopAsesByDeviceType({required RadarGetHttpTopAsesByDeviceTypeDeviceType deviceType, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByDeviceTypeBotClass>? botClass, List<RadarGetHttpTopAsesByDeviceTypeHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByDeviceTypeHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByDeviceTypeIpVersion>? ipVersion, List<RadarGetHttpTopAsesByDeviceTypeOs>? os, List<RadarGetHttpTopAsesByDeviceTypeTlsVersion>? tlsVersion, List<RadarGetHttpTopAsesByDeviceTypeBrowserFamily>? browserFamily, RadarGetHttpTopAsesByDeviceTypeFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -740,7 +772,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -770,7 +804,9 @@ return execute(
 /// `GET /radar/http/top/ases/http_protocol/{http_protocol}`
 Future<ApiResult<RadarGetHttpTopAsesByHttpProtocolResponse, RadarGetHttpTopAsesByHttpProtocolResponse404>> radarGetHttpTopAsesByHttpProtocol({required RadarGetHttpTopAsesByHttpProtocolHttpProtocol httpProtocol, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByHttpProtocolBotClass>? botClass, List<RadarGetHttpTopAsesByHttpProtocolDeviceType>? deviceType, List<RadarGetHttpTopAsesByHttpProtocolHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByHttpProtocolIpVersion>? ipVersion, List<RadarGetHttpTopAsesByHttpProtocolOs>? os, List<RadarGetHttpTopAsesByHttpProtocolTlsVersion>? tlsVersion, List<RadarGetHttpTopAsesByHttpProtocolBrowserFamily>? browserFamily, RadarGetHttpTopAsesByHttpProtocolFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -846,7 +882,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -876,7 +914,9 @@ return execute(
 /// `GET /radar/http/top/ases/http_version/{http_version}`
 Future<ApiResult<RadarGetHttpTopAsesByHttpVersionResponse, RadarGetHttpTopAsesByHttpVersionResponse404>> radarGetHttpTopAsesByHttpVersion({required RadarGetHttpTopAsesByHttpVersionHttpVersion httpVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByHttpVersionBotClass>? botClass, List<RadarGetHttpTopAsesByHttpVersionDeviceType>? deviceType, List<RadarGetHttpTopAsesByHttpVersionHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByHttpVersionIpVersion>? ipVersion, List<RadarGetHttpTopAsesByHttpVersionOs>? os, List<RadarGetHttpTopAsesByHttpVersionTlsVersion>? tlsVersion, List<RadarGetHttpTopAsesByHttpVersionBrowserFamily>? browserFamily, RadarGetHttpTopAsesByHttpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -952,7 +992,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -982,7 +1024,9 @@ return execute(
 /// `GET /radar/http/top/ases/ip_version/{ip_version}`
 Future<ApiResult<RadarGetHttpTopAsesByIpVersionResponse, RadarGetHttpTopAsesByIpVersionResponse404>> radarGetHttpTopAsesByIpVersion({required RadarGetHttpTopAsesByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByIpVersionBotClass>? botClass, List<RadarGetHttpTopAsesByIpVersionDeviceType>? deviceType, List<RadarGetHttpTopAsesByIpVersionHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByIpVersionHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByIpVersionOs>? os, List<RadarGetHttpTopAsesByIpVersionTlsVersion>? tlsVersion, List<RadarGetHttpTopAsesByIpVersionBrowserFamily>? browserFamily, RadarGetHttpTopAsesByIpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1058,7 +1102,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1088,7 +1134,9 @@ return execute(
 /// `GET /radar/http/top/ases/os/{os}`
 Future<ApiResult<RadarGetHttpTopAsesByOperatingSystemResponse, RadarGetHttpTopAsesByOperatingSystemResponse404>> radarGetHttpTopAsesByOperatingSystem({required RadarGetHttpTopAsesByOperatingSystemOs os, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByOperatingSystemBotClass>? botClass, List<RadarGetHttpTopAsesByOperatingSystemDeviceType>? deviceType, List<RadarGetHttpTopAsesByOperatingSystemHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByOperatingSystemHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByOperatingSystemIpVersion>? ipVersion, List<RadarGetHttpTopAsesByOperatingSystemTlsVersion>? tlsVersion, List<RadarGetHttpTopAsesByOperatingSystemBrowserFamily>? browserFamily, RadarGetHttpTopAsesByOperatingSystemFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1164,7 +1212,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1194,7 +1244,9 @@ return execute(
 /// `GET /radar/http/top/ases/tls_version/{tls_version}`
 Future<ApiResult<RadarGetHttpTopAsesByTlsVersionResponse, RadarGetHttpTopAsesByTlsVersionResponse404>> radarGetHttpTopAsesByTlsVersion({required RadarGetHttpTopAsesByTlsVersionTlsVersion tlsVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopAsesByTlsVersionBotClass>? botClass, List<RadarGetHttpTopAsesByTlsVersionDeviceType>? deviceType, List<RadarGetHttpTopAsesByTlsVersionHttpProtocol>? httpProtocol, List<RadarGetHttpTopAsesByTlsVersionHttpVersion>? httpVersion, List<RadarGetHttpTopAsesByTlsVersionIpVersion>? ipVersion, List<RadarGetHttpTopAsesByTlsVersionOs>? os, List<RadarGetHttpTopAsesByTlsVersionBrowserFamily>? browserFamily, RadarGetHttpTopAsesByTlsVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1270,7 +1322,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1300,7 +1354,9 @@ return execute(
 /// `GET /radar/http/top/locations`
 Future<ApiResult<RadarGetHttpTopLocationsByHttpRequestsResponse, RadarGetHttpTopLocationsByHttpRequestsResponse404>> radarGetHttpTopLocationsByHttpRequests({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByHttpRequestsBotClass>? botClass, List<RadarGetHttpTopLocationsByHttpRequestsDeviceType>? deviceType, List<RadarGetHttpTopLocationsByHttpRequestsHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByHttpRequestsHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByHttpRequestsIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByHttpRequestsOs>? os, List<RadarGetHttpTopLocationsByHttpRequestsTlsVersion>? tlsVersion, List<RadarGetHttpTopLocationsByHttpRequestsBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByHttpRequestsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1381,7 +1437,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1411,7 +1469,9 @@ return execute(
 /// `GET /radar/http/top/locations/bot_class/{bot_class}`
 Future<ApiResult<RadarGetHttpTopLocationsByBotClassResponse, RadarGetHttpTopLocationsByBotClassResponse404>> radarGetHttpTopLocationsByBotClass({required RadarGetHttpTopLocationsByBotClassBotClass botClass, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByBotClassDeviceType>? deviceType, List<RadarGetHttpTopLocationsByBotClassHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByBotClassHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByBotClassIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByBotClassOs>? os, List<RadarGetHttpTopLocationsByBotClassTlsVersion>? tlsVersion, List<RadarGetHttpTopLocationsByBotClassBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByBotClassFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1487,7 +1547,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1517,7 +1579,9 @@ return execute(
 /// `GET /radar/http/top/locations/browser_family/{browser_family}`
 Future<ApiResult<RadarGetHttpTopLocationsByBrowserFamilyResponse, RadarGetHttpTopLocationsByBrowserFamilyResponse404>> radarGetHttpTopLocationsByBrowserFamily({required RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily browserFamily, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByBrowserFamilyBotClass>? botClass, List<RadarGetHttpTopLocationsByBrowserFamilyDeviceType>? deviceType, List<RadarGetHttpTopLocationsByBrowserFamilyHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByBrowserFamilyHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByBrowserFamilyIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByBrowserFamilyOs>? os, List<RadarGetHttpTopLocationsByBrowserFamilyTlsVersion>? tlsVersion, RadarGetHttpTopLocationsByBrowserFamilyFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1593,7 +1657,9 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1623,7 +1689,9 @@ return execute(
 /// `GET /radar/http/top/locations/device_type/{device_type}`
 Future<ApiResult<RadarGetHttpTopLocationsByDeviceTypeResponse, RadarGetHttpTopLocationsByDeviceTypeResponse404>> radarGetHttpTopLocationsByDeviceType({required RadarGetHttpTopLocationsByDeviceTypeDeviceType deviceType, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByDeviceTypeBotClass>? botClass, List<RadarGetHttpTopLocationsByDeviceTypeHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByDeviceTypeHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByDeviceTypeIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByDeviceTypeOs>? os, List<RadarGetHttpTopLocationsByDeviceTypeTlsVersion>? tlsVersion, List<RadarGetHttpTopLocationsByDeviceTypeBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByDeviceTypeFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1699,7 +1767,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1729,7 +1799,9 @@ return execute(
 /// `GET /radar/http/top/locations/http_protocol/{http_protocol}`
 Future<ApiResult<RadarGetHttpTopLocationsByHttpProtocolResponse, RadarGetHttpTopLocationsByHttpProtocolResponse404>> radarGetHttpTopLocationsByHttpProtocol({required RadarGetHttpTopLocationsByHttpProtocolHttpProtocol httpProtocol, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByHttpProtocolBotClass>? botClass, List<RadarGetHttpTopLocationsByHttpProtocolDeviceType>? deviceType, List<RadarGetHttpTopLocationsByHttpProtocolHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByHttpProtocolIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByHttpProtocolOs>? os, List<RadarGetHttpTopLocationsByHttpProtocolTlsVersion>? tlsVersion, List<RadarGetHttpTopLocationsByHttpProtocolBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByHttpProtocolFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1805,7 +1877,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1835,7 +1909,9 @@ return execute(
 /// `GET /radar/http/top/locations/http_version/{http_version}`
 Future<ApiResult<RadarGetHttpTopLocationsByHttpVersionResponse, RadarGetHttpTopLocationsByHttpVersionResponse404>> radarGetHttpTopLocationsByHttpVersion({required RadarGetHttpTopLocationsByHttpVersionHttpVersion httpVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByHttpVersionBotClass>? botClass, List<RadarGetHttpTopLocationsByHttpVersionDeviceType>? deviceType, List<RadarGetHttpTopLocationsByHttpVersionHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByHttpVersionIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByHttpVersionOs>? os, List<RadarGetHttpTopLocationsByHttpVersionTlsVersion>? tlsVersion, List<RadarGetHttpTopLocationsByHttpVersionBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByHttpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -1911,7 +1987,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1941,7 +2019,9 @@ return execute(
 /// `GET /radar/http/top/locations/ip_version/{ip_version}`
 Future<ApiResult<RadarGetHttpTopLocationsByIpVersionResponse, RadarGetHttpTopLocationsByIpVersionResponse404>> radarGetHttpTopLocationsByIpVersion({required RadarGetHttpTopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByIpVersionBotClass>? botClass, List<RadarGetHttpTopLocationsByIpVersionDeviceType>? deviceType, List<RadarGetHttpTopLocationsByIpVersionHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByIpVersionHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByIpVersionOs>? os, List<RadarGetHttpTopLocationsByIpVersionTlsVersion>? tlsVersion, List<RadarGetHttpTopLocationsByIpVersionBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByIpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -2017,7 +2097,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2047,7 +2129,9 @@ return execute(
 /// `GET /radar/http/top/locations/os/{os}`
 Future<ApiResult<RadarGetHttpTopLocationsByOperatingSystemResponse, RadarGetHttpTopLocationsByOperatingSystemResponse404>> radarGetHttpTopLocationsByOperatingSystem({required RadarGetHttpTopLocationsByOperatingSystemOs os, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByOperatingSystemBotClass>? botClass, List<RadarGetHttpTopLocationsByOperatingSystemDeviceType>? deviceType, List<RadarGetHttpTopLocationsByOperatingSystemHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByOperatingSystemHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByOperatingSystemIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByOperatingSystemTlsVersion>? tlsVersion, List<RadarGetHttpTopLocationsByOperatingSystemBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByOperatingSystemFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -2123,7 +2207,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2153,7 +2239,9 @@ return execute(
 /// `GET /radar/http/top/locations/tls_version/{tls_version}`
 Future<ApiResult<RadarGetHttpTopLocationsByTlsVersionResponse, RadarGetHttpTopLocationsByTlsVersionResponse404>> radarGetHttpTopLocationsByTlsVersion({required RadarGetHttpTopLocationsByTlsVersionTlsVersion tlsVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, List<RadarGetHttpTopLocationsByTlsVersionBotClass>? botClass, List<RadarGetHttpTopLocationsByTlsVersionDeviceType>? deviceType, List<RadarGetHttpTopLocationsByTlsVersionHttpProtocol>? httpProtocol, List<RadarGetHttpTopLocationsByTlsVersionHttpVersion>? httpVersion, List<RadarGetHttpTopLocationsByTlsVersionIpVersion>? ipVersion, List<RadarGetHttpTopLocationsByTlsVersionOs>? os, List<RadarGetHttpTopLocationsByTlsVersionBrowserFamily>? browserFamily, RadarGetHttpTopLocationsByTlsVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -2229,7 +2317,9 @@ for (final item in browserFamily) {
   queryParametersList.add(ApiQueryParameter(name: 'browserFamily', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

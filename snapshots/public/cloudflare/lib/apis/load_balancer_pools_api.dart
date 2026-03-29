@@ -15,7 +15,9 @@ final class LoadBalancerPoolsApi with ApiExecutor {const LoadBalancerPoolsApi(th
 /// `GET /user/load_balancers/pools`
 Future<ApiResult<ResponseCommon42, Never>> loadBalancerPoolsListPools({String? monitor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (monitor != null) queryParameters['monitor'] = monitor;
+if (monitor != null) {
+  queryParameters['monitor'] = monitor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

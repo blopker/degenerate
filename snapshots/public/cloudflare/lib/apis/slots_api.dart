@@ -13,12 +13,24 @@ final class SlotsApi with ApiExecutor {const SlotsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/cni/slots`
 Future<ApiResult<NscSlotList, Never>> listSlots({required NscAccountTag accountId, String? addressContains, String? site, String? speed, bool? occupied, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (addressContains != null) queryParameters['address_contains'] = addressContains;
-if (site != null) queryParameters['site'] = site;
-if (speed != null) queryParameters['speed'] = speed;
-if (occupied != null) queryParameters['occupied'] = occupied.toString();
-if (cursor != null) queryParameters['cursor'] = cursor.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (addressContains != null) {
+  queryParameters['address_contains'] = addressContains;
+}
+if (site != null) {
+  queryParameters['site'] = site;
+}
+if (speed != null) {
+  queryParameters['speed'] = speed;
+}
+if (occupied != null) {
+  queryParameters['occupied'] = occupied.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -16,10 +16,18 @@ final class OriginCaApi with ApiExecutor {const OriginCaApi(this.apiConfig);
 Future<ApiResult<ResponseCommon68, Never>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['zone_id'] = zoneId.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

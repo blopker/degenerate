@@ -15,7 +15,9 @@ final class BotnetThreatFeedApi with ApiExecutor {const BotnetThreatFeedApi(this
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/day_report`
 Future<ApiResult<ResponseCommon28, Never>> botnetThreatFeedGetDayReport({required DosIdentifier accountId, required DosAsn asnId, DosTimestamp? date, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (date != null) queryParameters['date'] = date.toString();
+if (date != null) {
+  queryParameters['date'] = date.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

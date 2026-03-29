@@ -15,19 +15,25 @@ final class RadarRobotsTxtApi with ApiExecutor {const RadarRobotsTxtApi(this.api
 /// `GET /radar/robots_txt/top/domain_categories`
 Future<ApiResult<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404>> radarGetRobotsTxtTopDomainCategoriesByFilesParsed({int? limit, List<String>? name, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory? userAgentCategory, List<String>? date, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
 }
 }
-if (userAgentCategory != null) queryParameters['userAgentCategory'] = userAgentCategory.toJson();
+if (userAgentCategory != null) {
+  queryParameters['userAgentCategory'] = userAgentCategory.toJson();
+}
 if (date != null) {
 for (final item in date) {
   queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -57,13 +63,17 @@ return execute(
 /// `GET /radar/robots_txt/top/user_agents/directive`
 Future<ApiResult<RadarGetRobotsTxtTopUserAgentsByDirectiveResponse, RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404>> radarGetRobotsTxtTopUserAgentsByDirective({int? limit, List<String>? name, RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory? userAgentCategory, List<String>? date, List<String>? domainCategory, RadarGetRobotsTxtTopUserAgentsByDirectiveDirective? directive, RadarGetRobotsTxtTopUserAgentsByDirectiveFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
 }
 }
-if (userAgentCategory != null) queryParameters['userAgentCategory'] = userAgentCategory.toJson();
+if (userAgentCategory != null) {
+  queryParameters['userAgentCategory'] = userAgentCategory.toJson();
+}
 if (date != null) {
 for (final item in date) {
   queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
@@ -74,8 +84,12 @@ for (final item in domainCategory) {
   queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item, allowReserved: false));
 }
 }
-if (directive != null) queryParameters['directive'] = directive.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (directive != null) {
+  queryParameters['directive'] = directive.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

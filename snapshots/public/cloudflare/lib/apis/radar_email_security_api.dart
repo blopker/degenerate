@@ -60,8 +60,12 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -91,7 +95,9 @@ return execute(
 /// `GET /radar/email/security/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetEmailSecurityTimeseriesGroupResponse, RadarGetEmailSecurityTimeseriesGroupResponse400>> radarGetEmailSecurityTimeseriesGroup({required RadarGetEmailSecurityTimeseriesGroupDimension dimension, RadarGetEmailSecurityTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTimeseriesGroupArc>? arc, List<RadarGetEmailSecurityTimeseriesGroupDkim>? dkim, List<RadarGetEmailSecurityTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailSecurityTimeseriesGroupSpf>? spf, List<RadarGetEmailSecurityTimeseriesGroupTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecurityTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -137,8 +143,12 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -168,7 +178,9 @@ return execute(
 /// `GET /radar/email/security/top/tlds`
 Future<ApiResult<RadarGetEmailSecurityTopTldsByMessagesResponse, RadarGetEmailSecurityTopTldsByMessagesResponse404>> radarGetEmailSecurityTopTldsByMessages({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMessagesArc>? arc, List<RadarGetEmailSecurityTopTldsByMessagesDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMessagesDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMessagesSpf>? spf, List<RadarGetEmailSecurityTopTldsByMessagesTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMessagesTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMessagesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -214,8 +226,12 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (tldCategory != null) {
+  queryParameters['tldCategory'] = tldCategory.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -245,7 +261,9 @@ return execute(
 /// `GET /radar/email/security/top/tlds/malicious/{malicious}`
 Future<ApiResult<RadarGetEmailSecurityTopTldsByMaliciousResponse, RadarGetEmailSecurityTopTldsByMaliciousResponse404>> radarGetEmailSecurityTopTldsByMalicious({required RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMaliciousArc>? arc, List<RadarGetEmailSecurityTopTldsByMaliciousDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMaliciousDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMaliciousSpf>? spf, List<RadarGetEmailSecurityTopTldsByMaliciousTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMaliciousTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMaliciousFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -291,8 +309,12 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (tldCategory != null) {
+  queryParameters['tldCategory'] = tldCategory.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -322,7 +344,9 @@ return execute(
 /// `GET /radar/email/security/top/tlds/spam/{spam}`
 Future<ApiResult<RadarGetEmailSecurityTopTldsBySpamResponse, RadarGetEmailSecurityTopTldsBySpamResponse404>> radarGetEmailSecurityTopTldsBySpam({required RadarGetEmailSecurityTopTldsBySpamSpam spam, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpamArc>? arc, List<RadarGetEmailSecurityTopTldsBySpamDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpamDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpamSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpamTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpamTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpamFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -368,8 +392,12 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (tldCategory != null) {
+  queryParameters['tldCategory'] = tldCategory.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -399,7 +427,9 @@ return execute(
 /// `GET /radar/email/security/top/tlds/spoof/{spoof}`
 Future<ApiResult<RadarGetEmailSecurityTopTldsBySpoofResponse, RadarGetEmailSecurityTopTldsBySpoofResponse404>> radarGetEmailSecurityTopTldsBySpoof({required RadarGetEmailSecurityTopTldsBySpoofSpoof spoof, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpoofArc>? arc, List<RadarGetEmailSecurityTopTldsBySpoofDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpoofDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpoofSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpoofTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpoofTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpoofFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -445,8 +475,12 @@ for (final item in tlsVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (tldCategory != null) queryParameters['tldCategory'] = tldCategory.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (tldCategory != null) {
+  queryParameters['tldCategory'] = tldCategory.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -101,7 +101,9 @@ for (final item in ipVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 if (matchingAnswer != null) {
 for (final item in matchingAnswer) {
   queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
@@ -112,7 +114,9 @@ for (final item in tld) {
   queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -142,7 +146,9 @@ return execute(
 /// `GET /radar/dns/timeseries`
 Future<ApiResult<RadarGetDnsTimeseriesResponse, RadarGetDnsTimeseriesResponse400>> radarGetDnsTimeseries({RadarGetDnsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<bool>? cacheHit, List<bool>? nodata, List<RadarGetDnsTimeseriesProtocol>? protocol, List<RadarGetDnsTimeseriesQueryType?>? queryType, List<RadarGetDnsTimeseriesResponseCode>? responseCode, List<RadarGetDnsTimeseriesResponseTtl>? responseTtl, List<RadarGetDnsTimeseriesDnssec>? dnssec, List<RadarGetDnsTimeseriesDnssecAware>? dnssecAware, List<bool>? dnssecE2e, List<RadarGetDnsTimeseriesIpVersion>? ipVersion, List<bool>? matchingAnswer, List<String>? tld, RadarGetDnsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -239,7 +245,9 @@ for (final item in tld) {
   queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -269,7 +277,9 @@ return execute(
 /// `GET /radar/dns/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetDnsTimeseriesGroupResponse, RadarGetDnsTimeseriesGroupResponse400>> radarGetDnsTimeseriesGroup({required RadarGetDnsTimeseriesGroupDimension dimension, RadarGetDnsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<bool>? cacheHit, List<bool>? nodata, List<RadarGetDnsTimeseriesGroupProtocol>? protocol, List<RadarGetDnsTimeseriesGroupQueryType?>? queryType, List<RadarGetDnsTimeseriesGroupResponseCode>? responseCode, List<RadarGetDnsTimeseriesGroupResponseTtl>? responseTtl, List<RadarGetDnsTimeseriesGroupDnssec>? dnssec, List<RadarGetDnsTimeseriesGroupDnssecAware>? dnssecAware, List<bool>? dnssecE2e, List<RadarGetDnsTimeseriesGroupIpVersion>? ipVersion, int? limitPerGroup, List<bool>? matchingAnswer, List<String>? tld, RadarGetDnsTimeseriesGroupNormalization? normalization, RadarGetDnsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -356,7 +366,9 @@ for (final item in ipVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 if (matchingAnswer != null) {
 for (final item in matchingAnswer) {
   queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
@@ -367,8 +379,12 @@ for (final item in tld) {
   queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
 }
 }
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -398,7 +414,9 @@ return execute(
 /// `GET /radar/dns/top/ases`
 Future<ApiResult<RadarGetDnsTopAsesResponse, RadarGetDnsTopAsesResponse404>> radarGetDnsTopAses({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? domain, List<bool>? cacheHit, List<bool>? nodata, List<RadarGetDnsTopAsesProtocol>? protocol, List<RadarGetDnsTopAsesQueryType?>? queryType, List<RadarGetDnsTopAsesResponseCode>? responseCode, List<RadarGetDnsTopAsesResponseTtl>? responseTtl, List<RadarGetDnsTopAsesDnssec>? dnssec, List<RadarGetDnsTopAsesDnssecAware>? dnssecAware, List<bool>? dnssecE2e, List<RadarGetDnsTopAsesIpVersion>? ipVersion, List<bool>? matchingAnswer, RadarGetDnsTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -495,7 +513,9 @@ for (final item in matchingAnswer) {
   queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -525,7 +545,9 @@ return execute(
 /// `GET /radar/dns/top/locations`
 Future<ApiResult<RadarGetDnsTopLocationsResponse, RadarGetDnsTopLocationsResponse404>> radarGetDnsTopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? domain, List<bool>? cacheHit, List<bool>? nodata, List<RadarGetDnsTopLocationsProtocol>? protocol, List<RadarGetDnsTopLocationsQueryType?>? queryType, List<RadarGetDnsTopLocationsResponseCode>? responseCode, List<RadarGetDnsTopLocationsResponseTtl>? responseTtl, List<RadarGetDnsTopLocationsDnssec>? dnssec, List<RadarGetDnsTopLocationsDnssecAware>? dnssecAware, List<bool>? dnssecE2e, List<RadarGetDnsTopLocationsIpVersion>? ipVersion, List<bool>? matchingAnswer, List<String>? tld, RadarGetDnsTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -627,7 +649,9 @@ for (final item in tld) {
   queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,19 +13,35 @@ final class TokenValidationTokenRulesApi with ApiExecutor {const TokenValidation
 /// `GET /zones/{zone_id}/token_validation/rules`
 Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesList({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldUuid>? tokenConfiguration, ShieldAction? action, ShieldEnabled? enabled, ShieldUuid? id, ShieldUuid? ruleId, ShieldHost? host, ShieldHost? hostname, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 if (tokenConfiguration != null) {
 for (final item in tokenConfiguration) {
   queryParametersList.add(ApiQueryParameter(name: 'token_configuration', value: item.toJson(), allowReserved: false));
 }
 }
-if (action != null) queryParameters['action'] = action.toJson();
-if (enabled != null) queryParameters['enabled'] = enabled.toString();
-if (id != null) queryParameters['id'] = id.toString();
-if (ruleId != null) queryParameters['rule_id'] = ruleId.toString();
-if (host != null) queryParameters['host'] = host.toString();
-if (hostname != null) queryParameters['hostname'] = hostname.toString();
+if (action != null) {
+  queryParameters['action'] = action.toJson();
+}
+if (enabled != null) {
+  queryParameters['enabled'] = enabled.toString();
+}
+if (id != null) {
+  queryParameters['id'] = id.toString();
+}
+if (ruleId != null) {
+  queryParameters['rule_id'] = ruleId.toString();
+}
+if (host != null) {
+  queryParameters['host'] = host.toString();
+}
+if (hostname != null) {
+  queryParameters['hostname'] = hostname.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -200,8 +216,12 @@ return execute(
 /// `POST /zones/{zone_id}/token_validation/rules/preview`
 Future<ApiResult<ResponseCommon6, Never>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, required ShieldSelector body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 if (state != null) {
 for (final item in state) {
   queryParametersList.add(ApiQueryParameter(name: 'state', value: item.toJson(), allowReserved: false));

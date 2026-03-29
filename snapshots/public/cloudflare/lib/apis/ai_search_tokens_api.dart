@@ -13,10 +13,18 @@ final class AiSearchTokensApi with ApiExecutor {const AiSearchTokensApi(this.api
 /// `GET /accounts/{account_id}/ai-search/tokens`
 Future<ApiResult<AiSearchListTokensResponse, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (orderByDirection != null) {
+  queryParameters['order_by_direction'] = orderByDirection.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

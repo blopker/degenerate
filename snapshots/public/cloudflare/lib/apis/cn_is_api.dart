@@ -13,10 +13,18 @@ final class CnIsApi with ApiExecutor {const CnIsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/cni/cnis`
 Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (slot != null) queryParameters['slot'] = slot;
-if (tunnelId != null) queryParameters['tunnel_id'] = tunnelId;
-if (cursor != null) queryParameters['cursor'] = cursor.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (slot != null) {
+  queryParameters['slot'] = slot;
+}
+if (tunnelId != null) {
+  queryParameters['tunnel_id'] = tunnelId;
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

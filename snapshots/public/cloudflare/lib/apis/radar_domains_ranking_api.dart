@@ -15,20 +15,28 @@ final class RadarDomainsRankingApi with ApiExecutor {const RadarDomainsRankingAp
 /// `GET /radar/ranking/domain/{domain}`
 Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (rankingType != null) {
+  queryParameters['rankingType'] = rankingType.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
 }
 }
-if (includeTopLocations != null) queryParameters['includeTopLocations'] = includeTopLocations.toString();
+if (includeTopLocations != null) {
+  queryParameters['includeTopLocations'] = includeTopLocations.toString();
+}
 if (date != null) {
 for (final item in date) {
   queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -58,8 +66,12 @@ return execute(
 /// `GET /radar/ranking/timeseries_groups`
 Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (rankingType != null) {
+  queryParameters['rankingType'] = rankingType.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -95,7 +107,9 @@ for (final item in dateEnd) {
   queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -125,7 +139,9 @@ return execute(
 /// `GET /radar/ranking/top`
 Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -146,8 +162,12 @@ for (final item in date) {
   queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
 }
 }
-if (rankingType != null) queryParameters['rankingType'] = rankingType.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (rankingType != null) {
+  queryParameters['rankingType'] = rankingType.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

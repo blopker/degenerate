@@ -15,21 +15,41 @@ final class TunnelRoutingApi with ApiExecutor {const TunnelRoutingApi(this.apiCo
 /// `GET /accounts/{account_id}/teamnet/routes`
 Future<ApiResult<ResponseCommon69, Never>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (comment != null) queryParameters['comment'] = comment.toString();
-if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
-if (networkSubset != null) queryParameters['network_subset'] = networkSubset.toString();
-if (networkSuperset != null) queryParameters['network_superset'] = networkSuperset.toString();
-if (existedAt != null) queryParameters['existed_at'] = existedAt.toString();
-if (tunnelId != null) queryParameters['tunnel_id'] = tunnelId.toString();
-if (routeId != null) queryParameters['route_id'] = routeId.toString();
+if (comment != null) {
+  queryParameters['comment'] = comment.toString();
+}
+if (isDeleted != null) {
+  queryParameters['is_deleted'] = isDeleted.toString();
+}
+if (networkSubset != null) {
+  queryParameters['network_subset'] = networkSubset.toString();
+}
+if (networkSuperset != null) {
+  queryParameters['network_superset'] = networkSuperset.toString();
+}
+if (existedAt != null) {
+  queryParameters['existed_at'] = existedAt.toString();
+}
+if (tunnelId != null) {
+  queryParameters['tunnel_id'] = tunnelId.toString();
+}
+if (routeId != null) {
+  queryParameters['route_id'] = routeId.toString();
+}
 if (tunTypes != null) {
 for (final item in tunTypes) {
   queryParametersList.add(ApiQueryParameter(name: 'tun_types', value: item.toJson(), allowReserved: false));
 }
 }
-if (virtualNetworkId != null) queryParameters['virtual_network_id'] = virtualNetworkId.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (virtualNetworkId != null) {
+  queryParameters['virtual_network_id'] = virtualNetworkId.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -145,8 +165,12 @@ return execute(
 /// `GET /accounts/{account_id}/teamnet/routes/ip/{ip}`
 Future<ApiResult<ResponseCommon69, Never>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (virtualNetworkId != null) queryParameters['virtual_network_id'] = virtualNetworkId.toString();
-if (defaultVirtualNetworkFallback != null) queryParameters['default_virtual_network_fallback'] = defaultVirtualNetworkFallback.toString();
+if (virtualNetworkId != null) {
+  queryParameters['virtual_network_id'] = virtualNetworkId.toString();
+}
+if (defaultVirtualNetworkFallback != null) {
+  queryParameters['default_virtual_network_fallback'] = defaultVirtualNetworkFallback.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

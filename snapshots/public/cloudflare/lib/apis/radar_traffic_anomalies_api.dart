@@ -15,21 +15,41 @@ final class RadarTrafficAnomaliesApi with ApiExecutor {const RadarTrafficAnomali
 /// `GET /radar/traffic_anomalies`
 Future<ApiResult<RadarGetTrafficAnomaliesResponse, RadarGetTrafficAnomaliesResponse400>> radarGetTrafficAnomalies({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesStatus? status, List<RadarGetTrafficAnomaliesType>? type, int? asn, String? location, String? origin, RadarGetTrafficAnomaliesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (dateRange != null) queryParameters['dateRange'] = dateRange;
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (dateRange != null) {
+  queryParameters['dateRange'] = dateRange;
+}
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 if (type != null) {
 for (final item in type) {
   queryParametersList.add(ApiQueryParameter(name: 'type', value: item.toJson(), allowReserved: false));
 }
 }
-if (asn != null) queryParameters['asn'] = asn.toString();
-if (location != null) queryParameters['location'] = location;
-if (origin != null) queryParameters['origin'] = origin;
-if (format != null) queryParameters['format'] = format.toJson();
+if (asn != null) {
+  queryParameters['asn'] = asn.toString();
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (origin != null) {
+  queryParameters['origin'] = origin;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -59,12 +79,24 @@ return execute(
 /// `GET /radar/traffic_anomalies/locations`
 Future<ApiResult<RadarGetTrafficAnomaliesTopResponse, RadarGetTrafficAnomaliesTopResponse400>> radarGetTrafficAnomaliesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesTopStatus? status, RadarGetTrafficAnomaliesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (dateRange != null) queryParameters['dateRange'] = dateRange;
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (status != null) queryParameters['status'] = status.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (dateRange != null) {
+  queryParameters['dateRange'] = dateRange;
+}
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

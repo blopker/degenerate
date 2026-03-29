@@ -18,18 +18,36 @@ final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
 queryParameters['id'] = id.map((item) => item.toJson()).join(',');
 }
-if (name != null) queryParameters['name'] = name;
-if (nameStartsWith != null) queryParameters['name.startsWith'] = nameStartsWith;
-if (nameEndsWith != null) queryParameters['name.endsWith'] = nameEndsWith;
-if (nameContains != null) queryParameters['name.contains'] = nameContains;
-if (containingAccount != null) queryParameters['containing.account'] = containingAccount;
-if (containingUser != null) queryParameters['containing.user'] = containingUser;
-if (containingOrganization != null) queryParameters['containing.organization'] = containingOrganization;
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (nameStartsWith != null) {
+  queryParameters['name.startsWith'] = nameStartsWith;
+}
+if (nameEndsWith != null) {
+  queryParameters['name.endsWith'] = nameEndsWith;
+}
+if (nameContains != null) {
+  queryParameters['name.contains'] = nameContains;
+}
+if (containingAccount != null) {
+  queryParameters['containing.account'] = containingAccount;
+}
+if (containingUser != null) {
+  queryParameters['containing.user'] = containingUser;
+}
+if (containingOrganization != null) {
+  queryParameters['containing.organization'] = containingOrganization;
+}
 if (parentId != null) {
 queryParametersList.add(ApiQueryParameter(name: 'parent.id', value: parentId.toString(), allowReserved: false));
 }
-if (pageToken != null) queryParameters['page_token'] = pageToken;
-if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+if (pageToken != null) {
+  queryParameters['page_token'] = pageToken;
+}
+if (pageSize != null) {
+  queryParameters['page_size'] = pageSize.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -145,16 +163,36 @@ return execute(
 /// `GET /organizations/{organization_id}/accounts`
 Future<ApiResult<OrganizationsGetAccountsResponse, Never>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (accountPubname != null) queryParameters['account_pubname'] = accountPubname;
-if (accountPubnameStartsWith != null) queryParameters['account_pubname.startsWith'] = accountPubnameStartsWith;
-if (accountPubnameEndsWith != null) queryParameters['account_pubname.endsWith'] = accountPubnameEndsWith;
-if (accountPubnameContains != null) queryParameters['account_pubname.contains'] = accountPubnameContains;
-if (name != null) queryParameters['name'] = name;
-if (nameStartsWith != null) queryParameters['name.startsWith'] = nameStartsWith;
-if (nameEndsWith != null) queryParameters['name.endsWith'] = nameEndsWith;
-if (nameContains != null) queryParameters['name.contains'] = nameContains;
-if (pageToken != null) queryParameters['page_token'] = pageToken;
-if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+if (accountPubname != null) {
+  queryParameters['account_pubname'] = accountPubname;
+}
+if (accountPubnameStartsWith != null) {
+  queryParameters['account_pubname.startsWith'] = accountPubnameStartsWith;
+}
+if (accountPubnameEndsWith != null) {
+  queryParameters['account_pubname.endsWith'] = accountPubnameEndsWith;
+}
+if (accountPubnameContains != null) {
+  queryParameters['account_pubname.contains'] = accountPubnameContains;
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (nameStartsWith != null) {
+  queryParameters['name.startsWith'] = nameStartsWith;
+}
+if (nameEndsWith != null) {
+  queryParameters['name.endsWith'] = nameEndsWith;
+}
+if (nameContains != null) {
+  queryParameters['name.contains'] = nameContains;
+}
+if (pageToken != null) {
+  queryParameters['page_token'] = pageToken;
+}
+if (pageSize != null) {
+  queryParameters['page_size'] = pageSize.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,9 +15,15 @@ final class RadarOriginsApi with ApiExecutor {const RadarOriginsApi(this.apiConf
 /// `GET /radar/origins`
 Future<ApiResult<RadarGetOriginsResponse, RadarGetOriginsResponse400>> radarGetOrigins({int? limit, int? offset, RadarGetOriginsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -47,7 +53,9 @@ return execute(
 /// `GET /radar/origins/{slug}`
 Future<ApiResult<RadarGetOriginDetailsResponse, RadarGetOriginDetailsResponse404>> radarGetOriginDetails({required RadarGetOriginDetailsSlug slug, RadarGetOriginDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -97,7 +105,9 @@ for (final item in dateEnd) {
   queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 for (final item in origin) {
   queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson(), allowReserved: false));
 }
@@ -107,7 +117,9 @@ for (final item in region) {
   queryParametersList.add(ApiQueryParameter(name: 'region', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -137,7 +149,9 @@ return execute(
 /// `GET /radar/origins/timeseries`
 Future<ApiResult<RadarGetOriginsTimeseriesResponse, RadarGetOriginsTimeseriesResponse400>> radarGetOriginsTimeseries({RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -167,7 +181,9 @@ for (final item in region) {
   queryParametersList.add(ApiQueryParameter(name: 'region', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -197,7 +213,9 @@ return execute(
 /// `GET /radar/origins/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetOriginsTimeseriesGroupResponse, RadarGetOriginsTimeseriesGroupResponse400>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -218,7 +236,9 @@ for (final item in dateEnd) {
   queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 for (final item in origin) {
   queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson(), allowReserved: false));
 }
@@ -228,8 +248,12 @@ for (final item in region) {
   queryParametersList.add(ApiQueryParameter(name: 'region', value: item, allowReserved: false));
 }
 }
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

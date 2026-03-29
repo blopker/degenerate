@@ -15,10 +15,18 @@ final class ProjectsApi with ApiExecutor {const ProjectsApi(this.apiConfig);
 /// `GET /orgs/{org}/projectsV2`
 Future<ApiResult<List<Projects>, BasicError>> projectsListForOrg({required String org, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (q != null) queryParameters['q'] = q;
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (q != null) {
+  queryParameters['q'] = q;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -99,9 +107,15 @@ return execute(
 /// `GET /orgs/{org}/projectsV2/{project_number}/fields`
 Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForOrg({required int projectNumber, required String org, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -180,13 +194,21 @@ return execute(
 /// `GET /orgs/{org}/projectsV2/{project_number}/items`
 Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForOrg({required int projectNumber, required String org, String? q, ProjectsListItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (q != null) queryParameters['q'] = q;
+if (q != null) {
+  queryParameters['q'] = q;
+}
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
 }
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -352,9 +374,15 @@ final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
 }
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -437,10 +465,18 @@ return execute(
 /// `GET /users/{username}/projectsV2`
 Future<ApiResult<List<Projects>, BasicError>> projectsListForUser({required String username, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (q != null) queryParameters['q'] = q;
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (q != null) {
+  queryParameters['q'] = q;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -495,9 +531,15 @@ return execute(
 /// `GET /users/{username}/projectsV2/{project_number}/fields`
 Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForUser({required int projectNumber, required String username, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -578,10 +620,18 @@ return execute(
 /// `GET /users/{username}/projectsV2/{project_number}/items`
 Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForUser({required int projectNumber, required String username, String? before, String? after, int? perPage, String? q, ProjectsListItemsForUserFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (q != null) queryParameters['q'] = q;
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (q != null) {
+  queryParameters['q'] = q;
+}
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
 }
@@ -724,9 +774,15 @@ final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
 }
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

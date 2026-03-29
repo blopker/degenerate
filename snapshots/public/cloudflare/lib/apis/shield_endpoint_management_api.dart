@@ -15,10 +15,18 @@ final class ShieldEndpointManagementApi with ApiExecutor {const ShieldEndpointMa
 /// `GET /zones/{zone_id}/api_gateway/operations`
 Future<ApiResult<ResponseCommon6, Never>> apiShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder? order, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection? direction, List<String>? host, List<String>? method, String? endpoint, List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 if (host != null) {
 for (final item in host) {
   queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
@@ -29,7 +37,9 @@ for (final item in method) {
   queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
 }
 }
-if (endpoint != null) queryParameters['endpoint'] = endpoint;
+if (endpoint != null) {
+  queryParameters['endpoint'] = endpoint;
+}
 if (feature != null) {
 for (final item in feature) {
   queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson(), allowReserved: false));

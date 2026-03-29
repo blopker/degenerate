@@ -13,12 +13,24 @@ final class Api20100401MediaApi with ApiExecutor {const Api20100401MediaApi(this
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media.json`
 Future<ApiResult<ListMediaResponse, Never>> listMedia({required String accountSid, required String messageSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dateCreated != null) queryParameters['DateCreated'] = dateCreated.toString();
-if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore.toString();
-if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter.toString();
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (dateCreated != null) {
+  queryParameters['DateCreated'] = dateCreated.toString();
+}
+if (dateCreatedBefore != null) {
+  queryParameters['DateCreated<'] = dateCreatedBefore.toString();
+}
+if (dateCreatedAfter != null) {
+  queryParameters['DateCreated>'] = dateCreatedAfter.toString();
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

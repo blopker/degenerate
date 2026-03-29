@@ -15,11 +15,21 @@ final class MeetingsApi with ApiExecutor {const MeetingsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings`
 Future<ApiResult<RealtimekitPagingResponse, Never>> getAllMeetings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? pageNo, double? perPage, DateTime? startTime, DateTime? endTime, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (startTime != null) queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (search != null) queryParameters['search'] = search;
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (startTime != null) {
+  queryParameters['start_time'] = startTime.toString();
+}
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -69,7 +79,9 @@ return execute(
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}`
 Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
+if (name != null) {
+  queryParameters['name'] = name;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -148,8 +160,12 @@ return execute(
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants`
 Future<ApiResult<RealtimekitPagingResponse, RealtimekitGenericErrorResponse>> getMeetingParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, double? pageNo, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

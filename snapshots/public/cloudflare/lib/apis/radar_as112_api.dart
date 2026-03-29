@@ -61,8 +61,12 @@ for (final item in responseCode) {
   queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -92,7 +96,9 @@ return execute(
 /// `GET /radar/as112/timeseries`
 Future<ApiResult<RadarGetDnsAs112TimeseriesResponse, RadarGetDnsAs112TimeseriesResponse400>> radarGetDnsAs112Timeseries({RadarGetDnsAs112TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesProtocol>? protocol, List<RadarGetDnsAs112TimeseriesResponseCode>? responseCode, RadarGetDnsAs112TimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -139,7 +145,9 @@ for (final item in responseCode) {
   queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -169,7 +177,9 @@ return execute(
 /// `GET /radar/as112/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetDnsAs112TimeseriesGroupResponse, RadarGetDnsAs112TimeseriesGroupResponse400>> radarGetDnsAs112TimeseriesGroup({required RadarGetDnsAs112TimeseriesGroupDimension dimension, RadarGetDnsAs112TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesGroupQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesGroupProtocol>? protocol, List<RadarGetDnsAs112TimeseriesGroupResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -216,8 +226,12 @@ for (final item in responseCode) {
   queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -247,7 +261,9 @@ return execute(
 /// `GET /radar/as112/top/locations`
 Future<ApiResult<RadarGetDnsAs112TopLocationsResponse, RadarGetDnsAs112TopLocationsResponse404>> radarGetDnsAs112TopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -278,7 +294,9 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -308,7 +326,9 @@ return execute(
 /// `GET /radar/as112/top/locations/dnssec/{dnssec}`
 Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponse, RadarGetDnsAs112TopLocationsByDnssecResponse404>> radarGetDnsAs112TopLocationsByDnssec({required RadarGetDnsAs112TopLocationsByDnssecDnssec dnssec, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByDnssecFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -339,7 +359,9 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -369,7 +391,9 @@ return execute(
 /// `GET /radar/as112/top/locations/edns/{edns}`
 Future<ApiResult<RadarGetDnsAs112TopLocationsByEdnsResponse, RadarGetDnsAs112TopLocationsByEdnsResponse404>> radarGetDnsAs112TopLocationsByEdns({required RadarGetDnsAs112TopLocationsByEdnsEdns edns, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByEdnsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -400,7 +424,9 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -430,7 +456,9 @@ return execute(
 /// `GET /radar/as112/top/locations/ip_version/{ip_version}`
 Future<ApiResult<RadarGetDnsAs112TopLocationsByIpVersionResponse, RadarGetDnsAs112TopLocationsByIpVersionResponse404>> radarGetDnsAs112TopLocationsByIpVersion({required RadarGetDnsAs112TopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByIpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -461,7 +489,9 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

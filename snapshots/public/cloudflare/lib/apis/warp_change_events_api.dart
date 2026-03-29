@@ -19,11 +19,21 @@ queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
 queryParameters['from'] = from;
 queryParameters['to'] = to;
-if (type != null) queryParameters['type'] = type.toJson();
-if (toggle != null) queryParameters['toggle'] = toggle.toJson();
-if (configName != null) queryParameters['config_name'] = configName;
-if (accountName != null) queryParameters['account_name'] = accountName;
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (toggle != null) {
+  queryParameters['toggle'] = toggle.toJson();
+}
+if (configName != null) {
+  queryParameters['config_name'] = configName;
+}
+if (accountName != null) {
+  queryParameters['account_name'] = accountName;
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

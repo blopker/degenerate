@@ -15,10 +15,18 @@ final class CustomOriginTrustStoreApi with ApiExecutor {const CustomOriginTrustS
 /// `GET /zones/{zone_id}/acm/custom_trust_store`
 Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreListDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

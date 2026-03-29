@@ -19,9 +19,15 @@ final class BillingApi with ApiExecutor {const BillingApi(this.apiConfig);
 /// `GET /organizations/{org}/settings/billing/budgets`
 Future<ApiResult<GetAllBudgets, BasicError>> billingGetAllBudgetsOrg({required String org, int? page, int? perPage, BillingGetAllBudgetsOrgScope? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (scope != null) queryParameters['scope'] = scope.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (scope != null) {
+  queryParameters['scope'] = scope.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -136,12 +142,24 @@ return execute(
 /// `GET /organizations/{org}/settings/billing/premium_request/usage`
 Future<ApiResult<BillingPremiumRequestUsageReportOrg, BasicError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (year != null) queryParameters['year'] = year.toString();
-if (month != null) queryParameters['month'] = month.toString();
-if (day != null) queryParameters['day'] = day.toString();
-if (user != null) queryParameters['user'] = user;
-if (model != null) queryParameters['model'] = model;
-if (product != null) queryParameters['product'] = product;
+if (year != null) {
+  queryParameters['year'] = year.toString();
+}
+if (month != null) {
+  queryParameters['month'] = month.toString();
+}
+if (day != null) {
+  queryParameters['day'] = day.toString();
+}
+if (user != null) {
+  queryParameters['user'] = user;
+}
+if (model != null) {
+  queryParameters['model'] = model;
+}
+if (product != null) {
+  queryParameters['product'] = product;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -173,9 +191,15 @@ return execute(
 /// `GET /organizations/{org}/settings/billing/usage`
 Future<ApiResult<BillingUsageReport, BasicError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (year != null) queryParameters['year'] = year.toString();
-if (month != null) queryParameters['month'] = month.toString();
-if (day != null) queryParameters['day'] = day.toString();
+if (year != null) {
+  queryParameters['year'] = year.toString();
+}
+if (month != null) {
+  queryParameters['month'] = month.toString();
+}
+if (day != null) {
+  queryParameters['day'] = day.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -210,12 +234,24 @@ return execute(
 /// `GET /organizations/{org}/settings/billing/usage/summary`
 Future<ApiResult<BillingUsageSummaryReportOrg, BasicError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (year != null) queryParameters['year'] = year.toString();
-if (month != null) queryParameters['month'] = month.toString();
-if (day != null) queryParameters['day'] = day.toString();
-if (repository != null) queryParameters['repository'] = repository;
-if (product != null) queryParameters['product'] = product;
-if (sku != null) queryParameters['sku'] = sku;
+if (year != null) {
+  queryParameters['year'] = year.toString();
+}
+if (month != null) {
+  queryParameters['month'] = month.toString();
+}
+if (day != null) {
+  queryParameters['day'] = day.toString();
+}
+if (repository != null) {
+  queryParameters['repository'] = repository;
+}
+if (product != null) {
+  queryParameters['product'] = product;
+}
+if (sku != null) {
+  queryParameters['sku'] = sku;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -247,11 +283,21 @@ return execute(
 /// `GET /users/{username}/settings/billing/premium_request/usage`
 Future<ApiResult<BillingPremiumRequestUsageReportUser, BasicError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (year != null) queryParameters['year'] = year.toString();
-if (month != null) queryParameters['month'] = month.toString();
-if (day != null) queryParameters['day'] = day.toString();
-if (model != null) queryParameters['model'] = model;
-if (product != null) queryParameters['product'] = product;
+if (year != null) {
+  queryParameters['year'] = year.toString();
+}
+if (month != null) {
+  queryParameters['month'] = month.toString();
+}
+if (day != null) {
+  queryParameters['day'] = day.toString();
+}
+if (model != null) {
+  queryParameters['model'] = model;
+}
+if (product != null) {
+  queryParameters['product'] = product;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -283,9 +329,15 @@ return execute(
 /// `GET /users/{username}/settings/billing/usage`
 Future<ApiResult<BillingUsageReportUser, BasicError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (year != null) queryParameters['year'] = year.toString();
-if (month != null) queryParameters['month'] = month.toString();
-if (day != null) queryParameters['day'] = day.toString();
+if (year != null) {
+  queryParameters['year'] = year.toString();
+}
+if (month != null) {
+  queryParameters['month'] = month.toString();
+}
+if (day != null) {
+  queryParameters['day'] = day.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -320,12 +372,24 @@ return execute(
 /// `GET /users/{username}/settings/billing/usage/summary`
 Future<ApiResult<BillingUsageSummaryReportUser, BasicError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (year != null) queryParameters['year'] = year.toString();
-if (month != null) queryParameters['month'] = month.toString();
-if (day != null) queryParameters['day'] = day.toString();
-if (repository != null) queryParameters['repository'] = repository;
-if (product != null) queryParameters['product'] = product;
-if (sku != null) queryParameters['sku'] = sku;
+if (year != null) {
+  queryParameters['year'] = year.toString();
+}
+if (month != null) {
+  queryParameters['month'] = month.toString();
+}
+if (day != null) {
+  queryParameters['day'] = day.toString();
+}
+if (repository != null) {
+  queryParameters['repository'] = repository;
+}
+if (product != null) {
+  queryParameters['product'] = product;
+}
+if (sku != null) {
+  queryParameters['sku'] = sku;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

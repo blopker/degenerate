@@ -15,10 +15,18 @@ final class AccountsApi with ApiExecutor {const AccountsApi(this.apiConfig);
 /// `GET /accounts`
 Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

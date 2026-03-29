@@ -65,13 +65,27 @@ return execute(
 /// `GET /accounts/{account_id}/ai/models/search`
 Future<ApiResult<WorkersAiSearchModelResponse, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (task != null) queryParameters['task'] = task;
-if (author != null) queryParameters['author'] = author;
-if (source != null) queryParameters['source'] = source.toString();
-if (hideExperimental != null) queryParameters['hide_experimental'] = hideExperimental.toString();
-if (search != null) queryParameters['search'] = search;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (task != null) {
+  queryParameters['task'] = task;
+}
+if (author != null) {
+  queryParameters['author'] = author;
+}
+if (source != null) {
+  queryParameters['source'] = source.toString();
+}
+if (hideExperimental != null) {
+  queryParameters['hide_experimental'] = hideExperimental.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

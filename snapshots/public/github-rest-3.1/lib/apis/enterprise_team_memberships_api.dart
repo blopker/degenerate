@@ -15,8 +15,12 @@ final class EnterpriseTeamMembershipsApi with ApiExecutor {const EnterpriseTeamM
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships`
 Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsList({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

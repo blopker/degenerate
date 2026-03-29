@@ -1,32 +1,55 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'event_request_event.dart';/// POST body. Includes the event and the client's last-seen version
+import 'event_request_event.dart';
+
+/// POST body. Includes the event and the client's last-seen version
 /// for optimistic concurrency control.
-final class EventRequest {const EventRequest({required this.event, required this.lastSeenVersion, });
+final class EventRequest {
+  const EventRequest({required this.event, required this.lastSeenVersion});
 
-factory EventRequest.fromJson(Map<String, dynamic> json) { return EventRequest(
-  event: EventRequestEvent.fromJson(json['event'] as Map<String, dynamic>),
-  lastSeenVersion: (json['last_seen_version'] as num).toInt(),
-); }
+  factory EventRequest.fromJson(Map<String, dynamic> json) {
+    return EventRequest(
+      event: EventRequestEvent.fromJson(json['event'] as Map<String, dynamic>),
+      lastSeenVersion: (json['last_seen_version'] as num).toInt(),
+    );
+  }
 
-final EventRequestEvent event;
+  final EventRequestEvent event;
 
-final int lastSeenVersion;
+  final int lastSeenVersion;
 
-Map<String, dynamic> toJson() { return {
-  'event': event.toJson(),
-  'last_seen_version': lastSeenVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('last_seen_version') && json['last_seen_version'] is num; } 
-EventRequest copyWith({EventRequestEvent? event, int? lastSeenVersion, }) { return EventRequest(
-  event: event ?? this.event,
-  lastSeenVersion: lastSeenVersion ?? this.lastSeenVersion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is EventRequest &&
-          event == other.event &&
-          lastSeenVersion == other.lastSeenVersion; } 
-@override int get hashCode { return Object.hash(event, lastSeenVersion); } 
-@override String toString() { return 'EventRequest(event: $event, lastSeenVersion: $lastSeenVersion)'; } 
- }
+  Map<String, dynamic> toJson() {
+    return {'event': event.toJson(), 'last_seen_version': lastSeenVersion};
+  }
+
+  static bool canParse(Map<String, dynamic> json) {
+    return json.containsKey('event') &&
+        json.containsKey('last_seen_version') &&
+        json['last_seen_version'] is num;
+  }
+
+  EventRequest copyWith({EventRequestEvent? event, int? lastSeenVersion}) {
+    return EventRequest(
+      event: event ?? this.event,
+      lastSeenVersion: lastSeenVersion ?? this.lastSeenVersion,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is EventRequest &&
+            event == other.event &&
+            lastSeenVersion == other.lastSeenVersion;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(event, lastSeenVersion);
+  }
+
+  @override
+  String toString() {
+    return 'EventRequest(event: $event, lastSeenVersion: $lastSeenVersion)';
+  }
+}

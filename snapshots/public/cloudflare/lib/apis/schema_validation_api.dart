@@ -15,10 +15,18 @@ final class SchemaValidationApi with ApiExecutor {const SchemaValidationApi(this
 /// `GET /zones/{zone_id}/schema_validation/schemas`
 Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemasPaginated({required ShieldIdentifier zoneId, int? page, int? perPage, bool? omitSource, bool? validationEnabled, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (omitSource != null) queryParameters['omit_source'] = omitSource.toString();
-if (validationEnabled != null) queryParameters['validation_enabled'] = validationEnabled.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (omitSource != null) {
+  queryParameters['omit_source'] = omitSource.toString();
+}
+if (validationEnabled != null) {
+  queryParameters['validation_enabled'] = validationEnabled.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -68,7 +76,9 @@ return execute(
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}`
 Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, bool? omitSource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (omitSource != null) queryParameters['omit_source'] = omitSource.toString();
+if (omitSource != null) {
+  queryParameters['omit_source'] = omitSource.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -154,10 +164,18 @@ for (final item in method) {
   queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
 }
 }
-if (endpoint != null) queryParameters['endpoint'] = endpoint;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (operationStatus != null) queryParameters['operation_status'] = operationStatus.toJson();
+if (endpoint != null) {
+  queryParameters['endpoint'] = endpoint;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (operationStatus != null) {
+  queryParameters['operation_status'] = operationStatus.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -184,8 +202,12 @@ return execute(
 /// `GET /zones/{zone_id}/schema_validation/schemas/hosts`
 Future<ApiResult<ResponseCommon6, Never>> schemaValidationListSchemaHosts({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

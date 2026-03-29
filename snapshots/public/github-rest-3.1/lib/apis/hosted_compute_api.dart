@@ -17,8 +17,12 @@ final class HostedComputeApi with ApiExecutor {const HostedComputeApi(this.apiCo
 /// `GET /orgs/{org}/settings/network-configurations`
 Future<ApiResult<HostedComputeListNetworkConfigurationsForOrgResponse, Never>> hostedComputeListNetworkConfigurationsForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

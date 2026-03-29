@@ -1,23 +1,47 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class UpdateCurrentUserImageRequest {const UpdateCurrentUserImageRequest({required this.profileImage});
+import 'dart:convert';
+import 'dart:typed_data';
 
-factory UpdateCurrentUserImageRequest.fromJson(Map<String, dynamic> json) { return UpdateCurrentUserImageRequest(
-  profileImage: base64Decode(json['profile_image'] as String),
-); }
+final class UpdateCurrentUserImageRequest {
+  const UpdateCurrentUserImageRequest({required this.profileImage});
 
-final Uint8List profileImage;
+  factory UpdateCurrentUserImageRequest.fromJson(Map<String, dynamic> json) {
+    return UpdateCurrentUserImageRequest(
+      profileImage: base64Decode(json['profile_image'] as String),
+    );
+  }
 
-Map<String, dynamic> toJson() { return {
-  'profile_image': base64Encode(profileImage),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('profile_image'); } 
-UpdateCurrentUserImageRequest copyWith({Uint8List? profileImage}) { return UpdateCurrentUserImageRequest(
-  profileImage: profileImage ?? this.profileImage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is UpdateCurrentUserImageRequest &&
-          profileImage == other.profileImage; } 
-@override int get hashCode { return profileImage.hashCode; } 
-@override String toString() { return 'UpdateCurrentUserImageRequest(profileImage: $profileImage)'; } 
- }
+  final Uint8List profileImage;
+
+  Map<String, dynamic> toJson() {
+    return {'profile_image': base64Encode(profileImage)};
+  }
+
+  static bool canParse(Map<String, dynamic> json) {
+    return json.containsKey('profile_image');
+  }
+
+  UpdateCurrentUserImageRequest copyWith({Uint8List? profileImage}) {
+    return UpdateCurrentUserImageRequest(
+      profileImage: profileImage ?? this.profileImage,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is UpdateCurrentUserImageRequest &&
+            profileImage == other.profileImage;
+  }
+
+  @override
+  int get hashCode {
+    return profileImage.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'UpdateCurrentUserImageRequest(profileImage: $profileImage)';
+  }
+}

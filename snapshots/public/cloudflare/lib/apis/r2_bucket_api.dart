@@ -14,7 +14,9 @@ final class R2BucketApi with ApiExecutor {const R2BucketApi(this.apiConfig);
 ///
 /// `GET /accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration`
 Future<ApiResult<Response2, ResponseFailure>> r2GetEventNotificationConfigs({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,7 +41,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}`
 Future<ApiResult<Response2, ResponseFailure>> r2GetEventNotificationConfig({required R2QueueIdentifier queueId, required R2BucketName bucketName, required R2AccountIdentifier accountId, R2GetEventNotificationConfigCfR2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -65,7 +69,9 @@ return execute(
 /// `PUT /accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}`
 Future<ApiResult<Response2, Never>> r2PutEventNotificationConfig({required R2QueueIdentifier queueId, required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutEventNotificationConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -89,7 +95,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}`
 Future<ApiResult<Response2, Never>> r2EventNotificationDeleteConfig({required R2QueueIdentifier queueId, required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, R2EventNotificationDeleteConfigRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -113,15 +121,29 @@ return execute(
 /// `GET /accounts/{account_id}/r2/buckets`
 Future<ApiResult<Response2, Never>> r2ListBuckets({required R2AccountIdentifier accountId, String? nameContains, String? startAfter, double? perPage, R2ListBucketsOrder? order, R2ListBucketsDirection? direction, String? cursor, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (nameContains != null) queryParameters['name_contains'] = nameContains;
-if (startAfter != null) queryParameters['start_after'] = startAfter;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (nameContains != null) {
+  queryParameters['name_contains'] = nameContains;
+}
+if (startAfter != null) {
+  queryParameters['start_after'] = startAfter;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -146,7 +168,9 @@ return execute(
 /// `POST /accounts/{account_id}/r2/buckets`
 Future<ApiResult<Response2, Never>> r2CreateBucket({required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2CreateBucketRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'POST',
@@ -169,7 +193,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}`
 Future<ApiResult<Response2, Never>> r2GetBucket({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -191,7 +217,9 @@ return execute(
 ///
 /// `PATCH /accounts/{account_id}/r2/buckets/{bucket_name}`
 Future<ApiResult<Response2, Never>> r2PatchBucket({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2StorageClass cfR2StorageClass, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 headers['cf-r2-storage-class'] = cfR2StorageClass.toJson();
 
 final request = ApiRequest(
@@ -214,7 +242,9 @@ return execute(
 ///
 /// `DELETE /accounts/{account_id}/r2/buckets/{bucket_name}`
 Future<ApiResult<Response2, Never>> r2DeleteBucket({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -236,7 +266,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}/cors`
 Future<ApiResult<Response2, Never>> r2GetBucketCorsPolicy({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -259,7 +291,9 @@ return execute(
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/cors`
 Future<ApiResult<Response2, Never>> r2PutBucketCorsPolicy({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketCorsPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -282,7 +316,9 @@ return execute(
 ///
 /// `DELETE /accounts/{account_id}/r2/buckets/{bucket_name}/cors`
 Future<ApiResult<Response2, Never>> r2DeleteBucketCorsPolicy({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -304,7 +340,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom`
 Future<ApiResult<Response2, Never>> r2ListCustomDomains({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -327,7 +365,9 @@ return execute(
 /// `POST /accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom`
 Future<ApiResult<Response2, Never>> r2AddCustomDomain({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2AddCustomDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'POST',
@@ -350,7 +390,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}`
 Future<ApiResult<Response2, Never>> r2GetCustomDomainSettings({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2DomainName domain, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -373,7 +415,9 @@ return execute(
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}`
 Future<ApiResult<Response2, Never>> r2EditCustomDomainSettings({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2DomainName domain, R2Jurisdiction? cfR2Jurisdiction, required R2EditCustomDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -396,7 +440,9 @@ return execute(
 ///
 /// `DELETE /accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}`
 Future<ApiResult<Response2, Never>> r2DeleteCustomDomain({required R2BucketName bucketName, required R2AccountIdentifier accountId, required R2DomainName domain, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -418,7 +464,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}/domains/managed`
 Future<ApiResult<Response2, Never>> r2GetBucketPublicPolicy({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -441,7 +489,9 @@ return execute(
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/domains/managed`
 Future<ApiResult<Response2, Never>> r2PutBucketPublicPolicy({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2EditManagedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -464,7 +514,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}/lifecycle`
 Future<ApiResult<Response2, Never>> r2GetBucketLifecycleConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -487,7 +539,9 @@ return execute(
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/lifecycle`
 Future<ApiResult<Response2, Never>> r2PutBucketLifecycleConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketLifecycleConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -554,7 +608,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}/lock`
 Future<ApiResult<Response2, Never>> r2GetBucketLockConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -577,7 +633,9 @@ return execute(
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/lock`
 Future<ApiResult<Response2, Never>> r2PutBucketLockConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketLockConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -600,7 +658,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/r2/buckets/{bucket_name}/sippy`
 Future<ApiResult<Response2, Never>> r2GetBucketSippyConfig({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -623,7 +683,9 @@ return execute(
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/sippy`
 Future<ApiResult<Response2, Never>> r2PutBucketSippyConfig({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketSippyConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -646,7 +708,9 @@ return execute(
 ///
 /// `DELETE /accounts/{account_id}/r2/buckets/{bucket_name}/sippy`
 Future<ApiResult<Response2, Never>> r2DeleteBucketSippyConfig({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfR2Jurisdiction != null) headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+if (cfR2Jurisdiction != null) {
+  headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
+}
 
 final request = ApiRequest(
   method: 'DELETE',

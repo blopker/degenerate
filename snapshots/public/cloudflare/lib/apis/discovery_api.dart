@@ -36,8 +36,12 @@ return execute(
 /// `GET /zones/{zone_id}/api_gateway/discovery/operations`
 Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 if (host != null) {
 for (final item in host) {
   queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
@@ -48,12 +52,24 @@ for (final item in method) {
   queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
 }
 }
-if (endpoint != null) queryParameters['endpoint'] = endpoint;
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (diff != null) queryParameters['diff'] = diff.toString();
-if (origin != null) queryParameters['origin'] = origin.toJson();
-if (state != null) queryParameters['state'] = state.toJson();
+if (endpoint != null) {
+  queryParameters['endpoint'] = endpoint;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (diff != null) {
+  queryParameters['diff'] = diff.toString();
+}
+if (origin != null) {
+  queryParameters['origin'] = origin.toJson();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

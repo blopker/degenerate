@@ -50,8 +50,12 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -81,7 +85,9 @@ return execute(
 /// `GET /radar/ai/inference/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetAiInferenceTimeseriesGroupResponse, RadarGetAiInferenceTimeseriesGroupResponse400>> radarGetAiInferenceTimeseriesGroup({required RadarGetAiInferenceTimeseriesGroupDimension dimension, RadarGetAiInferenceTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, RadarGetAiInferenceTimeseriesGroupNormalization? normalization, RadarGetAiInferenceTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -117,9 +123,15 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

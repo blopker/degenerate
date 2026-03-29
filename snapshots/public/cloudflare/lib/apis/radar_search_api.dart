@@ -15,8 +15,12 @@ final class RadarSearchApi with ApiExecutor {const RadarSearchApi(this.apiConfig
 /// `GET /radar/search/global`
 Future<ApiResult<RadarGetSearchGlobalResponse, RadarGetSearchGlobalResponse400>> radarGetSearchGlobal({int? limit, double? limitPerGroup, required String query, List<RadarGetSearchGlobalInclude>? include, List<RadarGetSearchGlobalExclude>? exclude, RadarGetSearchGlobalFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 queryParameters['query'] = query;
 if (include != null) {
 for (final item in include) {
@@ -28,7 +32,9 @@ for (final item in exclude) {
   queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

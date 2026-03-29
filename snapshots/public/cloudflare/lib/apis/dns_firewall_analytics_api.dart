@@ -17,13 +17,27 @@ final class DnsFirewallAnalyticsApi with ApiExecutor {const DnsFirewallAnalytics
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report`
 Future<ApiResult<ResponseCommon22, Never>> dnsFirewallAnalyticsTable({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metrics != null) queryParameters['metrics'] = metrics.toString();
-if (dimensions != null) queryParameters['dimensions'] = dimensions.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (until != null) queryParameters['until'] = until.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sort != null) queryParameters['sort'] = sort.toString();
-if (filters != null) queryParameters['filters'] = filters.toString();
+if (metrics != null) {
+  queryParameters['metrics'] = metrics.toString();
+}
+if (dimensions != null) {
+  queryParameters['dimensions'] = dimensions.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toString();
+}
+if (filters != null) {
+  queryParameters['filters'] = filters.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -52,14 +66,30 @@ return execute(
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report/bytime`
 Future<ApiResult<ResponseCommon22, Never>> dnsFirewallAnalyticsByTime({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metrics != null) queryParameters['metrics'] = metrics.toString();
-if (dimensions != null) queryParameters['dimensions'] = dimensions.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (until != null) queryParameters['until'] = until.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sort != null) queryParameters['sort'] = sort.toString();
-if (filters != null) queryParameters['filters'] = filters.toString();
-if (timeDelta != null) queryParameters['time_delta'] = timeDelta.toJson();
+if (metrics != null) {
+  queryParameters['metrics'] = metrics.toString();
+}
+if (dimensions != null) {
+  queryParameters['dimensions'] = dimensions.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toString();
+}
+if (filters != null) {
+  queryParameters['filters'] = filters.toString();
+}
+if (timeDelta != null) {
+  queryParameters['time_delta'] = timeDelta.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

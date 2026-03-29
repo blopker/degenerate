@@ -60,8 +60,12 @@ for (final item in compromised) {
   queryParametersList.add(ApiQueryParameter(name: 'compromised', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -91,7 +95,9 @@ return execute(
 /// `GET /radar/leaked_credential_checks/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetLeakedCredentialChecksTimeseriesGroupResponse, RadarGetLeakedCredentialChecksTimeseriesGroupResponse400>> radarGetLeakedCredentialChecksTimeseriesGroup({required RadarGetLeakedCredentialChecksTimeseriesGroupDimension dimension, RadarGetLeakedCredentialChecksTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksTimeseriesGroupBotClass>? botClass, List<RadarGetLeakedCredentialChecksTimeseriesGroupCompromised>? compromised, List<RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult>? checkResult, int? limitPerGroup, RadarGetLeakedCredentialChecksTimeseriesGroupNormalization? normalization, RadarGetLeakedCredentialChecksTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -142,9 +148,15 @@ for (final item in checkResult) {
   queryParametersList.add(ApiQueryParameter(name: 'checkResult', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

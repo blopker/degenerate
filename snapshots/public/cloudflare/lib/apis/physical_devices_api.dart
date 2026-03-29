@@ -15,21 +15,41 @@ final class PhysicalDevicesApi with ApiExecutor {const PhysicalDevicesApi(this.a
 /// `GET /accounts/{account_id}/devices/physical-devices`
 Future<ApiResult<ListDevicesResponse, Never>> listDevices({required String accountId, String? cursor, ListDevicesSortBy? sortBy, ListDevicesSortOrder? sortOrder, String? lastSeenUserEmail, String? seenAfter, String? seenBefore, int? perPage, String? search, ListDevicesActiveRegistrations? activeRegistrations, List<String>? id, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cursor != null) queryParameters['cursor'] = cursor;
-if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
-if (lastSeenUserEmail != null) queryParameters['last_seen_user.email'] = lastSeenUserEmail;
-if (seenAfter != null) queryParameters['seen_after'] = seenAfter;
-if (seenBefore != null) queryParameters['seen_before'] = seenBefore;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
-if (activeRegistrations != null) queryParameters['active_registrations'] = activeRegistrations.toJson();
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
+if (sortBy != null) {
+  queryParameters['sort_by'] = sortBy.toJson();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
+if (lastSeenUserEmail != null) {
+  queryParameters['last_seen_user.email'] = lastSeenUserEmail;
+}
+if (seenAfter != null) {
+  queryParameters['seen_after'] = seenAfter;
+}
+if (seenBefore != null) {
+  queryParameters['seen_before'] = seenBefore;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (activeRegistrations != null) {
+  queryParameters['active_registrations'] = activeRegistrations.toJson();
+}
 if (id != null) {
 for (final item in id) {
   queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
 }
 }
-if (include != null) queryParameters['include'] = include;
+if (include != null) {
+  queryParameters['include'] = include;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -56,7 +76,9 @@ return execute(
 /// `GET /accounts/{account_id}/devices/physical-devices/{device_id}`
 Future<ApiResult<GetDeviceResponse, Never>> getDevice({required String deviceId, required String accountId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (include != null) queryParameters['include'] = include;
+if (include != null) {
+  queryParameters['include'] = include;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

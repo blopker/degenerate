@@ -13,11 +13,21 @@ final class AiSearchInstancesApi with ApiExecutor {const AiSearchInstancesApi(th
 /// `GET /accounts/{account_id}/ai-search/instances`
 Future<ApiResult<AiSearchListInstancesResponse, AiSearchListInstancesResponse400>> aiSearchListInstances({required String accountId, int? page, int? perPage, String? search, AiSearchListInstancesOrderBy? orderBy, AiSearchListInstancesOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (orderByDirection != null) {
+  queryParameters['order_by_direction'] = orderByDirection.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -32,7 +32,9 @@ return execute(
 /// `GET /accounts/{account_id}/security-center/insights`
 Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsights({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
@@ -83,8 +85,12 @@ for (final item in subjectneq) {
   queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
 }
 }
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -151,7 +157,9 @@ return execute(
 /// `GET /accounts/{account_id}/security-center/insights/class`
 Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsightCountsByClass({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
@@ -226,7 +234,9 @@ return execute(
 /// `GET /accounts/{account_id}/security-center/insights/severity`
 Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsightCountsBySeverity({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
@@ -301,7 +311,9 @@ return execute(
 /// `GET /accounts/{account_id}/security-center/insights/type`
 Future<ApiResult<ResponseCommon61, Never>> getSecurityCenterInsightCountsByType({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
@@ -376,7 +388,9 @@ return execute(
 /// `GET /zones/{zone_id}/security-center/insights`
 Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsights({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
@@ -427,8 +441,12 @@ for (final item in subjectneq) {
   queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
 }
 }
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -474,7 +492,9 @@ return execute(
 /// `GET /zones/{zone_id}/security-center/insights/class`
 Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsightCountsByClass({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
@@ -549,7 +569,9 @@ return execute(
 /// `GET /zones/{zone_id}/security-center/insights/severity`
 Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsightCountsBySeverity({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
@@ -624,7 +646,9 @@ return execute(
 /// `GET /zones/{zone_id}/security-center/insights/type`
 Future<ApiResult<ResponseCommon61, Never>> getZoneSecurityCenterInsightCountsByType({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dismissed != null) queryParameters['dismissed'] = dismissed.toString();
+if (dismissed != null) {
+  queryParameters['dismissed'] = dismissed.toString();
+}
 if (issueClass != null) {
 for (final item in issueClass) {
   queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));

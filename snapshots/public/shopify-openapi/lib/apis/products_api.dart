@@ -15,9 +15,15 @@ final class ProductsApi with ApiExecutor {const ProductsApi(this.apiConfig);
 /// `GET /admin/api/2020-01/collects.json`
 Future<ApiResult<void, Never>> deprecated202001GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -63,7 +69,9 @@ return execute(
 /// `GET /admin/api/2020-01/collects/{collect_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -107,7 +115,9 @@ return execute(
 /// `GET /admin/api/2020-01/collects/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -132,9 +142,15 @@ return execute(
 /// `GET /admin/api/2020-04/collects.json`
 Future<ApiResult<void, Never>> deprecated202004GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -180,7 +196,9 @@ return execute(
 /// `GET /admin/api/2020-04/collects/{collect_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -224,7 +242,9 @@ return execute(
 /// `GET /admin/api/2020-04/collects/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -249,9 +269,15 @@ return execute(
 /// `GET /admin/api/2020-07/collects.json`
 Future<ApiResult<void, Never>> deprecated202007GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -297,7 +323,9 @@ return execute(
 /// `GET /admin/api/2020-07/collects/{collect_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -341,7 +369,9 @@ return execute(
 /// `GET /admin/api/2020-07/collects/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -366,9 +396,15 @@ return execute(
 /// `GET /admin/api/2020-10/collects.json`
 Future<ApiResult<void, Never>> getCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -414,7 +450,9 @@ return execute(
 /// `GET /admin/api/2020-10/collects/{collect_id}.json`
 Future<ApiResult<void, Never>> getCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -458,7 +496,9 @@ return execute(
 /// `GET /admin/api/2020-10/collects/count.json`
 Future<ApiResult<void, Never>> getCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -483,9 +523,15 @@ return execute(
 /// `GET /admin/api/2021-01/collects.json`
 Future<ApiResult<void, Never>> deprecated202101GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -531,7 +577,9 @@ return execute(
 /// `GET /admin/api/2021-01/collects/{collect_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -575,7 +623,9 @@ return execute(
 /// `GET /admin/api/2021-01/collects/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -600,9 +650,15 @@ return execute(
 /// `GET /admin/api/unstable/collects.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -648,7 +704,9 @@ return execute(
 /// `GET /admin/api/unstable/collects/{collect_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -692,7 +750,9 @@ return execute(
 /// `GET /admin/api/unstable/collects/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -717,7 +777,9 @@ return execute(
 /// `GET /admin/api/2020-01/collections/{collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -742,7 +804,9 @@ return execute(
 /// `GET /admin/api/2020-01/collections/{collection_id}/products.json`
 Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -767,7 +831,9 @@ return execute(
 /// `GET /admin/api/2020-04/collections/{collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -792,7 +858,9 @@ return execute(
 /// `GET /admin/api/2020-04/collections/{collection_id}/products.json`
 Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -817,7 +885,9 @@ return execute(
 /// `GET /admin/api/2020-07/collections/{collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -842,7 +912,9 @@ return execute(
 /// `GET /admin/api/2020-07/collections/{collection_id}/products.json`
 Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -867,7 +939,9 @@ return execute(
 /// `GET /admin/api/2020-10/collections/{collection_id}.json`
 Future<ApiResult<void, Never>> getCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -892,7 +966,9 @@ return execute(
 /// `GET /admin/api/2020-10/collections/{collection_id}/products.json`
 Future<ApiResult<void, Never>> getCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -917,7 +993,9 @@ return execute(
 /// `GET /admin/api/2021-01/collections/{collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -942,7 +1020,9 @@ return execute(
 /// `GET /admin/api/2021-01/collections/{collection_id}/products.json`
 Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -967,7 +1047,9 @@ return execute(
 /// `GET /admin/api/unstable/collections/{collection_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -992,7 +1074,9 @@ return execute(
 /// `GET /admin/api/unstable/collections/{collection_id}/products.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1017,18 +1101,42 @@ return execute(
 /// `GET /admin/api/2020-01/custom_collections.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1074,13 +1182,27 @@ return execute(
 /// `GET /admin/api/2020-01/custom_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1105,7 +1227,9 @@ return execute(
 /// `GET /admin/api/2020-01/custom_collections/{custom_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1170,18 +1294,42 @@ return execute(
 /// `GET /admin/api/2020-04/custom_collections.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1227,13 +1375,27 @@ return execute(
 /// `GET /admin/api/2020-04/custom_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1258,7 +1420,9 @@ return execute(
 /// `GET /admin/api/2020-04/custom_collections/{custom_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1323,18 +1487,42 @@ return execute(
 /// `GET /admin/api/2020-07/custom_collections.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1380,13 +1568,27 @@ return execute(
 /// `GET /admin/api/2020-07/custom_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1411,7 +1613,9 @@ return execute(
 /// `GET /admin/api/2020-07/custom_collections/{custom_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1476,18 +1680,42 @@ return execute(
 /// `GET /admin/api/2020-10/custom_collections.json`
 Future<ApiResult<void, Never>> getCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1533,13 +1761,27 @@ return execute(
 /// `GET /admin/api/2020-10/custom_collections/count.json`
 Future<ApiResult<void, Never>> getCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1564,7 +1806,9 @@ return execute(
 /// `GET /admin/api/2020-10/custom_collections/{custom_collection_id}.json`
 Future<ApiResult<void, Never>> getCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1629,18 +1873,42 @@ return execute(
 /// `GET /admin/api/2021-01/custom_collections.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1686,13 +1954,27 @@ return execute(
 /// `GET /admin/api/2021-01/custom_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1717,7 +1999,9 @@ return execute(
 /// `GET /admin/api/2021-01/custom_collections/{custom_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1782,18 +2066,42 @@ return execute(
 /// `GET /admin/api/unstable/custom_collections.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1839,13 +2147,27 @@ return execute(
 /// `GET /admin/api/unstable/custom_collections/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1870,7 +2192,9 @@ return execute(
 /// `GET /admin/api/unstable/custom_collections/{custom_collection_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1935,24 +2259,60 @@ return execute(
 /// `GET /admin/api/2020-01/products.json`
 Future<ApiResult<void, Never>> deprecated202001GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (presentmentCurrencies != null) queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (presentmentCurrencies != null) {
+  queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2002,16 +2362,36 @@ return execute(
 /// `GET /admin/api/2020-01/products/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2036,7 +2416,9 @@ return execute(
 /// `GET /admin/api/2020-01/products/{product_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2105,24 +2487,60 @@ return execute(
 /// `GET /admin/api/2020-04/products.json`
 Future<ApiResult<void, Never>> deprecated202004GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (presentmentCurrencies != null) queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (presentmentCurrencies != null) {
+  queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2172,16 +2590,36 @@ return execute(
 /// `GET /admin/api/2020-04/products/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2206,7 +2644,9 @@ return execute(
 /// `GET /admin/api/2020-04/products/{product_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2275,24 +2715,60 @@ return execute(
 /// `GET /admin/api/2020-07/products.json`
 Future<ApiResult<void, Never>> deprecated202007GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (presentmentCurrencies != null) queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (presentmentCurrencies != null) {
+  queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2342,16 +2818,36 @@ return execute(
 /// `GET /admin/api/2020-07/products/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2376,7 +2872,9 @@ return execute(
 /// `GET /admin/api/2020-07/products/{product_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2445,24 +2943,60 @@ return execute(
 /// `GET /admin/api/2020-10/products.json`
 Future<ApiResult<void, Never>> getProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (presentmentCurrencies != null) queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (presentmentCurrencies != null) {
+  queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2512,16 +3046,36 @@ return execute(
 /// `GET /admin/api/2020-10/products/count.json`
 Future<ApiResult<void, Never>> getProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2546,7 +3100,9 @@ return execute(
 /// `GET /admin/api/2020-10/products/{product_id}.json`
 Future<ApiResult<void, Never>> getProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2615,24 +3171,60 @@ return execute(
 /// `GET /admin/api/2021-01/products.json`
 Future<ApiResult<void, Never>> deprecated202101GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (presentmentCurrencies != null) queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (presentmentCurrencies != null) {
+  queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2682,16 +3274,36 @@ return execute(
 /// `GET /admin/api/2021-01/products/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2716,7 +3328,9 @@ return execute(
 /// `GET /admin/api/2021-01/products/{product_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2785,24 +3399,60 @@ return execute(
 /// `GET /admin/api/unstable/products.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (presentmentCurrencies != null) queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (presentmentCurrencies != null) {
+  queryParameters['presentment_currencies'] = presentmentCurrencies.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2852,16 +3502,36 @@ return execute(
 /// `GET /admin/api/unstable/products/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (vendor != null) queryParameters['vendor'] = vendor.toString();
-if (productType != null) queryParameters['product_type'] = productType.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (vendor != null) {
+  queryParameters['vendor'] = vendor.toString();
+}
+if (productType != null) {
+  queryParameters['product_type'] = productType.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2886,7 +3556,9 @@ return execute(
 /// `GET /admin/api/unstable/products/{product_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2955,8 +3627,12 @@ return execute(
 /// `GET /admin/api/2020-01/products/{product_id}/images.json`
 Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3002,7 +3678,9 @@ return execute(
 /// `GET /admin/api/2020-01/products/{product_id}/images/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3027,7 +3705,9 @@ return execute(
 /// `GET /admin/api/2020-01/products/{product_id}/images/{image_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3092,8 +3772,12 @@ return execute(
 /// `GET /admin/api/2020-04/products/{product_id}/images.json`
 Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3139,7 +3823,9 @@ return execute(
 /// `GET /admin/api/2020-04/products/{product_id}/images/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3164,7 +3850,9 @@ return execute(
 /// `GET /admin/api/2020-04/products/{product_id}/images/{image_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3229,8 +3917,12 @@ return execute(
 /// `GET /admin/api/2020-07/products/{product_id}/images.json`
 Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3276,7 +3968,9 @@ return execute(
 /// `GET /admin/api/2020-07/products/{product_id}/images/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3301,7 +3995,9 @@ return execute(
 /// `GET /admin/api/2020-07/products/{product_id}/images/{image_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3366,8 +4062,12 @@ return execute(
 /// `GET /admin/api/2020-10/products/{product_id}/images.json`
 Future<ApiResult<void, Never>> getProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3413,7 +4113,9 @@ return execute(
 /// `GET /admin/api/2020-10/products/{product_id}/images/count.json`
 Future<ApiResult<void, Never>> getProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3438,7 +4140,9 @@ return execute(
 /// `GET /admin/api/2020-10/products/{product_id}/images/{image_id}.json`
 Future<ApiResult<void, Never>> getProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3503,8 +4207,12 @@ return execute(
 /// `GET /admin/api/2021-01/products/{product_id}/images.json`
 Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3550,7 +4258,9 @@ return execute(
 /// `GET /admin/api/2021-01/products/{product_id}/images/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3575,7 +4285,9 @@ return execute(
 /// `GET /admin/api/2021-01/products/{product_id}/images/{image_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3640,8 +4352,12 @@ return execute(
 /// `GET /admin/api/unstable/products/{product_id}/images.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3687,7 +4403,9 @@ return execute(
 /// `GET /admin/api/unstable/products/{product_id}/images/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3712,7 +4430,9 @@ return execute(
 /// `GET /admin/api/unstable/products/{product_id}/images/{image_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3777,18 +4497,42 @@ return execute(
 /// `GET /admin/api/2020-01/smart_collections.json`
 Future<ApiResult<void, Never>> deprecated202001GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3834,13 +4578,27 @@ return execute(
 /// `GET /admin/api/2020-01/smart_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3865,7 +4623,9 @@ return execute(
 /// `GET /admin/api/2020-01/smart_collections/{smart_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3930,9 +4690,15 @@ return execute(
 /// `PUT /admin/api/2020-01/smart_collections/{smart_collection_id}/order.json`
 Future<ApiResult<void, Never>> deprecated202001UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (products != null) queryParameters['products'] = products.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toString();
-if (products2 != null) queryParameters['products[]'] = products2.toString();
+if (products != null) {
+  queryParameters['products'] = products.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toString();
+}
+if (products2 != null) {
+  queryParameters['products[]'] = products2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3959,18 +4725,42 @@ return execute(
 /// `GET /admin/api/2020-04/smart_collections.json`
 Future<ApiResult<void, Never>> deprecated202004GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4016,13 +4806,27 @@ return execute(
 /// `GET /admin/api/2020-04/smart_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4047,7 +4851,9 @@ return execute(
 /// `GET /admin/api/2020-04/smart_collections/{smart_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4112,9 +4918,15 @@ return execute(
 /// `PUT /admin/api/2020-04/smart_collections/{smart_collection_id}/order.json`
 Future<ApiResult<void, Never>> deprecated202004UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (products != null) queryParameters['products'] = products.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toString();
-if (products2 != null) queryParameters['products[]'] = products2.toString();
+if (products != null) {
+  queryParameters['products'] = products.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toString();
+}
+if (products2 != null) {
+  queryParameters['products[]'] = products2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4141,18 +4953,42 @@ return execute(
 /// `GET /admin/api/2020-07/smart_collections.json`
 Future<ApiResult<void, Never>> deprecated202007GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4198,13 +5034,27 @@ return execute(
 /// `GET /admin/api/2020-07/smart_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4229,7 +5079,9 @@ return execute(
 /// `GET /admin/api/2020-07/smart_collections/{smart_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4294,9 +5146,15 @@ return execute(
 /// `PUT /admin/api/2020-07/smart_collections/{smart_collection_id}/order.json`
 Future<ApiResult<void, Never>> deprecated202007UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (products != null) queryParameters['products'] = products.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toString();
-if (products2 != null) queryParameters['products[]'] = products2.toString();
+if (products != null) {
+  queryParameters['products'] = products.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toString();
+}
+if (products2 != null) {
+  queryParameters['products[]'] = products2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4323,18 +5181,42 @@ return execute(
 /// `GET /admin/api/2020-10/smart_collections.json`
 Future<ApiResult<void, Never>> getSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4380,13 +5262,27 @@ return execute(
 /// `GET /admin/api/2020-10/smart_collections/count.json`
 Future<ApiResult<void, Never>> getSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4411,7 +5307,9 @@ return execute(
 /// `GET /admin/api/2020-10/smart_collections/{smart_collection_id}.json`
 Future<ApiResult<void, Never>> getSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4476,9 +5374,15 @@ return execute(
 /// `PUT /admin/api/2020-10/smart_collections/{smart_collection_id}/order.json`
 Future<ApiResult<void, Never>> updateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (products != null) queryParameters['products'] = products.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toString();
-if (products2 != null) queryParameters['products[]'] = products2.toString();
+if (products != null) {
+  queryParameters['products'] = products.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toString();
+}
+if (products2 != null) {
+  queryParameters['products[]'] = products2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4505,18 +5409,42 @@ return execute(
 /// `GET /admin/api/2021-01/smart_collections.json`
 Future<ApiResult<void, Never>> deprecated202101GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4562,13 +5490,27 @@ return execute(
 /// `GET /admin/api/2021-01/smart_collections/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4593,7 +5535,9 @@ return execute(
 /// `GET /admin/api/2021-01/smart_collections/{smart_collection_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4658,9 +5602,15 @@ return execute(
 /// `PUT /admin/api/2021-01/smart_collections/{smart_collection_id}/order.json`
 Future<ApiResult<void, Never>> deprecated202101UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (products != null) queryParameters['products'] = products.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toString();
-if (products2 != null) queryParameters['products[]'] = products2.toString();
+if (products != null) {
+  queryParameters['products'] = products.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toString();
+}
+if (products2 != null) {
+  queryParameters['products[]'] = products2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4687,18 +5637,42 @@ return execute(
 /// `GET /admin/api/unstable/smart_collections.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4744,13 +5718,27 @@ return execute(
 /// `GET /admin/api/unstable/smart_collections/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (title != null) queryParameters['title'] = title.toString();
-if (productId != null) queryParameters['product_id'] = productId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (publishedAtMin != null) queryParameters['published_at_min'] = publishedAtMin.toString();
-if (publishedAtMax != null) queryParameters['published_at_max'] = publishedAtMax.toString();
-if (publishedStatus != null) queryParameters['published_status'] = publishedStatus.toString();
+if (title != null) {
+  queryParameters['title'] = title.toString();
+}
+if (productId != null) {
+  queryParameters['product_id'] = productId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (publishedAtMin != null) {
+  queryParameters['published_at_min'] = publishedAtMin.toString();
+}
+if (publishedAtMax != null) {
+  queryParameters['published_at_max'] = publishedAtMax.toString();
+}
+if (publishedStatus != null) {
+  queryParameters['published_status'] = publishedStatus.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4775,7 +5763,9 @@ return execute(
 /// `GET /admin/api/unstable/smart_collections/{smart_collection_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4840,9 +5830,15 @@ return execute(
 /// `PUT /admin/api/unstable/smart_collections/{smart_collection_id}/order.json`
 Future<ApiResult<void, Never>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (products != null) queryParameters['products'] = products.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toString();
-if (products2 != null) queryParameters['products[]'] = products2.toString();
+if (products != null) {
+  queryParameters['products'] = products.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toString();
+}
+if (products2 != null) {
+  queryParameters['products[]'] = products2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

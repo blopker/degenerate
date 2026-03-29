@@ -15,8 +15,12 @@ final class WorkersAiTranslationApi with ApiExecutor {const WorkersAiTranslation
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/indictrans2-en-indic-1B`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -48,8 +52,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/omni-indictrans2-en-indic-1b`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -81,8 +89,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/m2m100-1.2b`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

@@ -15,11 +15,21 @@ final class AiGatewayDatasetsApi with ApiExecutor {const AiGatewayDatasetsApi(th
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets`
 Future<ApiResult<AigConfigListDatasetResponse, AigConfigListDatasetResponse400>> aigConfigListDataset({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? enable, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (name != null) queryParameters['name'] = name;
-if (enable != null) queryParameters['enable'] = enable.toString();
-if (search != null) queryParameters['search'] = search;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (enable != null) {
+  queryParameters['enable'] = enable.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

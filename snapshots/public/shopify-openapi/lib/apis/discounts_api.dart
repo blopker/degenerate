@@ -116,7 +116,9 @@ return execute(
 /// `GET /admin/api/2020-01/discount_codes/lookup.json`
 Future<ApiResult<void, Never>> deprecated202001GetDiscountCodesLookup({int? code, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (code != null) queryParameters['code'] = code.toString();
+if (code != null) {
+  queryParameters['code'] = code.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -320,7 +322,9 @@ return execute(
 /// `GET /admin/api/2020-04/discount_codes/lookup.json`
 Future<ApiResult<void, Never>> deprecated202004GetDiscountCodesLookup({int? code, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (code != null) queryParameters['code'] = code.toString();
+if (code != null) {
+  queryParameters['code'] = code.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -524,7 +528,9 @@ return execute(
 /// `GET /admin/api/2020-07/discount_codes/lookup.json`
 Future<ApiResult<void, Never>> deprecated202007GetDiscountCodesLookup({int? code, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (code != null) queryParameters['code'] = code.toString();
+if (code != null) {
+  queryParameters['code'] = code.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -728,7 +734,9 @@ return execute(
 /// `GET /admin/api/2020-10/discount_codes/lookup.json`
 Future<ApiResult<void, Never>> getDiscountCodesLookup({int? code, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (code != null) queryParameters['code'] = code.toString();
+if (code != null) {
+  queryParameters['code'] = code.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -932,7 +940,9 @@ return execute(
 /// `GET /admin/api/2021-01/discount_codes/lookup.json`
 Future<ApiResult<void, Never>> deprecated202101GetDiscountCodesLookup({int? code, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (code != null) queryParameters['code'] = code.toString();
+if (code != null) {
+  queryParameters['code'] = code.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1136,7 +1146,9 @@ return execute(
 /// `GET /admin/api/unstable/discount_codes/lookup.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetDiscountCodesLookup({int? code, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (code != null) queryParameters['code'] = code.toString();
+if (code != null) {
+  queryParameters['code'] = code.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

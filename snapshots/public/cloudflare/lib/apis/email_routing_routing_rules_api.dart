@@ -15,9 +15,15 @@ final class EmailRoutingRoutingRulesApi with ApiExecutor {const EmailRoutingRout
 /// `GET /zones/{zone_id}/email/routing/rules`
 Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesListRoutingRules({required EmailIdentifier zoneId, double? page, double? perPage, bool? enabled, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (enabled != null) queryParameters['enabled'] = enabled.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (enabled != null) {
+  queryParameters['enabled'] = enabled.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

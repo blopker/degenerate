@@ -168,7 +168,9 @@ return execute(
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/insert`
 Future<ApiResult<ResponseCommon72, Never>> vectorizeInsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeInsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (unparsableBehavior != null) queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();
+if (unparsableBehavior != null) {
+  queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-ndjson';
@@ -197,8 +199,12 @@ return execute(
 /// `GET /accounts/{account_id}/vectorize/v2/indexes/{index_name}/list`
 Future<ApiResult<ResponseCommon72, Never>> vectorizeListVectors({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, int? count, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (count != null) queryParameters['count'] = count.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (count != null) {
+  queryParameters['count'] = count.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -315,7 +321,9 @@ return execute(
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/upsert`
 Future<ApiResult<ResponseCommon72, Never>> vectorizeUpsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeUpsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (unparsableBehavior != null) queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();
+if (unparsableBehavior != null) {
+  queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-ndjson';

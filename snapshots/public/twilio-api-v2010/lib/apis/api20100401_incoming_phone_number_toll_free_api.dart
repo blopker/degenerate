@@ -13,13 +13,27 @@ final class Api20100401IncomingPhoneNumberTollFreeApi with ApiExecutor {const Ap
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json`
 Future<ApiResult<ListIncomingPhoneNumberTollFreeResponse, Never>> listIncomingPhoneNumberTollFree({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (beta != null) queryParameters['Beta'] = beta.toString();
-if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
-if (phoneNumber != null) queryParameters['PhoneNumber'] = phoneNumber;
-if (origin != null) queryParameters['Origin'] = origin;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (beta != null) {
+  queryParameters['Beta'] = beta.toString();
+}
+if (friendlyName != null) {
+  queryParameters['FriendlyName'] = friendlyName;
+}
+if (phoneNumber != null) {
+  queryParameters['PhoneNumber'] = phoneNumber;
+}
+if (origin != null) {
+  queryParameters['Origin'] = origin;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

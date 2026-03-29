@@ -15,8 +15,12 @@ final class AccountResourceGroupsApi with ApiExecutor {const AccountResourceGrou
 /// `GET /accounts/{account_id}/iam/resource_groups`
 Future<ApiResult<ResponseCommon35, Never>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id.toString();
-if (name != null) queryParameters['name'] = name;
+if (id != null) {
+  queryParameters['id'] = id.toString();
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

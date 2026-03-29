@@ -15,18 +15,42 @@ final class AuditLogsApi with ApiExecutor {const AuditLogsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/audit_logs`
 Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetAccountAuditLogs({required AaaIdentifier accountId, String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, dynamic since, dynamic before, String? zoneName, AuditLogsGetAccountAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id;
-if ($export != null) queryParameters['export'] = $export.toString();
-if (actionType != null) queryParameters['action.type'] = actionType;
-if (actorIp != null) queryParameters['actor.ip'] = actorIp;
-if (actorEmail != null) queryParameters['actor.email'] = actorEmail;
-if (since != null) queryParameters['since'] = since.toString();
-if (before != null) queryParameters['before'] = before.toString();
-if (zoneName != null) queryParameters['zone.name'] = zoneName;
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (hideUserLogs != null) queryParameters['hide_user_logs'] = hideUserLogs.toString();
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if ($export != null) {
+  queryParameters['export'] = $export.toString();
+}
+if (actionType != null) {
+  queryParameters['action.type'] = actionType;
+}
+if (actorIp != null) {
+  queryParameters['actor.ip'] = actorIp;
+}
+if (actorEmail != null) {
+  queryParameters['actor.email'] = actorEmail;
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before.toString();
+}
+if (zoneName != null) {
+  queryParameters['zone.name'] = zoneName;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (hideUserLogs != null) {
+  queryParameters['hide_user_logs'] = hideUserLogs.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -275,9 +299,15 @@ for (final item in zoneNameNot) {
 }
 queryParameters['since'] = since;
 queryParameters['before'] = before;
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -304,18 +334,42 @@ return execute(
 /// `GET /user/audit_logs`
 Future<ApiResult<AaaAuditLogsResponseCollection, Never>> auditLogsGetUserAuditLogs({String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, dynamic since, dynamic before, String? zoneName, AuditLogsGetUserAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id;
-if ($export != null) queryParameters['export'] = $export.toString();
-if (actionType != null) queryParameters['action.type'] = actionType;
-if (actorIp != null) queryParameters['actor.ip'] = actorIp;
-if (actorEmail != null) queryParameters['actor.email'] = actorEmail;
-if (since != null) queryParameters['since'] = since.toString();
-if (before != null) queryParameters['before'] = before.toString();
-if (zoneName != null) queryParameters['zone.name'] = zoneName;
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (hideUserLogs != null) queryParameters['hide_user_logs'] = hideUserLogs.toString();
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if ($export != null) {
+  queryParameters['export'] = $export.toString();
+}
+if (actionType != null) {
+  queryParameters['action.type'] = actionType;
+}
+if (actorIp != null) {
+  queryParameters['actor.ip'] = actorIp;
+}
+if (actorEmail != null) {
+  queryParameters['actor.email'] = actorEmail;
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before.toString();
+}
+if (zoneName != null) {
+  queryParameters['zone.name'] = zoneName;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (hideUserLogs != null) {
+  queryParameters['hide_user_logs'] = hideUserLogs.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

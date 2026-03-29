@@ -14,7 +14,9 @@ final class MagicGreTunnelsApi with ApiExecutor {const MagicGreTunnelsApi(this.a
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels`
 Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,7 +39,9 @@ return execute(
 /// `POST /accounts/{account_id}/magic/gre_tunnels`
 Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicCreateGreTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'POST',
@@ -61,7 +65,9 @@ return execute(
 /// `PUT /accounts/{account_id}/magic/gre_tunnels`
 Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -84,7 +90,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsListGreTunnelDetails({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -107,7 +115,9 @@ return execute(
 /// `PUT /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicGreTunnelAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -130,7 +140,9 @@ return execute(
 ///
 /// `DELETE /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicGreTunnelsDeleteGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'DELETE',

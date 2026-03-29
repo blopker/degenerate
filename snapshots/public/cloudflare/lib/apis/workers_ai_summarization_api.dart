@@ -15,8 +15,12 @@ final class WorkersAiSummarizationApi with ApiExecutor {const WorkersAiSummariza
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/bart-large-cnn`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookBartLargeCnnResponse400>> workersAiPostRunCfFacebookBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -48,8 +52,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-bart-large-cnn`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400>> workersAiPostRunCfFacebookNonomniBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

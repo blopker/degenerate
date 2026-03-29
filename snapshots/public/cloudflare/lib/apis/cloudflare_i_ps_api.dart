@@ -15,7 +15,9 @@ final class CloudflareIPsApi with ApiExecutor {const CloudflareIPsApi(this.apiCo
 /// `GET /ips`
 Future<ApiResult<ResponseCommon52, Never>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (networks != null) queryParameters['networks'] = networks;
+if (networks != null) {
+  queryParameters['networks'] = networks;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

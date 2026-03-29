@@ -124,9 +124,15 @@ return execute(
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items`
 Future<ApiResult<ResponseCommon41, Never>> listsGetListItems({required ListsListId listId, required ListsAccountId accountId, String? cursor, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cursor != null) queryParameters['cursor'] = cursor;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

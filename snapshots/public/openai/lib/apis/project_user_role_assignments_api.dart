@@ -13,9 +13,15 @@ final class ProjectUserRoleAssignmentsApi with ApiExecutor {const ProjectUserRol
 /// `GET /projects/{project_id}/users/{user_id}/roles`
 Future<ApiResult<RoleListResource, Never>> listProjectUserRoleAssignments({required String projectId, required String userId, int? limit, String? after, ListProjectUserRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

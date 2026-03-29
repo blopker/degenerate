@@ -15,8 +15,12 @@ final class AccountRolesApi with ApiExecutor {const AccountRolesApi(this.apiConf
 /// `GET /accounts/{account_id}/roles`
 Future<ApiResult<ResponseCommon35, Never>> accountRolesListRoles({required IamCommonComponentsSchemasIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,9 +13,15 @@ final class RolesApi with ApiExecutor {const RolesApi(this.apiConfig);
 /// `GET /organization/roles`
 Future<ApiResult<PublicRoleListResource, Never>> listRoles({int? limit, String? after, ListRolesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -101,9 +107,15 @@ return execute(
 /// `GET /projects/{project_id}/roles`
 Future<ApiResult<PublicRoleListResource, Never>> listProjectRoles({required String projectId, int? limit, String? after, ListProjectRolesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,8 +15,12 @@ final class AiSearchInstancesJobsApi with ApiExecutor {const AiSearchInstancesJo
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs`
 Future<ApiResult<AiSearchInstanceListJobsResponse, AiSearchInstanceListJobsResponse400>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -122,8 +126,12 @@ return execute(
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}/logs`
 Future<ApiResult<AiSearchInstanceListJobLogsResponse, AiSearchInstanceListJobLogsResponse400>> aiSearchInstanceListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,15 +15,33 @@ final class AccessAuthenticationLogsApi with ApiExecutor {const AccessAuthentica
 /// `GET /accounts/{account_id}/access/logs/access_requests`
 Future<ApiResult<ResponseCommon3, Never>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, dynamic direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (direction != null) queryParameters['direction'] = direction.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (until != null) queryParameters['until'] = until.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (email != null) queryParameters['email'] = email.toString();
-if (emailExact != null) queryParameters['email_exact'] = emailExact.toString();
-if (userId != null) queryParameters['user_id'] = userId.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (email != null) {
+  queryParameters['email'] = email.toString();
+}
+if (emailExact != null) {
+  queryParameters['email_exact'] = emailExact.toString();
+}
+if (userId != null) {
+  queryParameters['user_id'] = userId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

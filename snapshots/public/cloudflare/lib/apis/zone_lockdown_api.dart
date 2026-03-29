@@ -15,17 +15,39 @@ final class ZoneLockdownApi with ApiExecutor {const ZoneLockdownApi(this.apiConf
 /// `GET /zones/{zone_id}/firewall/lockdowns`
 Future<ApiResult<ResponseCommon31, Never>> zoneLockdownListZoneLockdownRules({required FirewallIdentifier zoneId, double? page, FirewallSchemasDescriptionSearch? description, FirewallModifiedOn? modifiedOn, FirewallIpSearch? ip, FirewallSchemasPriority? priority, FirewallUriSearch? uriSearch, FirewallIpRangeSearch? ipRangeSearch, double? perPage, DateTime? createdOn, String? descriptionSearch, String? ipSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (description != null) queryParameters['description'] = description.toString();
-if (modifiedOn != null) queryParameters['modified_on'] = modifiedOn.toString();
-if (ip != null) queryParameters['ip'] = ip.toString();
-if (priority != null) queryParameters['priority'] = priority.toString();
-if (uriSearch != null) queryParameters['uri_search'] = uriSearch.toString();
-if (ipRangeSearch != null) queryParameters['ip_range_search'] = ipRangeSearch.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (createdOn != null) queryParameters['created_on'] = createdOn.toString();
-if (descriptionSearch != null) queryParameters['description_search'] = descriptionSearch;
-if (ipSearch != null) queryParameters['ip_search'] = ipSearch;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (description != null) {
+  queryParameters['description'] = description.toString();
+}
+if (modifiedOn != null) {
+  queryParameters['modified_on'] = modifiedOn.toString();
+}
+if (ip != null) {
+  queryParameters['ip'] = ip.toString();
+}
+if (priority != null) {
+  queryParameters['priority'] = priority.toString();
+}
+if (uriSearch != null) {
+  queryParameters['uri_search'] = uriSearch.toString();
+}
+if (ipRangeSearch != null) {
+  queryParameters['ip_range_search'] = ipRangeSearch.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (createdOn != null) {
+  queryParameters['created_on'] = createdOn.toString();
+}
+if (descriptionSearch != null) {
+  queryParameters['description_search'] = descriptionSearch;
+}
+if (ipSearch != null) {
+  queryParameters['ip_search'] = ipSearch;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

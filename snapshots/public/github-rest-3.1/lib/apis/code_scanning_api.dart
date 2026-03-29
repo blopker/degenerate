@@ -19,17 +19,39 @@ final class CodeScanningApi with ApiExecutor {const CodeScanningApi(this.apiConf
 /// `GET /orgs/{org}/code-scanning/alerts`
 Future<ApiResult<List<CodeScanningOrganizationAlertItems>, BasicError>> codeScanningListAlertsForOrg({required String org, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, String? before, String? after, int? page, int? perPage, CodeScanningListAlertsForOrgDirection? direction, CodeScanningAlertStateQuery? state, CodeScanningListAlertsForOrgSort? sort, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (toolName != null) queryParameters['tool_name'] = toolName.toString();
-if (toolGuid != null) queryParameters['tool_guid'] = toolGuid.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (state != null) queryParameters['state'] = state.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (severity != null) queryParameters['severity'] = severity.toJson();
-if (assignees != null) queryParameters['assignees'] = assignees;
+if (toolName != null) {
+  queryParameters['tool_name'] = toolName.toString();
+}
+if (toolGuid != null) {
+  queryParameters['tool_guid'] = toolGuid.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (severity != null) {
+  queryParameters['severity'] = severity.toJson();
+}
+if (assignees != null) {
+  queryParameters['assignees'] = assignees;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -66,19 +88,45 @@ return execute(
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts`
 Future<ApiResult<List<CodeScanningAlertItems>, BasicError>> codeScanningListAlertsForRepo({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, CodeScanningRef? ref, int? pr, CodeScanningListAlertsForRepoDirection? direction, String? before, String? after, CodeScanningListAlertsForRepoSort? sort, CodeScanningAlertStateQuery? state, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (toolName != null) queryParameters['tool_name'] = toolName.toString();
-if (toolGuid != null) queryParameters['tool_guid'] = toolGuid.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (ref != null) queryParameters['ref'] = ref.toString();
-if (pr != null) queryParameters['pr'] = pr.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (state != null) queryParameters['state'] = state.toJson();
-if (severity != null) queryParameters['severity'] = severity.toJson();
-if (assignees != null) queryParameters['assignees'] = assignees;
+if (toolName != null) {
+  queryParameters['tool_name'] = toolName.toString();
+}
+if (toolGuid != null) {
+  queryParameters['tool_guid'] = toolGuid.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (ref != null) {
+  queryParameters['ref'] = ref.toString();
+}
+if (pr != null) {
+  queryParameters['pr'] = pr.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
+if (severity != null) {
+  queryParameters['severity'] = severity.toJson();
+}
+if (assignees != null) {
+  queryParameters['assignees'] = assignees;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -250,10 +298,18 @@ return execute(
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances`
 Future<ApiResult<List<CodeScanningAlertInstanceList>, BasicError>> codeScanningListAlertInstances({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, CodeScanningRef? ref, int? pr, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (ref != null) queryParameters['ref'] = ref.toString();
-if (pr != null) queryParameters['pr'] = pr.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (ref != null) {
+  queryParameters['ref'] = ref.toString();
+}
+if (pr != null) {
+  queryParameters['pr'] = pr.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -298,15 +354,33 @@ return execute(
 /// `GET /repos/{owner}/{repo}/code-scanning/analyses`
 Future<ApiResult<List<CodeScanningAnalysis>, BasicError>> codeScanningListRecentAnalyses({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, int? pr, CodeScanningRef? ref, CodeScanningAnalysisSarifId? sarifId, CodeScanningListRecentAnalysesDirection? direction, CodeScanningListRecentAnalysesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (toolName != null) queryParameters['tool_name'] = toolName.toString();
-if (toolGuid != null) queryParameters['tool_guid'] = toolGuid.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (pr != null) queryParameters['pr'] = pr.toString();
-if (ref != null) queryParameters['ref'] = ref.toString();
-if (sarifId != null) queryParameters['sarif_id'] = sarifId.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
+if (toolName != null) {
+  queryParameters['tool_name'] = toolName.toString();
+}
+if (toolGuid != null) {
+  queryParameters['tool_guid'] = toolGuid.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (pr != null) {
+  queryParameters['pr'] = pr.toString();
+}
+if (ref != null) {
+  queryParameters['ref'] = ref.toString();
+}
+if (sarifId != null) {
+  queryParameters['sarif_id'] = sarifId.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -440,7 +514,9 @@ return execute(
 /// `DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}`
 Future<ApiResult<CodeScanningAnalysisDeletion, BasicError>> codeScanningDeleteAnalysis({required String owner, required String repo, required int analysisId, String? confirmDelete, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (confirmDelete != null) queryParameters['confirm_delete'] = confirmDelete;
+if (confirmDelete != null) {
+  queryParameters['confirm_delete'] = confirmDelete;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

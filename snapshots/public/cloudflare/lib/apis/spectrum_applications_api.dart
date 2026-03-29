@@ -15,10 +15,18 @@ final class SpectrumApplicationsApi with ApiExecutor {const SpectrumApplications
 /// `GET /zones/{zone_id}/spectrum/apps`
 Future<ApiResult<ResponseCommon64, Never>> spectrumApplicationsListSpectrumApplications({required SpectrumConfigIdentifier zoneId, double? page, double? perPage, SpectrumApplicationsListSpectrumApplicationsDirection? direction, SpectrumApplicationsListSpectrumApplicationsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

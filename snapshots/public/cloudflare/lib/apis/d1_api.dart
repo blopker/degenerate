@@ -15,9 +15,15 @@ final class D1Api with ApiExecutor {const D1Api(this.apiConfig);
 /// `GET /accounts/{account_id}/d1/database`
 Future<ApiResult<ResponseCommon18, Never>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -254,7 +260,9 @@ return execute(
 /// `GET /accounts/{account_id}/d1/database/{database_id}/time_travel/bookmark`
 Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (timestamp != null) queryParameters['timestamp'] = timestamp.toString();
+if (timestamp != null) {
+  queryParameters['timestamp'] = timestamp.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -282,8 +290,12 @@ return execute(
 /// `POST /accounts/{account_id}/d1/database/{database_id}/time_travel/restore`
 Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (bookmark != null) queryParameters['bookmark'] = bookmark.toString();
-if (timestamp != null) queryParameters['timestamp'] = timestamp.toString();
+if (bookmark != null) {
+  queryParameters['bookmark'] = bookmark.toString();
+}
+if (timestamp != null) {
+  queryParameters['timestamp'] = timestamp.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

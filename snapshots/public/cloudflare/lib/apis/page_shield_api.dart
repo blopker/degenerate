@@ -59,18 +59,42 @@ return execute(
 /// `GET /zones/{zone_id}/page_shield/connections`
 Future<ApiResult<ResponseCommon50, Never>> pageShieldListConnections({required PageShieldId zoneId, String? excludeUrls, String? urls, String? hosts, String? page, double? perPage, PageShieldListConnectionsOrderBy? orderBy, PageShieldListConnectionsDirection? direction, bool? prioritizeMalicious, bool? excludeCdnCgi, String? status, String? pageUrl, PageShieldListConnectionsExport? $export, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (excludeUrls != null) queryParameters['exclude_urls'] = excludeUrls;
-if (urls != null) queryParameters['urls'] = urls;
-if (hosts != null) queryParameters['hosts'] = hosts;
-if (page != null) queryParameters['page'] = page;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (prioritizeMalicious != null) queryParameters['prioritize_malicious'] = prioritizeMalicious.toString();
-if (excludeCdnCgi != null) queryParameters['exclude_cdn_cgi'] = excludeCdnCgi.toString();
-if (status != null) queryParameters['status'] = status;
-if (pageUrl != null) queryParameters['page_url'] = pageUrl;
-if ($export != null) queryParameters['export'] = $export.toJson();
+if (excludeUrls != null) {
+  queryParameters['exclude_urls'] = excludeUrls;
+}
+if (urls != null) {
+  queryParameters['urls'] = urls;
+}
+if (hosts != null) {
+  queryParameters['hosts'] = hosts;
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (prioritizeMalicious != null) {
+  queryParameters['prioritize_malicious'] = prioritizeMalicious.toString();
+}
+if (excludeCdnCgi != null) {
+  queryParameters['exclude_cdn_cgi'] = excludeCdnCgi.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status;
+}
+if (pageUrl != null) {
+  queryParameters['page_url'] = pageUrl;
+}
+if ($export != null) {
+  queryParameters['export'] = $export.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -118,20 +142,48 @@ return execute(
 /// `GET /zones/{zone_id}/page_shield/cookies`
 Future<ApiResult<ResponseCommon50, Never>> pageShieldListCookies({required PageShieldId zoneId, String? hosts, String? page, double? perPage, PageShieldListCookiesOrderBy? orderBy, PageShieldListCookiesDirection? direction, String? pageUrl, PageShieldListCookiesExport? $export, String? name, bool? secure, bool? httpOnly, PageShieldListCookiesSameSite? sameSite, PageShieldListCookiesType? type, String? path, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (hosts != null) queryParameters['hosts'] = hosts;
-if (page != null) queryParameters['page'] = page;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (pageUrl != null) queryParameters['page_url'] = pageUrl;
-if ($export != null) queryParameters['export'] = $export.toJson();
-if (name != null) queryParameters['name'] = name;
-if (secure != null) queryParameters['secure'] = secure.toString();
-if (httpOnly != null) queryParameters['http_only'] = httpOnly.toString();
-if (sameSite != null) queryParameters['same_site'] = sameSite.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
-if (path != null) queryParameters['path'] = path;
-if (domain != null) queryParameters['domain'] = domain;
+if (hosts != null) {
+  queryParameters['hosts'] = hosts;
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (pageUrl != null) {
+  queryParameters['page_url'] = pageUrl;
+}
+if ($export != null) {
+  queryParameters['export'] = $export.toJson();
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (secure != null) {
+  queryParameters['secure'] = secure.toString();
+}
+if (httpOnly != null) {
+  queryParameters['http_only'] = httpOnly.toString();
+}
+if (sameSite != null) {
+  queryParameters['same_site'] = sameSite.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (path != null) {
+  queryParameters['path'] = path;
+}
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -286,19 +338,45 @@ return execute(
 /// `GET /zones/{zone_id}/page_shield/scripts`
 Future<ApiResult<ResponseCommon50, Never>> pageShieldListScripts({required PageShieldId zoneId, String? excludeUrls, String? urls, String? hosts, String? page, double? perPage, PageShieldListScriptsOrderBy? orderBy, PageShieldListScriptsDirection? direction, bool? prioritizeMalicious, bool? excludeCdnCgi, bool? excludeDuplicates, String? status, String? pageUrl, PageShieldListScriptsExport? $export, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (excludeUrls != null) queryParameters['exclude_urls'] = excludeUrls;
-if (urls != null) queryParameters['urls'] = urls;
-if (hosts != null) queryParameters['hosts'] = hosts;
-if (page != null) queryParameters['page'] = page;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (prioritizeMalicious != null) queryParameters['prioritize_malicious'] = prioritizeMalicious.toString();
-if (excludeCdnCgi != null) queryParameters['exclude_cdn_cgi'] = excludeCdnCgi.toString();
-if (excludeDuplicates != null) queryParameters['exclude_duplicates'] = excludeDuplicates.toString();
-if (status != null) queryParameters['status'] = status;
-if (pageUrl != null) queryParameters['page_url'] = pageUrl;
-if ($export != null) queryParameters['export'] = $export.toJson();
+if (excludeUrls != null) {
+  queryParameters['exclude_urls'] = excludeUrls;
+}
+if (urls != null) {
+  queryParameters['urls'] = urls;
+}
+if (hosts != null) {
+  queryParameters['hosts'] = hosts;
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (prioritizeMalicious != null) {
+  queryParameters['prioritize_malicious'] = prioritizeMalicious.toString();
+}
+if (excludeCdnCgi != null) {
+  queryParameters['exclude_cdn_cgi'] = excludeCdnCgi.toString();
+}
+if (excludeDuplicates != null) {
+  queryParameters['exclude_duplicates'] = excludeDuplicates.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status;
+}
+if (pageUrl != null) {
+  queryParameters['page_url'] = pageUrl;
+}
+if ($export != null) {
+  queryParameters['export'] = $export.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

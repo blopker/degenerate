@@ -16,8 +16,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
 queryParametersList.add(ApiQueryParameter(name: 'type', value: type.toString(), allowReserved: false));
 }
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -44,9 +44,15 @@ for (final item in resourceIds) {
   queryParametersList.add(ApiQueryParameter(name: 'resource_ids[]', value: item, allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,7 +13,9 @@ final class WhoisRecordApi with ApiExecutor {const WhoisRecordApi(this.apiConfig
 /// `GET /accounts/{account_id}/intel/whois`
 Future<ApiResult<ResponseCommon15, Never>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (domain != null) queryParameters['domain'] = domain;
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

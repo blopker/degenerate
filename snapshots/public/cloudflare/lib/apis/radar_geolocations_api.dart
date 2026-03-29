@@ -15,11 +15,21 @@ final class RadarGeolocationsApi with ApiExecutor {const RadarGeolocationsApi(th
 /// `GET /radar/geolocations`
 Future<ApiResult<RadarGetGeolocationsResponse, RadarGetGeolocationsResponse400>> radarGetGeolocations({int? limit, int? offset, String? geoId, String? location, RadarGetGeolocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (geoId != null) queryParameters['geoId'] = geoId;
-if (location != null) queryParameters['location'] = location;
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (geoId != null) {
+  queryParameters['geoId'] = geoId;
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -49,7 +59,9 @@ return execute(
 /// `GET /radar/geolocations/{geo_id}`
 Future<ApiResult<RadarGetGeolocationDetailsResponse, RadarGetGeolocationDetailsResponse404>> radarGetGeolocationDetails({required String geoId, RadarGetGeolocationDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

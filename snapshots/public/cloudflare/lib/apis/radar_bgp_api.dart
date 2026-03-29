@@ -15,22 +15,54 @@ final class RadarBgpApi with ApiExecutor {const RadarBgpApi(this.apiConfig);
 /// `GET /radar/bgp/hijacks/events`
 Future<ApiResult<RadarGetBgpHijacksEventsResponse, RadarGetBgpHijacksEventsResponse400>> radarGetBgpHijacksEvents({int? page, int? perPage, int? eventId, int? hijackerAsn, int? victimAsn, int? involvedAsn, String? involvedCountry, String? prefix, int? minConfidence, int? maxConfidence, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetBgpHijacksEventsSortBy? sortBy, RadarGetBgpHijacksEventsSortOrder? sortOrder, RadarGetBgpHijacksEventsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (eventId != null) queryParameters['eventId'] = eventId.toString();
-if (hijackerAsn != null) queryParameters['hijackerAsn'] = hijackerAsn.toString();
-if (victimAsn != null) queryParameters['victimAsn'] = victimAsn.toString();
-if (involvedAsn != null) queryParameters['involvedAsn'] = involvedAsn.toString();
-if (involvedCountry != null) queryParameters['involvedCountry'] = involvedCountry;
-if (prefix != null) queryParameters['prefix'] = prefix;
-if (minConfidence != null) queryParameters['minConfidence'] = minConfidence.toString();
-if (maxConfidence != null) queryParameters['maxConfidence'] = maxConfidence.toString();
-if (dateRange != null) queryParameters['dateRange'] = dateRange;
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (sortBy != null) queryParameters['sortBy'] = sortBy.toJson();
-if (sortOrder != null) queryParameters['sortOrder'] = sortOrder.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (eventId != null) {
+  queryParameters['eventId'] = eventId.toString();
+}
+if (hijackerAsn != null) {
+  queryParameters['hijackerAsn'] = hijackerAsn.toString();
+}
+if (victimAsn != null) {
+  queryParameters['victimAsn'] = victimAsn.toString();
+}
+if (involvedAsn != null) {
+  queryParameters['involvedAsn'] = involvedAsn.toString();
+}
+if (involvedCountry != null) {
+  queryParameters['involvedCountry'] = involvedCountry;
+}
+if (prefix != null) {
+  queryParameters['prefix'] = prefix;
+}
+if (minConfidence != null) {
+  queryParameters['minConfidence'] = minConfidence.toString();
+}
+if (maxConfidence != null) {
+  queryParameters['maxConfidence'] = maxConfidence.toString();
+}
+if (dateRange != null) {
+  queryParameters['dateRange'] = dateRange;
+}
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (sortBy != null) {
+  queryParameters['sortBy'] = sortBy.toJson();
+}
+if (sortOrder != null) {
+  queryParameters['sortOrder'] = sortOrder.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -95,8 +127,12 @@ for (final item in ipVersion) {
   queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
 }
 }
-if (includeDelay != null) queryParameters['includeDelay'] = includeDelay.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (includeDelay != null) {
+  queryParameters['includeDelay'] = includeDelay.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -126,18 +162,42 @@ return execute(
 /// `GET /radar/bgp/leaks/events`
 Future<ApiResult<RadarGetBgpRouteLeakEventsResponse, RadarGetBgpRouteLeakEventsResponse400>> radarGetBgpRouteLeakEvents({int? page, int? perPage, int? eventId, int? leakAsn, int? involvedAsn, String? involvedCountry, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetBgpRouteLeakEventsSortBy? sortBy, RadarGetBgpRouteLeakEventsSortOrder? sortOrder, RadarGetBgpRouteLeakEventsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (eventId != null) queryParameters['eventId'] = eventId.toString();
-if (leakAsn != null) queryParameters['leakAsn'] = leakAsn.toString();
-if (involvedAsn != null) queryParameters['involvedAsn'] = involvedAsn.toString();
-if (involvedCountry != null) queryParameters['involvedCountry'] = involvedCountry;
-if (dateRange != null) queryParameters['dateRange'] = dateRange;
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (sortBy != null) queryParameters['sortBy'] = sortBy.toJson();
-if (sortOrder != null) queryParameters['sortOrder'] = sortOrder.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (eventId != null) {
+  queryParameters['eventId'] = eventId.toString();
+}
+if (leakAsn != null) {
+  queryParameters['leakAsn'] = leakAsn.toString();
+}
+if (involvedAsn != null) {
+  queryParameters['involvedAsn'] = involvedAsn.toString();
+}
+if (involvedCountry != null) {
+  queryParameters['involvedCountry'] = involvedCountry;
+}
+if (dateRange != null) {
+  queryParameters['dateRange'] = dateRange;
+}
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (sortBy != null) {
+  queryParameters['sortBy'] = sortBy.toJson();
+}
+if (sortOrder != null) {
+  queryParameters['sortOrder'] = sortOrder.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -167,11 +227,21 @@ return execute(
 /// `GET /radar/bgp/routes/ases`
 Future<ApiResult<RadarGetBgpRoutesAsnsResponse, RadarGetBgpRoutesAsnsResponse400>> radarGetBgpRoutesAsns({String? location, int? limit, RadarGetBgpRoutesAsnsSortBy? sortBy, RadarGetBgpRoutesAsnsSortOrder? sortOrder, RadarGetBgpRoutesAsnsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (location != null) queryParameters['location'] = location;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sortBy != null) queryParameters['sortBy'] = sortBy.toJson();
-if (sortOrder != null) queryParameters['sortOrder'] = sortOrder.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sortBy != null) {
+  queryParameters['sortBy'] = sortBy.toJson();
+}
+if (sortOrder != null) {
+  queryParameters['sortOrder'] = sortOrder.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -201,10 +271,18 @@ return execute(
 /// `GET /radar/bgp/routes/moas`
 Future<ApiResult<RadarGetBgpPfx2asMoasResponse, RadarGetBgpPfx2asMoasResponse400>> radarGetBgpPfx2asMoas({int? origin, String? prefix, bool? invalidOnly, RadarGetBgpPfx2asMoasFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (origin != null) queryParameters['origin'] = origin.toString();
-if (prefix != null) queryParameters['prefix'] = prefix;
-if (invalidOnly != null) queryParameters['invalid_only'] = invalidOnly.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (origin != null) {
+  queryParameters['origin'] = origin.toString();
+}
+if (prefix != null) {
+  queryParameters['prefix'] = prefix;
+}
+if (invalidOnly != null) {
+  queryParameters['invalid_only'] = invalidOnly.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -234,11 +312,21 @@ return execute(
 /// `GET /radar/bgp/routes/pfx2as`
 Future<ApiResult<RadarGetBgpPfx2asResponse, RadarGetBgpPfx2asResponse400>> radarGetBgpPfx2as({String? prefix, int? origin, RadarGetBgpPfx2asRpkiStatus? rpkiStatus, bool? longestPrefixMatch, RadarGetBgpPfx2asFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (prefix != null) queryParameters['prefix'] = prefix;
-if (origin != null) queryParameters['origin'] = origin.toString();
-if (rpkiStatus != null) queryParameters['rpkiStatus'] = rpkiStatus.toJson();
-if (longestPrefixMatch != null) queryParameters['longestPrefixMatch'] = longestPrefixMatch.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (prefix != null) {
+  queryParameters['prefix'] = prefix;
+}
+if (origin != null) {
+  queryParameters['origin'] = origin.toString();
+}
+if (rpkiStatus != null) {
+  queryParameters['rpkiStatus'] = rpkiStatus.toJson();
+}
+if (longestPrefixMatch != null) {
+  queryParameters['longestPrefixMatch'] = longestPrefixMatch.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -268,8 +356,12 @@ return execute(
 /// `GET /radar/bgp/routes/realtime`
 Future<ApiResult<RadarGetBgpRoutesRealtimeResponse, RadarGetBgpRoutesRealtimeResponse400>> radarGetBgpRoutesRealtime({String? prefix, RadarGetBgpRoutesRealtimeFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (prefix != null) queryParameters['prefix'] = prefix;
-if (format != null) queryParameters['format'] = format.toJson();
+if (prefix != null) {
+  queryParameters['prefix'] = prefix;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -299,9 +391,15 @@ return execute(
 /// `GET /radar/bgp/routes/stats`
 Future<ApiResult<RadarGetBgpRoutesStatsResponse, RadarGetBgpRoutesStatsResponse400>> radarGetBgpRoutesStats({int? asn, String? location, RadarGetBgpRoutesStatsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (asn != null) queryParameters['asn'] = asn.toString();
-if (location != null) queryParameters['location'] = location;
-if (format != null) queryParameters['format'] = format.toJson();
+if (asn != null) {
+  queryParameters['asn'] = asn.toString();
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -331,11 +429,21 @@ return execute(
 /// `GET /radar/bgp/rpki/aspa/changes`
 Future<ApiResult<RadarGetBgpRpkiAspaChangesResponse, RadarGetBgpRpkiAspaChangesResponse400>> radarGetBgpRpkiAspaChanges({DateTime? dateStart, DateTime? dateEnd, int? asn, bool? includeAsnInfo, RadarGetBgpRpkiAspaChangesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (asn != null) queryParameters['asn'] = asn.toString();
-if (includeAsnInfo != null) queryParameters['includeAsnInfo'] = includeAsnInfo.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (asn != null) {
+  queryParameters['asn'] = asn.toString();
+}
+if (includeAsnInfo != null) {
+  queryParameters['includeAsnInfo'] = includeAsnInfo.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -365,11 +473,21 @@ return execute(
 /// `GET /radar/bgp/rpki/aspa/snapshot`
 Future<ApiResult<RadarGetBgpRpkiAspaSnapshotResponse, RadarGetBgpRpkiAspaSnapshotResponse400>> radarGetBgpRpkiAspaSnapshot({int? customerAsn, int? providerAsn, DateTime? date, bool? includeAsnInfo, RadarGetBgpRpkiAspaSnapshotFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (customerAsn != null) queryParameters['customerAsn'] = customerAsn.toString();
-if (providerAsn != null) queryParameters['providerAsn'] = providerAsn.toString();
-if (date != null) queryParameters['date'] = date.toString();
-if (includeAsnInfo != null) queryParameters['includeAsnInfo'] = includeAsnInfo.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (customerAsn != null) {
+  queryParameters['customerAsn'] = customerAsn.toString();
+}
+if (providerAsn != null) {
+  queryParameters['providerAsn'] = providerAsn.toString();
+}
+if (date != null) {
+  queryParameters['date'] = date.toString();
+}
+if (includeAsnInfo != null) {
+  queryParameters['includeAsnInfo'] = includeAsnInfo.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -399,8 +517,12 @@ return execute(
 /// `GET /radar/bgp/rpki/aspa/timeseries`
 Future<ApiResult<RadarGetBgpRpkiAspaTimeseriesResponse, RadarGetBgpRpkiAspaTimeseriesResponse400>> radarGetBgpRpkiAspaTimeseries({DateTime? dateStart, DateTime? dateEnd, List<String>? name, List<RadarGetBgpRpkiAspaTimeseriesRir>? rir, List<String>? location, RadarGetBgpRpkiAspaTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -416,7 +538,9 @@ for (final item in location) {
   queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -446,7 +570,9 @@ return execute(
 /// `GET /radar/bgp/timeseries`
 Future<ApiResult<RadarGetBgpTimeseriesResponse, RadarGetBgpTimeseriesResponse400>> radarGetBgpTimeseries({RadarGetBgpTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? prefix, List<RadarGetBgpTimeseriesUpdateType>? updateType, List<String>? asn, RadarGetBgpTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -482,7 +608,9 @@ for (final item in asn) {
   queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -512,7 +640,9 @@ return execute(
 /// `GET /radar/bgp/top/ases`
 Future<ApiResult<RadarGetBgpTopAsesResponse, RadarGetBgpTopAsesResponse400>> radarGetBgpTopAses({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? prefix, List<RadarGetBgpTopAsesUpdateType>? updateType, RadarGetBgpTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -548,7 +678,9 @@ for (final item in updateType) {
   queryParametersList.add(ApiQueryParameter(name: 'updateType', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -578,9 +710,15 @@ return execute(
 /// `GET /radar/bgp/top/ases/prefixes`
 Future<ApiResult<RadarGetBgpTopAsnsByPrefixesResponse, RadarGetBgpTopAsnsByPrefixesResponse404>> radarGetBgpTopAsnsByPrefixes({String? country, int? limit, RadarGetBgpTopAsnsByPrefixesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (country != null) queryParameters['country'] = country;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (country != null) {
+  queryParameters['country'] = country;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -610,7 +748,9 @@ return execute(
 /// `GET /radar/bgp/top/prefixes`
 Future<ApiResult<RadarGetBgpTopPrefixesResponse, RadarGetBgpTopPrefixesResponse400>> radarGetBgpTopPrefixes({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<RadarGetBgpTopPrefixesUpdateType>? updateType, RadarGetBgpTopPrefixesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -641,7 +781,9 @@ for (final item in updateType) {
   queryParametersList.add(ApiQueryParameter(name: 'updateType', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,11 +15,21 @@ final class RadarDatasetsApi with ApiExecutor {const RadarDatasetsApi(this.apiCo
 /// `GET /radar/datasets`
 Future<ApiResult<RadarGetReportsDatasetsResponse, RadarGetReportsDatasetsResponse400>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (datasetType != null) queryParameters['datasetType'] = datasetType.toJson();
-if (date != null) queryParameters['date'] = date;
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (datasetType != null) {
+  queryParameters['datasetType'] = datasetType.toJson();
+}
+if (date != null) {
+  queryParameters['date'] = date;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -73,7 +83,9 @@ return execute(
 /// `POST /radar/datasets/download`
 Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponse, RadarPostReportsDatasetDownloadUrlResponse400>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

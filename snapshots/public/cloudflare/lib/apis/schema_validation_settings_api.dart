@@ -82,8 +82,12 @@ return execute(
 /// `GET /zones/{zone_id}/schema_validation/settings/operations`
 Future<ApiResult<ResponseCommon6, Never>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

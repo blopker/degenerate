@@ -15,10 +15,18 @@ final class ApplicationsApi with ApiExecutor {const ApplicationsApi(this.apiConf
 /// `GET /accounts/{accountId}/resource-library/applications`
 Future<ApiResult<ResponseCommon5, Never>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (filter != null) queryParameters['filter'] = filter;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy;
+if (filter != null) {
+  queryParameters['filter'] = filter;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

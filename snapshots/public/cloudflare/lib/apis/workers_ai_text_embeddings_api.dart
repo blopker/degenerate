@@ -15,8 +15,12 @@ final class WorkersAiTextEmbeddingsApi with ApiExecutor {const WorkersAiTextEmbe
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-base-en-v1.5`
 Future<ApiResult<Map<String, dynamic>, $5Response400>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -48,8 +52,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-large-en-v1.5`
 Future<ApiResult<Map<String, dynamic>, $5Response4002>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -81,8 +89,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-m3`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeM3Response400>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -114,8 +126,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-small-en-v1.5`
 Future<ApiResult<Map<String, dynamic>, $5Response4003>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -147,8 +163,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-base-en-v1.5`
 Future<ApiResult<Map<String, dynamic>, $5Response4004>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -180,8 +200,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-large-en-v1.5`
 Future<ApiResult<Map<String, dynamic>, $5Response4005>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -213,8 +237,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-m3`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiOmniBgeM3Response400>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -246,8 +274,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-small-en-v1.5`
 Future<ApiResult<Map<String, dynamic>, $5Response4006>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -279,8 +311,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/ray-bge-large-en-v1.5`
 Future<ApiResult<Map<String, dynamic>, $5Response4007>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -312,8 +348,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/google/embeddinggemma-300m`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -345,8 +385,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/google/omni-embeddinggemma-300m`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -378,8 +422,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/pfnet/plamo-embedding-1b`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -411,8 +459,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-embedding-0.6b`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen3Embedding06bResponse400>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

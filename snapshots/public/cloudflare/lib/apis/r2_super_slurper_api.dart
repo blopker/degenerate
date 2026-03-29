@@ -13,8 +13,12 @@ final class R2SuperSlurperApi with ApiExecutor {const R2SuperSlurperApi(this.api
 /// `GET /accounts/{account_id}/slurper/jobs`
 Future<ApiResult<Success2, Never>> slurperListJobs({required String accountId, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -101,8 +105,12 @@ return execute(
 /// `GET /accounts/{account_id}/slurper/jobs/{job_id}/logs`
 Future<ApiResult<Success2, Never>> slurperGetJobLogs({required String accountId, required String jobId, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

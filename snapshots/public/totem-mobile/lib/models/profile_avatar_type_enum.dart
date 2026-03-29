@@ -1,26 +1,46 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProfileAvatarTypeEnum {const ProfileAvatarTypeEnum._(this.value);
+final class ProfileAvatarTypeEnum {
+  const ProfileAvatarTypeEnum._(this.value);
 
-factory ProfileAvatarTypeEnum.fromJson(String json) { return switch (json) {
-  'TD' => td,
-  'IM' => im,
-  _ => ProfileAvatarTypeEnum._(json),
-}; }
+  factory ProfileAvatarTypeEnum.fromJson(String json) {
+    return switch (json) {
+      'TD' => td,
+      'IM' => im,
+      _ => ProfileAvatarTypeEnum._(json),
+    };
+  }
 
-static const ProfileAvatarTypeEnum td = ProfileAvatarTypeEnum._('TD');
+  static const ProfileAvatarTypeEnum td = ProfileAvatarTypeEnum._('TD');
 
-static const ProfileAvatarTypeEnum im = ProfileAvatarTypeEnum._('IM');
+  static const ProfileAvatarTypeEnum im = ProfileAvatarTypeEnum._('IM');
 
-static const List<ProfileAvatarTypeEnum> values = [td, im];
+  static const List<ProfileAvatarTypeEnum> values = [td, im];
 
-final String value;
+  final String value;
 
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProfileAvatarTypeEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProfileAvatarTypeEnum($value)'; } 
- }
+  String toJson() {
+    return value;
+  }
+
+  /// Whether this value is unknown (not defined in the OpenAPI spec).
+  bool get isUnknown {
+    return !values.contains(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is ProfileAvatarTypeEnum && other.value == value;
+  }
+
+  @override
+  int get hashCode {
+    return value.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'ProfileAvatarTypeEnum($value)';
+  }
+}

@@ -18,9 +18,15 @@ final queryParametersList = <ApiQueryParameter>[];
 if (startEndParams != null) {
 queryParametersList.add(ApiQueryParameter(name: 'start_end_params', value: startEndParams.toString(), allowReserved: false));
 }
-if (ipv4 != null) queryParameters['ipv4'] = ipv4;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (ipv4 != null) {
+  queryParameters['ipv4'] = ipv4;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

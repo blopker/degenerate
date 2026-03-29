@@ -123,7 +123,9 @@ return execute(
 /// `GET /pets`
 Future<ApiResult<List<Pet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toJson();
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 if (identifier != null) {
 queryParametersList.add(ApiQueryParameter(name: 'identifier', value: identifier.toString(), allowReserved: false));
 }

@@ -57,9 +57,15 @@ return execute(
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/tests`
 Future<ApiResult<ResponseCommon49, Never>> speedListTestHistory({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, int? page, int? perPage, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (region != null) queryParameters['region'] = region.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (region != null) {
+  queryParameters['region'] = region.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -109,7 +115,9 @@ return execute(
 /// `DELETE /zones/{zone_id}/speed_api/pages/{url}/tests`
 Future<ApiResult<ResponseCommon49, Never>> speedDeleteTests({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (region != null) queryParameters['region'] = region.toJson();
+if (region != null) {
+  queryParameters['region'] = region.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -160,7 +168,9 @@ final queryParametersList = <ApiQueryParameter>[];
 queryParameters['region'] = region.toJson();
 queryParameters['deviceType'] = deviceType.toJson();
 queryParameters['start'] = start.toString();
-if (end != null) queryParameters['end'] = end.toString();
+if (end != null) {
+  queryParameters['end'] = end.toString();
+}
 queryParameters['tz'] = tz;
 queryParameters['metrics'] = metrics;
 
@@ -189,7 +199,9 @@ return execute(
 /// `GET /zones/{zone_id}/speed_api/schedule/{url}`
 Future<ApiResult<ResponseCommon49, Never>> speedGetScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (region != null) queryParameters['region'] = region.toJson();
+if (region != null) {
+  queryParameters['region'] = region.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -216,8 +228,12 @@ return execute(
 /// `POST /zones/{zone_id}/speed_api/schedule/{url}`
 Future<ApiResult<ResponseCommon49, Never>> speedCreateScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, ObservatoryScheduleFrequency? frequency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (region != null) queryParameters['region'] = region.toJson();
-if (frequency != null) queryParameters['frequency'] = frequency.toJson();
+if (region != null) {
+  queryParameters['region'] = region.toJson();
+}
+if (frequency != null) {
+  queryParameters['frequency'] = frequency.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -244,7 +260,9 @@ return execute(
 /// `DELETE /zones/{zone_id}/speed_api/schedule/{url}`
 Future<ApiResult<ResponseCommon49, Never>> speedDeleteTestSchedule({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (region != null) queryParameters['region'] = region.toJson();
+if (region != null) {
+  queryParameters['region'] = region.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

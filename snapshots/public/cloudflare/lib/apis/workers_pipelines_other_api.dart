@@ -15,8 +15,12 @@ final class WorkersPipelinesOtherApi with ApiExecutor {const WorkersPipelinesOth
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines`
 Future<ApiResult<PipelinesResponse, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -106,9 +110,15 @@ return execute(
 /// `GET /accounts/{account_id}/pipelines/v1/sinks`
 Future<ApiResult<SinksResponse, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pipelineId != null) queryParameters['pipeline_id'] = pipelineId;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pipelineId != null) {
+  queryParameters['pipeline_id'] = pipelineId;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -179,7 +189,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
 Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, String? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (force != null) queryParameters['force'] = force;
+if (force != null) {
+  queryParameters['force'] = force;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -204,9 +216,15 @@ return execute(
 /// `GET /accounts/{account_id}/pipelines/v1/streams`
 Future<ApiResult<StreamsResponse, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pipelineId != null) queryParameters['pipeline_id'] = pipelineId.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pipelineId != null) {
+  queryParameters['pipeline_id'] = pipelineId.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -300,7 +318,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
 Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, String? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (force != null) queryParameters['force'] = force;
+if (force != null) {
+  queryParameters['force'] = force;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

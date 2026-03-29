@@ -15,7 +15,9 @@ final class ZeroTrustListsApi with ApiExecutor {const ZeroTrustListsApi(this.api
 /// `GET /accounts/{account_id}/gateway/lists`
 Future<ApiResult<ResponseCommon82, Never>> zeroTrustListsListZeroTrustLists({required ZeroTrustGatewaySchemasIdentifier accountId, ZeroTrustGatewaySchemasType? type, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (type != null) queryParameters['type'] = type.toJson();
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

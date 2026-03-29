@@ -15,7 +15,9 @@ final class DomainHistoryApi with ApiExecutor {const DomainHistoryApi(this.apiCo
 /// `GET /accounts/{account_id}/intel/domain-history`
 Future<ApiResult<ResponseCommon39, Never>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (domain != null) queryParameters['domain'] = domain;
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

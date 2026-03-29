@@ -13,13 +13,27 @@ final class Api20100401AddressApi with ApiExecutor {const Api20100401AddressApi(
 /// `GET /2010-04-01/Accounts/{AccountSid}/Addresses.json`
 Future<ApiResult<ListAddressResponse, Never>> listAddress({required String accountSid, String? customerName, String? friendlyName, bool? emergencyEnabled, String? isoCountry, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (customerName != null) queryParameters['CustomerName'] = customerName;
-if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
-if (emergencyEnabled != null) queryParameters['EmergencyEnabled'] = emergencyEnabled.toString();
-if (isoCountry != null) queryParameters['IsoCountry'] = isoCountry;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (customerName != null) {
+  queryParameters['CustomerName'] = customerName;
+}
+if (friendlyName != null) {
+  queryParameters['FriendlyName'] = friendlyName;
+}
+if (emergencyEnabled != null) {
+  queryParameters['EmergencyEnabled'] = emergencyEnabled.toString();
+}
+if (isoCountry != null) {
+  queryParameters['IsoCountry'] = isoCountry;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

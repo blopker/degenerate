@@ -15,10 +15,18 @@ final class AccessGroupsApi with ApiExecutor {const AccessGroupsApi(this.apiConf
 /// `GET /accounts/{account_id}/access/groups`
 Future<ApiResult<ResponseCommon3, Never>> accessGroupsListAccessGroups({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (search != null) queryParameters['search'] = search;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

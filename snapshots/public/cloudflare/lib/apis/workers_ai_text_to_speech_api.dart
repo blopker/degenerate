@@ -59,8 +59,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -158,8 +162,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -213,8 +221,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -246,8 +258,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/myshell-ai/melotts`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMyshellAiMelottsResponse400>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

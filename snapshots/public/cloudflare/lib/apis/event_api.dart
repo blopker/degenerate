@@ -15,23 +15,37 @@ final class EventApi with ApiExecutor {const EventApi(this.apiConfig);
 /// `GET /accounts/{account_id}/cloudforce-one/events`
 Future<ApiResult<List<GetEventListGetResponse>, GetEventListGetResponse400>> getEventListGet({required String accountId, String? cursor, List<GetEventListGetSearch>? search, double? page, double? pageSize, String? orderBy, GetEventListGetOrder? order, List<String>? datasetId, bool? forceRefresh, GetEventListGetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 if (search != null) {
 for (final item in search) {
   queryParametersList.add(ApiQueryParameter(name: 'search', value: item.toString(), allowReserved: false));
 }
 }
-if (page != null) queryParameters['page'] = page.toString();
-if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
-if (orderBy != null) queryParameters['orderBy'] = orderBy;
-if (order != null) queryParameters['order'] = order.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (pageSize != null) {
+  queryParameters['pageSize'] = pageSize.toString();
+}
+if (orderBy != null) {
+  queryParameters['orderBy'] = orderBy;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 if (datasetId != null) {
 for (final item in datasetId) {
   queryParametersList.add(ApiQueryParameter(name: 'datasetId', value: item, allowReserved: false));
 }
 }
-if (forceRefresh != null) queryParameters['forceRefresh'] = forceRefresh.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (forceRefresh != null) {
+  queryParameters['forceRefresh'] = forceRefresh.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -234,8 +248,12 @@ return execute(
 /// `GET /accounts/{account_id}/cloudforce-one/events/{event_id}/relationships`
 Future<ApiResult<List<GetEventRelationshipsResponse>, GetEventRelationshipsResponse400>> getEventRelationships({required String accountId, required String eventId, GetEventRelationshipsDirection? direction, double? maxDepth, GetEventRelationshipsRelationshipTypes? relationshipTypes, List<String>? indicatorTypeIds, required String datasetId, bool? includeParent, double? page, double? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (maxDepth != null) queryParameters['maxDepth'] = maxDepth.toString();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (maxDepth != null) {
+  queryParameters['maxDepth'] = maxDepth.toString();
+}
 if (relationshipTypes != null) {
 queryParametersList.add(ApiQueryParameter(name: 'relationshipTypes', value: relationshipTypes.toString(), allowReserved: false));
 }
@@ -245,9 +263,15 @@ for (final item in indicatorTypeIds) {
 }
 }
 queryParameters['datasetId'] = datasetId;
-if (includeParent != null) queryParameters['includeParent'] = includeParent.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
+if (includeParent != null) {
+  queryParameters['includeParent'] = includeParent.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (pageSize != null) {
+  queryParameters['pageSize'] = pageSize.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -282,10 +306,18 @@ queryParameters['aggregateBy'] = aggregateBy;
 if (datasetId != null) {
 queryParametersList.add(ApiQueryParameter(name: 'datasetId', value: datasetId.toString(), allowReserved: false));
 }
-if (startDate != null) queryParameters['startDate'] = startDate;
-if (endDate != null) queryParameters['endDate'] = endDate;
-if (groupByDate != null) queryParameters['groupByDate'] = groupByDate.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (startDate != null) {
+  queryParameters['startDate'] = startDate;
+}
+if (endDate != null) {
+  queryParameters['endDate'] = endDate;
+}
+if (groupByDate != null) {
+  queryParameters['groupByDate'] = groupByDate.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -389,7 +421,9 @@ return execute(
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move`
 Future<ApiResult<double, PostEventMoveToNewDsResponse400>> postEventMoveToNewDs({required String accountId, required String datasetId, bool? keepRawData, PostEventMoveToNewDsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (keepRawData != null) queryParameters['keepRawData'] = keepRawData.toString();
+if (keepRawData != null) {
+  queryParameters['keepRawData'] = keepRawData.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

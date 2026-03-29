@@ -15,10 +15,18 @@ final class QueueApi with ApiExecutor {const QueueApi(this.apiConfig);
 /// `GET /accounts/{account_id}/event_subscriptions/subscriptions`
 Future<ApiResult<Success, Never>> subscriptionsList({required MqIdentifier accountId, int? page, int? perPage, SubscriptionsListOrder? order, SubscriptionsListDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

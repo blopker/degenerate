@@ -13,8 +13,12 @@ final class AccessCustomPagesApi with ApiExecutor {const AccessCustomPagesApi(th
 /// `GET /accounts/{account_id}/access/custom_pages`
 Future<ApiResult<ResponseCommon3, Never>> accessCustomPagesListCustomPages({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -20,12 +20,24 @@ for (final item in status) {
   queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson(), allowReserved: false));
 }
 }
-if (userEmail != null) queryParameters['user.email'] = userEmail;
-if (userEmailContains != null) queryParameters['user.email.contains'] = userEmailContains;
-if (userEmailStartsWith != null) queryParameters['user.email.startsWith'] = userEmailStartsWith;
-if (userEmailEndsWith != null) queryParameters['user.email.endsWith'] = userEmailEndsWith;
-if (pageToken != null) queryParameters['page_token'] = pageToken;
-if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
+if (userEmail != null) {
+  queryParameters['user.email'] = userEmail;
+}
+if (userEmailContains != null) {
+  queryParameters['user.email.contains'] = userEmailContains;
+}
+if (userEmailStartsWith != null) {
+  queryParameters['user.email.startsWith'] = userEmailStartsWith;
+}
+if (userEmailEndsWith != null) {
+  queryParameters['user.email.endsWith'] = userEmailEndsWith;
+}
+if (pageToken != null) {
+  queryParameters['page_token'] = pageToken;
+}
+if (pageSize != null) {
+  queryParameters['page_size'] = pageSize.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

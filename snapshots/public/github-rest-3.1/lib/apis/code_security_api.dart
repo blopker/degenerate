@@ -19,9 +19,15 @@ final class CodeSecurityApi with ApiExecutor {const CodeSecurityApi(this.apiConf
 /// `GET /enterprises/{enterprise}/code-security/configurations`
 Future<ApiResult<List<CodeSecurityConfiguration>, BasicError>> codeSecurityGetConfigurationsForEnterprise({required String enterprise, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -262,10 +268,18 @@ return execute(
 /// `GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories`
 Future<ApiResult<List<CodeSecurityConfigurationRepositories>, BasicError>> codeSecurityGetRepositoriesForEnterpriseConfiguration({required String enterprise, required int configurationId, int? perPage, String? before, String? after, String? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (status != null) queryParameters['status'] = status;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (status != null) {
+  queryParameters['status'] = status;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -300,10 +314,18 @@ return execute(
 /// `GET /orgs/{org}/code-security/configurations`
 Future<ApiResult<List<CodeSecurityConfiguration>, BasicError>> codeSecurityGetConfigurationsForOrg({required String org, CodeSecurityGetConfigurationsForOrgTargetType? targetType, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (targetType != null) queryParameters['target_type'] = targetType.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
+if (targetType != null) {
+  queryParameters['target_type'] = targetType.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -567,10 +589,18 @@ return execute(
 /// `GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories`
 Future<ApiResult<List<CodeSecurityConfigurationRepositories>, BasicError>> codeSecurityGetRepositoriesForConfiguration({required String org, required int configurationId, int? perPage, String? before, String? after, String? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (status != null) queryParameters['status'] = status;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (status != null) {
+  queryParameters['status'] = status;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

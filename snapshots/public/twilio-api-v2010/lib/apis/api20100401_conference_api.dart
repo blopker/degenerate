@@ -60,17 +60,39 @@ return execute(
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences.json`
 Future<ApiResult<ListConferenceResponse, Never>> listConference({required String accountSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, String? dateUpdated, String? dateUpdatedBefore, String? dateUpdatedAfter, String? friendlyName, ConferenceEnumStatus? status, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dateCreated != null) queryParameters['DateCreated'] = dateCreated;
-if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore;
-if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter;
-if (dateUpdated != null) queryParameters['DateUpdated'] = dateUpdated;
-if (dateUpdatedBefore != null) queryParameters['DateUpdated<'] = dateUpdatedBefore;
-if (dateUpdatedAfter != null) queryParameters['DateUpdated>'] = dateUpdatedAfter;
-if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
-if (status != null) queryParameters['Status'] = status.toJson();
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (dateCreated != null) {
+  queryParameters['DateCreated'] = dateCreated;
+}
+if (dateCreatedBefore != null) {
+  queryParameters['DateCreated<'] = dateCreatedBefore;
+}
+if (dateCreatedAfter != null) {
+  queryParameters['DateCreated>'] = dateCreatedAfter;
+}
+if (dateUpdated != null) {
+  queryParameters['DateUpdated'] = dateUpdated;
+}
+if (dateUpdatedBefore != null) {
+  queryParameters['DateUpdated<'] = dateUpdatedBefore;
+}
+if (dateUpdatedAfter != null) {
+  queryParameters['DateUpdated>'] = dateUpdatedAfter;
+}
+if (friendlyName != null) {
+  queryParameters['FriendlyName'] = friendlyName;
+}
+if (status != null) {
+  queryParameters['Status'] = status.toJson();
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

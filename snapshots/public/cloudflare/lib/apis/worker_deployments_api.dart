@@ -36,7 +36,9 @@ return execute(
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/deployments`
 Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, required WorkersDeployment body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (force != null) queryParameters['force'] = force.toString();
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

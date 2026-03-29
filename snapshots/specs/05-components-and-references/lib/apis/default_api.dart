@@ -12,7 +12,9 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// `GET /users`
 Future<ApiResult<List<User>, Never>> listUsers({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,9 +15,15 @@ final class PagesDeploymentApi with ApiExecutor {const PagesDeploymentApi(this.a
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/deployments`
 Future<ApiResult<ResponseCommon51, Never>> pagesDeploymentGetDeployments({required PagesProjectName projectName, required PagesIdentifier accountId, PagesDeploymentGetDeploymentsEnv? env, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (env != null) queryParameters['env'] = env.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (env != null) {
+  queryParameters['env'] = env.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

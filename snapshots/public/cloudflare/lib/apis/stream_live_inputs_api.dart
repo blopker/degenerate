@@ -15,7 +15,9 @@ final class StreamLiveInputsApi with ApiExecutor {const StreamLiveInputsApi(this
 /// `GET /accounts/{account_id}/stream/live_inputs`
 Future<ApiResult<ResponseCommon66, Never>> streamLiveInputsListLiveInputs({required StreamSchemasIdentifier accountId, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (includeCounts != null) queryParameters['include_counts'] = includeCounts.toString();
+if (includeCounts != null) {
+  queryParameters['include_counts'] = includeCounts.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

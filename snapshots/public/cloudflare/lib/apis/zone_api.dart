@@ -17,15 +17,33 @@ final class ZoneApi with ApiExecutor {const ZoneApi(this.apiConfig);
 /// `GET /zones`
 Future<ApiResult<ResponseCommon85, Never>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (status != null) queryParameters['status'] = status.toJson();
-if (accountId != null) queryParameters['account.id'] = accountId;
-if (accountName != null) queryParameters['account.name'] = accountName;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (match != null) queryParameters['match'] = match.toJson();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (accountId != null) {
+  queryParameters['account.id'] = accountId;
+}
+if (accountName != null) {
+  queryParameters['account.name'] = accountName;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (match != null) {
+  queryParameters['match'] = match.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

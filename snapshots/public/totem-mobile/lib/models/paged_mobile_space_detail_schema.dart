@@ -1,30 +1,64 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mobile_space_detail_schema.dart';final class PagedMobileSpaceDetailSchema {const PagedMobileSpaceDetailSchema({required this.items, required this.count, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'mobile_space_detail_schema.dart';
 
-factory PagedMobileSpaceDetailSchema.fromJson(Map<String, dynamic> json) { return PagedMobileSpaceDetailSchema(
-  items: (json['items'] as List<dynamic>).map((e) => MobileSpaceDetailSchema.fromJson(e as Map<String, dynamic>)).toList(),
-  count: (json['count'] as num).toInt(),
-); }
+final class PagedMobileSpaceDetailSchema {
+  const PagedMobileSpaceDetailSchema({
+    required this.items,
+    required this.count,
+  });
 
-final List<MobileSpaceDetailSchema> items;
+  factory PagedMobileSpaceDetailSchema.fromJson(Map<String, dynamic> json) {
+    return PagedMobileSpaceDetailSchema(
+      items: (json['items'] as List<dynamic>)
+          .map(
+            (e) => MobileSpaceDetailSchema.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+      count: (json['count'] as num).toInt(),
+    );
+  }
 
-final int count;
+  final List<MobileSpaceDetailSchema> items;
 
-Map<String, dynamic> toJson() { return {
-  'items': items.map((e) => e.toJson()).toList(),
-  'count': count,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
-      json.containsKey('count') && json['count'] is num; } 
-PagedMobileSpaceDetailSchema copyWith({List<MobileSpaceDetailSchema>? items, int? count, }) { return PagedMobileSpaceDetailSchema(
-  items: items ?? this.items,
-  count: count ?? this.count,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is PagedMobileSpaceDetailSchema &&
-          listEquals(items, other.items) &&
-          count == other.count; } 
-@override int get hashCode { return Object.hash(Object.hashAll(items), count); } 
-@override String toString() { return 'PagedMobileSpaceDetailSchema(items: $items, count: $count)'; } 
- }
+  final int count;
+
+  Map<String, dynamic> toJson() {
+    return {'items': items.map((e) => e.toJson()).toList(), 'count': count};
+  }
+
+  static bool canParse(Map<String, dynamic> json) {
+    return json.containsKey('items') &&
+        json.containsKey('count') &&
+        json['count'] is num;
+  }
+
+  PagedMobileSpaceDetailSchema copyWith({
+    List<MobileSpaceDetailSchema>? items,
+    int? count,
+  }) {
+    return PagedMobileSpaceDetailSchema(
+      items: items ?? this.items,
+      count: count ?? this.count,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is PagedMobileSpaceDetailSchema &&
+            listEquals(items, other.items) &&
+            count == other.count;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(Object.hashAll(items), count);
+  }
+
+  @override
+  String toString() {
+    return 'PagedMobileSpaceDetailSchema(items: $items, count: $count)';
+  }
+}

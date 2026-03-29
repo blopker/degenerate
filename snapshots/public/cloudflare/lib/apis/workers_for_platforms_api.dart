@@ -147,7 +147,9 @@ return execute(
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts`
 Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerListScripts({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, String? tags, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (tags != null) queryParameters['tags'] = tags;
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -174,8 +176,12 @@ return execute(
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts`
 Future<ApiResult<WorkersNamespaceScriptDeleteBulkResponse, Never>> namespaceWorkerDeleteScripts({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, String? tags, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (tags != null) queryParameters['tags'] = tags;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -223,7 +229,9 @@ return execute(
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}`
 Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, NamespaceWorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required WorkersMultipartScript body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (bindingsInherit != null) queryParameters['bindings_inherit'] = bindingsInherit.toJson();
+if (bindingsInherit != null) {
+  queryParameters['bindings_inherit'] = bindingsInherit.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -256,7 +264,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}`
 Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerScriptDeleteWorker({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (force != null) queryParameters['force'] = force.toString();
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -347,8 +357,12 @@ return execute(
 ///
 /// `PUT /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content`
 Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerPutScriptContent({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required NamespaceWorkerPutScriptContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
-if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+if (cfWorkerBodyPart != null) {
+  headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
+}
+if (cfWorkerMainModulePart != null) {
+  headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -421,7 +435,9 @@ return execute(
 /// `GET /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}`
 Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerGetScriptSecrets({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (urlEncoded != null) queryParameters['url_encoded'] = urlEncoded.toString();
+if (urlEncoded != null) {
+  queryParameters['url_encoded'] = urlEncoded.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -448,7 +464,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}`
 Future<ApiResult<ResponseCommon80, Never>> namespaceWorkerDeleteScriptSecret({required WorkersIdentifier accountId, required WorkersDispatchNamespaceName dispatchNamespace, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (urlEncoded != null) queryParameters['url_encoded'] = urlEncoded.toString();
+if (urlEncoded != null) {
+  queryParameters['url_encoded'] = urlEncoded.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

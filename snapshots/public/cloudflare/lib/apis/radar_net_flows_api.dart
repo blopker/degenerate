@@ -60,8 +60,12 @@ for (final item in product) {
   queryParametersList.add(ApiQueryParameter(name: 'product', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -91,7 +95,9 @@ return execute(
 /// `GET /radar/netflows/timeseries`
 Future<ApiResult<RadarGetNetflowsTimeseriesResponse, RadarGetNetflowsTimeseriesResponse400>> radarGetNetflowsTimeseries({RadarGetNetflowsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetNetflowsTimeseriesProduct>? product, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTimeseriesNormalization? normalization, RadarGetNetflowsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -137,8 +143,12 @@ for (final item in geoId) {
   queryParametersList.add(ApiQueryParameter(name: 'geoId', value: item, allowReserved: false));
 }
 }
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -168,7 +178,9 @@ return execute(
 /// `GET /radar/netflows/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetNetflowsTimeseriesGroupResponse, RadarGetNetflowsTimeseriesGroupResponse400>> radarGetNetflowsTimeseriesGroup({required RadarGetNetflowsTimeseriesGroupDimension dimension, RadarGetNetflowsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, int? limitPerGroup, RadarGetNetflowsTimeseriesGroupNormalization? normalization, List<RadarGetNetflowsTimeseriesGroupProduct>? product, RadarGetNetflowsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -209,14 +221,20 @@ for (final item in geoId) {
   queryParametersList.add(ApiQueryParameter(name: 'geoId', value: item, allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
 if (product != null) {
 for (final item in product) {
   queryParametersList.add(ApiQueryParameter(name: 'product', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -246,7 +264,9 @@ return execute(
 /// `GET /radar/netflows/top/ases`
 Future<ApiResult<RadarGetNetflowsTopAsesResponse, RadarGetNetflowsTopAsesResponse404>> radarGetNetflowsTopAses({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -287,7 +307,9 @@ for (final item in geoId) {
   queryParametersList.add(ApiQueryParameter(name: 'geoId', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -317,7 +339,9 @@ return execute(
 /// `GET /radar/netflows/top/locations`
 Future<ApiResult<RadarGetNetflowsTopLocationsResponse, RadarGetNetflowsTopLocationsResponse404>> radarGetNetflowsTopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? geoId, RadarGetNetflowsTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -358,7 +382,9 @@ for (final item in geoId) {
   queryParametersList.add(ApiQueryParameter(name: 'geoId', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

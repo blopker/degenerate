@@ -15,14 +15,30 @@ final class ZeroTrustHostnameRouteApi with ApiExecutor {const ZeroTrustHostnameR
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname`
 Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id.toString();
-if (hostname != null) queryParameters['hostname'] = hostname.toString();
-if (tunnelId != null) queryParameters['tunnel_id'] = tunnelId.toString();
-if (comment != null) queryParameters['comment'] = comment.toString();
-if (existedAt != null) queryParameters['existed_at'] = existedAt.toString();
-if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (id != null) {
+  queryParameters['id'] = id.toString();
+}
+if (hostname != null) {
+  queryParameters['hostname'] = hostname.toString();
+}
+if (tunnelId != null) {
+  queryParameters['tunnel_id'] = tunnelId.toString();
+}
+if (comment != null) {
+  queryParameters['comment'] = comment.toString();
+}
+if (existedAt != null) {
+  queryParameters['existed_at'] = existedAt.toString();
+}
+if (isDeleted != null) {
+  queryParameters['is_deleted'] = isDeleted.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

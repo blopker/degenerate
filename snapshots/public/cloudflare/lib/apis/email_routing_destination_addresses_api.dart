@@ -15,10 +15,18 @@ final class EmailRoutingDestinationAddressesApi with ApiExecutor {const EmailRou
 /// `GET /accounts/{account_id}/email/routing/addresses`
 Future<ApiResult<ResponseCommon30, Never>> emailRoutingDestinationAddressesListDestinationAddresses({required EmailIdentifier accountId, double? page, double? perPage, EmailRoutingDestinationAddressesListDestinationAddressesDirection? direction, bool? verified, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (verified != null) queryParameters['verified'] = verified.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (verified != null) {
+  queryParameters['verified'] = verified.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

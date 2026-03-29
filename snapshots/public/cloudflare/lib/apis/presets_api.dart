@@ -15,8 +15,12 @@ final class PresetsApi with ApiExecutor {const PresetsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets`
 Future<ApiResult<RealtimekitPagingResponse, Never>> getPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? perPage, double? pageNo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

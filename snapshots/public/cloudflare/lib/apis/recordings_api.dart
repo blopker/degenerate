@@ -15,15 +15,33 @@ final class RecordingsApi with ApiExecutor {const RecordingsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings`
 Future<ApiResult<RealtimekitPagingResponse, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (meetingId != null) queryParameters['meeting_id'] = meetingId;
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (expired != null) queryParameters['expired'] = expired.toString();
-if (search != null) queryParameters['search'] = search;
-if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
-if (startTime != null) queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (meetingId != null) {
+  queryParameters['meeting_id'] = meetingId;
+}
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (expired != null) {
+  queryParameters['expired'] = expired.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (sortBy != null) {
+  queryParameters['sort_by'] = sortBy.toJson();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
+if (startTime != null) {
+  queryParameters['start_time'] = startTime.toString();
+}
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
 if (status != null) {
 queryParameters['status'] = status.map((item) => item.toJson()).join(',');
 }

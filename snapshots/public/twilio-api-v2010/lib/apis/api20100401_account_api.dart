@@ -13,11 +13,21 @@ final class Api20100401AccountApi with ApiExecutor {const Api20100401AccountApi(
 /// `GET /2010-04-01/Accounts.json`
 Future<ApiResult<ListAccountResponse, Never>> listAccount({String? friendlyName, AccountEnumStatus? status, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
-if (status != null) queryParameters['Status'] = status.toJson();
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (friendlyName != null) {
+  queryParameters['FriendlyName'] = friendlyName;
+}
+if (status != null) {
+  queryParameters['Status'] = status.toJson();
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

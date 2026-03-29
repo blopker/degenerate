@@ -15,7 +15,9 @@ final class RadarInternetServicesRankingApi with ApiExecutor {const RadarInterne
 /// `GET /radar/ranking/internet_services/categories`
 Future<ApiResult<RadarGetRankingInternetServicesCategoriesResponse, RadarGetRankingInternetServicesCategoriesResponse400>> radarGetRankingInternetServicesCategories({int? limit, List<String>? name, List<String>? date, RadarGetRankingInternetServicesCategoriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -26,7 +28,9 @@ for (final item in date) {
   queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -61,7 +65,9 @@ for (final item in serviceCategory) {
   queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item, allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -82,7 +88,9 @@ for (final item in dateEnd) {
   queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -117,7 +125,9 @@ for (final item in serviceCategory) {
   queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item, allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -128,7 +138,9 @@ for (final item in date) {
   queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

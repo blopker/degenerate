@@ -15,15 +15,33 @@ final class TsengAbuseComplaintProcessorOtherApi with ApiExecutor {const TsengAb
 /// `GET /accounts/{account_id}/abuse-reports`
 Future<ApiResult<ListAbuseReportsResponse, ListAbuseReportsResponse500>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (sort != null) queryParameters['sort'] = sort;
-if (domain != null) queryParameters['domain'] = domain;
-if (createdBefore != null) queryParameters['created_before'] = createdBefore;
-if (createdAfter != null) queryParameters['created_after'] = createdAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
-if (mitigationStatus != null) queryParameters['mitigation_status'] = mitigationStatus.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort;
+}
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
+if (createdBefore != null) {
+  queryParameters['created_before'] = createdBefore;
+}
+if (createdAfter != null) {
+  queryParameters['created_after'] = createdAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (mitigationStatus != null) {
+  queryParameters['mitigation_status'] = mitigationStatus.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -53,8 +71,12 @@ return execute(
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/emails`
 Future<ApiResult<ListEmailsResponse, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -84,14 +106,30 @@ return execute(
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/mitigations`
 Future<ApiResult<ListMitigationsResponse, ListMitigationsResponse500>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
-if (effectiveBefore != null) queryParameters['effective_before'] = effectiveBefore;
-if (effectiveAfter != null) queryParameters['effective_after'] = effectiveAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (entityType != null) queryParameters['entity_type'] = entityType.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (effectiveBefore != null) {
+  queryParameters['effective_before'] = effectiveBefore;
+}
+if (effectiveAfter != null) {
+  queryParameters['effective_after'] = effectiveAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (entityType != null) {
+  queryParameters['entity_type'] = entityType.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

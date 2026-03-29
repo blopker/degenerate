@@ -15,8 +15,12 @@ final class ZoneRulesetsApi with ApiExecutor {const ZoneRulesetsApi(this.apiConf
 /// `GET /zones/{zone_id}/rulesets`
 Future<ApiResult<RulesetsResponse, Never>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cursor != null) queryParameters['cursor'] = cursor.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (cursor != null) {
+  queryParameters['cursor'] = cursor.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

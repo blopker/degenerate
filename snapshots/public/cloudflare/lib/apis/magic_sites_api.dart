@@ -15,7 +15,9 @@ final class MagicSitesApi with ApiExecutor {const MagicSitesApi(this.apiConfig);
 /// `GET /accounts/{account_id}/magic/sites`
 Future<ApiResult<ResponseCommon48, Never>> magicSitesListSites({required MagicIdentifier accountId, MagicIdentifier? connectorid, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (connectorid != null) queryParameters['connectorid'] = connectorid.toString();
+if (connectorid != null) {
+  queryParameters['connectorid'] = connectorid.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -64,7 +66,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicSitesSiteDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'GET',

@@ -15,10 +15,18 @@ final class CustomSslForAZoneApi with ApiExecutor {const CustomSslForAZoneApi(th
 /// `GET /zones/{zone_id}/custom_certificates`
 Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneListSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (match != null) queryParameters['match'] = match.toJson();
-if (status != null) queryParameters['status'] = status.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (match != null) {
+  queryParameters['match'] = match.toJson();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

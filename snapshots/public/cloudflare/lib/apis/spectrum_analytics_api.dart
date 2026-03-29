@@ -15,8 +15,12 @@ final class SpectrumAnalyticsApi with ApiExecutor {const SpectrumAnalyticsApi(th
 /// `GET /zones/{zone_id}/spectrum/analytics/aggregate/current`
 Future<ApiResult<ResponseCommon63, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (appId != null) queryParameters['appID'] = appId.toString();
-if (coloName != null) queryParameters['colo_name'] = coloName;
+if (appId != null) {
+  queryParameters['appID'] = appId.toString();
+}
+if (coloName != null) {
+  queryParameters['colo_name'] = coloName;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -53,14 +57,20 @@ for (final item in sort) {
   queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
 }
 }
-if (until != null) queryParameters['until'] = until.toString();
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
 if (metrics != null) {
 for (final item in metrics) {
   queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
 }
 }
-if (filters != null) queryParameters['filters'] = filters.toString();
-if (since != null) queryParameters['since'] = since.toString();
+if (filters != null) {
+  queryParameters['filters'] = filters.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
 queryParameters['time_delta'] = timeDelta.toJson();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -98,14 +108,20 @@ for (final item in sort) {
   queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
 }
 }
-if (until != null) queryParameters['until'] = until.toString();
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
 if (metrics != null) {
 for (final item in metrics) {
   queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
 }
 }
-if (filters != null) queryParameters['filters'] = filters.toString();
-if (since != null) queryParameters['since'] = since.toString();
+if (filters != null) {
+  queryParameters['filters'] = filters.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -1,23 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MessageResponse {const MessageResponse({required this.message});
+final class MessageResponse {
+  const MessageResponse({required this.message});
 
-factory MessageResponse.fromJson(Map<String, dynamic> json) { return MessageResponse(
-  message: json['message'] as String,
-); }
+  factory MessageResponse.fromJson(Map<String, dynamic> json) {
+    return MessageResponse(message: json['message'] as String);
+  }
 
-final String message;
+  final String message;
 
-Map<String, dynamic> toJson() { return {
-  'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-MessageResponse copyWith({String? message}) { return MessageResponse(
-  message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is MessageResponse &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'MessageResponse(message: $message)'; } 
- }
+  Map<String, dynamic> toJson() {
+    return {'message': message};
+  }
+
+  static bool canParse(Map<String, dynamic> json) {
+    return json.containsKey('message') && json['message'] is String;
+  }
+
+  MessageResponse copyWith({String? message}) {
+    return MessageResponse(message: message ?? this.message);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is MessageResponse && message == other.message;
+  }
+
+  @override
+  int get hashCode {
+    return message.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'MessageResponse(message: $message)';
+  }
+}

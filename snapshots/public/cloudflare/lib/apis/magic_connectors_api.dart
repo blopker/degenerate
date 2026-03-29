@@ -153,9 +153,15 @@ Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetryEventsLis
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from.toString();
 queryParameters['to'] = to.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
-if (k != null) queryParameters['k'] = k;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
+if (k != null) {
+  queryParameters['k'] = k;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -229,8 +235,12 @@ Future<ApiResult<MconnEnvelope, MconnEnvelope>> mconnConnectorTelemetrySnapshots
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from.toString();
 queryParameters['to'] = to.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

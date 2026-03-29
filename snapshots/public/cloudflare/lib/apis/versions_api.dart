@@ -15,8 +15,12 @@ final class VersionsApi with ApiExecutor {const VersionsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions`
 Future<ApiResult<ResponseCommon80, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -43,7 +47,9 @@ return execute(
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
 Future<ApiResult<ResponseCommon80, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (deploy != null) queryParameters['deploy'] = deploy.toString();
+if (deploy != null) {
+  queryParameters['deploy'] = deploy.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -72,7 +78,9 @@ return execute(
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
 Future<ApiResult<ResponseCommon80, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (include != null) queryParameters['include'] = include.toJson();
+if (include != null) {
+  queryParameters['include'] = include.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

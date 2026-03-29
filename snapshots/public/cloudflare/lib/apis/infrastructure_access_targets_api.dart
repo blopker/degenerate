@@ -16,15 +16,33 @@ final class InfrastructureAccessTargetsApi with ApiExecutor {const Infrastructur
 /// `GET /accounts/{account_id}/infrastructure/targets`
 Future<ApiResult<ResponseCommon37, Never>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (hostname != null) queryParameters['hostname'] = hostname;
-if (hostnameContains != null) queryParameters['hostname_contains'] = hostnameContains;
-if (virtualNetworkId != null) queryParameters['virtual_network_id'] = virtualNetworkId;
-if (ipV4 != null) queryParameters['ip_v4'] = ipV4;
-if (ipV6 != null) queryParameters['ip_v6'] = ipV6;
-if (createdBefore != null) queryParameters['created_before'] = createdBefore.toString();
-if (createdAfter != null) queryParameters['created_after'] = createdAfter.toString();
-if (modifiedBefore != null) queryParameters['modified_before'] = modifiedBefore.toString();
-if (modifiedAfter != null) queryParameters['modified_after'] = modifiedAfter.toString();
+if (hostname != null) {
+  queryParameters['hostname'] = hostname;
+}
+if (hostnameContains != null) {
+  queryParameters['hostname_contains'] = hostnameContains;
+}
+if (virtualNetworkId != null) {
+  queryParameters['virtual_network_id'] = virtualNetworkId;
+}
+if (ipV4 != null) {
+  queryParameters['ip_v4'] = ipV4;
+}
+if (ipV6 != null) {
+  queryParameters['ip_v6'] = ipV6;
+}
+if (createdBefore != null) {
+  queryParameters['created_before'] = createdBefore.toString();
+}
+if (createdAfter != null) {
+  queryParameters['created_after'] = createdAfter.toString();
+}
+if (modifiedBefore != null) {
+  queryParameters['modified_before'] = modifiedBefore.toString();
+}
+if (modifiedAfter != null) {
+  queryParameters['modified_after'] = modifiedAfter.toString();
+}
 if (ips != null) {
 for (final item in ips) {
   queryParametersList.add(ApiQueryParameter(name: 'ips', value: item, allowReserved: false));
@@ -35,15 +53,33 @@ for (final item in targetIds) {
   queryParametersList.add(ApiQueryParameter(name: 'target_ids', value: item, allowReserved: false));
 }
 }
-if (ipLike != null) queryParameters['ip_like'] = ipLike;
-if (ipv4Start != null) queryParameters['ipv4_start'] = ipv4Start;
-if (ipv4End != null) queryParameters['ipv4_end'] = ipv4End;
-if (ipv6Start != null) queryParameters['ipv6_start'] = ipv6Start;
-if (ipv6End != null) queryParameters['ipv6_end'] = ipv6End;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (ipLike != null) {
+  queryParameters['ip_like'] = ipLike;
+}
+if (ipv4Start != null) {
+  queryParameters['ipv4_start'] = ipv4Start;
+}
+if (ipv4End != null) {
+  queryParameters['ipv4_end'] = ipv4End;
+}
+if (ipv6Start != null) {
+  queryParameters['ipv6_start'] = ipv6Start;
+}
+if (ipv6End != null) {
+  queryParameters['ipv6_end'] = ipv6End;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

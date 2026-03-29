@@ -15,9 +15,15 @@ final class WorkflowsApi with ApiExecutor {const WorkflowsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/workflows`
 Future<ApiResult<WorListWorkflowsResponse, WorListWorkflowsResponse400>> worListWorkflows({required String accountId, double? perPage, double? page, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (search != null) queryParameters['search'] = search;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -121,13 +127,27 @@ return execute(
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/instances`
 Future<ApiResult<WorListWorkflowInstancesResponse, WorListWorkflowInstancesResponse400>> worListWorkflowInstances({required String workflowName, required String accountId, double? page, double? perPage, String? cursor, WorListWorkflowInstancesDirection? direction, WorListWorkflowInstancesStatus? status, DateTime? dateStart, DateTime? dateEnd, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (status != null) queryParameters['status'] = status.toJson();
-if (dateStart != null) queryParameters['date_start'] = dateStart.toString();
-if (dateEnd != null) queryParameters['date_end'] = dateEnd.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (dateStart != null) {
+  queryParameters['date_start'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['date_end'] = dateEnd.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -183,8 +203,12 @@ return execute(
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}`
 Future<ApiResult<WorDescribeWorkflowInstanceResponse, WorDescribeWorkflowInstanceResponse400>> worDescribeWorkflowInstance({required String workflowName, required String instanceId, required String accountId, WorDescribeWorkflowInstanceSimple? simple, WorDescribeWorkflowInstanceOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (simple != null) queryParameters['simple'] = simple.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
+if (simple != null) {
+  queryParameters['simple'] = simple.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -342,8 +366,12 @@ return execute(
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/versions`
 Future<ApiResult<WorListWorkflowVersionsResponse, WorListWorkflowVersionsResponse400>> worListWorkflowVersions({required String workflowName, required String accountId, double? perPage, double? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,9 +13,15 @@ final class McpPortalServersApi with ApiExecutor {const McpPortalServersApi(this
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers`
 Future<ApiResult<ListServersResponse, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

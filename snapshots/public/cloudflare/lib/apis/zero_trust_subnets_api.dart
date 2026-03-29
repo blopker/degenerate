@@ -15,17 +15,39 @@ final class ZeroTrustSubnetsApi with ApiExecutor {const ZeroTrustSubnetsApi(this
 /// `GET /accounts/{account_id}/zerotrust/subnets`
 Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name.toString();
-if (comment != null) queryParameters['comment'] = comment.toString();
-if (network != null) queryParameters['network'] = network.toString();
-if (existedAt != null) queryParameters['existed_at'] = existedAt.toString();
-if (addressFamily != null) queryParameters['address_family'] = addressFamily.toJson();
-if (isDefaultNetwork != null) queryParameters['is_default_network'] = isDefaultNetwork.toString();
-if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
-if (subnetTypes != null) queryParameters['subnet_types'] = subnetTypes.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (name != null) {
+  queryParameters['name'] = name.toString();
+}
+if (comment != null) {
+  queryParameters['comment'] = comment.toString();
+}
+if (network != null) {
+  queryParameters['network'] = network.toString();
+}
+if (existedAt != null) {
+  queryParameters['existed_at'] = existedAt.toString();
+}
+if (addressFamily != null) {
+  queryParameters['address_family'] = addressFamily.toJson();
+}
+if (isDefaultNetwork != null) {
+  queryParameters['is_default_network'] = isDefaultNetwork.toString();
+}
+if (isDeleted != null) {
+  queryParameters['is_deleted'] = isDeleted.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
+if (subnetTypes != null) {
+  queryParameters['subnet_types'] = subnetTypes.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

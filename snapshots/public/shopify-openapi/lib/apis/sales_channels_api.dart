@@ -633,7 +633,9 @@ return execute(
 /// `GET /admin/api/2020-01/collection_listings.json`
 Future<ApiResult<void, Never>> deprecated202001GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -658,7 +660,9 @@ return execute(
 /// `GET /admin/api/2020-01/collection_listings/{collection_listing_id}/product_ids.json`
 Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -742,7 +746,9 @@ return execute(
 /// `GET /admin/api/2020-04/collection_listings.json`
 Future<ApiResult<void, Never>> deprecated202004GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -767,7 +773,9 @@ return execute(
 /// `GET /admin/api/2020-04/collection_listings/{collection_listing_id}/product_ids.json`
 Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -851,7 +859,9 @@ return execute(
 /// `GET /admin/api/2020-07/collection_listings.json`
 Future<ApiResult<void, Never>> deprecated202007GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -876,7 +886,9 @@ return execute(
 /// `GET /admin/api/2020-07/collection_listings/{collection_listing_id}/product_ids.json`
 Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -960,7 +972,9 @@ return execute(
 /// `GET /admin/api/2020-10/collection_listings.json`
 Future<ApiResult<void, Never>> getCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -985,7 +999,9 @@ return execute(
 /// `GET /admin/api/2020-10/collection_listings/{collection_listing_id}/product_ids.json`
 Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1069,7 +1085,9 @@ return execute(
 /// `GET /admin/api/2021-01/collection_listings.json`
 Future<ApiResult<void, Never>> deprecated202101GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1094,7 +1112,9 @@ return execute(
 /// `GET /admin/api/2021-01/collection_listings/{collection_listing_id}/product_ids.json`
 Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1178,7 +1198,9 @@ return execute(
 /// `GET /admin/api/unstable/collection_listings.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1203,7 +1225,9 @@ return execute(
 /// `GET /admin/api/unstable/collection_listings/{collection_listing_id}/product_ids.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1306,10 +1330,18 @@ return execute(
 /// `POST /admin/api/2020-01/checkouts/{token}/payments.json`
 Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amountRequired != null) queryParameters['amount required'] = amountRequired.toString();
-if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired.toString();
-if (sessionIdRequired != null) queryParameters['session_id required'] = sessionIdRequired.toString();
-if (uniqueTokenRequired != null) queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+if (amountRequired != null) {
+  queryParameters['amount required'] = amountRequired.toString();
+}
+if (requestDetailsRequired != null) {
+  queryParameters['request_details required'] = requestDetailsRequired.toString();
+}
+if (sessionIdRequired != null) {
+  queryParameters['session_id required'] = sessionIdRequired.toString();
+}
+if (uniqueTokenRequired != null) {
+  queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1393,10 +1425,18 @@ return execute(
 /// `POST /admin/api/2020-04/checkouts/{token}/payments.json`
 Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amountRequired != null) queryParameters['amount required'] = amountRequired.toString();
-if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired.toString();
-if (sessionIdRequired != null) queryParameters['session_id required'] = sessionIdRequired.toString();
-if (uniqueTokenRequired != null) queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+if (amountRequired != null) {
+  queryParameters['amount required'] = amountRequired.toString();
+}
+if (requestDetailsRequired != null) {
+  queryParameters['request_details required'] = requestDetailsRequired.toString();
+}
+if (sessionIdRequired != null) {
+  queryParameters['session_id required'] = sessionIdRequired.toString();
+}
+if (uniqueTokenRequired != null) {
+  queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1480,10 +1520,18 @@ return execute(
 /// `POST /admin/api/2020-07/checkouts/{token}/payments.json`
 Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amountRequired != null) queryParameters['amount required'] = amountRequired.toString();
-if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired.toString();
-if (sessionIdRequired != null) queryParameters['session_id required'] = sessionIdRequired.toString();
-if (uniqueTokenRequired != null) queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+if (amountRequired != null) {
+  queryParameters['amount required'] = amountRequired.toString();
+}
+if (requestDetailsRequired != null) {
+  queryParameters['request_details required'] = requestDetailsRequired.toString();
+}
+if (sessionIdRequired != null) {
+  queryParameters['session_id required'] = sessionIdRequired.toString();
+}
+if (uniqueTokenRequired != null) {
+  queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1567,10 +1615,18 @@ return execute(
 /// `POST /admin/api/2020-10/checkouts/{token}/payments.json`
 Future<ApiResult<void, Never>> createCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amountRequired != null) queryParameters['amount required'] = amountRequired.toString();
-if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired.toString();
-if (sessionIdRequired != null) queryParameters['session_id required'] = sessionIdRequired.toString();
-if (uniqueTokenRequired != null) queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+if (amountRequired != null) {
+  queryParameters['amount required'] = amountRequired.toString();
+}
+if (requestDetailsRequired != null) {
+  queryParameters['request_details required'] = requestDetailsRequired.toString();
+}
+if (sessionIdRequired != null) {
+  queryParameters['session_id required'] = sessionIdRequired.toString();
+}
+if (uniqueTokenRequired != null) {
+  queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1654,10 +1710,18 @@ return execute(
 /// `POST /admin/api/2021-01/checkouts/{token}/payments.json`
 Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amountRequired != null) queryParameters['amount required'] = amountRequired.toString();
-if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired.toString();
-if (sessionIdRequired != null) queryParameters['session_id required'] = sessionIdRequired.toString();
-if (uniqueTokenRequired != null) queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+if (amountRequired != null) {
+  queryParameters['amount required'] = amountRequired.toString();
+}
+if (requestDetailsRequired != null) {
+  queryParameters['request_details required'] = requestDetailsRequired.toString();
+}
+if (sessionIdRequired != null) {
+  queryParameters['session_id required'] = sessionIdRequired.toString();
+}
+if (uniqueTokenRequired != null) {
+  queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1741,10 +1805,18 @@ return execute(
 /// `POST /admin/api/unstable/checkouts/{token}/payments.json`
 Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amountRequired != null) queryParameters['amount required'] = amountRequired.toString();
-if (requestDetailsRequired != null) queryParameters['request_details required'] = requestDetailsRequired.toString();
-if (sessionIdRequired != null) queryParameters['session_id required'] = sessionIdRequired.toString();
-if (uniqueTokenRequired != null) queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+if (amountRequired != null) {
+  queryParameters['amount required'] = amountRequired.toString();
+}
+if (requestDetailsRequired != null) {
+  queryParameters['request_details required'] = requestDetailsRequired.toString();
+}
+if (sessionIdRequired != null) {
+  queryParameters['session_id required'] = sessionIdRequired.toString();
+}
+if (uniqueTokenRequired != null) {
+  queryParameters['unique_token required'] = uniqueTokenRequired.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1809,11 +1881,21 @@ return execute(
 /// `GET /admin/api/2020-01/product_listings.json`
 Future<ApiResult<void, Never>> deprecated202001GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (productIds != null) queryParameters['product_ids'] = productIds.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
+if (productIds != null) {
+  queryParameters['product_ids'] = productIds.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1838,7 +1920,9 @@ return execute(
 /// `GET /admin/api/2020-01/product_listings/product_ids.json`
 Future<ApiResult<void, Never>> deprecated202001GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1941,11 +2025,21 @@ return execute(
 /// `GET /admin/api/2020-04/product_listings.json`
 Future<ApiResult<void, Never>> deprecated202004GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (productIds != null) queryParameters['product_ids'] = productIds.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
+if (productIds != null) {
+  queryParameters['product_ids'] = productIds.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1970,7 +2064,9 @@ return execute(
 /// `GET /admin/api/2020-04/product_listings/product_ids.json`
 Future<ApiResult<void, Never>> deprecated202004GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2073,11 +2169,21 @@ return execute(
 /// `GET /admin/api/2020-07/product_listings.json`
 Future<ApiResult<void, Never>> deprecated202007GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (productIds != null) queryParameters['product_ids'] = productIds.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (collectionId != null) queryParameters['collection_id'] = collectionId.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (handle != null) queryParameters['handle'] = handle.toString();
+if (productIds != null) {
+  queryParameters['product_ids'] = productIds.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (collectionId != null) {
+  queryParameters['collection_id'] = collectionId.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (handle != null) {
+  queryParameters['handle'] = handle.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2102,7 +2208,9 @@ return execute(
 /// `GET /admin/api/2020-07/product_listings/product_ids.json`
 Future<ApiResult<void, Never>> deprecated202007GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

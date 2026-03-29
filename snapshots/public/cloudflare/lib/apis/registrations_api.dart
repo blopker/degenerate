@@ -20,21 +20,41 @@ for (final item in userId) {
   queryParametersList.add(ApiQueryParameter(name: 'user.id', value: item, allowReserved: false));
 }
 }
-if (seenAfter != null) queryParameters['seen_after'] = seenAfter;
-if (seenBefore != null) queryParameters['seen_before'] = seenBefore;
-if (status != null) queryParameters['status'] = status.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
-if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (seenAfter != null) {
+  queryParameters['seen_after'] = seenAfter;
+}
+if (seenBefore != null) {
+  queryParameters['seen_before'] = seenBefore;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (sortBy != null) {
+  queryParameters['sort_by'] = sortBy.toJson();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 if (id != null) {
 for (final item in id) {
   queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
 }
 }
-if (deviceId != null) queryParameters['device.id'] = deviceId;
-if (include != null) queryParameters['include'] = include;
+if (deviceId != null) {
+  queryParameters['device.id'] = deviceId;
+}
+if (include != null) {
+  queryParameters['include'] = include;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -61,7 +81,9 @@ return execute(
 /// `GET /accounts/{account_id}/devices/registrations/{registration_id}`
 Future<ApiResult<GetRegistrationResponse, Never>> getRegistration({required String registrationId, required String accountId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (include != null) queryParameters['include'] = include;
+if (include != null) {
+  queryParameters['include'] = include;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

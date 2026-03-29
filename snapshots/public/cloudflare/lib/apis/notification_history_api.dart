@@ -15,10 +15,18 @@ final class NotificationHistoryApi with ApiExecutor {const NotificationHistoryAp
 /// `GET /accounts/{account_id}/alerting/v3/history`
 Future<ApiResult<ResponseCommon2, Never>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

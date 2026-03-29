@@ -13,19 +13,45 @@ final class Api20100401CallApi with ApiExecutor {const Api20100401CallApi(this.a
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls.json`
 Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (to != null) queryParameters['To'] = to;
-if (from != null) queryParameters['From'] = from;
-if (parentCallSid != null) queryParameters['ParentCallSid'] = parentCallSid;
-if (status != null) queryParameters['Status'] = status.toJson();
-if (startTime != null) queryParameters['StartTime'] = startTime.toString();
-if (startTimeBefore != null) queryParameters['StartTime<'] = startTimeBefore.toString();
-if (startTimeAfter != null) queryParameters['StartTime>'] = startTimeAfter.toString();
-if (endTime != null) queryParameters['EndTime'] = endTime.toString();
-if (endTimeBefore != null) queryParameters['EndTime<'] = endTimeBefore.toString();
-if (endTimeAfter != null) queryParameters['EndTime>'] = endTimeAfter.toString();
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (to != null) {
+  queryParameters['To'] = to;
+}
+if (from != null) {
+  queryParameters['From'] = from;
+}
+if (parentCallSid != null) {
+  queryParameters['ParentCallSid'] = parentCallSid;
+}
+if (status != null) {
+  queryParameters['Status'] = status.toJson();
+}
+if (startTime != null) {
+  queryParameters['StartTime'] = startTime.toString();
+}
+if (startTimeBefore != null) {
+  queryParameters['StartTime<'] = startTimeBefore.toString();
+}
+if (startTimeAfter != null) {
+  queryParameters['StartTime>'] = startTimeAfter.toString();
+}
+if (endTime != null) {
+  queryParameters['EndTime'] = endTime.toString();
+}
+if (endTimeBefore != null) {
+  queryParameters['EndTime<'] = endTimeBefore.toString();
+}
+if (endTimeAfter != null) {
+  queryParameters['EndTime>'] = endTimeAfter.toString();
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

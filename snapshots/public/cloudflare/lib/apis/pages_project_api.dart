@@ -15,8 +15,12 @@ final class PagesProjectApi with ApiExecutor {const PagesProjectApi(this.apiConf
 /// `GET /accounts/{account_id}/pages/projects`
 Future<ApiResult<ResponseCommon51, Never>> pagesProjectGetProjects({required PagesIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

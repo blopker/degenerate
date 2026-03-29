@@ -90,7 +90,9 @@ return execute(
 /// `GET /accounts/{account_id}/builds/builds/{build_uuid}/logs`
 Future<ApiResult<Response, BuildsErrorResponse>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cursor != null) queryParameters['cursor'] = cursor.toString();
+if (cursor != null) {
+  queryParameters['cursor'] = cursor.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

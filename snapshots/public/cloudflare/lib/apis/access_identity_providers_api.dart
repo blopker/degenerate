@@ -15,9 +15,15 @@ final class AccessIdentityProvidersApi with ApiExecutor {const AccessIdentityPro
 /// `GET /accounts/{account_id}/access/identity_providers`
 Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier accountId, String? scimEnabled, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (scimEnabled != null) queryParameters['scim_enabled'] = scimEnabled;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (scimEnabled != null) {
+  queryParameters['scim_enabled'] = scimEnabled;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -132,11 +138,21 @@ return execute(
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/groups`
 Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cfResourceId != null) queryParameters['cf_resource_id'] = cfResourceId.toString();
-if (idpResourceId != null) queryParameters['idp_resource_id'] = idpResourceId.toString();
-if (name != null) queryParameters['name'] = name.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (cfResourceId != null) {
+  queryParameters['cf_resource_id'] = cfResourceId.toString();
+}
+if (idpResourceId != null) {
+  queryParameters['idp_resource_id'] = idpResourceId.toString();
+}
+if (name != null) {
+  queryParameters['name'] = name.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -163,13 +179,27 @@ return execute(
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/users`
 Future<ApiResult<ResponseCommon3, Never>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cfResourceId != null) queryParameters['cf_resource_id'] = cfResourceId.toString();
-if (idpResourceId != null) queryParameters['idp_resource_id'] = idpResourceId.toString();
-if (username != null) queryParameters['username'] = username.toString();
-if (email != null) queryParameters['email'] = email.toString();
-if (name != null) queryParameters['name'] = name.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (cfResourceId != null) {
+  queryParameters['cf_resource_id'] = cfResourceId.toString();
+}
+if (idpResourceId != null) {
+  queryParameters['idp_resource_id'] = idpResourceId.toString();
+}
+if (username != null) {
+  queryParameters['username'] = username.toString();
+}
+if (email != null) {
+  queryParameters['email'] = email.toString();
+}
+if (name != null) {
+  queryParameters['name'] = name.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

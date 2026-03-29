@@ -199,11 +199,21 @@ return execute(
 /// `GET /accounts/{account_id}/images/v2`
 Future<ApiResult<ResponseCommon36, ResponseCommon36>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (continuationToken != null) queryParameters['continuation_token'] = continuationToken.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
-if (creator != null) queryParameters['creator'] = creator;
-if (metafieldoperator != null) queryParameters['meta.<field>[<operator>]'] = metafieldoperator;
+if (continuationToken != null) {
+  queryParameters['continuation_token'] = continuationToken.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
+if (creator != null) {
+  queryParameters['creator'] = creator;
+}
+if (metafieldoperator != null) {
+  queryParameters['meta.<field>[<operator>]'] = metafieldoperator;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

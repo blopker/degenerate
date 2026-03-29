@@ -15,10 +15,18 @@ final class OnRampsApi with ApiExecutor {const OnRampsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/magic/cloud/onramps`
 Future<ApiResult<McnResponse, McnResponse>> onrampsList({required McnAccountId accountId, String? orderBy, bool? desc, bool? status, bool? vpcs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (orderBy != null) queryParameters['order_by'] = orderBy;
-if (desc != null) queryParameters['desc'] = desc.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (vpcs != null) queryParameters['vpcs'] = vpcs.toString();
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy;
+}
+if (desc != null) {
+  queryParameters['desc'] = desc.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (vpcs != null) {
+  queryParameters['vpcs'] = vpcs.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -48,7 +56,9 @@ return execute(
 /// `POST /accounts/{account_id}/magic/cloud/onramps`
 Future<ApiResult<McnResponse, McnResponse>> onrampsCreate({required McnAccountId accountId, String? forwarded, required McnCreateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (forwarded != null) headers['forwarded'] = forwarded;
+if (forwarded != null) {
+  headers['forwarded'] = forwarded;
+}
 
 final request = ApiRequest(
   method: 'POST',
@@ -75,10 +85,18 @@ return execute(
 /// `GET /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
 Future<ApiResult<McnResponse, McnResponse>> onrampsRead({required McnAccountId accountId, required McnOnrampId onrampId, bool? status, bool? vpcs, bool? postApplyResources, bool? plannedResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (vpcs != null) queryParameters['vpcs'] = vpcs.toString();
-if (postApplyResources != null) queryParameters['post_apply_resources'] = postApplyResources.toString();
-if (plannedResources != null) queryParameters['planned_resources'] = plannedResources.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (vpcs != null) {
+  queryParameters['vpcs'] = vpcs.toString();
+}
+if (postApplyResources != null) {
+  queryParameters['post_apply_resources'] = postApplyResources.toString();
+}
+if (plannedResources != null) {
+  queryParameters['planned_resources'] = plannedResources.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -160,8 +178,12 @@ return execute(
 /// `DELETE /accounts/{account_id}/magic/cloud/onramps/{onramp_id}`
 Future<ApiResult<McnResponse, McnResponse>> onrampsDelete({required McnAccountId accountId, required McnOnrampId onrampId, bool? destroy, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (destroy != null) queryParameters['destroy'] = destroy.toString();
-if (force != null) queryParameters['force'] = force.toString();
+if (destroy != null) {
+  queryParameters['destroy'] = destroy.toString();
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

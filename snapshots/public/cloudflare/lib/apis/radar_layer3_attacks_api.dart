@@ -55,9 +55,15 @@ for (final item in protocol) {
   queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
 }
 }
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -87,7 +93,9 @@ return execute(
 /// `GET /radar/attacks/layer3/timeseries`
 Future<ApiResult<RadarGetAttacksLayer3TimeseriesByBytesResponse, RadarGetAttacksLayer3TimeseriesByBytesResponse400>> radarGetAttacksLayer3TimeseriesByBytes({RadarGetAttacksLayer3TimeseriesByBytesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TimeseriesByBytesIpVersion>? ipVersion, List<RadarGetAttacksLayer3TimeseriesByBytesProtocol>? protocol, RadarGetAttacksLayer3TimeseriesByBytesNormalization? normalization, RadarGetAttacksLayer3TimeseriesByBytesMetric? metric, RadarGetAttacksLayer3TimeseriesByBytesDirection? direction, RadarGetAttacksLayer3TimeseriesByBytesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -133,10 +141,18 @@ for (final item in protocol) {
   queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
 }
 }
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (metric != null) queryParameters['metric'] = metric.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (metric != null) {
+  queryParameters['metric'] = metric.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -166,7 +182,9 @@ return execute(
 /// `GET /radar/attacks/layer3/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetAttacksLayer3TimeseriesGroupResponse, RadarGetAttacksLayer3TimeseriesGroupResponse400>> radarGetAttacksLayer3TimeseriesGroup({required RadarGetAttacksLayer3TimeseriesGroupDimension dimension, RadarGetAttacksLayer3TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TimeseriesGroupIpVersion>? ipVersion, List<RadarGetAttacksLayer3TimeseriesGroupProtocol>? protocol, RadarGetAttacksLayer3TimeseriesGroupNormalization? normalization, RadarGetAttacksLayer3TimeseriesGroupDirection? direction, int? limitPerGroup, RadarGetAttacksLayer3TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -207,10 +225,18 @@ for (final item in protocol) {
   queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
 }
 }
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -240,7 +266,9 @@ return execute(
 /// `GET /radar/attacks/layer3/top/attacks`
 Future<ApiResult<RadarGetAttacksLayer3TopAttacksResponse, RadarGetAttacksLayer3TopAttacksResponse404>> radarGetAttacksLayer3TopAttacks({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopAttacksIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopAttacksProtocol>? protocol, RadarGetAttacksLayer3TopAttacksLimitDirection? limitDirection, int? limitPerLocation, RadarGetAttacksLayer3TopAttacksMagnitude? magnitude, RadarGetAttacksLayer3TopAttacksNormalization? normalization, RadarGetAttacksLayer3TopAttacksFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -281,11 +309,21 @@ for (final item in protocol) {
   queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
 }
 }
-if (limitDirection != null) queryParameters['limitDirection'] = limitDirection.toJson();
-if (limitPerLocation != null) queryParameters['limitPerLocation'] = limitPerLocation.toString();
-if (magnitude != null) queryParameters['magnitude'] = magnitude.toJson();
-if (normalization != null) queryParameters['normalization'] = normalization.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limitDirection != null) {
+  queryParameters['limitDirection'] = limitDirection.toJson();
+}
+if (limitPerLocation != null) {
+  queryParameters['limitPerLocation'] = limitPerLocation.toString();
+}
+if (magnitude != null) {
+  queryParameters['magnitude'] = magnitude.toJson();
+}
+if (normalization != null) {
+  queryParameters['normalization'] = normalization.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -315,7 +353,9 @@ return execute(
 /// `GET /radar/attacks/layer3/top/locations/origin`
 Future<ApiResult<RadarGetAttacksLayer3TopOriginLocationsResponse, RadarGetAttacksLayer3TopOriginLocationsResponse404>> radarGetAttacksLayer3TopOriginLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopOriginLocationsIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopOriginLocationsProtocol>? protocol, RadarGetAttacksLayer3TopOriginLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -356,7 +396,9 @@ for (final item in protocol) {
   queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -386,7 +428,9 @@ return execute(
 /// `GET /radar/attacks/layer3/top/locations/target`
 Future<ApiResult<RadarGetAttacksLayer3TopTargetLocationsResponse, RadarGetAttacksLayer3TopTargetLocationsResponse404>> radarGetAttacksLayer3TopTargetLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopTargetLocationsIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopTargetLocationsProtocol>? protocol, RadarGetAttacksLayer3TopTargetLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -427,7 +471,9 @@ for (final item in protocol) {
   queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

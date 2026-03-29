@@ -103,9 +103,15 @@ return execute(
 /// `GET /accounts/{account_id}/rum/site_info/list`
 Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListSites({required RumIdentifier accountId, RumPerPage? perPage, RumPage? page, RumOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

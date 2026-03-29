@@ -653,11 +653,10 @@ void main() {
       'optional header params are conditionally written into request headers',
       () {
         expect(source, contains('xRequestId'));
+        expect(source, contains("if (xRequestId != null) {"));
         expect(
           source,
-          contains(
-            "if (xRequestId != null) headers['X-Request-Id'] = xRequestId;",
-          ),
+          contains("headers['X-Request-Id'] = xRequestId;"),
         );
       },
     );
@@ -2610,6 +2609,30 @@ void main() {
         escapeDocComment('type <Foo.Bar> end'),
         'type `<Foo.Bar>` end',
       );
+    });
+  });
+
+  group('escapeDartString', () {
+    test('escapes backslash, quote, and dollar', () {
+      expect(escapeDartString(r"a\b"), r"a\\b");
+      expect(escapeDartString("a'b"), r"a\'b");
+      expect(escapeDartString(r'a$b'), r'a\$b');
+    });
+
+    test('escapes newline', () {
+      expect(escapeDartString('\n'), r'\n');
+    });
+
+    test('escapes carriage return', () {
+      expect(escapeDartString('\r'), r'\r');
+    });
+
+    test('escapes tab', () {
+      expect(escapeDartString('\t'), r'\t');
+    });
+
+    test('escapes mixed control characters', () {
+      expect(escapeDartString('a\nb\tc\r'), r'a\nb\tc\r');
     });
   });
 }

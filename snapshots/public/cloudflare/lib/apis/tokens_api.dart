@@ -15,9 +15,15 @@ final class TokensApi with ApiExecutor {const TokensApi(this.apiConfig);
 /// `GET /user/tokens`
 Future<ApiResult<ResponseCommon35, Never>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -155,8 +161,12 @@ return execute(
 /// `GET /user/tokens/permission_groups`
 Future<ApiResult<ResponseCommon35, Never>> permissionGroupsListPermissionGroups({String? name, String? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (scope != null) queryParameters['scope'] = scope;
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (scope != null) {
+  queryParameters['scope'] = scope;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

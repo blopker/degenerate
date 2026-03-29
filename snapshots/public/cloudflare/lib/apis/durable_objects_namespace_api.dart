@@ -15,8 +15,12 @@ final class DurableObjectsNamespaceApi with ApiExecutor {const DurableObjectsNam
 /// `GET /accounts/{account_id}/workers/durable_objects/namespaces`
 Future<ApiResult<ResponseCommon80, Never>> durableObjectsNamespaceListNamespaces({required WorkersIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -43,8 +47,12 @@ return execute(
 /// `GET /accounts/{account_id}/workers/durable_objects/namespaces/{id}/objects`
 Future<ApiResult<ResponseCommon80, Never>> durableObjectsNamespaceListObjects({required WorkersIdentifier accountId, required WorkersSchemasId id, double? limit, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -17,7 +17,9 @@ Future<ApiResult<ResponseCommon56, Never>> tagsGet({required ResourceTaggingIden
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['resource_id'] = resourceId.toString();
 queryParameters['resource_type'] = resourceType.toJson();
-if (workerId != null) queryParameters['worker_id'] = workerId.toString();
+if (workerId != null) {
+  queryParameters['worker_id'] = workerId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -44,7 +46,9 @@ return execute(
 /// `PUT /accounts/{account_id}/tags`
 Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingSetTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (ifMatch != null) headers['If-Match'] = ifMatch;
+if (ifMatch != null) {
+  headers['If-Match'] = ifMatch;
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -71,7 +75,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/tags`
 Future<ApiResult<void, ResponseCommonFailure59>> tagsDelete({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingDeleteTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (ifMatch != null) headers['If-Match'] = ifMatch;
+if (ifMatch != null) {
+  headers['If-Match'] = ifMatch;
+}
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -96,7 +102,9 @@ return execute(
 /// `GET /accounts/{account_id}/tags/keys`
 Future<ApiResult<ResponseCommon56, Never>> tagsListKeys({required ResourceTaggingIdentifier accountId, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -133,7 +141,9 @@ for (final item in tag) {
   queryParametersList.add(ApiQueryParameter(name: 'tag', value: item, allowReserved: false));
 }
 }
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -160,8 +170,12 @@ return execute(
 /// `GET /accounts/{account_id}/tags/values/{tag_key}`
 Future<ApiResult<ResponseCommon56, Never>> tagsListValues({required ResourceTaggingIdentifier accountId, required String tagKey, ResourceTaggingResourceType? type, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (type != null) queryParameters['type'] = type.toJson();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -190,7 +204,9 @@ Future<ApiResult<ResponseCommon56, Never>> tagsZoneGet({required ResourceTagging
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['resource_id'] = resourceId.toString();
 queryParameters['resource_type'] = resourceType.toJson();
-if (accessApplicationId != null) queryParameters['access_application_id'] = accessApplicationId.toString();
+if (accessApplicationId != null) {
+  queryParameters['access_application_id'] = accessApplicationId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -217,7 +233,9 @@ return execute(
 /// `PUT /zones/{zone_id}/tags`
 Future<ApiResult<ResponseCommon56, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingSetTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (ifMatch != null) headers['If-Match'] = ifMatch;
+if (ifMatch != null) {
+  headers['If-Match'] = ifMatch;
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -244,7 +262,9 @@ return execute(
 /// `DELETE /zones/{zone_id}/tags`
 Future<ApiResult<void, ResponseCommonFailure59>> tagsZoneDelete({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingDeleteTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (ifMatch != null) headers['If-Match'] = ifMatch;
+if (ifMatch != null) {
+  headers['If-Match'] = ifMatch;
+}
 
 final request = ApiRequest(
   method: 'DELETE',

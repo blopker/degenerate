@@ -15,9 +15,15 @@ Future<ApiResult<ResponseCommon19, Never>> listDexRules({required DigitalExperie
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
-if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
-if (name != null) queryParameters['name'] = name;
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
+if (sortBy != null) {
+  queryParameters['sort_by'] = sortBy.toJson();
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,9 +13,15 @@ final class CertificatesApi with ApiExecutor {const CertificatesApi(this.apiConf
 /// `GET /organization/certificates`
 Future<ApiResult<ListCertificatesResponse, Never>> listOrganizationCertificates({int? limit, String? after, ListOrganizationCertificatesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -188,9 +194,15 @@ return execute(
 /// `GET /organization/projects/{project_id}/certificates`
 Future<ApiResult<ListCertificatesResponse, Never>> listProjectCertificates({required String projectId, int? limit, String? after, ListProjectCertificatesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

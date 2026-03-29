@@ -15,17 +15,39 @@ final class CloudflareTunnelApi with ApiExecutor {const CloudflareTunnelApi(this
 /// `GET /accounts/{account_id}/cfd_tunnel`
 Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name.toString();
-if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
-if (existedAt != null) queryParameters['existed_at'] = existedAt.toString();
-if (uuid != null) queryParameters['uuid'] = uuid.toString();
-if (wasActiveAt != null) queryParameters['was_active_at'] = wasActiveAt.toString();
-if (wasInactiveAt != null) queryParameters['was_inactive_at'] = wasInactiveAt.toString();
-if (includePrefix != null) queryParameters['include_prefix'] = includePrefix;
-if (excludePrefix != null) queryParameters['exclude_prefix'] = excludePrefix;
-if (status != null) queryParameters['status'] = status.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (name != null) {
+  queryParameters['name'] = name.toString();
+}
+if (isDeleted != null) {
+  queryParameters['is_deleted'] = isDeleted.toString();
+}
+if (existedAt != null) {
+  queryParameters['existed_at'] = existedAt.toString();
+}
+if (uuid != null) {
+  queryParameters['uuid'] = uuid.toString();
+}
+if (wasActiveAt != null) {
+  queryParameters['was_active_at'] = wasActiveAt.toString();
+}
+if (wasInactiveAt != null) {
+  queryParameters['was_inactive_at'] = wasInactiveAt.toString();
+}
+if (includePrefix != null) {
+  queryParameters['include_prefix'] = includePrefix;
+}
+if (excludePrefix != null) {
+  queryParameters['exclude_prefix'] = excludePrefix;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -163,7 +185,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
 Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelCleanUpCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, TunnelClientId? clientId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (clientId != null) queryParameters['client_id'] = clientId.toString();
+if (clientId != null) {
+  queryParameters['client_id'] = clientId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -257,22 +281,44 @@ return execute(
 /// `GET /accounts/{account_id}/tunnels`
 Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
-if (existedAt != null) queryParameters['existed_at'] = existedAt.toString();
-if (uuid != null) queryParameters['uuid'] = uuid.toString();
-if (wasActiveAt != null) queryParameters['was_active_at'] = wasActiveAt.toString();
-if (wasInactiveAt != null) queryParameters['was_inactive_at'] = wasInactiveAt.toString();
-if (includePrefix != null) queryParameters['include_prefix'] = includePrefix;
-if (excludePrefix != null) queryParameters['exclude_prefix'] = excludePrefix;
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (isDeleted != null) {
+  queryParameters['is_deleted'] = isDeleted.toString();
+}
+if (existedAt != null) {
+  queryParameters['existed_at'] = existedAt.toString();
+}
+if (uuid != null) {
+  queryParameters['uuid'] = uuid.toString();
+}
+if (wasActiveAt != null) {
+  queryParameters['was_active_at'] = wasActiveAt.toString();
+}
+if (wasInactiveAt != null) {
+  queryParameters['was_inactive_at'] = wasInactiveAt.toString();
+}
+if (includePrefix != null) {
+  queryParameters['include_prefix'] = includePrefix;
+}
+if (excludePrefix != null) {
+  queryParameters['exclude_prefix'] = excludePrefix;
+}
 if (tunTypes != null) {
 for (final item in tunTypes) {
   queryParametersList.add(ApiQueryParameter(name: 'tun_types', value: item.toJson(), allowReserved: false));
 }
 }
-if (status != null) queryParameters['status'] = status.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -299,17 +345,39 @@ return execute(
 /// `GET /accounts/{account_id}/warp_connector`
 Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
-if (existedAt != null) queryParameters['existed_at'] = existedAt.toString();
-if (uuid != null) queryParameters['uuid'] = uuid.toString();
-if (wasActiveAt != null) queryParameters['was_active_at'] = wasActiveAt.toString();
-if (wasInactiveAt != null) queryParameters['was_inactive_at'] = wasInactiveAt.toString();
-if (includePrefix != null) queryParameters['include_prefix'] = includePrefix;
-if (excludePrefix != null) queryParameters['exclude_prefix'] = excludePrefix;
-if (status != null) queryParameters['status'] = status.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (isDeleted != null) {
+  queryParameters['is_deleted'] = isDeleted.toString();
+}
+if (existedAt != null) {
+  queryParameters['existed_at'] = existedAt.toString();
+}
+if (uuid != null) {
+  queryParameters['uuid'] = uuid.toString();
+}
+if (wasActiveAt != null) {
+  queryParameters['was_active_at'] = wasActiveAt.toString();
+}
+if (wasInactiveAt != null) {
+  queryParameters['was_inactive_at'] = wasInactiveAt.toString();
+}
+if (includePrefix != null) {
+  queryParameters['include_prefix'] = includePrefix;
+}
+if (excludePrefix != null) {
+  queryParameters['exclude_prefix'] = excludePrefix;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

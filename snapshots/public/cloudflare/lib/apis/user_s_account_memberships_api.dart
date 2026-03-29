@@ -15,13 +15,27 @@ final class UserSAccountMembershipsApi with ApiExecutor {const UserSAccountMembe
 /// `GET /memberships`
 Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, Never>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (accountName != null) queryParameters['account.name'] = accountName.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (name != null) queryParameters['name'] = name.toString();
-if (status != null) queryParameters['status'] = status.toJson();
+if (accountName != null) {
+  queryParameters['account.name'] = accountName.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (name != null) {
+  queryParameters['name'] = name.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,13 +15,27 @@ final class RadarLocationsApi with ApiExecutor {const RadarLocationsApi(this.api
 /// `GET /radar/entities/locations`
 Future<ApiResult<RadarGetEntitiesLocationsResponse, RadarGetEntitiesLocationsResponse400>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (location != null) queryParameters['location'] = location;
-if (region != null) queryParameters['region'] = region;
-if (subregion != null) queryParameters['subregion'] = subregion;
-if (continent != null) queryParameters['continent'] = continent.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (region != null) {
+  queryParameters['region'] = region;
+}
+if (subregion != null) {
+  queryParameters['subregion'] = subregion;
+}
+if (continent != null) {
+  queryParameters['continent'] = continent.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -51,7 +65,9 @@ return execute(
 /// `GET /radar/entities/locations/{location}`
 Future<ApiResult<RadarGetEntitiesLocationByAlpha2Response, RadarGetEntitiesLocationByAlpha2Response404>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

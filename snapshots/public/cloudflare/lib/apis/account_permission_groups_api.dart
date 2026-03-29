@@ -15,11 +15,21 @@ final class AccountPermissionGroupsApi with ApiExecutor {const AccountPermission
 /// `GET /accounts/{account_id}/iam/permission_groups`
 Future<ApiResult<ResponseCommon35, Never>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id;
-if (name != null) queryParameters['name'] = name;
-if (label != null) queryParameters['label'] = label;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (label != null) {
+  queryParameters['label'] = label;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

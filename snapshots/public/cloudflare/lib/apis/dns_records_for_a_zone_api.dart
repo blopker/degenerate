@@ -15,39 +15,105 @@ final class DnsRecordsForAZoneApi with ApiExecutor {const DnsRecordsForAZoneApi(
 /// `GET /zones/{zone_id}/dns_records`
 Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneListDnsRecords({required DnsRecordsIdentifier zoneId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? contentEndswith, DnsRecordsProxied? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, String? tag, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, DnsRecordsSearch? search, DnsRecordsTagMatch? tagMatch, DnsRecordsPage? page, DnsRecordsPerPage? perPage, DnsRecordsOrder? order, DnsRecordsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (nameExact != null) queryParameters['name.exact'] = nameExact;
-if (nameContains != null) queryParameters['name.contains'] = nameContains;
-if (nameStartswith != null) queryParameters['name.startswith'] = nameStartswith;
-if (nameEndswith != null) queryParameters['name.endswith'] = nameEndswith;
-if (type != null) queryParameters['type'] = type.toJson();
-if (content != null) queryParameters['content'] = content;
-if (contentExact != null) queryParameters['content.exact'] = contentExact;
-if (contentContains != null) queryParameters['content.contains'] = contentContains;
-if (contentStartswith != null) queryParameters['content.startswith'] = contentStartswith;
-if (contentEndswith != null) queryParameters['content.endswith'] = contentEndswith;
-if (proxied != null) queryParameters['proxied'] = proxied.toString();
-if (match != null) queryParameters['match'] = match.toJson();
-if (comment != null) queryParameters['comment'] = comment;
-if (commentPresent != null) queryParameters['comment.present'] = commentPresent;
-if (commentAbsent != null) queryParameters['comment.absent'] = commentAbsent;
-if (commentExact != null) queryParameters['comment.exact'] = commentExact;
-if (commentContains != null) queryParameters['comment.contains'] = commentContains;
-if (commentStartswith != null) queryParameters['comment.startswith'] = commentStartswith;
-if (commentEndswith != null) queryParameters['comment.endswith'] = commentEndswith;
-if (tag != null) queryParameters['tag'] = tag;
-if (tagPresent != null) queryParameters['tag.present'] = tagPresent;
-if (tagAbsent != null) queryParameters['tag.absent'] = tagAbsent;
-if (tagExact != null) queryParameters['tag.exact'] = tagExact;
-if (tagContains != null) queryParameters['tag.contains'] = tagContains;
-if (tagStartswith != null) queryParameters['tag.startswith'] = tagStartswith;
-if (tagEndswith != null) queryParameters['tag.endswith'] = tagEndswith;
-if (search != null) queryParameters['search'] = search.toString();
-if (tagMatch != null) queryParameters['tag_match'] = tagMatch.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (nameExact != null) {
+  queryParameters['name.exact'] = nameExact;
+}
+if (nameContains != null) {
+  queryParameters['name.contains'] = nameContains;
+}
+if (nameStartswith != null) {
+  queryParameters['name.startswith'] = nameStartswith;
+}
+if (nameEndswith != null) {
+  queryParameters['name.endswith'] = nameEndswith;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (content != null) {
+  queryParameters['content'] = content;
+}
+if (contentExact != null) {
+  queryParameters['content.exact'] = contentExact;
+}
+if (contentContains != null) {
+  queryParameters['content.contains'] = contentContains;
+}
+if (contentStartswith != null) {
+  queryParameters['content.startswith'] = contentStartswith;
+}
+if (contentEndswith != null) {
+  queryParameters['content.endswith'] = contentEndswith;
+}
+if (proxied != null) {
+  queryParameters['proxied'] = proxied.toString();
+}
+if (match != null) {
+  queryParameters['match'] = match.toJson();
+}
+if (comment != null) {
+  queryParameters['comment'] = comment;
+}
+if (commentPresent != null) {
+  queryParameters['comment.present'] = commentPresent;
+}
+if (commentAbsent != null) {
+  queryParameters['comment.absent'] = commentAbsent;
+}
+if (commentExact != null) {
+  queryParameters['comment.exact'] = commentExact;
+}
+if (commentContains != null) {
+  queryParameters['comment.contains'] = commentContains;
+}
+if (commentStartswith != null) {
+  queryParameters['comment.startswith'] = commentStartswith;
+}
+if (commentEndswith != null) {
+  queryParameters['comment.endswith'] = commentEndswith;
+}
+if (tag != null) {
+  queryParameters['tag'] = tag;
+}
+if (tagPresent != null) {
+  queryParameters['tag.present'] = tagPresent;
+}
+if (tagAbsent != null) {
+  queryParameters['tag.absent'] = tagAbsent;
+}
+if (tagExact != null) {
+  queryParameters['tag.exact'] = tagExact;
+}
+if (tagContains != null) {
+  queryParameters['tag.contains'] = tagContains;
+}
+if (tagStartswith != null) {
+  queryParameters['tag.startswith'] = tagStartswith;
+}
+if (tagEndswith != null) {
+  queryParameters['tag.endswith'] = tagEndswith;
+}
+if (search != null) {
+  queryParameters['search'] = search.toString();
+}
+if (tagMatch != null) {
+  queryParameters['tag_match'] = tagMatch.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

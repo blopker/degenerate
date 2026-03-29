@@ -57,8 +57,12 @@ return execute(
 /// `GET /orgs/{org}/copilot/billing/seats`
 Future<ApiResult<CopilotListCopilotSeatsResponse, BasicError>> copilotListCopilotSeats({required String org, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -326,10 +330,18 @@ return execute(
 /// `GET /orgs/{org}/copilot/metrics`
 Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForOrganization({required String org, String? since, String? until, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (since != null) queryParameters['since'] = since;
-if (until != null) queryParameters['until'] = until;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (since != null) {
+  queryParameters['since'] = since;
+}
+if (until != null) {
+  queryParameters['until'] = until;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -406,10 +418,18 @@ return execute(
 /// `GET /orgs/{org}/team/{team_slug}/copilot/metrics`
 Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForTeam({required String org, required String teamSlug, String? since, String? until, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (since != null) queryParameters['since'] = since;
-if (until != null) queryParameters['until'] = until;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (since != null) {
+  queryParameters['since'] = since;
+}
+if (until != null) {
+  queryParameters['until'] = until;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

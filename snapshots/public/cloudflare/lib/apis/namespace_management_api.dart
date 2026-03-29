@@ -18,11 +18,21 @@ final class NamespaceManagementApi with ApiExecutor {const NamespaceManagementAp
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces`
 Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pageToken != null) queryParameters['page_token'] = pageToken;
-if (pageSize != null) queryParameters['page_size'] = pageSize.toString();
-if (parent != null) queryParameters['parent'] = parent;
-if (returnUuids != null) queryParameters['return_uuids'] = returnUuids.toString();
-if (returnDetails != null) queryParameters['return_details'] = returnDetails.toString();
+if (pageToken != null) {
+  queryParameters['page_token'] = pageToken;
+}
+if (pageSize != null) {
+  queryParameters['page_size'] = pageSize.toString();
+}
+if (parent != null) {
+  queryParameters['parent'] = parent;
+}
+if (returnUuids != null) {
+  queryParameters['return_uuids'] = returnUuids.toString();
+}
+if (returnDetails != null) {
+  queryParameters['return_details'] = returnDetails.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

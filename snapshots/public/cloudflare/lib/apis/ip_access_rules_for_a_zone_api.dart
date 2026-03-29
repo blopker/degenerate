@@ -15,15 +15,33 @@ final class IpAccessRulesForAZoneApi with ApiExecutor {const IpAccessRulesForAZo
 /// `GET /zones/{zone_id}/firewall/access_rules/rules`
 Future<ApiResult<ResponseCommon31, Never>> ipAccessRulesForAZoneListIpAccessRules({required FirewallIdentifier zoneId, FirewallSchemasMode? mode, IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAZoneListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAZoneListIpAccessRulesOrder? order, IpAccessRulesForAZoneListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (mode != null) queryParameters['mode'] = mode.toJson();
-if (configurationTarget != null) queryParameters['configuration.target'] = configurationTarget.toJson();
-if (configurationValue != null) queryParameters['configuration.value'] = configurationValue;
-if (notes != null) queryParameters['notes'] = notes;
-if (match != null) queryParameters['match'] = match.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (mode != null) {
+  queryParameters['mode'] = mode.toJson();
+}
+if (configurationTarget != null) {
+  queryParameters['configuration.target'] = configurationTarget.toJson();
+}
+if (configurationValue != null) {
+  queryParameters['configuration.value'] = configurationValue;
+}
+if (notes != null) {
+  queryParameters['notes'] = notes;
+}
+if (match != null) {
+  queryParameters['match'] = match.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

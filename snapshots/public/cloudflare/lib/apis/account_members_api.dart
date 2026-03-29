@@ -15,11 +15,21 @@ final class AccountMembersApi with ApiExecutor {const AccountMembersApi(this.api
 /// `GET /accounts/{account_id}/members`
 Future<ApiResult<ResponseCommon35, Never>> accountMembersListMembers({required IamCommonComponentsSchemasIdentifier accountId, dynamic order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (status != null) queryParameters['status'] = status.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,8 +13,12 @@ final class InvitesApi with ApiExecutor {const InvitesApi(this.apiConfig);
 /// `GET /organization/invites`
 Future<ApiResult<InviteListResponse, Never>> listInvites({int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

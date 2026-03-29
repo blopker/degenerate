@@ -47,9 +47,15 @@ for (final item in include) {
   queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
 }
 }
-if (stream != null) queryParameters['stream'] = stream.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter.toString();
-if (includeObfuscation != null) queryParameters['include_obfuscation'] = includeObfuscation.toString();
+if (stream != null) {
+  queryParameters['stream'] = stream.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter.toString();
+}
+if (includeObfuscation != null) {
+  queryParameters['include_obfuscation'] = includeObfuscation.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -120,9 +126,15 @@ return execute(
 /// `GET /responses/{response_id}/input_items`
 Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 if (include != null) {
 for (final item in include) {
   queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));

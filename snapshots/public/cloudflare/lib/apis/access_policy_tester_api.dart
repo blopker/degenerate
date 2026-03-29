@@ -65,9 +65,15 @@ return execute(
 /// `GET /accounts/{account_id}/access/policy-tests/{policy_test_id}/users`
 Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTestsGetAUserPage({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, int? page, int? perPage, AccessPolicyTestsGetAUserPageStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (status != null) queryParameters['status'] = status.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

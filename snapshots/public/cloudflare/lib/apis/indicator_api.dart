@@ -15,10 +15,18 @@ final class IndicatorApi with ApiExecutor {const IndicatorApi(this.apiConfig);
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators`
 Future<ApiResult<GetIndicatorListLegacyResponse, Never>> getIndicatorListLegacy({required String accountId, required String datasetId, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
-if (search != null) queryParameters['search'] = search;
-if (indicatorType != null) queryParameters['indicatorType'] = indicatorType;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (pageSize != null) {
+  queryParameters['pageSize'] = pageSize.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (indicatorType != null) {
+  queryParameters['indicatorType'] = indicatorType;
+}
 if (relatedEvent != null) {
 for (final item in relatedEvent) {
   queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item, allowReserved: false));
@@ -206,10 +214,18 @@ for (final item in datasetIds) {
   queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
 }
 }
-if (page != null) queryParameters['page'] = page.toString();
-if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
-if (search != null) queryParameters['search'] = search;
-if (indicatorType != null) queryParameters['indicatorType'] = indicatorType;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (pageSize != null) {
+  queryParameters['pageSize'] = pageSize.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (indicatorType != null) {
+  queryParameters['indicatorType'] = indicatorType;
+}
 if (relatedEvents != null) {
 for (final item in relatedEvents) {
   queryParametersList.add(ApiQueryParameter(name: 'relatedEvents', value: item, allowReserved: false));
@@ -220,12 +236,24 @@ for (final item in tags) {
   queryParametersList.add(ApiQueryParameter(name: 'tags', value: item, allowReserved: false));
 }
 }
-if (createdAfter != null) queryParameters['createdAfter'] = createdAfter.toString();
-if (createdBefore != null) queryParameters['createdBefore'] = createdBefore.toString();
-if (relatedEventsLimit != null) queryParameters['relatedEventsLimit'] = relatedEventsLimit.toString();
-if (includeTags != null) queryParameters['includeTags'] = includeTags.toString();
-if (includeTotalCount != null) queryParameters['includeTotalCount'] = includeTotalCount.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (createdAfter != null) {
+  queryParameters['createdAfter'] = createdAfter.toString();
+}
+if (createdBefore != null) {
+  queryParameters['createdBefore'] = createdBefore.toString();
+}
+if (relatedEventsLimit != null) {
+  queryParameters['relatedEventsLimit'] = relatedEventsLimit.toString();
+}
+if (includeTags != null) {
+  queryParameters['includeTags'] = includeTags.toString();
+}
+if (includeTotalCount != null) {
+  queryParameters['includeTotalCount'] = includeTotalCount.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

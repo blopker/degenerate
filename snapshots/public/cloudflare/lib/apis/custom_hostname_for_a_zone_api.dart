@@ -15,13 +15,27 @@ final class CustomHostnameForAZoneApi with ApiExecutor {const CustomHostnameForA
 /// `GET /zones/{zone_id}/custom_hostnames`
 Future<ApiResult<ResponseCommon68, Never>> customHostnameForAZoneListCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, String? hostname, String? id, double? page, double? perPage, dynamic order, dynamic direction, dynamic ssl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (hostname != null) queryParameters['hostname'] = hostname;
-if (id != null) queryParameters['id'] = id;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toString();
-if (direction != null) queryParameters['direction'] = direction.toString();
-if (ssl != null) queryParameters['ssl'] = ssl.toString();
+if (hostname != null) {
+  queryParameters['hostname'] = hostname;
+}
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toString();
+}
+if (ssl != null) {
+  queryParameters['ssl'] = ssl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,7 +15,9 @@ final class BrapiApi with ApiExecutor {const BrapiApi(this.apiConfig);
 /// `POST /accounts/{account_id}/browser-rendering/content`
 Future<ApiResult<BrapiPostContentResponse, BrapiPostContentResponse400>> brapiPostContent({required String accountId, double? cacheTtl, required BrapiPostContentRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -47,7 +49,9 @@ return execute(
 /// `POST /accounts/{account_id}/browser-rendering/json`
 Future<ApiResult<BrapiPostJsonResponse, BrapiPostJsonResponse400>> brapiPostJson({required String accountId, double? cacheTtl, required BrapiPostJsonRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -79,7 +83,9 @@ return execute(
 /// `POST /accounts/{account_id}/browser-rendering/links`
 Future<ApiResult<BrapiPostLinksResponse, BrapiPostLinksResponse400>> brapiPostLinks({required String accountId, double? cacheTtl, required BrapiPostLinksRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -111,7 +117,9 @@ return execute(
 /// `POST /accounts/{account_id}/browser-rendering/markdown`
 Future<ApiResult<BrapiPostMarkdownResponse, BrapiPostMarkdownResponse400>> brapiPostMarkdown({required String accountId, double? cacheTtl, required BrapiPostMarkdownRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -143,7 +151,9 @@ return execute(
 /// `POST /accounts/{account_id}/browser-rendering/pdf`
 Future<ApiResult<String, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, double? cacheTtl, required BrapiPostPdfRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -175,7 +185,9 @@ return execute(
 /// `POST /accounts/{account_id}/browser-rendering/scrape`
 Future<ApiResult<BrapiPostScrapeResponse, BrapiPostScrapeResponse400>> brapiPostScrape({required String accountId, double? cacheTtl, required BrapiPostScrapeRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -207,7 +219,9 @@ return execute(
 /// `POST /accounts/{account_id}/browser-rendering/screenshot`
 Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotResponse400>> brapiPostScreenshot({required String accountId, double? cacheTtl, required BrapiPostScreenshotRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -239,7 +253,9 @@ return execute(
 /// `POST /accounts/{account_id}/browser-rendering/snapshot`
 Future<ApiResult<BrapiPostSnapshotResponse, BrapiPostSnapshotResponse400>> brapiPostSnapshot({required String accountId, double? cacheTtl, required BrapiPostSnapshotRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cacheTtl != null) queryParameters['cacheTTL'] = cacheTtl.toString();
+if (cacheTtl != null) {
+  queryParameters['cacheTTL'] = cacheTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

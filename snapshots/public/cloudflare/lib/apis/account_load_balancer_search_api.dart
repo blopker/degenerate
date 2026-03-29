@@ -15,10 +15,18 @@ final class AccountLoadBalancerSearchApi with ApiExecutor {const AccountLoadBala
 /// `GET /accounts/{account_id}/load_balancers/search`
 Future<ApiResult<ResponseCommon42, Never>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (query != null) queryParameters['query'] = query;
-if (references != null) queryParameters['references'] = references.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (query != null) {
+  queryParameters['query'] = query;
+}
+if (references != null) {
+  queryParameters['references'] = references.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

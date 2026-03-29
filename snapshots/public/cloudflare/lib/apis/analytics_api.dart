@@ -15,8 +15,12 @@ final class AnalyticsApi with ApiExecutor {const AnalyticsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/analytics/daywise`
 Future<ApiResult<GetOrgAnalyticsResponse, Never>> getOrgAnalytics({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? startDate, String? endDate, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (startDate != null) queryParameters['start_date'] = startDate;
-if (endDate != null) queryParameters['end_date'] = endDate;
+if (startDate != null) {
+  queryParameters['start_date'] = startDate;
+}
+if (endDate != null) {
+  queryParameters['end_date'] = endDate;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

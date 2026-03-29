@@ -27,5 +27,6 @@ final class PubTotemMobileApi {
   late final MeetingsApi meetings = MeetingsApi(_config);
   late final RoomsApi rooms = RoomsApi(_config);
 
-  PubTotemMobileApi withJWTAuth(String token) => PubTotemMobileApi(PubTotemMobileSecurity.applyJWTAuth(_config, token));
+  PubTotemMobileApi withJWTAuth(String token) =>
+      PubTotemMobileApi(PubTotemMobileSecurity.applyJWTAuth(_config, token));
 }

@@ -36,10 +36,18 @@ return execute(
 /// `GET /accounts/{account_id}/secrets_store/stores`
 Future<ApiResult<ResponseCommon59, Never>> secretsStoreList({required SecretsStoreAccountIdentifier accountId, SecretsStoreListDirection? direction, int? page, int? perPage, SecretsStoreListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -131,11 +139,21 @@ return execute(
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
 Future<ApiResult<ResponseCommon59, Never>> secretsStoreSecretsList({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, SecretsStoreSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
-if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 if (scopes != null) {
 queryParameters['scopes'] = scopes.map((item) => item.toString()).join(',');
 }
@@ -301,10 +319,18 @@ return execute(
 /// `GET /system/accounts/{account_tag}/stores`
 Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemList({required SecretsStoreAccountTag accountTag, SecretsStoreSystemListDirection? direction, int? page, int? perPage, SecretsStoreSystemListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -405,11 +431,21 @@ return execute(
 /// `GET /system/accounts/{account_tag}/stores/{store_id}/secrets`
 Future<ApiResult<ResponseCommon59, Never>> secretsStoreSystemSecretsList({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, SecretsStoreSystemSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSystemSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
-if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 if (scopes != null) {
 queryParameters['scopes'] = scopes.map((item) => item.toString()).join(',');
 }

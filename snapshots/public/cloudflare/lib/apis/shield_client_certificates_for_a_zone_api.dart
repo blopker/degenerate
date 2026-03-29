@@ -13,7 +13,9 @@ final class ShieldClientCertificatesForAZoneApi with ApiExecutor {const ShieldCl
 /// `GET /zones/{zone_id}/certificate_authorities/hostname_associations`
 Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneListHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, String? mtlsCertificateId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (mtlsCertificateId != null) queryParameters['mtls_certificate_id'] = mtlsCertificateId;
+if (mtlsCertificateId != null) {
+  queryParameters['mtls_certificate_id'] = mtlsCertificateId;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -61,11 +63,21 @@ return execute(
 /// `GET /zones/{zone_id}/client_certificates`
 Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneListClientCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic status, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

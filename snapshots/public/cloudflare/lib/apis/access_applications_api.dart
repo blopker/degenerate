@@ -15,14 +15,30 @@ final class AccessApplicationsApi with ApiExecutor {const AccessApplicationsApi(
 /// `GET /accounts/{account_id}/access/apps`
 Future<ApiResult<ResponseCommon3, Never>> accessApplicationsListAccessApplications({required AccessIdentifier accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (domain != null) queryParameters['domain'] = domain;
-if (aud != null) queryParameters['aud'] = aud;
-if (targetAttributes != null) queryParameters['target_attributes'] = targetAttributes;
-if (exact != null) queryParameters['exact'] = exact.toString();
-if (search != null) queryParameters['search'] = search;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
+if (aud != null) {
+  queryParameters['aud'] = aud;
+}
+if (targetAttributes != null) {
+  queryParameters['target_attributes'] = targetAttributes;
+}
+if (exact != null) {
+  queryParameters['exact'] = exact.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

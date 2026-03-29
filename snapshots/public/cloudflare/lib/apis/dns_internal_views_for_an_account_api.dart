@@ -15,18 +15,42 @@ final class DnsInternalViewsForAnAccountApi with ApiExecutor {const DnsInternalV
 /// `GET /accounts/{account_id}/dns_settings/views`
 Future<ApiResult<ResponseCommon26, Never>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (nameExact != null) queryParameters['name.exact'] = nameExact;
-if (nameContains != null) queryParameters['name.contains'] = nameContains;
-if (nameStartswith != null) queryParameters['name.startswith'] = nameStartswith;
-if (nameEndswith != null) queryParameters['name.endswith'] = nameEndswith;
-if (zoneId != null) queryParameters['zone_id'] = zoneId;
-if (zoneName != null) queryParameters['zone_name'] = zoneName;
-if (match != null) queryParameters['match'] = match.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (nameExact != null) {
+  queryParameters['name.exact'] = nameExact;
+}
+if (nameContains != null) {
+  queryParameters['name.contains'] = nameContains;
+}
+if (nameStartswith != null) {
+  queryParameters['name.startswith'] = nameStartswith;
+}
+if (nameEndswith != null) {
+  queryParameters['name.endswith'] = nameEndswith;
+}
+if (zoneId != null) {
+  queryParameters['zone_id'] = zoneId;
+}
+if (zoneName != null) {
+  queryParameters['zone_name'] = zoneName;
+}
+if (match != null) {
+  queryParameters['match'] = match.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

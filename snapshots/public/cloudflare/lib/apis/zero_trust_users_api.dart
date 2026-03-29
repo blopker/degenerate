@@ -15,11 +15,21 @@ final class ZeroTrustUsersApi with ApiExecutor {const ZeroTrustUsersApi(this.api
 /// `GET /accounts/{account_id}/access/users`
 Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUsers({required AccessIdentifier accountId, String? name, String? email, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (email != null) queryParameters['email'] = email;
-if (search != null) queryParameters['search'] = search;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (email != null) {
+  queryParameters['email'] = email;
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

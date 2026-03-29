@@ -29,10 +29,18 @@ final class BillableUsageApi with ApiExecutor {const BillableUsageApi(this.apiCo
 /// `GET /accounts/{account_id}/billing/usage/paygo`
 Future<ApiResult<UsageResponse, Never>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (from != null) queryParameters['from'] = from;
-if (to != null) queryParameters['to'] = to;
-if (lastYearPeriodStart != null) queryParameters['last_year_period_start'] = lastYearPeriodStart.toString();
-if (lastMonthPeriodStart != null) queryParameters['last_month_period_start'] = lastMonthPeriodStart.toString();
+if (from != null) {
+  queryParameters['from'] = from;
+}
+if (to != null) {
+  queryParameters['to'] = to;
+}
+if (lastYearPeriodStart != null) {
+  queryParameters['last_year_period_start'] = lastYearPeriodStart.toString();
+}
+if (lastMonthPeriodStart != null) {
+  queryParameters['last_month_period_start'] = lastMonthPeriodStart.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

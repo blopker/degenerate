@@ -13,9 +13,15 @@ final class SkillsApi with ApiExecutor {const SkillsApi(this.apiConfig);
 /// `GET /skills`
 Future<ApiResult<SkillListResource, Never>> listSkills({int? limit, OrderEnum? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -139,9 +145,15 @@ return execute(
 /// `GET /skills/{skill_id}/versions`
 Future<ApiResult<SkillVersionListResource, Never>> listSkillVersions({required String skillId, int? limit, OrderEnum? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

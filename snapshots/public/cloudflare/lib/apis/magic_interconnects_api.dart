@@ -14,7 +14,9 @@ final class MagicInterconnectsApi with ApiExecutor {const MagicInterconnectsApi(
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects`
 Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,7 +39,9 @@ return execute(
 /// `PUT /accounts/{account_id}/magic/cf_interconnects`
 Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -60,7 +64,9 @@ return execute(
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsListInterconnectDetails({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +89,9 @@ return execute(
 /// `PUT /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
 Future<ApiResult<ResponseCommon48, Never>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicInterconnectTunnelUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (xMagicNewHcTarget != null) headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+if (xMagicNewHcTarget != null) {
+  headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
+}
 
 final request = ApiRequest(
   method: 'PUT',

@@ -13,12 +13,24 @@ final class Api20100401CallRecordingApi with ApiExecutor {const Api20100401CallR
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json`
 Future<ApiResult<ListCallRecordingResponse, Never>> listCallRecording({required String accountSid, required String callSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dateCreated != null) queryParameters['DateCreated'] = dateCreated;
-if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore;
-if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (dateCreated != null) {
+  queryParameters['DateCreated'] = dateCreated;
+}
+if (dateCreatedBefore != null) {
+  queryParameters['DateCreated<'] = dateCreatedBefore;
+}
+if (dateCreatedAfter != null) {
+  queryParameters['DateCreated>'] = dateCreatedAfter;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

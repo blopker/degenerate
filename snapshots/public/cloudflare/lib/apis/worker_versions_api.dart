@@ -15,9 +15,15 @@ final class WorkerVersionsApi with ApiExecutor {const WorkerVersionsApi(this.api
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions`
 Future<ApiResult<ResponseCommon80, Never>> workerVersionsListVersions({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, bool? deployable, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (deployable != null) queryParameters['deployable'] = deployable.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (deployable != null) {
+  queryParameters['deployable'] = deployable.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -44,7 +50,9 @@ return execute(
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/versions`
 Future<ApiResult<ResponseCommon80, Never>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (bindingsInherit != null) queryParameters['bindings_inherit'] = bindingsInherit.toJson();
+if (bindingsInherit != null) {
+  queryParameters['bindings_inherit'] = bindingsInherit.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

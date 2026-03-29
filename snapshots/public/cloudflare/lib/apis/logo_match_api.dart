@@ -20,8 +20,12 @@ for (final item in logoId) {
   queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
 }
 }
-if (offset != null) queryParameters['offset'] = offset;
-if (limit != null) queryParameters['limit'] = limit;
+if (offset != null) {
+  queryParameters['offset'] = offset;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -56,8 +60,12 @@ for (final item in logoId) {
   queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
 }
 }
-if (offset != null) queryParameters['offset'] = offset;
-if (limit != null) queryParameters['limit'] = limit;
+if (offset != null) {
+  queryParameters['offset'] = offset;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -109,9 +117,15 @@ return execute(
 /// `POST /accounts/{account_id}/brand-protection/logos`
 Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required String accountId, String? tag, String? matchType, double? threshold, required ImageFile body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (tag != null) queryParameters['tag'] = tag;
-if (matchType != null) queryParameters['match_type'] = matchType;
-if (threshold != null) queryParameters['threshold'] = threshold.toString();
+if (tag != null) {
+  queryParameters['tag'] = tag;
+}
+if (matchType != null) {
+  queryParameters['match_type'] = matchType;
+}
+if (threshold != null) {
+  queryParameters['threshold'] = threshold.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';

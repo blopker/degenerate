@@ -15,8 +15,12 @@ final class BuildTokensApi with ApiExecutor {const BuildTokensApi(this.apiConfig
 /// `GET /accounts/{account_id}/builds/tokens`
 Future<ApiResult<Response, Never>> listBuildTokens({required BuildsAccountId accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

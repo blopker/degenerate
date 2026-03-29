@@ -1,29 +1,49 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'end_reason.dart';final class EndRoomEvent {const EndRoomEvent({this.type = 'end_room', required this.reason, });
+import 'end_reason.dart';
 
-factory EndRoomEvent.fromJson(Map<String, dynamic> json) { return EndRoomEvent(
-  type: json.containsKey('type') ? json['type'] as String : 'end_room',
-  reason: EndReason.fromJson(json['reason'] as String),
-); }
+final class EndRoomEvent {
+  const EndRoomEvent({this.type = 'end_room', required this.reason});
 
-final String type;
+  factory EndRoomEvent.fromJson(Map<String, dynamic> json) {
+    return EndRoomEvent(
+      type: json.containsKey('type') ? json['type'] as String : 'end_room',
+      reason: EndReason.fromJson(json['reason'] as String),
+    );
+  }
 
-final EndReason reason;
+  final String type;
 
-Map<String, dynamic> toJson() { return {
-  'type': type,
-  'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason'); } 
-EndRoomEvent copyWith({String Function()? type, EndReason? reason, }) { return EndRoomEvent(
-  type: type != null ? type() : this.type,
-  reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is EndRoomEvent &&
-          type == other.type &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(type, reason); } 
-@override String toString() { return 'EndRoomEvent(type: $type, reason: $reason)'; } 
- }
+  final EndReason reason;
+
+  Map<String, dynamic> toJson() {
+    return {'type': type, 'reason': reason.toJson()};
+  }
+
+  static bool canParse(Map<String, dynamic> json) {
+    return json.containsKey('reason');
+  }
+
+  EndRoomEvent copyWith({String Function()? type, EndReason? reason}) {
+    return EndRoomEvent(
+      type: type != null ? type() : this.type,
+      reason: reason ?? this.reason,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is EndRoomEvent && type == other.type && reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(type, reason);
+  }
+
+  @override
+  String toString() {
+    return 'EndRoomEvent(type: $type, reason: $reason)';
+  }
+}

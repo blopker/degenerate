@@ -13,9 +13,15 @@ final class ProjectGroupsApi with ApiExecutor {const ProjectGroupsApi(this.apiCo
 /// `GET /organization/projects/{project_id}/groups`
 Future<ApiResult<ProjectGroupListResource, Never>> listProjectGroups({required String projectId, int? limit, String? after, ListProjectGroupsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -16,7 +16,9 @@ final class RadarIpApi with ApiExecutor {const RadarIpApi(this.apiConfig);
 Future<ApiResult<RadarGetEntitiesIpResponse, RadarGetEntitiesIpResponse404>> radarGetEntitiesIp({required String ip, RadarGetEntitiesIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ip'] = ip;
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

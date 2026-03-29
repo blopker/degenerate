@@ -13,8 +13,12 @@ final class AutoRagJobsApi with ApiExecutor {const AutoRagJobsApi(this.apiConfig
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs`
 Future<ApiResult<AutoragConfigListJobsResponse, AutoragConfigListJobsResponse404>> autoragConfigListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -64,8 +68,12 @@ return execute(
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}/logs`
 Future<ApiResult<AutoragConfigListJobLogsResponse, AutoragConfigListJobLogsResponse404>> autoragConfigListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

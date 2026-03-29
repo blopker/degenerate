@@ -36,7 +36,9 @@ return execute(
 /// `POST /zones/{zone_id}/hold`
 Future<ApiResult<ResponseCommon86, Never>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (includeSubdomains != null) queryParameters['include_subdomains'] = includeSubdomains.toString();
+if (includeSubdomains != null) {
+  queryParameters['include_subdomains'] = includeSubdomains.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -88,7 +90,9 @@ return execute(
 /// `DELETE /zones/{zone_id}/hold`
 Future<ApiResult<ResponseCommon86, Never>> zones0HoldDelete({required ZonesSchemasIdentifier zoneId, String? holdAfter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (holdAfter != null) queryParameters['hold_after'] = holdAfter;
+if (holdAfter != null) {
+  queryParameters['hold_after'] = holdAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

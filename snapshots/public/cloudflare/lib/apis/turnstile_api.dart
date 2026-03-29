@@ -15,11 +15,21 @@ final class TurnstileApi with ApiExecutor {const TurnstileApi(this.apiConfig);
 /// `GET /accounts/{account_id}/challenges/widgets`
 Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetsList({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (filter != null) queryParameters['filter'] = filter;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (filter != null) {
+  queryParameters['filter'] = filter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -46,11 +56,21 @@ return execute(
 /// `POST /accounts/{account_id}/challenges/widgets`
 Future<ApiResult<ResponseCommon71, Never>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (filter != null) queryParameters['filter'] = filter;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (filter != null) {
+  queryParameters['filter'] = filter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

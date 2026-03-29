@@ -15,13 +15,27 @@ final class LoadBalancerHealthcheckEventsApi with ApiExecutor {const LoadBalance
 /// `GET /user/load_balancing_analytics/events`
 Future<ApiResult<ResponseCommon42, Never>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (until != null) queryParameters['until'] = until.toString();
-if (poolName != null) queryParameters['pool_name'] = poolName.toString();
-if (originHealthy != null) queryParameters['origin_healthy'] = originHealthy.toString();
-if (poolId != null) queryParameters['pool_id'] = poolId.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (originName != null) queryParameters['origin_name'] = originName;
-if (poolHealthy != null) queryParameters['pool_healthy'] = poolHealthy.toString();
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
+if (poolName != null) {
+  queryParameters['pool_name'] = poolName.toString();
+}
+if (originHealthy != null) {
+  queryParameters['origin_healthy'] = originHealthy.toString();
+}
+if (poolId != null) {
+  queryParameters['pool_id'] = poolId.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (originName != null) {
+  queryParameters['origin_name'] = originName;
+}
+if (poolHealthy != null) {
+  queryParameters['pool_healthy'] = poolHealthy.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

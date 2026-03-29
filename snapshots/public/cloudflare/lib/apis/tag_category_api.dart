@@ -15,7 +15,9 @@ final class TagCategoryApi with ApiExecutor {const TagCategoryApi(this.apiConfig
 /// `GET /accounts/{account_id}/cloudforce-one/events/tags/categories`
 Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListResponse400>> getTagCategoryList({required String accountId, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (search != null) queryParameters['search'] = search;
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

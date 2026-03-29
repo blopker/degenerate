@@ -22,7 +22,9 @@ Future<ApiResult<ResponseCommon80, Never>> workerAssetsUpload({required WorkersI
 /// `GET /accounts/{account_id}/workers/scripts`
 Future<ApiResult<ResponseCommon80, Never>> workerScriptListWorkers({required WorkersIdentifier accountId, String? tags, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (tags != null) queryParameters['tags'] = tags;
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -49,11 +51,21 @@ return execute(
 /// `GET /accounts/{account_id}/workers/scripts-search`
 Future<ApiResult<ResponseCommon80, Never>> workerScriptSearchWorkers({required WorkersIdentifier accountId, String? name, String? id, WorkerScriptSearchWorkersOrderBy? orderBy, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (id != null) queryParameters['id'] = id;
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -102,7 +114,9 @@ throw UnsupportedError('Cannot decode multipart/form-data response into Map<Stri
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}`
 Future<ApiResult<ResponseCommon80, Never>> workerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersScriptName scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required WorkersMultipartScript body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (bindingsInherit != null) queryParameters['bindings_inherit'] = bindingsInherit.toJson();
+if (bindingsInherit != null) {
+  queryParameters['bindings_inherit'] = bindingsInherit.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -135,7 +149,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}`
 Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (force != null) queryParameters['force'] = force.toString();
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -184,8 +200,12 @@ return execute(
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/content`
 Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
-if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+if (cfWorkerBodyPart != null) {
+  headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
+}
+if (cfWorkerMainModulePart != null) {
+  headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+}
 
 final request = ApiRequest(
   method: 'PUT',
@@ -323,7 +343,9 @@ return execute(
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
 Future<ApiResult<ResponseCommon80, Never>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (urlEncoded != null) queryParameters['url_encoded'] = urlEncoded.toString();
+if (urlEncoded != null) {
+  queryParameters['url_encoded'] = urlEncoded.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -350,7 +372,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
 Future<ApiResult<ResponseCommon80, Never>> workerDeleteScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (urlEncoded != null) queryParameters['url_encoded'] = urlEncoded.toString();
+if (urlEncoded != null) {
+  queryParameters['url_encoded'] = urlEncoded.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

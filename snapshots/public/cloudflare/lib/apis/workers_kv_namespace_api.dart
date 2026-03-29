@@ -15,10 +15,18 @@ final class WorkersKvNamespaceApi with ApiExecutor {const WorkersKvNamespaceApi(
 /// `GET /accounts/{account_id}/storage/kv/namespaces`
 Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceListNamespaces({required WorkersKvIdentifier accountId, double? page, double? perPage, WorkersKvNamespaceListNamespacesOrder? order, WorkersKvNamespaceListNamespacesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -202,9 +210,15 @@ return execute(
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/keys`
 Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceListANamespaceSKeys({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, double? limit, String? prefix, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (prefix != null) queryParameters['prefix'] = prefix;
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (prefix != null) {
+  queryParameters['prefix'] = prefix;
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -274,8 +288,12 @@ throw UnsupportedError('Cannot decode application/octet-stream response into Wor
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
 Future<ApiResult<ResponseCommon79, Never>> workersKvNamespaceWriteKeyValuePairWithMetadata({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, WorkersKvExpiration? expiration, WorkersKvExpirationTtl? expirationTtl, required WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (expiration != null) queryParameters['expiration'] = expiration.toString();
-if (expirationTtl != null) queryParameters['expiration_ttl'] = expirationTtl.toString();
+if (expiration != null) {
+  queryParameters['expiration'] = expiration.toString();
+}
+if (expirationTtl != null) {
+  queryParameters['expiration_ttl'] = expirationTtl.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

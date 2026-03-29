@@ -18,8 +18,12 @@ final class OrgsApi with ApiExecutor {const OrgsApi(this.apiConfig);
 /// `GET /organizations`
 Future<ApiResult<List<OrganizationSimple>, Never>> orgsList({int? since, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (since != null) queryParameters['since'] = since.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -279,9 +283,15 @@ return execute(
 /// `POST /orgs/{org}/attestations/bulk-list`
 Future<ApiResult<OrgsListAttestationsBulkResponse, Never>> orgsListAttestationsBulk({required String org, int? perPage, String? before, String? after, required OrgsListAttestationsBulkRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -357,10 +367,18 @@ return execute(
 /// `GET /orgs/{org}/attestations/repositories`
 Future<ApiResult<List<OrgsListAttestationRepositoriesResponse>, Never>> orgsListAttestationRepositories({required String org, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (predicateType != null) queryParameters['predicate_type'] = predicateType;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (predicateType != null) {
+  queryParameters['predicate_type'] = predicateType;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -414,10 +432,18 @@ return execute(
 /// `GET /orgs/{org}/attestations/{subject_digest}`
 Future<ApiResult<OrgsListAttestationsResponse, Never>> orgsListAttestations({required String org, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (predicateType != null) queryParameters['predicate_type'] = predicateType;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (predicateType != null) {
+  queryParameters['predicate_type'] = predicateType;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -444,8 +470,12 @@ return execute(
 /// `GET /orgs/{org}/blocks`
 Future<ApiResult<List<SimpleUser>, Never>> orgsListBlockedUsers({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -536,8 +566,12 @@ return execute(
 /// `GET /orgs/{org}/failed_invitations`
 Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListFailedInvitations({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -573,8 +607,12 @@ return execute(
 /// `GET /orgs/{org}/hooks`
 Future<ApiResult<List<OrgHook>, BasicError>> orgsListWebhooks({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -787,8 +825,12 @@ return execute(
 /// `GET /orgs/{org}/hooks/{hook_id}/deliveries`
 Future<ApiResult<List<HookDeliveryItem>, BasicError>> orgsListWebhookDeliveries({required String org, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -906,16 +948,26 @@ return execute(
 Future<ApiResult<List<InsightsRouteStats2>, Never>> apiInsightsGetRouteStatsByActor({required String org, required InsightsGetRouteStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetRouteStatsByActorDirection? direction, List<InsightsGetRouteStatsByActorSort>? sort, String? apiRouteSubstring, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 if (sort != null) {
 for (final item in sort) {
   queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
 }
 }
-if (apiRouteSubstring != null) queryParameters['api_route_substring'] = apiRouteSubstring;
+if (apiRouteSubstring != null) {
+  queryParameters['api_route_substring'] = apiRouteSubstring;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -944,16 +996,26 @@ return execute(
 Future<ApiResult<List<InsightsSubjectStats2>, Never>> apiInsightsGetSubjectStats({required String org, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetSubjectStatsDirection? direction, List<InsightsGetSubjectStatsSort>? sort, String? subjectNameSubstring, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 if (sort != null) {
 for (final item in sort) {
   queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
 }
 }
-if (subjectNameSubstring != null) queryParameters['subject_name_substring'] = subjectNameSubstring;
+if (subjectNameSubstring != null) {
+  queryParameters['subject_name_substring'] = subjectNameSubstring;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -982,7 +1044,9 @@ return execute(
 Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStats({required String org, required String minTimestamp, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1010,7 +1074,9 @@ return execute(
 Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1038,7 +1104,9 @@ return execute(
 Future<ApiResult<InsightsSummaryStats, Never>> apiInsightsGetSummaryStatsByActor({required String org, required InsightsGetSummaryStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1066,7 +1134,9 @@ return execute(
 Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStats({required String org, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
 queryParameters['timestamp_increment'] = timestampIncrement;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1096,7 +1166,9 @@ return execute(
 Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
 queryParameters['timestamp_increment'] = timestampIncrement;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1126,7 +1198,9 @@ return execute(
 Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByActor({required String org, required InsightsGetTimeStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
 queryParameters['timestamp_increment'] = timestampIncrement;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -1156,16 +1230,26 @@ return execute(
 Future<ApiResult<List<InsightsUserStats2>, Never>> apiInsightsGetUserStats({required String org, required String userId, required String minTimestamp, String? maxTimestamp, int? page, int? perPage, InsightsGetUserStatsDirection? direction, List<InsightsGetUserStatsSort>? sort, String? actorNameSubstring, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
-if (maxTimestamp != null) queryParameters['max_timestamp'] = maxTimestamp;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (maxTimestamp != null) {
+  queryParameters['max_timestamp'] = maxTimestamp;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 if (sort != null) {
 for (final item in sort) {
   queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
 }
 }
-if (actorNameSubstring != null) queryParameters['actor_name_substring'] = actorNameSubstring;
+if (actorNameSubstring != null) {
+  queryParameters['actor_name_substring'] = actorNameSubstring;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1198,8 +1282,12 @@ return execute(
 /// `GET /orgs/{org}/installations`
 Future<ApiResult<OrgsListAppInstallationsResponse, Never>> orgsListAppInstallations({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1229,10 +1317,18 @@ return execute(
 /// `GET /orgs/{org}/invitations`
 Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListPendingInvitations({required String org, int? perPage, int? page, OrgsListPendingInvitationsRole? role, OrgsListPendingInvitationsInvitationSource? invitationSource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (role != null) queryParameters['role'] = role.toJson();
-if (invitationSource != null) queryParameters['invitation_source'] = invitationSource.toJson();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (role != null) {
+  queryParameters['role'] = role.toJson();
+}
+if (invitationSource != null) {
+  queryParameters['invitation_source'] = invitationSource.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1316,8 +1412,12 @@ return execute(
 /// `GET /orgs/{org}/invitations/{invitation_id}/teams`
 Future<ApiResult<List<Team>, BasicError>> orgsListInvitationTeams({required String org, required int invitationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1462,10 +1562,18 @@ return execute(
 /// `GET /orgs/{org}/members`
 Future<ApiResult<List<SimpleUser>, ValidationError>> orgsListMembers({required String org, OrgsListMembersFilter? filter, OrgsListMembersRole? role, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (filter != null) queryParameters['filter'] = filter.toJson();
-if (role != null) queryParameters['role'] = role.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (filter != null) {
+  queryParameters['filter'] = filter.toJson();
+}
+if (role != null) {
+  queryParameters['role'] = role.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1829,8 +1937,12 @@ return execute(
 /// `GET /orgs/{org}/organization-roles/{role_id}/teams`
 Future<ApiResult<List<TeamRoleAssignment>, Never>> orgsListOrgRoleTeams({required String org, required int roleId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1862,8 +1974,12 @@ return execute(
 /// `GET /orgs/{org}/organization-roles/{role_id}/users`
 Future<ApiResult<List<UserRoleAssignment>, Never>> orgsListOrgRoleUsers({required String org, required int roleId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1891,9 +2007,15 @@ return execute(
 /// `GET /orgs/{org}/outside_collaborators`
 Future<ApiResult<List<SimpleUser>, Never>> orgsListOutsideCollaborators({required String org, OrgsListOutsideCollaboratorsFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (filter != null) queryParameters['filter'] = filter.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (filter != null) {
+  queryParameters['filter'] = filter.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1971,19 +2093,35 @@ return execute(
 /// `GET /orgs/{org}/personal-access-token-requests`
 Future<ApiResult<List<OrganizationProgrammaticAccessGrantRequest>, BasicError>> orgsListPatGrantRequests({required String org, int? perPage, int? page, OrgsListPatGrantRequestsSort? sort, OrgsListPatGrantRequestsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 if (owner != null) {
 for (final item in owner) {
   queryParametersList.add(ApiQueryParameter(name: 'owner', value: item, allowReserved: false));
 }
 }
-if (repository != null) queryParameters['repository'] = repository;
-if (permission != null) queryParameters['permission'] = permission;
-if (lastUsedBefore != null) queryParameters['last_used_before'] = lastUsedBefore.toString();
-if (lastUsedAfter != null) queryParameters['last_used_after'] = lastUsedAfter.toString();
+if (repository != null) {
+  queryParameters['repository'] = repository;
+}
+if (permission != null) {
+  queryParameters['permission'] = permission;
+}
+if (lastUsedBefore != null) {
+  queryParameters['last_used_before'] = lastUsedBefore.toString();
+}
+if (lastUsedAfter != null) {
+  queryParameters['last_used_after'] = lastUsedAfter.toString();
+}
 if (tokenId != null) {
 for (final item in tokenId) {
   queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item, allowReserved: false));
@@ -2075,8 +2213,12 @@ return execute(
 /// `GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories`
 Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRequestRepositories({required String org, required int patRequestId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2109,19 +2251,35 @@ return execute(
 /// `GET /orgs/{org}/personal-access-tokens`
 Future<ApiResult<List<OrganizationProgrammaticAccessGrant>, BasicError>> orgsListPatGrants({required String org, int? perPage, int? page, OrgsListPatGrantsSort? sort, OrgsListPatGrantsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
 if (owner != null) {
 for (final item in owner) {
   queryParametersList.add(ApiQueryParameter(name: 'owner', value: item, allowReserved: false));
 }
 }
-if (repository != null) queryParameters['repository'] = repository;
-if (permission != null) queryParameters['permission'] = permission;
-if (lastUsedBefore != null) queryParameters['last_used_before'] = lastUsedBefore.toString();
-if (lastUsedAfter != null) queryParameters['last_used_after'] = lastUsedAfter.toString();
+if (repository != null) {
+  queryParameters['repository'] = repository;
+}
+if (permission != null) {
+  queryParameters['permission'] = permission;
+}
+if (lastUsedBefore != null) {
+  queryParameters['last_used_before'] = lastUsedBefore.toString();
+}
+if (lastUsedAfter != null) {
+  queryParameters['last_used_after'] = lastUsedAfter.toString();
+}
 if (tokenId != null) {
 for (final item in tokenId) {
   queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item, allowReserved: false));
@@ -2213,8 +2371,12 @@ return execute(
 /// `GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories`
 Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRepositories({required String org, required int patId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2388,9 +2550,15 @@ return execute(
 /// `GET /orgs/{org}/properties/values`
 Future<ApiResult<List<OrgRepoCustomPropertyValues>, BasicError>> orgsCustomPropertiesForReposGetOrganizationValues({required String org, int? perPage, int? page, String? repositoryQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (repositoryQuery != null) queryParameters['repository_query'] = repositoryQuery;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (repositoryQuery != null) {
+  queryParameters['repository_query'] = repositoryQuery;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2454,8 +2622,12 @@ return execute(
 /// `GET /orgs/{org}/public_members`
 Future<ApiResult<List<SimpleUser>, Never>> orgsListPublicMembers({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2545,8 +2717,12 @@ return execute(
 /// `GET /orgs/{org}/rulesets/{ruleset_id}/history`
 Future<ApiResult<List<RulesetVersion>, BasicError>> orgsGetOrgRulesetHistory({required String org, required int rulesetId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2649,8 +2825,12 @@ return execute(
 /// `GET /orgs/{org}/settings/immutable-releases/repositories`
 Future<ApiResult<OrgsGetImmutableReleasesSettingsRepositoriesResponse, Never>> orgsGetImmutableReleasesSettingsRepositories({required String org, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2742,9 +2922,15 @@ return execute(
 /// `GET /user/memberships/orgs`
 Future<ApiResult<List<OrgMembership>, BasicError>> orgsListMembershipsForAuthenticatedUser({OrgsListMembershipsForAuthenticatedUserState? state, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (state != null) queryParameters['state'] = state.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2830,8 +3016,12 @@ return execute(
 /// `GET /user/orgs`
 Future<ApiResult<List<OrganizationSimple>, BasicError>> orgsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2864,8 +3054,12 @@ return execute(
 /// `GET /users/{username}/orgs`
 Future<ApiResult<List<OrganizationSimple>, Never>> orgsListForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

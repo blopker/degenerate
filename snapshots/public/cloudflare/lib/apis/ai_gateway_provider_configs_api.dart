@@ -15,8 +15,12 @@ final class AiGatewayProviderConfigsApi with ApiExecutor {const AiGatewayProvide
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs`
 Future<ApiResult<AigConfigListProvidersResponse, AigConfigListProvidersResponse400>> aigConfigListProviders({required String accountId, required String gatewayId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

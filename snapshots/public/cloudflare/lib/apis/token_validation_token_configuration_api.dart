@@ -15,8 +15,12 @@ final class TokenValidationTokenConfigurationApi with ApiExecutor {const TokenVa
 /// `GET /zones/{zone_id}/token_validation/config`
 Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigList({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -88,9 +88,15 @@ return execute(
 /// `GET /accounts/{account_id}/ai/finetunes/public`
 Future<ApiResult<WorkersAiListPublicFinetunesResponse, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (orderBy != null) queryParameters['orderBy'] = orderBy;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (orderBy != null) {
+  queryParameters['orderBy'] = orderBy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

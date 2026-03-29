@@ -15,11 +15,21 @@ final class UserAgentBlockingRulesApi with ApiExecutor {const UserAgentBlockingR
 /// `GET /zones/{zone_id}/firewall/ua_rules`
 Future<ApiResult<ResponseCommon31, Never>> userAgentBlockingRulesListUserAgentBlockingRules({required FirewallIdentifier zoneId, double? page, FirewallDescriptionSearch? description, double? perPage, String? userAgent, bool? paused, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (description != null) queryParameters['description'] = description.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (userAgent != null) queryParameters['user_agent'] = userAgent;
-if (paused != null) queryParameters['paused'] = paused.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (description != null) {
+  queryParameters['description'] = description.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (userAgent != null) {
+  queryParameters['user_agent'] = userAgent;
+}
+if (paused != null) {
+  queryParameters['paused'] = paused.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

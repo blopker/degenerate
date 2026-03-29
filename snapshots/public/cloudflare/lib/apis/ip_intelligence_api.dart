@@ -15,8 +15,12 @@ final class IpIntelligenceApi with ApiExecutor {const IpIntelligenceApi(this.api
 /// `GET /accounts/{account_id}/intel/ip`
 Future<ApiResult<ResponseCommon39, Never>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ipv4 != null) queryParameters['ipv4'] = ipv4;
-if (ipv6 != null) queryParameters['ipv6'] = ipv6;
+if (ipv4 != null) {
+  queryParameters['ipv4'] = ipv4;
+}
+if (ipv6 != null) {
+  queryParameters['ipv6'] = ipv6;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

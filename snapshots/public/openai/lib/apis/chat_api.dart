@@ -15,15 +15,23 @@ final class ChatApi with ApiExecutor {const ChatApi(this.apiConfig);
 /// `GET /chat/completions`
 Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (model != null) queryParameters['model'] = model;
+if (model != null) {
+  queryParameters['model'] = model;
+}
 if (metadata != null) {
 for (final entry in metadata.entries) {
   queryParametersList.add(ApiQueryParameter(name: entry.key, value: entry.value, allowReserved: false));
 }
 }
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -156,9 +164,15 @@ return execute(
 /// `GET /chat/completions/{completion_id}/messages`
 Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

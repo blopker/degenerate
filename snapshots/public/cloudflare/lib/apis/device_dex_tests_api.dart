@@ -15,10 +15,18 @@ final class DeviceDexTestsApi with ApiExecutor {const DeviceDexTestsApi(this.api
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
 Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (testName != null) queryParameters['testName'] = testName;
-if (kind != null) queryParameters['kind'] = kind.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (testName != null) {
+  queryParameters['testName'] = testName;
+}
+if (kind != null) {
+  queryParameters['kind'] = kind.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

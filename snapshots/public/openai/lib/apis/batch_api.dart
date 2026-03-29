@@ -13,8 +13,12 @@ final class BatchApi with ApiExecutor {const BatchApi(this.apiConfig);
 /// `GET /batches`
 Future<ApiResult<ListBatchesResponse, Never>> listBatches({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

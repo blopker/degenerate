@@ -17,12 +17,24 @@ Future<ApiResult<ResponseCommon19, Never>> getCommands({required DigitalExperien
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
-if (from != null) queryParameters['from'] = from.toString();
-if (to != null) queryParameters['to'] = to.toString();
-if (deviceId != null) queryParameters['device_id'] = deviceId;
-if (userEmail != null) queryParameters['user_email'] = userEmail;
-if (commandType != null) queryParameters['command_type'] = commandType;
-if (status != null) queryParameters['status'] = status.toJson();
+if (from != null) {
+  queryParameters['from'] = from.toString();
+}
+if (to != null) {
+  queryParameters['to'] = to.toString();
+}
+if (deviceId != null) {
+  queryParameters['device_id'] = deviceId;
+}
+if (userEmail != null) {
+  queryParameters['user_email'] = userEmail;
+}
+if (commandType != null) {
+  queryParameters['command_type'] = commandType;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -95,7 +107,9 @@ Future<ApiResult<ResponseCommon19, Never>> getCommandsEligibleDevices({required 
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

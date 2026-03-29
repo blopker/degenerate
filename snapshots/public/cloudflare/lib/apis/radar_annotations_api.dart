@@ -15,17 +15,39 @@ final class RadarAnnotationsApi with ApiExecutor {const RadarAnnotationsApi(this
 /// `GET /radar/annotations`
 Future<ApiResult<RadarGetAnnotationsResponse, RadarGetAnnotationsResponse400>> radarGetAnnotations({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsDataSource? dataSource, RadarGetAnnotationsEventType? eventType, int? asn, String? location, String? origin, RadarGetAnnotationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (dateRange != null) queryParameters['dateRange'] = dateRange;
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (dataSource != null) queryParameters['dataSource'] = dataSource.toJson();
-if (eventType != null) queryParameters['eventType'] = eventType.toJson();
-if (asn != null) queryParameters['asn'] = asn.toString();
-if (location != null) queryParameters['location'] = location;
-if (origin != null) queryParameters['origin'] = origin;
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (dateRange != null) {
+  queryParameters['dateRange'] = dateRange;
+}
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (dataSource != null) {
+  queryParameters['dataSource'] = dataSource.toJson();
+}
+if (eventType != null) {
+  queryParameters['eventType'] = eventType.toJson();
+}
+if (asn != null) {
+  queryParameters['asn'] = asn.toString();
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (origin != null) {
+  queryParameters['origin'] = origin;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -55,15 +77,33 @@ return execute(
 /// `GET /radar/annotations/outages`
 Future<ApiResult<RadarGetAnnotationsOutagesResponse, RadarGetAnnotationsOutagesResponse400>> radarGetAnnotationsOutages({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, int? asn, String? location, String? origin, RadarGetAnnotationsOutagesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (dateRange != null) queryParameters['dateRange'] = dateRange;
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (asn != null) queryParameters['asn'] = asn.toString();
-if (location != null) queryParameters['location'] = location;
-if (origin != null) queryParameters['origin'] = origin;
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (dateRange != null) {
+  queryParameters['dateRange'] = dateRange;
+}
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (asn != null) {
+  queryParameters['asn'] = asn.toString();
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (origin != null) {
+  queryParameters['origin'] = origin;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -93,11 +133,21 @@ return execute(
 /// `GET /radar/annotations/outages/locations`
 Future<ApiResult<RadarGetAnnotationsOutagesTopResponse, RadarGetAnnotationsOutagesTopResponse400>> radarGetAnnotationsOutagesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsOutagesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (dateRange != null) queryParameters['dateRange'] = dateRange;
-if (dateStart != null) queryParameters['dateStart'] = dateStart.toString();
-if (dateEnd != null) queryParameters['dateEnd'] = dateEnd.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (dateRange != null) {
+  queryParameters['dateRange'] = dateRange;
+}
+if (dateStart != null) {
+  queryParameters['dateStart'] = dateStart.toString();
+}
+if (dateEnd != null) {
+  queryParameters['dateEnd'] = dateEnd.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

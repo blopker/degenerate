@@ -35,8 +35,12 @@ return execute(
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
 Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
-if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+if (cfWorkerBodyPart != null) {
+  headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
+}
+if (cfWorkerMainModulePart != null) {
+  headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+}
 
 final request = ApiRequest(
   method: 'PUT',

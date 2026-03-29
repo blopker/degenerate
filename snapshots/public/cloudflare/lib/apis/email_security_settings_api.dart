@@ -15,20 +15,48 @@ final class EmailSecuritySettingsApi with ApiExecutor {const EmailSecuritySettin
 /// `GET /accounts/{account_id}/email-security/settings/allow_policies`
 Future<ApiResult<ResponseCommon29, Never>> emailSecurityListAllowPolicies({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListAllowPoliciesOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isSender, bool? isTrustedSender, bool? isRecipient, bool? isExemptRecipient, bool? isSpoof, bool? isAcceptableSender, bool? verifySender, EmailSecurityPatternType? patternType, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (search != null) queryParameters['search'] = search;
-if (isSender != null) queryParameters['is_sender'] = isSender.toString();
-if (isTrustedSender != null) queryParameters['is_trusted_sender'] = isTrustedSender.toString();
-if (isRecipient != null) queryParameters['is_recipient'] = isRecipient.toString();
-if (isExemptRecipient != null) queryParameters['is_exempt_recipient'] = isExemptRecipient.toString();
-if (isSpoof != null) queryParameters['is_spoof'] = isSpoof.toString();
-if (isAcceptableSender != null) queryParameters['is_acceptable_sender'] = isAcceptableSender.toString();
-if (verifySender != null) queryParameters['verify_sender'] = verifySender.toString();
-if (patternType != null) queryParameters['pattern_type'] = patternType.toJson();
-if (pattern != null) queryParameters['pattern'] = pattern;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (isSender != null) {
+  queryParameters['is_sender'] = isSender.toString();
+}
+if (isTrustedSender != null) {
+  queryParameters['is_trusted_sender'] = isTrustedSender.toString();
+}
+if (isRecipient != null) {
+  queryParameters['is_recipient'] = isRecipient.toString();
+}
+if (isExemptRecipient != null) {
+  queryParameters['is_exempt_recipient'] = isExemptRecipient.toString();
+}
+if (isSpoof != null) {
+  queryParameters['is_spoof'] = isSpoof.toString();
+}
+if (isAcceptableSender != null) {
+  queryParameters['is_acceptable_sender'] = isAcceptableSender.toString();
+}
+if (verifySender != null) {
+  queryParameters['verify_sender'] = verifySender.toString();
+}
+if (patternType != null) {
+  queryParameters['pattern_type'] = patternType.toJson();
+}
+if (pattern != null) {
+  queryParameters['pattern'] = pattern;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -169,13 +197,27 @@ return execute(
 /// `GET /accounts/{account_id}/email-security/settings/block_senders`
 Future<ApiResult<ResponseCommon29, Never>> emailSecurityListBlockedSenders({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListBlockedSendersOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityPatternType? patternType, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (search != null) queryParameters['search'] = search;
-if (patternType != null) queryParameters['pattern_type'] = patternType.toJson();
-if (pattern != null) queryParameters['pattern'] = pattern;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (patternType != null) {
+  queryParameters['pattern_type'] = patternType.toJson();
+}
+if (pattern != null) {
+  queryParameters['pattern'] = pattern;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -316,19 +358,35 @@ return execute(
 /// `GET /accounts/{account_id}/email-security/settings/domains`
 Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityDeliveryMode? allowedDeliveryMode, List<String>? domain, EmailSecurityDeliveryMode? activeDeliveryMode, String? integrationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (search != null) queryParameters['search'] = search;
-if (allowedDeliveryMode != null) queryParameters['allowed_delivery_mode'] = allowedDeliveryMode.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (allowedDeliveryMode != null) {
+  queryParameters['allowed_delivery_mode'] = allowedDeliveryMode.toJson();
+}
 if (domain != null) {
 for (final item in domain) {
   queryParametersList.add(ApiQueryParameter(name: 'domain', value: item, allowReserved: false));
 }
 }
-if (activeDeliveryMode != null) queryParameters['active_delivery_mode'] = activeDeliveryMode.toJson();
-if (integrationId != null) queryParameters['integration_id'] = integrationId;
+if (activeDeliveryMode != null) {
+  queryParameters['active_delivery_mode'] = activeDeliveryMode.toJson();
+}
+if (integrationId != null) {
+  queryParameters['integration_id'] = integrationId;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -441,12 +499,24 @@ return execute(
 /// `GET /accounts/{account_id}/email-security/settings/impersonation_registry`
 Future<ApiResult<ResponseCommon29, Never>> emailSecurityListDisplayNames({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListDisplayNamesOrder? order, EmailSecuritySortingDirection? direction, String? search, EmailSecurityListDisplayNamesProvenance? provenance, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (search != null) queryParameters['search'] = search;
-if (provenance != null) queryParameters['provenance'] = provenance.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (provenance != null) {
+  queryParameters['provenance'] = provenance.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -584,14 +654,30 @@ return execute(
 /// `GET /accounts/{account_id}/email-security/settings/trusted_domains`
 Future<ApiResult<ResponseCommon29, Never>> emailSecurityListTrustedDomains({required EmailSecurityAccountId accountId, int? page, int? perPage, EmailSecurityListTrustedDomainsOrder? order, EmailSecuritySortingDirection? direction, String? search, bool? isRecent, bool? isSimilarity, String? pattern, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (search != null) queryParameters['search'] = search;
-if (isRecent != null) queryParameters['is_recent'] = isRecent.toString();
-if (isSimilarity != null) queryParameters['is_similarity'] = isSimilarity.toString();
-if (pattern != null) queryParameters['pattern'] = pattern;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (isRecent != null) {
+  queryParameters['is_recent'] = isRecent.toString();
+}
+if (isSimilarity != null) {
+  queryParameters['is_similarity'] = isSimilarity.toString();
+}
+if (pattern != null) {
+  queryParameters['pattern'] = pattern;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

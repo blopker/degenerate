@@ -15,10 +15,18 @@ final class DestinationsApi with ApiExecutor {const DestinationsApi(this.apiConf
 /// `GET /accounts/{account_id}/workers/observability/destinations`
 Future<ApiResult<DestinationListResponse, DestinationListResponse401>> destinationList({required String accountId, double? page, double? perPage, DestinationListOrder? order, DestinationListOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['perPage'] = perPage.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['perPage'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (orderBy != null) {
+  queryParameters['orderBy'] = orderBy.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

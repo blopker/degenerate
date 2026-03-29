@@ -19,11 +19,21 @@ final class CampaignsApi with ApiExecutor {const CampaignsApi(this.apiConfig);
 /// `GET /orgs/{org}/campaigns`
 Future<ApiResult<List<CampaignSummary>, BasicError>> campaignsListOrgCampaigns({required String org, int? page, int? perPage, CampaignsListOrgCampaignsDirection? direction, CampaignState? state, CampaignsListOrgCampaignsSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (state != null) queryParameters['state'] = state.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,14 +15,30 @@ final class CustomersApi with ApiExecutor {const CustomersApi(this.apiConfig);
 /// `GET /admin/api/2020-01/customers.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomers({dynamic ids, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -68,10 +84,18 @@ return execute(
 /// `GET /admin/api/2020-01/customers/search.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomersSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -96,7 +120,9 @@ return execute(
 /// `GET /admin/api/2020-01/customers/{customer_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomersParamCustomerId({required String customerId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -242,14 +268,30 @@ return execute(
 /// `GET /admin/api/2020-04/customers.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomers({dynamic ids, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -295,10 +337,18 @@ return execute(
 /// `GET /admin/api/2020-04/customers/search.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomersSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -323,7 +373,9 @@ return execute(
 /// `GET /admin/api/2020-04/customers/{customer_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomersParamCustomerId({required String customerId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -469,14 +521,30 @@ return execute(
 /// `GET /admin/api/2020-07/customers.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomers({dynamic ids, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -522,10 +590,18 @@ return execute(
 /// `GET /admin/api/2020-07/customers/search.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomersSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -550,7 +626,9 @@ return execute(
 /// `GET /admin/api/2020-07/customers/{customer_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomersParamCustomerId({required String customerId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -696,14 +774,30 @@ return execute(
 /// `GET /admin/api/2020-10/customers.json`
 Future<ApiResult<void, Never>> getCustomers({dynamic ids, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -749,10 +843,18 @@ return execute(
 /// `GET /admin/api/2020-10/customers/search.json`
 Future<ApiResult<void, Never>> getCustomersSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -777,7 +879,9 @@ return execute(
 /// `GET /admin/api/2020-10/customers/{customer_id}.json`
 Future<ApiResult<void, Never>> getCustomersParamCustomerId({required String customerId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -923,14 +1027,30 @@ return execute(
 /// `GET /admin/api/2021-01/customers.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomers({dynamic ids, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -976,10 +1096,18 @@ return execute(
 /// `GET /admin/api/2021-01/customers/search.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomersSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1004,7 +1132,9 @@ return execute(
 /// `GET /admin/api/2021-01/customers/{customer_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomersParamCustomerId({required String customerId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1150,14 +1280,30 @@ return execute(
 /// `GET /admin/api/unstable/customers.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomers({dynamic ids, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ids != null) queryParameters['ids'] = ids.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (createdAtMin != null) queryParameters['created_at_min'] = createdAtMin.toString();
-if (createdAtMax != null) queryParameters['created_at_max'] = createdAtMax.toString();
-if (updatedAtMin != null) queryParameters['updated_at_min'] = updatedAtMin.toString();
-if (updatedAtMax != null) queryParameters['updated_at_max'] = updatedAtMax.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (ids != null) {
+  queryParameters['ids'] = ids.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (createdAtMin != null) {
+  queryParameters['created_at_min'] = createdAtMin.toString();
+}
+if (createdAtMax != null) {
+  queryParameters['created_at_max'] = createdAtMax.toString();
+}
+if (updatedAtMin != null) {
+  queryParameters['updated_at_min'] = updatedAtMin.toString();
+}
+if (updatedAtMax != null) {
+  queryParameters['updated_at_max'] = updatedAtMax.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1203,10 +1349,18 @@ return execute(
 /// `GET /admin/api/unstable/customers/search.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1231,7 +1385,9 @@ return execute(
 /// `GET /admin/api/unstable/customers/{customer_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomersParamCustomerId({required String customerId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1476,8 +1632,12 @@ return execute(
 /// `PUT /admin/api/2020-01/customers/{customer_id}/addresses/set.json`
 Future<ApiResult<void, Never>> deprecated202001UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
-if (operation != null) queryParameters['operation'] = operation;
+if (addressIds != null) {
+  queryParameters['address_ids[]'] = addressIds.toString();
+}
+if (operation != null) {
+  queryParameters['operation'] = operation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1620,8 +1780,12 @@ return execute(
 /// `PUT /admin/api/2020-04/customers/{customer_id}/addresses/set.json`
 Future<ApiResult<void, Never>> deprecated202004UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
-if (operation != null) queryParameters['operation'] = operation;
+if (addressIds != null) {
+  queryParameters['address_ids[]'] = addressIds.toString();
+}
+if (operation != null) {
+  queryParameters['operation'] = operation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1764,8 +1928,12 @@ return execute(
 /// `PUT /admin/api/2020-07/customers/{customer_id}/addresses/set.json`
 Future<ApiResult<void, Never>> deprecated202007UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
-if (operation != null) queryParameters['operation'] = operation;
+if (addressIds != null) {
+  queryParameters['address_ids[]'] = addressIds.toString();
+}
+if (operation != null) {
+  queryParameters['operation'] = operation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1908,8 +2076,12 @@ return execute(
 /// `PUT /admin/api/2020-10/customers/{customer_id}/addresses/set.json`
 Future<ApiResult<void, Never>> updateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
-if (operation != null) queryParameters['operation'] = operation;
+if (addressIds != null) {
+  queryParameters['address_ids[]'] = addressIds.toString();
+}
+if (operation != null) {
+  queryParameters['operation'] = operation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2052,8 +2224,12 @@ return execute(
 /// `PUT /admin/api/2021-01/customers/{customer_id}/addresses/set.json`
 Future<ApiResult<void, Never>> deprecated202101UpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
-if (operation != null) queryParameters['operation'] = operation;
+if (addressIds != null) {
+  queryParameters['address_ids[]'] = addressIds.toString();
+}
+if (operation != null) {
+  queryParameters['operation'] = operation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2196,8 +2372,12 @@ return execute(
 /// `PUT /admin/api/unstable/customers/{customer_id}/addresses/set.json`
 Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomersParamCustomerIdAddressesSet({required String customerId, int? addressIds, String? operation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (addressIds != null) queryParameters['address_ids[]'] = addressIds.toString();
-if (operation != null) queryParameters['operation'] = operation;
+if (addressIds != null) {
+  queryParameters['address_ids[]'] = addressIds.toString();
+}
+if (operation != null) {
+  queryParameters['operation'] = operation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2241,9 +2421,15 @@ return execute(
 /// `GET /admin/api/2020-01/customer_saved_searches.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearches({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2289,7 +2475,9 @@ return execute(
 /// `GET /admin/api/2020-01/customer_saved_searches/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesCount({dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2314,7 +2502,9 @@ return execute(
 /// `GET /admin/api/2020-01/customer_saved_searches/{customer_saved_search_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2379,9 +2569,15 @@ return execute(
 /// `GET /admin/api/2020-01/customer_saved_searches/{customer_saved_search_id}/customers.json`
 Future<ApiResult<void, Never>> deprecated202001GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, dynamic order, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2406,9 +2602,15 @@ return execute(
 /// `GET /admin/api/2020-04/customer_saved_searches.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearches({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2454,7 +2656,9 @@ return execute(
 /// `GET /admin/api/2020-04/customer_saved_searches/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesCount({dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2479,7 +2683,9 @@ return execute(
 /// `GET /admin/api/2020-04/customer_saved_searches/{customer_saved_search_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2544,9 +2750,15 @@ return execute(
 /// `GET /admin/api/2020-04/customer_saved_searches/{customer_saved_search_id}/customers.json`
 Future<ApiResult<void, Never>> deprecated202004GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, dynamic order, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2571,9 +2783,15 @@ return execute(
 /// `GET /admin/api/2020-07/customer_saved_searches.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearches({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2619,7 +2837,9 @@ return execute(
 /// `GET /admin/api/2020-07/customer_saved_searches/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesCount({dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2644,7 +2864,9 @@ return execute(
 /// `GET /admin/api/2020-07/customer_saved_searches/{customer_saved_search_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2709,9 +2931,15 @@ return execute(
 /// `GET /admin/api/2020-07/customer_saved_searches/{customer_saved_search_id}/customers.json`
 Future<ApiResult<void, Never>> deprecated202007GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, dynamic order, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2736,9 +2964,15 @@ return execute(
 /// `GET /admin/api/2020-10/customer_saved_searches.json`
 Future<ApiResult<void, Never>> getCustomerSavedSearches({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2784,7 +3018,9 @@ return execute(
 /// `GET /admin/api/2020-10/customer_saved_searches/count.json`
 Future<ApiResult<void, Never>> getCustomerSavedSearchesCount({dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2809,7 +3045,9 @@ return execute(
 /// `GET /admin/api/2020-10/customer_saved_searches/{customer_saved_search_id}.json`
 Future<ApiResult<void, Never>> getCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2874,9 +3112,15 @@ return execute(
 /// `GET /admin/api/2020-10/customer_saved_searches/{customer_saved_search_id}/customers.json`
 Future<ApiResult<void, Never>> getCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, dynamic order, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2901,9 +3145,15 @@ return execute(
 /// `GET /admin/api/2021-01/customer_saved_searches.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearches({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2949,7 +3199,9 @@ return execute(
 /// `GET /admin/api/2021-01/customer_saved_searches/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesCount({dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2974,7 +3226,9 @@ return execute(
 /// `GET /admin/api/2021-01/customer_saved_searches/{customer_saved_search_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3039,9 +3293,15 @@ return execute(
 /// `GET /admin/api/2021-01/customer_saved_searches/{customer_saved_search_id}/customers.json`
 Future<ApiResult<void, Never>> deprecated202101GetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, dynamic order, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3066,9 +3326,15 @@ return execute(
 /// `GET /admin/api/unstable/customer_saved_searches.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearches({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3114,7 +3380,9 @@ return execute(
 /// `GET /admin/api/unstable/customer_saved_searches/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesCount({dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3139,7 +3407,9 @@ return execute(
 /// `GET /admin/api/unstable/customer_saved_searches/{customer_saved_search_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesParamCustomerSavedSearchId({required String customerSavedSearchId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3204,9 +3474,15 @@ return execute(
 /// `GET /admin/api/unstable/customer_saved_searches/{customer_saved_search_id}/customers.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCustomerSavedSearchesParamCustomerSavedSearchIdCustomers({required String customerSavedSearchId, dynamic order, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

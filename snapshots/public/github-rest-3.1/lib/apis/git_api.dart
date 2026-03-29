@@ -460,7 +460,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/git/trees/{tree_sha}`
 Future<ApiResult<GitTree, ValidationError>> gitGetTree({required String owner, required String repo, required String treeSha, String? recursive, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recursive != null) queryParameters['recursive'] = recursive;
+if (recursive != null) {
+  queryParameters['recursive'] = recursive;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

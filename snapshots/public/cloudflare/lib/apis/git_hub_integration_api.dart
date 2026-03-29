@@ -16,7 +16,9 @@ final class GitHubIntegrationApi with ApiExecutor {const GitHubIntegrationApi(th
 Future<ApiResult<Response, Never>> getWorkerConfigAutofill({required BuildsAccountId accountId, required BuildsScmProviderType providerType, required BuildsProviderAccountId providerAccountId, required BuildsRepoId repoId, required BuildsBranch branch, BuildsRootDirectory? rootDirectory, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['branch'] = branch.toString();
-if (rootDirectory != null) queryParameters['root_directory'] = rootDirectory.toString();
+if (rootDirectory != null) {
+  queryParameters['root_directory'] = rootDirectory.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

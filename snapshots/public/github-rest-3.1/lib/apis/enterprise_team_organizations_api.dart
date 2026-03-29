@@ -15,8 +15,12 @@ final class EnterpriseTeamOrganizationsApi with ApiExecutor {const EnterpriseTea
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations`
 Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

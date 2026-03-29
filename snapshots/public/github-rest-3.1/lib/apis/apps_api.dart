@@ -112,8 +112,12 @@ return execute(
 /// `GET /app/hook/deliveries`
 Future<ApiResult<List<HookDeliveryItem>, BasicError>> appsListWebhookDeliveries({int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -196,8 +200,12 @@ return execute(
 /// `GET /app/installation-requests`
 Future<ApiResult<List<IntegrationInstallationRequest>, BasicError>> appsListInstallationRequestsForAuthenticatedApp({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -230,10 +238,18 @@ return execute(
 /// `GET /app/installations`
 Future<ApiResult<List<Installation>, Never>> appsListInstallations({int? perPage, int? page, DateTime? since, String? outdated, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (outdated != null) queryParameters['outdated'] = outdated;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (outdated != null) {
+  queryParameters['outdated'] = outdated;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -547,8 +563,12 @@ return execute(
 /// `GET /installation/repositories`
 Future<ApiResult<AppsListReposAccessibleToInstallationResponse, BasicError>> appsListReposAccessibleToInstallation({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -627,8 +647,12 @@ return execute(
 /// `GET /marketplace_listing/plans`
 Future<ApiResult<List<MarketplaceListingPlan>, BasicError>> appsListPlans({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -661,10 +685,18 @@ return execute(
 /// `GET /marketplace_listing/plans/{plan_id}/accounts`
 Future<ApiResult<List<MarketplacePurchase>, BasicError>> appsListAccountsForPlan({required int planId, AppsListAccountsForPlanSort? sort, AppsListAccountsForPlanDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -723,8 +755,12 @@ return execute(
 /// `GET /marketplace_listing/stubbed/plans`
 Future<ApiResult<List<MarketplaceListingPlan>, BasicError>> appsListPlansStubbed({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -757,10 +793,18 @@ return execute(
 /// `GET /marketplace_listing/stubbed/plans/{plan_id}/accounts`
 Future<ApiResult<List<MarketplacePurchase>, BasicError>> appsListAccountsForPlanStubbed({required int planId, AppsListAccountsForPlanStubbedSort? sort, AppsListAccountsForPlanStubbedDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -844,8 +888,12 @@ return execute(
 /// `GET /user/installations`
 Future<ApiResult<AppsListInstallationsForAuthenticatedUserResponse, BasicError>> appsListInstallationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -879,8 +927,12 @@ return execute(
 /// `GET /user/installations/{installation_id}/repositories`
 Future<ApiResult<AppsListInstallationReposForAuthenticatedUserResponse, BasicError>> appsListInstallationReposForAuthenticatedUser({required int installationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -958,8 +1010,12 @@ return execute(
 /// `GET /user/marketplace_purchases`
 Future<ApiResult<List<UserMarketplacePurchase>, BasicError>> appsListSubscriptionsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -990,8 +1046,12 @@ return execute(
 /// `GET /user/marketplace_purchases/stubbed`
 Future<ApiResult<List<UserMarketplacePurchase>, BasicError>> appsListSubscriptionsForAuthenticatedUserStubbed({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

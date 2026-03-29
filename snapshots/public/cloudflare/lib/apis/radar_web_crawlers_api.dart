@@ -35,7 +35,9 @@ for (final item in dateEnd) {
   queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 if (botOperator != null) {
 for (final item in botOperator) {
   queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item, allowReserved: false));
@@ -56,7 +58,9 @@ for (final item in clientType) {
   queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -86,7 +90,9 @@ return execute(
 /// `GET /radar/bots/crawlers/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetCrawlersTimeseriesGroupResponse, RadarGetCrawlersTimeseriesGroupResponse400>> radarGetCrawlersTimeseriesGroup({required RadarGetCrawlersTimeseriesGroupDimension dimension, RadarGetCrawlersTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersTimeseriesGroupClientType>? clientType, RadarGetCrawlersTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -107,7 +113,9 @@ for (final item in dateEnd) {
   queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 if (botOperator != null) {
 for (final item in botOperator) {
   queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item, allowReserved: false));
@@ -128,7 +136,9 @@ for (final item in clientType) {
   queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

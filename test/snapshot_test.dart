@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dart_style/dart_style.dart';
 import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
 
@@ -66,7 +67,12 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
             quiet: true,
           );
 
-          final generated = await Generator(config).generate();
+          var generated = await Generator(config).generate();
+
+          // Format dart files for specs that opt in
+          if (_formattedSpecs.contains(specName)) {
+            generated = _formatDartFiles(generated);
+          }
 
           // Write snapshot files
           final dir = Directory(snapshotDir);
@@ -106,7 +112,12 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
             quiet: true,
           );
 
-          final generated = await Generator(config).generate();
+          var generated = await Generator(config).generate();
+
+          // Format dart files for specs that opt in
+          if (_formattedSpecs.contains(specName)) {
+            generated = _formatDartFiles(generated);
+          }
 
           // Compare against existing snapshots
           final snapshotDirObj = Directory(snapshotDir);
@@ -153,6 +164,24 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
         }
       });
     }
+  });
+}
+
+/// Snapshots that are stored formatted (via dart_style) so we catch
+/// formatting-related regressions.
+const _formattedSpecs = {'unhinged', 'totem-mobile'};
+
+final _formatter = DartFormatter(
+  languageVersion: DartFormatter.latestLanguageVersion,
+);
+
+/// Format all .dart file contents in [files] using dart_style.
+Map<String, String> _formatDartFiles(Map<String, String> files) {
+  return files.map((path, content) {
+    if (path.endsWith('.dart')) {
+      return MapEntry(path, _formatter.format(content));
+    }
+    return MapEntry(path, content);
   });
 }
 

@@ -15,8 +15,12 @@ final class WaitingRoomApi with ApiExecutor {const WaitingRoomApi(this.apiConfig
 /// `GET /accounts/{account_id}/waiting_rooms`
 Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRoomsAccount({required WaitingroomIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -43,8 +47,12 @@ return execute(
 /// `GET /zones/{zone_id}/waiting_rooms`
 Future<ApiResult<ResponseCommon77, Never>> waitingRoomListWaitingRooms({required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -182,8 +190,12 @@ return execute(
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
 Future<ApiResult<ResponseCommon77, Never>> waitingRoomListEvents({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

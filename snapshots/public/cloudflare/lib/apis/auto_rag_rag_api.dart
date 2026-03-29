@@ -13,10 +13,18 @@ final class AutoRagRagApi with ApiExecutor {const AutoRagRagApi(this.apiConfig);
 /// `GET /accounts/{account_id}/autorag/rags/{id}/files`
 Future<ApiResult<AutoragConfigFilesResponse, AutoragConfigFilesResponse404>> autoragConfigFiles({required String id, required String accountId, int? page, int? perPage, String? search, AutoragConfigFilesStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
-if (status != null) queryParameters['status'] = status.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

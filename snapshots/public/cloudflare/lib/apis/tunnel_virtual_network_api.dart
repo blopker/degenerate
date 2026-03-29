@@ -15,11 +15,21 @@ final class TunnelVirtualNetworkApi with ApiExecutor {const TunnelVirtualNetwork
 /// `GET /accounts/{account_id}/teamnet/virtual_networks`
 Future<ApiResult<ResponseCommon69, Never>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id.toString();
-if (name != null) queryParameters['name'] = name.toString();
-if (isDefault != null) queryParameters['is_default'] = isDefault.toString();
-if (isDefaultNetwork != null) queryParameters['is_default_network'] = isDefaultNetwork.toString();
-if (isDeleted != null) queryParameters['is_deleted'] = isDeleted.toString();
+if (id != null) {
+  queryParameters['id'] = id.toString();
+}
+if (name != null) {
+  queryParameters['name'] = name.toString();
+}
+if (isDefault != null) {
+  queryParameters['is_default'] = isDefault.toString();
+}
+if (isDefaultNetwork != null) {
+  queryParameters['is_default_network'] = isDefaultNetwork.toString();
+}
+if (isDeleted != null) {
+  queryParameters['is_deleted'] = isDeleted.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

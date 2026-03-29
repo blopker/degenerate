@@ -13,9 +13,15 @@ final class VideosApi with ApiExecutor {const VideosApi(this.apiConfig);
 /// `GET /videos`
 Future<ApiResult<VideoListResource, Never>> listVideos({int? limit, OrderEnum? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -101,7 +107,9 @@ return execute(
 /// `GET /videos/{video_id}/content`
 Future<ApiResult<String, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (variant != null) queryParameters['variant'] = variant.toJson();
+if (variant != null) {
+  queryParameters['variant'] = variant.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

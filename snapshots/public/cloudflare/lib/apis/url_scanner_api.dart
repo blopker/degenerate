@@ -164,7 +164,9 @@ return execute(
 /// `GET /accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png`
 Future<ApiResult<String, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (resolution != null) queryParameters['resolution'] = resolution.toJson();
+if (resolution != null) {
+  queryParameters['resolution'] = resolution.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -194,8 +196,12 @@ return execute(
 /// `GET /accounts/{account_id}/urlscanner/v2/search`
 Future<ApiResult<UrlscannerSearchScansResponse2, UrlscannerSearchScansResponse4002>> urlscannerSearchScansV2({required String accountId, int? size, String? q, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (size != null) queryParameters['size'] = size.toString();
-if (q != null) queryParameters['q'] = q;
+if (size != null) {
+  queryParameters['size'] = size.toString();
+}
+if (q != null) {
+  queryParameters['q'] = q;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

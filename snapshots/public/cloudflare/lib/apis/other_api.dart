@@ -15,10 +15,18 @@ final class OtherApi with ApiExecutor {const OtherApi(this.apiConfig);
 /// `GET /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules`
 Future<ApiResult<ResponseCommon28, Never>> listDnsProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -154,10 +162,18 @@ return execute(
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist`
 Future<ApiResult<ResponseCommon28, Never>> listAllowlistPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -293,10 +309,18 @@ return execute(
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes`
 Future<ApiResult<ResponseCommon28, Never>> listPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -455,11 +479,21 @@ return execute(
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters`
 Future<ApiResult<ResponseCommon28, Never>> listSynProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (mode != null) queryParameters['mode'] = mode;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
+if (mode != null) {
+  queryParameters['mode'] = mode;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -595,10 +629,18 @@ return execute(
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules`
 Future<ApiResult<ResponseCommon28, Never>> listSynProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -734,11 +776,21 @@ return execute(
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters`
 Future<ApiResult<ResponseCommon28, Never>> listTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (mode != null) queryParameters['mode'] = mode;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
+if (mode != null) {
+  queryParameters['mode'] = mode;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -874,10 +926,18 @@ return execute(
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules`
 Future<ApiResult<ResponseCommon28, Never>> listTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (order != null) queryParameters['order'] = order;
-if (direction != null) queryParameters['direction'] = direction;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

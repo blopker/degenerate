@@ -51,7 +51,9 @@ for (final item in continent) {
 }
 }
 queryParameters['metric'] = metric.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -81,7 +83,9 @@ return execute(
 /// `GET /radar/quality/iqi/timeseries_groups`
 Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponse, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -117,9 +121,13 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (interpolation != null) queryParameters['interpolation'] = interpolation.toString();
+if (interpolation != null) {
+  queryParameters['interpolation'] = interpolation.toString();
+}
 queryParameters['metric'] = metric.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -174,9 +182,15 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (bucketSize != null) queryParameters['bucketSize'] = bucketSize.toString();
-if (metricGroup != null) queryParameters['metricGroup'] = metricGroup.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (bucketSize != null) {
+  queryParameters['bucketSize'] = bucketSize.toString();
+}
+if (metricGroup != null) {
+  queryParameters['metricGroup'] = metricGroup.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -231,7 +245,9 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -261,7 +277,9 @@ return execute(
 /// `GET /radar/quality/speed/top/ases`
 Future<ApiResult<RadarGetQualitySpeedTopAsesResponse, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -287,9 +305,15 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
-if (reverse != null) queryParameters['reverse'] = reverse.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (orderBy != null) {
+  queryParameters['orderBy'] = orderBy.toJson();
+}
+if (reverse != null) {
+  queryParameters['reverse'] = reverse.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -319,7 +343,9 @@ return execute(
 /// `GET /radar/quality/speed/top/locations`
 Future<ApiResult<RadarGetQualitySpeedTopLocationsResponse, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -345,9 +371,15 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (orderBy != null) queryParameters['orderBy'] = orderBy.toJson();
-if (reverse != null) queryParameters['reverse'] = reverse.toString();
-if (format != null) queryParameters['format'] = format.toJson();
+if (orderBy != null) {
+  queryParameters['orderBy'] = orderBy.toJson();
+}
+if (reverse != null) {
+  queryParameters['reverse'] = reverse.toString();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

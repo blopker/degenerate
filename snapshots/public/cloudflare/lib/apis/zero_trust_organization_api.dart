@@ -126,7 +126,9 @@ return execute(
 /// `POST /accounts/{account_id}/access/organizations/revoke_user`
 Future<ApiResult<AccessEmptyResponse, Never>> zeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessIdentifier accountId, bool? devices, required ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (devices != null) queryParameters['devices'] = devices.toString();
+if (devices != null) {
+  queryParameters['devices'] = devices.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

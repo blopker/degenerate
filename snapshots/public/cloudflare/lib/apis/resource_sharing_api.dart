@@ -15,20 +15,38 @@ final class ResourceSharingApi with ApiExecutor {const ResourceSharingApi(this.a
 /// `GET /accounts/{account_id}/shares`
 Future<ApiResult<ResponseCommon55, Never>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toJson();
-if (kind != null) queryParameters['kind'] = kind.toJson();
-if (targetType != null) queryParameters['target_type'] = targetType.toJson();
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (kind != null) {
+  queryParameters['kind'] = kind.toJson();
+}
+if (targetType != null) {
+  queryParameters['target_type'] = targetType.toJson();
+}
 if (resourceTypes != null) {
 for (final item in resourceTypes) {
   queryParametersList.add(ApiQueryParameter(name: 'resource_types', value: item.toJson(), allowReserved: false));
 }
 }
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (includeResources != null) queryParameters['include_resources'] = includeResources.toString();
-if (includeRecipientCounts != null) queryParameters['include_recipient_counts'] = includeRecipientCounts.toString();
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (includeResources != null) {
+  queryParameters['include_resources'] = includeResources.toString();
+}
+if (includeRecipientCounts != null) {
+  queryParameters['include_recipient_counts'] = includeRecipientCounts.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -78,8 +96,12 @@ return execute(
 /// `GET /accounts/{account_id}/shares/{share_id}`
 Future<ApiResult<ResponseCommon55, Never>> sharesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (includeResources != null) queryParameters['include_resources'] = includeResources.toString();
-if (includeRecipientCounts != null) queryParameters['include_recipient_counts'] = includeRecipientCounts.toString();
+if (includeResources != null) {
+  queryParameters['include_resources'] = includeResources.toString();
+}
+if (includeRecipientCounts != null) {
+  queryParameters['include_recipient_counts'] = includeRecipientCounts.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -150,9 +172,15 @@ return execute(
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients`
 Future<ApiResult<ResponseCommon55, Never>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (includeResources != null) queryParameters['include_resources'] = includeResources.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (includeResources != null) {
+  queryParameters['include_resources'] = includeResources.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -223,7 +251,9 @@ return execute(
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
 Future<ApiResult<ResponseCommon55, Never>> shareRecipientsGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, bool? includeResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (includeResources != null) queryParameters['include_resources'] = includeResources.toString();
+if (includeResources != null) {
+  queryParameters['include_resources'] = includeResources.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -271,10 +301,18 @@ return execute(
 /// `GET /accounts/{account_id}/shares/{share_id}/resources`
 Future<ApiResult<ResponseCommon55, Never>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toJson();
-if (resourceType != null) queryParameters['resource_type'] = resourceType.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (resourceType != null) {
+  queryParameters['resource_type'] = resourceType.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -389,18 +427,32 @@ return execute(
 /// `GET /organizations/{organization_id}/shares`
 Future<ApiResult<ResponseCommon55, Never>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toJson();
-if (kind != null) queryParameters['kind'] = kind.toJson();
-if (targetType != null) queryParameters['target_type'] = targetType.toJson();
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (kind != null) {
+  queryParameters['kind'] = kind.toJson();
+}
+if (targetType != null) {
+  queryParameters['target_type'] = targetType.toJson();
+}
 if (resourceTypes != null) {
 for (final item in resourceTypes) {
   queryParametersList.add(ApiQueryParameter(name: 'resource_types', value: item.toJson(), allowReserved: false));
 }
 }
-if (order != null) queryParameters['order'] = order.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -17,7 +17,9 @@ Future<ApiResult<ResponseCommon19, Never>> dexEndpointsListColos({required Digit
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from;
 queryParameters['to'] = to;
-if (sortBy != null) queryParameters['sortBy'] = sortBy.toJson();
+if (sortBy != null) {
+  queryParameters['sortBy'] = sortBy.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -45,8 +47,12 @@ return execute(
 Future<ApiResult<DigitalExperienceMonitoringDevice, Never>> devicesLiveStatus({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceId deviceId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, DigitalExperienceMonitoringTimeNow? timeNow, DigitalExperienceMonitoringColo? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['since_minutes'] = sinceMinutes.toString();
-if (timeNow != null) queryParameters['time_now'] = timeNow.toString();
-if (colo != null) queryParameters['colo'] = colo.toString();
+if (timeNow != null) {
+  queryParameters['time_now'] = timeNow.toString();
+}
+if (colo != null) {
+  queryParameters['colo'] = colo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -77,14 +83,30 @@ queryParameters['to'] = to.toString();
 queryParameters['from'] = from.toString();
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
-if (sortBy != null) queryParameters['sort_by'] = sortBy.toJson();
-if (colo != null) queryParameters['colo'] = colo.toString();
-if (deviceId != null) queryParameters['device_id'] = deviceId.toString();
-if (mode != null) queryParameters['mode'] = mode.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (platform != null) queryParameters['platform'] = platform.toString();
-if (version != null) queryParameters['version'] = version.toString();
-if (source != null) queryParameters['source'] = source.toJson();
+if (sortBy != null) {
+  queryParameters['sort_by'] = sortBy.toJson();
+}
+if (colo != null) {
+  queryParameters['colo'] = colo.toString();
+}
+if (deviceId != null) {
+  queryParameters['device_id'] = deviceId.toString();
+}
+if (mode != null) {
+  queryParameters['mode'] = mode.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (platform != null) {
+  queryParameters['platform'] = platform.toString();
+}
+if (version != null) {
+  queryParameters['version'] = version.toString();
+}
+if (source != null) {
+  queryParameters['source'] = source.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -140,8 +162,12 @@ Future<ApiResult<ResponseCommon19, Never>> dexFleetStatusOverTime({required Digi
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['to'] = to.toString();
 queryParameters['from'] = from.toString();
-if (colo != null) queryParameters['colo'] = colo.toString();
-if (deviceId != null) queryParameters['device_id'] = deviceId.toString();
+if (colo != null) {
+  queryParameters['colo'] = colo.toString();
+}
+if (deviceId != null) {
+  queryParameters['device_id'] = deviceId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -176,7 +202,9 @@ for (final item in deviceId) {
 queryParameters['from'] = from;
 queryParameters['to'] = to;
 queryParameters['interval'] = interval.toJson();
-if (colo != null) queryParameters['colo'] = colo;
+if (colo != null) {
+  queryParameters['colo'] = colo;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -210,7 +238,9 @@ for (final item in deviceId) {
 }
 queryParameters['from'] = from;
 queryParameters['to'] = to;
-if (colo != null) queryParameters['colo'] = colo;
+if (colo != null) {
+  queryParameters['colo'] = colo;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -237,16 +267,26 @@ return execute(
 /// `GET /accounts/{account_id}/dex/tests/overview`
 Future<ApiResult<ResponseCommon19, Never>> dexEndpointsListTestsOverview({required DigitalExperienceMonitoringAccountIdentifier accountId, String? colo, String? testName, List<String>? deviceId, double? page, double? perPage, DexEndpointsListTestsOverviewKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (colo != null) queryParameters['colo'] = colo;
-if (testName != null) queryParameters['testName'] = testName;
+if (colo != null) {
+  queryParameters['colo'] = colo;
+}
+if (testName != null) {
+  queryParameters['testName'] = testName;
+}
 if (deviceId != null) {
 for (final item in deviceId) {
   queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
 }
 }
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (kind != null) queryParameters['kind'] = kind.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (kind != null) {
+  queryParameters['kind'] = kind.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -273,7 +313,9 @@ return execute(
 /// `GET /accounts/{account_id}/dex/tests/unique-devices`
 Future<ApiResult<ResponseCommon19, Never>> dexEndpointsTestsUniqueDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, String? testName, List<String>? deviceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (testName != null) queryParameters['testName'] = testName;
+if (testName != null) {
+  queryParameters['testName'] = testName;
+}
 if (deviceId != null) {
 for (final item in deviceId) {
   queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
@@ -334,7 +376,9 @@ for (final item in deviceId) {
 queryParameters['from'] = from;
 queryParameters['to'] = to;
 queryParameters['interval'] = interval.toJson();
-if (colo != null) queryParameters['colo'] = colo;
+if (colo != null) {
+  queryParameters['colo'] = colo;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -398,7 +442,9 @@ for (final item in deviceId) {
 }
 queryParameters['from'] = from;
 queryParameters['to'] = to;
-if (colo != null) queryParameters['colo'] = colo;
+if (colo != null) {
+  queryParameters['colo'] = colo;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

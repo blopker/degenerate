@@ -349,9 +349,9 @@ class ApiEmitter {
         if (p.isRequired) {
           buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
         } else {
-          buf.writeln(
-            "if (${p.dartName} != null) cookies['$sanitizedName'] = $cookieValue;",
-          );
+          buf.writeln("if (${p.dartName} != null) {");
+          buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln('}');
         }
       }
       buf.writeln();
@@ -379,9 +379,9 @@ class ApiEmitter {
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
-        buf.writeln(
-          "if (${p.dartName} != null) headers['$sanitizedName'] = $headerValue;",
-        );
+        buf.writeln("if (${p.dartName} != null) {");
+        buf.writeln("  headers['$sanitizedName'] = $headerValue;");
+        buf.writeln('}');
       }
     }
     buf.writeln();
@@ -548,9 +548,9 @@ class ApiEmitter {
     if (p.isRequired && !p.type.isNullable) {
       buf.writeln("queryParameters['$sanitizedName'] = $queryValue;");
     } else {
-      buf.writeln(
-        "if (${p.dartName} != null) queryParameters['$sanitizedName'] = $queryValue;",
-      );
+      buf.writeln("if (${p.dartName} != null) {");
+      buf.writeln("  queryParameters['$sanitizedName'] = $queryValue;");
+      buf.writeln('}');
     }
   }
 
@@ -940,9 +940,9 @@ class ApiEmitter {
         if (p.isRequired) {
           buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
         } else {
-          buf.writeln(
-            "if (${p.dartName} != null) cookies['$sanitizedName'] = $cookieValue;",
-          );
+          buf.writeln("if (${p.dartName} != null) {");
+          buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln('}');
         }
       }
       buf.writeln();
@@ -969,9 +969,9 @@ class ApiEmitter {
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
-        buf.writeln(
-          "if (${p.dartName} != null) headers['$sanitizedName'] = $headerValue;",
-        );
+        buf.writeln("if (${p.dartName} != null) {");
+        buf.writeln("  headers['$sanitizedName'] = $headerValue;");
+        buf.writeln('}');
       }
     }
     buf.writeln();

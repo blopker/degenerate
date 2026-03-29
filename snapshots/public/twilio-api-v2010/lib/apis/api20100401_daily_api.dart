@@ -13,13 +13,27 @@ final class Api20100401DailyApi with ApiExecutor {const Api20100401DailyApi(this
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Records/Daily.json`
 Future<ApiResult<ListUsageRecordDailyResponse, Never>> listUsageRecordDaily({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (category != null) queryParameters['Category'] = category;
-if (startDate != null) queryParameters['StartDate'] = startDate;
-if (endDate != null) queryParameters['EndDate'] = endDate;
-if (includeSubaccounts != null) queryParameters['IncludeSubaccounts'] = includeSubaccounts.toString();
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (category != null) {
+  queryParameters['Category'] = category;
+}
+if (startDate != null) {
+  queryParameters['StartDate'] = startDate;
+}
+if (endDate != null) {
+  queryParameters['EndDate'] = endDate;
+}
+if (includeSubaccounts != null) {
+  queryParameters['IncludeSubaccounts'] = includeSubaccounts.toString();
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

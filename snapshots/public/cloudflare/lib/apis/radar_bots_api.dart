@@ -15,13 +15,27 @@ final class RadarBotsApi with ApiExecutor {const RadarBotsApi(this.apiConfig);
 /// `GET /radar/bots`
 Future<ApiResult<RadarGetBotsResponse, RadarGetBotsResponse400>> radarGetBots({int? limit, int? offset, RadarGetBotsBotCategory? botCategory, String? botOperator, RadarGetBotsKind? kind, RadarGetBotsBotVerificationStatus? botVerificationStatus, RadarGetBotsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (botCategory != null) queryParameters['botCategory'] = botCategory.toJson();
-if (botOperator != null) queryParameters['botOperator'] = botOperator;
-if (kind != null) queryParameters['kind'] = kind.toJson();
-if (botVerificationStatus != null) queryParameters['botVerificationStatus'] = botVerificationStatus.toJson();
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (botCategory != null) {
+  queryParameters['botCategory'] = botCategory.toJson();
+}
+if (botOperator != null) {
+  queryParameters['botOperator'] = botOperator;
+}
+if (kind != null) {
+  queryParameters['kind'] = kind.toJson();
+}
+if (botVerificationStatus != null) {
+  queryParameters['botVerificationStatus'] = botVerificationStatus.toJson();
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -51,7 +65,9 @@ return execute(
 /// `GET /radar/bots/{bot_slug}`
 Future<ApiResult<RadarGetBotDetailsResponse, RadarGetBotDetailsResponse404>> radarGetBotDetails({required String botSlug, RadarGetBotDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -116,7 +132,9 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 if (bot != null) {
 for (final item in bot) {
   queryParametersList.add(ApiQueryParameter(name: 'bot', value: item, allowReserved: false));
@@ -142,7 +160,9 @@ for (final item in botVerificationStatus) {
   queryParametersList.add(ApiQueryParameter(name: 'botVerificationStatus', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -172,7 +192,9 @@ return execute(
 /// `GET /radar/bots/timeseries`
 Future<ApiResult<RadarGetBotsTimeseriesResponse, RadarGetBotsTimeseriesResponse400>> radarGetBotsTimeseries({RadarGetBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesBotCategory>? botCategory, List<RadarGetBotsTimeseriesBotKind>? botKind, List<RadarGetBotsTimeseriesBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -233,7 +255,9 @@ for (final item in botVerificationStatus) {
   queryParametersList.add(ApiQueryParameter(name: 'botVerificationStatus', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -263,7 +287,9 @@ return execute(
 /// `GET /radar/bots/timeseries_groups/{dimension}`
 Future<ApiResult<RadarGetBotsTimeseriesGroupResponse, RadarGetBotsTimeseriesGroupResponse400>> radarGetBotsTimeseriesGroup({required RadarGetBotsTimeseriesGroupDimension dimension, RadarGetBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesGroupBotCategory>? botCategory, List<RadarGetBotsTimeseriesGroupBotKind>? botKind, List<RadarGetBotsTimeseriesGroupBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (aggInterval != null) {
+  queryParameters['aggInterval'] = aggInterval.toJson();
+}
 if (name != null) {
 for (final item in name) {
   queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
@@ -299,7 +325,9 @@ for (final item in continent) {
   queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
 }
 }
-if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (limitPerGroup != null) {
+  queryParameters['limitPerGroup'] = limitPerGroup.toString();
+}
 if (bot != null) {
 for (final item in bot) {
   queryParametersList.add(ApiQueryParameter(name: 'bot', value: item, allowReserved: false));
@@ -325,7 +353,9 @@ for (final item in botVerificationStatus) {
   queryParametersList.add(ApiQueryParameter(name: 'botVerificationStatus', value: item.toJson(), allowReserved: false));
 }
 }
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

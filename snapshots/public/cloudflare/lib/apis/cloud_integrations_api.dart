@@ -15,10 +15,18 @@ final class CloudIntegrationsApi with ApiExecutor {const CloudIntegrationsApi(th
 /// `GET /accounts/{account_id}/magic/cloud/providers`
 Future<ApiResult<McnResponse, McnResponse>> providersList({required McnAccountId accountId, bool? status, String? orderBy, bool? desc, bool? cloudflare, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy;
-if (desc != null) queryParameters['desc'] = desc.toString();
-if (cloudflare != null) queryParameters['cloudflare'] = cloudflare.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy;
+}
+if (desc != null) {
+  queryParameters['desc'] = desc.toString();
+}
+if (cloudflare != null) {
+  queryParameters['cloudflare'] = cloudflare.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -48,7 +56,9 @@ return execute(
 /// `POST /accounts/{account_id}/magic/cloud/providers`
 Future<ApiResult<McnResponse, McnResponse>> providersCreate({required McnAccountId accountId, String? forwarded, required McnCreateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (forwarded != null) headers['forwarded'] = forwarded;
+if (forwarded != null) {
+  headers['forwarded'] = forwarded;
+}
 
 final request = ApiRequest(
   method: 'POST',
@@ -75,7 +85,9 @@ return execute(
 /// `GET /accounts/{account_id}/magic/cloud/providers/{provider_id}`
 Future<ApiResult<McnResponse, McnResponse>> providersRead({required McnAccountId accountId, required McnProviderId providerId, bool? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -181,7 +193,9 @@ return execute(
 /// `POST /accounts/{account_id}/magic/cloud/providers/{provider_id}/discover`
 Future<ApiResult<McnResponse, McnResponse>> providersDiscover({required McnAccountId accountId, required McnProviderId providerId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (v2 != null) queryParameters['v2'] = v2.toString();
+if (v2 != null) {
+  queryParameters['v2'] = v2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

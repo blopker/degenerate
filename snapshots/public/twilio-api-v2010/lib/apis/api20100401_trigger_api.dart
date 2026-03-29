@@ -77,12 +77,24 @@ return execute(
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
 Future<ApiResult<ListUsageTriggerResponse, Never>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recurring != null) queryParameters['Recurring'] = recurring.toJson();
-if (triggerBy != null) queryParameters['TriggerBy'] = triggerBy.toJson();
-if (usageCategory != null) queryParameters['UsageCategory'] = usageCategory;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (recurring != null) {
+  queryParameters['Recurring'] = recurring.toJson();
+}
+if (triggerBy != null) {
+  queryParameters['TriggerBy'] = triggerBy.toJson();
+}
+if (usageCategory != null) {
+  queryParameters['UsageCategory'] = usageCategory;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -15,10 +15,18 @@ final class CertificatePacksApi with ApiExecutor {const CertificatePacksApi(this
 /// `GET /zones/{zone_id}/ssl/certificate_packs`
 Future<ApiResult<ResponseCommon68, Never>> certificatePacksListCertificatePacks({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, dynamic status, dynamic deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (deploy != null) queryParameters['deploy'] = deploy.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (deploy != null) {
+  queryParameters['deploy'] = deploy.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

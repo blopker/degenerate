@@ -15,7 +15,9 @@ final class ResourcesApi with ApiExecutor {const ResourcesApi(this.apiConfig);
 /// `GET /accounts/{account_id}/magic/cloud/resources`
 Future<ApiResult<McnResponseCollection, McnResponse>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (providerId != null) queryParameters['provider_id'] = providerId;
+if (providerId != null) {
+  queryParameters['provider_id'] = providerId;
+}
 if (resourceType != null) {
 for (final item in resourceType) {
   queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
@@ -26,20 +28,38 @@ for (final item in resourceId) {
   queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson(), allowReserved: false));
 }
 }
-if (region != null) queryParameters['region'] = region;
-if (resourceGroup != null) queryParameters['resource_group'] = resourceGroup;
-if (managed != null) queryParameters['managed'] = managed.toString();
+if (region != null) {
+  queryParameters['region'] = region;
+}
+if (resourceGroup != null) {
+  queryParameters['resource_group'] = resourceGroup;
+}
+if (managed != null) {
+  queryParameters['managed'] = managed.toString();
+}
 if (search != null) {
 for (final item in search) {
   queryParametersList.add(ApiQueryParameter(name: 'search', value: item, allowReserved: false));
 }
 }
-if (orderBy != null) queryParameters['order_by'] = orderBy;
-if (desc != null) queryParameters['desc'] = desc.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (cloudflare != null) queryParameters['cloudflare'] = cloudflare.toString();
-if (v2 != null) queryParameters['v2'] = v2.toString();
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy;
+}
+if (desc != null) {
+  queryParameters['desc'] = desc.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (cloudflare != null) {
+  queryParameters['cloudflare'] = cloudflare.toString();
+}
+if (v2 != null) {
+  queryParameters['v2'] = v2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -69,7 +89,9 @@ return execute(
 /// `GET /accounts/{account_id}/magic/cloud/resources/{resource_id}`
 Future<ApiResult<McnResponse, McnResponse>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (v2 != null) queryParameters['v2'] = v2.toString();
+if (v2 != null) {
+  queryParameters['v2'] = v2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -99,7 +121,9 @@ return execute(
 /// `GET /accounts/{account_id}/magic/cloud/resources/export`
 Future<ApiResult<Uint8List, McnResponse>> resourcesCatalogExport({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (providerId != null) queryParameters['provider_id'] = providerId;
+if (providerId != null) {
+  queryParameters['provider_id'] = providerId;
+}
 if (resourceType != null) {
 for (final item in resourceType) {
   queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
@@ -110,16 +134,26 @@ for (final item in resourceId) {
   queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson(), allowReserved: false));
 }
 }
-if (region != null) queryParameters['region'] = region;
-if (resourceGroup != null) queryParameters['resource_group'] = resourceGroup;
+if (region != null) {
+  queryParameters['region'] = region;
+}
+if (resourceGroup != null) {
+  queryParameters['resource_group'] = resourceGroup;
+}
 if (search != null) {
 for (final item in search) {
   queryParametersList.add(ApiQueryParameter(name: 'search', value: item, allowReserved: false));
 }
 }
-if (orderBy != null) queryParameters['order_by'] = orderBy;
-if (desc != null) queryParameters['desc'] = desc.toString();
-if (v2 != null) queryParameters['v2'] = v2.toString();
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy;
+}
+if (desc != null) {
+  queryParameters['desc'] = desc.toString();
+}
+if (v2 != null) {
+  queryParameters['v2'] = v2.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

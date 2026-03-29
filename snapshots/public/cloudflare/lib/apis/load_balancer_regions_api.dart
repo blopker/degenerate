@@ -15,9 +15,15 @@ final class LoadBalancerRegionsApi with ApiExecutor {const LoadBalancerRegionsAp
 /// `GET /accounts/{account_id}/load_balancers/regions`
 Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (subdivisionCode != null) queryParameters['subdivision_code'] = subdivisionCode.toString();
-if (subdivisionCodeA2 != null) queryParameters['subdivision_code_a2'] = subdivisionCodeA2.toString();
-if (countryCodeA2 != null) queryParameters['country_code_a2'] = countryCodeA2;
+if (subdivisionCode != null) {
+  queryParameters['subdivision_code'] = subdivisionCode.toString();
+}
+if (subdivisionCodeA2 != null) {
+  queryParameters['subdivision_code_a2'] = subdivisionCodeA2.toString();
+}
+if (countryCodeA2 != null) {
+  queryParameters['country_code_a2'] = countryCodeA2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

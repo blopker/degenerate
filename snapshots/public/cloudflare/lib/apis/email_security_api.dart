@@ -17,24 +17,60 @@ final class EmailSecurityApi with ApiExecutor {const EmailSecurityApi(this.apiCo
 /// `GET /accounts/{account_id}/email-security/investigate`
 Future<ApiResult<ResponseCommon29, Never>> emailSecurityInvestigate({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, String? query, bool? detectionsOnly, bool? actionLog, EmailSecurityInvestigateFinalDisposition? finalDisposition, String? metric, EmailSecurityInvestigateMessageAction? messageAction, String? recipient, String? sender, String? alertId, String? domain, String? messageId, String? subject, String? exactSubject, String? cursor, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (start != null) queryParameters['start'] = start.toString();
-if (end != null) queryParameters['end'] = end.toString();
-if (query != null) queryParameters['query'] = query;
-if (detectionsOnly != null) queryParameters['detections_only'] = detectionsOnly.toString();
-if (actionLog != null) queryParameters['action_log'] = actionLog.toString();
-if (finalDisposition != null) queryParameters['final_disposition'] = finalDisposition.toJson();
-if (metric != null) queryParameters['metric'] = metric;
-if (messageAction != null) queryParameters['message_action'] = messageAction.toJson();
-if (recipient != null) queryParameters['recipient'] = recipient;
-if (sender != null) queryParameters['sender'] = sender;
-if (alertId != null) queryParameters['alert_id'] = alertId;
-if (domain != null) queryParameters['domain'] = domain;
-if (messageId != null) queryParameters['message_id'] = messageId;
-if (subject != null) queryParameters['subject'] = subject;
-if (exactSubject != null) queryParameters['exact_subject'] = exactSubject;
-if (cursor != null) queryParameters['cursor'] = cursor;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (start != null) {
+  queryParameters['start'] = start.toString();
+}
+if (end != null) {
+  queryParameters['end'] = end.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query;
+}
+if (detectionsOnly != null) {
+  queryParameters['detections_only'] = detectionsOnly.toString();
+}
+if (actionLog != null) {
+  queryParameters['action_log'] = actionLog.toString();
+}
+if (finalDisposition != null) {
+  queryParameters['final_disposition'] = finalDisposition.toJson();
+}
+if (metric != null) {
+  queryParameters['metric'] = metric;
+}
+if (messageAction != null) {
+  queryParameters['message_action'] = messageAction.toJson();
+}
+if (recipient != null) {
+  queryParameters['recipient'] = recipient;
+}
+if (sender != null) {
+  queryParameters['sender'] = sender;
+}
+if (alertId != null) {
+  queryParameters['alert_id'] = alertId;
+}
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
+if (messageId != null) {
+  queryParameters['message_id'] = messageId;
+}
+if (subject != null) {
+  queryParameters['subject'] = subject;
+}
+if (exactSubject != null) {
+  queryParameters['exact_subject'] = exactSubject;
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -286,10 +322,18 @@ return execute(
 /// `GET /accounts/{account_id}/email-security/phishguard/reports`
 Future<ApiResult<ResponseCommon29, Never>> emailSecurityGetPhishguardReports({required EmailSecurityAccountId accountId, String? fromDate, String? toDate, DateTime? start, DateTime? end, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fromDate != null) queryParameters['from_date'] = fromDate;
-if (toDate != null) queryParameters['to_date'] = toDate;
-if (start != null) queryParameters['start'] = start.toString();
-if (end != null) queryParameters['end'] = end.toString();
+if (fromDate != null) {
+  queryParameters['from_date'] = fromDate;
+}
+if (toDate != null) {
+  queryParameters['to_date'] = toDate;
+}
+if (start != null) {
+  queryParameters['start'] = start.toString();
+}
+if (end != null) {
+  queryParameters['end'] = end.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -316,18 +360,42 @@ return execute(
 /// `GET /accounts/{account_id}/email-security/submissions`
 Future<ApiResult<ResponseCommon29, Never>> emailSecuritySubmissions({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, EmailSecuritySubmissionsType? type, String? submissionId, EmailSecuritySubmissionsOriginalDisposition? originalDisposition, EmailSecuritySubmissionsRequestedDisposition? requestedDisposition, EmailSecuritySubmissionsOutcomeDisposition? outcomeDisposition, String? status, String? query, EmailSecuritySubmissionsCustomerStatus? customerStatus, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (start != null) queryParameters['start'] = start.toString();
-if (end != null) queryParameters['end'] = end.toString();
-if (type != null) queryParameters['type'] = type.toJson();
-if (submissionId != null) queryParameters['submission_id'] = submissionId;
-if (originalDisposition != null) queryParameters['original_disposition'] = originalDisposition.toJson();
-if (requestedDisposition != null) queryParameters['requested_disposition'] = requestedDisposition.toJson();
-if (outcomeDisposition != null) queryParameters['outcome_disposition'] = outcomeDisposition.toJson();
-if (status != null) queryParameters['status'] = status;
-if (query != null) queryParameters['query'] = query;
-if (customerStatus != null) queryParameters['customer_status'] = customerStatus.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (start != null) {
+  queryParameters['start'] = start.toString();
+}
+if (end != null) {
+  queryParameters['end'] = end.toString();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (submissionId != null) {
+  queryParameters['submission_id'] = submissionId;
+}
+if (originalDisposition != null) {
+  queryParameters['original_disposition'] = originalDisposition.toJson();
+}
+if (requestedDisposition != null) {
+  queryParameters['requested_disposition'] = requestedDisposition.toJson();
+}
+if (outcomeDisposition != null) {
+  queryParameters['outcome_disposition'] = outcomeDisposition.toJson();
+}
+if (status != null) {
+  queryParameters['status'] = status;
+}
+if (query != null) {
+  queryParameters['query'] = query;
+}
+if (customerStatus != null) {
+  queryParameters['customer_status'] = customerStatus.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

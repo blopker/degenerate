@@ -15,7 +15,9 @@ final class ShieldSettingsApi with ApiExecutor {const ShieldSettingsApi(this.api
 /// `GET /zones/{zone_id}/api_gateway/configuration`
 Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (normalize != null) queryParameters['normalize'] = normalize.toString();
+if (normalize != null) {
+  queryParameters['normalize'] = normalize.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -42,7 +44,9 @@ return execute(
 /// `PUT /zones/{zone_id}/api_gateway/configuration`
 Future<ApiResult<ResponseCommon6, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, required ShieldConfiguration body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (normalize != null) queryParameters['normalize'] = normalize.toString();
+if (normalize != null) {
+  queryParameters['normalize'] = normalize.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

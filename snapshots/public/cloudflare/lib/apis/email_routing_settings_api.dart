@@ -36,7 +36,9 @@ return execute(
 /// `GET /zones/{zone_id}/email/routing/dns`
 Future<ApiResult<EmailRoutingSettingsEmailRoutingDnsSettingsResponse, Never>> emailRoutingSettingsEmailRoutingDnsSettings({required EmailIdentifier zoneId, EmailEmailSettingName? subdomain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (subdomain != null) queryParameters['subdomain'] = subdomain.toString();
+if (subdomain != null) {
+  queryParameters['subdomain'] = subdomain.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

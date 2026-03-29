@@ -15,12 +15,24 @@ final class AccountUserGroupsApi with ApiExecutor {const AccountUserGroupsApi(th
 /// `GET /accounts/{account_id}/iam/user_groups`
 Future<ApiResult<ResponseCommon35, Never>> accountUserGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, String? fuzzyName, double? page, double? perPage, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id.toString();
-if (name != null) queryParameters['name'] = name;
-if (fuzzyName != null) queryParameters['fuzzyName'] = fuzzyName;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (direction != null) queryParameters['direction'] = direction;
+if (id != null) {
+  queryParameters['id'] = id.toString();
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (fuzzyName != null) {
+  queryParameters['fuzzyName'] = fuzzyName;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -135,8 +147,12 @@ return execute(
 /// `GET /accounts/{account_id}/iam/user_groups/{user_group_id}/members`
 Future<ApiResult<ResponseCommon35, Never>> accountUserGroupMemberList({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

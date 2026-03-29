@@ -101,8 +101,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations`
 Future<ApiResult<List<CheckAnnotation>, Never>> checksListAnnotations({required String owner, required String repo, required int checkRunId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -239,11 +243,21 @@ return execute(
 /// `GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs`
 Future<ApiResult<ChecksListForSuiteResponse, Never>> checksListForSuite({required String owner, required String repo, required int checkSuiteId, String? checkName, ChecksListForSuiteStatus? status, ChecksListForSuiteFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (checkName != null) queryParameters['check_name'] = checkName;
-if (status != null) queryParameters['status'] = status.toJson();
-if (filter != null) queryParameters['filter'] = filter.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (checkName != null) {
+  queryParameters['check_name'] = checkName;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (filter != null) {
+  queryParameters['filter'] = filter.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -298,12 +312,24 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits/{ref}/check-runs`
 Future<ApiResult<ChecksListForRefResponse, Never>> checksListForRef({required String owner, required String repo, required String ref, String? checkName, ChecksListForRefStatus? status, ChecksListForRefFilter? filter, int? perPage, int? page, int? appId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (checkName != null) queryParameters['check_name'] = checkName;
-if (status != null) queryParameters['status'] = status.toJson();
-if (filter != null) queryParameters['filter'] = filter.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (appId != null) queryParameters['app_id'] = appId.toString();
+if (checkName != null) {
+  queryParameters['check_name'] = checkName;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (filter != null) {
+  queryParameters['filter'] = filter.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (appId != null) {
+  queryParameters['app_id'] = appId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -335,10 +361,18 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits/{ref}/check-suites`
 Future<ApiResult<ChecksListSuitesForRefResponse, Never>> checksListSuitesForRef({required String owner, required String repo, required String ref, int? appId, String? checkName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (appId != null) queryParameters['app_id'] = appId.toString();
-if (checkName != null) queryParameters['check_name'] = checkName;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (appId != null) {
+  queryParameters['app_id'] = appId.toString();
+}
+if (checkName != null) {
+  queryParameters['check_name'] = checkName;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

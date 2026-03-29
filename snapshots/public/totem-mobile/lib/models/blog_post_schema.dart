@@ -1,79 +1,148 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'public_user_schema.dart';final class BlogPostSchema {const BlogPostSchema({this.author, this.headerImageUrl, this.contentHtml, required this.title, this.subtitle, this.datePublished, this.slug, this.publish = false, this.readTime = 1, this.summary, });
+import 'public_user_schema.dart';
 
-factory BlogPostSchema.fromJson(Map<String, dynamic> json) { return BlogPostSchema(
-  author: json['author'] != null ? PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>) : null,
-  headerImageUrl: json['header_image_url'] as String?,
-  contentHtml: json['content_html'] as String?,
-  title: json['title'] as String,
-  subtitle: json['subtitle'] as String?,
-  datePublished: json['date_published'] != null ? DateTime.parse(json['date_published'] as String) : null,
-  slug: json['slug'] as String?,
-  publish: json.containsKey('publish') ? json['publish'] as bool : false,
-  readTime: json.containsKey('read_time') ? (json['read_time'] as num).toInt() : 1,
-  summary: json['summary'] as String?,
-); }
+final class BlogPostSchema {
+  const BlogPostSchema({
+    this.author,
+    this.headerImageUrl,
+    this.contentHtml,
+    required this.title,
+    this.subtitle,
+    this.datePublished,
+    this.slug,
+    this.publish = false,
+    this.readTime = 1,
+    this.summary,
+  });
 
-final PublicUserSchema? author;
+  factory BlogPostSchema.fromJson(Map<String, dynamic> json) {
+    return BlogPostSchema(
+      author: json['author'] != null
+          ? PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>)
+          : null,
+      headerImageUrl: json['header_image_url'] as String?,
+      contentHtml: json['content_html'] as String?,
+      title: json['title'] as String,
+      subtitle: json['subtitle'] as String?,
+      datePublished: json['date_published'] != null
+          ? DateTime.parse(json['date_published'] as String)
+          : null,
+      slug: json['slug'] as String?,
+      publish: json.containsKey('publish') ? json['publish'] as bool : false,
+      readTime: json.containsKey('read_time')
+          ? (json['read_time'] as num).toInt()
+          : 1,
+      summary: json['summary'] as String?,
+    );
+  }
 
-final String? headerImageUrl;
+  final PublicUserSchema? author;
 
-final String? contentHtml;
+  final String? headerImageUrl;
 
-final String title;
+  final String? contentHtml;
 
-final String? subtitle;
+  final String title;
 
-final DateTime? datePublished;
+  final String? subtitle;
 
-final String? slug;
+  final DateTime? datePublished;
 
-final bool publish;
+  final String? slug;
 
-/// Estimated reading time in minutes (auto-calculated)
-final int readTime;
+  final bool publish;
 
-/// Short summary of the blog post to show in list pages. No Markdown allowed. Max 2000 characters.
-final String? summary;
+  /// Estimated reading time in minutes (auto-calculated)
+  final int readTime;
 
-Map<String, dynamic> toJson() { return {
-  if (author != null) 'author': author?.toJson(),
-  'header_image_url': ?headerImageUrl,
-  'content_html': ?contentHtml,
-  'title': title,
-  'subtitle': ?subtitle,
-  if (datePublished != null) 'date_published': datePublished?.toIso8601String(),
-  'slug': ?slug,
-  'publish': publish,
-  'read_time': readTime,
-  'summary': ?summary,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
-BlogPostSchema copyWith({PublicUserSchema? Function()? author, String? Function()? headerImageUrl, String? Function()? contentHtml, String? title, String? Function()? subtitle, DateTime Function()? datePublished, String? Function()? slug, bool Function()? publish, int Function()? readTime, String? Function()? summary, }) { return BlogPostSchema(
-  author: author != null ? author() : this.author,
-  headerImageUrl: headerImageUrl != null ? headerImageUrl() : this.headerImageUrl,
-  contentHtml: contentHtml != null ? contentHtml() : this.contentHtml,
-  title: title ?? this.title,
-  subtitle: subtitle != null ? subtitle() : this.subtitle,
-  datePublished: datePublished != null ? datePublished() : this.datePublished,
-  slug: slug != null ? slug() : this.slug,
-  publish: publish != null ? publish() : this.publish,
-  readTime: readTime != null ? readTime() : this.readTime,
-  summary: summary != null ? summary() : this.summary,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is BlogPostSchema &&
-          author == other.author &&
-          headerImageUrl == other.headerImageUrl &&
-          contentHtml == other.contentHtml &&
-          title == other.title &&
-          subtitle == other.subtitle &&
-          datePublished == other.datePublished &&
-          slug == other.slug &&
-          publish == other.publish &&
-          readTime == other.readTime &&
-          summary == other.summary; } 
-@override int get hashCode { return Object.hash(author, headerImageUrl, contentHtml, title, subtitle, datePublished, slug, publish, readTime, summary); } 
-@override String toString() { return 'BlogPostSchema(author: $author, headerImageUrl: $headerImageUrl, contentHtml: $contentHtml, title: $title, subtitle: $subtitle, datePublished: $datePublished, slug: $slug, publish: $publish, readTime: $readTime, summary: $summary)'; } 
- }
+  /// Short summary of the blog post to show in list pages. No Markdown allowed. Max 2000 characters.
+  final String? summary;
+
+  Map<String, dynamic> toJson() {
+    return {
+      if (author != null) 'author': author?.toJson(),
+      'header_image_url': ?headerImageUrl,
+      'content_html': ?contentHtml,
+      'title': title,
+      'subtitle': ?subtitle,
+      if (datePublished != null)
+        'date_published': datePublished?.toIso8601String(),
+      'slug': ?slug,
+      'publish': publish,
+      'read_time': readTime,
+      'summary': ?summary,
+    };
+  }
+
+  static bool canParse(Map<String, dynamic> json) {
+    return json.containsKey('title') && json['title'] is String;
+  }
+
+  BlogPostSchema copyWith({
+    PublicUserSchema? Function()? author,
+    String? Function()? headerImageUrl,
+    String? Function()? contentHtml,
+    String? title,
+    String? Function()? subtitle,
+    DateTime Function()? datePublished,
+    String? Function()? slug,
+    bool Function()? publish,
+    int Function()? readTime,
+    String? Function()? summary,
+  }) {
+    return BlogPostSchema(
+      author: author != null ? author() : this.author,
+      headerImageUrl: headerImageUrl != null
+          ? headerImageUrl()
+          : this.headerImageUrl,
+      contentHtml: contentHtml != null ? contentHtml() : this.contentHtml,
+      title: title ?? this.title,
+      subtitle: subtitle != null ? subtitle() : this.subtitle,
+      datePublished: datePublished != null
+          ? datePublished()
+          : this.datePublished,
+      slug: slug != null ? slug() : this.slug,
+      publish: publish != null ? publish() : this.publish,
+      readTime: readTime != null ? readTime() : this.readTime,
+      summary: summary != null ? summary() : this.summary,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is BlogPostSchema &&
+            author == other.author &&
+            headerImageUrl == other.headerImageUrl &&
+            contentHtml == other.contentHtml &&
+            title == other.title &&
+            subtitle == other.subtitle &&
+            datePublished == other.datePublished &&
+            slug == other.slug &&
+            publish == other.publish &&
+            readTime == other.readTime &&
+            summary == other.summary;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      author,
+      headerImageUrl,
+      contentHtml,
+      title,
+      subtitle,
+      datePublished,
+      slug,
+      publish,
+      readTime,
+      summary,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'BlogPostSchema(author: $author, headerImageUrl: $headerImageUrl, contentHtml: $contentHtml, title: $title, subtitle: $subtitle, datePublished: $datePublished, slug: $slug, publish: $publish, readTime: $readTime, summary: $summary)';
+  }
+}

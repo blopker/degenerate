@@ -39,7 +39,9 @@ return execute(
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs`
 Future<ApiResult<McnResponse, McnResponse>> catalogSyncsCreate({required McnAccountId accountId, String? forwarded, required McnCreateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
-if (forwarded != null) headers['forwarded'] = forwarded;
+if (forwarded != null) {
+  headers['forwarded'] = forwarded;
+}
 
 final request = ApiRequest(
   method: 'POST',
@@ -142,7 +144,9 @@ return execute(
 /// `DELETE /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
 Future<ApiResult<McnResponse, McnResponse>> catalogSyncsDelete({required McnAccountId accountId, required McnCatalogSyncId syncId, bool? deleteDestination, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (deleteDestination != null) queryParameters['delete_destination'] = deleteDestination.toString();
+if (deleteDestination != null) {
+  queryParameters['delete_destination'] = deleteDestination.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -196,7 +200,9 @@ return execute(
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/prebuilt-policies`
 Future<ApiResult<McnResponse, McnResponse>> catalogSyncsPrebuiltPoliciesList({required McnAccountId accountId, McnCatalogSyncDestinationType? destinationType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (destinationType != null) queryParameters['destination_type'] = destinationType.toJson();
+if (destinationType != null) {
+  queryParameters['destination_type'] = destinationType.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

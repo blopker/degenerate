@@ -13,10 +13,18 @@ final class AiGatewayEvaluationsApi with ApiExecutor {const AiGatewayEvaluations
 /// `GET /accounts/{account_id}/ai-gateway/evaluation-types`
 Future<ApiResult<AigConfigListEvaluatorsResponse, AigConfigListEvaluatorsResponse400>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy;
-if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy;
+}
+if (orderByDirection != null) {
+  queryParameters['order_by_direction'] = orderByDirection.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -46,11 +54,21 @@ return execute(
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
 Future<ApiResult<AigConfigListEvaluationsResponse, AigConfigListEvaluationsResponse400>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (name != null) queryParameters['name'] = name;
-if (processed != null) queryParameters['processed'] = processed.toString();
-if (search != null) queryParameters['search'] = search;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (processed != null) {
+  queryParameters['processed'] = processed.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
