@@ -8,7 +8,7 @@ environment:
 dependencies:
   spec_13_external_refs:
     path: ../../../snapshots/specs/13-external-refs
-  degenerate_runtime: ^0.1.0
+  degenerate_runtime:
 
 dev_dependencies:
   test: ^1.25.6

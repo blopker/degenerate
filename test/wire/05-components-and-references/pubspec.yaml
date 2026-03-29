@@ -8,7 +8,7 @@ environment:
 dependencies:
   spec_05_components_and_references:
     path: ../../../snapshots/specs/05-components-and-references
-  degenerate_runtime: ^0.1.0
+  degenerate_runtime:
 
 dev_dependencies:
   test: ^1.25.6
