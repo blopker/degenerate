@@ -272,8 +272,6 @@ class Generator {
     config.resolvedPackageName = packageName;
 
     _log('Emitting Dart source files...');
-    final specFileName = isStdin ? 'stdin' : p.basename(config.inputPath);
-    final specVersion = inlinedDoc.version;
 
     final fileEmitter = FileEmitter();
     final emitterWarnings = <String>[];
@@ -288,8 +286,6 @@ class Generator {
       securitySchemes: securitySchemes,
       globalSecurity: globalSecurity,
       packageName: packageName,
-      specFileName: specFileName,
-      specVersion: specVersion,
       workspace: config.workspace,
       defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,

@@ -454,8 +454,6 @@ void main() {
         types: types,
         apis: apis,
         packageName: 'petstore_client',
-        specFileName: 'petstore-v3.0-oai.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -494,8 +492,6 @@ void main() {
         types: types,
         apis: apis,
         packageName: 'petstore_client',
-        specFileName: 'petstore-v3.0-oai.yaml',
-        specVersion: '1.0.0',
         workspace: true,
       );
       expect(wsFiles.keys, contains('pubspec.yaml'));
@@ -511,7 +507,6 @@ void main() {
       for (final entry in files.entries) {
         if (entry.key.startsWith('models/')) {
           expect(entry.value, contains('GENERATED CODE'));
-          expect(entry.value, contains('petstore-v3.0-oai.yaml'));
         }
       }
     });
@@ -579,8 +574,6 @@ void main() {
         types: types,
         apis: apis,
         packageName: 'petstore_client',
-        specFileName: 'petstore.yaml',
-        specVersion: '1.0.0',
         defaultServerUrl: 'https://petstore.swagger.io/v1',
       );
       final sdkFile =
@@ -1672,8 +1665,6 @@ void main() {
           ]),
         ],
         packageName: 'test_client',
-        specFileName: 'test.yaml',
-        specVersion: '3.0.0',
         warnings: warnings,
       );
 
@@ -1739,8 +1730,6 @@ void main() {
           ]),
         ],
         packageName: 'test_client',
-        specFileName: 'test.yaml',
-        specVersion: '3.0.0',
         warnings: warnings,
       );
 
@@ -1791,8 +1780,6 @@ void main() {
           IrSecurityRequirement({'ApiKeyAuth': []}),
         ],
         packageName: 'test_client',
-        specFileName: 'test.yaml',
-        specVersion: '3.0.0',
       );
 
       final securityFile = files['client/test_client_security.dart']!;
@@ -1962,8 +1949,6 @@ void main() {
         types: irTypes,
         apis: irApis,
         packageName: 'ext_test',
-        specFileName: 'extension-types.json',
-        specVersion: '3.1.0',
       );
     });
 
@@ -2123,8 +2108,6 @@ void main() {
         types: allTypes,
         apis: apis,
         packageName: 'inline_test',
-        specFileName: 'inline-test.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -2186,8 +2169,6 @@ void main() {
         types: types,
         apis: [],
         packageName: 'import_test',
-        specFileName: 'test.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -2223,8 +2204,6 @@ void main() {
         types: types,
         apis: [],
         packageName: 'bytes_test',
-        specFileName: 'test.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -2270,8 +2249,6 @@ void main() {
         types: types,
         apis: [],
         packageName: 'big_result_test',
-        specFileName: 'test.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -2335,8 +2312,6 @@ void main() {
         types: types,
         apis: apis,
         packageName: 'throw_test',
-        specFileName: 'test.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -2393,8 +2368,6 @@ void main() {
         types: types,
         apis: apis,
         packageName: 'form_test',
-        specFileName: 'test.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -2447,8 +2420,6 @@ void main() {
         types: types,
         apis: apis,
         packageName: 'obj_test',
-        specFileName: 'test.yaml',
-        specVersion: '1.0.0',
       );
     });
 
@@ -2476,8 +2447,6 @@ void main() {
           ]),
         ],
         packageName: 'pub_petstore_v3_0_oai',
-        specFileName: 'petstore.yaml',
-        specVersion: '1.0.0',
       );
       final sdkFile =
           files['client/pub_petstore_v3_0_oai_api.dart']!;
