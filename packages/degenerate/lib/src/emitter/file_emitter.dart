@@ -58,7 +58,7 @@ class FileEmitter {
     // into their parent typedef file (the parent file provides the import).
     final apiReferencedTypes = <String>{};
     for (final api in apis) {
-      final analysis = _analyzeApi(api);  // no typeRegistry
+      final analysis = _analyzeApi(api); // no typeRegistry
       apiReferencedTypes.addAll(analysis.referencedTypes);
     }
 
@@ -137,7 +137,9 @@ class FileEmitter {
         }
         if (needsRuntime) {
           b.directives.add(
-            Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
+            Directive.import(
+              'package:degenerate_runtime/degenerate_runtime.dart',
+            ),
           );
         }
         b.directives.addAll(modelImports);
@@ -329,8 +331,7 @@ class FileEmitter {
       }
       // Match the type selection logic used by ApiEmitter:
       // prefer application/json, fallback to first content type.
-      if (op.requestBody != null &&
-          op.requestBody!.content.isNotEmpty) {
+      if (op.requestBody != null && op.requestBody!.content.isNotEmpty) {
         final bodyContent = preferredContent(op.requestBody!.content)!;
         if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
         final schema = bodyContent.$2.schema;
@@ -395,7 +396,13 @@ class FileEmitter {
   /// When [skipInlinedOneOfRefs] is true (used during variant resolution),
   /// refs that resolve to non-self-referencing OneOf typedefs are NOT added
   /// to [names] because they are fully inlined in the parse code.
-  void _collectTopLevelTypeName(IrType type, Set<String> names, [Map<String, IrType>? typeRegistry, Set<String>? resolving, bool skipInlinedOneOfRefs = false]) {
+  void _collectTopLevelTypeName(
+    IrType type,
+    Set<String> names, [
+    Map<String, IrType>? typeRegistry,
+    Set<String>? resolving,
+    bool skipInlinedOneOfRefs = false,
+  ]) {
     switch (type) {
       case IrObject(:final name):
         names.add(name);
@@ -404,13 +411,20 @@ class FileEmitter {
       case IrTypeRef(:final name):
         // Check if this ref points to a non-self-referencing OneOf typedef
         // that will be inlined in parse code (no explicit reference in output).
-        final isInlinedOneOf = skipInlinedOneOfRefs && typeRegistry != null && switch (typeRegistry[name]) {
-          IrUntaggedUnion(:final variants)
-              when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-          IrAnyOf(:final variants)
-              when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-          _ => false,
-        };
+        final isInlinedOneOf =
+            skipInlinedOneOfRefs &&
+            typeRegistry != null &&
+            switch (typeRegistry[name]) {
+              IrUntaggedUnion(:final variants)
+                  when isOneOfEligible(variants) &&
+                      !_isSelfReferencing(name, variants) =>
+                true,
+              IrAnyOf(:final variants)
+                  when isOneOfEligible(variants) &&
+                      !_isSelfReferencing(name, variants) =>
+                true,
+              _ => false,
+            };
         if (!isInlinedOneOf) {
           names.add(name);
         }
@@ -422,14 +436,22 @@ class FileEmitter {
           final target = typeRegistry[name];
           if (target != null) {
             final variants = switch (target) {
-              IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants,
-              IrAnyOf(:final variants) when isOneOfEligible(variants) => variants,
+              IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+                variants,
+              IrAnyOf(:final variants) when isOneOfEligible(variants) =>
+                variants,
               _ => null,
             };
             if (variants != null) {
               for (final v in variants) {
                 // Variant refs to other OneOf typedefs are also inlined
-                _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
+                _collectTopLevelTypeName(
+                  v,
+                  names,
+                  typeRegistry,
+                  resolving,
+                  true,
+                );
               }
             }
           }
@@ -439,8 +461,10 @@ class FileEmitter {
       case IrUntaggedUnion(:final name, :final variants):
         // Skip adding the name if this is a non-self-referencing OneOf typedef
         // that will be inlined in parse code.
-        final skipUntagged = skipInlinedOneOfRefs &&
-            isOneOfEligible(variants) && !_isSelfReferencing(name, variants);
+        final skipUntagged =
+            skipInlinedOneOfRefs &&
+            isOneOfEligible(variants) &&
+            !_isSelfReferencing(name, variants);
         if (!skipUntagged) {
           names.add(name);
         }
@@ -452,8 +476,10 @@ class FileEmitter {
           }
         }
       case IrAnyOf(:final name, :final variants):
-        final skipAnyOf = skipInlinedOneOfRefs &&
-            isOneOfEligible(variants) && !_isSelfReferencing(name, variants);
+        final skipAnyOf =
+            skipInlinedOneOfRefs &&
+            isOneOfEligible(variants) &&
+            !_isSelfReferencing(name, variants);
         if (!skipAnyOf) {
           names.add(name);
         }
@@ -465,9 +491,21 @@ class FileEmitter {
       case IrExtensionType(:final name):
         names.add(name);
       case IrList(:final items):
-        _collectTopLevelTypeName(items, names, typeRegistry, resolving, skipInlinedOneOfRefs);
+        _collectTopLevelTypeName(
+          items,
+          names,
+          typeRegistry,
+          resolving,
+          skipInlinedOneOfRefs,
+        );
       case IrMap(:final values):
-        _collectTopLevelTypeName(values, names, typeRegistry, resolving, skipInlinedOneOfRefs);
+        _collectTopLevelTypeName(
+          values,
+          names,
+          typeRegistry,
+          resolving,
+          skipInlinedOneOfRefs,
+        );
       case IrPrimitive():
         break;
     }
@@ -506,28 +544,44 @@ class FileEmitter {
       IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
       IrList(:final items) => hasBytesAnywhere(items),
       IrMap(:final values) => hasBytesAnywhere(values),
-      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-      IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-      IrTypeRef(:final name) when typeRegistry != null && bytesVisited.add(name) => switch (typeRegistry[name]) {
-        IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-        IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-        _ => false,
-      },
+      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+        variants.any(hasBytesAnywhere),
+      IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
+        hasBytesAnywhere,
+      ),
+      IrTypeRef(:final name)
+          when typeRegistry != null && bytesVisited.add(name) =>
+        switch (typeRegistry[name]) {
+          IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+            variants.any(hasBytesAnywhere),
+          IrAnyOf(:final variants) when isOneOfEligible(variants) =>
+            variants.any(hasBytesAnywhere),
+          _ => false,
+        },
       _ => false,
     };
 
     bool isOneOfType(IrType t) => switch (t) {
       IrUntaggedUnion(:final name, :final variants)
-          when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencing(name, variants) =>
+        true,
       IrAnyOf(:final name, :final variants)
-          when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-      IrTypeRef(:final name) when typeRegistry != null => switch (typeRegistry[name]) {
-        IrUntaggedUnion(:final variants)
-            when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-        IrAnyOf(:final variants)
-            when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-        _ => false,
-      },
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencing(name, variants) =>
+        true,
+      IrTypeRef(:final name) when typeRegistry != null =>
+        switch (typeRegistry[name]) {
+          IrUntaggedUnion(:final variants)
+              when isOneOfEligible(variants) &&
+                  !_isSelfReferencing(name, variants) =>
+            true,
+          IrAnyOf(:final variants)
+              when isOneOfEligible(variants) &&
+                  !_isSelfReferencing(name, variants) =>
+            true,
+          _ => false,
+        },
       IrList(:final items) => isOneOfType(items),
       IrMap(:final values) => isOneOfType(values),
       _ => false,
@@ -642,18 +696,18 @@ class FileEmitter {
   }) {
     final exports = <Directive>[
       Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
-      if (apis.isNotEmpty)
-        Directive.export('client/${packageName}_api.dart'),
+      if (apis.isNotEmpty) Directive.export('client/${packageName}_api.dart'),
       if (hasSecurityFile)
         Directive.export('client/${packageName}_security.dart'),
       // Model exports (sorted, deduplicated, excluding inlined)
-      for (final name in types
-          .map(_typeName)
-          .whereType<String>()
-          .where((name) => !inlinedTypes.contains(name))
-          .toSet()
-          .toList()
-        ..sort())
+      for (final name
+          in types
+              .map(_typeName)
+              .whereType<String>()
+              .where((name) => !inlinedTypes.contains(name))
+              .toSet()
+              .toList()
+            ..sort())
         Directive.export('models/${toSnakeCase(name)}.dart'),
       // API exports (sorted, deduplicated)
       for (final name in apis.map((a) => a.name).toSet().toList()..sort())
@@ -881,7 +935,8 @@ class FileEmitter {
     String packageName,
     IrSecurityScheme scheme,
   ) {
-    final securityClass = '${sanitizeDartName(toPascalCase(packageName))}Security';
+    final securityClass =
+        '${sanitizeDartName(toPascalCase(packageName))}Security';
     final suffix = _securityMethodSuffix(scheme.name);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';
@@ -919,10 +974,7 @@ class FileEmitter {
     return sanitizeFieldName(camel);
   }
 
-  String _emitPubspec({
-    required String packageName,
-    bool workspace = false,
-  }) {
+  String _emitPubspec({required String packageName, bool workspace = false}) {
     final buf = StringBuffer();
     buf.writeln('name: $packageName');
     buf.writeln('description: Generated API client.');

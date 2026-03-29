@@ -31,14 +31,16 @@ final class HttpApiClient implements ApiClient {
           case ApiMultipartTextField():
             multipart.fields[field.name] = field.value;
           case ApiMultipartFileField():
-            multipart.files.add(http.MultipartFile.fromBytes(
-              field.name,
-              field.bytes,
-              filename: field.filename ?? field.name,
-              contentType: field.contentType != null
-                  ? http.MediaType.parse(field.contentType!)
-                  : null,
-            ));
+            multipart.files.add(
+              http.MultipartFile.fromBytes(
+                field.name,
+                field.bytes,
+                filename: field.filename ?? field.name,
+                contentType: field.contentType != null
+                    ? http.MediaType.parse(field.contentType!)
+                    : null,
+              ),
+            );
         }
       }
       return _send(multipart);

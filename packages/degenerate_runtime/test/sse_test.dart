@@ -3,8 +3,7 @@ import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:test/test.dart';
 
-Stream<List<int>> _encode(String text) =>
-    Stream.value(utf8.encode(text));
+Stream<List<int>> _encode(String text) => Stream.value(utf8.encode(text));
 
 Stream<List<int>> _encodeChunks(List<String> chunks) =>
     Stream.fromIterable(chunks.map(utf8.encode));

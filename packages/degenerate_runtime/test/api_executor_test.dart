@@ -13,10 +13,7 @@ void main() {
   group('ApiExecutor', () {
     test('execute returns ApiSuccess on 2xx', () async {
       final client = RecordingClient(
-        nextResponse: ApiResponse(
-          statusCode: 200,
-          body: jsonEncode({'id': 1}),
-        ),
+        nextResponse: ApiResponse(statusCode: 200, body: jsonEncode({'id': 1})),
       );
       final api = _TestApi(ApiConfig(client: client));
 
@@ -33,10 +30,7 @@ void main() {
 
     test('execute returns ApiError on 4xx', () async {
       final client = RecordingClient(
-        nextResponse: ApiResponse(
-          statusCode: 404,
-          body: 'not found',
-        ),
+        nextResponse: ApiResponse(statusCode: 404, body: 'not found'),
       );
       final api = _TestApi(ApiConfig(client: client));
 
@@ -66,20 +60,21 @@ void main() {
       expect(result, isA<ApiException<String, Never>>());
     });
 
-    test('execute returns ApiParseException on deserialization failure',
-        () async {
-      final client = RecordingClient(
-        nextResponse: ApiResponse(statusCode: 200, body: 'not json'),
-      );
-      final api = _TestApi(ApiConfig(client: client));
+    test(
+      'execute returns ApiParseException on deserialization failure',
+      () async {
+        final client = RecordingClient(
+          nextResponse: ApiResponse(statusCode: 200, body: 'not json'),
+        );
+        final api = _TestApi(ApiConfig(client: client));
 
-      final result = await api.execute<Map<String, dynamic>, Never>(
-        const ApiRequest(method: 'GET', path: '/test'),
-        onSuccess: (r) =>
-            jsonDecode(r.body) as Map<String, dynamic>,
-      );
+        final result = await api.execute<Map<String, dynamic>, Never>(
+          const ApiRequest(method: 'GET', path: '/test'),
+          onSuccess: (r) => jsonDecode(r.body) as Map<String, dynamic>,
+        );
 
-      expect(result, isA<ApiParseException<Map<String, dynamic>, Never>>());
-    });
+        expect(result, isA<ApiParseException<Map<String, dynamic>, Never>>());
+      },
+    );
   });
 }

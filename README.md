@@ -34,10 +34,9 @@
 
 ## Quick Start
 
-```yaml
+```bash
 # Add to your pubspec.yaml
-dev_dependencies:
-  degenerate: ^0.1.0
+dart pub add dev:degenerate
 ```
 
 ```bash
@@ -45,11 +44,11 @@ dev_dependencies:
 dart run degenerate -i petstore.yaml -n petstore
 ```
 
-Then use the generated client:
+The generated code is placed in `lib/petstore/` by default. Add the dependencies the CLI tells you to your `pubspec.yaml`, then use the client:
 
 ```dart
 import 'package:degenerate_http/degenerate_http.dart';
-import 'package:petstore/petstore.dart';
+import 'package:my_app/petstore/petstore.dart';
 
 void main() async {
   final client = HttpApiClient(
@@ -88,7 +87,7 @@ void main() async {
 }
 ```
 
-See [`example/`](example/) for a full working example against the live Petstore API.
+See [`example/`](example/) for a full working example against the live Petstore API, and [`example_workspace/`](example_workspace/) for a Dart workspace setup.
 
 ## Usage
 
@@ -97,48 +96,79 @@ dart run degenerate [options]
 
 Options:
   -i, --input              Path to OpenAPI spec, or "-" for stdin (required)
-  -o, --output             Output directory (default: lib/<name>, or packages/<name> with --workspace)
-  -n, --name               Package name (default: inferred from spec title)
+  -o, --output             Base output directory (default: lib, or packages with --workspace)
+  -n, --name               Package name (default: api_client). Appended to -o to form the output path.
   -t, --tag                Only include APIs matching these tags (repeatable)
   -p, --path               Only include operations under these path prefixes (repeatable)
       --include-deprecated  Include deprecated operations
       --clean              Remove output directory before generating
-      --workspace          Add resolution: workspace to generated pubspec (for monorepos)
+      --workspace          Generate a standalone package with pubspec.yaml (for Dart workspaces)
   -v, --verbose            Print IR and diagnostics
       --dry-run            Parse and validate without writing files
   -h, --help               Show help
       --version            Print the tool version
 ```
 
+### Output Modes
+
+**Default mode** generates code directly into your project's `lib/` directory:
+
+```bash
+dart run degenerate -i petstore.yaml -n petstore
+# Output: lib/petstore/
+```
+
+After generation, the CLI prints the dependencies you need to add to your `pubspec.yaml`.
+
+**Workspace mode** (`--workspace`) generates a standalone Dart package with its own `pubspec.yaml`:
+
+```bash
+dart run degenerate -i petstore.yaml -n petstore --workspace
+# Output: packages/petstore/
+```
+
+The CLI prints instructions for adding the package to your workspace and dependencies.
+
+### Code Formatting
+
+Generated code is not formatted. Run `dart format` on the output to apply your project's formatting preferences:
+
+```bash
+dart run degenerate -i petstore.yaml -n petstore
+dart format lib/petstore/
+```
+
 ### Examples
 
 ```bash
-# Generate from a YAML spec
-dart run degenerate -i petstore.yaml -o lib/src/api -n petstore
+# Generate into a custom directory
+dart run degenerate -i petstore.yaml -o clients -n petstore
+# Output: clients/petstore/
 
 # Only generate DNS-related APIs from a large spec
-dart run degenerate -i cloudflare.yaml -o lib/src/api -t dns
+dart run degenerate -i cloudflare.yaml -t dns
 
 # Multiple tags
-dart run degenerate -i cloudflare.yaml -o lib/src/api -t dns -t workers
+dart run degenerate -i cloudflare.yaml -t dns -t workers
 
 # Filter by path prefix
-dart run degenerate -i cloudflare.yaml -o lib/src/api -p /zones
+dart run degenerate -i cloudflare.yaml -p /zones
 
-# Generate from a JSON spec with verbose output
-dart run degenerate -i kubernetes-api.json -o lib/src/k8s --verbose
+# Verbose output
+dart run degenerate -i kubernetes-api.json -n k8s --verbose
 
 # Clean output directory before generating (removes stale files)
-dart run degenerate -i spec.yaml -o lib/src/api --clean
+dart run degenerate -i spec.yaml --clean
 
 # Dry run to check for issues without writing files
 dart run degenerate -i spec.yaml --dry-run
 
 # Pipe a spec from a URL
-curl -s https://petstore3.swagger.io/api/v3/openapi.json | dart run degenerate -i - -o lib/src/api -n petstore
+curl -s https://petstore3.swagger.io/api/v3/openapi.json | dart run degenerate -i - -n petstore
 
-# Pipe from another command
-cat spec.yaml | dart run degenerate -i - -o lib/src/api -n my_api
+# Workspace mode with custom output base
+dart run degenerate -i spec.yaml -o my_packages --workspace -n my_api
+# Output: my_packages/my_api/
 ```
 
 Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. When tags or paths are specified, unused types are automatically tree-shaken from the output.
@@ -167,7 +197,7 @@ import 'package:degenerate_http/degenerate_http.dart';
 ```dart
 import 'package:degenerate_dio/degenerate_dio.dart';
 import 'package:dio/dio.dart';
-import 'package:petstore/petstore.dart';
+import 'package:my_app/petstore/petstore.dart';
 
 final dio = Dio()
   // For granular timeout control, configure Dio directly
@@ -185,21 +215,31 @@ Use the `Dio` instance for low-level settings like proxy configuration, custom a
 
 ## Generated Output
 
+**Default mode** (`lib/<name>/`):
+
+```
+<name>.dart              Barrel file (exports everything)
+models/
+  pet.dart               Data classes with fromJson/toJson/copyWith/==/hashCode
+  pet_status.dart        Enum-like class with unknown value preservation
+  user_id.dart           Extension type for branded primitives
+  pet_or_error.dart      OneOf typedef for untagged unions
+  shape.dart             Sealed class for discriminated unions
+apis/
+  pets_api.dart          API client class with typed methods
+client/
+  <name>_api.dart        Root SDK facade with lazy API group accessors
+```
+
+**Workspace mode** (`packages/<name>/`):
+
 ```
 lib/
-  <package_name>.dart          Barrel file (exports everything)
-  src/
-    models/
-      pet.dart                 Data classes with fromJson/toJson/copyWith/==/hashCode
-      pet_status.dart          Enum-like class with unknown value preservation
-      user_id.dart             Extension type for branded primitives
-      pet_or_error.dart        OneOf typedef for untagged unions
-      shape.dart               Sealed class for discriminated unions
-    apis/
-      pets_api.dart            API client class with typed methods
-    client/
-      <package_name>_api.dart  Root SDK facade with lazy API group accessors
-pubspec.yaml                   Generated with correct dependencies
+  <name>.dart            Barrel file
+  models/                (same as above)
+  apis/
+  client/
+pubspec.yaml             Generated with correct dependencies
 ```
 
 Small types (extension types and enums) referenced by a single parent are automatically inlined into the parent's file to reduce file count.

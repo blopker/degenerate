@@ -81,7 +81,8 @@ class ModelEmitter {
           // 1. It's not required AND has no default, OR
           // 2. Its type is explicitly nullable (required + nullable is valid in OpenAPI).
           // Fields with defaults have non-nullable types, so fromJson must not produce null.
-          final isOptional = (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+          final isOptional =
+              (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
           final code = buildFromJsonCode(
             f.type,
             accessor,

@@ -5,9 +5,7 @@ void main() {
   group('AuthInterceptor', () {
     test('adds Authorization header', () async {
       Map<String, String>? capturedHeaders;
-      final interceptor = AuthInterceptor(
-        getToken: () async => 'my-token',
-      );
+      final interceptor = AuthInterceptor(getToken: () async => 'my-token');
 
       final chain = buildInterceptorChain(
         interceptors: [interceptor],
@@ -71,9 +69,7 @@ void main() {
 
     test('does not retry if no refreshToken provided', () async {
       var callCount = 0;
-      final interceptor = AuthInterceptor(
-        getToken: () async => 'bad-token',
-      );
+      final interceptor = AuthInterceptor(getToken: () async => 'bad-token');
 
       final chain = buildInterceptorChain(
         interceptors: [interceptor],

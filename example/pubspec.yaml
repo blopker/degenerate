@@ -7,5 +7,5 @@ environment:
   sdk: ^3.11.0
 
 dependencies:
-  degenerate_http: ^0.1.0
-  degenerate_runtime: ^0.1.0
+  degenerate_http:
+  degenerate_runtime:

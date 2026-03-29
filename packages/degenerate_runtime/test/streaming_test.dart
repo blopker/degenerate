@@ -40,10 +40,7 @@ void main() {
 
   group('RecordingClient.sseResponse', () {
     test('creates valid SSE stream', () async {
-      final response = RecordingClient.sseResponse([
-        '{"id":1}',
-        '{"id":2}',
-      ]);
+      final response = RecordingClient.sseResponse(['{"id":1}', '{"id":2}']);
 
       final events = await parseSseStream(response.byteStream).toList();
       expect(events, hasLength(2));

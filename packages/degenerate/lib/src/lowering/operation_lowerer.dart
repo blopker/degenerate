@@ -241,10 +241,7 @@ class OperationLowerer {
       paramNameHint = '${_currentOpPascal!}${toPascalCase(name)}';
     }
     final type = rawSchema != null
-        ? irMapper.lowerUntypedInlineSchema(
-            rawSchema,
-            nameHint: paramNameHint,
-          )
+        ? irMapper.lowerUntypedInlineSchema(rawSchema, nameHint: paramNameHint)
         : const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
     final defaultValue =
         param['default'] ??

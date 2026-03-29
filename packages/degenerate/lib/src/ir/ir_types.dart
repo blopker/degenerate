@@ -41,7 +41,12 @@ final class IrPrimitive extends IrType {
   @override
   IrPrimitive copyAsNullable() => isNullable
       ? this
-      : IrPrimitive(kind, format: format, description: description, isNullable: true);
+      : IrPrimitive(
+          kind,
+          format: format,
+          description: description,
+          isNullable: true,
+        );
 }
 
 final class IrEnum extends IrType {
@@ -59,7 +64,13 @@ final class IrEnum extends IrType {
   @override
   IrEnum copyAsNullable() => isNullable
       ? this
-      : IrEnum(name, values, defaultValue: defaultValue, description: description, isNullable: true);
+      : IrEnum(
+          name,
+          values,
+          defaultValue: defaultValue,
+          description: description,
+          isNullable: true,
+        );
 }
 
 final class IrList extends IrType {
@@ -97,7 +108,13 @@ final class IrObject extends IrType {
   @override
   IrObject copyAsNullable() => isNullable
       ? this
-      : IrObject(name, fields, requiredFields: requiredFields, description: description, isNullable: true);
+      : IrObject(
+          name,
+          fields,
+          requiredFields: requiredFields,
+          description: description,
+          isNullable: true,
+        );
 }
 
 final class IrField {
@@ -133,7 +150,13 @@ final class IrDiscriminatedUnion extends IrType {
   @override
   IrDiscriminatedUnion copyAsNullable() => isNullable
       ? this
-      : IrDiscriminatedUnion(name, discriminatorProperty, mapping, description: description, isNullable: true);
+      : IrDiscriminatedUnion(
+          name,
+          discriminatorProperty,
+          mapping,
+          description: description,
+          isNullable: true,
+        );
 }
 
 /// oneOf without discriminator - generates sealed class with runtime matching.
@@ -150,7 +173,12 @@ final class IrUntaggedUnion extends IrType {
   @override
   IrUntaggedUnion copyAsNullable() => isNullable
       ? this
-      : IrUntaggedUnion(name, variants, description: description, isNullable: true);
+      : IrUntaggedUnion(
+          name,
+          variants,
+          description: description,
+          isNullable: true,
+        );
 }
 
 /// anyOf - generates a composite that can be multiple types simultaneously.
@@ -187,7 +215,12 @@ final class IrExtensionType extends IrType {
   @override
   IrExtensionType copyAsNullable() => isNullable
       ? this
-      : IrExtensionType(name, inner, description: description, isNullable: true);
+      : IrExtensionType(
+          name,
+          inner,
+          description: description,
+          isNullable: true,
+        );
 }
 
 /// A reference to a named type (resolved during IR construction).

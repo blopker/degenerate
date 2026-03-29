@@ -32,10 +32,10 @@ class IrMapper {
 
   /// Create an IrMapper from a [NormalizationContext].
   IrMapper(NormalizationContext context)
-      : _usedNames = context.usedNames,
-        _nameMapping = context.nameMapping,
-        _discriminatorProperties = context.discriminatorProperties,
-        warnings = context.warnings;
+    : _usedNames = context.usedNames,
+      _nameMapping = context.nameMapping,
+      _discriminatorProperties = context.discriminatorProperties,
+      warnings = context.warnings;
 
   /// Lower all named schemas from `components.schemas`.
   ///
@@ -582,11 +582,12 @@ class IrMapper {
 
       // Merge type-level description (e.g. "One of: String, int" from
       // collapsed unions) into the field description for doc comments.
-      final effectiveDescription = fieldType.description != null &&
+      final effectiveDescription =
+          fieldType.description != null &&
               fieldType.description != fieldDescription
           ? fieldDescription != null
-              ? '$fieldDescription\n\n${fieldType.description}'
-              : fieldType.description
+                ? '$fieldDescription\n\n${fieldType.description}'
+                : fieldType.description
           : fieldDescription;
 
       fields.add(
@@ -655,7 +656,8 @@ class IrMapper {
           mapping[value] = IrTypeRef(dartRefName);
         } else if (refOrSchema is Map<String, dynamic>) {
           // Use title if available, otherwise derive from parent + value.
-          final hint = (refOrSchema['title'] as String?) ??
+          final hint =
+              (refOrSchema['title'] as String?) ??
               '$unionName${toPascalCase(value)}';
           mapping[value] = lowerInlineSchema(refOrSchema, nameHint: hint);
         }
@@ -672,8 +674,8 @@ class IrMapper {
           mapping[dartRefName] = IrTypeRef(dartRefName);
         } else if (variant is Map<String, dynamic> &&
             (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
-          final hint = (variant['title'] as String?) ??
-              '${unionName}Variant${i + 1}';
+          final hint =
+              (variant['title'] as String?) ?? '${unionName}Variant${i + 1}';
           final lowered = lowerInlineSchema(variant, nameHint: hint);
           // Derive the mapping key from the discriminator enum value if
           // available, otherwise use the type name.
@@ -716,8 +718,12 @@ class IrMapper {
     // e.g. oneOf: [{enum: [High]}, {enum: [Medium]}, {enum: [Low]}]
     final collapsed = _trySingleValueEnumCollapse(oneOf);
     if (collapsed != null) {
-      return IrEnum(unionName, collapsed,
-          description: description, isNullable: nullable);
+      return IrEnum(
+        unionName,
+        collapsed,
+        description: description,
+        isNullable: nullable,
+      );
     }
 
     final variants = <IrType>[];
@@ -726,7 +732,8 @@ class IrMapper {
       if (variant is Map<String, dynamic>) {
         // Use lowerInlineSchema for inline variants so they get registered
         // in the type registry and emitted as separate files.
-        final hint = (variant['title'] as String?) ??
+        final hint =
+            (variant['title'] as String?) ??
             _singleEnumHint(unionName, variant) ??
             '${unionName}Variant${i + 1}';
         variants.add(lowerInlineSchema(variant, nameHint: hint));
@@ -755,8 +762,11 @@ class IrMapper {
 
   // ─── AnyOf ────────────────────────────────────────────────────
 
-  IrType _lowerAnyOf(String? name, Map<String, dynamic> schema,
-      {bool isInline = false}) {
+  IrType _lowerAnyOf(
+    String? name,
+    Map<String, dynamic> schema, {
+    bool isInline = false,
+  }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final anyOfName = name ?? _uniqueTypeName('InlineAnyOf');
@@ -766,8 +776,12 @@ class IrMapper {
     // Collapse anyOf of single-value string enums into one enum.
     final collapsed = _trySingleValueEnumCollapse(anyOf);
     if (collapsed != null) {
-      return IrEnum(anyOfName, collapsed,
-          description: description, isNullable: nullable);
+      return IrEnum(
+        anyOfName,
+        collapsed,
+        description: description,
+        isNullable: nullable,
+      );
     }
 
     final variants = <IrType>[];
@@ -776,7 +790,8 @@ class IrMapper {
       if (variant is Map<String, dynamic>) {
         // Use lowerInlineSchema for inline variants so they get registered
         // in the type registry and emitted as separate files.
-        final hint = (variant['title'] as String?) ??
+        final hint =
+            (variant['title'] as String?) ??
             _singleEnumHint(anyOfName, variant) ??
             '${anyOfName}Variant${i + 1}';
         variants.add(lowerInlineSchema(variant, nameHint: hint));

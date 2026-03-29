@@ -24,9 +24,7 @@ class _HeaderInterceptor implements Interceptor {
 
   @override
   Future<ApiResponse> intercept(ApiRequest request, Handler next) {
-    return next(request.copyWith(
-      headers: {...request.headers, key: value},
-    ));
+    return next(request.copyWith(headers: {...request.headers, key: value}));
   }
 }
 
@@ -66,7 +64,12 @@ void main() {
 
       await chain(ApiRequest(method: 'GET', path: '/test'));
 
-      expect(log, ['first:before', 'second:before', 'second:after', 'first:after']);
+      expect(log, [
+        'first:before',
+        'second:before',
+        'second:after',
+        'first:after',
+      ]);
     });
 
     test('interceptors can modify the request', () async {

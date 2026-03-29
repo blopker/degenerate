@@ -14,8 +14,18 @@ class ApiEmitter {
   const ApiEmitter(this.api, {this.typeRegistry = const {}});
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
-  String _fromJson(IrType type, String accessor, {bool isOptional = false, bool paramIsMap = false}) =>
-      buildFromJsonCode(type, accessor, isOptional: isOptional, paramIsMap: paramIsMap, typeRegistry: typeRegistry);
+  String _fromJson(
+    IrType type,
+    String accessor, {
+    bool isOptional = false,
+    bool paramIsMap = false,
+  }) => buildFromJsonCode(
+    type,
+    accessor,
+    isOptional: isOptional,
+    paramIsMap: paramIsMap,
+    typeRegistry: typeRegistry,
+  );
 
   List<Spec> emit() {
     return [
@@ -48,9 +58,11 @@ class ApiEmitter {
             ),
           )
           ..methods.addAll(api.operations.map(_buildOperation))
-          ..methods.addAll(api.operations
-              .where((op) => eventStreamContent(op) != null)
-              .map(_buildStreamingOperation)),
+          ..methods.addAll(
+            api.operations
+                .where((op) => eventStreamContent(op) != null)
+                .map(_buildStreamingOperation),
+          ),
       ),
     ];
   }
@@ -291,19 +303,25 @@ class ApiEmitter {
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
-    final multipartFields = bodyType != null &&
-            isMultipartMediaType(requestBodyContent!.$1)
+    final multipartFields =
+        bodyType != null && isMultipartMediaType(requestBodyContent!.$1)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
-    final formUrlencodedFields = bodyType != null &&
-            isFormUrlencodedMediaType(requestBodyContent!.$1)
+    final formUrlencodedFields =
+        bodyType != null && isFormUrlencodedMediaType(requestBodyContent!.$1)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
     // Check for unsupported body before building any variables to avoid dead code.
-    if (bodyType != null && multipartFields == null && formUrlencodedFields == null) {
-      final bodyExpr = _buildRequestBodyExpr(requestBodyContent!.$1, requestBodyContent.$2.schema, op.requestBody!.isRequired);
+    if (bodyType != null &&
+        multipartFields == null &&
+        formUrlencodedFields == null) {
+      final bodyExpr = _buildRequestBodyExpr(
+        requestBodyContent!.$1,
+        requestBodyContent.$2.schema,
+        op.requestBody!.isRequired,
+      );
       if (bodyExpr.startsWith('throw ')) {
         buf.writeln('$bodyExpr;');
         return buf.toString();
@@ -339,12 +357,17 @@ class ApiEmitter {
       buf.writeln();
     }
 
-    buf.writeln('final headers = <String, String>{...apiConfig.defaultHeaders};');
-    if (requestBodyContent case (final mediaType, _)
-        when !isMultipartMediaType(mediaType)) {
+    buf.writeln(
+      'final headers = <String, String>{...apiConfig.defaultHeaders};',
+    );
+    if (requestBodyContent case (
+      final mediaType,
+      _,
+    ) when !isMultipartMediaType(mediaType)) {
       // Use application/json for wildcard content types since we serialize as JSON.
-      final contentType =
-          normalizeMediaType(mediaType) == '*/*' ? 'application/json' : mediaType;
+      final contentType = normalizeMediaType(mediaType) == '*/*'
+          ? 'application/json'
+          : mediaType;
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
@@ -380,10 +403,18 @@ class ApiEmitter {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
       buf.writeln("  contentType: 'multipart/form-data',");
     } else if (formUrlencodedFields != null) {
-      _writeFormUrlencodedBody(buf, formUrlencodedFields, op.requestBody!.isRequired);
+      _writeFormUrlencodedBody(
+        buf,
+        formUrlencodedFields,
+        op.requestBody!.isRequired,
+      );
     } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
-      final bodyExpr = _buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired);
+      final bodyExpr = _buildRequestBodyExpr(
+        requestBody.$1,
+        requestBody.$2.schema,
+        op.requestBody!.isRequired,
+      );
       buf.writeln('  body: $bodyExpr,');
     }
 
@@ -441,8 +472,7 @@ class ApiEmitter {
         IrExtensionType() =>
           'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
         // All named types with .fromJson(Map)
-        _ =>
-          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
+        _ => 'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
       };
     }
 
@@ -450,7 +480,8 @@ class ApiEmitter {
         'Cannot decode $mediaType response into ${irTypeName(returnType)}';
     return switch (returnType) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ || PrimitiveKind.string => 'return response.body;',
+        PrimitiveKind.dynamic_ ||
+        PrimitiveKind.string => 'return response.body;',
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
         PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
@@ -458,8 +489,7 @@ class ApiEmitter {
         _ => "throw UnsupportedError('$unsupportedMessage');",
       },
       IrEnum(:final name) => 'return $name.fromJson(response.body);',
-      IrExtensionType() =>
-        'return ${_fromJson(returnType, 'response.body')};',
+      IrExtensionType() => 'return ${_fromJson(returnType, 'response.body')};',
       _ =>
         "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
     };
@@ -730,32 +760,48 @@ class ApiEmitter {
     }
 
     for (final p in pathParams) {
-      params.add(Parameter((pb) => pb
-        ..name = p.dartName
-        ..named = true
-        ..required = true
-        ..type = irTypeToReference(p.type, forceNonNullable: true)));
+      params.add(
+        Parameter(
+          (pb) => pb
+            ..name = p.dartName
+            ..named = true
+            ..required = true
+            ..type = irTypeToReference(p.type, forceNonNullable: true),
+        ),
+      );
     }
     for (final p in queryParams) {
-      params.add(Parameter((pb) => pb
-        ..name = p.dartName
-        ..named = true
-        ..required = p.isRequired
-        ..type = irTypeToReference(p.type, forceNullable: !p.isRequired)));
+      params.add(
+        Parameter(
+          (pb) => pb
+            ..name = p.dartName
+            ..named = true
+            ..required = p.isRequired
+            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
+        ),
+      );
     }
     for (final p in headerParams) {
-      params.add(Parameter((pb) => pb
-        ..name = p.dartName
-        ..named = true
-        ..required = p.isRequired
-        ..type = irTypeToReference(p.type, forceNullable: !p.isRequired)));
+      params.add(
+        Parameter(
+          (pb) => pb
+            ..name = p.dartName
+            ..named = true
+            ..required = p.isRequired
+            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
+        ),
+      );
     }
     for (final p in cookieParams) {
-      params.add(Parameter((pb) => pb
-        ..name = p.dartName
-        ..named = true
-        ..required = p.isRequired
-        ..type = irTypeToReference(p.type, forceNullable: !p.isRequired)));
+      params.add(
+        Parameter(
+          (pb) => pb
+            ..name = p.dartName
+            ..named = true
+            ..required = p.isRequired
+            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
+        ),
+      );
     }
 
     final requestBodyContent = op.requestBody != null
@@ -763,18 +809,28 @@ class ApiEmitter {
         : null;
     final bodyType = requestBodyContent?.$2.schema;
     if (bodyType != null) {
-      params.add(Parameter((pb) => pb
-        ..name = 'body'
-        ..named = true
-        ..required = op.requestBody!.isRequired
-        ..type = irTypeToReference(bodyType,
-            forceNullable: !op.requestBody!.isRequired)));
+      params.add(
+        Parameter(
+          (pb) => pb
+            ..name = 'body'
+            ..named = true
+            ..required = op.requestBody!.isRequired
+            ..type = irTypeToReference(
+              bodyType,
+              forceNullable: !op.requestBody!.isRequired,
+            ),
+        ),
+      );
     }
 
-    params.add(Parameter((pb) => pb
-      ..name = 'options'
-      ..named = true
-      ..type = refer('RequestOptions?')));
+    params.add(
+      Parameter(
+        (pb) => pb
+          ..name = 'options'
+          ..named = true
+          ..type = refer('RequestOptions?'),
+      ),
+    );
 
     final sseContent = eventStreamContent(op)!;
     final eventType = sseContent.$2.schema;
@@ -839,18 +895,24 @@ class ApiEmitter {
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
-    final multipartFields = bodyType != null &&
-            isMultipartMediaType(requestBodyContent!.$1)
+    final multipartFields =
+        bodyType != null && isMultipartMediaType(requestBodyContent!.$1)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
-    final formUrlencodedFields = bodyType != null &&
-            isFormUrlencodedMediaType(requestBodyContent!.$1)
+    final formUrlencodedFields =
+        bodyType != null && isFormUrlencodedMediaType(requestBodyContent!.$1)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
     // Check for unsupported body before building any variables to avoid dead code.
-    if (bodyType != null && multipartFields == null && formUrlencodedFields == null) {
-      final bodyExpr = _buildRequestBodyExpr(requestBodyContent!.$1, requestBodyContent.$2.schema, op.requestBody!.isRequired);
+    if (bodyType != null &&
+        multipartFields == null &&
+        formUrlencodedFields == null) {
+      final bodyExpr = _buildRequestBodyExpr(
+        requestBodyContent!.$1,
+        requestBodyContent.$2.schema,
+        op.requestBody!.isRequired,
+      );
       if (bodyExpr.startsWith('throw ')) {
         buf.writeln('$bodyExpr;');
         return buf.toString();
@@ -886,15 +948,23 @@ class ApiEmitter {
       buf.writeln();
     }
 
-    buf.writeln('final headers = <String, String>{...apiConfig.defaultHeaders};');
-    if (requestBodyContent case (final mediaType, _)
-        when !isMultipartMediaType(mediaType)) {
-      final contentType =
-          normalizeMediaType(mediaType) == '*/*' ? 'application/json' : mediaType;
+    buf.writeln(
+      'final headers = <String, String>{...apiConfig.defaultHeaders};',
+    );
+    if (requestBodyContent case (
+      final mediaType,
+      _,
+    ) when !isMultipartMediaType(mediaType)) {
+      final contentType = normalizeMediaType(mediaType) == '*/*'
+          ? 'application/json'
+          : mediaType;
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
-      final sanitizedName = p.name.replaceAll('\n', '').replaceAll('\r', '').trim();
+      final sanitizedName = p.name
+          .replaceAll('\n', '')
+          .replaceAll('\r', '')
+          .trim();
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
@@ -922,10 +992,16 @@ class ApiEmitter {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
       buf.writeln("  contentType: 'multipart/form-data',");
     } else if (formUrlencodedFields != null) {
-      _writeFormUrlencodedBody(buf, formUrlencodedFields, op.requestBody!.isRequired);
+      _writeFormUrlencodedBody(
+        buf,
+        formUrlencodedFields,
+        op.requestBody!.isRequired,
+      );
     } else if (bodyType != null) {
       final requestBody = requestBodyContent!;
-      buf.writeln('  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},');
+      buf.writeln(
+        '  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},',
+      );
     }
     buf.writeln('  options: options,');
     buf.writeln(');');
@@ -998,8 +1074,7 @@ class ApiEmitter {
         IrMap(:final values) =>
           'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_fromJson(values, 'v')}));',
         // All named types with .fromJson(Map)
-        _ =>
-          'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
+        _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
       };
     }
 
@@ -1007,14 +1082,12 @@ class ApiEmitter {
         'Cannot decode $mediaType error into ${irTypeName(errorType)}';
     return switch (errorType) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ || PrimitiveKind.string =>
-          'return response.body;',
+        PrimitiveKind.dynamic_ ||
+        PrimitiveKind.string => 'return response.body;',
         PrimitiveKind.int => 'return int.parse(response.body);',
         PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool =>
-          "return response.body.toLowerCase() == 'true';",
-        PrimitiveKind.bytes =>
-          'return Uint8List.fromList(response.bodyBytes);',
+        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
+        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
         _ => 'return null;',
       },
       IrEnum(:final name) => 'return $name.fromJson(response.body);',
@@ -1142,7 +1215,8 @@ class ApiEmitter {
     }
     for (final f in fields) {
       final fieldAccessor = 'body.${f.name}';
-      final isBytes = f.type is IrPrimitive &&
+      final isBytes =
+          f.type is IrPrimitive &&
           (f.type as IrPrimitive).kind == PrimitiveKind.bytes;
       // Emit null guard only when the Dart field type is actually nullable.
       // Fields with defaults are non-nullable even if not required,
@@ -1215,10 +1289,14 @@ class ApiEmitter {
     bool isBytes,
   ) {
     if (isBytes) {
-      buf.writeln("    ApiMultipartField.file('${f.originalName}', $accessor),");
+      buf.writeln(
+        "    ApiMultipartField.file('${f.originalName}', $accessor),",
+      );
     } else {
       final valueExpr = _multipartFieldValueExpr(f.type, accessor);
-      buf.writeln("    ApiMultipartField.text('${f.originalName}', $valueExpr),");
+      buf.writeln(
+        "    ApiMultipartField.text('${f.originalName}', $valueExpr),",
+      );
     }
   }
 
@@ -1231,7 +1309,9 @@ class ApiEmitter {
     return switch (f.type) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.bool => v is bool,
-        PrimitiveKind.int || PrimitiveKind.double || PrimitiveKind.num => v is num,
+        PrimitiveKind.int ||
+        PrimitiveKind.double ||
+        PrimitiveKind.num => v is num,
         PrimitiveKind.string => v is String,
         _ => false,
       },

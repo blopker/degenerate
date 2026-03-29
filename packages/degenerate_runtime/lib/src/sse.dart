@@ -15,9 +15,8 @@ final class SseEvent {
   const SseEvent({this.event, required this.data, this.id});
 
   @override
-  String toString() => event != null
-      ? 'SseEvent($event, $data)'
-      : 'SseEvent($data)';
+  String toString() =>
+      event != null ? 'SseEvent($event, $data)' : 'SseEvent($data)';
 }
 
 /// Parse a byte stream of Server-Sent Events into [SseEvent]s.
@@ -65,7 +64,8 @@ Stream<SseEvent> parseSseStream(
     } else {
       field = line.substring(0, colonIndex);
       // Skip optional single space after colon.
-      final valueStart = (colonIndex + 1 < line.length && line[colonIndex + 1] == ' ')
+      final valueStart =
+          (colonIndex + 1 < line.length && line[colonIndex + 1] == ' ')
           ? colonIndex + 2
           : colonIndex + 1;
       value = line.substring(valueStart);

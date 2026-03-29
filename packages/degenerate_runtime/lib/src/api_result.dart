@@ -48,8 +48,9 @@ final class ApiError<T, E> extends ApiResult<T, E> implements Exception {
   T get dataOrThrow => throw this;
 
   @override
-  String toString() =>
-      error != null ? 'ApiError($statusCode, $error)' : 'ApiError($statusCode, $rawError)';
+  String toString() => error != null
+      ? 'ApiError($statusCode, $error)'
+      : 'ApiError($statusCode, $rawError)';
 }
 
 /// Network-level failure (DNS, timeout, connection refused).

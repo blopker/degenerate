@@ -481,24 +481,22 @@ class DiscriminatedUnionEmitter {
           ),
         )
         ..methods.add(
-          Method(
-            (m) {
-              final String fieldStr;
-              if (fieldName.startsWith(r'$')) {
-                final escaped = fieldName.replaceAll(r'$', r'\$');
-                fieldStr = '$escaped: \${$fieldName}';
-              } else {
-                fieldStr = '$fieldName: \$$fieldName';
-              }
-              m
-                ..name = 'toString'
-                ..annotations.add(refer('override'))
-                ..returns = refer('String')
-                ..body = Code(
-                  "return '${escapeNameForString(className)}($fieldStr)';",
-                );
-            },
-          ),
+          Method((m) {
+            final String fieldStr;
+            if (fieldName.startsWith(r'$')) {
+              final escaped = fieldName.replaceAll(r'$', r'\$');
+              fieldStr = '$escaped: \${$fieldName}';
+            } else {
+              fieldStr = '$fieldName: \$$fieldName';
+            }
+            m
+              ..name = 'toString'
+              ..annotations.add(refer('override'))
+              ..returns = refer('String')
+              ..body = Code(
+                "return '${escapeNameForString(className)}($fieldStr)';",
+              );
+          }),
         ),
     );
   }
@@ -855,9 +853,13 @@ class AnyOfEmitter {
     final resolved = _resolveType(type);
     return switch (resolved) {
       IrUntaggedUnion(:final name, :final variants)
-          when isOneOfEligible(variants) && !_isSelfReferencingUnion(name, variants) => true,
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencingUnion(name, variants) =>
+        true,
       IrAnyOf(:final name, :final variants)
-          when isOneOfEligible(variants) && !_isSelfReferencingUnion(name, variants) => true,
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencingUnion(name, variants) =>
+        true,
       _ => false,
     };
   }
@@ -994,7 +996,12 @@ class AnyOfEmitter {
           // OneOf typedef types use OneOf.parse() instead of .fromJson().
           if (_isOneOfType(f.type)) {
             final accessor = allObjectLike ? 'json' : 'map';
-            final parseCode = buildFromJsonCode(f.type, accessor, paramIsMap: true, typeRegistry: typeRegistry);
+            final parseCode = buildFromJsonCode(
+              f.type,
+              accessor,
+              paramIsMap: true,
+              typeRegistry: typeRegistry,
+            );
             if (allObjectLike) {
               return '  ${f.name}: $parseCode,';
             }
