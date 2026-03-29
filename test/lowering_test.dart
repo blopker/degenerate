@@ -1048,6 +1048,41 @@ void main() {
     });
   });
 
+  group('allOf with ref and extra properties', () {
+    test('currently produces a type ref (known limitation)', () {
+      // TODO: allOf with $ref + extra properties should produce an IrObject
+      // with merged fields. Currently returns IrTypeRef, losing the extra
+      // properties. Fixing this requires careful handling to avoid breaking
+      // discriminated union variants that use the same pattern.
+      final schemas = <String, dynamic>{
+        'Base': {
+          'type': 'object',
+          'properties': {
+            'id': {'type': 'string'},
+          },
+          'required': ['id'],
+        },
+        'Extended': {
+          'allOf': [
+            {r'$ref': '#/components/schemas/Base'},
+            {
+              'type': 'object',
+              'properties': {
+                'extra': {'type': 'string'},
+              },
+            },
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      final extended = mapper.typeRegistry['Extended'];
+      expect(extended, isA<IrTypeRef>());
+    });
+  });
+
   group('Vendor extensions (x- fields)', () {
     test('x- fields at schema level are ignored', () {
       final tl = IrMapper(NormalizationContext(

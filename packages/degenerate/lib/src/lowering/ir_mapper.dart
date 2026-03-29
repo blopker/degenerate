@@ -278,14 +278,16 @@ class IrMapper {
       final refName =
           _nameMapping[rawRefName] ??
           sanitizeDartName(toPascalCase(rawRefName));
-      final flatDescription =
-          flattened['description'] as String? ?? description;
-      final flatNullable = _isNullable(flattened) || nullable;
-      return IrTypeRef(
-        refName,
-        description: flatDescription,
-        isNullable: flatNullable,
-      );
+      {
+        final flatDescription =
+            flattened['description'] as String? ?? description;
+        final flatNullable = _isNullable(flattened) || nullable;
+        return IrTypeRef(
+          refName,
+          description: flatDescription,
+          isNullable: flatNullable,
+        );
+      }
     }
 
     // After flattening, check again for resolved refs (allOf may have surfaced one).
@@ -444,7 +446,7 @@ class IrMapper {
   IrType _lowerEnum(String? name, Map<String, dynamic> schema) {
     final values = (schema['enum'] as List).map((e) => e.toString()).toList();
     final rawDefault = schema['default'];
-    final defaultValue = rawDefault != null ? rawDefault.toString() : null;
+    final defaultValue = rawDefault?.toString();
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final enumName = name ?? _uniqueTypeName('InlineEnum');
