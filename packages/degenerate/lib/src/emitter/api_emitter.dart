@@ -371,10 +371,7 @@ class ApiEmitter {
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
-      final sanitizedName = p.name
-          .replaceAll('\n', '')
-          .replaceAll('\r', '')
-          .trim();
+      final sanitizedName = _sanitizeParameterName(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
@@ -736,7 +733,7 @@ class ApiEmitter {
       p.explode ?? (style == 'form');
 
   String _sanitizeParameterName(String value) =>
-      value.replaceAll('\n', '').replaceAll('\r', '').trim();
+      escapeDartString(value.replaceAll('\n', '').replaceAll('\r', '').trim());
 
   Method _buildStreamingOperation(IrOperation op) {
     final params = <Parameter>[];
@@ -961,10 +958,7 @@ class ApiEmitter {
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
-      final sanitizedName = p.name
-          .replaceAll('\n', '')
-          .replaceAll('\r', '')
-          .trim();
+      final sanitizedName = _sanitizeParameterName(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");

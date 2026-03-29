@@ -39,7 +39,7 @@ final class IncidentsApi with ApiExecutor {
       queryParameters['class'] = $class;
     }
     if ($filter != null) {
-      queryParameters['$filter'] = $filter;
+      queryParameters['\$filter'] = $filter;
     }
     if (kebabCaseParam != null) {
       queryParameters['kebab-case-param'] = kebabCaseParam.toString();

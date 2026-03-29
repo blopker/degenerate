@@ -5,7 +5,7 @@ import 'true.dart';
 final class Proto {
   const Proto({
     this.constructor,
-    this.toString = '[object Object]',
+    this.$toString = '[object Object]',
     this.valueOf,
     this.prototype,
   });
@@ -15,7 +15,7 @@ final class Proto {
       constructor: json['constructor'] != null
           ? True.fromJson(json['constructor'] as Map<String, dynamic>)
           : null,
-      toString: json.containsKey('toString')
+      $toString: json.containsKey('toString')
           ? json['toString'] as String
           : '[object Object]',
       valueOf: json['valueOf'] != null
@@ -29,7 +29,7 @@ final class Proto {
 
   final True? constructor;
 
-  final String toString;
+  final String $toString;
 
   final int? valueOf;
 
@@ -38,7 +38,7 @@ final class Proto {
   Map<String, dynamic> toJson() {
     return {
       if (constructor != null) 'constructor': constructor?.toJson(),
-      'toString': toString,
+      'toString': $toString,
       'valueOf': ?valueOf,
       if (prototype != null) 'prototype': prototype?.toJson(),
     };
@@ -50,13 +50,13 @@ final class Proto {
 
   Proto copyWith({
     True Function()? constructor,
-    String Function()? toString,
+    String Function()? $toString,
     int Function()? valueOf,
     Proto Function()? prototype,
   }) {
     return Proto(
       constructor: constructor != null ? constructor() : this.constructor,
-      toString: toString != null ? toString() : this.toString,
+      $toString: $toString != null ? $toString() : this.$toString,
       valueOf: valueOf != null ? valueOf() : this.valueOf,
       prototype: prototype != null ? prototype() : this.prototype,
     );
@@ -67,18 +67,18 @@ final class Proto {
     return identical(this, other) ||
         other is Proto &&
             constructor == other.constructor &&
-            toString == other.toString &&
+            $toString == other.$toString &&
             valueOf == other.valueOf &&
             prototype == other.prototype;
   }
 
   @override
   int get hashCode {
-    return Object.hash(constructor, toString, valueOf, prototype);
+    return Object.hash(constructor, $toString, valueOf, prototype);
   }
 
   @override
   String toString() {
-    return 'Proto(constructor: $constructor, toString: $toString, valueOf: $valueOf, prototype: $prototype)';
+    return 'Proto(constructor: $constructor, \$toString: ${$toString}, valueOf: $valueOf, prototype: $prototype)';
   }
 }

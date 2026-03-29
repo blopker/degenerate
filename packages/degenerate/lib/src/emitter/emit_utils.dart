@@ -417,6 +417,12 @@ String variantClassName(String baseName, String variantKey) {
   return '$baseName${toPascalCase(variantKey)}';
 }
 
+/// Unicode characters that Dart warns about in string literals
+/// (text direction overrides, zero-width joiners/spaces, bidi isolates, etc.).
+final _unicodeControlChars = RegExp(
+  '[\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]',
+);
+
 /// Escape a string value for use inside a Dart single-quoted string literal.
 String escapeDartString(String value) {
   return value
@@ -425,17 +431,28 @@ String escapeDartString(String value) {
       .replaceAll(r'$', r'\$')
       .replaceAll('\n', r'\n')
       .replaceAll('\r', r'\r')
-      .replaceAll('\t', r'\t');
+      .replaceAll('\t', r'\t')
+      .replaceAllMapped(_unicodeControlChars, (m) {
+    final code = m[0]!.codeUnitAt(0).toRadixString(16).toUpperCase();
+    return '\\u${code.padLeft(4, '0')}';
+  });
 }
 
 /// Convert an enum string value to a valid Dart enum constant name.
 final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
+// A leading +/- before a letter (not a digit) isn't handled by _splitWords
+// and would corrupt casing. Strip it before passing to toCamelCase.
+// Only matches at the start of the string to preserve interior hyphens
+// that serve as word separators (e.g. 'google-apps' → 'googleApps').
+final _leadingSignBeforeLetter = RegExp(r'^[+-](?=[a-zA-Z])');
 
 String enumValueName(String value) {
   // Strip characters that are invalid in identifiers and not recognized as
   // word separators by _splitWords, so they don't interfere with casing.
   // e.g. "[DONE]" → "DONE" → toCamelCase → "done" (not "[Done]" → "Done").
-  var name = toCamelCase(value.replaceAll(_nonIdentChars, ''));
+  var cleaned = value.replaceAll(_nonIdentChars, '');
+  cleaned = cleaned.replaceFirst(_leadingSignBeforeLetter, '');
+  var name = toCamelCase(cleaned);
   name = sanitizeFieldName(name);
   // Also escape enum-internal reserved names (value, values, json, etc.)
   if (enumReservedNames.contains(name)) {

@@ -8,8 +8,8 @@ final class ObjectModelNaN {
       'NaN' => naN,
       'nan' => nan,
       'NAN' => nan2,
-      '+NaN' => NaN,
-      '-NaN' => naN2,
+      '+NaN' => naN2,
+      '-NaN' => naN3,
       _ => ObjectModelNaN._(json),
     };
   }
@@ -20,11 +20,11 @@ final class ObjectModelNaN {
 
   static const ObjectModelNaN nan2 = ObjectModelNaN._('NAN');
 
-  static const ObjectModelNaN NaN = ObjectModelNaN._('+NaN');
+  static const ObjectModelNaN naN2 = ObjectModelNaN._('+NaN');
 
-  static const ObjectModelNaN naN2 = ObjectModelNaN._('-NaN');
+  static const ObjectModelNaN naN3 = ObjectModelNaN._('-NaN');
 
-  static const List<ObjectModelNaN> values = [naN, nan, nan2, NaN, naN2];
+  static const List<ObjectModelNaN> values = [naN, nan, nan2, naN2, naN3];
 
   final String value;
 

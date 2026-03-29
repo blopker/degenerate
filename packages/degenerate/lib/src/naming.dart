@@ -118,11 +118,21 @@ const enumReservedNames = <String>{
   'override',
 };
 
-/// Sanitize a field/variable name: handles reserved words and dart:core type
-/// name collisions. Uses `$` prefix for consistency with [sanitizeDartName].
+/// Object members that generated model classes override (toString, hashCode,
+/// operator ==). A field with one of these names would conflict.
+const objectMemberNames = <String>{
+  'toString',
+  'hashCode',
+  'runtimeType',
+  'noSuchMethod',
+};
+
+/// Sanitize a field/variable name: handles reserved words, dart:core type
+/// name collisions, and Object member conflicts.
+/// Uses `$` prefix for consistency with [sanitizeDartName].
 String sanitizeFieldName(String name) {
   name = sanitizeDartName(name);
-  if (dartCoreTypeNames.contains(name)) {
+  if (dartCoreTypeNames.contains(name) || objectMemberNames.contains(name)) {
     name = '\$$name';
   }
   return name;

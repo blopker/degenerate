@@ -20,8 +20,8 @@ final class $3Incident {
           ? (json['3-dread-level'] as num).toDouble()
           : 6.66,
       caf: json['café'] as String?,
-      gnirts: json['‮gnirts'] as String?,
-      ab: json['a​b'] as String?,
+      gnirts: json['\u202Egnirts'] as String?,
+      ab: json['a\u200Bb'] as String?,
     );
   }
 
@@ -45,8 +45,8 @@ final class $3Incident {
       '2species': $2species.toJson(),
       '3-dread-level': $3DreadLevel,
       'café': ?caf,
-      '‮gnirts': ?gnirts,
-      'a​b': ?ab,
+      '\u202Egnirts': ?gnirts,
+      'a\u200Bb': ?ab,
     };
   }
 

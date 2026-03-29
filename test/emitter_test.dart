@@ -130,6 +130,33 @@ void main() {
       });
     });
 
+    group('field named toString does not conflict with Object.toString', () {
+      late String source;
+
+      setUp(() {
+        // Field name '$toString' simulates sanitizeFieldName('toString')
+        final model = IrObject('Proto', [
+          IrField(
+            r'$toString',
+            'toString',
+            const IrPrimitive(PrimitiveKind.string),
+            defaultValue: '[object Object]',
+          ),
+        ]);
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('uses escaped field name', () {
+        expect(source, contains(r'final String $toString'));
+      });
+
+      test('is valid Dart (no conflicting_field_and_method)', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
     group('dynamic fields from PrimitiveKind.dynamic_', () {
       late String source;
 
@@ -2612,6 +2639,65 @@ void main() {
     });
   });
 
+  group('ApiEmitter - dollar sign in parameter names', () {
+    late String source;
+
+    setUp(() {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listItems',
+          'listItems',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              r'$filter',
+              r'$filter',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: false,
+            ),
+            IrParameter(
+              r'$top',
+              r'$top',
+              ParameterLocation.header,
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: false,
+            ),
+          ],
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(
+                  IrPrimitive(PrimitiveKind.string),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      source = emitRaw(library);
+    });
+
+    test('escapes dollar sign in query parameter key', () {
+      expect(source, contains(r"queryParameters['\$filter']"));
+    });
+
+    test('escapes dollar sign in header parameter key', () {
+      expect(source, contains(r"headers['\$top']"));
+    });
+
+    test('is valid Dart', () {
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
   group('escapeDartString', () {
     test('escapes backslash, quote, and dollar', () {
       expect(escapeDartString(r"a\b"), r"a\\b");
@@ -2633,6 +2719,21 @@ void main() {
 
     test('escapes mixed control characters', () {
       expect(escapeDartString('a\nb\tc\r'), r'a\nb\tc\r');
+    });
+
+    test('escapes bidi override characters', () {
+      expect(escapeDartString('\u202E'), r'\u202E');
+      expect(escapeDartString('\u202D'), r'\u202D');
+    });
+
+    test('escapes zero-width characters', () {
+      expect(escapeDartString('\u200B'), r'\u200B');
+      expect(escapeDartString('\uFEFF'), r'\uFEFF');
+    });
+
+    test('escapes bidi chars embedded in text', () {
+      expect(escapeDartString('\u202Egnirts'), r'\u202Egnirts');
+      expect(escapeDartString('a\u200Bb'), r'a\u200Bb');
     });
   });
 }
